@@ -24,7 +24,7 @@ This theme is built to be very straightforward, front end developer friendly and
 
 Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that the anything can change to a different direction without a warning.
 
-Air is not meant to be "a theme for everyone", so it doesn't have many parts that are generally included (see [Disabled features](#disabled-features)). 
+Air is not meant to be "a theme for everyone", so it doesn't have many parts that are generally included (see [Disabled features](#disabled-features)).
 
 If you for some reason happen to use this theme as base, please note the theme won't necessarily be that much fun or won't necessarily look any good. I recommend using [Sage](https://roots.io/sage/) if you need something more complete.
 
@@ -57,7 +57,8 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 #### Navigation
 
-Coming soon.
+* Custom navigation walker based on Bootstrap 3
+* Navigation styles coming soon
 
 #### WordPress & functions
 * Available for translation

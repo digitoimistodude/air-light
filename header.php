@@ -42,8 +42,23 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'air' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+
+			<?php
+				wp_nav_menu( array(
+					'menu'              => 'Primary Menu',
+					'theme_location'    => 'primary',
+					'container'       	=> 'nav',
+					'depth'             => 3,
+					'container_class'   => 'nav nav-collapse',
+					'menu_class'        => 'menu',
+					'menu_id' 					=> 'menu',
+					'echo'            	=> true,
+					'fallback_cb'       => 'wp_page_menu',
+					'items_wrap'      	=> '<ul class="%2$s" id="%1$s">%3$s</ul>',
+					'walker'            => new air_navwalker())
+				);
+			?>
+
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

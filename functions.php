@@ -32,6 +32,11 @@ register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'air' ),
 ) );
 
+/*
+ * Custom navigation walker
+ */
+require get_template_directory() . '/nav.php';
+
 /**
  * Remove WordPress Admin Bar
  *
