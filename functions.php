@@ -25,6 +25,13 @@ function air_wphidenag() {
    remove_action( 'admin_notices', 'update_nag', 3 );
 }
 
+/*
+ * Editable navigation menus.
+ */
+register_nav_menus( array(
+	'primary' => __( 'Primary Menu', 'air' ),
+) );
+
 /**
  * Remove WordPress Admin Bar
  *
