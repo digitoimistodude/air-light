@@ -47,9 +47,8 @@
 				wp_nav_menu( array(
 					'menu'              => 'Primary Menu',
 					'theme_location'    => 'primary',
-					'container'       	=> 'nav',
+					'container'       	=> false,
 					'depth'             => 3,
-					'container_class'   => 'nav nav-collapse',
 					'menu_class'        => 'menu',
 					'menu_id' 					=> 'menu',
 					'echo'            	=> true,

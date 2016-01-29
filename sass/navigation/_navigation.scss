@@ -1,0 +1,75 @@
+.main-navigation {
+
+  // Since we'll have the "ul li" "float:left" we need to add a clearfix after the container.
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+
+    // Navigation height needed for dropdown positioning
+    height: 60px;
+
+    li {
+      margin: 0;
+      display: inline-block;
+      float: left;
+      background-color: $color_links;
+
+      a {
+        display: block;
+        padding: 0 10px;
+        color: #fff;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #000;
+        }
+      }
+
+      > a:after {
+        content: ' +';
+      }
+
+      > a:only-child:after {
+        content: '';
+      }
+
+      &:hover {
+        // Display dropdowns on hover
+        > ul {
+          display: inherit;
+        }
+      }
+    }
+
+    // First level dropdown
+    ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+
+      li {
+        min-width: 170px;
+        float: none;
+        display: list-item;
+        position: relative;
+      }
+
+      // Second level dropdown
+      ul {
+        position: absolute;
+        top: 0;
+        left: 100%;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 {
   "name": "air",
   "version": "1.0.0",
-  "description": "A minimalist WordPress starter theme based on Milligram and _s.",
+  "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
     "font-awesome": "^4.5.0",
