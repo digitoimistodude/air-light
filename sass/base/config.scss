@@ -1,0 +1,26 @@
+// --------------------------------------------------------------
+// Theme options
+//
+// Start here!
+// This is the core file where most of the theme magic happens.
+// --------------------------------------------------------------
+
+// Colors
+$color_links: #9b4dca;
+$color_hover: #606c76;
+$color_body: #222;
+$color_grey: #dadfe1;
+
+// Typography
+// Typography related are included in typography/typography.scss
+
+// Breakpoints
+$layout-max-width: 100%;
+$layout-default-width: 960px;
+$container_tv: 1824px;
+$container_large: 1224px;
+$container_desktop: 960px;
+$container_landscape-ipad: 960px;
+$container_ipad: 770px;
+$container_mobile: 480px;
+$responsivenav: 872px;

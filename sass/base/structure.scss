@@ -1,0 +1,217 @@
+// Base structure constants
+
+#page {
+  max-width: $layout-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-content,
+.site-header {
+  max-width: $layout-default-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-footer {
+  padding: 20px;
+  background: $color_grey;
+  color: $color_body;
+  margin-top: 30px;
+}
+
+.container {
+  @include center($max_width: $container-desktop, $pad: 20px);
+}
+
+article.post {
+  margin-bottom: 30px;
+}
+
+// Apply a natural box layout model to all elements
+// Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html {
+  box-sizing: border-box;
+}
+
+img {
+  box-sizing: content-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+// Alignments
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 20px;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+// Accessibility
+.screen-reader-text {
+  clip: rect(1px 1px 1px 1px);
+  position: absolute !important;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(#000, .6);
+  clip: auto !important;
+  display: block;
+  font-weight: bold;
+  height: auto;
+  left: 0;
+  line-height: normal;
+  padding: 1rem .9375rem;
+  text-decoration: none;
+  top: 0;
+  width: auto;
+  z-index: 100000;
+
+  // Above WP toolbar
+  outline: none;
+}
+
+del {
+  text-decoration: line-through;
+  opacity: .6;
+}
+
+// Captions
+.wp-caption {
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .wp-caption-text {
+    text-align: left;
+    font-style: italic;
+    border-bottom: 2px solid $color_grey;
+    padding: 1rem 0;
+    margin-bottom: 20px;
+  }
+}
+
+// Galleries
+.gallery {
+  clear: both;
+
+  .gallery-itrem {
+    float: left;
+
+    .gallery-icon {
+      a {
+        display: block;
+      }
+
+      img {
+        border: 0;
+        height: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    .gallery-caption {
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
+
+// Embeds
+embed,
+iframe,
+object,
+video {
+  max-width: 100%;
+}
+
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+kbd,
+pre,
+samp {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 .625rem;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
