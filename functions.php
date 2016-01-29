@@ -20,10 +20,21 @@ setlocale(LC_ALL, 'fi_FI.utf8');
 /*
 * Hide WP updates nag
 */
-add_action('admin_menu','wphidenag');
-function wphidenag() {
+add_action('admin_menu','air_wphidenag');
+function air_wphidenag() {
    remove_action( 'admin_notices', 'update_nag', 3 );
 }
+
+/**
+ * Remove WordPress Admin Bar
+ *
+ * @link http://davidwalsh.name/remove-wordpress-admin-bar-css
+ */
+add_action('get_header', 'air_remove_admin_login_header');
+function air_remove_admin_login_header() {
+    remove_action('wp_head', '_admin_bar_bump_cb');
+}
+show_admin_bar(false);
 
 /*
  * Custom uploads folder media/ instead of default content/uploads/.
