@@ -83,6 +83,10 @@ img {
   margin: 0 auto;
 }
 
+.comments-link {
+  display: block;
+}
+
 // Accessibility
 .screen-reader-text {
   clip: rect(1px 1px 1px 1px);
@@ -188,7 +192,6 @@ samp {
 code {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   padding: 2px 4px;
-  font-size: 90%;
   color: #c7254e;
   background-color: #f9f2f4;
   border-radius: 4px;
@@ -209,7 +212,6 @@ dfn {
 
 kbd {
   padding: 2px 4px;
-  font-size: 90%;
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .25);
 }

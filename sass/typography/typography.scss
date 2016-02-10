@@ -105,12 +105,17 @@ img {
 	display: block;
 }
 
+// Links
 a {
 	color: $color_links;
 	text-decoration: none;
 	font-weight: 700;
 
 	&:focus {
-		outline: 1px solid $color_links;
+		outline: none;
 	}
+
+  &:hover {
+    color: $color_hover;
+  }
 }

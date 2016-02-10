@@ -1,6 +1,6 @@
 ## Air - A minimalist WordPress starter theme
 
-Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is shallowly based on [_s]("https://github.com/automattic/_s") and [milligram]("https://github.com/milligram/milligram").
+Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is shallowly based on [_s]("https://github.com/automattic/_s").
 
 This theme is built to be very straightforward, front end developer friendly and only partly modular by its structure.
 
@@ -40,7 +40,6 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
 * [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include col(1/100)`
-* Sassified gridless [milligram]("https://github.com/milligram/milligram") as base CSS framework
 
 #### Typography
 

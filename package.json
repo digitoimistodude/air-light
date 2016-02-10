@@ -6,7 +6,6 @@
   "devDependencies": {
     "font-awesome": "^4.5.0",
     "jeet": "^6.1.2",
-    "milligram": "^1.0.3",
     "normalize.css": "^3.0.3",
     "sass-rem": "^1.2.2",
     "typographic": "^2.9.3"
