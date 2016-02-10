@@ -1,3 +1,18 @@
+// Includes
+// --------------------------
+// * Base structure constants
+// * Site header
+// * Site footer
+// * A natural box layout model to all elements
+// * WordPress alignments
+// * Accessibility
+// * WordPress captions
+// * WordPress galleries
+// * Embeds
+// * Tables, codes and pres
+
+// Go!
+
 // Base structure constants
 
 #page {
@@ -44,7 +59,7 @@ article.post {
   margin-bottom: 30px;
 }
 
-// Apply a natural box layout model to all elements
+// A natural box layout model to all elements
 // Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
   box-sizing: border-box;
@@ -60,7 +75,7 @@ img {
   box-sizing: inherit;
 }
 
-// Alignments
+// WordPress alignments
 .alignleft {
   display: inline;
   float: left;
@@ -116,7 +131,7 @@ del {
   opacity: .6;
 }
 
-// Captions
+// WordPress captions
 .wp-caption {
   max-width: 100%;
 
@@ -134,7 +149,7 @@ del {
   }
 }
 
-// Galleries
+// WordPress galleries
 .gallery {
   clear: both;
 
@@ -168,7 +183,7 @@ video {
   max-width: 100%;
 }
 
-
+// Tables, codes and pres
 table {
   border-spacing: 0;
   border-collapse: collapse;
