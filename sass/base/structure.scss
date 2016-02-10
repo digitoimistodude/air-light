@@ -13,10 +13,6 @@
   margin-right: auto;
 }
 
-.site-content {
-  margin-top: 20px;
-}
-
 .container {
   @include center($max_width: $container-desktop, $pad: 20px);
 }
