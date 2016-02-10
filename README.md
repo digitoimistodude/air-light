@@ -80,7 +80,6 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * Threaded comments
 * Template tags (direct edit preferred)
 * WordPress admin bar for logged in users
-* RTL support
 
 ### Requirements
 
