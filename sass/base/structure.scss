@@ -13,15 +13,35 @@
   margin-right: auto;
 }
 
+.site-content {
+  margin-top: 20px;
+}
+
+.container {
+  @include center($max_width: $container-desktop, $pad: 20px);
+}
+
+// Site header
+
+.site-header {
+  .site-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .site-description {
+    @extend .screen-reader-text;
+  }
+}
+
+// Site footer
+
 .site-footer {
   padding: 20px;
   background: $color_grey;
   color: $color_body;
   margin-top: 30px;
-}
-
-.container {
-  @include center($max_width: $container-desktop, $pad: 20px);
 }
 
 article.post {
