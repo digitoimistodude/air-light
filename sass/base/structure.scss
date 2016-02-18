@@ -52,6 +52,12 @@
   background: $color_grey;
   color: $color_body;
   margin-top: 30px;
+
+  .theme-info {
+    @media(min-width: $container-ipad) {
+      float: right;
+    }
+  }
 }
 
 article.post {

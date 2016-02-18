@@ -15,7 +15,8 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php printf( esc_html__( 'Proudly powered by %s', 'air' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'air' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'air' ), 'WordPress' ); ?></a>
+			<span class="theme-info"><?php printf( esc_html__( 'Lightweight like %1$s itself.', 'air' ), '<i>air</i>' ); ?></span>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
