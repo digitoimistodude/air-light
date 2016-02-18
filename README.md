@@ -100,7 +100,7 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 
 ### Todo
 
-- [ ] Include gulpfile.js in the repo
+- [x] Include gulpfile.js in the repo
 - [ ] Add default navigation
 - [ ] Basic form styles
 - [ ] Theme starter bash script
