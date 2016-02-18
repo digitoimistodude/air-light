@@ -1,0 +1,64 @@
+// Support the last 4 versions of all browsers except IE.
+$support-for: (
+  chrome:  -4,
+  edge:    -4,
+  firefox: -4,
+  ie:      9,
+  opera:   -4,
+  safari:  -4,
+  '*':     -4,
+) !default;
+
+// Set the current version number for all browsers. As of: 2015-11-17
+$support-for-current-browser-version: (
+  chrome:  46,
+  edge:    25,
+  firefox: 42,
+  ie:      11,
+  opera:   33,
+  safari:  9,
+) !default;
+
+
+// support-for()
+//
+// Determines if the project has declared a minimum supported version number for
+// the specified browser.
+//
+// If configured, this is a wrapper function that uses Compass'
+// support-legacy-browser().
+// @see http://compass-style.org/reference/compass/support/#function-support-legacy-browser
+//
+@function support-for($browser, $version) {
+  // Ensure $version is an integer (or null).
+  @if not (type-of($version) == "null" or type-of($version) == "number" and round($version) == $version) {
+    @error "The $version parameter of support-for() must be an integer; #{type-of($version)} given.";
+  }
+
+  // Check against declared minimums.
+  $min-version: null;
+  @if map-has-key($support-for, $browser) {
+    $min-version: map-get($support-for, $browser);
+  }
+  @else if map-has-key($support-for, '*') {
+    $min-version: map-get($support-for, '*');
+  }
+
+  // Ensure $min-version is an integer (or null).
+  @if type-of($min-version) != "null" and type-of($min-version) != "number" {
+    @error "$support-for: (#{$browser}: #{$min-version}) must be set to an integer (or null); #{$min-version} is a #{type-of($min-version)}.";
+  }
+  @elseif type-of($min-version) == "number" and round($min-version) != $min-version {
+    @error "$support-for: (#{$browser}: #{$min-version}) must be set to an integer (or null); #{$min-version} is not an integer.";
+  }
+
+  // Negative $min-version means "X most recent versions".
+  @if type-of($min-version) == "number" and $min-version < 0 {
+    @if not map-has-key($support-for-current-browser-version, $browser) {
+      @error "#{$browser} not found in $support-for-current-browser-version map; it must be set to an integer.";
+    }
+    $min-version: map-get($support-for-current-browser-version, $browser) + $min-version + 1;
+  }
+
+  @return if(($min-version and ($version >= $min-version)), true, false);
+}

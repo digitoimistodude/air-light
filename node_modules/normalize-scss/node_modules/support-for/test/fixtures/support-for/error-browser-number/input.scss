@@ -1,0 +1,9 @@
+$support-for: (
+  safari: "9",
+);
+
+@import 'support-for';
+
+.test {
+  error: support-for(safari, 9);
+}

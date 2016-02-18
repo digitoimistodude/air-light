@@ -1,0 +1,10 @@
+@import 'support-for';
+
+@each $browser, $version in $support-for-current-browser-version {
+  $min-version: $version - 4 + 1;
+  .test-#{$browser} {
+    version-3: support-for($browser, $min-version + 1);
+    version-4: support-for($browser, $min-version);
+    version-5: support-for($browser, $min-version - 1);
+  }
+}

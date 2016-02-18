@@ -1,0 +1,29 @@
+// Use the saner border-box model for all elements.
+* {
+  @if support-for(firefox, 28) {
+    -moz-box-sizing: border-box;
+  }
+  box-sizing: border-box;
+}
+
+html {
+  @include define-type-sizing();
+  // Set default font family to sans-serif.
+  font-family: $font-body;
+  // Prevent iOS text size adjust after orientation change, without disabling
+  // user zoom.
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  // On short pages, we want any background gradients to fill the entire height
+  // of the browser.
+  min-height: 100%;
+}
+
+body {
+  // Output a horizontal grid to help with debugging typography. The
+  // $typey-debug variable will toggle its output.
+  @include typey-debug-grid();
+  // Remove default margin and padding.
+  margin: 0;
+  padding: 0;
+}

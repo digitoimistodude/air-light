@@ -1,0 +1,34 @@
+{
+  "name": "normalize-scss",
+  "description": "This is the Sass version of Normalize.css, a collection of HTML element and attribute rulesets to normalize styles across all browsers. This port aims to use a light dusting of Sass to make Normalize even easier to integrate with your website.",
+  "main": [
+    "sass/normalize/_import-now.scss"
+  ],
+  "authors": [
+    "John Albin Wilkins <virtually.johnalbin@gmail.com> (http://john.albin.net/)"
+  ],
+  "license": "(MIT OR GPL-2.0)",
+  "keywords": [
+    "sass",
+    "normalize",
+    "reset",
+    "typography",
+    "design",
+    "ui"
+  ],
+  "homepage": "https://github.com/JohnAlbin/normalize-scss",
+  "ignore": [
+    "**/.*",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "lib",
+    "node_modules",
+    "normalize-scss.gemspec",
+    "sache.json",
+    "test.html",
+    "test"
+  ],
+  "dependencies": {
+    "support-for": "~1.0.2"
+  }
+}

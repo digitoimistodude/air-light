@@ -1,0 +1,9 @@
+@mixin box-sizing($value) {
+  @if support-legacy-browser(firefox, "28") {
+    -moz-box-sizing: $value;
+  }
+  @if support-legacy-browser(safari, "5") or support-legacy-browser(chrome, "9") {
+    -webkit-box-sizing: $value;
+  }
+  box-sizing: $value;
+}

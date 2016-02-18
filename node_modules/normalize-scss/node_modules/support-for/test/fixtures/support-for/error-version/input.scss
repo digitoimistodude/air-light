@@ -1,0 +1,5 @@
+@import 'support-for';
+
+.test {
+  error: support-for(ie, "11");
+}

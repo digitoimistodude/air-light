@@ -1,0 +1,43 @@
+@function rhythm($multiplier, $relative-to: $base-font-size) {
+  @if $rhythm-unit == "px" {
+    @return $multiplier * $base-line-height;
+  }
+  @else if $rhythm-unit == "em" {
+    @return $multiplier * ($base-line-height / $relative-to) * 1em;
+  }
+  @return $multiplier * ($base-line-height / $base-font-size) * 1rem;
+}
+
+@function em($font-size) {
+  @return ($font-size/$base-font-size) * 1em;
+}
+
+@mixin establish-baseline() {
+  html {
+    font-size: ($base-font-size/16px)*100%;
+    line-height: rhythm(1);
+  }
+}
+
+@mixin adjust-font-size-to($font-size) {
+  font-size: em($font-size);
+  line-height: rhythm(ceil(($font-size/$base-line-height) + .1), $font-size);
+}
+
+@mixin leader($multiplier, $relative-to) {
+  margin-top: rhythm($multiplier, $relative-to);
+}
+
+@mixin trailer($multiplier, $relative-to) {
+  margin-bottom: rhythm($multiplier, $relative-to);
+}
+
+@mixin output-rhythm($property, $value) {
+  #{$property}: $value;
+}
+
+@mixin apply-side-rhythm-border($side, $width: 1px, $lines: 1) {
+  #{'border-' + $side + '-width'}: em($width);
+  #{'border-' + $side + '-style'}: solid;
+  #{'padding-' + $side}: (rhythm($lines) - em($width));
+}

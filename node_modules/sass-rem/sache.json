@@ -1,0 +1,11 @@
+{
+  "name": "sass-rem",
+  "description": "Sass mixin and function to use rem units with pixel fallback.",
+  "tags": [
+    "sass",
+    "rem",
+    "responsive",
+    "fallback"
+  ],
+  "website": "https://github.com/pierreburel/sass-rem"
+}

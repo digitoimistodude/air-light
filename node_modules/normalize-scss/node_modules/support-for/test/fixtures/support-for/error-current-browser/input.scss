@@ -1,0 +1,9 @@
+$support-for: (
+  mosaic: -2,
+);
+
+@import 'support-for';
+
+.test {
+  error: support-for(mosaic, 1);
+}

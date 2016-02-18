@@ -1,0 +1,10 @@
+$support-for: (
+  '*': -2,
+);
+
+@import 'support-for';
+
+.test {
+  wildcard: support-for(ie, 9);
+  wildcard: support-for(ie, 10);
+}

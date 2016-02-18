@@ -1,0 +1,53 @@
+// Embedded content
+//
+// Weight: 2
+//
+// Style guide: base.embedded
+
+// Image
+//
+// An `<img>` element represents an image.
+//
+// Markup: embedded-img.hbs
+//
+// Style guide: base.embedded.img
+
+img {
+  @if support-for(ie, 10) {
+    // Remove border when inside `a` element in IE 8/9/10.
+    border: 0;
+  }
+  @if support-for(ie, 7) {
+    // Improve image quality when scaled in IE 7.
+    -ms-interpolation-mode: bicubic;
+  }
+}
+
+img,
+svg {
+  // Suppress the space beneath the baseline
+  // vertical-align: bottom;
+
+  // Responsive images
+  max-width: 100%;
+  height: auto;
+  @if support-for(ie, 8) {
+    .lt-ie9 & {
+      // Correct IE 8 not scaling image height when resized.
+      width: auto;
+    }
+  }
+}
+
+// Scalable vector
+//
+// A `<svg>` element represents an image encoded as a Scalable Vector Graphic.
+//
+// Markup: embedded-svg.hbs
+//
+// Style guide: base.embedded.svg
+
+svg:not(:root) {
+  // Correct overflow not hidden in IE 9/10/11.
+  overflow: hidden;
+}

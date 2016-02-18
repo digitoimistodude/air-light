@@ -1,0 +1,20 @@
+# Exclude stuff specific to this project.
+node_modules
+
+# Exclude IDE management files.
+  # Eclipse
+.project
+.settings
+.buildpath
+  # Netbeans
+netbeans
+nbproject
+  # Komodo
+*.kpf
+  # WebStorm
+.idea
+
+# Exclude hidden OS files.
+.DS_Store
+._*
+Thumbs.db

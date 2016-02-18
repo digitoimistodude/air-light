@@ -1,0 +1,39 @@
+//
+// The major stylesheet for this project.
+//
+// We categorize our components by creating headings in this file. See the
+// description on the style guide home page for more information.
+
+
+// Colors and Sass
+//
+// Documentation for colors and Sass mixins and variables.
+//
+// Weight: -1
+//
+// Style guide: sass
+@import 'init';
+
+// Defaults
+//
+// These are the default base styles applied to HTML elements.
+//
+// Component classes can override these styles, but if no class applies a style
+// to an HTML element, these styles will be the ones displayed.
+//
+// Style guide: base
+@import 'base/normalize';
+
+// Components
+//
+// Design components are reusable designs that can be applied using just the CSS
+// class names specified in the component.
+//
+// Weight: 2
+//
+// Style guide: components
+
+// This file is @import'ed by base/forms, so we don't import it again.
+// @import 'components/button/button';
+// This file is @import'ed by base/grouping, so we don't import it again.
+// @import 'components/divider/divider';

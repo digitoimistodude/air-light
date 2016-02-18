@@ -1,0 +1,29 @@
+.test-chrome {
+  version-3: true;
+  version-4: true;
+  version-5: false; }
+
+.test-edge {
+  version-3: true;
+  version-4: true;
+  version-5: false; }
+
+.test-firefox {
+  version-3: true;
+  version-4: true;
+  version-5: false; }
+
+.test-ie {
+  version-3: true;
+  version-4: false;
+  version-5: false; }
+
+.test-opera {
+  version-3: true;
+  version-4: true;
+  version-5: false; }
+
+.test-safari {
+  version-3: true;
+  version-4: true;
+  version-5: false; }

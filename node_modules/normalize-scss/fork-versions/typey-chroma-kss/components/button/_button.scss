@@ -1,0 +1,51 @@
+// Button
+//
+// In addition to the default styling of `<button>` and
+// `<input type="submit|image|reset|button">` elements, the `.button` class and
+// its variants can apply buttons styles to various elements (like an `<a>`
+// link).
+//
+// :hover  - Hover styling.
+// :active - Depressed button styling.
+//
+// Markup: button.hbs
+//
+// Style guide: forms.button
+
+.button,
+%button {
+  -moz-appearance: button;
+  -webkit-appearance: button;
+  // Some styles don't apply to <a> links since they are inline elements by default.
+  display: inline-block;
+  padding: 2px 6px;
+  // Address Firefox 4+ setting `line-height` on `input` using `!important` in
+  // the UA stylesheet. And prevent its "line-height: normal" rule below from
+  // breaking the "appearance: button" styling on the input elements.
+  line-height: inherit;
+  text-decoration: none;
+  // Improve usability and consistency of cursor style between image-type `input` and others.
+  cursor: pointer;
+  color: color(button);
+
+  &:hover,
+  &:focus,
+  &:active {
+    // Override any link underlines and color changes.
+    text-decoration: none;
+    color: color(button);
+  }
+
+  &[disabled] {
+    // Re-set default cursor for disabled elements.
+    cursor: default;
+    color: color(button-disabled);
+
+    &:hover,
+    &:focus,
+    &:active {
+      // Override any link underlines and color changes.
+      color: color(button-disabled);
+    }
+  }
+}

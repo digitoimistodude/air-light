@@ -41,15 +41,17 @@
 			endif; ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
+		<button id="nav-toggle" class="nav-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Primary Menu', 'air' ); ?></span></button>
+
+		<nav id="nav" class="nav-collapse">
 
 			<?php
 				wp_nav_menu( array(
-					'menu'              => 'Primary Menu',
+					// 'menu'              => 'Primary Menu',
 					'theme_location'    => 'primary',
 					'container'       	=> false,
-					'depth'             => 3,
-					'menu_class'        => 'menu',
+					'depth'             => 4,
+					'menu_class'        => 'menu-items',
 					'menu_id' 					=> 'menu',
 					'echo'            	=> true,
 					'fallback_cb'       => 'wp_page_menu',

@@ -1,0 +1,12 @@
+$support-for: (
+  ie: -2,
+);
+
+@import 'support-for';
+
+.test {
+  ie-11: support-for(ie, 11);
+  ie-10: support-for(ie, 10);
+  ie-9: support-for(ie, 9);
+  ie-8: support-for(ie, 8);
+}

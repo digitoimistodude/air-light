@@ -11,9 +11,7 @@
 // * Embeds
 // * Tables, codes and pres
 // --------------------------
-
 // Base structure constants
-
 #page {
   max-width: $layout-max-width;
   margin-left: auto;
@@ -32,7 +30,6 @@
 }
 
 // Site header
-
 .site-header {
   .site-title {
     margin-top: 20px;
@@ -46,7 +43,6 @@
 }
 
 // Site footer
-
 .site-footer {
   padding: 20px;
   background: $color_grey;
@@ -54,7 +50,7 @@
   margin-top: 30px;
 
   .theme-info {
-    @media(min-width: $container-ipad) {
+    @media (min-width: $container-ipad) {
       float: right;
     }
   }
@@ -104,17 +100,27 @@ img {
 }
 
 // Accessibility
+
+:focus {
+  outline: thin solid $color_links;
+}
+
 .screen-reader-text {
   clip: rect(1px 1px 1px 1px);
   position: absolute !important;
+  transition: all .55s;
+
+  &.skip-link {
+    margin: 5px;
+  }
 }
 
 .screen-reader-text:hover,
 .screen-reader-text:active,
 .screen-reader-text:focus {
-  background-color: #f1f1f1;
-  border-radius: 3px;
-  box-shadow: 0 0 2px 2px rgba(#000, .6);
+  background-color: #222;
+  color: #fff;
+  box-shadow: none;
   clip: auto !important;
   display: block;
   font-weight: bold;

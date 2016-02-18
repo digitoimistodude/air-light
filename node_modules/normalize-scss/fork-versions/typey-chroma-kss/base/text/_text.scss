@@ -1,0 +1,229 @@
+// Text-level semantics
+//
+// The elements in this section give semantics to inline text.
+//
+// Weight: 1
+//
+// Style guide: base.text
+
+// Abbreviation / Acroynym
+//
+// The `<abbr>` element makes the meanings of abbreviations and acronyms visible
+// on hover.
+//
+// Markup: text-abbr.hbs
+//
+// Style guide: base.text.abbr
+
+abbr[title] {
+  // Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+  border-bottom: 1px dotted;
+
+  @media print {
+    // Add visible title after abbreviations.
+    &:after {
+      content: ' (' attr(title) ')';
+    }
+  }
+}
+
+// Bold
+//
+// The `<strong>` element or the `<b>` element is for emphasizing a snippet of
+// text with a heavier font-weight.
+//
+// Feel free to use `<b>` in HTML5. `<b>` is meant to highlight words or phrases
+// without conveying additional importance.
+//
+// Markup: text-b.hbs
+//
+// Weight: -1
+//
+// Style guide: base.text.b
+
+b,
+strong {
+  // Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+  font-weight: bold;
+}
+
+// Cite
+//
+// The `<cite>` element represents a reference to a creative work.
+//
+// Markup: text-cite.hbs
+//
+// Style guide: base.text.cite
+
+cite {
+  // Add your styles.
+}
+
+// Code
+//
+// The `<code>` element represents a fragment of computer code. The `<var>`
+// element represents a variable. The `<samp>` element represents (sample)
+// output from a program or computing system. The `<kbd>` element represents
+// user input (typically keyboard input.)
+//
+// Markup: text-code.hbs
+//
+// Style guide: base.text.code
+
+code,
+kbd,
+samp,
+var {
+  @extend %monospace;
+}
+
+// Deleted text
+//
+// The `<del>` element indicates blocks of text that have been deleted.
+//
+// Markup: text-del.hbs
+//
+// Style guide: base.text.del
+
+del {
+  // Add your styles.
+}
+
+// Definition
+//
+// The `<dfn>` element represents the defining instance of a term.
+//
+// Markup: text-dfn.hbs
+//
+// Style guide: base.text.dfn
+
+dfn {
+  // Address styling not present in Safari and Chrome.
+  font-style: italic;
+}
+
+// Italics
+//
+// The `<em>` element or the `<i>` element is used for emphasizing a snippet of
+// text with italics.
+//
+// Feel free to use `<i>` element in HTML5. `<i>` is meant to convey voice,
+// technical terms, etc.
+//
+// Markup: text-i.hbs
+//
+// Weight: -1
+//
+// Style guide: base.text.i
+
+i,
+em {
+  // Add your styles.
+}
+
+// Inserted text
+//
+// The `<ins>` element indicates additions to the document.
+//
+// Markup: text-ins.hbs
+//
+// Style guide: base.text.ins
+
+ins {
+  // Add your styles.
+}
+
+// Marked text
+//
+// The `<mark>` element highlights a run of text due to its relevance in another
+// context.
+//
+// Markup: text-mark.hbs
+//
+// Style guide: base.text.mark
+
+@if support-for(ie, 9) {
+  mark {
+    // Address styling not present in IE 8/9.
+    background: color(mark-bg);
+    color: color(text);
+  }
+}
+
+// Quote
+//
+// The `<q>` element represents an inline quote from another source. Longer
+// quotes should use the `<blockquote>` element.
+//
+// Markup: text-q.hbs
+//
+// Style guide: base.text.q
+
+q {
+  // Add your styles.
+}
+
+// Strikethrough text
+//
+// The `<s>` element indicates blocks of text that are no longer relevant.
+//
+// Markup: text-s.hbs
+//
+// Style guide: base.text.s
+
+s {
+  // Add your styles.
+}
+
+// Small text
+//
+// For de-emphasizing inline or blocks of text, use the `<small>` element to set
+// text at 80% the size of the parent.
+//
+// Markup: text-small.hbs
+//
+// Style guide: base.text.small
+
+small {
+  // Address inconsistent and variable font size in all browsers.
+  @include font-size(s);
+}
+
+// Superscript / Subscript
+//
+// The `<sup>` element represents a superscript and the `<sub>` element
+// represents a subscript.
+//
+// Markup: text-sub.hbs
+//
+// Style guide: base.text.sub
+
+sub,
+sup {
+  // Prevent `sub` and `sup` affecting `line-height` in all browsers.
+  @include font-size(xs);
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+// Underlined text
+//
+// To underline text use the `<u>` element. Not recommended since underlines are
+// used by web browsers to style hyperlinks.
+//
+// Markup: text-u.hbs
+//
+// Style guide: base.text.u
+
+u {
+  // Add your styles.
+}
