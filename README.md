@@ -1,6 +1,11 @@
 ## Air - A minimalist WordPress starter theme
 
-Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is shallowly based on [_s]("https://github.com/automattic/_s").
+Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s]("https://github.com/automattic/_s").
+
+**Current CSS weight:** 49 KB
+**Current JS weight:** 12 KB
+
+![](https://dl.dropboxusercontent.com/u/18447700/air-screenshot.png "Screenshot")
 
 This theme is built to be very straightforward, front end developer friendly and only partly modular by its structure.
 
@@ -102,6 +107,6 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 ### Todo
 
 - [x] Include gulpfile.js in the repo
-- [ ] Add default navigation
-- [ ] Basic form styles
+- [x] Add default navigation
+- [x] Basic form styles
 - [ ] Theme starter bash script

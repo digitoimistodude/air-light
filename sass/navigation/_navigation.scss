@@ -3,10 +3,11 @@
 
 // Main navigation settings
 $color_navigation_bg: transparent;
-$color_navigation_text: #000;
+$color_navigation_text: rgba(#fff, .8);
 $color_navigation_hover: #3e4853;
-$color_navigation_first_level_text_hover: lighten($color_navigation_text, 35%);
-$color_navigation_toggle: #000;
+$color_navigation_first_level_text_hover: #fff;
+$color_navigation_toggle: $color_navigation_text;
+$color_navigation_toggle_hover: $color_navigation_first_level_text_hover;
 $list_padding: 1em 1.5em;
 $font_size_navigation: .8rem;
 
@@ -44,13 +45,18 @@ $dropdown_border_radius: 5px;
   padding: 0 .75em;
   background: transparent;
 
+  span {
+    color: $color_navigation_toggle;
+  }
+
   &:hover,
   &:focus,
   &:active {
-    color: $color_navigation_hover;
+    color: $color_navigation_toggle_hover;
+    background: rgba(#fff, .12);
 
     span {
-      color: $color_navigation_hover;
+      color: $color_navigation_toggle_hover;
     }
   }
 
