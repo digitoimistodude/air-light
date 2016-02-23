@@ -7,6 +7,11 @@
  * @package air
  */
 
+ /*
+  * Allow Gravity Forms to hide labels to add placeholders
+  */
+ add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
 /*
  * Enable theme support for essential features
  */

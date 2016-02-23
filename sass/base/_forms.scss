@@ -1,0 +1,102 @@
+// General form settings
+
+$color_button_bg: #262626;
+$color_button_text: #fff;
+$color_forms: #cfd9db;
+$forms_border_radius: 3px;
+$forms_border_focus: darken(#cfd9db, 25%);
+
+// Basic styles for forms
+
+// Buttons
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+.button {
+    background: $color_button_bg;
+    color: $color_button_text;
+    border: 0;
+    width: auto;
+    display: inline-block;
+    padding: 16px 25px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    border-radius: $forms_border_radius;
+    transition: 150ms linear all;
+    appearance: none;
+
+    &:hover,
+    &:focus {
+      background: lighten($color_button_bg, 15%);
+    }
+}
+
+// Fields
+body {
+
+  .site {
+    textarea,
+    select,
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    input[type="number"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"] {
+      color: $color_forms;
+      border: 1px solid $color_forms;
+      border-radius: $forms_border_radius;
+      padding: 16px;
+      text-decoration: none;
+      position: relative;
+      transition: 150ms linear all;
+      appearance: none;
+      margin-bottom: 0;
+
+      &:focus {
+        outline: 0;
+        border: 1px solid $forms_border_focus;
+      }
+    }
+
+    select {
+      background: $color_forms;
+      color: #fff;
+    }
+  }
+
+  // General
+  form {
+    p {
+      margin-bottom: 20px;
+    }
+
+  }
+
+  // Gravity Forms
+  .gform_wrapper {
+    form {
+      .ginput_container,
+      .top_label {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .gfield {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      textarea {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
