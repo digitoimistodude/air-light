@@ -63,7 +63,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 #### Navigation
 
 * Custom navigation walker based on Bootstrap 3
-* Navigation styles coming soon
+* Sassified version of [viljamis' responsive-nav](https://github.com/viljamis/responsive-nav.js), fully Accessible and responsive multi-level navigation
 
 #### WordPress & functions
 * Available for translation
