@@ -25,42 +25,46 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+		<div class="container">
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+			<div class="site-branding">
+				<?php
+				if ( is_front_page() && is_home() ) : ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+				endif;
 
-		<button id="nav-toggle" class="nav-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Primary Menu', 'air' ); ?></span></button>
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<?php
+				endif; ?>
+			</div><!-- .site-branding -->
 
-		<nav id="nav" class="nav-collapse">
+			<button id="nav-toggle" class="nav-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Primary Menu', 'air' ); ?></span></button>
 
-			<?php
-				wp_nav_menu( array(
-					// 'menu'              => 'Primary Menu',
-					'theme_location'    => 'primary',
-					'container'       	=> false,
-					'depth'             => 4,
-					'menu_class'        => 'menu-items',
-					'menu_id' 					=> 'menu',
-					'echo'            	=> true,
-					'fallback_cb'       => 'wp_page_menu',
-					'items_wrap'      	=> '<ul class="%2$s" id="%1$s">%3$s</ul>',
-					'walker'            => new air_navwalker())
-				);
-			?>
+			<nav id="nav" class="nav-collapse">
 
-		</nav><!-- #site-navigation -->
+				<?php
+					wp_nav_menu( array(
+						// 'menu'              => 'Primary Menu',
+						'theme_location'    => 'primary',
+						'container'       	=> false,
+						'depth'             => 4,
+						'menu_class'        => 'menu-items',
+						'menu_id' 					=> 'menu',
+						'echo'            	=> true,
+						'fallback_cb'       => 'wp_page_menu',
+						'items_wrap'      	=> '<ul class="%2$s" id="%1$s">%3$s</ul>',
+						'walker'            => new air_navwalker())
+					);
+				?>
+
+			</nav><!-- #site-navigation -->						
+
+		</div><!-- .container -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

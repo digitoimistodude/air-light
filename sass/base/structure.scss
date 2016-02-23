@@ -19,13 +19,6 @@
   margin-right: auto;
 }
 
-.site-content,
-.site-header {
-  max-width: $layout-default-width;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .container {
   @include center($max_width: $container-desktop, $pad: 20px);
 }
