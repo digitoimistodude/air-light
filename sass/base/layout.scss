@@ -36,13 +36,17 @@
     }
 
     .site-title {
-      @include hiddentext();
-      background-image: url('../images/logo.svg');
-      background-repeat: no-repeat;
-      
-      // Logo size
-      width: 80px;
-      height: 80px;
+      overflow: hidden;
+
+      a {
+        @include hiddentext();
+        background-image: url('../images/logo.svg');
+        background-repeat: no-repeat;
+
+        // Logo size
+        width: 80px;
+        height: 80px;
+      }
     }
   }
 
