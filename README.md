@@ -2,8 +2,8 @@
 
 Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s]("https://github.com/automattic/_s").
 
-**Current CSS weight:** 49 KB
-**Current JS weight:** 12 KB
+- **Current CSS weight:** 49 KB
+- **Current JS weight:** 12 KB
 
 ![](https://dl.dropboxusercontent.com/u/18447700/air-screenshot.png "Screenshot")
 
