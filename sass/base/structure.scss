@@ -36,7 +36,7 @@
       padding-left: 0;
       padding-right: 0;
     }
-    
+
     .site-branding {
       padding-left: 20px;
       padding-right: 20px;
@@ -50,6 +50,10 @@
   background: $color_grey;
   color: $color_body;
   margin-top: 30px;
+
+  a {
+    color: $color_body;
+  }
 
   .theme-info {
     @media (min-width: $container-ipad) {
