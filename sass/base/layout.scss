@@ -22,9 +22,51 @@
 // --- Start coding here ---
 
 .site-header {
-  .site-title {
-    @include hiddentext();
-    background-image: url('../images/logo.svg');
-    background-repeat: no-repeat;
+  background-color: #ddd;
+
+  .site-branding {
+    overflow: hidden;
+
+    @media(min-width: $responsivenav) {
+      @include col(1/10);
+    }
+
+    @media(max-width: ($responsivenav)-1px) {
+      @include span(1/2);
+    }
+
+    .site-title {
+      @include hiddentext();
+      background-image: url('../images/logo.svg');
+      background-repeat: no-repeat;
+      
+      // Logo size
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .nav-collapse {
+    @media(min-width: $responsivenav) {
+      @include col(9/10);
+
+      // Set these based on the logo size
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      ul {
+        float: right;
+      }
+    }
+  }
+
+  @media(max-width: ($responsivenav)-1px) {
+    .nav-toggle {
+      width: auto;
+      float: right;
+      top: 30px;
+      right: 30px;
+      position: relative;
+    }
   }
 }

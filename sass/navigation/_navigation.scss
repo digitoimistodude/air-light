@@ -1,9 +1,22 @@
 @charset 'utf-8';
 @import 'burger';
 
-$dropdown-width: 200px;
-$color_navigation_bg: #212428;
+// Main navigation settings
+$color_navigation_bg: transparent;
+$color_navigation_text: #000;
 $color_navigation_hover: #3e4853;
+$color_navigation_first_level_text_hover: lighten($color_navigation_text, 35%);
+$color_navigation_toggle: #000;
+$list_padding: 1em 1.5em;
+$font_size_navigation: .8rem;
+
+// Drop down settings
+$dropdown-width: 200px;
+$color_dropdown_bg: #222;
+$color_dropdown_text: #fff;
+$color_dropdown_hover_bg: #3e4853;
+$color_dropdown_hover_text: #fff;
+$dropdown_border_radius: 5px;
 
 //! responsive-nav.js 1.0.39 by @viljamis
 // sassified by @rolle
@@ -15,9 +28,9 @@ $color_navigation_hover: #3e4853;
   display: block;
   z-index: 100000;
   -webkit-tap-highlight-color: rgba(#000, 0);
-  border: 1px solid #fff;
-  color: $color_navigation_bg;
-  font-size: .85em;
+  border: 0;
+  color: $color_navigation_toggle;
+  font-size: $font_size_navigation;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,15 +42,12 @@ $color_navigation_hover: #3e4853;
   float: right;
   line-height: 39px;
   padding: 0 .75em;
-  margin-top: 7px;
-  margin-right: 5%;
   background: transparent;
 
   &:hover,
   &:focus,
   &:active {
     color: $color_navigation_hover;
-    background-color: #fff;
 
     span {
       color: $color_navigation_hover;
@@ -49,7 +59,10 @@ $color_navigation_hover: #3e4853;
   }
 
   .burger-icon {
-    @include burger(20px, 3px, 3px, $color_navigation_bg);
+    @include burger(20px, 3px, 3px, $color_navigation_toggle);
+    float: left;
+    margin-top: 18px;
+    margin-right: 10px;
   }
 
   &.active .burger-icon {
@@ -118,8 +131,8 @@ button {
       }
 
       .dropdown-toggle {
-        border: 1px solid #fff;
-        color: #fff;
+        border: 0;
+        color: $color_navigation_text;
         content: '';
         height: 46px;
         width: 46px;
@@ -128,7 +141,7 @@ button {
         margin: 0;
         text-transform: lowercase;
         top: 6px;
-        right: 4%;
+        right: 10px;
         background: transparent;
 
         &.toggled:after {
@@ -138,8 +151,8 @@ button {
         &:hover,
         &:focus,
         &:active {
-          background-color: #fff;
-          color: $color_navigation_bg;
+          background-color: $color_dropdown_hover_bg;
+          color: $color_dropdown_hover_text;
         }
 
         &:after {
@@ -162,7 +175,7 @@ button {
   }
 
   ul {
-    @include rem('margin-bottom', 10px);
+    margin-bottom: 0;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
@@ -171,6 +184,17 @@ button {
     list-style: none;
     width: 100%;
     float: left;
+
+    // No hover background on the first level
+    &:first-child {
+      li a {
+        background: $color_navigation_bg;
+
+        &:hover {
+          color: $color_navigation_first_level_text_hover;
+        }
+      }
+    }
 
     @media screen and (min-width: $responsivenav) {
       width: auto;
@@ -202,7 +226,7 @@ button {
         }
 
         a {
-          padding: 15px 12px;
+          padding: $list_padding;
           white-space: normal;
           width: $dropdown-width;
         }
@@ -213,10 +237,6 @@ button {
         }
       }
     }
-  }
-
-  > ul {
-    border-top: 1px solid rgba(#fff, .15);
   }
 
   li {
@@ -234,7 +254,6 @@ button {
       // Dropdown toggles
       &.menu-item-has-children,
       &.page_item_has_children {
-        min-width: $dropdown-width;
 
         > a {
           padding-right: 2rem;
@@ -281,10 +300,6 @@ button {
       width: auto;
     }
 
-    &:first-child a {
-      border-left: 1px solid #fff;
-    }
-
     &.focus > a {
       background-color: $color_navigation_hover;
     }
@@ -292,16 +307,15 @@ button {
 
   a {
     background: $color_navigation_bg;
-    border-bottom: 1px solid rgba(#fff, .15);
-    color: #fff;
+    color: $color_navigation_text;
     float: left;
     padding: .9em 1.1em;
     text-decoration: none;
     width: 100%;
+    font-size: $font_size_navigation;
 
     @media screen and (min-width: $responsivenav) {
       border-bottom: 0;
-      border-right: 1px solid #fff;
       padding: 1em 1.5em;
       margin: 0;
       float: left;
@@ -326,30 +340,38 @@ button {
 
     ul {
       margin-bottom: 0;
+      background: $color_dropdown_bg;
 
-      a {
-        background: #282e34;
-        padding-left: 1.5em;
+      @media(min-width: $responsivenav) {
+        border-radius: $dropdown_border_radius;
+      }
 
-        &:focus,
-        &:hover,
-        &:active {
-          background: $color_navigation_hover;
-        }
+      li {
+        a {
+          color: $color_dropdown_text;
+          padding-left: 1.5em;
 
-        @media screen and (min-width: $responsivenav) {
-          text-align: left;
-          border: 0;
+          &:focus,
+          &:hover,
+          &:active {
+            background: $color_dropdown_hover_bg;
+            color: $color_dropdown_hover_text;
+
+            @media(min-width: $responsivenav) {
+              border-radius: $dropdown_border_radius;
+            }
+          }
+
+          @media screen and (min-width: $responsivenav) {
+            text-align: left;
+            border: 0;
+          }
         }
       }
 
       ul {
         border: 0;
         padding: 0;
-
-        a {
-          background: #2d353e;
-        }
       }
     }
 

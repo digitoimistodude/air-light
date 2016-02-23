@@ -38,7 +38,7 @@
 
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+					<p class="site-description screen-reader-text"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
 				endif; ?>
 			</div><!-- .site-branding -->
@@ -62,7 +62,7 @@
 					);
 				?>
 
-			</nav><!-- #site-navigation -->						
+			</nav><!-- #site-navigation -->
 
 		</div><!-- .container -->
 	</header><!-- #masthead -->
