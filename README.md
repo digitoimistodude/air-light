@@ -97,8 +97,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 1. Git clone or download zip
 2. Run `npm install`
-3. Move gulpfile.js to root directory of your project directory
-4. Run `gulp watch` and start coding
+3. Run `gulp watch` and start coding
 
 ### Contributing
 
