@@ -3,6 +3,9 @@
 // Reset
 @import '../../node_modules/normalize.css/normalize';
 
+// Helpers
+@import 'helpers';
+
 // Theme options
 @import 'config';
 
@@ -15,3 +18,13 @@
 
 // Navigation
 @import '../navigation/navigation';
+
+// --- Start coding here ---
+
+.site-header {
+  .site-title {
+    @include hiddentext();
+    background-image: url('../images/logo.svg');
+    background-repeat: no-repeat;
+  }
+}

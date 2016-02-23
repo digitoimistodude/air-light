@@ -1,0 +1,46 @@
+@mixin background-cover() {
+  background: {
+    size: cover;
+    repeat: no-repeat;
+    position: center;
+  }
+}
+
+@mixin background-auto() {
+  background: {
+    size: 100% auto;
+    repeat: no-repeat;
+    position: center;
+  }
+}
+
+@mixin hiddentext() {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  font-size: 0;
+  text-align: start;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin horizontal-align {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin centered {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transform-style: preserve-3d;
+}

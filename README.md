@@ -40,6 +40,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
 * [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include col(1/100)`
+* Container div inside site-main
 
 #### Typography
 
@@ -80,6 +81,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * Threaded comments
 * Template tags (direct edit preferred)
 * WordPress admin bar for logged in users
+* No sidebar by default
 
 ### Requirements
 
