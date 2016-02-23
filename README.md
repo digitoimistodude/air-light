@@ -74,7 +74,6 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 * Widgets
 * Post formats
-* Template parts structure
 * Jetpack support
 * Customizer
 * RTL support

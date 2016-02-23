@@ -25,25 +25,7 @@ get_header(); ?>
 				/* Start the Loop */
 				while ( have_posts() ) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<header class="entry-header">
-						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-						<?php if ( 'post' === get_post_type() ) : ?>
-						<div class="entry-meta">
-								<p class="entry-time"><time datetime="<?php the_time('c'); ?>"><?php the_time('l') ?>na, <?php the_time('j.') ?> <?php the_time('F') ?>ta <?php the_time('Y') ?> kello <?php the_time('G:i') ?></time></p>
-						</div><!-- .entry-meta -->
-						<?php endif; ?>
-					</header><!-- .entry-header -->
-
-					<div class="entry-summary">
-						<?php the_excerpt(); ?>
-					</div><!-- .entry-summary -->
-
-					<footer class="entry-footer">
-						<?php air_entry_footer(); ?>
-					</footer><!-- .entry-footer -->
-				</article><!-- #post-## -->
+					<?php get_template_part( 'template-parts/content', 'search' ); ?>
 
 				<?php endwhile;
 
@@ -51,34 +33,7 @@ get_header(); ?>
 
 			else : ?>
 
-			<section class="no-results not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'air' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<?php
-					if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
-
-						<p><?php printf( wp_kses( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'air' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
-
-					<?php elseif ( is_search() ) : ?>
-
-						<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'air' ); ?></p>
-						<?php
-							get_search_form();
-
-					else : ?>
-
-						<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'air' ); ?></p>
-						<?php
-							get_search_form();
-
-					endif; ?>
-				</div><!-- .page-content -->
-			</section><!-- .no-results -->
-
-			</div><!-- .container -->
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
 
