@@ -3,7 +3,7 @@ $fa-font-path: '../node_modules/font-awesome/fonts';
 @import '../../node_modules/font-awesome/scss/font-awesome';
 
 // Pennman's mixin for Google Web Fonts
-@import 'web-fonts';
+@import '../../node_modules/sass-web-fonts/web-fonts';
 
 // Typographic modular scale
 @import '../../node_modules/typographic/scss/typographic';
