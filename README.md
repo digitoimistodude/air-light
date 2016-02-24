@@ -108,4 +108,4 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 - [x] Include gulpfile.js in the repo
 - [x] Add default navigation
 - [x] Basic form styles
-- [ ] Theme starter bash script
+- [x] Theme starter bash script
