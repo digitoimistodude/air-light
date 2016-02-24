@@ -46,6 +46,7 @@
 }
 
 // Source: https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
+// Example usage: @include fontFace('Proxima Nova','../fonts/proximanova-regular', 400);
 @mixin fontFace($family, $src, $weight: normal, $style: normal) {
   @font-face {
     font-family: $family;
