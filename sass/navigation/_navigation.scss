@@ -201,6 +201,12 @@ button {
           left: 38%;
           margin-left: -75px;
         }
+
+        // TODO: Accessibility for hover transitions
+        &:focus,
+        &.focus {
+          display: block !important;
+        }
       }
 
       ul {
