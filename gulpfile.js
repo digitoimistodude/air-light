@@ -11,7 +11,7 @@ var sourcemaps  = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
 var notify      = require('gulp-notify');
 var prefix      = require('gulp-autoprefixer');
-var minifycss   = require('gulp-minify-css');
+var minifycss   = require('gulp-clean-css');
 var uglify      = require('gulp-uglify');
 var cache       = require('gulp-cache');
 var concat      = require('gulp-concat');
@@ -29,6 +29,7 @@ FILE PATHS
 var sassSrc = 'sass/**/*.{sass,scss}';
 var sassFile = 'sass/base/layout.scss';
 var cssDest = 'css';
+var customjs = 'js/scripts.js';
 var jsSrc = 'js/src/**/*.js';
 var jsDest = 'js';
 
@@ -53,6 +54,11 @@ var handleError = function(task) {
 
 BROWSERSYNC
 ===========
+
+Notes:
+   - Add only file types you are working on - if watching the whole themeDir,
+     task trigger will be out of sync because of the sourcemap-files etc.
+   - Adding only part of the files will also make the task faster
 
 */
 
@@ -82,23 +88,25 @@ gulp.task('styles', function() {
   gulp.src(sassFile)
 
     .pipe(sass({
-        compass: false,
-        bundleExec: true,
-        sourcemap: false,
-        style: 'compressed',
-        debugInfo: true,
-        lineNumbers: true,
-        // includePaths: require('node-bourbon').includePaths,
-        errLogToConsole: true
-      }))
+      compass: false,
+      bundleExec: true,
+      sourcemap: false,
+      style: 'compressed',
+      debugInfo: true,
+      lineNumbers: true,
+      errLogToConsole: true
+    }))
 
     .on('error', handleError('styles'))
-    .pipe(prefix('last 3 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
-    .pipe(minifycss({
-      keepBreaks:false,
-      keepSpecialComments:0
-    }))
+    .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
     .pipe(pixrem())
+    .pipe(minifycss({
+      advanced: true,
+      keepBreaks: false,
+      keepSpecialComments: 0,
+      mediaMerging: true,
+      sourceMap: true
+    }))
     .pipe(gulp.dest(cssDest))
     .pipe(browserSync.stream());
 
