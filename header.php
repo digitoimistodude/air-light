@@ -32,7 +32,6 @@
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicons/favicon-96x96.png" sizes="96x96">
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicons/favicon-16x16.png" sizes="16x16">
 <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/images/favicons/manifest.json">
-<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/images/favicons/mstile-144x144.png">
 <meta name="theme-color" content="#ffffff">
@@ -44,7 +43,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header">
 		<div class="container">
 
 			<div class="site-branding">
@@ -63,7 +62,7 @@
 				endif; ?>
 			</div><!-- .site-branding -->
 
-			<button id="nav-toggle" class="nav-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Primary Menu', 'air' ); ?></span></button>
+			<button id="nav-toggle" class="nav-toggle" aria-controls="nav" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Primary Menu', 'air' ); ?></span></button>
 
 			<nav id="nav" class="nav-collapse">
 

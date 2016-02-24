@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'air' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'air' ), 'WordPress' ); ?></a>
 			<span class="theme-info"><?php printf( esc_html__( 'Lightweight like %1$s itself.', 'air' ), '<i>air</i>' ); ?></span>
