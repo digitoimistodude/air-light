@@ -43,22 +43,31 @@ cd $PROJECTTHEMEPATH && rm -rf .git
 for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air;${THEMENAME};" $i $i; done
 for i in `grep -rl Air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air;${THEMENAME};" $i $i; done
 
-echo "${yellow}Installing and updating local node.js packages (may take a while)${txtreset}"
+echo "${yellow}Installing and updating theme node.js packages (may take a while)${txtreset}"
 cd ${PROJECTTHEMEPATH}
 npm-check-updates -u
 npm install
 
-echo "${yellow}Setting up gulpfile.js from devpackages github${txtreset}"
+echo "${yellow}Getting devpackages${txtreset}"
 cd ${PROJECTPATH}
 git clone git@github.com:digitoimistodude/devpackages.git
 
+echo "${yellow}Setting up package.json from devpackages github${txtreset}"
+sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/devpackages/package.json > "$PROJECTPATH/package.json"
+echo "${yellow}Installing and updating project node.js packages (may take a while)${txtreset}"
+cd ${PROJECTPATH}
+npm-check-updates -u
+npm install
+
 echo "${yellow}Generating gulpfile.js from git@github.com:digitoimistodude/devpackages.git${txtreset}"
-sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" $PROJECTPATH/devpackages/gulpfile.js > $PROJECTPATH/gulpfile_temp.js
-sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/gulpfile_temp.js > $PROJECTPATH/gulpfile.js
+cd $PROJECTPATH/devpackages
+git pull
+cd ${PROJECTPATH}
+sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" $PROJECTPATH/devpackages/gulpfile.js > $PROJECTPATH/gulpfile.js
+sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/gulpfile.js > $PROJECTPATH/gulpfile2.js && rm $PROJECTPATH/gulpfile.js && mv $PROJECTPATH/gulpfile2.js $PROJECTPATH/gulpfile.js
 
 echo "${yellow}Cleaning up...${txtreset}"
-rm -rf ${PROJECTTHEMEPATH}/devpackages
-rm -f ${PROJECTTHEMEPATH}/gulpfile_temp.js
+rm -rf ${PROJECTPATH}/devpackages
 rm -f ${PROJECTTHEMEPATH}/newtheme.sh
 rm -f ${PROJECTTHEMEPATH}/.gitignore
 rm ${PROJECTTHEMEPATH}/README.md
