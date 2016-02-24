@@ -48,7 +48,17 @@ cd ${PROJECTTHEMEPATH}
 npm-check-updates -u
 npm install
 
+echo "${yellow}Setting up gulpfile.js from devpackages github${txtreset}"
+cd ${PROJECTPATH}
+git clone git@github.com:digitoimistodude/devpackages.git
+
+echo "${yellow}Generating gulpfile.js from git@github.com:digitoimistodude/devpackages.git${txtreset}"
+sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" $PROJECTPATH/devpackages/gulpfile.js > $PROJECTPATH/gulpfile_temp.js
+sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/gulpfile_temp.js > $PROJECTPATH/gulpfile.js
+
 echo "${yellow}Cleaning up...${txtreset}"
+rm -rf ${PROJECTTHEMEPATH}/devpackages
+rm -f ${PROJECTTHEMEPATH}/gulpfile_temp.js
 rm -f ${PROJECTTHEMEPATH}/newtheme.sh
 rm -f ${PROJECTTHEMEPATH}/.gitignore
 rm ${PROJECTTHEMEPATH}/README.md
@@ -58,4 +68,4 @@ chmod 777 ${PROJECTPATH}/media
 echo "${yellow}Activating theme...${txtreset}"
 cd ${PROJECTPATH}
 ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate $THEMENAME"
-echo "${boldgreen}All done! Theme generated and activated. Your theme can be found at $PROJECTTHEMEPATH${txtreset}"
+echo "${boldgreen}All done! Theme generated and activated. Run gulp watch in theme folder and start coding! Your theme can be found at $PROJECTTHEMEPATH${txtreset}"
