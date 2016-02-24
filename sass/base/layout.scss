@@ -69,14 +69,4 @@
       }
     }
   }
-
-  @media(max-width: ($responsivenav)-1px) {
-    .nav-toggle {
-      width: auto;
-      float: right;
-      top: 30px;
-      right: 30px;
-      position: relative;
-    }
-  }
 }

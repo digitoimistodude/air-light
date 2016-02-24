@@ -8,9 +8,6 @@ $fa-font-path: '../node_modules/font-awesome/fonts';
 // Typographic modular scale
 @import '../../node_modules/typographic/scss/typographic';
 
-// SASS-rem baseline mixin
-@import '../../node_modules/sass-rem/rem';
-
 // Google web fonts in use:
 $url: web-fonts-url(
   ('Roboto':
@@ -35,14 +32,8 @@ $url: web-fonts-url(
 
 $header-ratio: $golden;
 
-// Invoke baseline for typographic
-html {
-  @include rem-baseline;
-}
-
 // Invoke typographic
 @include typographic();
-
 
 // Fix code line-height.
 big,

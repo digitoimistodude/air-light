@@ -51,7 +51,6 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 * Scalable and responsive typography with font stacks: [Typographic](https://github.com/corysimmons/typographic)
 * Google Webfonts with Penman's [Sass-Web-Fonts](https://github.com/penman/Sass-Web-Fonts) and custom web fonts with [Sass Boilerplate's fontFace-mixin](https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss)
-* REM units with pixel fallback: [sass-rem](https://github.com/pierreburel/sass-rem) `@include rem('padding', '10px)`
 * [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) Glyph icons
 
 #### Development

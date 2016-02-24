@@ -4,8 +4,6 @@
 //! responsive-nav.js 1.0.39 by @viljamis
 // sassified by @rolle
 .nav-toggle {
-  @include rem('padding-left', 15px);
-  @include rem('padding-top', 15px);
   margin-left: 0;
   list-style: none;
   display: block;
@@ -44,6 +42,14 @@
 
   @media (min-width: $responsivenav) {
     display: none;
+  }
+
+  @media(max-width: ($responsivenav)-1px) {
+    width: auto;
+    float: right;
+    top: 30px;
+    right: 20px;
+    position: relative;
   }
 
   .burger-icon {
