@@ -7,6 +7,11 @@
  * @package air
  */
 
+ /**
+  * The current version of the theme.
+  */
+ define( 'AIR_VERSION', '1.1.1' );
+
  /*
   * Allow Gravity Forms to hide labels to add placeholders
   */
@@ -118,6 +123,12 @@ endif;
  */
 function air_scripts() {
   wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css' );
-  wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), '1.0', true );
+  wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), AIR_VERSION, true );
+  wp_localize_script( 'scripts', 'screenReaderTexts', array(
+		'expandMenu'            => esc_html__( 'Open menu', 'air' ),
+		'collapseMenu'          => esc_html__( 'Close menu', 'air' ),
+		'expandSubMenu'         => '<span class="screen-reader-text">' . esc_html__( 'Open sub menu', 'air' ) . '</span>',
+		'collapseSubMenu'       => '<span class="screen-reader-text">' . esc_html__( 'Close sub menu', 'air' ) . '</span>',
+	) );
 }
 add_action( 'wp_enqueue_scripts', 'air_scripts' );

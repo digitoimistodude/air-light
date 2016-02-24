@@ -9,13 +9,13 @@ var navigation = responsiveNav(".nav-collapse", {
   customToggle: ".nav-toggle",
   enableFocus: true,
   enableDropdown: true,
-  openDropdown: '<span class="screen-reader-text">Open sub menu</span>',
-  closeDropdown: '<span class="screen-reader-text">Close sub menu</span>',
+  openDropdown: screenReaderTexts.expandSubMenu,
+  closeDropdown: screenReaderTexts.collapseSubMenu,
   open: function() {
-    customLabel.innerHTML = 'Close menu';
+    customLabel.innerHTML = screenReaderTexts.collapseMenu;
   },
   close: function() {
-    customLabel.innerHTML = 'Open menu';
+    customLabel.innerHTML = screenReaderTexts.expandMenu;
   },
   resizeMobile: function() {
     customToggle.setAttribute('aria-controls', 'nav');
