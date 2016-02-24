@@ -37,7 +37,8 @@ body {
     input[type="number"],
     input[type="month"],
     input[type="week"],
-    input[type="email"] {
+    input[type="email"],
+    input[type="search"] {
       color: $color_forms;
       border: 1px solid $color_forms;
       border-radius: $forms_border_radius;
@@ -66,6 +67,17 @@ body {
       margin-bottom: 20px;
     }
 
+    // Search form
+    &.search-form {
+      .search-field {
+        float: left;
+        margin-right: 5px;
+      }
+
+      .search-submit {
+        padding: 16px 1.75em;
+      }
+    }
   }
 
   // Gravity Forms
