@@ -20,7 +20,7 @@ This theme is built to be very straightforward, front end developer friendly and
     4. [Navigation](#navigation)
     5. [WordPress & functions](#wordpress--functions)
     6. [Disabled features](#disabled-features)
-5. [Requirements](#requirements)
+5. [Recommendations for development](#recommendations-for-development)
 6. [Installation](#installation)
 7. [Contributing](#contributing)
 8. [Todo](#todo)
@@ -87,10 +87,10 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * WordPress admin bar for logged in users
 * No sidebar by default
 
-### Requirements
+### Recommendations for development
 
-* Mac OS X (development only - not tested on other systems, but feel free to try and report back)
-* Preferred: [Devpackages](https://github.com/digitoimistodude/devpackages) - Npm, Gulp and Bower
+* Mac OS X
+* [Devpackages](https://github.com/digitoimistodude/devpackages) - Npm, Gulp and Bower
 * [Dudestack](https://github.com/digitoimistodude/dudestack) - A toolkit for creating a new professional WordPress project with deployments. Heavily based on Bedrock by Roots.
 
 ### Installation
