@@ -83,6 +83,11 @@ img {
 }
 
 // WordPress alignments
+.cat-links,
+.tags-links {
+  display: block;
+}
+
 .alignleft {
   display: inline;
   float: left;
