@@ -25,10 +25,13 @@
 .site-header {
   @include background-cover();
   background-color: #ddd;
-  background-image: url('../images/slide.jpg');
   background-repeat: no-repeat;
   background-position: 0 bottom;
-  height: 650px;
+  height: 300px;
+
+  &.front {
+    height: 650px;
+  }
 
   .site-branding {
     overflow: hidden;
