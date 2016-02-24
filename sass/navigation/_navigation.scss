@@ -1,24 +1,6 @@
 @charset 'utf-8';
 @import 'burger';
 
-// Main navigation settings
-$color_navigation_bg: transparent;
-$color_navigation_text: rgba(#fff, .8);
-$color_navigation_hover: #3e4853;
-$color_navigation_first_level_text_hover: #fff;
-$color_navigation_toggle: $color_navigation_text;
-$color_navigation_toggle_hover: $color_navigation_first_level_text_hover;
-$list_padding: 1em 1.5em;
-$font_size_navigation: .8rem;
-
-// Drop down settings
-$dropdown-width: 200px;
-$color_dropdown_bg: #222;
-$color_dropdown_text: #fff;
-$color_dropdown_hover_bg: #3e4853;
-$color_dropdown_hover_text: #fff;
-$dropdown_border_radius: 5px;
-
 //! responsive-nav.js 1.0.39 by @viljamis
 // sassified by @rolle
 .nav-toggle {

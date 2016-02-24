@@ -12,8 +12,39 @@ $color_body: #3c3530;
 $color_grey: #dadfe1;
 $color_alt: #aacd6e;
 
+// Main navigation settings
+$color_navigation_bg: transparent;
+$color_navigation_text: rgba(#fff, .8);
+$color_navigation_hover: #3e4853;
+$color_navigation_first_level_text_hover: #fff;
+$color_navigation_toggle: $color_navigation_text;
+$color_navigation_toggle_hover: $color_navigation_first_level_text_hover;
+$list_padding: 1em 1.5em;
+$font_size_navigation: .8rem;
+
+// Drop down settings
+$dropdown-width: 200px;
+$color_dropdown_bg: #222;
+$color_dropdown_text: #fff;
+$color_dropdown_hover_bg: #3e4853;
+$color_dropdown_hover_text: #fff;
+$dropdown_border_radius: 5px;
+
 // Typography
-// Typography related are included in typography/typography.scss
+$min-font: 16px;
+$max-font: 22px;
+
+// Font family stack
+$font_base: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+$font_headings: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
+$font_alt: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+
+// Form settings
+$color_button_bg: #262626;
+$color_button_text: #fff;
+$color_forms: #cfd9db;
+$forms_border_radius: 3px;
+$forms_border_focus: darken(#cfd9db, 25%);
 
 // Breakpoints
 $layout-max-width: 100%;

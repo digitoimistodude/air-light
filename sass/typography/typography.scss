@@ -33,9 +33,6 @@ $url: web-fonts-url(
 
 @import url($url);
 
-// Font sizes
-$min-font: 16px;
-$max-font: 22px;
 $header-ratio: $golden;
 
 // Invoke baseline for typographic
@@ -46,10 +43,6 @@ html {
 // Invoke typographic
 @include typographic();
 
-// Font family stack
-$font_base: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
-$font_headings: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
-$font_alt: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
 
 // Fix code line-height.
 big,
