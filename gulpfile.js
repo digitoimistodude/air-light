@@ -126,8 +126,7 @@ gulp.task('js', function() {
 
       gulp.src(
         [
-          'node_modules/jquery/dist/jquery.js',
-          'node_modules/jquery.easing/jquery.easing.js',
+          /*'node_modules/jquery/dist/jquery.js',*/
           'js/src/skip-link-focus-fix.js',
           'js/src/responsive-nav.js',
           'js/src/scripts.js'
