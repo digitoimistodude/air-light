@@ -194,15 +194,21 @@ button {
       width: auto;
       position: relative;
 
+      // Depth: .nav-collapse ul li
       li {
         &:hover > ul,
+        li:focus > ul,
         &.focus > ul {
           top: 55px;
           left: 38%;
           margin-left: -75px;
+
+          // Animate:
+          opacity: 1;
         }
       }
 
+      // Depth: .nav-collapse ul ul
       ul {
         float: left;
         margin: 0;
@@ -212,11 +218,22 @@ button {
         z-index: 99999;
         text-align: center;
 
+        // Animate:
+    		transition-property: opacity, visibility;
+    		transition-duration: .25s, 0s;
+    		transition-delay: .25s, .25s;
+    		transition: opacity .3s ease-in-out, top .3s ease-in-out;
+        opacity: 0;
+
         li:hover > ul,
+        li:focus > ul,
         li.focus > ul {
           top: 0;
           left: 0%;
           margin-left: $dropdown-width;
+
+          // Animate:
+          opacity: 1;
         }
 
         a {
@@ -225,9 +242,22 @@ button {
           width: $dropdown-width;
         }
 
+        // Depth: .nav-collapse ul ul ul
         ul {
           left: -999em;
           top: 20px;
+
+          li:hover > ul,
+          li:focus > ul,
+          li.focus > ul {
+            top: 0;
+            left: 0%;
+            margin-left: $dropdown-width;
+
+            // Animate:
+            opacity: 1;
+        		visibility: visible;
+          }
         }
       }
     }
