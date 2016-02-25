@@ -213,10 +213,17 @@ button {
         float: left;
         margin: 0;
         position: absolute;
-        top: 85px;
-        left: -999em;
-        z-index: 99999;
         text-align: center;
+
+        // Without out-animation:
+        // top: 85px;
+        // left: -999em;
+        // z-index: 99999;
+
+        // With out animation:
+        top: 55px;
+        left: 38%;
+        margin-left: -75px;
 
         // Animate:
     		transition-property: opacity, visibility;
