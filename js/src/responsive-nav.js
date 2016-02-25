@@ -234,11 +234,6 @@
         this.options = {
           animate: true,                    // Boolean: Use CSS3 transitions, true or false
           transition: 284,                  // Integer: Speed of the transition, in milliseconds
-          hovertransitions: true,           // Boolean: Use transition in desktop hovers
-          animationOpenSpeed: 500,          // Integer: Hover animation opening speed
-          animationCloseSpeed: 500,         // Integer: Hover animation closing speed
-          animationOpenEffect: 'swing',     // String: jQuery easing effect name for opening animation
-          animationCloseEffect: 'swing',    // String: jQuery easing effect name for closing animation
           label: "Menu",                    // String: Label for the navigation toggle
           insert: "before",                 // String: Insert the toggle before or after the navigation
           customToggle: "",                 // Selector: Specify the ID of a custom toggle
@@ -509,10 +504,9 @@
         this._closeOnNavClick();
         this._createToggle();
         this._transitions();
-        this._hoverTransitions();
         this.resize();
 
-		// Enable more accessible dropdown menu
+		    // Enable more accessible dropdown menu
         this._createFocus();
         this._createDropdown();
 
@@ -750,36 +744,6 @@
           objStyle.MozTransition =
           objStyle.OTransition =
           objStyle.transition = transition;
-        }
-      },
-
-      /**
-       * Adds animations to dropdowns on desktop
-       */
-      _hoverTransitions: function() {
-        if (opts.hovertransitions) {
-
-          $(".menu-items").find("li").each(function() {
-            if ($(this).has("ul").length) {
-              return $(this).addClass("item-with-ul").find("ul").hide();
-            }
-          });
-
-          $(".menu-items").find("ul").each(function() {
-            if ($(this).hasClass(".sub-menu")) {
-              $(this).addClass("transitions-enabled");
-            }
-          });
-
-          $(".item-with-ul, .menu-item-has-children > ul").on("mouseenter mouseleave", function(e){
-            e.type === "mouseenter"
-              ? $(".sub-menu", this).addClass('menu-show').stop(true, true).animate({
-                height: ["toggle", opts.animationOpenEffect]
-              }, opts.animationOpenSpeed)
-              : $(".sub-menu", this).removeClass('menu-show').stop(true, true).animate({
-                height: ["toggle", opts.animationCloseEffect]
-              }, opts.animationCloseSpeed);
-          });​
         }
       },
 

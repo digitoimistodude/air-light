@@ -8,11 +8,6 @@ var customLabel = document.getElementById('nav-toggle-label');
 var navigation = responsiveNav(".nav-collapse", {
   animate: true,
   transition: 284,
-  hovertransitions: true,
-  animationOpenSpeed: 400,
-  animationCloseSpeed: 400,
-  animationOpenEffect: 'swing',
-  animationCloseEffect: 'swing',
   customToggle: ".nav-toggle",
   enableFocus: true,
   enableDropdown: true,
