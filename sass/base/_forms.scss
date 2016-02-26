@@ -41,6 +41,7 @@ body {
     input[type="search"] {
       color: $color_forms;
       border: 1px solid $color_forms;
+      background: $color_forms_bg;
       border-radius: $forms_border_radius;
       padding: 16px;
       text-decoration: none;
