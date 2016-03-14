@@ -31,7 +31,7 @@ PROJECTTHEMEPATH="${HOME}/Projects/${PROJECTNAME}/content/themes/${THEMENAME}"
 
 echo "${yellow}Checking air updates...${txtreset}"
 cd $HOME
-git clone git@github.com:digitoimistodude/air.git
+git clone https://github.com/digitoimistodude/air
 cd $STARTERTHEMEPATH
 git pull
 echo "${yellow}Copying starter theme to project folder ${HOME}/Projects/${PROJECTNAME}/content/themes/${THEMENAME}${txtreset}"
@@ -50,7 +50,7 @@ npm install
 
 echo "${yellow}Getting devpackages${txtreset}"
 cd ${PROJECTPATH}
-git clone git@github.com:digitoimistodude/devpackages.git
+git clone https://github.com/digitoimistodude/devpackages
 
 echo "${yellow}Setting up package.json from devpackages github${txtreset}"
 sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/devpackages/package.json > "$PROJECTPATH/package.json"
@@ -59,7 +59,7 @@ cd ${PROJECTPATH}
 npm-check-updates -u
 npm install
 
-echo "${yellow}Generating gulpfile.js from git@github.com:digitoimistodude/devpackages.git${txtreset}"
+echo "${yellow}Generating gulpfile.js from https://github.com/digitoimistodude/devpackages${txtreset}"
 cd $PROJECTPATH/devpackages
 git pull
 cd ${PROJECTPATH}
