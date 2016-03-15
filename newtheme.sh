@@ -69,6 +69,7 @@ sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\P
 echo "${yellow}Cleaning up...${txtreset}"
 rm -rf ${PROJECTPATH}/devpackages
 rm -f ${PROJECTTHEMEPATH}/newtheme.sh
+rm -f ${PROJECTTHEMEPATH}/gulpfile.js
 rm -f ${PROJECTTHEMEPATH}/.gitignore
 rm ${PROJECTTHEMEPATH}/README.md
 echo "${yellow}Adding media library folder...${txtreset}"
