@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
 // Reset
-@import '../../node_modules/normalize.css/normalize';
+@import 'normalize.css/normalize';
 
 // Helpers
 @import 'helpers';
@@ -10,7 +10,7 @@
 @import 'config';
 
 // Structure, grid
-@import '../../node_modules/jeet/scss/jeet/index';
+@import 'jeet/scss/jeet/index';
 @import 'structure';
 @import 'forms';
 

@@ -94,7 +94,12 @@ gulp.task('styles', function() {
       style: 'compressed',
       debugInfo: true,
       lineNumbers: true,
-      errLogToConsole: true
+      errLogToConsole: true,
+      includePaths: [
+        // 'bower_components/',
+        'node_modules/',
+        // require('node-bourbon').includePaths
+      ],      
     }))
 
     .on('error', handleError('styles'))
