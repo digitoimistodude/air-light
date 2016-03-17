@@ -30,21 +30,49 @@ $color_dropdown_hover_bg: #3e4853;
 $color_dropdown_hover_text: #fff;
 $dropdown_border_radius: 5px;
 
+// Type settings
+$baseline-scaling: true;
+$baseline-snap: true;
+$min-font-size: 16px; // Mobile font size, set to false if no minimum
+$rootsize-mobile-small: 10px;
+$rootsize-mobile: 12px;
+$rootsize-ipad: 14px;
+$rootsize-ipad-landscape: 16px;
+$rootsize-desktop: 18px;
+$typographic-measure: 960px; // Default: 40rem
+
+// Type debugging
+$debug-allow: false; // Set debugging on or off
+$debug-grid: true;
+$debug-type: true;
+$debug-breakpoints: true;
+$debug-hover: false; // If set to false, show debugging all the time
+$debug-opacity: .1;
+$debug-tolerance: 1px;
+
+// Form settings
+$color_button_bg: #262626;
+$color_button_text: #fff;
+$color_forms: #cfd9db;
+$color_forms_text: #666;
+$color_forms_bg: #fff;
+$forms_border_radius: 3px;
+$forms_border_focus: darken(#cfd9db, 25%);
+
+// Breakpoints
+$layout-max-width: 100%;
+$container_tv: 1824px;
+$container_large: 1224px;
+$container_desktop: 960px;
+$container_landscape-ipad: 960px;
+$container_ipad: 770px;
+$container_mobile: 480px;
+$responsivenav: 872px;
+
 // Font family stack
 $font_base: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
 $font_headings: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
 $font_alt: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
-
-// Type settings
-$baseline-scaling: true;
-$baseline-snap: true;
-$min-font-size: 16px;
-$rootsize-mobile-small: 12px;
-$rootsize-mobile: 14px;
-$rootsize-ipad: 16px;
-$rootsize-ipad-landscape: 18px;
-$rootsize-desktop: 18px;
-$typographic-measure: 960px; // Default: 40rem
 
 // Set cap height to set to the baseline.
 // Here are some cap-height sizes to get you started:
@@ -70,34 +98,6 @@ $monospace: (
     regular: 400,
     cap-height: .68
 );
-
-// Type debugging
-$debug-allow: false;
-$debug-grid: true;
-$debug-type: true;
-$debug-breakpoints: true;
-$debug-hover: true; // If set to false, show debugging all the time
-$debug-opacity: .3;
-$debug-tolerance: 1px;
-
-// Form settings
-$color_button_bg: #262626;
-$color_button_text: #fff;
-$color_forms: #cfd9db;
-$color_forms_text: #666;
-$color_forms_bg: #fff;
-$forms_border_radius: 3px;
-$forms_border_focus: darken(#cfd9db, 25%);
-
-// Breakpoints
-$layout-max-width: 100%;
-$container_tv: 1824px;
-$container_large: 1224px;
-$container_desktop: 960px;
-$container_landscape-ipad: 960px;
-$container_ipad: 770px;
-$container_mobile: 480px;
-$responsivenav: 872px;
 
 // Megatype breakpoint map
 $breakpoint-map: (
