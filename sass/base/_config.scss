@@ -30,14 +30,55 @@ $color_dropdown_hover_bg: #3e4853;
 $color_dropdown_hover_text: #fff;
 $dropdown_border_radius: 5px;
 
-// Typography
-$min-font: 16px;
-$max-font: 22px;
-
 // Font family stack
 $font_base: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
 $font_headings: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
 $font_alt: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+
+// Type settings
+$baseline-scaling: true;
+$baseline-snap: true;
+$min-font-size: 16px;
+$rootsize-mobile-small: 12px;
+$rootsize-mobile: 14px;
+$rootsize-ipad: 16px;
+$rootsize-ipad-landscape: 18px;
+$rootsize-desktop: 18px;
+$typographic-measure: 960px; // Default: 40rem
+
+// Set cap height to set to the baseline.
+// Here are some cap-height sizes to get you started:
+// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
+// Lucida Grande: 0.72, Helvetica: 0.65, Helvetica Neue: 0.71, Verdana: 0.76, Tahoma: 0.76
+// Roboto: 0.65
+$sans: (
+    font-family: $font_base,
+    regular: normal,
+    bold: bold,
+    cap-height: .65
+);
+
+$serif: (
+    font-family: 'Georgia, serif',
+    regular: normal,
+    bold: bold,
+    cap-height: .66
+);
+
+$monospace: (
+    font-family: 'Menlo, Courier, monospace',
+    regular: 400,
+    cap-height: .68
+);
+
+// Type debugging
+$debug-allow: false;
+$debug-grid: true;
+$debug-type: true;
+$debug-breakpoints: true;
+$debug-hover: true; // If set to false, show debugging all the time
+$debug-opacity: .3;
+$debug-tolerance: 1px;
 
 // Form settings
 $color_button_bg: #262626;
@@ -57,3 +98,36 @@ $container_landscape-ipad: 960px;
 $container_ipad: 770px;
 $container_mobile: 480px;
 $responsivenav: 872px;
+
+// Megatype breakpoint map
+$breakpoint-map: (
+  0: (
+    start:      0,
+    max:        (($container_mobile)-20px),
+    rootsize:   $rootsize-mobile-small
+  ),
+
+  1: (
+    start:      $container_mobile,
+    max:        (($container_mobile)+80px),
+    rootsize:   $rootsize-mobile
+  ),
+
+  2: (
+    start:      $container_ipad,
+    max:        $container_desktop,
+    rootsize:   $rootsize-ipad
+  ),
+
+  3: (
+    start:      (($container_desktop)+20px),
+    max:        $container_large,
+    rootsize:   $rootsize-ipad-landscape
+  ),
+
+  4: (
+    start:      (($container_large)+20px),
+    max:        $container_tv,
+    rootsize:   $rootsize-desktop
+  )
+);

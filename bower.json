@@ -1,0 +1,6 @@
+{
+  "name": "air",
+  "devDependencies": {
+    "megatype": "*"
+  }
+}

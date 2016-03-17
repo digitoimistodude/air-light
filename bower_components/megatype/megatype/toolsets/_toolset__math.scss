@@ -1,0 +1,22 @@
+// =====================================================
+// -------------- MegaType Tools - Maths ---------------
+// =====================================================
+// @author Thomas Bredin-Grey <tom@studiothick.com>
+// Megatype: https://github.com/StudioThick/megatype
+// =====================================================
+
+
+// math functions
+
+// exponents
+@function pow($base, $exponent) {
+    $result: 1;
+
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $result: $result * $base;
+        }
+    }
+
+    @return $result;
+}

@@ -96,10 +96,10 @@ gulp.task('styles', function() {
       lineNumbers: true,
       errLogToConsole: true,
       includePaths: [
-        // 'bower_components/',
+        'bower_components/',
         'node_modules/',
         // require('node-bourbon').includePaths
-      ],      
+      ],
     }))
 
     .on('error', handleError('styles'))

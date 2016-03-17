@@ -1,0 +1,22 @@
+// =====================================================
+// -------------- Megatype Susy container --------------
+// =====================================================
+// @author Thomas Bredin-Grey <tom@studiothick.com>
+// Megatype: https://github.com/StudioThick/megatype
+// =====================================================
+
+// sets containers for all breakpoints. It is important to use this to avoid incorrect breakpoint values due to type scaling
+@mixin set-container {
+    @include all-breakpoints {
+        // apply max width and show debugging
+        @if break-get($current-breakpoint, max) != none {
+            max-width: break-get($current-breakpoint, max);
+
+            @if $debug-breakpoints == true and $debug-allow == true {
+                background-color: transparentize($debug-base, 1 - $debug-opacity);
+                background-clip: border-box;
+            }
+        }
+    }
+}
+

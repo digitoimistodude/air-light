@@ -1,0 +1,16 @@
+// =====================================================
+// ------------- Megatype helper functions -------------
+// =====================================================
+// @author Thomas Bredin-Grey <tom@studiothick.com>
+// Megatype: https://github.com/StudioThick/megatype
+// =====================================================
+
+// shorthand function to retreive breakpoint values
+@function break-get($break, $val) {
+    @return map-get(map-get($breakpoint-map, $break), $val);
+}
+
+// color variable helper
+@function palette($color) {
+    @return map-get($palettes, $color);
+};

@@ -9,13 +9,13 @@
 // Theme options
 @import 'config';
 
+// Typography
+@import '../typography/typography';
+
 // Structure, grid
 @import 'jeet/scss/jeet/index';
 @import 'structure';
 @import 'forms';
-
-// Typography
-@import '../typography/typography';
 
 // Navigation
 @import '../navigation/navigation';
@@ -31,6 +31,10 @@
 
   &.front {
     height: 650px;
+  }
+
+  .container {
+    padding: 0;
   }
 
   .site-branding {

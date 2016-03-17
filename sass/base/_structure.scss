@@ -10,8 +10,8 @@
 // * WordPress galleries
 // * Embeds
 // * Tables, codes and pres
+// * Sidebar
 // --------------------------
-
 // Base structure constants
 #page {
   max-width: $layout-max-width;
@@ -31,7 +31,7 @@
     font-size: 2rem;
   }
 
-  @media(max-width: $responsivenav) {
+  @media (max-width: $responsivenav) {
     .container {
       padding-left: 0;
       padding-right: 0;
@@ -68,18 +68,15 @@ article.post {
 
 // A natural box layout model to all elements
 // Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-html {
+html,
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
 
 img {
   box-sizing: content-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
 }
 
 // WordPress alignments
@@ -245,7 +242,7 @@ dfn {
 body {
   kbd {
     border: 1px solid #ccc;
-    font-family: Arial,Helvetica,sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #f7f7f7;
     color: #333;
     box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
@@ -277,5 +274,27 @@ pre {
     white-space: pre-wrap;
     background-color: transparent;
     border-radius: 0;
+  }
+}
+
+// Sidebar
+.sidebar {
+  @include min-width(2) {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    float: right;
+    width: 33.333%;
+  }
+
+  @include min-width(3) {
+    padding-top: 1rem;
+    width: 25%;
+  }
+
+  @include min-width(4) {
+    padding-top: 0;
+  }
+
+  @include min-width(3 4) {
   }
 }
