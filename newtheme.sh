@@ -74,6 +74,7 @@ rm -f ${PROJECTTHEMEPATH}/.gitignore
 rm ${PROJECTTHEMEPATH}/README.md
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
+echo "" > ${PROJECTPATH}/media/index.php
 chmod 777 ${PROJECTPATH}/media
 echo "${yellow}Activating theme...${txtreset}"
 cd ${PROJECTPATH}
