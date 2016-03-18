@@ -12,33 +12,28 @@ $fa-font-path: '../node_modules/font-awesome/fonts';
 // Google web fonts in use:
 $url: web-fonts-url(
   ('Roboto':
-    ('300', '300 italic', '400', '400 italic', '500', '500 italic', '700', '700 italic', '900', '900 italic')
-     ), ('Source Sans Pro':
-    ('700', '700 italic')
+    ('300',
+     '300 italic',
+     '400',
+     '400 italic',
+     '500',
+     '500 italic',
+     '700',
+     '700 italic',
+     '900',
+     '900 italic')
+     ),
+  ('Source Sans Pro':
+    ('700',
+     '700 italic'
+    )
   )
 );
 
 @import url($url);
 
-// Reset baseline
-html,
-body {
-  height: 100%;
-  margin: 0;
-  max-width: 100%;
-}
-
 body {
   line-height: 2rem;
-}
-
-.container {
-  @include set-container;
-  margin: 0 auto;
-
-  @include all-breakpoints {
-    padding: 4rem 2rem;
-  }
 }
 
 // Typographic measure for paragraphs, lists, and headings
@@ -53,9 +48,9 @@ h5,
 h6 {
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   max-width: $type-measure;
-  font-family: $font_headings;
   color: $color_body;
   font-weight: 700;
+  font-family: font-family-of($headings);
 }
 
 .site-content {
@@ -70,10 +65,6 @@ h6 {
     font-weight: regular-of($sans);
     text-align: left;
     max-width: $type-measure; // Good typographic measure
-
-    @include min-width(0 1) {
-      @include typeset($sans, 14px, 28px, 0, 2);
-    }
 
     @include min-width(2) {
       @include typeset($sans, 16px, 32px, 0, 2);
@@ -91,28 +82,28 @@ h6 {
     font-weight: bold;
 
     @include min-width(0 1) {
-      @include typeset($sans, 38px, 38px, 2, 2);
+      @include typeset($headings, 38px, 38px, 2, 2);
     }
 
     @include min-width(2) {
-      @include typeset($sans, 42px, 42px, 2, 2);
+      @include typeset($headings, 42px, 42px, 2, 2);
     }
 
     @include min-width(3) {
-      @include typeset($sans, 52px, 52px, 2, 2);
+      @include typeset($headings, 52px, 52px, 2, 2);
     }
 
     &:first-child {
       @include min-width(0 1) {
-        @include typeset($sans, 38px, 38px, 1, 2);
+        @include typeset($headings, 38px, 38px, 1, 2);
       }
 
       @include min-width(2) {
-        @include typeset($sans, 42px, 42px, 0, 2);
+        @include typeset($headings, 42px, 42px, 0, 2);
       }
 
       @include min-width(3) {
-        @include typeset($sans, 52px, 52px, 0, 2);
+        @include typeset($headings, 52px, 52px, 0, 2);
       }
     }
   }
@@ -121,11 +112,11 @@ h6 {
   h2,
   .h2-style {
     @include min-width(0 1 2) {
-      @include typeset($sans, 26px, 28px, 2, 1);
+      @include typeset($headings, 26px, 28px, 2, 1);
     }
 
     @include min-width(3 4) {
-      @include typeset($sans, 30px, 32px, 2, 1);
+      @include typeset($headings, 30px, 32px, 2, 1);
     }
   }
 
@@ -133,28 +124,28 @@ h6 {
   h3,
   .h3-style,
   .gform_wrapper h3.gform_title {
-    @include typeset($sans, 20px, 24px, 2, 1);
+    @include typeset($headings, 20px, 24px, 2, 1);
 
     @include min-width(1 2) {
-      @include typeset($sans, 22px, 28px, 2, 1);
+      @include typeset($headings, 22px, 28px, 2, 1);
     }
 
     @include min-width(3) {
-      @include typeset($sans, 24px, 32px, 2, 1);
+      @include typeset($headings, 24px, 32px, 2, 1);
     }
   }
 
   // Heading level 4.
   h4,
   .h4-style {
-    @include typeset($sans, 18px, 24px, 1, 1);
+    @include typeset($headings, 18px, 24px, 1, 1);
 
     @include min-width(1 2) {
-      @include typeset($sans, 20px, 28px, 1, 1);
+      @include typeset($headings, 20px, 28px, 1, 1);
     }
 
     @include min-width(3) {
-      @include typeset($sans, 22px, 32px, 1, 1);
+      @include typeset($headings, 22px, 32px, 1, 1);
     }
   }
 
@@ -163,14 +154,14 @@ h6 {
   .h5-style,
   h6,
   .h6-style {
-    @include typeset($sans, 1, 2, 1, 1);
+    @include typeset($headings, 1, 2, 1, 1);
 
     @include min-width(1) {
-      @include typeset($sans, 1rem, 2, 1, 1);
+      @include typeset($headings, 1rem, 2, 1, 1);
     }
 
     @include min-width(3) {
-      @include typeset($sans, 20px, 28px, 1, 1);
+      @include typeset($headings, 20px, 28px, 1, 1);
     }
   }
 
@@ -308,17 +299,17 @@ h6 {
     font-style: italic;
 
     @include min-width(0 2 3) {
-      @include typeset($sans, 18px, 29px, 0, 36px);
+      @include typeset($sans, 18px, 29px, 22px, 36px);
     }
 
     @include min-width(3) {
-      @include typeset($sans, 20px, 32px, 0, 48px);
+      @include typeset($sans, 20px, 32px, 22px, 48px);
     }
   }
 
   // Horizontal rule.
   hr {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000 50%);
+    background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
     background-repeat: repeat-x;
     background-size: 2px 2px;
     background-position: 0 50%;
@@ -402,7 +393,7 @@ dl,
 span,
 small,
 blockquote {
-  font-family: $font_base;
+  font-family: font-family-of($sans);
   color: $color_body;
 }
 

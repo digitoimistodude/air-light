@@ -33,20 +33,19 @@ $dropdown_border_radius: 5px;
 // Type settings
 $baseline-scaling: true;
 $baseline-snap: true;
-$min-font-size: 16px; // Mobile font size, set to false if no minimum
-$rootsize-mobile-small: 10px;
-$rootsize-mobile: 12px;
-$rootsize-ipad: 14px;
-$rootsize-ipad-landscape: 16px;
+$min-font-size: 15px; // Mobile font size, set to false if no minimum
+$rootsize-mobile-small: 15px;
+$rootsize-mobile: 15px;
+$rootsize-ipad: 16px;
+$rootsize-ipad-landscape: 18px;
 $rootsize-desktop: 18px;
-$typographic-measure: 960px; // Default: 40rem
 
 // Type debugging
 $debug-allow: false; // Set debugging on or off
 $debug-grid: true;
 $debug-type: true;
 $debug-breakpoints: true;
-$debug-hover: false; // If set to false, show debugging all the time
+$debug-hover: true; // If set to false, show debugging all the time
 $debug-opacity: .1;
 $debug-tolerance: 1px;
 
@@ -60,19 +59,28 @@ $forms_border_radius: 3px;
 $forms_border_focus: darken(#cfd9db, 25%);
 
 // Breakpoints
+$grid-type: fluid; // 'fluid' or 'snappy'
 $layout-max-width: 100%;
-$container_tv: 1824px;
-$container_large: 1224px;
-$container_desktop: 960px;
-$container_landscape-ipad: 960px;
-$container_ipad: 770px;
-$container_mobile: 480px;
-$responsivenav: 872px;
+$container_mobile_small_start: 0;
+$container_mobile_small_max: 420px;
+$container_mobile_start: 480px;
+$container_mobile_max: 560px;
+$container_ipad_start: 768px;
+$container_ipad_max: 840px;
+$container_desktop_start: 980px;
+$container_desktop_max: 1080px;
+$container_ipad_landscape_start: 980px;
+$container_ipad_landscape_max: 1080px;
+$container_desktop_start: 980px;
+$container_desktop_max: 1080px;
 
-// Font family stack
-$font_base: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
-$font_headings: "Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif;
-$font_alt: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
+$container_mobile: $container_mobile_start;
+$container_desktop: $container_desktop_start; // This is default .container size
+$container_ipad: $container_ipad_start;
+$typographic-measure: $container_desktop_start; // Default: 40rem
+
+// Where navigation transforms into responsive
+$responsivenav: 872px;
 
 // Set cap height to set to the baseline.
 // Here are some cap-height sizes to get you started:
@@ -80,10 +88,17 @@ $font_alt: "Roboto", "Helvetica Neue", Helvetica, sans-serif;
 // Lucida Grande: 0.72, Helvetica: 0.65, Helvetica Neue: 0.71, Verdana: 0.76, Tahoma: 0.76
 // Roboto: 0.65
 $sans: (
-    font-family: $font_base,
+    font-family: 'Roboto, "Helvetica Neue", Helvetica, sans-serif',
     regular: normal,
     bold: bold,
     cap-height: .65
+);
+
+$headings: (
+    font-family: '"Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif',
+    regular: normal,
+    bold: bold,
+    cap-height: .74
 );
 
 $serif: (
@@ -102,32 +117,32 @@ $monospace: (
 // Megatype breakpoint map
 $breakpoint-map: (
   0: (
-    start:      0,
-    max:        (($container_mobile)-20px),
+    start:      $container_mobile_small_start,
+    max:        $container_mobile_small_max,
     rootsize:   $rootsize-mobile-small
   ),
 
   1: (
-    start:      $container_mobile,
-    max:        (($container_mobile)+80px),
+    start:      $container_mobile_start,
+    max:        $container_mobile_max,
     rootsize:   $rootsize-mobile
   ),
 
   2: (
-    start:      $container_ipad,
-    max:        $container_desktop,
+    start:      $container_ipad_start,
+    max:        $container_ipad_max,
     rootsize:   $rootsize-ipad
   ),
 
   3: (
-    start:      (($container_desktop)+20px),
-    max:        $container_large,
+    start:      $container_ipad_landscape_start,
+    max:        $container_ipad_landscape_max,
     rootsize:   $rootsize-ipad-landscape
   ),
 
   4: (
-    start:      (($container_large)+20px),
-    max:        $container_tv,
+    start:      $container_desktop_start,
+    max:        $container_desktop_max,
     rootsize:   $rootsize-desktop
   )
 );

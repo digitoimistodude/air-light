@@ -19,12 +19,38 @@
   margin-right: auto;
 }
 
+// Set containers
+html,
+body {
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+}
+
 .container {
-  @include center($max_width: $container-desktop, $pad: 20px);
+  @if $grid-type == fluid {
+    @include center($max_width: $container-desktop, $pad: 20px);
+  } @else if $grid-type == snappy {
+    @include set-container;
+  } @else {
+    @include center($max_width: $container-desktop, $pad: 20px);
+  }
+}
+
+.site-content {
+  .container {
+
+    margin: 0 auto;
+
+    @include all-breakpoints {
+      padding: 4rem 2rem;
+    }
+  }
 }
 
 // Site header
 .site-header {
+
   .site-title {
     margin-top: 20px;
     margin-bottom: 20px;
