@@ -63,7 +63,6 @@ h6 {
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-family: font-family-of($sans);
     font-weight: regular-of($sans);
-    text-align: left;
     max-width: $type-measure; // Good typographic measure
 
     @include min-width(2) {
@@ -188,7 +187,6 @@ h6 {
   li {
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-family: font-family-of($sans);
-    text-align: left;
 
     @include min-width(0 1) {
       @include typeset($sans, 14px, 24px, 0, 1);
