@@ -1,9 +1,9 @@
 // Font awesome icon fonts
 $fa-font-path: '../node_modules/font-awesome/fonts';
-@import '../../node_modules/font-awesome/scss/font-awesome';
+@import 'font-awesome/scss/font-awesome';
 
 // Pennman's mixin for Google Web Fonts
-@import '../../node_modules/sass-web-fonts/web-fonts';
+@import 'sass-web-fonts/web-fonts';
 
 // Modular scale
 @import 'megatype/megatype';
