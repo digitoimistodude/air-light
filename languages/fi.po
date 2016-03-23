@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Air\n"
-"POT-Creation-Date: 2016-02-24 09:19+0200\n"
-"PO-Revision-Date: 2016-02-24 09:20+0200\n"
+"POT-Creation-Date: 2016-03-23 13:01+0200\n"
+"PO-Revision-Date: 2016-03-23 13:02+0200\n"
 "Last-Translator: Roni Laukkarinen <roni@dude.fi>\n"
 "Language-Team: Roni Laukkarinen <roni@dude.fi>\n"
 "Language: fi\n"
@@ -23,21 +23,11 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oho! Etsimääsi sivua ei löytynyt."
 
-#: 404.php:22
+#: 404.php:22 template-parts/content-none.php:31
 msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-"Näyttää siltä että mitään ei löytynyt. Kokeile linkkejä alla tai hakua?"
-
-#: 404.php:34
-msgid "Most Used Categories"
-msgstr "Käytetyimmät kategoriat"
-
-#: 404.php:52
-#, php-format
-msgid "Try looking in the monthly archives. %1$s"
-msgstr "Yritä etsiä kuukausiarkistoista. %1$s"
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
 
 #: comments.php:31
 #, php-format
@@ -74,61 +64,61 @@ msgstr "Voimanlähteenä %s"
 
 #: footer.php:19
 #, php-format
-msgid "Lightweight like %1$s itself."
-msgstr "Kevyt kuin itse ilma. Käytät %1$s-pohjateemaa."
+msgid "Lightweight like %1$s itself. You are using version %2$s"
+msgstr "Kevyt kuin ilma! Käytät %1$s-pohjateemaa %2$s"
 
-#: functions.php:42 header.php:46
+#: functions.php:42 header.php:65
 msgid "Primary Menu"
 msgstr "Päävalikko"
 
-#: functions.php:91 functions.php:97
+#: functions.php:94 functions.php:100
 msgid ", "
 msgstr ","
 
-#: functions.php:93
+#: functions.php:96
 #, php-format
 msgid "Posted in %1$s"
 msgstr "Julkaistu: %s"
 
-#: functions.php:99
+#: functions.php:102
 #, php-format
 msgid "Tagged %1$s"
 msgstr "Merkitty avainsanoilla %1$s"
 
-#: functions.php:105
+#: functions.php:108
 msgid "Leave a comment"
 msgstr "Jätä kommentti"
 
-#: functions.php:105
+#: functions.php:108
 msgid "1 Comment"
 msgstr "1 kommentti"
 
-#: functions.php:105
+#: functions.php:108
 msgid "% Comments"
 msgstr "% kommenttia"
 
-#: functions.php:112 template-parts/content-page.php:33
+#: functions.php:115 template-parts/content-page.php:33
 #, php-format
 msgid "Edit %s"
 msgstr "Muokkaa %s"
 
-#: functions.php:128
+#: functions.php:131
 msgid "Open menu"
 msgstr "Avaa valikko"
 
-#: functions.php:129
+#: functions.php:132
 msgid "Close menu"
 msgstr "Sulje valikko"
 
-#: functions.php:130
+#: functions.php:133
 msgid "Open sub menu"
 msgstr "Avaa alavalikko"
 
-#: functions.php:131
+#: functions.php:134
 msgid "Close sub menu"
 msgstr "Sulje alavalikko"
 
-#: header.php:25
+#: header.php:44
 msgid "Skip to content"
 msgstr "Hyppää sisältöön"
 
@@ -157,12 +147,6 @@ msgstr ""
 "Pahoittelut mutta mitään ei löytynyt hakuehdoillasi. Kokeile uudelleen "
 "joillakin toisilla hakusanoilla."
 
-#: template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
-msgstr "Emme valitettavasti löytäneet etsimääsi. Ehkä hakutoiminnosta on apua."
-
 #: template-parts/content-page.php:22 template-parts/content-single.php:38
 #: template-parts/content.php:38
 msgid "Pages:"
@@ -172,6 +156,24 @@ msgstr "Sivut:"
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Jatka artikkelin %s lukemista <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgid "Lightweight like %1$s itself"
+#~ msgstr "Käytät %1$s-pohjateemaa"
+
+#~ msgid ""
+#~ "It looks like nothing was found at this location. Maybe try one of the "
+#~ "links below or a search?"
+#~ msgstr ""
+#~ "Näyttää siltä että mitään ei löytynyt. Kokeile linkkejä alla tai hakua?"
+
+#~ msgid "Most Used Categories"
+#~ msgstr "Käytetyimmät kategoriat"
+
+#~ msgid "Try looking in the monthly archives. %1$s"
+#~ msgstr "Yritä etsiä kuukausiarkistoista. %1$s"
+
+#~ msgid "Lightweight like %1$s itself."
+#~ msgstr "Kevyt kuin itse ilma. Käytät %1$s-pohjateemaa."
 
 #~ msgid "Open child menu"
 #~ msgstr "Avaa alavalikko"
