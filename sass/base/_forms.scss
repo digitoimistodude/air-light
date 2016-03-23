@@ -97,8 +97,23 @@ body {
         margin-bottom: 10px;
       }
 
+      .ginput_container {
+        select,
+        input,
+        input.medium {
+          @media(max-width: $container-mobile) {
+            width: 100% !important; // Gravity forms uses !important here, so no choice
+            margin-right: 0;
+          }
+        }
+      }
+
       textarea {
         margin-bottom: 10px;
+
+        @media(max-width: $container-mobile) {
+          width: 100%;
+        }
       }
     }
   }
@@ -106,8 +121,32 @@ body {
 
 // Initial comment form styles
 
-.comment-form-comment {
-  label[for="comment"] {
+.comment-respond {
+  label[for="comment"],
+  label[for="author"],
+  label[for="email"],
+  label[for="url"] {
     display: block;
+  }
+
+  .comment-form-comment {
+    @include col(1/2);
+    margin-right: 2.6em;
+
+    @media(max-width: $container-ipad) {
+      @include stack();
+    }
+  }
+
+  input {
+    @media(max-width: $container-mobile) {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    @media(max-width: $container-mobile) {
+      width: 100%;
+    }
   }
 }
