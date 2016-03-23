@@ -13,7 +13,6 @@ var notify      = require('gulp-notify');
 var prefix      = require('gulp-autoprefixer');
 var minifycss   = require('gulp-clean-css');
 var uglify      = require('gulp-uglify');
-var cache       = require('gulp-cache');
 var concat      = require('gulp-concat');
 var util        = require('gulp-util');
 var header      = require('gulp-header');

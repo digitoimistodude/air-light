@@ -103,3 +103,11 @@ body {
     }
   }
 }
+
+// Initial comment form styles
+
+.comment-form-comment {
+  label[for="comment"] {
+    display: block;
+  }
+}
