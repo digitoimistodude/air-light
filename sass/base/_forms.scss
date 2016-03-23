@@ -94,7 +94,8 @@ body {
 
       .gfield {
         margin-top: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 0;
+        padding-left: 0;
       }
 
       .ginput_container {
@@ -108,8 +109,9 @@ body {
         }
       }
 
-      textarea {
-        margin-bottom: 10px;
+      textarea
+      textarea.medium {
+        margin-bottom: 0;
 
         @media(max-width: $container-mobile) {
           width: 100%;
@@ -120,13 +122,23 @@ body {
 }
 
 // Initial comment form styles
-
 .comment-respond {
   label[for="comment"],
   label[for="author"],
   label[for="email"],
   label[for="url"] {
     display: block;
+  }
+
+  p {
+    &.form-submit {
+      display: block;
+      clear: both;
+    }
+
+    &.comment-form-url {
+      margin-bottom: 0;
+    }
   }
 
   .comment-form-comment {
