@@ -56,9 +56,34 @@ body {
       }
     }
 
-    select {
-      background: $color_forms;
-      color: #fff;
+    .selectbox {
+      position: relative;
+      display: block;
+
+      select {
+        background: $color_forms;
+        color: #fff;
+        padding-right: 40px;
+        transition: none;
+
+        // TODO: experiment with the widths
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      &:after {
+        height: 16px;
+        width: 16px;
+
+        // TODO: Add raw svg-icon
+        font-family: 'FontAwesome';
+      	content: '\f107';
+      	position: absolute;
+        right: 15px;
+      	top: 25%;
+        color: #fff;
+      }
     }
   }
 
@@ -102,10 +127,8 @@ body {
         select,
         input,
         input.medium {
-          @media(max-width: $container-mobile) {
-            width: 100% !important; // Gravity forms uses !important here, so no choice
-            margin-right: 0;
-          }
+          width: 100% !important; // Gravity forms uses !important here, so no choice
+          margin-right: 0;
         }
       }
 

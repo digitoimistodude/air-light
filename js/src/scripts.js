@@ -29,3 +29,10 @@ var navigation = responsiveNav(".nav-collapse", {
     customToggle.removeAttribute('aria-controls');
   },
 });
+
+jQuery(document).ready(function() {
+  // Wrap all select tags with div to be able style them more
+  jQuery('select').each(function(){
+    jQuery(this).wrapAll('<div class="selectbox"/>');
+  });
+});
