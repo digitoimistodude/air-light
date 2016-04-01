@@ -10,7 +10,7 @@
  /**
   * The current version of the theme.
   */
- define( 'AIR_VERSION', '1.2.5' );
+ define( 'AIR_VERSION', '1.2.6' );
 
  /*
   * Allow Gravity Forms to hide labels to add placeholders
@@ -115,8 +115,8 @@ function air_entry_footer() {
 			esc_html__( 'Edit %s', 'air' ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
-		'<span class="edit-link">',
-		'</span>'
+		'<p class="edit-link">',
+		'</p>'
 	);
 }
 endif;

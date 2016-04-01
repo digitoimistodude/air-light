@@ -38,12 +38,43 @@ body {
 }
 
 .site-content {
+
   .container {
 
     margin: 0 auto;
 
     @include all-breakpoints {
       padding: 4rem 2rem;
+    }
+  }
+
+  // Meta, Edit -link
+  .entry-footer {
+    overflow: hidden;
+    clear: both;
+    display: block;
+
+    .edit-link {
+      text-align: left;
+      width: 100%;
+      display: block;
+      clear: both;
+      max-width: 100%;
+      min-width: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      top: 0;
+      bottom: 0;
+      padding: 0;
+      overflow: hidden;
+
+      a {
+        clear: both;
+        display: block;
+        margin-top: 40px;
+        font-size: 1.2rem;
+        padding: 0;
+      }
     }
   }
 }
