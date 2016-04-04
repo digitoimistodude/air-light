@@ -79,12 +79,9 @@ button {
     overflow: hidden;
     zoom: 1;
 
-    // Accessible hover/focus
-    .dropdown:hover,
-    li.focus {
-
+    .dropdown {
       ul {
-        max-height: 500px; // 100% won't work here, so we need fixed height
+        max-height: 100%;
         overflow: visible;
       }
     }
@@ -93,6 +90,16 @@ button {
       position: relative;
       max-height: none;
       overflow: visible;
+
+      // Accessible hover/focus
+      .dropdown:hover,
+      li.focus {
+
+        ul {
+          max-height: 500px; // 100% won't work here, so we need fixed height
+          overflow: visible;
+        }
+      }
 
       .dropdown {
         ul {
@@ -103,7 +110,7 @@ button {
     }
 
     @media screen and (max-width: ($responsivenav)-1px) {
-      visibility: hidden;
+      visibility: visible;
 
       &.opened {
         visibility: visible;
@@ -119,14 +126,15 @@ button {
         clip: rect(0 0 0 0);
         max-height: 0;
         position: absolute;
-        display: none; // This way you don't have focus on sub menu items unless you open the sub menu.
         overflow: hidden;
+        visibility: hidden;
         zoom: 1;
+        transition: all 2s;
 
         &.toggled {
-          display: block;
           max-height: 9999px;
           position: relative;
+          visibility: visible;
         }
       }
 
