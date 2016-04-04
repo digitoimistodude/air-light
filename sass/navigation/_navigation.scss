@@ -79,6 +79,16 @@ button {
     overflow: hidden;
     zoom: 1;
 
+    // Accessible hover/focus
+    .dropdown:hover,
+    li.focus {
+
+      ul {
+        max-height: 500px; // 100% won't work here, so we need fixed height
+        overflow: visible;
+      }
+    }
+
     @media screen and (min-width: $responsivenav) {
       position: relative;
       max-height: none;
@@ -86,8 +96,8 @@ button {
 
       .dropdown {
         ul {
-          max-height: none;
-          overflow: visible;
+          max-height: 0;
+          overflow: hidden;
         }
       }
     }
