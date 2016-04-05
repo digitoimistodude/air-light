@@ -61,7 +61,6 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing (included in [devpackages](https://github.com/digitoimistodude/devpackages))
 * [gulp](http://gulpjs.com/) build script that compiles both Less and Sass, checks for JavaScript errors, optimizes images, and concatenates and minifies files (see Dude's [devpackages](https://github.com/digitoimistodude/devpackages))
 * [npm](https://www.npmjs.com) for front-end package management
-* [bower](http://bower.io) - only for those packages that are not in npm. Will be deprecated when everything can be found!
 
 #### Navigation
 
@@ -100,8 +99,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 1. Git clone or download zip
 2. Run `npm install`
-3. Run `bower install`
-4. Run `gulp watch` and start coding
+3. Run `gulp watch` and start coding
 
 ### Contributing
 
