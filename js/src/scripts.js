@@ -30,9 +30,9 @@ var navigation = responsiveNav(".nav-collapse", {
   },
 });
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
   // Wrap all select tags with div to be able style them more
-  jQuery('select').each(function(){
-    jQuery(this).wrapAll('<div class="selectbox"/>');
+  $('select').each(function(){
+    $(this).wrapAll('<div class="selectbox"/>');
   });
 });
