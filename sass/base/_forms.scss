@@ -56,39 +56,22 @@ body {
       }
     }
 
-    .selectbox {
-      position: relative;
-      display: block;
+    select {
+      background-color: $color_forms_bg;
+      background-image: url('../images/select.svg');
+      background-repeat: no-repeat;
+      background-position: right center;      
+      color: $color_forms_text;
+      padding-right: 40px;
+      transition: none;
+      border: 1px solid $color_forms;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
 
-      select {
-        background: $color_forms_bg;
-        color: $color_forms_text;
-        padding-right: 40px;
-        transition: none;
-        border: 1px solid $color_forms;
-
-        // TODO: experiment with the widths
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-
-        &:hover,
-        &:focus {
-          border: 1px solid #222;
-        }
-      }
-
-      &:after {
-        height: 16px;
-        width: 16px;
-
-        // TODO: Add raw svg-icon
-        font-family: 'FontAwesome';
-      	content: '\f107';
-      	position: absolute;
-        right: 15px;
-      	top: 25%;
-        color: $color_forms_text;
+      &:hover,
+      &:focus {
+        border: 1px solid #222;
       }
     }
   }
