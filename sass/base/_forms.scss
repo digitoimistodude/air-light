@@ -180,8 +180,6 @@ body {
   }
 
   textarea {
-    @media(max-width: $container-mobile) {
-      width: 100%;
-    }
+    width: 100%;
   }
 }
