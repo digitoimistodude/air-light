@@ -61,15 +61,21 @@ body {
       display: block;
 
       select {
-        background: $color_forms;
-        color: #fff;
+        background: $color_forms_bg;
+        color: $color_forms_text;
         padding-right: 40px;
         transition: none;
+        border: 1px solid $color_forms;
 
         // TODO: experiment with the widths
         width: 100%;
         max-width: 100%;
         min-width: 0;
+
+        &:hover,
+        &:focus {
+          border: 1px solid #222;
+        }
       }
 
       &:after {
@@ -82,7 +88,7 @@ body {
       	position: absolute;
         right: 15px;
       	top: 25%;
-        color: #fff;
+        color: $color_forms_text;
       }
     }
   }
