@@ -33,10 +33,15 @@ $dropdown_border_radius: 5px;
 // Type settings
 $baseline-scaling: true;
 $baseline-snap: true;
-$min-font-size: 15px; // Mobile font size, set to false if no minimum
+
+// Font sizes
+// Note: Will scale up the typography
+$min-font-size: 1.2; // Mobile font size in unitless number, 1 = 16, 1.2 = 18, set to false if no minimum
+
+// Root sizes for type settings
 $rootsize-mobile-small: 15px;
 $rootsize-mobile: 15px;
-$rootsize-ipad: 16px;
+$rootsize-ipad: 18px;
 $rootsize-ipad-landscape: 18px;
 $rootsize-desktop: 18px;
 

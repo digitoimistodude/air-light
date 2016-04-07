@@ -60,6 +60,7 @@ h6 {
   dd,
   dt,
   figcaption {
+    @include typeset($sans, 16px, 32px, 0, 2);
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
     font-family: font-family-of($sans);
     font-weight: regular-of($sans);
