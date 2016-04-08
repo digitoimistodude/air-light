@@ -366,6 +366,7 @@ pre {
   visibility: hidden;
 	opacity: 0;
 	transition: opacity .3s 0s, visibility 0s .3s;
+  z-index: 10000;
 
 	&.is-visible,
   &.fade-out,
