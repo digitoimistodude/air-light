@@ -23,5 +23,7 @@
 
 <?php wp_footer(); ?>
 
+<a href="#page" class="top"><span class="screen-reader-text"><?php echo esc_html_e('Back to top', 'air'); ?></span><i class="fa fa-chevron-up"></i></a>
+
 </body>
 </html>
