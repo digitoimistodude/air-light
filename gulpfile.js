@@ -71,6 +71,7 @@ gulp.task('browsersync', function() {
   browserSync.init(files, {
     proxy: "dudetest.dev",
     browser: "Google Chrome",
+    open: "external",
     notify: true
   });
 
