@@ -66,6 +66,10 @@ $forms_border_focus: darken(#cfd9db, 25%);
 // Breakpoints
 $grid-type: fluid; // 'fluid' or 'snappy'
 $layout-max-width: 100%;
+
+// Set layout max width on desktop:
+$container_desktop_max_width: 960px;
+
 $container_mobile_small_start: 0;
 $container_mobile_small_max: 420px;
 $container_mobile_start: 480px;
@@ -74,8 +78,8 @@ $container_ipad_start: 768px;
 $container_ipad_max: 840px;
 $container_ipad_landscape_start: 980px;
 $container_ipad_landscape_max: 1080px;
-$container_desktop_start: 980px;
-$container_desktop_max: 1080px;
+$container_desktop_start: 1200px;
+$container_desktop_max: 1400px;
 
 $container_mobile: $container_mobile_start;
 $container_desktop: $container_desktop_start; // This is default .container size

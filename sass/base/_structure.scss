@@ -30,11 +30,11 @@ body {
 
 .container {
   @if $grid-type == fluid {
-    @include center($max_width: $container-desktop, $pad: 20px);
+    @include center($max_width: $container_desktop_max_width, $pad: 20px);
   } @else if $grid-type == snappy {
     @include set-container;
   } @else {
-    @include center($max_width: $container-desktop, $pad: 20px);
+    @include center($max_width: $container_desktop_max_width, $pad: 20px);
   }
 }
 
