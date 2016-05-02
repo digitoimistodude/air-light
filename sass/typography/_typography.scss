@@ -4,6 +4,7 @@ $fa-font-path: '../node_modules/font-awesome/fonts';
 
 // Pennman's mixin for Google Web Fonts
 @import 'sass-web-fonts/web-fonts';
+$web-fonts-protocol: 'https' !global !default;
 
 // Modular scale
 @import 'megatype/megatype';
