@@ -1,2 +1,3 @@
 js/all.js
+js/src/*.js
 gulpfile.js

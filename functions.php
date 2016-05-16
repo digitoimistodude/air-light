@@ -72,7 +72,7 @@ add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
  *
  * @link https://wordpress.org/support/topic/how-to-remove-query-strings-from-static-resources
  */
-function air_remove_script_version ( $src ) {
+function air_remove_script_version( $src ) {
   $parts = explode( '?', $src );
   return $parts[0];
 }
