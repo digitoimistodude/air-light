@@ -44,6 +44,8 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air' ); ?></a>
 
 	<header id="masthead" class="site-header<?php if(is_home() || is_front_page() ) : ?> front<?php endif; ?>" style="background-image:url('<?php if ( has_post_thumbnail() ) : ?><?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?><?php else : ?><?php echo get_template_directory_uri(); ?>/images/slide.jpg<?php endif; ?>');">
+		<div class="shade"></div>
+		
 		<div class="container">
 
 			<div class="site-branding">

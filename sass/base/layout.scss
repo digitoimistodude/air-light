@@ -22,15 +22,27 @@
 
 // --- Start coding here ---
 
+.shade {
+  background: #222;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  opacity: .1;
+}
+
 .site-header {
   @include background-cover();
   background-color: #ddd;
   background-repeat: no-repeat;
   background-position: 0 bottom;
   height: 300px;
+  position: relative;
 
   &.front {
-    height: 650px;
+    height: 550px;
   }
 
   .container {
