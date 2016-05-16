@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/digitoimistodude/air.svg?branch=master)](https://travis-ci.org/digitoimistodude/air)
+
 ## Air - A minimalist WordPress starter theme
 
 Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s]("https://github.com/automattic/_s").
