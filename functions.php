@@ -1,6 +1,6 @@
 <?php
 /**
- * air functions and definitions.
+ * Air functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
