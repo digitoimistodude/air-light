@@ -109,6 +109,12 @@ body {
   color: $color_body;
   margin-top: 30px;
 
+  svg {
+    fill: $color_body;
+    top: 1px;
+    position: relative;
+  }
+
   a {
     color: $color_body;
   }
@@ -359,7 +365,7 @@ pre {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: $color_links;
+  background: $color_body;
   width: 50px;
   height: 50px;
   text-decoration: none;
@@ -383,14 +389,18 @@ pre {
 		opacity: .5;
 	}
 
+  &.fade-out-completely {
+    opacity: 0;
+  }
+
 	.no-touch &:hover {
 		opacity: 1;
 	}
 
-  i {
+  svg {
     @include centered();
     position: absolute;
-    color: #fff;
+    fill: #fff;
     margin: 0;
     opacity: .8;
     font-size: 19px;
@@ -400,11 +410,11 @@ pre {
   &:hover,
   &:focus,
   &:active {
-    color: $color_alt;
-    background: $color_body;
+    background: $color_links;
 
-    i {
-      top: 25%;
+    svg {
+      fill: #fff;
+      top: 35%;
     }
   }
 }

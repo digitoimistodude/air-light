@@ -43,7 +43,15 @@ $(document).ready(function() {
 		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible fade-out');
 		if( $(this).scrollTop() > offset_opacity ) {
 			$back_to_top.addClass('fade-out');
+      $back_to_top.removeClass('fade-out-completely');
 		}
+
+    // If really on footer, fade out completely
+    if($(window).scrollTop() + 100 > $(document).height() - $(window).height() ) {
+      $back_to_top.addClass('fade-out-completely');
+    }
+
+
 	});
 
 	// Smooth scroll to top
@@ -68,5 +76,5 @@ $(document).ready(function() {
 	        window.location.hash = target;
 	    });
 	});
-  
+
 });

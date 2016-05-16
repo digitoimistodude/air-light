@@ -308,13 +308,16 @@ button {
           padding-right: 2rem;
 
           &:after {
-            content: '\f107';
-            display: inline-block;
-            font-family: FontAwesome;
-            font-size: .8rem;
+            @include vertical-align();
+            opacity: .8;
+            background-image: url('../svg/chevron-down.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            content: ' ';
+            width: 10px;
+            height: 10px;
             position: absolute;
             right: 12px;
-            top: 2px;
             padding-right: .2rem;
             vertical-align: text-bottom;
           }
@@ -336,8 +339,10 @@ button {
             padding-right: 2rem;
 
             &:after {
-              content: '\f105';
-              top: 18px;
+              background-image: url('../svg/chevron-right.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              top: 22px;
               padding-right: .2rem;
             }
           }
