@@ -1,7 +1,10 @@
 <?php
 /**
- * GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
- * Description: A custom WordPress nav walker class, using the WordPress built in menu manager.
+ * The core navigation file.
+ *
+ * A custom WordPress nav walker class, using the WordPress built in menu manager.
+ *
+ * Original GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
  * Version: 2.0.4
  * Author: Originally Edward McIntyre - @twittem
  * License: GPL-2.0+
