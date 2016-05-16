@@ -32,9 +32,12 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-			<?php endwhile; the_posts_navigation(); ?>
 
-		<?php else : ?>
+			<?php endwhile;
+
+			the_posts_navigation();
+
+		else : ?>
 
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
