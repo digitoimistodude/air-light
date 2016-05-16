@@ -12,12 +12,12 @@
   */
  define( 'AIR_VERSION', '1.4.0' );
 
- /*
+ /**
   * Allow Gravity Forms to hide labels to add placeholders
   */
  add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
-/*
+/**
  * Enable theme support for essential features
  */
 load_theme_textdomain( 'air', get_template_directory() . '/languages' );
@@ -25,24 +25,24 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-setlocale(LC_ALL, 'fi_FI.utf8');
+setlocale( LC_ALL, 'fi_FI.utf8' );
 
-/*
+/**
 * Hide WP updates nag
 */
-add_action('admin_menu','air_wphidenag');
+add_action( 'admin_menu', 'air_wphidenag' );
 function air_wphidenag() {
    remove_action( 'admin_notices', 'update_nag', 3 );
 }
 
-/*
+/**
  * Editable navigation menus.
  */
 register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'air' ),
 ) );
 
-/*
+/**
  * Custom navigation walker
  */
 require get_template_directory() . '/nav.php';
@@ -52,13 +52,13 @@ require get_template_directory() . '/nav.php';
  *
  * @link http://davidwalsh.name/remove-wordpress-admin-bar-css
  */
-add_action('get_header', 'air_remove_admin_login_header');
+add_action( 'get_header', 'air_remove_admin_login_header' );
 function air_remove_admin_login_header() {
-    remove_action('wp_head', '_admin_bar_bump_cb');
+    remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 show_admin_bar(false);
 
-/*
+/**
  * Custom uploads folder media/ instead of default content/uploads/.
  * Comment these out if you want to set up media library folder in wp-admin.
  */
@@ -77,7 +77,7 @@ function air_remove_script_version( $src ){
   return $parts[0];
 }
 
-if( !is_admin() ) {
+if ( ! is_admin() ) {
   add_filter( 'script_loader_src', 'air_remove_script_version', 15, 1 );
   add_filter( 'style_loader_src', 'air_remove_script_version', 15, 1 );
 }
