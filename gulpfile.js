@@ -123,23 +123,17 @@ SCRIPTS
 =======
 */
 
-var currentDate   = util.date(new Date(), 'dd-mm-yyyy HH:ss');
-var pkg       = require('./package.json');
-var banner      = '/*! <%= pkg.name %> <%= currentDate %> - <%= pkg.author %> */\n';
-
 gulp.task('js', function() {
 
       gulp.src(
         [
-          'node_modules/jquery/dist/jquery.js',
-          'js/src/modernizr-custom.js',
+          'node_modules/jquery/dist/jquery.slim.js',
           'js/src/skip-link-focus-fix.js',
           'js/src/responsive-nav.js',
           'js/src/scripts.js'
         ])
         .pipe(concat('all.js'))
         .pipe(uglify({preserveComments: false, compress: true, mangle: true}).on('error',function(e){console.log('\x07',e.message);return this.end();}))
-        .pipe(header(banner, {pkg: pkg, currentDate: currentDate}))
         .pipe(gulp.dest(jsDest));
 });
 
