@@ -77,7 +77,7 @@
 						'echo'            	=> true,
 						'fallback_cb'       => 'wp_page_menu',
 						'items_wrap'      	=> '<ul class="%2$s" id="%1$s">%3$s</ul>',
-						'walker'            => new air_navwalker(),
+						'walker'            => new air_NavWalker(),
 						)
 					);
 				?>

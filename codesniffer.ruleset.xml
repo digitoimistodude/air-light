@@ -12,6 +12,12 @@
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+		<exclude name="Generic.WhiteSpace.DisallowTabIndent.NonIndentTabsUsed" />
+		<exclude name="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket" />
+		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpen" />
+		<exclude name="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket" />
+		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" />		
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
