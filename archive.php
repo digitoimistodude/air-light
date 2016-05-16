@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'template-parts/hero', get_post_format() ); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -16,13 +18,13 @@ get_header(); ?>
 			if ( have_posts() ) : ?>
 
 			<div class="container">
-
 				<header class="page-header">
-				  <?php
-				    the_archive_title( '<h1 class="page-title">', '</h1>' );
-				    the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				  ?>
+					<?php
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					?>
 				</header><!-- .page-header -->
+			</div>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 

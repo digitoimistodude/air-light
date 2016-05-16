@@ -22,6 +22,8 @@
 
 // --- Start coding here ---
 
+
+// Default shade on top of slides
 .shade {
   background: #222;
   position: absolute;
@@ -30,64 +32,15 @@
   top: 0;
   bottom: 0;
   z-index: 0;
-  opacity: .1;
+  opacity: .1; // Play around with this, depending on your layout .33 is usually good amount
 }
 
-.site-header {
+// Basic slide layout
+.slide {
   @include background-cover();
-  background-color: #ddd;
-  background-repeat: no-repeat;
-  background-position: 0 bottom;
-  height: 300px;
+  background-position: bottom; // Usually center works best, bottom is just for air demo purposes
+  background-color: #e9e9e9;
+  height: 60vh;
   position: relative;
-
-  &.front {
-    height: 550px;
-  }
-
-  .container {
-    padding: 0;
-    position: relative;
-    z-index: 2;
-  }
-
-  .site-branding {
-    overflow: hidden;
-
-    @media(min-width: $responsivenav) {
-      @include col(2/10);
-    }
-
-    @media(max-width: ($responsivenav)-1px) {
-      @include span(1/2);
-    }
-
-    .site-title {
-      overflow: hidden;
-
-      a {
-        @include hiddentext();
-        background-image: url('../svg/logo.svg');
-        background-repeat: no-repeat;
-
-        // Logo size
-        width: 100%;
-        height: 80px;
-      }
-    }
-  }
-
-  .nav-collapse {
-    @media(min-width: $responsivenav) {
-      @include col(8/10);
-
-      // Set these based on the logo size
-      padding-top: 40px;
-      padding-bottom: 40px;
-
-      ul {
-        float: right;
-      }
-    }
-  }
+  margin-bottom: 2rem;
 }

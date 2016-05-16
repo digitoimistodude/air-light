@@ -80,6 +80,10 @@ body {
   form {
     p {
       margin-bottom: 20px;
+
+      &.form-submit {
+        margin-bottom: 0;
+      }
     }
 
     // Search form
@@ -97,6 +101,8 @@ body {
 
   // Gravity Forms
   .gform_wrapper {
+    margin: 0;
+    
     form {
       .ginput_container,
       .top_label {

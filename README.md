@@ -77,6 +77,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * WP updates nag hidden
 * All times and local units in Finnish
 * Custom uploads folder `media/` instead of default `content/uploads/`
+* **Air specific:** Templates for hero *slides*
 
 #### Disabled features
 
