@@ -20,6 +20,7 @@ input[type="button"],
 
     &:hover,
     &:focus {
+      color: $color_button_text;
       background: lighten($color_button_bg, 15%);
     }
 }
@@ -102,7 +103,7 @@ body {
   // Gravity Forms
   .gform_wrapper {
     margin: 0;
-    
+
     form {
       .ginput_container,
       .top_label {
