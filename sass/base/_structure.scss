@@ -45,8 +45,13 @@ body {
     margin: 0 auto;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media(max-width: $container_desktop_max_width) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
   }
 
   // Meta, Edit -link
