@@ -23,7 +23,7 @@
 
 <?php wp_footer(); ?>
 
-<a href="#page" class="top"><span class="screen-reader-text"><?php echo esc_html_e('Back to top', 'air'); ?></span><?php echo  wp_remote_fopen( esc_url( get_template_directory_uri() . '/svg/chevron-up.svg' ) ); ?></a>
+<a href="#page" class="top"><span class="screen-reader-text"><?php echo esc_html_e('Back to top', 'air'); ?></span><?php echo wp_remote_fopen( esc_url( get_template_directory_uri() . '/svg/chevron-up.svg' ) ); ?></a>
 
 </body>
 </html>
