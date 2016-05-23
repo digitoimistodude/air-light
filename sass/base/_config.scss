@@ -89,6 +89,14 @@ $typographic-measure: $container_desktop_start; // Default: 40rem
 // Where navigation transforms into responsive
 $responsivenav: 872px;
 
+// Non-responsive font stacks
+// You can use these font stacks normally with `font-family: $font_sans;` for instance.`
+$font_sans: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+$font_headings: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif;
+
+// Responsive font-stacks
+// Use this fonts with megatype mixin `font-family: font-family-of($headings);`
+
 // Set cap height to set to the baseline.
 // Here are some cap-height sizes to get you started:
 // Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
