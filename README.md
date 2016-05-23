@@ -6,8 +6,8 @@ Air is designed to be a minimal starting point for a WordPress project at [Digit
 
 ## [Demo](https://dudetest.xyz/air)
 
-- **CSS gzipped:** 7.1 KB *(43.5 KB original)*
-- **JS gzipped:** 26.9 KB *(79.4 KB original)*
+- **CSS gzipped:** 6.9 KB *(37 KB original)*
+- **JS gzipped:** 33.3 KB *(97.2 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
 ![](https://dl.dropboxusercontent.com/u/18447700/air-screenshot-2.png "Screenshot")
@@ -28,7 +28,8 @@ This theme is built to be very straightforward, front end developer friendly and
 5. [Recommendations for development](#recommendations-for-development)
 6. [Installation](#installation)
 7. [Contributing](#contributing)
-8. [Todo](#todo)
+8. [Notes](#notes)
+9. [Todo](#todo)
 
 ### Please note before using
 
@@ -108,6 +109,10 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 ### Contributing
 
 If you have ideas about the theme or spot an issue, please let us know. Before contributing ideas or reporting an issue about "missing" features or things regarding to the nature of that matter, please read [Please note](#please-note-before-using) section. Thank you very much.
+
+### Notes
+
+Gzip file sizes tested with `wc -c css/layout.css` and `gzip -c css/layout.css | wc -c` commands.
 
 ### Todo
 
