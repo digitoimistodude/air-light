@@ -375,6 +375,11 @@ pre {
   border-radius: 4px;
   overflow: auto;
 
+  &.debug {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
   code {
     padding: 0;
     font-size: inherit;
