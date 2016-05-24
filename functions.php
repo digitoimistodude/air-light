@@ -67,21 +67,6 @@ update_option( 'upload_url_path', untrailingslashit( str_replace( 'wp', 'media',
 define( 'uploads', ''.'media' );
 add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
-/**
- * Remove query strings from static resources
- *
- * @link https://wordpress.org/support/topic/how-to-remove-query-strings-from-static-resources
- */
-function air_remove_script_version( $src ) {
-  $parts = explode( '?', $src );
-  return $parts[0];
-}
-
-if ( ! is_admin() ) {
-  add_filter( 'script_loader_src', 'air_remove_script_version', 15, 1 );
-  add_filter( 'style_loader_src', 'air_remove_script_version', 15, 1 );
-}
-
 if ( ! function_exists( 'air_entry_footer' ) ) :
 
 /**
