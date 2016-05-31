@@ -19,7 +19,7 @@
 
 			<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
-					<p class="entry-time"><time datetime="<?php the_time('c'); ?>"><?php the_time('l') ?>na, <?php the_time('j.') ?> <?php the_time('F') ?>ta <?php the_time('Y') ?> kello <?php the_time('G:i') ?></time></p>
+					<p class="entry-time"><time datetime="<?php the_time('c'); ?>"><?php the_time('l') ?>, <?php the_time('j.') ?><?php the_time('n.') ?><?php the_time('Y') ?></time></p>
 			</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
