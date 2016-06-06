@@ -7,15 +7,20 @@
  * @package air
  */
 
- /**
-  * The current version of the theme.
-  */
- define( 'AIR_VERSION', '1.4.7' );
+/**
+ * The current version of the theme.
+ */
+define( 'AIR_VERSION', '1.4.7' );
 
- /**
-  * Allow Gravity Forms to hide labels to add placeholders
-  */
- add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+/**
+ * Allow Gravity Forms to hide labels to add placeholders
+ */
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+/**
+ *  Set Yoast SEO plugin metabox priority to low
+ */
+add_filter( 'wpseo_metabox_prio', function() { return 'low'; } );
 
 /**
  * Enable theme support for essential features
@@ -54,7 +59,7 @@ require get_template_directory() . '/nav.php';
  */
 add_action( 'get_header', 'air_remove_admin_login_header' );
 function air_remove_admin_login_header() {
-    remove_action( 'wp_head', '_admin_bar_bump_cb' );
+  remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 show_admin_bar(false);
 
