@@ -20,7 +20,10 @@ add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 /**
  *  Set Yoast SEO plugin metabox priority to low
  */
-add_filter( 'wpseo_metabox_prio', function() { return 'low'; } );
+function air_lowpriority_yoastseo() {
+  return 'low';
+}
+add_filter( 'wpseo_metabox_prio', 'air_lowpriority_yoastseo' );
 
 /**
  * Enable theme support for essential features
