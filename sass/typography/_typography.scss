@@ -4,7 +4,7 @@ $web-fonts-protocol: 'https' !global !default;
 
 // Google web fonts in use:
 $url: web-fonts-url(
-  ('Raleway':
+  ('Libre Franklin':
     ('200',
      '200 italic',
      '300',
@@ -18,6 +18,17 @@ $url: web-fonts-url(
      '900',
      '900 italic')
      ),
+  ('Fira Sans':
+    ('300',
+    '300 italic',
+    '400',
+    '400 italic',
+    '500',
+    '500 italic',
+    '700',
+    '700 italic'
+    )
+  )
   ('Source Sans Pro':
     ('700',
      '700 italic'
@@ -27,274 +38,347 @@ $url: web-fonts-url(
 
 @import url($url);
 
+// Viewport sized typography with minimum and maximum values
+// Inspiration: https://css-tricks.com/molten-leading-css/
+// More inspiration: https://www.smashingmagazine.com/2016/05/fluid-typography/
+//
+// Source: https://codepen.io/eduardoboucas/pen/YXxmwv
+//
+// @author Eduardo Boucas (@eduardoboucas)
+//
+// @param {Number}   $responsive  - Viewport-based size
+// @param {Number}   $min         - Minimum font size (px)
+// @param {Number}   $max         - Maximum font size (px)
+//                                  (optional)
+// @param {Number}   $fallback    - Fallback for viewport-
+//                                  based units (optional)
+//
+// @example scss - 5vw font size (with 50px fallback),
+//                 minumum of 35px and maximum of 150px
+//  @include responsive-font(5vw, 35px, 150px, 50px);
+//
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
+  $min-breakpoint: $min / $responsive-unitless * 100;
+  font-size: $responsive;
+
+  @media (max-#{$dimension}: #{$min-breakpoint}) {
+    font-size: $min;
+  }
+
+  @if $max {
+    $max-breakpoint: $max / $responsive-unitless * 100;
+
+    @media (min-#{$dimension}: #{$max-breakpoint}) {
+      font-size: $max;
+    }
+  }
+
+  @if $fallback {
+    font-size: $fallback;
+  }
+
+}
+
 body {
-  font-size: 1em;
-  line-height: 1.4em;
-}
+  line-height: 2rem;
+  font-size: 1rem;
+  font-family: $font-base;
 
-@media screen and (min-width: 20em) {
-  body {
-    font-size: calc(1em + (1.3125 - 1) * ((100vw - 20em) / (80 - 20)));
-    line-height: calc(1.4em + (1.8 - 1.4) * ((100vw - 20em) / (80 - 20)));
-  }
-}
-
-@media (min-width: 80em) {
-  body {
-    font-size: 1.3125em;
-    line-height: 1.8em;
-  }
-}
-
-// Typography defaults
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-  color: $color-body;
-  font-family: $font-headings;
-}
-
-.site-content {
-
-  // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
-  p,
-  dd,
-  dt,
-  figcaption {
-    font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    font-family: $font-base;
-  }
-
-  // Heading level 1.
-  h1 {
-    letter-spacing: -.02em;
-    font-weight: 700;
-  }
-
-  // Heading level 2.
-  h2 {
-
-  }
-
-  // Heading level 3.
-  h3,
-  .gform_wrapper h3.gform_title {
-
-  }
-
-  h4 {
-
-  }
-
-  // Heading level 5, 6.
-  h5,
-  h6 {
-
-  }
-
-  // Lists
-  ul {
-    list-style: disc outside;
-    padding-left: 1.375rem;
-
-    li {
-      padding-left: .35rem;
-    }
-  }
-
-  ol {
-    padding-left: 1.75rem;
-  }
-
-  ol,
-  ul {
-    padding-bottom: 1rem;
-  }
-
-  li {
-    font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    font-family: $font-base;
-
-
-  }
-
-  // Bold.
-  b,
-  strong {
-    font-weight: 700;
-  }
-
-  // Italic.
-  em,
-  i {
-    font-style: italic;
-  }
-
-  // Inline small text.
-  small {
-    line-height: 1;
-    font-size: .875em;
-  }
-
-  // images
-  img {
-    -ms-interpolation-mode: bicubic;
-    height: auto;
-    vertical-align: middle;
-    max-width: 100%;
-  }
-
-  // Figures and captions
-  figure {
-    position: relative;
-    margin-bottom: 1rem;
-
-    > img {
-      width: 100%;
-    }
-  }
-
-  // Figcaption.
-  figcaption {
-    margin-top: 0;
-    font-family: $font-base;
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  // Quotes.
-  blockquote {
-    clear: both;
-    border: 0 none;
-    position: relative;
-    margin-top: 3rem;
-    padding-bottom: 3rem;
-    margin: 0;
-
-    @media(min-width: $container-ipad) {
-      margin-top: 4rem;
-      padding-bottom: 4rem;
-    }
-
-    &:before {
-      content: '';
-      display: block;
-      height: 4px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      max-width: 147px;
-
-      @media(min-width: $container-mobile) {
-        width: 30%;
-      }
+  .site-content {
+    p,
+    dd,
+    dt,
+    figcaption,
+    hr,
+    small,
+    span,
+    ol,
+    ul,
+    li,
+    blockquote,
+    kbd,
+    pre,
+    samp,
+    code,
+    th,
+    td,
+    table,
+    tr {
+      @include responsive-font(3vw, $font-min-size, $font-max-size, $font-max-size);
+      letter-spacing: -.003em;
+      line-height: 1.68;
     }
 
     p {
+      margin-top: 29px;
+      margin-bottom: 29px;
+      line-height: 1.78;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+    p,
+    dd,
+    dt,
+    figcaption {
+      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
       font-family: $font-base;
-      margin-bottom: 0;
+    }
+
+    // Heading defaults
+    h1 {
+      @include responsive-font(4vw, 48px, 60px, 60px);
+      letter-spacing: -.02em;
+      font-weight: 700;
+    }
+
+    h2 {
+      @include responsive-font(3.2vw, 36px, 48px);
+      letter-spacing: -.02em;
+    }
+
+    h3,
+    .gform_wrapper h3.gform_title {
+      @include responsive-font(2.4vw, 24px, 36px);
+      letter-spacing: -.02em;
+    }
+
+    h4 {
+      @include responsive-font(1.6vw, 21px, 24px, 24px);
+    }
+
+    h5 {
+      @include responsive-font(1.4vw, 18px, 21px, 21px);
+    }
+
+    h6 {
+      @include responsive-font(1.2vw, 14px, 18px, 18px);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      color: $color-body;
+      font-family: $font-headings;
+      font-weight: 700;
+    }
+
+    // Lists
+    ul {
+      list-style: disc outside;
+      padding-left: 1.375rem;
+
+      li {
+        padding-left: .35rem;
+      }
+    }
+
+    ol {
+      padding-left: 1.75rem;
+    }
+
+    ol,
+    ul {
+      padding-bottom: 1rem;
+    }
+
+    li {
+      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+      font-family: $font-base;
+
+
+    }
+
+    // Bold.
+    b,
+    strong {
+      font-weight: 700;
+    }
+
+    // Italic.
+    em,
+    i {
+      font-style: italic;
+    }
+
+    // Inline small text.
+    small {
+      line-height: 1;
+      font-size: .875em;
+    }
+
+    // images
+    img {
+      -ms-interpolation-mode: bicubic;
+      height: auto;
+      vertical-align: middle;
+      max-width: 100%;
+    }
+
+    // Figures and captions
+    figure {
       position: relative;
-      overflow: visible;
+      margin-bottom: 1rem;
+
+      > img {
+        width: 100%;
+      }
     }
-  }
 
-  cite {
-    font-family: $font-base;
-    display: block;
-    font-style: italic;
-  }
-
-  // Horizontal rule.
-  hr {
-    background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
-    background-repeat: repeat-x;
-    background-size: 2px 2px;
-    background-position: 0 50%;
-    border: 0;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin: 0;
-    height: 0;
-  }
-
-  kbd,
-  pre,
-  samp {
-    font-family: $font-monospace;
-  }
-
-  // Code block.
-  code {
-    color: #c7254e;
-    background-color: #f9f2f4;
-    font-family: $font-monospace;
-    line-height: 1;
-    padding: .375rem .5rem;
-    border-radius: .3rem;
-    font-size: inherit; // normalize.css sets this as 1em by default
-
-    pre & {
-      display: inline-block;
-      padding: 1.15rem 1rem .85rem;
+    // Figcaption.
+    figcaption {
+      margin-top: 0;
+      font-family: $font-base;
+      font-style: normal;
+      font-weight: 400;
     }
-  }
 
-  // Preformatted text.
-  pre {
-    border-radius: .3rem;
-    display: block;
-    white-space: pre-wrap;
-    word-break: break-all;
-    word-wrap: break-word;
-    margin-bottom: 2rem;
-  }
+    // Quotes.
+    blockquote {
+      clear: both;
+      border: 0 none;
+      position: relative;
+      margin-top: 3rem;
+      padding-bottom: 3rem;
+      margin: 0;
 
-  // Tables
-  th,
-  td {
-    font-family: $font-base;
-    height: 3rem;
-    padding: 1rem;
-  }
+      p {
+        @include responsive-font(2vw, 17px, 25px, 25px);
+        opacity: .5;
+        font-style: italic;
+        font-family: $font-base;
+        margin-bottom: 0;
+        position: relative;
+        overflow: visible;
+      }
 
-  th {
-    font-weight: bold;
-  }
+      @media(min-width: $container-ipad) {
+        margin-top: 4rem;
+        padding-bottom: 4rem;
+      }
 
-}
+      &:before {
+        content: '';
+        display: block;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-width: 147px;
 
-// Font smoothing options
-body,
-html * {
-  font-smoothing: antialiased;
-  text-size-adjust: none;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+        @media(min-width: $container-mobile) {
+          width: 30%;
+        }
+      }
+    }
 
-// Text font stack
-p,
-ul,
-ol,
-dl,
-span,
-small,
-blockquote {
-  font-family: $font-base;
-  color: $color-body;
-}
+    cite {
+      font-family: $font-base;
+      display: block;
+      font-style: italic;
+    }
 
-// Links
-a {
-  color: $color-links;
-  text-decoration: none;
+    // Horizontal rule.
+    hr {
+      background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
+      background-repeat: repeat-x;
+      background-size: 2px 2px;
+      background-position: 0 50%;
+      border: 0;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      margin: 0;
+      height: 0;
+    }
 
-  &:hover {
-    color: $color-hover;
+    kbd,
+    pre,
+    samp {
+      font-family: $font-monospace;
+    }
+
+    // Code block.
+    code {
+      color: #c7254e;
+      background-color: #f9f2f4;
+      font-family: $font-monospace;
+      line-height: 1;
+      padding: .375rem .5rem;
+      border-radius: .3rem;
+      font-size: inherit; // normalize.css sets this as 1em by default
+
+      pre & {
+        display: inline-block;
+        padding: 1.15rem 1rem .85rem;
+      }
+    }
+
+    // Preformatted text.
+    pre {
+      border-radius: .3rem;
+      display: block;
+      white-space: pre-wrap;
+      word-break: break-all;
+      word-wrap: break-word;
+      margin-bottom: 2rem;
+    }
+
+    // Tables
+    th,
+    td {
+      font-family: $font-base;
+      height: 3rem;
+      padding: 1rem;
+    }
+
+    // Table heading cells
+    th {
+      font-weight: bold;
+    }
+
+    // Font smoothing options
+    body,
+    html * {
+      font-smoothing: antialiased;
+      text-size-adjust: none;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    // Text font stack
+    p,
+    ul,
+    ol,
+    dl,
+    span,
+    small,
+    blockquote {
+      font-family: $font-base;
+      color: $color-body;
+    }
+
+    // Links
+    a {
+      color: $color-links;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
   }
 }

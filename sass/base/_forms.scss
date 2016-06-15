@@ -25,6 +25,12 @@ input[type="button"],
     }
 }
 
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
 // Fields
 body {
 
