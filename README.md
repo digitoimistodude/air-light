@@ -52,13 +52,14 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
 * [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include col(1/100)`
 * Container div inside site-main
+* Possible to choose between fluid (flexible 100%) and snappy grid style (snapping to breakpoint, more space around)
+* Inline SVG-ready
 
 #### Typography
 
-* [Megatype](https://github.com/StudioThick/megatype) - A scalable and responsive typographic baseline (modular scale)
+* Responsive typography with viewport units with fallbacks (formerly [Megatype](https://github.com/StudioThick/megatype), still recommended with blogs or text-only based sites, but not included by default after 1.5.0)
 * Google Webfonts with Penman's [Sass-Web-Fonts](https://github.com/penman/Sass-Web-Fonts)
 * Web fonts helper: [Sass Boilerplate's fontFace-mixin](https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss)
-* [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) Glyph icons
 
 #### Development
 
