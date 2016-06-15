@@ -4,8 +4,8 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"],
 .button {
-    background: $color_button_bg;
-    color: $color_button_text;
+    background: $color-button-bg;
+    color: $color-button-text;
     border: 0;
     width: auto;
     display: inline-block;
@@ -14,14 +14,14 @@ input[type="button"],
     text-decoration: none;
     position: relative;
     cursor: pointer;
-    border-radius: $forms_border_radius;
+    border-radius: $forms-border-radius;
     transition: 150ms linear all;
     appearance: none;
 
     &:hover,
     &:focus {
-      color: $color_button_text;
-      background: lighten($color_button_bg, 15%);
+      color: $color-button-text;
+      background: lighten($color-button-bg, 15%);
     }
 }
 
@@ -40,10 +40,10 @@ body {
     input[type="week"],
     input[type="email"],
     input[type="search"] {
-      color: $color_forms_text;
-      border: 1px solid $color_forms;
-      background: $color_forms_bg;
-      border-radius: $forms_border_radius;
+      color: $color-forms-text;
+      border: 1px solid $color-forms;
+      background: $color-forms-bg;
+      border-radius: $forms-border-radius;
       padding: 16px;
       text-decoration: none;
       position: relative;
@@ -53,19 +53,19 @@ body {
 
       &:focus {
         outline: 0;
-        border: 1px solid $forms_border_focus;
+        border: 1px solid $forms-border-focus;
       }
     }
 
     select {
-      background-color: $color_forms_bg;
+      background-color: $color-forms-bg;
       background-image: url('../svg/select.svg');
       background-repeat: no-repeat;
       background-position: right center;
-      color: $color_forms_text;
+      color: $color-forms-text;
       padding-right: 40px;
       transition: none;
-      border: 1px solid $color_forms;
+      border: 1px solid $color-forms;
       width: 100%;
       max-width: 100%;
       min-width: 0;
@@ -150,14 +150,22 @@ body {
   }
 
   p {
+
     &.form-submit {
       display: block;
       clear: both;
+      margin-bottom: 0;
+      margin-top: 0;
     }
 
     &.comment-form-url {
       margin-bottom: 0;
     }
+
+    &.comment-form-comment {
+      margin-bottom: 0;
+    }
+
   }
 
   .comment-form-comment {

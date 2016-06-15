@@ -2,14 +2,12 @@
 @import 'sass-web-fonts/web-fonts';
 $web-fonts-protocol: 'https' !global !default;
 
-// Modular scale
-@import 'megatype/megatype';
-@include megatype;
-
 // Google web fonts in use:
 $url: web-fonts-url(
-  ('Roboto':
-    ('300',
+  ('Open Sans':
+    ('200',
+     '200 italic',
+     '300',
      '300 italic',
      '400',
      '400 italic',
@@ -30,11 +28,23 @@ $url: web-fonts-url(
 @import url($url);
 
 body {
-  line-height: 2rem;
+  font-size: 1em;
+  line-height: 1.4em;
 }
 
-// Typographic measure for paragraphs, lists, and headings
-$type-measure: $typographic-measure;
+@media screen and (min-width: 20em) {
+  body {
+    font-size: calc(1em + (1.3125 - 1) * ((100vw - 20em) / (80 - 20)));
+    line-height: calc(1.4em + (1.8 - 1.4) * ((100vw - 20em) / (80 - 20)));
+  }
+}
+
+@media (min-width: 80em) {
+  body {
+    font-size: 1.3125em;
+    line-height: 1.8em;
+  }
+}
 
 // Typography defaults
 h1,
@@ -44,10 +54,8 @@ h4,
 h5,
 h6 {
   font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-  max-width: $type-measure;
-  color: $color_body;
-  font-weight: 700;
-  font-family: font-family-of($headings);
+  color: $color-body;
+  font-family: $font-headings;
 }
 
 .site-content {
@@ -57,109 +65,35 @@ h6 {
   dd,
   dt,
   figcaption {
-    @include typeset($sans, 16px, 32px, 0, 2);
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    font-family: font-family-of($sans);
-    font-weight: regular-of($sans);
-    max-width: $type-measure; // Good typographic measure
-
-    @include min-width(2) {
-      @include typeset($sans, 16px, 32px, 0, 2);
-    }
-
-    @include min-width(3 4) {
-      @include typeset($sans, 18px, 36px, 0, 2);
-    }
+    font-family: $font-base;
   }
 
   // Heading level 1.
-  h1,
-  .h1-style {
+  h1 {
     letter-spacing: -.02em;
-    font-weight: bold;
-
-    @include min-width(0 1) {
-      @include typeset($headings, 38px, 38px, 2, 2);
-    }
-
-    @include min-width(2) {
-      @include typeset($headings, 42px, 42px, 2, 2);
-    }
-
-    @include min-width(3) {
-      @include typeset($headings, 52px, 52px, 2, 2);
-    }
-
-    &:first-child {
-      @include min-width(0 1) {
-        @include typeset($headings, 38px, 38px, 1, 2);
-      }
-
-      @include min-width(2) {
-        @include typeset($headings, 42px, 42px, 0, 2);
-      }
-
-      @include min-width(3) {
-        @include typeset($headings, 52px, 52px, 0, 2);
-      }
-    }
+    font-weight: 700;
   }
 
   // Heading level 2.
-  h2,
-  .h2-style {
-    @include min-width(0 1 2) {
-      @include typeset($headings, 26px, 28px, 2, 1);
-    }
+  h2 {
 
-    @include min-width(3 4) {
-      @include typeset($headings, 30px, 32px, 2, 1);
-    }
   }
 
   // Heading level 3.
   h3,
-  .h3-style,
   .gform_wrapper h3.gform_title {
-    @include typeset($headings, 20px, 24px, 2, 1);
 
-    @include min-width(1 2) {
-      @include typeset($headings, 22px, 28px, 2, 1);
-    }
-
-    @include min-width(3) {
-      @include typeset($headings, 24px, 32px, 2, 1);
-    }
   }
 
-  // Heading level 4.
-  h4,
-  .h4-style {
-    @include typeset($headings, 18px, 24px, 1, 1);
+  h4 {
 
-    @include min-width(1 2) {
-      @include typeset($headings, 20px, 28px, 1, 1);
-    }
-
-    @include min-width(3) {
-      @include typeset($headings, 22px, 32px, 1, 1);
-    }
   }
 
   // Heading level 5, 6.
   h5,
-  .h5-style,
-  h6,
-  .h6-style {
-    @include typeset($headings, 1, 2, 1, 1);
+  h6 {
 
-    @include min-width(1) {
-      @include typeset($headings, 1rem, 2, 1, 1);
-    }
-
-    @include min-width(3) {
-      @include typeset($headings, 20px, 28px, 1, 1);
-    }
   }
 
   // Lists
@@ -179,30 +113,19 @@ h6 {
   ol,
   ul {
     padding-bottom: 1rem;
-    max-width: $type-measure;
   }
 
   li {
     font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    font-family: font-family-of($sans);
+    font-family: $font-base;
 
-    @include min-width(0 1) {
-      @include typeset($sans, 14px, 24px, 0, 1);
-    }
 
-    @include min-width(2) {
-      @include typeset($sans, 16px, 32px, 0, 1);
-    }
-
-    @include min-width(3 4) {
-      @include typeset($sans, 18px, 36px, 0, 1);
-    }
   }
 
   // Bold.
   b,
   strong {
-    font-weight: bold;
+    font-weight: 700;
   }
 
   // Italic.
@@ -211,7 +134,7 @@ h6 {
     font-style: italic;
   }
 
-  // inline small text.
+  // Inline small text.
   small {
     line-height: 1;
     font-size: .875em;
@@ -225,7 +148,7 @@ h6 {
     max-width: 100%;
   }
 
-  // figures and captions
+  // Figures and captions
   figure {
     position: relative;
     margin-bottom: 1rem;
@@ -235,12 +158,12 @@ h6 {
     }
   }
 
-  // figcaption.
+  // Figcaption.
   figcaption {
     margin-top: 0;
-    font-family: font-family-of($sans);
+    font-family: $font-base;
     font-style: normal;
-    font-weight: regular-of($sans);
+    font-weight: 400;
   }
 
   // Quotes.
@@ -252,7 +175,7 @@ h6 {
     padding-bottom: 3rem;
     margin: 0;
 
-    @include min-width(2) {
+    @media(min-width: $container-ipad) {
       margin-top: 4rem;
       padding-bottom: 4rem;
     }
@@ -264,43 +187,25 @@ h6 {
       position: absolute;
       left: 0;
       top: 0;
-      width: span(2);
-      max-width: px-to-rem(147px);
+      max-width: 147px;
 
-      @include min-width(1) {
+      @media(min-width: $container-mobile) {
         width: 30%;
       }
     }
 
     p {
-      font-family: font-family-of($sans);
+      font-family: $font-base;
       margin-bottom: 0;
       position: relative;
       overflow: visible;
-
-      @include min-width(0 2) {
-        @include typeset($sans, 24px, 32px, 24px, 0);
-      }
-
-      @include min-width(3) {
-        @include typeset($sans, 28px, 36px, 24px, 0);
-      }
     }
   }
 
   cite {
-    @include typeset($sans, 18px, 29px, 0, 36px);
-    font-family: font-family-of($sans);
+    font-family: $font-base;
     display: block;
     font-style: italic;
-
-    @include min-width(0 2 3) {
-      @include typeset($sans, 18px, 29px, 22px, 36px);
-    }
-
-    @include min-width(3) {
-      @include typeset($sans, 20px, 32px, 22px, 48px);
-    }
   }
 
   // Horizontal rule.
@@ -316,17 +221,21 @@ h6 {
     height: 0;
   }
 
+  kbd,
+  pre,
+  samp {
+    font-family: $font-monospace;
+  }
+
   // Code block.
   code {
-    font-family: font-family-of($monospace);
+    color: #c7254e;
+    background-color: #f9f2f4;
+    font-family: $font-monospace;
     line-height: 1;
     padding: .375rem .5rem;
     border-radius: .3rem;
-
-    @include all-breakpoints {
-      font-size: px-to-rem(14px);
-      line-height: 1rem;
-    }
+    font-size: inherit; // normalize.css sets this as 1em by default
 
     pre & {
       display: inline-block;
@@ -347,22 +256,9 @@ h6 {
   // Tables
   th,
   td {
-    @include typeset($sans, 18px, 29px, 8px, 8px);
-    font-family: font-family-of($sans);
+    font-family: $font-base;
     height: 3rem;
     padding: 1rem;
-
-    @include min-width(2) {
-      @include typeset($sans, 18px, 29px, 8px, 8px);
-    }
-
-    @include min-width(3) {
-      @include typeset($sans, 18px, 29px, 8px, 8px);
-    }
-
-    @include min-width(3) {
-      @include typeset($sans, 20px, 32px, 8px, 8px);
-    }
   }
 
   th {
@@ -389,22 +285,16 @@ dl,
 span,
 small,
 blockquote {
-  font-family: font-family-of($sans);
-  color: $color_body;
+  font-family: $font-base;
+  color: $color-body;
 }
 
 // Links
 a {
-  color: $color_links;
+  color: $color-links;
   text-decoration: none;
-  font-weight: 700;
 
   &:hover {
-    color: $color_hover;
+    color: $color-hover;
   }
 }
-
-// Testing
-// .font-size-test code {
-//   @include typeset($font: $sans, $fontsize: 20px, $lineheight: 20px, $leader: 1, $trailer: 0);
-// }

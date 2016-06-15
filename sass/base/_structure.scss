@@ -31,11 +31,11 @@ body {
 
 .container {
   @if $grid-type == fluid {
-    @include center($max_width: $container_desktop_max_width, $pad: 20px);
+    @include center($max_width: $grid-base-size, $pad: 20px);
   } @else if $grid-type == snappy {
     @include set-container;
   } @else {
-    @include center($max_width: $container_desktop_max_width, $pad: 20px);
+    @include center($max_width: $grid-base-size, $pad: 20px);
   }
 }
 
@@ -48,7 +48,7 @@ body {
     padding-left: 0;
     padding-right: 0;
 
-    @media(max-width: $container_desktop_max_width) {
+    @media(max-width: $container-desktop) {
       padding-left: 2rem;
       padding-right: 2rem;
     }
@@ -78,7 +78,6 @@ body {
         clear: both;
         display: block;
         margin-top: 40px;
-        font-size: 1.2rem;
         padding: 0;
       }
     }
@@ -320,20 +319,6 @@ th {
   padding: 0;
 }
 
-kbd,
-pre,
-samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-code {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  padding: 2px 4px;
-  color: #c7254e;
-  background-color: #f9f2f4;
-  border-radius: 4px;
-}
-
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -392,19 +377,19 @@ pre {
 
 // Sidebar
 .sidebar {
-  @include min-width(2) {
+  @media(min-width: $container-mobile) {
     padding-top: 2rem;
     margin-bottom: 2rem;
     float: right;
     width: 33.333%;
   }
 
-  @include min-width(3) {
+  @media(min-width: $container-ipad) {
     padding-top: 1rem;
     width: 25%;
   }
 
-  @include min-width(4) {
+  @media(min-width: $container-desktop) {
     padding-top: 0;
   }
 }

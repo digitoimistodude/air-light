@@ -1,6 +1,6 @@
 {
   "name": "air",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -22,7 +22,6 @@
   "dependencies": {
     "jeet": "^6.1.2",
     "jquery": "~2.2.3",
-    "megatype": "^1.0.8",
     "normalize.css": "^4.1.1",
     "sass-web-fonts": "^2.0.1"
   }

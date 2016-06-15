@@ -6,158 +6,55 @@
 // --------------------------------------------------------------
 
 // Colors
-$color_links: #f16b6f;
-$color_hover: #606c76;
-$color_body: #3c3530;
-$color_grey: #dadfe1;
-$color_alt: #aacd6e;
+$color-links: #f16b6f;
+$color-hover: #606c76;
+$color-body: #3c3530;
+$color-grey: #dadfe1;
+$color-alt: #aacd6e;
 
 // Main navigation settings
-$color_navigation_bg: transparent;
-$color_navigation_text: rgba(#fff, .8);
-$color_navigation_hover: #3e4853;
-$color_navigation_first_level_text_hover: #fff;
-$color_navigation_toggle: $color_navigation_text;
-$color_navigation_toggle_hover: $color_navigation_first_level_text_hover;
-$list_padding: 1em 1.5em;
-$font_size_navigation: .8rem;
+$color-navigation-bg: transparent;
+$color-navigation-text: rgba(#fff, .8);
+$color-navigation-hover: #3e4853;
+$color-navigation-first-level-text-hover: #fff;
+$color-navigation-toggle: $color-navigation-text;
+$color-navigation-toggle-hover: $color-navigation-first-level-text-hover;
+$list-padding: 1em 1.5em;
+$font-size-navigation: .8rem;
 
 // Drop down settings
 $dropdown-width: 200px;
-$color_dropdown_bg: #222;
-$color_dropdown_text: #fff;
-$color_dropdown_hover_bg: #3e4853;
-$color_dropdown_hover_text: #fff;
-$dropdown_border_radius: 5px;
+$color-dropdown-bg: #222;
+$color-dropdown-text: #fff;
+$color-dropdown-hover-bg: #3e4853;
+$color-dropdown-hover-text: #fff;
+$dropdown-border-radius: 5px;
 
-// Type settings
-$baseline-scaling: true;
-$baseline-snap: true;
-
-// Font sizes
-// Note: Will scale up the typography
-$min-font-size: 1.2; // Mobile font size in unitless number, 1 = 16, 1.2 = 18, set to false if no minimum
-
-// Root sizes for type settings
-$rootsize-mobile-small: 15px;
-$rootsize-mobile: 15px;
-$rootsize-ipad: 18px;
-$rootsize-ipad-landscape: 18px;
-$rootsize-desktop: 18px;
-
-// Type debugging
-$debug-allow: false; // Set debugging on or off
-$debug-grid: true;
-$debug-type: true;
-$debug-breakpoints: true;
-$debug-hover: true; // If set to false, show debugging all the time
-$debug-opacity: .1;
-$debug-tolerance: 1px;
+// Font stacks
+// You can use these font stacks normally with `font-family: $font-sans;` for instance.`
+$font-base: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+$font-headings: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif;
+$font-monospace: 'Menlo', 'Courier', monospace;
 
 // Form settings
-$color_button_bg: #262626;
-$color_button_text: #fff;
-$color_forms: #cfd9db;
-$color_forms_text: #666;
-$color_forms_bg: #fff;
-$forms_border_radius: 3px;
-$forms_border_focus: darken(#cfd9db, 25%);
+$color-button-bg: #262626;
+$color-button-text: #fff;
+$color-forms: #cfd9db;
+$color-forms-text: #666;
+$color-forms-bg: #fff;
+$forms-border-radius: 3px;
+$forms-border-focus: darken(#cfd9db, 25%);
 
 // Breakpoints
 $grid-type: fluid; // 'fluid' or 'snappy'
 $layout-max-width: 100%;
 
 // Set layout max width on desktop:
-$container_desktop_max_width: 960px;
-
-$container_mobile_small_start: 0;
-$container_mobile_small_max: 420px;
-$container_mobile_start: 480px;
-$container_mobile_max: 560px;
-$container_ipad_start: 768px;
-$container_ipad_max: 840px;
-$container_ipad_landscape_start: 980px;
-$container_ipad_landscape_max: 1080px;
-$container_desktop_start: 1200px;
-$container_desktop_max: 1400px;
-
-$container_mobile: $container_mobile_start;
-$container_desktop: $container_desktop_start; // This is default .container size
-$container_ipad: $container_ipad_start;
-$typographic-measure: $container_desktop_start; // Default: 40rem
+$grid-base-size: 960px; // This is default .container size
+$container-mobile: 480px;
+$container-desktop: 1200px;
+$container-ipad: 770px;
+$container-ipad-landscape: 1024px;
 
 // Where navigation transforms into responsive
 $responsivenav: 872px;
-
-// Non-responsive font stacks
-// You can use these font stacks normally with `font-family: $font_sans;` for instance.`
-$font_sans: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
-$font_headings: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif;
-
-// Responsive font-stacks
-// Use this fonts with megatype mixin `font-family: font-family-of($headings);`
-
-// Set cap height to set to the baseline.
-// Here are some cap-height sizes to get you started:
-// Georgia: 0.66, Times / Times New Roman: 0.65, Palatino: 0.52
-// Lucida Grande: 0.72, Helvetica: 0.65, Helvetica Neue: 0.71, Verdana: 0.76, Tahoma: 0.76
-// Roboto: 0.65, Proxima Nova: 0.57, Museo Slab: 0.66, Myriad Pro: 0.66
-$sans: (
-    font-family: 'Roboto, "Helvetica Neue", Helvetica, sans-serif',
-    regular: normal,
-    bold: bold,
-    cap-height: .65
-);
-
-$headings: (
-    font-family: '"Source Sans Pro", "Helvetica Neue", Helvetica, sans-serif',
-    regular: normal,
-    bold: bold,
-    cap-height: .74
-);
-
-$serif: (
-    font-family: 'Georgia, serif',
-    regular: normal,
-    bold: bold,
-    cap-height: .66
-);
-
-$monospace: (
-    font-family: 'Menlo, Courier, monospace',
-    regular: 400,
-    cap-height: .68
-);
-
-// Megatype breakpoint map
-$breakpoint-map: (
-  0: (
-    start:      $container_mobile_small_start,
-    max:        $container_mobile_small_max,
-    rootsize:   $rootsize-mobile-small
-  ),
-
-  1: (
-    start:      $container_mobile_start,
-    max:        $container_mobile_max,
-    rootsize:   $rootsize-mobile
-  ),
-
-  2: (
-    start:      $container_ipad_start,
-    max:        $container_ipad_max,
-    rootsize:   $rootsize-ipad
-  ),
-
-  3: (
-    start:      $container_ipad_landscape_start,
-    max:        $container_ipad_landscape_max,
-    rootsize:   $rootsize-ipad-landscape
-  ),
-
-  4: (
-    start:      $container_desktop_start,
-    max:        $container_desktop_max,
-    rootsize:   $rootsize-desktop
-  )
-);
