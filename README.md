@@ -59,7 +59,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 * Responsive typography with viewport units with fallbacks (formerly [Megatype](https://github.com/StudioThick/megatype), still recommended with blogs or text-only based sites, but not included by default after 1.5.0)
 * Google Webfonts with Penman's [Sass-Web-Fonts](https://github.com/penman/Sass-Web-Fonts)
-* Web fonts helper: [Sass Boilerplate's fontFace-mixin](https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss) (if you have .odt, .ttf, .woff, .woff2 in `fonts` directory, you can add them with `@include fontFace('Proxima Nova','../fonts/proximanova-regular-webfont', 400);`)
+* Web fonts helper: [Sass Boilerplate's fontFace-mixin](https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss) (if you have .odt, .ttf, .woff, .woff2 in `fonts` directory, you can add them with `@include fontFace('Proxima Nova', '../fonts/proximanova-regular-webfont', 400);`)
 
 #### Development
 
