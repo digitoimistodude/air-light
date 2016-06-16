@@ -136,32 +136,58 @@ body {
 
     // Heading defaults
     h1 {
-      @include responsive-font(4vw, 48px, 60px, 60px);
+      @include responsive-font(4vw, 48px, 60px);
       letter-spacing: -.02em;
       font-weight: 700;
+      line-height: 3.8rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     h2 {
       @include responsive-font(3.2vw, 36px, 48px);
       letter-spacing: -.02em;
+      line-height: 3.2rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     h3,
     .gform_wrapper h3.gform_title {
       @include responsive-font(2.4vw, 24px, 36px);
       letter-spacing: -.02em;
+      line-height: 2.2rem;
     }
 
     h4 {
-      @include responsive-font(1.6vw, 21px, 24px, 24px);
+      @include responsive-font(1.6vw, 21px, 24px);
+      line-height: 1.4rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     h5 {
-      @include responsive-font(1.4vw, 18px, 21px, 21px);
+      @include responsive-font(1.4vw, 18px, 21px);
+      line-height: 1.2rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     h6 {
-      @include responsive-font(1.2vw, 14px, 18px, 18px);
+      @include responsive-font(1.2vw, 14px, 18px);
+      line-height: 1rem;
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     h1,
