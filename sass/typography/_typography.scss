@@ -375,16 +375,6 @@ body {
       font-weight: bold;
     }
 
-    // Font smoothing options
-    body,
-    html * {
-      font-smoothing: antialiased;
-      text-size-adjust: none;
-      text-rendering: geometricPrecision;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
     // Text font stack
     p,
     ul,
@@ -396,15 +386,25 @@ body {
       font-family: $font-base;
       color: $color-body;
     }
+  }
+}
 
-    // Links
-    a {
-      color: $color-links;
-      text-decoration: none;
+// Font smoothing options
+body,
+html * {
+  font-smoothing: antialiased;
+  text-size-adjust: none;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-      &:hover {
-        color: $color-hover;
-      }
-    }
+// Links
+a {
+  color: $color-links;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-hover;
   }
 }
