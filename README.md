@@ -10,7 +10,7 @@ Air is designed to be a minimal starting point for a WordPress project at [Digit
 - **JS gzipped:** 33.3 KB *(97.2 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
-![](https://dl.dropboxusercontent.com/u/18447700/air-screenshot-2.png "Screenshot")
+![](https://dl.dropboxusercontent.com/u/18447700/air-1.5.2.png "Screenshot")
 
 This theme is built to be very straightforward, front end developer friendly and only partly modular by its structure.
 
