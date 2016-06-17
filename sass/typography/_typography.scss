@@ -139,7 +139,14 @@ body {
       @include responsive-font(4vw, 48px, 60px);
       letter-spacing: -.02em;
       font-weight: 700;
-      line-height: 3.8rem;
+
+      @if $headings-line-height-setup == flexible {
+        line-height: 3.8rem;
+      } @else if $headings-line-height-setup == force {
+        line-height: $headings-line-height-forced;
+      } @else {
+        line-height: $headings-line-height-forced;
+      }
 
       &:first-child {
         margin-top: 0;
@@ -149,7 +156,14 @@ body {
     h2 {
       @include responsive-font(3.2vw, 36px, 48px);
       letter-spacing: -.02em;
-      line-height: 3.2rem;
+
+      @if $headings-line-height-setup == flexible {
+        line-height: 3.2rem;
+      } @else if $headings-line-height-setup == force {
+        line-height: $headings-line-height-forced;
+      } @else {
+        line-height: $headings-line-height-forced;
+      }
 
       &:first-child {
         margin-top: 0;
@@ -160,12 +174,30 @@ body {
     .gform_wrapper h3.gform_title {
       @include responsive-font(2.4vw, 24px, 36px);
       letter-spacing: -.02em;
-      line-height: 2.2rem;
+
+      @if $headings-line-height-setup == flexible {
+        line-height: 2.2rem;
+      } @else if $headings-line-height-setup == force {
+        line-height: $headings-line-height-forced;
+      } @else {
+        line-height: $headings-line-height-forced;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     h4 {
       @include responsive-font(1.6vw, 21px, 24px);
-      line-height: 1.4rem;
+
+      @if $headings-line-height-setup == flexible {
+        line-height: 1.4rem;
+      } @else if $headings-line-height-setup == force {
+        line-height: $headings-line-height-forced;
+      } @else {
+        line-height: $headings-line-height-forced;
+      }
 
       &:first-child {
         margin-top: 0;
@@ -174,7 +206,14 @@ body {
 
     h5 {
       @include responsive-font(1.4vw, 18px, 21px);
-      line-height: 1.2rem;
+
+      @if $headings-line-height-setup == flexible {
+        line-height: 1.2rem;
+      } @else if $headings-line-height-setup == force {
+        line-height: $headings-line-height-forced;
+      } @else {
+        line-height: $headings-line-height-forced;
+      }
 
       &:first-child {
         margin-top: 0;
@@ -183,7 +222,15 @@ body {
 
     h6 {
       @include responsive-font(1.2vw, 14px, 18px);
-      line-height: 1rem;
+
+
+      @if $headings-line-height-setup == flexible {
+        line-height: 1rem;
+      } @else if $headings-line-height-setup == force {
+        line-height: $headings-line-height-forced;
+      } @else {
+        line-height: $headings-line-height-forced;
+      }
 
       &:first-child {
         margin-top: 0;
