@@ -41,35 +41,12 @@
   background-position: bottom; // Usually center works best, bottom is just for air demo purposes
   background-color: #e9e9e9;
   height: 60vh;
-  max-height: 700px;
   position: relative;
   margin-bottom: 2rem;
 
-  // Fix iOS bug not displaying 60vh correctly
-  // iPad
-  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    height: 460px; // 100vh = 768px
-  }
+  // Experiment with max-height:
 
-  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-    height: 614px; // 100vh = 1024px
-  }
-
-  // iPhone 5
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2) {
-    height: 192px; // 100vh = 320px
-  }
-
-  @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 2) {
-    height: 340px; // 100vh = 568px
-  }
-
-  // iPhone 4
-  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-    height: 192px; // 100 vh = 320px
-  }
-
-  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-    height: 288px; // 100vh = 480px
+  &.slide-front {
+    max-height: 700px;
   }
 }
