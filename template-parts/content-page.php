@@ -29,6 +29,7 @@
       ?>
     </div><!-- .entry-content -->
 
+    <?php if ( get_edit_post_link() ) : ?>
     <footer class="entry-footer">
       <?php
         edit_post_link(
@@ -42,6 +43,7 @@
         );
       ?>
     </footer><!-- .entry-footer -->
+    <?php endif; ?>
   </article><!-- #post-## -->
 
 </div><!-- .container -->
