@@ -317,11 +317,13 @@ del {
 }
 
 // Embeds
-embed,
-iframe,
-object,
-video {
-  max-width: 100%;
+.entry-content {
+  embed,
+  iframe,
+  object,
+  video {
+    max-width: 100%;
+  }
 }
 
 // Tables, codes and pres
