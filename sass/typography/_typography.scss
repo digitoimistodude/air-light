@@ -108,13 +108,13 @@ body {
     tr {
       @include responsive-font(3vw, $font-min-size, $font-max-size, $font-max-size);
       letter-spacing: -.003em;
-      line-height: 1.68;
+      line-height: $font-base-line-height-elements;
     }
 
     p {
       margin-top: 29px;
       margin-bottom: 29px;
-      line-height: 1.78;
+      line-height: $font-base-line-height;
 
       &:first-child {
         margin-top: 0;
