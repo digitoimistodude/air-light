@@ -30,32 +30,32 @@ var navigation = responsiveNav(".nav-collapse", {
   },
 });
 
-$(document).ready(function() {
-
-  // Back to top
-	var offset = 300, // Browser window scroll (in pixels) after which the "back to top" link is shown
-	offset_opacity = 1200, // Browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-	scroll_top_duration = 700, // Duration of the top scrolling animation (in ms)
-	$back_to_top = $('.top'); // Grab the "back to top" link
+( function( $ ) {
 
 	// Hide or show the "back to top" link
-	$(window).scroll(function(){
-		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('is-visible') : $back_to_top.removeClass('is-visible fade-out');
-		if( $(this).scrollTop() > offset_opacity ) {
-			$back_to_top.addClass('fade-out');
-      $back_to_top.removeClass('fade-out-completely');
-		}
+	$(window).scroll(function() {
 
-    // If really on footer, fade out completely
-    if($(window).scrollTop() + 100 > $(document).height() - $(window).height() ) {
-      $back_to_top.addClass('fade-out-completely');
+    // Back to top
+  	var offset = 300, // Browser window scroll (in pixels) after which the "back to top" link is shown
+  	offset_opacity = 1200, // Browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+  	scroll_top_duration = 700 // Duration of the top scrolling animation (in ms)
+
+		if( $(this).scrollTop() > offset ) {
+      $('.top').addClass('is-visible');
+    } else {
+      $('.top').removeClass('is-visible');
     }
 
+		if( $(this).scrollTop() > offset_opacity ) {
+			$('.top').addClass('fade-out');
+		} else {
+      $('.top').removeClass('fade-out');
+    }
 
 	});
 
 	// Smooth scroll to top
-	$back_to_top.on('click', function(event){
+	$('.top').on('click', function(event){
 		event.preventDefault();
 		$('body, html').animate({
 			scrollTop: 0,
@@ -77,4 +77,4 @@ $(document).ready(function() {
 	    });
 	});
 
-});
+} )( jQuery );
