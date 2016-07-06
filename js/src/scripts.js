@@ -54,27 +54,31 @@ var navigation = responsiveNav(".nav-collapse", {
 
 	});
 
-	// Smooth scroll to top
-	$('.top').on('click', function(event){
-		event.preventDefault();
-		$('body, html').animate({
-			scrollTop: 0,
-		 	}, scroll_top_duration
-		);
-	});
+  $(function() {
 
-  // Smooth scroll to ID on any anchor link
-  $('a[href^="#"]').on('click',function (e) {
-	    e.preventDefault();
+    // Smooth scroll to top
+    $('.top').on('click', function(event){
+      event.preventDefault();
+      $('body, html').animate({
+        scrollTop: 0,
+        }, 700
+      );
+    });
 
-	    var target = this.hash;
-	    var $target = $(target);
+    // Smooth scroll to ID on any anchor link
+    $('a[href^="#"]').on('click',function (e) {
+        e.preventDefault();
 
-	    $('html, body').stop().animate({
-	        'scrollTop': $target.offset().top
-	    }, 500, 'swing', function () {
-	        window.location.hash = target;
-	    });
-	});
+        var target = this.hash;
+        var $target = $(target);
+
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top
+        }, 500, 'swing', function () {
+            window.location.hash = target;
+        });
+    });
+
+  });
 
 } )( jQuery );
