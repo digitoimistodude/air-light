@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "jeet": "^6.1.2",
-    "jquery": "~2.2.3",
     "normalize.css": "^4.1.1",
     "sass-web-fonts": "^2.0.1"
   }

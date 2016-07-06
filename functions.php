@@ -119,6 +119,7 @@ endif;
  */
 function air_scripts() {
   wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css' );
+  wp_enqueue_script( 'jquery-core' );
   wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), AIR_VERSION, true );
   wp_localize_script( 'scripts', 'screenReaderTexts', array(
 		'expandMenu'            => esc_html__( 'Open menu', 'air' ),
