@@ -6,7 +6,7 @@ Air is designed to be a minimal starting point for a WordPress project at [Digit
 
 ## [Demo](https://dudetest.xyz/air)
 
-- **CSS gzipped:** 6.2 KB *(28.4 KB original)*
+- **CSS gzipped:** 6.2 KB *(27.6 KB original)*
 - **JS gzipped:** 3.5 KB *(11.1 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
@@ -113,7 +113,7 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 
 ### Notes
 
-Gzip file sizes tested with `wc -c css/layout.css` and `gzip -c css/layout.css | wc -c` commands.
+Gzip file sizes tested with `wc -c css/global.css` and `gzip -c css/global.css | wc -c` commands.
 
 ### Todo
 
