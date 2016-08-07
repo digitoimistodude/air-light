@@ -1,0 +1,23 @@
+// Site footer
+.site-footer {
+  padding: 20px;
+  background: $color_grey;
+  color: $color_body;
+  margin-top: 30px;
+
+  svg {
+    fill: $color_body;
+    top: 1px;
+    position: relative;
+  }
+
+  a {
+    color: $color_body;
+  }
+
+  .theme-info {
+    @media (min-width: $container-ipad) {
+      float: right;
+    }
+  }
+}

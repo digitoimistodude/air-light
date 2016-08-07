@@ -1,0 +1,99 @@
+// Base structure constants
+#page {
+  max-width: $layout-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// A natural box layout model to all elements
+// Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html,
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  box-sizing: content-box;
+}
+
+// Set containers
+html,
+body {
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+}
+
+.container {
+  @if $grid-type == fluid {
+    @include center($max_width: $grid-base-size, $pad: 20px);
+  } @else if $grid-type == snappy {
+
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media(min-width: $container-ipad) {
+      width: 700px;
+    }
+
+    @media(min-width: $container-ipad-landscape) {
+      width: 900px;
+    }
+
+    @media(min-width: $container-desktop) {
+      width: $grid-base-size;
+    }
+
+  } @else {
+    @include center($max_width: $grid-base-size, $pad: 20px);
+  }
+}
+
+// Content start
+.site-content {
+
+  .container {
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 0;
+    padding-right: 0;
+
+    @media(max-width: $container-desktop) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  // Meta, Edit -link
+  .entry-footer {
+    overflow: hidden;
+    clear: both;
+    display: block;
+
+    .edit-link {
+      text-align: left;
+      width: 100%;
+      display: block;
+      clear: both;
+      max-width: 100%;
+      min-width: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      top: 0;
+      bottom: 0;
+      padding: 0;
+      overflow: hidden;
+
+      a {
+        clear: both;
+        display: block;
+        margin-top: 40px;
+        padding: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// WordPress galleries
+.gallery {
+  clear: both;
+
+  .gallery-itrem {
+    float: left;
+
+    .gallery-icon {
+      a {
+        display: block;
+      }
+
+      img {
+        border: 0;
+        height: auto;
+        margin-bottom: 0;
+      }
+    }
+
+    .gallery-caption {
+      margin: 0;
+      text-align: center;
+    }
+  }
+}

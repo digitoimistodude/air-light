@@ -26,7 +26,7 @@ FILE PATHS
 */
 
 var sassSrc = 'sass/**/*.{sass,scss}';
-var sassFile = 'sass/base/layout.scss';
+var sassFile = 'sass/base/global.scss';
 var cssDest = 'css';
 var customjs = 'js/scripts.js';
 var jsSrc = 'js/src/**/*.js';

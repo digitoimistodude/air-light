@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '1.5.6' );
+define( 'AIR_VERSION', '1.5.7' );
 
 /**
  * Allow Gravity Forms to hide labels to add placeholders
@@ -118,7 +118,10 @@ endif;
  * Enqueue scripts and styles.
  */
 function air_scripts() {
-  wp_enqueue_style( 'layout', get_template_directory_uri() . '/css/layout.css' );
+  // If you want to use a different CSS per view, you can set it up here
+  $air_template = 'global';
+
+  wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/' . $air_template .'.css' );
   wp_enqueue_script( 'jquery-core' );
   wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), AIR_VERSION, true );
   wp_localize_script( 'scripts', 'screenReaderTexts', array(

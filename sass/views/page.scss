@@ -1,28 +1,3 @@
-@charset 'UTF-8';
-
-// Reset
-@import 'normalize.css/normalize';
-
-// Helpers
-@import 'helpers';
-
-// Theme options
-@import 'config';
-
-// Typography
-@import '../typography/typography';
-
-// Structure, grid
-@import 'jeet/scss/jeet/jeet';
-@import 'structure';
-@import 'forms';
-
-// Navigation
-@import '../navigation/navigation';
-
-// --- Start coding here ---
-
-
 // Default shade on top of slides
 .shade {
   background: #222;
@@ -43,10 +18,5 @@
   height: 60vh;
   position: relative;
   margin-bottom: 2rem;
-
-  // Experiment with max-height:
-
-  &.slide-front {
-    max-height: 700px;
-  }
+  max-height: 700px;
 }

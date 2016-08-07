@@ -1,0 +1,132 @@
+// Blog, articles view
+article.post {
+  margin-bottom: 30px;
+}
+
+// WordPress alignments
+.cat-links,
+.tags-links {
+  display: block;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 20px;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+.comments-link {
+  display: block;
+}
+
+del {
+  text-decoration: line-through;
+  opacity: .6;
+}
+
+// WordPress captions
+.wp-caption {
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .wp-caption-text {
+    text-align: left;
+    font-style: italic;
+    border-bottom: 2px solid $color_grey;
+    padding: 1rem 0;
+    margin-bottom: 20px;
+  }
+}
+
+// Embeds
+.entry-content {
+  embed,
+  iframe,
+  object,
+  video {
+    max-width: 100%;
+  }
+}
+
+// Tables, codes and pres
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+body {
+  kbd {
+    border: 1px solid #ccc;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
+    border-radius: 4px;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    line-height: 1.4;
+    white-space: nowrap;
+    padding: 0 .5rem;
+  }
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 .625rem;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+
+  &.debug {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}

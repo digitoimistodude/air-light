@@ -1,0 +1,18 @@
+// Sidebar
+.sidebar {
+  @media(min-width: $container-mobile) {
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+    float: right;
+    width: 33.333%;
+  }
+
+  @media(min-width: $container-ipad) {
+    padding-top: 1rem;
+    width: 25%;
+  }
+
+  @media(min-width: $container-desktop) {
+    padding-top: 0;
+  }
+}

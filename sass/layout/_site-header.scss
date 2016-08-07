@@ -1,0 +1,60 @@
+// Site header
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  .container {
+    padding: 0;
+  }
+
+  .site-branding {
+    overflow: hidden;
+
+    @media(min-width: $responsivenav) {
+      @include col(2/10);
+    }
+
+    @media(max-width: ($responsivenav)-1px) {
+      @include span(1/2);
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .site-title {
+      overflow: hidden;
+
+      a {
+        @include hiddentext();
+        background-image: url('../svg/logo.svg');
+        background-repeat: no-repeat;
+
+        // Logo size
+        width: 100%;
+        height: 80px;
+      }
+    }
+  }
+
+  .nav-collapse {
+    @media(min-width: $responsivenav) {
+      @include col(8/10);
+
+      // Set these based on the logo size
+      padding-top: 40px;
+      padding-bottom: 40px;
+
+      ul {
+        float: right;
+      }
+    }
+  }
+
+  .site-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+}
