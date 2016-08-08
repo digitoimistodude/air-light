@@ -10,19 +10,16 @@
 // Helpers
 @import 'helpers';
 @import 'accessibility';
-
-// Typography
-@import '../typography/typography';
+@import 'burger';
 
 // Structure
 @import '../layout/containers';
 @import '../layout/site-header';
 @import '../layout/site-footer';
 @import '../layout/forms';
+@import '../layout/navigation';
+@import '../layout/typography';
 //@import '../layout/sidebar';
-
-// Navigation
-@import '../navigation/navigation';
 
 // Global features
 @import '../features/top';

@@ -2,6 +2,24 @@
 @import 'sass-web-fonts/web-fonts';
 $web-fonts-protocol: 'https' !global !default;
 
+// If you use self-hosted webfonts, uncomment this mixin:
+
+// Source: https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
+// Example usage: @include fontFace('Proxima Nova','../fonts/proximanova-regular', 400);
+// @mixin fontFace($family, $src, $weight: normal, $style: normal) {
+//   @font-face {
+//     font-family: $family;
+//     src: url('#{$src}.eot'); // IE9 compat
+//     src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+//       url('#{$src}.woff2') format('woff2'),
+//       url('#{$src}.woff') format('woff'), // standards
+//       url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+//       url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+//     font-style: $style;
+//     font-weight: $weight;
+//   }
+// }
+
 // Google web fonts in use:
 $url: web-fonts-url(
   ('Libre Franklin':
