@@ -71,6 +71,7 @@ rm -rf ${PROJECTPATH}/devpackages
 rm -f ${PROJECTTHEMEPATH}/newtheme.sh
 rm -f ${PROJECTTHEMEPATH}/gulpfile.js
 rm -f ${PROJECTTHEMEPATH}/.gitignore
+rm -f ${PROJECTTHEMEPATH}/languages/*
 rm ${PROJECTTHEMEPATH}/README.md
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
