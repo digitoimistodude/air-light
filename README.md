@@ -103,9 +103,17 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 ### Installation
 
+Traditional way:
+
 1. Git clone or download zip
-2. Run `npm install`
-3. Run `gulp watch` and start coding
+2. Open Terminal and run `npm install`
+3. Open project to Atom (or your preferred editor) and run search and replace air => yourprojectname
+4. Run `gulp watch` and start coding
+
+If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your vagrant box is up and running at `10.1.2.4`, just
+
+1. Open Terminal and cd to air directory
+2. Run `sh newtheme.sh` - the script takes care of the rest (updates textdomain with your project name, checks updates for air and npm packages, runs npm install, fetches devpackages, sets up gulp, cleans up the leftover files and activates the theme via wp-cli)
 
 ### Contributing
 
