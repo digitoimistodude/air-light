@@ -20,6 +20,9 @@ $web-fonts-protocol: 'https' !global !default;
 //   }
 // }
 
+// Create a fonts folder and add your custom fonts like this:
+// @include fontFace('RidleyGrotesk-Bold', '../fonts/31D08E_0_0', 700);
+
 // Google web fonts in use:
 $url: web-fonts-url(
   ('Libre Franklin':
