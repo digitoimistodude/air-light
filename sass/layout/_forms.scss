@@ -34,7 +34,9 @@ input {
 // Fields
 body {
 
-  .site {
+  .site,
+  .gform_wrapper,
+  .gform_wrapper .gform_body .gform_fields {
     textarea,
     select,
     input[type="text"],
@@ -45,7 +47,8 @@ body {
     input[type="month"],
     input[type="week"],
     input[type="email"],
-    input[type="search"] {
+    input[type="search"],
+    input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
       color: $color-forms-text;
       border: 1px solid $color-forms;
       background: $color-forms-bg;
