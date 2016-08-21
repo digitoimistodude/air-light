@@ -61,6 +61,7 @@ body {
     padding-bottom: 2rem;
     padding-left: 0;
     padding-right: 0;
+    overflow: hidden;
 
     @media(max-width: $container-desktop) {
       padding-left: 2rem;

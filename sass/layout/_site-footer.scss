@@ -4,6 +4,8 @@
   background: $color_grey;
   color: $color_body;
   margin-top: 30px;
+  overflow: hidden;
+  clear: both;
 
   svg {
     fill: $color_body;
@@ -16,7 +18,11 @@
   }
 
   .theme-info {
+    overflow: hidden;
+
     @media (min-width: $container-ipad) {
+      width: 60%;
+      text-align: right;
       float: right;
     }
   }
