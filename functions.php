@@ -81,19 +81,19 @@ if ( ! function_exists( 'air_entry_footer' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function air_entry_footer() {
-	// Hide category and tag text for pages.
+  // Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'air' ) );
-		if ( $categories_list ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'air' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
+		if ( $categories_list ) { ?>
+      <p class="cat"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'air' ) ); ?></p>
+    <?php	}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'air' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'air' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
+		if ( $tags_list ) { ?>
+      <?php the_tags('<ul class="tags"><li>','</li><li>','</li></ul>'); ?>
+		<?php }
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {

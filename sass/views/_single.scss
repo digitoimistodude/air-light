@@ -1,0 +1,22 @@
+.post {
+  .entry-header {
+    .entry-title {
+      margin-bottom: .1em;
+
+      a {
+        color: $color-body;
+      }
+    }
+  }
+
+  .entry-meta {
+
+    * {
+      color: $color-darkgrey;
+    }
+
+    .entry-time {
+      margin-bottom: 1.5em;
+    }
+  }
+}
