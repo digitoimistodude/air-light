@@ -1,0 +1,64 @@
+// If you are using Disqus or similar, you can uncomment this in global.scss
+
+// Comments
+.comments-area {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  .comment-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      @include responsive-font(1.2vw, 14px, 17px);
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 70px;
+
+      p {
+        @include responsive-font(1.2vw, 14px, 17px);
+        color: $color-darkgrey;
+      }
+
+      .avatar {
+        float: right;
+        border-radius: 50%;
+      }
+
+      .comment-author {
+        color: $color-body;
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding: 0;
+
+        a {
+          color: $color-body;
+        }
+      }
+
+      .comment-time {
+        @include responsive-font(1.2vw, 14px, 17px);
+        padding: 0;
+        margin: 0;
+        opacity: .5;
+
+        svg {
+          fill: $color-darkgrey;
+          position: relative;
+          top: 2px;
+          margin-right: 5px;
+        }
+
+        a {
+          color: $color-darkgrey;
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -30,9 +30,9 @@ if ( post_password_required() ) {
 			<h2 class="comments-title">
 				<?php
 					printf( // WPCS: XSS OK.
-						esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'air' ) ),
+						esc_html( _nx( 'One thought', '%1$s thoughts', get_comments_number(), 'comments title', 'air' ) ),
 						number_format_i18n( get_comments_number() ),
-						'<span>' . get_the_title() . '</span>'
+						'<span class="screen-reader-text">on article "' . get_the_title() . '"</span>'
 					);
 				?>
 			</h2>
@@ -54,6 +54,7 @@ if ( post_password_required() ) {
 					wp_list_comments( array(
 						'style'      => 'ol',
 						'short_ping' => true,
+            'callback' => 'air_comments',
 					) );
 				?>
 			</ol><!-- .comment-list -->
