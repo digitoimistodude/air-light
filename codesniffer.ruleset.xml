@@ -43,6 +43,7 @@
 
 		<exclude name="WordPress.VIP.RestrictedFunctions" />
 		<exclude name="WordPress.VIP.AdminBarRemoval.RemovalDetected" />
+    <exclude name="WordPress.VIP.OrderByRand.orderby" />
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
