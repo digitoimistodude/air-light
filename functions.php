@@ -87,15 +87,27 @@ $GLOBALS['comment'] = $comment; ?>
 }
 
 /**
- * Remove WordPress Admin Bar
+ * Remove WordPress Admin Bar when not on development env
  *
  * @link http://davidwalsh.name/remove-wordpress-admin-bar-css
  */
-add_action( 'get_header', 'air_remove_admin_login_header' );
-function air_remove_admin_login_header() {
+add_action( 'get_header', 'dude_remove_admin_login_header' );
+function dude_remove_admin_login_header() {
   remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
-show_admin_bar(false);
+
+if( getenv( 'WP_ENV' ) === 'development' ) {
+	add_action( 'wp_head', function() { ?>
+		<style>
+			#wpadminbar {
+				top: auto;
+				bottom: 0;
+			}
+		</style>
+	<?php } );
+} else {
+	show_admin_bar(false);
+}
 
 /**
  * Custom uploads folder media/ instead of default content/uploads/.
