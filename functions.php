@@ -103,6 +103,11 @@ if( getenv( 'WP_ENV' ) === 'development' ) {
 				top: auto;
 				bottom: 0;
 			}
+
+			#wpadminbar.nojs li:hover > .ab-sub-wrapper,
+			#wpadminbar li.hover > .ab-sub-wrapper {
+				bottom: 32px;
+			}
 		</style>
 	<?php } );
 } else {
