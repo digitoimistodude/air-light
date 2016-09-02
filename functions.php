@@ -111,9 +111,9 @@ if ( getenv( 'WP_ENV' ) === 'development' ) {
 				bottom: 32px;
 			}
 		</style>
-  <?php } else {
-    show_admin_bar(false);
-  }
+<?php }
+} else {
+  show_admin_bar(false);
 }
 
 /**
