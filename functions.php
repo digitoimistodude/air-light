@@ -120,7 +120,7 @@ if ( getenv( 'WP_ENV' ) === 'development' ) {
  */
 update_option( 'upload_path', untrailingslashit( str_replace( 'wp', 'media', ABSPATH ) ) );
 update_option( 'upload_url_path', untrailingslashit( str_replace( 'wp', 'media', get_site_url() ) ) );
-define( 'uploads', ''.'media' );
+define( 'uploads', '' . 'media' );
 add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
 if ( ! function_exists( 'air_entry_footer' ) ) :
@@ -170,7 +170,7 @@ function air_scripts() {
   // If you want to use a different CSS per view, you can set it up here
   $air_template = 'global';
 
-  wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/' . $air_template .'.css' );
+  wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/' . $air_template . '.css' );
   wp_enqueue_script( 'jquery-core' );
   wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), AIR_VERSION, true );
   wp_localize_script( 'scripts', 'screenReaderTexts', array(

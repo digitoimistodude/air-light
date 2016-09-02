@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 			<h2 class="comments-title">
 				<?php
 					printf( // WPCS: XSS OK.
-						esc_html( _nx( 'One thought', '%1$s thoughts', get_comments_number(), 'comments title', 'air' ) ),
+						esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments title', 'air' ) ),
 						number_format_i18n( get_comments_number() ),
 						'<span class="screen-reader-text">on article "' . get_the_title() . '"</span>'
 					);
