@@ -96,7 +96,7 @@ function dude_remove_admin_login_header() {
   remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 
-if( getenv( 'WP_ENV' ) === 'development' ) {
+if ( getenv( 'WP_ENV' ) === 'development' ) {
 	add_action( 'wp_head', function() { ?>
 		<style>
 			#wpadminbar {
