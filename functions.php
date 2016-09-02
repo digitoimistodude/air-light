@@ -91,14 +91,16 @@ $GLOBALS['comment'] = $comment; ?>
  *
  * @link http://davidwalsh.name/remove-wordpress-admin-bar-css
  */
-add_action( 'get_header', 'dude_remove_admin_login_header' );
-function dude_remove_admin_login_header() {
+add_action( 'get_header', 'air_remove_admin_login_header' );
+function air_remove_admin_login_header() {
   remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 
 if ( getenv( 'WP_ENV' ) === 'development' ) {
-	add_action( 'wp_head', function() { ?>
-		<style>
+  add_action('wp_head', 'air_dev_adminbar');
+
+  function air_dev_adminbar() { ?>
+    <style>
 			#wpadminbar {
 				top: auto;
 				bottom: 0;
@@ -109,9 +111,9 @@ if ( getenv( 'WP_ENV' ) === 'development' ) {
 				bottom: 32px;
 			}
 		</style>
-	<?php } );
-} else {
-	show_admin_bar(false);
+  <?php } else {
+    show_admin_bar(false);
+  }
 }
 
 /**
