@@ -157,7 +157,7 @@ body {
 
     // Heading defaults
     h1 {
-      @include responsive-font(4vw, 48px, 60px);
+      @include responsive-font(4vw, 38px, 80px);
       letter-spacing: -.02em;
       font-weight: 700;
 
@@ -175,7 +175,7 @@ body {
     }
 
     h2 {
-      @include responsive-font(3.2vw, 36px, 48px);
+      @include responsive-font(3.2vw, 32px, 68px);
       letter-spacing: -.02em;
 
       @if $headings-line-height-setup == flexible {
@@ -193,7 +193,7 @@ body {
 
     h3,
     .gform_wrapper h3.gform_title {
-      @include responsive-font(2.4vw, 24px, 36px);
+      @include responsive-font(2.4vw, 24px, 46px);
       letter-spacing: -.02em;
 
       @if $headings-line-height-setup == flexible {
@@ -210,7 +210,7 @@ body {
     }
 
     h4 {
-      @include responsive-font(1.6vw, 21px, 24px);
+      @include responsive-font(1.6vw, 21px, 34px);
 
       @if $headings-line-height-setup == flexible {
         line-height: 1.4rem;
