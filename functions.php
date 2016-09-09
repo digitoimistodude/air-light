@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '1.6.9' );
+define( 'AIR_VERSION', '1.7.0' );
 
 /**
  * Allow Gravity Forms to hide labels to add placeholders
