@@ -101,6 +101,11 @@ if ( getenv( 'WP_ENV' ) === 'development' ) {
 
   function air_dev_adminbar() { ?>
     <style>
+      html {
+        height: auto;
+        padding-bottom: 32px;
+      }
+
 			#wpadminbar {
 				top: auto;
 				bottom: 0;
