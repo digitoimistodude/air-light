@@ -122,6 +122,16 @@ if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
 }
 
 /**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function _s_pingback_header() {
+	if ( is_singular() && pings_open() ) :
+		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
+	endif;
+}
+add_action( 'wp_head', '_s_pingback_header' );
+
+/**
  * Custom uploads folder media/ instead of default content/uploads/.
  * Comment these out if you want to set up media library folder in wp-admin.
  */
