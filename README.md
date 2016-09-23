@@ -25,6 +25,7 @@ This theme is built to be very straightforward, front end developer friendly and
     4. [Navigation](#navigation)
     5. [WordPress & functions](#wordpress--functions)
     6. [Disabled features](#disabled-features)
+4. [Requirements](#requirements)    
 5. [Recommendations for development](#recommendations-for-development)
 6. [Installation](#installation)
 7. [Contributing](#contributing)
@@ -73,6 +74,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * Sassified version of [viljamis' responsive-nav](https://github.com/viljamis/responsive-nav.js), fully Accessible and responsive multi-level navigation
 
 #### WordPress & functions
+
 * Available for translation
 * Automatic feed links
 * WordPress managed title tag
@@ -94,6 +96,11 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * Template tags (direct edit preferred)
 * WordPress admin bar for logged in users
 * No sidebar by default
+
+### Requirements
+
+* Requires at least: WordPress 4.0
+* Tested up to WordPress 4.6.1
 
 ### Recommendations for development
 
@@ -122,10 +129,3 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 ### Notes
 
 Gzip file sizes tested with `wc -c css/global.css` and `gzip -c css/global.css | wc -c` commands.
-
-### Todo
-
-- [x] Include gulpfile.js in the repo
-- [x] Add default navigation
-- [x] Basic form styles
-- [x] Theme starter bash script
