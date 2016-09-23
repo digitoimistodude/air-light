@@ -41,7 +41,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'air' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air' ); ?></a>
 
 	<header id="masthead" class="site-header">
 
@@ -86,5 +86,7 @@
 
 		</div><!-- .container -->
 	</header><!-- #masthead -->
+
+  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 	<div id="content" class="site-content">

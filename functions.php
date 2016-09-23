@@ -96,7 +96,7 @@ function air_remove_admin_login_header() {
   remove_action( 'wp_head', '_admin_bar_bump_cb' );
 }
 
-if ( getenv( 'WP_ENV' ) === 'development' ) {
+if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
   add_action('wp_head', 'air_dev_adminbar');
 
   function air_dev_adminbar() { ?>

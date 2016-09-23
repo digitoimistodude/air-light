@@ -9,8 +9,6 @@
 
 ?>
 
-<?php get_template_part( 'template-parts/hero', 'page' ); ?>
-
 <div class="container">
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
