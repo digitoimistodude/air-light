@@ -1,9 +1,169 @@
 // WordPress galleries
 .gallery {
   clear: both;
+  overflow: hidden;
+  text-align: center;
+
+  &.gallery-columns-1 {
+    .gallery-item {
+      @include stack();
+    }
+  }
+
+  &.gallery-columns-2 {
+    .gallery-item {
+      @include col(1/2, $cycle: 2);
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-3 {
+    .gallery-item {
+      @include col(1/3, $cycle: 3);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-4 {
+    .gallery-item {
+      @include col(1/4, $cycle: 4);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-5 {
+    .gallery-item {
+      @include col(1/5, $cycle: 5);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-6 {
+    .gallery-item {
+      @include col(1/6, $cycle: 6);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-7 {
+    .gallery-item {
+      @include col(1/7, $cycle: 7);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-8 {
+    .gallery-item {
+      @include col(1/8, $cycle: 8);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-9 {
+    .gallery-item {
+      @include col(1/9, $cycle: 9);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
+
+  &.gallery-columns-10 {
+    .gallery-item {
+      @include col(1/10, $cycle: 10);
+
+      @media (max-width: $container-ipad) {
+        @include col(1/3, $cycle: 3);
+      }
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+        text-align: center;
+      }
+    }
+  }
 
   .gallery-item {
-    float: left;
+    // Default columns
+    @include col(1/4, $cycle: 4);
+
+    @media (max-width: $container-ipad) {
+      @include col(1/3, $cycle: 3);
+    }
+
+    @media (max-width: $container-mobile) {
+      @include stack();
+      text-align: center;
+    }
+
+    .gallery-caption {
+      font-size: .85em;
+      margin-top: .7em;
+      font-style: italic;
+      display: block;
+      font-family: $font-headings;
+      line-height: 1.2;
+      text-align: center;
+      opacity: .6;
+    }
 
     .gallery-icon {
       a {
@@ -14,12 +174,11 @@
         border: 0;
         height: auto;
         margin-bottom: 0;
+        width: 100%;
+        height: auto;
+        max-width: 150px;
+        max-height: 150px;
       }
-    }
-
-    .gallery-caption {
-      margin: 0;
-      text-align: center;
     }
   }
 }
