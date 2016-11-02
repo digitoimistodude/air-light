@@ -51,7 +51,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * All good things from the latest [Underscores](https://github.com/Automattic/_s)
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
-* [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include col(1/100)`
+* [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include column(1/100)`
 * Container div inside site-main
 * Possible to choose between fluid (flexible 100%) and snappy grid style (snapping to breakpoint, more space around)
 * Inline SVG-ready

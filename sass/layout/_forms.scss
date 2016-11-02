@@ -178,7 +178,7 @@ body {
   }
 
   .comment-form-comment {
-    @include col(1/2);
+    @include column(1/2);
     margin-right: 2.6em;
 
     @media(max-width: $container-ipad) {

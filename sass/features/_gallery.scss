@@ -12,7 +12,7 @@
 
   &.gallery-columns-2 {
     .gallery-item {
-      @include col(1/2, $cycle: 2);
+      @include column(1/2, $cycle: 2);
 
       @media (max-width: $container-mobile) {
         @include stack();
@@ -23,10 +23,10 @@
 
   &.gallery-columns-3 {
     .gallery-item {
-      @include col(1/3, $cycle: 3);
+      @include column(1/3, $cycle: 3);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -38,10 +38,10 @@
 
   &.gallery-columns-4 {
     .gallery-item {
-      @include col(1/4, $cycle: 4);
+      @include column(1/4, $cycle: 4);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -53,10 +53,10 @@
 
   &.gallery-columns-5 {
     .gallery-item {
-      @include col(1/5, $cycle: 5);
+      @include column(1/5, $cycle: 5);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -68,10 +68,10 @@
 
   &.gallery-columns-6 {
     .gallery-item {
-      @include col(1/6, $cycle: 6);
+      @include column(1/6, $cycle: 6);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -83,10 +83,10 @@
 
   &.gallery-columns-7 {
     .gallery-item {
-      @include col(1/7, $cycle: 7);
+      @include column(1/7, $cycle: 7);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -98,10 +98,10 @@
 
   &.gallery-columns-8 {
     .gallery-item {
-      @include col(1/8, $cycle: 8);
+      @include column(1/8, $cycle: 8);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -113,10 +113,10 @@
 
   &.gallery-columns-9 {
     .gallery-item {
-      @include col(1/9, $cycle: 9);
+      @include column(1/9, $cycle: 9);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -128,10 +128,10 @@
 
   &.gallery-columns-10 {
     .gallery-item {
-      @include col(1/10, $cycle: 10);
+      @include column(1/10, $cycle: 10);
 
       @media (max-width: $container-ipad) {
-        @include col(1/3, $cycle: 3);
+        @include column(1/3, $cycle: 3);
       }
 
       @media (max-width: $container-mobile) {
@@ -143,10 +143,10 @@
 
   .gallery-item {
     // Default columns
-    @include col(1/4, $cycle: 4);
+    @include column(1/4, $cycle: 4);
 
     @media (max-width: $container-ipad) {
-      @include col(1/3, $cycle: 3);
+      @include column(1/3, $cycle: 3);
     }
 
     @media (max-width: $container-mobile) {
