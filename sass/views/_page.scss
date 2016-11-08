@@ -1,10 +1,6 @@
-// Basic slide layout
+// Add custom page layout here
 .slide {
-  @include background-cover();
-  background-position: bottom; // Usually center works best, bottom is just for air demo purposes
-  background-color: #e9e9e9;
-  height: 60vh;
-  position: relative;
-  margin-bottom: 2rem;
-  max-height: 700px;
+  &.slide-page {
+    height: 50vh;
+  }
 }
