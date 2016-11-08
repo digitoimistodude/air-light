@@ -1,15 +1,3 @@
-// Default shade on top of slides
-.shade {
-  background: #222;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  opacity: .1; // Play around with this, depending on your layout .33 is usually good amount
-}
-
 // Basic slide layout
 .slide {
   @include background-cover();
