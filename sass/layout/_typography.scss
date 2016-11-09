@@ -101,6 +101,7 @@ $url: web-fonts-url(
   }
 }
 
+// Start typography settings
 body {
   line-height: 2rem;
   font-size: 1rem;
@@ -243,7 +244,6 @@ body {
     h6 {
       @include responsive-font(1.2vw, 14px, 18px);
 
-
       @if $headings-line-height-setup == flexible {
         line-height: 1rem;
       } @else if $headings-line-height-setup == force {
@@ -266,7 +266,7 @@ body {
       font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
       color: $color-body;
       font-family: $font-headings;
-      font-weight: 700;
+      font-weight: $headings-weight;
     }
 
     // Lists
