@@ -4,7 +4,7 @@ Theme URI: https://github.com/digitoimistodude/air
 Author: Digitoimisto Dude Oy
 Author URI: https://www.dude.fi
 Description: A minimalist WordPress starter theme.
-Version: 1.8.2
+Version: 1.8.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: air
@@ -13,12 +13,12 @@ Tags:
 
 /**
 * AIR theme version information
-* Last implemented _s commit: ff4b374 (Sep 03, 2016)
-* Last checked _s commit: ff4b374 (Sep 03, 2016)
+* Last implemented _s commit: 7d0846e (Sep 23, 2016)
+* Last checked _s commit: 7d0846e (Sep 23, 2016)
 *
 * @link https://github.com/Automattic/_s/commits/master
 *
 * @author Roni Laukkarinen, Timi Wahalahti
-* @since 08.11.2016
-* @version 12.10.2016
+* @version 09.11.2016
+* @since 28.01.2016
 */
