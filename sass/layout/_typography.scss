@@ -169,7 +169,7 @@ body {
     }
 
     // Define heading scales
-    @if $heading-scale == large {
+    @if $headings-scale == large {
 
       h1 {
         @include responsive-font(4vw, 38px, 80px);
@@ -196,7 +196,7 @@ body {
         @include responsive-font(1.2vw, 14px, 18px);
       }
 
-    } @else if $heading-scale == medium {
+    } @else if $headings-scale == medium {
 
       h1 {
         @include responsive-font(3.2vw, 32px, 68px);
@@ -223,7 +223,7 @@ body {
         @include responsive-font(1.2vw, 14px, 18px);
       }
 
-    } @else if $heading-scale == small {
+    } @else if $headings-scale == small {
 
       h1 {
         @include responsive-font(2.4vw, 24px, 46px);

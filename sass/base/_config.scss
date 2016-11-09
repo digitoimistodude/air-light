@@ -45,7 +45,7 @@ $font-base-line-height-elements: 1.68; // Line height for other elements like ta
 $headings-line-height-setup: force; // Force: all headings have same line height. Flexible: values are set separately in _typography.scss
 $headings-line-height-forced: 1.22; // This is effective only if force is chosen in $headings-line-height-setup
 $headings-weight: 900; // Default title weight. Usually 700 or 900 works pretty well
-$heading-scale: medium; // Change this as a base for your project or create your own in _typography.scss.
+$headings-scale: medium; // Change this as a base for your project or create your own in _typography.scss.
 
 // Form settings
 $color-button-bg: #262626;
