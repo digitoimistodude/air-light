@@ -156,8 +156,103 @@ body {
     }
 
     // Heading defaults
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+      color: $color-body;
+      font-family: $font-headings;
+      font-weight: $headings-weight;
+    }
+
+    // Define heading scales
+    @if $heading-scale == large {
+
+      h1 {
+        @include responsive-font(4vw, 38px, 80px);
+      }
+
+      h2 {
+        @include responsive-font(3.2vw, 32px, 68px);
+      }
+
+      h3,
+      .gform_wrapper h3.gform_title {
+        @include responsive-font(2.4vw, 24px, 46px);
+      }
+
+      h4 {
+        @include responsive-font(1.6vw, 21px, 34px);
+      }
+
+      h5 {
+        @include responsive-font(1.4vw, 18px, 21px);
+      }
+
+      h6 {
+        @include responsive-font(1.2vw, 14px, 18px);
+      }
+
+    } @else if $heading-scale == medium {
+
+      h1 {
+        @include responsive-font(3.2vw, 32px, 68px);
+      }
+
+      h2 {
+        @include responsive-font(2.4vw, 24px, 46px);
+      }
+
+      h3,
+      .gform_wrapper h3.gform_title {
+        @include responsive-font(1.6vw, 21px, 34px);
+      }
+
+      h4 {
+        @include responsive-font(1.4vw, 18px, 21px);
+      }
+
+      h5 {
+        @include responsive-font(1.2vw, 14px, 18px);
+      }
+
+      h6 {
+        @include responsive-font(1.2vw, 14px, 18px);
+      }
+
+    } @else if $heading-scale == small {
+
+      h1 {
+        @include responsive-font(2.4vw, 24px, 46px);
+      }
+
+      h2 {
+        @include responsive-font(1.6vw, 21px, 34px);
+      }
+
+      h3,
+      .gform_wrapper h3.gform_title {
+        @include responsive-font(1.4vw, 18px, 21px);
+      }
+
+      h4 {
+        @include responsive-font(1.2vw, 14px, 18px);
+      }
+
+      h5 {
+        @include responsive-font(1.2vw, 14px, 18px);
+      }
+
+      h6 {
+        @include responsive-font(1.2vw, 14px, 18px);
+      }
+
+    }
+
     h1 {
-      @include responsive-font(4vw, 38px, 80px);
       letter-spacing: -.02em;
       font-weight: 700;
 
@@ -175,7 +270,6 @@ body {
     }
 
     h2 {
-      @include responsive-font(3.2vw, 32px, 68px);
       letter-spacing: -.02em;
 
       @if $headings-line-height-setup == flexible {
@@ -193,7 +287,6 @@ body {
 
     h3,
     .gform_wrapper h3.gform_title {
-      @include responsive-font(2.4vw, 24px, 46px);
       letter-spacing: -.02em;
 
       @if $headings-line-height-setup == flexible {
@@ -210,8 +303,6 @@ body {
     }
 
     h4 {
-      @include responsive-font(1.6vw, 21px, 34px);
-
       @if $headings-line-height-setup == flexible {
         line-height: 1.4rem;
       } @else if $headings-line-height-setup == force {
@@ -226,8 +317,6 @@ body {
     }
 
     h5 {
-      @include responsive-font(1.4vw, 18px, 21px);
-
       @if $headings-line-height-setup == flexible {
         line-height: 1.2rem;
       } @else if $headings-line-height-setup == force {
@@ -242,8 +331,6 @@ body {
     }
 
     h6 {
-      @include responsive-font(1.2vw, 14px, 18px);
-
       @if $headings-line-height-setup == flexible {
         line-height: 1rem;
       } @else if $headings-line-height-setup == force {
@@ -255,18 +342,6 @@ body {
       &:first-child {
         margin-top: 0;
       }
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-      color: $color-body;
-      font-family: $font-headings;
-      font-weight: $headings-weight;
     }
 
     // Lists
