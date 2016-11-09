@@ -258,8 +258,6 @@ body {
 
       @if $headings-line-height-setup == flexible {
         line-height: 3.8rem;
-      } @else if $headings-line-height-setup == force {
-        line-height: $headings-line-height-forced;
       } @else {
         line-height: $headings-line-height-forced;
       }
@@ -274,8 +272,6 @@ body {
 
       @if $headings-line-height-setup == flexible {
         line-height: 3.2rem;
-      } @else if $headings-line-height-setup == force {
-        line-height: $headings-line-height-forced;
       } @else {
         line-height: $headings-line-height-forced;
       }
@@ -291,8 +287,6 @@ body {
 
       @if $headings-line-height-setup == flexible {
         line-height: 2.2rem;
-      } @else if $headings-line-height-setup == force {
-        line-height: $headings-line-height-forced;
       } @else {
         line-height: $headings-line-height-forced;
       }
@@ -305,8 +299,6 @@ body {
     h4 {
       @if $headings-line-height-setup == flexible {
         line-height: 1.4rem;
-      } @else if $headings-line-height-setup == force {
-        line-height: $headings-line-height-forced;
       } @else {
         line-height: $headings-line-height-forced;
       }
@@ -319,8 +311,6 @@ body {
     h5 {
       @if $headings-line-height-setup == flexible {
         line-height: 1.2rem;
-      } @else if $headings-line-height-setup == force {
-        line-height: $headings-line-height-forced;
       } @else {
         line-height: $headings-line-height-forced;
       }
@@ -333,8 +323,6 @@ body {
     h6 {
       @if $headings-line-height-setup == flexible {
         line-height: 1rem;
-      } @else if $headings-line-height-setup == force {
-        line-height: $headings-line-height-forced;
       } @else {
         line-height: $headings-line-height-forced;
       }
