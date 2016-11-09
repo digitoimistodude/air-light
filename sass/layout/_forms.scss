@@ -1,9 +1,9 @@
 // Buttons
-button,
-input[type="reset"],
-input[type="submit"],
-input[type="button"],
-.button {
+button:not(.nav-toggle),
+input[type="reset"]:not(.nav-toggle),
+input[type="submit"]:not(.nav-toggle),
+input[type="button"]:not(.nav-toggle),
+.button:not(.nav-toggle) {
     background: $color-button-bg;
     color: $color-button-text;
     border: 0;
