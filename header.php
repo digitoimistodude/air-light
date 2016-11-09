@@ -46,7 +46,7 @@
 				endif; ?>
 			</div><!-- .site-branding -->
 
-			<button id="nav-toggle" class="nav-toggle" aria-controls="nav" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Primary Menu', 'air' ); ?></span></button>
+			<button id="nav-toggle" class="nav-toggle" aria-controls="nav" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Menu', 'air' ); ?></span></button>
 
 			<nav id="nav" class="nav-collapse">
 
