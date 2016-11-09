@@ -254,7 +254,6 @@ body {
 
     h1 {
       letter-spacing: -.02em;
-      font-weight: 700;
 
       @if $headings-line-height-setup == flexible {
         line-height: 3.8rem;
