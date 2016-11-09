@@ -48,7 +48,7 @@ body {
     }
 
   } @else {
-    @include center($max_width: $grid-base-size, $pad: 20px);
+    @include center($max_width: $grid-base-size, $pad: $container-default-pad);
   }
 }
 
@@ -57,8 +57,8 @@ body {
 
   .container {
     margin: 0 auto;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: $container-default-pad;
+    padding-bottom: $container-default-pad;
     padding-left: 0;
     padding-right: 0;
     overflow: hidden;

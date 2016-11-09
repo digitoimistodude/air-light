@@ -60,8 +60,9 @@ $forms-border-focus: darken(#cfd9db, 25%);
 $grid-type: fluid; // 'fluid' or 'snappy'
 $layout-max-width: 100%;
 
-// Set layout max width on desktop:
-$grid-base-size: 960px; // This is default .container size
+// Container settings
+$container-default-pad: 4rem; // Default padding between containers, mostly vertically. Tweak _containers.scss.
+$grid-base-size: 960px; // Layout max width on desktop. This is default .container size
 $container-mobile: 480px;
 $container-desktop: 1200px;
 $container-ipad: 770px;
