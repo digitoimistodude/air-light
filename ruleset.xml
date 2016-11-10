@@ -16,6 +16,7 @@
 		<exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace" />
     <exclude name="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" />
+    <exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
 
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
@@ -48,6 +49,6 @@
 		<exclude name="WordPress.VIP.RestrictedFunctions" />
 		<exclude name="WordPress.VIP.AdminBarRemoval.RemovalDetected" />
     <exclude name="WordPress.VIP.OrderByRand" />
-    <exclude name="WordPress.VIP.OrderByRand.orderby" />    
+    <exclude name="WordPress.VIP.OrderByRand.orderby" />
 	</rule>
 </ruleset>

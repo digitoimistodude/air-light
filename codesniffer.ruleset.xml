@@ -16,6 +16,7 @@
 		<exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace" />
     <exclude name="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" />
+    <exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
 
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
