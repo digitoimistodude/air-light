@@ -10,7 +10,20 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '1.9.1' );
+define( 'AIR_VERSION', '1.9.2' );
+
+/**
+ * WooCommerce support
+ */
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+/**
+ * Requires
+ */
+require get_template_directory().'/inc/woocommerce.php';
 
 /**
  * Allow Gravity Forms to hide labels to add placeholders

@@ -1,0 +1,5 @@
+// Add your custom typography presets here
+
+.betweenh2andh3 {
+  @include responsive-font(3.2vw, 24px, 36px);
+}

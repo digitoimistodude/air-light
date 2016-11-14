@@ -101,6 +101,9 @@ $url: web-fonts-url(
   }
 }
 
+// Import presets
+@import 'typography-presets';
+
 // Start typography settings
 body {
   line-height: 2rem;
