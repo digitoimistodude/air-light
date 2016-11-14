@@ -23,7 +23,7 @@ function woocommerce_support() {
 /**
  * Requires
  */
-require get_template_directory().'/inc/woocommerce.php';
+require get_template_directory() . '/inc/woocommerce.php';
 
 /**
  * Allow Gravity Forms to hide labels to add placeholders

@@ -12,14 +12,14 @@ remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_l
 // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
 // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 // remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs' );
-//add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 20 );
+// add_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 20 );
 // add_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 30 );
 // add_action( 'woocommerce_before_shop_loop', 'woocommerce_pagination', 40 );
 // add_action( 'woocommerce_single_product_summary', 'woocommerce_breadcrumb', 4 );
 
 // Change number or products per row to 3
 add_filter( 'loop_shop_columns', 'air_wc_loop_columns' );
-if( !function_exists( 'air_wc_loop_columns' ) ) {
+if ( ! function_exists( 'air_wc_loop_columns' ) ) {
 	function air_wc_loop_columns() {
 		return 3; // 3 products per row
 	}
@@ -61,7 +61,7 @@ function jk_change_breadcrumb_delimiter( $defaults ) {
 add_action( 'init', 'air_wc_clear_cart_url' );
 function air_wc_clear_cart_url() {
   global $woocommerce;
-	if( isset( $_GET['empty-cart'] ) ) {
+	if ( isset( $_GET['empty-cart'] ) ) {
 		$woocommerce->cart->empty_cart();
 	}
 }

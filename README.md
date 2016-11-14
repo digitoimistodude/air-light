@@ -25,6 +25,7 @@ This theme is built to be very straightforward, front end developer friendly and
     4. [Navigation](#navigation)
     5. [WordPress & functions](#wordpress--functions)
     6. [Disabled features](#disabled-features)
+    7. [WooCommerce support](#woocommerce-support)
 4. [Requirements](#requirements)    
 5. [Recommendations for development](#recommendations-for-development)
 6. [Installation](#installation)
@@ -96,6 +97,10 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * Template tags (direct edit preferred)
 * WordPress admin bar for logged in users
 * No sidebar by default
+
+#### WooCommerce support
+
+Air has by default basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884). It includes the most basic overrides like buttons. WooCommerce as well as other things in the theme are built for starting point only.
 
 ### Requirements
 

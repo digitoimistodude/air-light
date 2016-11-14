@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $template = get_option( 'template' );
 
-switch( $template ) {
+switch ($template) {
 	case 'twentyeleven' :
 		echo '<div id="primary"><div id="content" role="main" class="twentyeleven">';
 		break;
@@ -41,7 +41,7 @@ switch( $template ) {
 	case 'twentysixteen' :
 		echo '<div id="primary" class="content-area twentysixteen"><main id="main" class="site-main" role="main">';
 		break;
-  case 'air':
+  case 'air' :
     echo '<div class="container woocommerce air">';
     break;
 	default :
