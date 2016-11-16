@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '1.9.2' );
+define( 'AIR_VERSION', '1.9.3' );
 
 /**
  * WooCommerce support
@@ -46,7 +46,40 @@ add_theme_support( 'automatic-feed-links' );
 add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+
+/**
+ * Set a locale for Finnish language
+ */
 setlocale( LC_ALL, 'fi_FI.utf8' );
+
+/*
+* Clean up WP admin bar
+*/
+function remove_admin_bar_links() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('about');            // Remove the about WordPress link
+    $wp_admin_bar->remove_menu('wporg');            // Remove the WordPress.org link
+    $wp_admin_bar->remove_menu('documentation');    // Remove the WordPress documentation link
+    $wp_admin_bar->remove_menu('support-forums');   // Remove the support forums link
+    $wp_admin_bar->remove_menu('feedback');         // Remove the feedback link
+    $wp_admin_bar->remove_menu('updates');          // Remove the updates link
+    $wp_admin_bar->remove_menu('comments');         // Remove the comments link
+    $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
+}
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
+
+/*
+* Clean up WP admin menu from stuff we usually don't need
+*/
+function remove_admin_menu_links() {
+    remove_menu_page('themes.php?page=editcss');
+    remove_menu_page('edit.php');
+    remove_menu_page('widgets.php');
+    remove_menu_page('edit.php?post_type=acf-field-group');
+    remove_menu_page('edit-comments.php');
+    remove_menu_page('admin.php?page=jetpack');
+}
+add_action('admin_menu', 'remove_admin_menu_links', 999);
 
 /**
 * Hide WP updates nag
