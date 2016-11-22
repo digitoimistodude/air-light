@@ -70,6 +70,5 @@
 		</div><!-- .container -->
 	</header><!-- #masthead -->
 
-  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
-
 	<div id="content" class="site-content">
+    <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
