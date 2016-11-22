@@ -73,6 +73,7 @@ rm -f ${PROJECTTHEMEPATH}/gulpfile.js
 rm -f ${PROJECTTHEMEPATH}/.gitignore
 rm -f ${PROJECTTHEMEPATH}/languages/*
 rm ${PROJECTTHEMEPATH}/README.md
+rm ${PROJECTTHEMEPATH}/LICENSE.md
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
 echo "" > ${PROJECTPATH}/media/index.php
