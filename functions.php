@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '1.9.4' );
+define( 'AIR_VERSION', '1.9.5' );
 
 /**
  * WooCommerce support
@@ -64,7 +64,6 @@ function remove_admin_bar_links() {
     $wp_admin_bar->remove_menu('feedback');         // Remove the feedback link
     $wp_admin_bar->remove_menu('updates');          // Remove the updates link
     $wp_admin_bar->remove_menu('comments');         // Remove the comments link
-    $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 
@@ -75,7 +74,6 @@ function remove_admin_menu_links() {
     remove_menu_page('themes.php?page=editcss');
     remove_menu_page('edit.php');
     remove_menu_page('widgets.php');
-    remove_menu_page('edit.php?post_type=acf-field-group');
     remove_menu_page('edit-comments.php');
     remove_menu_page('admin.php?page=jetpack');
 }
