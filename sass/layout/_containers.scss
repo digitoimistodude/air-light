@@ -63,7 +63,7 @@ body {
     padding-right: 0;
     overflow: hidden;
 
-    @media(max-width: $container-desktop) {
+    @media(max-width: $grid-base-size) {
       padding-left: 2rem;
       padding-right: 2rem;
     }
