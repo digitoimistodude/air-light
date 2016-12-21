@@ -97,6 +97,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * Template tags (direct edit preferred)
 * WordPress admin bar for logged in users
 * No sidebar by default
+* Emojicons
 
 #### WooCommerce support
 
