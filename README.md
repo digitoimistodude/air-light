@@ -105,8 +105,8 @@ Air has by default basic WooCommerce support [from version 1.9.2](https://github
 
 ### Requirements
 
-* Requires at least: WordPress 4.0
-* Tested up to WordPress 4.6.1
+* Requires at least: WordPress 4.7.0
+* Tested up to WordPress 4.7.0
 
 ### Recommendations for development
 

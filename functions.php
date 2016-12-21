@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '1.9.8' );
+define( 'AIR_VERSION', '1.9.9' );
 
 /**
  * WooCommerce support
@@ -261,9 +261,9 @@ function air_scripts() {
   // If you want to use a different CSS per view, you can set it up here
   $air_template = 'global';
 
-  wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/' . $air_template . '.css' );
+  wp_enqueue_style( 'styles', get_theme_file_uri( 'css/' . $air_template . '.css' ) );
   wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), AIR_VERSION, true );
+  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/all.js', array(), AIR_VERSION, true ) );
   wp_localize_script( 'scripts', 'screenReaderTexts', array(
 		'expandMenu'            => esc_html__( 'Open menu', 'air' ),
 		'collapseMenu'          => esc_html__( 'Close menu', 'air' ),
