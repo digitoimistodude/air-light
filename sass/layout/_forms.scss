@@ -17,6 +17,7 @@ input[type="button"]:not(.nav-toggle),
     border-radius: $forms-border-radius;
     transition: 150ms linear all;
     appearance: none;
+    font-family: $font-base;
 
     &:hover,
     &:focus {
@@ -53,6 +54,7 @@ body {
       border: 1px solid $color-forms;
       background: $color-forms-bg;
       border-radius: $forms-border-radius;
+      font-family: $font-base;
       padding: 16px;
       text-decoration: none;
       position: relative;
