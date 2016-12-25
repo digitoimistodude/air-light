@@ -31,7 +31,6 @@ require get_template_directory() . '/inc/woocommerce.php';
  * @link http://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
  */
 function disable_wp_emojicons() {
-
   // All actions related to emojis
   remove_action( 'admin_print_styles', 'print_emoji_styles' );
   remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -40,12 +39,10 @@ function disable_wp_emojicons() {
   remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
   remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
   remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-
   // Remove TinyMCE emojis
   add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 add_action( 'init', 'disable_wp_emojicons' );
-
 // Disable TinyMCE emojicons
 function disable_emojicons_tinymce( $plugins ) {
   if ( is_array( $plugins ) ) {
@@ -261,9 +258,9 @@ function air_scripts() {
   // If you want to use a different CSS per view, you can set it up here
   $air_template = 'global';
 
-  wp_enqueue_style( 'styles', get_theme_file_uri( 'css/' . $air_template . '.css' ) );
+  wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/' . $air_template . '.css' );
   wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/all.js', array(), AIR_VERSION, true ) );
+  wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/all.js', array(), AIR_VERSION, true );
   wp_localize_script( 'scripts', 'screenReaderTexts', array(
 		'expandMenu'            => esc_html__( 'Open menu', 'air' ),
 		'collapseMenu'          => esc_html__( 'Close menu', 'air' ),

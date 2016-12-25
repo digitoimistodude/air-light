@@ -9,7 +9,7 @@ var navigation = responsiveNav(".nav-collapse", {
   animate: true,
   transition: 284,
   customToggle: ".nav-toggle",
-  navClass: "nav-collapse",
+  navClass: ".nav-collapse",
   menuItems: "menu-items",
   subMenu: "sub-menu",
   enableFocus: true,
