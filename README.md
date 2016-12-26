@@ -31,7 +31,6 @@ This theme is built to be very straightforward, front end developer friendly and
 6. [Installation](#installation)
 7. [Contributing](#contributing)
 8. [Notes](#notes)
-9. [Todo](#todo)
 
 ### Please note before using
 
