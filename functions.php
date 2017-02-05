@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '2.0.1' );
+define( 'AIR_VERSION', '2.0.2' );
 
 /**
  * WooCommerce support
