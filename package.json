@@ -22,6 +22,6 @@
   "dependencies": {
     "jeet": "^7.0.0",
     "normalize.css": "^5.0.0",
-    "sass-web-fonts": "^2.0.2"
+    "sass-web-fonts": "^2.0.3"
   }
 }
