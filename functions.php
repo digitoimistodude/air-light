@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '2.0.3' );
+define( 'AIR_VERSION', '2.0.4' );
 
 /**
  * WooCommerce support
@@ -140,7 +140,7 @@ $GLOBALS['comment'] = $comment; ?>
       <h4 class="comment-author"><?php printf( __( '<a href="#">%s</h4>' ), get_comment_author_link() ) ?></a>
 
     <?php if ( 0 === $comment->comment_approved ) : ?>
-      <p><em><?php _e( 'Kommenttisi odottaa ylläpidon hyväksymistä.', 'air' ) ?></em></p>
+      <p><em><?php _e( 'Your comment is awaiting approval.', 'air' ) ?></em></p>
     <?php endif; ?>
 
       <p class="comment-time">

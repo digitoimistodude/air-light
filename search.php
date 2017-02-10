@@ -7,39 +7,41 @@
  * @package air
  */
 
-get_header(); ?>
+get_header();
+get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) : ?>
+      <div class="container">
 
-				<div class="container">
-					<header class="page-header">
-						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'air' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-					</header><!-- .page-header -->
-				</div>
+        <?php
+        if ( have_posts() ) : ?>
 
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post(); ?>
+              <header class="page-header">
+                <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'air' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+              </header><!-- .page-header -->
 
-					<?php get_template_part( 'template-parts/content', 'search' ); ?>
+            <?php
+            while ( have_posts() ) : the_post(); ?>
 
-				<?php endwhile;
+              <?php get_template_part( 'template-parts/content', 'search' ); ?>
 
-				the_posts_navigation();
+            <?php endwhile;
 
-			else : ?>
+            the_posts_navigation();
 
-				<?php get_template_part( 'template-parts/content', 'none' ); ?>
+          else : ?>
 
-		<?php endif; ?>
+            <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+        <?php endif; ?>
+
+        </main><!-- #main -->
+        </section><!-- #primary -->
+
+      </div><!-- .container -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

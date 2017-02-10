@@ -12,6 +12,8 @@
 
 get_header(); ?>
 
+<?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -32,5 +34,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();
