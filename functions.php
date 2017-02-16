@@ -68,6 +68,20 @@ function air_lowpriority_yoastseo() {
 add_filter( 'wpseo_metabox_prio', 'air_lowpriority_yoastseo' );
 
 /**
+ * Remove SendGrid credentials in development env, so that
+ * test emails won't go out to client.
+ */
+if( getenv( 'WP_ENV' ) === 'development' ) {
+  add_filter( 'option_sendgrid_api_key', function() {
+    return '';
+  } );
+
+  add_filter( 'option_sendgrid_pwd', function() {
+    return '';
+  } );
+}
+
+/**
  * Enable theme support for essential features
  */
 load_theme_textdomain( 'air', get_template_directory() . '/languages' );
