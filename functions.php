@@ -28,9 +28,10 @@ require get_template_directory() . '/inc/woocommerce.php';
 /**
  * Remove archive title prefix
  */
-add_filter('get_the_archive_title', function ($title) {
-    return preg_replace('/^\w+: /', '', $title);
-});
+function air_remove_archive_title_prefix($title) {
+  return preg_replace('/^\w+: /', '', $title);
+}
+add_filter( 'get_the_archive_title', 'air_remove_archive_title_prefix' );
 
 /**
  * Disable emojicons introduced with WP 4.2
