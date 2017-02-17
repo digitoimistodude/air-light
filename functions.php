@@ -26,8 +26,8 @@ function woocommerce_support() {
 require get_template_directory() . '/inc/woocommerce.php';
 
 /**
-* Remove archive title prefix ("Archive:", "Foo:", "Bar:") from archive titles
-*/
+ * Remove archive title prefix
+ */
 add_filter('get_the_archive_title', function ($title) {
     return preg_replace('/^\w+: /', '', $title);
 });
