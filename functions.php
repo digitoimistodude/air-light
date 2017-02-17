@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '2.0.5' );
+define( 'AIR_VERSION', '2.0.6' );
 
 /**
  * WooCommerce support
@@ -79,13 +79,17 @@ add_filter( 'wpseo_metabox_prio', 'air_lowpriority_yoastseo' );
  * test emails won't go out to client.
  */
 if( getenv( 'WP_ENV' ) === 'development' ) {
-  add_filter( 'option_sendgrid_api_key', function() {
-    return '';
-  } );
 
-  add_filter( 'option_sendgrid_pwd', function() {
+  function air_remove_sendgrid_apikey() {
     return '';
-  } );
+  }
+  add_filter( 'option_sendgrid_api_key', 'air_remove_sendgrid_apikey' );
+
+  function air_remove_sendgrid_pwd() {
+    return '';
+  }
+  add_filter( 'option_sendgrid_pwd', 'air_remove_sendgrid_pwd' );
+
 }
 
 /**
