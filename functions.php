@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '2.0.4' );
+define( 'AIR_VERSION', '2.0.5' );
 
 /**
  * WooCommerce support
@@ -24,6 +24,13 @@ function woocommerce_support() {
  * Requires
  */
 require get_template_directory() . '/inc/woocommerce.php';
+
+/**
+* Remove archive title prefix ("Archive:", "Foo:", "Bar:") from archive titles
+*/
+add_filter('get_the_archive_title', function ($title) {
+    return preg_replace('/^\w+: /', '', $title);
+});
 
 /**
  * Disable emojicons introduced with WP 4.2
