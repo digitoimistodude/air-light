@@ -28,8 +28,8 @@ require get_template_directory() . '/inc/woocommerce.php';
 /**
  * Remove archive title prefix
  */
-function air_remove_archive_title_prefix($title) {
-  return preg_replace('/^\w+: /', '', $title);
+function air_remove_archive_title_prefix( $title ) {
+  return preg_replace( '/^\w+: /', '', $title );
 }
 add_filter( 'get_the_archive_title', 'air_remove_archive_title_prefix' );
 
@@ -79,7 +79,7 @@ add_filter( 'wpseo_metabox_prio', 'air_lowpriority_yoastseo' );
  * Remove SendGrid credentials in development env, so that
  * test emails won't go out to client.
  */
-if( getenv( 'WP_ENV' ) === 'development' ) {
+if ( getenv( 'WP_ENV' ) === 'development' ) {
 
   function air_remove_sendgrid_apikey() {
     return '';
