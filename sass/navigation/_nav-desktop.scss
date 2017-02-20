@@ -1,0 +1,160 @@
+//! responsive-nav.js 1.0.39 by @viljamis
+// sassified by @rolle
+// non-mobile version
+// TEMP
+@import 'burger';
+
+// Desktop styles for navigation
+#nav {
+  ul {
+    li {
+      // Desktop navigation start
+      @media (min-width: $responsivenav) {
+        border: 0;
+        display: inline-block;
+        height: 55px;
+        line-height: 55px;
+        position: relative;
+        width: auto;
+
+        // Depth: nav ul li
+        &:hover > ul,
+        li:focus > ul,
+        &.focus > ul {
+          top: 55px;
+          left: 38%;
+          margin-left: -75px;
+
+          // Animate:
+          opacity: 1;
+        }
+
+        // Dropdown toggles
+        &.menu-item-has-children,
+        &.page-item-has-children {
+          > a {
+            padding-right: 2rem;
+          }
+
+          // First level dropdown toggle
+          button.dropdown-toggle {
+            @include vertical-align();
+            opacity: .8;
+            background-image: url('../svg/chevron-down.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            content: ' ';
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: 0;
+            margin-top: -.1rem;
+            padding-right: .2rem;
+            vertical-align: text-bottom;
+            background-color: transparent;
+          }
+        }
+
+        li {
+          max-width: $dropdown-width;
+          border: 0;
+          display: block;
+          height: auto;
+          line-height: 1.0909090909;
+
+          &.menu-item-has-children,
+          &.page-item-has-children {
+            > a {
+              // A bit space for the dropdown toggle
+              padding-right: 2rem;
+            }
+
+            // Second level dropdown toggle
+            button.dropdown-toggle {
+              background-image: url('../svg/chevron-right.svg');
+              background-repeat: no-repeat;
+              background-position: center;
+              top: 22px;
+              padding-right: .2rem;
+            }
+          }
+        }
+
+        // .li
+
+        // Depth: nav ul ul
+        ul {
+          float: left;
+          margin: 0;
+          position: absolute;
+          text-align: center;
+          top: 85px;
+          left: -999em;
+          z-index: 99999;
+          opacity: 0;
+
+          // Animate:
+          @if $enable-nav-animations == true {
+            transition-property: opacity, visibility;
+            transition-duration: .25s, 0s;
+            transition-delay: .25s, .25s;
+            transition: opacity .3s ease-in-out, top .3s ease-in-out;
+          }
+
+          li:hover > ul,
+          li:focus > ul,
+          li.focus > ul {
+            top: 0;
+            left: 0%;
+            margin-left: $dropdown-width;
+
+            // Animate:
+            opacity: 1;
+          }
+
+          a {
+            padding: $list-padding;
+            white-space: normal;
+            width: $dropdown-width;
+          }
+
+          // Depth: nav ul ul ul
+          ul {
+            left: -999em;
+            top: 20px;
+
+            li:hover > ul,
+            li:focus > ul,
+            li.focus > ul {
+              top: 0;
+              left: 0%;
+              margin-left: $dropdown-width;
+
+              // Animate:
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $responsivenav) {
+    .dropdown {
+      ul {
+        max-height: 0;
+        overflow: hidden;
+
+        li {
+          width: 100%;
+
+          a {
+            text-align: left;
+            border: 0;
+          }
+        }
+      }
+    }
+  }  
+}

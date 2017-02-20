@@ -35,6 +35,7 @@ $color-dropdown-text: #fff;
 $color-dropdown-hover-bg: #3e4853;
 $color-dropdown-hover-text: #fff;
 $dropdown-border-radius: 0;
+$enable-nav-animations: true; // Should we use animations, true or false
 
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
@@ -52,9 +53,6 @@ $headings-line-height-setup: force; // Force: all headings have same line height
 $headings-line-height-forced: 1.22; // This is effective only if force is chosen in $headings-line-height-setup
 $headings-weight: 900; // Default title weight. Usually 700 or 900 works pretty well
 $headings-scale: medium; // Change this as a base for your project or create your own in _typography.scss.
-
-// Form settings
-// Set up form settings in sass/layout/_forms.scss
 
 // Breakpoints
 $grid-type: fluid; // 'fluid' or 'snappy'

@@ -1,0 +1,103 @@
+//! responsive-nav.js 1.0.39 by @viljamis
+// sassified by @rolle
+
+// General for both mobile and non-mobile
+#nav {
+  clip: rect(0 0 0 0);
+  max-height: 0;
+  zoom: 1;
+  user-select: none;
+  list-style: none;
+  position: relative;
+  overflow: visible;
+
+  ul {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    display: block;
+    list-style: none;
+
+    li {
+      display: block;
+      float: left;
+      width: 100%;
+
+      a {
+        font-weight: 500;
+        background: $color-navigation-bg;
+        color: $color-navigation-text;
+        float: left;
+        text-decoration: none;
+        width: 100%;
+        font-size: $font-size-navigation;
+        margin: 0;
+        text-align: left;
+        display: inline-block;
+        padding: 0 16px;
+
+        &:hover {
+          background-color: $color-navigation-hover;
+        }
+      }
+
+      // Accessibility: list item with focus
+      &.focus > a {
+        background-color: $color-navigation-hover;
+      }
+    }
+
+    // Separate first level styles, if you'd like to style other levels differently
+    &:first-child {
+      li a {
+        background: $color-navigation-bg;
+
+        &:hover {
+          color: $color-navigation-first-level-text-hover;
+        }
+      }
+    }
+  }
+
+  .dropdown {
+    ul {
+      max-height: 100%;
+      overflow: visible;
+      margin-bottom: 0;
+      background: $color-dropdown-bg;
+      border-radius: $dropdown-border-radius;
+
+      li {
+        a {
+          color: $color-dropdown-text;
+          padding-left: 1.5em;
+          line-height: 1.5;
+
+          &:focus,
+          &:hover,
+          &:active {
+            background: $color-dropdown-hover-bg;
+            color: $color-dropdown-hover-text;
+            border-radius: $dropdown-border-radius;
+          }
+        }
+      }
+
+      ul {
+        border: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  // Accessible hover/focus
+  .dropdown:hover,
+  li.focus {
+    ul {
+      max-height: 500px; // 100% won't work here, so we need fixed height
+      overflow: visible;
+    }
+  }
+}

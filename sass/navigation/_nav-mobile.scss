@@ -1,0 +1,170 @@
+//! responsive-nav.js 1.0.39 by @viljamis
+// sassified by @rolle
+// mobile version
+@charset 'utf-8';
+@import 'burger';
+
+// Mobile styles
+@media screen and (max-width: $responsivenav) {
+  #nav {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    background: $color-almostblack;
+    transition: 3s;
+
+    // Mobile navigation styles
+    ul {
+      padding: 10px 0;
+      width: 100%;
+      float: left;
+
+      li {
+        position: relative;
+
+        a {
+          padding: 5px 10px;
+        }
+
+        // Sublevels
+        ul.sub-menu {
+          padding: 5px 0;
+          transition: 3s;
+
+          li {
+            a {
+              padding-top: 10px;
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    &.opened {
+      visibility: visible;
+      max-height: 9999px;
+    }
+
+    &.multiple-level-nav.opened.dropdown-active {
+      &.opened.dropdown-active {
+        max-height: 9999px !important; // Enable active class to let the navigation expand over the calculated max height.
+      }
+    }
+
+    &.multiple-level-nav .sub-menu {
+      clip: rect(0 0 0 0);
+      max-height: 0;
+      position: absolute;
+      overflow: hidden;
+      visibility: hidden;
+      zoom: 1;
+
+      &.toggled {
+        max-height: 9999px;
+        position: relative;
+        visibility: visible;
+      }
+    }
+
+    // + - toggles in mobile navigation
+    .dropdown-toggle {
+      background: #191919;
+      border: 0;
+      color: $color-navigation-text;
+      content: '';
+      height: 32px;
+      width: 32px;
+      padding: 0;
+      position: absolute;
+      margin: 0;
+      text-transform: lowercase;
+      top: 4px;
+      right: 10px;
+      z-index: 9999;
+
+      &.toggled:after {
+        content: '-';
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $color-dropdown-hover-bg;
+        color: $color-dropdown-hover-text;
+      }
+
+      &:after {
+        content: '+';
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// Hamburger menu icon
+.nav-toggle {
+  margin-left: 0;
+  list-style: none;
+  display: block;
+  z-index: 100000;
+  -webkit-tap-highlight-color: rgba(#000, 0);
+  border: 0;
+  color: $color-navigation-toggle;
+  font-size: $font-size-navigation;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  user-select: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  float: right;
+  line-height: 39px;
+  padding: 0 .75em;
+  background: transparent;
+
+  span {
+    color: $color-navigation-toggle;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-navigation-toggle-hover;
+    background: rgba(#fff, .12);
+
+    span {
+      color: $color-navigation-toggle-hover;
+    }
+  }
+
+  @media (min-width: $responsivenav) {
+    display: none;
+  }
+
+  @media (max-width: ($responsivenav)-1px) {
+    width: auto;
+    float: right;
+    top: 30px;
+    right: 20px;
+    position: relative;
+  }
+
+  .burger-icon {
+    @include burger(20px, 3px, 3px, $color-navigation-toggle);
+    float: left;
+    margin-top: 18px;
+    margin-right: 10px;
+  }
+
+  &.active .burger-icon {
+    @include burger-to-cross;
+  }
+}
+
+button {
+  appearance: button;
+  cursor: pointer;
+}

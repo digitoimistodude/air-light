@@ -6,8 +6,7 @@
 var customToggle = document.getElementById('nav-toggle');
 var customLabel = document.getElementById('nav-toggle-label');
 var navigation = responsiveNav(".nav-collapse", {
-  animate: true,
-  transition: 284,
+  animate: false, // We are using animations in CSS
   customToggle: ".nav-toggle",
   navClass: ".nav-collapse",
   menuItems: "menu-items",
