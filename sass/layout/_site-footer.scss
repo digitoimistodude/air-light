@@ -1,28 +1,41 @@
 // Site footer
-.site-footer {
-  padding: 20px;
-  background: $color_grey;
-  color: $color_body;
-  overflow: hidden;
-  clear: both;
+body {
+  #page {
+    .site-footer {
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      overflow: hidden;
+      clear: both;
 
-  svg {
-    fill: $color_body;
-    top: 1px;
-    position: relative;
-  }
+      svg {
+        fill: darken($color-fog, 8%);
+        top: 2px;
+        position: relative;
+      }
 
-  a {
-    color: $color_body;
-  }
+      p,
+      span {
+        color: darken($color-fog, 8%);
+      }
 
-  .theme-info {
-    overflow: hidden;
+      a {
+        color: darken($color-fog, 8%);
 
-    @media (min-width: $container-ipad) {
-      width: 60%;
-      text-align: right;
-      float: right;
+        &:hover {
+          color: #fff;
+        }
+      }
+
+      .theme-info {
+        overflow: hidden;
+
+        @media (min-width: $container-ipad) {
+          width: 60%;
+          text-align: right;
+          float: right;
+        }
+      }
     }
   }
 }
