@@ -226,7 +226,7 @@ if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
  */
 function air_pingback_header() {
 	if ( is_singular() && pings_open() ) :
-		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
+		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	endif;
 }
 add_action( 'wp_head', 'air_pingback_header' );
