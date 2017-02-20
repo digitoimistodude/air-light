@@ -72,7 +72,6 @@ class Air_Walker extends Walker_Nav_Menu {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 				$atts['data-toggle']		= 'dropdown';
 				$atts['class']					= 'dropdown';
-				$atts['aria-haspopup']	= 'true';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}

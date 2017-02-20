@@ -813,9 +813,8 @@
        // Add .multiple-level-nav class to nav
        addClass(nav, 'multiple-level-nav');
 
-       // Set menu items with sub menus to aria-haspopup="true" and add toggle button before sub menu.
+       // Add toggle button before sub menu.
        for (i = 0, len = subMenus.length; i < len; i++) {
-         subMenus[i].parentNode.setAttribute( 'aria-haspopup', 'true' );
          subMenus[i].insertAdjacentHTML( 'beforebegin', '<button class="dropdown-toggle" aria-expanded="false">' + opts.openDropdown + '</button>' );
        }
 
