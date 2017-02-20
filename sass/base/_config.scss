@@ -61,8 +61,7 @@ $grid-type: fluid; // 'fluid' or 'snappy'
 $layout-max-width: 100%;
 
 // Container settings
-$container-default-pad: 4rem; // Default padding between containers, mostly vertically. Tweak _containers.scss.
-$grid-base-size: 960px; // Layout max width on desktop. This is default .container size
+$grid-base-size: 1070px; // Layout max width on desktop. This is default .container size
 $container-mobile: 480px;
 $container-desktop: 1200px;
 $container-ipad: 770px;
