@@ -27,13 +27,22 @@
       overflow: hidden;
 
       a {
-        @include hiddentext();
-        background-image: url('../svg/logo.svg');
-        background-repeat: no-repeat;
+        svg {
+          transition: all .77s;
+          color: #fff;
+          position: relative;
+        }
 
-        // Logo size
-        width: 80px;
-        height: 80px;
+        // Just an example what svg hover can do
+        &:hover {
+          svg {
+            transform: rotate(360deg);
+            fill: $color-links;
+
+            // This is for air demo only, because our svg is not perfectly symmetric
+            transform-origin: 55% 35%;
+          }
+        }
       }
     }
   }

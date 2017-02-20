@@ -1,6 +1,8 @@
 // Add custom page layout here
 .slide {
   &.slide-page {
-    height: 50vh;
+    @media(min-width: $container-mobile) {
+      height: 50vh;
+    }
   }
 }
