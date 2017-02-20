@@ -1,199 +1,243 @@
-// Buttons
-button:not(.nav-toggle),
-input[type="reset"]:not(.nav-toggle),
-input[type="submit"]:not(.nav-toggle),
-input[type="button"]:not(.nav-toggle),
-.button:not(.nav-toggle) {
-    background: $color-button-bg;
-    color: $color-button-text;
-    border: 0;
-    width: auto;
-    display: inline-block;
-    padding: 16px 25px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-    border-radius: $forms-border-radius;
-    transition: 150ms linear all;
-    appearance: none;
-    font-family: $font-base;
-
-    &:hover,
-    &:focus {
-      color: $color-button-text;
-      background: lighten($color-button-bg, 15%);
-    }
-}
-
-a,
-button,
-input {
-  -webkit-tap-highlight-color: transparent;
-}
-
 // Fields
 body {
 
-  .site,
-  .gform_wrapper,
-  .gform_wrapper .gform_body .gform_fields {
-    textarea,
-    select,
-    input[type="text"],
-    input[type="tel"],
-    input[type="url"],
-    input[type="password"],
-    input[type="number"],
-    input[type="month"],
-    input[type="week"],
-    input[type="email"],
-    input[type="search"] {
-      color: $color-forms-text;
-      border: 1px solid $color-forms;
-      background: $color-forms-bg;
-      border-radius: $forms-border-radius;
-      font-family: $font-base;
-      padding: 16px;
+  // Buttons
+  button:not(.nav-toggle),
+  input[type="reset"]:not(.nav-toggle),
+  input[type="submit"]:not(.nav-toggle),
+  input[type="button"]:not(.nav-toggle),
+  .button:not(.nav-toggle) {
+      background: #222;
+      color: #fff;
+      border: 0;
+      width: auto;
+      display: inline-block;
+      padding: 16px 25px;
+      margin-bottom: 10px;
       text-decoration: none;
       position: relative;
+      cursor: pointer;
       transition: 150ms linear all;
       appearance: none;
-      margin-bottom: 0;
-
-      &:focus {
-        outline: 0;
-        border: 1px solid $forms-border-focus;
-      }
-    }
-
-    select {
-      background-color: $color-forms-bg;
-      background-image: url('../svg/select.svg');
-      background-repeat: no-repeat;
-      background-position: right center;
-      color: $color-forms-text;
-      padding-right: 40px;
-      transition: none;
-      border: 1px solid $color-forms;
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
+      font-family: $font-base;
 
       &:hover,
       &:focus {
-        border: 1px solid #222;
+        color: #222;
+        background: #ddd;
       }
-    }
   }
 
-  // General
-  form {
-    p {
-      margin-bottom: 20px;
-
-      &.form-submit {
-        margin-bottom: 0;
-      }
-    }
-
-    // Search form
-    &.search-form {
-      .search-field {
-        float: left;
-        margin-right: 5px;
-      }
-
-      .search-submit {
-        padding: 16px 1.75em;
-      }
-    }
+  a,
+  button,
+  input {
+    -webkit-tap-highlight-color: transparent;
   }
 
-  // Gravity Forms
-  .gform_wrapper {
-    margin: 0;
+  // Forced styles
+  #page {
+    .site-content,
+    .site-footer {
 
-    form {
-      .ginput_container,
-      .top_label {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding-top: 0;
-        padding-bottom: 0;
+      // Gravity Forms clean ups
+      .gform_wrapper,
+      .gform_header,
+      .gform_footer {
+        margin: 0;
+        padding: 0;
       }
 
-      .gfield {
-        margin-top: 10px;
-        margin-bottom: 0;
-        padding-left: 0;
-      }
+      .gform_body {
+        li,
+        div {
+          margin-top: 0;
+          padding-top: 0;
+          padding-left: 0;
+          margin-left: 0;
+        }
 
-      .ginput_container {
-        select,
-        input,
-        input.medium {
-          width: 100% !important; // Gravity forms uses !important here, so no choice
-          margin-right: 0;
+        li {
+          margin-bottom: 1rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
 
-      textarea
-      textarea.medium {
-        margin-bottom: 0;
+      .gform_wrapper div,
+      form {
+        textarea,
+        select,
+        input[type="text"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="password"],
+        input[type="number"],
+        input[type="month"],
+        input[type="week"],
+        input[type="email"],
+        input[type="search"] {
+          @extend .default;
+          font-family: $font-base;
+          background: #fdfdfd;
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          border-bottom: 3px solid rgba(#434343, .2);
+          padding: 25px 20px;
+          line-height: 24px;
+          transition: all .55s;
+          text-decoration: none;
+          position: relative;
+          appearance: none;
+          margin-bottom: 0;
 
-        @media(max-width: $container-mobile) {
+          &::placeholder {
+            color: #434343;
+            opacity: .4;
+          }
+
+          &:focus {
+            border-color: rgba(#222, 1);
+            outline: 0;
+
+            &::placeholder {
+              color: #222;
+              opacity: .8;
+            }
+          }
+        }
+
+        select {
+          background-image: url('../svg/select.svg');
+          background-repeat: no-repeat;
+          background-position: right center;
+          padding-right: 40px;
+          transition: none;
+          width: 100%;
+          max-width: 100%;
+          min-width: 0;
+
+          &:hover,
+          &:focus {
+            border: 1px solid #222;
+          }
+        }
+      }
+
+      // General
+      form {
+        p {
+          margin-bottom: 20px;
+
+          &.form-submit {
+            margin-bottom: 0;
+          }
+        }
+
+        // Search form
+        &.search-form {
+          .search-field {
+            float: left;
+            margin-right: 5px;
+          }
+
+          .search-submit {
+            padding: 16px 1.75em;
+          }
+        }
+      }
+
+      // Comment form
+      .comment-respond {
+        margin-bottom: 0;
+        overflow: hidden;
+
+        p {
+          &.comment-form-author {
+            @include column(1/3);
+            margin-bottom: 20px;
+            margin-top: 0;
+
+            @media(max-width: $container-mobile) {
+              @include stack();
+            }
+
+            input#author {
+              padding: 15px;
+              border-width: 1px;
+            }
+          }
+
+          &.comment-form-email {
+            @include column(2/3);
+            margin-right: 0;
+            clear: right;
+            margin-bottom: 20px;
+            margin-top: 0;
+
+            @media(max-width: $container-mobile) {
+              @include stack();
+            }
+
+            input#email {
+              padding: 15px;
+              border-width: 1px;
+            }
+          }
+
+          &.comment-form-url {
+            @include stack();
+            position: relative;
+            margin-top: 0;
+            margin-bottom: 30px;
+
+            input#url {
+              padding: 15px;
+              border-width: 1px;
+            }
+          }
+
+          &.form-submit {
+            display: block;
+            clear: both;
+            margin-bottom: 0;
+            margin-top: 0;
+
+            input {
+              color: #fff;
+
+              &.active {
+                color: #222;
+              }
+
+              &:hover,
+              &:focus {
+                color: #222;
+                background: #ddd;
+              }
+            }
+          }
+
+          &.comment-form-comment {
+            margin-bottom: 20px;
+          }
+        }
+
+        input {
+          @media (max-width: $container-mobile) {
+            width: 100%;
+          }
+        }
+
+        input#author,
+        input#email,
+        input#url,
+        textarea {
           width: 100%;
         }
       }
     }
-  }
-}
-
-// Initial comment form styles
-.comment-respond {
-  label[for="comment"],
-  label[for="author"],
-  label[for="email"],
-  label[for="url"] {
-    display: block;
-  }
-
-  p {
-
-    &.form-submit {
-      display: block;
-      clear: both;
-      margin-bottom: 0;
-      margin-top: 0;
-    }
-
-    &.comment-form-url {
-      margin-bottom: 0;
-    }
-
-    &.comment-form-comment {
-      margin-bottom: 0;
-    }
-
-  }
-
-  .comment-form-comment {
-    @include column(1/2);
-    margin-right: 2.6em;
-
-    @media(max-width: $container-ipad) {
-      @include stack();
-    }
-  }
-
-  input {
-    @media(max-width: $container-mobile) {
-      width: 100%;
-    }
-  }
-
-  textarea {
-    width: 100%;
   }
 }

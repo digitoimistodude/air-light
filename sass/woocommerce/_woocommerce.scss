@@ -18,12 +18,12 @@ body {
       .button.disabled,
       .button.alt,
       .button[disabled] {
-        background: $color-button-bg;
-        color: $color-button-text;
-        border-radius: $forms-border-radius;
+        background: #222;
+        color: #fff;
+        border-radius: 0;
 
         &:hover {
-          background: $color-button-bg;
+          background: #222;
         }
       }
 

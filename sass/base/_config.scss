@@ -54,13 +54,7 @@ $headings-weight: 900; // Default title weight. Usually 700 or 900 works pretty 
 $headings-scale: medium; // Change this as a base for your project or create your own in _typography.scss.
 
 // Form settings
-$color-button-bg: #262626;
-$color-button-text: #fff;
-$color-forms: #cfd9db;
-$color-forms-text: #666;
-$color-forms-bg: #fff;
-$forms-border-radius: 3px;
-$forms-border-focus: darken(#cfd9db, 25%);
+// Set up form settings in sass/layout/_forms.scss
 
 // Breakpoints
 $grid-type: fluid; // 'fluid' or 'snappy'
