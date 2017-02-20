@@ -1,104 +1,37 @@
-// Pennman's mixin for Google Web Fonts
-@import 'sass-web-fonts/web-fonts';
-$web-fonts-protocol: 'https' !global !default;
+// Choose which option to use
+// google: Uses Pennman's mixin for Google Web Fonts
+// selfhosted: Uses self-hosted webfonts from fonts/ directory
+$fontstack: google;
 
-// If you use self-hosted webfonts, uncomment this mixin:
+@if $fontstack == selfhosted {
 
-// Source: https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
-// Example usage: @include fontFace('Proxima Nova','../fonts/proximanova-regular', 400);
-// @mixin fontFace($family, $src, $weight: normal, $style: normal) {
-//   @font-face {
-//     font-family: $family;
-//     src: url('#{$src}.eot'); // IE9 compat
-//     src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
-//       url('#{$src}.woff2') format('woff2'),
-//       url('#{$src}.woff') format('woff'), // standards
-//       url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
-//       url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
-//     font-style: $style;
-//     font-weight: $weight;
-//   }
-// }
+// Set up self-hosted fonts here
+@include fontFace('Chivo', '../fonts/Chivo-Regular', 400);
+@include fontFace('Chivo', '../fonts/Chivo-RegularItalic', 400, italic);
+@include fontFace('Chivo', '../fonts/Chivo-Bold', 700);
+@include fontFace('Chivo', '../fonts/Chivo-BoldItalic', 700, italic);
 
-// Create a fonts folder and add your custom fonts like this:
-// @include fontFace('RidleyGrotesk-Bold', '../fonts/31D08E_0_0', 700);
+} @else {
 
-// Google web fonts in use:
-$url: web-fonts-url(
-  ('Libre Franklin':
-    ('200',
-     '200 italic',
-     '300',
-     '300 italic',
-     '400',
-     '400 italic',
-     '500',
-     '500 italic',
-     '700',
-     '700 italic',
-     '900',
-     '900 italic')
-     ),
-  ('Fira Sans':
-    ('300',
-    '300 italic',
-    '400',
-    '400 italic',
-    '500',
-    '500 italic',
-    '700',
-    '700 italic'
+  // Set up fonts here
+  $url: web-fonts-url(
+    ('Fira Sans':
+      ('300',
+      '300 italic',
+      '400',
+      '400 italic',
+      '700',
+      '700 italic'
+      )
     )
-  )
-  ('Source Sans Pro':
-    ('700',
-     '700 italic'
+    ('Source Sans Pro':
+      ('700',
+       '700 italic'
+      )
     )
-  )
-);
+  );
 
-@import url($url);
-
-// Viewport sized typography with minimum and maximum values
-// Inspiration: https://css-tricks.com/molten-leading-css/
-// More inspiration: https://www.smashingmagazine.com/2016/05/fluid-typography/
-//
-// Source: https://codepen.io/eduardoboucas/pen/YXxmwv
-//
-// @author Eduardo Boucas (@eduardoboucas)
-//
-// @param {Number}   $responsive  - Viewport-based size
-// @param {Number}   $min         - Minimum font size (px)
-// @param {Number}   $max         - Maximum font size (px)
-//                                  (optional)
-// @param {Number}   $fallback    - Fallback for viewport-
-//                                  based units (optional)
-//
-// @example scss - 5vw font size (with 50px fallback),
-//                 minumum of 35px and maximum of 150px
-//  @include responsive-font(5vw, 35px, 150px, 50px);
-//
-@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
-  $responsive-unitless: $responsive / ($responsive - $responsive + 1);
-  $dimension: if(unit($responsive) == 'vh', 'height', 'width');
-  $min-breakpoint: $min / $responsive-unitless * 100;
-  font-size: $responsive;
-
-  @media (max-#{$dimension}: #{$min-breakpoint}) {
-    font-size: $min;
-  }
-
-  @if $max {
-    $max-breakpoint: $max / $responsive-unitless * 100;
-
-    @media (min-#{$dimension}: #{$max-breakpoint}) {
-      font-size: $max;
-    }
-  }
-
-  @if $fallback {
-    font-size: $fallback;
-  }
+  @import url($url);
 }
 
 // Import presets

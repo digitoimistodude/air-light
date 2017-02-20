@@ -1,6 +1,6 @@
 <?php
 /**
- * The core navigation file.
+ * The core navigation file
  *
  * A custom WordPress nav walker class, using the WordPress built in menu manager.
  *

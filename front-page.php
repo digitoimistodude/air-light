@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying front page.
+ * The template for displaying front page
  *
  * Contains the closing of the #content div and all content after.
  * Initial styles for front page template.

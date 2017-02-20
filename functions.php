@@ -1,6 +1,6 @@
 <?php
 /**
- * Air functions and definitions.
+ * Air functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -10,7 +10,7 @@
 /**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '2.0.6' );
+define( 'AIR_VERSION', '2.0.7' );
 
 /**
  * WooCommerce support

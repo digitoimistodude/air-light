@@ -6,7 +6,7 @@
 // --------------------------------------------------------------
 
 // Colors
-$color-links: #f16b6f;
+$color-links: #6ba444;
 $color-hover: #606c76;
 $color-body: #3c3530;
 $color-headings: #333;
@@ -17,7 +17,6 @@ $color-lightgrey: #8e8e8e;
 $color-dark: #1a1a1a;
 $color-almostblack: #020202;
 $color-fog: #b0b0b0;
-$color-alt: #aacd6e;
 
 // Main navigation settings
 $color-navigation-bg: transparent;
@@ -39,6 +38,7 @@ $dropdown-border-radius: 5px;
 
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
+// Please set up fonts in sass/layout/_typography.scss
 $font-base: 'Fira Sans', 'Helvetica Neue', Helvetica, sans-serif;
 $font-headings: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
