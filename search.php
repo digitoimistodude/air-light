@@ -18,29 +18,23 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
         <?php
         if ( have_posts() ) : ?>
 
-              <header class="page-header">
-                <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'air' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-              </header><!-- .page-header -->
+        <header class="page-header">
+          <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'air' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+        </header><!-- .page-header -->
 
-            <?php
-            while ( have_posts() ) : the_post(); ?>
-
-              <?php get_template_part( 'template-parts/content', 'search' ); ?>
-
-            <?php endwhile;
-
-            the_posts_navigation();
-
-          else : ?>
-
-            <?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-        <?php endif; ?>
-
-        </main><!-- #main -->
-        </section><!-- #primary -->
+        <?php
+        while ( have_posts() ) : the_post();
+          get_template_part( 'template-parts/content', get_post_format() );
+        endwhile;
+          the_posts_navigation();
+        else :
+          get_template_part( 'template-parts/content', 'none' );
+        endif; ?>
 
       </div><!-- .container -->
+
+    </main><!-- #main -->
+  </section><!-- #primary -->
 
 <?php
 // get_sidebar();
