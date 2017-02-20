@@ -6,6 +6,7 @@
 .screen-reader-text {
   clip: rect(1px 1px 1px 1px);
   position: absolute !important;
+  word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
   transition: all .55s;
 
   &.skip-link {
