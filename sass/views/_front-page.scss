@@ -8,6 +8,20 @@
     @media(min-width: $container-mobile) {
       max-height: 700px;
       height: 60vh;
-    }    
+    }
+
+    .container {
+      padding-top: 150px;
+
+      h1 {
+        color: #fff;
+        text-align: center;
+      }
+
+      @media(min-width: $container-mobile) {
+        @include vertical-align();
+        padding-top: 6rem;
+      }
+    }
   }
 }

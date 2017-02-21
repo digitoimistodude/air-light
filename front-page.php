@@ -12,7 +12,13 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
+<div class="slide<?php if ( is_front_page() ) : echo ' slide-front'; elseif ( is_page() ) : echo ' slide-page'; else : echo ' slide-' . get_post_type(); endif; ?>" style="background-image:url('<?php if ( has_post_thumbnail() ) : ?><?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) ); ?><?php else : ?><?php echo esc_url( get_template_directory_uri() . '/images/default.jpg' ); ?><?php endif; ?>');">
+  <div class="shade shade-gradient"></div>
+
+  <div class="container">
+    <h1><?php echo esc_html_e('air &mdash; WordPress starter theme', 'air'); ?></h1>
+  </div>
+</div>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -21,7 +27,7 @@ get_header(); ?>
 
         <?php
         while ( have_posts() ) : the_post();
-          get_template_part( 'template-parts/content', 'page' );
+          the_content();
 
           // If comments are open or we have at least one comment, load up the comment template.
           if ( comments_open() || get_comments_number() ) :
@@ -30,7 +36,7 @@ get_header(); ?>
 
         endwhile; // End of the loop.
         ?>
-			
+
       </div><!-- .container -->
 
 		</main><!-- #main -->
