@@ -1,3 +1,5 @@
 bower_components/
 node_modules/
 dandelion.yml
+sass/navigation/luxbar
+sass/navigation/_luxbar.scss

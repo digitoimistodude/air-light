@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "jeet": "^7.0.0",
+    "luxbar": "^0.3.2",
     "normalize.css": "^5.0.0",
     "sass-web-fonts": "^2.0.3"
   }
