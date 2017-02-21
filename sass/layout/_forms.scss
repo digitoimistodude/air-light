@@ -110,6 +110,7 @@ body {
         }
 
         select {
+          border: 3px solid rgba(#434343, .2);
           background-image: url('../svg/select.svg');
           background-repeat: no-repeat;
           background-position: right center;
@@ -121,7 +122,7 @@ body {
 
           &:hover,
           &:focus {
-            border: 1px solid #222;
+            border-color: #222;
           }
         }
       }
