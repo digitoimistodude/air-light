@@ -1,8 +1,6 @@
 //! responsive-nav.js 1.0.39 by @viljamis
 // sassified by @rolle
 // non-mobile version
-// TEMP
-@import 'burger';
 
 // Desktop styles for navigation
 #nav {
@@ -20,13 +18,22 @@
         // Depth: nav ul li
         &:hover > ul,
         li:focus > ul,
-        &.focus > ul {
+        &.focus > ul,
+        .focus > ul,
+        ul.toggled {
           top: 55px;
           left: 38%;
           margin-left: -75px;
-
-          // Animate:
           opacity: 1;
+        }
+
+        // Accessible, toggled drop down
+        ul.toggled {
+          max-height: 9999px;
+          overflow: visible;
+          margin-bottom: 0;
+          background: $color-dropdown-bg;
+          border-radius: $dropdown-border-radius;
         }
 
         // Dropdown toggles
@@ -103,12 +110,12 @@
 
           li:hover > ul,
           li:focus > ul,
-          li.focus > ul {
+          li.focus > ul,
+          .focus > ul,
+          ul.toggled {
             top: 0;
             left: 0%;
             margin-left: $dropdown-width;
-
-            // Animate:
             opacity: 1;
           }
 
@@ -125,12 +132,12 @@
 
             li:hover > ul,
             li:focus > ul,
-            li.focus > ul {
+            li.focus > ul,
+            .focus > ul,
+            &.toggled {
               top: 0;
               left: 0%;
               margin-left: $dropdown-width;
-
-              // Animate:
               opacity: 1;
               visibility: visible;
             }
@@ -156,5 +163,5 @@
         }
       }
     }
-  }  
+  }
 }

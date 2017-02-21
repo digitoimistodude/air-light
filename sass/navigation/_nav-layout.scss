@@ -93,6 +93,7 @@
   }
 
   // Accessible hover/focus
+  .sub-menu.toggled,
   .dropdown:hover,
   li.focus {
     ul {

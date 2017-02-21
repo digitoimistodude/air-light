@@ -200,7 +200,7 @@
         // Move up through the ancestors of the current link until we hit 'menu-items' class. That's top level ul-element class name.
         while ( -1 === self.className.indexOf( menuItems ) ) {
 
-          // On li elements toggle the class .focus.
+          // On li and nav-toggle elements toggle the class .focus.
           if ( 'li' === self.tagName.toLowerCase() ) {
             if ( -1 !== self.className.indexOf( 'focus' ) ) {
               self.className = self.className.replace( ' focus', '' );
