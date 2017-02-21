@@ -28,19 +28,15 @@
 
       a {
         svg {
+          fill: #fff;
           transition: all .77s;
-          color: #fff;
           position: relative;
         }
 
         // Just an example what svg hover can do
         &:hover {
           svg {
-            transform: rotate(360deg);
-            fill: $color-links;
-
-            // This is for air demo only, because our svg is not perfectly symmetric
-            transform-origin: 55% 35%;
+            fill: $color-fog;
           }
         }
       }
@@ -52,8 +48,8 @@
       @include column(8/10);
 
       // Set these based on the logo size
-      padding-top: 40px;
-      padding-bottom: 40px;
+      padding-top: 30px;
+      padding-bottom: 30px;
 
       ul {
         float: right;

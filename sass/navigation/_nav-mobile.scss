@@ -11,7 +11,6 @@
     max-height: 0;
     overflow: hidden;
     background: $color-almostblack;
-    transition: 3s;
 
     // Mobile navigation styles
     ul {
@@ -29,7 +28,7 @@
         // Sublevels
         ul.sub-menu {
           padding: 5px 0;
-          transition: 3s;
+          transition: 1s;
 
           li {
             a {
@@ -42,6 +41,7 @@
     }
 
     &.opened {
+      transition: 4s;
       visibility: visible;
       max-height: 9999px;
     }
@@ -59,6 +59,7 @@
       overflow: hidden;
       visibility: hidden;
       zoom: 1;
+      transition: 4s;
 
       &.toggled {
         max-height: 9999px;
@@ -79,7 +80,7 @@
       position: absolute;
       margin: 0;
       text-transform: lowercase;
-      top: 4px;
+      top: 5px;
       right: 10px;
       z-index: 9999;
 
