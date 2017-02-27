@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/digitoimistodude/air.svg?branch=master)](https://travis-ci.org/digitoimistodude/air)
+[![Build Status](https://img.shields.io/travis/digitoimistodude/air.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air)
 
 ## Air - A minimalist WordPress starter theme
 
