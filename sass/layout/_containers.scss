@@ -28,12 +28,12 @@ body {
 
 .container {
   @if $grid-type == fluid {
-    @include center($max_width: $grid-base-size, $pad: 20px);
+    @include center($max_width: $grid-base-size, $pad: $container-default-pad);
   } @else if $grid-type == snappy {
 
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: $container-default-pad;
+    padding-right: $container-default-pad;
 
     @media(min-width: $container-ipad) {
       width: 700px;
@@ -48,7 +48,7 @@ body {
     }
 
   } @else {
-    @include center($max_width: $grid-base-size, $pad: 4em);
+    @include center($max_width: $grid-base-size, $pad: $container-default-pad);
   }
 }
 
