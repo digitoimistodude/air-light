@@ -5,7 +5,13 @@
 // This is the core file where most of the theme magic happens.
 // --------------------------------------------------------------
 
+// Debugging features
+$debug-allow: true;
+$enable-html-lint: true;
+$debug-grid: true;
+
 // Colors
+$color-debug-base: #f54848 !default;
 $color-links: #6ba444;
 $color-hover: #606c76;
 $color-body: #333;

@@ -1,0 +1,6 @@
+@if $debug-grid == true and $debug-allow == true {
+  // Debug grid - lets grid show through images
+  img {
+    opacity: .75;
+  }
+}
