@@ -815,7 +815,7 @@
 
        // Add toggle button before sub menu.
        for (i = 0, len = subMenus.length; i < len; i++) {
-         subMenus[i].insertAdjacentHTML( 'beforebegin', '<button class="dropdown-toggle" aria-expanded="false">' + opts.openDropdown + '</button>' );
+         subMenus[i].insertAdjacentHTML( 'beforebegin', '<button type="button" class="dropdown-toggle" aria-label="Open/close dropdown" aria-expanded="false">' + opts.openDropdown + '</button>' );
        }
 
        // Select all dropdown buttons
