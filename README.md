@@ -6,7 +6,7 @@ Air is designed to be a minimal starting point for a WordPress project at [Digit
 
 ## [Demo](https://dudetest.xyz/air)
 
-- **CSS gzipped:** 11.6 KB *(114.5 KB original)*
+- **CSS gzipped:** 7 KB *(47.1 KB original)*
 - **JS gzipped:** 3.5 KB *(10.8 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
