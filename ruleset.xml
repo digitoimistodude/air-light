@@ -38,7 +38,10 @@
 
 		<exclude name="WordPress.XSS.EscapeOutput.UnsafePrintingFunction" />
 		<exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
+
 		<exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
+    <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
+
 		<exclude name="WordPress.Variables.GlobalVariables" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis)" />
@@ -50,5 +53,7 @@
 		<exclude name="WordPress.VIP.AdminBarRemoval.RemovalDetected" />
     <exclude name="WordPress.VIP.OrderByRand" />
     <exclude name="WordPress.VIP.OrderByRand.orderby" />
+    <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+    
 	</rule>
 </ruleset>
