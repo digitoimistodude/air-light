@@ -1,79 +1,61 @@
 <?php
 /**
- * Air functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package air
- */
-
-/**
  * The current version of the theme.
  */
-define( 'AIR_VERSION', '2.3.0' );
-
-/**
- * WooCommerce support
- */
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-  add_theme_support( 'woocommerce' );
-}
+define( 'AIR_VERSION', '2.3.1' );
 
 /**
  * Requires
  */
-require get_template_directory() . '/inc/woocommerce.php';
+require get_theme_file_path( '/inc/hooks-defaults.php' );
+require get_theme_file_path( '/inc/woocommerce.php' );
+require get_theme_file_path( '/inc/menus.php' );
+require get_theme_file_path( '/inc/nav-walker.php' );
+require get_theme_file_path( '/inc/comments.php' );
 
 /**
- * Remove archive title prefix
+ * Enable theme support for essential features
  */
-function air_remove_archive_title_prefix( $title ) {
-  return preg_replace( '/^\w+: /', '', $title );
-}
-add_filter( 'get_the_archive_title', 'air_remove_archive_title_prefix' );
+load_theme_textdomain( 'air', get_template_directory() . '/languages' );
+add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'title-tag' );
+add_theme_support( 'post-thumbnails' );
+add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
 /**
- * Disable emojicons introduced with WP 4.2
- *
- * @link http://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
+ * Set a locale for Finnish language
  */
-function disable_wp_emojicons() {
-  // All actions related to emojis
-  remove_action( 'admin_print_styles', 'print_emoji_styles' );
-  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  remove_action( 'wp_print_styles', 'print_emoji_styles' );
-  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-
-  // Remove TinyMCE emojis
-  add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
-}
-add_action( 'init', 'disable_wp_emojicons' );
-
-// Disable TinyMCE emojicons
-function disable_emojicons_tinymce( $plugins ) {
-  if ( is_array( $plugins ) ) {
-    return array_diff( $plugins, array( 'wpemoji' ) );
-  } else {
-    return array();
-  }
-}
+setlocale( LC_ALL, 'fi_FI.utf8' );
 
 /**
- * Allow Gravity Forms to hide labels to add placeholders
+ * Custom uploads folder media/ instead of default content/uploads/.
+ * Comment these out if you want to set up media library folder in wp-admin.
  */
-add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+update_option( 'upload_path', untrailingslashit( str_replace( 'wp', 'media', ABSPATH ) ) );
+update_option( 'upload_url_path', untrailingslashit( str_replace( 'wp', 'media', get_site_url() ) ) );
+define( 'uploads', '' . 'media' );
+add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
 /**
- *  Set Yoast SEO plugin metabox priority to low
+ * Enqueue scripts and styles.
  */
-function air_lowpriority_yoastseo() {
-  return 'low';
+function air_scripts() {
+  $air_template = 'global';
+
+  // Styles
+  wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_template}.css" ) ) );
+
+  // Scripts
+  wp_enqueue_script( 'jquery-core' );
+  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/all.js' ), array(), filemtime( get_theme_file_path( 'js/all.js' ) ), true );
+  wp_localize_script( 'scripts', 'screenReaderTexts', array(
+		'expandMenu'      => esc_html__( 'Open menu', 'air' ),
+		'collapseMenu'    => esc_html__( 'Close menu', 'air' ),
+		'expandSubMenu'   => '<span class="screen-reader-text">' . __( 'Open sub menu', 'air' ) . '</span>',
+		'collapseSubMenu' => '<span class="screen-reader-text">' . __( 'Close sub menu', 'air' ) . '</span>',
+	) );
 }
-add_filter( 'wpseo_metabox_prio', 'air_lowpriority_yoastseo' );
+add_action( 'wp_enqueue_scripts', 'air_scripts' );
 
 /**
  * Remove SendGrid credentials in development env, so that
@@ -93,152 +75,6 @@ if ( getenv( 'WP_ENV' ) === 'development' ) {
 
 }
 
-/**
- * Enable theme support for essential features
- */
-load_theme_textdomain( 'air', get_template_directory() . '/languages' );
-add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'title-tag' );
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-
-/**
- * Set a locale for Finnish language
- */
-setlocale( LC_ALL, 'fi_FI.utf8' );
-
-/*
-* Clean up WP admin bar
-*/
-function remove_admin_bar_links() {
-  global $wp_admin_bar;
-  $wp_admin_bar->remove_menu('about');            // Remove the about WordPress link
-  $wp_admin_bar->remove_menu('wporg');            // Remove the WordPress.org link
-  $wp_admin_bar->remove_menu('documentation');    // Remove the WordPress documentation link
-  $wp_admin_bar->remove_menu('support-forums');   // Remove the support forums link
-  $wp_admin_bar->remove_menu('feedback');         // Remove the feedback link
-  $wp_admin_bar->remove_menu('updates');          // Remove the updates link
-  $wp_admin_bar->remove_menu('comments');         // Remove the comments link
-}
-add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
-
-/*
-* Clean up WP admin menu from stuff we usually don't need
-*/
-function remove_admin_menu_links() {
-  remove_menu_page('themes.php?page=editcss');
-  remove_menu_page('edit.php');
-  remove_menu_page('widgets.php');
-  remove_menu_page('edit-comments.php');
-  remove_menu_page('admin.php?page=jetpack');
-}
-add_action('admin_menu', 'remove_admin_menu_links', 999);
-
-/**
-* Hide WP updates nag
-*/
-add_action( 'admin_menu', 'air_wphidenag' );
-function air_wphidenag() {
-  remove_action( 'admin_notices', 'update_nag', 3 );
-}
-
-/**
- * Editable navigation menus.
- */
-register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'air' ),
-) );
-
-/**
- * Custom navigation walker
- */
-require get_template_directory() . '/nav.php';
-
-/**
- * Custom comments
- */
-function air_comments( $comment, $args, $depth ) {
-$GLOBALS['comment'] = $comment; ?>
-
-  <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-    <div id="comment-<?php comment_ID(); ?>">
-      <?php echo get_avatar( $comment, $size = '62' ); ?>
-      <h4 class="comment-author"><?php printf( __( '<a href="#">%s</h4>' ), get_comment_author_link() ) ?></a>
-
-    <?php if ( 0 === $comment->comment_approved ) : ?>
-      <p><em><?php _e( 'Your comment is awaiting approval.', 'air' ) ?></em></p>
-    <?php endif; ?>
-
-      <p class="comment-time">
-        <a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-          <svg width="16" height="16" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1520 1216q0-40-28-68l-208-208q-28-28-68-28-42 0-72 32 3 3 19 18.5t21.5 21.5 15 19 13 25.5 3.5 27.5q0 40-28 68t-68 28q-15 0-27.5-3.5t-25.5-13-19-15-21.5-21.5-18.5-19q-33 31-33 73 0 40 28 68l206 207q27 27 68 27 40 0 68-26l147-146q28-28 28-67zm-703-705q0-40-28-68l-206-207q-28-28-68-28-39 0-68 27l-147 146q-28 28-28 67 0 40 28 68l208 208q27 27 68 27 42 0 72-31-3-3-19-18.5t-21.5-21.5-15-19-13-25.5-3.5-27.5q0-40 28-68t68-28q15 0 27.5 3.5t25.5 13 19 15 21.5 21.5 18.5 19q33-31 33-73zm895 705q0 120-85 203l-147 146q-83 83-203 83-121 0-204-85l-206-207q-83-83-83-203 0-123 88-209l-88-88q-86 88-208 88-120 0-204-84l-208-208q-84-84-84-204t85-203l147-146q83-83 203-83 121 0 204 85l206 207q83 83 83 203 0 123-88 209l88 88q86-88 208-88 120 0 204 84l208 208q84 84 84 204z"/></svg>
-          <time><?php printf( __( '%1$s at %2$s' ), get_comment_date(), get_comment_time() ) ?></time>
-        </a>
-      </p>
-
-      <?php comment_text();
-
-      comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
-      edit_comment_link( __( '&mdash; Edit' ), ' ', '' ) ?>
-
-    </div>
-  </li>
-<?php
-}
-
-/**
- * Remove WordPress Admin Bar when not on development env
- *
- * @link http://davidwalsh.name/remove-wordpress-admin-bar-css
- */
-add_action( 'get_header', 'air_remove_admin_login_header' );
-function air_remove_admin_login_header() {
-  remove_action( 'wp_head', '_admin_bar_bump_cb' );
-}
-
-if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
-  add_action('wp_head', 'air_dev_adminbar');
-
-  function air_dev_adminbar() { ?>
-    <style>
-      html {
-        height: auto;
-        padding-bottom: 32px;
-      }
-
-			#wpadminbar {
-				top: auto;
-				bottom: 0;
-			}
-
-			#wpadminbar.nojs li:hover > .ab-sub-wrapper,
-			#wpadminbar li.hover > .ab-sub-wrapper {
-				bottom: 32px;
-			}
-		</style>
-<?php }
-} else {
-  show_admin_bar( false );
-}
-
-/**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
- */
-function air_pingback_header() {
-	if ( is_singular() && pings_open() ) :
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-	endif;
-}
-add_action( 'wp_head', 'air_pingback_header' );
-
-/**
- * Custom uploads folder media/ instead of default content/uploads/.
- * Comment these out if you want to set up media library folder in wp-admin.
- */
-update_option( 'upload_path', untrailingslashit( str_replace( 'wp', 'media', ABSPATH ) ) );
-update_option( 'upload_url_path', untrailingslashit( str_replace( 'wp', 'media', get_site_url() ) ) );
-define( 'uploads', '' . 'media' );
-add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
 if ( ! function_exists( 'air_entry_footer' ) ) :
 
@@ -277,23 +113,3 @@ if ( ! function_exists( 'air_entry_footer' ) ) :
   	);
   }
 endif;
-
-/**
- * Enqueue scripts and styles.
- */
-function air_scripts() {
-  // If you want to use a different CSS per view, you can set it up here
-  $air_template = 'global';
-
-  wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_template}.css" ) ) );
-
-  wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/all.js' ), array(), filemtime( get_theme_file_path( 'js/all.js' ) ), true );
-  wp_localize_script( 'scripts', 'screenReaderTexts', array(
-		'expandMenu'            => esc_html__( 'Open menu', 'air' ),
-		'collapseMenu'          => esc_html__( 'Close menu', 'air' ),
-		'expandSubMenu'         => '<span class="screen-reader-text">' . __( 'Open sub menu', 'air' ) . '</span>',
-		'collapseSubMenu'       => '<span class="screen-reader-text">' . __( 'Close sub menu', 'air' ) . '</span>',
-	) );
-}
-add_action( 'wp_enqueue_scripts', 'air_scripts' );
