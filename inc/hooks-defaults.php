@@ -102,18 +102,38 @@ if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
     <style>
       html {
         height: auto;
-        padding-bottom: 32px;
+        top: 32px;
+        position: relative;
       }
 
-			#wpadminbar {
-				top: auto;
-				bottom: 0;
-			}
+     /* Hide WordPress logo */
+     #wp-admin-bar-wp-logo {
+       display: none;
+     }
 
-			#wpadminbar.nojs li:hover > .ab-sub-wrapper,
-			#wpadminbar li.hover > .ab-sub-wrapper {
-				bottom: 32px;
-			}
+     /* Invert admin bar */
+     #wpadminbar {
+       background: #fff;
+     }
+
+     #wpadminbar .ab-empty-item,
+     #wpadminbar a.ab-item,
+     #wpadminbar>#wp-toolbar span.ab-label,
+     #wpadminbar>#wp-toolbar span.noticon {
+       color: #23282d;
+     }
+
+     #wpadminbar #adminbarsearch:before,
+     #wpadminbar .ab-icon:before,
+     #wpadminbar .ab-item:before {
+       color: #23282d;
+       background: transparent;
+     }
+
+     #wpadminbar.nojs li:hover > .ab-sub-wrapper,
+     #wpadminbar li.hover > .ab-sub-wrapper {
+       top: 32px;
+     }
 		</style>
 <?php }
 } else {
