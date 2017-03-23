@@ -17,6 +17,7 @@
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace" />
     <exclude name="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" />
     <exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
@@ -35,6 +36,8 @@
 		<exclude name="Squiz.Commenting.ClassComment.Missing" />
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpenHint" />
+    <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
+    <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
 
 		<exclude name="WordPress.XSS.EscapeOutput.UnsafePrintingFunction" />
 		<exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
