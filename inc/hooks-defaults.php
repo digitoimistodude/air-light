@@ -106,6 +106,12 @@ if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
         position: relative;
       }
 
+      @media screen and (max-width: 600px) {
+        html {
+          top: 46px;
+        }
+      }
+
      /* Hide WordPress logo */
      #wp-admin-bar-wp-logo {
        display: none;
@@ -114,6 +120,12 @@ if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
      /* Invert admin bar */
      #wpadminbar {
        background: #fff;
+     }
+
+     @media screen and (max-width: 600px) {
+       #wpadminbar {
+         position: fixed;
+       }
      }
 
      #wpadminbar .ab-empty-item,
@@ -134,7 +146,7 @@ if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
      #wpadminbar li.hover > .ab-sub-wrapper {
        top: 32px;
      }
-		</style>
+   </style>
 <?php }
 } else {
   show_admin_bar( false );
