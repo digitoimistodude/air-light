@@ -50,6 +50,7 @@
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis)" />
 		<exclude name="WordPress.PHP.StrictInArray.MissingTrueStrict" />
     <exclude name="WordPress.Functions.DontExtract.extract" />
+    <exclude name="WordPress.Functions.DontExtract.extract_extract" />
 
 		<exclude name="WordPress.VIP.RestrictedFunctions" />
 		<exclude name="WordPress.VIP.AdminBarRemoval.RemovalDetected" />
