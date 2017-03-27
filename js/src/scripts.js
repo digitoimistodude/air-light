@@ -2,6 +2,8 @@
  * Air theme JavaScript.
  */
 
+// Vanilla JS start
+
 // Set up the responsive and accessible navigation
 var customToggle = document.getElementById('nav-toggle');
 var customLabel = document.getElementById('nav-toggle-label');
@@ -29,54 +31,46 @@ var navigation = responsiveNav(".nav-collapse", {
   },
 });
 
+
+// jQuery start
 ( function( $ ) {
 
 	// Hide or show the "back to top" link
 	$(window).scroll(function() {
 
     // Back to top
-  	var offset = 300, // Browser window scroll (in pixels) after which the "back to top" link is shown
-  	offset_opacity = 1200, // Browser window scroll (in pixels) after which the "back to top" link opacity is reduced
-  	scroll_top_duration = 700 // Duration of the top scrolling animation (in ms)
+  	var offset = 300; // Browser window scroll (in pixels) after which the "back to top" link is shown
+  	var offset_opacity = 1200; // Browser window scroll (in pixels) after which the link opacity is reduced
+  	var scroll_top_duration = 700; // Duration of the top scrolling animation (in ms)
+    var link_class = '.top';
 
 		if( $(this).scrollTop() > offset ) {
-      $('.top').addClass('is-visible');
+      $( link_class ).addClass('is-visible');
     } else {
-      $('.top').removeClass('is-visible');
+      $( link_class ).removeClass('is-visible');
     }
 
 		if( $(this).scrollTop() > offset_opacity ) {
-			$('.top').addClass('fade-out');
+			$( link_class ).addClass('fade-out');
 		} else {
-      $('.top').removeClass('fade-out');
+      $( link_class ).removeClass('fade-out');
     }
 
 	});
 
+  // Document ready start
   $(function() {
 
-    // Smooth scroll to top
-    $('.top').on('click', function(event){
-      event.preventDefault();
-      $('body, html').animate({
-        scrollTop: 0,
-        }, 700
-      );
-    });
+    // Document ready stuff here
 
-    // Smooth scroll to ID on any anchor link
-    $('a[href^="#"]').on('click',function (e) {
-        e.preventDefault();
+    // Set up back to top link
+    const moveTo = new MoveTo();
+    const target = document.getElementById('target');
+    moveTo.move(target);
 
-        var target = this.hash;
-        var $target = $(target);
-
-        $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 500, 'swing', function () {
-            window.location.hash = target;
-        });
-    });
+    // Register a back to top trigger
+    const trigger = document.getElementsByClassName('js-trigger')[0];
+    moveTo.registerTrigger(trigger);
 
   });
 
