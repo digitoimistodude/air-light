@@ -130,8 +130,8 @@ if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
 
      #wpadminbar .ab-empty-item,
      #wpadminbar a.ab-item,
-     #wpadminbar>#wp-toolbar span.ab-label,
-     #wpadminbar>#wp-toolbar span.noticon {
+     #wpadminbar > #wp-toolbar span.ab-label,
+     #wpadminbar > #wp-toolbar span.noticon {
        color: #23282d;
      }
 

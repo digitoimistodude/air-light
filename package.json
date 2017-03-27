@@ -1,6 +1,6 @@
 {
   "name": "air",
-  "version": "2.3.0",
+  "version": "2.3.3",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -8,23 +8,24 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "3.1.1",
     "gulp-changed": "^2.0.0",
+    "gulp-clean-css": "3.0.4",
     "gulp-concat": "2.6.1",
     "gulp-header": "1.8.8",
-    "gulp-clean-css": "3.0.3",
     "gulp-notify": "^3.0.0",
     "gulp-pixrem": "^1.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "2.1.0",
+    "gulp-uglify": "2.1.2",
     "gulp-util": "^3.0.8",
     "require-dir": "^0.3.1"
   },
   "dependencies": {
     "jeet": "^7.1.0",
-    "lint-html-with-scss-css": "^1.0.1",
+    "lint-html-with-scss-css": "^1.1.0",
     "luxbar": "^0.3.2",
-    "normalize.css": "^5.0.0",
+    "normalize.css": "^6.0.0",
     "sass-web-fonts": "^2.0.2",
-    "sassboilerplate": "^0.1.0"
+    "sassboilerplate": "^0.1.0",
+    "moveto": "^1.5.3"
   }
 }
