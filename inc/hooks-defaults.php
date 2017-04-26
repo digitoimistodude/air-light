@@ -1,7 +1,14 @@
 <?php
+/**
+ * Air hooks.
+ *
+ * @package air
+ */
 
 /**
  * Remove archive title prefix
+ *
+ * @param type $title Use title parameter.
  */
 function air_remove_archive_title_prefix( $title ) {
   return preg_replace( '/^\w+: /', '', $title );
@@ -25,14 +32,18 @@ function dude_disable_wp_emojicons() {
 
   // Disable classic smilies
   add_filter( 'option_use_smilies', '__return_false' );
-	
+
   add_filter( 'tiny_mce_plugins', 'dude_disable_emojicons_tinymce' );
 }
 add_action( 'init', 'dude_disable_wp_emojicons' );
 
-// Disable TinyMCE emojicons
+/**
+ * Disable TinyMCE emojicons
+ *
+ * @param type $plugins Hook to plugins.
+ */
 function dude_disable_emojicons_tinymce( $plugins ) {
-  if( is_array( $plugins ) ) {
+  if ( is_array( $plugins ) ) {
     return array_diff( $plugins, array( 'wpemoji' ) );
   } else {
     return array();
@@ -52,9 +63,9 @@ function air_lowpriority_yoastseo() {
 }
 add_filter( 'wpseo_metabox_prio', 'air_lowpriority_yoastseo' );
 
-/*
-* Clean up WP admin bar
-*/
+/**
+ * Clean up WP admin bar
+ */
 function remove_admin_bar_links() {
   global $wp_admin_bar;
   $wp_admin_bar->remove_menu( 'about' );            // Remove the about WordPress link
@@ -67,9 +78,9 @@ function remove_admin_bar_links() {
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 
-/*
-* Clean up WP admin menu from stuff we usually don't need
-*/
+/**
+ * Clean up WP admin menu from stuff we usually don't need
+ */
 function remove_admin_menu_links() {
   remove_menu_page( 'themes.php?page=editcss' );
   remove_menu_page( 'edit.php' );
@@ -80,8 +91,8 @@ function remove_admin_menu_links() {
 add_action( 'admin_menu', 'remove_admin_menu_links', 999 );
 
 /**
-* Hide WP updates nag
-*/
+ * Hide WP updates nag
+ */
 add_action( 'admin_menu', 'air_wphidenag' );
 function air_wphidenag() {
   remove_action( 'admin_notices', 'update_nag', 3 );
@@ -98,10 +109,11 @@ function air_remove_admin_login_header() {
 }
 
 if ( getenv( 'WP_ENV' ) === 'development' && is_user_logged_in() ) {
-  add_action('wp_head', 'air_dev_adminbar');
+  add_action( 'wp_head', 'air_dev_adminbar' );
 
-  function air_dev_adminbar() { ?>
-    <style>
+  function air_dev_adminbar() {
+    ?>
+    <style type="text/css">
       html {
         height: auto;
         top: 32px;
