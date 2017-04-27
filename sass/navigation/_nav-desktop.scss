@@ -60,6 +60,60 @@
             vertical-align: text-bottom;
             background-color: transparent;
           }
+
+          // Open second level in last navigation item to the left instead of right
+          &:last-child {
+
+            li:hover > ul,
+            li:focus > ul,
+            li.focus > ul,
+            .focus > ul,
+            ul.toggled {
+              top: 0;
+              right: 0%;
+              left: auto;
+              margin-left: auto;
+              margin-right: $dropdown-width;
+              opacity: 1;
+            }
+
+            li {
+
+              a {
+                padding-left: 30px;
+              }
+
+              &.menu-item-has-children,
+              &.page-item-has-children {
+
+                button.dropdown-toggle {
+                  background-image: url('../svg/chevron-left.svg');
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  top: 22px;
+                  padding-right: 0;
+                  padding-left: .2rem;
+                  right: auto;
+                  left: 8px;
+                }
+              }
+
+              ul {
+                li:hover > ul,
+                li:focus > ul,
+                li.focus > ul,
+                .focus > ul,
+                ul.toggled {
+                  top: 0;
+                  right: 0%;
+                  left: auto;
+                  margin-left: auto;
+                  margin-right: $dropdown-width;
+                  opacity: 1;
+                }
+              }
+            }
+          }
         }
 
         li {
@@ -71,6 +125,7 @@
 
           &.menu-item-has-children,
           &.page-item-has-children {
+
             > a {
               // A bit space for the dropdown toggle
               padding-right: 2rem;
