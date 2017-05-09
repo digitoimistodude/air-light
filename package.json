@@ -1,6 +1,6 @@
 {
   "name": "air",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -14,7 +14,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-pixrem": "^1.0.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.3",
+    "gulp-sourcemaps": "^2.4.4",
     "gulp-uglify": "2.1.2",
     "gulp-util": "^3.0.8",
     "require-dir": "^0.3.1"
