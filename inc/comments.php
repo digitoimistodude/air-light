@@ -9,7 +9,7 @@ $GLOBALS['comment'] = $comment; ?>
   <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
     <div id="comment-<?php comment_ID(); ?>">
       <?php echo get_avatar( $comment, $size = '62' ); ?>
-      <h4 class="comment-author"><?php printf( __( '<a href="#">%s</h4>' ), get_comment_author_link() ) ?></a>
+      <h4 class="comment-author"><a href="#"><?php printf( __( '%s' ), get_comment_author_link() ) ?></a></h4>
 
     <?php if ( 0 === $comment->comment_approved ) : ?>
       <p><em><?php _e( 'Your comment is awaiting approval.', 'air' ) ?></em></p>

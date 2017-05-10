@@ -17,6 +17,7 @@
 		<exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace" />
     <exclude name="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" />
     <exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 
 		<exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
 		<exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
@@ -35,21 +36,29 @@
 		<exclude name="Squiz.Commenting.ClassComment.Missing" />
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpenHint" />
+    <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
+    <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
 
 		<exclude name="WordPress.XSS.EscapeOutput.UnsafePrintingFunction" />
 		<exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
+
 		<exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
+    <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
+
 		<exclude name="WordPress.Variables.GlobalVariables" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis)" />
 		<exclude name="WordPress.PHP.StrictInArray.MissingTrueStrict" />
     <exclude name="WordPress.Functions.DontExtract.extract" />
+    <exclude name="WordPress.Functions.DontExtract.extract_extract" />
 
 		<exclude name="WordPress.VIP.RestrictedFunctions" />
 		<exclude name="WordPress.VIP.AdminBarRemoval.RemovalDetected" />
     <exclude name="WordPress.VIP.OrderByRand" />
     <exclude name="WordPress.VIP.OrderByRand.orderby" />
-	</rule>
+    <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+
+  </rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<rule ref="PHPCompatibility"/>

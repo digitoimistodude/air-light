@@ -1,8 +1,17 @@
 <?php
 /**
  * The current version of the theme.
+ *
+ * @package air
  */
-define( 'AIR_VERSION', '2.3.1' );
+
+define( 'AIR_VERSION', '2.4.4' );
+
+/**
+ * Define SendGrid credentials
+ */
+define('SENDGRID_API_KEY', getenv('SENDGRID_API_KEY'));
+define('SENDGRID_STATS_CATEGORIES', 'air');
 
 /**
  * Requires

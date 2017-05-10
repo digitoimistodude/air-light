@@ -39,12 +39,9 @@ class Air_Walker extends Walker_Nav_Menu {
 		} else if ( strcasecmp($item->attr_title, 'disabled' ) === 0 ) {
 			$output .= $indent . '<li class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 		} else {
-
 			$class_names = $value = '';
-
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			$classes[] = 'air-menu-item menu-item-' . $item->ID;
-
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( $args->has_children ) {

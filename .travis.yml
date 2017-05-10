@@ -1,8 +1,8 @@
-# Travis CI (MIT License) configuration file for the air WordPress theme.
+# Travis CI (MIT License) configuration file for the Underscores WordPress theme.
 # @link https://travis-ci.org/
 
-# For use with the air WordPress theme.
-# @link https://github.com/digitoimistodude/air
+# For use with the Underscores WordPress theme.
+# @link https://github.com/Automattic/_s
 
 # Ditch sudo and use containers.
 # @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
@@ -25,8 +25,10 @@ matrix:
         # aliased to a recent 5.6.x version
         - php: '5.6'
           env: SNIFF=1
-        # aliased to a recent 7.x version
+        # aliased to a recent 7.0.x version
         - php: '7.0'
+        # aliased to a recent 7.1.x version
+        - php: '7.1'
         # aliased to a recent hhvm version
         - php: 'hhvm'
 

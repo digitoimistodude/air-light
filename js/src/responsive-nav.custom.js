@@ -357,8 +357,8 @@
           addClass(navToggle, "active");
           nav.style.position = opts.openPos;
           setAttributes(nav, {"aria-hidden": "false"});
-		  setAttributes(nav, {"aria-expanded": "true"});
-		  setAttributes(navToggle, {"aria-expanded": "true"});
+		      setAttributes(nav, {"aria-expanded": "true"});
+		      setAttributes(navToggle, {"aria-expanded": "true"});
           navOpen = true;
           opts.open();
         }
@@ -374,8 +374,8 @@
           removeClass(htmlEl, opts.navActiveClass);
           removeClass(navToggle, "active");
           setAttributes(nav, {"aria-hidden": "true"});
-		  setAttributes(nav, {"aria-expanded": "false"});
-		  setAttributes(navToggle, {"aria-expanded": "false"});
+		      setAttributes(nav, {"aria-expanded": "false"});
+		      setAttributes(navToggle, {"aria-expanded": "false"});
 
           // If animations are enabled, wait until they finish
           if (opts.animate) {
@@ -423,8 +423,8 @@
 
           isMobile = true;
           setAttributes(navToggle, {"aria-hidden": "false"});
-		  setAttributes(nav, {"aria-expanded": "false"});
-		  setAttributes(navToggle, {"aria-expanded": "false"});
+		      setAttributes(nav, {"aria-expanded": "false"});
+		      setAttributes(navToggle, {"aria-expanded": "false"});
 
           // If the navigation is hidden
           if (nav.className.match(/(^|\s)closed(\s|$)/)) {
@@ -440,18 +440,18 @@
 
           this._createStyles();
           this._calcHeight();
-		  opts.resizeMobile();
+		      opts.resizeMobile();
 
         } else {
 
           isMobile = false;
           setAttributes(navToggle, {"aria-hidden": "true"});
           setAttributes(nav, {"aria-hidden": "false"});
-		  nav.removeAttribute("aria-expanded");
-		  navToggle.removeAttribute("aria-expanded");
+		      nav.removeAttribute("aria-expanded");
+		      navToggle.removeAttribute("aria-expanded");
           nav.style.position = opts.openPos;
           this._removeStyles();
-		  opts.resizeDesktop();
+		      opts.resizeDesktop();
 
         }
       },
@@ -685,7 +685,7 @@
           // If the event type is touch
           if (e.type === "touchend") {
 
-			// If sub-navigation toggle was tapped
+			      // If sub-navigation toggle was tapped
             if (isDropdownTapped) {
               this._toggleDropdown(targetEl);
 
@@ -722,7 +722,7 @@
           targetEl = e.target,
           isDropdownTapped = false;
 
-        if (hasClass(targetEl, "dropdown-toggle") && opts.enableDropdown) isDropdownTapped = true;
+        if (hasClass(targetEl, "dropdown-toggle") && opts.enableDropdown) isDropdownTapped = true;          
         if (evt.keyCode === 13) {
          if (isDropdownTapped) {
             this._toggleDropdown(targetEl);
@@ -841,7 +841,7 @@
 
         // Enable active class to let the navigation expand over
         // the calculated max height
-        //addClass(nav, "dropdown-active");
+        addClass(nav, "dropdown-active");
 
         // Change dropdown button text on every click
         if( targetEl.innerHTML === opts.openDropdown ) {

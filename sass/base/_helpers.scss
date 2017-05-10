@@ -49,7 +49,19 @@
 }
 
 // Helper mixin for self-hosted fonts
-@import 'sassboilerplate/fontface';
+@mixin fontFace($family, $src, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$src}.eot'); // IE9 compat
+    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+      url('#{$src}.woff') format('woff'), // standards
+      url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+      url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
 
 // Helper mixin for Google Web Fonts
 @import 'sass-web-fonts/web-fonts';
