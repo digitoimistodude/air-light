@@ -44,7 +44,7 @@ matrix:
 # e.g. copy database configurations, environment variables, etc.
 # Failures in this section will result in build status 'errored'.
 before_script:
-    - export PHPCS_DIR=/tmp/phpcs
+    - export PHPCS_DIR=/usr/local/bin/phpcs
     - export SNIFFS_DIR=/tmp/sniffs
     # Install CodeSniffer for WordPress Coding Standards checks.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
