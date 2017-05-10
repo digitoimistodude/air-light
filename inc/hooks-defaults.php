@@ -129,3 +129,17 @@ function air_pingback_header() {
 	endif;
 }
 add_action( 'wp_head', 'air_pingback_header' );
+
+function air_disable_rest_endpoints( $endpoints ) {
+	if ( isset( $endpoints['/wp/v2/users'] ) ) {
+  	unset( $endpoints['/wp/v2/users'] );
+  }
+
+  if ( isset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] ) ) {
+  	unset( $endpoints['/wp/v2/users/(?P<id>[\d]+)'] );
+  }
+
+  return $endpoints;
+}
+
+add_filter( 'rest_endpoints', 'air_disable_rest_endpoints' );
