@@ -176,6 +176,9 @@ function air_pingback_header() {
 }
 add_action( 'wp_head', 'air_pingback_header' );
 
+/**
+ *  Disable REST-API users endpoint.
+ */
 function air_disable_rest_endpoints( $endpoints ) {
 	if ( isset( $endpoints['/wp/v2/users'] ) ) {
   	unset( $endpoints['/wp/v2/users'] );
