@@ -13,12 +13,6 @@ sudo: false
 # @link http://about.travis-ci.org/docs/user/languages/php/
 language: php
 
-env:
-  # Branch for patches against 2.x. `master` is now 3.x which WPCS is not (yet) compatible with.
-  - PHPCS_BRANCH=2.9
-  # Tagged release
-  - PHPCS_BRANCH=2.9.0
-
 # Declare versions of PHP to use. Use one decimal max.
 # @link http://docs.travis-ci.com/user/build-configuration/
 matrix:
