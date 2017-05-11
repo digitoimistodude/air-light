@@ -108,3 +108,16 @@ $web-fonts-protocol: 'https' !global !default;
     font-size: $fallback;
   }
 }
+
+// A natural box layout model to all elements
+// Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html,
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+img {
+  box-sizing: content-box;
+}

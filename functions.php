@@ -5,7 +5,7 @@
  * @package air
  */
 
-define( 'AIR_VERSION', '2.4.5' );
+define( 'AIR_VERSION', '2.4.6' );
 
 /**
  * Define SendGrid credentials
@@ -17,7 +17,6 @@ define('SENDGRID_CATEGORIES', 'air');
  * Requires
  */
 require get_theme_file_path( '/inc/hooks-defaults.php' );
-require get_theme_file_path( '/inc/woocommerce.php' );
 require get_theme_file_path( '/inc/menus.php' );
 require get_theme_file_path( '/inc/nav-walker.php' );
 require get_theme_file_path( '/inc/comments.php' );

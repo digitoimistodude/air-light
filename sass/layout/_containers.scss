@@ -5,27 +5,6 @@
   margin-right: auto;
 }
 
-// A natural box layout model to all elements
-// Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
-html,
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-img {
-  box-sizing: content-box;
-}
-
-// Set containers
-html,
-body {
-  height: 100%;
-  margin: 0;
-  max-width: 100%;
-}
-
 .container {
   @if $grid-type == fluid {
     @include center($max_width: $grid-base-size, $pad: $container-default-pad);

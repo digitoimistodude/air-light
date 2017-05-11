@@ -11,9 +11,6 @@
 @import 'helpers';
 @import 'accessibility';
 
-// Debugging features
-@import '../debug/lint';
-
 // Structure
 @import '../layout/general';
 @import '../layout/typography';
@@ -38,6 +35,3 @@
 @import '../views/blog';
 @import '../views/single';
 @import '../views/comments';
-
-// WooCommerce
-@import '../woocommerce/woocommerce';
