@@ -1,6 +1,10 @@
-// If you are using Disqus or similar, you can uncomment this in global.scss
-
+// --------------------------------------------------------
 // Comments
+//
+// WordPress built-in comments with comment_form().
+// Custom comment template can be found in inc/comments.php
+// --------------------------------------------------------
+
 .comments-area {
   margin-top: 50px;
   margin-bottom: 50px;

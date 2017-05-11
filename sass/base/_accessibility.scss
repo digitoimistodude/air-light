@@ -1,4 +1,10 @@
+// ---------------------------------------------------------
 // Accessibility
+//
+// A hidden screen reader for readers, focus elements for
+// vision impaired and other useful a11y CSS hacks.
+// ---------------------------------------------------------
+
 :focus {
   outline: thin solid $color_links;
 }

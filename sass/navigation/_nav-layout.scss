@@ -1,7 +1,13 @@
-//! responsive-nav.js 1.0.39 by @viljamis
-// sassified by @rolle
+// ------------------------------------------------------------
+// Site navigation layout
+//
+// The main layout for the website navigation, for both mobile
+// and non-mobile versions. Add general nav styles here, for
+// example link color and effect changes. Originally a fork of
+// responsive-nav 1.0.39 by @viljamis, sassified by
+// @ronilaukkarinen
+// ------------------------------------------------------------
 
-// General for both mobile and non-mobile
 #nav {
   clip: rect(0 0 0 0);
   max-height: 0;

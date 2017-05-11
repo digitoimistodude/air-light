@@ -1,4 +1,10 @@
-// Fields
+// ------------------------------------------------------------
+// Forms and input fields
+//
+// All the forms on the site. General styles. Supports most of
+// the Gravity Forms styles out of the box.
+// ------------------------------------------------------------
+
 body {
 
   // Buttons
@@ -80,12 +86,9 @@ body {
         input[type="search"] {
           @extend .default;
           font-family: $font-base;
-          background: #fdfdfd;
-          border-top: 0;
-          border-left: 0;
-          border-right: 0;
-          border-bottom: 3px solid rgba(#434343, .2);
-          padding: 25px 20px;
+          background: #f0f0f0;
+          border: 0;
+          padding: 15px 20px;
           line-height: 24px;
           transition: all .55s;
           text-decoration: none;
@@ -99,6 +102,7 @@ body {
           }
 
           &:focus {
+            background: #dfdfdf;
             border-color: rgba(#222, 1);
             outline: 0;
 
@@ -110,7 +114,8 @@ body {
         }
 
         select {
-          border: 3px solid rgba(#434343, .2);
+          border: 0;
+          border-radius: 0;
           background-image: url('../svg/select.svg');
           background-repeat: no-repeat;
           background-position: right center;

@@ -5,7 +5,7 @@
  * @package air
  */
 
-define( 'AIR_VERSION', '2.4.6' );
+define( 'AIR_VERSION', '2.4.7' );
 
 /**
  * Define SendGrid credentials

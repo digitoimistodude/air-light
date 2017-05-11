@@ -1,31 +1,44 @@
-// Basic front-page slide layout
-.slide {
-  &.slide-front {
-    background-position: center;
-    background-color: #e9e9e9;
-    position: relative;
+// ------------------------------------------------
+// Front page
+//
+// The most important page on the website goes here.
+// You can force the styles by defining them inside
+// the body.
+// ------------------------------------------------
 
-    @media(min-width: $container-mobile) {
-      max-height: 700px;
-      height: 60vh;
-    }
+body {
+  #page {
+    .site-content {
+      .slide {
+        &.slide-front {
+          background-position: center;
+          background-color: #e9e9e9;
+          position: relative;
 
-    .container {
-      padding-top: 150px;
+          @media(min-width: $container-mobile) {
+            max-height: 700px;
+            height: 60vh;
+          }
 
-      h1 {
-        color: #fff;
-        text-align: center;
+          .container {
+            padding-top: 150px;
+
+            h1 {
+              color: #fff;
+              text-align: center;
+            }
+
+            @media(min-width: $container-mobile) {
+              @include vertical-align();
+              padding-top: 6rem;
+            }
+          }
+        }
+
+        &.slide-front-content {
+          background: #fff;
+        }
       }
-
-      @media(min-width: $container-mobile) {
-        @include vertical-align();
-        padding-top: 6rem;
-      }
     }
-  }
-
-  &.slide-front-content {
-    background: #fff;
   }
 }

@@ -1,4 +1,13 @@
+// -----------------------------------------------------------
+// Typography
+//
+// Everything around fonts, font size definitions and typeset
+// presets. No modular scale, but a sophisticated viewport
+// based responsive mixin can be found in _helpers.scss
+// -----------------------------------------------------------
+
 // Choose which option to use
+// Feel free to remove bloat code or comments if you use only either one or neither
 // google: Uses Pennman's mixin for Google Web Fonts
 // selfhosted: Uses self-hosted webfonts from fonts/ directory
 $fontstack: google;
