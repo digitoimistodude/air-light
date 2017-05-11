@@ -100,7 +100,7 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 
 #### WooCommerce support
 
-Air has by default basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884). It includes the most basic overrides like buttons. WooCommerce as well as other things in the theme are built for starting point only.
+Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), but it has been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6. WooCommerce air support includes the most basic overrides like buttons. WooCommerce as well as other things in air theme are built for starting point only.
 
 ### Requirements
 
