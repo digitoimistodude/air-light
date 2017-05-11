@@ -11,7 +11,7 @@ define( 'AIR_VERSION', '2.4.4' );
  * Define SendGrid credentials
  */
 define('SENDGRID_API_KEY', getenv('SENDGRID_API_KEY'));
-define('SENDGRID_STATS_CATEGORIES', 'air');
+define('SENDGRID_CATEGORIES', 'air');
 
 /**
  * Requires
