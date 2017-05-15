@@ -6,7 +6,13 @@
 // -----------------------------------------------------------
 
 // Desktop styles for navigation
-#nav {
+nav {
+  @media (min-width: $responsivenav) {
+    // Set based on logo height, for example air logo is about 62px, menu links height are 12px, so paddings are (60/2)-12:
+    padding-top: 17px;
+    padding-bottom: 17px;
+  }
+
   ul {
     li {
       // Desktop navigation start
@@ -23,7 +29,8 @@
         &.focus > ul,
         .focus > ul,
         ul.toggled {
-          top: 55px;
+          // Calculate this with the font size
+          top: 32px;
           left: 38%;
           margin-left: -75px;
           opacity: 1;
@@ -207,8 +214,8 @@
   @media (min-width: $responsivenav) {
     .dropdown {
       ul {
-        max-height: 0;
-        overflow: hidden;
+        max-height: 9999px;
+        overflow: visible;
 
         li {
           width: 100%;

@@ -116,8 +116,8 @@
   -webkit-tap-highlight-color: rgba(#000, 0);
   border: 0;
   color: #fff;
-  font-size: 21px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-touch-callout: none;
@@ -129,6 +129,8 @@
   line-height: 39px;
   padding: 0 .75em;
   background: transparent;
+  appearance: button;
+  cursor: pointer;
 
   span {
     color: #fff;
@@ -152,8 +154,8 @@
   @media (max-width: ($responsivenav)-1px) {
     width: auto;
     float: right;
-    top: 30px;
-    right: 20px;
+    top: 22px;
+    right: 10px;
     position: relative;
   }
 
@@ -169,7 +171,3 @@
   }
 }
 
-button {
-  appearance: button;
-  cursor: pointer;
-}

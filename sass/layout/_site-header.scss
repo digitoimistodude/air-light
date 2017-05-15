@@ -11,10 +11,14 @@
   left: 0;
   width: 100%;
   z-index: 1;
-  padding-top: 20px;
+
+  @media(min-width: $responsivenav) {
+    padding-top: 20px;
+  }
 
   .container {
     padding: 0;
+    overflow: visible;
   }
 
   .site-branding {
@@ -24,6 +28,22 @@
     .site-title {
       overflow: hidden;
       margin: 0;
+
+      // The point where logo touches the left side
+      @media(max-width: $grid-base-size+20) {
+        margin-left: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+
+      // The point where navigation turns into mobile nav
+      @media(max-width: $responsivenav) {
+        margin-left: 10px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        margin-right: 0;
+      }
 
       a {
         svg {
@@ -36,7 +56,7 @@
           svg {
             fill: $color-fog;
           }
-        }
+        }        
       }
     }
   }
