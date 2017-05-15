@@ -1,7 +1,7 @@
 // -----------------------------------------------------------
 // Site navigation desktop layout
 //
-// The main layout for the website navigation, for a desktop 
+// The main layout for the website navigation, for a desktop
 // version only.
 // -----------------------------------------------------------
 
@@ -13,8 +13,7 @@
       @media (min-width: $responsivenav) {
         border: 0;
         display: inline-block;
-        height: 55px;
-        line-height: 55px;
+        height: auto;
         position: relative;
         width: auto;
 
@@ -178,7 +177,7 @@
           }
 
           a {
-            padding: $list-padding;
+            padding: 1em 1.5em;
             white-space: normal;
             width: $dropdown-width;
           }

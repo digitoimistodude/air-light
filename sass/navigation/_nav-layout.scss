@@ -8,7 +8,7 @@
 // @ronilaukkarinen
 // ------------------------------------------------------------
 
-#nav {
+nav {
   clip: rect(0 0 0 0);
   max-height: 0;
   zoom: 1;
@@ -16,6 +16,11 @@
   list-style: none;
   position: relative;
   overflow: visible;
+  float: right;
+
+  // Set based on logo height, for example air logo is about 62px, menu links height are 12px, so paddings are (60/2)-12:
+  padding-top: 17px;
+  padding-bottom: 17px;
 
   ul {
     margin-bottom: 0;
@@ -32,35 +37,37 @@
       width: 100%;
 
       a {
-        background: $color-navigation-bg;
-        color: $color-navigation-text;
+        background: transparent;
+        color: #fff;
         float: left;
         text-decoration: none;
         width: 100%;
-        font-size: $font-size-navigation;
+        font-size: 14px;
         margin: 0;
         text-align: left;
         display: inline-block;
         padding: 0 16px;
 
         &:hover {
-          background-color: $color-navigation-hover;
+          color: #fff;
+          background-color: #3e4853;
         }
       }
 
       // Accessibility: list item with focus
       &.focus > a {
-        background-color: $color-navigation-hover;
+        background-color: #3e4853;
       }
     }
 
     // Separate first level styles, if you'd like to style other levels differently
     &:first-child {
       li a {
-        background: $color-navigation-bg;
+        color: #fff;
+        background: transparent;
 
         &:hover {
-          color: $color-navigation-first-level-text-hover;
+          color: rgba(#fff, .8);
         }
       }
     }

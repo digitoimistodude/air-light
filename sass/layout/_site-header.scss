@@ -11,6 +11,7 @@
   left: 0;
   width: 100%;
   z-index: 1;
+  padding-top: 20px;
 
   .container {
     padding: 0;
@@ -18,19 +19,11 @@
 
   .site-branding {
     overflow: hidden;
-
-    @media(min-width: $responsivenav) {
-      @include column(2/10);
-    }
-
-    @media(max-width: ($responsivenav)-1px) {
-      @include span(1/2);
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+    float: left;
 
     .site-title {
       overflow: hidden;
+      margin: 0;
 
       a {
         svg {
@@ -39,7 +32,6 @@
           position: relative;
         }
 
-        // Just an example what svg hover can do
         &:hover {
           svg {
             fill: $color-fog;
@@ -47,25 +39,5 @@
         }
       }
     }
-  }
-
-  .nav-collapse {
-    @media(min-width: $responsivenav) {
-      @include column(8/10);
-
-      // Set these based on the logo size
-      padding-top: 30px;
-      padding-bottom: 30px;
-
-      ul {
-        float: right;
-      }
-    }
-  }
-
-  .site-title {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 2rem;
   }
 }
