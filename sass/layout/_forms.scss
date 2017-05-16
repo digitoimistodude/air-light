@@ -13,25 +13,25 @@ body {
   input[type="submit"]:not(.nav-toggle),
   input[type="button"]:not(.nav-toggle),
   .button:not(.nav-toggle) {
-      background: #222;
-      color: #fff;
-      border: 0;
-      width: auto;
-      display: inline-block;
-      padding: 16px 25px;
-      margin-bottom: 10px;
-      text-decoration: none;
-      position: relative;
-      cursor: pointer;
-      transition: 150ms linear all;
-      appearance: none;
-      font-family: $font-base;
+    background: $color-links;
+    color: #fff;
+    border: 0;
+    width: auto;
+    display: inline-block;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: 150ms linear all;
+    appearance: none;
+    font-family: $font-base;
 
-      &:hover,
-      &:focus {
-        color: #222;
-        background: #ddd;
-      }
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: darken($color-links, 15%);
+    }
   }
 
   a,
@@ -166,7 +166,7 @@ body {
             margin-bottom: 20px;
             margin-top: 0;
 
-            @media(max-width: $container-mobile) {
+            @media (max-width: $container-mobile) {
               @include stack();
             }
 
@@ -183,7 +183,7 @@ body {
             margin-bottom: 20px;
             margin-top: 0;
 
-            @media(max-width: $container-mobile) {
+            @media (max-width: $container-mobile) {
               @include stack();
             }
 

@@ -36,7 +36,7 @@ $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
 $font-min-size: 16px; // Minimum font size, on mobile (default: 16px)
-$font-max-size: 20px; // Maximum font size, on desktop (default: 21px)
+$font-max-size: 18px; // Maximum font size, on desktop
 $font-base-line-height: 1.78; // Line height for paragraphs
 $font-base-line-height-elements: 1.68; // Line height for other elements like table cells and spans
 $headings-line-height-setup: force; // Force: all headings have same line height. Flexible: values are set separately in _typography.scss
