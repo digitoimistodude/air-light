@@ -8,15 +8,8 @@
 define( 'AIR_VERSION', '2.4.9' );
 
 /**
- * Define SendGrid credentials
- */
-define('SENDGRID_API_KEY', getenv('SENDGRID_API_KEY'));
-define('SENDGRID_CATEGORIES', 'air');
-
-/**
  * Requires
  */
-require get_theme_file_path( '/inc/hooks-defaults.php' );
 require get_theme_file_path( '/inc/menus.php' );
 require get_theme_file_path( '/inc/nav-walker.php' );
 require get_theme_file_path( '/inc/comments.php' );
@@ -34,15 +27,6 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list'
  * Set a locale for Finnish language
  */
 setlocale( LC_ALL, 'fi_FI.utf8' );
-
-/**
- * Custom uploads folder media/ instead of default content/uploads/.
- * Comment these out if you want to set up media library folder in wp-admin.
- */
-update_option( 'upload_path', untrailingslashit( str_replace( 'wp', 'media', ABSPATH ) ) );
-update_option( 'upload_url_path', untrailingslashit( str_replace( 'wp', 'media', get_site_url() ) ) );
-define( 'uploads', '' . 'media' );
-add_filter( 'option_uploads_use_yearmonth_folders', '__return_false', 100 );
 
 /**
  * Enqueue scripts and styles.
@@ -64,24 +48,6 @@ function air_scripts() {
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'air_scripts' );
-
-/**
- * Remove SendGrid credentials in development env, so that
- * test emails won't go out to client.
- */
-if ( getenv( 'WP_ENV' ) === 'development' ) {
-
-  function air_remove_sendgrid_apikey() {
-    return '';
-  }
-  add_filter( 'option_sendgrid_api_key', 'air_remove_sendgrid_apikey' );
-
-  function air_remove_sendgrid_pwd() {
-    return '';
-  }
-  add_filter( 'option_sendgrid_pwd', 'air_remove_sendgrid_pwd' );
-
-}
 
 
 if ( ! function_exists( 'air_entry_footer' ) ) :
