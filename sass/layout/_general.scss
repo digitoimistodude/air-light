@@ -43,9 +43,8 @@ body {
 
   .container {
     margin: 0 auto;
-    padding-top: 4em;
-    padding-bottom: 4em;
-    overflow: hidden;
+    padding-top: $container-default-pad;
+    padding-bottom: $container-default-pad;
 
     @if $grid-type == fluid {
       @include center($max_width: $grid-base-size, $pad: $container-default-pad);
@@ -74,6 +73,8 @@ body {
     @media(max-width: $grid-base-size + 100px) {
       padding-left: $container-default-pad/2;
       padding-right: $container-default-pad/2;
+      padding-top: $container-default-pad/2;
+      padding-bottom: $container-default-pad/2;
     }
   }
 

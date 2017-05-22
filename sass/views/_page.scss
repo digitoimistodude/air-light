@@ -8,7 +8,7 @@
 .slide {
   &.slide-page {
     @media(min-width: $container-mobile) {
-      min-height: 500px;
+      min-height: 300px;
     }
   }
 }
