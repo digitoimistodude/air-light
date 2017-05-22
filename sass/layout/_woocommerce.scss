@@ -1,0 +1,94 @@
+// Default overrides for WooCommerce
+body {
+  &.woocommerce,
+  &.woocommerce-page {
+    .site-content {
+
+      // Breadcrumb
+      .woocommerce-breadcrumb {
+        font-weight: 600;
+        color: $color-fog;
+        font-family: $font-headings;
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+
+      // Buttons
+      .button,
+      .button.disabled,
+      .button.alt,
+      .button[disabled] {
+        background: #222;
+        color: #fff;
+        border-radius: 0;
+
+        &:hover {
+          background: #222;
+        }
+      }
+
+      // Product archive listing
+      ul.products {
+        .button {
+          @include responsive-font(3vw, 13px, 16px, $font-max-size);
+        }
+
+        // Default columns fix for air
+        li {
+          @media(min-width: $container-ipad) {
+            @include column(1/4, $cycle: 4);
+          }
+        }
+
+        // Star rating fix for air
+        .star-rating {
+          @extend .default;
+          margin-top: 2px;
+          height: 32px;
+
+          span {
+            padding-top: 1.5em;
+            font-family: 'star';
+
+            &:after {
+              font-family: 'star';
+              content: '\53\53\53\53\53';
+              top: 0;
+              position: absolute;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      // Single product
+      div.product {
+        @extend .default;
+
+        // Star rating fix for air
+        .star-rating {
+          @extend .default;
+          margin-top: 2px;
+          height: 35px;
+
+          * {
+            font-family: 'star';
+          }
+        }
+
+        // Price size fix
+        .price,
+        .price span {
+          @extend .betweenh2andh3;
+          font-family: $font-headings;
+          color: $color-almostblack;
+          font-weight: 900;
+        }
+
+        .button {
+          padding: 18px;
+        }
+      }
+    }
+  }
+}
