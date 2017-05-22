@@ -7,40 +7,35 @@
  * @package air
  */
 
- get_header();
- get_template_part( 'template-parts/hero', get_post_type() ); ?>
+get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-      <div class="container">
+<div id="primary" class="content-area">
+	<main id="main" class="site-main">
+    <div class="container">
 
-        <?php
-        if ( have_posts() ) : ?>
+      <?php if ( have_posts() ) : ?>
 
-            <header class="page-header">
-              <?php
-                the_archive_title( '<h1 class="page-title">', '</h1>' );
-                the_archive_description( '<div class="taxonomy-description">', '</div>' );
-                ?>
-            </header><!-- .page-header -->
+        <header class="page-header">
+          <?php the_archive_title( '<h1 class="page-title">', '</h1>' );
+          the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+        </header><!-- .page-header -->
 
-            <?php while ( have_posts() ) : the_post();
-              get_template_part( 'template-parts/content', get_post_format() );
-            endwhile;
+        <?php while ( have_posts() ) {
+        	the_post();
+        	get_template_part( 'template-parts/content', get_post_type() );
+        }
 
-          the_posts_navigation();
+        the_posts_navigation();
 
-          else :
-            get_template_part( 'template-parts/content', 'none' ); ?>
+      else :
+      	get_template_part( 'template-parts/content', 'none' );
+      endif; ?>
 
-  			<?php endif; ?>
+    </div><!-- .container -->
 
-      </div><!-- .container -->
+	</main><!-- #main -->
+</div><!-- #primary -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-// get_sidebar();
-get_footer();
+<?php get_footer();

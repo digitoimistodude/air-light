@@ -23,7 +23,7 @@
 
 <?php wp_footer(); ?>
 
-<a href="#page" class="js-trigger top" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html_e('Back to top', 'air'); ?></span><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/chevron-up.svg' ) ) ); ?></a>
+<a href="#page" class="js-trigger top" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html_e('Back to top', 'air'); ?></span><?php echo file_get_contents( get_theme_file_path( '/svg/chevron-up.svg' ) ); ?></a>
 
 </body>
 </html>

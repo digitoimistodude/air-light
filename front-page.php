@@ -10,11 +10,11 @@
  * @package air
  */
 
-// Featured image
+// Featured image.
 if ( has_post_thumbnail() ) :
-  $featured_image = esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) );
+	$featured_image = esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) );
 else :
-  $featured_image = esc_url( get_template_directory_uri() . '/images/default.jpg' );
+	$featured_image = esc_url( get_template_directory_uri() . '/images/default.jpg' );
 endif;
 
 get_header(); ?>
@@ -23,7 +23,7 @@ get_header(); ?>
   <div class="shade shade-gradient"></div>
 
   <div class="container">
-    <h1><?php echo esc_html_e('air &mdash; WordPress starter theme', 'air'); ?></h1>
+    <h1><?php echo esc_html_e( 'air &mdash; WordPress starter theme', 'air' ); ?></h1>
   </div>
 </div>
 
@@ -34,11 +34,9 @@ get_header(); ?>
 
       <div class="container">
 
-        <?php
-        while ( have_posts() ) : the_post();
-          the_content();
-        endwhile;
-        ?>
+        <?php while ( have_posts() ) {
+        	the_content();
+				} ?>
 
       </div><!-- .container -->
 
@@ -47,6 +45,4 @@ get_header(); ?>
   </main><!-- #main -->
 </div><!-- #primary -->
 
-<?php
-// get_sidebar();
-get_footer();
+<?php get_footer();

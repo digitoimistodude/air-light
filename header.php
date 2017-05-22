@@ -28,38 +28,33 @@
   		<div class="container">
 
   			<div class="site-branding">
-  				<?php
-  				if ( is_front_page() && is_home() ) : ?>
+  				<?php if ( is_front_page() && is_home() ) : ?>
   					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/logo.svg' ) ) ); ?></a></h1>
   				<?php else : ?>
   					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span><?php echo file_get_contents( esc_url( get_theme_file_path( '/svg/logo.svg' ) ) ); ?></a></p>
-  				<?php
-  				endif;
+  				<?php endif;
+
   				$description = get_bloginfo( 'description', 'display' );
   				if ( $description || is_customize_preview() ) : ?>
   					<p class="site-description screen-reader-text"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-  				<?php
-  				endif; ?>
+  				<?php endif; ?>
   			</div><!-- .site-branding -->
 
   			<button id="nav-toggle" class="nav-toggle" aria-controls="nav" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Menu', 'air' ); ?></span></button>
 
   			<nav id="nav" class="nav-collapse">
 
-  				<?php
-  					wp_nav_menu( array(
-  						'theme_location'    => 'primary',
-  						'container'       	=> false,
-  						'depth'             => 4,
-  						'menu_class'        => 'menu-items',
-  						'menu_id' 					=> 'menu',
-  						'echo'            	=> true,
-  						'fallback_cb'       => 'wp_page_menu',
-  						'items_wrap'      	=> '<ul class="%2$s" id="%1$s">%3$s</ul>',
-  						'walker'            => new Air_Walker(),
-  						)
-  					);
-  				?>
+  				<?php wp_nav_menu( array(
+						'theme_location'    => 'primary',
+						'container'       	=> false,
+						'depth'             => 4,
+						'menu_class'        => 'menu-items',
+						'menu_id' 					=> 'menu',
+						'echo'            	=> true,
+						'fallback_cb'       => 'wp_page_menu',
+						'items_wrap'      	=> '<ul class="%2$s" id="%1$s">%3$s</ul>',
+						'walker'            => new Air_Walker(),
+  				) ); ?>
 
   			</nav><!-- #site-navigation -->
 

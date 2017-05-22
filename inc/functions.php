@@ -1,6 +1,14 @@
 <?php
+/**
+ *  Air custom functions.
+ *
+ *  @package air
+ */
 
 if ( ! function_exists( 'air_entry_footer' ) ) {
+	/**
+	 *  Show categories, tags, comment and edit links after post.
+	 */
 	function air_entry_footer() {
 		if ( 'post' === get_post_type() ) {
 			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma', 'air' ) );
@@ -30,6 +38,9 @@ if ( ! function_exists( 'air_entry_footer' ) ) {
 }
 
 if ( ! function_exists( 'air_comments' ) ) {
+	/**
+	 *  Custom comments function.
+	 */
 	function air_comments( $comment, $args, $depth ) {
 		//$GLOBALS['comment'] = $comment; ?>
 

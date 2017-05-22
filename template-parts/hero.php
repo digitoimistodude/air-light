@@ -11,8 +11,6 @@
 // Slide settings
 if ( is_front_page() ) :
 	$slide_class = ' slide-front';
-elseif ( is_page() ) :
-	$slide_class = ' slide-page';
 else :
 	$slide_class = ' slide-' . get_post_type();
 endif;
