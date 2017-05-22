@@ -5,96 +5,99 @@
 // classes and other WordPress editor formatting.
 // ------------------------------------------------
 
-article.post {
-  margin-bottom: 30px;
-}
-
-// WordPress alignments
-.cat-links,
-.tags-links {
-  display: block;
-}
-
-.alignleft {
-  display: inline;
-  float: left;
-  margin-right: 20px;
-}
-
-.alignright {
-  display: inline;
-  float: right;
-  margin-left: 20px;
-}
-
-.aligncenter {
-  clear: both;
-  display: block;
-  margin: 0 auto;
-}
-
-.comments-link {
-  display: block;
-}
-
-del {
-  text-decoration: line-through;
-  opacity: .6;
-}
-
-// WordPress captions
-.wp-caption {
-  max-width: 100%;
-
-  img[class*="wp-image-"] {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .wp-caption-text {
-    text-align: left;
-    font-style: italic;
-    border-bottom: 2px solid $color_grey;
-    padding: 1rem 0;
-    margin-bottom: 20px;
-  }
-}
-
-// Embeds
-.entry-content {
-  embed,
-  iframe,
-  object,
-  video {
-    max-width: 100%;
-  }
-}
-
-// Tables, codes and pres
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-td,
-th {
-  padding: 0;
-}
-
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-b,
-strong {
-  font-weight: bold;
-}
-
-dfn {
-  font-style: italic;
-}
-
 body {
+
+  .container {
+    &.container-article {
+      max-width: $article-max-width;
+    }
+
+    // WordPress alignments
+    .cat-links,
+    .tags-links {
+      display: block;
+    }
+
+    .alignleft {
+      display: inline;
+      float: left;
+      margin-right: 20px;
+    }
+
+    .alignright {
+      display: inline;
+      float: right;
+      margin-left: 20px;
+    }
+
+    .aligncenter {
+      clear: both;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .comments-link {
+      display: block;
+    }
+
+    del {
+      text-decoration: line-through;
+      opacity: .6;
+    }    
+  }
+
+  // WordPress captions
+  .wp-caption {
+    max-width: 100%;
+
+    img[class*="wp-image-"] {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .wp-caption-text {
+      text-align: left;
+      font-style: italic;
+      border-bottom: 2px solid $color_grey;
+      padding: 1rem 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  // Embeds
+  .entry-content {
+    embed,
+    iframe,
+    object,
+    video {
+      max-width: 100%;
+    }
+  }
+
+  // Tables, codes and pres
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    padding: 0;
+  }
+
+  abbr[title] {
+    border-bottom: 1px dotted;
+  }
+
+  b,
+  strong {
+    font-weight: bold;
+  }
+
+  dfn {
+    font-style: italic;
+  }
+
   kbd {
     border: 1px solid #ccc;
     font-family: Arial, Helvetica, sans-serif;
@@ -108,140 +111,142 @@ body {
     white-space: nowrap;
     padding: 0 .5rem;
   }
-}
 
-pre {
-  display: block;
-  padding: 9.5px;
-  margin: 0 0 .625rem;
-  color: #333;
-  word-break: break-all;
-  word-wrap: break-word;
-  background-color: #f5f5f5;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  overflow: auto;
+  pre {
+    display: block;
+    padding: 9.5px;
+    margin: 0 0 .625rem;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: auto;
 
-  &.debug {
-    font-size: 11px;
-    line-height: 1.5;
-  }
+    &.debug {
+      font-size: 11px;
+      line-height: 1.5;
+    }
 
-  code {
-    padding: 0;
-    font-size: inherit;
-    color: inherit;
-    white-space: pre-wrap;
-    background-color: transparent;
-    border-radius: 0;
-  }
-}
-
-// Taxonomies
-.taxonomy-description {
-  margin-bottom: 2rem;
-}
-
-.post {
-  .entry-header {
-    .entry-title {
-      margin-bottom: .1em;
-
-      a {
-        color: $color-body;
-      }
+    code {
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      white-space: pre-wrap;
+      background-color: transparent;
+      border-radius: 0;
     }
   }
 
-  .entry-content {
-    margin-bottom: 2em;
+  // Taxonomies
+  .taxonomy-description {
+    margin-bottom: 2rem;
   }
 
-  .entry-meta {
-    * {
-      color: $color-darkgrey;
-    }
+  .post {
+    margin-bottom: 30px;
 
-    .entry-time {
-      margin-bottom: 1.5em;
-    }
-  }
+    .entry-header {
+      .entry-title {
+        margin-bottom: .1em;
 
-  .entry-footer {
-    margin-top: 0;
-    margin-bottom: 0;
-
-    .cat {
-      margin-top: 0;
-      margin-bottom: 10px;
-
-      a {
-        @include responsive-font(1.2vw, 14px, 17px);
-      }
-    }
-
-    a {
-      color: #777;
-
-      &:hover {
-        color: #111;
-      }
-    }
-
-    .comments-link {
-      @include responsive-font(1.2vw, 14px, 17px);
-      text-align: right;
-      display: block;
-
-      svg {
-        fill: #777;
-        position: relative;
-        top: 1px;
-        margin-right: 2px;
-      }
-
-      &:hover,
-      &:focus {
-        color: #111;
-
-        a,
-        a:link,
-        a:visited,
-        svg {
-          color: #111;
-          fill: #111;
+        a {
+          color: $color-body;
         }
       }
     }
 
-    .tags {
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-      padding-left: 0;
+    .entry-content {
+      margin-bottom: 2em;
+    }
 
-      li {
-        @include responsive-font(1.2vw, 10px, 13px);
-        margin-left: 0;
-        margin-right: 10px;
-        margin-bottom: 10px;
-        padding-left: 0;
-        display: inline-block;
-        float: left;
+    .entry-meta {
+      * {
+        color: $color-darkgrey;
+      }
+
+      .entry-time {
+        margin-bottom: 1.5em;
+      }
+    }
+
+    .entry-footer {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      .cat {
         margin-top: 0;
+        margin-bottom: 10px;
 
         a {
-          transition: all .6s;
-          padding: 6px 10px 4px;
-          display: inline-block;
-          border-radius: 4px;
-          background: #f0f0f0;
-          opacity: .8;
+          @include responsive-font(1.2vw, 14px, 17px);
+        }
+      }
 
-          &:hover {
+      a {
+        color: #777;
+
+        &:hover {
+          color: #111;
+        }
+      }
+
+      .comments-link {
+        @include responsive-font(1.2vw, 14px, 17px);
+        text-align: right;
+        display: block;
+
+        svg {
+          fill: #777;
+          position: relative;
+          top: 1px;
+          margin-right: 2px;
+        }
+
+        &:hover,
+        &:focus {
+          color: #111;
+
+          a,
+          a:link,
+          a:visited,
+          svg {
             color: #111;
-            background: #ddd;
-            opacity: 1;
+            fill: #111;
+          }
+        }
+      }
+
+      .tags {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        padding-left: 0;
+
+        li {
+          @include responsive-font(1.2vw, 10px, 13px);
+          margin-left: 0;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          padding-left: 0;
+          display: inline-block;
+          float: left;
+          margin-top: 0;
+
+          a {
+            transition: all .6s;
+            padding: 6px 10px 4px;
+            display: inline-block;
+            border-radius: 4px;
+            background: #f0f0f0;
+            opacity: .8;
+
+            &:hover {
+              color: #111;
+              background: #ddd;
+              opacity: 1;
+            }
           }
         }
       }
