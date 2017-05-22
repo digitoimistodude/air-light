@@ -11,6 +11,7 @@
  */
 
 // Featured image.
+$featured_image = '';
 if ( has_post_thumbnail() ) :
 	$featured_image = esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) );
 else :
@@ -34,9 +35,14 @@ get_header(); ?>
 
       <div class="container">
 
-        <?php while ( have_posts() ) {
-        	the_content();
-				} ?>
+        <?php if ( have_posts() ) {
+        	while ( have_posts() ) {
+	      		the_post();
+	      		the_content();
+					}
+        } else {
+        	get_template_part( 'template-parts/content', 'none' );
+        }  ?>
 
       </div><!-- .container -->
 
