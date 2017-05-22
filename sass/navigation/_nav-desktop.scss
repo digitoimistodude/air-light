@@ -6,7 +6,7 @@
 // -----------------------------------------------------------
 
 // Desktop styles for navigation
-nav {
+#nav {
   @media (min-width: $responsivenav) {
     // Set based on logo height, for example air logo is about 62px, menu links height are 12px, so paddings are (60/2)-12:
     padding-top: 17px;

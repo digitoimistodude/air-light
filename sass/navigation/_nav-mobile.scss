@@ -10,6 +10,14 @@
 
 // Mobile styles
 @media screen and (max-width: $responsivenav) {
+  html {
+    &.js-nav-active {
+      .site-header {
+        background-color: #222;
+      }
+    }
+  }
+
   #nav {
     width: 100%;
     max-height: 0;
