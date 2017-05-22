@@ -6,103 +6,107 @@
 // always repeating elements right below.
 // -----------------------------------------------------------
 
-.slide {
-  @include background-cover();
-  background-position: center;
-  background-color: #fff;
-  position: relative;
-  min-height: 200px;
-}
+body {
+  margin: 0;
 
-// Default shade on top of slides
-.shade {
-  background: #222;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  opacity: .33;
-
-  &.shade-gradient {
-    background: linear-gradient(to bottom, rgba(#111, .2) 0%, rgba(#555, .0) 50%, rgba(#122030, .8) 100%);
-    opacity: 1;
+  .slide {
+    @include background-cover();
+    background-position: center;
+    background-color: #fff;
+    position: relative;
+    min-height: 200px;
   }
-}
 
-// Containers
-#page {
-  max-width: $layout-max-width;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container {
-  margin: 0 auto;
-  padding-top: 4em;
-  padding-bottom: 4em;
-  overflow: hidden;
-
-  @if $grid-type == fluid {
-    @include center($max_width: $grid-base-size, $pad: $container-default-pad);
-  } @else if $grid-type == snappy {
-
+  // Default shade on top of slides
+  .shade {
+    background: #222;
+    position: absolute;
     width: 100%;
-    padding-left: $container-default-pad;
-    padding-right: $container-default-pad;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: .33;
 
-    @media(min-width: $container-ipad) {
-      width: 700px;
+    &.shade-gradient {
+      background: linear-gradient(to bottom, rgba(#111, .2) 0%, rgba(#555, .0) 50%, rgba(#122030, .8) 100%);
+      opacity: 1;
     }
-
-    @media(min-width: $container-ipad-landscape) {
-      width: 900px;
-    }
-
-    @media(min-width: $container-desktop) {
-      width: $grid-base-size;
-    }
-
-  } @else {
-    @include center($max_width: $grid-base-size, $pad: $container-default-pad);
   }
 
-  @media(max-width: $grid-base-size + 100px) {
-    padding-left: $container-default-pad/2;
-    padding-right: $container-default-pad/2;
+  // Containers
+  #page {
+    max-width: $layout-max-width;
+    margin-left: auto;
+    margin-right: auto;
   }
-}
 
-// Content start
-.site-content {
-
-  // Meta, Edit -link
-  .entry-footer {
+  .container {
+    margin: 0 auto;
+    padding-top: 4em;
+    padding-bottom: 4em;
     overflow: hidden;
-    clear: both;
-    display: block;
 
-    .edit-link {
-      text-align: left;
+    @if $grid-type == fluid {
+      @include center($max_width: $grid-base-size, $pad: $container-default-pad);
+    } @else if $grid-type == snappy {
+
       width: 100%;
-      display: block;
-      clear: both;
-      max-width: 100%;
-      min-width: 0;
-      margin-bottom: 0;
-      margin-top: 0;
-      top: 0;
-      bottom: 0;
-      padding: 0;
-      overflow: hidden;
+      padding-left: $container-default-pad;
+      padding-right: $container-default-pad;
 
-      a {
-        clear: both;
+      @media(min-width: $container-ipad) {
+        width: 700px;
+      }
+
+      @media(min-width: $container-ipad-landscape) {
+        width: 900px;
+      }
+
+      @media(min-width: $container-desktop) {
+        width: $grid-base-size;
+      }
+
+    } @else {
+      @include center($max_width: $grid-base-size, $pad: $container-default-pad);
+    }
+
+    @media(max-width: $grid-base-size + 100px) {
+      padding-left: $container-default-pad/2;
+      padding-right: $container-default-pad/2;
+    }
+  }
+
+  // Content start
+  .site-content {
+
+    // Meta, Edit -link
+    .entry-footer {
+      overflow: hidden;
+      clear: both;
+      display: block;
+
+      .edit-link {
+        text-align: left;
+        width: 100%;
         display: block;
-        margin-top: 40px;
+        clear: both;
+        max-width: 100%;
+        min-width: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        top: 0;
+        bottom: 0;
         padding: 0;
+        overflow: hidden;
+
+        a {
+          clear: both;
+          display: block;
+          margin-top: 40px;
+          padding: 0;
+        }
       }
     }
-  }
+  }  
 }

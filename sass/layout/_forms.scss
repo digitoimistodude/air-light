@@ -13,18 +13,18 @@ body {
   input[type="submit"]:not(.nav-toggle),
   input[type="button"]:not(.nav-toggle),
   .button:not(.nav-toggle) {
+    font-size: 16px;
     background: $color-links;
     color: #fff;
     border: 0;
     width: auto;
     display: inline-block;
-    padding: 15px 20px;
+    padding: 10px 30px;
     margin-bottom: 10px;
     text-decoration: none;
     position: relative;
     cursor: pointer;
     transition: 150ms linear all;
-    appearance: none;
     font-family: $font-base;
 
     &:hover,
