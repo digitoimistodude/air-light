@@ -42,7 +42,7 @@ if ( ! function_exists( 'air_comments' ) ) {
 	 *  Custom comments function.
 	 */
 	function air_comments( $comment, $args, $depth ) {
-		//$GLOBALS['comment'] = $comment; ?>
+		// $GLOBALS['comment'] = $comment; ?>
 
 		<li id="li-comment-<?php comment_ID() ?>" <?php comment_class(); ?>>
 			<div id="comment-<?php comment_ID(); ?>">
