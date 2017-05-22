@@ -42,9 +42,11 @@ If you for some reason happen to use this theme as base, please note the theme w
 
 ### License
 
-Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/licenses/mit/) which means you can freely use this theme commercially or privately, modify it, or distribute it, but you are forbidden to hold Dude liable for anything, or claim that what you do with this is made by us.
+Air is licensed with [The MIT License (MIT)](http://choosealicense.com/licenses/mit/) which means you can freely use this theme commercially or privately, modify it, or distribute it, but you are forbidden to hold Dude liable for anything, or claim that what you do with this is made by us.
 
 ### Features
+
+Some features, WooCommerce support and personal preferences of Dude are moved to [Air helper](https://github.com/digitoimistodude/air-helper) plugin.
 
 #### Layout base & grid
 
@@ -76,13 +78,8 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 #### WordPress & functions
 
 * Available for translation
-* Automatic feed links
-* WordPress managed title tag
 * Support for Post Thumbnails on posts and pages
 * HTML5 core markup for WordPress elements
-* WP updates nag hidden
-* All times and local units in Finnish
-* Custom uploads folder `media/` instead of default `content/uploads/`
 * **Air specific:** Templates for hero *slides*
 
 #### Disabled features
@@ -94,13 +91,13 @@ Dudestarter is licensed with [The MIT License (MIT)](http://choosealicense.com/l
 * RTL support
 * Threaded comments
 * Template tags (direct edit preferred)
-* WordPress admin bar for logged in users
 * No sidebar by default
-* Emojicons
 
 #### WooCommerce support
 
-Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), but it has been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6. WooCommerce air support includes the most basic overrides like buttons. WooCommerce as well as other things in air theme are built for starting point only.
+Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
+
+Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.com/digitoimistodude/air-helper) plugin and Air contains optional very basic WC styles. Air helper will add it's WC functionality when theme support for WooCommerce is added.
 
 ### Requirements
 
