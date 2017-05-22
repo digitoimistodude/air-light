@@ -17,8 +17,6 @@
 @import '../layout/site-header';
 @import '../layout/site-footer';
 @import '../layout/forms';
-//@import '../layout/sidebar';
-//@import '../layout/woocommerce';
 
 // Navigation
 @import '../navigation/nav-layout';
@@ -34,3 +32,9 @@
 @import '../views/page';
 @import '../views/blog';
 @import '../views/comments';
+
+// Extra building blocks
+// @import '../extra/sticky-nav';
+// @import '../extra/polylang-dropdown';
+// @import '../layout/sidebar';
+// @import '../layout/woocommerce';

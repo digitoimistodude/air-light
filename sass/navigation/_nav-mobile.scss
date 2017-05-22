@@ -124,7 +124,6 @@
   -webkit-tap-highlight-color: rgba(#000, 0);
   border: 0;
   color: #fff;
-  font-size: 16px;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -142,6 +141,7 @@
 
   span {
     color: #fff;
+    font-size: 1.2em;
   }
 
   &:hover,
@@ -168,9 +168,9 @@
   }
 
   .burger-icon {
-    @include burger(20px, 3px, 3px, #fff);
+    @include burger(20px, 2px, 4px, #fff);
     float: left;
-    margin-top: 18px;
+    margin-top: 19px;
     margin-right: 10px;
   }
 

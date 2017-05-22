@@ -25,7 +25,11 @@ This theme is built to be very straightforward, front end developer friendly and
     4. [Navigation](#navigation)
     5. [WordPress & functions](#wordpress--functions)
     6. [Disabled features](#disabled-features)
-    7. [WooCommerce support](#woocommerce-support)
+    7. [Extra building blocks](#extra-building-blocks)
+        7.1. [Sticky navigation](#sticky-navigation)
+        7.2. [Slick slider](#slick-slider)
+        7.3. [Polylang language switcher dropdown](#polylang-language-switcher-dropdown)
+        7.4. [WooCommerce support](#woocommerce-support)
 4. [Requirements](#requirements)    
 5. [Recommendations for development](#recommendations-for-development)
 6. [Installation](#installation)
@@ -93,7 +97,21 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * Template tags (direct edit preferred)
 * No sidebar by default
 
-#### WooCommerce support
+#### Extra building blocks
+
+##### Sticky navigation
+
+Air has sticky navigation baked in. You can enable the navigation by adding sticky-nav.js to your gulpfile (included with [Devpackages](https://github.com/digitoimistodude/devpackages) and newtheme.sh start script) and uncommeting sticky-nav in global.scss.
+
+##### Slick slider
+
+Included sassified version, clean SCSS file for slick carousel is coming soon!
+
+##### Polylang language switcher dropdown
+
+Polylang's language switcher is quite plain by default, so we have built a dropdown for `pll-parent-menu-item`. Not enabled by default. To use, uncomment entries in gulpfile and global.scss.
+
+##### WooCommerce support
 
 Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
 

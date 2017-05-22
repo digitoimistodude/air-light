@@ -129,6 +129,7 @@ gulp.task('js', function() {
         [
           'js/src/skip-link-focus-fix.js',
           'js/src/responsive-nav.custom.js',
+          // 'js/src/sticky-nav.js',
           'node_modules/moveto/dist/moveTo.js',
           'js/src/scripts.js'
         ])
