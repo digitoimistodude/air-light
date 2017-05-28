@@ -161,10 +161,9 @@
 
   @media (max-width: ($responsivenav)-1px) {
     width: auto;
-    float: right;
     top: 22px;
     right: 10px;
-    position: relative;
+    position: absolute;
   }
 
   .burger-icon {
