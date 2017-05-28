@@ -4,6 +4,8 @@
 // The main layout for the website navigation, for the mobile
 // version only.
 // -----------------------------------------------------------
+$nav-toggle-color: #fff;
+$nav-toggle-active-color: #fff;
 
 @charset 'utf-8';
 @import 'burger';
@@ -137,21 +139,21 @@
   padding: 0 .75em;
   background: transparent;
   appearance: button;
-  cursor: pointer;
+  cursor: pointer; 
 
   span {
-    color: #fff;
+    color: $nav-toggle-color;
     font-size: 1.2em;
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: #fff;
-    background: rgba(#fff, .12);
+    color: $nav-toggle-color;
+    background: rgba($nav-toggle-color, .12);
 
     span {
-      color: #fff;
+      color: $nav-toggle-color;
     }
   }
 
@@ -167,14 +169,40 @@
   }
 
   .burger-icon {
-    @include burger(20px, 2px, 4px, #fff);
+    @include burger(20px, 2px, 4px, $nav-toggle-color);
     float: left;
     margin-top: 19px;
     margin-right: 10px;
   }
 
+  // Separate active colors for opened state
   &.active .burger-icon {
     @include burger-to-cross;
+
+    color: $nav-toggle-active-color;
+
+    &:focus,
+    &:hover,
+    &:active {
+      color: $nav-toggle-active-color;
+
+      span {
+        color: $nav-toggle-active-color;
+      }
+    }
+
+    span {
+      color: $nav-toggle-active-color;
+    }
+
+    .burger-icon {
+      color: $nav-toggle-active-color;
+
+      &:before,
+      &:after {
+        background-color: $nav-toggle-active-color;
+      }
+    }    
   }
 }
 
