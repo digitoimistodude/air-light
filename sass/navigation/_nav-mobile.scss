@@ -176,10 +176,17 @@ $nav-toggle-active-color: #fff;
   }
 
   // Separate active colors for opened state
-  &.active .burger-icon {
-    @include burger-to-cross;
-
+  &.active {
     color: $nav-toggle-active-color;
+
+    .burger-icon {
+      @include burger-to-cross;
+
+      &:before,
+      &:after {
+        background-color: $nav-toggle-active-color;
+      }
+    }
 
     &:focus,
     &:hover,
@@ -194,15 +201,6 @@ $nav-toggle-active-color: #fff;
     span {
       color: $nav-toggle-active-color;
     }
-
-    .burger-icon {
-      color: $nav-toggle-active-color;
-
-      &:before,
-      &:after {
-        background-color: $nav-toggle-active-color;
-      }
-    }    
   }
 }
 
