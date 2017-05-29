@@ -64,12 +64,12 @@ var navigation = responsiveNav(".nav-collapse", {
     // Document ready stuff here
 
     // Set up back to top link
-    const moveTo = new MoveTo();
-    const target = document.getElementById('target');
+    var moveTo = new MoveTo();
+    var target = document.getElementById('target');
     moveTo.move(target);
 
     // Register a back to top trigger
-    const trigger = document.getElementsByClassName('js-trigger')[0];
+    var trigger = document.getElementsByClassName('js-trigger')[0];
     moveTo.registerTrigger(trigger);
 
   });
