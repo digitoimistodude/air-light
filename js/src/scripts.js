@@ -61,7 +61,14 @@ var navigation = responsiveNav(".nav-collapse", {
   // Document ready start
   $(function() {
 
-    // Document ready stuff here
+    // Slick carousel, add class slider to a container which has the slider items as children
+    // $('.slider').slick({
+    //   slidesToShow: 1,
+    //   slidesToScroll: 1,
+    //   arrows: true,
+    //   dots: false,
+    //   fade: true
+    // });
 
     // Set up back to top link
     var moveTo = new MoveTo();

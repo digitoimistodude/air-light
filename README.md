@@ -101,21 +101,79 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Sticky navigation
 
-Air has sticky navigation baked in. You can enable the navigation by adding sticky-nav.js to your gulpfile (included with [Devpackages](https://github.com/digitoimistodude/devpackages) and newtheme.sh start script) and uncommeting sticky-nav in global.scss.
+Air has sticky navigation baked in. 
+
+##### How to enable
+
+You can enable the navigation by 
+
+1. Adding sticky-nav.js to your gulpfile (already included with [Devpackages](https://github.com/digitoimistodude/devpackages) and newtheme.sh start script)
+2. Uncommeting sticky-nav import in global.scss
 
 #### Slick slider
 
-Included sassified version, clean SCSS file for slick carousel is coming soon!
+Air includes sassified version, clean SCSS file for slick carousel. 
+
+##### How to enable
+
+To enable Slick carousel support, 
+
+1. Run `npm install slick-carousel --save` in theme directory
+2. Run `npm update` in theme directory
+3. Uncomment `themeDir + '/node_modules/slick-carousel/slick/slick.js'` in gulpfile.js
+4. Start gulp again, add slick init to document ready in scripts.js, like this, tweak to your needs (already uncommented):
+
+```` javascript
+$('.slider').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  dots: false,
+  fade: true
+});
+````
+
+5. Construct your slider like this:
+
+```` html
+<div class="slide slide-slider">
+  <div class="container slider">
+    <div class="item">
+      <p><b>Slider item 1</b> Some other content. Lorem ipsum in proident deserunt nostrud. Lorem ipsum in proident deserunt nostrud.</p>
+    </div><!-- .item -->
+
+    <div class="item">
+      <p><b>Slider item 2</b> Something different to see the change. Lorem ipsum in proident deserunt nostrud culpa veniam sed esse aliqua ea velit aute.</p>
+    </div><!-- .item -->
+</div><!-- .slide-slider -->
+````
+
+Please note: If you want to change the background to lighter, you will need to edit the svg arrows accordingly.
 
 #### Polylang language switcher dropdown
 
-Polylang's language switcher is quite plain by default, so we have built a dropdown for `pll-parent-menu-item`. Not enabled by default. To use, uncomment entries in gulpfile and global.scss.
+Polylang's language switcher is quite plain by default, so we have built a dropdown for `pll-parent-menu-item`. Not enabled by default. 
+
+##### How to enable
+
+To use, 
+
+1. Uncomment entries in gulpfile and global.scss
+2. Run gulp again
+3. Save SCSS and JS to compile them all together
 
 #### WooCommerce support
 
 Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
 
-Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.com/digitoimistodude/air-helper) plugin and Air contains optional very basic WC styles. Air helper will add it's WC functionality when theme support for WooCommerce is added.
+##### How to enable
+
+Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.com/digitoimistodude/air-helper) plugin and Air contains optional very basic WC styles. Air helper will add it's WC functionality when theme support for WooCommerce is added. To enable:
+
+1. Get [Air helper](https://github.com/digitoimistodude/air-helper)
+2. Activate the plugin
+3. Uncomment woocommerce import in global.scss
+4. Run gulp again and save files
 
 ### Requirements
 

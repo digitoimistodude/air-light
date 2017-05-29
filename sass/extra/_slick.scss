@@ -1,0 +1,242 @@
+// -----------------------------------------------
+// Slick carousel
+//
+// Style support for Slick slider.
+// -----------------------------------------------
+
+// Slider
+// Note: add class slick-slider to the actual slider
+body {
+  #page {
+    .site-content {
+      .slide {
+        &.slide-slider {
+          background-position: center;
+          background-color: #333;
+
+          .item {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @media(max-width: $grid-base-size + 100) {
+              padding-left: 40px;
+              padding-right: 40px;
+            }
+          }
+
+          h1,
+          h2 {
+            color: #fff;
+            text-transform: uppercase;
+          }
+
+          p {
+            color: #fff;
+            opacity: .7;
+          }
+        }
+      }
+
+      .slick-list {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        &:focus {
+          outline: none;
+        }
+
+        .slick-loading & {
+          // If you want to use a loading animation, enable it here:
+          // background: #fff slick-image-url('../images/loading.gif') center center no-repeat;
+        }
+
+        &.dragging {
+          cursor: hand;
+        }
+      }
+
+      .slick-slider .slick-track,
+      .slick-slider .slick-list {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .slick-track {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: block;
+        zoom: 1;
+        z-index: 9999;
+
+        &:before,
+        &:after {
+          content: '';
+          display: table;
+        }
+
+        &:after {
+          clear: both;
+        }
+
+        .slick-loading & {
+          visibility: hidden;
+        }
+      }
+
+      .slick-slide {
+        float: left;
+        height: 100%;
+        min-height: 1px;
+
+        img {
+          display: block;
+        }
+
+        &.slick-loading img {
+          display: none;
+        }
+
+        &.dragging img {
+          pointer-events: none;
+        }
+
+        .slick-initialized & {
+          display: block;
+        }
+
+        .slick-loading & {
+          visibility: hidden;
+        }
+
+        .slick-vertical & {
+          display: block;
+          height: auto;
+        }
+      }
+
+      // Dots
+      .slick-dots {
+        position: absolute;
+        bottom: 0;
+        list-style: none;
+        display: block;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+
+        li {
+          position: relative;
+          display: inline-block;
+          height: 10px;
+          width: 10px;
+          margin: 0 5px;
+          padding: 0;
+          cursor: pointer;
+
+          &.slick-active {
+            button,
+            button[type="button"],
+            button:focus,
+            button[type="button"]:focus {
+              opacity: 1;
+              background: #fff;
+            }
+          }
+
+          button,
+          button[type="button"] {
+            @include hiddentext();
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 4px;
+            cursor: pointer;
+            transition: background .5s, opacity .5s;
+            opacity: .4;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            padding: 0;
+
+            &:hover,
+            &:focus {
+              outline: none;
+              background: transparent;
+
+              &:before {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      // Slider
+      .slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        user-select: none;
+        touch-action: pan-y;
+        clear: both;
+        overflow: hidden;
+        margin-bottom: 0;
+
+        @media (max-width: $container-mobile) {
+          max-height: 600px;
+        }
+
+        // Arrows
+        .slick-prev,
+        .slick-next {
+          position: absolute;
+          display: block;
+          height: 60px;
+          width: 60px;
+          line-height: 0;
+          font-size: 0;
+          cursor: pointer;
+          color: transparent;
+          top: 50%;
+          margin-top: -30px;
+          padding: 0;
+          border: 0;
+          outline: none;
+          z-index: 200;
+          transition: all .33s;
+          background-color: transparent;
+          opacity: .2;
+
+          &:hover {
+            outline: none;
+            color: transparent;
+            transition: all .33s;
+            background-color: transparent;
+            opacity: 1;
+          }
+
+          &:focus {
+            outline: none;
+            color: transparent;
+            transition: all .33s;
+            background-color: transparent;
+          }
+        }
+
+        .slick-prev {
+          left: 0;
+          background-image: url('../svg/slider-left-arrow.svg');
+          background-color: transparent;
+        }
+
+        .slick-next {
+          right: 0;
+          background-image: url('../svg/slider-right-arrow.svg');
+          background-color: transparent;
+        }
+      }
+    }    
+  }
+}
