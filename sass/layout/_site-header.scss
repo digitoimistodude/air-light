@@ -5,16 +5,12 @@
 // the site navigation and search for example.
 // -----------------------------------------------------------
 
-// Calculate site-header height here
-$site-header-height: 92px;
-
 .site-header {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 15;
-  margin-bottom: -$site-header-height;
 
   @media(min-width: $responsivenav) {
     padding-top: 20px;
