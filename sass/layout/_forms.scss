@@ -32,6 +32,28 @@ body {
       color: #fff;
       background: darken($color-links, 15%);
     }
+
+    &.button-ghost {
+      background-color: transparent;
+      border: 1px solid $color-links;
+      color: $color-links;
+
+      &:hover {
+        background-color: $color-links;
+        color: #fff;
+      }
+
+      &.button-ghost-white {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+          background-color: $color-links;
+          border-color: $color-links;
+          color: #fff;
+        }
+      }
+    }
   }
 
   a,
