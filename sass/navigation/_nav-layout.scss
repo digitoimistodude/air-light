@@ -8,6 +8,9 @@
 // @ronilaukkarinen
 // ------------------------------------------------------------
 
+$dropdown-width: 200px;
+$enable-nav-animations: true; // Should we use animations, true or false
+
 #nav {
   clip: rect(0 0 0 0);
   max-height: 0;
@@ -74,21 +77,21 @@
       max-height: 100%;
       overflow: visible;
       margin-bottom: 0;
-      background: $color-dropdown-bg;
-      border-radius: $dropdown-border-radius;
+      background: #222;
+      border-radius: 0;
 
       li {
         a {
-          color: $color-dropdown-text;
+          color: #fff;
           padding-left: 1.5em;
           line-height: 1.5;
 
           &:focus,
           &:hover,
           &:active {
-            background: $color-dropdown-hover-bg;
-            color: $color-dropdown-hover-text;
-            border-radius: $dropdown-border-radius;
+            background: #3e4853;
+            color: #fff;
+            border-radius: 0;
           }
         }
       }
