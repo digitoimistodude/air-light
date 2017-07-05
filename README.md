@@ -207,14 +207,13 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 
 ### Air development
 
-#### Requirements
-
-- OS X or Linux
-- [dudestack](https://github.com/digitoimistodude/dudestack)
-
 #### Installation
 
-If you want to improve air, you need to install our development environment with these steps:
+If you want to improve air, you have two options. 
+
+##### 1. Using dudestack
+
+Air is originally built on [dudestack](https://github.com/digitoimistodude/dudestack). Install our development environment with these steps (unix only, sorry Windows!):
 
 1. `mkdir ~/Projects && git clone https://github.com/digitoimistodude/dudestack`
 2. `cd ~/Projects/dudestack && sh setup.sh`
@@ -228,6 +227,10 @@ If you want to improve air, you need to install our development environment with
 10. Wait npm to get through files (get a coffee)
 11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
 12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air` if you have Sublime Text 3. Run `gulp watch` and start developing!
+
+##### 2. Use your own stack
+
+To install air to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
 
 When you make changes, commit them with clear describing commit messages and them make a pull request. We are happy to accept improvements!
 
