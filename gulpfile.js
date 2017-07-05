@@ -69,7 +69,7 @@ gulp.task('browsersync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: "dudetest.dev",
+    proxy: "airdev.dev",
     browser: "Google Chrome",
     open: "external",
     notify: true

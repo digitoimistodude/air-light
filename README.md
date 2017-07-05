@@ -34,6 +34,7 @@ This theme is built to be very straightforward, front end developer friendly and
 6. [Recommendations for development](#recommendations-for-development)
 7. [Installation](#installation)
 8. [Contributing](#contributing)
+    1. [Air development](#air-development)
 9. [Notes](#notes)
 
 ### Please note before using
@@ -203,6 +204,31 @@ If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and 
 ### Contributing
 
 If you have ideas about the theme or spot an issue, please let us know. Before contributing ideas or reporting an issue about "missing" features or things regarding to the nature of that matter, please read [Please note](#please-note-before-using) section. Thank you very much.
+
+### Air development
+
+#### Requirements
+
+- OS X or Linux
+- dudestack
+
+#### Installation
+
+If you want to improve air, you need to install our development environment with these steps:
+
+1. `mkdir ~/Projects && git clone https://github.com/digitoimistodude/dudestack`
+2. `cd ~/Projects/dudestack && sh setup.sh`
+3. `/usr/local/bin/createproject`, name project after *airdev* when asked
+4. Wait for the project to be created
+5. Create a fork of air
+6. `cd ~/Projects/airdev/content/themes`
+7. Fetch your fork with `git clone git@github.com:yourusername/air.git` (remember to replace yourusername with your actual username)
+8. `cd ~/Projects/airdev/content/themes/air`
+9. Get air dependencides by running `npm install` (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
+10. Wait npm to get through files (get a coffee)
+11. Open whole project to sublime, for example with `[subl](http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/) -n ~/Projects/airdev/content/themes/air` if you have Sublime Text 3. Run `gulp watch` and start developing!
+
+When you make changes, commit them with clear describing commit messages and them make a pull request. We are happy to accept improvements!
 
 ### Notes
 
