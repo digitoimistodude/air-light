@@ -210,7 +210,7 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 #### Requirements
 
 - OS X or Linux
-- dudestack
+- [dudestack](https://github.com/digitoimistodude/dudestack)
 
 #### Installation
 
@@ -227,7 +227,7 @@ If you want to improve air, you need to install our development environment with
 9. Get air dependencides by running `npm install` (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
 10. Wait npm to get through files (get a coffee)
 11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
-12. Open whole project to sublime, for example with `[subl](http://olivierlacan.com/posts/launch-sublime-text-3-from-the-command-line/) -n ~/Projects/airdev/content/themes/air` if you have Sublime Text 3. Run `gulp watch` and start developing!
+12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air` if you have Sublime Text 3. Run `gulp watch` and start developing!
 
 When you make changes, commit them with clear describing commit messages and them make a pull request. We are happy to accept improvements!
 
