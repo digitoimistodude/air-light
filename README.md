@@ -211,7 +211,7 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 
 If you want to improve air, you have two options. 
 
-##### 1. Using dudestack
+##### 1. Use dudestack
 
 Air is originally built on [dudestack](https://github.com/digitoimistodude/dudestack). Install our development environment with these steps (unix only, sorry Windows!):
 
