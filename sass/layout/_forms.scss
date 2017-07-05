@@ -146,6 +146,14 @@ body {
           width: 100%;
           max-width: 100%;
           min-width: 0;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          text-indent: 1px;
+          text-overflow: '';
+
+          &::-ms-expand {
+            display: none;
+          }
 
           &:hover,
           &:focus {
