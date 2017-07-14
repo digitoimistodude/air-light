@@ -226,13 +226,25 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 9. Get air dependencides by running `npm install` (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
 10. Wait npm to get through files (get a coffee)
 11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
-12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air` if you have Sublime Text 3. Run `gulp watch` and start developing!
+12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air` if you have Sublime Text.
+13. Go to back to air dir with `cd ~/Projects/airdev/content/themes/air` and then run `gulp watch` and start developing!
+
+You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for OS X lemp stack or `alias wp='ssh vagrant@10.1.2.4 "cd /var/www/"$(basename "$PWD")"; /var/www/"$(basename "$PWD")"/vendor/wp-cli/wp-cli/bin/wp"'` for marlin-vagrant to get to use wp-cli with simply `wp`.
 
 ##### 2. Use your own stack
 
 To install air to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
 
 When you make changes, commit them with clear describing commit messages and them make a pull request. We are happy to accept improvements!
+
+##### Content and unit tests
+
+Next you just need to add content and menu via [airdev.dev/admin](http://airdev.dev/), or you can use the ready-made content:
+
+1. `cd ~/Projects/airdev`
+2. `wp plugin install wordpress-importer --activate`
+3. `wget https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml`
+4. `wp import theme-unit-test-data.xml --authors=create`
 
 ### Notes
 
