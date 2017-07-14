@@ -217,8 +217,8 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 
 1. `mkdir ~/Projects && git clone https://github.com/digitoimistodude/dudestack`
 2. `cd ~/Projects/dudestack && sh setup.sh`
-3. `/usr/local/bin/createproject`, name project after *airdev* when asked
-4. Wait for the project to be created
+3. Run `createproject`, name project after *airdev* when asked
+4. Wait for the project to be created (get a coffee, first time can take couple of minutes)
 5. Create a fork of air
 6. `cd ~/Projects/airdev/content/themes`
 7. Fetch your fork with `git clone git@github.com:yourusername/air.git` (remember to replace yourusername with your actual username)
