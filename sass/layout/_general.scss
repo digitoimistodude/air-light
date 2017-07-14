@@ -72,12 +72,12 @@ body {
 
     @media(max-width: $grid-base-size + 100px) {
       padding-left: $container-default-pad-x/2;
-      padding-right: $container-default-pad-x/2;      
+      padding-right: $container-default-pad-x/2;
     }
 
     @media(max-width: $container-ipad - 10px) {
       padding-top: $container-default-pad-y/2;
-      padding-bottom: $container-default-pad-y/2;      
+      padding-bottom: $container-default-pad-y/2;
     }
   }
 
@@ -112,5 +112,5 @@ body {
         }
       }
     }
-  }  
+  }
 }
