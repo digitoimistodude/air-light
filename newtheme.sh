@@ -78,7 +78,7 @@ echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
 echo "" > ${PROJECTPATH}/media/index.php
 chmod 777 ${PROJECTPATH}/media
-echo "${yellow}Activating theme...${txtreset}"
-cd ${PROJECTPATH}
-ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate $THEMENAME"
-echo "${boldgreen}All done! Theme generated and activated. Run gulp watch in project root and start coding! Your project can be found at $PROJECTPATH and your theme can be found at $PROJECTTHEMEPATH${txtreset}"
+#echo "${yellow}Activating theme...${txtreset}"
+#cd ${PROJECTPATH}
+#ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate $THEMENAME"
+echo "${boldgreen}All done! Theme generated. Go to $PROJECTNAME.dev/wp/wp-admin/themes.php and activate your theme, then run gulp watch in project root and start coding! Your project can be found at $PROJECTPATH and your theme can be found at $PROJECTTHEMEPATH${txtreset}"
