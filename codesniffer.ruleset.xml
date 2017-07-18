@@ -59,7 +59,4 @@
     <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
 
   </rule>
-
-	<!-- Include sniffs for PHP cross-version compatibility. -->
-	<rule ref="PHPCompatibility"/>
 </ruleset>
