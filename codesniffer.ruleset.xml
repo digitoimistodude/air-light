@@ -49,6 +49,7 @@
 		<exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
     <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
     <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
+    <exclude name="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned" />
 
 		<exclude name="WordPress.Variables.GlobalVariables" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
