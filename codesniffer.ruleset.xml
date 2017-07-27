@@ -11,6 +11,7 @@
 		<exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
 		<exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
 		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+    <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
 		<exclude name="Generic.Files.EndFileNewline.NotFound" />
 		<exclude name="Generic.Strings.UnnecessaryStringConcat.Found" />
 		<exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
@@ -38,12 +39,16 @@
 		<exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpenHint" />
     <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
     <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
 
 		<exclude name="WordPress.XSS.EscapeOutput.UnsafePrintingFunction" />
 		<exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
 
 		<exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
     <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
+    <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
 
 		<exclude name="WordPress.Variables.GlobalVariables" />
 		<exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
