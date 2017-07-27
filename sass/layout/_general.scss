@@ -47,7 +47,7 @@ body {
     padding-bottom: $container-default-pad-y;
 
     @if $grid-type == fluid {
-      @include center($max_width: $grid-base-size, $pad: $container-default-pad-x);
+      @include center($max_width: $grid-base-size, $pad: 0);
     } @else if $grid-type == snappy {
 
       width: 100%;
@@ -67,7 +67,7 @@ body {
       }
 
     } @else {
-      @include center($max_width: $grid-base-size, $pad: $container-default-pad-x);
+      @include center($max_width: $grid-base-size, $pad: 0);
     }
 
     @media(max-width: $grid-base-size + 100px) {
