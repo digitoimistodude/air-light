@@ -5,7 +5,7 @@
  * @package air
  */
 
-define( 'AIR_VERSION', '2.7.9' );
+define( 'AIR_VERSION', '2.8.0' );
 
 /**
  * Requires.
