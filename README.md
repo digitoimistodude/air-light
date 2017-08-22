@@ -238,7 +238,7 @@ When you make changes, commit them with clear describing commit messages and the
 
 ##### Content and unit tests
 
-Next you just need to add content and menu via [airdev.dev/admin](http://airdev.dev/), or you can use the ready-made content:
+Next you just need to add content and menu via [airdev.test/admin](http://airdev.test/), or you can use the ready-made content:
 
 1. `cd ~/Projects/airdev`
 2. `wp plugin install wordpress-importer --activate`
