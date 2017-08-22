@@ -329,11 +329,24 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
                 padding-top: 60px;
                 position: relative;
                 z-index: 2;                
-              }
+              }              
+            }
+          }
+
+          @if $enable-arrows == true {
+            ul.sub-menu {
+              margin-top: 10px;
 
               li {
+                  margin-top: 0;
+
                 a {
                   padding-top: 5px;
+                  margin-top: 0;
+                }
+
+                &:after {
+                  display: none;
                 }
               }
             }
