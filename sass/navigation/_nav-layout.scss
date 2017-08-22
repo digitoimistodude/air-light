@@ -10,6 +10,7 @@
 
 $dropdown-width: 200px;
 $enable-nav-animations: true; // Should we use animations, true or false
+$color-nav-links: #fff;
 
 #nav {
   clip: rect(0 0 0 0);
@@ -37,7 +38,7 @@ $enable-nav-animations: true; // Should we use animations, true or false
 
       a {
         background: transparent;
-        color: #fff;
+        color: $color-nav-links;
         float: left;
         text-decoration: none;
         width: 100%;
@@ -62,11 +63,11 @@ $enable-nav-animations: true; // Should we use animations, true or false
     // Separate first level styles, if you'd like to style other levels differently
     &:first-child {
       li a {
-        color: #fff;
+        color: $color-nav-links;
         background: transparent;
 
         &:hover {
-          color: rgba(#fff, .8);
+          color: rgba($color-nav-links, .8);
         }
       }
     }

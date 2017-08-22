@@ -4,6 +4,10 @@
 // The most important page on the website goes here.
 // You can force the styles by defining them inside
 // the body.
+//
+// Please note: These are mostly for demo purposes
+// so feel free to remove everything in this file
+// and start over.
 // ------------------------------------------------
 
 body {
@@ -12,9 +16,13 @@ body {
       .slide {
         &.slide-front {
           background-position: center;
-          background-color: #e9e9e9;
+          background-color: #fff;
           position: relative;
           min-height: 300px;
+
+          .shade {
+            opacity: 1;
+          }
 
           .container {
             padding-top: 30vh;
@@ -22,15 +30,15 @@ body {
             position: relative;
             z-index: 10;
 
-            @media(max-width: $container-mobile) {
-              padding-top: 150px;
-              padding-bottom: 100px;
+            .accent {
+              @include responsive-font(3vw, 18px, 24px);
+              font-style: italic;
+              text-transform: lowercase;
+              font-weight: 700;
+              text-align: center;
+              margin: 0;
+              color: $color-links;
             }
-
-            @media(max-height: $container-mobile) {
-              padding-top: 150px;
-              padding-bottom: 100px;
-            }            
 
             h1 {
               color: #fff;
