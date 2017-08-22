@@ -69,10 +69,6 @@
   }
 }
 
-// Helper mixin for Google Web Fonts
-@import 'sass-web-fonts/web-fonts';
-$web-fonts-protocol: 'https' !global !default;
-
 // Viewport sized typography with minimum and maximum values
 // Inspiration: https://css-tricks.com/molten-leading-css/
 // More inspiration: https://www.smashingmagazine.com/2016/05/fluid-typography/

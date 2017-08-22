@@ -354,7 +354,7 @@
           removeClass(nav, "closed");
           addClass(nav, "opened");
           addClass(htmlEl, opts.navActiveClass);
-          addClass(navToggle, "active");
+          addClass(navToggle, "is-active");
           nav.style.position = opts.openPos;
           setAttributes(nav, {"aria-hidden": "false"});
 		      setAttributes(nav, {"aria-expanded": "true"});
@@ -372,7 +372,7 @@
           addClass(nav, "closed");
           removeClass(nav, "opened");
           removeClass(htmlEl, opts.navActiveClass);
-          removeClass(navToggle, "active");
+          removeClass(navToggle, "is-active");
           setAttributes(nav, {"aria-hidden": "true"});
 		      setAttributes(nav, {"aria-expanded": "false"});
 		      setAttributes(navToggle, {"aria-expanded": "false"});

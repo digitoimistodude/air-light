@@ -20,6 +20,7 @@
     "require-dir": "^0.3.1"
   },
   "dependencies": {
+    "hamburgers": "^0.9.1",
     "jeet": "^7.1.0",
     "lint-html-with-scss-css": "^1.1.0",
     "luxbar": "^0.3.2",

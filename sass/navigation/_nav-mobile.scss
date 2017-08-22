@@ -6,9 +6,25 @@
 // -----------------------------------------------------------
 $nav-toggle-color: #fff;
 $nav-toggle-active-color: #fff;
+$hamburger-padding-x: 15px;
+$hamburger-padding-y: 15px;
+$hamburger-layer-width: 40px;
+$hamburger-layer-height: 4px;
+$hamburger-layer-spacing: 6px;
+$hamburger-layer-color: $nav-toggle-color;
+$hamburger-layer-border-radius: 4px;
+$hamburger-hover-opacity: .7;
+$hamburger-hover-transition-duration: .15s;
+$hamburger-hover-transition-timing-function: linear;
 
 @charset 'utf-8';
-@import 'burger';
+@import 'hamburgers/_sass/hamburgers/hamburgers';
+
+// Choose hamburger animation here
+// Choices: https://jonsuh.com/hamburgers/
+.hamburger {
+  @extend .hamburger--spin;
+}
 
 // Mobile styles
 @media screen and (max-width: $responsivenav) {
@@ -119,12 +135,12 @@ $nav-toggle-active-color: #fff;
 
 // Hamburger menu icon
 .nav-toggle {
-  margin-left: 0;
   list-style: none;
   display: block;
   z-index: 100000;
   -webkit-tap-highlight-color: rgba(#000, 0);
   border: 0;
+  overflow: visible;
   color: #fff;
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
@@ -134,12 +150,13 @@ $nav-toggle-active-color: #fff;
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  float: right;
-  line-height: 39px;
-  padding: 0;
+  padding: 10px 5px 0;
+  margin: 0;
   background: transparent;
-  appearance: button;
   cursor: pointer;
+  top: 15px;
+  right: 10px;
+  position: absolute;
 
   // Hide from desktops
   display: none;
@@ -162,27 +179,19 @@ $nav-toggle-active-color: #fff;
 
   @media (max-width: ($responsivenav)-1px) {
     display: block;
-    width: auto;
-    top: 15px;
-    right: 10px;
-    position: absolute;
-    padding: 10px;
-  }
-
-  .burger-icon {
-    @include burger(30px, 2px, 6px, $nav-toggle-color);
   }
 
   // Separate active colors for opened state
-  &.active {
+  &.is-active {
     color: $nav-toggle-active-color;
 
-    .burger-icon {
-      @include burger-to-cross;
-
-      &:before,
-      &:after {
+    .hamburger-box {
+      .hamburger-inner {
         background-color: $nav-toggle-active-color;
+
+        &:after {
+          background-color: $nav-toggle-active-color;
+        }        
       }
     }
 
