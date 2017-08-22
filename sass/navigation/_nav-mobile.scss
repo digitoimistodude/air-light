@@ -30,8 +30,12 @@ $hamburger-hover-transition-timing-function: linear;
 @media screen and (max-width: $responsivenav) {
   html {
     &.js-nav-active {
-      .site-header {
-        background-color: #222;
+      nav#nav {
+        clip: auto;
+        position: fixed !important;
+        max-height: 100%;
+        height: 100vh;
+        top: 0;
       }
     }
   }
@@ -41,15 +45,17 @@ $hamburger-hover-transition-timing-function: linear;
     max-height: 0;
     overflow: hidden;
     background: $color-almostblack;
+    float: none;
 
     // Mobile navigation styles
     ul {
-      padding: 10px 0;
+      padding: 5%;
       width: 100%;
-      float: left;
+      float: none;
 
       li {
         position: relative;
+        display: block;
 
         a {
           padding: 5px 10px;
@@ -57,13 +63,23 @@ $hamburger-hover-transition-timing-function: linear;
 
         // Sublevels
         ul.sub-menu {
-          padding: 5px 0;
+          padding: 0;
           transition: 1s;
+          background: transparent;
 
           li {
+            display: block;
+            position: relative;
+
             a {
               padding-top: 10px;
               padding-bottom: 10px;
+              position: relative;
+              z-index: 1;
+
+              &:hover {
+                background: none;
+              }
             }
           }
         }
@@ -71,7 +87,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
 
     &.opened {
-      transition: 4s;
+      transition: 1s;
       visibility: visible;
       max-height: 9999px;
     }
@@ -89,7 +105,6 @@ $hamburger-hover-transition-timing-function: linear;
       overflow: hidden;
       visibility: hidden;
       zoom: 1;
-      transition: 4s;
 
       &.toggled {
         max-height: 9999px;
