@@ -8,10 +8,6 @@
 // @ronilaukkarinen
 // ------------------------------------------------------------
 
-$dropdown-width: 200px;
-$enable-nav-animations: false; // Should we use animations, true or false
-$color-nav-links: #fff;
-
 #nav {
   clip: rect(0 0 0 0);
   max-height: 0;
@@ -19,8 +15,6 @@ $color-nav-links: #fff;
   user-select: none;
   list-style: none;
   position: relative;
-  overflow: visible;
-  float: right;
 
   ul {
     margin-bottom: 0;
@@ -37,12 +31,9 @@ $color-nav-links: #fff;
       width: 100%;
 
       a {
-        background: transparent;
-        color: $color-nav-links;
         float: left;
         text-decoration: none;
         width: 100%;
-        font-size: 14px;
         margin: 0;
         text-align: left;
         display: inline-block;
@@ -50,27 +41,14 @@ $color-nav-links: #fff;
 
         &:hover {
           color: #fff;
-          background-color: #3e4853;
         }
       }
 
       // Accessibility: list item with focus
       &.focus > a {
-        background-color: #3e4853;
+        color: #3e4853;
       }
-    }
-
-    // Separate first level styles, if you'd like to style other levels differently
-    &:first-child {
-      li a {
-        color: $color-nav-links;
-        background: transparent;
-
-        &:hover {
-          color: rgba($color-nav-links, .8);
-        }
-      }
-    }
+    }    
   }
 
   .dropdown {
@@ -90,16 +68,10 @@ $color-nav-links: #fff;
           &:focus,
           &:hover,
           &:active {
-            background: #3e4853;
             color: #fff;
             border-radius: 0;
           }
         }
-      }
-
-      ul {
-        border: 0;
-        padding: 0;
       }
     }
   }

@@ -13,7 +13,7 @@ $hamburger-layer-height: 4px;
 $hamburger-layer-spacing: 6px;
 $hamburger-layer-color: $nav-toggle-color;
 $hamburger-layer-border-radius: 4px;
-$hamburger-hover-opacity: .7;
+$hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
 
@@ -59,6 +59,11 @@ $hamburger-hover-transition-timing-function: linear;
 
         a {
           padding: 5px 10px;
+          color: #fff;
+
+          &:hover {
+            color: $color-links;
+          }
         }
 
         // Sublevels
@@ -78,6 +83,7 @@ $hamburger-hover-transition-timing-function: linear;
               z-index: 1;
 
               &:hover {
+                color: $color-links;
                 background: none;
               }
             }
@@ -151,7 +157,6 @@ $hamburger-hover-transition-timing-function: linear;
 // Hamburger menu icon
 .nav-toggle {
   list-style: none;
-  display: block;
   z-index: 100000;
   -webkit-tap-highlight-color: rgba(#000, 0);
   border: 0;
@@ -163,14 +168,12 @@ $hamburger-hover-transition-timing-function: linear;
   -webkit-touch-callout: none;
   user-select: none;
   text-decoration: none;
-  position: relative;
-  overflow: hidden;
   padding: 10px 5px 0;
   margin: 0;
   background: transparent;
   cursor: pointer;
   top: 15px;
-  right: 10px;
+  right: 15px;
   position: absolute;
 
   // Hide from desktops
@@ -206,7 +209,7 @@ $hamburger-hover-transition-timing-function: linear;
 
         &:after {
           background-color: $nav-toggle-active-color;
-        }        
+        }
       }
     }
 
