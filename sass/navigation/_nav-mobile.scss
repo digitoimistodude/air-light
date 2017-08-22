@@ -136,10 +136,13 @@ $nav-toggle-active-color: #fff;
   overflow: hidden;
   float: right;
   line-height: 39px;
-  padding: 0 .75em;
+  padding: 0;
   background: transparent;
   appearance: button;
-  cursor: pointer; 
+  cursor: pointer;
+
+  // Hide from desktops
+  display: none;
 
   span {
     color: $nav-toggle-color;
@@ -157,22 +160,17 @@ $nav-toggle-active-color: #fff;
     }
   }
 
-  @media (min-width: $responsivenav) {
-    display: none;
-  }
-
   @media (max-width: ($responsivenav)-1px) {
+    display: block;
     width: auto;
-    top: 22px;
+    top: 15px;
     right: 10px;
     position: absolute;
+    padding: 10px;
   }
 
   .burger-icon {
-    @include burger(20px, 2px, 4px, $nav-toggle-color);
-    float: left;
-    margin-top: 19px;
-    margin-right: 10px;
+    @include burger(30px, 2px, 6px, $nav-toggle-color);
   }
 
   // Separate active colors for opened state

@@ -44,7 +44,7 @@
 
       // The point where navigation turns into mobile nav
       @media(max-width: $responsivenav) {
-        margin-left: 10px;
+        margin-left: 15px;
         margin-top: 10px;
         margin-bottom: 0;
         margin-right: 0;
@@ -61,7 +61,7 @@
           svg {
             fill: $color-fog;
           }
-        }        
+        }
       }
     }
   }

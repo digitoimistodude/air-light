@@ -41,7 +41,7 @@
             <?php endif; ?>
           </div><!-- .site-branding -->
 
-          <button id="nav-toggle" class="nav-toggle" aria-controls="nav" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label"><?php esc_html_e( 'Menu', 'air' ); ?></span></button>
+          <button id="nav-toggle" class="nav-toggle" aria-controls="nav" aria-expanded="false"><span class="burger-icon"></span> <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air' ); ?>"><?php esc_html_e( 'Menu', 'air' ); ?></span></button>
 
           <nav id="nav" class="nav-collapse">
 
