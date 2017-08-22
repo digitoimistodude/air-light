@@ -6,42 +6,12 @@
 // based responsive mixin can be found in _helpers.scss
 // -----------------------------------------------------------
 
-// Choose which option to use
-// Feel free to remove bloat code or comments if you use only either one or neither
-// google: Uses Pennman's mixin for Google Web Fonts
-// selfhosted: Uses self-hosted webfonts from fonts/ directory
-$fontstack: google;
-
-@if $fontstack == selfhosted {
-
 // Set up self-hosted fonts here
-@include fontFace('Chivo', '../fonts/Chivo-Regular', 400);
-@include fontFace('Chivo', '../fonts/Chivo-RegularItalic', 400, italic);
-@include fontFace('Chivo', '../fonts/Chivo-Bold', 700);
-@include fontFace('Chivo', '../fonts/Chivo-BoldItalic', 700, italic);
-
-} @else {
-
-  // Set up fonts here
-  $url: web-fonts-url(
-    ('Fira Sans':
-      ('300',
-      '300 italic',
-      '400',
-      '400 italic',
-      '700',
-      '700 italic'
-      )
-    )
-    ('Source Sans Pro':
-      ('700',
-       '700 italic'
-      )
-    )
-  );
-
-  @import url($url);
-}
+@include fontFace('Poppins', '../fonts/poppins-light', 200);
+@include fontFace('Poppins', '../fonts/poppins-regular', 400);
+@include fontFace('Poppins', '../fonts/poppins-medium', 500);
+@include fontFace('Poppins', '../fonts/poppins-semibold', 600);
+@include fontFace('Poppins', '../fonts/poppins-bold', 700);
 
 // Start typography settings
 body {
