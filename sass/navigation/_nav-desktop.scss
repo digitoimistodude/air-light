@@ -7,6 +7,8 @@
 $dropdown-width: 200px;
 $enable-nav-animations: true; // Should we use animations, true or false
 $color-nav-links: #fff;
+$color-nav-dropdown-background: #fff;
+$color-nav-dropdown-links: #333;
 $enable-arrows: true; // Should we enable dropdown top arrows
 $enable-rounder-corners: true; // Should we enable rounder corners
 $icon-arrow-right: '../svg/chevron-right-dark.svg';
@@ -197,7 +199,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             max-height: 9999px;
             overflow: visible;
             margin-bottom: 0;
-            background: #fff;
+            background: $color-nav-dropdown-background;
             border-radius: 0;
           }
 
@@ -255,7 +257,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             position: absolute;
             width: 30px;
             height: 30px;
-            background: #fff;
+            background: $color-nav-dropdown-background;
             transform: rotate(45deg);
             top: -15px;
             left: 40px;
@@ -275,7 +277,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
       ul {
         overflow: visible;
         margin-bottom: 0;
-        background: #fff;
+        background: $color-nav-dropdown-background;
         max-height: 9999px;
 
         @if $enable-rounder-corners == true {
@@ -290,12 +292,12 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         }
 
         li {
-          background: #fff;
+          background: $color-nav-dropdown-background;
           z-index: 2;
           width: 100%;
 
           span {
-            background: #fff;
+            background: $color-nav-dropdown-background;
             text-transform: none;
           }
 
@@ -319,7 +321,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
                 top: 50px;
                 left: 0;
                 height: 22px;
-                background: #fff;
+                background: $color-nav-dropdown-background;
                 z-index: 0;
               }
 
@@ -338,7 +340,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
           }
 
           a {
-            color: $color-body;
+            color: $color-nav-dropdown-links;
             line-height: 1.5;
             font-weight: 400;
             font-size: 14px;
