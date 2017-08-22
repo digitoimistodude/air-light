@@ -4,30 +4,34 @@
 // The very bottom of the site. Usually contains supporting
 // or secondary navigation, social media icons, contact details
 // and such.
+//
+// Please note: These are mostly for demo purposes
+// so feel free to remove everything in this file
+// and start over.
 // ------------------------------------------------------------
 
 body {
   #page {
     .site-footer {
       padding: 20px;
-      background: #222;
+      background: #eaeaea;
       color: #fff;
       overflow: hidden;
       clear: both;
 
       svg {
-        fill: darken($color-fog, 8%);
+        fill: darken($color-fog, 12%);
         top: 2px;
         position: relative;
       }
 
       p,
       span {
-        color: darken($color-fog, 8%);
+        color: darken($color-fog, 12%);
       }
 
       a {
-        color: darken($color-fog, 8%);
+        color: darken($color-fog, 12%);
 
         &:hover {
           color: #fff;
