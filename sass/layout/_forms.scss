@@ -19,7 +19,7 @@ body {
     border: 0;
     width: auto;
     display: inline-block;
-    padding: 10px 30px;
+    padding: 12px 30px;
     margin-bottom: 10px;
     text-decoration: none;
     position: relative;
@@ -240,20 +240,6 @@ body {
             clear: both;
             margin-bottom: 0;
             margin-top: 0;
-
-            input {
-              color: #fff;
-
-              &.active {
-                color: #222;
-              }
-
-              &:hover,
-              &:focus {
-                color: #222;
-                background: #ddd;
-              }
-            }
           }
 
           &.comment-form-comment {
