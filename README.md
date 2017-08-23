@@ -1,6 +1,6 @@
 ## Air - A minimalist WordPress starter theme
 
-[![Build Status](https://img.shields.io/travis/digitoimistodude/air.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air) [![GitHub release](https://img.shields.io/github/release/digitoimistodude/air.svg?style=flat-square)]()
+[![Build Status](https://img.shields.io/travis/digitoimistodude/air.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air.svg?style=flat-square)](https://github.com/digitoimistodude/air/releases)
 
 Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s]("https://github.com/automattic/_s").
 
