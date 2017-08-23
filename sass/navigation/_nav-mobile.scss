@@ -205,8 +205,6 @@ $hamburger-hover-transition-timing-function: linear;
 
     .hamburger-box {
       .hamburger-inner {
-        background-color: $nav-toggle-active-color;
-
         &:after {
           background-color: $nav-toggle-active-color;
         }
