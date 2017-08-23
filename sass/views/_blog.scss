@@ -6,7 +6,6 @@
 // ------------------------------------------------
 
 body {
-
   .container {
     &.container-article {
       max-width: $article-max-width;
@@ -43,7 +42,7 @@ body {
     del {
       text-decoration: line-through;
       opacity: .6;
-    }    
+    }
   }
 
   // WordPress captions
@@ -83,6 +82,22 @@ body {
   td,
   th {
     padding: 0;
+    font-family: $font-base;
+    height: 3rem;
+    padding: 1rem;
+
+    @media (max-width: 600px) {
+      @include stack();
+      display: inline-block;
+      height: auto;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+
+  // Table heading cells
+  th {
+    font-weight: 700;
   }
 
   abbr[title] {
