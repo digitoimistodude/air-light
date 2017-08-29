@@ -36,9 +36,15 @@
       popUpSelector: 'ul, .sf-mega',
       hoverClass: 'air-hover',
       delay: 800,
-      speed: 1,
-      speedOut: 1,
+      speed: 500,
+      speedOut: 500,
       cssArrows: true
+    });
+
+    // Responsive navigation toggle
+    $('#nav-toggle').click(function () {
+      $('.menu-items').toggle();
+      $(this).toggleClass('is-active');
     });
 
     // Slick carousel, add class slider to a container which has the slider items as children

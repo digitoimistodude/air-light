@@ -42,7 +42,6 @@ $hamburger-hover-transition-timing-function: linear;
 
   #nav {
     width: 100%;
-    max-height: 0;
     overflow: hidden;
     background: $color-almostblack;
     float: none;
@@ -89,18 +88,6 @@ $hamburger-hover-transition-timing-function: linear;
             }
           }
         }
-      }
-    }
-
-    &.opened {
-      transition: 1s;
-      visibility: visible;
-      max-height: 9999px;
-    }
-
-    &.multiple-level-nav.opened.dropdown-active {
-      &.opened.dropdown-active {
-        max-height: 9999px !important; // Enable active class to let the navigation expand over the calculated max height.
       }
     }
 
@@ -226,4 +213,3 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 }
-

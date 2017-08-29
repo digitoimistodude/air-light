@@ -164,7 +164,10 @@
 						return this;
 					}
 
-					$ul.stop(true, true).hide();
+					$ul.stop(true, true).animate(o.animationOut, speed, function () {
+						var $this = $(this);
+						o.onHide.call($this);
+					});
 				}
 				return this;
 			},
@@ -180,7 +183,9 @@
 					return this;
 				}
 
-				$ul.stop(true, true).show();
+				$ul.stop(true, true).animate(o.animation, o.speed, function () {
+					o.onShow.call($ul);
+				});
 				return this;
 			},
 			destroy: function () {
@@ -252,6 +257,8 @@
 		pathClass: 'overrideThisToUse',
 		pathLevels: 1,
 		delay: 800,
+		animation: {opacity: 'show'},
+		animationOut: {opacity: 'hide'},
 		speed: 'normal',
 		speedOut: 'fast',
 		cssArrows: true,
