@@ -128,10 +128,10 @@ gulp.task('js', function() {
       gulp.src(
         [
           'js/src/skip-link-focus-fix.js',
-          'js/src/responsive-nav.custom.js',
           // 'js/src/sticky-nav.js',
           // 'node_modules/slick-carousel/slick/slick.js',
-          'node_modules/jquery-hoverintent/jquery.hoverIntent.js',
+          'node_modules/superfish/dist/js/hoverIntent.js',
+          'node_modules/superfish/dist/js/superfish.js',
           'node_modules/moveto/dist/moveTo.js',
           'js/src/scripts.js'
         ])

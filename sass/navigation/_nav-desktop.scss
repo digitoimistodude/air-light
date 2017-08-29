@@ -2,10 +2,8 @@
 // Site navigation desktop layout
 //
 // The main layout for the website navigation, for a desktop
-// version only.
+// devices only.
 // -----------------------------------------------------------
-$dropdown-width: 200px;
-$enable-nav-animations: true; // Should we use animations, true or false
 $color-nav-links: #fff;
 $color-nav-dropdown-background: #fff;
 $color-nav-dropdown-links: #333;
@@ -15,7 +13,6 @@ $icon-arrow-right: '../svg/chevron-right-dark.svg';
 $icon-arrow-down: '../svg/chevron-down.svg';
 $icon-arrow-left: '../svg/chevron-left-dark.svg';
 
-// Desktop styles for navigation
 @media (min-width: $responsivenav) {
   #nav {
     // Set based on logo height, for example air logo is about 62px
@@ -23,242 +20,87 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
     padding-top: 17px;
     padding-bottom: 17px;
     float: right;
-    overflow: visible;
+  }
 
-    ul {
-      padding: 10px 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-      // Separate first level styles, if you'd like to style other levels differently
-      &:first-child {
-        > li {
-          a {
-            color: $color-nav-links;
-            background: transparent;
-            font-size: 15px;
-
-            &:hover {
-              color: rgba($color-nav-links, .8);
-            }
-          }
-        }
-      }
-
-      li {
-        border: 0;
-        display: inline-block;
-        height: auto;
-        position: relative;
-        width: auto;
-
+    // Separate first level styles, if you'd like to style other levels differently
+    &:first-child {
+      > li {
         a {
-          background: transparent;
           color: $color-nav-links;
-        }
+          background: transparent;
+          font-size: 15px;
 
-        // Depth: nav ul li
-        &:hover > ul,
-        li:focus > ul,
-        &.focus > ul,
-        .focus > ul,
-        ul.toggled,
-        .hoverintent {
-          left: 38%;
-          margin-left: -75px;
-          opacity: 1;
-
-          @if $enable-arrows == true {
-            top: 62px;
-          } @else {
-            // Calculate this with the font size
-            top: 32px;
-          }
-        }
-
-        // Dropdown toggles
-        &.menu-item-has-children,
-        &.page-item-has-children {
-          > a {
-            padding-right: 2rem;
-          }
-
-          // First level dropdown toggle
-          button.dropdown-toggle {
-            opacity: .8;
-            background-image: url($icon-arrow-down);
-            background-repeat: no-repeat;
-            background-position: center;
-            content: ' ';
-            width: 10px;
-            height: 10px;
-            position: absolute;
-            right: 0;
-            padding-right: .2rem;
-            top: 2px;
-            vertical-align: text-bottom;
-            background-color: transparent;
-            z-index: 99;
-          }
-
-          // Open second level in last navigation item to the left instead of right
-          &:last-child {
-            li:hover > ul,
-            li:focus > ul,
-            li.focus > ul,
-            .focus > ul,
-            ul.toggled,
-            &.hoverintent {
-              top: 0;
-              right: 0%;
-              left: auto;
-              margin-left: auto;
-              margin-right: $dropdown-width;
-              opacity: 1;
-            }
-
-            li {
-              a {
-                padding-left: 30px;
-              }
-
-              &.menu-item-has-children,
-              &.page-item-has-children {
-                button.dropdown-toggle {
-                  background-image: url($icon-arrow-left);
-                  background-repeat: no-repeat;
-                  background-position: center;
-                  bottom: 2px;
-                  right: auto;
-                  left: 8px;
-                  top: auto;
-                  padding: 0;
-                  z-index: 99;
-                }
-              }
-
-              ul {
-                li:hover > ul,
-                li:focus > ul,
-                li.focus > ul,
-                .focus > ul,
-                ul.toggled,
-                &.hoverintent {
-                  top: 0;
-                  right: 0%;
-                  left: auto;
-                  margin-left: auto;
-                  margin-right: $dropdown-width;
-                  opacity: 1;
-                }
-              }
-            }
-          }
-        }
-
-        li {
-          max-width: $dropdown-width;
-          border: 0;
-          display: block;
-          height: auto;
-          line-height: 1.0909090909;
-
-          &.menu-item-has-children,
-          &.page-item-has-children {
-            > a {
-              // A bit space for the dropdown toggle
-              padding-right: 2rem;
-            }
-
-            // Second level dropdown toggle
-            button.dropdown-toggle {
-              background-image: url($icon-arrow-right);
-              background-repeat: no-repeat;
-              background-position: center;
-              bottom: 2px;
-              top: auto;
-              right: 15px;
-              padding: 0;
-              z-index: 99;
-            }
-          }
-        }
-        // .li
-
-        // Depth: nav ul ul
-        ul {
-          float: left;
-          margin: 0;
-          position: absolute;
-          text-align: center;
-          top: 85px;
-          left: -999em;
-          z-index: 99999;
-          opacity: 0;
-
-          &.sub-menu {
-            .sub-menu {
-              margin-top: -10px;
-            }
-          }
-
-          // Accessible, toggled drop down
-          &.toggled {
-            max-height: 9999px;
-            overflow: visible;
-            margin-bottom: 0;
-            background: $color-nav-dropdown-background;
-            border-radius: 0;
-          }
-
-          // Animate:
-          @if $enable-nav-animations == true {
-            transition-property: opacity, visibility;
-            transition-duration: .25s, 0s;
-            transition-delay: .25s, .25s;
-            transition: opacity .3s ease-in-out, top .3s ease-in-out;
-          }
-
-          li:hover > ul,
-          li:focus > ul,
-          li.focus > ul,
-          .focus > ul,
-          ul.toggled {
-            top: 0;
-            left: 0%;
-            margin-left: $dropdown-width;
-            opacity: 1;
-          }
-
-          a {
-            padding: 5px 10px;
-            white-space: normal;
-            width: $dropdown-width;
-          }
-
-          // Depth: nav ul ul ul
-          ul {
-            left: -999em;
-            top: 20px;
-
-            li:hover > ul,
-            li:focus > ul,
-            li.focus > ul,
-            .focus > ul,
-            &.toggled,
-            &.hoverintent {
-              top: 0;
-              left: 0%;
-              margin-left: $dropdown-width;
-              opacity: 1;
-              visibility: visible;
-            }
+          &:hover {
+            color: rgba($color-nav-links, .8);
           }
         }
       }
     }
 
-    .dropdown {
-      @if $enable-arrows == true {
-        > ul.sub-menu {
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: block;
+      position: relative;
+      white-space: nowrap;
+      transition: background .2s;
+
+      &:hover,
+      &.air-hover {
+        transition: none;
+      }
+
+      &:hover > ul,
+      &.air-hover > ul {
+        display: block;
+      }
+    }
+
+    ul {
+      position: absolute;
+      display: none;
+      top: 100%;
+      left: 0;
+      z-index: 99;
+      float: left;
+      margin-bottom: 1em;
+      min-width: 12em; // Allow long menu items to determine submenu width
+
+      ul {
+        top: 0;
+        left: 100%;
+      }
+    }
+
+    > li {
+      float: left;
+    }
+
+    a {
+      background: transparent;
+      color: $color-nav-links;
+      position: relative;
+      padding: .75em 1em;
+      text-decoration: none;
+    }
+  }
+
+  // Dropdown styles
+  .dropdown {
+    @if $enable-arrows == true {
+      > ul.sub-menu {
+          margin-top: 15px;
+          padding: 10px 0;
+
           // Cool top arrows
           &:after {
             position: absolute;
@@ -266,7 +108,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             height: 30px;
             background: $color-nav-dropdown-background;
             transform: rotate(45deg);
-            top: -15px;
+            top: -10px;
             left: 40px;
             content: ' ';
             z-index: -2;
@@ -282,10 +124,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
       }
 
       ul {
-        overflow: visible;
-        margin-bottom: 0;
         background: $color-nav-dropdown-background;
-        max-height: 9999px;
 
         @if $enable-rounder-corners == true {
           border-radius: 3px;
@@ -299,20 +138,10 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         }
 
         li {
-          background: $color-nav-dropdown-background;
-          z-index: 2;
-          width: 100%;
-
-          span {
-            background: $color-nav-dropdown-background;
-            text-transform: none;
-          }
-
           &:first-child {
             background: transparent;
 
             @if $enable-arrows == true {
-              margin-top: -50px;
               position: relative;
 
               li {
@@ -321,37 +150,16 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             }
 
             @if $enable-arrows == true {
-              &:after {
-                position: absolute;
-                content: ' ';
-                width: 100%;
-                top: 50px;
-                left: 0;
-                height: 22px;
-                background: $color-nav-dropdown-background;
-                z-index: 0;
-              }
-
               a {
-                padding-top: 60px;
                 position: relative;
-                z-index: 2;                
-              }              
+                z-index: 2;
+              }
             }
           }
 
           @if $enable-arrows == true {
             ul.sub-menu {
-              margin-top: 10px;
-
               li {
-                  margin-top: 0;
-
-                a {
-                  padding-top: 5px;
-                  margin-top: 0;
-                }
-
                 &:after {
                   display: none;
                 }
@@ -370,12 +178,45 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             &:active {
               color: $color-links;
             }
-          }
+          }          
         }
+      }
+    }
 
-        ul {
-          border: 0;
+  .sf-arrows {
+    .sf-with-ul {
+      padding-right: 2.5em;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 1em;
+        margin-top: -3px;
+        height: 0;
+        width: 0;
+        border: 5px solid transparent;
+        border-top-color: rgba(#fff, .5);
+      }
+    }
+
+    ul {
+      .sf-with-ul:after {
+        margin-top: -5px;
+        margin-right: -3px;
+        border-color: transparent;
+        border-left-color: rgba(#fff, .5);
+      }
+
+      li {
+        > .sf-with-ul:focus:after,
+        &:hover > .sf-with-ul:after {
+          border-left-color: fff;
         }
+      }
+
+      .air-hover > .sf-with-ul:after {
+        border-left-color: fff;
       }
     }
   }
