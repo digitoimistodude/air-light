@@ -33,12 +33,12 @@
 
     // Init navigation
     jQuery('.menu-items').superfish({
-      popUpSelector: 'ul, .sf-mega',
       hoverClass: 'air-hover',
-      delay: 800,
-      speed: 500,
-      speedOut: 500,
-      cssArrows: true
+      delay: 0,
+      speed: 0,
+      speedOut: 0,
+      cssArrows: true,
+      disableHI: true
     });
 
     // Responsive navigation toggle
