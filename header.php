@@ -48,7 +48,7 @@
             <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air' ); ?>"><?php esc_html_e( 'Menu', 'air' ); ?></span>
           </button>
 
-          <nav id="nav" class="nav-collapse">
+          <nav id="nav" class="nav">
 
             <?php wp_nav_menu( array(
               'theme_location'    => 'primary',

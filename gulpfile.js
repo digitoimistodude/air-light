@@ -128,10 +128,12 @@ gulp.task('js', function() {
       gulp.src(
         [
           'js/src/skip-link-focus-fix.js',
-          'js/src/responsive-nav.custom.js',
           // 'js/src/sticky-nav.js',
           // 'node_modules/slick-carousel/slick/slick.js',
           'node_modules/moveto/dist/moveTo.js',
+          'js/src/jquery.easing.js',
+          'js/src/hoverIntent.js',
+          'js/src/superfish.custom.js',
           'js/src/scripts.js'
         ])
         .pipe(concat('all.js'))

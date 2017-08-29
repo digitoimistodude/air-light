@@ -2,36 +2,6 @@
  * Air theme JavaScript.
  */
 
-// Vanilla JS start
-
-// Set up the responsive and accessible navigation
-var customToggle = document.getElementById('nav-toggle');
-var customLabel = document.getElementById('nav-toggle-label');
-var navigation = responsiveNav(".nav-collapse", {
-  animate: false, // We are using animations in CSS
-  customToggle: ".nav-toggle",
-  navClass: ".nav-collapse",
-  menuItems: "menu-items",
-  subMenu: "sub-menu",
-  enableFocus: true,
-  enableDropdown: true,
-  openDropdown: screenReaderTexts.expandSubMenu,
-  closeDropdown: screenReaderTexts.collapseSubMenu,
-  open: function() {
-    customLabel.innerHTML = screenReaderTexts.collapseMenu;
-  },
-  close: function() {
-    customLabel.innerHTML = screenReaderTexts.expandMenu;
-  },
-  resizeMobile: function() {
-    customToggle.setAttribute('aria-controls', 'nav');
-  },
-  resizeDesktop: function() {
-    customToggle.removeAttribute('aria-controls');
-  },
-});
-
-
 // jQuery start
 ( function( $ ) {
 
@@ -60,6 +30,16 @@ var navigation = responsiveNav(".nav-collapse", {
 
   // Document ready start
   $(function() {
+
+    // Init navigation
+    jQuery('.menu-items').superfish({
+      popUpSelector: 'ul, .sf-mega',
+      hoverClass: 'air-hover',
+      delay: 800,
+      speed: 1,
+      speedOut: 1,
+      cssArrows: true
+    });
 
     // Slick carousel, add class slider to a container which has the slider items as children
     // $('.slider').slick({
