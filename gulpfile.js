@@ -131,6 +131,7 @@ gulp.task('js', function() {
           'js/src/responsive-nav.custom.js',
           // 'js/src/sticky-nav.js',
           // 'node_modules/slick-carousel/slick/slick.js',
+          'node_modules/jquery-hoverintent/jquery.hoverIntent.js',
           'node_modules/moveto/dist/moveTo.js',
           'js/src/scripts.js'
         ])

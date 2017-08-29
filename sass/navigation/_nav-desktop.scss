@@ -60,7 +60,8 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         li:focus > ul,
         &.focus > ul,
         .focus > ul,
-        ul.toggled {         
+        ul.toggled,
+        .hoverintent {
           left: 38%;
           margin-left: -75px;
           opacity: 1;
@@ -104,7 +105,8 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             li:focus > ul,
             li.focus > ul,
             .focus > ul,
-            ul.toggled {
+            ul.toggled,
+            &.hoverintent {
               top: 0;
               right: 0%;
               left: auto;
@@ -138,7 +140,8 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
                 li:focus > ul,
                 li.focus > ul,
                 .focus > ul,
-                ul.toggled {
+                ul.toggled,
+                &.hoverintent {
                   top: 0;
                   right: 0%;
                   left: auto;
@@ -240,7 +243,8 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             li:focus > ul,
             li.focus > ul,
             .focus > ul,
-            &.toggled {
+            &.toggled,
+            &.hoverintent {
               top: 0;
               left: 0%;
               margin-left: $dropdown-width;

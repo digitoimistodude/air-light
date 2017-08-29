@@ -31,9 +31,24 @@ var navigation = responsiveNav(".nav-collapse", {
   },
 });
 
-
 // jQuery start
 ( function( $ ) {
+
+  // Navigation hoverintent support
+  // If you don't need hoverintent, simply remove these two vars and hoverIntent function
+  var showMenu = function() {
+    return $(this).find('>ul').addClass('hoverintent');
+  };
+
+  var resetMenu = function() {
+    return $(this).find('>ul').removeClass('hoverintent');
+  };
+
+  $('.menu-item-has-children').hoverIntent({
+    over: showMenu,
+    out: resetMenu,
+    timeout: 800
+  });
 
 	// Hide or show the "back to top" link
 	$(window).scroll(function() {
