@@ -5,12 +5,17 @@
 // the site navigation and search for example.
 // -----------------------------------------------------------
 
+// Fix overlapping in some mobile devices
 .site-header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 15;
+
+  @media(max-width: $responsivenav) {
+    overflow: hidden;
+  }
 
   @media(min-width: $responsivenav) {
     padding-top: 20px;
