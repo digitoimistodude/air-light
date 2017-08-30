@@ -28,8 +28,7 @@ This theme is built to be very straightforward, front end developer friendly and
 4. [Extra building blocks](#extra-building-blocks)
     1. [Sticky navigation](#sticky-navigation)
     2. [Slick slider](#slick-slider)
-    3. [Polylang language switcher dropdown](#polylang-language-switcher-dropdown)
-    4. [WooCommerce support](#woocommerce-support)
+    3. [WooCommerce support](#woocommerce-support)
 5. [Requirements](#requirements)    
 6. [Recommendations for development](#recommendations-for-development)
 7. [Installation](#installation)
@@ -150,18 +149,6 @@ $('.slider').slick({
 ````
 
 Please note: If you want to change the background to lighter, you will need to edit the svg arrows accordingly.
-
-#### Polylang language switcher dropdown
-
-Polylang's language switcher is quite plain by default, so we have built a dropdown for `pll-parent-menu-item`. Not enabled by default. 
-
-##### How to enable
-
-To use, 
-
-1. Uncomment entries in gulpfile and global.scss
-2. Run gulp again
-3. Save SCSS and JS to compile them all together
 
 #### WooCommerce support
 
