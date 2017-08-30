@@ -32,7 +32,10 @@ $hamburger-hover-transition-timing-function: linear;
   // Ensure nav stays in the same position when activated
   html {
     &.js-nav-active {
-      position: fixed;
+
+      .nav-toggle {
+        position: fixed;
+      }
 
       nav#nav {
         visibility: visible;

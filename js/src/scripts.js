@@ -38,7 +38,8 @@
     });
 
     // Show mobile navigation on click
-    $('#nav-toggle').click(function() {
+    $('#nav-toggle').click(function(e) {
+      e.preventDefault();
       $(this).toggleClass('is-active');
       $('html').toggleClass('js-nav-active');      
     });

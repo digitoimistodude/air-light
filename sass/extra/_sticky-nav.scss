@@ -29,11 +29,13 @@ $navheight-collapsed: 54px;
     left: 0;
 
     .site-header {
-      padding-top: 10px;
-      padding-bottom: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
 
       .site-title {
         svg {
+          position: relative;
+          top: 5px;
           width: 32px;
           height: 32px;
         }
@@ -50,15 +52,15 @@ $navheight-collapsed: 54px;
     }
 
     .nav-toggle {
-      top: -2px;
-      right: 0;
+      top: 5px;
+      right: 5px;
     }
 
     @media(min-width: $responsivenav) {
       height: $navheight-collapsed;
     }    
 
-    // Hide when scrolling down, show again when scrolling up   
+    // Hide when scrolling down, show again when scrolling up
     &.scrolling-down {
       @media(min-width: $responsivenav) {
         margin-top: -$navheight-expanded;

@@ -109,6 +109,7 @@ You can enable the navigation by
 
 1. Adding sticky-nav.js to your gulpfile (already included with [Devpackages](https://github.com/digitoimistodude/devpackages) and newtheme.sh start script)
 2. Uncommeting sticky-nav import in global.scss
+3. Restart gulp and save scripts.js once to compile working combined javascript file
 
 #### Slick slider
 
