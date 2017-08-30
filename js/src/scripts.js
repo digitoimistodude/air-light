@@ -2,52 +2,8 @@
  * Air theme JavaScript.
  */
 
-// Vanilla JS start
-
-// Set up the responsive and accessible navigation
-var customToggle = document.getElementById('nav-toggle');
-var customLabel = document.getElementById('nav-toggle-label');
-var navigation = responsiveNav(".nav-collapse", {
-  animate: false, // We are using animations in CSS
-  customToggle: ".nav-toggle",
-  navClass: ".nav-collapse",
-  menuItems: "menu-items",
-  subMenu: "sub-menu",
-  enableFocus: true,
-  enableDropdown: true,
-  openDropdown: screenReaderTexts.expandSubMenu,
-  closeDropdown: screenReaderTexts.collapseSubMenu,
-  open: function() {
-    customLabel.innerHTML = screenReaderTexts.collapseMenu;
-  },
-  close: function() {
-    customLabel.innerHTML = screenReaderTexts.expandMenu;
-  },
-  resizeMobile: function() {
-    customToggle.setAttribute('aria-controls', 'nav');
-  },
-  resizeDesktop: function() {
-    customToggle.removeAttribute('aria-controls');
-  },
-});
-
 // jQuery start
 ( function( $ ) {
-
-  // Navigation hoverintent support
-  // var showMenu = function() {
-  //   return $(this).find('>ul').addClass('hoverintent');
-  // };
-
-  // var resetMenu = function() {
-  //   return $(this).find('>ul').removeClass('hoverintent');
-  // };
-
-  // $('.menu-item-has-children').hoverIntent({
-  //   over: showMenu,
-  //   out: resetMenu,
-  //   timeout: 800
-  // });
 
 	// Hide or show the "back to top" link
 	$(window).scroll(function() {
@@ -75,14 +31,17 @@ var navigation = responsiveNav(".nav-collapse", {
   // Document ready start
   $(function() {
 
-    // Slick carousel, add class slider to a container which has the slider items as children
-    // $('.slider').slick({
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-    //   arrows: true,
-    //   dots: false,
-    //   fade: true
-    // });
+    // Init navigation
+    $('#main-menu').smartmenus({
+      subMenusSubOffsetX: 1,
+      subMenusSubOffsetY: -8
+    });
+
+    // Show mobile navigation on click
+    $('#nav-toggle').click(function() {
+      $(this).toggleClass('is-active');
+      $('html').toggleClass('js-nav-active');      
+    });
 
     // Set up back to top link
     var moveTo = new MoveTo();

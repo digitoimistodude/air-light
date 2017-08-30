@@ -1,0 +1,61 @@
+// ---------------------------------------------------------
+// Site navigation core
+//
+// The main layout for the website navigation, for both mobile
+// and desktop devices.
+// -----------------------------------------------------------
+.menu-items {
+  position: relative;
+  z-index: 9999;
+
+  &:after {
+    content: '\00a0';
+    display: block;
+    height: 0;
+    font: 0/0 serif;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+  }
+
+  ul,
+  li {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    direction: ltr;
+    text-align: left;
+    -webkit-tap-highlight-color: rgba(#000, 0);
+  }
+
+  li,
+  a {
+    position: relative;
+  }
+
+  a {
+    display: block;
+
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  ul {
+    display: none;
+  }
+
+  > li {
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

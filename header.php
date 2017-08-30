@@ -48,14 +48,14 @@
             <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air' ); ?>"><?php esc_html_e( 'Menu', 'air' ); ?></span>
           </button>
 
-          <nav id="nav" class="nav-collapse">
+          <nav id="nav" role="navigation">
 
             <?php wp_nav_menu( array(
               'theme_location'    => 'primary',
               'container'         => false,
               'depth'             => 4,
               'menu_class'        => 'menu-items',
-              'menu_id'           => 'menu',
+              'menu_id'           => 'main-menu',
               'echo'              => true,
               'fallback_cb'       => 'wp_page_menu',
               'items_wrap'        => '<ul class="%2$s" id="%1$s">%3$s</ul>',

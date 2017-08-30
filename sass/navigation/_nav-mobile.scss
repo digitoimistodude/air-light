@@ -28,128 +28,101 @@ $hamburger-hover-transition-timing-function: linear;
 
 // Mobile styles
 @media screen and (max-width: $responsivenav) {
+
+  // Ensure nav stays in the same position when activated
   html {
     &.js-nav-active {
+      position: fixed;
+
       nav#nav {
-        clip: auto;
-        position: fixed !important;
+        visibility: visible;
         max-height: 100%;
         height: 100vh;
-        top: 0;
       }
     }
   }
 
-  #nav {
-    width: 100%;
+  nav#nav {
+    // Hide mobile navigation by default while enabling use of animations
+    visibility: hidden;
     max-height: 0;
-    overflow: hidden;
+    height: 0;
     background: $color-almostblack;
-    float: none;
+    transition: all 1s;
+    margin: 0;
+    clip: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
 
-    // Mobile navigation styles
-    ul {
-      padding: 5%;
+    .menu-items {
+      margin: 0;
+      padding: 5% 0;
       width: 100%;
       float: none;
 
-      li {
-        position: relative;
-        display: block;
+      a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5%;
+        padding-right: 58px; // Make room for the toggle button (sub indicator)
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 17px;
+        text-decoration: none;
 
-        a {
-          padding: 5px 10px;
+        &:hover,
+        &:focus,
+        &:active {
+          color: $color-links;
+        }
+
+        &.current {
+          color: #d23600;
+        }
+
+        &.disabled {
+          color: #bbb;
+        }
+
+        span.sub-arrow {
+          position: absolute;
+          top: 50%;
+          margin-top: -17px;
+          left: auto;
+          right: 24px;
+          width: 34px;
+          height: 34px;
+          overflow: hidden;
+          font: bold 16px/34px monospace !important;
+          text-align: center;
+          background: #202020;
           color: #fff;
 
           &:hover {
-            color: $color-links;
+            background-color: #3e4853;
+            color: #fff;
           }
         }
 
-        // Sublevels
-        ul.sub-menu {
-          padding: 0;
-          transition: 1s;
-          background: transparent;
-
-          li {
-            display: block;
-            position: relative;
-
-            a {
-              padding-top: 10px;
-              padding-bottom: 10px;
-              position: relative;
-              z-index: 1;
-
-              &:hover {
-                color: $color-links;
-                background: none;
-              }
-            }
-          }
+        &.highlighted span.sub-arrow:before {
+          display: block;
+          content: '-';
         }
       }
-    }
 
-    &.opened {
-      transition: 1s;
-      visibility: visible;
-      max-height: 9999px;
-    }
+      // Dropdowns
+      ul {
+        background: rgba(#666, .1);
+        padding-top: 10px;
+        padding-bottom: 10px;
 
-    &.multiple-level-nav.opened.dropdown-active {
-      &.opened.dropdown-active {
-        max-height: 9999px !important; // Enable active class to let the navigation expand over the calculated max height.
-      }
-    }
-
-    &.multiple-level-nav .sub-menu {
-      clip: rect(0 0 0 0);
-      max-height: 0;
-      position: absolute;
-      overflow: hidden;
-      visibility: hidden;
-      zoom: 1;
-
-      &.toggled {
-        max-height: 9999px;
-        position: relative;
-        visibility: visible;
-      }
-    }
-
-    // + - toggles in mobile navigation
-    .dropdown-toggle {
-      background: #191919;
-      border: 0;
-      color: #fff;
-      content: '';
-      height: 32px;
-      width: 32px;
-      line-height: 1.8;
-      padding: 0;
-      position: absolute;
-      margin: 0;
-      text-transform: lowercase;
-      top: 5px;
-      right: 10px;
-      z-index: 9999;
-
-      &.toggled:after {
-        content: '-';
-      }
-
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: #3e4853;
-        color: #fff;
-      }
-
-      &:after {
-        content: '+';
-        font-size: 20px;
+        a {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -227,4 +200,3 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 }
-
