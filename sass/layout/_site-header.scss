@@ -13,10 +13,6 @@
   width: 100%;
   z-index: 15;
 
-  @media(max-width: $responsivenav) {
-    overflow: hidden;
-  }
-
   @media(min-width: $responsivenav) {
     padding-top: 20px;
   }
