@@ -41,7 +41,7 @@
     $('#nav-toggle').click(function(e) {
       e.preventDefault();
       $(this).toggleClass('is-active');
-      $('html').toggleClass('js-nav-active');      
+      $('body').toggleClass('js-nav-active');
     });
 
     // Set up back to top link

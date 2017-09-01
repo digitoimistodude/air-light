@@ -30,8 +30,9 @@ $hamburger-hover-transition-timing-function: linear;
 @media screen and (max-width: $responsivenav) {
 
   // Ensure nav stays in the same position when activated
-  html {
+  body {
     &.js-nav-active {
+      overflow: hidden;
 
       .nav-toggle {
         position: fixed;
@@ -41,6 +42,7 @@ $hamburger-hover-transition-timing-function: linear;
         visibility: visible;
         max-height: 100%;
         height: 100vh;
+        overflow: auto;
       }
     }
   }
@@ -76,6 +78,8 @@ $hamburger-hover-transition-timing-function: linear;
         font-weight: 400;
         line-height: 17px;
         text-decoration: none;
+        position: relative;
+        z-index: 0;
 
         &:hover,
         &:focus,
