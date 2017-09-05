@@ -10,10 +10,12 @@
 }
 
 .screen-reader-text {
-  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
   word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
-  transition: all .55s;
 
   &.skip-link {
     margin: 5px;
@@ -40,4 +42,9 @@
 
   // Above WP toolbar
   outline: none;
+}
+
+// Do not show the outline on the skip link target.
+#content[tabindex="-1"]:focus {
+  outline: 0;
 }
