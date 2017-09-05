@@ -26,11 +26,11 @@ get_header(); ?>
   <div class="container">
     <p class="accent">
       <?php
-        echo esc_html_e( 'Air ' );
-        echo esc_attr( AIR_VERSION );
+        echo esc_html_e( 'Air ', 'air' );
+        echo esc_attr( AIR_VERSION, 'air' );
       ?>
     </p>
-    <h1><?php echo esc_html_e('a WordPress starter theme', 'air' ); ?></h1>
+    <h1><?php echo esc_html_e( 'a WordPress starter theme', 'air' ); ?></h1>
   </div>
 </div>
 
