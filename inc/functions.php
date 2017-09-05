@@ -16,7 +16,7 @@ if ( ! function_exists( 'air_entry_footer' ) ) {
 				<p class="cat"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'air' ) ); ?></p>
 			<?php	endif;
 
-			$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma', 'air' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'air' ) );
 			if ( $tags_list ) {
 				the_tags( '<ul class="tags"><li>', '</li><li>', '</li></ul>' );
 			}
