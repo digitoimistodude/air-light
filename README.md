@@ -75,8 +75,9 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Navigation
 
-* Custom navigation walker based on Bootstrap 3
-* Sassified version of [viljamis' responsive-nav](https://github.com/viljamis/responsive-nav.js), fully Accessible and responsive multi-level navigation
+* Custom navigation walker
+* Support for multi-level drop down submenus
+* Sassified version of [SmartMenus](https://github.com/vadikom/smartmenus), fully Accessible and responsive multi-level navigation
 
 #### WordPress & functions
 
