@@ -43,8 +43,8 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 				      <?php edit_post_link(
 				      	sprintf(
 			            /* translators: %s: Name of current post */
-			            esc_html__( 'Edit %s', '_s' ),
-			            the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			            __( 'Edit <span class="screen-reader-text">%s</span>', '_s' ),
+			            get_the_title()
 					      ),
 					      '<span class="edit-link">',
 					      '</span>'
