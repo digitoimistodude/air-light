@@ -195,7 +195,7 @@ body {
         margin-bottom: 10px;
 
         a {
-          @include responsive-font(1.2vw, 14px, 17px);
+          @extend %small;
         }
       }
 
@@ -208,7 +208,7 @@ body {
       }
 
       .comments-link {
-        @include responsive-font(1.2vw, 14px, 17px);
+        @extend %small;
         text-align: right;
         display: block;
 
@@ -240,7 +240,7 @@ body {
         padding-left: 0;
 
         li {
-          @include responsive-font(1.2vw, 10px, 13px);
+          @extend %small;
           margin-left: 0;
           margin-right: 10px;
           margin-bottom: 10px;

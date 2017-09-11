@@ -176,7 +176,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  @media (max-width: ($responsivenav)-1px) {
+  @media (max-width: ($responsivenav)-.1rem) {
     display: block;
   }
 

@@ -26,28 +26,26 @@ $font-headings: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
-$font-min-size: 18px; // Minimum font size, on mobile
-$font-max-size: 17px; // Maximum font size, on desktop
+$font-min-size: 1.8rem; // Minimum font size, on mobile (1.8rem = 18px)
+$font-max-size: 1.7rem; // Maximum font size, on desktop (1.7rem = 17px)
 $font-base-line-height: 1.78; // Line height for paragraphs
 $font-base-line-height-elements: 1.68; // Line height for other elements like table cells and spans
-$headings-line-height-setup: force; // Force: all headings have same line height. Flexible: values are set separately in _typography.scss
-$headings-line-height-forced: 1.22; // This is effective only if force is chosen in $headings-line-height-setup
+$headings-line-height: 1.22; // Line height for headings
 $headings-weight: 900; // Default title weight. Usually 700 or 900 works pretty well
-$headings-scale: medium; // Change this as a base for your project or create your own in _typography.scss.
 
 // Breakpoints
 $grid-type: fluid; // 'fluid' or 'snappy'
 $layout-max-width: 100%;
 
 // Container settings
-$container-default-pad-x: 4rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
-$container-default-pad-y: 4rem; // Default vertical padding for containers
-$grid-base-size: 960px; // Layout container max width on desktop. This is default .container size
-$article-max-width: 800px; // Max width for articles
-$container-mobile: 480px;
-$container-desktop: 1200px;
-$container-ipad: 770px;
-$container-ipad-landscape: 1024px;
+$container-default-pad-x: 6.4rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
+$container-default-pad-y: 6.4rem; // Default vertical padding for containers
+$grid-base-size: 96rem; // Layout container max width on desktop. This is default .container size
+$article-max-width: 80rem; // Max width for articles
+$container-mobile: 48rem;
+$container-desktop: 120rem;
+$container-ipad: 77rem;
+$container-ipad-landscape: 102.4rem;
 
 // Where navigation transforms into responsive - scale your window width down to test
-$responsivenav: 960px;
+$responsivenav: 96rem;

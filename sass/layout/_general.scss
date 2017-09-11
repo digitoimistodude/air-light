@@ -70,12 +70,12 @@ body {
       @include center($max_width: $grid-base-size, $pad: 0);
     }
 
-    @media(max-width: $grid-base-size + 100px) {
+    @media(max-width: $grid-base-size) {
       padding-left: $container-default-pad-x/2;
       padding-right: $container-default-pad-x/2;
     }
 
-    @media(max-width: $container-ipad - 10px) {
+    @media(max-width: $container-ipad) {
       padding-top: $container-default-pad-y/2;
       padding-bottom: $container-default-pad-y/2;
     }

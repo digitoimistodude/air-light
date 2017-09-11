@@ -13,10 +13,18 @@
 @include fontFace('Poppins', '../fonts/poppins-semibold', 600);
 @include fontFace('Poppins', '../fonts/poppins-bold', 700);
 
+:root {
+  font-size: 62.5%;
+}
+
+// Default font size
+body {
+  font-size: $font-max-size;
+}
+
 // Start typography settings
 body {
   line-height: 2rem;
-  font-size: 1rem;
   font-family: $font-base;
 
   .site-content,
@@ -40,14 +48,13 @@ body {
     table,
     tr,
     .default {
-      @include responsive-font(3vw, $font-min-size, $font-max-size, $font-max-size);
       letter-spacing: -.003em;
       line-height: $font-base-line-height-elements;
     }
 
     p {
-      margin-top: 29px;
-      margin-bottom: 29px;
+      margin-top: 2.9rem;
+      margin-bottom: 2.9rem;
       line-height: $font-base-line-height;
 
       &:first-child {
@@ -68,6 +75,11 @@ body {
       font-family: $font-base;
     }
 
+    // A preset for small fonts
+    %small {
+      font-size: auto;
+    }
+
     // Heading defaults
     h1,
     h2,
@@ -79,193 +91,42 @@ body {
       color: $color-headings;
       font-family: $font-headings;
       font-weight: $headings-weight;
-    }
+      line-height: $headings-line-height;
 
-    // Define heading scales
-    @if $headings-scale == large {
-
-      h1,
-      %h1 {
-        @include responsive-font(4vw, 38px, 80px);
+      &:first-child {
+        margin-top: 0;
       }
-
-      h2,
-      %h2 {
-        @include responsive-font(3.2vw, 32px, 68px);
-      }
-
-      h3,
-      %h3,
-      .gform_wrapper h3.gform_title {
-        @include responsive-font(2.4vw, 24px, 46px);
-      }
-
-      h4,
-      %h4 {
-        @include responsive-font(1.6vw, 21px, 34px);
-      }
-
-      h5,
-      %h5 {
-        @include responsive-font(1.4vw, 18px, 21px);
-      }
-
-      h6,
-      %h6 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-    } @else if $headings-scale == medium {
-
-      h1,
-      %h1 {
-        @include responsive-font(3.2vw, 32px, 68px);
-      }
-
-      h2,
-      %h2 {
-        @include responsive-font(2.4vw, 24px, 46px);
-      }
-
-      h3,
-      %h3,
-      .gform_wrapper h3.gform_title {
-        @include responsive-font(1.6vw, 21px, 34px);
-      }
-
-      h4,
-      %h4 {
-        @include responsive-font(1.4vw, 18px, 21px);
-      }
-
-      h5,
-      %h5 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-      h6,
-      %h6 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-    } @else if $headings-scale == small {
-
-      h1,
-      %h1 {
-        @include responsive-font(2.4vw, 24px, 46px);
-      }
-
-      h2,
-      %h2 {
-        @include responsive-font(1.6vw, 21px, 34px);
-      }
-
-      h3,
-      %h3,
-      .gform_wrapper h3.gform_title {
-        @include responsive-font(1.4vw, 18px, 21px);
-      }
-
-      h4,
-      %h4 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-      h5,
-      %h5 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-      h6,
-      %h6 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
     }
 
     h1,
     %h1 {
-      letter-spacing: -.02em;
-
-      @if $headings-line-height-setup == flexible {
-        line-height: 3.8rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
+      @include responsive-font(3.2vw, 32px, 68px);
     }
 
     h2,
     %h2 {
-      letter-spacing: -.02em;
-
-      @if $headings-line-height-setup == flexible {
-        line-height: 3.2rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
+      @include responsive-font(2.4vw, 24px, 46px);
     }
 
     h3,
     %h3,
     .gform_wrapper h3.gform_title {
-      letter-spacing: -.02em;
-
-      @if $headings-line-height-setup == flexible {
-        line-height: 2.2rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
+      @include responsive-font(1.6vw, 21px, 34px);
     }
 
     h4,
     %h4 {
-      @if $headings-line-height-setup == flexible {
-        line-height: 1.4rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
+      @include responsive-font(1.4vw, 18px, 21px);
     }
 
     h5,
     %h5 {
-      @if $headings-line-height-setup == flexible {
-        line-height: 1.2rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
+      @include responsive-font(1.2vw, 14px, 18px);
     }
 
     h6,
     %h6 {
-      @if $headings-line-height-setup == flexible {
-        line-height: 1rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
+      @include responsive-font(1.2vw, 14px, 18px);
     }
 
     // Lists
@@ -351,7 +212,7 @@ body {
       margin: 0;
 
       p {
-        @include responsive-font(2vw, 17px, 25px, 25px);
+        // @include scaleFont($grid-base-size, $font-min-size, $font-max-size, $font-max-size);
         opacity: .5;
         font-style: italic;
         font-family: $font-base;

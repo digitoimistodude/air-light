@@ -31,7 +31,7 @@ body {
             z-index: 10;
 
             .accent {
-              @include responsive-font(3vw, 18px, 24px);
+              @extend %h3;
               font-style: italic;
               text-transform: lowercase;
               font-weight: 700;
