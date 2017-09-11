@@ -15,12 +15,12 @@ body {
           background-color: #333;
 
           .item {
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-left: 2rem;
+            padding-right: 2rem;
 
             @media(max-width: $grid-base-size + 100) {
-              padding-left: 40px;
-              padding-right: 40px;
+              padding-left: 4rem;
+              padding-right: 4rem;
             }
           }
 
