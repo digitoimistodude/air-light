@@ -30,7 +30,7 @@ body {
       // Product archive listing
       ul.products {
         .button {
-          @include responsive-font(3vw, 13px, 16px, $font-max-size);
+          @extend %small;
         }
 
         // Default columns fix for air

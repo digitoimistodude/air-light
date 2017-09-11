@@ -16,13 +16,13 @@
     list-style: none;
 
     li {
-      @include responsive-font(1.2vw, 14px, 17px);
+      @extend %small;
       padding: 0;
       margin-top: 0;
       margin-bottom: 70px;
 
       p {
-        @include responsive-font(1.2vw, 14px, 17px);
+        @extend %small;
         color: $color-darkgrey;
       }
 
@@ -43,7 +43,7 @@
       }
 
       .comment-time {
-        @include responsive-font(1.2vw, 14px, 17px);
+        @extend %small;
         padding: 0;
         margin: 0;
         opacity: .5;
