@@ -63,7 +63,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
             position: absolute;
             right: 8px;
             top: 50%;
-            margin-top: -12px;
+            margin-top: 0;
             text-indent: -9999px;
             overflow: hidden;
             background-image: url($icon-arrow-right);
@@ -118,20 +118,24 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         }
 
         &.has-submenu {
-          padding-right: 10px;
+          // Let's make space for the arrow
+          padding-right: 15px;
+          margin-right: 8px;
         }
 
         span.sub-arrow {
+          @include vertical-align();
           text-indent: -9999px;
           overflow: hidden;
-          top: 50%;
-          margin-top: -2px;
-          margin-right: 5px;
-          right: 12px;
+          margin-top: 0;
+          margin-right: 0;
+          right: 0;
           background-image: url($icon-arrow-down);
           background-repeat: no-repeat;
           background-position: center;
           color: transparent;
+          position: absolute;
+          width: 8px;
         }
 
         &.highlighted span.sub-arrow:before {
