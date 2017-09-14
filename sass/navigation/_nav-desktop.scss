@@ -91,7 +91,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
           &:active,
           &.highlighted,
           &.current {
-            color: rgba($color-nav-links, .8);
+            color: $color-links;
           }
         }        
       }
