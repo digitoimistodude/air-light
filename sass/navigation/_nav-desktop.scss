@@ -77,6 +77,23 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
 
       li {
         float: left;
+
+        // Current and hover styles
+        // &.current_page_item {
+        //   a {
+        //     color: $color-links;
+        //   }
+        // }
+
+        a {
+          &:hover,
+          &:focus,
+          &:active,
+          &.highlighted,
+          &.current {
+            color: rgba($color-nav-links, .8);
+          }
+        }        
       }
 
       &.sm-rtl li {
@@ -95,14 +112,6 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         color: $color-nav-links;
         font-size: 15px;
         padding: 12px;
-
-        &:hover,
-        &:focus,
-        &:active,
-        &.highlighted,
-        &.current {
-          color: rgba($color-nav-links, .8);
-        }
 
         &.disabled {
           color: #bbb;
