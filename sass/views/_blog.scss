@@ -154,6 +154,11 @@ body {
     }
   }
 
+  // Search results
+  &.search-results .hentry {
+    margin-bottom: 30px;
+  }
+
   // Taxonomies
   .taxonomy-description {
     margin-bottom: 2rem;
