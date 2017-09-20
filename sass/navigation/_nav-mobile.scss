@@ -64,7 +64,7 @@ $hamburger-hover-transition-timing-function: linear;
 
     .menu-items {
       margin: 0;
-      padding: 5% 0;
+      padding: 15% 0;
       width: 100%;
       float: none;
 
@@ -149,12 +149,15 @@ $hamburger-hover-transition-timing-function: linear;
   -webkit-touch-callout: none;
   user-select: none;
   text-decoration: none;
-  padding: 10px 5px 0;
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-bottom: 2rem;
   margin: 0;
   background: transparent;
   cursor: pointer;
-  top: 15px;
-  right: 15px;
+  top: 0;
+  right: 0;
   position: absolute;
 
   // Hide from desktops
@@ -169,7 +172,6 @@ $hamburger-hover-transition-timing-function: linear;
   &:focus,
   &:active {
     color: $nav-toggle-color;
-    background: rgba($nav-toggle-color, .12);
 
     span {
       color: $nav-toggle-color;
