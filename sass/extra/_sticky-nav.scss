@@ -3,7 +3,7 @@ $navheight-mobile: 54px;
 $navheight-collapsed: 54px;
 
 .site-header {
-  transition: all .55s ease;  
+  transition: all .55s ease;
 }
 
 .nav-container {
@@ -58,7 +58,7 @@ $navheight-collapsed: 54px;
 
     @media(min-width: $responsivenav) {
       height: $navheight-collapsed;
-    }    
+    }
 
     // Hide when scrolling down, show again when scrolling up
     &.scrolling-down {
