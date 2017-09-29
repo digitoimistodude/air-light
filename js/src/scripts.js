@@ -34,7 +34,8 @@
     // Init navigation
     $('#main-menu').smartmenus({
       subMenusSubOffsetX: 1,
-      subMenusSubOffsetY: -8
+      subMenusSubOffsetY: -8,
+      showTimeout: 0
     });
 
     // Show mobile navigation on click
