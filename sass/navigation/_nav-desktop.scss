@@ -33,6 +33,17 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         padding: 5px 0;
         background: #fff;
 
+        li {
+          // Prevent nav from flickering
+          &.menu-item-has-children {
+            a {
+              // Let's make space for the arrow
+              padding-right: 3.5rem;
+              margin-bottom: 0;
+            }
+          }
+        }
+
         ul {
           // Fix weird sub-level alignment bug if no borders set
           transform: translateY(3px);
@@ -53,10 +64,6 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
           &.disabled {
             background: #fff;
             color: #ccc;
-          }
-
-          &.has-submenu {
-            padding-right: 35px;
           }
 
           span.sub-arrow {
@@ -85,15 +92,26 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         //   }
         // }
 
-        a {
-          &:hover,
-          &:focus,
-          &:active,
-          &.highlighted,
-          &.current {
-            color: $color-links;
+        // Prevent nav from flickering
+        &.menu-item-has-children {
+          margin-right: .8rem;
+
+          a {
+            // Let's make space for the arrow
+            padding-right: 1.5rem;
+            margin-bottom: .8rem;
           }
         }
+
+        // a {
+        //   &:hover,
+        //   &:focus,
+        //   &:active,
+        //   &.highlighted,
+        //   &.current {
+        //     color: $color-links;
+        //   }
+        // }
       }
 
       &.sm-rtl li {
@@ -115,12 +133,6 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
 
         &.disabled {
           color: #bbb;
-        }
-
-        &.has-submenu {
-          // Let's make space for the arrow
-          padding-right: 15px;
-          margin-right: 8px;
         }
 
         span.sub-arrow {
