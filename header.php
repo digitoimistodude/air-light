@@ -60,7 +60,7 @@
               'echo'              => true,
               'fallback_cb'       => 'Air_Walker::fallback',
               'items_wrap'        => '<ul class="%2$s" id="%1$s">%3$s</ul>',
-              'walker'            => new Air_Walker()
+              'walker'            => new Air_Walker(),
             ) ); ?>
 
           </nav><!-- #nav -->
