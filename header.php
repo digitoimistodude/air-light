@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="icon" type="image/png" href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/favicon.png">
-  
+
   <?php wp_head(); ?>
 </head>
 
@@ -58,15 +58,15 @@
               'menu_class'        => 'menu-items',
               'menu_id'           => 'main-menu',
               'echo'              => true,
-              'fallback_cb'       => 'wp_page_menu',
+              'fallback_cb'       => 'Air_Walker::fallback',
               'items_wrap'        => '<ul class="%2$s" id="%1$s">%3$s</ul>',
-              'walker'            => new Air_Walker(),
+              'walker'            => new Air_Walker()
             ) ); ?>
 
           </nav><!-- #site-navigation -->
 
-        </div><!-- .container -->          
-      </header>    
+        </div><!-- .container -->
+      </header>
   </div><!-- .nav-container -->
 
 	<div id="content" class="site-content">
