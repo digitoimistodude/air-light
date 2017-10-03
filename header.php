@@ -63,7 +63,7 @@
               'walker'            => new Air_Walker()
             ) ); ?>
 
-          </nav><!-- #site-navigation -->
+          </nav><!-- #nav -->
 
         </div><!-- .container -->
       </header>
