@@ -14,8 +14,8 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
   #nav {
     // Set based on logo height, for example air logo is about 62px
     // menu links height are 12px, so paddings are (60/2)-12:
-    padding-top: 17px;
-    padding-bottom: 17px;
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
     float: right;
 
     .menu-items {
@@ -26,29 +26,37 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
       // Dropdowns
       ul {
         position: absolute;
-        width: 12em;
-        padding: 5px 0;
+        padding: 0;
         background: #fff;
 
+        &.sub-menu {
+          padding-top: .5rem;
+          padding-bottom: .5rem;
+        }
+
         li {
+          width: 100%;
+
           // Prevent nav from flickering
           &.menu-item-has-children {
             a {
               // Let's make space for the arrow
               padding-right: 3.5rem;
+              margin-right: 0;
               margin-bottom: 0;
+              width: 100%;              
             }
           }
         }
 
         ul {
           // Fix weird sub-level alignment bug if no borders set
-          transform: translateY(3px);
+          transform: translateY(.3rem);
         }
 
         a {
-          padding: 8px 15px;
-          font-size: 14px;
+          padding: .8rem 1.5rem;
+          font-size: 1.4rem;
           color: $color-nav-dropdown-links;
 
           &:hover,
@@ -94,7 +102,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         &.menu-item-has-children {
           margin-right: .8rem;
 
-          a {
+          > a {
             // Let's make space for the arrow
             padding-right: 1.5rem;
             margin-bottom: .8rem;

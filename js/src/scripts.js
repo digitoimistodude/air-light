@@ -31,11 +31,14 @@
   // Document ready start
   $(function() {
 
-    // Init navigation
+    // Navigation
+    // More options: https://www.smartmenus.org/docs/
     $('#main-menu').smartmenus({
       subMenusSubOffsetX: 1,
       subMenusSubOffsetY: -8,
-      showTimeout: 0
+      showTimeout: 0,
+      subMenusMaxWidth: '20em',
+      subMenusMinWidth: '10em'
     });
 
     // Show mobile navigation on click
