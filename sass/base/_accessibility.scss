@@ -44,3 +44,14 @@
 #content[tabindex="-1"]:focus {
   outline: 0;
 }
+
+// Override focus outline only where needed
+input,
+button,
+select,
+textarea,
+a {
+  &:focus {
+    outline: thin solid $color_links;
+  }
+}
