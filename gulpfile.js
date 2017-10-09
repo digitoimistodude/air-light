@@ -106,7 +106,7 @@ gulp.task('styles', function() {
     .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
     .pipe(pixrem())
     .pipe(cleancss({
-      compatibility: 'ie8',
+      compatibility: 'ie11',
       level: { 
         1: {
           tidyAtRules: true,
