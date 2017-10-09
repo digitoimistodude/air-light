@@ -5,10 +5,6 @@
 // vision impaired and other useful a11y CSS hacks.
 // ---------------------------------------------------------
 
-:focus {
-  outline: thin solid $color_links;
-}
-
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
@@ -20,28 +16,28 @@
   &.skip-link {
     margin: 5px;
   }
-}
 
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-  background-color: #222;
-  color: #fff;
-  box-shadow: none;
-  clip: auto !important;
-  display: block;
-  font-weight: bold;
-  height: auto;
-  left: 0;
-  line-height: normal;
-  padding: 1rem .9375rem;
-  text-decoration: none;
-  top: 0;
-  width: auto;
-  z-index: 100000;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #222;
+    color: #fff;
+    box-shadow: none;
+    clip: auto !important;
+    display: block;
+    font-weight: bold;
+    height: auto;
+    left: 0;
+    line-height: normal;
+    padding: 1rem .9375rem;
+    text-decoration: none;
+    top: 0;
+    width: auto;
+    z-index: 100000;
 
-  // Above WP toolbar
-  outline: none;
+    // Above WP toolbar
+    outline: none;
+  }
 }
 
 // Do not show the outline on the skip link target.
