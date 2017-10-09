@@ -108,7 +108,7 @@ gulp.task('styles', function() {
     .pipe(minifycss({
       advanced: true,
       keepBreaks: false,
-      keepSpecialComments: 0,
+      specialComments: 0,
       mediaMerging: true,
       sourceMap: true
     }))
