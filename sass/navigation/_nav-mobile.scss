@@ -109,6 +109,11 @@ $hamburger-hover-transition-timing-function: linear;
           background: #202020;
           color: #fff;
 
+          // If + arrow is not visible on smartmenus version
+          // &:before {
+          //   content: '+';
+          // }
+
           &:hover {
             background-color: #3e4853;
             color: #fff;

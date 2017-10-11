@@ -111,7 +111,7 @@ gulp.task('styles', function() {
         1: {
           tidyAtRules: true,
           cleanupCharsets: true,
-          specialComments: 0 
+          specialComments: 0
         }
       }
     }, function(details) {
