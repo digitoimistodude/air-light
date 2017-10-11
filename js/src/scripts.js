@@ -38,7 +38,8 @@
       subMenusSubOffsetY: -8,
       showTimeout: 0,
       subMenusMaxWidth: '30rem',
-      subMenusMinWidth: '10rem'
+      subMenusMinWidth: '10rem',
+      subIndicatorsText:  '+'
     });
 
     // Show mobile navigation on click
