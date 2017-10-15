@@ -13,14 +13,14 @@ body {
   input[type="submit"]:not(.nav-toggle),
   input[type="button"]:not(.nav-toggle),
   .button:not(.nav-toggle) {
-    font-size: 16px;
+    font-size: 1.6rem;
     background: $color-links;
     color: #fff;
     border: 0;
     width: auto;
     display: inline-block;
-    padding: 12px 30px;
-    margin-bottom: 10px;
+    padding: 1.2rem 3rem;
+    margin-bottom: 1rem;
     text-decoration: none;
     position: relative;
     cursor: pointer;
