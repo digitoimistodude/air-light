@@ -168,8 +168,23 @@ $hamburger-hover-transition-timing-function: linear;
     font-size: 1.2em;
   }
 
+  // Alternative focus for mobile nav
+  &:focus {
+    outline: none;
+
+    span {
+      span {
+        background-color: rgba($nav-toggle-color, .5);
+      }
+
+      &:before,
+      &:after {
+        background-color: rgba($nav-toggle-color, .5);
+      }
+    }
+  }
+
   &:hover,
-  &:focus,
   &:active {
     color: $nav-toggle-color;
 
