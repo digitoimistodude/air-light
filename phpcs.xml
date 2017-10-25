@@ -60,7 +60,6 @@
         <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
 
         <exclude name="WordPress.XSS.EscapeOutput.UnsafePrintingFunction" />
         <exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
