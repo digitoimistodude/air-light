@@ -103,14 +103,14 @@ $hamburger-hover-transition-timing-function: linear;
 
         span.sub-arrow {
           position: absolute;
-          top: 50%;
-          margin-top: -17px;
+          top: 0;
+          margin-top: 0;
           left: auto;
-          right: 24px;
-          width: 34px;
-          height: 34px;
+          right: 20px;
+          width: 37px;
+          height: 37px;
           overflow: hidden;
-          font: bold 16px/34px monospace !important;
+          font: bold 18px/37px monospace !important;
           text-align: center;
           background: #202020;
           color: #fff;
