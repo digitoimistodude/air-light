@@ -81,6 +81,12 @@ $hamburger-hover-transition-timing-function: linear;
         position: relative;
         z-index: 0;
 
+        // Prevent nav item overlapping with dropdown opening toggle
+        &.has-submenu {
+          width: 80%;
+          position: static;
+        }
+
         &:hover,
         &:focus,
         &:active {
