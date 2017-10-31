@@ -27,6 +27,11 @@ body {
     transition: 150ms linear all;
     font-family: $font-base;
 
+    @media(max-width: $container-mobile) {
+      // Wrap long buttons on mobile
+      display: block;
+    }
+
     &:hover,
     &:focus {
       color: #fff;
