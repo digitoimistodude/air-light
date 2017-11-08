@@ -6,13 +6,13 @@
 // -----------------------------------------------------------
 $nav-toggle-color: #fff;
 $nav-toggle-active-color: #fff;
-$hamburger-padding-x: 15px;
-$hamburger-padding-y: 15px;
-$hamburger-layer-width: 40px;
-$hamburger-layer-height: 4px;
-$hamburger-layer-spacing: 6px;
+$hamburger-padding-x: 1.5rem;
+$hamburger-padding-y: 5rem;
+$hamburger-layer-width: 4rem;
+$hamburger-layer-height: .4rem;
+$hamburger-layer-spacing: .6rem;
 $hamburger-layer-color: $nav-toggle-color;
-$hamburger-layer-border-radius: 4px;
+$hamburger-layer-border-radius: .4rem;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
@@ -69,14 +69,14 @@ $hamburger-hover-transition-timing-function: linear;
       float: none;
 
       a {
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
         padding-left: 5%;
-        padding-right: 58px; // Make room for the toggle button (sub indicator)
+        padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
         color: #fff;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 400;
-        line-height: 17px;
+        line-height: 1.7rem;
         text-decoration: none;
         position: relative;
         z-index: 0;
@@ -113,9 +113,9 @@ $hamburger-hover-transition-timing-function: linear;
           top: 0;
           margin-top: 0;
           left: auto;
-          right: 20px;
-          width: 37px;
-          height: 37px;
+          right: 2rem;
+          width: 3.7rem;
+          height: 3.7rem;
           overflow: hidden;
           font: bold 18px/37px monospace !important;
           text-align: center;
@@ -137,11 +137,11 @@ $hamburger-hover-transition-timing-function: linear;
       // Dropdowns
       ul {
         background: rgba(#666, .1);
-        padding-top: 10px;
-        padding-bottom: 10px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         a {
-          font-size: 16px;
+          font-size: 1.6rem;
         }
       }
     }
