@@ -81,6 +81,13 @@ $hamburger-hover-transition-timing-function: linear;
         position: relative;
         z-index: 0;
 
+        // We have color here, so it's okay to remove outline
+        outline: none;
+
+        &:focus {
+          outline: none;
+        }
+
         // Prevent nav item overlapping with dropdown opening toggle
         &.has-submenu {
           width: 80%;
