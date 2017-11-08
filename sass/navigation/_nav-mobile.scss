@@ -137,11 +137,35 @@ $hamburger-hover-transition-timing-function: linear;
       // Dropdowns
       ul {
         background: rgba(#666, .1);
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        margin-left: 0;
+        padding: 0;
+
+        // Slight margins to improve readability of sub-navs
+        // Second level
+        > li {
+          padding-left: 1.5rem;
+
+          // Third level
+          ul {
+            margin-left: -1.5rem;
+
+            li {
+              padding-left: 3rem;
+            }
+
+            // Fourth level
+            ul {
+              margin-left: -3rem;
+
+              li {
+                padding-left: 4.5rem;
+              }
+            }
+          }
+        }
 
         a {
-          font-size: 1.6rem;
+          font-size: 1.4rem;
         }
       }
     }
