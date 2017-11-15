@@ -52,8 +52,7 @@
 input,
 button,
 select,
-textarea,
-a {
+textarea {
   &:focus {
     outline: thin solid $color_links;
   }
