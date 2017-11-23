@@ -44,7 +44,7 @@
       }
 
       // The point where navigation turns into mobile nav
-      @media(max-width: $responsivenav) {
+      @media(max-width: $responsivenav-1px) {
         margin-left: 15px;
         margin-top: 10px;
         margin-bottom: 0;
