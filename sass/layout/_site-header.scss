@@ -22,7 +22,7 @@
     padding-bottom: 0;
     overflow: visible;
 
-    @media(max-width: $responsivenav) {
+    @media(max-width: $responsivenav-1px) {
       padding: 0;
     }
   }
