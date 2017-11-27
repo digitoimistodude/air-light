@@ -12,7 +12,7 @@ var browserSync = require('browser-sync').create();
 var notify      = require('gulp-notify');
 var prefix      = require('gulp-autoprefixer');
 var cleancss    = require('gulp-clean-css');
-var uglify      = require('gulp-uglify');
+var uglify      = require('gulp-uglify-es').default;
 var concat      = require('gulp-concat');
 var util        = require('gulp-util');
 var header      = require('gulp-header');
@@ -107,7 +107,7 @@ gulp.task('styles', function() {
     .pipe(pixrem())
     .pipe(cleancss({
       compatibility: 'ie11',
-      level: { 
+      level: {
         1: {
           tidyAtRules: true,
           cleanupCharsets: true,
@@ -139,7 +139,7 @@ gulp.task('js', function() {
           'node_modules/smartmenus/dist/jquery.smartmenus.js',
           'node_modules/moveto/dist/moveTo.js',
           // 'js/src/sticky-nav.js',
-          // 'node_modules/slick-carousel/slick/slick.js',          
+          // 'node_modules/slick-carousel/slick/slick.js',
           'js/src/scripts.js'
         ])
         .pipe(concat('all.js'))
