@@ -40,7 +40,7 @@ $navheight-collapsed: 54px;
           height: 32px;
         }
 
-        @media(max-width: $responsivenav-1px) {
+        @media(max-width: $responsivenav -1px) {
           margin-top: 0;
         }
       }

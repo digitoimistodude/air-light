@@ -27,7 +27,7 @@ $hamburger-hover-transition-timing-function: linear;
 }
 
 // Mobile styles
-@media screen and (max-width: $responsivenav-1px) {
+@media screen and (max-width: $responsivenav -1px) {
 
   // Ensure nav stays in the same position when activated
   body {
@@ -230,7 +230,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  @media (max-width: $responsivenav-1px) {
+  @media (max-width: $responsivenav -1px) {
     display: block;
   }
 
