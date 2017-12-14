@@ -49,7 +49,7 @@ if ( ! function_exists( 'air_comments' ) ) {
 				<?php echo get_avatar( $comment, '62' ); ?>
 				<h4 class="comment-author"><?php echo get_comment_author_link(); ?></h4>
 
-				<?php if ( 0 === $comment->comment_approved ) : ?>
+				<?php if ( '0' === $comment->comment_approved ) : ?>
 					<p><em><?php _e( 'Your comment is awaiting approval.', 'air' ); ?></em></p>
 				<?php endif; ?>
 
