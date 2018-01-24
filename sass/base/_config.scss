@@ -43,7 +43,7 @@ $layout-max-width: 100%;
 $container-default-pad-x: 6.4rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
 $container-default-pad-y: 6.4rem; // Default vertical padding for containers
 $grid-base-size: 960px; // Layout container max width on desktop. This is default .container size
-$article-max-width: 800px; // Max width for articles
+$article-max-width: 800px; // Max width for articles (see also $content_width in functions.php!)
 $container-mobile: 480px;
 $container-desktop: 1200px;
 $container-ipad: 770px;

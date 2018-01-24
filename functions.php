@@ -30,6 +30,13 @@ load_theme_textdomain( 'air', get_template_directory() . '/languages' );
 setlocale( LC_ALL, 'fi_FI.utf8' );
 
 /**
+ * Define content width in articles
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 800;
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function air_scripts() {
