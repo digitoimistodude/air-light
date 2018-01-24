@@ -24,13 +24,7 @@ get_header(); ?>
   <div class="shade shade-gradient"></div>
 
   <div class="container">
-    <p class="accent">
-      Air 
-      <?php
-        echo esc_attr( AIR_VERSION, 'air' );
-      ?>
-    </p>
-    <h1><?php echo esc_html_e( 'a WordPress starter theme', 'air' ); ?></h1>
+    <h1><span class="accent"><?php echo esc_html_e('Air ', 'air'); echo esc_attr( AIR_VERSION, 'air' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air' ); ?></h1>
   </div>
 </div>
 
