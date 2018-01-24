@@ -15,9 +15,9 @@
 
 	<footer id="colophon" class="site-footer">
 
-        <!-- This is just theme info for the demo, so please 
+        <!-- This is just theme info for the demo, so please
         remove these and make your own!
-      
+
         Start by removing this comment and until the next comment: -->
 
 		<div class="site-info">
@@ -27,14 +27,14 @@
 
         <!-- At least
         ... Until here. This comment included. -->
-        
+
 	</footer><!-- #colophon -->
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
-<a href="#page" class="js-trigger top" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html_e('Back to top', 'air'); ?></span><?php echo file_get_contents( get_theme_file_path( '/svg/chevron-up.svg' ) ); ?></a>
+<a href="#page" class="js-trigger top" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html_e('Back to top', 'air'); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a>
 
 </body>
 </html>
