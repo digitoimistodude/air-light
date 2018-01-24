@@ -49,6 +49,12 @@ del {
   padding: 3rem;
 }
 
+// Required post author comment
+.comments-area .comment-list li.bypostauthor {
+  background-color: #fff6e8;
+  padding: 3rem;
+}
+
 // WordPress captions
 .wp-caption {
   max-width: 100%;
@@ -85,7 +91,6 @@ table {
 
 td,
 th {
-  padding: 0;
   font-family: $font-base;
   height: 3rem;
   padding: 1rem;
