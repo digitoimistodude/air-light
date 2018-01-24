@@ -5,263 +5,260 @@
 // classes and other WordPress editor formatting.
 // ------------------------------------------------
 
-body {
-  .container {
-    &.container-article {
-      max-width: $article-max-width;
+// WordPress alignments
+.cat-links,
+.tags-links {
+  display: block;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 20px;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin: 0 auto;
+}
+
+.comments-link {
+  display: block;
+}
+
+del {
+  text-decoration: line-through;
+  opacity: .6;
+}
+
+.container.container-article {
+  max-width: $article-max-width;
+}
+
+
+// WordPress captions
+.wp-caption {
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .wp-caption-text {
+    text-align: left;
+    font-style: italic;
+    border-bottom: 2px solid $color_grey;
+    padding: 1rem 0;
+    margin-bottom: 20px;
+  }
+}
+
+// Embeds
+.entry-content {
+  embed,
+  iframe,
+  object,
+  video {
+    max-width: 100%;
+  }
+}
+
+// Tables, codes and pres
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0;
+  font-family: $font-base;
+  height: 3rem;
+  padding: 1rem;
+
+  @media (max-width: 600px) {
+    @include stack();
+    display: inline-block;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+// Table heading cells
+th {
+  font-weight: 700;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+kbd {
+  border: 1px solid #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
+  border-radius: 4px;
+  display: inline-block;
+  text-shadow: 0 1px 0 #fff;
+  line-height: 1.4;
+  white-space: nowrap;
+  padding: 0 .5rem;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 .625rem;
+  color: #333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: auto;
+
+  &.debug {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+// Taxonomies
+.taxonomy-description {
+  margin-bottom: 2rem;
+}
+
+.post {
+  margin-bottom: 30px;
+
+  .entry-header {
+    .entry-title {
+      margin-bottom: .1em;
+
+      a {
+        color: $color-body;
+      }
+    }
+  }
+
+  .entry-content {
+    margin-bottom: 2em;
+  }
+
+  .entry-meta {
+    * {
+      color: $color-darkgrey;
     }
 
-    // WordPress alignments
-    .cat-links,
-    .tags-links {
-      display: block;
+    .entry-time {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .entry-footer {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    .cat {
+      margin-top: 0;
+      margin-bottom: 10px;
+
+      a {
+        @extend %small;
+      }
     }
 
-    .alignleft {
-      display: inline;
-      float: left;
-      margin-right: 20px;
-    }
+    a {
+      color: #777;
 
-    .alignright {
-      display: inline;
-      float: right;
-      margin-left: 20px;
-    }
-
-    .aligncenter {
-      clear: both;
-      display: block;
-      margin: 0 auto;
+      &:hover {
+        color: #111;
+      }
     }
 
     .comments-link {
+      @extend %small;
+      text-align: right;
       display: block;
-    }
 
-    del {
-      text-decoration: line-through;
-      opacity: .6;
-    }
-  }
-
-  // WordPress captions
-  .wp-caption {
-    max-width: 100%;
-
-    img[class*="wp-image-"] {
-      display: block;
-      margin: 0 auto;
-    }
-
-    .wp-caption-text {
-      text-align: left;
-      font-style: italic;
-      border-bottom: 2px solid $color_grey;
-      padding: 1rem 0;
-      margin-bottom: 20px;
-    }
-  }
-
-  // Embeds
-  .entry-content {
-    embed,
-    iframe,
-    object,
-    video {
-      max-width: 100%;
-    }
-  }
-
-  // Tables, codes and pres
-  table {
-    border-spacing: 0;
-    border-collapse: collapse;
-  }
-
-  td,
-  th {
-    padding: 0;
-    font-family: $font-base;
-    height: 3rem;
-    padding: 1rem;
-
-    @media (max-width: 600px) {
-      @include stack();
-      display: inline-block;
-      height: auto;
-      padding: 10px 0;
-      text-align: center;
-    }
-  }
-
-  // Table heading cells
-  th {
-    font-weight: 700;
-  }
-
-  abbr[title] {
-    border-bottom: 1px dotted;
-  }
-
-  b,
-  strong {
-    font-weight: bold;
-  }
-
-  dfn {
-    font-style: italic;
-  }
-
-  kbd {
-    border: 1px solid #ccc;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f7f7f7;
-    color: #333;
-    box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
-    border-radius: 4px;
-    display: inline-block;
-    text-shadow: 0 1px 0 #fff;
-    line-height: 1.4;
-    white-space: nowrap;
-    padding: 0 .5rem;
-  }
-
-  pre {
-    display: block;
-    padding: 9.5px;
-    margin: 0 0 .625rem;
-    color: #333;
-    word-break: break-all;
-    word-wrap: break-word;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    overflow: auto;
-
-    &.debug {
-      font-size: 11px;
-      line-height: 1.5;
-    }
-
-    code {
-      padding: 0;
-      font-size: inherit;
-      color: inherit;
-      white-space: pre-wrap;
-      background-color: transparent;
-      border-radius: 0;
-    }
-  }
-
-  // Taxonomies
-  .taxonomy-description {
-    margin-bottom: 2rem;
-  }
-
-  .post {
-    margin-bottom: 30px;
-
-    .entry-header {
-      .entry-title {
-        margin-bottom: .1em;
-
-        a {
-          color: $color-body;
-        }
-      }
-    }
-
-    .entry-content {
-      margin-bottom: 2em;
-    }
-
-    .entry-meta {
-      * {
-        color: $color-darkgrey;
+      svg {
+        fill: #777;
+        position: relative;
+        top: 1px;
+        margin-right: 2px;
       }
 
-      .entry-time {
-        margin-bottom: 1.5em;
-      }
-    }
+      &:hover,
+      &:focus {
+        color: #111;
 
-    .entry-footer {
-      margin-top: 0;
-      margin-bottom: 0;
-
-      .cat {
-        margin-top: 0;
-        margin-bottom: 10px;
-
-        a {
-          @extend %small;
-        }
-      }
-
-      a {
-        color: #777;
-
-        &:hover {
-          color: #111;
-        }
-      }
-
-      .comments-link {
-        @extend %small;
-        text-align: right;
-        display: block;
-
+        a,
+        a:link,
+        a:visited,
         svg {
-          fill: #777;
-          position: relative;
-          top: 1px;
-          margin-right: 2px;
-        }
-
-        &:hover,
-        &:focus {
           color: #111;
-
-          a,
-          a:link,
-          a:visited,
-          svg {
-            color: #111;
-            fill: #111;
-          }
+          fill: #111;
         }
       }
+    }
 
-      .tags {
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
+    .tags {
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      padding-left: 0;
+
+      li {
+        @extend %extrasmall;
+        margin-left: 0;
+        margin-right: 10px;
+        margin-bottom: 10px;
         padding-left: 0;
+        display: inline-block;
+        float: left;
+        margin-top: 0;
 
-        li {
-          @extend %extrasmall;
-          margin-left: 0;
-          margin-right: 10px;
-          margin-bottom: 10px;
-          padding-left: 0;
+        a {
+          transition: all .6s;
+          padding: 6px 10px 4px;
           display: inline-block;
-          float: left;
-          margin-top: 0;
+          border-radius: 4px;
+          background: #f0f0f0;
+          opacity: .8;
 
-          a {
-            transition: all .6s;
-            padding: 6px 10px 4px;
-            display: inline-block;
-            border-radius: 4px;
-            background: #f0f0f0;
-            opacity: .8;
-
-            &:hover {
-              color: #111;
-              background: #ddd;
-              opacity: 1;
-            }
+          &:hover {
+            color: #111;
+            background: #ddd;
+            opacity: 1;
           }
         }
       }
