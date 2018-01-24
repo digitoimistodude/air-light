@@ -17,12 +17,12 @@ endif;
 
 // Featured image
 if ( has_post_thumbnail() ) :
-	$featured_image = esc_url( wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) ) );
+	$featured_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
 else :
-	$featured_image = esc_url( get_template_directory_uri() . '/images/default.jpg' );
+	$featured_image = get_theme_file_uri( 'images/default.jpg' );
 endif;
 ?>
 
-<div class="slide<?php echo $slide_class; ?>" style="background-image:url('<?php echo $featured_image; ?>');">
+<div class="slide<?php echo $slide_class; ?>" style="background-image:url('<?php echo esc_url( $featured_image ); ?>');">
   <div class="shade"></div>
 </div>
