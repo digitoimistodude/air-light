@@ -42,6 +42,12 @@ del {
   max-width: $article-max-width;
 }
 
+// Required sticky class
+.sticky {
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 3rem;
+}
 
 // WordPress captions
 .wp-caption {
