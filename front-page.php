@@ -25,8 +25,8 @@ get_header(); ?>
 
   <div class="container">
     <p class="accent">
+      Air 
       <?php
-        echo esc_html_e( 'Air ', 'air' );
         echo esc_attr( AIR_VERSION, 'air' );
       ?>
     </p>
