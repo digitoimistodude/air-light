@@ -48,6 +48,12 @@ function air_scripts() {
 	// Scripts.
 	wp_enqueue_script( 'jquery-core' );
 	wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/all.js' ), array(), filemtime( get_theme_file_path( 'js/all.js' ) ), true );
+
+	// Required comment-reply script
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+
 	wp_localize_script( 'scripts', 'screenReaderTexts', array(
 		'expandMenu'      => esc_html__( 'Open menu', 'air' ),
 		'collapseMenu'    => esc_html__( 'Close menu', 'air' ),
