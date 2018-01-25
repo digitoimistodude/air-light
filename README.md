@@ -24,7 +24,8 @@ This theme is built to be very straightforward, front end developer friendly and
     3. [Development](#development)
     4. [Navigation](#navigation)
     5. [WordPress & functions](#wordpress--functions)
-    6. [Disabled features](#disabled-features)
+    6. [Accessibility](#accessibility)
+    7. [Disabled features](#disabled-features)
 4. [Extra building blocks](#extra-building-blocks)
     1. [Sticky navigation](#sticky-navigation)
     2. [Slick slider](#slick-slider)
@@ -77,7 +78,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 * Custom navigation walker
 * Support for multi-level drop down submenus
-* Sassified version of [SmartMenus](https://github.com/vadikom/smartmenus), fully Accessible and responsive multi-level navigation
+* Sassified version of [SmartMenus](https://github.com/vadikom/smartmenus), fully accessible and responsive multi-level navigation
 
 #### WordPress & functions
 
@@ -85,6 +86,17 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * Support for Post Thumbnails on posts and pages
 * HTML5 core markup for WordPress elements
 * **Air specific:** Templates for hero *slides*
+
+#### Accessibility
+
+Creating accessible websites is really important and our goal is to make air as accessible-ready as possible. Theme fully supports navigating with keyboard and screen-readers. Other accessible features:
+
+* [Navigation patterns](#navigation)
+* Skip link
+* Smart focus for keyboard users, [what-input](https://github.com/ten1seven/what-input) baked in
+* Valid HTML
+* Accessible SVG icons
+* Screen reader class
 
 #### Disabled features
 
