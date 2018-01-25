@@ -57,3 +57,8 @@ textarea {
     outline: thin solid $color_links;
   }
 }
+
+// Suppress focus ring on for mouse users for visual reasons
+[data-whatintent="mouse"] *:focus {
+  outline: none;
+}

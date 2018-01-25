@@ -1,6 +1,6 @@
 {
   "name": "air",
-  "version": "3.4.2",
+  "version": "3.4.3",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -25,6 +25,7 @@
     "moveto": "^1.7.1",
     "normalize.css": "^7.0.0",
     "slick-carousel": "^1.8.1",
-    "smartmenus": "^1.1.0"
+    "smartmenus": "^1.1.0",
+    "what-input": "^5.0.4"
   }
 }
