@@ -5,267 +5,255 @@
 // the Gravity Forms styles out of the box.
 // ------------------------------------------------------------
 
-body {
 
-  // Buttons
-  button:not(.nav-toggle),
-  input[type="reset"]:not(.nav-toggle),
-  input[type="submit"]:not(.nav-toggle),
-  input[type="button"]:not(.nav-toggle),
-  .button:not(.nav-toggle) {
-    font-size: 1.6rem;
-    background: $color-links;
+// Buttons
+button:not(.nav-toggle),
+input[type="reset"]:not(.nav-toggle),
+input[type="submit"]:not(.nav-toggle),
+input[type="button"]:not(.nav-toggle),
+.button:not(.nav-toggle) {
+  font-size: 1.6rem;
+  background: $color-links;
+  color: #fff;
+  border: 0;
+  width: auto;
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: 150ms linear background;
+  font-family: $font-base;
+
+  @media (max-width: $container-mobile) {
+    // Wrap long buttons on mobile
+    display: block;
+  }
+
+  &:hover,
+  &:focus {
     color: #fff;
-    border: 0;
-    width: auto;
-    display: inline-block;
-    padding: 1.2rem 3rem;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-    transition: 150ms linear all;
-    font-family: $font-base;
+    background: darken($color-links, 15%);
+  }
 
-    @media(max-width: $container-mobile) {
-      // Wrap long buttons on mobile
-      display: block;
-    }
+  &.button-ghost {
+    background-color: transparent;
+    border: 1px solid $color-links;
+    color: $color-links;
 
-    &:hover,
-    &:focus {
+    &:hover {
+      background-color: $color-links;
       color: #fff;
-      background: darken($color-links, 15%);
     }
 
-    &.button-ghost {
-      background-color: transparent;
-      border: 1px solid $color-links;
-      color: $color-links;
+    &.button-ghost-white {
+      border-color: #fff;
+      color: #fff;
 
       &:hover {
         background-color: $color-links;
+        border-color: $color-links;
         color: #fff;
-      }
-
-      &.button-ghost-white {
-        border-color: #fff;
-        color: #fff;
-
-        &:hover {
-          background-color: $color-links;
-          border-color: $color-links;
-          color: #fff;
-        }
       }
     }
   }
+}
 
-  a,
-  button,
+a,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// Gravity Forms clean ups
+.gform_wrapper,
+.gform_header,
+.gform_footer {
+  margin: 0;
+  padding: 0;
+}
+
+.gform_body {
+  li,
+  div {
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+textarea,
+select,
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="search"] {
+  @extend .default;
+  font-family: $font-base;
+  background: #f0f0f0;
+  border: 0;
+  padding: 15px 20px;
+  line-height: 24px;
+  transition: background .55s;
+  text-decoration: none;
+  position: relative;
+  appearance: none;
+  margin-bottom: 0;
+
+  &::placeholder {
+    color: #434343;
+    opacity: .4;
+  }
+
+  &:focus {
+    background: #dfdfdf;
+    border-color: rgba(#222, 1);
+    outline: 0;
+
+    &::placeholder {
+      color: #222;
+      opacity: .8;
+    }
+  }
+}
+
+select {
+  border: 0;
+  border-radius: 0;
+  background-image: url('../svg/select.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 40px;
+  transition: none;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: #222;
+  }
+}
+
+// General
+form {
+  p {
+    margin-bottom: 20px;
+
+    &.form-submit {
+      margin-bottom: 0;
+    }
+  }
+
+  // Search form
+  &.search-form {
+    .search-field {
+      float: left;
+      margin-right: 5px;
+    }
+
+    .search-submit {
+      padding: 19px 1.75em;
+      line-height: 1;
+    }
+  }
+}
+
+// Comment form
+.comment-respond {
+  margin-bottom: 0;
+  overflow: visible;
+
+  p {
+    &.comment-form-author {
+      @include column(1/3);
+      margin-bottom: 20px;
+      margin-top: 0;
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+      }
+
+      input#author {
+        padding: 15px;
+        border-width: 1px;
+      }
+    }
+
+    &.comment-form-email {
+      @include column(2/3);
+      margin-right: 0;
+      clear: right;
+      margin-bottom: 20px;
+      margin-top: 0;
+
+      @media (max-width: $container-mobile) {
+        @include stack();
+      }
+
+      input#email {
+        padding: 15px;
+        border-width: 1px;
+      }
+    }
+
+    &.comment-form-url {
+      @include stack();
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 30px;
+
+      input#url {
+        padding: 15px;
+        border-width: 1px;
+      }
+    }
+
+    &.form-submit {
+      display: block;
+      clear: both;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    &.comment-form-comment {
+      margin-bottom: 20px;
+    }
+  }
+
   input {
-    -webkit-tap-highlight-color: transparent;
+    @media (max-width: $container-mobile) {
+      width: 100%;
+    }
   }
 
-  // Forced styles
-  #page {
-    .site-content,
-    .site-footer {
-
-      // Gravity Forms clean ups
-      .gform_wrapper,
-      .gform_header,
-      .gform_footer {
-        margin: 0;
-        padding: 0;
-      }
-
-      .gform_body {
-        li,
-        div {
-          margin-top: 0;
-          padding-top: 0;
-          padding-left: 0;
-          margin-left: 0;
-        }
-
-        li {
-          margin-bottom: 1rem;
-
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-      }
-
-      .gform_wrapper div,
-      form {
-        textarea,
-        select,
-        input[type="text"],
-        input[type="tel"],
-        input[type="url"],
-        input[type="password"],
-        input[type="number"],
-        input[type="month"],
-        input[type="week"],
-        input[type="email"],
-        input[type="search"] {
-          @extend .default;
-          font-family: $font-base;
-          background: #f0f0f0;
-          border: 0;
-          padding: 15px 20px;
-          line-height: 24px;
-          transition: all .55s;
-          text-decoration: none;
-          position: relative;
-          appearance: none;
-          margin-bottom: 0;
-
-          &::placeholder {
-            color: #434343;
-            opacity: .4;
-          }
-
-          &:focus {
-            background: #dfdfdf;
-            border-color: rgba(#222, 1);
-            outline: 0;
-
-            &::placeholder {
-              color: #222;
-              opacity: .8;
-            }
-          }
-        }
-
-        select {
-          border: 0;
-          border-radius: 0;
-          background-image: url('../svg/select.svg');
-          background-repeat: no-repeat;
-          background-position: right center;
-          padding-right: 40px;
-          transition: none;
-          width: 100%;
-          max-width: 100%;
-          min-width: 0;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          text-indent: 1px;
-          text-overflow: '';
-
-          &::-ms-expand {
-            display: none;
-          }
-
-          &:hover,
-          &:focus {
-            border-color: #222;
-          }
-        }
-      }
-
-      // General
-      form {
-        p {
-          margin-bottom: 20px;
-
-          &.form-submit {
-            margin-bottom: 0;
-          }
-        }
-
-        // Search form
-        &.search-form {
-          .search-field {
-            float: left;
-            margin-right: 5px;
-          }
-
-          .search-submit {
-            padding: 19px 1.75em;
-            line-height: 1;
-          }
-        }
-      }
-
-      // Comment form
-      .comment-respond {
-        margin-bottom: 0;
-        overflow: hidden;
-
-        p {
-          &.comment-form-author {
-            @include column(1/3);
-            margin-bottom: 20px;
-            margin-top: 0;
-
-            @media (max-width: $container-mobile) {
-              @include stack();
-            }
-
-            input#author {
-              padding: 15px;
-              border-width: 1px;
-            }
-          }
-
-          &.comment-form-email {
-            @include column(2/3);
-            margin-right: 0;
-            clear: right;
-            margin-bottom: 20px;
-            margin-top: 0;
-
-            @media (max-width: $container-mobile) {
-              @include stack();
-            }
-
-            input#email {
-              padding: 15px;
-              border-width: 1px;
-            }
-          }
-
-          &.comment-form-url {
-            @include stack();
-            position: relative;
-            margin-top: 0;
-            margin-bottom: 30px;
-
-            input#url {
-              padding: 15px;
-              border-width: 1px;
-            }
-          }
-
-          &.form-submit {
-            display: block;
-            clear: both;
-            margin-bottom: 0;
-            margin-top: 0;
-          }
-
-          &.comment-form-comment {
-            margin-bottom: 20px;
-          }
-        }
-
-        input {
-          @media (max-width: $container-mobile) {
-            width: 100%;
-          }
-        }
-
-        input#author,
-        input#email,
-        input#url,
-        textarea {
-          width: 100%;
-        }
-      }
-    }
+  input#author,
+  input#email,
+  input#url,
+  textarea {
+    width: 100%;
   }
 }

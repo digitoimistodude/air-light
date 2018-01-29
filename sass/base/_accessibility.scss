@@ -24,7 +24,7 @@
 
   &:focus {
     background-color: #f1f1f1;
-    border-radius: 3px;
+    border-radius: 0;
     box-shadow: 0 0 2px 2px rgba(#000, .6);
     clip: auto !important;
     clip-path: none;
@@ -48,17 +48,30 @@
   outline: 0;
 }
 
-// Override focus outline only where needed
-input,
-button,
-select,
-textarea {
-  &:focus {
-    outline: thin solid $color_links;
-  }
+// Suppress focus ring on for mouse users for visual reasons
+[data-whatinput="mouse"] *:focus {
+  outline: none;
 }
 
-// Suppress focus ring on for mouse users for visual reasons
-[data-whatintent="mouse"] *:focus {
-  outline: none;
+// Visually distinct focus color on keyboard
+[data-whatinput="keyboard"] {
+  body {
+    input,
+    button,
+    select,
+    textarea {
+      &:focus {
+        outline: 4px solid #f9bf47;
+        opacity: 1;
+      }
+    }
+
+    a {
+      &:focus {
+        outline: 2px solid #f9bf47;
+        background: #f9bf47;
+        opacity: 1;
+      }
+    }
+  }
 }
