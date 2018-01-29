@@ -20,18 +20,18 @@ body {
       clear: both;
 
       svg {
-        fill: darken($color-fog, 12%);
+        fill: #555;
         top: 2px;
         position: relative;
       }
 
       p,
       span {
-        color: darken($color-fog, 12%);
+        color: #555;
       }
 
       a {
-        color: darken($color-fog, 12%);
+        color: #555;
 
         &:hover {
           color: $color-links;
