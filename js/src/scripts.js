@@ -49,6 +49,14 @@
       $('body').toggleClass('js-nav-active');
     });
 
+    // Close navigation when pressing esc key
+    $(document).keyup(function(e) {
+      if (e.which == 27) {
+        $('#nav-toggle').removeClass('is-active');
+        $('body').removeClass('js-nav-active');
+      }
+    });
+
     // Set up back to top link
     var moveTo = new MoveTo();
     var target = document.getElementById('target');
