@@ -52,15 +52,18 @@
       }
 
       a {
+        overflow: hidden;
+        display: block;
+
         svg {
           fill: #fff;
-          transition: all .77s;
+          transition: all .22s;
           position: relative;
         }
 
         &:hover {
           svg {
-            fill: $color-fog;
+            fill: $color-links;
           }
         }
       }
