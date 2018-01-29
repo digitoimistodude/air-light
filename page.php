@@ -16,7 +16,7 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div id="primary" class="content-area">
+<div id="content" class="content-area">
 	<main id="main" class="site-main">
 
     <div class="container">

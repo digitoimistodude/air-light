@@ -71,4 +71,4 @@
       </header>
   </div><!-- .nav-container -->
 
-	<div id="content" class="site-content">
+	<div class="site-content">

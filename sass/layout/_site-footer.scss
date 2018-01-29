@@ -34,7 +34,7 @@ body {
         color: darken($color-fog, 12%);
 
         &:hover {
-          color: #fff;
+          color: $color-links;
         }
       }
 

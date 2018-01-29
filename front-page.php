@@ -28,7 +28,7 @@ get_header(); ?>
   </div>
 </div>
 
-<div id="primary" class="content-area">
+<div id="content" class="content-area">
   <main id="main" class="site-main">
 
     <div class="slide slide-front-content">
