@@ -92,18 +92,18 @@ gulp.task('a11y', function() {
 
   // Coming soon, see: https://github.com/yargalot/gulp-accessibility/issues/21
 
-  return gulp.src(files)
-    .pipe(access({ 
-      accessibilityLevel: 'WCAG2AA',
-      browser: true,
-      reportType: 'json',
-      reportLevels: {
-        notice: false,
-        warning: false,
-        error: true
-      }
-    }))
-    .on('error', console.log)
+  // return gulp.src(files)
+  //   .pipe(access({ 
+  //     accessibilityLevel: 'WCAG2AA',
+  //     browser: true,
+  //     reportType: 'json',
+  //     reportLevels: {
+  //       notice: false,
+  //       warning: false,
+  //       error: true
+  //     }
+  //   }))
+  //   .on('error', console.log)
 });
 
 
@@ -171,6 +171,7 @@ gulp.task('js', function() {
           // 'js/src/sticky-nav.js',
           // 'node_modules/slick-carousel/slick/slick.js',
           'node_modules/what-input/dist/what-input.js',
+          'js/src/navigation.js',
           'js/src/scripts.js'
         ])
         .pipe(concat('all.js'))

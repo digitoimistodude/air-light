@@ -29,6 +29,11 @@ $hamburger-hover-transition-timing-function: linear;
 // Mobile styles
 @media screen and (max-width: $responsivenav - 1px) {
 
+  // Disable scroll on html body when menu is opened.
+  .disable-scroll {
+    overflow: hidden;
+  }
+
   // Ensure nav stays in the same position when activated
   body {
     &.js-nav-active {
@@ -237,6 +242,19 @@ $hamburger-hover-transition-timing-function: linear;
   // Separate active colors for opened state
   &.is-active {
     color: $nav-toggle-active-color;
+
+    &:focus,
+    &.focus {
+      .hamburger-box {
+        .hamburger-inner {
+          background-color: $color-links;
+
+          &:after {
+            background-color: $color-links;
+          }
+        }
+      }
+    }
 
     .hamburger-box {
       .hamburger-inner {
