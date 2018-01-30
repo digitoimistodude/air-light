@@ -6,123 +6,116 @@
 // always repeating elements right below.
 // -----------------------------------------------------------
 
-body {
-  margin: 0;
+// Default structural element
+.slide {
+  @include background-cover();
+  background-position: center;
+  background-color: #fff;
+  position: relative;
+  min-height: 100px;
+}
 
-  .slide {
-    @include background-cover();
-    background-position: center;
-    background-color: #fff;
-    position: relative;
-    min-height: 100px;
+// Default shade on top of slides
+.shade {
+  background: #333;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: .15;
+
+  &.shade-gradient {
+    background: linear-gradient(to bottom, rgba(#122030, .44) 0%, rgba(#555, .1) 50%, rgba(#122030, .0) 100%);
+    opacity: 1;
   }
+}
 
-  // Default shade on top of slides
-  .shade {
-    background: #333;
-    position: absolute;
+// Site wrapper
+.site {
+  max-width: $layout-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Containers
+.container {
+  margin: 0 auto;
+  padding-top: $container-default-pad-y;
+  padding-bottom: $container-default-pad-y;
+
+  @if $grid-type == fluid {
+    @include center($max_width: $grid-base-size, $pad: 0);
+  } @else if $grid-type == snappy {
     width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    opacity: .15;
+    padding-left: $container-default-pad-x;
+    padding-right: $container-default-pad-x;
 
-    &.shade-gradient {
-      background: linear-gradient(to bottom, rgba(#122030, .44) 0%, rgba(#555, .1) 50%, rgba(#122030, .0) 100%);
-      opacity: 1;
-    }
-  }
-
-  // Containers
-  #page {
-    max-width: $layout-max-width;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .container {
-    margin: 0 auto;
-    padding-top: $container-default-pad-y;
-    padding-bottom: $container-default-pad-y;
-
-    @if $grid-type == fluid {
-      @include center($max_width: $grid-base-size, $pad: 0);
-    } @else if $grid-type == snappy {
-
-      width: 100%;
-      padding-left: $container-default-pad-x;
-      padding-right: $container-default-pad-x;
-
-      @media(min-width: $container-ipad) {
-        width: 700px;
-      }
-
-      @media(min-width: $container-ipad-landscape) {
-        width: 900px;
-      }
-
-      @media(min-width: $container-desktop) {
-        width: $grid-base-size;
-      }
-
-    } @else {
-      @include center($max_width: $grid-base-size, $pad: 0);
+    @media (min-width: $container-ipad) {
+      width: 700px;
     }
 
-    @media(max-width: $grid-base-size + 100px) {
-      padding-left: $container-default-pad-x/2;
-      padding-right: $container-default-pad-x/2;
+    @media (min-width: $container-ipad-landscape) {
+      width: 900px;
     }
 
-    @media(max-width: $container-ipad - 10px) {
-      padding-top: $container-default-pad-y/2;
-      padding-bottom: $container-default-pad-y/2;
+    @media (min-width: $container-desktop) {
+      width: $grid-base-size;
     }
+  } @else {
+    @include center($max_width: $grid-base-size, $pad: 0);
   }
 
-  // Content start
-  .site-content {
-
-    // Meta, Edit -link
-    .entry-footer {
-      overflow: hidden;
-      clear: both;
-      display: block;
-
-      .edit-link {
-        text-align: left;
-        width: 100%;
-        display: block;
-        clear: both;
-        max-width: 100%;
-        min-width: 0;
-        margin-bottom: 0;
-        margin-top: 0;
-        top: 0;
-        bottom: 0;
-        padding: 0;
-        overflow: hidden;
-
-        a {
-          clear: both;
-          display: block;
-          margin-top: 40px;
-          padding: 0;
-        }
-      }
-    }
+  @media (max-width: $grid-base-size + 100px) {
+    padding-left: $container-default-pad-x / 2;
+    padding-right: $container-default-pad-x / 2;
   }
 
-  // Global link helper
-  // This is useful in services -type of areas where the whole block is a link
-  a.global-link,
-  .global-link {
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    position: absolute;
-    top: 0;
-    left: 0;
+  @media (max-width: $container-ipad - 10px) {
+    padding-top: $container-default-pad-y / 2;
+    padding-bottom: $container-default-pad-y / 2;
   }
+}
+
+// Meta actions
+.entry-footer {
+  overflow: hidden;
+  clear: both;
+  display: block;  
+}
+
+// Edit
+.edit-link {
+  text-align: left;
+  width: 100%;
+  display: block;
+  clear: both;
+  max-width: 100%;
+  min-width: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  overflow: hidden;
+
+  a {
+    clear: both;
+    display: block;
+    margin-top: 40px;
+    padding: 0;
+  }
+}
+
+// Global link helper
+// This is useful in services -type of areas where the whole block is a link
+// Remember to define aria-label or screen-reader-text for accessibility
+a.global-link {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
