@@ -31,6 +31,15 @@
   text-align: start;
 }
 
+// Clearfix
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+
 // Positioning
 @mixin vertical-align {
   position: relative;
