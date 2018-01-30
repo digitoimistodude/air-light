@@ -78,7 +78,6 @@ body {
     dt,
     figcaption {
       font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-      font-family: $font-base;
     }
 
     // Heading defaults
@@ -302,9 +301,6 @@ body {
 
     li {
       font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-      font-family: $font-base;
-
-
     }
 
     // Bold.
@@ -349,7 +345,6 @@ body {
     // Figcaption.
     figcaption {
       margin-top: 0;
-      font-family: $font-base;
       font-style: normal;
       font-weight: 400;
     }
@@ -367,7 +362,6 @@ body {
         @include responsive-font(2vw, 17px, 25px, 25px);
         opacity: .5;
         font-style: italic;
-        font-family: $font-base;
         margin-bottom: 0;
         position: relative;
         overflow: visible;
@@ -394,7 +388,6 @@ body {
     }
 
     cite {
-      font-family: $font-base;
       display: block;
       font-style: italic;
     }
@@ -451,7 +444,6 @@ body {
     dl,
     small,
     blockquote {
-      font-family: $font-base;
       color: $color-body;
     }
   }
