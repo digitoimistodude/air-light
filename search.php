@@ -24,7 +24,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
       <?php while ( have_posts() ) {
       	the_post();
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', 'search' );
       }
 
       the_posts_navigation();
