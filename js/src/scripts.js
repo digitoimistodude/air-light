@@ -31,18 +31,6 @@
   // Document ready start
   $(function() {
 
-    // Navigation
-    // More options: https://www.smartmenus.org/docs/
-    $('#main-menu').smartmenus({
-      subMenusSubOffsetX: 1,
-      subMenusSubOffsetY: -8,
-      showTimeout: 0,
-      subMenusMaxWidth: '30rem',
-      subMenusMinWidth: '10rem',
-      subIndicatorsText:  '+',
-      collapsibleBehavior: 'link'
-    });
-
     // Set up back to top link
     var moveTo = new MoveTo();
     var target = document.getElementById('target');

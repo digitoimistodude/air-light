@@ -4,7 +4,8 @@
 // The main layout for the website navigation, for both mobile
 // and desktop devices.
 // -----------------------------------------------------------
-.menu-items {
+
+#nav ul.menu-items {
   position: relative;
   z-index: 9999;
 
@@ -36,8 +37,6 @@
   }
 
   a {
-    display: block;
-
     &.disabled {
       cursor: not-allowed;
     }
@@ -58,4 +57,34 @@
       padding: 0;
     }
   }
+}
+
+#nav ul ul {
+  margin-top: 0;
+  margin-left: 25px;
+}
+
+#nav ul ul ul {
+  margin-left: 25px;
+}
+
+.no-js #nav ul,
+#nav ul .sub-menu.toggled-on {
+  display: block;
+}
+
+.dropdown-toggle:after,
+.dropdown-toggle.toggled-on:after,
+#nav-toggle:before,
+#nav-toggle.toggled-on:before {
+  speak: none;
+}
+
+.dropdown-toggle:after,
+.dropdown-toggle.toggled-on:after {
+  font-size: 1.3rem;
+}
+
+.no-js #nav-toggle {
+  display: none;
 }

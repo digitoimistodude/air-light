@@ -85,6 +85,7 @@ $hamburger-hover-transition-timing-function: linear;
         text-decoration: none;
         position: relative;
         z-index: 0;
+        display: block;
 
         // We have color here, so it's okay to remove outline
         outline: none;
@@ -113,27 +114,43 @@ $hamburger-hover-transition-timing-function: linear;
           color: #bbb;
         }
 
-        span.sub-arrow {
-          position: absolute;
-          top: 0;
-          margin-top: 0;
-          left: auto;
-          right: 2rem;
-          width: 3.7rem;
-          height: 3.7rem;
-          overflow: hidden;
-          font: bold 18px/37px monospace !important;
-          text-align: center;
-          background: #202020;
-          color: #fff;
+        &.highlighted span.sub-arrow:before {
+          display: block;
+          content: '-';
+        }
+      }
 
-          &:hover {
-            background-color: #3e4853;
-            color: #fff;
-          }
+      // Dropdown toggle
+      button.dropdown-toggle {
+        position: absolute;
+        top: 0;
+        margin-top: 0;
+        left: auto;
+        right: 2rem;
+        width: 3.7rem;
+        height: 3.7rem;
+        overflow: hidden;
+        font: bold 18px/37px monospace !important;
+        text-align: center;
+        background: #202020;
+        color: #fff;
+        padding: 0;
+        z-index: 9999;
+
+        &:focus {
+          z-index: 10000;
         }
 
-        &.highlighted span.sub-arrow:before {
+        &:before {
+          content: '+';
+        }
+
+        &:hover {
+          background-color: #3e4853;
+          color: #fff;
+        }
+
+        &.toggled-on:before {
           display: block;
           content: '-';
         }

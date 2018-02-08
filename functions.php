@@ -5,7 +5,7 @@
  * @package air
  */
 
-define( 'AIR_VERSION', '3.5.0' );
+define( 'AIR_VERSION', '3.5.2' );
 
 /**
  * Requires.
@@ -72,11 +72,9 @@ function air_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_localize_script( 'scripts', 'screenReaderTexts', array(
-		'expandMenu'      => esc_html__( 'Open menu', 'air' ),
-		'collapseMenu'    => esc_html__( 'Close menu', 'air' ),
-		'expandSubMenu'   => '<span class="screen-reader-text">' . __( 'Open sub menu', 'air' ) . '</span>',
-		'collapseSubMenu' => '<span class="screen-reader-text">' . __( 'Close sub menu', 'air' ) . '</span>',
+	wp_localize_script( 'scripts', 'screenReaderText', array(
+		'expand'      => esc_html__( 'Open child menu', 'air' ),
+		'collapse'    => esc_html__( 'Close child menu', 'air' ),
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'air_scripts' );

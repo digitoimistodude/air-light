@@ -136,7 +136,6 @@ gulp.task('js', function() {
       gulp.src(
         [
           'js/src/skip-link-focus-fix.js',
-          'node_modules/smartmenus/dist/jquery.smartmenus.js',
           'node_modules/moveto/dist/moveTo.js',
           // 'js/src/sticky-nav.js',
           // 'node_modules/slick-carousel/slick/slick.js',
