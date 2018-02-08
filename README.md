@@ -78,7 +78,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 * Custom navigation walker
 * Support for multi-level drop down submenus
-* Sassified version of [SmartMenus](https://github.com/vadikom/smartmenus), fully accessible and responsive multi-level navigation
+* Improved version of the [accessible menu for WordPress themes](https://github.com/theme-smith/accessible-nav-wp), fully accessible and responsive multi-level navigation
 
 #### WordPress & functions
 
