@@ -39,7 +39,8 @@
       showTimeout: 0,
       subMenusMaxWidth: '30rem',
       subMenusMinWidth: '10rem',
-      subIndicatorsText:  '+'
+      subIndicatorsText:  '+',
+      collapsibleBehavior: 'link'
     });
 
     // Set up back to top link
