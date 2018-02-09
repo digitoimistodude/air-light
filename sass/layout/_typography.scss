@@ -13,6 +13,7 @@
 @include fontFace('Poppins', '../fonts/poppins-semibold', 600);
 @include fontFace('Poppins', '../fonts/poppins-bold', 700);
 
+// Set root size for rems
 :root {
   font-size: 62.5%;
 }
@@ -22,436 +23,7 @@ body {
   font-size: 1.7rem;
   font-family: $font-base;
 
-  .site-content,
-  .site-footer {
-    // Preset for small fonts
-    %small {
-      @include responsive-font(1.2vw, 14px, 17px);
-    }
-
-    %extrasmall {
-      @include responsive-font(1.2vw, 12px, 14px);
-    }
-
-    // Defaults
-    p,
-    dd,
-    dt,
-    figcaption,
-    hr,
-    small,
-    ol,
-    ul,
-    li,
-    blockquote,
-    kbd,
-    pre,
-    samp,
-    code,
-    th,
-    td,
-    table,
-    tr,
-    .default {
-      @include responsive-font(3vw, $font-min-size, $font-max-size, $font-max-size);
-      letter-spacing: -.003em;
-      line-height: $font-base-line-height-elements;
-    }
-
-    p {
-      margin-top: 2.9rem;
-      margin-bottom: 2.9rem;
-      line-height: $font-base-line-height;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    // Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
-    p,
-    dd,
-    dt,
-    figcaption {
-      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    }
-
-    // Heading defaults
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-      color: $color-headings;
-      font-family: $font-headings;
-      font-weight: $headings-weight;
-    }
-
-    // Define heading scales
-    @if $headings-scale == large {
-
-      h1,
-      %h1 {
-        @include responsive-font(4vw, 38px, 80px);
-      }
-
-      h2,
-      %h2 {
-        @include responsive-font(3.2vw, 32px, 68px);
-      }
-
-      h3,
-      %h3,
-      .gform_wrapper h3.gform_title {
-        @include responsive-font(2.4vw, 24px, 46px);
-      }
-
-      h4,
-      %h4 {
-        @include responsive-font(1.6vw, 21px, 34px);
-      }
-
-      h5,
-      %h5 {
-        @include responsive-font(1.4vw, 18px, 21px);
-      }
-
-      h6,
-      %h6 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-    } @else if $headings-scale == medium {
-
-      h1,
-      %h1 {
-        @include responsive-font(3.2vw, 32px, 68px);
-      }
-
-      h2,
-      %h2 {
-        @include responsive-font(2.4vw, 24px, 46px);
-      }
-
-      h3,
-      %h3,
-      .gform_wrapper h3.gform_title {
-        @include responsive-font(1.6vw, 21px, 34px);
-      }
-
-      h4,
-      %h4 {
-        @include responsive-font(1.4vw, 18px, 21px);
-      }
-
-      h5,
-      %h5 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-      h6,
-      %h6 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-    } @else if $headings-scale == small {
-
-      h1,
-      %h1 {
-        @include responsive-font(2.4vw, 24px, 46px);
-      }
-
-      h2,
-      %h2 {
-        @include responsive-font(1.6vw, 21px, 34px);
-      }
-
-      h3,
-      %h3,
-      .gform_wrapper h3.gform_title {
-        @include responsive-font(1.4vw, 18px, 21px);
-      }
-
-      h4,
-      %h4 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-      h5,
-      %h5 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-      h6,
-      %h6 {
-        @include responsive-font(1.2vw, 14px, 18px);
-      }
-
-    }
-
-    h1,
-    %h1 {
-      letter-spacing: -.02em;
-
-      @if $headings-line-height-setup == flexible {
-        line-height: 3.8rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    h2,
-    %h2 {
-      letter-spacing: -.02em;
-
-      @if $headings-line-height-setup == flexible {
-        line-height: 3.2rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    h3,
-    %h3,
-    .gform_wrapper h3.gform_title {
-      letter-spacing: -.02em;
-
-      @if $headings-line-height-setup == flexible {
-        line-height: 2.2rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    h4,
-    %h4 {
-      @if $headings-line-height-setup == flexible {
-        line-height: 1.4rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    h5,
-    %h5 {
-      @if $headings-line-height-setup == flexible {
-        line-height: 1.2rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    h6,
-    %h6 {
-      @if $headings-line-height-setup == flexible {
-        line-height: 1rem;
-      } @else {
-        line-height: $headings-line-height-forced;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    // Lists
-    ul {
-      list-style: disc outside;
-      padding-left: 1.375rem;
-
-      li {
-        padding-left: .35rem;
-      }
-    }
-
-    ol {
-      padding-left: 1.75rem;
-    }
-
-    ol,
-    ul {
-      padding-bottom: 1rem;
-    }
-
-    li {
-      font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-    }
-
-    // Bold.
-    b,
-    strong {
-      font-weight: 700;
-    }
-
-    // Italic.
-    em,
-    i {
-      font-style: italic;
-    }
-
-    // Inline small text.
-    small {
-      line-height: 1;
-      font-size: .875em;
-    }
-
-    // images
-    img {
-      -ms-interpolation-mode: bicubic;
-      height: auto;
-      vertical-align: middle;
-      max-width: 100%;
-    }
-
-    // Figures and captions
-    figure {
-      position: relative;
-      margin-bottom: 1rem;
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0;
-
-      > img {
-        width: 100%;
-      }
-    }
-
-    // Figcaption.
-    figcaption {
-      margin-top: 0;
-      font-style: normal;
-      font-weight: 400;
-    }
-
-    // Quotes.
-    blockquote {
-      clear: both;
-      border: 0 none;
-      position: relative;
-      margin-top: 3rem;
-      padding-bottom: 3rem;
-      margin: 0;
-
-      p {
-        @include responsive-font(2vw, 17px, 25px, 25px);
-        opacity: .5;
-        font-style: italic;
-        margin-bottom: 0;
-        position: relative;
-        overflow: visible;
-      }
-
-      @media(min-width: $container-ipad) {
-        margin-top: 4rem;
-        padding-bottom: 4rem;
-      }
-
-      &:before {
-        content: '';
-        display: block;
-        height: 4px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        max-width: 147px;
-
-        @media(min-width: $container-mobile) {
-          width: 30%;
-        }
-      }
-    }
-
-    cite {
-      display: block;
-      font-style: italic;
-    }
-
-    // Horizontal rule.
-    hr {
-      background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
-      background-repeat: repeat-x;
-      background-size: 2px 2px;
-      background-position: 0 50%;
-      border: 0;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      margin: 0;
-      height: 0;
-    }
-
-    kbd,
-    pre,
-    samp {
-      font-family: $font-monospace;
-    }
-
-    // Code block.
-    code {
-      color: #c7254e;
-      background-color: #f9f2f4;
-      font-family: $font-monospace;
-      line-height: 1;
-      padding: .375rem .5rem;
-      border-radius: .3rem;
-      font-size: inherit; // normalize.css sets this as 1em by default
-
-      pre & {
-        display: inline-block;
-        padding: 1.15rem 1rem .85rem;
-      }
-    }
-
-    // Preformatted text.
-    pre {
-      border-radius: .3rem;
-      display: block;
-      white-space: pre-wrap;
-      word-break: break-all;
-      word-wrap: break-word;
-      margin-bottom: 2rem;
-    }
-
-    // Text font stack
-    p,
-    ul,
-    ol,
-    dl,
-    small,
-    blockquote {
-      color: $color-body;
-    }
-  }
-}
-
-// Font smoothing options
-body,
-html * {
+  // Font smoothing options
   font-smoothing: antialiased;
   text-size-adjust: none;
   text-rendering: geometricPrecision;
@@ -467,4 +39,421 @@ a {
   &:hover {
     color: $color-hover;
   }
+}
+
+// Preset for small fonts
+%small {
+  @include responsive-font(1.2vw, 14px, 17px);
+}
+
+%extrasmall {
+  @include responsive-font(1.2vw, 12px, 14px);
+}
+
+// Defaults
+p,
+dd,
+dt,
+figcaption,
+hr,
+small,
+ol,
+ul,
+li,
+blockquote,
+kbd,
+pre,
+samp,
+code,
+th,
+td,
+table,
+tr,
+.default {
+  @include responsive-font(3vw, $font-min-size, $font-max-size, $font-max-size);
+  letter-spacing: -.003em;
+  line-height: $font-base-line-height-elements;
+}
+
+p {
+  margin-top: 2.9rem;
+  margin-bottom: 2.9rem;
+  line-height: $font-base-line-height;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
+p,
+dd,
+dt,
+figcaption {
+  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+}
+
+// Heading defaults
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+  color: $color-headings;
+  font-family: $font-headings;
+  font-weight: $headings-weight;
+}
+
+// Define heading scales
+@if $headings-scale == large {
+  h1,
+  %h1 {
+    @include responsive-font(4vw, 38px, 80px);
+  }
+
+  h2,
+  %h2 {
+    @include responsive-font(3.2vw, 32px, 68px);
+  }
+
+  h3,
+  %h3,
+  .gform_wrapper h3.gform_title {
+    @include responsive-font(2.4vw, 24px, 46px);
+  }
+
+  h4,
+  %h4 {
+    @include responsive-font(1.6vw, 21px, 34px);
+  }
+
+  h5,
+  %h5 {
+    @include responsive-font(1.4vw, 18px, 21px);
+  }
+
+  h6,
+  %h6 {
+    @include responsive-font(1.2vw, 14px, 18px);
+  }
+} @else if $headings-scale == medium {
+  h1,
+  %h1 {
+    @include responsive-font(3.2vw, 32px, 68px);
+  }
+
+  h2,
+  %h2 {
+    @include responsive-font(2.4vw, 24px, 46px);
+  }
+
+  h3,
+  %h3,
+  .gform_wrapper h3.gform_title {
+    @include responsive-font(1.6vw, 21px, 34px);
+  }
+
+  h4,
+  %h4 {
+    @include responsive-font(1.4vw, 18px, 21px);
+  }
+
+  h5,
+  %h5 {
+    @include responsive-font(1.2vw, 14px, 18px);
+  }
+
+  h6,
+  %h6 {
+    @include responsive-font(1.2vw, 14px, 18px);
+  }
+} @else if $headings-scale == small {
+  h1,
+  %h1 {
+    @include responsive-font(2.4vw, 24px, 46px);
+  }
+
+  h2,
+  %h2 {
+    @include responsive-font(1.6vw, 21px, 34px);
+  }
+
+  h3,
+  %h3,
+  .gform_wrapper h3.gform_title {
+    @include responsive-font(1.4vw, 18px, 21px);
+  }
+
+  h4,
+  %h4 {
+    @include responsive-font(1.2vw, 14px, 18px);
+  }
+
+  h5,
+  %h5 {
+    @include responsive-font(1.2vw, 14px, 18px);
+  }
+
+  h6,
+  %h6 {
+    @include responsive-font(1.2vw, 14px, 18px);
+  }
+}
+
+h1,
+%h1 {
+  letter-spacing: -.02em;
+
+  @if $headings-line-height-setup == flexible {
+    line-height: 3.8rem;
+  } @else {
+    line-height: $headings-line-height-forced;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h2,
+%h2 {
+  letter-spacing: -.02em;
+
+  @if $headings-line-height-setup == flexible {
+    line-height: 3.2rem;
+  } @else {
+    line-height: $headings-line-height-forced;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h3,
+%h3,
+.gform_wrapper h3.gform_title {
+  letter-spacing: -.02em;
+
+  @if $headings-line-height-setup == flexible {
+    line-height: 2.2rem;
+  } @else {
+    line-height: $headings-line-height-forced;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h4,
+%h4 {
+  @if $headings-line-height-setup == flexible {
+    line-height: 1.4rem;
+  } @else {
+    line-height: $headings-line-height-forced;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h5,
+%h5 {
+  @if $headings-line-height-setup == flexible {
+    line-height: 1.2rem;
+  } @else {
+    line-height: $headings-line-height-forced;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h6,
+%h6 {
+  @if $headings-line-height-setup == flexible {
+    line-height: 1rem;
+  } @else {
+    line-height: $headings-line-height-forced;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+// Lists
+ul {
+  list-style: disc outside;
+  padding-left: 1.375rem;
+
+  li {
+    padding-left: .35rem;
+  }
+}
+
+ol {
+  padding-left: 1.75rem;
+}
+
+ol,
+ul {
+  padding-bottom: 1rem;
+}
+
+li {
+  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
+}
+
+// Bold.
+b,
+strong {
+  font-weight: 700;
+}
+
+// Italic.
+em,
+i {
+  font-style: italic;
+}
+
+// Inline small text.
+small {
+  line-height: 1;
+  font-size: .875em;
+}
+
+// images
+img {
+  -ms-interpolation-mode: bicubic;
+  height: auto;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+// Figures and captions
+figure {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+
+  > img {
+    width: 100%;
+  }
+}
+
+// Figcaption.
+figcaption {
+  margin-top: 0;
+  font-style: normal;
+  font-weight: 400;
+}
+
+// Quotes.
+blockquote {
+  clear: both;
+  border: 0 none;
+  position: relative;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+  margin: 0;
+
+  p {
+    @include responsive-font(2vw, 17px, 25px, 25px);
+    opacity: .5;
+    font-style: italic;
+    margin-bottom: 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  @media (min-width: $container-ipad) {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 147px;
+
+    @media (min-width: $container-mobile) {
+      width: 30%;
+    }
+  }
+}
+
+cite {
+  display: block;
+  font-style: italic;
+}
+
+// Horizontal rule.
+hr {
+  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  background-position: 0 50%;
+  border: 0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin: 0;
+  height: 0;
+}
+
+kbd,
+pre,
+samp {
+  font-family: $font-monospace;
+}
+
+// Code block.
+code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  font-family: $font-monospace;
+  line-height: 1;
+  padding: .375rem .5rem;
+  border-radius: .3rem;
+  font-size: inherit; // normalize.css sets this as 1em by default
+
+  pre & {
+    display: inline-block;
+    padding: 1.15rem 1rem .85rem;
+  }
+}
+
+// Preformatted text.
+pre {
+  border-radius: .3rem;
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  margin-bottom: 2rem;
+}
+
+// Text font stack
+p,
+ul,
+ol,
+dl,
+small,
+blockquote {
+  color: $color-body;
 }
