@@ -44,7 +44,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         // Current and hover styles
         &.current_page_item {
           > a {
-            color: rgba(#fff, .5);
+            text-decoration: underline;
           }
         }
 
