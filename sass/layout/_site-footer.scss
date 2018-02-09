@@ -10,43 +10,39 @@
 // and start over.
 // ------------------------------------------------------------
 
-body {
-  #page {
-    .site-footer {
-      padding: 20px;
-      background: #eaeaea;
-      color: #fff;
-      overflow: hidden;
-      clear: both;
+.site-footer {
+  padding: 20px;
+  background: #eaeaea;
+  color: #fff;
+  overflow: hidden;
+  clear: both;
 
-      svg {
-        fill: #555;
-        top: 2px;
-        position: relative;
-      }
+  svg {
+    fill: #555;
+    top: 2px;
+    position: relative;
+  }
 
-      p,
-      span {
-        color: #555;
-      }
+  p,
+  span {
+    color: #555;
+  }
 
-      a {
-        color: #555;
+  a {
+    color: #555;
 
-        &:hover {
-          color: $color-links;
-        }
-      }
-
-      .theme-info {
-        overflow: hidden;
-
-        @media (min-width: $container-ipad) {
-          width: 60%;
-          text-align: right;
-          float: right;
-        }
-      }
+    &:hover {
+      color: $color-links;
     }
+  }
+}
+
+.theme-info {
+  overflow: hidden;
+
+  @media (min-width: $container-ipad) {
+    width: 60%;
+    text-align: right;
+    float: right;
   }
 }
