@@ -4,7 +4,6 @@
 // The main layout for the website navigation, for a desktop
 // devices only.
 // -----------------------------------------------------------
-$color-nav-links: #fff;
 $color-nav-dropdown-links: #333;
 $color-nav-links: #fff;
 $color-nav-dropdown-links: #333;
@@ -65,7 +64,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
           &:active,
           &.highlighted,
           &.current {
-            color: $color-links;
+            color: $color-nav-links;
           }
         }
       }
