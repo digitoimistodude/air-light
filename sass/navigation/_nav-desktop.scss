@@ -83,6 +83,10 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         &.sub-menu {
           padding-top: .5rem;
           padding-bottom: .5rem;
+
+          li {
+            margin: 0;
+          }
         }
 
         .dropdown-toggle {
@@ -204,30 +208,5 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         }
       }
     }
-  }
-
-  #nav ul .has-sub-menu > li {
-    padding-right: 40px;
-  }
-
-
-  #nav ul .dropdown-toggle:after {
-    content: "\f063";
-  }
-  #nav ul ul .dropdown-toggle:after {
-    content: "\f061";
-  }
-  #nav ul .dropdown-toggle.toggled-on:after {
-    content: "\f062";
-  }
-  #nav ul ul .dropdown-toggle.toggled-on:after {
-    content: "\f060";
-  }
-  button.dropdown-toggle {
-    position: inherit;
-    right: auto;
-  }
-  #nav ul li:hover > ul {
-    display: block;
   }
 }

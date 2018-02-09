@@ -5,6 +5,11 @@
 // vision impaired and other useful a11y CSS hacks.
 // ---------------------------------------------------------
 
+// Variables
+$focus-background-color: #f9bf47;
+$focus-outline-color: #f9bf47;
+$focus-text-color: #000;
+
 // Text meant only for screen readers.
 .screen-reader-text {
   border: 0;
@@ -61,17 +66,20 @@
     select,
     textarea {
       &:focus {
-        outline: 4px solid #f9bf47;
+        outline: 4px solid $focus-outline-color;
         opacity: 1;
       }
     }
 
-    a {
-      &:focus {
-        outline: 2px solid #f9bf47;
-        background: #f9bf47;
-        opacity: 1;
-      }
+    #nav ul li a:focus {
+      background: $focus-background-color;
+      color: $focus-text-color;
+    }
+
+    a:focus {
+      outline: 2px solid $focus-outline-color;
+      background: $focus-background-color;
+      opacity: 1;
     }
   }
 }

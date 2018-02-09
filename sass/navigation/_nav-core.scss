@@ -62,10 +62,10 @@
 #nav ul ul {
   margin-top: 0;
   margin-left: 25px;
-}
 
-#nav ul ul ul {
-  margin-left: 25px;
+  ul {
+    margin-left: 25px;
+  }
 }
 
 .no-js #nav ul,
