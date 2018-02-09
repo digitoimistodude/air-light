@@ -31,7 +31,7 @@ get_header(); ?>
 <div id="content" class="content-area">
   <main id="main" class="site-main">
 
-    <div class="slide slide-front-content">
+    <div class="slide">
 
       <div class="container">
 

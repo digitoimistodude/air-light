@@ -10,50 +10,38 @@
 // and start over.
 // ------------------------------------------------
 
-body {
-  #page {
-    .site-content {
-      .slide {
-        &.slide-front {
-          background-position: center;
-          background-color: #fff;
-          position: relative;
-          min-height: 300px;
+.slide.slide-front {
+  background-position: center;
+  background-color: #fff;
+  position: relative;
+  min-height: 300px;
 
-          .shade {
-            opacity: 1;
-          }
+  .shade {
+    opacity: 1;
+  }
 
-          .container {
-            padding-top: 30vh;
-            padding-bottom: 30vh;
-            position: relative;
-            z-index: 10;
+  .container {
+    padding-top: 30vh;
+    padding-bottom: 30vh;
+    position: relative;
+    z-index: 10;
+  }
 
-            .accent {
-              @extend %h3;
-              font-style: italic;
-              text-transform: lowercase;
-              font-weight: 700;
-              text-align: center;
-              margin: 0;
-              color: $color-links;
-              display: block;
-            }
+  .accent {
+    @extend %h3;
+    font-style: italic;
+    text-transform: lowercase;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: $color-links;
+    display: block;
+  }
 
-            h1 {
-              color: #fff;
-              text-align: center;
-              margin: 0;
-              padding: 0;
-            }
-          }
-        }
-
-        &.slide-front-content {
-          background: #fff;
-        }
-      }
-    }
+  h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
   }
 }

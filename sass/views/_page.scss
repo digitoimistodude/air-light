@@ -4,11 +4,3 @@
 // All the other pages of the site, without any
 // particular layout.
 // ------------------------------------------------
-
-.slide {
-  &.slide-page {
-    @media(min-width: $container-mobile) {
-      min-height: 300px;
-    }
-  }
-}
