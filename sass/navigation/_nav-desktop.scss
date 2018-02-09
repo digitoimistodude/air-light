@@ -210,3 +210,8 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
     }
   }
 }
+
+// Enable hovers
+#nav ul li:hover > ul {  
+  display: block;
+}
