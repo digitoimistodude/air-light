@@ -371,11 +371,11 @@ blockquote {
 
   p {
     @include responsive-font(2vw, 17px, 25px, 25px);
-    opacity: .5;
     font-style: italic;
     margin-bottom: 0;
     position: relative;
     overflow: visible;
+    color: #666;
   }
 
   @media (min-width: $container-ipad) {
