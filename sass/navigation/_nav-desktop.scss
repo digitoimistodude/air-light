@@ -14,7 +14,12 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
 
 @media only screen and (min-width: $responsivenav) {
 
-  // Make sure nav-toggle is hidden on desktop
+  // Enable hovers
+  #nav ul li:hover > ul {
+    display: block;
+  }
+
+  // Make sure mobile nav-toggle is hidden on desktop
   #nav-toggle {
     display: none;
   }
@@ -208,9 +213,4 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
       }
     }
   }
-}
-
-// Enable hovers
-#nav ul li:hover > ul {
-  display: block;
 }
