@@ -22,6 +22,7 @@
 body {
   font-size: 1.7rem;
   font-family: $font-base;
+  color: $color-body;
 
   // Font smoothing options
   font-smoothing: antialiased;
@@ -446,14 +447,4 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   margin-bottom: 2rem;
-}
-
-// Text font stack
-p,
-ul,
-ol,
-dl,
-small,
-blockquote {
-  color: $color-body;
 }
