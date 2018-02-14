@@ -5,8 +5,8 @@
 // particular layout.
 // ------------------------------------------------
 
-.slide.slide-page {
+.block.block-page {
   @media(min-width: $container-mobile) {
-    min-height: 200px;
+    min-height: 300px;
   }
 }

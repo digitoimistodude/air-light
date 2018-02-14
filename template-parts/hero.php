@@ -3,16 +3,16 @@
  * Default hero template file.
  *
  * This is the default hero image for page templates, called
- * 'slide'. Strictly air specific.
+ * 'block'. Strictly air specific.
  *
  * @package air
  */
 
-// Slide settings
+// Block settings
 if ( is_front_page() ) :
-	$slide_class = ' slide-front';
+	$block_class = ' block-front';
 else :
-	$slide_class = ' slide-' . get_post_type();
+	$block_class = ' block-' . get_post_type();
 endif;
 
 // Featured image
@@ -23,6 +23,6 @@ else :
 endif;
 ?>
 
-<div class="slide<?php echo $slide_class; ?>" style="background-image:url('<?php echo esc_url( $featured_image ); ?>');">
+<div class="block<?php echo $block_class; ?>" style="background-image: url('<?php echo esc_url( $featured_image ); ?>');">
   <div class="shade"></div>
 </div>

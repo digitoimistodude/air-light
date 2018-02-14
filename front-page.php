@@ -20,19 +20,18 @@ endif;
 
 get_header(); ?>
 
-<div class="slide slide-front" style="background-image:url('<?php echo esc_url( $featured_image ); ?>');">
+<div class="block block-front" style="background-image: url('<?php echo esc_url( $featured_image ); ?>');">
   <div class="shade shade-gradient"></div>
 
   <div class="container">
-    <h1><span class="accent"><?php echo esc_html_e('Air ', 'air'); echo esc_attr( AIR_VERSION, 'air' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air' ); ?></h1>
+    <h1><span class="accent"><?php echo esc_html_e( 'Air ', 'air' ); echo esc_attr( AIR_VERSION, 'air' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air' ); ?></h1>
   </div>
 </div>
 
 <div id="content" class="content-area">
   <main id="main" class="site-main">
 
-    <div class="slide">
-
+    <div class="block">
       <div class="container">
 
         <?php the_post_thumbnail(); ?>
@@ -46,9 +45,8 @@ get_header(); ?>
         	get_template_part( 'template-parts/content', 'none' );
         }  ?>
 
-      </div><!-- .container -->
-
-    </div><!-- .slide.slide-front-content -->
+      </div>
+    </div>
 
   </main><!-- #main -->
 </div><!-- #primary -->

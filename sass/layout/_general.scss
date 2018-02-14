@@ -7,7 +7,7 @@
 // -----------------------------------------------------------
 
 // Default structural element
-.slide {
+.block {
   @include background-cover();
   background-position: center;
   background-color: #fff;
@@ -15,7 +15,7 @@
   min-height: 100px;
 }
 
-// Default shade on top of slides
+// Default shade on top of blocks
 .shade {
   background: #333;
   position: absolute;

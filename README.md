@@ -85,7 +85,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * Available for translation
 * Support for Post Thumbnails on posts and pages
 * HTML5 core markup for WordPress elements
-* **Air specific:** Templates for hero *slides*
+* **Air specific:** Templates for hero *blocks*
 
 #### Accessibility
 
@@ -149,7 +149,7 @@ $('.slider').slick({
 5. Construct your slider like this:
 
 ```` html
-<div class="slide slide-slider">
+<div class="block block-slider">
   <div class="container slider">
     <div class="item">
       <p><b>Slider item 1</b> Some other content. Lorem ipsum in proident deserunt nostrud. Lorem ipsum in proident deserunt nostrud.</p>
@@ -158,7 +158,7 @@ $('.slider').slick({
     <div class="item">
       <p><b>Slider item 2</b> Something different to see the change. Lorem ipsum in proident deserunt nostrud culpa veniam sed esse aliqua ea velit aute.</p>
     </div><!-- .item -->
-</div><!-- .slide-slider -->
+</div><!-- .block -->
 ````
 
 Please note: If you want to change the background to lighter, you will need to edit the svg arrows accordingly.
