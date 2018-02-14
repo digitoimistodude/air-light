@@ -28,6 +28,7 @@ input[type="button"]:not(.nav-toggle),
   @media (max-width: $container-mobile) {
     // Wrap long buttons on mobile
     display: block;
+    text-align: center;
   }
 
   &:hover,
