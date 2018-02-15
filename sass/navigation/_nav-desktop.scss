@@ -45,7 +45,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         float: left;
         margin: 0;
 
-        // Current and hover styles
+        // Current parent menu item
         &.current_page_item {
           > a {
             text-decoration: underline;
@@ -63,6 +63,7 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
           }
         }
 
+        // Active menu item
         a {
           &:hover,
           &:focus,
