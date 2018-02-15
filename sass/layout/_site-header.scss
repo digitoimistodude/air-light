@@ -29,12 +29,10 @@
 }
 
 .site-branding {
-  overflow: hidden;
   float: left;
 }
 
 .site-title {
-  overflow: hidden;
   margin: 0;
 
   // The point where logo touches the left side
@@ -54,13 +52,16 @@
   }
 
   a {
-    overflow: hidden;
     display: block;
+    position: relative;
+
+    @media(max-width: $responsivenav) {
+      top: 1rem;
+    }
 
     svg {
       fill: #fff;
       transition: all .22s;
-      position: relative;
     }
 
     &:hover {
