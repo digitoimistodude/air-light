@@ -136,6 +136,7 @@ $hamburger-hover-transition-timing-function: linear;
         color: #fff;
         padding: 0;
         z-index: 9999;
+        border: 0;
 
         &:focus {
           z-index: 10000;

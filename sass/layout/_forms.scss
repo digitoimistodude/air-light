@@ -6,55 +6,57 @@
 // ------------------------------------------------------------
 
 // Buttons
-button:not(.nav-toggle),
-input[type="reset"]:not(.nav-toggle),
-input[type="submit"]:not(.nav-toggle),
-input[type="button"]:not(.nav-toggle),
-.button:not(.nav-toggle) {
-  font-size: 1.6rem;
-  background: $color-links;
-  color: #fff;
-  border: 0;
-  width: auto;
-  display: inline-block;
-  padding: 1.2rem 3rem;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  position: relative;
-  cursor: pointer;
-  transition: 150ms linear background;
-  font-family: $font-base;
-
-  @media (max-width: $container-mobile) {
-    // Wrap long buttons on mobile
-    display: block;
-    text-align: center;
-  }
-
-  &:hover,
-  &:focus {
+.content-area {
+  button,
+  .button,
+  input[type="reset"],
+  input[type="submit"],
+  input[type="button"] {
+    font-size: 1.6rem;
+    background: $color-links;
     color: #fff;
-    background: darken($color-links, 15%);
-  }
+    border: 0;
+    width: auto;
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: 150ms linear background;
+    font-family: $font-base;
 
-  &.button-ghost {
-    background-color: transparent;
-    border: 1px solid $color-links;
-    color: $color-links;
-
-    &:hover {
-      background-color: $color-links;
-      color: #fff;
+    @media (max-width: $container-mobile) {
+      // Wrap long buttons on mobile
+      display: block;
+      text-align: center;
     }
 
-    &.button-ghost-white {
-      border-color: #fff;
+    &:hover,
+    &:focus {
       color: #fff;
+      background: darken($color-links, 15%);
+    }
+
+    &.button-ghost {
+      background-color: transparent;
+      border: 1px solid $color-links;
+      color: $color-links;
 
       &:hover {
         background-color: $color-links;
-        border-color: $color-links;
         color: #fff;
+      }
+
+      &.button-ghost-white {
+        border-color: #fff;
+        color: #fff;
+
+        &:hover {
+          background-color: $color-links;
+          border-color: $color-links;
+          color: #fff;
+        }
       }
     }
   }
