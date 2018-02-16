@@ -24,10 +24,9 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list'
 // add_theme_support( 'woocommerce' );
 
 /**
- * Load textdomain and set a locale.
+ * Load textdomain.
  */
 load_theme_textdomain( 'air', get_template_directory() . '/languages' );
-setlocale( LC_ALL, 'fi_FI.utf8' );
 
 /**
  * Define content width in articles
