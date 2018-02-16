@@ -196,17 +196,17 @@ pre {
 
   a {
     @extend %small;
+    font-weight: 600;
   }
 }
 
-.tags {
+ul.tags {
   overflow: hidden;
   margin: 0;
   padding: 0;
   padding-left: 0;
 
   li {
-    @extend %extrasmall;
     margin-left: 0;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -216,16 +216,17 @@ pre {
     margin-top: 0;
 
     a {
-      transition: all .6s;
-      padding: 6px 10px 4px;
-      display: inline-block;
+      font-size: 1.2rem;
+      color: #333;
+      padding: .5rem 1rem;
+      display: inline;
       border-radius: 4px;
       background: #f0f0f0;
       opacity: .8;
 
       &:hover {
-        color: #111;
-        background: #ddd;
+        color: #fff;
+        background: #aaa;
         opacity: 1;
       }
     }
@@ -263,7 +264,7 @@ pre {
   margin-bottom: 0;
 
   a {
-    color: #777;
+    color: #888;
 
     &:hover {
       color: #111;
