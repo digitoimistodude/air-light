@@ -79,6 +79,8 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * Custom navigation walker
 * Support for multi-level drop down submenus
 * Improved version of the [accessible menu for WordPress themes](https://github.com/theme-smith/accessible-nav-wp), fully accessible and responsive multi-level navigation
+* Support for animations
+* Pure CSS hoverintent
 
 #### WordPress & functions
 
