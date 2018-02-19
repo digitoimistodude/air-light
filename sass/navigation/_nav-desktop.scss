@@ -11,51 +11,53 @@ $dropdown-width: 19rem;
 $icon-arrow-right: '../svg/chevron-right-dark.svg';
 $icon-arrow-down: '../svg/chevron-down.svg';
 $icon-arrow-left: '../svg/chevron-left-dark.svg';
-$hover-intent: 0;
+$hover-intent: .3s;
 
 // Set true/false in _nav-core.sccss
 @if $enable-animations == true {
 
-  .sub-menu {
-    width: $dropdown-width;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    transform: translateY(-2em);
-    z-index: -1;
-    transition: all .3s ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
+  @media only screen and (min-width: $responsivenav) {
+    .sub-menu {
+      width: $dropdown-width;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform: translateY(-2em);
+      z-index: -1;
+      transition: all .3s ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
 
-    @if $hover-intent == 0 {
-      transition: all .3s ease-in-out 0s, visibility 0s linear .3s, z-index 0s linear .01s;
+      @if $hover-intent == 0 {
+        transition: all .3s ease-in-out 0s, visibility 0s linear .3s, z-index 0s linear .01s;
+      }
     }
-  }
 
-  #nav ul .sub-menu.toggled-on {
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-    transition-delay: 0s, 0s, .3s;
-  }
-
-  [data-whatinput="keyboard"] .sub-menu {
-    transition: none;
-    transition-delay: none;
-    transform: none;
-  }
-
-  [data-whatinput="mouse"] #nav ul li.menu-item-has-children,
-  [data-whatintent="mouse"] #nav ul li.menu-item-has-children {
-    &:focus > .sub-menu,
-    &:focus-within > .sub-menu,
-    &:hover > .sub-menu {
+    #nav ul .sub-menu.toggled-on {
       visibility: visible;
       opacity: 1;
       z-index: 1;
       transform: translateY(0%);
       transition-delay: 0s, 0s, .3s;
+    }
+
+    [data-whatinput="keyboard"] .sub-menu {
+      transition: none;
+      transition-delay: none;
+      transform: none;
+    }
+
+    [data-whatinput="mouse"] #nav ul li.menu-item-has-children,
+    [data-whatintent="mouse"] #nav ul li.menu-item-has-children {
+      &:focus > .sub-menu,
+      &:focus-within > .sub-menu,
+      &:hover > .sub-menu {
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, .3s;
+      }
     }
   }
 }
@@ -65,6 +67,12 @@ $hover-intent: 0;
   // Use display block based hovers if no animations enabled
   @if $enable-animations == false {
     // Enable hovers
+    #nav ul li:hover > ul {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width: $responsivenav) {
     #nav ul li:hover > ul {
       display: block;
     }

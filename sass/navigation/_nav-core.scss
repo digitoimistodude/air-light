@@ -4,7 +4,7 @@
 // The main layout for the website navigation, for both mobile
 // and desktop devices.
 // -----------------------------------------------------------
-$enable-animations: false;
+$enable-animations: true;
 
 #nav ul.menu-items {
   position: relative;
@@ -45,6 +45,14 @@ $enable-animations: false;
 
   // Hide by default if no animations enabled
   @if $enable-animations == false {
+    @media only screen and (min-width: $responsivenav) {
+      ul {
+        display: none;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $responsivenav) {
     ul {
       display: none;
     }
@@ -73,7 +81,15 @@ $enable-animations: false;
 }
 
 @if $enable-animations == false {
-  #nav ul .sub-menu.toggled-on {
+  @media only screen and (min-width: $responsivenav) {
+    #nav ul .sub-menu.toggled-on {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: $responsivenav) {
+  body #nav ul .sub-menu.toggled-on {
     display: block;
   }
 }
