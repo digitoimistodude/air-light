@@ -4,6 +4,7 @@
 // The main layout for the website navigation, for both mobile
 // and desktop devices.
 // -----------------------------------------------------------
+$enable-animations: true;
 
 #nav ul.menu-items {
   position: relative;
@@ -42,8 +43,11 @@
     }
   }
 
-  ul {
-    display: none;
+  // Hide by default if no animations enabled
+  @if $enable-animations == false {
+    ul {
+      display: none;
+    }
   }
 
   > li {
@@ -68,9 +72,10 @@
   }
 }
 
-.no-js #nav ul,
-#nav ul .sub-menu.toggled-on {
-  display: block;
+@if $enable-animations == false {
+  #nav ul .sub-menu.toggled-on {
+    display: block;
+  }
 }
 
 .dropdown-toggle:after,
@@ -83,6 +88,11 @@
 .dropdown-toggle:after,
 .dropdown-toggle.toggled-on:after {
   font-size: 1.3rem;
+}
+
+// If Javascript is not enabled
+.no-js #nav ul {
+  display: block;
 }
 
 .no-js #nav-toggle {
