@@ -7,10 +7,11 @@
 $color-nav-dropdown-links: #333;
 $color-nav-links: #fff;
 $color-nav-dropdown-links: #333;
-$dropdown-width: 22rem;
+$dropdown-width: 19rem;
 $icon-arrow-right: '../svg/chevron-right-dark.svg';
 $icon-arrow-down: '../svg/chevron-down.svg';
 $icon-arrow-left: '../svg/chevron-left-dark.svg';
+$hover-intent: .3s;
 
 // Set true/false in _nav-core.sccss
 @if $enable-animations == true {
@@ -25,7 +26,12 @@ $icon-arrow-left: '../svg/chevron-left-dark.svg';
         left: 0;
         transform: translateY(-2em);
         z-index: -1;
-        transition: all .3s ease-in-out 0s, visibility 0s linear .3s, z-index 0s linear .01s;
+        transition: all .3s ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
+
+        @if $hover-intent == 0 {
+          transition: all .3s ease-in-out 0s, visibility 0s linear .3s, z-index 0s linear .01s;
+        }
+
       }
 
       #nav ul li.menu-item-has-children {
