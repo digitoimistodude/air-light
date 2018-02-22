@@ -6,6 +6,16 @@
 // -----------------------------------------------------------
 $enable-animations: true;
 
+// Fix overflow problems
+.nav-container {
+  overflow: visible;
+  position: absolute;
+  height: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 #nav ul.menu-items {
   position: relative;
   z-index: 9999;

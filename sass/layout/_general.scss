@@ -34,9 +34,11 @@
 
 // Site wrapper
 .site {
-  max-width: $layout-max-width;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  overflow: hidden;
 }
 
 // Containers

@@ -6,10 +6,10 @@
 // -----------------------------------------------------------
 
 .site-header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  width: auto;
   z-index: 15;
 
   @media (min-width: $responsivenav) {
