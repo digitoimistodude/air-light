@@ -43,21 +43,6 @@ $enable-animations: true;
     }
   }
 
-  // Hide by default if no animations enabled
-  @if $enable-animations == false {
-    @media only screen and (min-width: $responsivenav) {
-      ul {
-        display: none;
-      }
-    }
-  }
-
-  @media only screen and (max-width: $responsivenav) {
-    ul {
-      display: none;
-    }
-  }
-
   > li {
     > h1,
     > h2,
@@ -68,6 +53,21 @@ $enable-animations: true;
       margin: 0;
       padding: 0;
     }
+  }
+}
+
+// Hide by default if no animations enabled
+@if $enable-animations == false {
+  @media only screen and (min-width: $responsivenav) {
+    #nav ul.menu-items ul {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: $responsivenav) {
+  body.js #nav ul.menu-items ul {
+    display: none;
   }
 }
 
@@ -82,14 +82,14 @@ $enable-animations: true;
 
 @if $enable-animations == false {
   @media only screen and (min-width: $responsivenav) {
-    #nav ul .sub-menu.toggled-on {
+    body.js #nav ul .sub-menu.toggled-on {
       display: block;
     }
   }
 }
 
 @media only screen and (max-width: $responsivenav) {
-  body #nav ul .sub-menu.toggled-on {
+  body.js #nav ul .sub-menu.toggled-on {
     display: block;
   }
 }
@@ -106,11 +106,6 @@ $enable-animations: true;
   font-size: 1.3rem;
 }
 
-// If Javascript is not enabled
-.no-js #nav ul {
-  display: block;
-}
-
-.no-js #nav-toggle {
+body.no-js #nav-toggle {
   display: none;
 }

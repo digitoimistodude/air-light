@@ -29,13 +29,21 @@ $hamburger-hover-transition-timing-function: linear;
 // Mobile styles
 @media screen and (max-width: $responsivenav - 1px) {
 
+  // Users that don't have Javascript enabled
+  body.no-js .site-header {
+    position: static;
+
+    // Use the same color than navigation
+    background: $color-almostblack;
+  }
+
   // Disable scroll on html body when menu is opened.
   .disable-scroll {
     overflow: hidden;
   }
 
   // Ensure nav stays in the same position when activated
-  body {
+  body.js {
     &.js-nav-active {
       overflow: hidden;
 
@@ -52,26 +60,35 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  nav#nav {
+  body.js nav#nav {
     // Hide mobile navigation by default while enabling use of animations
     visibility: hidden;
     max-height: 0;
     height: 0;
-    background: $color-almostblack;
-    transition: all .55s;
-    margin: 0;
     clip: auto;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+
+    .menu-items {
+      padding: 15% 0;
+    }
+  }
+
+  nav#nav {
+    background: $color-almostblack;
+    transition: all .55s;
+    margin: 0;
     overflow: hidden;
+    display: block;
+    width: 100%;
 
     .menu-items {
       margin: 0;
-      padding: 15% 0;
       width: 100%;
       float: none;
+      padding: 2rem 0;
 
       a {
         padding-top: 1rem;
