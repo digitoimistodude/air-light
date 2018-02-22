@@ -83,3 +83,8 @@ $focus-text-color: #000;
     }
   }
 }
+
+// Make theme keyboard accessible with no Javascript enabled
+body.no-js *:focus {
+  outline: 4px solid $focus-outline-color;
+}

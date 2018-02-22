@@ -2,6 +2,10 @@
  * Air theme JavaScript.
  */
 
+// Define Javascript is active by changing the body class
+document.body.classList.remove('no-js');
+document.body.classList.add('js');
+
 // jQuery start
 ( function( $ ) {
 
