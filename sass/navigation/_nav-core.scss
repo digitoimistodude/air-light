@@ -65,6 +65,15 @@ $enable-animations: true;
   }
 }
 
+// Disable animations on IE10 + IE11
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @media only screen and (min-width: $responsivenav) {
+    #nav ul.menu-items ul {
+      display: none;
+    }
+  }
+}
+
 @media only screen and (max-width: $responsivenav) {
   body.js #nav ul.menu-items ul {
     display: none;
@@ -81,6 +90,15 @@ $enable-animations: true;
 }
 
 @if $enable-animations == false {
+  @media only screen and (min-width: $responsivenav) {
+    body.js #nav ul .sub-menu.toggled-on {
+      display: block;
+    }
+  }
+}
+
+// Disable animations on IE10 + IE11
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media only screen and (min-width: $responsivenav) {
     body.js #nav ul .sub-menu.toggled-on {
       display: block;

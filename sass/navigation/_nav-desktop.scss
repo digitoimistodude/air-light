@@ -15,7 +15,6 @@ $hover-intent: .3s;
 
 // Set true/false in _nav-core.sccss
 @if $enable-animations == true {
-
   @media only screen and (min-width: $responsivenav) {
     .sub-menu {
       width: $dropdown-width;
@@ -62,7 +61,6 @@ $hover-intent: .3s;
 
     // Disable all animations, enable hovers for no-js users
     body.no-js {
-
       .sub-menu {
         width: $dropdown-width;
         visibility: hidden;
@@ -74,6 +72,46 @@ $hover-intent: .3s;
         z-index: -1;
         transition: none;
         transition-delay: none;
+      }
+
+      #nav ul li.menu-item-has-children {
+        &:focus > .sub-menu,
+        &:focus-within > .sub-menu,
+        &:hover > .sub-menu {
+          visibility: visible;
+          opacity: 1;
+          z-index: 1;
+          transform: translateY(0%);
+          transition-delay: 0s, 0s, .3s;
+        }
+      }
+    }
+
+    // Disable animations and improve styles on IE10 + IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      #nav ul.menu-items ul.sub-menu {
+        width: $dropdown-width;
+        visibility: visible;
+        opacity: 1;
+        top: 0;
+        transform: translateY(1.5rem);
+        z-index: -1;
+        transition: none;
+        transition-delay: none;
+        list-style-type: none;
+        list-style: none;
+
+        li.menu-item {
+          padding-top: 0;
+          margin-top: 0;
+          list-style-type: none;
+          list-style: none;
+        }
+
+        ul.sub-menu.has-sub-menu {
+          transform: translateY(0);
+          padding-top: .5rem;
+        }
       }
 
       #nav ul li.menu-item-has-children {
@@ -108,6 +146,14 @@ $hover-intent: .3s;
   }
 
   @media only screen and (max-width: $responsivenav) {
+    #nav ul li:hover > ul {
+      display: block;
+    }
+  }
+
+  // Disable animations on IE10 + IE11
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    // Enable hovers
     #nav ul li:hover > ul {
       display: block;
     }
