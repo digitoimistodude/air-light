@@ -32,11 +32,11 @@ class Air_Walker extends Walker_Nav_Menu {
 		 */
 		if ( strcasecmp( $item->attr_title, 'divider' ) === 0 && 1 === $depth ) {
 			$output .= $indent . '<li class="divider">';
-		} else if ( strcasecmp( $item->title, 'divider') === 0 && 1 === $depth ) {
+		} else if ( strcasecmp( $item->title, 'divider' ) === 0 && 1 === $depth ) {
 			$output .= $indent . '<li class="divider">';
-		} else if ( strcasecmp( $item->attr_title, 'dropdown-header') === 0 && 1 === $depth ) {
+		} else if ( strcasecmp( $item->attr_title, 'dropdown-header' ) === 0 && 1 === $depth ) {
 			$output .= $indent . '<li class="dropdown-header">' . esc_attr( $item->title );
-		} else if ( strcasecmp($item->attr_title, 'disabled' ) === 0 ) {
+		} else if ( strcasecmp( $item->attr_title, 'disabled' ) === 0 ) {
 			$output .= $indent . '<li class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
 		} else {
 			$class_names = $value = '';
