@@ -24,65 +24,35 @@
 
      <!-- Include the WordPress ruleset, with exclusions. -->
      <rule ref="WordPress">
-        <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-        <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+
+        <!-- Nazi-strict intendation rules we want to exclude -->
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
-        <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />    
-        <exclude name="Generic.Files.EndFileNewline.NotFound" />
-        <exclude name="Generic.Strings.UnnecessaryStringConcat.Found" />
-        <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
-        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace" />
-        <exclude name="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase" />
-        <exclude name="Generic.Commenting.DocComment.ShortNotCapital" />
+        <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
+        <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
+        <exclude name="WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned" />
+
+        <!-- Don't require too strict inline commenting, it's a good thing to documentate, let's not make it frustrating -->
+        <exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
+        <exclude name="Squiz.Commenting.ClassComment.WrongStyle" />
+        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
+        <exclude name="Squiz.Commenting.FunctionComment.Missing" />
+        <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
+
+        <!-- General code style related excludes -->
+        <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
+
+        <!-- General WordPress stuff we like to overrule -->
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 
-        <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" />
-
-        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterEnd" />
-        <exclude name="Squiz.Commenting.FileComment.WrongStyle" />
-        <exclude name="Squiz.Commenting.FileComment.Missing" />
-        <exclude name="Squiz.Commenting.BlockComment.NoEmptyLineBefore" />
-        <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
-        <exclude name="Squiz.Commenting.InlineComment.NotCapital" />
-        <exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
-        <exclude name="Squiz.Commenting.VariableComment.WrongStyle" />
-        <exclude name="Squiz.Commenting.FunctionComment.Missing" />
-        <exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
-        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-        <exclude name="Squiz.Commenting.ClassComment.Missing" />
-        <exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
-        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterOpenHint" />
-        <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
-        <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
-
-        <exclude name="WordPress.XSS.EscapeOutput.UnsafePrintingFunction" />
-        <exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
-
-        <exclude name="WordPress.Arrays.ArrayDeclaration.NoSpaceAfterOpenParenthesis" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned" />
-
-        <exclude name="WordPress.Variables.GlobalVariables" />
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceAfterOpenParenthesis" />
-        <exclude name="WordPress.WhiteSpace.ControlStructureSpacing.NoSpaceBeforeCloseParenthesis)" />
-        <exclude name="WordPress.PHP.StrictInArray.MissingTrueStrict" />
-        <exclude name="WordPress.Functions.DontExtract.extract" />
-        <exclude name="WordPress.Functions.DontExtract.extract_extract" />
-
+        <!-- Very strict VIP rules not needed -->
         <exclude name="WordPress.VIP.RestrictedFunctions" />
         <exclude name="WordPress.VIP.AdminBarRemoval.RemovalDetected" />
         <exclude name="WordPress.VIP.OrderByRand" />
         <exclude name="WordPress.VIP.OrderByRand.orderby" />
+
+        <!-- Translations related, not always necessary, too strict -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
     </rule>
 
