@@ -43,6 +43,7 @@
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket" />
         <exclude name="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket" />
 
+        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterEnd" />
         <exclude name="Squiz.Commenting.FileComment.WrongStyle" />
