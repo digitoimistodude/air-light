@@ -12,7 +12,7 @@ Air is designed to be a minimal starting point for a WordPress project at [Digit
 
 ![](https://www.dude.fi/air-3.0.0-screenshot.png "Screenshot")
 
-This theme is built to be very straightforward, front end developer friendly and only partly modular by its structure.
+This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Respectfully committing to [Underscores]("https://github.com/automattic/_s") and [WordPress Theme Coding Standards]("https://codex.wordpress.org/Theme_Development#Theme_Development_Standards"), hence most of the changes implemented as they are committed.
 
 ## Table of contents
 
