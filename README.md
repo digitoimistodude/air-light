@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/digitoimistodude/air.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air.svg?style=flat-square)](https://github.com/digitoimistodude/air/releases)
 
-Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s]("https://github.com/automattic/_s").
+Air is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s](https://github.com/automattic/_s).
 
 ## [Demo](https://dudetest.xyz/air)
 
@@ -12,7 +12,7 @@ Air is designed to be a minimal starting point for a WordPress project at [Digit
 
 ![](https://www.dude.fi/air-3.0.0-screenshot.png "Screenshot")
 
-This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Respectfully committing to [Underscores]("https://github.com/automattic/_s") and [WordPress Theme Coding Standards]("https://codex.wordpress.org/Theme_Development#Theme_Development_Standards"), hence most of the changes implemented as they are committed.
+This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Respectfully committing to [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards]"https://codex.wordpress.org/Theme_Development#Theme_Development_Standards), hence most of the changes implemented as they are committed.
 
 ## Table of contents
 
