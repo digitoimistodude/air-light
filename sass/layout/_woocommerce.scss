@@ -42,7 +42,7 @@ body {
 
         // Star rating fix for air
         .star-rating {
-          @extend .default;
+          @extend %default;
           margin-top: 2px;
           height: 32px;
 
@@ -63,11 +63,11 @@ body {
 
       // Single product
       div.product {
-        @extend .default;
+        @extend %default;
 
         // Star rating fix for air
         .star-rating {
-          @extend .default;
+          @extend %default;
           margin-top: 2px;
           height: 35px;
 

@@ -70,7 +70,7 @@ th,
 td,
 table,
 tr,
-.default {
+%default {
   @include responsive-font(3vw, $font-min-size, $font-max-size, $font-max-size);
   letter-spacing: -.003em;
   line-height: $font-base-line-height-elements;
