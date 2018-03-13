@@ -51,6 +51,7 @@
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
         <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
+        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
 
         <!-- General WordPress stuff we like to overrule -->
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
