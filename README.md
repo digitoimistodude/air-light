@@ -167,7 +167,7 @@ Please note: If you want to change the background to lighter, you will need to e
 
 #### WooCommerce support
 
-Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
+Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air-light/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
 
 ##### How to enable
 
@@ -195,7 +195,7 @@ Traditional way:
 
 1. Git clone or download zip
 2. Open Terminal and run `npm install`
-3. Open project to Atom (or your preferred editor) and run search and replace air => yourprojectname
+3. Open project to Atom (or your preferred editor) and run search and replace air-light => yourprojectname
 4. Run `gulp watch` and start coding
 
 If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your vagrant box is up and running at `10.1.2.4`, just
@@ -221,21 +221,21 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 2. `cd ~/Projects/dudestack && sh setup.sh`
 3. Run `createproject`, name project after *airdev* when asked
 4. Wait for the project to be created (get a coffee, first time can take couple of minutes)
-5. Create a fork of air
+5. Create a fork of air-light
 6. `cd ~/Projects/airdev/content/themes`
-7. Fetch your fork with `git clone git@github.com:yourusername/air.git` (remember to replace yourusername with your actual username)
-8. `cd ~/Projects/airdev/content/themes/air`
+7. Fetch your fork with `git clone git@github.com:yourusername/air-light.git` (remember to replace yourusername with your actual username)
+8. `cd ~/Projects/airdev/content/themes/air-light`
 9. Get air dependencides by running `npm install` (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
 10. Wait npm to get through files (get a coffee)
-11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
-12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air` if you have Sublime Text.
-13. Go to back to air dir with `cd ~/Projects/airdev/content/themes/air` and then run `gulp watch` and start developing!
+11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
+12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air-light` if you have Sublime Text.
+13. Go to back to air-light dir with `cd ~/Projects/airdev/content/themes/air-light` and then run `gulp watch` and start developing!
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for OS X lemp stack or `alias wp='ssh vagrant@10.1.2.4 "cd /var/www/"$(basename "$PWD")"; /var/www/"$(basename "$PWD")"/vendor/wp-cli/wp-cli/bin/wp"'` for marlin-vagrant to get to use wp-cli with simply `wp`.
 
 ##### 2. Use your own stack
 
-To install air to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
+To install air-light to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
 
 When you make changes, commit them with clear describing commit messages and them make a pull request. We are happy to accept improvements!
 
