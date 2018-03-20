@@ -41,7 +41,7 @@ cd $PROJECTTHEMEPATH && rm -rf .git
 
 # THE magical sed command by rolle (goes through every single file in theme folder and searchs and replaces every air instance with THEMENAME):
 for i in `grep -rl air-light * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-light;${THEMENAME};" $i $i; done
-for i in `grep -rl Air-light * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air-light - Minimalistic & Lightweight;${THEMENAME};" $i $i; done
+for i in `grep -rl Air-light * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air-light;${THEMENAME};" $i $i; done
 
 echo "${yellow}Installing and updating theme node.js packages (may take a while)${txtreset}"
 cd ${PROJECTTHEMEPATH}
