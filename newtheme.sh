@@ -72,6 +72,8 @@ rm -rf ${PROJECTPATH}/devpackages
 rm -f ${PROJECTTHEMEPATH}/newtheme.sh
 rm -f ${PROJECTTHEMEPATH}/gulpfile.js
 rm -f ${PROJECTTHEMEPATH}/.gitignore
+rm -f ${PROJECTTHEMEPATH}/.travis.yml
+rm -f ${PROJECTTHEMEPATH}/readme.txt
 rm -f ${PROJECTTHEMEPATH}/languages/*
 rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
