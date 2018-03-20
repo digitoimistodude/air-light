@@ -2,9 +2,9 @@
 /**
  * Editable navigation menus.
  *
- * @package air
+ * @package air-light
  */
 
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'air' ),
+	'primary' => __( 'Primary Menu', 'air-light' ),
 ) );

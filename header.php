@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package air
+ * @package air-light
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class( 'no-js' );; ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
 
   <div class="nav-container">
       <header class="site-header">
@@ -41,11 +41,11 @@
             <?php endif; ?>
           </div><!-- .site-branding -->
 
-          <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_html_e( 'Menu', 'air' ); ?>" aria-controls="navigation">
+          <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>" aria-controls="navigation">
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
             </span>
-            <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air' ); ?>"><?php esc_html_e( 'Menu', 'air' ); ?></span>
+            <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>"><?php esc_html_e( 'Menu', 'air-light' ); ?></span>
           </button>
 
           <div class="main-navigation-wrapper" id="main-navigation-wrapper">

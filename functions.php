@@ -2,10 +2,10 @@
 /**
  * The current version of the theme.
  *
- * @package air
+ * @package air-light
  */
 
-define( 'AIR_VERSION', '3.7.7' );
+define( 'AIR_VERSION', '3.7.8' );
 
 /**
  * Requires.
@@ -26,7 +26,7 @@ add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list'
 /**
  * Load textdomain.
  */
-load_theme_textdomain( 'air', get_template_directory() . '/languages' );
+load_theme_textdomain( 'air-light', get_template_directory() . '/languages' );
 
 /**
  * Define content width in articles
@@ -42,9 +42,9 @@ if ( ! isset( $content_width ) ) {
  */
 function _air_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'air' ),
+		'name'          => esc_html__( 'Sidebar', 'air-light' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'air' ),
+		'description'   => esc_html__( 'Add widgets here.', 'air-light' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -72,8 +72,8 @@ function air_scripts() {
 	}
 
 	wp_localize_script( 'scripts', 'screenReaderText', array(
-		'expand'      => esc_html__( 'Open child menu', 'air' ),
-		'collapse'    => esc_html__( 'Close child menu', 'air' ),
+		'expand'      => esc_html__( 'Open child menu', 'air-light' ),
+		'collapse'    => esc_html__( 'Close child menu', 'air-light' ),
 	) );
 }
 add_action( 'wp_enqueue_scripts', 'air_scripts' );

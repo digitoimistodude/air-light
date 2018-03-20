@@ -5,7 +5,7 @@
  * This is the default hero image for page templates, called
  * 'block'. Strictly air specific.
  *
- * @package air
+ * @package air-light
  */
 
 // Block settings

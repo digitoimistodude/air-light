@@ -1,5 +1,5 @@
 #!/bin/bash
-# Theme starting bash script by rolle (github.com/ronilaukkarinen & github.com/digitoimistodude)
+# Theme starting bash script (github.com/digitoimistodude)
 
 txtbold=$(tput bold)
 boldyellow=${txtbold}$(tput setaf 3)
@@ -19,7 +19,7 @@ read -p "${boldyellow}Project created? (y/n)${txtreset} " yn
     esac
 done
 
-echo "${boldwhite}Please note: This script is designed to work with dudestack and air. See https://github.com/digitoimistodude${txtreset} "
+echo "${boldwhite}Please note: This script is designed to work with dudestack and air-light. See https://github.com/digitoimistodude${txtreset} "
 echo "${boldyellow}Project name in lowercase:${txtreset} "
 read -e PROJECTNAME
 echo "${boldyellow}Theme name in lowercase (no spaces or special characters):${txtreset} "
@@ -40,8 +40,8 @@ echo "${yellow}Generating theme files with theme name and texdomain called ${THE
 cd $PROJECTTHEMEPATH && rm -rf .git
 
 # THE magical sed command by rolle (goes through every single file in theme folder and searchs and replaces every air instance with THEMENAME):
-for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air;${THEMENAME};" $i $i; done
-for i in `grep -rl Air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air;${THEMENAME};" $i $i; done
+for i in `grep -rl air-light * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-light;${THEMENAME};" $i $i; done
+for i in `grep -rl Air-light * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air-light - Minimalistic & Lightweight;${THEMENAME};" $i $i; done
 
 echo "${yellow}Installing and updating theme node.js packages (may take a while)${txtreset}"
 cd ${PROJECTTHEMEPATH}

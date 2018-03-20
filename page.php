@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package air
+ * @package air-light
  */
 
 get_header();
@@ -32,7 +32,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 				    <?php the_content();
 
 				      wp_link_pages( array(
-				        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air' ),
+				        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ),
 				        'after'  => '</div>',
 				      ) );
 				    ?>
@@ -44,7 +44,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 				      	sprintf(
 			            /* translators: %s: Name of current post. Only visible to screen readers */
 			            wp_kses(
- 										__( 'Edit <span class="screen-reader-text">%s</span>', 'air' ),
+ 										__( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
  										array(
  											'span' => array(
  												'class' => array(),

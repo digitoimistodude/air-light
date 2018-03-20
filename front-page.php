@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package air
+ * @package air-light
  */
 
 // Featured image.
@@ -24,7 +24,7 @@ get_header(); ?>
   <div class="shade shade-gradient"></div>
 
   <div class="container">
-    <h1><span class="accent"><?php echo esc_html_e( 'Air ', 'air' ); echo esc_attr( AIR_VERSION, 'air' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air' ); ?></h1>
+    <h1><span class="accent"><?php echo esc_html_e( 'air-light ', 'air-light' ); echo esc_attr( AIR_VERSION, 'air-light' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?></h1>
   </div>
 </div>
 

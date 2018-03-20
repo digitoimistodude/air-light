@@ -10,7 +10,7 @@
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
- * @package air
+ * @package air-light
  */
 class Air_Walker extends Walker_Nav_Menu {
 
@@ -41,7 +41,7 @@ class Air_Walker extends Walker_Nav_Menu {
 		} else {
 			$class_names = $value = '';
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-			$classes[] = 'air-menu-item menu-item-' . $item->ID;
+			$classes[] = 'air-light-menu-item menu-item-' . $item->ID;
 			$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
 			if ( $args->has_children ) {
