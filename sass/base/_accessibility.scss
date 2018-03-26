@@ -88,3 +88,10 @@ $focus-text-color: #000;
 body.no-js *:focus {
   outline: 4px solid $focus-outline-color;
 }
+
+// Links within content must be underlined
+// @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
+.container p a,
+.entry-content p a {
+  text-decoration: underline;
+}
