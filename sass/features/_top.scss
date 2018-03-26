@@ -13,7 +13,6 @@
   width: 50px;
   height: 50px;
   text-decoration: none;
-  visibility: hidden;
 	opacity: 0;
 	transition: opacity .3s 0s, visibility 0s .3s;
   z-index: 10000;
@@ -25,7 +24,6 @@
 	}
 
 	&.is-visible { // The button becomes visible
-		visibility: visible;
 		opacity: 1;
 	}
 
