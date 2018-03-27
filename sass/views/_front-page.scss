@@ -14,11 +14,14 @@
   @include background-cover();
   background-image: url('../images/default.jpg');
   background-repeat: no-repeat;
-  min-height: 50rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  min-height: 50rem;
+
+  // Internet Explorer needs this
+  height: 50rem;
 
   h1 {
     @include responsive-font(2.4vw, 22px, 46px);
