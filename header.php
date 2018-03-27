@@ -16,7 +16,6 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
 
   <?php wp_head(); ?>
 </head>
@@ -49,7 +48,7 @@
               </span>
               <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>"><?php esc_html_e( 'Menu', 'air-light' ); ?></span>
             </button>
-                      
+
             <nav id="nav" role="navigation">
 
               <?php wp_nav_menu( array(

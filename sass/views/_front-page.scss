@@ -21,7 +21,7 @@
   position: relative;
 
   h1 {
-    @extend %h2;
+    @include responsive-font(2.4vw, 22px, 46px);
     color: #383d29;
     text-align: center;
     margin: 0;

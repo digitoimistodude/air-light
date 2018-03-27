@@ -5,7 +5,7 @@
 // version only.
 // -----------------------------------------------------------
 $nav-toggle-color: #333;
-$nav-toggle-active-color: #333;
+$nav-toggle-active-color: #fff;
 $hamburger-padding-x: 1.5rem;
 $hamburger-padding-y: 5rem;
 $hamburger-layer-width: 4rem;
@@ -222,7 +222,7 @@ $hamburger-hover-transition-timing-function: linear;
   -webkit-touch-callout: none;
   user-select: none;
   text-decoration: none;
-  padding: 1rem;
+  padding: 0;
   margin: 0;
   background: transparent;
   cursor: pointer;
@@ -242,12 +242,12 @@ $hamburger-hover-transition-timing-function: linear;
 
     span {
       span {
-        background-color: rgba($nav-toggle-color, .5);
+        background-color: $nav-toggle-color;
       }
 
       &:before,
       &:after {
-        background-color: rgba($nav-toggle-color, .5);
+        background-color: $nav-toggle-color;
       }
     }
   }
@@ -273,10 +273,10 @@ $hamburger-hover-transition-timing-function: linear;
     &.focus {
       .hamburger-box {
         .hamburger-inner {
-          background-color: $color-links;
+          background-color: $nav-toggle-active-color;
 
           &:after {
-            background-color: $color-links;
+            background-color: $nav-toggle-active-color;
           }
         }
       }

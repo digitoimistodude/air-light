@@ -7,11 +7,10 @@
 // -----------------------------------------------------------
 
 // Set up self-hosted fonts here
-@include fontFace('Poppins', '../fonts/poppins-light', 200);
-@include fontFace('Poppins', '../fonts/poppins-regular', 400);
-@include fontFace('Poppins', '../fonts/poppins-medium', 500);
-@include fontFace('Poppins', '../fonts/poppins-semibold', 600);
-@include fontFace('Poppins', '../fonts/poppins-bold', 700);
+@include fontFace('Karla', '../fonts/poppins-regular', 400);
+@include fontFace('Karla', '../fonts/poppins-italic', 400, italic);
+@include fontFace('Karla', '../fonts/poppins-bold', 700);
+@include fontFace('Karla', '../fonts/poppins-bolditalic', 700, italic);
 
 // Set root size for rems
 :root {

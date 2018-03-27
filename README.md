@@ -10,7 +10,7 @@ Air-light (or simply *Air*) is designed to be a minimal starting point for a Wor
 - **JS gzipped:** 3.5 KB *(10.8 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
-![](https://www.dude.fi/air-3.0.0-screenshot.png "Screenshot")
+![](https://www.dude.fi/air-4.0.0-screenshot.png "Screenshot")
 
 This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed.
 
@@ -59,6 +59,8 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
 * [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include column(1/100)`
+* Flexbox-ready
+* CSS Grid-ready*
 * Container div inside site-main
 * Possible to choose between fluid (flexible 100%) and snappy grid style (snapping to breakpoint, more space around)
 * Inline SVG-ready
@@ -78,6 +80,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 * Custom navigation walker
 * Support for multi-level drop down submenus
+* Support for both absolute and relative navigation
 * Improved version of the [accessible menu for WordPress themes](https://github.com/theme-smith/accessible-nav-wp), fully accessible and responsive multi-level navigation
 * Support for animations
 * Pure CSS hoverintent
