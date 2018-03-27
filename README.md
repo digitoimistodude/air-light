@@ -14,7 +14,7 @@ Air-light (or simply *Air*) is designed to be a minimal starting point for a Wor
 
 This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed.
 
-Air was changed to air-light in version 3.7.8 (Match 20th, 2018), because *air* was already taken in the official WordPress theme directory.
+Air was renamed to air-light in version 3.7.8 (Match 20th, 2018), because *air* was already taken in the official WordPress theme directory.
 
 ## Table of contents
 
