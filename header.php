@@ -16,6 +16,7 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
 
   <?php wp_head(); ?>
 </head>
@@ -26,29 +27,29 @@
 
   <div class="nav-container">
       <header class="site-header">
-        <div class="container">
 
           <div class="site-branding">
             <?php if ( is_front_page() && is_home() ) : ?>
-              <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span><?php include get_theme_file_path( '/svg/logo.svg' ); ?></a></h1>
+              <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?php //include get_theme_file_path( '/svg/logo.svg' ); ?></a></h1>
             <?php else : ?>
-              <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="screen-reader-text"><?php bloginfo( 'name' ); ?></span><?php include get_theme_file_path( '/svg/logo.svg' ); ?></a></p>
+              <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><?php //include get_theme_file_path( '/svg/logo.svg' ); ?></a></p>
             <?php endif;
 
             $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>
               <p class="site-description screen-reader-text"><?php echo $description; /* WPCS: xss ok. */ ?></p>
             <?php endif; ?>
-          </div><!-- .site-branding -->
-
-          <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>" aria-controls="navigation">
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
-            </span>
-            <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>"><?php esc_html_e( 'Menu', 'air-light' ); ?></span>
-          </button>
+          </div><!-- .site-branding -->          
 
           <div class="main-navigation-wrapper" id="main-navigation-wrapper">
+
+            <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>" aria-controls="navigation">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+              <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>"><?php esc_html_e( 'Menu', 'air-light' ); ?></span>
+            </button>
+                      
             <nav id="nav" role="navigation">
 
               <?php wp_nav_menu( array(
@@ -65,8 +66,6 @@
 
             </nav><!-- #nav -->
           </div>
-
-        </div><!-- .container -->
       </header>
   </div><!-- .nav-container -->
 

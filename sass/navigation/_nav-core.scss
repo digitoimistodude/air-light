@@ -6,17 +6,7 @@
 // -----------------------------------------------------------
 $enable-animations: true;
 
-// Fix overflow problems
-.nav-container {
-  overflow: visible;
-  position: absolute;
-  height: 100px;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-#nav ul.menu-items {
+nav .menu-items {
   position: relative;
   z-index: 9999;
 
@@ -47,29 +37,25 @@ $enable-animations: true;
     position: relative;
   }
 
-  a {
-    &.disabled {
-      cursor: not-allowed;
-    }
+  .disabled {
+    cursor: not-allowed;
   }
 
-  > li {
-    > h1,
-    > h2,
-    > h3,
-    > h4,
-    > h5,
-    > h6 {
-      margin: 0;
-      padding: 0;
-    }
+  li > h1,
+  li > h2,
+  li > h3,
+  li > h4,
+  li > h5,
+  li > h6 {
+    margin: 0;
+    padding: 0;
   }
 }
 
 // Hide by default if no animations enabled
 @if $enable-animations == false {
   @media only screen and (min-width: $responsivenav) {
-    #nav ul.menu-items ul {
+    nav .menu-items ul {
       display: none;
     }
   }
@@ -78,19 +64,19 @@ $enable-animations: true;
 // Disable animations on IE10 + IE11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media only screen and (min-width: $responsivenav) {
-    #nav ul.menu-items ul {
+    nav .menu-items ul {
       display: none;
     }
   }
 }
 
 @media only screen and (max-width: $responsivenav) {
-  body.js #nav ul.menu-items ul {
+  .js nav .menu-items ul {
     display: none;
   }
 }
 
-#nav ul ul {
+nav ul ul {
   margin-top: 0;
   margin-left: 25px;
 
@@ -101,7 +87,7 @@ $enable-animations: true;
 
 @if $enable-animations == false {
   @media only screen and (min-width: $responsivenav) {
-    body.js #nav ul .sub-menu.toggled-on {
+    .js nav ul .sub-menu.toggled-on {
       display: block;
     }
   }
@@ -110,22 +96,22 @@ $enable-animations: true;
 // Disable animations on IE10 + IE11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media only screen and (min-width: $responsivenav) {
-    body.js #nav ul .sub-menu.toggled-on {
+    .js nav ul .sub-menu.toggled-on {
       display: block;
     }
   }
 }
 
 @media only screen and (max-width: $responsivenav) {
-  body.js #nav ul .sub-menu.toggled-on {
+  .js nav ul .sub-menu.toggled-on {
     display: block;
   }
 }
 
 .dropdown-toggle:after,
 .dropdown-toggle.toggled-on:after,
-#nav-toggle:before,
-#nav-toggle.toggled-on:before {
+.nav-toggle:before,
+.nav-toggle.toggled-on:before {
   speak: none;
 }
 
@@ -134,6 +120,6 @@ $enable-animations: true;
   font-size: 1.3rem;
 }
 
-body.no-js #nav-toggle {
+.no-js nav-toggle {
   display: none;
 }

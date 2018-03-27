@@ -21,13 +21,13 @@ $color-fog: #b0b0b0;
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
 // Please set up fonts in sass/layout/_typography.scss
-$font-base: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif;
-$font-headings: 'Poppins', 'Helvetica Neue', Helvetica, sans-serif;
+$font-base: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
+$font-headings: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
-$font-min-size: 18px; // Minimum font size, on mobile
-$font-max-size: 17px; // Maximum font size, on desktop
+$font-min-size: 19px; // Minimum font size, on mobile
+$font-max-size: 18px; // Maximum font size, on desktop
 $font-base-line-height: 1.78; // Line height for paragraphs
 $font-base-line-height-elements: 1.68; // Line height for other elements like table cells and spans
 $headings-line-height-setup: force; // Force: all headings have same line height. Flexible: values are set separately in _typography.scss
@@ -40,7 +40,7 @@ $grid-type: fluid; // 'fluid' or 'snappy'
 $layout-max-width: 100%;
 
 // Container settings
-$container-default-pad-x: 6.4rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
+$container-default-pad-x: 2rem; // Default padding between containers horizontally. Tweak _general.scss if needed.
 $container-default-pad-y: 6.4rem; // Default vertical padding for containers
 $grid-base-size: 960px; // Layout container max width on desktop. This is default .container size
 $article-max-width: 800px; // Max width for articles (see also $content_width in functions.php!)

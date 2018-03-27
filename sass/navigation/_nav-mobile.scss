@@ -4,15 +4,15 @@
 // The main layout for the website navigation, for the mobile
 // version only.
 // -----------------------------------------------------------
-$nav-toggle-color: #fff;
-$nav-toggle-active-color: #fff;
+$nav-toggle-color: #333;
+$nav-toggle-active-color: #333;
 $hamburger-padding-x: 1.5rem;
 $hamburger-padding-y: 5rem;
 $hamburger-layer-width: 4rem;
-$hamburger-layer-height: .4rem;
+$hamburger-layer-height: .2rem;
 $hamburger-layer-spacing: .6rem;
 $hamburger-layer-color: $nav-toggle-color;
-$hamburger-layer-border-radius: .4rem;
+$hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
@@ -30,7 +30,7 @@ $hamburger-hover-transition-timing-function: linear;
 @media screen and (max-width: $responsivenav - 1px) {
 
   // Users that don't have Javascript enabled
-  body.no-js .site-header {
+  .no-js .site-header {
     position: static;
 
     // Use the same color than navigation
@@ -43,15 +43,11 @@ $hamburger-hover-transition-timing-function: linear;
   }
 
   // Ensure nav stays in the same position when activated
-  body.js {
+  .js {
     &.js-nav-active {
       overflow: hidden;
 
-      .nav-toggle {
-        position: fixed;
-      }
-
-      nav#nav {
+      nav {
         visibility: visible;
         max-height: 100%;
         height: 100vh;
@@ -60,7 +56,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  body.js nav#nav {
+  .js nav {
     // Hide mobile navigation by default while enabling use of animations
     visibility: hidden;
     max-height: 0;
@@ -76,7 +72,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  nav#nav {
+  nav {
     background: $color-almostblack;
     transition: all .55s;
     margin: 0;
@@ -131,14 +127,14 @@ $hamburger-hover-transition-timing-function: linear;
           color: #bbb;
         }
 
-        &.highlighted span.sub-arrow:before {
+        &.highlighted .sub-arrow:before {
           display: block;
           content: '-';
         }
       }
 
       // Dropdown toggle
-      button.dropdown-toggle {
+      .dropdown-toggle {
         position: absolute;
         top: 0;
         margin-top: 0;
@@ -147,7 +143,7 @@ $hamburger-hover-transition-timing-function: linear;
         width: 3.7rem;
         height: 3.7rem;
         overflow: hidden;
-        font: bold 18px/37px monospace !important;
+        font: bold 18px/37px monospace;
         text-align: center;
         background: #202020;
         color: #fff;
@@ -226,16 +222,11 @@ $hamburger-hover-transition-timing-function: linear;
   -webkit-touch-callout: none;
   user-select: none;
   text-decoration: none;
-  padding-top: 2rem;
-  padding-right: 2rem;
-  padding-left: 1rem;
-  padding-bottom: 2rem;
+  padding: 1rem;
   margin: 0;
   background: transparent;
   cursor: pointer;
-  top: 0;
-  right: 0;
-  position: absolute;
+  position: relative;
 
   // Hide from desktops
   display: none;

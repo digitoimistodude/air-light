@@ -5,13 +5,33 @@
 // devices only.
 // -----------------------------------------------------------
 $color-nav-dropdown-links: #333;
-$color-nav-links: #fff;
+$color-nav-links: #333;
 $color-nav-dropdown-links: #333;
 $dropdown-width: 19rem;
 $icon-arrow-right: '../svg/chevron-right-dark.svg';
-$icon-arrow-down: '../svg/chevron-down.svg';
+$icon-arrow-down: '../svg/chevron-down-dark.svg';
 $icon-arrow-left: '../svg/chevron-left-dark.svg';
 $hover-intent: .3s;
+$absolute-navigation: false;
+
+@if $absolute-navigation == true {
+  $icon-arrow-down: '../svg/chevron-down.svg';
+
+  .nav-container {
+    position: absolute;
+    width: 100%;
+
+    // Main level links
+    nav > ul > li > a {
+      color: #fff;
+      position: relative;
+    }
+
+    nav > ul > li > a:hover {
+      color: #fff;
+    }
+  }
+}
 
 // Set true/false in _nav-core.sccss
 @if $enable-animations == true {
@@ -32,7 +52,7 @@ $hover-intent: .3s;
       }
     }
 
-    #nav ul .sub-menu.toggled-on {
+    nav ul .sub-menu.toggled-on {
       visibility: visible;
       opacity: 1;
       z-index: 1;
@@ -46,8 +66,8 @@ $hover-intent: .3s;
       transform: none;
     }
 
-    [data-whatinput="mouse"] #nav ul li.menu-item-has-children,
-    [data-whatintent="mouse"] #nav ul li.menu-item-has-children {
+    [data-whatinput="mouse"] nav ul .menu-item-has-children,
+    [data-whatintent="mouse"] nav ul .menu-item-has-children {
       &:focus > .sub-menu,
       &:focus-within > .sub-menu,
       &:hover > .sub-menu {
@@ -60,7 +80,7 @@ $hover-intent: .3s;
     }
 
     // Disable all animations, enable hovers for no-js users
-    body.no-js {
+    .no-js {
       .sub-menu {
         width: $dropdown-width;
         visibility: hidden;
@@ -74,22 +94,20 @@ $hover-intent: .3s;
         transition-delay: none;
       }
 
-      #nav ul li.menu-item-has-children {
-        &:focus > .sub-menu,
-        &:focus-within > .sub-menu,
-        &:hover > .sub-menu {
-          visibility: visible;
-          opacity: 1;
-          z-index: 1;
-          transform: translateY(0%);
-          transition-delay: 0s, 0s, .3s;
-        }
+      nav ul .menu-item-has-children:focus > .sub-menu,
+      nav ul .menu-item-has-children:focus-within > .sub-menu,
+      nav ul .menu-item-has-children:hover > .sub-menu {
+        visibility: visible;
+        opacity: 1;
+        z-index: 1;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, .3s;
       }
     }
 
     // Disable animations and improve styles on IE10 + IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      #nav ul.menu-items ul.sub-menu {
+      nav .menu-items .sub-menu {
         width: $dropdown-width;
         visibility: visible;
         opacity: 1;
@@ -101,20 +119,20 @@ $hover-intent: .3s;
         list-style-type: none;
         list-style: none;
 
-        li.menu-item {
+        .menu-item {
           padding-top: 0;
           margin-top: 0;
           list-style-type: none;
           list-style: none;
         }
 
-        ul.sub-menu.has-sub-menu {
+        .sub-menu.has-sub-menu {
           transform: translateY(0);
           padding-top: .5rem;
         }
       }
 
-      #nav ul li.menu-item-has-children {
+      nav ul .menu-item-has-children {
         &:focus > .sub-menu,
         &:focus-within > .sub-menu,
         &:hover > .sub-menu {
@@ -134,19 +152,19 @@ $hover-intent: .3s;
   // Use display block based hovers if no animations enabled
   @if $enable-animations == false {
     // Enable hovers
-    #nav ul li:hover > ul {
+    nav ul li:hover > ul {
       display: block;
     }
 
     // Support for non-js users
-    body.no-js #nav ul li:hover > ul,
-    body.no-js #nav ul li:focus > ul {
+    .no-js nav ul li:hover > ul,
+    .no-js nav ul li:focus > ul {
       display: block;
     }
   }
 
   @media only screen and (max-width: $responsivenav) {
-    #nav ul li:hover > ul {
+    nav ul li:hover > ul {
       display: block;
     }
   }
@@ -154,13 +172,13 @@ $hover-intent: .3s;
   // Disable animations on IE10 + IE11
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     // Enable hovers
-    #nav ul li:hover > ul {
+    nav ul li:hover > ul {
       display: block;
     }
   }
 
   // Dropdown arrows for no-js users
-  body.no-js #nav ul.menu-items li.menu-item-has-children {
+  .no-js nav .menu-items .menu-item-has-children {
     &:after {
       @include vertical-align();
       text-indent: -9999px;
@@ -182,7 +200,7 @@ $hover-intent: .3s;
       display: block;
     }
 
-    ul.sub-menu li.menu-item-has-children:after {
+    .sub-menu .menu-item-has-children:after {
       position: absolute;
       right: 8px;
       top: 50%;
@@ -204,58 +222,50 @@ $hover-intent: .3s;
   }
 
   // Make sure mobile nav-toggle is hidden on desktop
-  #nav-toggle {
+  .nav-toggle {
     display: none;
   }
 
   // Start navigation
-  #nav {
+  nav {
     // Set based on logo height, for example air logo is about 62px
     // menu links height are 12px, so paddings are (60/2)-12:
     padding-top: 1.7rem;
     padding-bottom: 1.7rem;
     float: right;
 
-    ul.menu-items {
+    .menu-items {
       margin: 0;
       padding: 0;
       background: transparent;
       position: relative;
       float: left;
+    }
 
-      // General menu items
-      li {
-        position: relative;
-        float: left;
-        margin: 0;
+    // General menu items
+    .menu-item {
+      position: relative;
+      float: left;
+      margin: 0;
 
-        // Current parent menu item
-        &.current_page_item {
-          > a {
-            text-decoration: underline;
-          }
+      // Main level
+      a {
+        color: $color-nav-links;
+        font-size: 16px;
+        padding: 20px 12px;
+        font-weight: 600;
+
+        &.disabled {
+          color: #bbb;
         }
 
-        // Prevent nav from flickering
-        &.menu-item-has-children {
-          margin-right: .8rem;
-
-          > a {
-            // Let's make space for the nav-toggle/arrow
-            padding-right: 1.5rem;
-            margin-bottom: .8rem;
-          }
-        }
-
-        // Active menu item
-        a {
-          &:hover,
-          &:focus,
-          &:active,
-          &.highlighted,
-          &.current {
-            color: $color-nav-links;
-          }
+        // Actions in menu items
+        &:hover,
+        &:focus,
+        &:active,
+        &.highlighted,
+        &.current {
+          color: $color-nav-links;
         }
       }
 
@@ -291,7 +301,7 @@ $hover-intent: .3s;
           padding: 0;
 
           // Sub-level toggle arrow
-          button.dropdown-toggle {
+          .dropdown-toggle {
             position: absolute;
             right: 8px;
             top: 50%;
@@ -353,19 +363,8 @@ $hover-intent: .3s;
         }
       }
 
-      // Main level
-      a {
-        color: $color-nav-links;
-        font-size: 15px;
-        padding: 20px 12px;
-
-        &.disabled {
-          color: #bbb;
-        }
-      }
-
       // Main level toggle arrow
-      button.dropdown-toggle {
+      .dropdown-toggle {
         @include vertical-align();
         text-indent: -9999px;
         overflow: hidden;
@@ -385,19 +384,28 @@ $hover-intent: .3s;
       }
 
       // Bubble arrow
-      > li > ul {
-        &:after {
-          content: '';
-          position: absolute;
-          width: 0;
-          height: 0;
-          overflow: hidden;
-          border-style: dashed dashed solid;
-          top: -16px;
-          left: 31px;
-          border-width: 8px;
-          border-color: transparent transparent #fff;
-        }
+      > li > ul:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border-style: dashed dashed solid;
+        top: -16px;
+        left: 31px;
+        border-width: 8px;
+        border-color: transparent transparent #fff;
+      }
+    }
+
+    // Prevent nav from flickering
+    .menu-item.menu-item-has-children {
+      margin-right: .8rem;
+
+      > a {
+        // Let's make space for the nav-toggle/arrow
+        padding-right: 1.5rem;
+        margin-bottom: .8rem;
       }
     }
   }

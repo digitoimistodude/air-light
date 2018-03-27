@@ -10,34 +10,36 @@
 // and start over.
 // ------------------------------------------------
 
-.block.block-front {
-  background-position: center;
-  background-color: #fff;
+.entry-header-demo {
+  @include background-cover();
+  background-image: url('../images/default.jpg');
+  background-repeat: no-repeat;
+  min-height: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  min-height: 300px;
-
-  .container {
-    padding-top: 30vh;
-    padding-bottom: 30vh;
-    position: relative;
-    z-index: 10;
-  }
-
-  .accent {
-    @extend %h3;
-    font-style: italic;
-    text-transform: lowercase;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    color: $color-links;
-    display: block;
-  }
 
   h1 {
-    color: #fff;
+    @extend %h2;
+    color: #383d29;
     text-align: center;
     margin: 0;
     padding: 0;
+    position: relative;
+    z-index: 2;
   }
+}
+
+.accent {
+  @extend %h3;
+  font-style: italic;
+  text-transform: lowercase;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  color: $color-links;
+  display: block;
+  position: relative;
+  z-index: 2;
 }

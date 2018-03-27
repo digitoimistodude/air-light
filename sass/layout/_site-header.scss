@@ -7,66 +7,30 @@
 
 .site-header {
   position: relative;
-  top: 0;
-  left: 0;
-  width: auto;
   z-index: 15;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-left: $container-default-pad-x;
+  padding-right: $container-default-pad-x;
+  max-width: $grid-base-size;
+  margin-left: auto;
+  margin-right: auto;
 
-  @media (min-width: $responsivenav) {
-    padding-top: 20px;
-  }
-
-  .container {
-    padding-top: 0;
-    padding-bottom: 0;
-    overflow: visible;
-
-    @media (max-width: $responsivenav - 1px) {
-      padding: 0;
-    }
-  }
-}
-
-.site-branding {
-  float: left;
+  // Easier flex way to align logo and navigation
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .site-title {
   margin: 0;
-
-  // The point where logo touches the left side
-  @media (max-width: $grid-base-size+20) {
-    margin-left: 10px;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 0;
-  }
-
-  // The point where navigation turns into mobile nav
-  @media (max-width: $responsivenav - 1px) {
-    margin-left: 15px;
-    margin-top: 10px;
-    margin-bottom: 0;
-    margin-right: 0;
-  }
+  font-weight: 700;
 
   a {
-    display: block;
-    position: relative;
+    color: #111;
+  }
 
-    @media(max-width: $responsivenav) {
-      top: 1rem;
-    }
-
-    svg {
-      fill: #fff;
-      transition: all .22s;
-    }
-
-    &:hover {
-      svg {
-        fill: $color-links;
-      }
-    }
+  svg {
+    fill: #fff;
   }
 }

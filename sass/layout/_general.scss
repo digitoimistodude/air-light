@@ -41,13 +41,19 @@
   margin: 0 auto;
   padding-top: $container-default-pad-y;
   padding-bottom: $container-default-pad-y;
+  padding-left: $container-default-pad-x;
+  padding-right: $container-default-pad-x;
 
   @if $grid-type == fluid {
-    @include center($max_width: $grid-base-size, $pad: 0);
-  } @else if $grid-type == snappy {
-    width: 100%;
+
+    max-width: $grid-base-size;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: $container-default-pad-x;
     padding-right: $container-default-pad-x;
+
+  } @else if $grid-type == snappy {
+    width: 100%;
 
     @media (min-width: $container-ipad) {
       width: 700px;
@@ -62,11 +68,6 @@
     }
   } @else {
     @include center($max_width: $grid-base-size, $pad: 0);
-  }
-
-  @media (max-width: $grid-base-size + 100px) {
-    padding-left: $container-default-pad-x / 2;
-    padding-right: $container-default-pad-x / 2;
   }
 
   @media (max-width: $container-ipad - 10px) {
