@@ -22,7 +22,7 @@
 
 <body <?php body_class( 'no-js' );; ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', 'air-light' ); ?></a>
 
   <div class="nav-container">
       <header class="site-header">
@@ -42,11 +42,11 @@
 
           <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-            <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>" aria-controls="navigation">
+            <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>" aria-controls="navigation">
               <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
               </span>
-              <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_html_e( 'Menu', 'air-light' ); ?>"><?php esc_html_e( 'Menu', 'air-light' ); ?></span>
+              <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>"><?php esc_attr_e( 'Menu', 'air-light' ); ?></span>
             </button>
 
             <nav id="nav" role="navigation">
