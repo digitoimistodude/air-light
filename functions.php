@@ -5,7 +5,7 @@
  * @package air-light
  */
 
-define( 'AIR_VERSION', '4.0.3' );
+define( 'AIR_LIGHT_VERSION', '4.0.3' );
 
 /**
  * Requires.
@@ -40,7 +40,7 @@ if ( ! isset( $content_width ) ) {
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function _air_widgets_init() {
+function _air_light_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'air-light' ),
 		'id'            => 'sidebar-1',
@@ -51,16 +51,16 @@ function _air_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', '_air_widgets_init' );
+add_action( 'widgets_init', '_air_light_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function air_scripts() {
-	$air_template = 'global.min';
+function air_light_scripts() {
+	$air_light_template = 'global.min';
 
 	// Styles.
-	wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_template}.css" ) ) );
+	wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_light_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_light_template}.css" ) ) );
 
 	// Scripts.
 	wp_enqueue_script( 'jquery-core' );
@@ -76,4 +76,4 @@ function air_scripts() {
 		'collapse'    => esc_html__( 'Close child menu', 'air-light' ),
 	) );
 }
-add_action( 'wp_enqueue_scripts', 'air_scripts' );
+add_action( 'wp_enqueue_scripts', 'air_light_scripts' );

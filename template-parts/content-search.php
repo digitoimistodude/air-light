@@ -25,6 +25,6 @@
   </div><!-- .entry-summary -->
 
   <footer class="entry-footer">
-    <?php air_entry_footer(); ?>
+    <?php entry_footer(); ?>
   </footer><!-- .entry-footer -->
 </article><!-- #post-## -->	

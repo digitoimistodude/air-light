@@ -58,9 +58,9 @@
                 'menu_class'        => 'menu-items',
                 'menu_id'           => 'main-menu',
                 'echo'              => true,
-                'fallback_cb'       => 'Air_Walker::fallback',
+                'fallback_cb'       => 'Air_light_Walker::fallback',
                 'items_wrap'        => '<ul class="%2$s" id="%1$s">%3$s</ul>',
-                'walker'            => new Air_Walker(),
+                'walker'            => new Air_light_Walker(),
               ) ); ?>
 
             </nav><!-- #nav -->

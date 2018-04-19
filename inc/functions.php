@@ -5,11 +5,11 @@
  *  @package air-light
  */
 
-if ( ! function_exists( 'air_entry_footer' ) ) {
+if ( ! function_exists( 'air_light_entry_footer' ) ) {
 	/**
 	 *  Show categories, tags, comment and edit links after post.
 	 */
-	function air_entry_footer() {
+	function air_light_entry_footer() {
 		if ( 'post' === get_post_type() ) {
 			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma', 'air-light' ) );
 			if ( $categories_list ) : ?>
@@ -37,11 +37,11 @@ if ( ! function_exists( 'air_entry_footer' ) ) {
 	}
 }
 
-if ( ! function_exists( 'air_comments' ) ) {
+if ( ! function_exists( 'air_light_comments' ) ) {
 	/**
 	 *  Custom comments function.
 	 */
-	function air_comments( $comment, $args, $depth ) {
+	function air_light_comments( $comment, $args, $depth ) {
 		// $GLOBALS['comment'] = $comment; ?>
 
 		<li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
