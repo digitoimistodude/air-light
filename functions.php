@@ -71,7 +71,7 @@ function air_light_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_localize_script( 'scripts', 'screenReaderText', array(
+	wp_localize_script( 'scripts', 'air_light_screenReaderText', array(
 		'expand'      => esc_html__( 'Open child menu', 'air-light' ),
 		'collapse'    => esc_html__( 'Close child menu', 'air-light' ),
 	) );
