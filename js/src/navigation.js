@@ -17,7 +17,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     var siteHeaderMenu   = menuContainer.find( '#main-navigation-wrapper' );
     var siteNavigation   = menuContainer.find( '#nav' );  
     var dropdownToggle   = $('<button />', {'class': 'dropdown-toggle','aria-expanded': false})
-    .append($('<span />', {'class': 'screen-reader-text',text: screenReaderText.expand}));     
+    .append($('<span />', {'class': 'screen-reader-text',text: air_light_screenReaderText.expand}));     
 
     // Toggles the menu button    
     (function() {
@@ -61,8 +61,8 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
         ? 'true' : 'false' );
         // jscs:enable
         screenReaderSpan.text( screenReaderSpan.text() ===
-        screenReaderText.expand ? screenReaderText.collapse :
-        screenReaderText.expand );
+        air_light_screenReaderText.expand ? air_light_screenReaderText.collapse :
+        air_light_screenReaderText.expand );
     });
 
     // Adds a class to sub-menus for styling    
