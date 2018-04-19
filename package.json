@@ -1,6 +1,6 @@
 {
   "name": "air-light",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -16,8 +16,10 @@
     "gulp-notify": "^3.0.0",
     "gulp-php2html": "^0.3.2",
     "gulp-pixrem": "^1.0.0",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
+    "gulp-stylefmt": "^1.1.0",
     "gulp-uglify-es": "^0.1.6",
     "gulp-util": "^3.0.8",
     "require-dir": "^0.3.1"

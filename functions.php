@@ -5,7 +5,7 @@
  * @package air-light
  */
 
-define( 'AIR_VERSION', '4.0.1' );
+define( 'AIR_VERSION', '4.0.2' );
 
 /**
  * Requires.
@@ -57,7 +57,7 @@ add_action( 'widgets_init', '_air_widgets_init' );
  * Enqueue scripts and styles.
  */
 function air_scripts() {
-	$air_template = 'global';
+	$air_template = 'global.min';
 
 	// Styles.
 	wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_template}.css" ) ) );
