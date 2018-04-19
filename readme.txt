@@ -5,9 +5,9 @@ Tags: one-column, accessibility-ready, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.9.3
-Stable tag: 1.0.0
-License: GNU General Public License v2 or later
-License URI: LICENSE
+Stable tag: 4.0.3
+License: MIT License
+License URI: https://opensource.org/licenses/MIT
 
 A starter theme called air-light.
 
