@@ -1,5 +1,8 @@
 === air-light ===
 
+Air-light WordPress Theme, Copyright 2018 Digitoimisto Dude Oy, Roni Laukkarinen
+Air-light is distributed under the terms of the GNU GPL
+
 Contributors: Digitoimisto Dude Oy
 Tags: one-column, accessibility-ready, translation-ready
 
