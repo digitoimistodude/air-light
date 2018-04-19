@@ -50,7 +50,7 @@ if ( ! function_exists( 'air_light_comments' ) ) {
 				<h4 class="comment-author"><?php echo get_comment_author_link(); ?></h4>
 
 				<?php if ( '0' === $comment->comment_approved ) : ?>
-					<p><em><?php esc_attr_e( 'Your comment is awaiting approval.', 'air-light' ); ?></em></p>
+					<p><em><?php esc_html_e( 'Your comment is awaiting approval.', 'air-light' ); ?></em></p>
 				<?php endif; ?>
 
 				<p class="comment-time">
