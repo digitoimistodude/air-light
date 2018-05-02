@@ -122,8 +122,7 @@ h2,
 }
 
 h3,
-%h3,
-.gform_wrapper h3.gform_title {
+%h3 {
   @include responsive-font(1.6vw, 21px, 34px);
 }
 

@@ -755,18 +755,15 @@ h2 {
       font-size: 46px; } }
 
 h3,
-.accent,
-.gform_wrapper h3.gform_title {
+.accent {
   font-size: 1.6vw; }
   @media (max-width: 1312.5px) {
     h3,
-    .accent,
-    .gform_wrapper h3.gform_title {
+    .accent {
       font-size: 21px; } }
   @media (min-width: 2125px) {
     h3,
-    .accent,
-    .gform_wrapper h3.gform_title {
+    .accent {
       font-size: 34px; } }
 
 h4 {
