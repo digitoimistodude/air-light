@@ -6,7 +6,7 @@
 // -----------------------------------------------------------
 $enable-animations: true;
 
-nav .menu-items {
+.nav-primary .menu-items {
   position: relative;
   z-index: 9999;
 
@@ -55,7 +55,7 @@ nav .menu-items {
 // Hide by default if no animations enabled
 @if $enable-animations == false {
   @media only screen and (min-width: $responsivenav) {
-    nav .menu-items ul {
+    .nav-primary .menu-items ul {
       display: none;
     }
   }
@@ -64,19 +64,19 @@ nav .menu-items {
 // Disable animations on IE10 + IE11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media only screen and (min-width: $responsivenav) {
-    nav .menu-items ul {
+    .nav-primary .menu-items ul {
       display: none;
     }
   }
 }
 
 @media only screen and (max-width: $responsivenav) {
-  .js nav .menu-items ul {
+  .js .nav-primary .menu-items ul {
     display: none;
   }
 }
 
-nav ul ul {
+.nav-primary ul ul {
   margin-top: 0;
   margin-left: 25px;
 
@@ -87,7 +87,7 @@ nav ul ul {
 
 @if $enable-animations == false {
   @media only screen and (min-width: $responsivenav) {
-    .js nav ul .sub-menu.toggled-on {
+    .js .nav-primary ul .sub-menu.toggled-on {
       display: block;
     }
   }
@@ -96,14 +96,14 @@ nav ul ul {
 // Disable animations on IE10 + IE11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media only screen and (min-width: $responsivenav) {
-    .js nav ul .sub-menu.toggled-on {
+    .js .nav-primary ul .sub-menu.toggled-on {
       display: block;
     }
   }
 }
 
 @media only screen and (max-width: $responsivenav) {
-  .js nav ul .sub-menu.toggled-on {
+  .js .nav-primary ul .sub-menu.toggled-on {
     display: block;
   }
 }

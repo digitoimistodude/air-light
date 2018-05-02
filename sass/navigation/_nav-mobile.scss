@@ -47,7 +47,7 @@ $hamburger-hover-transition-timing-function: linear;
     &.js-nav-active {
       overflow: hidden;
 
-      nav {
+      .nav-primary {
         visibility: visible;
         max-height: 100%;
         height: 100vh;
@@ -56,7 +56,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  .js nav {
+  .js .nav-primary {
     // Hide mobile navigation by default while enabling use of animations
     visibility: hidden;
     max-height: 0;
@@ -72,7 +72,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  nav {
+  .nav-primary {
     background: $color-almostblack;
     transition: all .55s;
     margin: 0;

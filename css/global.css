@@ -1327,10 +1327,10 @@ form.search-form .search-submit {
   .comment-respond textarea {
     width: 100%; }
 
-nav .menu-items {
+.nav-primary .menu-items {
   position: relative;
   z-index: 9999; }
-  nav .menu-items:after {
+  .nav-primary .menu-items:after {
     content: '\00a0';
     display: block;
     height: 0;
@@ -1338,8 +1338,8 @@ nav .menu-items {
     clear: both;
     visibility: hidden;
     overflow: hidden; }
-  nav .menu-items ul,
-  nav .menu-items li {
+  .nav-primary .menu-items ul,
+  .nav-primary .menu-items li {
     display: block;
     list-style: none;
     margin: 0;
@@ -1348,40 +1348,40 @@ nav .menu-items {
     direction: ltr;
     text-align: left;
     -webkit-tap-highlight-color: transparent; }
-  nav .menu-items li,
-  nav .menu-items a {
+  .nav-primary .menu-items li,
+  .nav-primary .menu-items a {
     position: relative; }
-  nav .menu-items .disabled {
+  .nav-primary .menu-items .disabled {
     cursor: not-allowed; }
-  nav .menu-items li > h1,
-  nav .menu-items li > h2,
-  nav .menu-items li > h3,
-  nav .menu-items li > h4,
-  nav .menu-items li > h5,
-  nav .menu-items li > h6 {
+  .nav-primary .menu-items li > h1,
+  .nav-primary .menu-items li > h2,
+  .nav-primary .menu-items li > h3,
+  .nav-primary .menu-items li > h4,
+  .nav-primary .menu-items li > h5,
+  .nav-primary .menu-items li > h6 {
     margin: 0;
     padding: 0; }
 
 @media only screen and (-ms-high-contrast: active) and (min-width: 960px), only screen and (-ms-high-contrast: none) and (min-width: 960px) {
-  nav .menu-items ul {
+  .nav-primary .menu-items ul {
     display: none; } }
 
 @media only screen and (max-width: 960px) {
-  .js nav .menu-items ul {
+  .js .nav-primary .menu-items ul {
     display: none; } }
 
-nav ul ul {
+.nav-primary ul ul {
   margin-top: 0;
   margin-left: 25px; }
-  nav ul ul ul {
+  .nav-primary ul ul ul {
     margin-left: 25px; }
 
 @media only screen and (-ms-high-contrast: active) and (min-width: 960px), only screen and (-ms-high-contrast: none) and (min-width: 960px) {
-  .js nav ul .sub-menu.toggled-on {
+  .js .nav-primary ul .sub-menu.toggled-on {
     display: block; } }
 
 @media only screen and (max-width: 960px) {
-  .js nav ul .sub-menu.toggled-on {
+  .js .nav-primary ul .sub-menu.toggled-on {
     display: block; } }
 
 .dropdown-toggle:after,
@@ -1413,7 +1413,7 @@ nav ul ul {
     -webkit-transition: all 0.3s ease-in-out 0.3s, visibility 0.3s linear 0.3s, z-index 0s linear 0.01s;
     -o-transition: all 0.3s ease-in-out 0.3s, visibility 0.3s linear 0.3s, z-index 0s linear 0.01s;
     transition: all 0.3s ease-in-out 0.3s, visibility 0.3s linear 0.3s, z-index 0s linear 0.01s; }
-  nav ul .sub-menu.toggled-on {
+  .nav-primary ul .sub-menu.toggled-on {
     visibility: visible;
     opacity: 1;
     z-index: 1;
@@ -1433,12 +1433,12 @@ nav ul ul {
     -webkit-transform: none;
         -ms-transform: none;
             transform: none; }
-  [data-whatinput="mouse"] nav ul .menu-item-has-children:focus > .sub-menu,
-  [data-whatinput="mouse"] nav ul .menu-item-has-children:focus-within > .sub-menu,
-  [data-whatinput="mouse"] nav ul .menu-item-has-children:hover > .sub-menu,
-  [data-whatintent="mouse"] nav ul .menu-item-has-children:focus > .sub-menu,
-  [data-whatintent="mouse"] nav ul .menu-item-has-children:focus-within > .sub-menu,
-  [data-whatintent="mouse"] nav ul .menu-item-has-children:hover > .sub-menu {
+  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
+  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu,
+  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
+  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
     z-index: 1;
@@ -1465,9 +1465,9 @@ nav ul ul {
     -webkit-transition-delay: none;
          -o-transition-delay: none;
             transition-delay: none; }
-  .no-js nav ul .menu-item-has-children:focus > .sub-menu,
-  .no-js nav ul .menu-item-has-children:focus-within > .sub-menu,
-  .no-js nav ul .menu-item-has-children:hover > .sub-menu {
+  .no-js .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+  .no-js .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
+  .no-js .nav-primary ul .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
     z-index: 1;
@@ -1479,7 +1479,7 @@ nav ul ul {
             transition-delay: 0s, 0s, .3s; } }
 
 @media only screen and (min-width: 960px) and (-ms-high-contrast: active), only screen and (min-width: 960px) and (-ms-high-contrast: none) {
-  nav .menu-items .sub-menu {
+  .nav-primary .menu-items .sub-menu {
     width: 19rem;
     visibility: visible;
     opacity: 1;
@@ -1496,19 +1496,19 @@ nav ul ul {
             transition-delay: none;
     list-style-type: none;
     list-style: none; }
-    nav .menu-items .sub-menu .menu-item {
+    .nav-primary .menu-items .sub-menu .menu-item {
       padding-top: 0;
       margin-top: 0;
       list-style-type: none;
       list-style: none; }
-    nav .menu-items .sub-menu .sub-menu.has-sub-menu {
+    .nav-primary .menu-items .sub-menu .sub-menu.has-sub-menu {
       -webkit-transform: translateY(0);
           -ms-transform: translateY(0);
               transform: translateY(0);
       padding-top: .5rem; }
-  nav ul .menu-item-has-children:focus > .sub-menu,
-  nav ul .menu-item-has-children:focus-within > .sub-menu,
-  nav ul .menu-item-has-children:hover > .sub-menu {
+  .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+  .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
+  .nav-primary ul .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
     z-index: 1;
@@ -1520,15 +1520,15 @@ nav ul ul {
             transition-delay: 0s, 0s, .3s; } }
 
 @media only screen and (min-width: 960px) and (max-width: 960px) {
-  nav ul li:hover > ul {
+  .nav-primary ul li:hover > ul {
     display: block; } }
 
 @media only screen and (min-width: 960px) and (-ms-high-contrast: active), only screen and (min-width: 960px) and (-ms-high-contrast: none) {
-  nav ul li:hover > ul {
+  .nav-primary ul li:hover > ul {
     display: block; } }
 
 @media only screen and (min-width: 960px) {
-  .no-js nav .menu-items .menu-item-has-children:after {
+  .no-js .nav-primary .menu-items .menu-item-has-children:after {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1553,7 +1553,7 @@ nav ul ul {
     border: 0;
     content: ' ';
     display: block; }
-  .no-js nav .menu-items .menu-item-has-children .sub-menu .menu-item-has-children:after {
+  .no-js .nav-primary .menu-items .menu-item-has-children .sub-menu .menu-item-has-children:after {
     position: absolute;
     right: 8px;
     top: 50%;
@@ -1573,30 +1573,30 @@ nav ul ul {
     display: block; }
   .nav-toggle {
     display: none; }
-  nav {
+  .nav-primary {
     padding-top: 1.7rem;
     padding-bottom: 1.7rem;
     float: right; }
-    nav .menu-items {
+    .nav-primary .menu-items {
       margin: 0;
       padding: 0;
       background: transparent;
       position: relative;
       float: left; }
-    nav .menu-item {
+    .nav-primary .menu-item {
       position: relative;
       float: left;
       margin: 0; }
-      nav .menu-item a {
+      .nav-primary .menu-item a {
         color: #333;
         font-size: 16px;
         padding: 20px 12px;
         font-weight: 600; }
-        nav .menu-item a.disabled {
+        .nav-primary .menu-item a.disabled {
           color: #bbb; }
-        nav .menu-item a:hover, nav .menu-item a:focus, nav .menu-item a:active, nav .menu-item a.highlighted, nav .menu-item a.current {
+        .nav-primary .menu-item a:hover, .nav-primary .menu-item a:focus, .nav-primary .menu-item a:active, .nav-primary .menu-item a.highlighted, .nav-primary .menu-item a.current {
           color: #333; }
-      nav .menu-item ul {
+      .nav-primary .menu-item ul {
         position: absolute;
         background: #fff;
         margin-left: 0;
@@ -1604,21 +1604,21 @@ nav ul ul {
         padding-top: .5rem;
         margin-top: 18px;
         z-index: 999; }
-        nav .menu-item ul.sub-menu {
+        .nav-primary .menu-item ul.sub-menu {
           padding-top: .5rem;
           padding-bottom: .5rem; }
-          nav .menu-item ul.sub-menu li {
+          .nav-primary .menu-item ul.sub-menu li {
             margin: 0; }
-        nav .menu-item ul .dropdown-toggle {
+        .nav-primary .menu-item ul .dropdown-toggle {
           position: absolute;
           right: 1rem;
           top: .4rem;
           border: 0; }
-        nav .menu-item ul li {
+        .nav-primary .menu-item ul li {
           float: none;
           width: 19rem;
           padding: 0; }
-          nav .menu-item ul li .dropdown-toggle {
+          .nav-primary .menu-item ul li .dropdown-toggle {
             position: absolute;
             right: 8px;
             top: 50%;
@@ -1634,29 +1634,29 @@ nav ul ul {
             width: 12px;
             height: 12px;
             border: 0; }
-            nav .menu-item ul li .dropdown-toggle.toggled-on {
+            .nav-primary .menu-item ul li .dropdown-toggle.toggled-on {
               background-image: url("../svg/chevron-left-dark.svg"); }
-          nav .menu-item ul li.menu-item-has-children a {
+          .nav-primary .menu-item ul li.menu-item-has-children a {
             padding-right: 3.5rem;
             margin-right: 0;
             margin-bottom: 0;
             width: 100%; }
-        nav .menu-item ul ul {
+        .nav-primary .menu-item ul ul {
           top: 0;
           left: 100%;
           margin-left: 0;
           margin-top: -5px; }
-        nav .menu-item ul a {
+        .nav-primary .menu-item ul a {
           padding: .8rem 1.5rem;
           font-size: 1.4rem;
           color: #333;
           display: block; }
-          nav .menu-item ul a:hover, nav .menu-item ul a:focus, nav .menu-item ul a:active, nav .menu-item ul a.highlighted {
+          .nav-primary .menu-item ul a:hover, .nav-primary .menu-item ul a:focus, .nav-primary .menu-item ul a:active, .nav-primary .menu-item ul a.highlighted {
             color: #045d30; }
-          nav .menu-item ul a.disabled {
+          .nav-primary .menu-item ul a.disabled {
             background: #fff;
             color: #ccc; }
-      nav .menu-item .dropdown-toggle {
+      .nav-primary .menu-item .dropdown-toggle {
         position: relative;
         top: 50%;
         -webkit-transform: translateY(-50%);
@@ -1679,7 +1679,7 @@ nav ul ul {
         height: 8px;
         width: 8px;
         border: 0; }
-      nav .menu-item > li > ul:after {
+      .nav-primary .menu-item > li > ul:after {
         content: '';
         position: absolute;
         width: 0;
@@ -1690,9 +1690,9 @@ nav ul ul {
         left: 31px;
         border-width: 8px;
         border-color: transparent transparent #fff; }
-    nav .menu-item.menu-item-has-children {
+    .nav-primary .menu-item.menu-item-has-children {
       margin-right: .8rem; }
-      nav .menu-item.menu-item-has-children > a {
+      .nav-primary .menu-item.menu-item-has-children > a {
         padding-right: 1.5rem;
         margin-bottom: .8rem; } }
 
@@ -2054,8 +2054,8 @@ nav ul ul {
   transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22), -webkit-transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
 
 /*
- * Arrow Turn
- */
+   * Arrow Turn
+   */
 .hamburger--arrowturn.is-active .hamburger-inner {
   -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
@@ -2068,8 +2068,8 @@ nav ul ul {
             transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
 
 /*
- * Arrow Turn Right
- */
+   * Arrow Turn Right
+   */
 .hamburger--arrowturn-r.is-active .hamburger-inner {
   -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
@@ -2970,12 +2970,12 @@ nav ul ul {
     overflow: hidden; }
   .js.js-nav-active {
     overflow: hidden; }
-    .js.js-nav-active nav {
+    .js.js-nav-active .nav-primary {
       visibility: visible;
       max-height: 100%;
       height: 100vh;
       overflow: auto; }
-  .js nav {
+  .js .nav-primary {
     visibility: hidden;
     max-height: 0;
     height: 0;
@@ -2984,9 +2984,9 @@ nav ul ul {
     top: 0;
     left: 0;
     right: 0; }
-    .js nav .menu-items {
+    .js .nav-primary .menu-items {
       padding: 15% 0; }
-  nav {
+  .nav-primary {
     background: #020202;
     -webkit-transition: all .55s;
     -o-transition: all .55s;
@@ -2995,12 +2995,12 @@ nav ul ul {
     overflow: hidden;
     display: block;
     width: 100%; }
-    nav .menu-items {
+    .nav-primary .menu-items {
       margin: 0;
       width: 100%;
       float: none;
       padding: 2rem 0; }
-      nav .menu-items a {
+      .nav-primary .menu-items a {
         padding-top: 1rem;
         padding-bottom: 1rem;
         padding-left: 5%;
@@ -3014,21 +3014,21 @@ nav ul ul {
         z-index: 0;
         display: block;
         outline: none; }
-        nav .menu-items a:focus {
+        .nav-primary .menu-items a:focus {
           outline: none; }
-        nav .menu-items a.has-submenu {
+        .nav-primary .menu-items a.has-submenu {
           width: 80%;
           position: static; }
-        nav .menu-items a:hover, nav .menu-items a:focus, nav .menu-items a:active {
+        .nav-primary .menu-items a:hover, .nav-primary .menu-items a:focus, .nav-primary .menu-items a:active {
           color: #045d30; }
-        nav .menu-items a.current {
+        .nav-primary .menu-items a.current {
           color: #d23600; }
-        nav .menu-items a.disabled {
+        .nav-primary .menu-items a.disabled {
           color: #bbb; }
-        nav .menu-items a.highlighted .sub-arrow:before {
+        .nav-primary .menu-items a.highlighted .sub-arrow:before {
           display: block;
           content: '-'; }
-      nav .menu-items .dropdown-toggle {
+      .nav-primary .menu-items .dropdown-toggle {
         position: absolute;
         top: 0;
         margin-top: 0;
@@ -3044,31 +3044,31 @@ nav ul ul {
         padding: 0;
         z-index: 9999;
         border: 0; }
-        nav .menu-items .dropdown-toggle:focus {
+        .nav-primary .menu-items .dropdown-toggle:focus {
           z-index: 10000; }
-        nav .menu-items .dropdown-toggle:before {
+        .nav-primary .menu-items .dropdown-toggle:before {
           content: '+'; }
-        nav .menu-items .dropdown-toggle:hover {
+        .nav-primary .menu-items .dropdown-toggle:hover {
           background-color: #3e4853;
           color: #fff; }
-        nav .menu-items .dropdown-toggle.toggled-on:before {
+        .nav-primary .menu-items .dropdown-toggle.toggled-on:before {
           display: block;
           content: '-'; }
-      nav .menu-items ul {
+      .nav-primary .menu-items ul {
         background: rgba(102, 102, 102, 0.1);
         margin-left: 0;
         padding: 0; }
-        nav .menu-items ul > li {
+        .nav-primary .menu-items ul > li {
           padding-left: 1.5rem; }
-          nav .menu-items ul > li ul {
+          .nav-primary .menu-items ul > li ul {
             margin-left: -1.5rem; }
-            nav .menu-items ul > li ul li {
+            .nav-primary .menu-items ul > li ul li {
               padding-left: 3rem; }
-            nav .menu-items ul > li ul ul {
+            .nav-primary .menu-items ul > li ul ul {
               margin-left: -3rem; }
-              nav .menu-items ul > li ul ul li {
+              .nav-primary .menu-items ul > li ul ul li {
                 padding-left: 4.5rem; }
-        nav .menu-items ul a {
+        .nav-primary .menu-items ul a {
           font-size: 1.4rem; } }
 
 .nav-toggle {
