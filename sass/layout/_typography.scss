@@ -89,14 +89,6 @@ p {
   }
 }
 
-// Paragraphs. OpenType ligatures and oldstyle figures enabled if available.
-p,
-dd,
-dt,
-figcaption {
-  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-}
-
 // Heading defaults
 h1,
 h2,
@@ -104,7 +96,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   color: $color-headings;
   font-family: $font-headings;
   font-weight: $headings-weight;
@@ -158,10 +149,6 @@ ol {
 ol,
 ul {
   padding-bottom: 1rem;
-}
-
-li {
-  font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
 }
 
 // Bold.

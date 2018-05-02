@@ -717,21 +717,12 @@ p {
   p:last-child {
     margin-bottom: 0; }
 
-p,
-dd,
-dt,
-figcaption {
-  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-          font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; }
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-          font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   color: #222;
   font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 700; }
@@ -809,10 +800,6 @@ ol,
 ul {
   padding-bottom: 10px;
   padding-bottom: 1rem; }
-
-li {
-  -webkit-font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1;
-          font-feature-settings: 'kern' 1, 'onum' 1, 'liga' 1; }
 
 b,
 strong {
