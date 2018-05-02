@@ -6,8 +6,8 @@ Air-light (or simply *Air*) is designed to be a minimal starting point for a Wor
 
 ## [Demo](https://dudetest.xyz/air)
 
-- **CSS gzipped:** 7 KB *(47.1 KB original)*
-- **JS gzipped:** 3.5 KB *(10.8 KB original)*
+- **CSS gzipped:** 12 KB *(113 KB original)*
+- **JS gzipped:** 3.4 KB *(10.8 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
 ![](https://www.dude.fi/air-4.0.0-screenshot.png "Screenshot")
