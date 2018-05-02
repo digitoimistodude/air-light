@@ -32,8 +32,7 @@ $font-base-line-height: 1.78; // Line height for paragraphs
 $font-base-line-height-elements: 1.68; // Line height for other elements like table cells and spans
 $headings-line-height-setup: force; // Force: all headings have same line height. Flexible: values are set separately in _typography.scss
 $headings-line-height-forced: 1.22; // This is effective only if force is chosen in $headings-line-height-setup
-$headings-weight: 900; // Default title weight. Usually 700 or 900 works pretty well
-$headings-scale: medium; // Change this as a base for your project or create your own in _typography.scss.
+$headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty well
 
 // Breakpoints
 $grid-type: fluid; // 'fluid' or 'snappy'
