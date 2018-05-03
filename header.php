@@ -38,7 +38,7 @@
             if ( $description || is_customize_preview() ) : ?>
               <p class="site-description screen-reader-text"><?php echo $description; /* WPCS: xss ok. */ ?></p>
             <?php endif; ?>
-          </div><!-- .site-branding -->          
+          </div><!-- .site-branding -->
 
           <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
@@ -49,7 +49,7 @@
               <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>"><?php esc_attr_e( 'Menu', 'air-light' ); ?></span>
             </button>
 
-            <nav id="nav" role="navigation">
+            <nav id="nav" class="nav-primary" role="navigation">
 
               <?php wp_nav_menu( array(
                 'theme_location'    => 'primary',

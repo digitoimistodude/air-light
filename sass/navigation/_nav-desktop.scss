@@ -22,12 +22,12 @@ $absolute-navigation: false;
     width: 100%;
 
     // Main level links
-    nav > ul > li > a {
+    .nav-primary > ul > li > a {
       color: #fff;
       position: relative;
     }
 
-    nav > ul > li > a:hover {
+    .nav-primary > ul > li > a:hover {
       color: #fff;
     }
   }
@@ -52,7 +52,7 @@ $absolute-navigation: false;
       }
     }
 
-    nav ul .sub-menu.toggled-on {
+    .nav-primary ul .sub-menu.toggled-on {
       visibility: visible;
       opacity: 1;
       z-index: 1;
@@ -66,8 +66,8 @@ $absolute-navigation: false;
       transform: none;
     }
 
-    [data-whatinput="mouse"] nav ul .menu-item-has-children,
-    [data-whatintent="mouse"] nav ul .menu-item-has-children {
+    [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children,
+    [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children {
       &:focus > .sub-menu,
       &:focus-within > .sub-menu,
       &:hover > .sub-menu {
@@ -94,9 +94,9 @@ $absolute-navigation: false;
         transition-delay: none;
       }
 
-      nav ul .menu-item-has-children:focus > .sub-menu,
-      nav ul .menu-item-has-children:focus-within > .sub-menu,
-      nav ul .menu-item-has-children:hover > .sub-menu {
+      .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+      .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
+      .nav-primary ul .menu-item-has-children:hover > .sub-menu {
         visibility: visible;
         opacity: 1;
         z-index: 1;
@@ -107,7 +107,7 @@ $absolute-navigation: false;
 
     // Disable animations and improve styles on IE10 + IE11
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      nav .menu-items .sub-menu {
+      .nav-primary .menu-items .sub-menu {
         width: $dropdown-width;
         visibility: visible;
         opacity: 1;
@@ -132,7 +132,7 @@ $absolute-navigation: false;
         }
       }
 
-      nav ul .menu-item-has-children {
+      .nav-primary ul .menu-item-has-children {
         &:focus > .sub-menu,
         &:focus-within > .sub-menu,
         &:hover > .sub-menu {
@@ -152,19 +152,19 @@ $absolute-navigation: false;
   // Use display block based hovers if no animations enabled
   @if $enable-animations == false {
     // Enable hovers
-    nav ul li:hover > ul {
+    .nav-primary ul li:hover > ul {
       display: block;
     }
 
     // Support for non-js users
-    .no-js nav ul li:hover > ul,
-    .no-js nav ul li:focus > ul {
+    .no-js .nav-primary ul li:hover > ul,
+    .no-js .nav-primary ul li:focus > ul {
       display: block;
     }
   }
 
   @media only screen and (max-width: $responsivenav) {
-    nav ul li:hover > ul {
+    .nav-primary ul li:hover > ul {
       display: block;
     }
   }
@@ -172,13 +172,13 @@ $absolute-navigation: false;
   // Disable animations on IE10 + IE11
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     // Enable hovers
-    nav ul li:hover > ul {
+    .nav-primary ul li:hover > ul {
       display: block;
     }
   }
 
   // Dropdown arrows for no-js users
-  .no-js nav .menu-items .menu-item-has-children {
+  .no-js .nav-primary .menu-items .menu-item-has-children {
     &:after {
       @include vertical-align();
       text-indent: -9999px;
@@ -227,7 +227,7 @@ $absolute-navigation: false;
   }
 
   // Start navigation
-  nav {
+  .nav-primary {
     // Set based on logo height, for example air logo is about 62px
     // menu links height are 12px, so paddings are (60/2)-12:
     padding-top: 1.7rem;
