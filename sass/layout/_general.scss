@@ -13,6 +13,8 @@
   background-color: #fff;
   position: relative;
   min-height: 100px;
+  max-width: $layout-max-width;
+  margin: 0 auto;
 }
 
 // Default shade on top of blocks

@@ -19,6 +19,8 @@
   justify-content: center;
   position: relative;
   min-height: 50rem;
+  max-width: $layout-max-width;
+  margin: 0 auto;
 
   // Internet Explorer needs this
   height: 50rem;
