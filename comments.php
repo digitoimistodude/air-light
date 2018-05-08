@@ -17,7 +17,8 @@
  */
 if ( post_password_required() ) {
 	return;
-} ?>
+}
+?>
 
 <div id="comments" class="comments-area">
 
@@ -26,11 +27,21 @@ if ( post_password_required() ) {
   if ( have_comments() ) : ?>
     <h2 class="comments-title">
       <?php
+        $comment_count = get_comments_number();
+        if ( '1' === $comment_count ) {
+          printf(
+            /* translators: 1: title. */
+            esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', '_s' ),
+            '<span>' . get_the_title() . '</span>'
+          );
+        } else {
         printf( // WPCS: XSS OK.
-          esc_html( _nx( '%1$s comment', '%1$s comments', get_comments_number(), 'comments title', 'air-light' ) ),
-          number_format_i18n( get_comments_number() ),
-          '<span class="screen-reader-text">on article "' . get_the_title() . '"</span>'
+          /* translators: 1: comment count number, 2: title. */
+          esc_html( _nx( '%1$s comment %2$s', '%1$s comments %2$s', $comment_count, 'comments title', '_s' ) ),
+          number_format_i18n( $comment_count ),
+          '<span class="screen-reader-text">on &ldquo;' . get_the_title() . '&rdquo;</span>'
         );
+      }
       ?>
     </h2>
 
