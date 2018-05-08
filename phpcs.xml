@@ -34,6 +34,7 @@
         <exclude name="WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned" />
         <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
         <exclude name="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned" />
+        <exclude name="PEAR.Functions.FunctionCallSignature.OpeningIndent" />
 
         <!-- Don't require too strict inline commenting, it's a good thing to documentate, let's not make it frustrating -->
         <exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
