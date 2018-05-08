@@ -53,6 +53,7 @@
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
         <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
+        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
         <exclude name="PHPCompatibility.PHP.NewFunctionArrayDereferencing.Found" />
 
