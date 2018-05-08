@@ -78,6 +78,12 @@
   }
 }
 
+// Clear block containers by default
+.site-main .container {
+  overflow: hidden;
+  clear: both;
+}
+
 // Meta actions
 .entry-footer {
   overflow: hidden;
