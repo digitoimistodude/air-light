@@ -513,7 +513,7 @@ a {
   color: #045d30;
   text-decoration: none; }
   a:hover {
-    color: #606c76; }
+    color: #111; }
 
 .cat a, .comments-link, .comment-list li, .comment-list li p, .comment-list li .comment-time {
   font-size: 1.2vw; }
