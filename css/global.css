@@ -4003,8 +4003,7 @@ ul.tags {
         color: #222; }
     .comment-list li .comment-time {
       padding: 0;
-      margin: 0;
-      opacity: .5; }
+      margin: 0; }
       .comment-list li .comment-time svg {
         fill: #4f5964;
         position: relative;
