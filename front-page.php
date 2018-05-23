@@ -21,12 +21,12 @@ endif;
 get_header();
 ?>
 
-<header class="entry-header-demo">
-  <h1><span class="accent"><?php echo esc_html_e( 'air-light ', 'air-light' ); echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?></h1>
-</header>
-
 <div id="content" class="content-area">
-  <main id="main" class="site-main">
+  <main role="main" id="main" class="site-main">
+
+    <div class="entry-header-demo">
+      <h1><span class="accent"><?php echo esc_html_e( 'air-light ', 'air-light' ); echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?></h1>
+    </div>
 
     <div class="block">
       <div class="container">
