@@ -225,11 +225,19 @@
     left: 0;
     background-image: url('../svg/slider-left-arrow.svg');
     background-color: transparent;
+    
+    &:hover {
+      background-image: url('../svg/slider-left-arrow.svg');
+    }
   }
 
   .slick-next {
     right: 0;
     background-image: url('../svg/slider-right-arrow.svg');
     background-color: transparent;
+    
+    &:hover {
+      background-image: url('../svg/slider-right-arrow.svg');
+    }
   }
 }
