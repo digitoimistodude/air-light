@@ -374,8 +374,8 @@ img {
 .no-js *:focus {
   outline: 4px solid #f9bf47; }
 
-.container p a,
-.entry-content p a {
+.container a,
+.entry-content a {
   text-decoration: underline; }
 
 .block {
@@ -792,9 +792,9 @@ cite {
   font-style: italic; }
 
 hr {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, #000));
-  background-image: -o-linear-gradient(top, transparent 50%, #000 50%);
-  background-image: linear-gradient(to bottom, transparent 50%, #000 50%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, #000));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0) 50%, #000 50%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 50%;
@@ -1038,6 +1038,19 @@ input[type="search"] {
   input[type="search"]:-ms-input-placeholder {
     color: #434343;
     opacity: .4; }
+  textarea::-ms-input-placeholder,
+  select::-ms-input-placeholder,
+  input[type="text"]::-ms-input-placeholder,
+  input[type="tel"]::-ms-input-placeholder,
+  input[type="url"]::-ms-input-placeholder,
+  input[type="password"]::-ms-input-placeholder,
+  input[type="number"]::-ms-input-placeholder,
+  input[type="month"]::-ms-input-placeholder,
+  input[type="week"]::-ms-input-placeholder,
+  input[type="email"]::-ms-input-placeholder,
+  input[type="search"]::-ms-input-placeholder {
+    color: #434343;
+    opacity: .4; }
   textarea::placeholder,
   select::placeholder,
   input[type="text"]::placeholder,
@@ -1089,6 +1102,19 @@ input[type="search"] {
     input[type="week"]:focus:-ms-input-placeholder,
     input[type="email"]:focus:-ms-input-placeholder,
     input[type="search"]:focus:-ms-input-placeholder {
+      color: #222;
+      opacity: .8; }
+    textarea:focus::-ms-input-placeholder,
+    select:focus::-ms-input-placeholder,
+    input[type="text"]:focus::-ms-input-placeholder,
+    input[type="tel"]:focus::-ms-input-placeholder,
+    input[type="url"]:focus::-ms-input-placeholder,
+    input[type="password"]:focus::-ms-input-placeholder,
+    input[type="number"]:focus::-ms-input-placeholder,
+    input[type="month"]:focus::-ms-input-placeholder,
+    input[type="week"]:focus::-ms-input-placeholder,
+    input[type="email"]:focus::-ms-input-placeholder,
+    input[type="search"]:focus::-ms-input-placeholder {
       color: #222;
       opacity: .8; }
     textarea:focus::placeholder,
@@ -1259,7 +1285,7 @@ form.search-form .search-submit {
     line-height: normal;
     direction: ltr;
     text-align: left;
-    -webkit-tap-highlight-color: transparent; }
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
   .nav-primary .menu-items li,
   .nav-primary .menu-items a {
     position: relative; }
@@ -1966,8 +1992,8 @@ form.search-form .search-submit {
   transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22), -webkit-transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22); }
 
 /*
- * Arrow Turn
- */
+   * Arrow Turn
+   */
 .hamburger--arrowturn.is-active .hamburger-inner {
   -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
@@ -1980,8 +2006,8 @@ form.search-form .search-submit {
             transform: translate3d(8px, 0, 0) rotate(-45deg) scale(0.7, 1); }
 
 /*
- * Arrow Turn Right
- */
+   * Arrow Turn Right
+   */
 .hamburger--arrowturn-r.is-active .hamburger-inner {
   -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
@@ -2986,7 +3012,7 @@ form.search-form .search-submit {
 .nav-toggle {
   list-style: none;
   z-index: 100000;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   border: 0;
   overflow: visible;
   color: #fff;
