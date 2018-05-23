@@ -671,13 +671,16 @@ h3,
     .accent {
       font-size: 34px; } }
 
-h4 {
+h4,
+.comment-list li .comment-author {
   font-size: 1.4vw; }
   @media (max-width: 1285.71429px) {
-    h4 {
+    h4,
+    .comment-list li .comment-author {
       font-size: 18px; } }
   @media (min-width: 1500px) {
-    h4 {
+    h4,
+    .comment-list li .comment-author {
       font-size: 21px; } }
 
 h5 {

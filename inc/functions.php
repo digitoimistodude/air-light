@@ -47,7 +47,7 @@ if ( ! function_exists( 'air_light_comments' ) ) {
 		<li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 			<div id="comment-<?php comment_ID(); ?>">
 				<?php echo get_avatar( $comment, '62' ); ?>
-				<h4 class="comment-author"><?php echo get_comment_author_link(); ?></h4>
+				<h3 class="comment-author"><?php echo get_comment_author_link(); ?></h3>
 
 				<?php if ( '0' === $comment->comment_approved ) : ?>
 					<p><em><?php esc_html_e( 'Your comment is awaiting approval.', 'air-light' ); ?></em></p>

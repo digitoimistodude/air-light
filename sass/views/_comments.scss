@@ -33,6 +33,7 @@
     }
 
     .comment-author {
+      @extend %h4;
       color: $color-body;
       margin-top: 0;
       margin-bottom: 10px;
