@@ -267,7 +267,8 @@ ul.tags {
     color: $color-darkgrey;
 
     &:hover {
-      color: $color-body;
+      color: $color-links;
+      text-decoration: none;
     }
   }
 }

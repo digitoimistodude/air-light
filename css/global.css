@@ -377,6 +377,10 @@ img {
 .container a,
 .entry-content a {
   text-decoration: underline; }
+  .container a:hover, .container a:focus,
+  .entry-content a:hover,
+  .entry-content a:focus {
+    text-decoration: none; }
 
 .block {
   background-size: cover;
@@ -3939,7 +3943,8 @@ ul.tags {
   .entry-footer a {
     color: #4f5964; }
     .entry-footer a:hover {
-      color: #222; }
+      color: #045d30;
+      text-decoration: none; }
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,

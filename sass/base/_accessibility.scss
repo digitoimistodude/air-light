@@ -90,4 +90,9 @@ $focus-text-color: #000;
 .container a,
 .entry-content a {
   text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
 }
