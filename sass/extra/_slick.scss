@@ -132,14 +132,12 @@
     padding: 0;
     cursor: pointer;
 
-    &.slick-active {
-      button,
-      button[type="button"],
-      button:focus,
-      button[type="button"]:focus {
-        opacity: 1;
-        background: #fff;
-      }
+    &.slick-active button,
+    &.slick-active button[type="button"],
+    &.slick-active button:focus,
+    &.slick-active button[type="button"]:focus {
+      opacity: 1;
+      background: #fff;
     }
 
     button,
@@ -155,16 +153,17 @@
       border: 2px solid #fff;
       border-radius: 6px;
       padding: 0;
+    }
 
-      &:hover,
-      &:focus {
-        outline: none;
-        background: transparent;
+    button:hover,
+    button:focus[type="button"] {
+      outline: none;
+      background: transparent;
+    }
 
-        &:before {
-          opacity: 1;
-        }
-      }
+    button:hover:before,
+    button:focus[type="button"]:before {
+      opacity: 1;
     }
   }
 }
@@ -225,7 +224,7 @@
     left: 0;
     background-image: url('../svg/slider-left-arrow.svg');
     background-color: transparent;
-    
+
     &:hover {
       background-image: url('../svg/slider-left-arrow.svg');
     }
@@ -235,7 +234,7 @@
     right: 0;
     background-image: url('../svg/slider-right-arrow.svg');
     background-color: transparent;
-    
+
     &:hover {
       background-image: url('../svg/slider-right-arrow.svg');
     }
