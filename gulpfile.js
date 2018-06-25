@@ -151,11 +151,10 @@ gulp.task('styles', function() {
     .on('error', handleError('styles'))
     .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
     .pipe(pixrem())
-    .pipe(gulp.dest(cssDest))
 
     // Process the expanded output with Stylefmt
     gulp.src('css/global.css')
-    .pipe(stylefmt())
+    .pipe(stylefmt({ configFile: './.stylelintrc' }))
     .pipe(gulp.dest(cssDest))
 
 });

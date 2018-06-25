@@ -1,0 +1,20 @@
+{
+  "extends": "stylelint-config-primer",
+  "rules": {
+    "rule-nested-empty-line-before": "always",
+    "rule-non-nested-empty-line-before": "always",
+    "block-no-empty": true,
+    "declaration-colon-newline-after": "never",
+    "number-leading-zero": "never",
+    "value-list-comma-newline-after": "never",
+    "selector-list-comma-newline-after": "always",
+    "declaration-colon-space-before": "never",
+    "block-opening-brace-space-before": "always",
+    "string-quotes": "single",
+    "declaration-block-trailing-semicolon": "always",
+    "no-eol-whitespace": "false",
+    "number-no-trailing-zeros": "true",
+    "block-closing-brace-newline-after": "always",
+    "declaration-empty-line-before": "never"
+  }
+}
