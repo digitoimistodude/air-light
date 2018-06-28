@@ -156,6 +156,7 @@ gulp.task('styles', function() {
     gulp.src('css/global.css')
     .pipe(stylefmt({ configFile: './.stylelintrc' }))
     .pipe(gulp.dest(cssDest))
+    .pipe(browserSync.stream());
 
 });
 

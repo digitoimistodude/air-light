@@ -3797,9 +3797,9 @@ form.search-form .search-submit {
   text-decoration: none;
   list-style: none;
   cursor: pointer;
-  -ms-user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   background: transparent;
   border: 0;
@@ -4787,9 +4787,9 @@ form.search-form .search-submit {
 
 .entry-header-demo {
   position: relative;
-  display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  display: -webkit-box;
   max-width: 100%;
   height: 50rem;
   height: 500px;
