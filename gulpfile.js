@@ -153,7 +153,6 @@ gulp.task('styles', function() {
     .pipe(pixrem())
 
     // Process the expanded output with Stylefmt
-    gulp.src('css/global.css')
     .pipe(stylefmt({ configFile: './.stylelintrc' }))
     .pipe(gulp.dest(cssDest))
     .pipe(browserSync.stream());
