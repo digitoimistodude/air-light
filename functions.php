@@ -54,6 +54,18 @@ function _air_light_widgets_init() {
 add_action( 'widgets_init', '_air_light_widgets_init' );
 
 /**
+ * Move jQuery to footer
+ */
+function air_light_move_jquery_into_footer($wp_scripts) {
+  if (!is_admin()) {
+    $wp_scripts->add_data('jquery',         'group', 1);
+    $wp_scripts->add_data('jquery-core',    'group', 1);
+    $wp_scripts->add_data('jquery-migrate', 'group', 1);
+  }
+}
+add_action('wp_default_scripts', 'air_light_move_jquery_into_footer');
+
+/**
  * Enqueue scripts and styles.
  */
 function air_light_scripts() {
