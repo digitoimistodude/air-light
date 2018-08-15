@@ -759,9 +759,9 @@ h1 {
   }
 }
 
-@media (min-width: 2125px) {
+@media (min-width: 1593.75px) {
   h1 {
-    font-size: 68px;
+    font-size: 51px;
   }
 }
 
@@ -775,9 +775,9 @@ h2 {
   }
 }
 
-@media (min-width: 1916.66667px) {
+@media (min-width: 1583.33333px) {
   h2 {
-    font-size: 46px;
+    font-size: 38px;
   }
 }
 
@@ -793,10 +793,10 @@ h3,
   }
 }
 
-@media (min-width: 2125px) {
+@media (min-width: 1750px) {
   h3,
   .accent {
-    font-size: 34px;
+    font-size: 28px;
   }
 }
 
@@ -829,9 +829,9 @@ h5 {
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1416.66667px) {
   h5 {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 
@@ -845,9 +845,9 @@ h6 {
   }
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1000px) {
   h6 {
-    font-size: 18px;
+    font-size: 12px;
   }
 }
 

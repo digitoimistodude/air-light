@@ -102,19 +102,20 @@ h6 {
 }
 
 // Define heading scales
+// Current: Perfect fourth: https://type-scale.com/
 h1,
 %h1 {
-  @include responsive-font(3.2vw, 32px, 68px);
+  @include responsive-font(3.2vw, 32px, 51px);
 }
 
 h2,
 %h2 {
-  @include responsive-font(2.4vw, 24px, 46px);
+  @include responsive-font(2.4vw, 24px, 38px);
 }
 
 h3,
 %h3 {
-  @include responsive-font(1.6vw, 21px, 34px);
+  @include responsive-font(1.6vw, 21px, 28px);
 }
 
 h4,
@@ -124,12 +125,12 @@ h4,
 
 h5,
 %h5 {
-  @include responsive-font(1.2vw, 14px, 18px);
+  @include responsive-font(1.2vw, 14px, 17px);
 }
 
 h6,
 %h6 {
-  @include responsive-font(1.2vw, 14px, 18px);
+  @include responsive-font(1.2vw, 14px, 12px);
 }
 
 // Lists
