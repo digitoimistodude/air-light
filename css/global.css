@@ -3621,7 +3621,7 @@ form.search-form .search-submit {
 @media screen and (max-width: 959px) {
   .no-js .site-header {
     position: static;
-    background: #020202;
+    background: #232426;
   }
 
   .disable-scroll {
@@ -3659,7 +3659,7 @@ form.search-form .search-submit {
     width: 100%;
     margin: 0;
     overflow: hidden;
-    background: #020202;
+    background: #232426;
     -webkit-transition: all .55s;
     -o-transition: all .55s;
     transition: all .55s;
@@ -4909,7 +4909,6 @@ del {
   margin-bottom: 20px;
   font-style: italic;
   text-align: left;
-  border-bottom: 2px solid #dadfe1;
 }
 
 .entry-content {

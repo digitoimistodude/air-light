@@ -6,6 +6,7 @@
 // -----------------------------------------------------------
 $nav-toggle-color: #333;
 $nav-toggle-active-color: #fff;
+$nav-background-color: #232426;
 $hamburger-padding-x: 1.5rem;
 $hamburger-padding-y: 5rem;
 $hamburger-layer-width: 4rem;
@@ -34,7 +35,7 @@ $hamburger-hover-transition-timing-function: linear;
     position: static;
 
     // Use the same color than navigation
-    background: $color-almostblack;
+    background: $nav-background-color;
   }
 
   // Disable scroll on html body when menu is opened.
@@ -73,7 +74,7 @@ $hamburger-hover-transition-timing-function: linear;
   }
 
   .nav-primary {
-    background: $color-almostblack;
+    background: $nav-background-color;
     transition: all .55s;
     margin: 0;
     overflow: hidden;
