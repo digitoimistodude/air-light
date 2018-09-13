@@ -68,6 +68,7 @@
         <exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
         <exclude name="WordPress.Functions.DontExtract.extract_extract" />
         <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
+        <exclude name="Generic.Commenting.DocComment.MissingShort" />
 
         <!-- Translations related, not always necessary, too strict -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
