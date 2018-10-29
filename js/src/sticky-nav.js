@@ -11,9 +11,9 @@
       var scroll = $(window).scrollTop();
 
       if (scroll >= collapsePoint) {
-        $('.nav-container, .site-content').addClass('sticky');
+        $('.nav-container, .site-content').addClass('nav-container-sticky');
       } else {
-        $('.nav-container, .site-content').removeClass('sticky');
+        $('.nav-container, .site-content').removeClass('nav-container-sticky');
       }
 
   });

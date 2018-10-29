@@ -22,7 +22,7 @@ $navheight-collapsed: 54px;
     height: $navheight-expanded;
   }
 
-  &.sticky {
+  &.nav-container-sticky {
     background: #222;
     position: fixed;
     top: 0;
