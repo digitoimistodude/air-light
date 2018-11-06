@@ -1,8 +1,7 @@
 {
-  "extends": "stylelint-config-primer",
+  "extends": "stylelint-config-wordpress/scss",
   "rules": {
-    "rule-nested-empty-line-before": "always",
-    "rule-non-nested-empty-line-before": "always",
+    "indentation": 2,
     "block-no-empty": true,
     "declaration-colon-newline-after": "never",
     "number-leading-zero": "never",
