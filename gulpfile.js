@@ -4,7 +4,6 @@ REQUIRED STUFF
 ==============
 */
 
-var changed     = require('gulp-changed');
 var gulp        = require('gulp');
 var sass        = require('gulp-sass');
 var sourcemaps  = require('gulp-sourcemaps');
@@ -20,6 +19,7 @@ var pixrem      = require('gulp-pixrem');
 var exec        = require('child_process').exec;
 var rename      = require('gulp-rename');
 var stylefmt    = require('gulp-stylefmt');
+var debug       = require('gulp-debug');
 
 /*
 
@@ -69,7 +69,7 @@ gulp.task('browsersync', function() {
   var files = [
     phpSrc,
     jsSrc
-  ];  
+  ];
 
   browserSync.init(files, {
     proxy: "airdev.test",
@@ -84,6 +84,23 @@ gulp.task('browsersync', function() {
 STYLES
 ======
 */
+
+var autostyle = function( file ) {
+    var currentDirectory = process.cwd() + '/';
+    var modifiedFile = file.path.replace( currentDirectory, '' );
+    var fileName = modifiedFile.replace(/^.*[\\\/]/, '')
+    var correctDir = modifiedFile.replace( fileName, '' );
+
+    gulp.src( modifiedFile )
+        // Run current file through stylefmt
+        .pipe(stylefmt({ configFile: './.stylelintrc' }))
+
+        // Display debug information
+        .pipe(debug())
+
+        // Overwrite
+        .pipe(gulp.dest(correctDir));
+};
 
 gulp.task('styles', function() {
 
@@ -196,7 +213,7 @@ WATCH
 
 gulp.task('watch', ['browsersync'], () => {
 
-  gulp.watch(sassSrc, ['styles']);
+  gulp.watch(sassSrc, ['styles']).on( 'change', autostyle );
   gulp.watch(jsSrc, ['js']);
 
 });

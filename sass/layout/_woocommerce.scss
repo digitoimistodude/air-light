@@ -35,7 +35,7 @@ body {
 
         // Default columns fix for air
         li {
-          @media(min-width: $container-ipad) {
+          @media (min-width: $container-ipad) {
             @include column(1/4, $cycle: 4);
           }
         }

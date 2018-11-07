@@ -8,8 +8,11 @@
 
 // Set up self-hosted fonts here
 @include fontFace('Karla', '../fonts/karla-regular', 400);
+
 @include fontFace('Karla', '../fonts/karla-italic', 400, italic);
+
 @include fontFace('Karla', '../fonts/karla-bold', 700);
+
 @include fontFace('Karla', '../fonts/karla-bolditalic', 700, italic);
 
 // Set root size for rems

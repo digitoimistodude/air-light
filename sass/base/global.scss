@@ -1,7 +1,8 @@
-@charset 'UTF-8';
+@charset 'utf-8';
 
 // Reset & grid
 @import 'normalize';
+
 @import 'jeet/scss/index';
 
 // Theme options
@@ -9,28 +10,39 @@
 
 // Helpers
 @import 'helpers';
+
 @import 'accessibility';
 
 // Structure
 @import '../layout/general';
+
 @import '../layout/typography';
+
 @import '../layout/site-header';
+
 @import '../layout/site-footer';
+
 @import '../layout/forms';
 
 // Navigation
 @import '../navigation/nav-core';
+
 @import '../navigation/nav-desktop';
+
 @import '../navigation/nav-mobile';
 
 // Global features
 @import '../features/top';
+
 @import '../features/gallery';
 
 // Views
 @import '../views/front-page';
+
 @import '../views/page';
+
 @import '../views/blog';
+
 @import '../views/comments';
 
 // Extra building blocks

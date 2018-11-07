@@ -42,22 +42,11 @@
       background-color: transparent;
       border: 1px solid $color-links;
       color: $color-links;
+    }
 
-      &:hover {
-        background-color: $color-links;
-        color: #fff;
-      }
-
-      &.button-ghost-white {
-        border-color: #fff;
-        color: #fff;
-
-        &:hover {
-          background-color: $color-links;
-          border-color: $color-links;
-          color: #fff;
-        }
-      }
+    &.button-ghost:hover {
+      background-color: $color-links;
+      color: #fff;
     }
   }
 }
@@ -189,61 +178,62 @@ form {
   margin-bottom: 0;
   overflow: visible;
 
-  p {
-    &.comment-form-author {
-      @include column(1/3);
-      margin-bottom: 20px;
-      margin-top: 0;
+  .comment-form-author {
+    @include column(1/3);
+    margin-bottom: 20px;
+    margin-top: 0;
 
-      @media (max-width: $container-mobile) {
-        @include stack();
-      }
-
-      input#author {
-        padding: 15px;
-        border-width: 1px;
-      }
-    }
-
-    &.comment-form-email {
-      @include column(2/3);
-      margin-right: 0;
-      clear: right;
-      margin-bottom: 20px;
-      margin-top: 0;
-
-      @media (max-width: $container-mobile) {
-        @include stack();
-      }
-
-      input#email {
-        padding: 15px;
-        border-width: 1px;
-      }
-    }
-
-    &.comment-form-url {
+    @media (max-width: $container-mobile) {
       @include stack();
-      position: relative;
-      margin-top: 0;
-      margin-bottom: 30px;
-
-      input#url {
-        padding: 15px;
-        border-width: 1px;
-      }
     }
 
-    &.form-submit {
-      display: block;
-      clear: both;
-      margin-bottom: 0;
-      margin-top: 0;
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .comment-form-email {
+    @include column(2/3);
+    margin-right: 0;
+    clear: right;
+    margin-bottom: 20px;
+    margin-top: 0;
+
+    @media (max-width: $container-mobile) {
+      @include stack();
     }
 
-    &.comment-form-comment {
-      margin-bottom: 20px;
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
     }
+  }
+
+  .comment-form-url {
+    @include stack();
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%;
+    }
+  }
+
+  .form-submit {
+    display: block;
+    clear: both;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .comment-form-comment {
+    margin-bottom: 20px;
   }
 
   input {
@@ -252,9 +242,6 @@ form {
     }
   }
 
-  input#author,
-  input#email,
-  input#url,
   textarea {
     width: 100%;
   }

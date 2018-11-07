@@ -106,8 +106,8 @@ $sass-burger-add-vendor-prefixes: true !default;
 
   &::after {
     @if $sass-burger-add-vendor-prefixes {
-      transform: translateY( - ($burger-gutter + $burger-height)) rotate(-45deg);
+      transform: translateY(- ($burger-gutter + $burger-height)) rotate(-45deg);
     }
-    transform: translateY( - ($burger-gutter + $burger-height)) rotate(-45deg);
+    transform: translateY(- ($burger-gutter + $burger-height)) rotate(-45deg);
   }
 }
