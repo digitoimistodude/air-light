@@ -17,11 +17,8 @@
     "declaration-empty-line-before": "never",
     rule-empty-line-before: "always",
     "at-rule-empty-line-before": [
-      "always",
+      "never",
       {
-        "except": [
-          "first-nested"
-        ],
         "ignore": [
           "after-comment"
         ],
