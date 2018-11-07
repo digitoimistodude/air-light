@@ -17,10 +17,16 @@
     "declaration-empty-line-before": "never",
     rule-empty-line-before: "always",
     "at-rule-empty-line-before": [
-      "never",
+      "always",
       {
+        "except": [
+          "first-nested",
+          "after-same-name",
+          "blockless-after-same-name-blockless"
+        ],
         "ignore": [
-          "after-comment"
+          "after-comment",
+          "global.scss"
         ],
       }
     ]
