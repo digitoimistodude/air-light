@@ -114,7 +114,7 @@ linters:
     ignore_parent_selectors: false
 
   PlaceholderInExtend:
-    enabled: true
+    enabled: false
 
   PrivateNamingConvention:
     enabled: false
@@ -161,12 +161,12 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 6
+    max_depth: 8
 
   SelectorFormat:
     enabled: true
     convention: hyphenated_lowercase # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
-    ignored_names: ['gform_body', 'gform_wrapper', 'gform_header', 'field_1_1', 'field_1_2', 'field_1_3', 'field_1_4', 'field_1_5', 'field_1_6', 'field_1_7', 'field_1_8', 'field_1_9', 'field_1_10', 'field_2_1', 'field_2_2', 'field_2_3', 'field_2_4', 'field_2_5', 'field_2_6', 'field_2_7', 'field_2_8', 'field_2_9', 'field_2_10', 'ginput_container_email', 'gform_footer', 'top_label', 'gfield_checkbox']
+    ignored_names: ['hamburger', 'gform_body', 'gform_wrapper', 'gform_header', 'field_1_1', 'field_1_2', 'field_1_3', 'field_1_4', 'field_1_5', 'field_1_6', 'field_1_7', 'field_1_8', 'field_1_9', 'field_1_10', 'field_2_1', 'field_2_2', 'field_2_3', 'field_2_4', 'field_2_5', 'field_2_6', 'field_2_7', 'field_2_8', 'field_2_9', 'field_2_10', 'ginput_container_email', 'gform_footer', 'top_label', 'gfield_checkbox']
 
   Shorthand:
     enabled: true

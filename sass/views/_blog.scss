@@ -234,12 +234,12 @@ ul.tags {
       border-radius: 4px;
       background: #f0f0f0;
       opacity: .8;
+    }
 
-      &:hover {
-        color: #fff;
-        background: #aaa;
-        opacity: 1;
-      }
+    a:hover {
+      color: #fff;
+      background: #aaa;
+      opacity: 1;
     }
   }
 }

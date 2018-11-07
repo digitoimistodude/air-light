@@ -3661,6 +3661,7 @@ form.search-form .search-submit {
     width: 100%;
     float: none;
     padding: 2rem 0;
+    outline: none;
   }
 
   .nav-primary .menu-items a {
@@ -3694,15 +3695,15 @@ form.search-form .search-submit {
     color: #045d30;
   }
 
-  .nav-primary .menu-items a.current {
+  .nav-primary .menu-items .current {
     color: #d23600;
   }
 
-  .nav-primary .menu-items a.disabled {
+  .nav-primary .menu-items .disabled {
     color: #bbb;
   }
 
-  .nav-primary .menu-items a.highlighted .sub-arrow:before {
+  .nav-primary .menu-items .highlighted .sub-arrow:before {
     display: block;
     content: '-';
   }
@@ -3749,6 +3750,10 @@ form.search-form .search-submit {
     padding: 0;
   }
 
+  .nav-primary .menu-items ul a {
+    font-size: 1.4rem;
+  }
+
   .nav-primary .menu-items ul > li {
     padding-left: 1.5rem;
   }
@@ -3761,16 +3766,12 @@ form.search-form .search-submit {
     padding-left: 3rem;
   }
 
-  .nav-primary .menu-items ul > li ul ul {
+  .nav-primary .menu-items ul > li ul li ul {
     margin-left: -3rem;
   }
 
-  .nav-primary .menu-items ul > li ul ul li {
+  .nav-primary .menu-items ul > li ul li ul li {
     padding-left: 4.5rem;
-  }
-
-  .nav-primary .menu-items ul a {
-    font-size: 1.4rem;
   }
 }
 
@@ -3813,8 +3814,8 @@ form.search-form .search-submit {
   background-color: #333;
 }
 
-.nav-toggle:focus span:before,
-.nav-toggle:focus span:after {
+.nav-toggle:focus span span:before,
+.nav-toggle:focus span span:after {
   background-color: #333;
 }
 
@@ -3848,11 +3849,11 @@ form.search-form .search-submit {
   background-color: #fff;
 }
 
-.nav-toggle.is-active .hamburger-box .hamburger-inner {
+.nav-toggle.is-active.hamburger-box .hamburger-inner {
   background-color: #fff;
 }
 
-.nav-toggle.is-active .hamburger-box .hamburger-inner:after {
+.nav-toggle.is-active.hamburger-box .hamburger-inner:after {
   background-color: #fff;
 }
 

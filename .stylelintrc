@@ -8,7 +8,7 @@
     "value-list-comma-newline-after": "never",
     "selector-list-comma-newline-after": "always",
     "declaration-colon-space-before": "never",
-    "string-quotes": "single",
+    "string-quotes": "single", { "avoidEscape" : true },
     "declaration-block-trailing-semicolon": "always",
     "no-eol-whitespace": "false",
     "number-no-trailing-zeros": "true",
