@@ -4913,6 +4913,15 @@ del {
   max-width: 100%;
 }
 
+.entry-content h1:first-child,
+.entry-content h2:first-child,
+.entry-content h3:first-child,
+.entry-content h4:first-child,
+.entry-content h5:first-child,
+.entry-content h6:first-child {
+  margin-top: 0;
+}
+
 table {
   border-spacing: 0;
   border-collapse: collapse;
