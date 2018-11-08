@@ -8,7 +8,6 @@
     "value-list-comma-newline-after": "never",
     "selector-list-comma-newline-after": "always",
     "declaration-colon-space-before": "never",
-    "string-quotes": "single", { "avoidEscape" : true },
     "declaration-block-trailing-semicolon": "always",
     "no-eol-whitespace": "false",
     "number-no-trailing-zeros": "true",
@@ -16,6 +15,7 @@
     "block-closing-brace-newline-after": "always-multi-line",
     "declaration-empty-line-before": "never",
     rule-empty-line-before: "always",
+    "string-quotes": "single",
     "at-rule-empty-line-before": [
       "always",
       {
@@ -25,8 +25,7 @@
           "blockless-after-same-name-blockless"
         ],
         "ignore": [
-          "after-comment",
-          "global.scss"
+          "after-comment"
         ],
       }
     ]
