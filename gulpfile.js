@@ -241,9 +241,10 @@ WATCH
 
 // Run the JS task followed by a reload
 gulp.task('js-watch', ['js'], browserSync.reload);
-gulp.task('watch', ['browsersync', 'phpcs'], function() {
+gulp.task('watch', ['browsersync'], function() {
 
   gulp.watch(sassSrc, ['styles', 'scss-lint']).on( 'change', helpers );
+  gulp.watch(phpSrc, ['phpcs']);
   gulp.watch(jsSrc, ['js-watch']);
 
 });

@@ -262,10 +262,8 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [scss-lint](https://github.com/brigade/scss-lint) built inside gulpfile.js. **Please note, you need to configure these separately!**
 
-PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by editing the task:
+PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
 
-1. Find line `gulp.task('watch', ['browsersync', 'phpcs'], function() {` in gulpfile.js
-2. Replace it with `gulp.task('watch', ['browsersync'], function() {`
 
 ### Notes
 
