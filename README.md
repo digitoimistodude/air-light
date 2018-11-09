@@ -36,16 +36,17 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     1. [Sticky navigation](#sticky-navigation)
     2. [Slick slider](#slick-slider)
     3. [WooCommerce support](#woocommerce-support)
-5. [Requirements](#requirements)    
+5. [Requirements](#requirements)
 6. [Recommendations for development](#recommendations-for-development)
 7. [Installation](#installation)
 8. [Contributing](#contributing)
     1. [Air development](#air-development)
-9. [Notes](#notes)
+9. [Debuggers](#debuggers)
+10. [Notes](#notes)
 
 ### Please note before using
 
-Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that the anything can change to a different direction without a warning.
+Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that the anything can change to a different direction without a warning. Please also see [Debuggers](#debuggers)!
 
 Air is not meant to be "a theme for everyone", so it doesn't have many parts that are generally included (see [Disabled features](#disabled-features)).
 
@@ -124,11 +125,11 @@ Creating accessible websites is really important and our goal is to make air as 
 
 #### Sticky navigation
 
-Air has sticky navigation baked in. 
+Air has sticky navigation baked in.
 
 ##### How to enable
 
-You can enable the navigation by 
+You can enable the navigation by
 
 1. Adding sticky-nav.js to your gulpfile (already included with [Devpackages](https://github.com/digitoimistodude/devpackages) and newtheme.sh start script)
 2. Uncommeting sticky-nav import in global.scss
@@ -136,11 +137,11 @@ You can enable the navigation by
 
 #### Slick slider
 
-Air includes sassified version, clean SCSS file for slick carousel. 
+Air includes sassified version, clean SCSS file for slick carousel.
 
 ##### How to enable
 
-To enable Slick carousel support, 
+To enable Slick carousel support,
 
 1. Run `npm install slick-carousel --save` in theme directory
 2. Run `npm update` in theme directory
@@ -220,7 +221,7 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 
 #### Installation
 
-If you want to improve air, you have two options. 
+If you want to improve air, you have two options.
 
 ##### 1. Use dudestack
 
@@ -256,6 +257,15 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 2. `wp plugin install wordpress-importer --activate`
 3. `wget https://wpcom-themes.svn.automattic.com/demo/theme-unit-test-data.xml`
 4. `wp import theme-unit-test-data.xml --authors=create`
+
+### Debuggers
+
+Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [scss-lint](https://github.com/brigade/scss-lint) built inside gulpfile.js. **Please note, you need to configure these separately!**
+
+PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by editing the task:
+
+1. Find line `gulp.task('watch', ['browsersync', 'phpcs'], function() {` in gulpfile.js
+2. Replace it with `gulp.task('watch', ['browsersync'], function() {`
 
 ### Notes
 

@@ -22,6 +22,7 @@ var stylefmt    = require('gulp-stylefmt');
 var debug       = require('gulp-debug');
 var scsslint    = require('gulp-scss-lint');
 var cache       = require('gulp-cached');
+var phpcs       = require('gulp-phpcs');
 
 /*
 
@@ -77,7 +78,8 @@ gulp.task('browsersync', function() {
     proxy: "airdev.test",
     browser: "Google Chrome",
     open: "external",
-    notify: true
+    notify: true,
+    reloadDelay: 1000
   });
 });
 
@@ -183,6 +185,27 @@ gulp.task('styles', function() {
 
 /*
 
+PHPCS
+======
+*/
+
+gulp.task('phpcs', function() {
+
+  gulp.src(phpSrc)
+
+    // Validate files using PHP Code Sniffer
+    .pipe(phpcs({
+      bin: '/usr/local/bin/phpcs',
+      standard: './phpcs.xml',
+      warningSeverity: 0
+    }))
+
+    // Log all problems that was found
+    .pipe(phpcs.reporter('log'));
+});
+
+/*
+
 SCRIPTS
 =======
 */
@@ -216,10 +239,12 @@ WATCH
 
 */
 
-gulp.task('watch', ['browsersync'], () => {
+// Run the JS task followed by a reload
+gulp.task('js-watch', ['js'], browserSync.reload);
+gulp.task('watch', ['browsersync', 'phpcs'], function() {
 
   gulp.watch(sassSrc, ['styles', 'scss-lint']).on( 'change', helpers );
-  gulp.watch(jsSrc, ['js']);
+  gulp.watch(jsSrc, ['js-watch']);
 
 });
 

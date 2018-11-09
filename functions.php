@@ -5,7 +5,7 @@
  * @package air-light
  */
 
-define( 'AIR_LIGHT_VERSION', '4.3.8' );
+define( 'AIR_LIGHT_VERSION', '4.3.9' );
 
 /**
  * Requires.
