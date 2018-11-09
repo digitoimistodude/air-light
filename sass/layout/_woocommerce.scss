@@ -1,93 +1,93 @@
 // Default overrides for WooCommerce
 body {
   &.woocommerce,
-  &.woocommerce-page {
-    .site-content {
+  &.woocommerce-page .site-content {
 
-      // Breadcrumb
-      .woocommerce-breadcrumb {
-        font-weight: 600;
-        color: $color-fog;
-        font-family: $font-headings;
-        text-transform: uppercase;
-        font-size: 16px;
+    // Breadcrumb
+    .woocommerce-breadcrumb {
+      font-weight: 600;
+      color: $color-fog;
+      font-family: $font-headings;
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    // Buttons
+    .button,
+    .button.disabled,
+    .button.alt,
+    .button[disabled] {
+      background: #222;
+      color: #fff;
+      border-radius: 0;
+    }
+
+    .button:hover,
+    .button.disabled:hover,
+    .button.alt:hover,
+    .button[disabled]:hover {
+      background: #222;
+    }
+
+    // Product archive listing
+    ul.products .button {
+      @extend %small;
+    }
+
+
+    // Default columns fix for air
+    ul.products li {
+      @media (min-width: $container-ipad) {
+        @include column(1/4, $cycle: 4);
       }
+    }
 
-      // Buttons
-      .button,
-      .button.disabled,
-      .button.alt,
-      .button[disabled] {
-        background: #222;
-        color: #fff;
-        border-radius: 0;
+    // Star rating fix for air
+    ul.products .star-rating {
+      @extend %default;
+      margin-top: 2px;
+      height: 32px;
+    }
 
-        &:hover {
-          background: #222;
-        }
+    ul.products .star-rating span {
+      padding-top: 1.5em;
+      font-family: 'star';
+
+      &:after {
+        font-family: 'star';
+        content: '\53\53\53\53\53';
+        top: 0;
+        position: absolute;
+        left: 0;
       }
+    }
 
-      // Product archive listing
-      ul.products {
-        .button {
-          @extend %small;
-        }
+    // Single product
+    div.product {
+      @extend %default;
 
-        // Default columns fix for air
-        li {
-          @media (min-width: $container-ipad) {
-            @include column(1/4, $cycle: 4);
-          }
-        }
-
-        // Star rating fix for air
-        .star-rating {
-          @extend %default;
-          margin-top: 2px;
-          height: 32px;
-
-          span {
-            padding-top: 1.5em;
-            font-family: 'star';
-
-            &:after {
-              font-family: 'star';
-              content: '\53\53\53\53\53';
-              top: 0;
-              position: absolute;
-              left: 0;
-            }
-          }
-        }
-      }
-
-      // Single product
-      div.product {
+      // Star rating fix for air
+      .star-rating {
         @extend %default;
+        margin-top: 2px;
+        height: 35px;
+      }
 
-        // Star rating fix for air
-        .star-rating {
-          @extend %default;
-          margin-top: 2px;
-          height: 35px;
+      .star-rating * {
+        font-family: 'star';
+      }
 
-          * {
-            font-family: 'star';
-          }
-        }
+      // Price size fix
+      .price,
+      .price span {
+        @extend .betweenh2andh3;
+        font-family: $font-headings;
+        color: $color-body;
+        font-weight: 900;
+      }
 
-        // Price size fix
-        .price,
-        .price span {
-          @extend .betweenh2andh3;
-          font-family: $font-headings;
-          color: $color-body;
-          font-weight: 900;
-        }
-
-        .button {
-          padding: 18px;
-        }
+      .button {
+        padding: 18px;
       }
     }
   }

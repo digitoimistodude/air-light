@@ -282,10 +282,10 @@ $absolute-navigation: false;
         &.sub-menu {
           padding-top: .5rem;
           padding-bottom: .5rem;
+        }
 
-          li {
-            margin: 0;
-          }
+        &.sub-menu li {
+          margin: 0;
         }
 
         .dropdown-toggle {
@@ -299,41 +299,40 @@ $absolute-navigation: false;
           float: none;
           width: $dropdown-width;
           padding: 0;
+        }
 
-          // Sub-level toggle arrow
-          .dropdown-toggle {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            margin-top: 0;
-            padding: 0;
-            text-indent: -9999px;
-            overflow: hidden;
-            background-color: transparent;
-            background-image: url($icon-arrow-right);
-            background-repeat: no-repeat;
-            background-position: center;
-            color: transparent;
-            width: 12px;
-            height: 12px;
-            border: 0;
+        // Sub-level toggle arrow
+        li .dropdown-toggle {
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          margin-top: 0;
+          padding: 0;
+          text-indent: -9999px;
+          overflow: hidden;
+          background-color: transparent;
+          background-image: url($icon-arrow-right);
+          background-repeat: no-repeat;
+          background-position: center;
+          color: transparent;
+          width: 12px;
+          height: 12px;
+          border: 0;
+        }
 
-            // Toggled state
-            &.toggled-on {
-              background-image: url($icon-arrow-left);
-            }
-          }
+        // Toggled state
+        li .dropdown-toggle.toggled-on {
+          background-image: url($icon-arrow-left);
+        }
 
-          // Prevent nav from flickering
-          &.menu-item-has-children {
-            a {
-              // Let's make space for the arrow
-              padding-right: 3.5rem;
-              margin-right: 0;
-              margin-bottom: 0;
-              width: 100%;
-            }
-          }
+        // Prevent nav from flickering
+        .menu-item-has-children a {
+
+          // Let's make space for the arrow
+          padding-right: 3.5rem;
+          margin-right: 0;
+          margin-bottom: 0;
+          width: 100%;
         }
 
         ul {
@@ -348,18 +347,18 @@ $absolute-navigation: false;
           font-size: 1.4rem;
           color: $color-nav-dropdown-links;
           display: block;
+        }
 
-          &:hover,
-          &:focus,
-          &:active,
-          &.highlighted {
-            color: $color-links;
-          }
+        a:hover,
+        a:focus,
+        a:active,
+        a.highlighted {
+          color: $color-links;
+        }
 
-          &.disabled {
-            background: #fff;
-            color: #ccc;
-          }
+        .disabled {
+          background: #fff;
+          color: #ccc;
         }
       }
 

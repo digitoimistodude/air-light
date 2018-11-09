@@ -1946,7 +1946,7 @@ form.search-form .search-submit {
     background-image: url('../svg/chevron-left-dark.svg');
   }
 
-  .nav-primary .menu-item ul li.menu-item-has-children a {
+  .nav-primary .menu-item ul .menu-item-has-children a {
     padding-right: 3.5rem;
     margin-right: 0;
     margin-bottom: 0;
@@ -1974,7 +1974,7 @@ form.search-form .search-submit {
     color: #045d30;
   }
 
-  .nav-primary .menu-item ul a.disabled {
+  .nav-primary .menu-item ul .disabled {
     background: #fff;
     color: #ccc;
   }
