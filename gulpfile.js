@@ -20,6 +20,8 @@ var exec        = require('child_process').exec;
 var rename      = require('gulp-rename');
 var stylefmt    = require('gulp-stylefmt');
 var debug       = require('gulp-debug');
+var scsslint    = require('gulp-scss-lint');
+var cache       = require('gulp-cached');
 
 /*
 
@@ -85,22 +87,25 @@ STYLES
 ======
 */
 
-var autostyle = function( file ) {
-    var currentDirectory = process.cwd() + '/';
-    var modifiedFile = file.path.replace( currentDirectory, '' );
-    var fileName = modifiedFile.replace(/^.*[\\\/]/, '')
-    var correctDir = modifiedFile.replace( fileName, '' );
+var helpers = function( file ) {
+    var currentdirectory = process.cwd() + '/';
+    var modifiedfile = file.path.replace( currentdirectory, '' );
+    var filename = modifiedfile.replace(/^.*[\\\/]/, '')
+    var correctdir = modifiedfile.replace( filename, '' );
 
-    gulp.src( modifiedFile )
+    gulp.src(modifiedfile)
         // Run current file through stylefmt
-        .pipe(stylefmt({ configFile: './.stylelintrc' }))
-
-        // Display debug information
-        .pipe(debug())
+        .pipe(stylefmt({ configFile: '.stylelintrc' }))
 
         // Overwrite
-        .pipe(gulp.dest(correctDir));
+        .pipe(gulp.dest(correctdir))
 };
+
+gulp.task('scss-lint', function() {
+  gulp.src([sassSrc, '!sass/navigation/_burger.scss', '!sass/base/_normalize.scss'])
+    .pipe(cache('scsslint'))
+    .pipe(scsslint());
+});
 
 gulp.task('styles', function() {
 
@@ -135,8 +140,8 @@ gulp.task('styles', function() {
         }
       }
     }, function(details) {
-        console.log('[clean-css] Original size: ' + details.stats.originalSize + ' bytes');
-        console.log('[clean-css] Minified size: ' + details.stats.minifiedSize + ' bytes');
+        //console.log('[clean-css] Original size: ' + details.stats.originalSize + ' bytes');
+        //console.log('[clean-css] Minified size: ' + details.stats.minifiedSize + ' bytes');
         console.log('[clean-css] Time spent on minification: ' + details.stats.timeSpent + ' ms');
         console.log('[clean-css] Compression efficiency: ' + details.stats.efficiency * 100 + ' %');
     }))
@@ -213,7 +218,7 @@ WATCH
 
 gulp.task('watch', ['browsersync'], () => {
 
-  gulp.watch(sassSrc, ['styles']).on( 'change', autostyle );
+  gulp.watch(sassSrc, ['styles', 'scss-lint']).on( 'change', helpers );
   gulp.watch(jsSrc, ['js']);
 
 });

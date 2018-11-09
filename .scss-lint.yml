@@ -82,7 +82,7 @@ linters:
     enabled: true
 
   ImportantRule:
-    enabled: true
+    enabled: false
 
   ImportPath:
     enabled: true
@@ -114,7 +114,7 @@ linters:
     ignore_parent_selectors: false
 
   PlaceholderInExtend:
-    enabled: true
+    enabled: false
 
   PrivateNamingConvention:
     enabled: false
