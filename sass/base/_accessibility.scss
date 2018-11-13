@@ -78,6 +78,10 @@ $focus-text-color: #000;
     background: $focus-background-color;
     opacity: 1;
   }
+
+  a.global-link:focus {
+    background: rgba($focus-background-color, .5);
+  }
 }
 
 // Make theme keyboard accessible with no Javascript enabled

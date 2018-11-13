@@ -416,6 +416,10 @@ img {
   opacity: 1;
 }
 
+[data-whatinput="keyboard"] a.global-link:focus {
+  background: rgba(249, 191, 71, .5);
+}
+
 .no-js *:focus {
   outline: 4px solid #f9bf47;
 }
