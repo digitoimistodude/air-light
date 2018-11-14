@@ -172,6 +172,8 @@
 .slider {
   position: relative;
   display: block;
+
+  /* autoprefixer: ignore next */
   box-sizing: border-box;
   user-select: none;
   touch-action: pan-y;

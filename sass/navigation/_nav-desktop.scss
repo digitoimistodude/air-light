@@ -62,14 +62,12 @@ $absolute-navigation: false;
 
     [data-whatinput="keyboard"] .sub-menu {
       transition: none;
-      transition-delay: none;
       transform: none;
     }
 
     [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children,
     [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children {
       &:focus > .sub-menu,
-      &:focus-within > .sub-menu,
       &:hover > .sub-menu {
         visibility: visible;
         opacity: 1;
@@ -91,11 +89,9 @@ $absolute-navigation: false;
         transform: translateY(-2em);
         z-index: -1;
         transition: none;
-        transition-delay: none;
       }
 
       .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-      .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
       .nav-primary ul .menu-item-has-children:hover > .sub-menu {
         visibility: visible;
         opacity: 1;
@@ -115,7 +111,6 @@ $absolute-navigation: false;
         transform: translateY(1.5rem);
         z-index: -1;
         transition: none;
-        transition-delay: none;
         list-style-type: none;
         list-style: none;
 
@@ -134,7 +129,6 @@ $absolute-navigation: false;
 
       .nav-primary ul .menu-item-has-children {
         &:focus > .sub-menu,
-        &:focus-within > .sub-menu,
         &:hover > .sub-menu {
           visibility: visible;
           opacity: 1;

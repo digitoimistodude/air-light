@@ -4,13 +4,10 @@
    ========================================================================== */
 /**
  * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
   line-height: 1.15;
   /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
 }
 
 /* Sections
@@ -38,7 +35,7 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
+  /* autoprefixer: ignore next */
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -224,7 +221,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
+  /* autoprefixer: ignore next */
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -259,7 +256,7 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  -webkit-box-sizing: border-box;
+  /* autoprefixer: ignore next */
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -339,12 +336,12 @@ html,
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
+  /* autoprefixer: ignore next */
   box-sizing: border-box;
 }
 
 img {
-  -webkit-box-sizing: content-box;
+  /* autoprefixer: ignore next */
   box-sizing: content-box;
 }
 
@@ -576,7 +573,6 @@ body {
   font-size: 1.7rem;
   font-family: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
   color: #222;
-  font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
   -moz-text-size-adjust: none;
   -ms-text-size-adjust: none;
@@ -1685,19 +1681,14 @@ form.search-form .search-submit {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
-    -webkit-transition-delay: none;
-    -o-transition-delay: none;
-    transition-delay: none;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
   }
 
   [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
   [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu,
   [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
   [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
@@ -1724,13 +1715,9 @@ form.search-form .search-submit {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
-    -webkit-transition-delay: none;
-    -o-transition-delay: none;
-    transition-delay: none;
   }
 
   .no-js .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  .no-js .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
   .no-js .nav-primary ul .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;
@@ -1757,9 +1744,6 @@ form.search-form .search-submit {
     -webkit-transition: none;
     -o-transition: none;
     transition: none;
-    -webkit-transition-delay: none;
-    -o-transition-delay: none;
-    transition-delay: none;
     list-style-type: none;
     list-style: none;
   }
@@ -1779,7 +1763,6 @@ form.search-form .search-submit {
   }
 
   .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
   .nav-primary ul .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
     opacity: 1;

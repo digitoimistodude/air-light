@@ -31,18 +31,18 @@ $navheight-collapsed: 54px;
     .site-header {
       padding-top: 5px;
       padding-bottom: 5px;
+    }
 
+    .site-title svg {
+      position: relative;
+      top: 5px;
+      width: 32px;
+      height: 32px;
+    }
+
+    @media (max-width: $responsivenav - 1px) {
       .site-title {
-        svg {
-          position: relative;
-          top: 5px;
-          width: 32px;
-          height: 32px;
-        }
-
-        @media (max-width: $responsivenav - 1px) {
-          margin-top: 0;
-        }
+        margin-top: 0;
       }
     }
 

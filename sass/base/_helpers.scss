@@ -122,9 +122,11 @@ html,
 *,
 *:before,
 *:after {
+  /* autoprefixer: ignore next */
   box-sizing: border-box;
 }
 
 img {
+  /* autoprefixer: ignore next */
   box-sizing: content-box;
 }

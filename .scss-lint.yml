@@ -34,7 +34,7 @@ linters:
     enabled: false
 
   Comment:
-    enabled: true
+    enabled: false
     style: silent
 
   DebugStatement:
@@ -166,7 +166,7 @@ linters:
   SelectorFormat:
     enabled: true
     convention: hyphenated_lowercase # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
-    ignored_names: ['breadcrumbs__crumb--home', 'breadcrumbs__crumb', 'breadcrumbs__trail', 'breadcrumbs__title', 'gform_body', 'ginput_container_checkbox', 'choice_1_8_1', 'gform_page_footer', 'gform_wrapper', 'gform_header', 'field_1_1', 'field_1_2', 'field_1_3', 'field_1_4', 'field_1_5', 'field_1_6', 'field_1_7', 'field_1_8', 'field_1_9', 'field_1_10', 'field_2_1', 'field_2_2', 'field_2_3', 'field_2_4', 'field_2_5', 'field_2_6', 'field_2_7', 'field_2_8', 'field_2_9', 'field_2_10', 'ginput_container_email', 'gform_footer', 'top_label', 'gfield_radio', 'gfield_checkbox']
+    ignored_names: ['current_menu_item', 'current_page_parent', 'breadcrumbs__crumb--home', 'breadcrumbs__crumb', 'breadcrumbs__trail', 'breadcrumbs__title', 'gform_body', 'ginput_container_checkbox', 'choice_1_8_1', 'gform_page_footer', 'gform_wrapper', 'gform_header', 'field_1_1', 'field_1_2', 'field_1_3', 'field_1_4', 'field_1_5', 'field_1_6', 'field_1_7', 'field_1_8', 'field_1_9', 'field_1_10', 'field_2_1', 'field_2_2', 'field_2_3', 'field_2_4', 'field_2_5', 'field_2_6', 'field_2_7', 'field_2_8', 'field_2_9', 'field_2_10', 'ginput_container_email', 'gform_footer', 'top_label', 'gfield_radio', 'gfield_checkbox']
 
   Shorthand:
     enabled: true
