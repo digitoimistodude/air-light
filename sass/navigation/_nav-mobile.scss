@@ -271,8 +271,8 @@ $hamburger-hover-transition-timing-function: linear;
     color: $nav-toggle-active-color;
   }
 
-  &.is-active:focus,
-  &.is-active.focus {
+  &.is-active span:focus,
+  &.is-active span.focus {
     .hamburger-box .hamburger-inner {
       background-color: $nav-toggle-active-color;
     }
@@ -282,7 +282,7 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  &.is-active.hamburger-box {
+  &.is-active span.hamburger-box {
     .hamburger-inner {
       background-color: $nav-toggle-active-color;
     }
@@ -292,9 +292,9 @@ $hamburger-hover-transition-timing-function: linear;
     }
   }
 
-  &.is-active:focus,
-  &.is-active:hover,
-  &.is-active:active {
+  &.is-active span:focus,
+  &.is-active span:hover,
+  &.is-active span:active {
     color: $nav-toggle-active-color;
 
     span {

@@ -3826,33 +3826,33 @@ form.search-form .search-submit {
   color: #fff;
 }
 
-.nav-toggle.is-active:focus .hamburger-box .hamburger-inner,
-.nav-toggle.is-active.focus .hamburger-box .hamburger-inner {
+.nav-toggle.is-active span:focus .hamburger-box .hamburger-inner,
+.nav-toggle.is-active span.focus .hamburger-box .hamburger-inner {
   background-color: #fff;
 }
 
-.nav-toggle.is-active:focus .hamburger-box .hamburger-inner:after,
-.nav-toggle.is-active.focus .hamburger-box .hamburger-inner:after {
+.nav-toggle.is-active span:focus .hamburger-box .hamburger-inner:after,
+.nav-toggle.is-active span.focus .hamburger-box .hamburger-inner:after {
   background-color: #fff;
 }
 
-.nav-toggle.is-active.hamburger-box .hamburger-inner {
+.nav-toggle.is-active span.hamburger-box .hamburger-inner {
   background-color: #fff;
 }
 
-.nav-toggle.is-active.hamburger-box .hamburger-inner:after {
+.nav-toggle.is-active span.hamburger-box .hamburger-inner:after {
   background-color: #fff;
 }
 
-.nav-toggle.is-active:focus,
-.nav-toggle.is-active:hover,
-.nav-toggle.is-active:active {
+.nav-toggle.is-active span:focus,
+.nav-toggle.is-active span:hover,
+.nav-toggle.is-active span:active {
   color: #fff;
 }
 
-.nav-toggle.is-active:focus span,
-.nav-toggle.is-active:hover span,
-.nav-toggle.is-active:active span {
+.nav-toggle.is-active span:focus span,
+.nav-toggle.is-active span:hover span,
+.nav-toggle.is-active span:active span {
   color: #fff;
 }
 
