@@ -69,7 +69,7 @@
             'menu_id'           => 'main-menu',
             'echo'              => true,
             'fallback_cb'       => 'Air_Light_Navwalker::fallback',
-            'items_wrap'        => '<ul class="%2$s" id="%1$s">%3$s</ul>',
+            'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
             'walker'            => new Air_Light_Navwalker(),
           ) ); ?>
 

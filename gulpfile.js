@@ -291,7 +291,7 @@ gulp.task('a11y', function() {
       force: true,
       reportLevels: {
         notice: false,
-        warning: true,
+        warning: false,
         error: true
       },
 
