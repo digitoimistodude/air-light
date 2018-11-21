@@ -75,6 +75,12 @@
 
         <!-- Translations related, not always necessary, too strict -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+
+        <!-- EditorConfig makes sure this happens anyway & false positives happen with this -->
+        <exclude name="Generic.Files.EndFileNewline.NotFound" />
+
+        <!-- Many times when developing a customer case we have placeholders for SVG includes, so unnecessary error reports happen with this rule -->
+        <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.
