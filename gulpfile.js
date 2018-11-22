@@ -306,7 +306,7 @@ gulp.task('a11y', function() {
     }))
     .on('error', console.log)
 });
-d
+
 /*
 
 SCRIPTS
