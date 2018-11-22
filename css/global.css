@@ -1885,11 +1885,13 @@ form.search-form .search-submit {
     margin-left: 0;
     padding-bottom: .5rem;
     padding-top: .5rem;
+    padding-left: 0;
     margin-top: 18px;
     z-index: 999;
   }
 
   .nav-primary .menu-item ul.sub-menu {
+    padding-left: 0;
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
