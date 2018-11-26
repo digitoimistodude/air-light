@@ -91,13 +91,19 @@ STYLES
 ======
 */
 
-var helpers = function( file ) {
+var stylefmtfile = function( file ) {
+
+    console.log(util.colors.white('[') + util.colors.yellow('Stylefmt') + util.colors.white('] ') + 'Automatically correcting file based on .stylelintrc...');
     var currentdirectory = process.cwd() + '/';
     var modifiedfile = file.path.replace( currentdirectory, '' );
     var filename = modifiedfile.replace(/^.*[\\\/]/, '')
     var correctdir = modifiedfile.replace( filename, '' );
 
     gulp.src(modifiedfile)
+
+        // Cache this action to prevent watch loop
+        .pipe(cache('stylefmtrunning'))
+
         // Run current file through stylefmt
         .pipe(stylefmt({ configFile: '.stylelintrc' }))
 
@@ -107,6 +113,11 @@ var helpers = function( file ) {
 
 gulp.task('scss-lint', function() {
   gulp.src([sassSrc, '!sass/navigation/_burger.scss', '!sass/base/_normalize.scss'])
+
+    // Cache this action to prevent watch loop
+    .pipe(cache('scsslintrunning'))
+
+    // Print linter report
     .pipe(scsslint());
 });
 
@@ -346,7 +357,7 @@ WATCH
 gulp.task('js-watch', ['js'], browsersync.reload);
 gulp.task('watch', ['browsersync'], function() {
 
-  gulp.watch(sassSrc, ['styles', 'scss-lint']).on( 'change', helpers );
+  gulp.watch(sassSrc, ['styles', 'scss-lint']).on( 'change', stylefmtfile );
   gulp.watch(phpSrc, ['phpcs', 'validatehtml', 'a11y']);
   gulp.watch(jsSrc, ['js-watch']);
 
