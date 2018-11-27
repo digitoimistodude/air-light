@@ -308,10 +308,19 @@ gulp.task('a11y', function() {
 
       // Ignore WordPress/PHP-related/file structure related error messages
       ignore: [
+        // The html element should have a lang or xml:lang attribute which describes the language of the document.
         'WCAG2A.Principle3.Guideline3_1.3_1_1.H57.2',
+
+        // A title should be provided for the document, using a non-empty title element in the head section.
         'WCAG2A.Principle2.Guideline2_4.2_4_2.H25.1.NoTitleEl',
+
+        // Anchor element found with a valid href attribute, but no link content has been supplied.
         'WCAG2A.Principle4.Guideline4_1.4_1_2.H91.A.NoContent',
+
+        // Heading tag found with no content. Text that is not intended as a heading should not be marked up with heading tags.
         'WCAG2A.Principle1.Guideline1_3.1_3_1.H42.2',
+
+        // This link points to a named anchor "[link target]" within the document, but no anchor exists with that name.
         'WCAG2A.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID'
       ]
     }))
