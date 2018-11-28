@@ -9,7 +9,6 @@
 // Default structural element
 .block {
   @include background-cover();
-  background-position: center;
   background-color: #fff;
   position: relative;
   min-height: 100px;
