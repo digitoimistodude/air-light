@@ -1557,16 +1557,6 @@ form.search-form .search-submit {
   z-index: 9999;
 }
 
-.nav-primary .menu-items:after {
-  content: '\00a0';
-  display: block;
-  height: 0;
-  font: 0/0 serif;
-  clear: both;
-  visibility: hidden;
-  overflow: hidden;
-}
-
 .nav-primary .menu-items ul,
 .nav-primary .menu-items li {
   display: block;

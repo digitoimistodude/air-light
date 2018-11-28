@@ -10,16 +10,6 @@ $enable-animations: true;
   position: relative;
   z-index: 9999;
 
-  &:after {
-    content: '\00a0';
-    display: block;
-    height: 0;
-    font: 0/0 serif;
-    clear: both;
-    visibility: hidden;
-    overflow: hidden;
-  }
-
   ul,
   li {
     display: block;
