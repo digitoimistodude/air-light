@@ -75,7 +75,7 @@ $focus-text-color: #000;
 
   a:focus {
     outline: 2px solid $focus-outline-color;
-    background: $focus-background-color;
+    background: rgba($focus-background-color, .5);
     opacity: 1;
   }
 

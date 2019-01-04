@@ -409,7 +409,7 @@ img {
 
 [data-whatinput="keyboard"] a:focus {
   outline: 2px solid #f9bf47;
-  background: #f9bf47;
+  background: rgba(249, 191, 71, .5);
   opacity: 1;
 }
 
