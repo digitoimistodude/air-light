@@ -57,9 +57,8 @@ git clone https://github.com/digitoimistodude/devpackages
 
 echo "${yellow}Setting up package.json from devpackages github${txtreset}"
 sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/devpackages/package.json > "$PROJECTPATH/package.json"
-echo "${yellow}Installing and updating project node.js packages (may take a while)${txtreset}"
+echo "${yellow}Installing project node.js packages (may take a while)${txtreset}"
 cd ${PROJECTPATH}
-npm-check-updates -u
 npm install
 
 echo "${yellow}Generating gulpfile.js from https://github.com/digitoimistodude/devpackages${txtreset}"
