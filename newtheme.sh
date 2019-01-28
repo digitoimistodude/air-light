@@ -95,9 +95,9 @@ echo "# ${PROJECTNAME}
 
 This project is hand made for customer. Customer basic details are here:
 
-**Company name:** (Please fill)  
-**Contact person:** (Please fill)  
-**Contact email:** (Please fill)  
+**Company name:** (Please fill)
+**Contact person:** (Please fill)
+**Contact email:** (Please fill)
 
 ## Stack
 
@@ -126,9 +126,9 @@ On top of features included in [digitoimistodude/air-light](https://github.com/d
 
 Green checkmarks show if the environment is already set up and running, red cross indicates if it's not yet there or disabled.
 
-✅ Development: [${PROJECTNAME}.test](http://${PROJECTNAME}.test)  
-❌ Staging: [asiakas.dude.fi/${PROJECTNAME}](https://asiakas.dude.fi/${PROJECTNAME})  
-❌ Production: [${PROJECTNAME}.fi](https://${PROJECTNAME}.fi/)  
+✅ Development: [${PROJECTNAME}.test](http://${PROJECTNAME}.test)
+❌ Staging: [asiakas.dude.fi/${PROJECTNAME}](https://asiakas.dude.fi/${PROJECTNAME})
+❌ Production: [${PROJECTNAME}.fi](https://${PROJECTNAME}.fi/)
 
 ## Setting it up initially
 
@@ -139,7 +139,7 @@ If dev environment is indeed running, you're ready to version control the projec
 There are npm packages in both project root and theme folder. If you come later to this project, please run:
 
 1. \`composer in\stall\` (in project folder)
-2. \`npm install` (in project folder)
+2. \`npm install\` (in project folder)
 2. \`npm install\` (in theme folder)
 
 Run project with \`gulp\`.
