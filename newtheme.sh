@@ -95,9 +95,9 @@ echo "# ${PROJECTNAME}
 
 This project is hand made for customer. Customer basic details are here:
 
-**Company name:** (Please fill)
-**Contact person:** (Please fill)
-**Contact email:** (Please fill)
+**Company name:** (Please fill)  
+**Contact person:** (Please fill)  
+**Contact email:** (Please fill)  
 
 ## Stack
 
@@ -109,8 +109,8 @@ This project is built on [digitoimistodude/dudestack](https://github.com/digitoi
 
 ## Basic details
 
-**Developers:** [ronilaukkarinen](https://github.com/ronilaukkarinen)
-**Custom post type plugin:** ACF Pro
+**Developers:** [ronilaukkarinen](https://github.com/ronilaukkarinen)  
+**Custom post type plugin:** ACF Pro  
 
 ## Theme screenshot
 
@@ -126,9 +126,9 @@ On top of features included in [digitoimistodude/air-light](https://github.com/d
 
 Green checkmarks show if the environment is already set up and running, red cross indicates if it's not yet there or disabled.
 
-✅ Development: [${PROJECTNAME}.test](http://${PROJECTNAME}.test)
-❌ Staging: [asiakas.dude.fi/${PROJECTNAME}](https://asiakas.dude.fi/${PROJECTNAME})
-❌ Production: [${PROJECTNAME}.fi](https://${PROJECTNAME}.fi/)
+✅ Development: [${PROJECTNAME}.test](http://${PROJECTNAME}.test)  
+❌ Staging: [asiakas.dude.fi/${PROJECTNAME}](https://asiakas.dude.fi/${PROJECTNAME})  
+❌ Production: [${PROJECTNAME}.fi](https://${PROJECTNAME}.fi/)  
 
 ## Setting it up initially
 
