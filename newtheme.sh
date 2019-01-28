@@ -88,10 +88,9 @@ echo "${yellow}Generating default README.md...${txtreset}"
 newestair="4.5.8"
 newestwordpress="5.0.3"
 newestphp="7.2"
-currentdate="LC_TIME=en_US date '+%d %b %Y'";
-datewithunderscores="${currentdate} |tr ' ' '_'"
+currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
 echo "# ${PROJECTNAME}
-![based_on_air_version ${newestair}_](https://img.shields.io/badge/based_on_air_version-${newestair}_-brightgreen.svg?style=flat-square) ![project_created ${datewithunderscores}](https://img.shields.io/badge/project_created-${datewithunderscores}-blue.svg?style=flat-square) ![Tested_up_to WordPress_${newestwordpress}](https://img.shields.io/badge/Tested_up_to-WordPress_${newestwordpress}-blue.svg?style=flat-square) ![Compatible_with PHP_${newestphp}](https://img.shields.io/badge/Compatible_with-PHP_${newestphp}-green.svg?style=flat-square)
+![based_on_air_version ${newestair}_](https://img.shields.io/badge/based_on_air_version-${newestair}_-brightgreen.svg?style=flat-square) ![project_created ${currentdate}](https://img.shields.io/badge/project_created-${currentdate}-blue.svg?style=flat-square) ![Tested_up_to WordPress_${newestwordpress}](https://img.shields.io/badge/Tested_up_to-WordPress_${newestwordpress}-blue.svg?style=flat-square) ![Compatible_with PHP_${newestphp}](https://img.shields.io/badge/Compatible_with-PHP_${newestphp}-green.svg?style=flat-square)
 
 This project is hand made for customer. Customer basic details are here:
 
