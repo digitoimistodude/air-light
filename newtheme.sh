@@ -132,17 +132,17 @@ Green checkmarks show if the environment is already set up and running, red cros
 
 ## Setting it up initially
 
-According to our handbook, you should have run `createproject`, inital setup by now. Your Vagrant machine (or macOS LEMP) should be up and running. If not, go back to [dudestack-instructions](https://github.com/digitoimistodude/dudestack-instructions) or [Dude handbook](https://handbook.dude.fi/wordpress-kehitys/projektin-aloitus) and read what you have do.
+According to our handbook, you should have run \`createproject\`, inital setup by now. Your Vagrant machine (or macOS LEMP) should be up and running. If not, go back to [dudestack-instructions](https://github.com/digitoimistodude/dudestack-instructions) or [Dude handbook](https://handbook.dude.fi/wordpress-kehitys/projektin-aloitus) and read what you have do.
 
 If dev environment is indeed running, you're ready to version control the project.
 
 There are npm packages in both project root and theme folder. If you come later to this project, please run:
 
-1. `composer install` (in project folder)
-2. `npm install` (in project folder)
-2. `npm install` (in theme folder)
+1. \`composer in\stall\` (in project folder)
+2. \`npm install` (in project folder)
+2. \`npm install\` (in theme folder)
 
-Run project with `gulp`.
+Run project with \`gulp\`.
 
 ## Noteworthy in this project
 
