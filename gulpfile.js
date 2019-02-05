@@ -9,7 +9,8 @@ var sass           = require('gulp-sass');
 var sourcemaps     = require('gulp-sourcemaps');
 var browsersync    = require('browser-sync').create();
 var notify         = require('gulp-notify');
-var prefix         = require('gulp-autoprefixer');
+var postcss        = require('gulp-postcss');
+var autoprefixer   = require('autoprefixer');
 var cleancss       = require('gulp-clean-css');
 var uglify         = require('gulp-uglify-es').default;
 var concat         = require('gulp-concat');
@@ -123,6 +124,13 @@ gulp.task('scss-lint', function() {
 
 gulp.task('styles', function() {
 
+    // Adds browser fallback (eg. -webkit, -moz, etc.)
+    // When a browser dies, Autoprefixer will automatically stop writing prefixes for that browser
+    // Source: https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
+    var plugins = [
+        autoprefixer({grid: true, browsers: ['>1%']})
+    ];
+
     // Save compressed version
     gulp.src(sassFile)
 
@@ -142,7 +150,7 @@ gulp.task('styles', function() {
     }))
 
     .on('error', handleError('styles'))
-    .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
+    .pipe(postcss(plugins))
     .pipe(pixrem())
     .pipe(cleancss({
       compatibility: 'ie11',
@@ -185,7 +193,7 @@ gulp.task('styles', function() {
     }))
 
     .on('error', handleError('styles'))
-    .pipe(prefix('last 3 version', 'safari 5', 'ie 9', 'opera 12.1', 'ios 6', 'android 4')) // Adds browser prefixes (eg. -webkit, -moz, etc.)
+    .pipe(postcss(plugins))
     .pipe(pixrem())
 
     // Process the expanded output with Stylefmt
