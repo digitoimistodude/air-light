@@ -66,6 +66,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
 * [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include column(1/100)`
+* Beta: Mixin for CSS Grid, for example `@include grid(3)` is 1 of third. See more: [sass/base/_helpers.scss](https://github.com/digitoimistodude/air/blob/master/sass/base/_helpers.scss).
 * Flexbox-ready
 * CSS Grid-ready*
 * Container div inside site-main
