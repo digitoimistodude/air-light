@@ -94,6 +94,10 @@ $nav-open-from-top: false;
     position: fixed;
     right: 0;
     top: -100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 
     @if $nav-open-from-right == true {
       right: -100%;
