@@ -17,10 +17,16 @@ $hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
+$nav-open-from-right: false;
+$nav-open-from-left: false;
+$nav-open-from-bottom: false;
+$nav-open-from-top: false;
 
 @charset 'utf-8';
 
 @import 'hamburgers/_sass/hamburgers/hamburgers';
+
+
 
 // Choose hamburger animation here
 // Choices: https://jonsuh.com/hamburgers/
@@ -51,9 +57,30 @@ $hamburger-hover-transition-timing-function: linear;
 
       .nav-primary {
         visibility: visible;
-        max-height: 100%;
         height: 100vh;
         overflow: auto;
+        top: 0;
+
+        @if $nav-open-from-right == true {
+          width: 100vw;
+          right: 0;
+        }
+
+        @if $nav-open-from-left == true {
+          width: 100vw;
+          left: 0;
+        }
+
+        @if $nav-open-from-bottom == true {
+          width: 100vw;
+          bottom: 0;
+          top: initial;
+        }
+
+        @if $nav-open-from-top == true {
+          width: 100vw;
+          top: 0;
+        }
       }
     }
   }
@@ -61,13 +88,31 @@ $hamburger-hover-transition-timing-function: linear;
   .js .nav-primary {
     // Hide mobile navigation by default while enabling use of animations
     visibility: hidden;
-    max-height: 0;
-    height: 0;
+    height: 100vh;
+    width: 100%;
     clip: auto;
     position: fixed;
-    top: 0;
-    left: 0;
     right: 0;
+    top: -100%;
+
+    @if $nav-open-from-right == true {
+      right: -100%;
+      top: 0;
+    }
+
+    @if $nav-open-from-left == true {
+      left: -100%;
+      top: 0;
+    }
+
+    @if $nav-open-from-bottom == true {
+      bottom: -100%;
+      top: initial;
+    }
+
+    @if $nav-open-from-top == true {
+      top: -100%;
+    }
 
     .menu-items {
       padding: 15% 0;
