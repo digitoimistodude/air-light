@@ -20,13 +20,11 @@ $hamburger-hover-transition-timing-function: linear;
 $nav-open-from-right: false;
 $nav-open-from-left: false;
 $nav-open-from-bottom: false;
-$nav-open-from-top: false;
+$nav-open-from-top: true;
 
 @charset 'utf-8';
 
 @import 'hamburgers/_sass/hamburgers/hamburgers';
-
-
 
 // Choose hamburger animation here
 // Choices: https://jonsuh.com/hamburgers/
