@@ -26,8 +26,6 @@ $nav-open-from-top: true;
 
 @import 'hamburgers/_sass/hamburgers/hamburgers';
 
-
-
 // Choose hamburger animation here
 // Choices: https://jonsuh.com/hamburgers/
 .hamburger {
@@ -98,10 +96,6 @@ $nav-open-from-top: true;
     position: fixed;
     right: 0;
     top: -100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 
     @if $nav-open-from-right == true {
       right: -100%;
