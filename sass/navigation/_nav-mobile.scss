@@ -59,6 +59,10 @@ $nav-open-from-top: true;
         overflow: auto;
         top: 0;
 
+        .menu-items {
+          opacity: 1;
+        }
+
         @if $nav-open-from-right == true {
           width: 100vw;
           right: 0;
@@ -126,6 +130,8 @@ $nav-open-from-top: true;
     width: 100%;
 
     .menu-items {
+      transition: all .55s;
+      opacity: 0;
       margin: 0;
       width: 100%;
       float: none;
