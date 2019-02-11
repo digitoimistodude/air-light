@@ -17,10 +17,10 @@ $hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
-$nav-open-from-right: true;
+$nav-open-from-right: false;
 $nav-open-from-left: false;
 $nav-open-from-bottom: false;
-$nav-open-from-top: false;
+$nav-open-from-top: true;
 
 @charset 'utf-8';
 

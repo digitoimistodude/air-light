@@ -2991,7 +2991,7 @@ form.search-form .search-submit {
     overflow: auto;
     top: 0;
     width: 100vw;
-    right: 0;
+    top: 0;
   }
 
   .js.js-nav-active .nav-primary .menu-items {
@@ -3010,8 +3010,7 @@ form.search-form .search-submit {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    right: -100%;
-    top: 0;
+    top: -100%;
   }
 
   .js .nav-primary .menu-items {
