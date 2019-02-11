@@ -17,7 +17,7 @@ $hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
-$nav-open-from-right: false;
+$nav-open-from-right: true;
 $nav-open-from-left: false;
 $nav-open-from-bottom: false;
 $nav-open-from-top: false;
@@ -60,6 +60,10 @@ $nav-open-from-top: false;
         height: 100vh;
         overflow: auto;
         top: 0;
+
+        .menu-items {
+          opacity: 1;
+        }
 
         @if $nav-open-from-right == true {
           width: 100vw;
@@ -132,6 +136,8 @@ $nav-open-from-top: false;
     width: 100%;
 
     .menu-items {
+      transition: all .55s;
+      opacity: 0;
       margin: 0;
       width: 100%;
       float: none;
