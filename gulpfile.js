@@ -291,7 +291,8 @@ gulp.task('validatehtml', function() {
         /Bad value “mailto:<\?php/g,
         /Bad value “tel:<\?/g,
         /<\?php/g,
-        /This document appears to be written/g,
+        /This document appears to be written/g,,
+        /“<” is not allowed/g,
         /The document is not mappable to XML/g]
     }))
 });
