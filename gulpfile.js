@@ -293,6 +293,10 @@ gulp.task('validatehtml', function() {
         /<\?php/g,
         /This document appears to be written/g,,
         /“<” is not allowed/g,
+        /Attribute “'/g,
+        /Attribute “&&”/g,
+        /Attribute “isset/g,
+        /Duplicate attribute “\$/g,
         /The document is not mappable to XML/g]
     }))
 });
