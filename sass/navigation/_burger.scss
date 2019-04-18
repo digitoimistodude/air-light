@@ -13,11 +13,11 @@ $sass-burger-add-vendor-prefixes: true !default;
   position: relative;
   margin-top: $height + $gutter;
   margin-bottom: $height + $gutter;
+  user-select: none;
 
   @if $sass-burger-add-vendor-prefixes {
     user-select: none;
   }
-  user-select: none;
 
   &,
   &::before,
@@ -73,9 +73,7 @@ $sass-burger-add-vendor-prefixes: true !default;
 }
 
 @mixin burger-middle {
-  & {
-    @content;
-  }
+  @content;
 }
 
 @mixin burger-bottom {
@@ -86,9 +84,7 @@ $sass-burger-add-vendor-prefixes: true !default;
 
 // Burger animations
 @mixin burger-to-cross($color: auto) {
-  & {
-    background-color: transparent;
-  }
+  background-color: transparent;
 
   @if ($color != auto) {
     &::before,
