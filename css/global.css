@@ -69,10 +69,8 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
+  border-bottom: 0;
   /* 1 */
-  text-decoration: underline;
-  /* 2 */
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */
@@ -119,11 +117,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 /* Embedded content
@@ -1540,6 +1538,12 @@ form.search-form .search-submit {
   padding: 0;
 }
 
+@media only screen and (min-width: 960px) {
+  .nav-primary .menu-items ul {
+    display: none;
+  }
+}
+
 @media only screen and (-ms-high-contrast: active) and (min-width: 960px), only screen and (-ms-high-contrast: none) and (min-width: 960px) {
   .nav-primary .menu-items ul {
     display: none;
@@ -1559,6 +1563,12 @@ form.search-form .search-submit {
 
 .nav-primary ul ul ul {
   margin-left: 25px;
+}
+
+@media only screen and (min-width: 960px) {
+  .js .nav-primary ul .sub-menu.toggled-on {
+    display: block;
+  }
 }
 
 @media only screen and (-ms-high-contrast: active) and (min-width: 960px), only screen and (-ms-high-contrast: none) and (min-width: 960px) {
@@ -1591,96 +1601,13 @@ form.search-form .search-submit {
 }
 
 @media only screen and (min-width: 960px) {
-  .sub-menu {
-    width: 19rem;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    transform: translateY(-2em);
-    z-index: -1;
-    transition: all .3s ease-in-out .3s, visibility .3s linear .3s, z-index 0s linear .01s;
+  .nav-primary ul li:hover > ul {
+    display: block;
   }
 
-  .nav-primary ul .sub-menu.toggled-on {
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-    transition-delay: 0s, 0s, .3s;
-  }
-
-  [data-whatinput="keyboard"] .sub-menu {
-    transition: none;
-    transform: none;
-  }
-
-  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu,
-  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu {
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-    transition-delay: 0s, 0s, .3s;
-  }
-
-  .no-js .sub-menu {
-    width: 19rem;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    transform: translateY(-2em);
-    z-index: -1;
-    transition: none;
-  }
-
-  .no-js .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  .no-js .nav-primary ul .menu-item-has-children:hover > .sub-menu {
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-    transition-delay: 0s, 0s, .3s;
-  }
-}
-
-@media only screen and (min-width: 960px) and (-ms-high-contrast: active), only screen and (min-width: 960px) and (-ms-high-contrast: none) {
-  .nav-primary .menu-items .sub-menu {
-    width: 19rem;
-    visibility: visible;
-    opacity: 1;
-    top: 0;
-    transform: translateY(1.5rem);
-    z-index: -1;
-    transition: none;
-    list-style-type: none;
-    list-style: none;
-  }
-
-  .nav-primary .menu-items .sub-menu .menu-item {
-    padding-top: 0;
-    margin-top: 0;
-    list-style-type: none;
-    list-style: none;
-  }
-
-  .nav-primary .menu-items .sub-menu .sub-menu.has-sub-menu {
-    transform: translateY(0);
-    padding-top: .5rem;
-  }
-
-  .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-  .nav-primary ul .menu-item-has-children:hover > .sub-menu {
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-    transition-delay: 0s, 0s, .3s;
+  .no-js .nav-primary ul li:hover > ul,
+  .no-js .nav-primary ul li:focus > ul {
+    display: block;
   }
 }
 
