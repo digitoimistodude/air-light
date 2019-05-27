@@ -2913,11 +2913,7 @@ form.search-form .search-submit {
   }
 
   .js.js-nav-active .nav-primary {
-    visibility: visible;
-    height: 100vh;
     overflow: auto;
-    top: 0;
-    width: 100vw;
     top: 0;
   }
 
@@ -2926,14 +2922,13 @@ form.search-form .search-submit {
   }
 
   .js .nav-primary {
-    visibility: hidden;
     height: 100vh;
-    width: 100%;
-    clip: auto;
+    width: 100vw;
     position: fixed;
-    right: 0;
-    top: -100%;
-    top: -100%;
+    transition: all 250ms ease-in-out;
+    left: 0;
+    z-index: 5;
+    top: -100vh;
   }
 
   .js .nav-primary .menu-items {
@@ -2942,11 +2937,9 @@ form.search-form .search-submit {
 
   .nav-primary {
     background: #232426;
-    transition: all .55s;
     margin: 0;
     overflow: hidden;
     display: block;
-    width: 100%;
   }
 
   .nav-primary .menu-items {

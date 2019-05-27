@@ -17,10 +17,7 @@ $hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
-$nav-open-from-right: false;
-$nav-open-from-left: false;
-$nav-open-from-bottom: false;
-$nav-open-from-top: true;
+$nav-open-from-direction: top;
 
 @charset 'utf-8';
 
@@ -54,34 +51,26 @@ $nav-open-from-top: true;
       overflow: hidden;
 
       .nav-primary {
-        visibility: visible;
-        height: 100vh;
         overflow: auto;
-        top: 0;
 
-        .menu-items {
-          opacity: 1;
+        @if $nav-open-from-direction == top {
+          top: 0;
         }
 
-        @if $nav-open-from-right == true {
-          width: 100vw;
+        @if $nav-open-from-direction == right {
           right: 0;
         }
 
-        @if $nav-open-from-left == true {
-          width: 100vw;
+        @if $nav-open-from-direction == bottom {
+          bottom: 0;
+        }
+
+        @if $nav-open-from-direction == left {
           left: 0;
         }
 
-        @if $nav-open-from-bottom == true {
-          width: 100vw;
-          bottom: 0;
-          top: initial;
-        }
-
-        @if $nav-open-from-top == true {
-          width: 100vw;
-          top: 0;
+        .menu-items {
+          opacity: 1;
         }
       }
     }
@@ -89,31 +78,30 @@ $nav-open-from-top: true;
 
   .js .nav-primary {
     // Hide mobile navigation by default while enabling use of animations
-    visibility: hidden;
     height: 100vh;
-    width: 100%;
-    clip: auto;
+    width: 100vw;
     position: fixed;
-    right: 0;
-    top: -100%;
+    transition: all 250ms ease-in-out;
+    left: 0;
+    z-index: 5;
 
-    @if $nav-open-from-right == true {
-      right: -100%;
+    @if $nav-open-from-direction == top {
+      top: -100vh;
+    }
+
+    @if $nav-open-from-direction == right {
+      right: -100vw;
       top: 0;
+      left: auto;
     }
 
-    @if $nav-open-from-left == true {
-      left: -100%;
+    @if $nav-open-from-direction == bottom {
+      bottom: -100vh;
+    }
+
+    @if $nav-open-from-direction == left {
+      left: -100vw;
       top: 0;
-    }
-
-    @if $nav-open-from-bottom == true {
-      bottom: -100%;
-      top: initial;
-    }
-
-    @if $nav-open-from-top == true {
-      top: -100%;
     }
 
     .menu-items {
@@ -123,11 +111,9 @@ $nav-open-from-top: true;
 
   .nav-primary {
     background: $nav-background-color;
-    transition: all .55s;
     margin: 0;
     overflow: hidden;
     display: block;
-    width: 100%;
 
     .menu-items {
       transition: all .55s;
@@ -136,6 +122,7 @@ $nav-open-from-top: true;
       width: 100%;
       float: none;
       padding: 2rem 0;
+
       // We have color here, so it's okay to remove outline
       outline: none;
 
