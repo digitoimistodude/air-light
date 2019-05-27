@@ -51,11 +51,8 @@ $nav-open-from-direction: top;
       overflow: hidden;
 
       .nav-primary {
-        overflow: auto;
-
         // Smooth animation based on https://medium.com/outsystems-experts/how-to-achieve-60-fps-animations-with-css3-db7b98610108
         transform: translateY(0) translateX(0);
-        visibility: visible;
 
         .menu-items {
           opacity: 1;
@@ -66,12 +63,8 @@ $nav-open-from-direction: top;
 
   .js .nav-primary {
     // Hide mobile navigation by default while enabling use of animations
-    width: 100vw;
-    height: 100vh;
     position: fixed;
-    transition: all 300ms ease-in-out;
     z-index: 5;
-    visibility: hidden;
 
     // Default position, IE needs this
     top: 0;
@@ -86,10 +79,14 @@ $nav-open-from-direction: top;
   }
 
   .nav-primary {
+    height: 100vh;
+    width: 100vw;
     background: $nav-background-color;
+    overflow: auto;
+    transition: all 300ms ease-in-out;
     margin: 0;
-    overflow: hidden;
     display: block;
+    will-change: transform;
 
     // These need to be here instead of .js .nav-primary to prevent flickering on load
     @if $nav-open-from-direction == top {
@@ -97,7 +94,7 @@ $nav-open-from-direction: top;
     }
 
     @if $nav-open-from-direction == right {
-      transform: translateX(100vh);
+      transform: translateX(100vw);
     }
 
     @if $nav-open-from-direction == bottom {
@@ -105,7 +102,7 @@ $nav-open-from-direction: top;
     }
 
     @if $nav-open-from-direction == left {
-      transform: translateX(-100vh);
+      transform: translateX(-100vw);
     }
 
     .menu-items {

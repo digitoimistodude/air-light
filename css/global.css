@@ -2913,9 +2913,7 @@ form.search-form .search-submit {
   }
 
   .js.js-nav-active .nav-primary {
-    overflow: auto;
     transform: translateY(0) translateX(0);
-    visibility: visible;
   }
 
   .js.js-nav-active .nav-primary .menu-items {
@@ -2923,12 +2921,8 @@ form.search-form .search-submit {
   }
 
   .js .nav-primary {
-    width: 100vw;
-    height: 100vh;
     position: fixed;
-    transition: all 300ms ease-in-out;
     z-index: 5;
-    visibility: hidden;
     top: 0;
     left: 0;
   }
@@ -2939,10 +2933,14 @@ form.search-form .search-submit {
   }
 
   .nav-primary {
+    height: 100vh;
+    width: 100vw;
     background: #232426;
+    overflow: auto;
+    transition: all 300ms ease-in-out;
     margin: 0;
-    overflow: hidden;
     display: block;
+    will-change: transform;
     transform: translateY(-100vh);
   }
 
