@@ -591,20 +591,20 @@ a:hover {
 .comment-list li,
 .comment-list li p,
 .comment-list li .comment-time {
-  font-size: 1.2vw;
+  font-size: 14px;
 }
 
-@media (max-width: 1166.66667px) {
+@media screen and (min-width: 320px) {
   .cat a,
   .comments-link,
   .comment-list li,
   .comment-list li p,
   .comment-list li .comment-time {
-    font-size: 14px;
+    font-size: calc(14px + 3 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 1416.66667px) {
+@media screen and (min-width: 1920px) {
   .cat a,
   .comments-link,
   .comment-list li,
@@ -643,13 +643,12 @@ input[type="month"],
 input[type="week"],
 input[type="email"],
 input[type="search"] {
-  font-size: 3vw;
-  font-size: 18px;
+  font-size: 17px;
   letter-spacing: -.003em;
   line-height: 1.68;
 }
 
-@media (max-width: 633.33333px) {
+@media screen and (min-width: 320px) {
   p,
   dd,
   dt,
@@ -679,11 +678,11 @@ input[type="search"] {
   input[type="week"],
   input[type="email"],
   input[type="search"] {
-    font-size: 19px;
+    font-size: calc(17px + 3 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 600px) {
+@media screen and (min-width: 1920px) {
   p,
   dd,
   dt,
@@ -713,7 +712,7 @@ input[type="search"] {
   input[type="week"],
   input[type="email"],
   input[type="search"] {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -745,32 +744,32 @@ h6 {
 }
 
 h1 {
-  font-size: 3.2vw;
+  font-size: 32px;
 }
 
-@media (max-width: 1000px) {
+@media screen and (min-width: 320px) {
   h1 {
-    font-size: 32px;
+    font-size: calc(32px + 19 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 1593.75px) {
+@media screen and (min-width: 1920px) {
   h1 {
     font-size: 51px;
   }
 }
 
 h2 {
-  font-size: 2.4vw;
+  font-size: 24px;
 }
 
-@media (max-width: 1000px) {
+@media screen and (min-width: 320px) {
   h2 {
-    font-size: 24px;
+    font-size: calc(24px + 14 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 1583.33333px) {
+@media screen and (min-width: 1920px) {
   h2 {
     font-size: 38px;
   }
@@ -778,17 +777,17 @@ h2 {
 
 h3,
 .accent {
-  font-size: 1.6vw;
+  font-size: 21px;
 }
 
-@media (max-width: 1312.5px) {
+@media screen and (min-width: 320px) {
   h3,
   .accent {
-    font-size: 21px;
+    font-size: calc(21px + 7 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 1750px) {
+@media screen and (min-width: 1920px) {
   h3,
   .accent {
     font-size: 28px;
@@ -797,17 +796,17 @@ h3,
 
 h4,
 .comment-list li .comment-author {
-  font-size: 1.4vw;
+  font-size: 18px;
 }
 
-@media (max-width: 1285.71429px) {
+@media screen and (min-width: 320px) {
   h4,
   .comment-list li .comment-author {
-    font-size: 18px;
+    font-size: calc(18px + 3 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 1500px) {
+@media screen and (min-width: 1920px) {
   h4,
   .comment-list li .comment-author {
     font-size: 21px;
@@ -815,32 +814,32 @@ h4,
 }
 
 h5 {
-  font-size: 1.2vw;
+  font-size: 14px;
 }
 
-@media (max-width: 1166.66667px) {
+@media screen and (min-width: 320px) {
   h5 {
-    font-size: 14px;
+    font-size: calc(14px + 3 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 1416.66667px) {
+@media screen and (min-width: 1920px) {
   h5 {
     font-size: 17px;
   }
 }
 
 h6 {
-  font-size: 1.2vw;
+  font-size: 14px;
 }
 
-@media (max-width: 1166.66667px) {
+@media screen and (min-width: 320px) {
   h6 {
-    font-size: 14px;
+    font-size: calc(14px + -2 * ((100vw - 320px) / 1600));
   }
 }
 
-@media (min-width: 1000px) {
+@media screen and (min-width: 1920px) {
   h6 {
     font-size: 12px;
   }
@@ -921,8 +920,7 @@ blockquote {
 }
 
 blockquote p {
-  font-size: 2vw;
-  font-size: 25px;
+  font-size: 17px;
   font-style: italic;
   margin-bottom: 0;
   position: relative;
@@ -930,13 +928,13 @@ blockquote p {
   color: #666;
 }
 
-@media (max-width: 850px) {
+@media screen and (min-width: 25px) {
   blockquote p {
-    font-size: 17px;
+    font-size: calc(17px + 8 * ((100vw - 25px) / 1895));
   }
 }
 
-@media (min-width: 1250px) {
+@media screen and (min-width: 1920px) {
   blockquote p {
     font-size: 25px;
   }
@@ -4077,25 +4075,12 @@ form.search-form .search-submit {
 }
 
 .entry-header-demo h1 {
-  font-size: 2.4vw;
   color: #383d29;
   text-align: center;
   margin: 0;
   padding: 0;
   position: relative;
   z-index: 2;
-}
-
-@media (max-width: 916.66667px) {
-  .entry-header-demo h1 {
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 1916.66667px) {
-  .entry-header-demo h1 {
-    font-size: 46px;
-  }
 }
 
 .accent {
