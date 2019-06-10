@@ -254,7 +254,7 @@ linters:
     excluded_identifiers: []
 
   ZeroUnit:
-    enabled: true
+    enabled: false
 
   Compass::*:
     enabled: false
