@@ -530,6 +530,7 @@ a.global-link {
 
 @font-face {
   font-family: "Karla";
+  font-display: auto;
   src: url("../fonts/karla-regular.eot");
   src: url("../fonts/karla-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-regular.woff") format("woff"), url("../fonts/karla-regular.woff2") format("woff2"), url("../fonts/karla-regular.ttf") format("truetype"), url("../fonts/karla-regular.svg#Karla") format("svg");
   font-style: normal;
@@ -538,6 +539,7 @@ a.global-link {
 
 @font-face {
   font-family: "Karla";
+  font-display: auto;
   src: url("../fonts/karla-italic.eot");
   src: url("../fonts/karla-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-italic.woff") format("woff"), url("../fonts/karla-italic.woff2") format("woff2"), url("../fonts/karla-italic.ttf") format("truetype"), url("../fonts/karla-italic.svg#Karla") format("svg");
   font-style: italic;
@@ -546,6 +548,7 @@ a.global-link {
 
 @font-face {
   font-family: "Karla";
+  font-display: auto;
   src: url("../fonts/karla-bold.eot");
   src: url("../fonts/karla-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-bold.woff") format("woff"), url("../fonts/karla-bold.woff2") format("woff2"), url("../fonts/karla-bold.ttf") format("truetype"), url("../fonts/karla-bold.svg#Karla") format("svg");
   font-style: normal;
@@ -554,6 +557,7 @@ a.global-link {
 
 @font-face {
   font-family: "Karla";
+  font-display: auto;
   src: url("../fonts/karla-bolditalic.eot");
   src: url("../fonts/karla-bolditalic.eot?#iefix") format("embedded-opentype"), url("../fonts/karla-bolditalic.woff") format("woff"), url("../fonts/karla-bolditalic.woff2") format("woff2"), url("../fonts/karla-bolditalic.ttf") format("truetype"), url("../fonts/karla-bolditalic.svg#Karla") format("svg");
   font-style: italic;
