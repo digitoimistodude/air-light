@@ -3170,12 +3170,22 @@ form.search-form .search-submit {
   bottom: 20px;
   right: 20px;
   background: #222;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-decoration: none;
   opacity: 0;
   transition: opacity .3s 0s, visibility 0s .3s;
-  z-index: 10000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .top {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .top.is-visible,
@@ -3201,17 +3211,20 @@ form.search-form .search-submit {
 }
 
 .top svg {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  transform-style: preserve-3d;
-  position: absolute;
   fill: #fff;
   margin: 0;
   opacity: .8;
-  font-size: 19px;
   transition: all .3s ease;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 480px) {
+  .top svg {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 .top:hover,
@@ -3224,7 +3237,7 @@ form.search-form .search-submit {
 .top:focus svg,
 .top:active svg {
   fill: #fff;
-  top: 35%;
+  margin-top: -35%;
 }
 
 .gallery {
