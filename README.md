@@ -132,8 +132,10 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── style.css                       # → Theme meta information
 ├── svg/                            # → Your theme SVG graphics and icons
 ├── template-parts/                 # → WordPress template parts. Modules go under this folder.
+│   ├── content-none.php            # → Default content (from _s, can be deleted/modified)
+│   ├── content-search.php          # → Default content (from _s, can be deleted/modified)
 │   ├── content.php                 # → Default content (from _s, can be deleted/modified)
-│   ├── hero.php.                   # → Default hero
+│   ├── hero.php                    # → Default hero
 ```
 
 ### Features
