@@ -31,7 +31,8 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     4. [Navigation](#navigation)
     5. [WordPress & functions](#wordpress--functions)
     6. [Accessibility](#accessibility)
-    7. [Disabled features](#disabled-features)
+    7. [Lazy load](#lazy-load)
+    8. [Disabled features](#disabled-features)
 4. [Extra building blocks](#extra-building-blocks)
     1. [Sticky navigation](#sticky-navigation)
     2. [Slick slider](#slick-slider)
@@ -192,6 +193,10 @@ Creating accessible websites is really important and our goal is to make air as 
 * Valid HTML
 * Accessible SVG icons
 * Screen reader class
+
+#### Lazy load
+
+From 4.7.1 air-light has a lazy loading image features for background images and imgs. If you don't use this feature, remove it from gulpfile.js. This feature depends on [air-helper](https://github.com/digitoimistodude/air-helper), check out the documentation in air-helper for further instructions.
 
 #### Disabled features
 

@@ -124,11 +124,20 @@
                         let srcset = img.getAttribute(self.settings.srcset);
                         let srcmobile = img.getAttribute(self.settings.srcmobile);
 
-                        /* Add fully loaded original background image to next div element */
-                        if ( document.documentElement.clientWidth < 600 ) {
-                          img.nextElementSibling.style.backgroundImage = "url(" + srcmobile + ")";
+                        /* Replace fully loaded original background image to the img src */
+                        if ('img' === img.tagName.toLowerCase()) {
+                          if ( document.documentElement.clientWidth < 600 ) {
+                            img.src = srcmobile;
+                          } else {
+                            img.src = src;
+                          }
                         } else {
-                          img.nextElementSibling.style.backgroundImage = "url(" + src + ")";
+                          /* Add fully loaded original background image to next div element */
+                          if ( document.documentElement.clientWidth < 600 ) {
+                            img.nextElementSibling.style.backgroundImage = "url(" + srcmobile + ")";
+                          } else {
+                            img.nextElementSibling.style.backgroundImage = "url(" + src + ")";
+                          }
                         }
                     }
                 });
