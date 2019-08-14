@@ -127,8 +127,9 @@ gulp.task('styles', function() {
     // Adds browser fallback (eg. -webkit, -moz, etc.)
     // When a browser dies, Autoprefixer will automatically stop writing prefixes for that browser
     // Source: https://css-tricks.com/css-grid-in-ie-css-grid-and-the-new-autoprefixer/
+    // Note: After new version browser settings are in package.json
     var plugins = [
-        autoprefixer({grid: true, browsers: ['>1%']})
+      autoprefixer({grid: true})
     ];
 
     // Save compressed version

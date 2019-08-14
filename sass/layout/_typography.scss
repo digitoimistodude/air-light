@@ -71,13 +71,12 @@ tr,
 %default {
   @include responsive-font($font-min-size, $font-max-size);
   letter-spacing: -.003em;
-  line-height: $font-base-line-height-elements;
+  line-height: $line-height;
 }
 
 p {
   margin-top: 2.9rem;
   margin-bottom: 2.9rem;
-  line-height: $font-base-line-height;
 
   &:first-child {
     margin-top: 0;

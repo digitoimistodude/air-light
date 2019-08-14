@@ -22,8 +22,7 @@ $font-monospace: 'Menlo', 'Courier', monospace;
 // Font settings
 $font-min-size: 17px; // Minimum font size, on mobile
 $font-max-size: 20px; // Maximum font size, on desktop
-$font-base-line-height: 1.78; // Line height for paragraphs
-$font-base-line-height-elements: 1.68; // Line height for other elements like table cells and spans
+$line-height: 1.6; // Line height
 $headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty well
 
 // Breakpoints

@@ -557,7 +557,7 @@ input[type="email"],
 input[type="search"] {
   font-size: 17px;
   letter-spacing: -.003em;
-  line-height: 1.68; }
+  line-height: 1.6; }
   @media screen and (min-width: 320px) {
     p,
     dd,
@@ -625,8 +625,7 @@ p {
   margin-top: 29px;
   margin-top: 2.9rem;
   margin-bottom: 29px;
-  margin-bottom: 2.9rem;
-  line-height: 1.78; }
+  margin-bottom: 2.9rem; }
   p:first-child {
     margin-top: 0; }
   p:last-child {
