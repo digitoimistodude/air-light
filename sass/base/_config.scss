@@ -40,5 +40,8 @@ $container-ipad: 770px;
 $container-ipad-landscape: 1024px;
 $container-desktop: 1200px;
 
+// Transition duration and animations
+$transition-duration: .6s;
+
 // Where navigation transforms into responsive - scale your window width down to test
 $responsivenav: 960px;

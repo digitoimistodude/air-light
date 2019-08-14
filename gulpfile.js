@@ -355,6 +355,7 @@ gulp.task('js', function() {
           // 'js/src/sticky-nav.js',
           // 'node_modules/slick-carousel/slick/slick.js',
           'node_modules/what-input/dist/what-input.js',
+          'js/src/lazyload.js',
           'js/src/navigation.js',
           'js/src/scripts.js'
         ])
