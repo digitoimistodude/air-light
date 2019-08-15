@@ -117,7 +117,9 @@
                         const img = entry.target;
 
                         /* Add animation class to full-image div */
-                        img.nextElementSibling.classList.add('reveal');
+                        if (typeof(img.nextElementSibling) != 'undefined' && img.nextElementSibling != null) {
+                          img.nextElementSibling.classList.add('reveal');
+                        }
 
                         self.observer.unobserve(entry.target);
                         let src = img.getAttribute(self.settings.src);
