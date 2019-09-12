@@ -62,6 +62,7 @@ cd ${PROJECTPATH}
 npm install
 
 echo "${yellow}Generating gulpfile.js from https://github.com/digitoimistodude/devpackages${txtreset}"
+cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cd $PROJECTPATH/devpackages
 git pull
 cd ${PROJECTPATH}
