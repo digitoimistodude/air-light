@@ -423,10 +423,16 @@ img {
   padding-left: 2rem;
   padding-right: 20px;
   padding-right: 2rem; }
-  @media (max-width: 760px) {
+  @media (max-width: 1110px) {
     .container {
-      padding-top: 3.2rem;
-      padding-bottom: 3.2rem; } }
+      padding-left: 8rem;
+      padding-right: 8rem; } }
+  @media (max-width: 770px) {
+    .container {
+      padding-top: 5.33333rem;
+      padding-bottom: 5.33333rem;
+      padding-left: 2rem;
+      padding-right: 2rem; } }
 
 .site-main .container {
   overflow: hidden;
@@ -505,6 +511,7 @@ body {
   font-family: "Karla", "Helvetica Neue", Helvetica, sans-serif;
   color: #222;
   -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
       -ms-text-size-adjust: none;
           text-size-adjust: none;
   text-rendering: geometricPrecision;
@@ -987,6 +994,32 @@ input[type="search"] {
      -moz-appearance: none;
           appearance: none;
   margin-bottom: 0; }
+  textarea::-webkit-input-placeholder,
+  select::-webkit-input-placeholder,
+  input[type="text"]::-webkit-input-placeholder,
+  input[type="tel"]::-webkit-input-placeholder,
+  input[type="url"]::-webkit-input-placeholder,
+  input[type="password"]::-webkit-input-placeholder,
+  input[type="number"]::-webkit-input-placeholder,
+  input[type="month"]::-webkit-input-placeholder,
+  input[type="week"]::-webkit-input-placeholder,
+  input[type="email"]::-webkit-input-placeholder,
+  input[type="search"]::-webkit-input-placeholder {
+    color: #434343;
+    opacity: .4; }
+  textarea::-moz-placeholder,
+  select::-moz-placeholder,
+  input[type="text"]::-moz-placeholder,
+  input[type="tel"]::-moz-placeholder,
+  input[type="url"]::-moz-placeholder,
+  input[type="password"]::-moz-placeholder,
+  input[type="number"]::-moz-placeholder,
+  input[type="month"]::-moz-placeholder,
+  input[type="week"]::-moz-placeholder,
+  input[type="email"]::-moz-placeholder,
+  input[type="search"]::-moz-placeholder {
+    color: #434343;
+    opacity: .4; }
   textarea:-ms-input-placeholder,
   select:-ms-input-placeholder,
   input[type="text"]:-ms-input-placeholder,
@@ -1040,6 +1073,32 @@ input[type="search"] {
     background: #dfdfdf;
     border-color: #222222;
     outline: 0; }
+    textarea:focus::-webkit-input-placeholder,
+    select:focus::-webkit-input-placeholder,
+    input[type="text"]:focus::-webkit-input-placeholder,
+    input[type="tel"]:focus::-webkit-input-placeholder,
+    input[type="url"]:focus::-webkit-input-placeholder,
+    input[type="password"]:focus::-webkit-input-placeholder,
+    input[type="number"]:focus::-webkit-input-placeholder,
+    input[type="month"]:focus::-webkit-input-placeholder,
+    input[type="week"]:focus::-webkit-input-placeholder,
+    input[type="email"]:focus::-webkit-input-placeholder,
+    input[type="search"]:focus::-webkit-input-placeholder {
+      color: #222;
+      opacity: .8; }
+    textarea:focus::-moz-placeholder,
+    select:focus::-moz-placeholder,
+    input[type="text"]:focus::-moz-placeholder,
+    input[type="tel"]:focus::-moz-placeholder,
+    input[type="url"]:focus::-moz-placeholder,
+    input[type="password"]:focus::-moz-placeholder,
+    input[type="number"]:focus::-moz-placeholder,
+    input[type="month"]:focus::-moz-placeholder,
+    input[type="week"]:focus::-moz-placeholder,
+    input[type="email"]:focus::-moz-placeholder,
+    input[type="search"]:focus::-moz-placeholder {
+      color: #222;
+      opacity: .8; }
     textarea:focus:-ms-input-placeholder,
     select:focus:-ms-input-placeholder,
     input[type="text"]:focus:-ms-input-placeholder,
@@ -1477,7 +1536,9 @@ form.search-form .search-submit {
   padding: 5rem 1.5rem;
   display: inline-block;
   cursor: pointer;
+  transition-property: opacity, -webkit-filter;
   transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
   font: inherit;
@@ -2993,15 +3054,26 @@ form.search-form .search-submit {
   z-index: 0;
   overflow: hidden; }
   .background-image.reveal {
-    filter: none;
+    -webkit-filter: none;
+            filter: none;
     will-change: transform, opacity;
-    animation: progressive-reveal 1s ease-out; }
+    -webkit-animation: progressive-reveal 1s ease-out;
+            animation: progressive-reveal 1s ease-out; }
   .background-image.preview {
-    filter: blur(1vw);
+    -webkit-filter: blur(1vw);
+            filter: blur(1vw);
     transform: scale(1.05); }
   .background-image.full-image {
     z-index: 1;
     transition: all 0.6s; }
+
+@-webkit-keyframes progressive-reveal {
+  0% {
+    transform: scale(1.05);
+    opacity: 0; }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
 
 @keyframes progressive-reveal {
   0% {
