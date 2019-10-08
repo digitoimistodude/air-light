@@ -23,6 +23,6 @@ else :
 endif;
 ?>
 
-<div class="block<?php echo $block_class; ?>" style="background-image: url('<?php echo esc_url( $featured_image ); ?>');">
+<div class="block<?php echo esc_attr( $block_class ); ?>" style="background-image: url('<?php echo esc_url( $featured_image ); ?>');">
   <div class="shade"></div>
 </div>

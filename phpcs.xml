@@ -61,17 +61,16 @@
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
 
         <!-- Very strict VIP/discouraged rules that are not needed -->
-        <exclude name="WordPress.VIP.RestrictedFunctions" />
-        <exclude name="WordPress.VIP.AdminBarRemoval.RemovalDetected" />
-        <exclude name="WordPress.VIP.OrderByRand" />
-        <exclude name="WordPress.VIP.OrderByRand.orderby" />
-        <exclude name="WordPress.VIP.ValidatedSanitizedInput.MissingUnslash" />
         <exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
         <exclude name="WordPress.Functions.DontExtract.extract_extract" />
         <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
         <exclude name="Generic.Commenting.DocComment.MissingShort" />
         <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
         <exclude name="PHPCompatibility.PHP.NewClosure.Found" />
+        <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
+        <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
+        <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
+        <exclude name="WordPress.PHP.DontExtract.extract_extract" />
 
         <!-- Translations related, not always necessary, too strict -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />

@@ -32,14 +32,14 @@ if ( post_password_required() ) {
           printf(
             /* translators: 1: title. */
             esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'air-light' ),
-            '<span>' . get_the_title() . '</span>'
+            '<span>' . esc_html( get_the_title() ) . '</span>'
           );
         } else {
         printf( // WPCS: XSS OK.
           /* translators: 1: comment count number, 2: title. */
           esc_html( _nx( '%1$s comment %2$s', '%1$s comments %2$s', $comment_count, 'comments title', 'air-light' ) ),
           number_format_i18n( $comment_count ),
-          '<span class="screen-reader-text">on &ldquo;' . get_the_title() . '&rdquo;</span>'
+          '<span class="screen-reader-text">on &ldquo;' . esc_html( get_the_title() ) . '&rdquo;</span>'
         );
       }
       ?>

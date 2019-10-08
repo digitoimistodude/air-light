@@ -179,7 +179,7 @@ class Air_Light_Navwalker extends Walker_Nav_Menu {
 				$fb_output .= '</' . $container . '>';
       }
 
-			echo $fb_output;
+			echo esc_attr( $fb_output );
 		}
 	}
 }
