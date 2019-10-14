@@ -4,47 +4,4 @@
 // The most important page on the website goes here.
 // You can force the styles by defining them inside
 // the body.
-//
-// Please note: These are mostly for demo purposes
-// so feel free to remove everything in this file
-// and start over.
 // ------------------------------------------------
-
-.entry-header-demo {
-  @include background-cover();
-  background-image: url('../images/default.jpg');
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  min-height: 50rem;
-  max-width: $layout-max-width;
-  margin: 0 auto;
-
-  // Internet Explorer needs this
-  height: 50rem;
-
-  h1 {
-    @include responsive-font(2.4vw, 22px, 46px);
-    color: #383d29;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: 2;
-  }
-}
-
-.accent {
-  @extend %h3;
-  font-style: italic;
-  text-transform: lowercase;
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
-  color: $color-links;
-  display: block;
-  position: relative;
-  z-index: 2;
-}
