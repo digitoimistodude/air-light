@@ -100,7 +100,7 @@ h6 {
 }
 
 // Define heading scales
-// Current: Perfect fourth: https://type-scale.com/
+// Current: Perfect fourth (from second row below): https://type-scale.com/
 h1,
 %h1 {
   @include responsive-font(32px, 51px);
