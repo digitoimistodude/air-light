@@ -46,9 +46,9 @@ for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air-light;${
 for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;air_light_;${THEMENAME}_;" $i $i; done
 for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air_light_;${THEMENAME}_;" $i $i; done
 
-echo "${yellow}Installing and updating theme node.js packages (may take a while)${txtreset}"
-cd ${PROJECTTHEMEPATH}
-npm-check-updates -u
+#echo "${yellow}Installing and updating theme node.js packages (may take a while)${txtreset}"
+#cd ${PROJECTTHEMEPATH}
+#npm-check-updates -u
 npm install
 
 echo "${yellow}Getting devpackages${txtreset}"
@@ -80,8 +80,23 @@ rm -f ${PROJECTTHEMEPATH}/languages/*
 rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
 
-echo "${yellow}Removing useless stuff with sed...${txtreset}"
-find ./sass/ -maxdepth 2 -name 'global.scss' -exec sed -i "s/@import '../layout/demo-content';//g" {} +
+read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
+  if [ "$yn" = "n" ]; then
+    find ${PROJECTTHEMEPATH}/sass/ -maxdepth 3 -name 'global.scss' -exec sed -i '' -e "s/@import '..\/views\/comments';//g" {} +
+    rm ${PROJECTTHEMEPATH}/sass/views/_comments.scss
+  else
+    echo ' '
+  fi
+
+read -p "${boldyellow}Do we use woocommerce in this project? (y/n)${txtreset} " yn
+  if [ "$yn" = "n" ]; then
+      rm ${PROJECTTHEMEPATH}/sass/layout/_woocommerce.scss
+  else
+    echo ' '
+  fi
+
+echo "${yellow}Removing other useless stuff with sed...${txtreset}"
+find ${PROJECTTHEMEPATH}/sass/ -maxdepth 3 -name 'global.scss' -exec sed -i '' -e "s/@import '..\/layout\/demo-content';//g" {} +
 rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
 
 echo "${yellow}Adding media library folder...${txtreset}"
@@ -91,7 +106,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="4.7.9"
+newestair="4.8.0"
 newestwordpress="5.2.2"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
