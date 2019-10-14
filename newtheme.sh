@@ -79,6 +79,11 @@ rm -f ${PROJECTTHEMEPATH}/readme.txt
 rm -f ${PROJECTTHEMEPATH}/languages/*
 rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
+
+echo "${yellow}Removing useless stuff with sed...${txtreset}"
+find ./sass/ -maxdepth 2 -name 'global.scss' -exec sed -i "s/@import '../layout/demo-content';//g" {} +
+rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
+
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
 echo "" > ${PROJECTPATH}/media/index.php
@@ -86,7 +91,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="4.7.8"
+newestair="4.7.9"
 newestwordpress="5.2.2"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
