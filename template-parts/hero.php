@@ -18,11 +18,9 @@ if ( is_front_page() ) {
 // Featured image
 if ( has_post_thumbnail() ) {
 	$featured_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-} else {
-	$featured_image = get_theme_file_uri( 'images/default.jpg' );
 }
 ?>
 
-<div class="block block-hero<?php echo esc_attr( $block_class ); ?>" style="background-image: url('<?php echo esc_url( $featured_image ); ?>');">
+<div class="block block-hero<?php echo esc_attr( $block_class ); ?>"<?php if ( has_post_thumbnail() ) : ?> style="background-image: url('<?php echo esc_url( $featured_image ); ?>');<?php endif; ?>">
   <div class="shade"></div>
 </div>
