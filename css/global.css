@@ -768,18 +768,11 @@ blockquote {
   padding-bottom: 3rem;
   margin: 0; }
   blockquote p {
-    font-size: 17px;
     font-style: italic;
     margin-bottom: 0;
     position: relative;
     overflow: visible;
     color: #666; }
-    @media screen and (min-width: 25px) {
-      blockquote p {
-        font-size: calc(17px + 8 * ((100vw - 25px) / 1895)); } }
-    @media screen and (min-width: 1920px) {
-      blockquote p {
-        font-size: 25px; } }
   @media (min-width: 770px) {
     blockquote {
       margin-top: 4rem;
@@ -895,7 +888,12 @@ pre {
 .content-area .button,
 .content-area input[type="reset"],
 .content-area input[type="submit"],
-.content-area input[type="button"] {
+.content-area input[type="button"],
+.site-footer button,
+.site-footer .button,
+.site-footer input[type="reset"],
+.site-footer input[type="submit"],
+.site-footer input[type="button"] {
   font-size: 16px;
   font-size: 1.6rem;
   background: #045d30;
@@ -917,7 +915,12 @@ pre {
     .content-area .button,
     .content-area input[type="reset"],
     .content-area input[type="submit"],
-    .content-area input[type="button"] {
+    .content-area input[type="button"],
+    .site-footer button,
+    .site-footer .button,
+    .site-footer input[type="reset"],
+    .site-footer input[type="submit"],
+    .site-footer input[type="button"] {
       display: block;
       text-align: center; } }
   .content-area button:hover, .content-area button:focus,
@@ -928,14 +931,29 @@ pre {
   .content-area input[type="submit"]:hover,
   .content-area input[type="submit"]:focus,
   .content-area input[type="button"]:hover,
-  .content-area input[type="button"]:focus {
+  .content-area input[type="button"]:focus,
+  .site-footer button:hover,
+  .site-footer button:focus,
+  .site-footer .button:hover,
+  .site-footer .button:focus,
+  .site-footer input[type="reset"]:hover,
+  .site-footer input[type="reset"]:focus,
+  .site-footer input[type="submit"]:hover,
+  .site-footer input[type="submit"]:focus,
+  .site-footer input[type="button"]:hover,
+  .site-footer input[type="button"]:focus {
     color: #fff;
     background: #01140a; }
   .content-area button.button-ghost,
   .content-area .button.button-ghost,
   .content-area input[type="reset"].button-ghost,
   .content-area input[type="submit"].button-ghost,
-  .content-area input[type="button"].button-ghost {
+  .content-area input[type="button"].button-ghost,
+  .site-footer button.button-ghost,
+  .site-footer .button.button-ghost,
+  .site-footer input[type="reset"].button-ghost,
+  .site-footer input[type="submit"].button-ghost,
+  .site-footer input[type="button"].button-ghost {
     background-color: transparent;
     border: 1px solid #045d30;
     color: #045d30; }
@@ -943,7 +961,12 @@ pre {
   .content-area .button.button-ghost:hover,
   .content-area input[type="reset"].button-ghost:hover,
   .content-area input[type="submit"].button-ghost:hover,
-  .content-area input[type="button"].button-ghost:hover {
+  .content-area input[type="button"].button-ghost:hover,
+  .site-footer button.button-ghost:hover,
+  .site-footer .button.button-ghost:hover,
+  .site-footer input[type="reset"].button-ghost:hover,
+  .site-footer input[type="submit"].button-ghost:hover,
+  .site-footer input[type="button"].button-ghost:hover {
     background-color: #045d30;
     color: #fff; }
 
