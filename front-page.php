@@ -8,18 +8,18 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:38:06
+ * @Last Modified time: 2019-10-15 14:40:09
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 // Featured image.
 $featured_image = '';
-if ( has_post_thumbnail() ) :
+if ( has_post_thumbnail() ) {
 	$featured_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-else :
+} else {
 	$featured_image = get_theme_file_uri( 'images/default.jpg' );
-endif;
+}
 
 get_header(); ?>
 
