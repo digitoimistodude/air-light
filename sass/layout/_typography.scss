@@ -267,7 +267,6 @@ blockquote {
   margin: 0;
 
   p {
-    @include responsive-font(17px, 25px, 25px);
     font-style: italic;
     margin-bottom: 0;
     position: relative;
