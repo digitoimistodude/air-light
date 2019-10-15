@@ -4,9 +4,11 @@
  *
  * Contains the closing of the #content div and all content after.
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:36:09
  * @package air-light
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 ?>

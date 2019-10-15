@@ -4,9 +4,11 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:37:51
  * @package air-light
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 ?>

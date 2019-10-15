@@ -2,9 +2,11 @@
 /**
  * Template part for displaying results in search pages.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:38:24
  * @package air-light
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 ?>

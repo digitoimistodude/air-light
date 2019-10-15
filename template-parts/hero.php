@@ -5,6 +5,9 @@
  * This is the default hero image for page templates, called
  * 'block'. Strictly air specific.
  *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:32:59
  * @package air-light
  */
 

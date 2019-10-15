@@ -2,9 +2,11 @@
 /**
  * The template for displaying archive pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:35:50
  * @package air-light
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 get_header();

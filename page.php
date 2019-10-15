@@ -7,9 +7,11 @@
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:36:27
  * @package air-light
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
 the_post();

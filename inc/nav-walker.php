@@ -10,6 +10,9 @@
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:37:37
  * @package air-light
  */
 class Air_Light_Navwalker extends Walker_Nav_Menu {

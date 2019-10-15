@@ -1,8 +1,11 @@
 <?php
 /**
- *  Air custom functions.
+ * Air custom functions.
  *
- *  @package air-light
+ * @Date:   2019-10-15 12:30:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2019-10-15 14:37:41
+ * @package air-light
  */
 
 if ( ! function_exists( 'air_light_entry_footer' ) ) {
