@@ -14,11 +14,11 @@
     <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
     <?php if ( 'post' === get_post_type() ) : ?>
-    <div class="entry-meta">
-        <p class="entry-time">
-          <time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time>
-        </p>
-    </div><!-- .entry-meta -->
+      <div class="entry-meta">
+          <p class="entry-time">
+            <time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time>
+          </p>
+      </div><!-- .entry-meta -->
     <?php endif; ?>
   </header><!-- .entry-header -->
 
@@ -29,4 +29,4 @@
   <footer class="entry-footer">
     <?php air_light_entry_footer(); ?>
   </footer><!-- .entry-footer -->
-</article><!-- #post-## -->	
+</article><!-- #post-## -->

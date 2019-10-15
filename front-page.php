@@ -18,8 +18,7 @@ else :
 	$featured_image = get_theme_file_uri( 'images/default.jpg' );
 endif;
 
-get_header();
-?>
+get_header(); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
@@ -33,12 +32,12 @@ get_header();
 
         <?php if ( have_posts() ) {
         	while ( have_posts() ) {
-	      		the_post();
-	      		the_content();
+        		the_post();
+        		the_content();
 					}
         } else {
         	get_template_part( 'template-parts/content', 'none' );
-        }  ?>
+        } ?>
 
       </div>
     </div>

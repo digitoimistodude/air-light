@@ -7,27 +7,26 @@
  * @package air-light
  */
 
+the_post();
+
 get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 <div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">
-
     <div class="container container-article">
-      <?php while ( have_posts() ) {
-      	the_post();
-				get_template_part( 'template-parts/content', get_post_type() );
 
-				the_post_navigation();
+      <?php get_template_part( 'template-parts/content', get_post_type() );
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
+			the_post_navigation();
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
 			} ?>
-    </div><!-- .container -->
 
+    </div><!-- .container -->
 	</main><!-- #main -->
 </div><!-- #primary -->
 

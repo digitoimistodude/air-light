@@ -30,5 +30,4 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php
-get_footer();
+<?php get_footer();
