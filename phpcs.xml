@@ -65,6 +65,7 @@
         <exclude name="WordPress.Functions.DontExtract.extract_extract" />
         <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
         <exclude name="Generic.Commenting.DocComment.MissingShort" />
+        <exclude name="Generic.Commenting.DocComment.SpacingBeforeTags" />
         <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
         <exclude name="PHPCompatibility.PHP.NewClosure.Found" />
         <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
