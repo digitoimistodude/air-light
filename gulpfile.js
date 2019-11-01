@@ -295,6 +295,7 @@ gulp.task('validatehtml', function() {
         /This document appears to be written/g,,
         /“<” is not allowed/g,
         /Attribute “'/g,
+        /Attribute “false/g,
         /Attribute “&&”/g,
         /Attribute “isset/g,
         /Duplicate attribute “\$/g,
