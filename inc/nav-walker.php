@@ -12,8 +12,9 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2019-12-03 14:42:51
- * @package ctsengtec
+ * @Last Modified time: 2019-12-30 21:58:07
+ *
+ * @package air-light
  */
 class Air_Light_Navwalker extends Walker_Nav_Menu {
 
@@ -44,7 +45,7 @@ class Air_Light_Navwalker extends Walker_Nav_Menu {
     } else {
       $class_names = $value = '';
       $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-      $classes[] = 'ctsengtec-menu-item menu-item-' . $item->ID;
+      $classes[] = 'air-light-menu-item menu-item-' . $item->ID;
       $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
       if ( $args->has_children ) {
