@@ -229,7 +229,7 @@ PHPCS
 
 gulp.task('phpcs', function() {
 
-  gulp.src(phpSrc)
+  gulp.src([phpSrc, '!node_modules/**/*'])
 
     // Validate files using PHP Code Sniffer
     .pipe(phpcs({
