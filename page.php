@@ -8,8 +8,8 @@
  * different template.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:36:27
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-01-16 09:39:53
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -54,8 +54,8 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
                 ),
                 get_the_title()
               ),
-              '<span class="edit-link">',
-              '</span>'
+              '<p class="edit-link">',
+              '</p>'
             ); ?>
           </footer><!-- .entry-footer -->
         <?php endif; ?>
