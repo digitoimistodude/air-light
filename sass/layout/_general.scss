@@ -79,6 +79,8 @@
     padding-right: $container-default-pad-x * 4;
   }
 
+  // Please note: You should really define these globals separately per project
+  // For every project by dividing 1.2 will not cut it
   @media (max-width: $container-ipad) {
     padding-top: $container-default-pad-y / 1.2;
     padding-bottom: $container-default-pad-y / 1.2;
