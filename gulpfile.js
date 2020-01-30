@@ -27,6 +27,22 @@ var phpcs          = require('gulp-phpcs');
 var validatehtml   = require('gulp-w3c-html-validation');
 var a11y           = require('gulp-accessibility');
 
+// Better CSS error reporting
+const printGulpPluginErrorBeautifully = require('@wulechuan/printer-for-errors-of-gulp-plugins');
+const exampleSourceFileBasePath = '.';
+const errorOfGlupPluginsPrintingConfigurations = {
+
+    // This simply helps the logger print shorter paths
+    // so that file paths looks better in narrow console windows.
+    basePathToShortenPrintedFilePaths: exampleSourceFileBasePath,
+
+    colorTheme: {
+        heading: {
+            lineColor: 'magenta',
+        },
+    },
+};
+
 /*
 
 FILE PATHS
@@ -54,7 +70,8 @@ var handleError = function(task) {
         message: task + ' failed, check the logs...'
       })(err);
 
-    util.log(util.colors.bgRed(task + ' error:'), util.colors.red(err));
+    // util.log(util.colors.bgRed(task + ' error:'), util.colors.red(err));
+    printGulpPluginErrorBeautifully(err, errorOfGlupPluginsPrintingConfigurations)
   };
 };
 
@@ -212,7 +229,7 @@ PHPCS
 
 gulp.task('phpcs', function() {
 
-  gulp.src(phpSrc)
+  gulp.src([phpSrc, '!node_modules/**/*'])
 
     // Validate files using PHP Code Sniffer
     .pipe(phpcs({
@@ -295,6 +312,7 @@ gulp.task('validatehtml', function() {
         /This document appears to be written/g,,
         /“<” is not allowed/g,
         /Attribute “'/g,
+        /Attribute “false/g,
         /Attribute “&&”/g,
         /Attribute “isset/g,
         /Duplicate attribute “\$/g,

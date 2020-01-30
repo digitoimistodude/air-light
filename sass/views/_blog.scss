@@ -34,8 +34,347 @@ del {
   color: #666;
 }
 
+// Gutenberg magic
 .container.container-article {
   max-width: $article-max-width;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.container.container-article article {
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 8rem;
+  padding-bottom: 0;
+
+  .article--meta-information {
+    margin-top: 8rem;
+
+    svg {
+      position: relative;
+      top: 2px;
+      margin-right: 3px;
+    }
+
+    a:not(.button) {
+      color: $color-darkgrey;
+      text-decoration: none;
+      text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
+      box-shadow: inset 0 -1px 0 0 #fff, inset 0 -2px 0 0 rgba($color-darkgrey, .6);
+      transition: all .55s;
+      background-image: linear-gradient(to top, $color-darkgrey, $color-darkgrey);
+      background-size: 100% 0;
+      background-position: left bottom;
+      background-repeat: no-repeat;
+
+      &:hover {
+        color: #fff;
+        text-shadow: none;
+        padding-left: 5px;
+        padding-right: 5px;
+        box-shadow: none;
+        background-size: 100% 2.8rem;
+        margin-left: -5px;
+        margin-right: -5px;
+      }
+    }
+  }
+
+  .article--meta-information p,
+  .article--meta-information b,
+  .article--meta-information a {
+    @include responsive-font(14px, 16px);
+    color: $color-darkgrey;
+    line-height: 1.77;
+  }
+
+  .entry-meta .notification-box {
+    border-top: 1px solid rgba($color-darkgrey, .3);
+    border-bottom: 1px solid rgba($color-darkgrey, .3);
+    padding: 4rem 2rem;
+    margin-top: 8rem;
+
+    @media (max-width: 600px) {
+      padding: 2rem;
+    }
+
+    h2,
+    p,
+    b {
+      @include responsive-font(16px, 21px);
+      color: $color-darkgrey;
+      margin: 0;
+    }
+  }
+
+  a:not(.button) {
+    @extend %link;
+    position: relative;
+    color: $color-links;
+    transition: all .55s;
+    text-decoration: none;
+  }
+
+  figcaption,
+  cite,
+  small {
+    @include responsive-font(14px, 16px);
+    font-style: normal;
+    color: $color-darkgrey;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    max-width: $article-max-width;
+    padding-bottom: 0;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+
+    @media (max-width: $container-mobile) {
+      margin-top: 2rem;
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  p {
+    color: $color-black;
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .is-style-ingress {
+    line-height: 1.22;
+  }
+
+  iframe,
+  .fb-post,
+  small {
+    display: block;
+  }
+
+  ul,
+  li {
+    line-height: 1.77;
+  }
+
+  .featured-image-single {
+    max-width: 920px;
+    margin-bottom: 8rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  blockquote {
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 3px solid $color-black;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    padding: 4rem;
+    max-width: 920px;
+    line-height: 1.77;
+
+    cite {
+      text-align: left;
+    }
+
+    * {
+      line-height: 1.77;
+    }
+
+    @media (max-width: $container-mobile) {
+      padding: 4rem 2rem;
+    }
+
+    p {
+      @include responsive-font($font-min-size, 24px);
+    }
+  }
+
+  cite {
+    margin-bottom: 8rem;
+  }
+
+  ul,
+  ol {
+    padding-left: 2.2rem;
+  }
+
+  div[style="width: 640px;"],
+  .wp-video {
+    width: 100% !important;
+    max-width: $article-max-width !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  > * {
+    max-width: $article-max-width;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.77;
+
+    &.wp-block-image {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+
+      .entry-photo {
+        margin: 0;
+      }
+
+      .entry-photo img {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &.twitter-tweet,
+    &.instagram-media,
+    &.wp-video {
+      width: 100% !important;
+      max-width: $article-max-width !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+
+      @media (max-width: 800px) {
+        padding-left: 4rem !important;
+        padding-right: 4rem !important;
+      }
+
+      @media (max-width: 480px) {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+      }
+    }
+
+    &.entry-title {
+      @include responsive-font(42px, 90px);
+      max-width: 1000px;
+      line-height: 1;
+      text-align: center;
+      margin-bottom: 0;
+      margin-top: 8rem;
+
+      @media (max-width: 600px) {
+        margin-top: 0;
+      }
+
+      svg {
+        margin-left: 5px;
+      }
+    }
+
+    &.entry-meta {
+      text-align: center;
+      margin-bottom: 9rem;
+      max-width: 800px;
+
+      @media (max-width: $container-mobile) {
+        margin-bottom: 8rem;
+      }
+
+      p {
+        @include responsive-font(16px, 19px);
+        margin-top: 2rem;
+        opacity: .8;
+
+        @media (max-width: $container-mobile) {
+          font-size: 15px;
+        }
+      }
+
+      @media (max-width: $container-mobile) {
+        .reading-time {
+          display: block;
+        }
+
+        .reading-time .dot-divider {
+          display: none;
+        }
+      }
+    }
+
+    &.wp-block-gallery {
+      overflow: hidden;
+      color: $color-white;
+
+      figcaption {
+        width: 100%;
+        color: $color-white;
+        font-size: 14px;
+        padding: 2rem;
+        line-height: 1.55;
+      }
+
+      img {
+        margin-bottom: 0;
+      }
+    }
+
+    &.alignwide {
+      width: 100%;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+
+      @media (min-width: 870px) {
+        max-width: 85vw;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      @media (max-width: $container-mobile) {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+
+    &.alignfull {
+      max-width: 100%;
+      width: 100%;
+      margin-top: 8rem;
+      margin-bottom: 8rem;
+    }
+  }
+
+  @media (min-width: 1170px) {
+    // Big photos
+    .entry-photo {
+      max-width: 100%;
+      text-align: center;
+      margin-top: 8rem;
+      margin-bottom: 8rem;
+
+      img {
+        max-width: 70%;
+        margin: 0 auto;
+      }
+    }
+
+    small[style="text-align: center;"] {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+      margin-bottom: 8rem;
+      margin-top: -4rem;
+    }
+  }
 }
 
 // Required sticky class
@@ -68,10 +407,14 @@ del {
   }
 }
 
-// Embeds
 .entry-content {
   margin-bottom: 2em;
 
+  p {
+    line-height: 1.77;
+  }
+
+  // Embeds
   embed,
   iframe,
   object,
@@ -204,11 +547,6 @@ pre {
 .cat {
   margin-top: 0;
   margin-bottom: 10px;
-
-  a {
-    @extend %small;
-    font-weight: 600;
-  }
 }
 
 ul.tags {

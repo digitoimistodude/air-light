@@ -3,8 +3,8 @@
  * Air custom functions.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:37:41
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-01-16 09:41:05
  * @package air-light
  */
 
@@ -31,12 +31,6 @@ if ( ! function_exists( 'air_light_entry_footer' ) ) {
 			comments_popup_link( sprintf( wp_kses( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'air-light' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 			echo '</span>';
 		}
-
-		edit_post_link(
-			sprintf( _x( 'Edit %s', '%s: Name of current post', 'air-light' ), the_title( '<span class="screen-reader-text">"', '"</span>', false ) ),
-			'<p class="edit-link">',
-			'</p>'
-		);
 	}
 }
 

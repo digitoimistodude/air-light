@@ -79,6 +79,8 @@
     padding-right: $container-default-pad-x * 4;
   }
 
+  // Please note: You should really define these globals separately per project
+  // For every project by dividing 1.2 will not cut it
   @media (max-width: $container-ipad) {
     padding-top: $container-default-pad-y / 1.2;
     padding-bottom: $container-default-pad-y / 1.2;
@@ -100,7 +102,7 @@
   display: block;
 }
 
-// Edit
+// Better edit link
 .edit-link {
   text-align: left;
   width: 100%;
@@ -109,17 +111,26 @@
   max-width: 100%;
   min-width: 0;
   margin-bottom: 0;
-  margin-top: 0;
-  top: 0;
-  bottom: 0;
-  padding: 0;
+  margin-top: 2rem;
   overflow: hidden;
+  transition: all .22s;
 
   a {
     clear: both;
+    text-align: center;
+    transition: all .22s;
     display: block;
-    margin-top: 40px;
-    padding: 0;
+    padding: 2rem;
+    background: #fafafa;
+    color: #999;
+    border: 2px dashed #999;
+    margin: 0;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #999;
+    background: #efefef;
   }
 }
 

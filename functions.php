@@ -7,14 +7,15 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2019-10-17 11:53:05
+ * @Last Modified time: 2020-01-22 14:16:53
+ *
  * @package air-light
  */
 
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '4.8.8' );
+define( 'AIR_LIGHT_VERSION', '4.9.9' );
 
 /**
  * Requires.
@@ -79,7 +80,11 @@ function air_light_move_jquery_into_footer( $wp_scripts ) {
  */
 add_action( 'wp_enqueue_scripts', 'air_light_scripts' );
 function air_light_scripts() {
-  $air_light_template = 'global.min';
+  if ( 'development' === getenv( 'WP_ENV' ) ) {
+    $air_light_template = 'global';
+  } else {
+    $air_light_template = 'global.min';
+  }
 
   // Styles.
   wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_light_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_light_template}.css" ) ) );

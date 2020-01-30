@@ -15,7 +15,7 @@
   input[type="button"] {
     font-size: 1.6rem;
     background: $color-links;
-    color: #fff;
+    color: $color-white;
     border: 0;
     width: auto;
     display: inline-block;
@@ -35,7 +35,7 @@
 
     &:hover,
     &:focus {
-      color: #fff;
+      color: $color-white;
       background: darken($color-links, 15%);
     }
 
@@ -47,7 +47,7 @@
 
     &.button-ghost:hover {
       background-color: $color-links;
-      color: #fff;
+      color: $color-white;
     }
   }
 }

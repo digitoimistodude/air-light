@@ -107,7 +107,7 @@ chmod 777 ${PROJECTPATH}/media
 echo "${yellow}Generating default README.md...${txtreset}"
 
 newestair="4.8.5"
-newestwordpress="5.2.2"
+newestwordpress="5.3.2"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
 echo "# ${PROJECTNAME}
