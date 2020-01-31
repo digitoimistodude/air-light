@@ -45,6 +45,7 @@
         <exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
         <exclude name="Squiz.Commenting.FileComment.Missing" />
         <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
 
         <!-- General code style related excludes -->
         <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
