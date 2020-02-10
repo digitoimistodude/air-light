@@ -20,10 +20,6 @@ namespace Air_Light;
 define( 'AIR_LIGHT_VERSION', '4.9.9' );
 
 /**
- * Requires.
+ * Setup theme
  */
 require get_theme_file_path( '/inc/theme-setup.php' );
-require get_theme_file_path( '/inc/functions.php' );
-require get_theme_file_path( '/inc/menus.php' );
-require get_theme_file_path( '/inc/nav-walker.php' );
-require get_theme_file_path( '/inc/scripts-styles.php' );

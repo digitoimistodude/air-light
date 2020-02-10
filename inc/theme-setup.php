@@ -30,6 +30,7 @@ $theme_settings = [
     'automatic-feed-links',
     'title-tag',
     'post-thumbnails',
+    // 'woocommerce',
     'html5' => [
       [
         'search-form',
@@ -40,6 +41,25 @@ $theme_settings = [
       ],
     ],
   ],
+
+  // Set theme textdomain
+  'textdomain' => 'air-light',
+
+  // Set up features
+  // - Comment row to disable a feature
+  // - Add your own features below
+  'features' => [
+    'widgets'
+  ],
+
+  // Set up template tags
+  // - Comment row to disable a template tag
+  // - Add your own custom template tags below
+  'template-tags' => [
+    'single-comment',
+    'entry-footer',
+    'featured-image',
+  ],
 ];
 
 $theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
@@ -47,22 +67,45 @@ $theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
 define( 'THEME_SETTINGS', $theme_settings );
 
 /**
- * Enable theme support for essential features.
+ * Require required files
  */
-add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'title-tag' );
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-// add_theme_support( 'woocommerce' );
+require get_theme_file_path( '/inc/menus.php' );
+require get_theme_file_path( '/inc/nav-walker.php' );
+require get_theme_file_path( '/inc/scripts-styles.php' );
+
+/**
+ * Build theme support
+ */
+foreach ( THEME_SETTINGS['theme_support'] as $supported_feature_key => $args ) {
+  if ( is_array( $args ) ) {
+    add_theme_support( $supported_feature_key, $args );
+  } else {
+    add_theme_support( $supported_feature_key );
+  }
+}
 
 /**
  * Load textdomain.
  */
-load_theme_textdomain( 'air-light', get_template_directory() . '/languages' );
+load_theme_textdomain( THEME_SETTINGS['textdomain'], get_template_directory() . '/languages' );
 
 /**
  * Define content width in articles
  */
 if ( ! isset( $content_width ) ) {
-  $content_width = 800;
+  $content_width = THEME_SETTINGS['content_width'];
+}
+
+/**
+ * Require additional features
+ */
+foreach ( THEME_SETTINGS['features'] as $feature ) {
+  require get_theme_file_path( '/inc/features/' . $feature . '.php' );
+}
+
+/**
+ * Require template tags
+ */
+foreach ( THEME_SETTINGS['template-tags'] as $template_tag ) {
+  require get_theme_file_path( '/inc/template-tags/' . $template_tag . '.php' );
 }

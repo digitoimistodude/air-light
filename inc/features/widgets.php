@@ -12,8 +12,8 @@ namespace Air_Light;
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-add_action( 'widgets_init', 'air_light_widgets_init' );
-function air_light_widgets_init() {
+add_action( 'widgets_init', __NAMESPACE__ . '\widgets_init' );
+function widgets_init() {
   register_sidebar( array(
     'name'          => esc_html__( 'Sidebar', 'air-light' ),
     'id'            => 'sidebar-1',
@@ -23,4 +23,4 @@ function air_light_widgets_init() {
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
   ) );
-} // end air_light_widgets_init
+} // end widgets_init
