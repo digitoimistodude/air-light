@@ -12,6 +12,8 @@
  * @package air-light
  */
 
+namespace Air_Light;
+
 /**
  * The current version of the theme.
  */
@@ -20,30 +22,10 @@ define( 'AIR_LIGHT_VERSION', '4.9.9' );
 /**
  * Requires.
  */
+require get_theme_file_path( '/inc/theme-setup.php' );
 require get_theme_file_path( '/inc/functions.php' );
 require get_theme_file_path( '/inc/menus.php' );
 require get_theme_file_path( '/inc/nav-walker.php' );
-
-/**
- * Enable theme support for essential features.
- */
-add_theme_support( 'automatic-feed-links' );
-add_theme_support( 'title-tag' );
-add_theme_support( 'post-thumbnails' );
-add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
-// add_theme_support( 'woocommerce' );
-
-/**
- * Load textdomain.
- */
-load_theme_textdomain( 'air-light', get_template_directory() . '/languages' );
-
-/**
- * Define content width in articles
- */
-if ( ! isset( $content_width ) ) {
-  $content_width = 800;
-}
 
 /**
  * Register widget area.
