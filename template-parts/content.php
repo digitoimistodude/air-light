@@ -53,4 +53,5 @@ namespace Air_Light;
   <footer class="entry-footer">
     <?php entry_footer(); ?>
   </footer><!-- .entry-footer -->
+
 </article><!-- #post-## -->

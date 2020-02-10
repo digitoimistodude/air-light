@@ -20,6 +20,8 @@ $theme_settings = [
   ],
   'content_width' => 800,
 
+  'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
+
   // Set theme support
   'theme_support' => [
     'automatic-feed-links',
@@ -36,6 +38,10 @@ $theme_settings = [
     ],
   ],
 ];
+
+$theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
+
+define( 'THEME_SETTINGS', $theme_settings );
 
 /**
  * Enable theme support for essential features.
