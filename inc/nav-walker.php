@@ -16,6 +16,9 @@
  *
  * @package air-light
  */
+
+namespace Air_Light;
+
 class Air_Light_Navwalker extends Walker_Nav_Menu {
 
   public function start_lvl( &$output, $depth = 0, $args = array() ) {

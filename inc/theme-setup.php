@@ -22,6 +22,9 @@ $theme_settings = [
 
   'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
 
+  'logo_path' => get_theme_file_path( '/svg/logo.svg' ),
+  'logo_url' => get_theme_file_uri( '/svg/logo.svg' ),
+
   // Set theme support
   'theme_support' => [
     'automatic-feed-links',

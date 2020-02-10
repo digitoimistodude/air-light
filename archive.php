@@ -9,6 +9,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
+namespace Air_Light;
+
 get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
