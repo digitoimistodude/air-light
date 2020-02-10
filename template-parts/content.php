@@ -9,6 +9,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
+namespace Air_Light;
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -49,6 +51,6 @@
   </div><!-- .entry-content -->
 
   <footer class="entry-footer">
-    <?php air_light_entry_footer(); ?>
+    <?php entry_footer(); ?>
   </footer><!-- .entry-footer -->
 </article><!-- #post-## -->

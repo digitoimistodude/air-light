@@ -12,6 +12,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
+namespace Air_Light;
+
  /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -63,7 +65,7 @@ if ( post_password_required() ) {
         wp_list_comments( array(
           'style'      => 'ol',
           'short_ping' => true,
-          'callback' => 'air_light_comments',
+          'callback' => __NAMESPACE__ . '\single-comment',
         ) );
       ?>
     </ol><!-- .comment-list -->
