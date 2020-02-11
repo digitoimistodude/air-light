@@ -32,9 +32,9 @@ namespace Air_Light;
       <div class="nav-container">
         <header class="site-header" role="banner">
 
-          <?php get_template_part( 'template-parts/header/branding.php' ); ?>
+          <?php get_template_part( 'template-parts/header/branding' ); ?>
 
-          <?php get_template_part( 'template-parts/header/navigation.php'); ?>
+          <?php get_template_part( 'template-parts/header/navigation'); ?>
 
         </header>
       </div><!-- .nav-container -->
