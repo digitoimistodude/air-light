@@ -27,14 +27,14 @@ namespace Air_Light;
   <body <?php body_class( 'no-js' ); ?>>
     <div id="page" class="site">
 
-      <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_SETTINGS['textdomain'] ); ?></a>
+      <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
 
       <div class="nav-container">
         <header class="site-header" role="banner">
 
           <?php get_template_part( 'template-parts/header/branding' ); ?>
 
-          <?php get_template_part( 'template-parts/header/navigation'); ?>
+          <?php get_template_part( 'template-parts/header/navigation' ); ?>
 
         </header>
       </div><!-- .nav-container -->

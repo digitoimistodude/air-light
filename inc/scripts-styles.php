@@ -44,7 +44,7 @@ function enqueue_theme_scripts() {
   }
 
   wp_localize_script( 'scripts', 'air_light_screenReaderText', array(
-    'expand'      => esc_html__( 'Open child menu', THEME_SETTINGS['textdomain'] ),
-    'collapse'    => esc_html__( 'Close child menu', THEME_SETTINGS['textdomain'] ),
+    'expand'      => esc_html__( 'Open child menu', 'air-light' ),
+    'collapse'    => esc_html__( 'Close child menu', 'air-light' ),
   ) );
 } // end air_light_scripts

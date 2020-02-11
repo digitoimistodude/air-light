@@ -21,11 +21,11 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', THEME_SETTINGS['textdomain'] ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'air-light' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', THEME_SETTINGS['textdomain'] ); ?></p>
+					<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'air-light' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->

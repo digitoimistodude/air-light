@@ -11,11 +11,11 @@ namespace Air_Light;
 
       <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-        <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', THEME_SETTINGS['textdomain'] ); ?>">
+        <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
-          <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', THEME_SETTINGS['textdomain'] ); ?>"><?php esc_attr_e( 'Menu', THEME_SETTINGS['textdomain'] ); ?></span>
+          <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>"><?php esc_attr_e( 'Menu', 'air-light' ); ?></span>
         </button>
 
         <nav id="nav" class="nav-primary" role="navigation">

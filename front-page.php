@@ -25,9 +25,9 @@ get_header(); ?>
     <div class="entry-header-demo">
       <h1>
         <span class="accent">
-          <?php echo esc_html_e( 'air-light ', THEME_SETTINGS['textdomain'] ); echo esc_attr( AIR_LIGHT_VERSION, THEME_SETTINGS['textdomain'] ); ?>
+          <?php echo esc_html_e( 'air-light ', 'air-light' ); echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?>
         </span>
-        <?php echo esc_html_e( 'a WordPress starter theme', THEME_SETTINGS['textdomain'] ); ?>
+        <?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?>
       </h1>
     </div>
 

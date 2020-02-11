@@ -48,16 +48,16 @@ $theme_settings = [
         'comment-form',
         'comment-list',
         'gallery',
-        'caption'
+        'caption',
     ],
   ],
 
   // Set theme textdomain
-  'textdomain' => THEME_SETTINGS['textdomain'],
+  'textdomain' => 'air-light',
 
   // Set menu locations
   'menu_locations' => [
-    'primary' => __( 'Primary Menu', THEME_SETTINGS['textdomain'] ),
+    'primary' => __( 'Primary Menu', 'air-light' ),
   ],
 
   // Set up taxonomies
@@ -79,8 +79,7 @@ $theme_settings = [
   // Set up features
   // - Comment row to disable a feature
   // - Add your own features below
-  'features' => [
-  ],
+  'features' => [],
 
   // Set up template tags
   // - Comment row to disable a template tag
