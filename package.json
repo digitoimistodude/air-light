@@ -7,6 +7,7 @@
     "@wulechuan/printer-for-errors-of-gulp-plugins": "^1.0.0",
     "access-sniff": "^3.2.0",
     "autoprefixer": "^9.4.7",
+    "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.3",
     "browserslist": [
       "last 2 version",
@@ -38,7 +39,8 @@
     "stylelint-config-recommended": "^2.1.0",
     "stylelint-config-standard": "^18.2.0",
     "stylelint-config-wordpress": "^13.1.0",
-    "stylelint-order": "^1.0.0"
+    "stylelint-order": "^1.0.0",
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "hamburgers": "^1.1.3",
