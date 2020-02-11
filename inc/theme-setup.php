@@ -8,70 +8,13 @@
 namespace Air_Light;
 
 /**
- * Theme settings
- */
-
-$theme_settings = [
-  // Set image sizes & content width
-  'image_sizes' => [
-    'small' => 300,
-    'medium' => 700,
-    'large' => 1200,
-  ],
-  'content_width' => 800,
-
-  'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
-
-  'logo_path' => get_theme_file_path( '/svg/logo.svg' ),
-  'logo_url' => get_theme_file_uri( '/svg/logo.svg' ),
-
-  // Set theme support
-  'theme_support' => [
-    'automatic-feed-links',
-    'title-tag',
-    'post-thumbnails',
-    // 'woocommerce',
-    'html5' => [
-      [
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption'
-      ],
-    ],
-  ],
-
-  // Set theme textdomain
-  'textdomain' => 'air-light',
-
-  // Set up features
-  // - Comment row to disable a feature
-  // - Add your own features below
-  'features' => [
-    'widgets'
-  ],
-
-  // Set up template tags
-  // - Comment row to disable a template tag
-  // - Add your own custom template tags below
-  'template-tags' => [
-    'single-comment',
-    'entry-footer',
-    'featured-image',
-  ],
-];
-
-$theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
-
-define( 'THEME_SETTINGS', $theme_settings );
-
-/**
  * Require required files
  */
-require get_theme_file_path( '/inc/menus.php' );
-require get_theme_file_path( '/inc/nav-walker.php' );
 require get_theme_file_path( '/inc/scripts-styles.php' );
+require get_theme_file_path( '/inc/widgets.php' );
+require get_theme_file_path( '/inc/Nav_Walker.php' );
+require get_theme_file_path( '/inc/post-types/Post_Type.php');
+require get_theme_file_path( '/inc/taxonomies/Taxonomy.php');
 
 /**
  * Build theme support
@@ -83,6 +26,12 @@ foreach ( THEME_SETTINGS['theme_support'] as $supported_feature_key => $args ) {
     add_theme_support( $supported_feature_key );
   }
 }
+
+/**
+ * Register menu locations
+ */
+
+register_nav_menus( THEME_SETTINGS['menu_locations'] );
 
 /**
  * Load textdomain.
@@ -97,15 +46,66 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
+ * Build taxonomies
+ */
+foreach ( THEME_SETTINGS['taxonomies'] as $slug => $args) {
+  $classname = __NAMESPACE__ . "\\" . $args['name'];
+  $file_path = get_theme_file_path( '/inc/taxonomies/' . $args['name'] . '.php' );
+
+  if ( ! file_exists( $file_path ) ) {
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+  }
+  require $file_path;
+
+  if ( ! class_exists( $classname ) ) {
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+  }
+
+  $taxonomy = new $classname( $slug );
+  $taxonomy->register( $args['post_types'] );
+}
+
+/**
+ * Build custom post types
+ */
+foreach ( THEME_SETTINGS['post_types'] as $slug => $name) {
+  $classname = __NAMESPACE__ . "\\" . $name;
+  $file_path = get_theme_file_path( '/inc/post-types/' . $name . '.php' );
+
+  if ( ! file_exists( $file_path ) ) {
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+  }
+  // Get the class file
+  require $file_path;
+
+  if ( ! class_exists( $classname ) ) {
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+  }
+
+  $post_type = new $classname( $slug );
+  $post_type->register();
+}
+
+/**
  * Require additional features
  */
+
 foreach ( THEME_SETTINGS['features'] as $feature ) {
-  require get_theme_file_path( '/inc/features/' . $feature . '.php' );
+  $file_path = get_theme_file_path( '/inc/features/' . $feature . '.php' );
+  if ( ! file_exists( $file_path ) ) {
+    return new \WP_Error( 'invalid-feature', __( 'The feature file does not exist.', 'air-light' ), $classname );
+  }
+  require $file_path ;
 }
+
 
 /**
  * Require template tags
  */
 foreach ( THEME_SETTINGS['template-tags'] as $template_tag ) {
-  require get_theme_file_path( '/inc/template-tags/' . $template_tag . '.php' );
+  $file_path = get_theme_file_path( '/inc/template-tags/' . $template_tag . '.php' );
+  if ( ! file_exists( $file_path ) ) {
+    return new \WP_Error( 'invalid-template-tag', __( 'The template tag file does not exist.', 'air-light' ), $template_tag );
+  }
+  require $file_path;
 }

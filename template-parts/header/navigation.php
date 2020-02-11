@@ -27,9 +27,9 @@ namespace Air_Light;
             'menu_class'        => 'menu-items',
             'menu_id'           => 'main-menu',
             'echo'              => true,
-            // 'fallback_cb'       => __NAMESPACE__ . '\Air_Light_Navwalker::fallback',
+            'fallback_cb'       => __NAMESPACE__ . '\Nav_Walker::fallback',
             'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
-            'walker'            => new Air_Light_Navwalker(),
+            'walker'            => new Nav_Walker(),
           ) ); ?>
 
         </nav><!-- #nav -->
