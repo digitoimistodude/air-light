@@ -53,11 +53,11 @@ $theme_settings = [
   ],
 
   // Set theme textdomain
-  'textdomain' => 'air-light',
+  'textdomain' => THEME_SETTINGS['textdomain'],
 
   // Set menu locations
   'menu_locations' => [
-    'primary' => __( 'Primary Menu', 'air-light' ),
+    'primary' => __( 'Primary Menu', THEME_SETTINGS['textdomain'] ),
   ],
 
   // Set up taxonomies

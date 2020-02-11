@@ -34,7 +34,7 @@ namespace Air_Light;
     <?php the_content( sprintf(
       wp_kses(
         /* translators: %s: Name of current post. Only visible to screen readers */
-        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'air-light' ),
+        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', THEME_SETTINGS['textdomain'] ),
         array(
           'span' => array(
             'class' => array(),
@@ -45,7 +45,7 @@ namespace Air_Light;
     ) );
 
     wp_link_pages( array(
-      'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ),
+      'before' => '<div class="page-links">' . esc_html__( 'Pages:', THEME_SETTINGS['textdomain'] ),
       'after'  => '</div>',
     ) ); ?>
   </div><!-- .entry-content -->

@@ -11,20 +11,20 @@ class Contact extends Post_Type {
 
     // Modify all the i18ized strings here.
     $generated_labels = [
-      'menu_name'          => __( 'Contact', 'air-light' ),
-      'name'               => _x( 'Contacts', 'post type general name', 'air-light' ),
-      'singular_name'      => _x( 'Contact', 'post type singular name', 'air-light' ),
-      'name_admin_bar'     => _x( 'Contact', 'add new on admin bar', 'air-light' ),
-      'add_new'            => _x( 'Add New', 'thing', 'air-light' ),
-      'add_new_item'       => __( 'Add New Contact', 'air-light' ),
-      'new_item'           => __( 'New Contact', 'air-light' ),
-      'edit_item'          => __( 'Edit Contact', 'air-light' ),
-      'view_item'          => __( 'View Contact', 'air-light' ),
-      'all_items'          => __( 'All Contacts', 'air-light' ),
-      'search_items'       => __( 'Search Contacts', 'air-light' ),
-      'parent_item_colon'  => __( 'Parent Contacts:', 'air-light' ),
-      'not_found'          => __( 'No contacts found.', 'air-light' ),
-      'not_found_in_trash' => __( 'No contacts found in Trash.', 'air-light' ),
+      'menu_name'          => __( 'Contact', THEME_SETTINGS['textdomain'] ),
+      'name'               => _x( 'Contacts', 'post type general name', THEME_SETTINGS['textdomain'] ),
+      'singular_name'      => _x( 'Contact', 'post type singular name', THEME_SETTINGS['textdomain'] ),
+      'name_admin_bar'     => _x( 'Contact', 'add new on admin bar', THEME_SETTINGS['textdomain'] ),
+      'add_new'            => _x( 'Add New', 'thing', THEME_SETTINGS['textdomain'] ),
+      'add_new_item'       => __( 'Add New Contact', THEME_SETTINGS['textdomain'] ),
+      'new_item'           => __( 'New Contact', THEME_SETTINGS['textdomain'] ),
+      'edit_item'          => __( 'Edit Contact', THEME_SETTINGS['textdomain'] ),
+      'view_item'          => __( 'View Contact', THEME_SETTINGS['textdomain'] ),
+      'all_items'          => __( 'All Contacts', THEME_SETTINGS['textdomain'] ),
+      'search_items'       => __( 'Search Contacts', THEME_SETTINGS['textdomain'] ),
+      'parent_item_colon'  => __( 'Parent Contacts:', THEME_SETTINGS['textdomain'] ),
+      'not_found'          => __( 'No contacts found.', THEME_SETTINGS['textdomain'] ),
+      'not_found_in_trash' => __( 'No contacts found in Trash.', THEME_SETTINGS['textdomain'] ),
     ];
 
     // Definition of the post type arguments. For full list see:

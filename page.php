@@ -37,7 +37,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
           <?php the_content(); ?>
 
           <?php wp_link_pages( [
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', THEME_SETTINGS['textdomain'] ),
             'after'  => '</div>',
           ] ); ?>
 
@@ -49,7 +49,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
               sprintf(
                 /* translators: %s: Name of current post. Only visible to screen readers */
                 wp_kses(
-                  __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
+                  __( 'Edit <span class="screen-reader-text">%s</span>', THEME_SETTINGS['textdomain'] ),
                   [
                     'span' => [
                       'class' => [],

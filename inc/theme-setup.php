@@ -53,12 +53,12 @@ foreach ( THEME_SETTINGS['taxonomies'] as $slug => $args) {
   $file_path = get_theme_file_path( '/inc/taxonomies/' . $args['name'] . '.php' );
 
   if ( ! file_exists( $file_path ) ) {
-    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', THEME_SETTINGS['textdomain'] ), $classname );
   }
   require $file_path;
 
   if ( ! class_exists( $classname ) ) {
-    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', THEME_SETTINGS['textdomain'] ), $classname );
   }
 
   $taxonomy = new $classname( $slug );
@@ -73,13 +73,13 @@ foreach ( THEME_SETTINGS['post_types'] as $slug => $name) {
   $file_path = get_theme_file_path( '/inc/post-types/' . $name . '.php' );
 
   if ( ! file_exists( $file_path ) ) {
-    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', THEME_SETTINGS['textdomain'] ), $classname );
   }
   // Get the class file
   require $file_path;
 
   if ( ! class_exists( $classname ) ) {
-    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+    return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', THEME_SETTINGS['textdomain'] ), $classname );
   }
 
   $post_type = new $classname( $slug );
@@ -93,7 +93,7 @@ foreach ( THEME_SETTINGS['post_types'] as $slug => $name) {
 foreach ( THEME_SETTINGS['features'] as $feature ) {
   $file_path = get_theme_file_path( '/inc/features/' . $feature . '.php' );
   if ( ! file_exists( $file_path ) ) {
-    return new \WP_Error( 'invalid-feature', __( 'The feature file does not exist.', 'air-light' ), $classname );
+    return new \WP_Error( 'invalid-feature', __( 'The feature file does not exist.', THEME_SETTINGS['textdomain'] ), $classname );
   }
   require $file_path ;
 }
@@ -105,7 +105,7 @@ foreach ( THEME_SETTINGS['features'] as $feature ) {
 foreach ( THEME_SETTINGS['template-tags'] as $template_tag ) {
   $file_path = get_theme_file_path( '/inc/template-tags/' . $template_tag . '.php' );
   if ( ! file_exists( $file_path ) ) {
-    return new \WP_Error( 'invalid-template-tag', __( 'The template tag file does not exist.', 'air-light' ), $template_tag );
+    return new \WP_Error( 'invalid-template-tag', __( 'The template tag file does not exist.', THEME_SETTINGS['textdomain'] ), $template_tag );
   }
   require $file_path;
 }

@@ -30,7 +30,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
             sprintf(
               /* translators: %s: Name of current post. Only visible to screen readers */
               wp_kses(
-                __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
+                __( 'Edit <span class="screen-reader-text">%s</span>', THEME_SETTINGS['textdomain'] ),
                 [
                   'span' => [
                     'class' => [],

@@ -34,13 +34,13 @@ if ( post_password_required() ) {
         if ( '1' === $comment_count ) {
           printf(
             /* translators: 1: title. */
-            esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'air-light' ),
+            esc_html__( 'One thought on &ldquo;%1$s&rdquo;', THEME_SETTINGS['textdomain'] ),
             '<span>' . esc_html( get_the_title() ) . '</span>'
           );
         } else {
         printf( // WPCS: XSS OK.
           /* translators: 1: comment count number, 2: title. */
-          esc_html( _nx( '%1$s comment %2$s', '%1$s comments %2$s', $comment_count, 'comments title', 'air-light' ) ),
+          esc_html( _nx( '%1$s comment %2$s', '%1$s comments %2$s', $comment_count, 'comments title', THEME_SETTINGS['textdomain'] ) ),
           number_format_i18n( $comment_count ),
           '<span class="screen-reader-text">on &ldquo;' . esc_html( get_the_title() ) . '&rdquo;</span>'
         );
@@ -50,11 +50,11 @@ if ( post_password_required() ) {
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
     <nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-      <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'air-light' ); ?></h2>
+      <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', THEME_SETTINGS['textdomain'] ); ?></h2>
       <div class="nav-links">
 
-        <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'air-light' ) ); ?></div>
-        <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'air-light' ) ); ?></div>
+        <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', THEME_SETTINGS['textdomain'] ) ); ?></div>
+        <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', THEME_SETTINGS['textdomain'] ) ); ?></div>
 
       </div><!-- .nav-links -->
     </nav><!-- #comment-nav-above -->
@@ -72,11 +72,11 @@ if ( post_password_required() ) {
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
     <nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-      <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'air-light' ); ?></h2>
+      <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', THEME_SETTINGS['textdomain'] ); ?></h2>
       <div class="nav-links">
 
-        <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'air-light' ) ); ?></div>
-        <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'air-light' ) ); ?></div>
+        <div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', THEME_SETTINGS['textdomain'] ) ); ?></div>
+        <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', THEME_SETTINGS['textdomain'] ) ); ?></div>
 
       </div><!-- .nav-links -->
     </nav><!-- #comment-nav-below -->
@@ -89,7 +89,7 @@ if ( post_password_required() ) {
   // If comments are closed and there are comments, let's leave a little note, shall we?
   if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'air-light' ); ?></p>
+    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', THEME_SETTINGS['textdomain'] ); ?></p>
   <?php
   endif;
 

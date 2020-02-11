@@ -27,7 +27,7 @@ namespace Air_Light;
   <body <?php body_class( 'no-js' ); ?>>
     <div id="page" class="site">
 
-      <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
+      <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', THEME_SETTINGS['textdomain'] ); ?></a>
 
       <div class="nav-container">
         <header class="site-header" role="banner">

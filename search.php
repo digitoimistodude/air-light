@@ -24,7 +24,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
         <header class="page-header">
           <h1 class="page-title">
-            <?php printf( esc_html__( 'Search Results for: %s', 'air-light' ), '<span>' . get_search_query() . '</span>' ); ?>
+            <?php printf( esc_html__( 'Search Results for: %s', THEME_SETTINGS['textdomain'] ), '<span>' . get_search_query() . '</span>' ); ?>
           </h1>
         </header><!-- .page-header -->
 
