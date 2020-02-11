@@ -14,20 +14,20 @@ class Example extends Taxonomy {
   public function register( array $post_types = [] ) {
     // Taxonomy labels.
     $labels = [
-      'name'                  => _x( 'Examples', 'Taxonomy plural name', air-light,
-      'singular_name'         => _x( 'Example', 'Taxonomy singular name', air-light,
-      'search_items'          => __( 'Search Examples', air-light,
-      'popular_items'         => __( 'Popular Examples', air-light,
-      'all_items'             => __( 'All Examples', air-light,
-      'parent_item'           => __( 'Parent Example', air-light,
-      'parent_item_colon'     => __( 'Parent Example', air-light,
-      'edit_item'             => __( 'Edit Example', air-light,
-      'update_item'           => __( 'Update Example', air-light,
-      'add_new_item'          => __( 'Add New Example', air-light,
-      'new_item_name'         => __( 'New Example', air-light,
-      'add_or_remove_items'   => __( 'Add or remove Examples', air-light,
-      'choose_from_most_used' => __( 'Choose from most used examples', air-light,
-      'menu_name'             => __( 'Example', air-light,
+      'name'                  => _x( 'Examples', 'Taxonomy plural name', 'air-light' ),
+      'singular_name'         => _x( 'Example', 'Taxonomy singular name', 'air-light' ),
+      'search_items'          => __( 'Search Examples', 'air-light' ),
+      'popular_items'         => __( 'Popular Examples', 'air-light' ),
+      'all_items'             => __( 'All Examples', 'air-light' ),
+      'parent_item'           => __( 'Parent Example', 'air-light' ),
+      'parent_item_colon'     => __( 'Parent Example', 'air-light' ),
+      'edit_item'             => __( 'Edit Example', 'air-light' ),
+      'update_item'           => __( 'Update Example', 'air-light' ),
+      'add_new_item'          => __( 'Add New Example', 'air-light' ),
+      'new_item_name'         => __( 'New Example', 'air-light' ),
+      'add_or_remove_items'   => __( 'Add or remove Examples', 'air-light' ),
+      'choose_from_most_used' => __( 'Choose from most used examples', 'air-light' ),
+      'menu_name'             => __( 'Example', 'air-light' ),
     ];
 
     $args = [
