@@ -128,7 +128,7 @@ $theme_settings = [
   ],
 ];
 
-$theme_settings = apply_filters( __NAMESPACE__ . '\theme_settings', $theme_settings );
+$theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
 
 define( 'THEME_SETTINGS', $theme_settings );
 
