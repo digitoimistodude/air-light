@@ -34,15 +34,13 @@ $theme_settings = [
 
   'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
 
-  'logo_path' => get_theme_file_path( '/svg/logo.svg' ),
-  'logo_url' => get_theme_file_uri( '/svg/logo.svg' ),
+  'logo' => '/svg/logo.svg',
 
   // Set theme support
   'theme_support' => [
     'automatic-feed-links' => [],
     'title-tag' => [],
     'post-thumbnails' => [],
-    // 'woocommerce' => [],
     'html5' => [
         'search-form',
         'comment-form',
@@ -76,25 +74,70 @@ $theme_settings = [
     'contact' => 'Contact',
   ],
 
-  // Set up features
-  // - Comment row to disable a feature
-  // - Add your own features below
-  'features' => [],
+  /**
+   * Gutenberg -related settings
+   */
 
-  // Set up template tags
-  // - Comment row to disable a template tag
-  // - Add your own custom template tags below
-  'template-tags' => [
-    'single-comment',
-    'entry-footer',
+  // If you want to use classic editor somewhere, define it here
+  'use_classic_editor' => [ 'page' ],
+
+  // Don't restrict blocks
+  // 'allowed_blocks' => 'all',
+
+  // Restrict to only selected blocks
+  'allowed_blocks' => [
+    // Set default blocks allowed in every post type
+    'default' => [
+      'core/archives',
+      'core/audio',
+      'core/button',
+      'core/categories',
+      'core/code',
+      'core/column',
+      'core/columns',
+      // 'core/coverImage',
+      'core/embed',
+      'core/file',
+      'core/freeform',
+      'core/gallery',
+      'core/heading',
+      'core/html',
+      'core/image',
+      'core/latestComments',
+      'core/latestPosts',
+      'core/list',
+      'core/more',
+      'core/nextpage',
+      'core/paragraph',
+      'core/preformatted',
+      'core/pullquote',
+      'core/quote',
+      'core/reusableBlock',
+      'core/separator',
+      'core/shortcode',
+      'core/spacer',
+      'core/subhead',
+      'core/table',
+      'core/textColumns',
+      'core/verse',
+      'core/video',
+    ],
+    'post' => [
+      'core/coverImage', // This block is now allowed only in posts
+    ],
   ],
 ];
 
-$theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
+$theme_settings = apply_filters( __NAMESPACE__ . '\theme_settings', $theme_settings );
 
 define( 'THEME_SETTINGS', $theme_settings );
 
 /**
- * Setup theme
+ * Required files
  */
-require get_theme_file_path( '/inc/theme-setup.php' );
+require get_theme_file_path( '/inc/hooks.php' );
+require get_theme_file_path( '/inc/includes.php' );
+require get_theme_file_path( '/inc/template-tags.php' );
+
+// Run theme setup
+theme_setup();

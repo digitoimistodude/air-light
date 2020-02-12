@@ -10,8 +10,6 @@ namespace Air_Light;
 /**
  * Move jQuery to footer
  */
-add_action( 'wp_default_scripts', __NAMESPACE__ . '\move_jquery_into_footer' );
-
 function move_jquery_into_footer( $wp_scripts ) {
   if ( ! is_admin() ) {
     $wp_scripts->add_data( 'jquery',         'group', 1 );
@@ -23,7 +21,6 @@ function move_jquery_into_footer( $wp_scripts ) {
 /**
  * Enqueue scripts and styles.
  */
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_theme_scripts' );
 function enqueue_theme_scripts() {
   if ( 'development' === getenv( 'WP_ENV' ) ) {
     $air_light_template = 'global';

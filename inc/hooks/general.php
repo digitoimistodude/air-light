@@ -1,8 +1,6 @@
 <?php
 /**
- * Set up widgets
- *
- * @package air-light
+ * General hooks.
  */
 
 namespace Air_Light;
@@ -12,7 +10,6 @@ namespace Air_Light;
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-add_action( 'widgets_init', __NAMESPACE__ . '\widgets_init' );
 function widgets_init() {
   register_sidebar( array(
     'name'          => esc_html__( 'Sidebar', 'air-light' ),
