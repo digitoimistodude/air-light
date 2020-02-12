@@ -17,7 +17,7 @@ function allowed_block_types( $allowed_blocks, $post ) {
   $allowed_blocks = THEME_SETTINGS['allowed_blocks']['default'];
 
   // If there is post type specific blocks, add them to the allowed blocks list
-  if ( THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) {
+  if ( isset( THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) ) {
     $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] );
   }
 
