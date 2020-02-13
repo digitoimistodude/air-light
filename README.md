@@ -30,9 +30,11 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     3. [Development](#development)
     4. [Navigation](#navigation)
     5. [WordPress & functions](#wordpress--functions)
-    6. [Accessibility](#accessibility)
-    7. [Lazy load](#lazy-load)
-    8. [Disabled features](#disabled-features)
+    6. [Custom Post Types](#custom-post-types)
+    7. [Custom Taxonomies](#custom-taxonomies)
+    8. [Accessibility](#accessibility)
+    9. [Lazy load](#lazy-load)
+    10. [Disabled features](#disabled-features)
 4. [Extra building blocks](#extra-building-blocks)
     1. [Sticky navigation](#sticky-navigation)
     2. [Slick slider](#slick-slider)
@@ -73,14 +75,19 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── fonts/                          # → Your webfont files
 ├── footer.php                      # → Site footer
 ├── front-page.php                  # → Demo front-page template (not included in wordpress.org version)
-├── functions.php                   # → Classic functions.php file, we use this to call other files
+├── functions.php                   # → Set up your theme basic settings
 ├── gulpfile.js                     # → Gulpfile for air-light development
 ├── header.php                      # → Site header
 ├── images/                         # → Your theme images, for example default featured images and placeholders
 ├── inc/                            # → Theme core PHP
-│   ├── functions.php               # → General theme functions
-│   ├── menus.php                   # → Navigation based functions
-│   ├── nav-walker.php              # → Navigation builder
+│   ├── hooks/                      # → Hook functions
+│   ├── includes/                   # → Non-template features
+│   ├── template-tags/              # → Template functions and helpers
+│   ├── post-types/                 # → Custom Post Types
+│   ├── taxonomies/                 # → Custom Taxonomies
+│   ├── hooks.php                   # → All hooks the theme runs are here
+│   ├── includes.php                # → Include non-template features
+│   ├── template-tags.php           # → Include template functions and helpers
 ├── js/                             # → JavaScript files for production (never edit)
 │   ├── all.js                      # → Obfuscated, concatted, minified file that contains all site JS
 │   ├── src/                        # → JavaScript files for development
@@ -134,6 +141,9 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── style.css                       # → Theme meta information
 ├── svg/                            # → Your theme SVG graphics and icons
 ├── template-parts/                 # → WordPress template parts. Modules go under this folder.
+│   ├── header/                     # → Header modules
+│   │   ├── branding.php            # → Site branding
+│   │   ├── navigation.php          # → Site navigation
 │   ├── content-none.php            # → Default content (from _s, can be deleted/modified)
 │   ├── content-search.php          # → Default content (from _s, can be deleted/modified)
 │   ├── content.php                 # → Default content (from _s, can be deleted/modified)
@@ -183,6 +193,31 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * Support for Post Thumbnails on posts and pages
 * HTML5 core markup for WordPress elements
 * **Air specific:** Templates for hero *blocks*
+
+#### Custom Post Types
+
+Air-light can register your CPT:s automatically.
+1. Add your custom post type to theme settings under post_types, located in `functions.php` like this:
+```
+'post_types' => [
+  'your-post-type' => 'Your_Post_Type'
+]
+```
+2. Add a file `inc/post-types/your-post-type.php`
+3. Extend `Post_Type` class with `Your_Post_Type` and define your post type in a public function called `register()`. See the example: `inc/post-types/your-post-type.php`.
+
+#### Custom Taxonomies
+
+Air-light can register your Taxonomies automatically.
+1. Add your taxonomy to theme settings under taxonomies, located in `functions.php` like this:
+```
+'your-taxonomy' => [
+  'name' => 'Your_Taxonomy'
+  'post_types' => 'post, page'
+]
+```
+2. Add a file `inc/taxonomies/your-taxonomy.php`
+3. Extend `Taxonomy` class with `Your_Taxonomy` and define your taxonomy in a public function called `register()`. See the example: `inc/taxonomies/your-taxonomy.php`.
 
 #### Accessibility
 

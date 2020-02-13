@@ -2,8 +2,6 @@
 /**
  * The core navigation file
  *
- * A custom WordPress nav walker class, using the WordPress built in menu manager.
- *
  * Original GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
  * Version: 2.0.4
  * Author: Originally Edward McIntyre - @twittem
@@ -16,7 +14,13 @@
  *
  * @package air-light
  */
-class Air_Light_Navwalker extends Walker_Nav_Menu {
+
+namespace Air_Light;
+
+/**
+ * A custom WordPress nav walker class, using the WordPress built in menu manager.
+ */
+class Nav_Walker extends \Walker_Nav_Menu {
 
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat( "\t", $depth );
