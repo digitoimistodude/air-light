@@ -24,7 +24,9 @@ define( 'AIR_LIGHT_VERSION', '4.9.9' );
  */
 
 $theme_settings = [
-  // Set image sizes & content width
+  /**
+   * Image and content sizes
+   */
   'image_sizes' => [
     'small' => 300,
     'medium' => 700,
@@ -32,11 +34,16 @@ $theme_settings = [
   ],
   'content_width' => 800,
 
+  /**
+   * Logo and featured image
+   */
   'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
 
   'logo' => '/svg/logo.svg',
 
-  // Set theme support
+  /**
+   * Theme support
+   */
   'theme_support' => [
     'automatic-feed-links' => [],
     'title-tag' => [],
@@ -50,28 +57,41 @@ $theme_settings = [
     ],
   ],
 
-  // Set theme textdomain
+  /**
+   * Theme textdomain
+   */
   'textdomain' => 'air-light',
 
-  // Set menu locations
+  /**
+   * Menu locations
+   */
   'menu_locations' => [
     'primary' => __( 'Primary Menu', 'air-light' ),
   ],
 
-  // Set up taxonomies
-  // TODO Instructions how to add taxonomies
+  /**
+   * Taxonomies
+   *
+   * See the instructions:
+   * https://github.com/digitoimistodude/air-light#custom-taxonomies
+   */
   'taxonomies' => [
-    'example' => [
-      'name'       => 'Example',
-      'post_types' => [ 'post', 'page' ],
-    ],
+    // 'your-taxonomy' => [
+    //  'name'       => 'Your_Taxonomy',
+    //  'post_types' => [ 'post', 'page' ],
+    // ],
   ],
 
-  // Set up custom post types
+  /**
+   * Post types
+   *
+   * See the instructions:
+   * https://github.com/digitoimistodude/air-light#custom-post-types
+   */
   // TODO Instructions how to add post types
 
   'post_types' => [
-    'contact' => 'Contact',
+    // 'your-post-type' => 'Your_Post_Type',
   ],
 
   /**
@@ -126,6 +146,8 @@ $theme_settings = [
       'core/coverImage', // This block is now allowed only in posts
     ],
   ],
+  // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
+  'my_custom_setting' => true,
 ];
 
 $theme_settings = apply_filters( 'air_helper_theme_settings', $theme_settings );
