@@ -55,7 +55,7 @@ var sassSrc = 'sass/**/*.{sass,scss}';
 var sassFile = 'sass/base/global.scss';
 var phpSrc = '**/*.php';
 var cssDest = 'css';
-var customjs = 'js/scripts.js';
+var customJs = 'js/src/scripts.js';
 var jsSrc = 'js/src/**/*.js';
 var jsDest = 'js';
 
@@ -371,7 +371,7 @@ gulp.task('js', function() {
 
       gulp.src(
         [
-          'js/src/scripts.js'
+          customJs
         ])
         .pipe(webpack( {
           externals: {
@@ -388,10 +388,6 @@ gulp.task('js', function() {
                   }
                 ]
               },
-              {
-                test: /\.svg$/,
-                loader: 'svg-inline-loader'
-              }
             ],
           },
           output: {
