@@ -4,59 +4,25 @@
 // The main layout for the website navigation, for a desktop
 // devices only.
 // -----------------------------------------------------------
-
 $absolute-navigation: true;
 $nav-desktop-background-color: $color-blue;
 $hover-intent: .3s;
-
 $nav-links: (
-  'color': $color-white,
-  'hover-color': $color-white,
-  'font-weight': 700,
-  'font-size': 1.6rem,
-);
-
+  'color': $color-white, 'hover-color': $color-white, 'font-weight': 700, 'font-size': 1.6rem, );
 $nav-dropdown-links: (
-  'color': $color-blue,
-  'hover-color': $color-cyan,
-  'font-weight': 400,
-  'font-size': 1.4rem,
-);
-
+  'color': $color-blue, 'hover-color': $color-cyan, 'font-weight': 400, 'font-size': 1.4rem, );
 $dropdown: (
-  'gap': 1rem, // Gap between dropdown and nav link item
-  'width': 19rem, // Dropdown menu width
-);
-
+  'gap': 1rem, 'width': 19rem, );
 $dropdown-toggle: (
-  'background': transparent,
-  'border': none,
-  'border-radius': 50%,
-  'color': $color-cyan-bright,
-  'size': 3rem,
-  'arrow-size': 1rem,
-);
+  'background': transparent, 'border': none, 'border-radius': 50%, 'color': $color-cyan-bright, 'size': 3rem, 'arrow-size': 1rem, );
 $dropdown-toggle-hover: (
-  'background': $color-white,
-  'border': 1px solid $color-white,
-  'color': $color-blue,
-);
+  'background': $color-white, 'border': 1px solid $color-white, 'color': $color-blue, );
 $submenu-dropdown-toggle: (
-  'background': transparent,
-  'border': none,
-  'border-radius': 0,
-  'color': $color-blue,
-  'size': 3rem,
-  'arrow-size': 1rem,
-);
+  'background': transparent, 'border': none, 'border-radius': 0, 'color': $color-blue, 'size': 3rem, 'arrow-size': 1rem, );
 $submenu-dropdown-toggle-hover: (
-  'background': $color-white,
-  'border': none,
-  'color': $color-blue,
-);
+  'background': $color-white, 'border': none, 'color': $color-blue, );
 
 @if $absolute-navigation == true {
-
   .nav-container {
     background-color: transparent;
     position: absolute;
@@ -159,7 +125,6 @@ $submenu-dropdown-toggle-hover: (
 } // @if $enable-animations == true
 
 @media only screen and (min-width: $responsivenav) {
-
   .nav-container {
     background: $nav-desktop-background-color;
   }
@@ -336,6 +301,7 @@ $submenu-dropdown-toggle-hover: (
         display: inline-flex;
         align-items: center;
         justify-content: center;
+
         svg {
           transition: transform .3s ease-in;
           width: map-get($dropdown-toggle, 'arrow-size');
@@ -385,12 +351,10 @@ $submenu-dropdown-toggle-hover: (
         top: 100%;
       }
 
-
       > a {
         // Let's make space for the nav-toggle/arrow
         padding-right: 1.5rem;
       }
-
     } // .menu-item.menu-item-has-children
     .sub-menu .menu-item-has-children {
       display: flex;
