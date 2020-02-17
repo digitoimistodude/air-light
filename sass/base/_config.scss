@@ -5,29 +5,40 @@
 // This is the core file where most of the theme magic happens.
 // --------------------------------------------------------------
 
-// Colors
-$color-links: #045d30;
-$color-hover: #111;
-$color-body: #222;
-$color-headings: #222;
+// Theme colors
+$color-blue: #3962c9;
+$color-cyan: #159d94;
+$color-cyan-bright: #60f4ea;
+$color-blue-bright: #81a9ff;
+$color-blue-dark: darken($color-blue, 40%);
+
+// Base colors
+$color-white: #fff;
+$color-black: #222;
+$color-shadows: #b8bbb3;
 $color-darkgrey: #4f5964;
 $color-lightgrey: #f5f5f5;
-$color-default-background: #f0f0f0;
-$color-white: #fff;
-$color-black: #000;
-$color-shadows: #b8bbb3;
+
+// Text and background colors
+$color-links: $color-cyan;
+$color-hover: $color-blue;
+$color-body: $color-black;
+$color-headings: $color-blue;
+
+$color-default-background: $color-blue-dark;
 
 // Font settings
 // You can use these font stacks normally with `font-family: $font-sans;` for instance.`
 // Please set up fonts in sass/layout/_typography.scss
-$font-base: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
-$font-headings: 'Karla', 'Helvetica Neue', Helvetica, sans-serif;
+$font-base: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+$font-headings: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
 
 // Font settings
 $font-min-size: 17px; // Minimum font size, on mobile
 $font-max-size: 20px; // Maximum font size, on desktop
-$line-height: 1.6; // Line height
+$line-height: 1.7; // Line height
+$body-weight: 400;
 $headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty well
 
 // Breakpoints

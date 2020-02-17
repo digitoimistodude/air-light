@@ -1,0 +1,63 @@
+// CSS Grid mixin with flexbox fallback for IE and Edge
+@mixin grid($columns, $fr: 1, $min_height: 100px, $max_height: auto, $gutter_x: 16px, $gutter_y: 16px) {
+  display: grid;
+  grid-template-columns: repeat($columns, #{$fr}fr);
+  /* autoprefixer: off */
+  grid-auto-rows: minmax($min_height, $max_height);
+  grid-column-gap: $gutter_x;
+  grid-row-gap: $gutter_y;
+
+  // For browser versions that do not support CSS grid
+  @supports not (display: grid) {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    > div {
+      $grid_width: 100% / $columns;
+      width: calc(#{$grid_width} - #{$gutter_x});
+      margin-right: $gutter_x;
+      margin-bottom: $gutter_y;
+
+      &:nth-child(#{$columns}n+#{$columns}) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Internet Explorer
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    > div {
+      $grid_width: 100% / $columns;
+      width: calc(#{$grid_width} - #{$gutter_x});
+      margin-right: $gutter_x;
+      margin-bottom: $gutter_y;
+
+      &:nth-child(#{$columns}n+#{$columns}) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Edge
+  @supports (-ms-ime-align: auto) {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    > div {
+      $grid_width: 100% / $columns;
+      width: calc(#{$grid_width} - #{$gutter_x});
+      margin-right: $gutter_x;
+      margin-bottom: $gutter_y;
+
+      &:nth-child(#{$columns}n+#{$columns}) {
+        margin-right: 0;
+      }
+    }
+  }
+}

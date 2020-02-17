@@ -8,7 +8,11 @@
 @import 'config';
 
 // Helpers
-@import 'helpers';
+@import '../helpers/general';
+@import '../helpers/background';
+@import '../helpers/grid';
+@import '../helpers/typography';
+
 @import 'accessibility';
 
 // Structure

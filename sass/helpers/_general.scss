@@ -1,0 +1,54 @@
+// ---------------------------------------------------------
+// Helpers
+//
+// Mixins and other essentials for global theme development.
+// ---------------------------------------------------------
+
+// General
+@mixin hiddentext() {
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  font-size: 0;
+  text-align: start;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+// Positioning
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin horizontal-align {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-style: preserve-3d;
+}
+
+@mixin centered {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  transform-style: preserve-3d;
+}
+
+
+// Viewport sized typography with minimum and maximum values
+// Based on an example here: https://css-tricks.com/snippets/css/fluid-typography/
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

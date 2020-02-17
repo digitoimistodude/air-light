@@ -11,19 +11,10 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 */
 
 (function ($) {
-
   var menuContainer = $('.nav-container');
   var menuToggle = menuContainer.find('#nav-toggle');
   var siteHeaderMenu = menuContainer.find('#main-navigation-wrapper');
   var siteNavigation = menuContainer.find('#nav');
-  var dropdownToggle = $('<button />', {
-      'class': 'dropdown-toggle',
-      'aria-expanded': false
-    })
-    .append($('<span />', {
-      'class': 'screen-reader-text',
-      text: air_light_screenReaderText.expand
-    }));
 
   // Toggles the menu button
   (function () {
@@ -46,17 +37,15 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     });
   })();
 
-  // Adds the dropdown toggle button
-  $('.menu-item-has-children > a').after(dropdownToggle);
-
   // Adds aria attribute
   siteHeaderMenu.find('.menu-item-has-children').attr('aria-haspopup', 'true');
 
   // Toggles the sub-menu when dropdown toggle button clicked
   siteHeaderMenu.find('.dropdown-toggle').click(function (e) {
 
-    screenReaderSpan = $(this).find('.screen-reader-text');
-    dropdownMenu = $(this).nextAll('.sub-menu');
+    const screenReaderSpan = $(this).find('.screen-reader-text');
+
+    const dropdownMenu = $(this).nextAll('.sub-menu');
 
     e.preventDefault();
     $(this).toggleClass('toggled-on');

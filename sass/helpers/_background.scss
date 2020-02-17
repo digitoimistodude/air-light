@@ -1,0 +1,20 @@
+/**
+ * Background helpers
+ */
+
+// Backgrounds
+@mixin background-cover() {
+  background: {
+    size: cover;
+    repeat: no-repeat;
+    position: center;
+  }
+}
+
+@mixin background-auto() {
+  background: {
+    size: 100% auto;
+    repeat: no-repeat;
+    position: center;
+  }
+}

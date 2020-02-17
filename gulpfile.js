@@ -377,17 +377,22 @@ gulp.task('js', function() {
           externals: {
             jquery: 'jQuery' // Available and loaded through WordPress.
           },
+          mode: 'development',
           module: {
             rules: [
               {
                 test: /.js$/,
                 use: [
                   {
-                    loader: 'babel-loader'
+                    loader: 'babel-loader',
                   }
                 ]
+              },
+              {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
               }
-            ]
+            ],
           },
           output: {
             filename: 'all.js'

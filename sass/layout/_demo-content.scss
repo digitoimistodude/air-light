@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  text-shadow: 0px 0px 30px $color-blue;
   min-height: 50rem;
   max-width: $layout-max-width;
   margin: 0 auto;
@@ -21,26 +22,153 @@
   // Internet Explorer needs this
   height: 50rem;
 
-  h1 {
-    @include responsive-font(2.4vw, 22px, 46px);
-    color: #383d29;
+  .inner {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    max-height: 100%;
+    justify-items: center;
+    padding: 2rem;
+    max-width: 40rem;
+
+    @media (min-width: $container-ipad) {
+      padding: 0;
+      display: grid;
+      grid-template-rows: none;
+      grid-template-columns: 3fr 5fr;
+      max-width: $article-max-width;
+    }
+  }
+
+  @keyframes plane-container {
+    0% {
+      overflow: visible;
+    }
+    80% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: hidden;
+    }
+  }
+  .logo {
+    color: $color-cyan-bright;
+    border-top: 2px solid $color-white;
+    border-right: none;
+    width: 100%;
     text-align: center;
+    order: 2;
+    overflow: visible;
+    animation: plane-container 10s linear 1s infinite;
+
+    @keyframes plane {
+      0% {
+        transform: translate(-200%, 140%);
+      }
+      10% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+
+      85% {
+        transform: translate(0, 0);
+        opacity: 1;
+      }
+      95% {
+        transform: translate(140%, -100%);
+      }
+      97% {
+        opacity: 0;
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+    svg {
+      padding: 2rem;
+      height: auto;
+      width: 100%;
+      max-width: 20rem;
+      opacity: 0;
+      transform: translate(-100%, 100%);
+      animation: plane 10s cubic-bezier(0.86, 0, 0.07, 1) 1s infinite;
+    }
+
+    @media (min-width: $container-ipad) {
+      border-top: none;
+      border-right: 2px solid $color-white;
+      order: 0;
+      text-align: right;
+
+      svg {
+        padding: 2rem 4rem;
+        max-width: 24vw;
+      }
+    }
+  }
+
+  h1 {
+    @include responsive-font(32px, 68px);
+    color: $color-white;
     margin: 0;
-    padding: 0;
+    padding: 2rem;
     position: relative;
     z-index: 2;
+    text-align: center;
+
+    @media (min-width: $container-ipad) {
+      padding: 2rem 4rem;
+      text-align: left;
+    }
   }
 }
 
 .accent {
   @extend %h3;
-  font-style: italic;
+  font-style: normal;
+  letter-spacing: 0.05em;
   text-transform: lowercase;
-  font-weight: 700;
-  text-align: center;
+  font-weight: $body-weight;
   margin: 0;
-  color: $color-links;
+  margin-bottom: 1rem;
+  color: $color-blue-bright;
   display: block;
   position: relative;
   z-index: 2;
+}
+
+.site-title {
+  margin: 0;
+  font-weight: 700;
+
+  a {
+    color: $color-cyan-bright;
+    display: flex;
+    svg {
+      transition: transform 1s ease-in;
+
+      .clr-i-solid-path-2 {
+        fill: $color-white;
+      }
+    }
+    &:hover svg {
+      transition: transform .4s cubic-bezier(0.6, -0.68, 0.735, 0.045);
+      transform: translate(240%, -200%);
+
+      .clr-i-solid-path-2 {
+        display: block !important;
+        fill: $color-cyan-bright;
+      }
+    }
+  }
+  .logo-name {
+    content: 'Air';
+    display: block;
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
+    font-weight: $body-weight;
+    color: $color-white;
+    margin-left: .75rem;
+    font-size: 2.2rem;
+  }
 }

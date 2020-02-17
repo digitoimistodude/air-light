@@ -24,6 +24,15 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat( "\t", $depth );
+
+    // Get the ico
+    ob_start();
+    require get_theme_file_path( 'svg/chevron-down.svg' );
+    $icon = ob_get_clean();
+
+    $output .= '<button class="dropdown-toggle" aria-expanded="false">';
+    $output .= '<span class="screen-reader-text">' . esc_html__( 'Open child menu', 'air-light' ) . '</span>';
+    $output .= $icon . '</button>';
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }
 

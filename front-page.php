@@ -23,12 +23,17 @@ get_header(); ?>
   <main role="main" id="main" class="site-main">
 
     <div class="entry-header-demo">
-      <h1>
-        <span class="accent">
-          <?php echo esc_html_e( 'air-light ', 'air-light' ); echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?>
-        </span>
-        <?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?>
-      </h1>
+      <div class="inner">
+        <div class="logo">
+          <?php include get_theme_file_path( THEME_SETTINGS['logo'] ); ?>
+        </div>
+        <h1>
+          <span class="accent">
+            <?php echo esc_html_e( 'air-light ', 'air-light' ); ?><?php echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?>
+          </span>
+          <?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?>
+        </h1>
+      </div>
     </div>
 
     <div class="block">
