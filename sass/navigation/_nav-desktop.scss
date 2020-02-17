@@ -245,6 +245,9 @@ $submenu-dropdown-toggle-hover: (
       // Dropdowns
       ul {
         position: absolute;
+        top: 100%;
+        right: 0;
+        width: map-get($dropdown, 'width');
         background: #fff;
         margin-left: 0;
         padding-bottom: .5rem;
@@ -267,33 +270,6 @@ $submenu-dropdown-toggle-hover: (
           float: none;
           width: map-get($dropdown, 'width');
           padding: 0;
-        }
-
-        // Sub-level toggle arrow
-        li .dropdown-toggle {
-          background-color: map-get($submenu-dropdown-toggle, 'background');
-          border: map-get($submenu-dropdown-toggle, 'border');
-          border-radius: map-get($submenu-dropdown-toggle, 'border-radius');
-          color: map-get($submenu-dropdown-toggle, 'color');
-          height: map-get($submenu-dropdown-toggle, 'size');
-          width: map-get($submenu-dropdown-toggle, 'size');
-
-          &:hover,
-          &:active {
-            background-color: map-get($submenu-dropdown-toggle, 'background');
-            border: map-get($submenu-dropdown-toggle, 'border');
-            color: map-get($submenu-dropdown-toggle, 'color');
-          }
-
-          svg {
-            transform: rotate(-90deg) rotateX(0deg);
-            width: map-get($submenu-dropdown-toggle, 'arrow-size');
-            height: map-get($submenu-dropdown-toggle, 'arrow-size');
-          }
-
-          &.toggled-on svg {
-            transform: rotate(-90deg) rotateX(180deg);
-          }
         }
 
         ul {
@@ -324,6 +300,34 @@ $submenu-dropdown-toggle-hover: (
         }
       }
 
+      // Sub-level toggle arrow
+      ul li .dropdown-toggle {
+        background-color: map-get($submenu-dropdown-toggle, 'background');
+        border: map-get($submenu-dropdown-toggle, 'border');
+        border-radius: map-get($submenu-dropdown-toggle, 'border-radius');
+        color: map-get($submenu-dropdown-toggle, 'color');
+        height: map-get($submenu-dropdown-toggle, 'size');
+        width: map-get($submenu-dropdown-toggle, 'size');
+        flex-shrink: 0;
+
+        &:hover,
+        &:active {
+          background-color: map-get($submenu-dropdown-toggle, 'background');
+          border: map-get($submenu-dropdown-toggle, 'border');
+          color: map-get($submenu-dropdown-toggle, 'color');
+        }
+
+        svg {
+          transform: rotate(-90deg) rotateX(0deg);
+          width: map-get($submenu-dropdown-toggle, 'arrow-size');
+          height: map-get($submenu-dropdown-toggle, 'arrow-size');
+        }
+
+        &.toggled-on svg {
+          transform: rotate(-90deg) rotateX(180deg);
+        }
+      }
+
       // Main level toggle arrow
       button.dropdown-toggle {
         background-color: map-get($dropdown-toggle, 'background');
@@ -336,6 +340,7 @@ $submenu-dropdown-toggle-hover: (
         display: inline-flex;
         align-items: center;
         justify-content: center;
+
         svg {
           transition: transform .3s ease-in;
           width: map-get($dropdown-toggle, 'arrow-size');
@@ -373,6 +378,8 @@ $submenu-dropdown-toggle-hover: (
     .menu-item.menu-item-has-children {
       margin-right: .8rem;
       position: relative;
+      display: flex;
+      justify-content: space-between;
 
       // Add a pseudo element to fill the gap
       // between menu item and sub menu to help hovering
@@ -393,9 +400,6 @@ $submenu-dropdown-toggle-hover: (
 
     } // .menu-item.menu-item-has-children
     .sub-menu .menu-item-has-children {
-      display: flex;
-      justify-content: space-between;
-
       // Don't use gap filler in sub menu items
       &:after {
         display: none;

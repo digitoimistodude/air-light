@@ -1551,6 +1551,9 @@ form.search-form .search-submit {
           color: #fff; }
       .nav-primary .menu-item ul {
         position: absolute;
+        top: 100%;
+        right: 0;
+        width: 19rem;
         background: #fff;
         margin-left: 0;
         padding-bottom: .5rem;
@@ -1574,7 +1577,8 @@ form.search-form .search-submit {
           border-radius: 0;
           color: #3962c9;
           height: 3rem;
-          width: 3rem; }
+          width: 3rem;
+          flex-shrink: 0; }
           .nav-primary .menu-item ul li .dropdown-toggle:hover, .nav-primary .menu-item ul li .dropdown-toggle:active {
             background-color: transparent;
             border: none;
@@ -1638,7 +1642,9 @@ form.search-form .search-submit {
         border-color: transparent transparent #fff; }
     .nav-primary .menu-item.menu-item-has-children {
       margin-right: .8rem;
-      position: relative; }
+      position: relative;
+      display: flex;
+      justify-content: space-between; }
       .nav-primary .menu-item.menu-item-has-children:after {
         display: block;
         position: absolute;
@@ -1648,11 +1654,8 @@ form.search-form .search-submit {
         top: 100%; }
       .nav-primary .menu-item.menu-item-has-children > a {
         padding-right: 1.5rem; }
-    .nav-primary .sub-menu .menu-item-has-children {
-      display: flex;
-      justify-content: space-between; }
-      .nav-primary .sub-menu .menu-item-has-children:after {
-        display: none; } }
+    .nav-primary .sub-menu .menu-item-has-children:after {
+      display: none; } }
 
 /*!
  * Hamburgers

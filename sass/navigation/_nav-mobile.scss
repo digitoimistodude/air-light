@@ -5,7 +5,7 @@
 // version only.
 // -----------------------------------------------------------
 
-$nav-background-color: rgba( $color-blue-dark, 0.97);
+$nav-background-color: rgba($color-blue-dark, .97);
 
 $nav-toggle: (
   'color': $color-cyan-bright,
@@ -187,7 +187,7 @@ $nav-open-from-direction: top;
         text-align: center;
         background: map-get($dropdown-toggle, 'background');
         color: map-get($dropdown-toggle, 'color');
-        border:  0;
+        border: 0;
         padding: 0;
         z-index: 9999;
       }
