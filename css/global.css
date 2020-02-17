@@ -1253,7 +1253,7 @@ form.search-form .search-submit {
   align-items: center;
   justify-content: center;
   position: relative;
-  text-shadow: 0px 0px 30px #3962c9;
+  text-shadow: 0 0px 30px #3962c9;
   min-height: 500px;
   min-height: 50rem;
   max-width: 100%;
@@ -1261,10 +1261,9 @@ form.search-form .search-submit {
   height: 500px;
   height: 50rem; }
   .entry-header-demo .inner {
-    display: -ms-grid;
     display: grid;
-    -ms-grid-rows: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    /* autoprefixer: off */
     align-items: center;
     max-height: 100%;
     justify-items: center;
@@ -1301,7 +1300,7 @@ form.search-form .search-submit {
   .entry-header-demo .logo {
     color: #60f4ea;
     border-top: 2px solid #fff;
-    border-right: none;
+    border-right: 0;
     width: 100%;
     text-align: center;
     order: 2;
@@ -1353,7 +1352,7 @@ form.search-form .search-submit {
               animation: plane 10s cubic-bezier(0.86, 0, 0.07, 1) 1s infinite; }
     @media (min-width: 770px) {
       .entry-header-demo .logo {
-        border-top: none;
+        border-top: 0;
         border-right: 2px solid #fff;
         order: 0;
         text-align: right; }
@@ -1382,7 +1381,7 @@ form.search-form .search-submit {
 
 .accent {
   font-style: normal;
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
   text-transform: lowercase;
   font-weight: 400;
   margin: 0;
@@ -1413,7 +1412,7 @@ form.search-form .search-submit {
     content: 'Air';
     display: block;
     text-transform: lowercase;
-    letter-spacing: 0.1em;
+    letter-spacing: .1em;
     font-weight: 400;
     color: #fff;
     margin-left: 7.5px;
@@ -1571,24 +1570,6 @@ form.search-form .search-submit {
           float: none;
           width: 19rem;
           padding: 0; }
-        .nav-primary .menu-item ul li .dropdown-toggle {
-          background-color: transparent;
-          border: none;
-          border-radius: 0;
-          color: #3962c9;
-          height: 3rem;
-          width: 3rem;
-          flex-shrink: 0; }
-          .nav-primary .menu-item ul li .dropdown-toggle:hover, .nav-primary .menu-item ul li .dropdown-toggle:active {
-            background-color: transparent;
-            border: none;
-            color: #3962c9; }
-          .nav-primary .menu-item ul li .dropdown-toggle svg {
-            transform: rotate(-90deg) rotateX(0deg);
-            width: 1rem;
-            height: 1rem; }
-          .nav-primary .menu-item ul li .dropdown-toggle.toggled-on svg {
-            transform: rotate(-90deg) rotateX(180deg); }
         .nav-primary .menu-item ul ul {
           top: 0;
           left: 100%;
@@ -1608,6 +1589,24 @@ form.search-form .search-submit {
         .nav-primary .menu-item ul .disabled {
           background: #fff;
           color: #ccc; }
+      .nav-primary .menu-item ul li .dropdown-toggle {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        color: #3962c9;
+        height: 3rem;
+        width: 3rem;
+        flex-shrink: 0; }
+        .nav-primary .menu-item ul li .dropdown-toggle:hover, .nav-primary .menu-item ul li .dropdown-toggle:active {
+          background-color: transparent;
+          border: none;
+          color: #3962c9; }
+        .nav-primary .menu-item ul li .dropdown-toggle svg {
+          transform: rotate(-90deg) rotateX(0deg);
+          width: 1rem;
+          height: 1rem; }
+        .nav-primary .menu-item ul li .dropdown-toggle.toggled-on svg {
+          transform: rotate(-90deg) rotateX(180deg); }
       .nav-primary .menu-item button.dropdown-toggle {
         background-color: transparent;
         border: none;
