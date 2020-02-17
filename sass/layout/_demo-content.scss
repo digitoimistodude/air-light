@@ -30,7 +30,7 @@
     max-height: 100%;
     justify-items: center;
     padding: 2rem;
-    max-width: 40rem;
+    max-width: $container-desktop;
 
     @media (min-width: $container-ipad) {
       padding: 0;

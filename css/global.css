@@ -875,7 +875,7 @@ pre {
   padding-left: 2rem;
   padding-right: 20px;
   padding-right: 2rem;
-  max-width: 960px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -1269,8 +1269,7 @@ form.search-form .search-submit {
     justify-items: center;
     padding: 20px;
     padding: 2rem;
-    max-width: 400px;
-    max-width: 40rem; }
+    max-width: 1200px; }
     @media (min-width: 770px) {
       .entry-header-demo .inner {
         padding: 0;
