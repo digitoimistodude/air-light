@@ -1,10 +1,19 @@
 <?php
 /**
  * The base for a post type object
+ *
+ * @package air-light
+ * @Author: Niku Hietanen
+ * @Date: 2020-02-20 13:45:26
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-20 13:45:58
  */
 
 namespace Air_Light;
 
+/**
+ * A base for Post Type creation
+ */
 abstract class Post_Type {
 
   /**
@@ -22,7 +31,7 @@ abstract class Post_Type {
   public $slug;
 
 
-  function __construct( string $slug ) {
+  public function __construct( $slug ) {
     $this->slug = $slug;
   }
 
@@ -44,7 +53,7 @@ abstract class Post_Type {
    * @return WP_Post_Type|WP_Error Registered post type or error in case
    *                               of failure.
    */
-  function register_wp_post_type( string $slug, array $args ) {
+  public function register_wp_post_type( $slug, $args ) {
     return register_post_type( $slug, $args );
   }
 

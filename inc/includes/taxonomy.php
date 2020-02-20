@@ -1,13 +1,17 @@
 <?php
-/*
+/**
+ * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:23
- * @Last Modified by:   Niku Hietanen
- * @Last Modified time: 2020-02-18 15:06:23
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-20 13:46:26
  */
 
 namespace Air_Light;
 
+/**
+ * A base for Taxonomy creation
+ */
 abstract class Taxonomy {
 
 	/**
@@ -18,7 +22,7 @@ abstract class Taxonomy {
 	protected $slug;
 
 
-	function __construct( string $slug ) {
+	public function __construct( $slug ) {
 		$this->slug = $slug;
 	}
 
@@ -39,7 +43,7 @@ abstract class Taxonomy {
 	 * @param  array  $args Taxonomy arguments.
 	 * @return  array List of post types that were registered in the taxonomy.
 	 */
-	protected function register_wp_taxonomy( string $slug, array $object_types, array $args ) {
+	protected function register_wp_taxonomy( $slug, $object_types, $args ) {
 		$register_result = [];
 
 		// Convert the object types to strings because it can be a list of

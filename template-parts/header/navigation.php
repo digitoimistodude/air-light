@@ -21,15 +21,15 @@ namespace Air_Light;
         <nav id="nav" class="nav-primary" role="navigation">
 
           <?php wp_nav_menu( array(
-            'theme_location'    => 'primary',
-            'container'         => false,
-            'depth'             => 4,
-            'menu_class'        => 'menu-items',
-            'menu_id'           => 'main-menu',
-            'echo'              => true,
-            'fallback_cb'       => __NAMESPACE__ . '\Nav_Walker::fallback',
-            'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
-            'walker'            => new Nav_Walker(),
+            'theme_location' => 'primary',
+            'container'      => false,
+            'depth'          => 4,
+            'menu_class'     => 'menu-items',
+            'menu_id'        => 'main-menu',
+            'echo'           => true,
+            'fallback_cb'    => __NAMESPACE__ . '\Nav_Walker::fallback',
+            'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+            'walker'         => new Nav_Walker(),
           ) ); ?>
 
         </nav><!-- #nav -->

@@ -49,23 +49,23 @@ class Nav_Walker extends \Walker_Nav_Menu {
      */
     if ( strcasecmp( $item->attr_title, 'divider' ) === 0 && 1 === $depth ) {
       $output .= $indent . '<li class="divider">';
-    } else if ( strcasecmp( $item->title, 'divider' ) === 0 && 1 === $depth ) {
+    } elseif ( strcasecmp( $item->title, 'divider' ) === 0 && 1 === $depth ) {
       $output .= $indent . '<li class="divider">';
-    } else if ( strcasecmp( $item->attr_title, 'dropdown-header' ) === 0 && 1 === $depth ) {
+    } elseif ( strcasecmp( $item->attr_title, 'dropdown-header' ) === 0 && 1 === $depth ) {
       $output .= $indent . '<li class="dropdown-header">' . esc_attr( $item->title );
-    } else if ( strcasecmp( $item->attr_title, 'disabled' ) === 0 ) {
+    } elseif ( strcasecmp( $item->attr_title, 'disabled' ) === 0 ) {
       $output .= $indent . '<li class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
     } else {
       $class_names = $value = '';
-      $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-      $classes[] = 'air-light-menu-item menu-item-' . $item->ID;
+      $classes     = empty( $item->classes ) ? array() : (array) $item->classes;
+      $classes[]   = 'air-light-menu-item menu-item-' . $item->ID;
       $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
       if ( $args->has_children ) {
         $class_names .= ' dropdown';
       }
 
-      if ( in_array( 'current-menu-item', $classes ) ) {
+      if ( in_array( 'current-menu-item', $classes, true ) ) {
         $class_names .= ' active';
       }
 
@@ -76,16 +76,16 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
       $output .= $indent . '<li' . $id . $value . $class_names . '>';
 
-      $atts = array();
+      $atts           = array();
       $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
       $atts['target'] = ! empty( $item->target ) ? $item->target : '';
       $atts['rel']    = ! empty( $item->xfn ) ? $item->xfn : '';
 
       // If item has_children add atts to a.
       if ( $args->has_children && 0 === $depth ) {
-        $atts['href'] = ! empty( $item->url ) ? $item->url : '';
-        $atts['data-toggle']    = 'dropdown';
-        $atts['class']          = 'dropdown';
+        $atts['href']        = ! empty( $item->url ) ? $item->url : '';
+        $atts['data-toggle'] = 'dropdown';
+        $atts['class']       = 'dropdown';
       } else {
         $atts['href'] = ! empty( $item->url ) ? $item->url : '';
       }
@@ -95,7 +95,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
       $attributes = '';
       foreach ( $atts as $attr => $value ) {
         if ( ! empty( $value ) ) {
-          $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+          $value       = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
           $attributes .= ' ' . $attr . '="' . $value . '"';
         }
       }
@@ -162,41 +162,41 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
       extract( $args );
 
-      $fb_output = null; // WPCS: XSS ok.
+      $fb_output = null;
 
       if ( $container ) {
-        $fb_output = '<' . $container; // WPCS: XSS ok.
+        $fb_output = '<' . $container;
 
         if ( $container_id ) {
-          $fb_output .= ' id="' . $container_id . '"'; // WPCS: XSS ok.
+          $fb_output .= ' id="' . $container_id . '"';
         }
 
         if ( $container_class ) {
-          $fb_output .= ' class="' . $container_class . '"'; // WPCS: XSS ok.
+          $fb_output .= ' class="' . $container_class . '"';
         }
 
-        $fb_output .= '>'; // WPCS: XSS ok.
+        $fb_output .= '>';
       }
 
-      $fb_output .= '<ul'; // WPCS: XSS ok.
+      $fb_output .= '<ul';
 
       if ( $menu_id ) {
-        $fb_output .= ' id="' . $menu_id . '"'; // WPCS: XSS ok.
+        $fb_output .= ' id="' . $menu_id . '"';
       }
 
       if ( $menu_class ) {
-        $fb_output .= ' class="' . $menu_class . '"'; // WPCS: XSS ok.
+        $fb_output .= ' class="' . $menu_class . '"';
       }
 
-      $fb_output .= '>'; // WPCS: XSS ok.
-      $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>'; // WPCS: XSS ok.
-      $fb_output .= '</ul>'; // WPCS: XSS ok.
+      $fb_output .= '>';
+      $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+      $fb_output .= '</ul>';
 
       if ( $container ) {
-        $fb_output .= '</' . $container . '>'; // WPCS: XSS ok.
+        $fb_output .= '</' . $container . '>';
       }
 
-      echo $fb_output; // WPCS: XSS ok.
+      echo $fb_output; // phpcs:ignore
     }
   }
 }

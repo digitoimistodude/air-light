@@ -3,6 +3,10 @@
  * Enqueue and localize theme scripts and styles
  *
  * @package air-light
+ * @Author: Niku Hietanen
+ * @Date: 2020-02-20 13:46:50
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-20 13:48:46
  */
 
 namespace Air_Light;
@@ -41,7 +45,7 @@ function enqueue_theme_scripts() {
   }
 
   wp_localize_script( 'scripts', 'air_light_screenReaderText', array(
-    'expand'      => esc_html__( 'Open child menu', 'air-light' ),
-    'collapse'    => esc_html__( 'Close child menu', 'air-light' ),
+    'expand'   => esc_html__( 'Open child menu', 'air-light' ),
+    'collapse' => esc_html__( 'Close child menu', 'air-light' ),
   ) );
 } // end air_light_scripts

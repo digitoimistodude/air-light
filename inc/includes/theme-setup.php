@@ -1,6 +1,12 @@
 <?php
 /**
  * Theme setup
+ *
+ * @package air-light
+ * @Author: Niku Hietanen
+ * @Date: 2020-02-20 13:46:50
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-20 13:47:31
  **/
 
 namespace Air_Light;
@@ -35,13 +41,13 @@ function theme_setup() {
  * Build taxonomies
  */
 function build_taxonomies() {
-  if ( ! is_array( THEME_SETTINGS['taxonomies']) || ! THEME_SETTINGS['taxonomies'] ) {
+  if ( ! is_array( THEME_SETTINGS['taxonomies'] ) || ! THEME_SETTINGS['taxonomies'] ) {
     return;
   }
 
   foreach ( THEME_SETTINGS['taxonomies'] as $slug => $args ) {
     $classname = __NAMESPACE__ . '\\' . $args['name'];
-    $file_path = get_theme_file_path( '/inc/taxonomies/' . $slug. '.php' );
+    $file_path = get_theme_file_path( '/inc/taxonomies/' . $slug . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
       return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
@@ -60,8 +66,8 @@ function build_taxonomies() {
 /**
  * Build custom post types
  */
-function build_post_types () {
-  if ( ! is_array( THEME_SETTINGS['post_types']) || ! THEME_SETTINGS['post_types'] ) {
+function build_post_types() {
+  if ( ! is_array( THEME_SETTINGS['post_types'] ) || ! THEME_SETTINGS['post_types'] ) {
     return;
   }
 

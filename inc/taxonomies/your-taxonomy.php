@@ -1,5 +1,6 @@
 <?php
-/*
+/**
+ * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:05:35
  * @Last Modified by: Niku Hietanen
@@ -8,16 +9,15 @@
 
 namespace Air_Light;
 
+/**
+ * Registers the Your Taxonomy taxonomy.
+ *
+ * @param Array $post_types Optional. Post types in
+ * which the taxonomy should be registered.
+ */
 class Your_Taxonomy extends Taxonomy {
 
-  /**
-   * Registers the Your Taxonomy taxonomy.
-   *
-   * @param array $post_types Optional. Post types in which the taxonomy
-   *                          should be registered.
-   * @return WP_Post_Type|WP_Error Registered post type or error in case
-   *                               of failure.
-   */
+
   public function register( array $post_types = [] ) {
     // Taxonomy labels.
     $labels = [

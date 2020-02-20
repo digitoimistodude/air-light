@@ -1,6 +1,12 @@
 <?php
 /**
  * Gutenberg related settings
+ *
+ * @package air-light
+ * @Author: Niku Hietanen
+ * @Date: 2020-02-20 13:46:50
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-20 13:48:38
  */
 
 namespace Air_Light;
@@ -28,7 +34,7 @@ function allowed_block_types( $allowed_blocks, $post ) {
  * Check whether to use classic or block editor for a certain post type as defined in the settings
  */
 function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
-  if ( in_array( $post_type, THEME_SETTINGS['use_classic_editor'] ) ) {
+  if ( in_array( $post_type, THEME_SETTINGS['use_classic_editor'], true ) ) {
     return false;
   }
   return true;

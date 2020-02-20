@@ -1,18 +1,19 @@
 <?php
-/*
+/**
+ * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:45
  * @Last Modified by: Niku Hietanen
  * @Last Modified time: 2020-02-18 15:07:08
- */
+ **/
 
 namespace Air_Light;
 
+/**
+ * Registers the Your Post Type post type.
+ */
 class Your_Post_Type extends Post_Type {
 
-  /**
-   * Registers the Your Post Type post type.
-   */
   public function register() {
 
     // Modify all the i18ized strings here.
@@ -36,15 +37,15 @@ class Your_Post_Type extends Post_Type {
     // Definition of the post type arguments. For full list see:
     // http://codex.wordpress.org/Function_Reference/register_post_type
     $args = [
-      'labels'       => $generated_labels,
-      'description'  => '',
-      'rewrite'      => [
+      'labels'              => $generated_labels,
+      'description'         => '',
+      'rewrite'             => [
         'slug' => 'your-post-type',
       ],
-      'supports'     => [ 'title', 'editor', 'thumbnail' ],
-      'taxonomies'   => [],
-      'show_in_menu' => true,
-      'public'       => true,
+      'supports'            => [ 'title', 'editor', 'thumbnail' ],
+      'taxonomies'          => [],
+      'show_in_menu'        => true,
+      'public'              => true,
       'exclude_from_search' => false,
     ];
 
