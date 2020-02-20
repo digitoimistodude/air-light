@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-18 15:05:56
+ * @Last Modified time: 2020-02-20 14:19:44
  *
  * @package air-light
  */
@@ -28,9 +28,9 @@ $theme_settings = [
    * Image and content sizes
    */
   'image_sizes' => [
-    'small' => 300,
+    'small'  => 300,
     'medium' => 700,
-    'large' => 1200,
+    'large'  => 1200,
   ],
   'content_width' => 800,
 
@@ -40,22 +40,6 @@ $theme_settings = [
   'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
 
   'logo' => '/svg/logo.svg',
-
-  /**
-   * Theme support
-   */
-  'theme_support' => [
-    'automatic-feed-links' => [],
-    'title-tag' => [],
-    'post-thumbnails' => [],
-    'html5' => [
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ],
-  ],
 
   /**
    * Theme textdomain
@@ -76,11 +60,13 @@ $theme_settings = [
    * https://github.com/digitoimistodude/air-light#custom-taxonomies
    */
   'taxonomies' => [
-    // 'your-taxonomy' => [
-    //  'name'       => 'Your_Taxonomy',
-    //  'post_types' => [ 'post', 'page' ],
-    // ],
-  ],
+    /**
+    'your-taxonomy' => [
+      'name'       => 'Your_Taxonomy',
+      'post_types' => [ 'post', 'page' ],
+    ],
+    */
+    ],
 
   /**
    * Post types

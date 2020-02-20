@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 13:47:31
+ * @Last Modified time: 2020-02-20 14:20:18
  **/
 
 namespace Air_Light;
@@ -94,11 +94,17 @@ function build_post_types() {
  * Build theme support
  */
 function build_theme_support() {
-  foreach ( THEME_SETTINGS['theme_support'] as $supported_feature_key => $args ) {
-    if ( is_array( $args ) ) {
-      add_theme_support( $supported_feature_key, $args );
-    } else {
-      add_theme_support( $supported_feature_key );
-    }
-  }
+  add_theme_support( 'automatic-feed-links' );
+  add_theme_support( 'title-tag' );
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support(
+    'html5',
+    [
+      'search-form',
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption',
+    ]
+  );
 }
