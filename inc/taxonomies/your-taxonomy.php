@@ -1,4 +1,11 @@
 <?php
+/*
+ * @Author: Niku Hietanen
+ * @Date: 2020-02-18 15:05:35
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-18 15:06:07
+ */
+
 namespace Air_Light;
 
 class Your_Taxonomy extends Taxonomy {

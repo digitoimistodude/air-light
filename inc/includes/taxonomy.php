@@ -1,4 +1,11 @@
 <?php
+/*
+ * @Author: Niku Hietanen
+ * @Date: 2020-02-18 15:06:23
+ * @Last Modified by:   Niku Hietanen
+ * @Last Modified time: 2020-02-18 15:06:23
+ */
+
 namespace Air_Light;
 
 abstract class Taxonomy {
