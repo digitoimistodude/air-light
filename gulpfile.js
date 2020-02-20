@@ -377,7 +377,7 @@ gulp.task('js', function() {
           externals: {
             jquery: 'jQuery' // Available and loaded through WordPress.
           },
-          mode: 'development',
+          mode: 'production',
           module: {
             rules: [
               {
@@ -394,13 +394,6 @@ gulp.task('js', function() {
             filename: 'all.js'
           },
         }))
-        /*.pipe(concat('all.js'))
-        .pipe(uglify({
-          compress: true,
-          mangle: true}).on('error', function(err) {
-            util.log(util.colors.red('[Error]'), err.toString());
-            this.emit('end');
-          })) */
         .pipe(gulp.dest(jsDest));
 });
 

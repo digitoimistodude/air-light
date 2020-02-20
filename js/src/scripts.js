@@ -7,7 +7,7 @@
 import './skip-link-focus-fix';
 import MoveTo from 'moveto';
 import './sticky-nav.js'
-import slick from 'slick-carousel';
+// import slick from 'slick-carousel';
 import 'what-input';
 import './navigation.js';
 import './lazyload.js';
