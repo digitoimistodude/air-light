@@ -10,6 +10,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
 
+namespace Air_Light;
+
 the_post();
 
 get_header();
@@ -29,11 +31,11 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
               /* translators: %s: Name of current post. Only visible to screen readers */
               wp_kses(
                 __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
-                array(
-                  'span' => array(
-                    'class' => array(),
-                  ),
-                )
+                [
+                  'span' => [
+                    'class' => [],
+                  ],
+                ]
               ),
               get_the_title()
             ),

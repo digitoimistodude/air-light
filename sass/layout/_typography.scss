@@ -7,10 +7,10 @@
 // -----------------------------------------------------------
 
 // Set up self-hosted fonts here
-@include fontFace('Karla', '../fonts/karla-regular', 400);
-@include fontFace('Karla', '../fonts/karla-italic', 400, italic);
-@include fontFace('Karla', '../fonts/karla-bold', 700);
-@include fontFace('Karla', '../fonts/karla-bolditalic', 700, italic);
+@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-regular', 400);
+@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
+@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700', 700);
+@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
 
 // Set root size for rems
 :root {
@@ -22,6 +22,7 @@ body {
   font-size: 1.7rem;
   font-family: $font-base;
   color: $color-body;
+  font-weight: $body-weight;
 
   // Font smoothing options
   text-size-adjust: none;
@@ -273,7 +274,7 @@ figure {
 figcaption {
   margin-top: 0;
   font-style: normal;
-  font-weight: 400;
+  font-weight: $body-weight;
 }
 
 // Quotes.

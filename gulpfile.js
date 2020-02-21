@@ -26,6 +26,8 @@ var cache          = require('gulp-cached');
 var phpcs          = require('gulp-phpcs');
 var validatehtml   = require('gulp-w3c-html-validation');
 var a11y           = require('gulp-accessibility');
+var webpack        = require('webpack-stream');
+
 
 // Better CSS error reporting
 const printGulpPluginErrorBeautifully = require('@wulechuan/printer-for-errors-of-gulp-plugins');
@@ -53,7 +55,7 @@ var sassSrc = 'sass/**/*.{sass,scss}';
 var sassFile = 'sass/base/global.scss';
 var phpSrc = '**/*.php';
 var cssDest = 'css';
-var customjs = 'js/scripts.js';
+var customJs = 'js/src/scripts.js';
 var jsSrc = 'js/src/**/*.js';
 var jsDest = 'js';
 
@@ -369,22 +371,29 @@ gulp.task('js', function() {
 
       gulp.src(
         [
-          'js/src/skip-link-focus-fix.js',
-          'node_modules/moveto/dist/moveTo.js',
-          // 'js/src/sticky-nav.js',
-          // 'node_modules/slick-carousel/slick/slick.js',
-          'node_modules/what-input/dist/what-input.js',
-          'js/src/lazyload.js',
-          'js/src/navigation.js',
-          'js/src/scripts.js'
+          customJs
         ])
-        .pipe(concat('all.js'))
-        .pipe(uglify({
-          compress: true,
-          mangle: true}).on('error', function(err) {
-            util.log(util.colors.red('[Error]'), err.toString());
-            this.emit('end');
-          }))
+        .pipe(webpack( {
+          externals: {
+            jquery: 'jQuery' // Available and loaded through WordPress.
+          },
+          mode: 'production',
+          module: {
+            rules: [
+              {
+                test: /.js$/,
+                use: [
+                  {
+                    loader: 'babel-loader',
+                  }
+                ]
+              },
+            ],
+          },
+          output: {
+            filename: 'all.js'
+          },
+        }))
         .pipe(gulp.dest(jsDest));
 });
 

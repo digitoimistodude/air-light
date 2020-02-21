@@ -6,19 +6,16 @@
  * Initial styles for front page template.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2019-12-19 19:19:33
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-20 14:16:21
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
+namespace Air_Light;
+
 // Featured image.
-$featured_image = '';
-if ( has_post_thumbnail() ) {
-	$featured_image = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
-} else {
-	$featured_image = get_theme_file_uri( 'images/default.jpg' );
-}
+$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS['default_featured_image'];
 
 get_header(); ?>
 
@@ -26,20 +23,35 @@ get_header(); ?>
   <main role="main" id="main" class="site-main">
 
     <div class="entry-header-demo">
-      <h1><span class="accent"><?php echo esc_html_e( 'air-light ', 'air-light' ); echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?></span><?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?></h1>
+      <div class="inner">
+        <div class="logo">
+          <?php include get_theme_file_path( THEME_SETTINGS['logo'] ); ?>
+        </div>
+        <h1>
+          <span class="accent">
+            <?php echo esc_html_e( 'air-light ', 'air-light' ); ?><?php echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?>
+          </span>
+          <?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?>
+        </h1>
+      </div>
     </div>
 
     <div class="block">
       <div class="container">
 
-        <?php if ( have_posts() ) {
-        	while ( have_posts() ) {
-        		the_post();
-        		the_content();
-					}
-        } else {
-        	get_template_part( 'template-parts/content', 'none' );
-        } ?>
+        <?php if ( have_posts() ) : ?>
+
+          <?php while ( have_posts() ) : the_post(); ?>
+
+            <?php the_content(); ?>
+
+          <?php endwhile; ?>
+
+        <?php else : ?>
+
+          <?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+        <?php endif ?>
 
       </div>
     </div>

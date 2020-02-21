@@ -144,7 +144,7 @@ del {
 
   p {
     color: $color-black;
-    font-weight: 400;
+    font-weight: $body-weight;
   }
 
   h1,
@@ -529,7 +529,10 @@ pre {
     margin-bottom: .1em;
 
     a {
-      color: $color-body;
+      color: $color-links;
+      &:hover {
+        color: $color-hover;
+      }
     }
   }
 }
@@ -538,10 +541,11 @@ pre {
   * {
     color: $color-darkgrey;
   }
+  margin-bottom: 1em;
 }
 
-.entry-time {
-  margin-bottom: 1.5em;
+p.entry-time {
+  margin-bottom: .1em;
 }
 
 .cat {

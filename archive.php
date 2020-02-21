@@ -3,11 +3,13 @@
  * The template for displaying archive pages
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:35:50
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-18 15:07:02
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
+
+namespace Air_Light;
 
 get_header();
 

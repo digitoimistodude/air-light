@@ -1,0 +1,20 @@
+.notice {
+  padding: $container-default-pad-x;
+  background-color: $color-lightgrey;
+  border-left: 4px solid $color-darkgrey;
+}
+
+.notice-success {
+  background-color: lighten($color-success, 40%);
+  border-color: $color-success;
+}
+
+.notice-warning {
+  background-color: lighten($color-warning, 40%);
+  border-color: $color-warning;
+}
+
+.notice-error {
+  background-color: lighten($color-error, 40%);
+  border-color: $color-error;
+}

@@ -12,7 +12,7 @@
   padding-top: 2rem;
   padding-left: $container-default-pad-x;
   padding-right: $container-default-pad-x;
-  max-width: $grid-base-size;
+  max-width: $container-desktop;
   margin-left: auto;
   margin-right: auto;
 
@@ -27,6 +27,6 @@
   font-weight: 700;
 
   a {
-    color: #111;
+    color: $color-cyan-bright;
   }
 }

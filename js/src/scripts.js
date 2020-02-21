@@ -2,6 +2,18 @@
  * Air theme JavaScript.
  */
 
+// Import modules (comment to disable)
+
+import './skip-link-focus-fix';
+import MoveTo from 'moveto';
+import './sticky-nav.js'
+// import slick from 'slick-carousel';
+import 'what-input';
+import './navigation.js';
+import './lazyload.js';
+
+
+
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');

@@ -9,6 +9,8 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  */
 
+namespace Air_Light;
+
 get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
