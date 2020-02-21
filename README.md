@@ -388,16 +388,17 @@ Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSnif
 
 PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
 
-### Releasing a new version (staff only)
+### Releasing a new version tag (staff only)
 
 Other than Dude staff should make pull requests, but the senior developers can push new versions directly. Whenever you have updates that are worthwile, commit them with clear commit messages and then do versioning. Every meaningful commit or bunch of commits that form a feature together make the version go up semantically 0.0.1.
 
 The tag-release cycle:
 
 1. Commit your changes
-2. Add a tag with `git tag -a x.x.x` commands
-3. Add description for a feature or just name it by version name x.x.x if the changes are small
-4. `git push -u origin HEAD && git push --tags` (or `p && git push --tags` if you use our term aliases)
+2. Search and replace version in style.css, functions.php, package.json, readme.txt. Remember update Tested up WordPress version as well.
+3. Add a tag with `git tag -a x.x.x` commands
+4. Add description for a feature or just name it by version name x.x.x if the changes are small
+5. `git push -u origin HEAD && git push --tags` (or `p && git push --tags` if you use our term aliases)
 
 That's it, you released a new version!
 
