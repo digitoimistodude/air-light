@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 14:19:44
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-02-21 13:00:05
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '4.9.9' );
+define( 'AIR_LIGHT_VERSION', '5.0.0' );
 
 /**
  * Theme settings
