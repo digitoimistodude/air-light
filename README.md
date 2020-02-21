@@ -45,7 +45,7 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
 8. [Contributing](#contributing)
     1. [Air development](#air-development)
     2. [Debuggers](#debuggers)
-    2. [Releasing a new version (staff only)](#releasing-a-new-version-staff-only)
+    2. [Releasing a new version (staff only)](#releasing-a-new-version-tag-staff-only)
 9. [Notes](#notes)
 
 ### Please note before using
