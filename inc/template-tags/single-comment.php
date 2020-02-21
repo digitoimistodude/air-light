@@ -1,6 +1,8 @@
 <?php
 /**
  * Single comment callback
+ *
+ * @package air-light
  */
 
 namespace Air_Light;

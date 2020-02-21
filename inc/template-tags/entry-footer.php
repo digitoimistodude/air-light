@@ -1,6 +1,8 @@
 <?php
 /**
  *  Show categories, tags, comment and edit links after post.
+ *
+ * @package air-light
  */
 
 namespace Air_Light;

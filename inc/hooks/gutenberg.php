@@ -2,11 +2,12 @@
 /**
  * Gutenberg related settings
  *
- * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 13:48:38
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-02-21 11:15:27
+ *
+ * @package air-light
  */
 
 namespace Air_Light;
@@ -23,7 +24,7 @@ function allowed_block_types( $allowed_blocks, $post ) {
   $allowed_blocks = THEME_SETTINGS['allowed_blocks']['default'];
 
   // If there is post type specific blocks, add them to the allowed blocks list
-  if ( isset( THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) ) {
+  if ( null !== THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) {
     $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] );
   }
 
