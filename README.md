@@ -66,6 +66,11 @@ We try to achieve as classic WordPress theme structure as possible to make it po
 themes/your-theme-name/             # → Root of your air-light based theme
 ├── 404.php                         # → Default "not found" page
 ├── archive.php                     # → Default archive template
+├── bin/                            # → Scripts
+│   ├── air-move-in.sh              # → A script for moving all dev files back to the theme
+│   ├── air-move-out.sh              # → A script for moving all dev files out of the theme for testing with Theme Check plugin
+│   ├── air-pack.sh                  # → A script that makes a package for WordPress Theme Directory
+│   ├── newtheme.sh                  # → The start script for creating YOUR own theme out of air-light
 ├── comments.php                    # → Default comments template (can be deleted if not needed)
 ├── css/                            # → CSS files for production (never edit)
 │   ├── global.css                  # → Unminified, stylefmtd CSS file
@@ -88,8 +93,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── navigation.js           # → Accessible multi-level navigation (from 3.4.5)
 │   │   ├── scripts.js              # → Theme core JavaScript file (from 1.0.0)
 │   │   ├── skip-link-focus-fix.js  # → Skip link fix from _s
-│   │   └── sticky-nav.js           # → Sticky nav functionality (optional)
-├── newtheme.sh                     # → Start script for creating new air based themes
+│   │   └── sticky-nav.js           # → Sticky nav functionality (optional)based themes
 ├── node_modules/                   # → Node.js packages (never edit)
 ├── package.json                    # → Node.js dependencies and scripts
 ├── page.php                        # → Default page template
@@ -220,7 +224,7 @@ Air has sticky navigation baked in.
 
 You can enable the navigation by
 
-1. Adding sticky-nav.js to your gulpfile (already included with [Devpackages](https://github.com/digitoimistodude/devpackages) and newtheme.sh start script)
+1. Adding sticky-nav.js to your gulpfile (already included with [Devpackages](https://github.com/digitoimistodude/devpackages) and bin/newtheme.sh start script)
 2. Uncommeting sticky-nav import in global.scss
 3. Restart gulp and save scripts.js once to compile working combined javascript file
 
@@ -299,7 +303,7 @@ Traditional way:
 
 If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your vagrant box is up and running at `10.1.2.4`, just
 
-1. Open Terminal and cd to air directory
+1. Open Terminal and cd to the bin directory under air-light theme
 2. Run `sh newtheme.sh` - the script takes care of the rest (updates textdomain with your project name, checks updates for air and npm packages, runs npm install, fetches devpackages, sets up gulp, cleans up the leftover files and activates the theme via wp-cli)
 
 ### Contributing

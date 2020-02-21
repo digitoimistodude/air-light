@@ -71,7 +71,7 @@ sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\P
 
 echo "${yellow}Cleaning up...${txtreset}"
 rm -rf ${PROJECTPATH}/devpackages
-rm -f ${PROJECTTHEMEPATH}/newtheme.sh
+rm -rf ${PROJECTTHEMEPATH}/bin
 rm -f ${PROJECTTHEMEPATH}/gulpfile.js
 rm -f ${PROJECTTHEMEPATH}/.gitignore
 rm -f ${PROJECTTHEMEPATH}/.travis.yml
@@ -79,6 +79,10 @@ rm -f ${PROJECTTHEMEPATH}/readme.txt
 rm -f ${PROJECTTHEMEPATH}/languages/*
 rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
+
+echo "${yellow}Removing demo content...${txtreset}"
+find ${PROJECTTHEMEPATH}/sass/ -maxdepth 3 -name 'global.scss' -exec sed -i '' -e "s/@import '..\/layout\/demo-content';//g" {} +
+rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
 
 read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
   if [ "$yn" = "n" ]; then
