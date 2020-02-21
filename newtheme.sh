@@ -80,6 +80,10 @@ rm -f ${PROJECTTHEMEPATH}/languages/*
 rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
 
+echo "${yellow}Removing demo content...${txtreset}"
+find ${PROJECTTHEMEPATH}/sass/ -maxdepth 3 -name 'global.scss' -exec sed -i '' -e "s/@import '..\/layout\/demo-content';//g" {} +
+rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
+
 read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
   if [ "$yn" = "n" ]; then
     find ${PROJECTTHEMEPATH}/sass/ -maxdepth 3 -name 'global.scss' -exec sed -i '' -e "s/@import '..\/views\/comments';//g" {} +
