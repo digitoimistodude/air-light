@@ -8,7 +8,7 @@
 # @link https://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
 # @link https://docs.travis-ci.com/user/workers/container-based-infrastructure/#Routing-your-build-to-container-based-infrastructure
 sudo: false
-dist: trusty
+dist: xenial
 
 # Declare project language.
 # @link https://about.travis-ci.org/docs/user/languages/php/
@@ -55,7 +55,7 @@ before_script:
     # Install CodeSniffer for WordPress Coding Standards checks.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR; fi
     # Install WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then git clone -b 0.14.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then git clone -b 2.2.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
     # Install PHP Compatibility sniffs.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR; fi
     # Set install path for PHPCS sniffs.
