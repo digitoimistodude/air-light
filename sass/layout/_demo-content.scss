@@ -15,12 +15,12 @@
   justify-content: center;
   position: relative;
   text-shadow: 0 0px 30px $color-blue;
-  min-height: 50rem;
+  min-height: 53rem;
   max-width: $layout-max-width;
   margin: 0 auto;
 
   // Internet Explorer needs this
-  height: 50rem;
+  height: 53rem;
 
   .inner {
     display: grid;
@@ -31,6 +31,8 @@
     justify-items: center;
     padding: 2rem;
     max-width: $container-desktop;
+    margin-top: 140px;
+    margin-bottom: 80px;
 
     @media (min-width: $container-ipad) {
       padding: 0;
@@ -117,7 +119,7 @@
   }
 
   h1 {
-    @include responsive-font(32px, 68px);
+    @include responsive-font(32px, 62px);
     color: $color-white;
     margin: 0;
     padding: 2rem;
