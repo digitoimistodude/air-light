@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-28 17:31:56
+ * @Last Modified time: 2020-02-28 17:44:52
  */
 
 namespace Air_Light;
@@ -35,13 +35,16 @@ function the_module( $post_id ) {
    *  Key contains $have_rows_id to differiate modules if same module is used on multiple pages
    */
   $module_cache_key = __NAMESPACE__ . "_modular_{$post_id}_{$module_name}|{$module_row_index}";
+  // Cache settings
+  $enable_caching   = THEME_SETTINGS['enable_module_caching'] ?: true;
+  $excluded_modules = THEME_SETTINGS['exclude_module_from_cache'] ?: [];
 
   /**
    *  Check if module needs to bypass cache or we are in development envarioment.
    *  If it in cache, we get content to variable. If not in cache, put it in there and to variable.
    *  In both cases, variable is returned in the end of this functon.
    */
-  if ( THEME_SETTINGS['enable_module_caching'] && ! \array_key_exists( $module_name, THEME_SETTINGS['exclude_module_from_cache'] ) && \getenv( 'WP_ENV' ) !== 'development' ) {
+  if ( $enable_caching && ! \array_key_exists( $module_name, $excluded_modules ) && \getenv( 'WP_ENV' ) !== 'development' ) {
     $module_output = load_module_from_cache( $module_cache_key, $module_name, $module_path );
   } else {
     // module is exluded from cache or we are in development envarioment
