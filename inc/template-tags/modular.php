@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-28 17:06:55
+ * @Last Modified time: 2020-02-28 17:31:56
  */
 
 namespace Air_Light;
@@ -23,72 +23,40 @@ function the_module( $post_id ) {
     return;
   }
   // defaults
-  $template_part_output = null;
+  $module_output = null;
 
   // make template part name.
-  $template_part_name = str_replace( '_', '-', \get_row_layout() );
-  $template_row_index = \get_row_index();
-  $template_part_path = \get_theme_file_path( "template-parts/modules/{$template_part_name}.php" );
+  $module_name      = \str_replace( '_', '-', \get_row_layout() );
+  $module_row_index = \get_row_index();
+  $module_path      = \get_theme_file_path( "template-parts/modules/{$module_name}.php" );
 
   /**
    *  Make cache key.
    *  Key contains $have_rows_id to differiate modules if same module is used on multiple pages
    */
-  $template_part_cache_key = __NAMESPACE__ . "_modular_{$post_id}_{$template_part_name}|{$template_row_index}";
+  $module_cache_key = __NAMESPACE__ . "_modular_{$post_id}_{$module_name}|{$module_row_index}";
 
   /**
    *  Check if module needs to bypass cache or we are in development envarioment.
    *  If it in cache, we get content to variable. If not in cache, put it in there and to variable.
    *  In both cases, variable is returned in the end of this functon.
    */
-  if ( THEME_SETTINGS['enable_module_caching'] && ! \array_key_exists( $template_part_name, THEME_SETTINGS['exclude_module_from_cache'] ) && \getenv( 'WP_ENV' ) !== 'development' ) {
-
-    // module can be cached, try to find it is already in cache.
-    $template_part_output = \wp_cache_get( $template_part_cache_key, 'theme' );
-
-    if ( $template_part_output ) {
-      // Template loaded from cache
-      // add log message in development and staging
-      \do_action( 'qm/debug', "Module served from cache: {$template_part_name} ({$template_part_cache_key})" );
-    } else {
-      // module is not in cache.
-      // validate that file actually exists.
-      if ( \file_exists( $template_part_path ) ) {
-
-        // get module content.
-        \ob_start( 'ob_gzhandler' );
-        include $template_part_path;
-        $template_part_output = \ob_get_clean();
-
-        // save module to cache.
-        \wp_cache_set( $template_part_cache_key, $template_part_output, 'theme', HOUR_IN_SECONDS );
-
-        // add log message in development and staging
-        \do_action( 'qm/debug', "Module cached: {$template_part_name} ({$template_part_cache_key})" );
-      }
-    }
+  if ( THEME_SETTINGS['enable_module_caching'] && ! \array_key_exists( $module_name, THEME_SETTINGS['exclude_module_from_cache'] ) && \getenv( 'WP_ENV' ) !== 'development' ) {
+    $module_output = load_module_from_cache( $module_cache_key, $module_name, $module_path );
   } else {
     // module is exluded from cache or we are in development envarioment
-
     // add log message in development and staging
-    \do_action( 'qm/debug', "Module bypassed cache: {$template_part_name} ({$template_part_cache_key})" );
+    \do_action( 'qm/debug', "Module bypassed cache: {$module_name} ({$module_cache_key})" );
 
-    // validate that file actually exists.
-    if ( \file_exists( $template_part_path ) ) {
-
-      // get module content.
-      \ob_start();
-      include $template_part_path;
-      $template_part_output = \ob_get_clean();
-    }
+    $module_output = load_module( $module_path );
   }
 
-  if ( empty( $template_part_output ) ) {
-    \do_action( 'qm/error', "Module {$template_part_name} output is empty" );
+  if ( empty( $module_output ) ) {
+    \do_action( 'qm/error', "Module {$module_name} output is empty" );
   }
 
   // finally output module content.
-  echo $template_part_output; // phpcs:ignore
+  echo $module_output; // phpcs:ignore
 }
 
 /**
@@ -115,4 +83,60 @@ function get_modular_rows_id() {
   }
 
   return $have_rows_id;
+}
+
+/**
+ * Load module content from cache
+ * @param String $module_cache_key Module cache key
+ * @param String $module_name Module name
+ * @param String $module_path Module file path
+ *
+ * @return String Module content
+ */
+function load_module_from_cache( $module_cache_key, $module_name, $module_path ) {
+  // module can be cached, try to find it is already in cache.
+  $output = \wp_cache_get( $module_cache_key, 'theme' );
+
+  if ( $output ) {
+    // Template loaded from cache
+    // add log message in development and staging
+    \do_action( 'qm/debug', "Module served from cache: {$module_name} ({$module_cache_key})" );
+    return $output;
+  }
+
+  // Module is not found in cache.
+  // Load module content.
+  $output = load_module( $module_path, true );
+
+  // Save module to cache.
+  \wp_cache_set( $module_cache_key, $output, 'theme', HOUR_IN_SECONDS );
+
+  // add log message in development and staging
+  \do_action( 'qm/debug', "Module cached: {$module_name} ({$module_cache_key})" );
+
+  return $output;
+
+}
+
+/**
+ * Load module file
+ *
+ * @param String  $module_path The module file path
+ * @param Boolean $cache Use Gzip for caching
+ *
+ * @return String Module content
+ */
+function load_module( $module_path, $cache = false ) {
+  $output_callback = $cache ? 'ob_gzhandler' : null;
+
+  // Validate that file actually exists.
+  if ( ! \file_exists( $module_path ) ) {
+    \do_action( 'qm/error', "Module file not found: {$module_path})" );
+    return '';
+  }
+
+  // get module content.
+  \ob_start( $output_callback );
+  include $module_path;
+  return \ob_get_clean();
 }
