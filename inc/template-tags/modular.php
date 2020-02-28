@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-28 16:40:33
+ * @Last Modified time: 2020-02-28 17:06:55
  */
 
 namespace Air_Light;
@@ -44,8 +44,13 @@ function the_module( $post_id ) {
   if ( THEME_SETTINGS['enable_module_caching'] && ! \array_key_exists( $template_part_name, THEME_SETTINGS['exclude_module_from_cache'] ) && \getenv( 'WP_ENV' ) !== 'development' ) {
 
     // module can be cached, try to find it is already in cache.
-    if ( \wp_cache_get( $template_part_cache_key, 'theme' ) !== $template_part_output ) {
+    $template_part_output = \wp_cache_get( $template_part_cache_key, 'theme' );
 
+    if ( $template_part_output ) {
+      // Template loaded from cache
+      // add log message in development and staging
+      \do_action( 'qm/debug', "Module served from cache: {$template_part_name} ({$template_part_cache_key})" );
+    } else {
       // module is not in cache.
       // validate that file actually exists.
       if ( \file_exists( $template_part_path ) ) {
@@ -61,9 +66,6 @@ function the_module( $post_id ) {
         // add log message in development and staging
         \do_action( 'qm/debug', "Module cached: {$template_part_name} ({$template_part_cache_key})" );
       }
-    } else {
-      // add log message in development and staging
-      \do_action( 'qm/debug', "Module served from cache: {$template_part_name} ({$template_part_cache_key})" );
     }
   } else {
     // module is exluded from cache or we are in development envarioment
