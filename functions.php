@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-02-21 13:00:05
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-02-28 16:39:37
  *
  * @package air-light
  */
@@ -131,6 +131,11 @@ $theme_settings = [
     'post' => [
       'core/coverImage', // This block is now allowed only in posts
     ],
+  ],
+  // Module caching
+  'enable_module_caching' => true,
+  'exclude_module_from_cache' => [
+    'contact-form' => true,
   ],
   // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
   'my_custom_setting' => true,
