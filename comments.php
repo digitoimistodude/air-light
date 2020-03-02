@@ -6,8 +6,8 @@
  * and the comment form.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:39:47
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-03-02 10:51:24
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -65,7 +65,7 @@ if ( post_password_required() ) {
         wp_list_comments( array(
           'style'      => 'ol',
           'short_ping' => true,
-          'callback' => __NAMESPACE__ . '\single-comment',
+          'callback'   => __NAMESPACE__ . '\single_comment',
         ) );
       ?>
     </ol><!-- .comment-list -->
