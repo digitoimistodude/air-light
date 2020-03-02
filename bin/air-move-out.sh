@@ -28,3 +28,7 @@ sudo rm ~/Projects/airdev/content/themes/air-light/fonts/.DS_Store
 sudo rm ~/Projects/airdev/content/themes/air-light/images/.DS_Store
 sudo mv ~/Projects/airdev/content/themes/air-light/.stylelintrc ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.editorconfig ~/air-temp/
+
+# Remove custom stuff that are not part of an official WordPress theme in WP theme directory
+rm ~/Projects/airdev/content/themes/air-light/inc/includes/taxonomy.php
+rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
