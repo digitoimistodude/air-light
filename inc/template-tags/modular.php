@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-28 17:44:52
+ * @Last Modified time: 2020-03-02 08:16:49
  */
 
 namespace Air_Light;
@@ -36,7 +36,7 @@ function the_module( $post_id ) {
    */
   $module_cache_key = __NAMESPACE__ . "_modular_{$post_id}_{$module_name}|{$module_row_index}";
   // Cache settings
-  $enable_caching   = THEME_SETTINGS['enable_module_caching'] ?: true;
+  $enable_caching   = isset( THEME_SETTINGS['enable_module_caching'] ) ? THEME_SETTINGS['enable_module_caching'] : true;
   $excluded_modules = THEME_SETTINGS['exclude_module_from_cache'] ?: [];
 
   /**
