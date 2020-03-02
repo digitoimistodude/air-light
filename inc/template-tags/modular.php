@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-03-02 10:27:11
+ * @Last Modified time: 2020-03-02 10:36:44
  */
 
 namespace Air_Light;
@@ -36,8 +36,8 @@ function the_module( $post_id ) {
    */
   $module_cache_key = __NAMESPACE__ . "_modular_{$post_id}_{$module_name}|{$module_row_index}";
   // Cache settings
-  $enable_caching   = array_key_exists( 'enable_module_caching', THEME_SETTINGS ) ? THEME_SETTINGS['enable_module_caching'] : true;
-  $excluded_modules = array_key_exists( 'exclude_module_from_cache', THEME_SETTINGS ) ? THEME_SETTINGS['exclude_module_from_cache'] : [];
+  $enable_caching   = ! empty( THEME_SETTINGS ) && array_key_exists( 'enable_module_caching', THEME_SETTINGS ) ? THEME_SETTINGS['enable_module_caching'] : true;
+  $excluded_modules = ! empty( THEME_SETTINGS ) && array_key_exists( 'exclude_module_from_cache', THEME_SETTINGS ) ? THEME_SETTINGS['exclude_module_from_cache'] : [];
 
   /**
    *  Check if module needs to bypass cache or we are in development envarioment.
