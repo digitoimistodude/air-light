@@ -14,7 +14,7 @@ sudo mv ~/air-temp/phpcs.xml ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/node_modules ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.jscsrc ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/gulpfile.js ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/newtheme.sh ~/Projects/airdev/content/themes/air-light/
+sudo mv ~/air-temp/bin ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/content ~/Projects/airdev/content/themes/air-light/content
 sudo mv ~/air-temp/.scss-lint.yml ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/front-page.php ~/Projects/airdev/content/themes/air-light/
