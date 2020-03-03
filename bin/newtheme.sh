@@ -49,6 +49,23 @@ for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i '' -e "s;Air_light_;$
 #echo "${yellow}Installing and updating theme node.js packages (may take a while)${txtreset}"
 #cd ${PROJECTTHEMEPATH}
 #npm-check-updates -u
+echo "${yellow}Creating acf-json...${txtreset}"
+mkdir -p ${PROJECTTHEMEPATH}/acf-json
+
+echo "${yellow}Making sure the permissions are right for npm... (you should have nopasswd sudoers or temporarily password copied here if it asks for each time)${txtreset}"
+sudo chmod -R 777 ${PROJECTTHEMEPATH}/acf-json
+mkdir -p ${PROJECTPATH}/node_modules
+mkdir -p ${PROJECTTHEMEPATH}/node_modules
+sudo chown -R $(whoami) ~/.npm
+sudo chown -R $(whoami) ${PROJECTPATH}/node_modules
+sudo chmod -R 777 ${PROJECTPATH}/node_modules
+sudo chown -R $(whoami) ${PROJECTTHEMEPATH}/node_modules
+sudo chmod -R 777 ${PROJECTTHEMEPATH}/node_modules
+sudo chown -R $(whoami) ${PROJECTPATH}/content/plugins
+sudo chmod 777 ${PROJECTPATH}/content
+sudo chmod -R 777 ${PROJECTPATH}/content/plugins
+
+echo "${yellow}Installing deps${txtreset}"
 npm install
 
 echo "${yellow}Getting devpackages${txtreset}"
