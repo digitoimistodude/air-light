@@ -121,7 +121,7 @@ rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
-find ${PROJECTTHEMEPATH}/ -maxdepth 1 -name 'header.php' -exec sed -i '' -e "1 s/^<\?php get_template_part*-1; \?>//" {} +
+find ${PROJECTTHEMEPATH}/ -maxdepth 1 -name 'front-page.php' -exec sed -i '' -e "1 s/^<\?php get_template_part.*; \?>//" {} +
 
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
