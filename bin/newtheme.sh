@@ -99,6 +99,13 @@ read -p "${boldyellow}Do we use woocommerce in this project? (y/n)${txtreset} " 
     echo ' '
   fi
 
+echo "${yellow}Remove things we need to remove anyway in each start...${txtreset}"
+rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
+touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
+rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
+touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
+find ${PROJECTTHEMEPATH}/ -maxdepth 1 -name 'header.php' -exec sed -i '' -e "1 s/^<\?php get_template_part*-1; \?>//" {} +
+
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
 echo "" > ${PROJECTPATH}/media/index.php

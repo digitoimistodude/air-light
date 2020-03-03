@@ -6,8 +6,8 @@
  * Initial styles for front page template.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 14:16:21
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-03-03 14:38:06
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
@@ -22,39 +22,7 @@ get_header(); ?>
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
 
-    <div class="entry-header-demo">
-      <div class="inner">
-        <div class="logo">
-          <?php include get_theme_file_path( THEME_SETTINGS['logo'] ); ?>
-        </div>
-        <h1>
-          <span class="accent">
-            <?php echo esc_html_e( 'air-light ', 'air-light' ); ?><?php echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?>
-          </span>
-          <?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?>
-        </h1>
-      </div>
-    </div>
-
-    <div class="block">
-      <div class="container">
-
-        <?php if ( have_posts() ) : ?>
-
-          <?php while ( have_posts() ) : the_post(); ?>
-
-            <?php the_content(); ?>
-
-          <?php endwhile; ?>
-
-        <?php else : ?>
-
-          <?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-        <?php endif ?>
-
-      </div>
-    </div>
+    <?php get_template_part( 'template-parts/header/demo-content' ); ?>
 
   </main><!-- #main -->
 </div><!-- #primary -->
