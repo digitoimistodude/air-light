@@ -110,7 +110,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="4.8.5"
+newestair="5.0.1"
 newestwordpress="5.3.2"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
@@ -119,9 +119,9 @@ echo "# ${PROJECTNAME}
 
 This project is hand made for customer. Customer basic details are here:
 
-**Company name:** (Please fill)
-**Contact person:** (Please fill)
-**Contact email:** (Please fill)
+**Company name:** (Please fill)  
+**Contact person:** (Please fill)  
+**Contact email:** (Please fill)  
 
 ## Stack
 
@@ -133,8 +133,8 @@ This project is built on [digitoimistodude/dudestack](https://github.com/digitoi
 
 ## Basic details
 
-**Developers:** [ronilaukkarinen](https://github.com/ronilaukkarinen)
-**Custom post type plugin:** ACF Pro
+**Developers:** [ronilaukkarinen](https://github.com/ronilaukkarinen)  
+**Custom post type plugin:** ACF Pro  
 
 ## Theme screenshot
 
@@ -150,9 +150,9 @@ On top of features included in [digitoimistodude/air-light](https://github.com/d
 
 Green checkmarks show if the environment is already set up and running, red cross indicates if it's not yet there or disabled.
 
-✅ Development: [${PROJECTNAME}.test](http://${PROJECTNAME}.test)
-❌ Staging: [${PROJECTNAME}.vaiheessa.fi](https://${PROJECTNAME}.vaiheessa.fi)
-❌ Production: [${PROJECTNAME}.fi](https://${PROJECTNAME}.fi/)
+✅ Development: [${PROJECTNAME}.test](http://${PROJECTNAME}.test)  
+❌ Staging: [${PROJECTNAME}.vaiheessa.fi](https://${PROJECTNAME}.vaiheessa.fi)  
+❌ Production: [${PROJECTNAME}.fi](https://${PROJECTNAME}.fi/)  
 
 ## Setting it up initially
 
@@ -162,7 +162,7 @@ If dev environment is indeed running, you're ready to version control the projec
 
 There are npm packages in both project root and theme folder. If you come later to this project, please run:
 
-1. \`composer in\stall\` (in project folder)
+1. \`composer install\` (in project folder)
 2. \`npm install\` (in project folder)
 2. \`npm install\` (in theme folder)
 
