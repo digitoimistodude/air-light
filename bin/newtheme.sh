@@ -129,6 +129,7 @@ find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'footer.php' -exec sed -i '' -e "s/<
 echo "${yellow}Fixing stylelint bug for gulp... (see: https://github.com/digitoimistodude/devpackages#known-issues)${txtreset}"
 sudo npm install stylelint -g
 sudo cp -R /usr/local/lib/node_modules/stylelint ${PROJECTPATH}/node_modules/gulp-stylefmt/node_modules/
+cp ${PROJECTTHEMEPATH}/.stylelintrc ${PROJECTPATH}/
 
 echo "${yellow}Running project gulp styles once...${txtreset}"
 cd ${PROJECTPATH}
