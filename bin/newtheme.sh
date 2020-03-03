@@ -121,7 +121,18 @@ rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
-find ${PROJECTTHEMEPATH}/ -maxdepth 1 -name 'front-page.php' -exec sed -i '' -e "1 s/^<\?php get_template_part.*; \?>//" {} +
+rm ${PROJECTTHEMEPATH}/template-parts/header/demo-content.php
+rm -rf ${PROJECTTHEMEPATH}/template-parts/footer
+find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
+find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'footer.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>//g" {} +
+
+echo "${yellow}Fixing stylelint bug for gulp... (see: https://github.com/digitoimistodude/devpackages#known-issues)${txtreset}"
+sudo npm install stylelint -g
+sudo cp -R /usr/local/lib/node_modules/stylelint ${PROJECTPATH}/node_modules/gulp-stylefmt/node_modules/
+
+echo "${yellow}Running project gulp styles once...${txtreset}"
+cd ${PROJECTPATH}
+gulp styles
 
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
@@ -130,7 +141,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="5.0.1"
+newestair="5.0.2"
 newestwordpress="5.3.2"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');

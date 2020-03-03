@@ -1,6 +1,6 @@
 <?php
 /**
- * Air demo content
+ * Air demo content for front-page header
  *
  * @package air-light
  */

@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-02 12:28:23
+ * @Last Modified time: 2020-03-03 15:17:04
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '5.0.1' );
+define( 'AIR_LIGHT_VERSION', '5.0.2' );
 
 /**
  * Theme settings
