@@ -14,7 +14,7 @@
     "block-opening-brace-newline-after": "never",
     "block-closing-brace-newline-after": "always-multi-line",
     "declaration-empty-line-before": "never",
-    rule-empty-line-before: "always",
+    "rule-empty-line-before": "always",
     "string-quotes": "single",
     "at-rule-empty-line-before": [
       "always",
