@@ -10,7 +10,7 @@ Air-light (or simply *Air*) is designed to be a minimal starting point for a Wor
 - **JS gzipped:** 3.4 KB *(10.8 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
-![](https://www.dude.fi/air-5.0.2-screenshot.png "Screenshot")
+![](https://www.dude.fi/air-5.0.3-screenshot.png "Screenshot")
 
 This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed.
 
