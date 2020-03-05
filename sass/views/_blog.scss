@@ -530,6 +530,7 @@ pre {
 
     a {
       color: $color-links;
+
       &:hover {
         color: $color-hover;
       }
@@ -538,10 +539,11 @@ pre {
 }
 
 .entry-meta {
+  margin-bottom: 1em;
+
   * {
     color: $color-darkgrey;
   }
-  margin-bottom: 1em;
 }
 
 p.entry-time {
