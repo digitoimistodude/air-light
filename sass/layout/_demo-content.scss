@@ -186,3 +186,14 @@
     font-size: 2.2rem;
   }
 }
+
+.site-header .site-branding .site-title a,
+.site-header .nav-primary .menu-items .menu-item .dropdown-toggle,
+.site-header .nav-primary .menu-items .current-menu-parent > a,
+.site-header .nav-primary .menu-items .current-menu-item > a {
+  color: $color-cyan-bright;
+
+  @media (max-width: $responsivenav) {
+    color: $color-cyan-bright;
+  }
+}

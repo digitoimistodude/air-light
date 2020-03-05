@@ -5,7 +5,7 @@
 // devices only.
 // -----------------------------------------------------------
 $absolute-navigation: true;
-$nav-desktop-background-color: $color-blue-dark;
+$nav-desktop-background-color: $color-default-background;
 $hover-intent: .3s;
 
 $nav-links: (
@@ -15,7 +15,7 @@ $nav-links: (
   'font-size': 1.6rem
 );
 $nav-dropdown-links: (
-  'color': $color-blue,
+  'color': $color-links,
   'hover-color': $color-cyan,
   'font-weight': 400,
   'font-size': 1.4rem
@@ -30,7 +30,7 @@ $dropdown-toggle: (
   'background': transparent,
   'border': none,
   'border-radius': 50%,
-  'color': $color-cyan-bright,
+  'color': $color-white,
   'size': 3rem,
   'arrow-size': 1rem
 );
@@ -38,14 +38,14 @@ $dropdown-toggle: (
 $dropdown-toggle-hover: (
   'background': $color-white,
   'border': 1px solid $color-white,
-  'color': $color-blue,
+  'color': $color-links,
 );
 
 $submenu-dropdown-toggle: (
   'background': transparent,
   'border': none,
   'border-radius': 0,
-  'color': $color-blue,
+  'color': $color-links,
   'size': 3rem,
   'arrow-size': 1rem
 );
@@ -53,7 +53,7 @@ $submenu-dropdown-toggle: (
 $submenu-dropdown-toggle-hover: (
   'background': $color-white,
   'border': none,
-  'color': $color-blue,
+  'color': $color-links,
 );
 
 @if $absolute-navigation == true {

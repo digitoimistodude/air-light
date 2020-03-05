@@ -5,17 +5,17 @@
 // version only.
 // -----------------------------------------------------------
 
-$nav-background-color: rgba($color-blue-dark, .97);
+$nav-background-color: rgba($color-default-background, .97);
 
 $nav-toggle: (
-  'color': $color-cyan-bright,
-  'active-color': $color-cyan-bright,
+  'color': $color-white,
+  'active-color': $color-white,
 );
 
 $nav-links: (
   'color': $color-white,
   'color-active': $color-white,
-  'color-current': $color-cyan-bright,
+  'color-current': $color-links,
   'font-weight': 400,
   'font-size': 1.6rem,
 );
@@ -25,7 +25,7 @@ $dropdown: (
 );
 
 $dropdown-toggle: (
-  'color': $color-cyan-bright,
+  'color': $color-white,
   'background': transparent,
   'active-color': $color-white,
   'active-background': transparent,
