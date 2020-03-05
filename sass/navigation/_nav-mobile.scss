@@ -5,10 +5,26 @@
 // version only.
 // -----------------------------------------------------------
 $nav-background-color: rgba($color-default-background, .97);
-$nav-toggle: ('color': $color-white, 'active-color': $color-white, );
-$nav-links: ('color': $color-white, 'color-active': $color-white, 'color-current': $color-links, 'font-weight': 400, 'font-size': 1.6rem, );
-$dropdown: ('background': transparent, );
-$dropdown-toggle: ('color': $color-white, 'background': transparent, 'active-color': $color-white, 'active-background': transparent, );
+$nav-toggle: (
+  'color': $color-white,
+  'active-color': $color-white,
+  );
+$nav-links: (
+  'color': $color-white,
+  'color-active': $color-white,
+  'color-current': $color-links,
+  'font-weight': 400,
+  'font-size': 1.6rem,
+);
+$dropdown: (
+  'background': transparent,
+  );
+$dropdown-toggle: (
+  'color': $color-white,
+  'background': transparent,
+  'active-color': $color-white,
+  'active-background': transparent,
+);
 $hamburger-padding-x: 1.5rem;
 $hamburger-padding-y: 5rem;
 $hamburger-layer-width: 4rem;

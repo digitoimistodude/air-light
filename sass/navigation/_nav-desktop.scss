@@ -7,13 +7,47 @@
 $absolute-navigation: true;
 $nav-desktop-background-color: $color-default-background;
 $hover-intent: .3s;
-$nav-links: ('color': $color-white, 'hover-color': $color-white, 'font-weight': 700, 'font-size': 1.6rem);
-$nav-dropdown-links: ('color': $color-links, 'hover-color': $color-cyan, 'font-weight': 400, 'font-size': 1.4rem);
-$dropdown: ('gap': 1rem, 'width': 19rem);
-$dropdown-toggle: ('background': transparent, 'border': none, 'border-radius': 50%, 'color': $color-white, 'size': 3rem, 'arrow-size': 1rem);
-$dropdown-toggle-hover: ('background': $color-white, 'border': 1px solid $color-white, 'color': $color-links, );
-$submenu-dropdown-toggle: ('background': transparent, 'border': none, 'border-radius': 0, 'color': $color-links, 'size': 3rem, 'arrow-size': 1rem);
-$submenu-dropdown-toggle-hover: ('background': $color-white, 'border': none, 'color': $color-links, );
+$nav-links: (
+  'color': $color-white,
+  'hover-color': $color-white,
+  'font-weight': 700,
+  'font-size': 1.6rem
+);
+$nav-dropdown-links: (
+  'color': $color-links,
+  'hover-color': $color-cyan,
+  'font-weight': 400,
+  'font-size': 1.4rem
+);
+$dropdown: (
+  'gap': 1rem,
+  'width': 19rem
+);
+$dropdown-toggle: (
+  'background': transparent,
+  'border': none, 'border-radius': 50%,
+  'color': $color-white,
+  'size': 3rem,
+  'arrow-size': 1rem
+);
+$dropdown-toggle-hover: (
+  'background': $color-white,
+  'border': 1px solid $color-white,
+  'color': $color-links,
+);
+$submenu-dropdown-toggle: (
+  'background': transparent,
+  'border': none,
+  'border-radius': 0,
+  'color': $color-links,
+  'size': 3rem,
+  'arrow-size': 1rem
+);
+$submenu-dropdown-toggle-hover: (
+  'background': $color-white,
+  'border': none,
+  'color': $color-links,
+);
 
 @if $absolute-navigation == true {
   .nav-container {
