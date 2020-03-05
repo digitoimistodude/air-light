@@ -1,6 +1,29 @@
 {
-  "extends": "stylelint-config-wordpress/scss",
+  "plugins": [
+    "stylelint-declaration-use-variable",
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-wordpress/scss"
+  ],
   "rules": {
+    "scss/at-each-key-value-single-line": false,
+    "sh-waqar/declaration-use-variable": [[
+      "/color/",
+      {
+        "ignoreValues": [
+          "transparent",
+          "inherit"
+        ],
+      }
+    ]],
+    "scss/dollar-variable-colon-newline-after": "always",
+    "color-hex-case": "lower",
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "function-parentheses-space-inside": "never",
+    "media-feature-parentheses-space-inside": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "comment-whitespace-inside": "always",
     "indentation": 2,
     "block-no-empty": true,
     "declaration-colon-newline-after": "never",
@@ -29,5 +52,5 @@
         ],
       }
     ]
-  }
+  },
 }
