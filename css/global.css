@@ -1435,6 +1435,9 @@ form.search-form .search-submit {
     .site-header .nav-primary .menu-items .current-menu-item > a {
       color: #60f4ea; } }
 
+.site-header .nav-primary .menu-items .menu-item .menu-item .dropdown-toggle {
+  color: #3962c9; }
+
 .nav-primary .menu-items {
   position: relative;
   z-index: 9999; }
