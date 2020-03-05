@@ -67,6 +67,10 @@
     overflow: visible;
     animation: plane-container 10s linear 1s infinite;
 
+    .logo-name {
+      display: none;
+    }
+
     @keyframes plane {
       0% {
         transform: translate(-200%, 140%);

@@ -1308,6 +1308,8 @@ form.search-form .search-submit {
     overflow: visible;
     -webkit-animation: plane-container 10s linear 1s infinite;
             animation: plane-container 10s linear 1s infinite; }
+    .entry-header-demo .logo .logo-name {
+      display: none; }
 
 @-webkit-keyframes plane {
   0% {
