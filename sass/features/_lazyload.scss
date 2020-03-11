@@ -27,12 +27,12 @@
 
 @keyframes progressive-reveal {
   0% {
-    transform: scale(1.05);
-    opacity: 0;
+    // transform: scale(1.05);
+    opacity: .2;
   }
 
   100% {
-    transform: scale(1);
+    // transform: scale(1);
     opacity: 1;
   }
 }
