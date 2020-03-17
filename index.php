@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:36:41
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-03-17 10:17:21
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -29,7 +29,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
         <?php if ( is_home() && ! is_front_page() ) : ?>
 
           <header>
-            <h1 class="page-title screen-reader-text">
+            <h1 class="entry-title screen-reader-text">
               <?php single_post_title(); ?>
             </h1>
           </header>
