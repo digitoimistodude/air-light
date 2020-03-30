@@ -12,8 +12,6 @@ import 'what-input';
 import './navigation.js';
 import './lazyload.js';
 
-
-
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');

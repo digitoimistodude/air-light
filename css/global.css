@@ -792,6 +792,19 @@ h6 {
   color: #3962c9;
   font-family: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 700;
+  margin-top: 27px;
+  margin-top: 2.7rem;
+  margin-bottom: 27px;
+  margin-bottom: 2.7rem;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
 }
 
 h1 {

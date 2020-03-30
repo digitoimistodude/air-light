@@ -122,6 +122,12 @@ h6 {
   color: $color-headings;
   font-family: $font-headings;
   font-weight: $headings-weight;
+  margin-top: 2.7rem;
+  margin-bottom: 2.7rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 // Define heading scales
