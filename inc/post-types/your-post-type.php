@@ -39,6 +39,7 @@ class Your_Post_Type extends Post_Type {
     $args = [
       'labels'              => $generated_labels,
       'description'         => '',
+      'menu_icon'           => null,
       'rewrite'             => [
         'slug' => 'your-post-type',
       ],
