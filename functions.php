@@ -153,4 +153,4 @@ require get_theme_file_path( '/inc/includes.php' );
 require get_theme_file_path( '/inc/template-tags.php' );
 
 // Run theme setup
-theme_setup();
+add_action( 'init', __NAMESPACE__ . '\theme_setup' );

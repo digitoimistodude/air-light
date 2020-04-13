@@ -39,6 +39,7 @@ class Your_Post_Type extends Post_Type {
     $args = [
       'labels'              => $generated_labels,
       'description'         => '',
+      'menu_icon'           => null,
       'rewrite'             => [
         'slug' => 'your-post-type',
       ],
@@ -46,7 +47,9 @@ class Your_Post_Type extends Post_Type {
       'taxonomies'          => [],
       'show_in_menu'        => true,
       'public'              => true,
+      'has_archive'         => false,
       'exclude_from_search' => false,
+      'show_in_rest'        => false,
     ];
 
     $this->register_wp_post_type( $this->slug, $args );
