@@ -39,17 +39,16 @@ class Your_Taxonomy extends Taxonomy {
 
     $args = [
       'labels'            => $labels,
-      'public'            => true,
+      'public'            => false,
       'show_in_nav_menus' => true,
       'show_admin_column' => true,
-      'hierarchical'      => false,
-      'show_tagcloud'     => true,
+      'hierarchical'      => true,
+      'show_tagcloud'     => false,
       'show_ui'           => true,
-      'query_var'         => true,
+      'query_var'         => false,
       'rewrite'           => [
         'slug' => 'your-taxonomy',
       ],
-      'query_var'         => true,
     ];
 
     $this->register_wp_taxonomy( $this->slug, $post_types, $args );
