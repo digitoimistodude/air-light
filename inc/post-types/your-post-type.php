@@ -46,7 +46,7 @@ class Your_Post_Type extends Post_Type {
       'supports'            => [ 'title', 'editor', 'thumbnail' ],
       'taxonomies'          => [],
       'show_in_menu'        => true,
-      'public'              => true,
+      'public'              => false,
       'has_archive'         => false,
       'exclude_from_search' => false,
       'show_in_rest'        => false,
