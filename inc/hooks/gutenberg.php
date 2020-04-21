@@ -16,12 +16,12 @@ namespace Air_Light;
  * Restrict blocks to only allowed blocks in the settings
  */
 function allowed_block_types( $allowed_blocks, $post ) {
-  if ( 'all' === THEME_SETTINGS['allowed_blocks'] ) {
+  if ( ! isset( THEME_SETTINGS['allowed_blocks'] ) || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
     return $allowed_blocks;
   }
 
   // Add the default allowed blocks
-  $allowed_blocks = THEME_SETTINGS['allowed_blocks']['default'];
+  $allowed_blocks = isset( THEME_SETTINGS['allowed_blocks']['default'] ) ? THEME_SETTINGS['allowed_blocks']['default'] : [];
 
   // If there is post type specific blocks, add them to the allowed blocks list
   if ( null !== THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) {
