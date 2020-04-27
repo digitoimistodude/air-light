@@ -955,10 +955,6 @@ figure {
   margin-top: 0;
 }
 
-figure > img {
-  width: 100%;
-}
-
 figcaption {
   margin-top: 0;
   font-style: normal;
