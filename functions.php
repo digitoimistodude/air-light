@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-04-27 13:13:06
+ * @Last Modified time: 2020-04-28 09:45:24
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '5.1.1' );
+define( 'AIR_LIGHT_VERSION', '5.1.2' );
 
 /**
  * Theme settings
@@ -96,7 +96,7 @@ $theme_settings = [
     'default' => [
       'core/archives',
       'core/audio',
-      'core/button',
+      'core/buttons',
       'core/categories',
       'core/code',
       'core/column',
