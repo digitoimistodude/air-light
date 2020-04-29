@@ -4,15 +4,33 @@
 // The main layout for the website navigation, for the mobile
 // version only.
 // -----------------------------------------------------------
-$nav-toggle-color: #333;
-$nav-toggle-active-color: #fff;
-$nav-background-color: #232426;
+$nav-background-color: rgba($color-default-background, .97);
+$nav-toggle: (
+  'color': $color-white,
+  'active-color': $color-white,
+  );
+$nav-links: (
+  'color': $color-white,
+  'color-active': $color-white,
+  'color-current': $color-links,
+  'font-weight': 400,
+  'font-size': 1.6rem,
+);
+$dropdown: (
+  'background': transparent,
+  );
+$dropdown-toggle: (
+  'color': $color-white,
+  'background': transparent,
+  'active-color': $color-white,
+  'active-background': transparent,
+);
 $hamburger-padding-x: 1.5rem;
 $hamburger-padding-y: 5rem;
 $hamburger-layer-width: 4rem;
 $hamburger-layer-height: .2rem;
 $hamburger-layer-spacing: .6rem;
-$hamburger-layer-color: $nav-toggle-color;
+$hamburger-layer-color: map-get($nav-toggle, 'color');
 $hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
@@ -107,9 +125,9 @@ $nav-open-from-direction: top;
         padding-bottom: 1rem;
         padding-left: 5%;
         padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
-        color: #fff;
-        font-size: 1.6rem;
-        font-weight: 400;
+        color: map-get($nav-links, 'color');
+        font-size: map-get($nav-links, 'font-size');
+        font-weight: map-get($nav-links, 'font-weight');
         line-height: 1.7rem;
         text-decoration: none;
         position: relative;
@@ -131,11 +149,12 @@ $nav-open-from-direction: top;
       a:hover,
       a:focus,
       a:active {
-        color: $color-links;
+        color: map-get($nav-links, 'color-active');
       }
 
-      .current {
-        color: #d23600;
+      .current-menu-parent > a,
+      .current-menu-item > a {
+        color: map-get($nav-links, 'color-current');
       }
 
       .disabled {
@@ -160,24 +179,29 @@ $nav-open-from-direction: top;
         overflow: hidden;
         font: bold 18px/37px monospace;
         text-align: center;
-        background: #202020;
-        color: #fff;
+        background: map-get($dropdown-toggle, 'background');
+        color: map-get($dropdown-toggle, 'color');
+        border: 0;
         padding: 0;
         z-index: 9999;
-        border: 0;
       }
 
       .dropdown-toggle:focus {
         z-index: 10000;
       }
 
+      // Hide desktop toggles
+      .dropdown-toggle svg {
+        display: none;
+      }
+
       .dropdown-toggle:before {
         content: '+';
       }
 
-      .dropdown-toggle:hover {
-        background-color: #3e4853;
-        color: #fff;
+      .dropdown-toggle.toggled-on {
+        background: map-get($dropdown-toggle, 'active-background');
+        color: map-get($dropdown-toggle, 'active-color');
       }
 
       .dropdown-toggle.toggled-on:before {
@@ -187,7 +211,7 @@ $nav-open-from-direction: top;
 
       // Dropdowns
       ul {
-        background: rgba(#666, .1);
+        background: map-get($dropdown, 'background');
         margin-left: 0;
         padding: 0;
       }
@@ -237,8 +261,8 @@ $nav-open-from-direction: top;
   -webkit-touch-callout: none;
   user-select: none;
   text-decoration: none;
-  padding: 2rem;
-  margin: 0 -2rem 0 0;
+  padding: 0;
+  margin: 0;
   background: transparent;
   cursor: pointer;
   position: relative;
@@ -247,7 +271,7 @@ $nav-open-from-direction: top;
   display: none;
 
   span {
-    color: $nav-toggle-color;
+    color: map-get($nav-toggle, 'color');
     font-size: 1.2em;
   }
 
@@ -256,21 +280,21 @@ $nav-open-from-direction: top;
     outline: none;
 
     span span {
-      background-color: $nav-toggle-color;
+      background-color: map-get($nav-toggle, 'color');
     }
 
     span span:before,
     span span:after {
-      background-color: $nav-toggle-color;
+      background-color: map-get($nav-toggle, 'color');
     }
   }
 
   &:hover,
   &:active {
-    color: $nav-toggle-color;
+    color: map-get($nav-toggle, 'color');
 
     span {
-      color: $nav-toggle-color;
+      color: map-get($nav-toggle, 'color');
     }
   }
 
@@ -280,41 +304,41 @@ $nav-open-from-direction: top;
 
   // Separate active colors for opened state
   &.is-active {
-    color: $nav-toggle-active-color;
+    color: map-get($nav-toggle, 'active-color');
   }
 
   &.is-active span:focus,
   &.is-active span.focus {
     .hamburger-box .hamburger-inner {
-      background-color: $nav-toggle-active-color;
+      background-color: map-get($nav-toggle, 'active-color');
     }
 
     .hamburger-box .hamburger-inner:after {
-      background-color: $nav-toggle-active-color;
+      background-color: map-get($nav-toggle, 'active-color');
     }
   }
 
   &.is-active span.hamburger-box {
     .hamburger-inner {
-      background-color: $nav-toggle-active-color;
+      background-color: map-get($nav-toggle, 'active-color');
     }
 
     .hamburger-inner:after {
-      background-color: $nav-toggle-active-color;
+      background-color: map-get($nav-toggle, 'active-color');
     }
   }
 
   &.is-active span:focus,
   &.is-active span:hover,
   &.is-active span:active {
-    color: $nav-toggle-active-color;
+    color: map-get($nav-toggle, 'active-color');
 
     span {
-      color: $nav-toggle-active-color;
+      color: map-get($nav-toggle, 'active-color');
     }
   }
 
   &.is-active span {
-    color: $nav-toggle-active-color;
+    color: map-get($nav-toggle, 'active-color');
   }
 }

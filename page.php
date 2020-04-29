@@ -14,6 +14,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
 
+namespace Air_Light;
+
 the_post();
 
 get_header();
@@ -31,12 +33,14 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
         </header><!-- .entry-header -->
 
         <div class="entry-content">
-          <?php the_content();
 
-          wp_link_pages( array(
+          <?php the_content(); ?>
+
+          <?php wp_link_pages( [
             'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ),
             'after'  => '</div>',
-          ) ); ?>
+          ] ); ?>
+
         </div><!-- .entry-content -->
 
         <?php if ( get_edit_post_link() ) : ?>
@@ -46,11 +50,11 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
                 /* translators: %s: Name of current post. Only visible to screen readers */
                 wp_kses(
                   __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
-                  array(
-                    'span' => array(
-                      'class' => array(),
-                    ),
-                  )
+                  [
+                    'span' => [
+                      'class' => [],
+                    ],
+                  ]
                 ),
                 get_the_title()
               ),

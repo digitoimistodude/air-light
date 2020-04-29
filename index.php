@@ -8,40 +8,50 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:36:41
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-03-17 10:17:21
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
+
+namespace Air_Light;
 
 get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 <div id="content" class="content-area">
-	<main role="main" id="main" class="site-main">
+  <main role="main" id="main" class="site-main">
     <div class="container">
 
-			<?php if ( have_posts() ) {
-				if ( is_home() && ! is_front_page() ) { ?>
-				  <header>
-            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+      <?php if ( have_posts() ) : ?>
+
+        <?php if ( is_home() && ! is_front_page() ) : ?>
+
+          <header>
+            <h1 class="entry-title screen-reader-text">
+              <?php single_post_title(); ?>
+            </h1>
           </header>
-				<?php }
 
-				while ( have_posts() ) {
-					the_post();
-					get_template_part( 'template-parts/content', get_post_type() );
-				}
+        <?php endif; ?>
 
-				the_posts_navigation();
+        <?php while ( have_posts() ) : the_post(); ?>
 
-			} else {
-				get_template_part( 'template-parts/content', 'none' );
-			} ?>
+          <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+
+          <?php endwhile; ?>
+
+        <?php the_posts_navigation(); ?>
+
+      <?php else : ?>
+
+        <?php get_template_part( 'template-parts/content', 'none' ); ?>
+
+      <?php endif; ?>
 
     </div><!-- .container -->
-	</main><!-- #main -->
+  </main><!-- #main -->
 </div><!-- #primary -->
 
 <?php get_footer();

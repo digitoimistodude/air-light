@@ -29,6 +29,7 @@
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
+        <exclude name="WordPress.WhiteSpace.PrecisionAlignment" />
         <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
         <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
         <exclude name="WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned" />
@@ -45,6 +46,7 @@
         <exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
         <exclude name="Squiz.Commenting.FileComment.Missing" />
         <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
+        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
 
         <!-- General code style related excludes -->
         <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
@@ -56,6 +58,7 @@
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
         <exclude name="PHPCompatibility.PHP.NewFunctionArrayDereferencing.Found" />
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
 
         <!-- General WordPress stuff we like to overrule -->
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
@@ -72,6 +75,7 @@
         <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
         <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
         <exclude name="WordPress.PHP.DontExtract.extract_extract" />
+        <exclude name="WordPress.PHP.DisallowShortTernary" />
 
         <!-- Translations related, not always necessary, too strict -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />

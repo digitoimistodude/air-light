@@ -3,8 +3,8 @@
  * Template part for displaying a message that posts cannot be found.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2019-10-15 14:38:21
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2020-03-17 10:17:21
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -12,9 +12,9 @@
 ?>
 
 <section class="no-results not-found">
-	<header class="page-header">
-	  <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'air-light' ); ?></h1>
-	</header><!-- .page-header -->
+	<header class="entry-header">
+	  <h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'air-light' ); ?></h1>
+	</header><!-- .entry-header -->
 
 	<div class="page-content">
 	  <?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
