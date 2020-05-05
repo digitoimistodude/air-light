@@ -85,6 +85,10 @@
 
         <!-- Many times when developing a customer case we have placeholders for SVG includes, so unnecessary error reports happen with this rule -->
         <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
+
+        <!-- Other useful excludes -->
+        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
+        <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.
