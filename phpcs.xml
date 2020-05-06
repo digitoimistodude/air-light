@@ -1,3 +1,9 @@
+<!--
+  @Author: Roni Laukkarinen
+  @Date:   2020-05-06 09:53:22
+  @Last Modified by:   Roni Laukkarinen
+  @Last Modified time: 2020-05-06 09:53:22
+-->
 <?xml version="1.0"?>
 <ruleset name="WordPress Theme Coding Standards">
     <!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
@@ -89,6 +95,7 @@
         <!-- Other useful excludes -->
         <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
         <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
+        <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.
