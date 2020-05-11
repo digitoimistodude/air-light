@@ -87,7 +87,6 @@
         <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
 
         <!-- Other useful excludes -->
-        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
         <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
         <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
         <exclude name="PEAR.NamingConventions.ValidClassName.StartWithCapital" />
