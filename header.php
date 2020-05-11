@@ -1,14 +1,15 @@
 <?php
 /**
- * The header for our theme
+ * Template for header
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * <head> section and everything up until <div id="content">
  *
- * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-02-21 13:30:49
+ * @Author: Roni Laukkarinen
+ * @Date: 2020-05-11 13:17:32
+ * @Last Modified by: Roni Laukkarinen
+ * @Last Modified time: 2020-05-11 13:17:32
+ *
  * @package air-light
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 namespace Air_Light;
@@ -16,6 +17,7 @@ namespace Air_Light;
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
+
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,7 +33,7 @@ namespace Air_Light;
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
 
     <div class="nav-container">
-      <header class="site-header" role="banner">
+      <header class="site-header">
 
         <?php get_template_part( 'template-parts/header/branding' ); ?>
 
