@@ -1,32 +1,36 @@
 <?php
 /**
- * The template for displaying the footer
+ * Template for displaying the footer
  *
- * Contains the closing of the #content div and all content after.
+ * Description for template.
  *
- * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-03 15:07:17
- * @package air-light
+ * @Author: Roni Laukkarinen
+ * @Date: 2020-05-11 13:33:49
+ * @Last Modified by: Roni Laukkarinen
+ * @Last Modified time: 2020-05-11 13:33:49
+ *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * @package air-light
  */
 
 namespace Air_Light;
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer role="contentinfo" id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer">
 
-    <?php get_template_part( 'template-parts/footer/demo-content' ); ?>
+  <?php get_template_part( 'template-parts/footer/demo-content' ); ?>
 
-    <a href="#page" class="js-trigger top" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html_e( 'Back to top', 'air-light' ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a>
+  <a href="#page" class="js-trigger top" data-mt-duration="300"><span
+      class="screen-reader-text"><?php echo esc_html_e( 'Back to top', 'air-light' ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a>
 
-	</footer><!-- #colophon -->
+</footer><!-- #colophon -->
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 </body>
+
 </html>
