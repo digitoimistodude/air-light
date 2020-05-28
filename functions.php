@@ -1,34 +1,23 @@
+<?php
 /**
-* Template for .
-*
-* Description for template.
-*
-* @Author: Roni Laukkarinen
-* @Date: 2020-05-11 13:29:16
-* @Last Modified by: Roni Laukkarinen
-* @Last Modified time: 2020-05-11 13:29:16
-*
-* @package
-*/
-/**
-* Gather all bits and pieces together.
-* If you end up having multiple post types, taxonomies,
-* hooks and functions - please split those to their
-* own files under /inc and just require here.
-*
-* @Date: 2019-10-15 12:30:02
-* @Last Modified by: Roni Laukkarinen
-* @Last Modified time: 2020-04-28 09:45:24
-*
-* @package air-light
-*/
+ * Gather all bits and pieces together.
+ * If you end up having multiple post types, taxonomies,
+ * hooks and functions - please split those to their
+ * own files under /inc and just require here.
+ *
+ * @Date: 2019-10-15 12:30:02
+ * @Last Modified by: Roni Laukkarinen
+ * @Last Modified time: 2020-04-28 09:45:24
+ *
+ * @package air-light
+ */
 
 namespace Air_Light;
 
 /**
 * The current version of the theme.
 */
-define( 'AIR_LIGHT_VERSION', '5.1.4' );
+define( 'AIR_LIGHT_VERSION', '5.1.5' );
 
 /**
 * Theme settings
