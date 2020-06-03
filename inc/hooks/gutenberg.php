@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-02-21 11:15:27
+ * @Last Modified time: 2020-06-03 12:47:42
  *
  * @package air-light
  */
@@ -16,7 +16,7 @@ namespace Air_Light;
  * Restrict blocks to only allowed blocks in the settings
  */
 function allowed_block_types( $allowed_blocks, $post ) {
-  if ( ! isset( THEME_SETTINGS['allowed_blocks'] ) || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
+  if ( null !== THEME_SETTINGS['allowed_blocks'] || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
     return $allowed_blocks;
   }
 
