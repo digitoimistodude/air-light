@@ -112,7 +112,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _normalize.scss         # → Browser reset
 │   │   └── global.scss             # → Core CSS file that calls all the modular files
 │   ├── extra/                      # → Extra, optional styles
-│   │   ├── _slick.scss.            # → Base styles for slick carousel
+│   │   ├── _slick.scss             # → Base styles for slick carousel
 │   │   └── _sticky-nav.scss        # → Sticky top navigation styles
 │   ├── features/                   # → Fuctionality styles
 │   │   ├── _breadcrumbs.scss       # → Styles for breadcrumb trail WordPress plugin
@@ -129,7 +129,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   └── _woocommerce.scss       # → WooCommerce webshop styles (optional)
 │   ├── navigation/                 # → Navigation styles
 │   │   ├── _burger.scss            # → Burger styles and animations
-│   │   ├── _nav-core.scss.         # → Styles for both desktop and mobile navigation
+│   │   ├── _nav-core.scss          # → Styles for both desktop and mobile navigation
 │   │   ├── _nav-desktop.scss       # → Desktop navigation styles and dropdowns
 │   │   └── _nav-mobile.scss        # → Navigation styles for mobile and touch devices
 │   ├── views/                      # → Templates, archives, pages and views go here
