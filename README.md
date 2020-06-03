@@ -70,9 +70,9 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── archive.php                     # → Default archive template
 ├── bin/                            # → Scripts
 │   ├── air-move-in.sh              # → A script for moving all dev files back to the theme
-│   ├── air-move-out.sh              # → A script for moving all dev files out of the theme for testing with Theme Check plugin
-│   ├── air-pack.sh                  # → A script that makes a package for WordPress Theme Directory
-│   ├── newtheme.sh                  # → The start script for creating YOUR own theme out of air-light
+│   ├── air-move-out.sh             # → A script for moving all dev files out of the theme for testing with Theme Check plugin
+│   ├── air-pack.sh                 # → A script that makes a package for WordPress Theme Directory
+│   ├── newtheme.sh                 # → The start script for creating YOUR own theme out of air-light
 ├── comments.php                    # → Default comments template (can be deleted if not needed)
 ├── css/                            # → CSS files for production (never edit)
 │   ├── global.css                  # → Unminified, stylefmtd CSS file
