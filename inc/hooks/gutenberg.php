@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-06-03 12:47:42
+ * @Last Modified time: 2020-06-03 13:08:26
  *
  * @package air-light
  */
@@ -21,7 +21,7 @@ function allowed_block_types( $allowed_blocks, $post ) {
   }
 
   // Add the default allowed blocks
-  $allowed_blocks = isset( THEME_SETTINGS['allowed_blocks']['default'] ) ? THEME_SETTINGS['allowed_blocks']['default'] : [];
+  $allowed_blocks = null !== THEME_SETTINGS['allowed_blocks']['default'] ? THEME_SETTINGS['allowed_blocks']['default'] : [];
 
   // If there is post type specific blocks, add them to the allowed blocks list
   if ( null !== THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) {
