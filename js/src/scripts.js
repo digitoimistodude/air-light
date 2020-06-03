@@ -3,8 +3,6 @@
  */
 
 // Import modules (comment to disable)
-
-import "./skip-link-focus-fix";
 import MoveTo from "moveto";
 // import './sticky-nav.js'
 // import slick from 'slick-carousel';

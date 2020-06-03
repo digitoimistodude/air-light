@@ -99,7 +99,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── lazyload.js             # → Script that lazyloads images to img or background (from 4.7.1)
 │   │   ├── navigation.js           # → Accessible multi-level navigation (from 3.4.5)
 │   │   ├── scripts.js              # → Theme core JavaScript file (from 1.0.0)
-│   │   ├── skip-link-focus-fix.js  # → Skip link fix from _s
 │   │   └── sticky-nav.js           # → Sticky nav functionality (optional)based themes
 ├── node_modules/                   # → Node.js packages (never edit)
 ├── package.json                    # → Node.js dependencies and scripts
