@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-02-21 11:15:27
+ * @Last Modified time: 2020-06-03 13:08:26
  *
  * @package air-light
  */
@@ -16,12 +16,12 @@ namespace Air_Light;
  * Restrict blocks to only allowed blocks in the settings
  */
 function allowed_block_types( $allowed_blocks, $post ) {
-  if ( ! isset( THEME_SETTINGS['allowed_blocks'] ) || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
+  if ( null !== THEME_SETTINGS['allowed_blocks'] || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
     return $allowed_blocks;
   }
 
   // Add the default allowed blocks
-  $allowed_blocks = isset( THEME_SETTINGS['allowed_blocks']['default'] ) ? THEME_SETTINGS['allowed_blocks']['default'] : [];
+  $allowed_blocks = null !== THEME_SETTINGS['allowed_blocks']['default'] ? THEME_SETTINGS['allowed_blocks']['default'] : [];
 
   // If there is post type specific blocks, add them to the allowed blocks list
   if ( null !== THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) {

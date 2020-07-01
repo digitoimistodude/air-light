@@ -70,9 +70,9 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── archive.php                     # → Default archive template
 ├── bin/                            # → Scripts
 │   ├── air-move-in.sh              # → A script for moving all dev files back to the theme
-│   ├── air-move-out.sh              # → A script for moving all dev files out of the theme for testing with Theme Check plugin
-│   ├── air-pack.sh                  # → A script that makes a package for WordPress Theme Directory
-│   ├── newtheme.sh                  # → The start script for creating YOUR own theme out of air-light
+│   ├── air-move-out.sh             # → A script for moving all dev files out of the theme for testing with Theme Check plugin
+│   ├── air-pack.sh                 # → A script that makes a package for WordPress Theme Directory
+│   ├── newtheme.sh                 # → The start script for creating YOUR own theme out of air-light
 ├── comments.php                    # → Default comments template (can be deleted if not needed)
 ├── css/                            # → CSS files for production (never edit)
 │   ├── global.css                  # → Unminified, stylefmtd CSS file
@@ -99,7 +99,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── lazyload.js             # → Script that lazyloads images to img or background (from 4.7.1)
 │   │   ├── navigation.js           # → Accessible multi-level navigation (from 3.4.5)
 │   │   ├── scripts.js              # → Theme core JavaScript file (from 1.0.0)
-│   │   ├── skip-link-focus-fix.js  # → Skip link fix from _s
 │   │   └── sticky-nav.js           # → Sticky nav functionality (optional)based themes
 ├── node_modules/                   # → Node.js packages (never edit)
 ├── package.json                    # → Node.js dependencies and scripts
@@ -113,7 +112,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _normalize.scss         # → Browser reset
 │   │   └── global.scss             # → Core CSS file that calls all the modular files
 │   ├── extra/                      # → Extra, optional styles
-│   │   ├── _slick.scss.            # → Base styles for slick carousel
+│   │   ├── _slick.scss             # → Base styles for slick carousel
 │   │   └── _sticky-nav.scss        # → Sticky top navigation styles
 │   ├── features/                   # → Fuctionality styles
 │   │   ├── _breadcrumbs.scss       # → Styles for breadcrumb trail WordPress plugin
@@ -130,7 +129,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   └── _woocommerce.scss       # → WooCommerce webshop styles (optional)
 │   ├── navigation/                 # → Navigation styles
 │   │   ├── _burger.scss            # → Burger styles and animations
-│   │   ├── _nav-core.scss.         # → Styles for both desktop and mobile navigation
+│   │   ├── _nav-core.scss          # → Styles for both desktop and mobile navigation
 │   │   ├── _nav-desktop.scss       # → Desktop navigation styles and dropdowns
 │   │   └── _nav-mobile.scss        # → Navigation styles for mobile and touch devices
 │   ├── views/                      # → Templates, archives, pages and views go here
