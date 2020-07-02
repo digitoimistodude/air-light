@@ -1,0 +1,102 @@
+/**
+ * Form helpers
+ */
+
+// Global button styles
+@mixin button() {
+    font-size: 1.6rem;
+    background: $color-links;
+    color: $color-white;
+    border: 0;
+    width: auto;
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    transition: 150ms linear background;
+    font-family: $font-base;
+
+    @media (max-width: $container-mobile) {
+      // Wrap long buttons on mobile
+      display: block;
+      text-align: center;
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+      background: darken($color-links, 15%);
+    }
+
+    &.button-ghost {
+      background-color: transparent;
+      border: 1px solid $color-links;
+      color: $color-links;
+    }
+
+    &.button-ghost:hover {
+      background-color: $color-links;
+      color: $color-white;
+    }
+}
+
+// Global input element styles
+@mixin input() {
+    font-family: $font-base;
+    background: $color-input-background;
+    color: $color-input-text;
+    border: 0;
+    padding: 15px 20px;
+    line-height: 24px;
+    transition: background .55s;
+    text-decoration: none;
+    position: relative;
+    appearance: none;
+    margin-bottom: 0;
+
+    &::placeholder {
+        color: lighten($color-input-text, 25%);
+        opacity: .4;
+    }
+
+    &:focus {
+        background: $color-input-background-focus;
+        border-color: $color-black;
+        outline: 0;
+
+        &::placeholder {
+        color: lighten($color-input-text, 15%);
+        opacity: .8;
+        }
+    }
+}
+
+// Specific select element styles
+@mixin select() {
+    border: 0;
+    border-radius: 0;
+    background-image: url('../svg/select.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 40px;
+    transition: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  
+    &::-ms-expand {
+      display: none;
+    }
+  
+    &:hover,
+    &:focus {
+      border-color: $color-black;
+    }
+}
+

@@ -6,7 +6,7 @@ body {
     // Breadcrumb
     .woocommerce-breadcrumb {
       font-weight: 600;
-      color: $color-fog;
+      color: lighten($color-body, 20%);
       font-family: $font-headings;
       text-transform: uppercase;
       font-size: 16px;
@@ -17,8 +17,8 @@ body {
     .button.disabled,
     .button.alt,
     .button[disabled] {
-      background: #222;
-      color: #fff;
+      background: $color-body;
+      color: $color-white;
       border-radius: 0;
     }
 
@@ -26,7 +26,7 @@ body {
     .button.disabled:hover,
     .button.alt:hover,
     .button[disabled]:hover {
-      background: #222;
+      background: $color-body;
     }
 
     // Product archive listing

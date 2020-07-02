@@ -58,12 +58,12 @@ $submenu-dropdown-toggle-hover: (
     // Main level links
     .nav-primary > ul > li > a,
     .nav-primary > ul > li > button {
-      color: #fff;
+      color: $color-white;
       position: relative;
     }
 
     .nav-primary > ul > li > a:hover {
-      color: #fff;
+      color: $color-white;
     }
   }
 }
@@ -240,7 +240,7 @@ $submenu-dropdown-toggle-hover: (
         top: 100%;
         right: 0;
         width: map-get($dropdown, 'width');
-        background: #fff;
+        background: $color-white;
         margin-left: 0;
         padding-bottom: .5rem;
         padding-top: .5rem;
@@ -287,7 +287,7 @@ $submenu-dropdown-toggle-hover: (
         }
 
         .disabled {
-          background: #fff;
+          background: $color-white;
           color: #ccc;
         }
       }
@@ -362,7 +362,7 @@ $submenu-dropdown-toggle-hover: (
         top: -16px;
         left: 31px;
         border-width: 8px;
-        border-color: transparent transparent #fff;
+        border-color: transparent transparent $color-white;
       }
     }
 

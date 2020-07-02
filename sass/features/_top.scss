@@ -9,7 +9,7 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: $color_body;
+  background: $color-body;
   width: 40px;
   height: 40px;
   text-decoration: none;
@@ -48,7 +48,7 @@
   }
 
   svg {
-    fill: #fff;
+    fill: $color-white;
     margin: 0;
     opacity: .8;
     transition: all .3s ease;
@@ -68,7 +68,7 @@
     background: $color_links;
 
     svg {
-      fill: #fff;
+      fill: $color-white;
       margin-top: -35%;
     }
   }

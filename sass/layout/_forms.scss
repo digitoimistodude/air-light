@@ -13,42 +13,7 @@
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    font-size: 1.6rem;
-    background: $color-links;
-    color: $color-white;
-    border: 0;
-    width: auto;
-    display: inline-block;
-    padding: 1.2rem 3rem;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    position: relative;
-    cursor: pointer;
-    transition: 150ms linear background;
-    font-family: $font-base;
-
-    @media (max-width: $container-mobile) {
-      // Wrap long buttons on mobile
-      display: block;
-      text-align: center;
-    }
-
-    &:hover,
-    &:focus {
-      color: $color-white;
-      background: darken($color-links, 15%);
-    }
-
-    &.button-ghost {
-      background-color: transparent;
-      border: 1px solid $color-links;
-      color: $color-links;
-    }
-
-    &.button-ghost:hover {
-      background-color: $color-links;
-      color: $color-white;
-    }
+    @include button();
   }
 }
 
@@ -96,58 +61,11 @@ input[type="week"],
 input[type="email"],
 input[type="search"] {
   @extend %default;
-  font-family: $font-base;
-  background: #f0f0f0;
-  border: 0;
-  padding: 15px 20px;
-  line-height: 24px;
-  transition: background .55s;
-  text-decoration: none;
-  position: relative;
-  appearance: none;
-  margin-bottom: 0;
-
-  &::placeholder {
-    color: #434343;
-    opacity: .4;
-  }
-
-  &:focus {
-    background: #dfdfdf;
-    border-color: rgba(#222, 1);
-    outline: 0;
-
-    &::placeholder {
-      color: #222;
-      opacity: .8;
-    }
-  }
+  @include input();
 }
 
 select {
-  border: 0;
-  border-radius: 0;
-  background-image: url('../svg/select.svg');
-  background-repeat: no-repeat;
-  background-position: right center;
-  padding-right: 40px;
-  transition: none;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
-
-  &::-ms-expand {
-    display: none;
-  }
-
-  &:hover,
-  &:focus {
-    border-color: #222;
-  }
+  @include select();
 }
 
 // General

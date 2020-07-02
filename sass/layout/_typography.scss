@@ -41,39 +41,6 @@ a {
   }
 }
 
-// Special link styles for example in blog posts, use with @extend
-%link {
-  color: #111;
-  text-decoration: none;
-  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
-  box-shadow: inset 0 -1px 0 0 #fff, inset 0 -2px 0 0 rgba(#111, .6);
-  transition: all .55s;
-  background-image: linear-gradient(to top, #111, #111);
-  background-size: 100% 0;
-  background-position: left bottom;
-  background-repeat: no-repeat;
-
-  &:hover {
-    color: #fff;
-    text-shadow: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    box-shadow: none;
-    background-size: 100% 2.8rem;
-    margin-left: -5px;
-    margin-right: -5px;
-  }
-}
-
-// Preset for small fonts
-%small {
-  @include responsive-font(14px, 17px);
-}
-
-%extrasmall {
-  @include responsive-font(12px, 14px);
-}
-
 // Defaults
 p,
 dd,
@@ -92,11 +59,8 @@ code,
 th,
 td,
 table,
-tr,
-%default {
-  @include responsive-font($font-min-size, $font-max-size);
-  letter-spacing: -.003em;
-  line-height: $line-height;
+tr {
+  @extend %default;
 }
 
 p {
@@ -131,97 +95,29 @@ h6 {
   }
 }
 
-// Define heading scales
-// Current: Perfect fourth: https://type-scale.com/
-$heading_typescale: medium;
-
-// Defaults are null
-$h1_min: null;
-$h1_max: null;
-$h2_min: null;
-$h2_max: null;
-$h3_min: null;
-$h3_max: null;
-$h4_min: null;
-$h4_max: null;
-$h5_min: null;
-$h5_max: null;
-$h6_min: null;
-$h6_max: null;
-
-@if $heading_typescale == 'large' {
-  $h1_min: 32px;
-  $h1_max: 67px;
-  $h2_min: 24px;
-  $h2_max: 51px;
-  $h3_min: 21px;
-  $h3_max: 38px;
-  $h4_min: 18px;
-  $h4_max: 28px;
-  $h5_min: 14px;
-  $h5_max: 28px;
-  $h6_min: 14px;
-  $h6_max: 21px;
+// Heading level specific
+h1 {
+  @extend %h1;
 }
 
-@if $heading_typescale == 'medium' {
-  $h1_min: 32px;
-  $h1_max: 51px;
-  $h2_min: 24px;
-  $h2_max: 38px;
-  $h3_min: 21px;
-  $h3_max: 28px;
-  $h4_min: 18px;
-  $h4_max: 21px;
-  $h5_min: 14px;
-  $h5_max: 17px;
-  $h6_min: 14px;
-  $h6_max: 12px;
+h2 {
+  @extend %h2;
 }
 
-@if $heading_typescale == 'small' {
-  $h1_min: 28px;
-  $h1_max: 38px;
-  $h2_min: 21px;
-  $h2_max: 28px;
-  $h3_min: 20px;
-  $h3_max: 21px;
-  $h4_min: 16px;
-  $h4_max: 18px;
-  $h5_min: 16px;
-  $h5_max: 18px;
-  $h6_min: 14px;
-  $h6_max: 16px;
+h3 {
+  @extend %h3;
 }
 
-h1,
-%h1 {
-  @include responsive-font($h1_min, $h1_max);
+h4 {
+  @extend %h4;
 }
 
-h2,
-%h2 {
-  @include responsive-font($h2_min, $h2_max);
+h5 {
+  @extend %h5;
 }
 
-h3,
-%h3 {
-  @include responsive-font($h3_min, $h3_max);
-}
-
-h4,
-%h4 {
-  @include responsive-font($h4_min, $h4_max);
-}
-
-h5,
-%h5 {
-  @include responsive-font($h5_min, $h5_max);
-}
-
-h6,
-%h6 {
-  @include responsive-font($h6_min, $h6_max);
+h6 {
+  @extend %h6;
 }
 
 // Lists
@@ -294,7 +190,7 @@ blockquote {
     margin-bottom: 0;
     position: relative;
     overflow: visible;
-    color: #666;
+    color: $color-darkgrey;
   }
 
   @media (min-width: $container-ipad) {
@@ -324,7 +220,7 @@ cite {
 
 // Horizontal rule.
 hr {
-  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
+  background-image: linear-gradient(to bottom, rgba($color-body, 0) 50%, $color-body 50%);
   background-repeat: repeat-x;
   background-size: 2px 2px;
   background-position: 0 50%;

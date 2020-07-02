@@ -9,7 +9,7 @@
 
 .block.block-slider {
   background-position: center;
-  background-color: #333;
+  background-color: $color-shade;
 
   .item {
     padding-left: 2rem;
@@ -23,12 +23,12 @@
 
   h1,
   h2 {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
   }
 
   p {
-    color: #fff;
+    color: $color-white;
     opacity: .7;
   }
 }
