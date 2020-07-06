@@ -12,14 +12,14 @@ $color-cyan-bright: #60f4ea;
 $color-blue-bright: #81a9ff;
 $color-blue-dark: darken($color-blue, 40%);
 
-// Base colors
+// Base theme colors
 $color-white: #fff;
 $color-black: #222;
 $color-shadows: #b8bbb3;
 $color-darkgrey: #4f5964;
 $color-lightgrey: #f5f5f5;
 
-// Text and background colors
+// Text colors
 $color-links: $color-blue;
 $color-hover: $color-cyan;
 $color-body: $color-black;
@@ -27,8 +27,15 @@ $color-headings: $color-blue;
 $color-success: #30dd44;
 $color-warning: #ed7e29;
 $color-error: #dd3030;
-$color-default-background: $color-blue-dark;
+$color-breadcrumb: lighten($color-body, 20%);
+$color-del-text: lighten($color-body, 20%);
+$color-footer-text: lighten($color-body, 20%);
+$color-footer-links: $color-links;
+
+// Background colors
+$color-default-background: $color-blue-dark; // value comes from demo colors above, replace if deleting demo content.
 $color-shade: #333;
+$color-footer-bg: $color-lightgrey;
 
 // Form colors
 $color-input-text: $color-body;

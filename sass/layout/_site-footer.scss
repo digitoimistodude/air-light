@@ -12,26 +12,26 @@
 
 .site-footer {
   padding: 20px;
-  background: $color-lightgrey;
+  background: $color-footer-bg;
   overflow: hidden;
   clear: both;
 
   svg {
-    fill: lighten($color-body, 20%);
+    fill: $color-footer-text;
     top: 2px;
     position: relative;
   }
 
   p,
   span {
-    color: lighten($color-body, 20%);
+    color: $color-footer-text;
   }
 
   a {
-    color: lighten($color-body, 20%);
+    color: $color-footer-text;
 
     &:hover {
-      color: $color-links;
+      color: $color-footer-links;
     }
   }
 }
