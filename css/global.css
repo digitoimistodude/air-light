@@ -3558,6 +3558,13 @@ form.search-form .search-submit {
   opacity: 0;
   transition: opacity .3s 0s, visibility 0s .3s;
   z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top:focus {
+  outline: none;
 }
 
 .back-to-top.has-light-bg svg {
@@ -3592,8 +3599,6 @@ form.search-form .search-submit {
 
 .top {
   background: transparent;
-  width: 50px;
-  height: 50px;
 }
 
 .top svg {

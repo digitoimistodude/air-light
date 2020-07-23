@@ -16,6 +16,13 @@
   opacity: 0;
   transition: opacity .3s 0s, visibility 0s .3s;
   z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus {
+    outline: none;
+  }
 
   // Accessibility: Change color based on background color the element is on
   &.has-light-bg svg {
@@ -51,8 +58,6 @@
 
 .top {
   background: transparent;
-  width: 50px;
-  height: 50px;
 
   svg {
     position: absolute;
