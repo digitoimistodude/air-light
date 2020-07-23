@@ -3548,53 +3548,52 @@ form.search-form .search-submit {
 }
 
 .back-to-top {
+  width: 50px;
+  height: 50px;
   margin: 0;
   position: fixed;
   bottom: 20px;
   right: 20px;
-}
-
-.top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: transparent;
-  width: 50px;
-  height: 50px;
   text-decoration: none;
   opacity: 0;
   transition: opacity .3s 0s, visibility 0s .3s;
   z-index: 10000;
 }
 
-.top.has-light-bg svg {
+.back-to-top.has-light-bg svg {
   fill: #222;
 }
 
-.top.has-dark-bg svg {
+.back-to-top.has-dark-bg svg {
   fill: #fff;
 }
 
-.top.is-visible,
-.top.fade-out,
-.no-touch .top:hover {
+.back-to-top.is-visible,
+.back-to-top.fade-out,
+.no-touch .back-to-top:hover {
   transition: opacity .3s 0s, visibility 0s 0s;
 }
 
-.top.is-visible {
+.back-to-top.is-visible {
   opacity: 1;
 }
 
-.top.fade-out {
+.back-to-top.fade-out {
   opacity: 1;
 }
 
-.top.fade-out:hover {
+.back-to-top.fade-out:hover {
   opacity: 1;
 }
 
-.no-touch .top:hover {
+.no-touch .back-to-top:hover {
   opacity: 1;
+}
+
+.top {
+  background: transparent;
+  width: 50px;
+  height: 50px;
 }
 
 .top svg {
