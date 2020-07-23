@@ -3547,27 +3547,32 @@ form.search-form .search-submit {
   color: #fff;
 }
 
+.back-to-top {
+  margin: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
 .top {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #222;
-  width: 40px;
-  height: 40px;
+  background: transparent;
+  width: 50px;
+  height: 50px;
   text-decoration: none;
   opacity: 0;
   transition: opacity .3s 0s, visibility 0s .3s;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 10000;
 }
 
-@media (max-width: 480px) {
-  .top {
-    width: 30px;
-    height: 30px;
-  }
+.top.has-light-bg svg {
+  fill: #222;
+}
+
+.top.has-dark-bg svg {
+  fill: #fff;
 }
 
 .top.is-visible,
@@ -3581,7 +3586,7 @@ form.search-form .search-submit {
 }
 
 .top.fade-out {
-  opacity: .3;
+  opacity: 1;
 }
 
 .top.fade-out:hover {
@@ -3593,33 +3598,21 @@ form.search-form .search-submit {
 }
 
 .top svg {
-  fill: #fff;
+  position: absolute;
+  fill: #222;
   margin: 0;
   opacity: .8;
+  font-size: 19px;
   transition: all .3s ease;
-  position: relative;
-  width: 20px;
-  height: 20px;
-}
-
-@media (max-width: 480px) {
-  .top svg {
-    width: 15px;
-    height: 15px;
-  }
-}
-
-.top:hover,
-.top:focus,
-.top:active {
-  background: #3962c9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .top:hover svg,
 .top:focus svg,
 .top:active svg {
-  fill: #fff;
-  margin-top: -35%;
+  transform: translateY(-0.5rem);
 }
 
 .gallery {

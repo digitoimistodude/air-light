@@ -23,8 +23,8 @@ namespace Air_Light;
 
   <?php get_template_part( 'template-parts/footer/demo-content' ); ?>
 
-  <a aria-hidden="true" href="#page" class="js-trigger top" data-mt-duration="300"><span
-      class="screen-reader-text"><?php echo esc_html_e( 'Back to top', 'air-light' ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a>
+  <p class="back-to-top"><a href="#page" class="js-trigger top" data-mt-duration="300"><span
+      class="screen-reader-text"><?php echo esc_html_e( 'Back to top', 'air-light' ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
 
 </footer><!-- #colophon -->
 
