@@ -10,7 +10,7 @@ Air-light (or simply *Air*) is designed to be a minimal starting point for a Wor
 - **JS gzipped:** 3.4 KB *(10.8 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
-![](https://www.dude.fi/air-5.0.1-screenshot.png "Screenshot")
+![](https://i.imgur.com/U0Mn3xl.png "Screenshot")
 
 This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed.
 
@@ -41,12 +41,13 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     3. [WooCommerce support](#woocommerce-support)
 5. [Requirements](#requirements)
 6. [Recommendations for development](#recommendations-for-development)
-7. [Installation](#installation)
-8. [Contributing](#contributing)
+7. [Our way of building new themes](#our-way-of-building-new-themes)
+8. [Installation](#installation)
+9. [Contributing](#contributing)
     1. [Air development](#air-development)
     2. [Debuggers](#debuggers)
     2. [Releasing a new version (staff only)](#releasing-a-new-version-tag-staff-only)
-9. [Notes](#notes)
+10. [Notes](#notes)
 
 ### Please note before using
 
@@ -288,16 +289,19 @@ $('.slider').slick({
 5. Construct your slider like this:
 
 ```` html
-<div class="block block-slider">
-  <div class="container slider">
-    <div class="item">
-      <p><b>Slider item 1</b> Some other content. Lorem ipsum in proident deserunt nostrud. Lorem ipsum in proident deserunt nostrud.</p>
-    </div><!-- .item -->
+<section class="block block-slider">
+  <div class="container">
+    <div class="cols slider">
+      <div class="col item">
+        <p><b>Slider item 1</b> Some other content. Lorem ipsum in proident deserunt nostrud. Lorem ipsum in proident deserunt nostrud.</p>
+      </div><!-- .item -->
 
-    <div class="item">
-      <p><b>Slider item 2</b> Something different to see the change. Lorem ipsum in proident deserunt nostrud culpa veniam sed esse aliqua ea velit aute.</p>
-    </div><!-- .item -->
-</div><!-- .block -->
+      <div class="col item">
+        <p><b>Slider item 2</b> Something different to see the change. Lorem ipsum in proident deserunt nostrud culpa veniam sed esse aliqua ea velit aute.</p>
+      </div><!-- .item -->
+    </div>
+  </div>
+</section><!-- .block -->
 ````
 
 Please note: If you want to change the background to lighter, you will need to edit the svg arrows accordingly.
@@ -325,6 +329,26 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 * Mac OS X
 * [Devpackages](https://github.com/digitoimistodude/devpackages) - Npm, Gulp and Bower
 * [Dudestack](https://github.com/digitoimistodude/dudestack) - A toolkit for creating a new professional WordPress project with deployments. Heavily based on Bedrock by Roots.
+
+### Our way of building new themes
+
+We use ACF and Gutenberg to build new websites on air-light. This is the default block structure we are used to have:
+
+```` html
+<section class="block block-something has-dark-bg">
+  <div class="container">
+    <div class="cols cols-two">
+      <div class="col">
+        <p><b>Column item 1</b> Some other content. Lorem ipsum in proident deserunt nostrud. Lorem ipsum in proident deserunt nostrud.</p>
+      </div><!-- .col -->
+
+      <div class="col">
+        <p><b>Column item 2</b> Something different to see the change. Lorem ipsum in proident deserunt nostrud culpa veniam sed esse aliqua ea velit aute.</p>
+      </div><!-- .col -->
+    </div>
+  </div>
+</section><!-- .block -->
+````
 
 ### Installation
 

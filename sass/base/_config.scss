@@ -5,19 +5,20 @@
 // This is the core file where most of the theme magic happens.
 // --------------------------------------------------------------
 
-// Demo theme colors (you can remove these)
-$color-blue: #3962c9;
-$color-cyan: #159d94;
-$color-cyan-bright: #60f4ea;
-$color-blue-bright: #81a9ff;
-$color-blue-dark: darken($color-blue, 40%);
-
 // Base colors
 $color-white: #fff;
 $color-black: #222;
 $color-shadows: #b8bbb3;
 $color-darkgrey: #4f5964;
 $color-lightgrey: #f5f5f5;
+
+// Brand colors
+$color-blue: #3962c9;
+$color-cyan: #159d94;
+$color-cyan-bright: #60f4ea;
+$color-blue-bright: #81a9ff;
+$color-blue-dark: darken($color-blue, 40%);
+$color-midnight: #03061b;
 
 // Text and background colors
 $color-links: $color-blue;

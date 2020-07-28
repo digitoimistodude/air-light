@@ -3,16 +3,16 @@
 Air-light WordPress Theme, Copyright 2018 Digitoimisto Dude Oy, Roni Laukkarinen
 Air-light is distributed under the terms of the MIT License
 
-Bundled header image, Copyright Sarah Dorweiler
+Bundled header image, Copyright Brady Bellini
 License: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
-Source: https://stocksnap.io/photo/TQ30QBDKB4
+Source: https://stocksnap.io/photo/nature-mountains-3T1GEXSD0R
 
 Contributors: Digitoimisto Dude Oy
 Tags: one-column, accessibility-ready, translation-ready
 
 Requires at least: 4.0
 Tested up to: 5.4.2
-Stable tag: 5.2.4
+Stable tag: 5.3.0
 License: MIT License
 License URI: https://opensource.org/licenses/MIT
 

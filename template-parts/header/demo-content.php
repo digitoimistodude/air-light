@@ -9,7 +9,8 @@ namespace Air_Light;
 
 ?>
 
-<div class="entry-header-demo">
+<section class="block block-entry-header-demo">
+  <div class="shade" aria-hidden="true"></div>
   <div class="inner">
     <div class="logo">
       <?php include get_theme_file_path( THEME_SETTINGS['logo'] ); ?>
@@ -21,9 +22,9 @@ namespace Air_Light;
       <?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?>
     </h1>
   </div>
-</div>
+</section>
 
-<div class="block">
+<section class="block">
   <div class="container">
 
     <?php if ( have_posts() ) : ?>
@@ -41,4 +42,4 @@ namespace Air_Light;
       <?php endif ?>
 
   </div>
-</div>
+</section>

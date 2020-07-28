@@ -418,14 +418,14 @@ template {
 }
 
 .shade {
-  background: #333;
+  background: #03061b;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: 0;
-  opacity: .15;
+  opacity: .35;
 }
 
 .site {
@@ -1913,7 +1913,7 @@ Usage: codyhouse.co/license
   background-color: rgba(var(--color-primary), .1);
 }
 
-.entry-header-demo {
+.block.block-entry-header-demo {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1926,13 +1926,18 @@ Usage: codyhouse.co/license
   text-shadow: 0 0px 30px #3962c9;
   min-height: 530px;
   min-height: 53rem;
+  max-height: 800px;
+  max-height: 80rem;
+  height: 80vh;
   max-width: 100%;
   margin: 0 auto;
-  height: 530px;
-  height: 53rem;
 }
 
-.entry-header-demo .inner {
+.block.block-entry-header-demo .shade {
+  opacity: .4;
+}
+
+.block.block-entry-header-demo .inner {
   display: grid;
   grid-template-rows: 1fr 1fr;
   /* autoprefixer: off */
@@ -1947,7 +1952,7 @@ Usage: codyhouse.co/license
 }
 
 @media (min-width: 770px) {
-  .entry-header-demo .inner {
+  .block.block-entry-header-demo .inner {
     padding: 0;
     display: -ms-grid;
     display: grid;
@@ -1987,7 +1992,7 @@ Usage: codyhouse.co/license
   }
 }
 
-.entry-header-demo .logo {
+.block.block-entry-header-demo .logo {
   color: #60f4ea;
   border-top: 2px solid #fff;
   border-right: 0;
@@ -1999,7 +2004,7 @@ Usage: codyhouse.co/license
   animation: plane-container 10s linear 1s infinite;
 }
 
-.entry-header-demo .logo .logo-name {
+.block.block-entry-header-demo .logo .logo-name {
   display: none;
 }
 
@@ -2059,7 +2064,7 @@ Usage: codyhouse.co/license
   }
 }
 
-.entry-header-demo .logo svg {
+.block.block-entry-header-demo .logo svg {
   padding: 20px;
   padding: 2rem;
   height: auto;
@@ -2073,25 +2078,25 @@ Usage: codyhouse.co/license
 }
 
 @media (max-width: 480px) {
-  .entry-header-demo .logo svg {
+  .block.block-entry-header-demo .logo svg {
     max-width: 15rem;
   }
 }
 
 @media (min-width: 770px) {
-  .entry-header-demo .logo {
+  .block.block-entry-header-demo .logo {
     border-top: 0;
     border-right: 2px solid #fff;
     order: 0;
     text-align: right;
   }
 
-  .entry-header-demo .logo svg {
+  .block.block-entry-header-demo .logo svg {
     padding: 2rem 4rem;
   }
 }
 
-.entry-header-demo h1 {
+.block.block-entry-header-demo h1 {
   font-size: 32px;
   color: #fff;
   margin: 0;
@@ -2103,19 +2108,19 @@ Usage: codyhouse.co/license
 }
 
 @media screen and (min-width: 320px) {
-  .entry-header-demo h1 {
+  .block.block-entry-header-demo h1 {
     font-size: calc(32px + 30 * ((100vw - 320px) / 1600));
   }
 }
 
 @media screen and (min-width: 1920px) {
-  .entry-header-demo h1 {
+  .block.block-entry-header-demo h1 {
     font-size: 62px;
   }
 }
 
 @media (min-width: 770px) {
-  .entry-header-demo h1 {
+  .block.block-entry-header-demo h1 {
     padding: 2rem 4rem;
     text-align: left;
   }
@@ -2125,7 +2130,7 @@ Usage: codyhouse.co/license
   font-style: normal;
   letter-spacing: .05em;
   text-transform: lowercase;
-  font-weight: 400;
+  font-weight: 500;
   margin: 0;
   margin-bottom: 10px;
   margin-bottom: 1rem;
@@ -2133,6 +2138,7 @@ Usage: codyhouse.co/license
   display: block;
   position: relative;
   z-index: 2;
+  text-shadow: 0 0px 10px rgba(57, 98, 201, .5);
 }
 
 .site-title {
@@ -2198,7 +2204,7 @@ Usage: codyhouse.co/license
   color: #3962c9;
 }
 
-.entry-header-demo + .block .container {
+.block.block-entry-header-demo + .block .container {
   max-width: 800px;
 }
 

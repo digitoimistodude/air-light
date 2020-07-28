@@ -6,7 +6,7 @@
 // and start over.
 // ------------------------------------------------
 
-.entry-header-demo {
+.block.block-entry-header-demo {
   @include background-cover();
   background-image: url('../images/default.jpg');
   background-repeat: no-repeat;
@@ -16,11 +16,14 @@
   position: relative;
   text-shadow: 0 0px 30px $color-blue;
   min-height: 53rem;
+  max-height: 80rem;
+  height: 80vh;
   max-width: $layout-max-width;
   margin: 0 auto;
 
-  // Internet Explorer needs this
-  height: 53rem;
+  .shade {
+    opacity: .4;
+  }
 
   .inner {
     display: grid;
@@ -146,13 +149,14 @@
   font-style: normal;
   letter-spacing: .05em;
   text-transform: lowercase;
-  font-weight: $body-weight;
+  font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
   color: $color-blue-bright;
   display: block;
   position: relative;
   z-index: 2;
+  text-shadow: 0 0px 10px rgba($color-blue, .5);
 }
 
 .site-title {
@@ -211,6 +215,6 @@
   color: $color-links;
 }
 
-.entry-header-demo + .block .container {
+.block.block-entry-header-demo + .block .container {
   max-width: $article-max-width;
 }
