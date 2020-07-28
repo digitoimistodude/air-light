@@ -446,7 +446,7 @@ template {
   padding-left: 2rem;
   padding-right: 20px;
   padding-right: 2rem;
-  max-width: 960px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -455,7 +455,7 @@ template {
   padding-right: 2rem;
 }
 
-@media (max-width: 1110px) {
+@media (max-width: 1350px) {
   .container {
     padding-left: 8rem;
     padding-right: 8rem;
@@ -1037,7 +1037,7 @@ pre {
   padding-left: 2rem;
   padding-right: 20px;
   padding-right: 2rem;
-  max-width: 960px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
