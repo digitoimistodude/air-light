@@ -3,12 +3,12 @@ $navheight-mobile: 54px;
 $navheight-collapsed: 54px;
 
 .site-header {
-  transition: all .55s ease;
+  transition: all $transition-duration ease;
 }
 
 .nav-container {
   position: fixed;
-  transition: all .55s ease;
+  transition: all $transition-duration ease;
   height: $navheight-mobile;
   width: 100%;
   z-index: 9999;

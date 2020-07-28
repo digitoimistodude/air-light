@@ -55,15 +55,17 @@ $submenu-dropdown-toggle-hover: (
     position: absolute;
     width: 100%;
 
-    // Main level links
-    .nav-primary > ul > li > a,
-    .nav-primary > ul > li > button {
-      color: #fff;
-      position: relative;
-    }
+    @media only screen and (min-width: $responsivenav) {
+      // Main level links
+      .nav-primary > ul > li > a,
+      .nav-primary > ul > li > button {
+        color: $color-white;
+        position: relative;
+      }
 
-    .nav-primary > ul > li > a:hover {
-      color: #fff;
+      .nav-primary > ul > li > a:hover {
+        color: $color-white;
+      }
     }
   }
 }
@@ -80,10 +82,10 @@ $submenu-dropdown-toggle-hover: (
       left: 0;
       transform: translateY(-2em);
       z-index: -1;
-      transition: all .3s ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
+      transition: all $transition-duration ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
 
       @if $hover-intent == 0 {
-        transition: all .3s ease-in-out 0s, visibility 0s linear .3s, z-index 0s linear .01s;
+        transition: all $transition-duration ease-in-out 0s, visibility 0s linear $transition-duration, z-index 0s linear .01s;
       }
     }
 
@@ -334,7 +336,7 @@ $submenu-dropdown-toggle-hover: (
         justify-content: center;
 
         svg {
-          transition: transform .3s ease-in;
+          transition: transform $transition-duration ease-in;
           width: map-get($dropdown-toggle, 'arrow-size');
           height: map-get($dropdown-toggle, 'arrow-size');
         }

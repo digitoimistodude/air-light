@@ -24,7 +24,7 @@
     text-decoration: none;
     position: relative;
     cursor: pointer;
-    transition: 150ms linear background;
+    transition: $transition-duration linear background;
     font-family: $font-base;
 
     @media (max-width: $container-mobile) {
@@ -101,7 +101,7 @@ input[type="search"] {
   border: 0;
   padding: 15px 20px;
   line-height: 24px;
-  transition: background .55s;
+  transition: background $transition-duration;
   text-decoration: none;
   position: relative;
   appearance: none;

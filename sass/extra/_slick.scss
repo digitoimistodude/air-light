@@ -148,7 +148,7 @@
       height: 10px;
       margin: 0 4px;
       cursor: pointer;
-      transition: background .5s, opacity .5s;
+      transition: background $transition-duration, opacity $transition-duration;
       opacity: .4;
       border: 2px solid #fff;
       border-radius: 6px;
@@ -202,14 +202,14 @@
     border: 0;
     outline: none;
     z-index: 200;
-    transition: all .33s;
+    transition: all $transition-duration;
     background-color: transparent;
     opacity: .2;
 
     &:hover {
       outline: none;
       color: transparent;
-      transition: all .33s;
+      transition: all $transition-duration;
       background-color: transparent;
       opacity: 1;
     }
@@ -217,7 +217,7 @@
     &:focus {
       outline: none;
       color: transparent;
-      transition: all .33s;
+      transition: all $transition-duration;
       background-color: transparent;
     }
   }

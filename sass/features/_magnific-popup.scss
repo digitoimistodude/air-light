@@ -20,7 +20,7 @@
 
 .mfp-wrap {
   opacity: 1;
-  transition: all .3s ease-out;
+  transition: all $transition-duration ease-out;
   z-index: 999999 !important;
 
   .mfp-bottom-bar {
@@ -84,7 +84,7 @@
 
   .mfp-figure {
     transform: scale(.95);
-    transition: all .3s ease-out;
+    transition: all $transition-duration ease-out;
     opacity: .5;
 
     &:after {
@@ -118,7 +118,7 @@
       border: 2px solid transparent;
       line-height: 38px;
       padding: 0;
-      transition: all .3s ease-out;
+      transition: all $transition-duration ease-out;
       color: #fff;
       background: #000;
       margin-right: 5px;

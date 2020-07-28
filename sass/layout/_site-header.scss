@@ -16,6 +16,11 @@
   margin-left: auto;
   margin-right: auto;
 
+  @media (max-width: $responsivenav) {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
   // Easier flex way to align logo and navigation
   display: flex;
   align-items: center;
@@ -29,6 +34,7 @@
   a {
     color: $color-links;
     overflow: visible;
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }

@@ -14,7 +14,7 @@
   height: 40px;
   text-decoration: none;
   opacity: 0;
-  transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity $transition-duration 0s, visibility 0s $transition-duration;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
   &.is-visible,
   &.fade-out,
   .no-touch &:hover {
-    transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity $transition-duration 0s, visibility 0s 0s;
   }
 
   &.is-visible { // The button becomes visible
@@ -51,7 +51,7 @@
     fill: #fff;
     margin: 0;
     opacity: .8;
-    transition: all .3s ease;
+    transition: all $transition-duration ease;
     position: relative;
     width: 20px;
     height: 20px;
