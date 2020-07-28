@@ -2238,12 +2238,6 @@ Usage: codyhouse.co/license
   padding: 0;
 }
 
-@media only screen and (min-width: 960px) {
-  .nav-primary .menu-items ul {
-    display: none;
-  }
-}
-
 @media only screen and (-ms-high-contrast: active) and (min-width: 960px), only screen and (-ms-high-contrast: none) and (min-width: 960px) {
   .nav-primary .menu-items ul {
     display: none;
@@ -2263,12 +2257,6 @@ Usage: codyhouse.co/license
 
 .nav-primary ul ul ul {
   margin-left: 25px;
-}
-
-@media only screen and (min-width: 960px) {
-  .js .nav-primary ul .sub-menu.toggled-on {
-    display: block;
-  }
 }
 
 @media only screen and (-ms-high-contrast: active) and (min-width: 960px), only screen and (-ms-high-contrast: none) and (min-width: 960px) {
@@ -2319,17 +2307,115 @@ Usage: codyhouse.co/license
 }
 
 @media only screen and (min-width: 960px) {
+  .menu-item-has-children::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent transparent #fff;
+    border-style: solid;
+    border-width: 0 5px 5px;
+    left: 50%;
+    bottom: -10px;
+    transform: scale(0);
+    margin-left: -20px;
+    transform-origin: center bottom;
+    transition: none;
+  }
+
+  .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
+    transform: scale(1);
+    transition-delay: 0s, 0s, 0s;
+    transition: all .25s cubic-bezier(.19, 1, .22, 1);
+  }
+
+  .sub-menu {
+    width: 19rem;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all .22s ease-in-out 0s, visibility 0s linear 0s, z-index 0s linear .01s;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left: 1px solid rgba(0, 0, 0, .05);
+    border-right: 1px solid rgba(0, 0, 0, .05);
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all .25s cubic-bezier(.19, 1, .22, 1);
+  }
+
+  .sub-menu a {
+    line-height: 1.5;
+  }
+
+  .nav-primary ul .sub-menu.toggled-on {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0s;
+  }
+
+  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu,
+  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0s;
+  }
+}
+
+@media only screen and (min-width: 960px) and (-ms-high-contrast: active), only screen and (min-width: 960px) and (-ms-high-contrast: none) {
+  .nav-primary .menu-items .sub-menu {
+    width: 19rem;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(1.5rem);
+    z-index: -1;
+    transition: none;
+    list-style-type: none;
+    list-style: none;
+  }
+
+  .nav-primary .menu-items .sub-menu .menu-item {
+    padding-top: 0;
+    margin-top: 0;
+    list-style-type: none;
+    list-style: none;
+  }
+
+  .nav-primary .menu-items .sub-menu .sub-menu.has-sub-menu {
+    transform: translateY(0);
+    padding-top: .5rem;
+  }
+
+  .nav-primary ul .menu-item-has-children:focus > .sub-menu,
+  .nav-primary ul .menu-item-has-children:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0s;
+  }
+}
+
+@media only screen and (min-width: 960px) {
   .nav-container {
     background: #0c142a;
-  }
-
-  .nav-primary ul li:hover > ul {
-    display: block;
-  }
-
-  .no-js .nav-primary ul li:hover > ul,
-  .no-js .nav-primary ul li:focus > ul {
-    display: block;
   }
 }
 
@@ -2371,9 +2457,9 @@ Usage: codyhouse.co/license
   }
 
   .nav-primary .menu-item a {
+    padding: .6rem 2rem;
     color: #fff;
     font-size: 1.6rem;
-    padding: 0 2rem;
     font-weight: 700;
     display: inline-flex;
     align-items: center;
@@ -2430,11 +2516,12 @@ Usage: codyhouse.co/license
   }
 
   .nav-primary .menu-item ul a {
-    padding: .8rem 1.5rem;
+    padding: 0 1.5rem;
     font-size: 1.4rem;
     font-weight: 400;
     color: #3962c9;
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   .nav-primary .menu-item ul a:hover,
@@ -2454,16 +2541,11 @@ Usage: codyhouse.co/license
     border: none;
     border-radius: 0;
     color: #3962c9;
-    height: 3rem;
+    height: 4rem;
     width: 3rem;
     flex-shrink: 0;
-  }
-
-  .nav-primary .menu-item ul li .dropdown-toggle:hover,
-  .nav-primary .menu-item ul li .dropdown-toggle:active {
-    background-color: transparent;
-    border: none;
-    color: #3962c9;
+    -ms-grid-row-align: center;
+    align-self: center;
   }
 
   .nav-primary .menu-item ul li .dropdown-toggle svg {
@@ -2480,8 +2562,8 @@ Usage: codyhouse.co/license
     background-color: transparent;
     border: none;
     border-radius: 50%;
-    color: #fff;
-    height: 3rem;
+    color: #3962c9;
+    height: 4rem;
     width: 3rem;
     padding: 0;
     display: inline-flex;
@@ -2493,13 +2575,6 @@ Usage: codyhouse.co/license
     transition: transform .22s ease-in;
     width: 1rem;
     height: 1rem;
-  }
-
-  .nav-primary .menu-item button.dropdown-toggle:hover,
-  .nav-primary .menu-item button.dropdown-toggle:active {
-    background-color: #fff;
-    border: 1px solid #fff;
-    color: #3962c9;
   }
 
   .nav-primary .menu-item button.dropdown-toggle.toggled-on svg {

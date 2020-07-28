@@ -6,7 +6,9 @@
 // -----------------------------------------------------------
 $absolute-navigation: true;
 $nav-desktop-background-color: $color-default-background;
-$hover-intent: .3s;
+$hover-intent: 0s;
+$nav-link-padding-y: .6rem;
+$nav-link-padding-x: 2rem;
 $nav-links: (
   'color': $color-white,
   'hover-color': $color-white,
@@ -40,7 +42,8 @@ $submenu-dropdown-toggle: (
   'border': none,
   'border-radius': 0,
   'color': $color-links,
-  'size': 3rem,
+  'height': 4rem,
+  'width': 3rem,
   'arrow-size': 1rem
 );
 $submenu-dropdown-toggle-hover: (
@@ -73,6 +76,32 @@ $submenu-dropdown-toggle-hover: (
 // Set true/false in _nav-core.sccss
 @if $enable-animations == true {
   @media only screen and (min-width: $responsivenav) {
+    .menu-item-has-children::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-color: transparent transparent #fff;
+      border-style: solid;
+      border-width: 0 5px 5px;
+      left: 50%;
+      bottom: -10px;
+      transform: scale(0);
+      margin-left: -20px;
+      transform-origin: center bottom;
+      transition: none;
+    }
+
+    .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
+      transform: scale(1);
+      transition-delay: 0s, 0s, $hover-intent;
+
+      @if $hover-intent == 0 {
+        transition: all .25s cubic-bezier(.19, 1, .22, 1);
+      }
+    }
+
     .sub-menu {
       width: map-get($dropdown, 'width');
       visibility: hidden;
@@ -83,9 +112,25 @@ $submenu-dropdown-toggle-hover: (
       transform: translateY(-2em);
       z-index: -1;
       transition: all $transition-duration ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-left: 1px solid rgba(0, 0, 0, .05);
+      border-right: 1px solid rgba(0, 0, 0, .05);
+      border-bottom: 1px solid rgba(0, 0, 0, .05);
+      box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
 
       @if $hover-intent == 0 {
-        transition: all $transition-duration ease-in-out 0s, visibility 0s linear $transition-duration, z-index 0s linear .01s;
+        transition: all .25s cubic-bezier(.19, 1, .22, 1);
+      }
+
+      a {
+        line-height: 1.5;
       }
     }
 
@@ -94,12 +139,7 @@ $submenu-dropdown-toggle-hover: (
       opacity: 1;
       z-index: 1;
       transform: translateY(0%);
-      transition-delay: 0s, 0s, .3s;
-    }
-
-    [data-whatinput="keyboard"] .sub-menu {
-      transition: none;
-      transform: none;
+      transition-delay: 0s, 0s, $hover-intent;
     }
 
     [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children,
@@ -110,7 +150,7 @@ $submenu-dropdown-toggle-hover: (
         opacity: 1;
         z-index: 1;
         transform: translateY(0%);
-        transition-delay: 0s, 0s, .3s;
+        transition-delay: 0s, 0s, $hover-intent;
       }
     }
 
@@ -146,7 +186,7 @@ $submenu-dropdown-toggle-hover: (
           opacity: 1;
           z-index: 1;
           transform: translateY(0%);
-          transition-delay: 0s, 0s, .3s;
+          transition-delay: 0s, 0s, $hover-intent;
         }
       }
     }
@@ -214,9 +254,9 @@ $submenu-dropdown-toggle-hover: (
 
       // Main level
       a {
+        padding: $nav-link-padding-y $nav-link-padding-x;
         color: map-get($nav-links, 'color');
         font-size: map-get($nav-links, 'font-size');
-        padding: 0 2rem;
         font-weight: map-get($nav-links, 'font-weight');
         display: inline-flex;
         align-items: center;
@@ -274,11 +314,12 @@ $submenu-dropdown-toggle-hover: (
         }
 
         a {
-          padding: .8rem 1.5rem;
+          padding: 0 1.5rem;
           font-size: map-get($nav-dropdown-links, 'font-size');
           font-weight: map-get($nav-dropdown-links, 'font-weight');
           color: map-get($nav-dropdown-links, 'color');
-          display: block;
+          display: flex;
+          align-items: center;
         }
 
         a:hover,
@@ -300,16 +341,10 @@ $submenu-dropdown-toggle-hover: (
         border: map-get($submenu-dropdown-toggle, 'border');
         border-radius: map-get($submenu-dropdown-toggle, 'border-radius');
         color: map-get($submenu-dropdown-toggle, 'color');
-        height: map-get($submenu-dropdown-toggle, 'size');
-        width: map-get($submenu-dropdown-toggle, 'size');
+        height: map-get($submenu-dropdown-toggle, 'height');
+        width: map-get($submenu-dropdown-toggle, 'width');
         flex-shrink: 0;
-
-        &:hover,
-        &:active {
-          background-color: map-get($submenu-dropdown-toggle, 'background');
-          border: map-get($submenu-dropdown-toggle, 'border');
-          color: map-get($submenu-dropdown-toggle, 'color');
-        }
+        align-self: center;
 
         svg {
           transform: rotate(-90deg) rotateX(0deg);
@@ -327,9 +362,9 @@ $submenu-dropdown-toggle-hover: (
         background-color: map-get($dropdown-toggle, 'background');
         border: map-get($dropdown-toggle, 'border');
         border-radius: map-get($dropdown-toggle, 'border-radius');
-        color: map-get($dropdown-toggle, 'color');
-        height: map-get($dropdown-toggle, 'size');
-        width: map-get($dropdown-toggle, 'size');
+        color: map-get($submenu-dropdown-toggle, 'color');
+        height: map-get($submenu-dropdown-toggle, 'height');
+        width: map-get($submenu-dropdown-toggle, 'width');
         padding: 0;
         display: inline-flex;
         align-items: center;
@@ -339,13 +374,6 @@ $submenu-dropdown-toggle-hover: (
           transition: transform $transition-duration ease-in;
           width: map-get($dropdown-toggle, 'arrow-size');
           height: map-get($dropdown-toggle, 'arrow-size');
-        }
-
-        &:hover,
-        &:active {
-          background-color: map-get($dropdown-toggle-hover, 'background');
-          border: map-get($dropdown-toggle-hover, 'border');
-          color: map-get($dropdown-toggle-hover, 'color');
         }
 
         &.toggled-on svg {
