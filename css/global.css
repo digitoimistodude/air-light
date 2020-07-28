@@ -762,7 +762,6 @@ h6 {
   color: #3962c9;
   font-family: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
   font-weight: 700;
-  line-height: 1.5;
   margin-top: 27px;
   margin-top: 2.7rem;
   margin-bottom: 27px;
@@ -776,6 +775,14 @@ h4:first-child,
 h5:first-child,
 h6:first-child {
   margin-top: 0;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
 }
 
 h1 {
@@ -1878,6 +1885,10 @@ form.search-form .search-submit {
 
 .site-header .nav-primary .menu-items .menu-item .menu-item .dropdown-toggle {
   color: #3962c9;
+}
+
+.entry-header-demo + .block .container {
+  max-width: 800px;
 }
 
 .nav-primary .menu-items {

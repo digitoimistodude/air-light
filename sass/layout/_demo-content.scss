@@ -204,3 +204,7 @@
 .site-header .nav-primary .menu-items .menu-item .menu-item .dropdown-toggle {
   color: $color-links;
 }
+
+.entry-header-demo + .block .container {
+  max-width: $article-max-width;
+}
