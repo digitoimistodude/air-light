@@ -4,51 +4,69 @@
 // The main layout for the website navigation, for the mobile
 // version only.
 // -----------------------------------------------------------
-$nav-background-color: rgba($color-default-background, .97);
+$nav-background-color: $color-white;
 $nav-toggle: (
   'color': $color-white,
   'active-color': $color-white,
-  );
+);
 $nav-links: (
-  'color': $color-white,
-  'color-active': $color-white,
+  'color': $color-body,
+  'color-active': $color-links,
   'color-current': $color-links,
-  'font-weight': 400,
-  'font-size': 1.6rem,
+  'font-weight': 500,
+  'font-size': 15px,
 );
 $dropdown: (
   'background': transparent,
-  );
+);
 $dropdown-toggle: (
-  'color': $color-white,
+  'color': $color-body,
   'background': transparent,
-  'active-color': $color-white,
+  'active-color': $color-body,
   'active-background': transparent,
 );
 $hamburger-padding-x: 1.5rem;
-$hamburger-padding-y: 5rem;
-$hamburger-layer-width: 4rem;
+$hamburger-padding-y: 4rem;
+$hamburger-layer-width: 3rem;
 $hamburger-layer-height: .2rem;
-$hamburger-layer-spacing: .6rem;
+$hamburger-layer-spacing: .5rem;
 $hamburger-layer-color: map-get($nav-toggle, 'color');
 $hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
 $nav-open-from-direction: top;
-
-@charset 'utf-8';
+$mobile-nav-height: 80px;
 
 @import 'hamburgers/_sass/hamburgers/hamburgers';
 
 // Choose hamburger animation here
 // Choices: https://jonsuh.com/hamburgers/
 .hamburger {
-  @extend .hamburger--spin;
+  @extend .hamburger--collapse;
+}
+
+// Let's ensure site-header loads properly and doesn't leave empty spaces
+@media (max-width: $responsivenav) {
+  .no-js .nav-container,
+  .no-js .site-header,
+  .no-js .main-navigation-wrapper,
+  .no-js .nav-toggle,
+  .no-js .search-wrapper {
+    height: $mobile-nav-height !important;
+  }
+
+  .no-js > div:first-of-type {
+    display: none !important;
+  }
 }
 
 // Mobile styles
 @media screen and (max-width: $responsivenav - 1px) {
+  .main-navigation-wrapper {
+    order: 6;
+    z-index: 999;
+  }
 
   // Users that don't have Javascript enabled
   .no-js .site-header {
@@ -87,22 +105,39 @@ $nav-open-from-direction: top;
     z-index: 5;
 
     // Default position, IE needs this
-    top: 0;
+    top: $mobile-nav-height;
     left: 0;
 
     .menu-items {
-      padding: 15% 0;
+      padding: 5px 0 20px;
 
       // Let's keep the content always full height
       height: 100vh;
     }
   }
 
+  .main-title {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .sub-title {
+    font-size: 1.6rem;
+    opacity: .5;
+    display: none !important;
+  }
+
+  .main-title,
+  .sub-title {
+    width: 100%;
+    display: block;
+  }
+
   .nav-primary {
     height: 100vh;
     width: 100vw;
     overflow: auto;
-    transition: all 300ms ease-in-out;
+    transition: all $transition-duration ease-in-out;
     margin: 0;
     display: block;
     will-change: opacity;
@@ -120,11 +155,31 @@ $nav-open-from-direction: top;
       // We have color here, so it's okay to remove outline
       outline: none;
 
+      li:first-child a {
+        border-top: 0;
+      }
+
+      li:last-child a,
+      .menu-item-2681 a {
+        border-bottom: 1px solid #f4f4f4;
+      }
+
+      li > ul > li:last-child .main-title {
+        padding-bottom: 20px;
+      }
+
+      li > ul > li:last-child a {
+        border-bottom: 0;
+      }
+
       a {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        padding-left: 5%;
+        border-top: 1px solid #f4f4f4;
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        padding-left: 0;
         padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
+        margin-left: 2rem;
+        margin-right: 2rem;
         color: map-get($nav-links, 'color');
         font-size: map-get($nav-links, 'font-size');
         font-weight: map-get($nav-links, 'font-weight');
@@ -161,29 +216,25 @@ $nav-open-from-direction: top;
         color: #bbb;
       }
 
-      .highlighted .sub-arrow:before {
-        display: block;
-        content: '-';
-      }
-
-
       // Dropdown toggle
       .dropdown-toggle {
         position: absolute;
         top: 0;
-        margin-top: 0;
         left: auto;
-        right: 2rem;
-        width: 3.7rem;
-        height: 3.7rem;
+        right: 10px;
+        width: 12px;
+        height: 7px;
         overflow: hidden;
-        font: bold 18px/37px monospace;
-        text-align: center;
-        background: map-get($dropdown-toggle, 'background');
-        color: map-get($dropdown-toggle, 'color');
+        background: transparent;
         border: 0;
-        padding: 0;
+        padding: 20px;
         z-index: 9999;
+        background-image: url('../svg/mobile-nav-arrow-down.svg');
+        background-position: center;
+        background-size: 12px 7px;
+        background-repeat: no-repeat;
+        transition: all $transition-duration;
+        transform: rotate(0);
       }
 
       .dropdown-toggle:focus {
@@ -195,18 +246,83 @@ $nav-open-from-direction: top;
         display: none;
       }
 
-      .dropdown-toggle:before {
-        content: '+';
+      .menu-item.menu-item-2749 a {
+        background: #f4f4f4;
+        transition: all $transition-duration;
+        font-weight: 600;
+        padding: 14px 29px;
+        line-height: 1;
+        order: 5;
+        border-radius: 3px;
+        white-space: nowrap;
+        align-self: center;
+        font-size: 14px;
+        color: $color-body;
+        text-align: center;
+        margin-top: 15px;
+
+        &:hover,
+        &:focus {
+          background: #e7e7e7;
+        }
+      }
+
+      .menu-item.menu-item-3271,
+      .menu-item.menu-item-3272 {
+        width: 50%;
+        margin: 10px 0 0;
+        float: left;
+        border: 0;
+      }
+
+      .menu-item.menu-item-3271 {
+        text-align: left;
+      }
+
+      .menu-item.menu-item-3272 {
+        justify-content: flex-end;
+        text-align: right;
+        width: auto;
+        float: right;
+
+        a {
+          justify-content: flex-end;
+          display: inline-block;
+          text-align: right;
+          padding-right: 0;
+        }
+      }
+
+      .menu-item.menu-item-3271 a,
+      .menu-item.menu-item-3272 a {
+        border: 0;
+        font-weight: 600;
+        color: #b2b2b2;
+        transition: all $transition-duration;
+        position: relative;
+        font-size: 14px !important;
+
+        svg {
+          width: 11px;
+          height: 11px;
+          min-width: 11px;
+          margin-left: 8px;
+        }
+
+        &.link-webshop {
+          font-size: 14px;
+          margin-left: auto;
+        }
+
+        @media (max-width: 1440px) {
+          font-size: 14px;
+        }
       }
 
       .dropdown-toggle.toggled-on {
-        background: map-get($dropdown-toggle, 'active-background');
-        color: map-get($dropdown-toggle, 'active-color');
-      }
-
-      .dropdown-toggle.toggled-on:before {
-        display: block;
-        content: '-';
+        background-color: transparent;
+        transform: rotate(-180deg);
+        cursor: pointer;
       }
 
       // Dropdowns
@@ -254,21 +370,33 @@ $nav-open-from-direction: top;
   -webkit-tap-highlight-color: rgba(#000, 0);
   border: 0;
   overflow: visible;
-  color: #fff;
+  color: map-get($nav-toggle, 'color');
   font-weight: 700;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-touch-callout: none;
   user-select: none;
   text-decoration: none;
-  padding: 0;
-  margin: 0;
+  padding: 2rem;
+  margin: 0 -2rem 0;
   background: transparent;
   cursor: pointer;
   position: relative;
+  top: 0;
 
   // Hide from desktops
   display: none;
+
+  // Modern stuff (::after is first line, without ::after is first)
+  &:not(.toggled-on) .hamburger-inner {
+    width: 18px;
+    transition: width $transition-duration;
+  }
+
+  &.is-active .hamburger-inner,
+  &:hover .hamburger-inner {
+    width: $hamburger-layer-width;
+  }
 
   span {
     color: map-get($nav-toggle, 'color');
@@ -341,4 +469,11 @@ $nav-open-from-direction: top;
   &.is-active span {
     color: map-get($nav-toggle, 'active-color');
   }
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+  color: map-get($nav-toggle, 'active-color');
+  background: map-get($nav-toggle, 'active-color');
 }

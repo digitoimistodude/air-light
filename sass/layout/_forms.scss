@@ -6,6 +6,10 @@
 // ------------------------------------------------------------
 
 // Buttons
+.button-wrapper {
+  margin-bottom: 0;
+}
+
 .content-area,
 .site-footer {
   button,
@@ -13,41 +17,71 @@
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    font-size: 1.6rem;
-    background: $color-links;
+    font-size: 16px;
+    background: $color-darkgrey;
     color: $color-white;
     border: 0;
+    border-radius: 3px;
     width: auto;
     display: inline-block;
-    padding: 1.2rem 3rem;
-    margin-bottom: 1rem;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 0;
     text-decoration: none;
     position: relative;
     cursor: pointer;
     transition: 150ms linear background;
     font-family: $font-base;
+    font-weight: 700;
+    line-height: 1;
+    appearance: none;
 
-    @media (max-width: $container-mobile) {
-      // Wrap long buttons on mobile
-      display: block;
-      text-align: center;
+    &.button-grey {
+      color: $color-body;
+      background: $color-lightgrey;
+
+      &:hover {
+        background: $color-hover;
+      }
     }
 
-    &:hover,
-    &:focus {
+    &.button-small {
+      font-size: 16px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    &.button-large {
+      font-size: 20px;
+      padding: 14px 27px 16px;
+    }
+
+    &.button-action {
+      font-size: 16px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    @media (max-width: $container-mobile) {
+      font-size: 14px;
+    }
+
+    &:hover {
       color: $color-white;
-      background: darken($color-links, 15%);
+      background: $color-hover;
+      border-color: $color-hover;
     }
 
     &.button-ghost {
       background-color: transparent;
       border: 1px solid $color-links;
       color: $color-links;
-    }
-
-    &.button-ghost:hover {
-      background-color: $color-links;
-      color: $color-white;
     }
   }
 }
@@ -84,6 +118,64 @@ input {
   }
 }
 
+body form label,
+body .gform_wrapper legend.gfield_label,
+body .gform_wrapper label.gfield_label {
+  font-weight: 500;
+}
+
+.col.col-content #gform_wrapper_1.gform_wrapper,
+.col.col-content #gform_wrapper_2.gform_wrapper {
+  .gform_footer {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  #field_1_5 {
+    width: 100%;
+
+    textarea {
+      margin-bottom: 16px;
+      min-height: 180px;
+    }
+  }
+
+  #field_2_3 {
+    input {
+      margin-bottom: 16px;
+    }
+  }
+
+  input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+  textarea,
+  select,
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="number"],
+  input[type="month"],
+  input[type="week"],
+  input[type="email"],
+  input[type="search"] {
+    width: 100%;
+  }
+
+  ul.gform_fields {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  ul.gform_fields li.gfield {
+    width: 50%;
+
+    @media (max-width: 760px) {
+      width: 100%;
+    }
+  }
+}
+
+body .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
 textarea,
 select,
 input[type="text"],
@@ -96,10 +188,11 @@ input[type="week"],
 input[type="email"],
 input[type="search"] {
   @extend %default;
+  border-radius: 3px;
   font-family: $font-base;
-  background: #f0f0f0;
-  border: 0;
-  padding: 15px 20px;
+  background: #fbfbfb;
+  border: solid 1px #d9d9d9;
+  padding: 15px;
   line-height: 24px;
   transition: background .55s;
   text-decoration: none;
@@ -113,8 +206,8 @@ input[type="search"] {
   }
 
   &:focus {
-    background: #dfdfdf;
-    border-color: rgba(#222, 1);
+    background: #fbfbfb;
+    border: solid 1px darken(#d9d9d9, 12%);
     outline: 0;
 
     &::placeholder {
@@ -129,8 +222,8 @@ select {
   border-radius: 0;
   background-image: url('../svg/select.svg');
   background-repeat: no-repeat;
-  background-position: right center;
-  padding-right: 40px;
+  background-position: right 17px center;
+  background-size: 11px auto;
   transition: none;
   width: 100%;
   max-width: 100%;
@@ -139,6 +232,9 @@ select {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
+  border: 1px solid $color-body;
+  padding: 11px 28px 11px 10px;
+  line-height: 1;
 
   &::-ms-expand {
     display: none;
@@ -246,4 +342,160 @@ form {
   textarea {
     width: 100%;
   }
+}
+
+// Modern checkboxes
+// Source: https://codyhouse.co/ds/components/app/radio-checkbox-buttons
+
+/* --------------------------------
+
+File#: _1_radios-checkboxes
+Title: Radios and Checkboxes
+Descr: Custom radio and checkbox buttons
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  // radios and checkboxes
+  --checkbox-radio-size: 24px;
+  --checkbox-radio-translate-y: 1px; // edit to align buttons with labels
+  --checkbox-radio-gap: var(--space-xxxs); // gap between button and label
+  --checkbox-radio-border-width: 2px;
+
+  // radio buttons
+  --radio-marker-size: 12px;
+
+  // checkboxes
+  --checkbox-marker-size: 12px;
+  --checkbox-radius: 0;
+}
+
+.radio,
+.checkbox {
+  // hide native buttons
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.radio + label,
+.checkbox + label { // label style
+  display: inline-flex;
+  align-items: baseline;
+  line-height: var(--body-line-height);
+  user-select: none;
+  cursor: pointer;
+}
+
+.radio + label::before,
+.checkbox + label::before { // custom buttons - basic style
+  content: '';
+  display: inline-block;
+  vertical-align: middle; // fallback
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-bg);
+  border-width: var(--checkbox-radio-border-width);
+  border-color: var(--color-contrast-low);
+  border-style: solid;
+  // margin-right: var(--checkbox-radio-gap);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform .2s, border .2s;
+  margin-right: 16px;
+}
+
+.radio:not(:checked):not(:focus) + label:hover::before,
+.checkbox:not(:checked):not(:focus) + label:hover::before { // :hover
+  border-color: var(--color-contrast-medium);
+}
+
+@supports (grid-area: auto) {
+  .radio + label::before,
+  .checkbox + label::before {
+    position: relative;
+    top: var(--checkbox-radio-translate-y);
+  }
+}
+
+.radio + label::before {
+  border-radius: 50%; // radio button radius
+}
+
+.checkbox + label::before {
+  border-radius: var(--checkbox-radius); // checkbox button radius
+}
+
+.radio:checked + label::before,
+.checkbox:checked + label::before {
+  // checked state
+  background-color: var(--color-primary);
+  box-shadow: none;
+  border-color: var(--color-primary);
+  transition: transform .2s;
+}
+
+.radio:active + label::before,
+.checkbox:active + label::before {
+  // active state
+  transform: scale(.8);
+  transition: transform .2s;
+}
+
+.radio:checked:active + label::before,
+.checkbox:checked:active + label::before {
+  transform: none;
+  transition: none;
+}
+
+.radio:checked + label::before {
+  // radio button icon
+  background-image: url('../svg/radio-check.svg');
+  background-color: $color-darkgrey;
+  border-color: $color-darkgrey !important;
+  background-size: var(--radio-marker-size);
+}
+
+.checkbox:checked + label::before {
+  // checkbox button icon
+  background-image: url('../svg/checkbox.svg');
+  background-size: var(--checkbox-marker-size);
+}
+
+.radio:checked:active + label::before,
+.checkbox:checked:active + label::before,
+.radio:focus + label::before,
+.checkbox:focus + label::before {
+  // focus state
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary), .2);
+}
+
+// --radio--bg, --checkbox--bg
+.radio--bg + label,
+.checkbox--bg + label {
+  padding: var(--space-xxxxs) var(--space-xxxs);
+  border-radius: var(--radius-md);
+  transition: background .2s;
+}
+
+.radio--bg + label:hover,
+.checkbox--bg + label:hover {
+  background-color: var(--color-contrast-lower);
+}
+
+.radio--bg:active + label,
+.checkbox--bg:active + label,
+.radio--bg:focus + label,
+.checkbox--bg:focus + label {
+  background-color: rgba(var(--color-primary), .1);
 }

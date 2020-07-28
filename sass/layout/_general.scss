@@ -113,12 +113,12 @@
   margin-bottom: 0;
   margin-top: 2rem;
   overflow: hidden;
-  transition: all .22s;
+  transition: all $transition-duration;
 
   a {
     clear: both;
     text-align: center;
-    transition: all .22s;
+    transition: all $transition-duration;
     display: block;
     padding: 2rem;
     background: #fafafa;
