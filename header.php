@@ -45,7 +45,6 @@ namespace Air_Light;
       <header class="site-header">
 
         <?php get_template_part( 'template-parts/header/branding' ); ?>
-
         <?php get_template_part( 'template-parts/header/navigation' ); ?>
 
       </header>

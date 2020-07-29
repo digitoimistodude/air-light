@@ -12,15 +12,21 @@
 
 namespace Air_Light;
 
+// Reminder for translated accessible labels
+if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-pro/polylang.php' ) ) {
+  $screenreadertext_expand_toggle = ask__( 'Accessibility: Open main menu' );
+} else {
+  $screenreadertext_expand_toggle = 'Open main menu';
+}
 ?>
 
 <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-  <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>">
+  <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php echo esc_html( $screenreadertext_expand_toggle ); ?>">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
-    <span id="nav-toggle-label" class="screen-reader-text" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>"><?php esc_attr_e( 'Menu', 'air-light' ); ?></span>
+    <span id="nav-toggle-label" class="screen-reader-text"><?php echo esc_html( $screenreadertext_expand_toggle ); ?></span>
   </button>
 
   <nav id="nav" class="nav-primary">
