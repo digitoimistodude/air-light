@@ -120,10 +120,6 @@ $submenu-dropdown-toggle-hover: (
       border-right: 1px solid rgba(0, 0, 0, .05);
       border-bottom: 1px solid rgba(0, 0, 0, .05);
       box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
 
       @if $hover-intent == 0 {
         transition: all .25s cubic-bezier(.19, 1, .22, 1);
