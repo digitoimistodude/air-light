@@ -426,8 +426,26 @@ $mobile-nav-height: 80px;
     }
   }
 
+  // Accessibility: Show for screen readers, hide visually if not visible label class added
+  &:not(.has-visible-label) .nav-toggle-label {
+    @extend .screen-reader-text;
+  }
+
   @media (max-width: $responsivenav - 1px) {
     display: block;
+
+    &.has-visible-label {
+      display: flex;
+      align-items: center;
+
+      .nav-toggle-label {
+        font-size: $font-min-size;
+      }
+
+      .hamburger-box {
+        margin-right: 2rem;
+      }
+    }
   }
 
   // Separate active colors for opened state

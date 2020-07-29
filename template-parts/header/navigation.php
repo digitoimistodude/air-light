@@ -26,7 +26,7 @@ if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
-    <span id="nav-toggle-label" class="screen-reader-text"><?php echo esc_html( $screenreadertext_expand_toggle ); ?></span>
+    <span id="nav-toggle-label" class="nav-toggle-label"><?php echo esc_html( $screenreadertext_expand_toggle ); ?></span>
   </button>
 
   <nav id="nav" class="nav-primary">
