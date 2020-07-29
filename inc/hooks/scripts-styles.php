@@ -45,7 +45,7 @@ function enqueue_theme_scripts() {
   }
 
   // Reminder for translated accessible labels
-  if ( function_exists( 'ask__' ) ) {
+  if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-pro/polylang.php' ) ) {
     $screenreadertext_expand = ask__( 'Accessibility: Open child menu' );
     $screenreadertext_collapse = ask__( 'Accessibility: Close child menu' );
   } else {

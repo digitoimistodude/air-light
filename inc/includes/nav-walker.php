@@ -33,7 +33,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
     $output .= '<button class="dropdown-toggle" aria-expanded="false">';
 
     // Reminder for translated accessible labels
-    if ( function_exists( 'ask__' ) ) {
+    if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-pro/polylang.php' ) ) {
       $screenreadertext = ask__( 'Accessibility: Open child menu' );
     } else {
       $screenreadertext = esc_html__( 'Open child menu', 'air-light' );
