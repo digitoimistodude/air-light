@@ -23,7 +23,16 @@ namespace Air_Light;
 
   <?php get_template_part( 'template-parts/footer/demo-content' ); ?>
 
-  <p class="back-to-top"><a href="#page" class="js-trigger top no-text-link" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html_e( 'Back to top', 'air-light' ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
+  <?php
+    // Reminder for translated accessible labels
+    if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-pro/polylang.php' ) ) {
+      $screenreadertext_top = ask__( 'Accessibility: Back to top' );
+    } else {
+      $screenreadertext_top = 'Back to top';
+    }
+  ?>
+
+  <p class="back-to-top"><a href="#page" class="js-trigger top no-text-link" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html( $screenreadertext_top ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
 
 </footer><!-- #colophon -->
 

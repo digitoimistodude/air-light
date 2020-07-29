@@ -17,7 +17,7 @@ namespace Air_Light;
     </div>
     <h1>
       <span class="accent">
-        <?php echo esc_html_e( 'air-light ', 'air-light' ); ?><?php echo esc_attr( AIR_LIGHT_VERSION, 'air-light' ); ?>
+        <?php echo esc_html_e( 'air-light ', 'air-light' ); ?><?php echo esc_html( AIR_LIGHT_VERSION ); ?>
       </span>
       <?php echo esc_html_e( 'a WordPress starter theme', 'air-light' ); ?>
     </h1>
