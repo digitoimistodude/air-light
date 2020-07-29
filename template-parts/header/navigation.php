@@ -4,8 +4,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:22:26
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-05-11 13:28:23
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2020-07-29 14:36:42
  *
  * @package air-light
  */
@@ -16,7 +16,7 @@ namespace Air_Light;
 
 <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-  <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>">
+  <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>" data-air-nav-toggle="nav">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
