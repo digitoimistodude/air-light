@@ -113,3 +113,14 @@ $enable-animations: true;
 .no-js .nav-toggle {
   display: none;
 }
+
+// Accessibiliy
+.sub-menu {
+  // Hide from keyboard and screen readers if not toggled
+  visibility: hidden;
+
+  &.toggled-on {
+    // Show for keyboard and screen readers only when toggled
+    visibility: visible;
+  }
+}

@@ -2294,6 +2294,14 @@ Usage: codyhouse.co/license
   display: none;
 }
 
+.sub-menu {
+  visibility: hidden;
+}
+
+.sub-menu.toggled-on {
+  visibility: visible;
+}
+
 .nav-container {
   background-color: transparent;
   position: absolute;

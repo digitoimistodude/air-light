@@ -11,6 +11,9 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 */
 
 (function ($) {
+  // Responsive nav width
+  var responsivenav = 960;
+
   // Check if enter pressed
   var enterPressed = false;
   $(window)
@@ -80,7 +83,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Toggles the sub-menu when dropdown toggle button accessed
   siteHeaderMenu.find(".dropdown-toggle").click(function (e) {
-    if (enterPressed) {
+    if (enterPressed || window.innerWidth < responsivenav) {
       const screenReaderSpan = $(this).find(".screen-reader-text");
       const dropdownMenu = $(this).nextAll(".sub-menu");
 
@@ -251,6 +254,75 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     menu.className += " nav-menu";
   }
 
+  // Focus trap for mobile navigation
+  if (window.innerWidth < responsivenav) {
+    var firstFocusableElement = null;
+    var lastFocusableElement = null;
+
+    // Select nav items
+    navElements = container.querySelectorAll([
+      ".nav-primary a[href]",
+      ".nav-primary button",
+    ]);
+    for (var i = 0; i < navElements.length; i++) {
+      navElements[i].addEventListener("keydown", function () {
+        focusTrap();
+      });
+    }
+
+    function focusTrap() {
+      // Set focusable elements inside main navigation.
+      focusableElements = container.querySelectorAll([
+        ".sub-menu.toggled-on > li a[href]",
+        'ul[aria-expanded="true"] > li > a[href]',
+        "area[href]",
+        "input:not([disabled])",
+        "select:not([disabled])",
+        "textarea:not([disabled])",
+        ".sub-menu.toggled-on > li > button:not([disabled]):not(.toggled-on)",
+        'ul[aria-expanded="true"] > li > button:not([disabled]):not(.toggled-on)',
+        "iframe",
+        "object",
+        "embed",
+        "[contenteditable]",
+        '[tabindex]:not([tabindex^="-"])',
+      ]);
+      firstFocusableElement = focusableElements[0];
+      lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+      // Tämä näyttää oikean muuttuvan arvon
+      console.log(lastFocusableElement);
+
+      // Redirect last Tab to first focusable element.
+      lastFocusableElement.addEventListener("keydown", function (e) {
+        if (e.keyCode === 9 && !e.shiftKey) {
+          e.preventDefault();
+
+          // Tämä näyttää saman mikä aikaisemminkin...
+          console.log(this);
+          button.focus(); // Set focus on first element - that's actually close menu button.
+        }
+      });
+
+      // Redirect first Shift+Tab to toggle button element.
+      firstFocusableElement.addEventListener("keydown", function (e) {
+        if (e.keyCode === 9 && e.shiftKey) {
+          e.preventDefault();
+          button.focus(); // Set focus on last element.
+        }
+      });
+
+      // Redirect Shift+Tab from the toggle button to last focusable element.
+      button.addEventListener("keydown", function (e) {
+        if (e.keyCode === 9 && e.shiftKey) {
+          e.preventDefault();
+          lastFocusableElement.focus(); // Set focus on last element.
+        }
+      });
+    }
+  }
+
+  // What happens when clicking menu toggle
   button.onclick = function () {
     // Change screen reader open/close labels
     navTogglescreenReaderText = $(this).find("#nav-toggle-label");
@@ -283,50 +355,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       button.className += " is-active";
       button.setAttribute("aria-expanded", "true");
       menu.setAttribute("aria-expanded", "true");
-
-      // Set focusable elements inside main navigation.
-      focusableElements = container.querySelectorAll([
-        "a[href]",
-        "area[href]",
-        "input:not([disabled])",
-        "select:not([disabled])",
-        "textarea:not([disabled])",
-        "button:not([disabled])",
-        "iframe",
-        "object",
-        "embed",
-        "[contenteditable]",
-        '[tabindex]:not([tabindex^="-"])',
-      ]);
-      firstFocusableElement = focusableElements[0];
-      lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-      // Redirect last Tab to first focusable element.
-      forwardTab = function (e) {
-        if (e.keyCode === 9 && !e.shiftKey) {
-          e.preventDefault();
-          button.focus(); // Set focus on first element - that's actually close menu button.
-        }
-      };
-      lastFocusableElement.addEventListener("keydown", forwardTab);
-
-      // Redirect first Shift+Tab to toggle button element.
-      firstShiftTab = function (e) {
-        if (e.keyCode === 9 && e.shiftKey) {
-          e.preventDefault();
-          button.focus(); // Set focus on last element.
-        }
-      };
-      firstFocusableElement.addEventListener("keydown", firstShiftTab);
-
-      // Redirect Shift+Tab from the toggle button to last focusable element.
-      shiftTab = function (e) {
-        if (e.keyCode === 9 && e.shiftKey) {
-          e.preventDefault();
-          lastFocusableElement.focus(); // Set focus on last element.
-        }
-      };
-      button.addEventListener("keydown", shiftTab);
     }
   };
 
@@ -357,25 +385,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     button.className = button.className.replace(" is-active", "");
     button.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-expanded", "false");
-
-    focusableElements = container.querySelectorAll([
-      "a[href]",
-      "area[href]",
-      "input:not([disabled])",
-      "select:not([disabled])",
-      "textarea:not([disabled])",
-      "button:not([disabled])",
-      "iframe",
-      "object",
-      "embed",
-      "[contenteditable]",
-      '[tabindex]:not([tabindex^="-"])',
-    ]);
-    firstFocusableElement = focusableElements[0];
-    lastFocusableElement = focusableElements[focusableElements.length - 1];
-    lastFocusableElement.removeEventListener("keydown", forwardTab);
-    firstFocusableElement.removeEventListener("keydown", firstShiftTab);
-    button.removeEventListener("keydown", shiftTab);
     button.focus();
   }
 
