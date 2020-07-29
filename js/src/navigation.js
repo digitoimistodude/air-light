@@ -23,7 +23,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     }
 
     menuToggle.add(siteNavigation).attr("aria-expanded", "false");
-
     menuToggle.on("click", function () {
       $(this).add(siteHeaderMenu).toggleClass("toggled-on");
 
@@ -39,6 +38,28 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       // jscs:enable
     });
   })();
+
+  // Close focused dropdowns when pressing esc
+  $(".dropdown a, .dropdown button").on("keyup", function () {
+    if ($(".dropdown").find(":focus").length !== 0) {
+      // Close menu using Esc key.
+      if (event.keyCode == 27) {
+        // Close the dropdown menu
+        thisDropdown = $(this).parent().parent().parent();
+
+        screenReaderSpan = thisDropdown.find(".screen-reader-text");
+        dropdownToggle = thisDropdown.find(".dropdown-toggle");
+        thisDropdown.find(".sub-menu").removeClass("toggled-on");
+        thisDropdown.find(".dropdown-toggle").removeClass("toggled-on");
+        thisDropdown.find(".dropdown").removeClass("toggled-on");
+        dropdownToggle.attr("aria-expanded", "false");
+        // jscs:enable
+        screenReaderSpan.text(air_light_screenReaderText.expand);
+        // Move focus back to previous dropdown select
+        thisDropdown.find(".dropdown-toggle:first").focus();
+      }
+    }
+  });
 
   // Adds aria attribute
   siteHeaderMenu.find(".menu-item-has-children").attr("aria-haspopup", "true");
