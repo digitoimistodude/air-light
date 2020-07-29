@@ -9,7 +9,7 @@ namespace Air_Light;
 
 ?>
 
-<section class="block block-entry-header-demo">
+<section class="block block-entry-header-demo has-dark-bg">
   <div class="shade" aria-hidden="true"></div>
   <div class="inner">
     <div class="logo">
@@ -24,7 +24,7 @@ namespace Air_Light;
   </div>
 </section>
 
-<section class="block">
+<section class="block has-light-bg">
   <div class="container">
 
     <?php if ( have_posts() ) : ?>

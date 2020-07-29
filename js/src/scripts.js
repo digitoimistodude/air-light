@@ -48,6 +48,27 @@ lazyload(images, {
     });
   });
 
+  // Accessibility: Ensure back to top is right color on right background
+  var stickyOffset = $(".back-to-top").offset();
+  var $contentDivs = $(".block");
+  $(document).scroll(function () {
+    $contentDivs.each(function (k) {
+      var _thisOffset = $(this).offset();
+      var _actPosition = _thisOffset.top - $(window).scrollTop();
+      if (
+        _actPosition < stickyOffset.top &&
+        _actPosition + $(this).height() > 0
+      ) {
+        $(".back-to-top")
+          .removeClass("has-light-bg has-dark-bg")
+          .addClass(
+            $(this).hasClass("has-light-bg") ? "has-light-bg" : "has-dark-bg"
+          );
+        return false;
+      }
+    });
+  });
+
   // Hide or show the "back to top" link
   $(window).scroll(function () {
     // Back to top

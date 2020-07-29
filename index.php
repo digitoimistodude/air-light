@@ -22,35 +22,38 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 <div id="content" class="content-area">
   <main role="main" id="main" class="site-main">
-    <div class="container">
 
-      <?php if ( have_posts() ) : ?>
+    <section class="block block-blog has-light-bg">
+      <div class="container">
 
-        <?php if ( is_home() && ! is_front_page() ) : ?>
+        <?php if ( have_posts() ) : ?>
 
-          <header>
-            <h1 class="entry-title screen-reader-text">
-              <?php single_post_title(); ?>
-            </h1>
-          </header>
+          <?php if ( is_home() && ! is_front_page() ) : ?>
+
+            <header>
+              <h1 class="entry-title screen-reader-text">
+                <?php single_post_title(); ?>
+              </h1>
+            </header>
+
+          <?php endif; ?>
+
+          <?php while ( have_posts() ) : the_post(); ?>
+
+            <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+
+            <?php endwhile; ?>
+
+          <?php the_posts_navigation(); ?>
+
+        <?php else : ?>
+
+          <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
         <?php endif; ?>
 
-        <?php while ( have_posts() ) : the_post(); ?>
-
-          <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
-
-          <?php endwhile; ?>
-
-        <?php the_posts_navigation(); ?>
-
-      <?php else : ?>
-
-        <?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-      <?php endif; ?>
-
-    </div><!-- .container -->
+      </div><!-- .container -->
+    </section>
   </main><!-- #main -->
 </div><!-- #primary -->
 
