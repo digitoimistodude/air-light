@@ -35,7 +35,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
     // Reminder for translated accessible labels
     if ( function_exists( 'ask__' ) ) {
       $screenreadertext = ask__( 'Accessibility: Open child menu' );
-    else {
+    } else {
       $screenreadertext = esc_html__( 'Open child menu', 'air-light' );
     }
 
