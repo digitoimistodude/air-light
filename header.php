@@ -30,7 +30,16 @@ namespace Air_Light;
   <?php wp_body_open(); ?>
   <div id="page" class="site">
 
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'air-light' ); ?></a>
+  <?php
+    // Reminder for translated accessible labels
+    if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-pro/polylang.php' ) ) {
+      $screenreadertext_skip = ask__( 'Accessibility: Skip to content' );
+    } else {
+      $screenreadertext_skip = 'Skip to content';
+    }
+  ?>
+
+    <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( $screenreadertext_skip ); ?></a>
 
     <div class="nav-container">
       <header class="site-header">
