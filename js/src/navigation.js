@@ -395,6 +395,17 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     button.className = button.className.replace(" is-active", "");
     button.setAttribute("aria-expanded", "false");
     menu.setAttribute("aria-expanded", "false");
+
+    // Change screen reader open/close labels
+    navTogglescreenReaderText = $("#nav-toggle-label");
+    navTogglescreenReaderText.text(
+      navTogglescreenReaderText.text() ===
+        maailma2030_screenReaderText.expand_toggle
+        ? maailma2030_screenReaderText.collapse_toggle
+        : maailma2030_screenReaderText.expand_toggle
+    );
+
+    // Return focus to nav-toggle
     button.focus();
   }
 
