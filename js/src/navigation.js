@@ -11,6 +11,20 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 */
 
 (function ($) {
+  // Check if enter pressed
+  var enterPressed = false;
+  $(window)
+    .keydown(function (evt) {
+      if (evt.which == 13) {
+        enterPressed = true;
+      }
+    })
+    .keyup(function (evt) {
+      if (evt.which == 13) {
+        enterPressed = false;
+      }
+    });
+
   var menuContainer = $(".nav-container");
   var menuToggle = menuContainer.find("#nav-toggle");
   var siteHeaderMenu = menuContainer.find("#main-navigation-wrapper");
@@ -64,27 +78,28 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   // Adds aria attribute
   siteHeaderMenu.find(".menu-item-has-children").attr("aria-haspopup", "true");
 
-  // Toggles the sub-menu when dropdown toggle button clicked
+  // Toggles the sub-menu when dropdown toggle button accessed
   siteHeaderMenu.find(".dropdown-toggle").click(function (e) {
-    const screenReaderSpan = $(this).find(".screen-reader-text");
+    if (enterPressed) {
+      const screenReaderSpan = $(this).find(".screen-reader-text");
+      const dropdownMenu = $(this).nextAll(".sub-menu");
 
-    const dropdownMenu = $(this).nextAll(".sub-menu");
+      e.preventDefault();
+      $(this).toggleClass("toggled-on");
+      dropdownMenu.toggleClass("toggled-on");
 
-    e.preventDefault();
-    $(this).toggleClass("toggled-on");
-    dropdownMenu.toggleClass("toggled-on");
-
-    // jscs:disable
-    $(this).attr(
-      "aria-expanded",
-      $(this).attr("aria-expanded") === "false" ? "true" : "false"
-    );
-    // jscs:enable
-    screenReaderSpan.text(
-      screenReaderSpan.text() === air_light_screenReaderText.expand
-        ? air_light_screenReaderText.collapse
-        : air_light_screenReaderText.expand
-    );
+      // jscs:disable
+      $(this).attr(
+        "aria-expanded",
+        $(this).attr("aria-expanded") === "false" ? "true" : "false"
+      );
+      // jscs:enable
+      screenReaderSpan.text(
+        screenReaderSpan.text() === air_light_screenReaderText.expand
+          ? air_light_screenReaderText.collapse
+          : air_light_screenReaderText.expand
+      );
+    }
   });
 
   // Adds a class to sub-menus for styling
