@@ -48,23 +48,27 @@ lazyload(images, {
     });
   });
 
+  // Detect Visible section on viewport from bottom
+  // @link https://codepen.io/BoyWithSilverWings/pen/MJgQqR
+  $.fn.isInViewport = function () {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+
   // Accessibility: Ensure back to top is right color on right background
-  var stickyOffset = $(".back-to-top").offset();
-  var $contentDivs = $(".block");
-  $(document).scroll(function () {
-    $contentDivs.each(function (k) {
-      var _thisOffset = $(this).offset();
-      var _actPosition = _thisOffset.top - $(window).scrollTop();
-      if (
-        _actPosition < stickyOffset.top &&
-        _actPosition + $(this).height() > 0
-      ) {
+  $(window).on("resize scroll", function () {
+    $(".block").each(function () {
+      if ($(this).isInViewport()) {
         $(".back-to-top")
           .removeClass("has-light-bg has-dark-bg")
           .addClass(
             $(this).hasClass("has-light-bg") ? "has-light-bg" : "has-dark-bg"
           );
-        return false;
       }
     });
   });
