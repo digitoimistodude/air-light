@@ -7,7 +7,8 @@ import MoveTo from "moveto";
 // import './sticky-nav.js'
 // import slick from 'slick-carousel';
 import "what-input";
-import "./navigation.js";
+// import "./navigation.js";
+import AirNav from './air-nav.js';
 import "./lazyload.js";
 
 // Define Javascript is active by changing the body class
@@ -23,6 +24,8 @@ lazyload(images, {
   rootMargin: "0px",
   threshold: 0,
 });
+
+const nav = new AirNav(document.querySelector('.nav-primary'));
 
 // jQuery start
 (function ($) {
