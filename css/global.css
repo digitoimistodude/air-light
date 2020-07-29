@@ -2301,7 +2301,9 @@ Usage: codyhouse.co/license
   visibility: hidden;
 }
 
-.sub-menu.toggled-on {
+.sub-menu.toggled-on,
+.dropdown.hovered .sub-menu,
+.dropdown:hover + .sub-menu {
   visibility: visible;
 }
 
@@ -2380,6 +2382,10 @@ Usage: codyhouse.co/license
     transition-delay: 0s, 0s, 0s;
   }
 
+  .nav-primary ul .sub-menu.toggled-on ul {
+    top: 0;
+  }
+
   [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
   [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu,
   [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu,
@@ -2389,6 +2395,13 @@ Usage: codyhouse.co/license
     z-index: 1;
     transform: translateY(0%);
     transition-delay: 0s, 0s, 0s;
+  }
+
+  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu ul,
+  [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu ul,
+  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:focus > .sub-menu ul,
+  [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children:hover > .sub-menu ul {
+    top: 0;
   }
 }
 
@@ -2416,6 +2429,10 @@ Usage: codyhouse.co/license
     padding-top: .5rem;
   }
 
+  .nav-primary ul .menu-item-has-children .sub-menu {
+    visibility: hidden;
+  }
+
   .nav-primary ul .menu-item-has-children:focus > .sub-menu,
   .nav-primary ul .menu-item-has-children:hover > .sub-menu {
     visibility: visible;
@@ -2423,6 +2440,11 @@ Usage: codyhouse.co/license
     z-index: 1;
     transform: translateY(0%);
     transition-delay: 0s, 0s, 0s;
+  }
+
+  .nav-primary ul .menu-item-has-children:focus > .sub-menu ul,
+  .nav-primary ul .menu-item-has-children:hover > .sub-menu ul {
+    top: 0;
   }
 }
 
@@ -2522,7 +2544,7 @@ Usage: codyhouse.co/license
   }
 
   .nav-primary .menu-item ul ul {
-    top: 0;
+    top: 6rem;
     left: 100%;
     margin-left: 0;
     margin-top: -5px;

@@ -28,6 +28,16 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       }
     });
 
+  // More flexible subnav hovers with class helper
+  $(".menu-item-has-children .sub-menu, .menu-item-has-children a").hover(
+    function () {
+      $(this).parent().addClass("hovered");
+    },
+    function () {
+      $(this).parent().removeClass("hovered");
+    }
+  );
+
   var menuContainer = $(".nav-container");
   var menuToggle = menuContainer.find("#nav-toggle");
   var siteHeaderMenu = menuContainer.find("#main-navigation-wrapper");

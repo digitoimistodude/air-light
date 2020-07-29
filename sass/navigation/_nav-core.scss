@@ -115,12 +115,14 @@ $enable-animations: true;
 }
 
 // Accessibiliy
+// Hide from keyboard and screen readers if not toggled
 .sub-menu {
-  // Hide from keyboard and screen readers if not toggled
   visibility: hidden;
+}
 
-  &.toggled-on {
-    // Show for keyboard and screen readers only when toggled
-    visibility: visible;
-  }
+// Show for keyboard and screen readers only when toggled
+.sub-menu.toggled-on,
+.dropdown.hovered .sub-menu,
+.dropdown:hover + .sub-menu {
+  visibility: visible;
 }

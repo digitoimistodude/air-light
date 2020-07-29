@@ -136,6 +136,11 @@ $submenu-dropdown-toggle-hover: (
       z-index: 1;
       transform: translateY(0%);
       transition-delay: 0s, 0s, $hover-intent;
+
+      // Reset top, flicker-hack
+      ul {
+        top: 0;
+      }
     }
 
     [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children,
@@ -147,6 +152,11 @@ $submenu-dropdown-toggle-hover: (
         z-index: 1;
         transform: translateY(0%);
         transition-delay: 0s, 0s, $hover-intent;
+
+        // Reset top, flicker-hack
+        ul {
+          top: 0;
+        }
       }
     }
 
@@ -176,6 +186,10 @@ $submenu-dropdown-toggle-hover: (
       }
 
       .nav-primary ul .menu-item-has-children {
+        .sub-menu {
+          visibility: hidden;
+        }
+
         &:focus > .sub-menu,
         &:hover > .sub-menu {
           visibility: visible;
@@ -183,6 +197,11 @@ $submenu-dropdown-toggle-hover: (
           z-index: 1;
           transform: translateY(0%);
           transition-delay: 0s, 0s, $hover-intent;
+
+          // Reset top, flicker-hack
+          ul {
+            top: 0;
+          }
         }
       }
     }
@@ -303,7 +322,8 @@ $submenu-dropdown-toggle-hover: (
         }
 
         ul {
-          top: 0;
+          // Prevent flickering by setting up larger top
+          top: 6rem;
           left: 100%;
           margin-left: 0;
           margin-top: -5px;
