@@ -44,8 +44,17 @@ function enqueue_theme_scripts() {
     wp_enqueue_script( 'comment-reply' );
   }
 
+  // Reminder for translated accessible labels
+  if ( function_exists( 'ask__' ) ) {
+    $screenreadertext_expand = ask__( 'Accessibility: Open child menu' );
+    $screenreadertext_collapse = ask__( 'Accessibility: Close child menu' );
+  else {
+    $screenreadertext_expand = esc_html__( 'Open child menu', 'air-light' );
+    $screenreadertext_collapse = esc_html__( 'Close child menu', 'air-light' );
+  }
+
   wp_localize_script( 'scripts', 'air_light_screenReaderText', array(
-    'expand'   => esc_html__( 'Open child menu', 'air-light' ),
-    'collapse' => esc_html__( 'Close child menu', 'air-light' ),
+    'expand'   => $screenreadertext_expand,
+    'collapse' => $screenreadertext_collapse,
   ) );
 } // end air_light_scripts
