@@ -15,13 +15,13 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div id="content" class="content-area">
+<div class="content-area">
 	<main role="main" id="main" class="site-main">
 		<div class="container">
 
 			<section class="error-404 not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'air-light' ); ?></h1>
+					<h1 id="content" class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'air-light' ); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="page-content">

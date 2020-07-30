@@ -22,14 +22,14 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div id="content" class="content-area">
+<div class="content-area">
   <main role="main" id="main" class="site-main">
 
     <section class="block block-page has-light-bg">
       <div class="container">
 
           <header class="entry-header">
-            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+            <?php the_title( '<h1 class="entry-title" id="content">', '</h1>' ); ?>
           </header><!-- .entry-header -->
 
           <div class="entry-content">

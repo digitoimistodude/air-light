@@ -20,7 +20,7 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div id="content" class="content-area">
+<div class="content-area">
   <main role="main" id="main" class="site-main">
 
     <section class="block block-blog has-light-bg">
@@ -31,7 +31,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
           <?php if ( is_home() && ! is_front_page() ) : ?>
 
             <header>
-              <h1 class="entry-title screen-reader-text">
+              <h1 id="content" class="entry-title screen-reader-text">
                 <?php single_post_title(); ?>
               </h1>
             </header>
