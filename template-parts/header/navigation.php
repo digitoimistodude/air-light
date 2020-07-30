@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:22:26
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-05-11 13:28:23
+ * @Last Modified time: 2020-07-30 10:37:21
  *
  * @package air-light
  */
@@ -13,7 +13,7 @@
 namespace Air_Light;
 
 // Reminder for translated accessible labels
-if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-pro/polylang.php' ) ) {
+if ( function_exists( 'pll_the_languages' ) ) {
   $screenreadertext_expand_toggle = ask__( 'Accessibility: Open main menu' );
 } else {
   $screenreadertext_expand_toggle = 'Open main menu';

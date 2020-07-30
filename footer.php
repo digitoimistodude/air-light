@@ -25,7 +25,7 @@ namespace Air_Light;
 
   <?php
     // Reminder for translated accessible labels
-    if ( is_plugin_active( 'polylang/polylang.php' ) || is_plugin_active( 'polylang-pro/polylang.php' ) ) {
+    if ( function_exists( 'pll_the_languages' ) ) {
       $screenreadertext_top = ask__( 'Accessibility: Back to top' );
     } else {
       $screenreadertext_top = 'Back to top';
