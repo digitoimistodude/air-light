@@ -278,51 +278,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     // Listen for key events on nav elements and the toggle button
     // to trigger focus trap
     for (var i = 0; i < navElements.length; i++) {
-      navElements[i].addEventListener("keydown", function (e) {
-        focusTrap(e);
-      });
-    }
-    button.addEventListener("keydown", function (e) {
-      focusTrap(e);
-    });
-
-    function focusTrap(e) {
-      // Set focusable elements inside main navigation.
-      focusableElements = container.querySelectorAll([
-        ".sub-menu.toggled-on > li a[href]",
-        'ul[aria-expanded="true"] > li > a[href]',
-        "area[href]",
-        "input:not([disabled])",
-        "select:not([disabled])",
-        "textarea:not([disabled])",
-        ".sub-menu.toggled-on > li > button:not([disabled]):not(.toggled-on)",
-        'ul[aria-expanded="true"] > li > button:not([disabled]):not(.toggled-on)',
-        "iframe",
-        "object",
-        "embed",
-        "[contenteditable]",
-        '[tabindex]:not([tabindex^="-"])',
-      ]);
-      firstFocusableElement = focusableElements[0];
-      lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-      // Redirect last Tab to first focusable element.
-      if (lastFocusableElement === e.target && e.keyCode === 9 && !e.shiftKey) {
-        e.preventDefault();
-        button.focus(); // Set focus on first element - that's actually close menu button.
-      }
-
-      // Redirect first Shift+Tab to toggle button element.
-      if (firstFocusableElement === e.target && e.keyCode === 9 && e.shiftKey) {
-        e.preventDefault();
-        button.focus(); // Set focus on last element.
-      }
-
-      // Redirect Shift+Tab from the toggle button to last focusable element.
-      if (button === e.target && e.keyCode === 9 && e.shiftKey) {
-        e.preventDefault();
-        lastFocusableElement.focus(); // Set focus on last element.
-      }
+      navElements[i].addEventListener("keydown", focusTrap);
     }
   }
 
@@ -359,6 +315,8 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       button.className += " is-active";
       button.setAttribute("aria-expanded", "true");
       menu.setAttribute("aria-expanded", "true");
+      // add focus trap when menu open
+      button.addEventListener("keydown", focusTrap, false);
     }
   };
 
@@ -383,6 +341,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Close menu function.
   function closeMenu() {
+    button.removeEventListener("keydown", focusTrap, false);
     html.className = html.className.replace(" disable-scroll", "");
     body.className = body.className.replace(" js-nav-active", "");
     container.className = container.className.replace(" is-active", "");
@@ -431,6 +390,48 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       }
 
       self = self.parentElement;
+    }
+  }
+
+  function focusTrap(e) {
+    // Set focusable elements inside main navigation.
+    focusableElements = container.querySelectorAll([
+      ".sub-menu.toggled-on > li a[href]",
+      'ul[aria-expanded="true"] > li > a[href]',
+      "area[href]",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "textarea:not([disabled])",
+      ".sub-menu.toggled-on > li > button:not([disabled]):not(.toggled-on)",
+      'ul[aria-expanded="true"] > li > button:not([disabled]):not(.toggled-on)',
+      "iframe",
+      "object",
+      "embed",
+      "[contenteditable]",
+      '[tabindex]:not([tabindex^="-"])',
+    ]);
+    firstFocusableElement = focusableElements[0];
+    lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+    // Redirect last Tab to first focusable element.
+    if (lastFocusableElement === e.target && e.keyCode === 9 && !e.shiftKey) {
+      e.preventDefault();
+      button.focus(); // Set focus on first element - that's actually close menu button.
+      console.log(1)
+    }
+
+    // Redirect first Shift+Tab to toggle button element.
+    if (firstFocusableElement === e.target && e.keyCode === 9 && e.shiftKey) {
+      e.preventDefault();
+      button.focus(); // Set focus on last element.
+      console.log(2);
+    }
+
+    // Redirect Shift+Tab from the toggle button to last focusable element.
+    if (button === e.target && e.keyCode === 9 && e.shiftKey) {
+      e.preventDefault();
+      lastFocusableElement.focus(); // Set focus on last element.
+      console.log(3);
     }
   }
 })(jQuery);
