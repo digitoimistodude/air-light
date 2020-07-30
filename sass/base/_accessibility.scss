@@ -6,9 +6,14 @@
 // ---------------------------------------------------------
 
 // Variables
-$focus-background-color: #f9bf47;
-$focus-outline-color: #f9bf47;
+$focus-outline-color: #4d4aff;
 $focus-text-color: #000;
+$focus-outline-style: 2px solid;
+$focus-outline-style-large-elements: 4px solid;
+$tld-browsersync: 'localhost:3000';
+$tld-development: 'airdev.test';
+$tld-staging: 'air.vaiheessa.fi';
+$tld-production: 'www.dudetest.xyz';
 
 // Text meant only for screen readers.
 .screen-reader-text {
@@ -25,6 +30,12 @@ $focus-text-color: #000;
 
   &.skip-link {
     margin: 5px;
+
+    &:focus {
+      background: $color-white;
+      color: $focus-outline-color;
+      outline: 2px solid $focus-outline-color;
+    }
   }
 
   &:focus {
@@ -58,35 +69,39 @@ $focus-text-color: #000;
   outline: none;
 }
 
+// Make sure outline is visible on cols that have .global-link
+body .block-image-links .cols .col,
+.col {
+  overflow: visible;
+}
+
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
   input:focus,
   button:focus,
   select:focus,
-  textarea:focus {
-    outline: 4px solid $focus-outline-color;
-    opacity: 1;
-  }
-
-  nav ul li a:focus {
-    background: $focus-background-color;
-    color: $focus-text-color;
-  }
-
+  textarea:focus,
+  div[tabindex]:focus,
+  nav ul li a:focus,
+  div[tabindex]:focus,
   a:focus {
-    outline: 2px solid $focus-outline-color;
-    background: rgba($focus-background-color, .5);
+    // Normalize the look of the outline across browsers
+    // @link https://a11yproject.com/posts/never-remove-css-outlines/
+    outline: $focus-outline-style $focus-outline-color;
+    color: $focus-text-color;
     opacity: 1;
+    z-index: 99;
   }
 
+  // A bit better focus for large elements
   a.global-link:focus {
-    background: rgba($focus-background-color, .5);
+    outline: $focus-outline-style-large-elements $focus-outline-color;
   }
 }
 
 // Make theme keyboard accessible with no Javascript enabled
 .no-js *:focus {
-  outline: 4px solid $focus-outline-color;
+  outline: $focus-outline-style $focus-outline-color;
 }
 
 // Links within content must be underlined
@@ -99,4 +114,35 @@ $focus-text-color: #000;
   &:focus {
     text-decoration: none;
   }
+}
+
+// Add icon to external links
+a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]) {
+  background-image: url('../svg/external-link.svg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+  margin-right: 1rem;
+
+  @media (max-width: 600px) {
+    background-size: 14px 14px;
+  }
+}
+
+// Light icons for dark navigation
+.menu-item a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]) {
+  background-image: url('../svg/external-link-white.svg');
+}
+
+// Do not use email links as external links
+a[href^="mailto"] {
+  background-image: none;
+  padding-right: 0;
+}
+
+// Footer exceptions
+.block-footer .menu-item a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]),
+.block-footer a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]) {
+  background-size: 12px 12px;
+  padding-right: 2rem;
 }

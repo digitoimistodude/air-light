@@ -339,6 +339,13 @@ template {
   margin: 5px;
 }
 
+.screen-reader-text.skip-link:focus,
+.nav-toggle:not(.has-visible-label) .skip-link.nav-toggle-label:focus {
+  background: #fff;
+  color: #4d4aff;
+  outline: 2px solid #4d4aff;
+}
+
 .screen-reader-text:focus,
 .nav-toggle:not(.has-visible-label) .nav-toggle-label:focus {
   background-color: #f1f1f1;
@@ -370,31 +377,31 @@ template {
   outline: none;
 }
 
+body .block-image-links .cols .col,
+.col {
+  overflow: visible;
+}
+
 [data-whatinput="keyboard"] input:focus,
 [data-whatinput="keyboard"] button:focus,
 [data-whatinput="keyboard"] select:focus,
-[data-whatinput="keyboard"] textarea:focus {
-  outline: 4px solid #f9bf47;
-  opacity: 1;
-}
-
-[data-whatinput="keyboard"] nav ul li a:focus {
-  background: #f9bf47;
-  color: #000;
-}
-
+[data-whatinput="keyboard"] textarea:focus,
+[data-whatinput="keyboard"] div[tabindex]:focus,
+[data-whatinput="keyboard"] nav ul li a:focus,
+[data-whatinput="keyboard"] div[tabindex]:focus,
 [data-whatinput="keyboard"] a:focus {
-  outline: 2px solid #f9bf47;
-  background: rgba(249, 191, 71, .5);
+  outline: 2px solid #4d4aff;
+  color: #000;
   opacity: 1;
+  z-index: 99;
 }
 
 [data-whatinput="keyboard"] a.global-link:focus {
-  background: rgba(249, 191, 71, .5);
+  outline: 4px solid #4d4aff;
 }
 
 .no-js *:focus {
-  outline: 4px solid #f9bf47;
+  outline: 2px solid #4d4aff;
 }
 
 .container a,
@@ -409,7 +416,39 @@ template {
   text-decoration: none;
 }
 
-.block {
+a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+  background-image: url('../svg/external-link.svg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 25px;
+  padding-right: 2.5rem;
+  margin-right: 10px;
+  margin-right: 1rem;
+}
+
+@media (max-width: 600px) {
+  a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+    background-size: 14px 14px;
+  }
+}
+
+.menu-item a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+  background-image: url('../svg/external-link-white.svg');
+}
+
+a[href^="mailto"] {
+  background-image: none;
+  padding-right: 0;
+}
+
+.block-footer .menu-item a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]),
+.block-footer a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+  background-size: 12px 12px;
+  padding-right: 20px;
+  padding-right: 2rem;
+}
+
+.block:not(.block-footer) {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -4195,7 +4234,6 @@ Usage: codyhouse.co/license
 }
 
 .top svg {
-  position: absolute;
   fill: #222;
   margin: 0;
   opacity: .8;
