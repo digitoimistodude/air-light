@@ -416,7 +416,7 @@ body .block-image-links .cols .col,
   text-decoration: none;
 }
 
-a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"]) {
   background-image: url('../svg/external-link.svg');
   background-position: right center;
   background-repeat: no-repeat;
@@ -427,12 +427,12 @@ a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):no
 }
 
 @media (max-width: 600px) {
-  a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+  a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"]) {
     background-size: 14px 14px;
   }
 }
 
-.menu-item a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+.menu-item a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"]) {
   background-image: url('../svg/external-link-white.svg');
 }
 
@@ -442,7 +442,7 @@ a[href^="mailto"] {
 }
 
 .block-footer .menu-item a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]),
-.block-footer a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]) {
+.block-footer a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"]) {
   background-size: 12px 12px;
   padding-right: 20px;
   padding-right: 2rem;

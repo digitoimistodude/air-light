@@ -10,6 +10,7 @@ $focus-outline-color: #4d4aff;
 $focus-text-color: #000;
 $focus-outline-style: 2px solid;
 $focus-outline-style-large-elements: 4px solid;
+$tld-mobile: '192.168.1.233:3000';
 $tld-browsersync: 'localhost:3000';
 $tld-development: 'airdev.test';
 $tld-staging: 'air.vaiheessa.fi';
@@ -117,7 +118,7 @@ body .block-image-links .cols .col,
 }
 
 // Add icon to external links
-a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]) {
+a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]) {
   background-image: url('../svg/external-link.svg');
   background-position: right center;
   background-repeat: no-repeat;
@@ -130,7 +131,7 @@ a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):n
 }
 
 // Light icons for dark navigation
-.menu-item a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]) {
+.menu-item a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]) {
   background-image: url('../svg/external-link-white.svg');
 }
 
@@ -142,7 +143,7 @@ a[href^="mailto"] {
 
 // Footer exceptions
 .block-footer .menu-item a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]),
-.block-footer a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]) {
+.block-footer a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]) {
   background-size: 12px 12px;
   padding-right: 2rem;
 }
