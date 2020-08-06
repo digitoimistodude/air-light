@@ -12,7 +12,7 @@ Tags: one-column, accessibility-ready, translation-ready
 
 Requires at least: 4.0
 Tested up to: 5.4.2
-Stable tag: 5.3.0
+Stable tag: 5.3.1
 License: MIT License
 License URI: https://opensource.org/licenses/MIT
 
