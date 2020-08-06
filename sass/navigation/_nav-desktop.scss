@@ -17,13 +17,15 @@ $nav-links: (
 );
 $nav-dropdown-links: (
   'color': $color-links,
-  'hover-color': $color-cyan,
+  'hover-color': $color-hover,
   'font-weight': 400,
   'font-size': 1.4rem
 );
 $dropdown: (
+  'background': $color-white,
   'gap': 1rem,
-  'width': 19rem
+  'width': 19rem,
+  'border-radius': 4px
 );
 $dropdown-toggle: (
   'background': transparent,
@@ -103,6 +105,7 @@ $submenu-dropdown-toggle-hover: (
     }
 
     .sub-menu {
+      background: map-get($dropdown, 'background');
       width: map-get($dropdown, 'width');
       visibility: hidden;
       opacity: 0;
@@ -112,10 +115,10 @@ $submenu-dropdown-toggle-hover: (
       transform: translateY(-2em);
       z-index: -1;
       transition: all $transition-duration ease-in-out $hover-intent, visibility $hover-intent linear $hover-intent, z-index 0s linear .01s;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
+      border-top-left-radius: map-get($dropdown, 'border-radius');
+      border-top-right-radius: map-get($dropdown, 'border-radius');
+      border-bottom-left-radius: map-get($dropdown, 'border-radius');
+      border-bottom-right-radius: map-get($dropdown, 'border-radius');
       border-left: 1px solid rgba(0, 0, 0, .05);
       border-right: 1px solid rgba(0, 0, 0, .05);
       border-bottom: 1px solid rgba(0, 0, 0, .05);

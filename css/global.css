@@ -2389,6 +2389,7 @@ Usage: codyhouse.co/license
   }
 
   .sub-menu {
+    background: #fff;
     width: 19rem;
     visibility: hidden;
     opacity: 0;
