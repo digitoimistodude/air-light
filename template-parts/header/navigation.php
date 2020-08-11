@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:22:26
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-07-30 10:37:21
+ * @Last Modified time: 2020-08-11 15:04:17
  *
  * @package air-light
  */
@@ -39,7 +39,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
       'menu_id'        => 'main-menu',
       'echo'           => true,
       'fallback_cb'    => __NAMESPACE__ . '\Nav_Walker::fallback',
-      'items_wrap'     => '<ul class="%2$s">%3$s</ul>',
+      'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
       'walker'         => new Nav_Walker(),
     ) ); ?>
 

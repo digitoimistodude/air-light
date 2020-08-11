@@ -28,8 +28,8 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       }
     });
 
-  // More flexible subnav hovers with class helper
-  $(".menu-item-has-children .sub-menu, .menu-item-has-children a").hover(
+  // Accessibility: More flexible subnav hovers with class helper, see the end of _nav-core.scss
+  $(".menu-item-has-children .sub-menu, .menu-item-has-children").hover(
     function () {
       $(this).parent().addClass("hovered");
     },
@@ -417,7 +417,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     if (lastFocusableElement === e.target && e.keyCode === 9 && !e.shiftKey) {
       e.preventDefault();
       button.focus(); // Set focus on first element - that's actually close menu button.
-      console.log(1)
+      console.log(1);
     }
 
     // Redirect first Shift+Tab to toggle button element.

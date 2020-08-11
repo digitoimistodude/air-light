@@ -7,8 +7,10 @@ import MoveTo from "moveto";
 // import './sticky-nav.js'
 // import slick from 'slick-carousel';
 import "what-input";
-import "./navigation.js";
 import "./lazyload.js";
+
+// Navigation
+import "./navigation.js";
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove("no-js");
@@ -96,7 +98,7 @@ lazyload(images, {
 
   // Document ready start
   $(function () {
-    // Your jQuery here
+    // Your JavaScript here
   });
 })(jQuery);
 

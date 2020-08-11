@@ -4,7 +4,6 @@
 // The main layout for the website navigation, for both mobile
 // and desktop devices.
 // -----------------------------------------------------------
-$enable-animations: true;
 
 .nav-primary .menu-items {
   position: relative;
@@ -42,15 +41,6 @@ $enable-animations: true;
   }
 }
 
-// Hide by default if no animations enabled
-@if $enable-animations == false {
-  @media only screen and (min-width: $responsivenav) {
-    .nav-primary .menu-items ul {
-      display: none;
-    }
-  }
-}
-
 // Disable animations on IE10 + IE11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media only screen and (min-width: $responsivenav) {
@@ -75,14 +65,6 @@ $enable-animations: true;
   }
 }
 
-@if $enable-animations == false {
-  @media only screen and (min-width: $responsivenav) {
-    .js .nav-primary ul .sub-menu.toggled-on {
-      display: block;
-    }
-  }
-}
-
 // Disable animations on IE10 + IE11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   @media only screen and (min-width: $responsivenav) {
@@ -99,13 +81,6 @@ $enable-animations: true;
 }
 
 .dropdown-toggle:after,
-.dropdown-toggle.toggled-on:after,
-.nav-toggle:before,
-.nav-toggle.toggled-on:before {
-  speak: none;
-}
-
-.dropdown-toggle:after,
 .dropdown-toggle.toggled-on:after {
   font-size: 1.3rem;
 }
@@ -116,13 +91,13 @@ $enable-animations: true;
 
 // Accessibiliy
 // Hide from keyboard and screen readers if not toggled
-.sub-menu {
+.sub-menu:not(.toggled-on) {
   visibility: hidden;
 }
 
 // Show for keyboard and screen readers only when toggled
 .sub-menu.toggled-on,
 .dropdown.hovered .sub-menu,
-.dropdown:hover + .sub-menu {
+.dropdown:hovered + .sub-menu {
   visibility: visible;
 }
