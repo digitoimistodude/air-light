@@ -17,21 +17,21 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 <div class="content-area">
 	<main role="main" id="main" class="site-main">
-		<div class="container">
 
 			<section class="error-404 not-found">
-				<header class="entry-header">
-					<h1 id="content" class="entry-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'air-light' ); ?></h1>
-				</header><!-- .entry-header -->
+        <div class="container">
+          <div class="content">
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'air-light' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+				    <header class="entry-header">
+              <h1 id="content" class="entry-title">404<span class="screen-reader-text"> <?php esc_html_e( 'Page not found.', 'air-light' ); ?></span></h1>
+			  	  </header>
 
-		</div><!-- .container -->
+	  				<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'air-light' ); ?></p>
+          </div>
+        </div>
+			</section>
+
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php get_footer();
+<?php wp_footer();
