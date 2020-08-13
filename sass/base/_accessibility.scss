@@ -119,31 +119,28 @@ body .block-image-links .cols .col,
 
 // Add icon to external links
 a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]) {
-  background-image: url('../svg/external-link.svg');
-  background-position: right center;
-  background-repeat: no-repeat;
-  padding-right: 2.5rem;
-  margin-right: 1rem;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
 
-  @media (max-width: 600px) {
+  &::after {
+    background-image: url('../svg/external-link.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    content: '';
+    position: relative;
+    display: flex;
+    width: 14px;
+    height: 14px;
     background-size: 14px 14px;
+    right: 0;
+    top: 0;
+    margin-left: 5px;
+    margin-right: 2px;
   }
 }
 
-// Light icons for dark navigation
-.menu-item a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]) {
-  background-image: url('../svg/external-link-white.svg');
-}
-
 // Do not use email links as external links
-a[href^="mailto"] {
-  background-image: none;
-  padding-right: 0;
-}
-
-// Footer exceptions
-.block-footer .menu-item a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]),
-.block-footer a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]) {
-  background-size: 12px 12px;
-  padding-right: 2rem;
+a[href^="mailto"]::after {
+  display: none;
 }
