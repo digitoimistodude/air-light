@@ -6,12 +6,10 @@
 // ------------------------------------------------------------
 
 .back-to-top {
-  width: 50px;
-  height: 50px;
   margin: 0;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 4px;
+  right: 4px;
   text-decoration: none;
   opacity: 0;
   transition: opacity $transition-duration 0s, visibility 0s $transition-duration;
@@ -59,14 +57,19 @@
 .top {
   background: transparent;
 
+  // Makes it 50x50
+  padding: 16px;
+
   svg {
     fill: $color-body;
     margin: 0;
     opacity: .8;
-    transition: all $transition-duration ease;
-    position: relative;
-    width: 20px;
-    height: 20px;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
 
     @media (max-width: $container-mobile) {
       width: 15px;

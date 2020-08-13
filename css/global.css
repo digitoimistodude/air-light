@@ -3018,12 +3018,10 @@ Usage: codyhouse.co/license
   background: #fff; }
 
 .back-to-top {
-  width: 50px;
-  height: 50px;
   margin: 0;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 4px;
+  right: 4px;
   text-decoration: none;
   opacity: 0;
   transition: opacity 0.22s 0s, visibility 0s 0.22s;
@@ -3050,15 +3048,18 @@ Usage: codyhouse.co/license
     opacity: 1; }
 
 .top {
-  background: transparent; }
+  background: transparent;
+  padding: 16px; }
   .top svg {
     fill: #222;
     margin: 0;
     opacity: .8;
-    transition: all 0.22s ease;
-    position: relative;
-    width: 20px;
-    height: 20px; }
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px; }
     @media (max-width: 480px) {
       .top svg {
         width: 15px;
