@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2020-08-13 12:39:30
+# @Last Modified time: 2020-08-13 12:40:00
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
