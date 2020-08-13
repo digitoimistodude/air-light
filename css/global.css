@@ -361,11 +361,11 @@ body .block-image-links .cols .col,
   .entry-content a:focus {
     text-decoration: none; }
 
-a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"]) {
+a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"]):not(.no-external-link-indicator) {
   display: inline-flex;
   justify-content: space-between;
   align-items: center; }
-  a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"])::after {
+  a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.1.233:3000"]):not(.no-external-link-indicator)::after {
     background-image: url("../svg/external-link.svg");
     background-position: right center;
     background-repeat: no-repeat;

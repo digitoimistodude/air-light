@@ -118,7 +118,7 @@ body .block-image-links .cols .col,
 }
 
 // Add icon to external links
-a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]) {
+a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator) {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
