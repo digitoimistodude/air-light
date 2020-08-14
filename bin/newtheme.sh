@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2020-08-13 12:40:00
+# @Last Modified time: 2020-08-14 17:37:36
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
@@ -146,7 +146,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="5.3.4"
+newestair="5.3.5"
 newestwordpress="5.4.2"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');

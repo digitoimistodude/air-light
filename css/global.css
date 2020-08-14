@@ -371,7 +371,7 @@ a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):no
     background-repeat: no-repeat;
     content: '';
     position: relative;
-    display: flex;
+    display: inline-flex;
     width: 14px;
     height: 14px;
     background-size: 14px 14px;
@@ -3036,8 +3036,10 @@ Usage: codyhouse.co/license
 .back-to-top {
   margin: 0;
   position: fixed;
-  bottom: 4px;
-  right: 4px;
+  bottom: 10px;
+  bottom: 1rem;
+  right: 10px;
+  right: 1rem;
   text-decoration: none;
   opacity: 0;
   transition: opacity 0.22s 0s, visibility 0s 0.22s;

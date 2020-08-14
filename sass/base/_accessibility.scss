@@ -129,7 +129,7 @@ a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):n
     background-repeat: no-repeat;
     content: '';
     position: relative;
-    display: flex;
+    display: inline-flex;
     width: 14px;
     height: 14px;
     background-size: 14px 14px;

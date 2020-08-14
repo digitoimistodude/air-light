@@ -8,8 +8,8 @@
 .back-to-top {
   margin: 0;
   position: fixed;
-  bottom: 4px;
-  right: 4px;
+  bottom: 1rem;
+  right: 1rem;
   text-decoration: none;
   opacity: 0;
   transition: opacity $transition-duration 0s, visibility 0s $transition-duration;
