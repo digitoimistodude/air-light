@@ -42,26 +42,22 @@ a {
 }
 
 // Special link styles for example in blog posts, use with @extend
-%link {
-  color: #111;
+%textlink {
+  position: relative;
+  overflow: visible;
+  font-weight: 700;
+  z-index: 1;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
-  box-shadow: inset 0 -1px 0 0 #fff, inset 0 -2px 0 0 rgba(#111, .6);
-  transition: all .55s;
-  background-image: linear-gradient(to top, #111, #111);
-  background-size: 100% 0;
-  background-position: left bottom;
-  background-repeat: no-repeat;
+  transition: all .18s ease-in-out;
+  display: inline-flex;
+  color: $color-body;
+  border-bottom: 1px solid $color-links;
+  box-shadow: inset 0 -.1rem 0 $color-links;
 
-  &:hover {
-    color: #fff;
-    text-shadow: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    box-shadow: none;
-    background-size: 100% 2.8rem;
-    margin-left: -5px;
-    margin-right: -5px;
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -3.3rem 0 $color-links;
+    color: $color-body;
   }
 }
 

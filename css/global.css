@@ -555,25 +555,20 @@ a {
   a:hover {
     color: #159d94; }
 
-.container.container-article article a:not(.button) {
-  color: #111;
+.container.container-article article a:not(.button):not(.no-text-link) {
+  position: relative;
+  overflow: visible;
+  font-weight: 700;
+  z-index: 1;
   text-decoration: none;
-  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
-  box-shadow: inset 0 -1px 0 0 #fff, inset 0 -2px 0 0 rgba(17, 17, 17, 0.6);
-  transition: all .55s;
-  background-image: linear-gradient(to top, #111, #111);
-  background-size: 100% 0;
-  background-position: left bottom;
-  background-repeat: no-repeat; }
-  .container.container-article article a:hover:not(.button) {
-    color: #fff;
-    text-shadow: none;
-    padding-left: 5px;
-    padding-right: 5px;
-    box-shadow: none;
-    background-size: 100% 2.8rem;
-    margin-left: -5px;
-    margin-right: -5px; }
+  transition: all .18s ease-in-out;
+  display: inline-flex;
+  color: #222;
+  border-bottom: 1px solid #3962c9;
+  box-shadow: inset 0 -0.1rem 0 #3962c9; }
+  .container.container-article article a:hover:not(.button):not(.no-text-link), .container.container-article article a:focus:not(.button):not(.no-text-link) {
+    box-shadow: inset 0 -3.3rem 0 #3962c9;
+    color: #222; }
 
 .comments-link, .comment-list li, .comment-list li p, .comment-list li .comment-time {
   font-size: 14px; }
@@ -3300,7 +3295,7 @@ del {
         .container.container-article article .entry-meta .notification-box p,
         .container.container-article article .entry-meta .notification-box b {
           font-size: 21px; } }
-  .container.container-article article a:not(.button) {
+  .container.container-article article a:not(.button):not(.no-text-link) {
     position: relative;
     color: #3962c9;
     transition: all 0.22s;

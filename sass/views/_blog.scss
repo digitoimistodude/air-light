@@ -110,8 +110,8 @@ del {
     }
   }
 
-  a:not(.button) {
-    @extend %link;
+  a:not(.button):not(.no-text-link) {
+    @extend %textlink;
     position: relative;
     color: $color-links;
     transition: all $transition-duration;
