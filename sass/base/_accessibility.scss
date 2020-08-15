@@ -65,8 +65,9 @@ $tld-production: 'www.dudetest.xyz';
   outline: 0;
 }
 
-// Suppress focus ring on for mouse users for visual reasons
-[data-whatinput="mouse"] *:focus {
+// Suppress focus ring on for mouse and touch users for visual reasons
+[data-whatinput="mouse"] *:focus,
+[data-whatinput="touch"] *:focus {
   outline: none;
 }
 

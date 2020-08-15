@@ -327,7 +327,8 @@ template {
 [tabindex="-1"]:focus {
   outline: 0; }
 
-[data-whatinput="mouse"] *:focus {
+[data-whatinput="mouse"] *:focus,
+[data-whatinput="touch"] *:focus {
   outline: none; }
 
 body .block-image-links .cols .col,
