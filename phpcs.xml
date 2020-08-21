@@ -75,7 +75,6 @@
         <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
         <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
         <exclude name="WordPress.PHP.DontExtract.extract_extract" />
-        <exclude name="WordPress.PHP.DisallowShortTernary" />
 
         <!-- Translations related, not always necessary, too strict -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
