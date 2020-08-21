@@ -438,8 +438,8 @@ a[href^="mailto"]::after {
 
 .gallery {
   margin-bottom: 1.5em;
-  display: -ms-grid;
   display: grid;
+  /* autoprefixer: off */
   grid-gap: 1.5em; }
 
 .gallery-item {

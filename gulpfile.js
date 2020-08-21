@@ -110,9 +110,9 @@ STYLES
 var stylefmtfile = function (file) {
   console.log(
     util.colors.white("[") +
-      util.colors.yellow("Stylefmt") +
-      util.colors.white("] ") +
-      "Automatically correcting file based on .stylelintrc..."
+    util.colors.yellow("Stylefmt") +
+    util.colors.white("] ") +
+    "Automatically correcting file based on .stylelintrc..."
   );
   var currentdirectory = process.cwd() + "/";
   var modifiedfile = file.path.replace(currentdirectory, "");
@@ -195,13 +195,13 @@ gulp.task("styles", function () {
           //console.log('[clean-css] Minified size: ' + details.stats.minifiedSize + ' bytes');
           console.log(
             "[clean-css] Time spent on minification: " +
-              details.stats.timeSpent +
-              " ms"
+            details.stats.timeSpent +
+            " ms"
           );
           console.log(
             "[clean-css] Compression efficiency: " +
-              details.stats.efficiency * 100 +
-              " %"
+            details.stats.efficiency * 100 +
+            " %"
           );
         }
       )
