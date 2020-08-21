@@ -24,7 +24,7 @@
 
   // Accessibility: Change color based on background color the element is on
   &.has-light-bg svg {
-    fill: $color-body;
+    fill: $color-black;
   }
 
   &.has-dark-bg svg {
@@ -61,7 +61,7 @@
   padding: 16px;
 
   svg {
-    fill: $color-body;
+    fill: $color-black;
     margin: 0;
     opacity: .8;
     transition: all .3s ease;

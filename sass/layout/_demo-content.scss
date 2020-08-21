@@ -6,6 +6,11 @@
 // and start over.
 // ------------------------------------------------
 
+// Demo variables
+$color-cyan: #159d94;
+$color-cyan-bright: #60f4ea;
+
+// Demo structure
 .block.block-entry-header-demo {
   @include background-cover();
   background-image: url('../images/default.jpg');

@@ -10,7 +10,7 @@ $nav-toggle: (
   'active-color': $color-white,
 );
 $nav-links: (
-  'color': $color-body,
+  'color': $color-black,
   'color-active': $color-links,
   'color-current': $color-links,
   'font-weight': 500,
@@ -20,9 +20,9 @@ $dropdown: (
   'background': transparent,
 );
 $dropdown-toggle: (
-  'color': $color-body,
+  'color': $color-black,
   'background': transparent,
-  'active-color': $color-body,
+  'active-color': $color-black,
   'active-background': transparent,
 );
 $hamburger-padding-x: 1.5rem;
@@ -159,11 +159,6 @@ $mobile-nav-height: 80px;
         border-top: 0;
       }
 
-      li:last-child a,
-      .menu-item-2681 a {
-        border-bottom: 1px solid #f4f4f4;
-      }
-
       li > ul > li:last-child .main-title {
         padding-bottom: 20px;
       }
@@ -244,79 +239,6 @@ $mobile-nav-height: 80px;
       // Hide desktop toggles
       .dropdown-toggle svg {
         display: none;
-      }
-
-      .menu-item.menu-item-2749 a {
-        background: #f4f4f4;
-        transition: all $transition-duration;
-        font-weight: 600;
-        padding: 14px 29px;
-        line-height: 1;
-        order: 5;
-        border-radius: 3px;
-        white-space: nowrap;
-        align-self: center;
-        font-size: 14px;
-        color: $color-body;
-        text-align: center;
-        margin-top: 15px;
-
-        &:hover,
-        &:focus {
-          background: #e7e7e7;
-        }
-      }
-
-      .menu-item.menu-item-3271,
-      .menu-item.menu-item-3272 {
-        width: 50%;
-        margin: 10px 0 0;
-        float: left;
-        border: 0;
-      }
-
-      .menu-item.menu-item-3271 {
-        text-align: left;
-      }
-
-      .menu-item.menu-item-3272 {
-        justify-content: flex-end;
-        text-align: right;
-        width: auto;
-        float: right;
-
-        a {
-          justify-content: flex-end;
-          display: inline-block;
-          text-align: right;
-          padding-right: 0;
-        }
-      }
-
-      .menu-item.menu-item-3271 a,
-      .menu-item.menu-item-3272 a {
-        border: 0;
-        font-weight: 600;
-        color: #b2b2b2;
-        transition: all $transition-duration;
-        position: relative;
-        font-size: 14px !important;
-
-        svg {
-          width: 11px;
-          height: 11px;
-          min-width: 11px;
-          margin-left: 8px;
-        }
-
-        &.link-webshop {
-          font-size: 14px;
-          margin-left: auto;
-        }
-
-        @media (max-width: 1440px) {
-          font-size: 14px;
-        }
       }
 
       .dropdown-toggle.toggled-on {

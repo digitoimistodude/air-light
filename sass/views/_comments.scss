@@ -34,13 +34,13 @@
 
     .comment-author {
       @extend %h4;
-      color: $color-body;
+      color: $color-paragraphs;
       margin-top: 0;
       margin-bottom: 10px;
       padding: 0;
 
       a {
-        color: $color-body;
+        color: $color-paragraphs;
       }
     }
 

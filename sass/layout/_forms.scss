@@ -39,7 +39,7 @@
     appearance: none;
 
     &.button-grey {
-      color: $color-body;
+      color: $color-black;
       background: $color-lightgrey;
 
       &:hover {
@@ -232,7 +232,7 @@ select {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
-  border: 1px solid $color-body;
+  border: 1px solid $color-paragraphs;
   padding: 11px 28px 11px 10px;
   line-height: 1;
 
