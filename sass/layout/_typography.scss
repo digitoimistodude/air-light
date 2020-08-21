@@ -6,11 +6,26 @@
 // based responsive mixin can be found in _helpers.scss
 // -----------------------------------------------------------
 
+// Font settings
+// You can use these font stacks normally with `font-family: $font-sans;` for instance.`
+// Please set up fonts in sass/layout/_typography.scss
+$font-base: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+$font-headings: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+$font-monospace: 'Menlo', 'Courier', monospace;
+
+// Font settings
+$font-min-size: 17px; // Minimum font size, on mobile
+$font-max-size: 20px; // Maximum font size, on desktop
+$line-height: 1.7; // Line height
+$line-height-headings: 1.5; // Line height for headings
+$body-weight: 400;
+$headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty well
+
 // Set up self-hosted fonts here
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-regular', 400);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700', 700);
-@include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
+@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-regular', 400);
+@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
+@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-700', 700);
+@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
 
 // Set root size for rems
 :root {

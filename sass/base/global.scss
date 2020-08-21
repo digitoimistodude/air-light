@@ -4,8 +4,10 @@
 @import 'normalize';
 @import 'jeet/scss/index';
 
-// Theme options
-@import 'config';
+// Variables
+@import '../variables/colors';
+@import '../variables/breakpoints';
+@import '../variables/spacing';
 
 // Helpers
 @import '../helpers/general';
@@ -13,7 +15,15 @@
 @import '../helpers/grid';
 @import '../helpers/typography';
 
+// Accessibility
 @import 'accessibility';
+
+// Global features
+@import '../features/animations';
+@import '../features/top';
+@import '../features/gallery';
+@import '../features/lazyload';
+@import '../features/notices';
 
 // Structure
 @import '../layout/general';
@@ -27,12 +37,6 @@
 @import '../navigation/nav-core';
 @import '../navigation/nav-desktop';
 @import '../navigation/nav-mobile';
-
-// Global features
-@import '../features/top';
-@import '../features/gallery';
-@import '../features/lazyload';
-@import '../features/notices';
 
 // Views
 @import '../views/front-page';

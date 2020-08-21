@@ -1,0 +1,14 @@
+// Layout widths
+$grid-type: fluid; // 'fluid' or 'snappy'
+$layout-max-width: 100%;
+
+// Breakpoints
+$grid-base-size: 1200px; // Layout container max width on desktop. This is default .container size
+$article-max-width: 800px; // Max width for articles (see also $content_width in functions.php!)
+$container-mobile: 480px;
+$container-ipad: 770px;
+$container-ipad-landscape: 1024px;
+$container-desktop: 1200px;
+
+// Where navigation transforms into responsive - scale your window width down to test
+$responsivenav: 960px;

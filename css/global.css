@@ -384,6 +384,163 @@ a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):no
 a[href^="mailto"]::after {
   display: none; }
 
+.back-to-top {
+  margin: 0;
+  position: fixed;
+  bottom: 10px;
+  bottom: 1rem;
+  right: 10px;
+  right: 1rem;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.22s 0s, visibility 0s 0.22s;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .back-to-top:focus {
+    outline: none; }
+  .back-to-top.has-light-bg svg {
+    fill: #222; }
+  .back-to-top.has-dark-bg svg {
+    fill: #fff; }
+  .back-to-top.is-visible, .back-to-top.fade-out,
+  .no-touch .back-to-top:hover {
+    transition: opacity 0.22s 0s, visibility 0s 0s; }
+  .back-to-top.is-visible {
+    opacity: 1; }
+  .back-to-top.fade-out {
+    opacity: 1; }
+    .back-to-top.fade-out:hover {
+      opacity: 1; }
+  .no-touch .back-to-top:hover {
+    opacity: 1; }
+
+.top {
+  background: transparent;
+  padding: 16px; }
+  .top svg {
+    fill: #222;
+    margin: 0;
+    opacity: .8;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px; }
+    @media (max-width: 480px) {
+      .top svg {
+        width: 15px;
+        height: 15px; } }
+  .top:hover svg, .top:focus svg, .top:active svg {
+    transform: translateY(-0.5rem); }
+
+.gallery {
+  margin-bottom: 1.5em;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1.5em; }
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  width: 100%; }
+
+.gallery-columns-2 {
+  -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr); }
+
+.gallery-columns-3 {
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr); }
+
+.gallery-columns-4 {
+  -ms-grid-columns: (1fr)[4];
+  grid-template-columns: repeat(4, 1fr); }
+
+.gallery-columns-5 {
+  -ms-grid-columns: (1fr)[5];
+  grid-template-columns: repeat(5, 1fr); }
+
+.gallery-columns-6 {
+  -ms-grid-columns: (1fr)[6];
+  grid-template-columns: repeat(6, 1fr); }
+
+.gallery-columns-7 {
+  -ms-grid-columns: (1fr)[7];
+  grid-template-columns: repeat(7, 1fr); }
+
+.gallery-columns-8 {
+  -ms-grid-columns: (1fr)[8];
+  grid-template-columns: repeat(8, 1fr); }
+
+.gallery-columns-9 {
+  -ms-grid-columns: (1fr)[9];
+  grid-template-columns: repeat(9, 1fr); }
+
+.gallery-caption {
+  display: block; }
+
+.background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden; }
+  .background-image.reveal {
+    -webkit-filter: none;
+            filter: none;
+    will-change: transform, opacity;
+    -webkit-animation: progressive-reveal 1s ease-out;
+            animation: progressive-reveal 1s ease-out; }
+  .background-image.preview {
+    -webkit-filter: blur(1vw);
+            filter: blur(1vw);
+    transform: scale(1.05); }
+  .background-image.full-image {
+    z-index: 1;
+    transition: all 0.22s; }
+
+@-webkit-keyframes progressive-reveal {
+  0% {
+    opacity: .2; }
+  100% {
+    opacity: 1; } }
+
+@keyframes progressive-reveal {
+  0% {
+    opacity: .2; }
+  100% {
+    opacity: 1; } }
+
+.has-lazyload {
+  overflow: hidden;
+  position: relative; }
+
+.notice {
+  padding: 20px;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-left: 4px solid #4f5964; }
+
+.notice-success {
+  background-color: #dffae2;
+  border-color: #30dd44; }
+
+.notice-warning {
+  background-color: #fdefe5;
+  border-color: #ed7e29; }
+
+.notice-error {
+  background-color: #fadfdf;
+  border-color: #dd3030; }
+
 .block:not(.block-footer) {
   background-size: cover;
   background-repeat: no-repeat;
@@ -501,34 +658,34 @@ a.global-link {
       font-size: 200px; } }
 
 @font-face {
-  font-family: "Archivo";
+  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-regular.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-regular.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-regular.svg#Archivo") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-regular.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-regular.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
   font-style: normal;
   font-weight: 400; }
 
 @font-face {
-  font-family: "Archivo";
+  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-italic.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-italic.svg#Archivo") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-italic.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
   font-style: italic;
   font-weight: 400; }
 
 @font-face {
-  font-family: "Archivo";
+  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-700.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-700.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700.svg#Archivo") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-700.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
   font-style: normal;
   font-weight: 700; }
 
 @font-face {
-  font-family: "Archivo";
+  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-700italic.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.svg#Archivo") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
   font-style: italic;
   font-weight: 700; }
 
@@ -3028,163 +3185,6 @@ Usage: codyhouse.co/license
 .hamburger.is-active .hamburger-inner::after {
   color: #fff;
   background: #fff; }
-
-.back-to-top {
-  margin: 0;
-  position: fixed;
-  bottom: 10px;
-  bottom: 1rem;
-  right: 10px;
-  right: 1rem;
-  text-decoration: none;
-  opacity: 0;
-  transition: opacity 0.22s 0s, visibility 0s 0.22s;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .back-to-top:focus {
-    outline: none; }
-  .back-to-top.has-light-bg svg {
-    fill: #222; }
-  .back-to-top.has-dark-bg svg {
-    fill: #fff; }
-  .back-to-top.is-visible, .back-to-top.fade-out,
-  .no-touch .back-to-top:hover {
-    transition: opacity 0.22s 0s, visibility 0s 0s; }
-  .back-to-top.is-visible {
-    opacity: 1; }
-  .back-to-top.fade-out {
-    opacity: 1; }
-    .back-to-top.fade-out:hover {
-      opacity: 1; }
-  .no-touch .back-to-top:hover {
-    opacity: 1; }
-
-.top {
-  background: transparent;
-  padding: 16px; }
-  .top svg {
-    fill: #222;
-    margin: 0;
-    opacity: .8;
-    transition: all .3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px; }
-    @media (max-width: 480px) {
-      .top svg {
-        width: 15px;
-        height: 15px; } }
-  .top:hover svg, .top:focus svg, .top:active svg {
-    transform: translateY(-0.5rem); }
-
-.gallery {
-  margin-bottom: 1.5em;
-  display: -ms-grid;
-  display: grid;
-  grid-gap: 1.5em; }
-
-.gallery-item {
-  display: inline-block;
-  text-align: center;
-  width: 100%; }
-
-.gallery-columns-2 {
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr); }
-
-.gallery-columns-3 {
-  -ms-grid-columns: (1fr)[3];
-  grid-template-columns: repeat(3, 1fr); }
-
-.gallery-columns-4 {
-  -ms-grid-columns: (1fr)[4];
-  grid-template-columns: repeat(4, 1fr); }
-
-.gallery-columns-5 {
-  -ms-grid-columns: (1fr)[5];
-  grid-template-columns: repeat(5, 1fr); }
-
-.gallery-columns-6 {
-  -ms-grid-columns: (1fr)[6];
-  grid-template-columns: repeat(6, 1fr); }
-
-.gallery-columns-7 {
-  -ms-grid-columns: (1fr)[7];
-  grid-template-columns: repeat(7, 1fr); }
-
-.gallery-columns-8 {
-  -ms-grid-columns: (1fr)[8];
-  grid-template-columns: repeat(8, 1fr); }
-
-.gallery-columns-9 {
-  -ms-grid-columns: (1fr)[9];
-  grid-template-columns: repeat(9, 1fr); }
-
-.gallery-caption {
-  display: block; }
-
-.background-image {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  overflow: hidden; }
-  .background-image.reveal {
-    -webkit-filter: none;
-            filter: none;
-    will-change: transform, opacity;
-    -webkit-animation: progressive-reveal 1s ease-out;
-            animation: progressive-reveal 1s ease-out; }
-  .background-image.preview {
-    -webkit-filter: blur(1vw);
-            filter: blur(1vw);
-    transform: scale(1.05); }
-  .background-image.full-image {
-    z-index: 1;
-    transition: all 0.22s; }
-
-@-webkit-keyframes progressive-reveal {
-  0% {
-    opacity: .2; }
-  100% {
-    opacity: 1; } }
-
-@keyframes progressive-reveal {
-  0% {
-    opacity: .2; }
-  100% {
-    opacity: 1; } }
-
-.has-lazyload {
-  overflow: hidden;
-  position: relative; }
-
-.notice {
-  padding: 20px;
-  padding: 2rem;
-  background-color: #f5f5f5;
-  border-left: 4px solid #4f5964; }
-
-.notice-success {
-  background-color: #dffae2;
-  border-color: #30dd44; }
-
-.notice-warning {
-  background-color: #fdefe5;
-  border-color: #ed7e29; }
-
-.notice-error {
-  background-color: #fadfdf;
-  border-color: #dd3030; }
 
 @media (min-width: 480px) {
   .block.block-page {

@@ -1,0 +1,24 @@
+// Base colors
+$color-white: #fff;
+$color-black: #222;
+$color-shadows: #b8bbb3;
+$color-darkgrey: #4f5964;
+$color-lightgrey: #f5f5f5;
+
+// Brand colors
+$color-blue: #3962c9;
+$color-cyan: #159d94;
+$color-cyan-bright: #60f4ea;
+$color-blue-bright: #81a9ff;
+$color-blue-dark: darken($color-blue, 40%);
+$color-midnight: #03061b;
+
+// Text and background colors
+$color-links: $color-blue;
+$color-hover: $color-cyan;
+$color-body: $color-black;
+$color-headings: $color-blue;
+$color-success: #30dd44;
+$color-warning: #ed7e29;
+$color-error: #dd3030;
+$color-default-background: $color-blue-dark;
