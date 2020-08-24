@@ -351,6 +351,7 @@ $submenu-dropdown-toggle-hover: (
         padding-right: 1.5rem;
       }
     } // .menu-item.menu-item-has-children
+
     .sub-menu .menu-item-has-children {
       // Don't use gap filler in sub menu items
       &:after {
