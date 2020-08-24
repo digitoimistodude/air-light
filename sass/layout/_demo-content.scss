@@ -10,6 +10,12 @@
 $color-cyan: #159d94;
 $color-cyan-bright: #60f4ea;
 
+// Header for demo nav
+.site-header {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 // Demo structure
 .block.block-entry-header-demo {
   @include background-cover();

@@ -1676,6 +1676,12 @@ Usage: codyhouse.co/license
 .checkbox--bg:focus + label {
   background-color: rgba(var(--color-primary), 0.1); }
 
+.site-header {
+  padding-top: 40px;
+  padding-top: 4rem;
+  padding-bottom: 40px;
+  padding-bottom: 4rem; }
+
 .block.block-entry-header-demo {
   background-size: cover;
   background-repeat: no-repeat;
@@ -2023,9 +2029,8 @@ Usage: codyhouse.co/license
   .nav-toggle {
     display: none; }
   .nav-primary {
-    padding-top: 1.7rem;
-    padding-bottom: 1.7rem;
-    float: right; }
+    padding-top: 0;
+    padding-bottom: 0; }
     .nav-primary .menu-items {
       margin: 0;
       padding: 0;
@@ -3057,8 +3062,8 @@ Usage: codyhouse.co/license
   text-decoration: none;
   padding: 20px;
   padding: 2rem;
-  margin: 0 -20px 0;
-  margin: 0 -2rem 0;
+  margin: 0 -20px 0 0;
+  margin: 0 -2rem 0 0;
   background: transparent;
   cursor: pointer;
   position: relative;

@@ -168,11 +168,8 @@ $submenu-dropdown-toggle-hover: (
 
   // Start navigation
   .nav-primary {
-    // Set based on logo height, for example air logo is about 62px
-    // menu links height are 12px, so paddings are (60/2)-12:
-    padding-top: 1.7rem;
-    padding-bottom: 1.7rem;
-    float: right;
+    padding-top: 0;
+    padding-bottom: 0;
 
     .menu-items {
       margin: 0;
