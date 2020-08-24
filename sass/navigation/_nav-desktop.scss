@@ -328,12 +328,12 @@ $submenu-dropdown-toggle-hover: (
       }
     }
 
-    // Prevent nav from flickering
     .menu-item.menu-item-has-children {
       margin-right: .8rem;
       position: relative;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       // Add a pseudo element to fill the gap
       // between menu item and sub menu to help hovering

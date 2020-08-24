@@ -2141,7 +2141,8 @@ Usage: codyhouse.co/license
       margin-right: .8rem;
       position: relative;
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      align-items: center; }
       .nav-primary .menu-item.menu-item-has-children:after {
         display: block;
         position: absolute;
