@@ -3,7 +3,7 @@ $grid-type: fluid; // 'fluid' or 'snappy'
 
 // Layout widths
 $layout-max-width: 100%;
-$grid-base-size: 1200px; // Layout container max width on desktop. This is default .container size
+$grid-base-size: 1200px; // Default .container width on desktop
 $article-max-width: 800px; // Max width for articles (see also $content_width in functions.php)
 $responsivenav: 960px; // Where navigation transforms into responsive - scale your window width down to test
 
