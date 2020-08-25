@@ -11,9 +11,7 @@
 
 namespace Air_Light;
 
-get_header();
-
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+get_header(); ?>
 
 <div class="content-area">
 	<main role="main" id="main" class="site-main">
@@ -23,10 +21,10 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
           <div class="content">
 
 				    <header class="entry-header">
-              <h1 id="content" class="entry-title">404<span class="screen-reader-text"> <?php esc_html_e( 'Page not found.', 'air-light' ); ?></span></h1>
+              <h1 id="content" class="entry-title">404<span class="screen-reader-text">Page not found.</span></h1>
 			  	  </header>
 
-	  				<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'air-light' ); ?></p>
+	  				<p>Page not found.</p>
           </div>
         </div>
 			</section>
