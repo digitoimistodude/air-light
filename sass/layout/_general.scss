@@ -147,7 +147,7 @@ a.global-link {
 }
 
 // Error 404 title
-.error-404 {
+.block.block-error-404 {
   .container {
     @media (min-width: $container-mobile) {
       padding-top: 10%;

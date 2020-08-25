@@ -16,7 +16,7 @@ get_header(); ?>
 <div class="content-area">
 	<main role="main" id="main" class="site-main">
 
-			<section class="block block-error-404 error-404 not-found">
+			<section class="block block-error-404">
         <div class="container">
           <div class="content">
 
