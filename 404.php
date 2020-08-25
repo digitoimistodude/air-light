@@ -32,4 +32,10 @@ get_header(); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-<?php wp_footer();
+<?php
+
+// Enable visible footer if fits project:
+// get_footer();
+
+// WordPress scripts and hooks
+wp_footer();
