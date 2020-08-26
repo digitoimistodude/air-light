@@ -83,17 +83,18 @@ echo "${yellow}Installing project node.js packages (may take a while)${txtreset}
 cd ${PROJECTPATH}
 npm install
 
-echo "${yellow}Generating gulpfile.js from https://github.com/digitoimistodude/devpackages${txtreset}"
+echo "${yellow}Generating config for gulp from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cd $PROJECTPATH/devpackages
 git pull
 cd ${PROJECTPATH}
-sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" $PROJECTPATH/devpackages/gulpfile.js > $PROJECTPATH/gulpfile.js
-sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/gulpfile.js > $PROJECTPATH/gulpfile2.js && rm $PROJECTPATH/gulpfile.js && mv $PROJECTPATH/gulpfile2.js $PROJECTPATH/gulpfile.js
+sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" $PROJECTPATH/devpackages/gulp/config.js > $PROJECTPATH/gulp/config.js
+sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/gulp/config.js > $PROJECTPATH/gulp/config2.js && rm $PROJECTPATH/gulp/config.js && mv $PROJECTPATH/gulp/config2.js $PROJECTPATH/gulp/config.js
 
 echo "${yellow}Cleaning up...${txtreset}"
 rm -rf ${PROJECTPATH}/devpackages
 rm -rf ${PROJECTTHEMEPATH}/bin
+rm -rf ${PROJECTTHEMEPATH}/gulp
 rm -f ${PROJECTTHEMEPATH}/gulpfile.js
 rm -f ${PROJECTTHEMEPATH}/.gitignore
 rm -f ${PROJECTTHEMEPATH}/.travis.yml
@@ -146,7 +147,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="5.4.4"
+newestair="5.4.5"
 newestwordpress="5.5"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
