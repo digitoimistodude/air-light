@@ -85,16 +85,14 @@ npm install
 
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
-cd $PROJECTPATH/devpackages
+cd ${PROJECTPATH}/devpackages
 git pull
-cp gulpfile.js $PROJECTPATH/
-mv gulp $PROJECTPATH/
+cp gulpfile.js ${PROJECTPATH}/
+mv gulp ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages/gulp/
-sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" config.js > config2.js
-mv config2.js $PROJECTPATH/gulp/
-cd $PROJECTPATH/gulp/
-rm config.js
-sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" config2.js > config.js
+sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" ${PROJECTPATH}/devpackages/config.js > ${PROJECTPATH}/gulp/config2.js
+rm ${PROJECTPATH}/gulp/config.js
+sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" ${PROJECTPATH}/gulp/config2.js > ${PROJECTPATH}/gulp/config.js
 
 echo "${yellow}Cleaning up...${txtreset}"
 rm -rf ${PROJECTPATH}/devpackages
