@@ -90,8 +90,8 @@ cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
 cp -Rv ${PROJECTPATH}/devpackages/gulp ${PROJECTPATH}/
 
 # Temp test
-cat ${PROJECTPATH}/devpackages/config.js
-sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/config.js > ${PROJECTPATH}/gulp/config2.js
+cat ${PROJECTPATH}/devpackages/gulp/config.js
+sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/gulp/config.js > ${PROJECTPATH}/gulp/config2.js
 
 # Temp test
 cat ${PROJECTPATH}/gulp/config2.js
