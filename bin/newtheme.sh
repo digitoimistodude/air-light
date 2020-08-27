@@ -88,14 +88,7 @@ cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
 cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
 cp -Rv ${PROJECTPATH}/devpackages/gulp ${PROJECTPATH}/
-
-# Temp test
-cat ${PROJECTPATH}/devpackages/gulp/config.js
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/gulp/config.js > ${PROJECTPATH}/gulp/config2.js
-
-# Temp test
-cat ${PROJECTPATH}/gulp/config2.js
-
 rm ${PROJECTPATH}/gulp/config.js
 sed -e "s/\PROJECTNAME/${PROJECTNAME}/" -e "s/\PROJECTNAME/${PROJECTNAME}/" -e "s/\PROJECTNAME/${PROJECTNAME}/" ${PROJECTPATH}/gulp/config2.js > ${PROJECTPATH}/gulp/config.js
 rm ${PROJECTPATH}/gulp/config2.js
