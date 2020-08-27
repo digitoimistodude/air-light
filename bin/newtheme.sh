@@ -89,9 +89,12 @@ cd $PROJECTPATH/devpackages
 git pull
 cp gulpfile.js $PROJECTPATH/
 mv gulp $PROJECTPATH/
-cd ${PROJECTPATH}
-sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" $PROJECTPATH/devpackages/gulp/config.js > $PROJECTPATH/gulp/config.js
-sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/gulp/config.js > $PROJECTPATH/gulp/config2.js && rm $PROJECTPATH/gulp/config.js && mv $PROJECTPATH/gulp/config2.js $PROJECTPATH/gulp/config.js
+cd ${PROJECTPATH}/devpackages/gulp/
+sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" config.js > config2.js
+mv config2.js $PROJECTPATH/gulp/
+cd $PROJECTPATH/gulp/
+rm config.js
+sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" config2.js > config.js
 
 echo "${yellow}Cleaning up...${txtreset}"
 rm -rf ${PROJECTPATH}/devpackages
