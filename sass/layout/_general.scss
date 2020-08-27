@@ -160,3 +160,16 @@ a.global-link {
     margin-bottom: 2rem;
   }
 }
+
+// Hide/show helpers
+.hide-on-desktop {
+  @media (min-width: $container-mobile) {
+    display: none;
+  }
+}
+
+.hide-on-mobile {
+  @media (max-width: $container-mobile) {
+    display: none;
+  }
+}
