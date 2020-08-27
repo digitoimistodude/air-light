@@ -10,6 +10,7 @@
   margin-bottom: 0;
 }
 
+// Buttons
 .content-area,
 .site-footer {
   button,
@@ -86,95 +87,7 @@
   }
 }
 
-a,
-button,
-input {
-  -webkit-tap-highlight-color: transparent;
-}
-
-// Gravity Forms clean ups
-.gform_wrapper,
-.gform_header,
-.gform_footer {
-  margin: 0;
-  padding: 0;
-}
-
-.gform_body {
-  li,
-  div {
-    margin-top: 0;
-    padding-top: 0;
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  li {
-    margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-body form label,
-body .gform_wrapper legend.gfield_label,
-body .gform_wrapper label.gfield_label {
-  font-weight: 500;
-}
-
-.col.col-content #gform_wrapper_1.gform_wrapper,
-.col.col-content #gform_wrapper_2.gform_wrapper {
-  .gform_footer {
-    margin-top: 0;
-    padding-top: 0;
-  }
-
-  #field_1_5 {
-    width: 100%;
-
-    textarea {
-      margin-bottom: 16px;
-      min-height: 180px;
-    }
-  }
-
-  #field_2_3 {
-    input {
-      margin-bottom: 16px;
-    }
-  }
-
-  input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
-  textarea,
-  select,
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
-  input[type="number"],
-  input[type="month"],
-  input[type="week"],
-  input[type="email"],
-  input[type="search"] {
-    width: 100%;
-  }
-
-  ul.gform_fields {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  ul.gform_fields li.gfield {
-    width: 50%;
-
-    @media (max-width: 760px) {
-      width: 100%;
-    }
-  }
-}
-
+// Form input elements and textareas
 body .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
 textarea,
 select,
@@ -218,6 +131,7 @@ input[type="search"] {
   }
 }
 
+// Select drop downs
 select {
   border-radius: 0;
   background-image: url('../svg/select.svg');
@@ -243,30 +157,6 @@ select {
   &:hover,
   &:focus {
     border-color: #222;
-  }
-}
-
-// General
-form {
-  p {
-    margin-bottom: 20px;
-
-    &.form-submit {
-      margin-bottom: 0;
-    }
-  }
-
-  // Search form
-  &.search-form {
-    .search-field {
-      float: left;
-      margin-right: 5px;
-    }
-
-    .search-submit {
-      padding: 19px 1.75em;
-      line-height: 1;
-    }
   }
 }
 
