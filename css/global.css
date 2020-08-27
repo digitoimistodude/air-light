@@ -1354,58 +1354,6 @@ form.search-form .search-submit {
   padding: 19px 1.75em;
   line-height: 1; }
 
-@media (min-width: 480px) {
-  .comment-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1em;
-    /* autoprefixer: off */
-    justify-content: center; }
-    .comment-form .comment-notes,
-    .comment-form .comment-form-comment,
-    .comment-form .form-submit {
-      grid-column: 1 / span 2; } }
-
-.comment-respond {
-  margin-bottom: 0;
-  overflow: visible; }
-  .comment-respond .comment-form-author {
-    margin-bottom: 20px;
-    margin-top: 0; }
-    .comment-respond .comment-form-author input {
-      padding: 15px;
-      border-width: 1px;
-      width: 100%; }
-  .comment-respond .comment-form-email {
-    margin-right: 0;
-    clear: right;
-    margin-bottom: 20px;
-    margin-top: 0; }
-    .comment-respond .comment-form-email input {
-      padding: 15px;
-      border-width: 1px;
-      width: 100%; }
-  .comment-respond .comment-form-url {
-    position: relative;
-    margin-top: 0;
-    margin-bottom: 30px; }
-    .comment-respond .comment-form-url input {
-      padding: 15px;
-      border-width: 1px;
-      width: 100%; }
-  .comment-respond .form-submit {
-    display: block;
-    clear: both;
-    margin-bottom: 0;
-    margin-top: 0; }
-  .comment-respond .comment-form-comment {
-    margin-bottom: 20px; }
-  @media (max-width: 480px) {
-    .comment-respond input {
-      width: 100%; } }
-  .comment-respond textarea {
-    width: 100%; }
-
 /* --------------------------------
 
 File#: _1_radios-checkboxes
@@ -3464,3 +3412,55 @@ ul.tags {
         color: #4f5964; }
       .comment-list li .comment-time:hover {
         opacity: 1; }
+
+@media (min-width: 480px) {
+  .comment-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+    /* autoprefixer: off */
+    justify-content: center; }
+    .comment-form .comment-notes,
+    .comment-form .comment-form-comment,
+    .comment-form .form-submit {
+      grid-column: 1 / span 2; } }
+
+.comment-respond {
+  margin-bottom: 0;
+  overflow: visible; }
+  .comment-respond .comment-form-author {
+    margin-bottom: 20px;
+    margin-top: 0; }
+    .comment-respond .comment-form-author input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%; }
+  .comment-respond .comment-form-email {
+    margin-right: 0;
+    clear: right;
+    margin-bottom: 20px;
+    margin-top: 0; }
+    .comment-respond .comment-form-email input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%; }
+  .comment-respond .comment-form-url {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 30px; }
+    .comment-respond .comment-form-url input {
+      padding: 15px;
+      border-width: 1px;
+      width: 100%; }
+  .comment-respond .form-submit {
+    display: block;
+    clear: both;
+    margin-bottom: 0;
+    margin-top: 0; }
+  .comment-respond .comment-form-comment {
+    margin-bottom: 20px; }
+  @media (max-width: 480px) {
+    .comment-respond input {
+      width: 100%; } }
+  .comment-respond textarea {
+    width: 100%; }
