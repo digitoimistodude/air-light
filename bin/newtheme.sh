@@ -87,12 +87,19 @@ echo "${yellow}Generating gulp tasks and configuration from https://github.com/d
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
 git pull
-cp gulpfile.js ${PROJECTPATH}/
+cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
 mv gulp ${PROJECTPATH}/
-cd ${PROJECTPATH}/devpackages/gulp/
-sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" ${PROJECTPATH}/devpackages/config.js > ${PROJECTPATH}/gulp/config2.js
+
+# Temp test
+cat ${PROJECTPATH}/devpackages/config.js
+sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/config.js > ${PROJECTPATH}/gulp/config2.js
+
+# Temp test
+cat ${PROJECTPATH}/gulp/config2.js
+
 rm ${PROJECTPATH}/gulp/config.js
-sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" ${PROJECTPATH}/gulp/config2.js > ${PROJECTPATH}/gulp/config.js
+sed -e "s/\PROJECTNAME/${PROJECTNAME}/" -e "s/\PROJECTNAME/${PROJECTNAME}/" -e "s/\PROJECTNAME/${PROJECTNAME}/" ${PROJECTPATH}/gulp/config2.js > ${PROJECTPATH}/gulp/config.js
+rm ${PROJECTPATH}/gulp/config2.js
 
 echo "${yellow}Cleaning up...${txtreset}"
 rm -rf ${PROJECTPATH}/devpackages
@@ -134,10 +141,6 @@ rm ${PROJECTTHEMEPATH}/template-parts/header/demo-content.php
 rm -rf ${PROJECTTHEMEPATH}/template-parts/footer
 find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
 find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'footer.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>//g" {} +
-
-echo "${yellow}Fixing stylelint bug for gulp... (see: https://github.com/digitoimistodude/devpackages#known-issues)${txtreset}"
-sudo npm install stylelint -g
-sudo cp -R /usr/local/lib/node_modules/stylelint ${PROJECTPATH}/node_modules/gulp-stylefmt/node_modules/
 
 echo "${yellow}Running project gulp styles once...${txtreset}"
 cd ${PROJECTPATH}
