@@ -85,7 +85,8 @@
       padding-right: 25px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color-white;
       background: $color-hover;
       border-color: $color-hover;

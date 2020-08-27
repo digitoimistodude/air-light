@@ -1156,16 +1156,25 @@ pre {
     padding-bottom: 14px;
     padding-left: 25px;
     padding-right: 25px; }
-  .content-area button:hover,
+  .content-area button:hover, .content-area button:focus,
   .content-area .button:hover,
+  .content-area .button:focus,
   .content-area input[type="reset"]:hover,
+  .content-area input[type="reset"]:focus,
   .content-area input[type="submit"]:hover,
+  .content-area input[type="submit"]:focus,
   .content-area input[type="button"]:hover,
+  .content-area input[type="button"]:focus,
   .site-footer button:hover,
+  .site-footer button:focus,
   .site-footer .button:hover,
+  .site-footer .button:focus,
   .site-footer input[type="reset"]:hover,
+  .site-footer input[type="reset"]:focus,
   .site-footer input[type="submit"]:hover,
-  .site-footer input[type="button"]:hover {
+  .site-footer input[type="submit"]:focus,
+  .site-footer input[type="button"]:hover,
+  .site-footer input[type="button"]:focus {
     color: #fff;
     background: #0c142a;
     border-color: #0c142a; }
