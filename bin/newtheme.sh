@@ -70,7 +70,7 @@ sudo chown -R $(whoami) ${PROJECTPATH}/content/plugins
 sudo chmod 777 ${PROJECTPATH}/content
 sudo chmod -R 777 ${PROJECTPATH}/content/plugins
 
-echo "${yellow}Installing deps${txtreset}"
+echo "${yellow}Installing dependencies...${txtreset}"
 npm install
 
 echo "${yellow}Getting devpackages${txtreset}"
@@ -86,9 +86,8 @@ npm install
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
-git pull
 cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
-mv gulp ${PROJECTPATH}/
+cp -Rv ${PROJECTPATH}/devpackages/gulp ${PROJECTPATH}/
 
 # Temp test
 cat ${PROJECTPATH}/devpackages/config.js
