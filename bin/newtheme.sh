@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2020-08-15 16:41:46
+# @Last Modified time: 2020-08-27 08:55:43
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
@@ -83,10 +83,12 @@ echo "${yellow}Installing project node.js packages (may take a while)${txtreset}
 cd ${PROJECTPATH}
 npm install
 
-echo "${yellow}Generating config for gulp from https://github.com/digitoimistodude/devpackages${txtreset}"
+echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cd $PROJECTPATH/devpackages
 git pull
+cp gulpfile.js $PROJECTPATH/
+mv gulp $PROJECTPATH/
 cd ${PROJECTPATH}
 sed -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" -e "s/\THEMENAME/$THEMENAME/" $PROJECTPATH/devpackages/gulp/config.js > $PROJECTPATH/gulp/config.js
 sed -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" -e "s/\PROJECTNAME/$PROJECTNAME/" $PROJECTPATH/gulp/config.js > $PROJECTPATH/gulp/config2.js && rm $PROJECTPATH/gulp/config.js && mv $PROJECTPATH/gulp/config2.js $PROJECTPATH/gulp/config.js
@@ -147,7 +149,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="5.4.5"
+newestair="5.4.6"
 newestwordpress="5.5"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
