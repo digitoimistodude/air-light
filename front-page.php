@@ -15,7 +15,7 @@
 namespace Air_Light;
 
 // Featured image.
-$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS['default_featured_image'];
+$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS['default_featured_image']; // phpcs:ignore
 
 get_header(); ?>
 

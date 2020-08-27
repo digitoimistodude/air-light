@@ -12,13 +12,11 @@
 }
 
 .alignleft {
-  display: inline;
   float: left;
   margin-right: 20px;
 }
 
 .alignright {
-  display: inline;
   float: right;
   margin-left: 20px;
 }
@@ -448,7 +446,7 @@ th {
   padding: 1rem;
 
   @media (max-width: 600px) {
-    @include stack();
+    width: 100%;
     display: inline-block;
     height: auto;
     padding: 10px 0;
@@ -566,7 +564,6 @@ ul.tags {
     margin-right: 10px;
     margin-bottom: 10px;
     padding-left: 0;
-    display: inline-block;
     float: left;
     margin-top: 0;
 

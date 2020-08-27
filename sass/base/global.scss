@@ -2,7 +2,6 @@
 
 // Reset & grid
 @import 'normalize';
-@import 'jeet/scss/index';
 
 // Variables
 @import '../variables/colors';
@@ -24,7 +23,6 @@
 @import '../features/top';
 @import '../features/gallery';
 @import '../features/lazyload';
-@import '../features/notices';
 
 // Structure
 @import '../layout/general';
@@ -50,3 +48,4 @@
 // @import '../layout/sidebar';
 // @import '../layout/woocommerce';
 // @import '../extra/slick';
+// @import '../features/notices';

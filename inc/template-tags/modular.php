@@ -49,13 +49,13 @@ function the_module( $post_id ) {
   } else {
     // module is exluded from cache or we are in development envarioment
     // add log message in development and staging
-    \do_action( 'qm/debug', "Module bypassed cache: {$module_name} ({$module_cache_key})" );
+    \do_action( 'qm/debug', "Module bypassed cache: {$module_name} ({$module_cache_key})" ); // phpcs:ignore
 
     $module_output = load_module( $module_path );
   }
 
   if ( empty( $module_output ) ) {
-    \do_action( 'qm/error', "Module {$module_name} output is empty" );
+    \do_action( 'qm/error', "Module {$module_name} output is empty" ); // phpcs:ignore
   }
 
   // finally output module content.
@@ -78,10 +78,10 @@ function get_modular_rows_id() {
    *  page for post type (humanmade/page-for-post-type) plugins.
    */
   if ( \is_home() && \get_option( 'page_for_posts' ) ) {
-    $have_rows_id = \get_option( 'page_for_posts' ) ?: false;
+    $have_rows_id = \get_option( 'page_for_posts' ) ?: false; // phpcs:ignore
     $have_rows_id = \function_exists( 'pll_get_post' ) ? \pll_get_post( $have_rows_id ) : $have_rows_id;
   } elseif ( is_post_type_archive() ) {
-    $have_rows_id = \get_option( 'page_for_' . \get_post_type() ) ?: false;
+    $have_rows_id = \get_option( 'page_for_' . \get_post_type() ) ?: false; // phpcs:ignore
     $have_rows_id = \function_exists( 'pll_get_post' ) ? \pll_get_post( $have_rows_id ) : $have_rows_id;
   }
 
@@ -103,7 +103,7 @@ function load_module_from_cache( $module_cache_key, $module_name, $module_path )
   if ( $output ) {
     // Template loaded from cache
     // add log message in development and staging
-    \do_action( 'qm/debug', "Module served from cache: {$module_name} ({$module_cache_key})" );
+    \do_action( 'qm/debug', "Module served from cache: {$module_name} ({$module_cache_key})" ); // phpcs:ignore
     return $output;
   }
 
@@ -115,7 +115,7 @@ function load_module_from_cache( $module_cache_key, $module_name, $module_path )
   \wp_cache_set( $module_cache_key, $output, 'theme', HOUR_IN_SECONDS );
 
   // add log message in development and staging
-  \do_action( 'qm/debug', "Module cached: {$module_name} ({$module_cache_key})" );
+  \do_action( 'qm/debug', "Module cached: {$module_name} ({$module_cache_key})" ); // phpcs:ignore
 
   return $output;
 
@@ -134,7 +134,7 @@ function load_module( $module_path, $cache = false ) {
 
   // Validate that file actually exists.
   if ( ! \file_exists( $module_path ) ) {
-    \do_action( 'qm/error', "Module file not found: {$module_path})" );
+    \do_action( 'qm/error', "Module file not found: {$module_path})" ); // phpcs:ignore
     return '';
   }
 

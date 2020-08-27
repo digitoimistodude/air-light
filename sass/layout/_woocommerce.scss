@@ -36,11 +36,12 @@ body {
 
 
     // Default columns fix for air
-    ul.products li {
-      @media (min-width: $container-ipad) {
-        @include column(1/4, $cycle: 4);
-      }
-    }
+    // TODO: Replace with CSS grid
+    // ul.products li {
+    //   @media (min-width: $container-ipad) {
+    //     @include column(1/4, $cycle: 4);
+    //   }
+    // }
 
     // Star rating fix for air
     ul.products .star-rating {

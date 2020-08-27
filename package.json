@@ -1,6 +1,6 @@
 {
   "name": "air-light",
-  "version": "5.4.6",
+  "version": "5.4.7",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -34,7 +34,6 @@
   },
   "dependencies": {
     "hamburgers": "^1.1.3",
-    "jeet": "^7.2.0",
     "moveto": "^1.8.2",
     "slick-carousel": "^1.8.1",
     "what-input": "^5.2.10"

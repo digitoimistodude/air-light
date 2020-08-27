@@ -199,6 +199,7 @@ input[type="search"] {
   position: relative;
   appearance: none;
   margin-bottom: 0;
+  box-sizing: border-box;
 
   &::placeholder {
     color: #434343;
@@ -218,7 +219,6 @@ input[type="search"] {
 }
 
 select {
-  border: 0;
   border-radius: 0;
   background-image: url('../svg/select.svg');
   background-repeat: no-repeat;
@@ -271,18 +271,31 @@ form {
 }
 
 // Comment form
+.comment-form {
+  @media (min-width: $container-mobile) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+
+    /* autoprefixer: off */
+    justify-content: center;
+
+    // Make these full width
+    .comment-notes,
+    .comment-form-comment,
+    .form-submit {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
 .comment-respond {
   margin-bottom: 0;
   overflow: visible;
 
   .comment-form-author {
-    @include column(1/3);
     margin-bottom: 20px;
     margin-top: 0;
-
-    @media (max-width: $container-mobile) {
-      @include stack();
-    }
 
     input {
       padding: 15px;
@@ -292,15 +305,10 @@ form {
   }
 
   .comment-form-email {
-    @include column(2/3);
     margin-right: 0;
     clear: right;
     margin-bottom: 20px;
     margin-top: 0;
-
-    @media (max-width: $container-mobile) {
-      @include stack();
-    }
 
     input {
       padding: 15px;
@@ -310,7 +318,6 @@ form {
   }
 
   .comment-form-url {
-    @include stack();
     position: relative;
     margin-top: 0;
     margin-bottom: 30px;
