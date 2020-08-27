@@ -39,6 +39,7 @@
     line-height: 1;
     appearance: none;
 
+    // Button styles
     &.button-grey {
       color: $color-black;
       background: $color-lightgrey;
@@ -48,12 +49,27 @@
       }
     }
 
+    &.button-ghost {
+      background-color: transparent;
+      border: 1px solid $color-links;
+      color: $color-links;
+    }
+
+    // Button sizes
     &.button-small {
       font-size: 16px;
       padding-top: 12px;
       padding-bottom: 12px;
       padding-left: 25px;
       padding-right: 25px;
+    }
+
+    &.button-medium {
+      font-size: 18px;
+      padding-top: 19px;
+      padding-bottom: 19px;
+      padding-left: 40px;
+      padding-right: 40px;
     }
 
     &.button-large {
@@ -69,20 +85,14 @@
       padding-right: 25px;
     }
 
-    @media (max-width: $container-mobile) {
-      font-size: 14px;
-    }
-
     &:hover {
       color: $color-white;
       background: $color-hover;
       border-color: $color-hover;
     }
 
-    &.button-ghost {
-      background-color: transparent;
-      border: 1px solid $color-links;
-      color: $color-links;
+    @media (max-width: $container-mobile) {
+      font-size: 14px;
     }
   }
 }

@@ -1086,6 +1086,19 @@ pre {
     .site-footer input[type="submit"].button-grey:hover,
     .site-footer input[type="button"].button-grey:hover {
       background: #0c142a; }
+  .content-area button.button-ghost,
+  .content-area .button.button-ghost,
+  .content-area input[type="reset"].button-ghost,
+  .content-area input[type="submit"].button-ghost,
+  .content-area input[type="button"].button-ghost,
+  .site-footer button.button-ghost,
+  .site-footer .button.button-ghost,
+  .site-footer input[type="reset"].button-ghost,
+  .site-footer input[type="submit"].button-ghost,
+  .site-footer input[type="button"].button-ghost {
+    background-color: transparent;
+    border: 1px solid #3962c9;
+    color: #3962c9; }
   .content-area button.button-small,
   .content-area .button.button-small,
   .content-area input[type="reset"].button-small,
@@ -1101,6 +1114,21 @@ pre {
     padding-bottom: 12px;
     padding-left: 25px;
     padding-right: 25px; }
+  .content-area button.button-medium,
+  .content-area .button.button-medium,
+  .content-area input[type="reset"].button-medium,
+  .content-area input[type="submit"].button-medium,
+  .content-area input[type="button"].button-medium,
+  .site-footer button.button-medium,
+  .site-footer .button.button-medium,
+  .site-footer input[type="reset"].button-medium,
+  .site-footer input[type="submit"].button-medium,
+  .site-footer input[type="button"].button-medium {
+    font-size: 18px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-left: 40px;
+    padding-right: 40px; }
   .content-area button.button-large,
   .content-area .button.button-large,
   .content-area input[type="reset"].button-large,
@@ -1128,18 +1156,6 @@ pre {
     padding-bottom: 14px;
     padding-left: 25px;
     padding-right: 25px; }
-  @media (max-width: 480px) {
-    .content-area button,
-    .content-area .button,
-    .content-area input[type="reset"],
-    .content-area input[type="submit"],
-    .content-area input[type="button"],
-    .site-footer button,
-    .site-footer .button,
-    .site-footer input[type="reset"],
-    .site-footer input[type="submit"],
-    .site-footer input[type="button"] {
-      font-size: 14px; } }
   .content-area button:hover,
   .content-area .button:hover,
   .content-area input[type="reset"]:hover,
@@ -1153,19 +1169,18 @@ pre {
     color: #fff;
     background: #0c142a;
     border-color: #0c142a; }
-  .content-area button.button-ghost,
-  .content-area .button.button-ghost,
-  .content-area input[type="reset"].button-ghost,
-  .content-area input[type="submit"].button-ghost,
-  .content-area input[type="button"].button-ghost,
-  .site-footer button.button-ghost,
-  .site-footer .button.button-ghost,
-  .site-footer input[type="reset"].button-ghost,
-  .site-footer input[type="submit"].button-ghost,
-  .site-footer input[type="button"].button-ghost {
-    background-color: transparent;
-    border: 1px solid #3962c9;
-    color: #3962c9; }
+  @media (max-width: 480px) {
+    .content-area button,
+    .content-area .button,
+    .content-area input[type="reset"],
+    .content-area input[type="submit"],
+    .content-area input[type="button"],
+    .site-footer button,
+    .site-footer .button,
+    .site-footer input[type="reset"],
+    .site-footer input[type="submit"],
+    .site-footer input[type="button"] {
+      font-size: 14px; } }
 
 body .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
 textarea,
