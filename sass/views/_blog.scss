@@ -142,7 +142,7 @@ del {
 
   p {
     color: $color-black;
-    font-weight: $body-weight;
+    font-weight: $font-weight-paragraphs;
   }
 
   h1,
@@ -198,7 +198,7 @@ del {
     }
 
     p {
-      @include responsive-font($font-min-size, 24px);
+      @include responsive-font($font-size-min, 24px);
     }
   }
 
@@ -441,7 +441,7 @@ table {
 
 td,
 th {
-  font-family: $font-base;
+  font-family: $font-paragraphs;
   height: 3rem;
   padding: 1rem;
 

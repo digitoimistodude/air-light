@@ -530,19 +530,15 @@ a[href^="mailto"]::after {
   padding-right: 2rem;
   max-width: 1200px;
   margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem; }
+  margin-right: auto; }
   @media (max-width: 1350px) {
     .container {
-      padding-left: 8rem;
-      padding-right: 8rem; } }
-  @media (max-width: 770px) {
-    .container {
-      padding-top: 5.33333rem;
-      padding-bottom: 5.33333rem;
       padding-left: 2rem;
       padding-right: 2rem; } }
+  @media (max-width: 770px) {
+    .container {
+      padding-top: 5rem;
+      padding-bottom: 5rem; } }
 
 .site-main .container {
   overflow: hidden;
@@ -602,6 +598,14 @@ a.global-link {
     .block.block-error-404 h1 {
       font-size: 200px; } }
 
+@media (min-width: 480px) {
+  .hide-on-desktop {
+    display: none; } }
+
+@media (max-width: 480px) {
+  .hide-on-mobile {
+    display: none; } }
+
 @font-face {
   font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
   font-display: auto;
@@ -638,7 +642,7 @@ a.global-link {
   font-size: 62.5%; }
 
 body {
-  font-size: 1.7rem;
+  font-size: 17px;
   font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
   color: #4f5964;
   font-weight: 400;
@@ -1124,7 +1128,7 @@ pre {
   .site-footer input[type="reset"].button-medium,
   .site-footer input[type="submit"].button-medium,
   .site-footer input[type="button"].button-medium {
-    font-size: 18px;
+    font-size: 17px;
     padding-top: 19px;
     padding-bottom: 19px;
     padding-left: 40px;

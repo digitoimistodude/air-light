@@ -6,26 +6,39 @@
 // based responsive mixin can be found in _helpers.scss
 // -----------------------------------------------------------
 
-// Font settings
-// You can use these font stacks normally with `font-family: $font-sans;` for instance.`
-// Please set up fonts in sass/layout/_typography.scss
-$font-base: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
+// Font family settings
+$font-paragraphs: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
 $font-headings: 'Archivo', 'Helvetica Neue', Helvetica, sans-serif;
 $font-monospace: 'Menlo', 'Courier', monospace;
 
-// Font settings
-$font-min-size: 17px; // Minimum font size, on mobile
-$font-max-size: 20px; // Maximum font size, on desktop
-$line-height: 1.7; // Line height
-$line-height-headings: 1.5; // Line height for headings
-$body-weight: 400;
-$headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty well
+// Font size settings
+$font-size-small: 16px;
+$font-size-medium: 17px;
+$font-size-large: 20px;
+$font-size-min: 17px;
+$font-size-max: 20px;
+$font-min-size-h1: 32px;
+$font-max-size-h1: 51px;
+$font-min-size-h2: 24px;
+$font-max-size-h2: 38px;
+$font-min-size-h3: 21px;
+$font-max-size-h3: 28px;
+$font-min-size-h4: 18px;
+$font-max-size-h4: 21px;
+$font-min-size-h5: 14px;
+$font-max-size-h5: 17px;
+$font-min-size-h6: 14px;
+$font-max-size-h6: 12px;
+$line-height-paragraphs: 1.7;
+$line-height-headings: 1.5;
+$font-weight-paragraphs: 400;
+$font-weight-headings: 700;
 
-// Set up self-hosted fonts here
-@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-regular', 400);
-@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
-@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-700', 700);
-@include fontFace($font-base, '../fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
+// Self-hosted fonts
+@include fontFace($font-paragraphs, '../fonts/archivo-v6-latin_latin-ext-regular', 400);
+@include fontFace($font-paragraphs, '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
+@include fontFace($font-paragraphs, '../fonts/archivo-v6-latin_latin-ext-700', 700);
+@include fontFace($font-paragraphs, '../fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
 
 // Set root size for rems
 :root {
@@ -34,10 +47,10 @@ $headings-weight: 700; // Default title weight. Usually 700 or 900 works pretty 
 
 // Start typography settings
 body {
-  font-size: 1.7rem;
-  font-family: $font-base;
+  font-size: $font-size-medium;
+  font-family: $font-paragraphs;
   color: $color-paragraphs;
-  font-weight: $body-weight;
+  font-weight: $font-weight-paragraphs;
 
   // Font smoothing options
   text-size-adjust: none;
@@ -105,9 +118,9 @@ td,
 table,
 tr,
 %default {
-  @include responsive-font($font-min-size, $font-max-size);
+  @include responsive-font($font-size-min, $font-size-max);
   letter-spacing: -.003em;
-  line-height: $line-height;
+  line-height: $line-height-paragraphs;
 }
 
 p {
@@ -132,7 +145,7 @@ h5,
 h6 {
   color: $color-headings;
   font-family: $font-headings;
-  font-weight: $headings-weight;
+  font-weight: $font-weight-headings;
   margin-top: 2.7rem;
   margin-bottom: 2.7rem;
 
@@ -151,95 +164,34 @@ h6 {
 
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
-$heading_typescale: medium;
-
-// Defaults are null
-$h1_min: null;
-$h1_max: null;
-$h2_min: null;
-$h2_max: null;
-$h3_min: null;
-$h3_max: null;
-$h4_min: null;
-$h4_max: null;
-$h5_min: null;
-$h5_max: null;
-$h6_min: null;
-$h6_max: null;
-
-@if $heading_typescale == 'large' {
-  $h1_min: 32px;
-  $h1_max: 67px;
-  $h2_min: 24px;
-  $h2_max: 51px;
-  $h3_min: 21px;
-  $h3_max: 38px;
-  $h4_min: 18px;
-  $h4_max: 28px;
-  $h5_min: 14px;
-  $h5_max: 28px;
-  $h6_min: 14px;
-  $h6_max: 21px;
-}
-
-@if $heading_typescale == 'medium' {
-  $h1_min: 32px;
-  $h1_max: 51px;
-  $h2_min: 24px;
-  $h2_max: 38px;
-  $h3_min: 21px;
-  $h3_max: 28px;
-  $h4_min: 18px;
-  $h4_max: 21px;
-  $h5_min: 14px;
-  $h5_max: 17px;
-  $h6_min: 14px;
-  $h6_max: 12px;
-}
-
-@if $heading_typescale == 'small' {
-  $h1_min: 28px;
-  $h1_max: 38px;
-  $h2_min: 21px;
-  $h2_max: 28px;
-  $h3_min: 20px;
-  $h3_max: 21px;
-  $h4_min: 16px;
-  $h4_max: 18px;
-  $h5_min: 16px;
-  $h5_max: 18px;
-  $h6_min: 14px;
-  $h6_max: 16px;
-}
-
 h1,
 %h1 {
-  @include responsive-font($h1_min, $h1_max);
+  @include responsive-font($font-min-size-h1, $font-max-size-h1);
 }
 
 h2,
 %h2 {
-  @include responsive-font($h2_min, $h2_max);
+  @include responsive-font($font-min-size-h2, $font-max-size-h2);
 }
 
 h3,
 %h3 {
-  @include responsive-font($h3_min, $h3_max);
+  @include responsive-font($font-min-size-h3, $font-max-size-h3);
 }
 
 h4,
 %h4 {
-  @include responsive-font($h4_min, $h4_max);
+  @include responsive-font($font-min-size-h4, $font-max-size-h4);
 }
 
 h5,
 %h5 {
-  @include responsive-font($h5_min, $h5_max);
+  @include responsive-font($font-min-size-h5, $font-max-size-h5);
 }
 
 h6,
 %h6 {
-  @include responsive-font($h6_min, $h6_max);
+  @include responsive-font($font-min-size-h6, $font-max-size-h6);
 }
 
 // Lists
@@ -295,7 +247,7 @@ figure {
 figcaption {
   margin-top: 0;
   font-style: normal;
-  font-weight: $body-weight;
+  font-weight: $font-weight-paragraphs;
 }
 
 // Quotes.

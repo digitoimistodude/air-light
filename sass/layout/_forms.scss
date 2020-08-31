@@ -18,7 +18,7 @@
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    font-size: 16px;
+    font-size: $font-size-small;
     background: $color-darkgrey;
     color: $color-white;
     border: 0;
@@ -34,7 +34,7 @@
     position: relative;
     cursor: pointer;
     transition: 150ms linear background;
-    font-family: $font-base;
+    font-family: $font-paragraphs;
     font-weight: 700;
     line-height: 1;
     appearance: none;
@@ -57,7 +57,7 @@
 
     // Button sizes
     &.button-small {
-      font-size: 16px;
+      font-size: $font-size-small;
       padding-top: 12px;
       padding-bottom: 12px;
       padding-left: 25px;
@@ -65,7 +65,7 @@
     }
 
     &.button-medium {
-      font-size: 18px;
+      font-size: $font-size-medium;
       padding-top: 19px;
       padding-bottom: 19px;
       padding-left: 40px;
@@ -73,12 +73,12 @@
     }
 
     &.button-large {
-      font-size: 20px;
+      font-size: $font-size-large;
       padding: 14px 27px 16px;
     }
 
     &.button-action {
-      font-size: 16px;
+      font-size: $font-size-small;
       padding-top: 14px;
       padding-bottom: 14px;
       padding-left: 25px;
@@ -113,7 +113,7 @@ input[type="email"],
 input[type="search"] {
   @extend %default;
   border-radius: 3px;
-  font-family: $font-base;
+  font-family: $font-paragraphs;
   background: #fbfbfb;
   border: solid 1px #d9d9d9;
   padding: 15px;
