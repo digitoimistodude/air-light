@@ -85,6 +85,7 @@ npm install
 
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
+cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
 cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
 cp -Rv ${PROJECTPATH}/devpackages/gulp ${PROJECTPATH}/
