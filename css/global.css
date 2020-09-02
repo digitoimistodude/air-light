@@ -865,13 +865,13 @@ h5 {
       font-size: 17px; } }
 
 h6 {
-  font-size: 14px; }
+  font-size: 12px; }
   @media screen and (min-width: 320px) {
     h6 {
-      font-size: calc(14px + -2 * ((100vw - 320px) / 1600)); } }
+      font-size: calc(12px + 2 * ((100vw - 320px) / 1600)); } }
   @media screen and (min-width: 1920px) {
     h6 {
-      font-size: 12px; } }
+      font-size: 14px; } }
 
 ul {
   list-style: disc outside;
