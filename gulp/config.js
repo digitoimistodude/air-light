@@ -21,8 +21,8 @@ module.exports = {
           removeDuplicateMediaBlocks: true,
           removeUnusedAtRules: true,
           restructureRules: true
-        },
-      },
+        }
+      }
     }
   },
   rename: {
@@ -38,11 +38,11 @@ module.exports = {
       proxy: 'airdev.test',
       browser: 'Google Chrome',
       open: false,
-      notify: true,
+      notify: true
     },
     watch: [
       '**/*.php',
-      'js/src/**/*.js',
+      'js/src/**/*.js'
     ]
   },
   styles: {
@@ -57,7 +57,7 @@ module.exports = {
         debugInfo: true,
         lineNumbers: true,
         errLogToConsole: true,
-        includePaths: ['node_modules/'],
+        includePaths: ['node_modules/']
       },
       production: {
         bundleExec: true,
@@ -65,7 +65,7 @@ module.exports = {
         debugInfo: true,
         lineNumbers: true,
         errLogToConsole: true,
-        includePaths: ['node_modules/'],
+        includePaths: ['node_modules/']
       }
     }
   },
@@ -76,7 +76,7 @@ module.exports = {
     uglify: {
       opts: {
         compress: true,
-        mangle: true,
+        mangle: true
       }
     }
   },
@@ -88,7 +88,7 @@ module.exports = {
     opts: {
       bin: '/usr/local/bin/phpcs',
       standard: 'phpcs.xml',
-      warningSeverity: 0,
+      warningSeverity: 0
     }
   }
-}
+};

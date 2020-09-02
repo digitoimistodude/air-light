@@ -12,19 +12,18 @@ const errorOfGlupPluginsPrintingConfigurations = {
 
   colorTheme: {
     heading: {
-      lineColor: 'magenta',
-    },
-  },
+      lineColor: 'magenta'
+    }
+  }
 };
 
 // General error handling
 const handleError = function (task) {
   return function (err) {
     notify.onError({
-      message: task + ' failed, check the logs...',
+      message: task + ' failed, check the logs...'
     })(err);
 
-    // util.log(util.colors.bgRed(task + ' error:'), util.colors.red(err));
     printGulpPluginErrorBeautifully(
       err,
       errorOfGlupPluginsPrintingConfigurations,
@@ -32,4 +31,7 @@ const handleError = function (task) {
   };
 };
 
-module.exports = { printGulpPluginErrorBeautifully, handleError };
+module.exports = {
+  printGulpPluginErrorBeautifully,
+  handleError
+};

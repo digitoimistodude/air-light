@@ -1,5 +1,9 @@
 {
     "preset": "wordpress",
+    "requireSpacesInsideParentheses": false,
+    "requirePaddingNewLinesBeforeLineComments": false,
+    "disallowSpacesInFunctionExpression": false,
+    "disallowSpacesInAnonymousFunctionExpression": false,
     "fileExtensions": [ ".js" ],
     "excludeFiles": [
     	"js/all.js",

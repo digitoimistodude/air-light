@@ -1,5 +1,8 @@
 // Dependencies
-const { dest, src } = require('gulp');
+const {
+  dest,
+  src
+} = require('gulp');
 const uglify = require('gulp-uglify-es').default;
 const concat = require('gulp-concat');
 const webpack = require('webpack-stream');
@@ -11,25 +14,21 @@ function js(cb) {
     .pipe(
       webpack({
         externals: {
-          jquery: 'jQuery', // Available and loaded through WordPress.
+          jquery: 'jQuery' // Available and loaded through WordPress.
         },
         mode: 'production',
         module: {
-          rules: [
-            {
-              test: /.js$/,
-              use: [
-                {
-                  loader: 'babel-loader',
-                },
-              ],
-            },
-          ],
+          rules: [{
+            test: /.js$/,
+            use: [{
+              loader: 'babel-loader'
+            }]
+          }]
         },
         output: {
-          filename: 'all.js',
-        },
-      }),
+          filename: 'all.js'
+        }
+      })
     )
     .pipe(concat('all.js'))
     .pipe(
@@ -38,7 +37,7 @@ function js(cb) {
         this.emit('end');
       }),
     )
-    .pipe(dest(config.js.dest))
+    .pipe(dest(config.js.dest));
   cb();
 }
 
