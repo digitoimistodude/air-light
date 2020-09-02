@@ -16,7 +16,7 @@ namespace Air_Light;
  * Restrict blocks to only allowed blocks in the settings
  */
 function allowed_block_types( $allowed_blocks, $post ) {
-  if ( ! isset( THEME_SETTINGS['allowed_blocks'] ) || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
+  if ( null !== THEME_SETTINGS['allowed_blocks'] || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
     return $allowed_blocks;
   }
 
