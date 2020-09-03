@@ -40,3 +40,7 @@ function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
   }
   return true;
 }
+
+// Enable Gutenberg extra features.
+add_theme_support( 'align-wide' );
+add_theme_support( 'wp-block-styles' );
