@@ -9,6 +9,7 @@
 @import '../variables/spacings';
 
 // Helpers
+@import '../helpers/animations';
 @import '../helpers/typography';
 @import '../helpers/general';
 @import '../helpers/aspect-ratio';
@@ -19,7 +20,6 @@
 @import 'accessibility';
 
 // Global features
-@import '../features/animations';
 @import '../features/top';
 @import '../features/gallery';
 @import '../features/lazyload';
