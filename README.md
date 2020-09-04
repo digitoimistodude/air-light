@@ -77,7 +77,8 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── comments.php                    # → Default comments template (can be deleted if not needed)
 ├── css/                            # → CSS files for production (never edit)
 │   ├── global.css                  # → Unminified, stylefmtd CSS file
-│   └── global.min.css              # → Minified theme CSS, this file is called in functions.php
+│   └── global.min.css              # → Minified theme CSS, this file is called in scripts-styles.php
+│   └── gutenberg.min.css           # → Minified Gutenberg CSS for editor, this file is called in gutenberg.php
 ├── fonts/                          # → Your webfont files
 ├── footer.php                      # → Site footer
 ├── front-page.php                  # → Demo front-page template (not included in wordpress.org version)
@@ -108,31 +109,41 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── sass/                           # → CSS files for development
 │   ├── base/                       # → Theme base styles
 │   │   ├── _accessibility.scss     # → Accessibility
-│   │   ├── _config.scss            # → Theme config: Colors, fonts, etc.
-│   │   ├── _helpers.scss           # → Mostly SASS mixins
 │   │   ├── _normalize.scss         # → Browser reset
 │   │   └── global.scss             # → Core CSS file that calls all the modular files
+│   │   └── gutenberg.scss          # → Core CSS file for Gutenberg editor and blocks
 │   ├── extra/                      # → Extra, optional styles
 │   │   ├── _slick.scss             # → Base styles for slick carousel
 │   │   └── _sticky-nav.scss        # → Sticky top navigation styles
 │   ├── features/                   # → Fuctionality styles
-│   │   ├── _breadcrumbs.scss       # → Styles for breadcrumb trail WordPress plugin
+│   │   ├── _breadcrumbs.scss       # → Styles for hybrid breadcrumbs
 │   │   ├── _gallery.scss           # → Default WordPress gallery feature styles
 │   │   ├── _lazyload.scss          # → Styles for air-helper lazyload feature (lazyload.js needed)
 │   │   ├── _magnific-popup.scss    # → Defaults for magnific popup
-│   │   └── _top.scss               # → Back to top styles
+│   │   ├── _top.scss               # → Back to top styles
+│   │   ├── _notices.scss           # → Default notices (not included by default)
+│   │   ├── _pagination.scss        # → Numbered pagination styles
+│   │   ├── _sticky-nav.scss        # → Sticky nav styles (not included by default)
+│   │   └── _slick.scss             # → Styles for slick-carousel (not included by default)
 │   ├── layout/                     # → Fuctionality styles
+│   │   ├── _demo-content.scss      # → Styles for demo, start script will delete this file
 │   │   ├── _forms.scss             # → Styles for general forms and Gravity Forms
-│   │   ├── _sidebar.scss           # → Sidebar (optional)
+│   │   ├── _sidebar.scss           # → Sidebar (not included by default)
 │   │   ├── _site-footer.scss       # → Footer styles
 │   │   ├── _site-header.scss       # → Header styles
 │   │   ├── _typography.scss        # → Defaults for typography and fonts
-│   │   └── _woocommerce.scss       # → WooCommerce webshop styles (optional)
+│   │   ├── _gutenberg.scss         # → Site-side styles for Gutenberg (pratically for single.php)
+│   │   └── _woocommerce.scss       # → WooCommerce webshop styles (not included by default)
 │   ├── navigation/                 # → Navigation styles
 │   │   ├── _burger.scss            # → Burger styles and animations
 │   │   ├── _nav-core.scss          # → Styles for both desktop and mobile navigation
 │   │   ├── _nav-desktop.scss       # → Desktop navigation styles and dropdowns
 │   │   └── _nav-mobile.scss        # → Navigation styles for mobile and touch devices
+│   ├── variables/                  # → Configurations
+│   │   ├── _breakpoints.scss       # → Widths from mobile to TV screens
+│   │   ├── _colors.scss            # → All the colors of the theme
+│   │   ├── _fonts.scss             # → Font settings
+│   │   └── _spacings.scss          # → Margins and paddings
 │   ├── views/                      # → Templates, archives, pages and views go here
 │   │   ├── _blog.scss              # → General blog archive and post styles
 │   │   ├── _comments.scss          # → Comment styles (optional)
@@ -148,9 +159,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   ├── header/                     # → Header modules
 │   │   ├── branding.php            # → Site branding
 │   │   ├── navigation.php          # → Site navigation
-│   ├── content-none.php            # → Default content (from _s, can be deleted/modified)
-│   ├── content-search.php          # → Default content (from _s, can be deleted/modified)
-│   ├── content.php                 # → Default content (from _s, can be deleted/modified)
+│   ├── content-modular.php         # → ACF Flexible fields
 │   ├── hero.php                    # → Default hero
 ```
 
