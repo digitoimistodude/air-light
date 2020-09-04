@@ -9,7 +9,7 @@ namespace Air_Light;
 
 function entry_footer() {
   if ( 'post' === get_post_type() ) {
-    $categories_list = get_the_category_list( _x( ' ', 'Used between list items, there is a space after the comma', 'air-light' ) );
+    $categories_list = get_the_category_list( _x( ' ', 'Used between list items, there is a space after the comma', 'air-light' ) ); // phpcs:ignore
     if ( $categories_list ) : ?>
       <p class="cat"><?php echo $categories_list; // phpcs:disable ?></p>
     <?php	endif;
