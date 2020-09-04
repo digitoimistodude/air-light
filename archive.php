@@ -32,9 +32,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
           get_template_part( 'template-parts/content', get_post_type() );
         }
 
-        the_posts_navigation();
-      else :
-      	get_template_part( 'template-parts/content', 'none' );
+        the_posts_pagination();
       endif; ?>
 
     </div><!-- .container -->

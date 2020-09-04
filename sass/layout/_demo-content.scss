@@ -231,7 +231,8 @@ $color-cyan-bright: #60f4ea;
 }
 
 // Build these to views/_index.scss for example
-.block.block-blog article {
+.block.block-blog article,
+.block.block-blog nav {
   max-width: $article-max-width;
   margin-left: auto;
   margin-right: auto;

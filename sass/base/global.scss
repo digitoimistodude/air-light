@@ -19,11 +19,6 @@
 // Accessibility
 @import 'accessibility';
 
-// Global features
-@import '../features/top';
-@import '../features/gallery';
-@import '../features/lazyload';
-
 // Structure
 @import '../layout/general';
 @import '../layout/typography';
@@ -32,6 +27,12 @@
 @import '../layout/forms';
 @import '../layout/gutenberg';
 @import '../layout/demo-content';
+
+// Global features
+@import '../features/top';
+@import '../features/gallery';
+@import '../features/lazyload';
+@import '../features/pagination';
 
 // Navigation
 @import '../navigation/nav-core';

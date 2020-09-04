@@ -46,7 +46,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
             </article><!-- #post-## -->
           <?php endwhile; ?>
 
-          <?php the_posts_navigation(); ?>
+          <?php the_posts_pagination(); ?>
 
         <?php endif; ?>
 
