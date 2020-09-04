@@ -456,9 +456,11 @@ ul.tags {
   overflow: hidden;
   margin-top: 0;
   margin-bottom: $margin-between-image-and-text;
-  padding: 0;
-  padding-left: 0;
   list-style: none;
+
+  @media (min-width: $article-max-width + 40px) {
+    padding: 0;
+  }
 
   li {
     margin-left: 0;

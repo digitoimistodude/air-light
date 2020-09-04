@@ -1642,9 +1642,10 @@ ul.tags {
   overflow: hidden;
   margin-top: 0;
   margin-bottom: 3.2rem;
-  padding: 0;
-  padding-left: 0;
   list-style: none; }
+  @media (min-width: 840px) {
+    ul.tags {
+      padding: 0; } }
   ul.tags li {
     margin-left: 0;
     margin-right: 10px;
