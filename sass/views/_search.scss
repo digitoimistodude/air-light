@@ -6,6 +6,7 @@
 .block-search form {
   display: grid;
   grid-template-columns: 9fr 1fr;
+  /* autoprefixer: off */
   grid-gap: 1rem;
 
   input,

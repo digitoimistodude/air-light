@@ -273,10 +273,10 @@ template {
   display: none; }
 
 /**
- * Background helpers
+ * Typography helpers
  */
 /**
- * Typography helpers
+ * Background helpers
  */
 .screen-reader-text, .nav-toggle:not(.has-visible-label) .nav-toggle-label {
   border: 0;
@@ -3169,6 +3169,7 @@ ul.tags {
 .block-search form {
   display: grid;
   grid-template-columns: 9fr 1fr;
+  /* autoprefixer: off */
   grid-gap: 1rem; }
   .block-search form input,
   .block-search form label {
