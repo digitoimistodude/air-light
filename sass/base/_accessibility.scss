@@ -108,12 +108,20 @@ body .block-image-links .cols .col,
 
 // Links within content must be underlined
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
-.container a,
-.entry-content a {
-  text-decoration: underline;
+.container {
+  a {
+    text-decoration: underline;
 
-  &:hover,
-  &:focus {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+
+  // With exceptions for those that are already styled:
+  .comments-link a,
+  .tags a,
+  .cat a {
     text-decoration: none;
   }
 }

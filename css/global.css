@@ -344,13 +344,15 @@ body .block-image-links .cols .col,
 .no-js *:focus {
   outline: 2px solid #4d4aff; }
 
-.container a,
-.entry-content a {
+.container a {
   text-decoration: underline; }
-  .container a:hover, .container a:focus,
-  .entry-content a:hover,
-  .entry-content a:focus {
+  .container a:hover, .container a:focus {
     text-decoration: none; }
+
+.container .comments-link a,
+.container .tags a,
+.container .cat a {
+  text-decoration: none; }
 
 a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator) {
   display: inline-flex;
@@ -1737,8 +1739,24 @@ pre {
   justify-content: space-between; }
 
 .cat {
-  margin-top: 0;
-  margin-bottom: 10px; }
+  margin-top: 4rem;
+  margin-bottom: 1rem; }
+  .cat a {
+    color: #222;
+    font-size: 16px;
+    display: inline-block;
+    border-color: rgba(6, 22, 41, 0.2);
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    border-radius: 5px;
+    padding: .2em .6em;
+    margin-right: .4em;
+    box-shadow: none;
+    background: transparent;
+    transition: all 0.22s; }
+  .cat a:hover,
+  .cat a:focus {
+    border-color: rgba(6, 22, 41, 0.4); }
 
 ul.tags {
   overflow: hidden;
@@ -1765,11 +1783,11 @@ ul.tags {
       padding: .2em .6em;
       margin-right: .4em;
       box-shadow: none;
-      background: transparent; }
-    ul.tags li a:hover {
-      color: #fff;
-      background: #aaa;
-      opacity: 1; }
+      background: transparent;
+      transition: all 0.22s; }
+    ul.tags li a:not(.button):not(.no-text-link):hover,
+    ul.tags li a:not(.button):not(.no-text-link):focus {
+      border-color: rgba(6, 22, 41, 0.4); }
 
 .site-header {
   padding-top: 4rem;
@@ -1941,6 +1959,11 @@ ul.tags {
 
 .block.block-entry-header-demo + .block .container {
   max-width: 800px; }
+
+.block.block-blog article {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .nav-primary .menu-items {
   position: relative;
@@ -3231,8 +3254,10 @@ ul.tags {
   font-size: 14px;
   text-align: right;
   display: block; }
+  .comments-link a {
+    color: #555; }
   .comments-link svg {
-    fill: #777;
+    fill: #555;
     position: relative;
     top: 1px;
     margin-right: 2px; }

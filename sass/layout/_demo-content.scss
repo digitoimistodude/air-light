@@ -229,3 +229,10 @@ $color-cyan-bright: #60f4ea;
 .block.block-entry-header-demo + .block .container {
   max-width: $article-max-width;
 }
+
+// Build these to views/_index.scss for example
+.block.block-blog article {
+  max-width: $article-max-width;
+  margin-left: auto;
+  margin-right: auto;
+}

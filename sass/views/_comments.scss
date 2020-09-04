@@ -16,8 +16,12 @@
   text-align: right;
   display: block;
 
+  a {
+    color: $color-comments-link;
+  }
+
   svg {
-    fill: #777;
+    fill: $color-comments-link;
     position: relative;
     top: 1px;
     margin-right: 2px;
