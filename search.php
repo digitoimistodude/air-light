@@ -55,7 +55,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
     <section class="block block-search">
       <div class="container">
-        <h1>Haku</h1>
+        <h1>Search</h1>
         <?php get_search_form( true ); ?>
       </div>
     </section>
@@ -65,9 +65,9 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
         <div class="container">
 
           <?php foreach ( $results as $post_type => $posts ) :
-            $title = 'Artikkelit';
+            $title = 'Articles';
             if ( 'product' === $post_type ) {
-              $title = 'Tuotteet';
+              $title = 'Products';
             } ?>
             <div class="col col-results col-results-<?php echo esc_attr( $post_type ) ?>">
               <h2><?php echo esc_html( $title ) ?></h2>

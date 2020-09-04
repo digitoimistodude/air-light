@@ -19,12 +19,13 @@
     padding-top: 0;
 
     @media (min-width: $container-ipad-landscape) {
-      @include grid(2);
+      // Change this to 2 if you use other post type results
+      @include grid(1);
     }
   }
 
   .row-result {
-    padding: 2rem;
+    padding: 2rem 0;
     border-top: 2px solid $color-forms-border;
 
     &:last-of-type {

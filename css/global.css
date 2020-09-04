@@ -3323,7 +3323,7 @@ ul.tags {
   @media (min-width: 1024px) {
     .block-search-results > .container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(1, 1fr);
       /* autoprefixer: off */
       grid-auto-rows: minmax(100px, auto);
       grid-column-gap: 16px;
@@ -3334,10 +3334,10 @@ ul.tags {
           flex-wrap: wrap;
           overflow: hidden; }
           .block-search-results > .container > div {
-            width: calc(50% - 16px);
+            width: calc(100% - 16px);
             margin-right: 16px;
             margin-bottom: 16px; }
-            .block-search-results > .container > div:nth-child(2n+2) {
+            .block-search-results > .container > div:nth-child(1n+1) {
               margin-right: 0; } } }
   @media all and (min-width: 1024px) and (-ms-high-contrast: none), (min-width: 1024px) and (-ms-high-contrast: active) {
     .block-search-results > .container {
@@ -3345,10 +3345,10 @@ ul.tags {
       flex-wrap: wrap;
       overflow: hidden; }
       .block-search-results > .container > div {
-        width: calc(50% - 16px);
+        width: calc(100% - 16px);
         margin-right: 16px;
         margin-bottom: 16px; }
-        .block-search-results > .container > div:nth-child(2n+2) {
+        .block-search-results > .container > div:nth-child(1n+1) {
           margin-right: 0; } }
   @media (min-width: 1024px) {
       @supports (-ms-ime-align: auto) {
@@ -3357,14 +3357,14 @@ ul.tags {
           flex-wrap: wrap;
           overflow: hidden; }
           .block-search-results > .container > div {
-            width: calc(50% - 16px);
+            width: calc(100% - 16px);
             margin-right: 16px;
             margin-bottom: 16px; }
-            .block-search-results > .container > div:nth-child(2n+2) {
+            .block-search-results > .container > div:nth-child(1n+1) {
               margin-right: 0; } } }
 
 .block-search-results .row-result {
-  padding: 2rem;
+  padding: 2rem 0;
   border-top: 2px solid #d9d9d9; }
   .block-search-results .row-result:last-of-type {
     border-bottom: 2px solid #d9d9d9; }
