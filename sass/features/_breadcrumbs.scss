@@ -3,7 +3,7 @@
 // https://github.com/digitoimistodude/air-light
 
 .block.block-breadcrumb {
-  padding-bottom: 1rem;
+  padding-bottom: 0;
 
   > .container {
     padding-top: 3rem;
@@ -86,7 +86,7 @@
   a,
   h2 {
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     color: $color-paragraphs;
 
     @media (max-width: 600px) {
@@ -118,6 +118,11 @@
       margin-right: 0;
       opacity: .3;
       font-weight: 500;
+      transition: all $transition-duration;
+
+      &:hover {
+        opacity: .6;
+      }
     }
 
     li:last-child {
@@ -142,28 +147,6 @@
       }
 
       &:before {
-        text-indent: -9999px;
-        overflow: hidden;
-        text-decoration: none;
-        text-align: start;
-        font-size: 14px;
-        color: #393939;
-        height: 10px;
-        width: 10px;
-        background-image: url('../svg/breadcrumbs-arrow.svg');
-        background-repeat: no-repeat;
-        background-position: 0;
-        background-size: inherit;
-        position: relative;
-        display: inline-flex;
-        padding: 0;
-        margin-left: 12px;
-        margin-right: 10px;
-        content: ' ';
-        align-self: center;
-      }
-
-      &:after {
         text-indent: -9999px;
         overflow: hidden;
         text-decoration: none;
