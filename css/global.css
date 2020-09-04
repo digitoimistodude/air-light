@@ -2102,7 +2102,7 @@ ul.tags {
 
 .sub-menu.toggled-on,
 .dropdown.hovered .sub-menu,
-.dropdown:hovered + .sub-menu {
+.dropdown:hover + .sub-menu {
   visibility: visible; }
 
 .nav-container {
@@ -2158,8 +2158,8 @@ ul.tags {
     .sub-menu a {
       line-height: 1.5; }
   .nav-primary ul .sub-menu.toggled-on,
-  [data-whatinput="mouse"] .menu-item-has-children:focus > .sub-menu,
-  [data-whatinput="mouse"] .menu-item-has-children:hover > .sub-menu {
+  .menu-item-has-children:focus > .sub-menu,
+  .menu-item-has-children:hover > .sub-menu {
     top: 100%;
     visibility: visible;
     opacity: 1;

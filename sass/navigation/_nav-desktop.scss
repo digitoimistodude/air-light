@@ -131,8 +131,8 @@ $submenu-dropdown-toggle-hover: (
   }
 
   .nav-primary ul .sub-menu.toggled-on,
-  [data-whatinput="mouse"] .menu-item-has-children:focus > .sub-menu,
-  [data-whatinput="mouse"] .menu-item-has-children:hover > .sub-menu {
+  .menu-item-has-children:focus > .sub-menu,
+  .menu-item-has-children:hover > .sub-menu {
     top: 100%;
     visibility: visible;
     opacity: 1;

@@ -98,6 +98,6 @@
 // Show for keyboard and screen readers only when toggled
 .sub-menu.toggled-on,
 .dropdown.hovered .sub-menu,
-.dropdown:hovered + .sub-menu {
+.dropdown:hover + .sub-menu {
   visibility: visible;
 }
