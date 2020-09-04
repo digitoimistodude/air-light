@@ -279,34 +279,34 @@ template {
  * Background helpers
  */
 @font-face {
-  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Archivo";
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-regular.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-regular.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-regular.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-regular.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-regular.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-regular.svg#Archivo") format("svg");
   font-style: normal;
   font-weight: 400; }
 
 @font-face {
-  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Archivo";
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-italic.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-italic.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-italic.svg#Archivo") format("svg");
   font-style: italic;
   font-weight: 400; }
 
 @font-face {
-  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Archivo";
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-700.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-700.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-700.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700.svg#Archivo") format("svg");
   font-style: normal;
   font-weight: 700; }
 
 @font-face {
-  font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Archivo";
   font-display: auto;
   src: url("../fonts/archivo-v6-latin_latin-ext-700italic.eot");
-  src: url("../fonts/archivo-v6-latin_latin-ext-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.svg#Archivo, Helvetica Neue, Helvetica, sans-serif") format("svg");
+  src: url("../fonts/archivo-v6-latin_latin-ext-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff") format("woff"), url("../fonts/archivo-v6-latin_latin-ext-700italic.woff2") format("woff2"), url("../fonts/archivo-v6-latin_latin-ext-700italic.ttf") format("truetype"), url("../fonts/archivo-v6-latin_latin-ext-700italic.svg#Archivo") format("svg");
   font-style: italic;
   font-weight: 700; }
 
