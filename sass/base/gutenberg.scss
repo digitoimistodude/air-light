@@ -1,0 +1,66 @@
+@charset 'utf-8';
+
+// Helpers
+@import '../helpers/typography';
+
+// Variables
+@import '../variables/colors';
+@import '../variables/breakpoints';
+@import '../variables/spacings';
+@import '../variables/fonts';
+
+// Accessibility
+@import 'accessibility';
+
+// Gutenberg blocks
+@import '../gutenberg/boxed';
+
+// Editor styles
+.editor-styles-wrapper {
+  color: $color-paragraphs;
+
+  p {
+    color: $color-paragraphs;
+    line-height: $line-height-blog;
+  }
+
+  // Disable focus for us only
+  &:focus {
+    outline: 0 !important;
+    border: 0 !important;
+  }
+
+  // No drop cap
+  .has-drop-cap:not(:focus):first-letter {
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: inherit;
+    float: none;
+  }
+
+  // Make editor same width than on site
+  .wp-block:not([data-align="full"]):not([data-align="wide"]) {
+    max-width: $article-max-width;
+    width: 100%;
+  }
+
+  .block-editor-block-list__block[data-type="core/paragraph"] p,
+  .block-editor-block-list__block p,
+  p {
+    font-size: $font-size-max;
+    font-family: $font-paragraphs !important;
+    color: $color-paragraphs;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  * {
+    font-family: $font-paragraphs;
+  }
+}

@@ -46,6 +46,7 @@ module.exports = {
     ]
   },
   styles: {
+    gutenberg: 'sass/base/gutenberg.scss',
     main: 'sass/base/global.scss',
     src: 'sass/**/*.{sass,scss}',
     dest: 'css',

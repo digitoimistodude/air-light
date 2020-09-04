@@ -12,6 +12,10 @@
 
 namespace Air_Light;
 
+// Enable Gutenberg extra features.
+add_theme_support( 'align-wide' );
+add_theme_support( 'wp-block-styles' );
+
 /**
  * Restrict blocks to only allowed blocks in the settings
  */
@@ -41,6 +45,25 @@ function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
   return true;
 }
 
-// Enable Gutenberg extra features.
-add_theme_support( 'align-wide' );
-add_theme_support( 'wp-block-styles' );
+/**
+ * Register Gutenberg blocks
+ */
+function register_block_editor_assets() {
+  $dependencies = array(
+    'wp-blocks',    // Provides useful functions and components for extending the editor
+    'wp-i18n',      // Provides localization functions
+    'wp-element',   // Provides React.Component
+    'wp-components', // Provides many prebuilt components and controls
+  );
+
+  wp_register_script( 'block-editor', get_theme_file_uri( 'js/src/block.js', __FILE__ ), $dependencies, null ); // phpcs:ignore
+  wp_register_style( 'block-editor', get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ ), null, null ); // phpcs:ignore
+}
+add_action( 'admin_init', __NAMESPACE__ . '\register_block_editor_assets' );
+
+register_block_type( 'plugin-namespace/block', array(
+  'editor_script' => 'block-editor',
+  'editor_style'  => 'block-editor',
+  'script'        => 'block',
+  'style'         => 'block',
+));

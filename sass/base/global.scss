@@ -3,11 +3,6 @@
 // Reset & grid
 @import 'normalize';
 
-// Variables
-@import '../variables/colors';
-@import '../variables/breakpoints';
-@import '../variables/spacings';
-
 // Helpers
 @import '../helpers/animations';
 @import '../helpers/typography';
@@ -15,6 +10,12 @@
 @import '../helpers/aspect-ratio';
 @import '../helpers/background';
 @import '../helpers/grid';
+
+// Variables
+@import '../variables/colors';
+@import '../variables/breakpoints';
+@import '../variables/spacings';
+@import '../variables/fonts';
 
 // Accessibility
 @import 'accessibility';
@@ -43,3 +44,6 @@
 @import '../views/front-page';
 @import '../views/search';
 @import '../views/comments';
+
+// Gutenberg blocks
+@import '../gutenberg/boxed';
