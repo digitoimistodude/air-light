@@ -1,0 +1,53 @@
+.block-search,
+.block-search-results {
+  background-color: $color-white;
+}
+
+.block-search form {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  grid-gap: 1rem;
+
+  input,
+  label {
+    width: 100%;
+  }
+}
+
+.block-search-results {
+  > .container {
+    padding-top: 0;
+
+    @media (min-width: $container-ipad-landscape) {
+      @include grid(2);
+    }
+  }
+
+  .row-result {
+    padding: 2rem;
+    border-top: 2px solid $color-forms-border;
+
+    &:last-of-type {
+      border-bottom: 2px solid $color-forms-border;
+    }
+  }
+
+  h3 {
+    @include responsive-font($font-size-min-h4, $font-size-max-h4);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+
+  .tags li a {
+    background-color: $color-ice;
+    color: $color-main;
+
+    &:hover {
+      background-color: $color-main;
+      color: $color-ice;
+    }
+  }
+}

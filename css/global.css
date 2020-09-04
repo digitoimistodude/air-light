@@ -1101,7 +1101,7 @@ pre {
   .site-footer input[type="submit"].button-ghost,
   .site-footer input[type="button"].button-ghost {
     background-color: transparent;
-    border: 1px solid #3962c9;
+    border: 2px solid #3962c9;
     color: #3962c9; }
   .content-area button.button-small,
   .content-area .button.button-small,
@@ -1209,8 +1209,8 @@ input[type="email"],
 input[type="search"] {
   border-radius: 3px;
   font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
-  background: #fbfbfb;
-  border: solid 1px #d9d9d9;
+  background: #fff;
+  border: solid 2px #d9d9d9;
   padding: 15px;
   line-height: 24px;
   transition: background .55s;
@@ -1246,7 +1246,7 @@ input[type="search"] {
   input[type="email"]:focus,
   input[type="search"]:focus {
     background: #fbfbfb;
-    border: solid 1px #bababa;
+    border: 2px solid #bababa;
     outline: 0; }
     body .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']):focus::placeholder,
     textarea:focus::placeholder,
@@ -1277,7 +1277,7 @@ select {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
-  border: 1px solid #4f5964;
+  border: 2px solid #4f5964;
   padding: 11px 28px 11px 10px;
   line-height: 1; }
   select::-ms-expand {
@@ -3305,6 +3305,89 @@ ul.tags {
 .posts-navigation .nav-next a:after,
 .post-navigation .nav-next a:after {
   content: ' →'; }
+
+.block-search,
+.block-search-results {
+  background-color: #fff; }
+
+.block-search form {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  grid-gap: 1rem; }
+  .block-search form input,
+  .block-search form label {
+    width: 100%; }
+
+.block-search-results > .container {
+  padding-top: 0; }
+  @media (min-width: 1024px) {
+    .block-search-results > .container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* autoprefixer: off */
+      grid-auto-rows: minmax(100px, auto);
+      grid-column-gap: 16px;
+      grid-row-gap: 16px; }
+      @supports not (display: grid) {
+        .block-search-results > .container {
+          display: flex;
+          flex-wrap: wrap;
+          overflow: hidden; }
+          .block-search-results > .container > div {
+            width: calc(50% - 16px);
+            margin-right: 16px;
+            margin-bottom: 16px; }
+            .block-search-results > .container > div:nth-child(2n+2) {
+              margin-right: 0; } } }
+  @media all and (min-width: 1024px) and (-ms-high-contrast: none), (min-width: 1024px) and (-ms-high-contrast: active) {
+    .block-search-results > .container {
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden; }
+      .block-search-results > .container > div {
+        width: calc(50% - 16px);
+        margin-right: 16px;
+        margin-bottom: 16px; }
+        .block-search-results > .container > div:nth-child(2n+2) {
+          margin-right: 0; } }
+  @media (min-width: 1024px) {
+      @supports (-ms-ime-align: auto) {
+        .block-search-results > .container {
+          display: flex;
+          flex-wrap: wrap;
+          overflow: hidden; }
+          .block-search-results > .container > div {
+            width: calc(50% - 16px);
+            margin-right: 16px;
+            margin-bottom: 16px; }
+            .block-search-results > .container > div:nth-child(2n+2) {
+              margin-right: 0; } } }
+
+.block-search-results .row-result {
+  padding: 2rem;
+  border-top: 2px solid #d9d9d9; }
+  .block-search-results .row-result:last-of-type {
+    border-bottom: 2px solid #d9d9d9; }
+
+.block-search-results h3 {
+  font-size: 18px;
+  margin-bottom: 1rem; }
+  @media screen and (min-width: 320px) {
+    .block-search-results h3 {
+      font-size: calc(18px + 3 * ((100vw - 320px) / 1600)); } }
+  @media screen and (min-width: 1920px) {
+    .block-search-results h3 {
+      font-size: 21px; } }
+
+.block-search-results p {
+  margin-top: 1rem; }
+
+.block-search-results .tags li a {
+  background-color: #eaf1f8;
+  color: #3962c9; }
+  .block-search-results .tags li a:hover {
+    background-color: #3962c9;
+    color: #eaf1f8; }
 
 .comments-area {
   margin-top: 50px;

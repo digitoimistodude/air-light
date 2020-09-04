@@ -12,37 +12,89 @@
 
 namespace Air_Light;
 
+$results = [];
+if ( ! empty( $_GET['s'] ) && have_posts() ) { // phpcs:ignore
+  while ( have_posts() ) {
+    the_post();
+    $post_type = get_post_type();
+
+    if ( 'page' === $post_type ) {
+      $post_type = 'post';
+    }
+
+    $result = [
+      'id'        => get_the_id(),
+      'title'     => get_the_title(),
+      'permalink' => get_the_permalink(),
+    ];
+
+    if ( 'product' === $post_type ) {
+      $cats = get_the_term_list( get_the_ID(), 'tea-blend', '<ul class="tags"><li>', '</li><li>', '</li></ul>' );
+      if ( ! $cats ) {
+        $cats = get_the_term_list( get_the_ID(), 'product_cat', '<ul class="tags"><li>', '</li><li>', '</li></ul>' );
+      }
+
+      $result['thumbnail_id'] = get_post_thumbnail_id();
+      $result['categories'] = $cats;
+    }
+
+    if ( 'post' === $post_type ) {
+      $result['excerpt'] = get_the_excerpt();
+    }
+
+    $results[ $post_type ][] = $result;
+  }
+} wp_reset_postdata();
+
 get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div class="content-area">
+<div id="content" class="content-area">
 	<main role="main" id="main" class="site-main">
-    <div class="container">
 
-      <?php if ( have_posts() ) : ?>
+    <section class="block block-search">
+      <div class="container">
+        <h1>Haku</h1>
+        <?php get_search_form( true ); ?>
+      </div>
+    </section>
 
-        <header class="entry-header">
-          <h1 class="entry-title" id="content">
-            <?php printf( esc_html__( 'Search Results for: %s', 'air-light' ), '<span>' . get_search_query() . '</span>' ); ?>
-          </h1>
-        </header><!-- .entry-header -->
+    <?php if ( ! empty( $results ) ) : ?>
+      <section class="block block-search-results">
+        <div class="container">
 
-      <?php while ( have_posts() ) : the_post(); ?>
+          <?php foreach ( $results as $post_type => $posts ) :
+            $title = 'Artikkelit';
+            if ( 'product' === $post_type ) {
+              $title = 'Tuotteet';
+            } ?>
+            <div class="col col-results col-results-<?php echo esc_attr( $post_type ) ?>">
+              <h2><?php echo esc_html( $title ) ?></h2>
 
-				<?php get_template_part( 'template-parts/content', 'search' ); ?>
+              <?php foreach ( $posts as $post ) : ?>
+                <div class="row row-result row-result-<?php echo esc_attr( $post_type ) ?>">
+                  <?php if ( 'product' === $post_type ) : ?>
+                    <div class="image"><?php image_lazyload_tag( $post['thumbnail_id'] ) ?></div>
+                  <?php endif; ?>
 
-      <?php endwhile; ?>
+                  <div class="content">
+                    <h3><a href="<?php echo esc_url( $post['permalink'] ) ?>"><?php echo esc_html( $post['title'] ) ?></a></h3>
+                    <?php if ( 'product' === $post_type ) : ?>
+                      <?php echo wp_kses_post( $post['categories'] ); ?>
+                    <?php elseif ( 'post' === $post_type ) : ?>
+                      <p><?php echo wp_kses_post( $post['excerpt'] ) ?></p>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          <?php endforeach; ?>
 
-      <?php the_posts_navigation(); ?>
-
-		<?php else : ?>
-
-      <?php get_template_part( 'template-parts/content', 'none' ); ?>
-
+        </div>
+      </section>
     <?php endif; ?>
 
-    </div><!-- .container -->
   </main><!-- #main -->
 </div><!-- #primary -->
 

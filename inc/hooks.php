@@ -8,6 +8,16 @@
 namespace Air_Light;
 
 /**
+ * Enable search view
+ */
+add_filter( 'air_helper_disable_views_search', '__return_false' );
+
+/**
+ * Breadcrumb
+ */
+// require get_theme_file_path( 'inc/hooks/breadcrumb.php' );
+
+/**
  * General hooks
  */
 require get_theme_file_path( 'inc/hooks/general.php' );

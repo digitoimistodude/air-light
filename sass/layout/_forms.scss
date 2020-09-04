@@ -5,6 +5,12 @@
 // the Gravity Forms styles out of the box.
 // ------------------------------------------------------------
 
+// Variables
+$border-radius: 3px;
+$border-width: 2px;
+$button-font-weight: 700;
+$background-inputs: $color-white;
+
 // Buttons
 .button-wrapper {
   margin-bottom: 0;
@@ -22,7 +28,7 @@
     background: $color-darkgrey;
     color: $color-white;
     border: 0;
-    border-radius: 3px;
+    border-radius: $border-radius;
     width: auto;
     display: inline-block;
     padding-top: 12px;
@@ -35,7 +41,7 @@
     cursor: pointer;
     transition: 150ms linear background;
     font-family: $font-paragraphs;
-    font-weight: 700;
+    font-weight: $button-font-weight;
     line-height: 1;
     appearance: none;
 
@@ -51,7 +57,7 @@
 
     &.button-ghost {
       background-color: transparent;
-      border: 1px solid $color-links;
+      border: $border-width solid $color-links;
       color: $color-links;
     }
 
@@ -114,8 +120,8 @@ input[type="search"] {
   @extend %default;
   border-radius: 3px;
   font-family: $font-paragraphs;
-  background: #fbfbfb;
-  border: solid 1px #d9d9d9;
+  background: $background-inputs;
+  border: solid $border-width $color-forms-border;
   padding: 15px;
   line-height: 24px;
   transition: background .55s;
@@ -132,7 +138,7 @@ input[type="search"] {
 
   &:focus {
     background: #fbfbfb;
-    border: solid 1px darken(#d9d9d9, 12%);
+    border: $border-width solid darken(#d9d9d9, 12%);
     outline: 0;
 
     &::placeholder {
@@ -157,7 +163,7 @@ select {
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
-  border: 1px solid $color-paragraphs;
+  border: $border-width solid $color-paragraphs;
   padding: 11px 28px 11px 10px;
   line-height: 1;
 

@@ -25,7 +25,7 @@ $color-cyan-bright: #60f4ea;
   align-items: center;
   justify-content: center;
   position: relative;
-  text-shadow: 0 0px 30px $color-blue;
+  text-shadow: 0 0px 30px $color-main;
   min-height: 53rem;
   max-height: 80rem;
   height: 80vh;
@@ -163,11 +163,11 @@ $color-cyan-bright: #60f4ea;
   font-weight: 500;
   margin: 0;
   margin-bottom: 1rem;
-  color: $color-blue-bright;
+  color: $color-bright;
   display: block;
   position: relative;
   z-index: 2;
-  text-shadow: 0 0px 10px rgba($color-blue, .5);
+  text-shadow: 0 0px 10px rgba($color-main, .5);
 }
 
 .site-title {
