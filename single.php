@@ -22,29 +22,15 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 	<main role="main" id="main" class="site-main">
 
     <section class="block block-single has-light-bg">
-      <div class="container container-article">
+      <div class="gutenberg-content">
 
-        <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
+        <?php the_content(); ?>
+        <?php entry_footer(); ?>
 
         <?php if ( get_edit_post_link() ) : ?>
-          <footer class="entry-footer">
-            <?php edit_post_link(
-              sprintf(
-                /* translators: %s: Name of current post. Only visible to screen readers */
-                wp_kses(
-                  __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
-                  [
-                    'span' => [
-                      'class' => [],
-                    ],
-                  ]
-                ),
-                get_the_title()
-              ),
-              '<p class="edit-link">',
-              '</p>'
-            ); ?>
-          </footer><!-- .entry-footer -->
+          <?php
+            edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
+          ?>
         <?php endif; ?>
 
   			<?php the_post_navigation();
@@ -54,7 +40,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
   				comments_template();
   			} ?>
 
-      </div><!-- .container -->
+      </div>
     </section>
 
 	</main><!-- #main -->

@@ -11,19 +11,45 @@
   overflow: visible;
 }
 
+.comments-link {
+  font-size: $font-size-tiny;
+  text-align: right;
+  display: block;
+
+  svg {
+    fill: #777;
+    position: relative;
+    top: 1px;
+    margin-right: 2px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-black;
+
+    a,
+    a:link,
+    a:visited,
+    svg {
+      color: $color-black;
+      fill: $color-black;
+    }
+  }
+}
+
 .comment-list {
   padding: 0;
   margin: 0;
   list-style: none;
 
   li {
-    @extend %small;
+    font-size: $font-size-tiny;
     padding: 0;
     margin-top: 0;
     margin-bottom: 70px;
 
     p {
-      @extend %small;
+      font-size: $font-size-tiny;
       color: $color-darkgrey;
     }
 
@@ -45,7 +71,7 @@
     }
 
     .comment-time {
-      @extend %small;
+      font-size: $font-size-tiny;
       padding: 0;
       margin: 0;
 

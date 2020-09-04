@@ -29,31 +29,30 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
         <?php if ( have_posts() ) : ?>
 
           <?php if ( is_home() && ! is_front_page() ) : ?>
-
-            <header>
-              <h1 id="content" class="entry-title screen-reader-text">
-                <?php single_post_title(); ?>
-              </h1>
-            </header>
-
+            <h1 id="content" class="screen-reader-text"><?php single_post_title(); ?></h1>
           <?php endif; ?>
 
           <?php while ( have_posts() ) : the_post(); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></h2>
+              <p><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time></p>
 
-            <?php get_template_part( 'template-parts/content', get_post_type() ); ?>
-
-            <?php endwhile; ?>
+              <div div class="content">
+                <?php
+                  the_content();
+                  entry_footer();
+                ?>
+              </div>
+            </article><!-- #post-## -->
+          <?php endwhile; ?>
 
           <?php the_posts_navigation(); ?>
-
-        <?php else : ?>
-
-          <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
         <?php endif; ?>
 
       </div><!-- .container -->
     </section>
+
   </main><!-- #main -->
 </div><!-- #primary -->
 

@@ -14,22 +14,20 @@ namespace Air_Light;
 get_header(); ?>
 
 <div class="content-area">
-	<main role="main" id="main" class="site-main">
+  <main role="main" id="main" class="site-main">
 
-			<section class="block block-error-404">
-        <div class="container">
-          <div class="content">
+    <section class="block block-error-404">
+      <div class="container">
+        <div class="content">
 
-				    <header class="entry-header">
-              <h1 id="content" class="entry-title">404<span class="screen-reader-text">Page not found.</span></h1>
-			  	  </header>
+          <h1 id="content">404<span class="screen-reader-text">Page not found.</span></h1>
+          <p>Page not found.</p>
 
-	  				<p>Page not found.</p>
-          </div>
         </div>
-			</section>
+      </div>
+    </section>
 
-	</main><!-- #main -->
+  </main><!-- #main -->
 </div><!-- #primary -->
 
 <?php

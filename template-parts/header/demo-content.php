@@ -26,20 +26,10 @@ namespace Air_Light;
 
 <section class="block has-light-bg">
   <div class="container">
-
     <?php if ( have_posts() ) : ?>
-
       <?php while ( have_posts() ) : the_post(); ?>
-
         <?php the_content(); ?>
-
       <?php endwhile; ?>
-
-      <?php else : ?>
-
-        <?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-      <?php endif ?>
-
+    <?php endif ?>
   </div>
 </section>

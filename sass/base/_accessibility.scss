@@ -146,4 +146,12 @@ a[href^="mailto"]::after {
   display: none;
 }
 
+// Possible extenral link hover styles on blog
+// &::after {
+//   transition: all .18s ease-in-out;
+// }
 
+// &:hover::after,
+// &:focus::after {
+//   background-image: url('../svg/external-link-white.svg');
+// }

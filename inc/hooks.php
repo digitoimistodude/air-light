@@ -10,7 +10,7 @@ namespace Air_Light;
 /**
  * Enable search view
  */
-add_filter( 'air_helper_disable_views_search', '__return_false' );
+// add_filter( 'air_helper_disable_views_search', '__return_false' );
 
 /**
  * Breadcrumb

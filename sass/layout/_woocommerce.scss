@@ -31,9 +31,8 @@ body {
 
     // Product archive listing
     ul.products .button {
-      @extend %small;
+      font-size: $font-size-tiny;
     }
-
 
     // Default columns fix for air
     // TODO: Replace with CSS grid

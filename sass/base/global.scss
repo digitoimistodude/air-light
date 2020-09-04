@@ -30,6 +30,7 @@
 @import '../layout/site-header';
 @import '../layout/site-footer';
 @import '../layout/forms';
+@import '../layout/gutenberg';
 @import '../layout/demo-content';
 
 // Navigation
@@ -39,8 +40,6 @@
 
 // Views
 @import '../views/front-page';
-@import '../views/page';
-@import '../views/blog';
 @import '../views/search';
 @import '../views/comments';
 
