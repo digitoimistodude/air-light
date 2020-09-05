@@ -6,7 +6,6 @@
 // -----------------------------------------------------------
 $absolute-navigation: true;
 $nav-desktop-background-color: $color-default-background;
-$hover-intent: .1s;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
 $nav-link-padding-y-dropdown: .4rem;
@@ -121,9 +120,6 @@ $submenu-dropdown-toggle-hover: (
     position: absolute;
     top: -9999px;
 
-    // This works, but animation bugs
-    // transition: 0s .11s; // Delay on hover off
-
     a {
       line-height: 1.5;
     }
@@ -131,13 +127,13 @@ $submenu-dropdown-toggle-hover: (
 
   .nav-primary ul .sub-menu.toggled-on,
   .menu-item-has-children:focus > .sub-menu,
-  .menu-item-has-children:hover > .sub-menu {
+  .menu-item-has-children:hover > .sub-menu,
+  .menu-item-has-children.hover-intent > .sub-menu {
     top: 100%;
     visibility: visible;
     opacity: 1;
     z-index: 1;
     transform: translateY(0%);
-    // transition-delay: 0s; // React immediately on hover
   }
 }
 
@@ -244,7 +240,6 @@ $submenu-dropdown-toggle-hover: (
         }
 
         a {
-          width: 100%;
           padding: $nav-link-padding-y-dropdown $nav-link-padding-x-dropdown;
           font-size: map-get($nav-dropdown-links, 'font-size');
           font-weight: map-get($nav-dropdown-links, 'font-weight');

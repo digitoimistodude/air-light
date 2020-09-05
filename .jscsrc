@@ -1,13 +1,18 @@
 {
-    "preset": "wordpress",
-    "requireSpacesInsideParentheses": false,
-    "requirePaddingNewLinesBeforeLineComments": false,
-    "disallowSpacesInFunctionExpression": false,
-    "disallowSpacesInAnonymousFunctionExpression": false,
-    "fileExtensions": [ ".js" ],
-    "excludeFiles": [
-    	"js/all.js",
-      "js/src/*.js",
-      "gulpfile.js"
-    ]
+  "preset": "wordpress",
+  "requireSpacesInsideParentheses": null,
+  "requirePaddingNewLinesBeforeLineComments": false,
+  "disallowSpacesInFunctionExpression": null,
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "requireVarDeclFirst": false,
+  "requireSpaceAfterPrefixUnaryOperators": false,
+  "requireYodaConditions": null,
+  "requireCamelCaseOrUpperCaseIdentifiers": false,
+  "requireCapitalizedComments": false,
+  "fileExtensions": [".js"],
+  "excludeFiles": [
+    "js/all.js",
+    "js/src/*.js",
+    "gulpfile.js"
+  ]
 }

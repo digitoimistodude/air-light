@@ -41,15 +41,6 @@
   }
 }
 
-// Disable animations on IE10 + IE11
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  @media only screen and (min-width: $responsivenav) {
-    .nav-primary .menu-items ul {
-      display: none;
-    }
-  }
-}
-
 @media only screen and (max-width: $responsivenav) {
   .js .nav-primary .menu-items ul {
     display: none;
@@ -62,15 +53,6 @@
 
   ul {
     margin-left: 25px;
-  }
-}
-
-// Disable animations on IE10 + IE11
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  @media only screen and (min-width: $responsivenav) {
-    .js .nav-primary ul .sub-menu.toggled-on {
-      display: block;
-    }
   }
 }
 
@@ -87,17 +69,4 @@
 
 .no-js .nav-toggle {
   display: none;
-}
-
-// Accessibiliy
-// Hide from keyboard and screen readers if not toggled
-.sub-menu:not(.toggled-on) {
-  visibility: hidden;
-}
-
-// Show for keyboard and screen readers only when toggled
-.sub-menu.toggled-on,
-.dropdown.hovered .sub-menu,
-.dropdown:hover + .sub-menu {
-  visibility: visible;
 }
