@@ -2140,7 +2140,6 @@ ul.tags {
     background: #fff;
     width: 22rem;
     left: 0;
-    transform: translateY(-2em);
     z-index: -1;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;

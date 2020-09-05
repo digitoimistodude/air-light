@@ -104,7 +104,6 @@ $submenu-dropdown-toggle-hover: (
     background: map-get($dropdown, 'background');
     width: map-get($dropdown, 'width');
     left: 0;
-    transform: translateY(-2em);
     z-index: -1;
     border-top-left-radius: map-get($dropdown, 'border-radius');
     border-top-right-radius: map-get($dropdown, 'border-radius');
