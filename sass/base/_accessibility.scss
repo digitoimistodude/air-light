@@ -146,6 +146,7 @@ a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):n
     top: 0;
     margin-left: 5px;
     margin-right: 2px;
+    transition: all .18s ease-in-out;
   }
 }
 
@@ -153,13 +154,3 @@ a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):n
 a[href^="mailto"]::after {
   display: none;
 }
-
-// Possible extenral link hover styles on blog
-// &::after {
-//   transition: all .18s ease-in-out;
-// }
-
-// &:hover::after,
-// &:focus::after {
-//   background-image: url('../svg/external-link-white.svg');
-// }

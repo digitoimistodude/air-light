@@ -403,7 +403,8 @@ a[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):no
     right: 0;
     top: 0;
     margin-left: 5px;
-    margin-right: 2px; }
+    margin-right: 2px;
+    transition: all .18s ease-in-out; }
 
 a[href^="mailto"]::after {
   display: none; }
@@ -537,6 +538,29 @@ a {
   text-decoration: none; }
   a:hover {
     color: #0c142a; }
+
+.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
+article .content *:not(.comments-link) a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
+  position: relative;
+  overflow: visible;
+  font-weight: 700;
+  z-index: 1;
+  text-decoration: none;
+  transition: all .18s ease-in-out;
+  display: inline-flex;
+  color: #4f5964;
+  border-bottom: 1px solid #3962c9;
+  box-shadow: inset 0 -0.1rem 0 #3962c9; }
+  .gutenberg-content a:hover:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
+  article .content *:not(.comments-link) a:hover:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]), .gutenberg-content a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
+  article .content *:not(.comments-link) a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
+    box-shadow: inset 0 -100px 0 #3962c9;
+    color: #fff; }
+
+.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after, .gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after,
+article .content *:not(.comments-link) a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after,
+article .content *:not(.comments-link) a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="www.dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after {
+  background-image: url("../svg/external-link-white.svg"); }
 
 p,
 dd,
