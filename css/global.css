@@ -896,8 +896,8 @@ pre {
   overflow: hidden;
   clear: both; }
   .site-footer svg {
+    margin-right: 5px;
     fill: #555;
-    top: 2px;
     position: relative; }
   .site-footer p,
   .site-footer span {
