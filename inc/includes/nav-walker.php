@@ -34,9 +34,17 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
     // Reminder for translated accessible labels
     if ( function_exists( 'pll_the_languages' ) ) {
-      $screenreadertext = ask__( 'Accessibility: Open child menu' );
+      if ( 'fi' === pll_current_language() ) {
+        $screenreadertext = ask__( 'Saavutettavuus: Avaa alavalikko' );
+      } else {
+        $screenreadertext = ask__( 'Accessibility: Open child menu' );
+      }
     } else {
-      $screenreadertext = esc_html__( 'Open child menu', 'air-light' );
+      if ( 'fi' === get_bloginfo( 'language' ) ) {
+        $screenreadertext = esc_html__( 'Avaa alavalikko', 'air-light' );
+      } else {
+        $screenreadertext = esc_html__( 'Open child menu', 'air-light' );
+      }
     }
 
     $output .= '<span class="screen-reader-text">' . $screenreadertext . '</span>';
