@@ -178,7 +178,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
 * Flexbox-ready
-* CSS Grid-ready*
+* CSS Grid-ready
 * Container div inside site-main
 * Inline SVG-ready
 
