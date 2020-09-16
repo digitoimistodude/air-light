@@ -112,6 +112,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _normalize.scss         # → Browser reset
 │   │   └── global.scss             # → Core CSS file that calls all the modular files
 │   │   └── gutenberg.scss          # → Core CSS file for Gutenberg editor and blocks
+│   ├── components/                 # → Add your style components to this folder
 │   ├── features/                   # → Fuctionality styles
 │   │   ├── _breadcrumbs.scss       # → Styles for hybrid breadcrumbs
 │   │   ├── _gallery.scss           # → Default WordPress gallery feature styles
@@ -163,8 +164,8 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   ├── header/                     # → Header modules
 │   │   ├── branding.php            # → Site branding
 │   │   ├── navigation.php          # → Site navigation
-│   ├── content-modular.php         # → ACF Flexible fields
-│   ├── hero.php                    # → Default hero
+│   ├── content-modular.php         # → ACF flexible content
+│   └── hero.php                    # → Default hero
 ```
 
 ### Features
@@ -176,12 +177,9 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * All good things from the latest [Underscores](https://github.com/Automattic/_s)
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
-* [Jeet](https://github.com/mojotech/jeet) Grid for SASS `@include column(1/100)`
-* Beta: Mixin for CSS Grid, for example `@include grid(3)` is 1 of third. See more: [sass/base/_helpers.scss](https://github.com/digitoimistodude/air/blob/master/sass/base/_helpers.scss).
 * Flexbox-ready
 * CSS Grid-ready*
 * Container div inside site-main
-* Possible to choose between fluid (flexible 100%) and snappy grid style (snapping to breakpoint, more space around)
 * Inline SVG-ready
 
 #### Typography
@@ -286,8 +284,8 @@ To enable Slick carousel support,
 
 1. Run `npm install slick-carousel --save` in theme directory
 2. Run `npm update` in theme directory
-3. Uncomment `themeDir + '/node_modules/slick-carousel/slick/slick.js'` in gulpfile.js
-4. Start gulp again, add slick init to document ready in scripts.js, like this, tweak to your needs (already uncommented):
+3. Uncomment `// import slick from 'slick-carousel';` in scripts.js
+4. Add slick init to document ready in scripts.js, like this, tweak to your needs:
 
 ```` javascript
 $('.slider').slick({
@@ -340,7 +338,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 ### Recommendations for development
 
 * Mac OS X
-* [Devpackages](https://github.com/digitoimistodude/devpackages) - Npm, Gulp and Bower
+* [Devpackages](https://github.com/digitoimistodude/devpackages) - Npm and Gulp + plugins
 * [Dudestack](https://github.com/digitoimistodude/dudestack) - A toolkit for creating a new professional WordPress project with deployments. Heavily based on Bedrock by Roots.
 
 ### Our way of building new themes
