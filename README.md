@@ -112,9 +112,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _normalize.scss         # → Browser reset
 │   │   └── global.scss             # → Core CSS file that calls all the modular files
 │   │   └── gutenberg.scss          # → Core CSS file for Gutenberg editor and blocks
-│   ├── extra/                      # → Extra, optional styles
-│   │   ├── _slick.scss             # → Base styles for slick carousel
-│   │   └── _sticky-nav.scss        # → Sticky top navigation styles
 │   ├── features/                   # → Fuctionality styles
 │   │   ├── _breadcrumbs.scss       # → Styles for hybrid breadcrumbs
 │   │   ├── _gallery.scss           # → Default WordPress gallery feature styles
