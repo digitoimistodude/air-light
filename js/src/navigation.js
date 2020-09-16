@@ -87,6 +87,30 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
         thisDropdown.find('.dropdown-toggle:first').focus();
       }
     }
+
+    if (window.innerWidth > responsivenav) {
+      // Close previous dropdown if we are on main level
+      prevDropdown = $(this).parent().prev();
+
+      screenReaderSpanPrev = prevDropdown.find('.screen-reader-text');
+      dropdownTogglePrev = prevDropdown.find('.dropdown-toggle');
+      prevDropdown.find('.sub-menu').removeClass('toggled-on');
+      prevDropdown.find('.dropdown-toggle').removeClass('toggled-on');
+      prevDropdown.find('.dropdown').removeClass('toggled-on');
+      dropdownTogglePrev.attr('aria-expanded', 'false');
+      screenReaderSpanPrev.text(trey_screenReaderText.expand);
+
+      // Close next dropdown if we are on main level
+      nextDropdown = $(this).parent().next();
+
+      screenReaderSpanNext = nextDropdown.find('.screen-reader-text');
+      dropdownToggleNext = nextDropdown.find('.dropdown-toggle');
+      nextDropdown.find('.sub-menu').removeClass('toggled-on');
+      nextDropdown.find('.dropdown-toggle').removeClass('toggled-on');
+      nextDropdown.find('.dropdown').removeClass('toggled-on');
+      dropdownToggleNext.attr('aria-expanded', 'false');
+      screenReaderSpanNext.text(trey_screenReaderText.expand);
+    }    
   });
 
   // Adds aria attribute
