@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/digitoimistodude/air-light.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air-light) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air-light.svg?style=flat-square)](https://github.com/digitoimistodude/air-light/releases) [![GitHub contributors](https://img.shields.io/github/contributors/digitoimistodude/air-light.svg?style=flat-square)]()
 
-Air-light (or simply *Air*) is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s](https://github.com/automattic/_s).
+Air-light (or simply *Air*) is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s](https://github.com/automattic/_s). We welcome all happy contributes with open arms!
 
 ## [Demo](https://dudetest.xyz/air)
 
@@ -51,11 +51,11 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
 
 ### Please note before using
 
-Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that the anything can change to a different direction without a warning. Please also see [Debuggers](#debuggers)!
+Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that the anything can change to a different direction without a warning when you look at this dev-git the next time. Please note this theme has no updates inside WordPress by design. Use this theme to hack it to pieces and create your new awesome theme based on Air! Please also see [Debuggers](#debuggers)!
 
-Air is not meant to be "a theme for everyone", so it doesn't have many parts that are generally included (see [Disabled features](#disabled-features)).
+Air is not meant to be "a theme for everyone", which means it doesn't have all the parts that are generally included in multi-purpose themes for non-technical people (please see [Disabled features](#disabled-features)).
 
-If you for some reason happen to use this theme as base, please note the theme won't necessarily be that much fun or won't necessarily look any good. I recommend using [Sage](https://roots.io/sage/) if you need something more complete.
+If you want to use this theme as starter for your new theme, please note the theme won't necessarily be that much fun or won't look good by default and neads work from you. We recommend using [Sage](https://roots.io/sage/) if you need something more extended.
 
 ### License
 
@@ -179,7 +179,8 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 * CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
 * Flexbox-ready
 * CSS Grid-ready
-* Container div inside site-main
+* Section blocks and containers
+* Basic and minimal CSS framework for forms, commenting and typography
 * Inline SVG-ready
 
 #### Typography
