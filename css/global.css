@@ -1641,7 +1641,8 @@ a[href^="mailto"]::after {
 .entry-footer {
   overflow: hidden;
   clear: both;
-  display: block; }
+  display: flex;
+  justify-content: space-between; }
 
 .edit-link {
   text-align: left;
@@ -1720,7 +1721,7 @@ a {
     color: #0c142a; }
 
 .gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-article .content *:not(.comments-link) a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
+article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
   position: relative;
   overflow: visible;
   font-weight: 700;
@@ -1732,15 +1733,10 @@ article .content *:not(.comments-link) a:not(.button):not(.url):not(.no-text-lin
   border-bottom: 1px solid #3962c9;
   box-shadow: inset 0 -0.1rem 0 #3962c9; }
   .gutenberg-content a:hover:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-  article .content *:not(.comments-link) a:hover:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]), .gutenberg-content a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-  article .content *:not(.comments-link) a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
+  article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:hover:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]), .gutenberg-content a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
+  article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
     box-shadow: inset 0 -100px 0 #3962c9;
     color: #fff; }
-
-.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after, .gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after,
-article .content *:not(.comments-link) a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after,
-article .content *:not(.comments-link) a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after {
-  background-image: url("../svg/external-link-white.svg"); }
 
 p,
 dd,
@@ -2884,6 +2880,11 @@ ul.tags {
     ul.tags li a:not(.button):not(.no-text-link):focus {
       border-color: rgba(6, 22, 41, 0.4); }
 
+.sticky {
+  border: 1px dashed #d7e4f2;
+  padding: 2rem;
+  margin-bottom: 2rem; }
+
 .site-header {
   padding-top: 4rem;
   padding-bottom: 4rem; }
@@ -3076,8 +3077,18 @@ ul.tags {
   margin-left: auto;
   margin-right: auto; }
 
+.block-blog article {
+  margin-bottom: 6rem; }
+  .block-blog article:last-child {
+    margin-botto: 0; }
+
 .block-blog ul.tags {
   padding-left: 0; }
+
+.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after, .gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after,
+article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after,
+article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after {
+  background-image: url("../svg/external-link-white.svg"); }
 
 .back-to-top {
   margin: 0;
@@ -3349,23 +3360,37 @@ ul.tags {
   margin-bottom: 50px;
   overflow: visible; }
 
+article .content .comments-link,
 .comments-link {
   font-size: 14px;
   text-align: right;
   display: block; }
+  article .content .comments-link a,
   .comments-link a {
-    color: #555; }
+    color: #555;
+    box-shadow: none; }
+  article .content .comments-link svg,
   .comments-link svg {
     fill: #555;
     position: relative;
     top: 1px;
     margin-right: 2px; }
-  .comments-link:hover, .comments-link:focus {
+  article .content .comments-link:hover, article .content .comments-link:focus,
+  .comments-link:hover,
+  .comments-link:focus {
     color: #222; }
+    article .content .comments-link:hover a,
+    article .content .comments-link:hover a:link,
+    article .content .comments-link:hover a:visited,
+    article .content .comments-link:hover svg, article .content .comments-link:focus a,
+    article .content .comments-link:focus a:link,
+    article .content .comments-link:focus a:visited,
+    article .content .comments-link:focus svg,
     .comments-link:hover a,
     .comments-link:hover a:link,
     .comments-link:hover a:visited,
-    .comments-link:hover svg, .comments-link:focus a,
+    .comments-link:hover svg,
+    .comments-link:focus a,
     .comments-link:focus a:link,
     .comments-link:focus a:visited,
     .comments-link:focus svg {

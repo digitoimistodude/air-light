@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2020-08-27 08:55:43
+# @Last Modified time: 2020-09-17 13:07:13
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
@@ -109,7 +109,9 @@ rm ${PROJECTTHEMEPATH}/LICENSE.md
 
 echo "${yellow}Removing demo content...${txtreset}"
 find ${PROJECTTHEMEPATH}/sass/ -maxdepth 3 -name 'global.scss' -exec sed -i '' -e "s/@import '..\/layout\/demo-content';//g" {} +
+find ${PROJECTTHEMEPATH}/sass/ -maxdepth 3 -name 'global.scss' -exec sed -i '' -e "s/@import '..\/layout\/wordpress';//g" {} +
 rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
+rm ${PROJECTTHEMEPATH}/sass/layout/_wordpress.scss
 
 read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
   if [ "$yn" = "n" ]; then
@@ -147,7 +149,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="5.6.6"
+newestair="5.6.7"
 newestwordpress="5.5"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');

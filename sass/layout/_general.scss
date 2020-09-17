@@ -72,7 +72,8 @@
 .entry-footer {
   overflow: hidden;
   clear: both;
-  display: block;
+  display: flex;
+  justify-content: space-between;
 }
 
 // Better edit link

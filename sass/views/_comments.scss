@@ -11,6 +11,7 @@
   overflow: visible;
 }
 
+article .content .comments-link,
 .comments-link {
   font-size: $font-size-tiny;
   text-align: right;
@@ -18,6 +19,7 @@
 
   a {
     color: $color-comments-link;
+    box-shadow: none;
   }
 
   svg {
