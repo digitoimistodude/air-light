@@ -46,7 +46,8 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
 9. [Contributing](#contributing)
     1. [Air development](#air-development)
     2. [Debuggers](#debuggers)
-    2. [Releasing a new version (staff only)](#releasing-a-new-version-tag-staff-only)
+    3. [Releasing a new version on git and tagging principles (staff only)](#releasing-a-new-version-on-git-and-tagging-principles-staff-only)
+    4. [Releasing a new version on the demo site and WordPress.org (staff only)](#releasing-a-new-version-on-the-demo-site-and-wordpress-org-staff-only)
 10. [Notes](#notes)
 
 ### Please note before using
@@ -427,7 +428,7 @@ Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSnif
 
 PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
 
-### Releasing a new version tag (staff only)
+### Releasing a new version on git and tagging principles (staff only)
 
 Other than Dude staff should make pull requests, but the senior developers can push new versions directly. Whenever you have updates that are worthwile, commit them with clear commit messages and then do versioning. Every meaningful commit or bunch of commits that form a feature together make the version go up semantically 0.0.1.
 
@@ -440,6 +441,17 @@ The tag-release cycle:
 5. `git push -u origin HEAD && git push --tags` (or `p && git push --tags` if you use our term aliases)
 
 That's it, you released a new version!
+
+### Releasing a new version on the demo site and WordPress.org (staff only)
+
+After tagging and releasing version on GitHub, you need to complete these steps:
+
+1. Release the dev version to the server with this magical command (you need to have pubkey auth on for auto-login): `rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} ~/Projects/airdev/content/themes/air-light/* you@the_server:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/`
+2. `cd ~/Projects/airdev/content/themes/air-light/bin`
+3. `sh air-move-out.sh`
+4. Go to [Theme Check](http://airdev.test/wp/wp-admin/themes.php?page=themecheck)` and click "Check it!" button. Fix possible errors.
+5. `sh air-pack.sh`
+6. Upload *~/Projects/airdev/content/themes/air-light.zip* to [wordpress.org/themes/ulpoad](https://wordpress.org/themes/upload/)
 
 ### Notes
 
