@@ -2885,6 +2885,11 @@ ul.tags {
   padding: 2rem;
   margin-bottom: 2rem; }
 
+.comment-list li.bypostauthor,
+.bypostauthor {
+  border: 1px dashed rgba(57, 98, 201, 0.5);
+  padding: 2rem; }
+
 .site-header {
   padding-top: 4rem;
   padding-bottom: 4rem; }

@@ -4,3 +4,9 @@
   padding: 2rem;
   margin-bottom: 2rem;
 }
+
+.comment-list li.bypostauthor,
+.bypostauthor {
+  border: 1px dashed rgba($color-main, .5);
+  padding: 2rem;
+}
