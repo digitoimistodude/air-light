@@ -23,6 +23,11 @@
 // Accessibility
 @import 'accessibility';
 
+// Navigation
+@import '../navigation/nav-core';
+@import '../navigation/nav-desktop';
+@import '../navigation/nav-mobile';
+
 // Structure
 @import '../layout/general';
 @import '../layout/typography';
@@ -37,11 +42,6 @@
 @import '../features/gallery';
 @import '../features/lazyload';
 @import '../features/pagination';
-
-// Navigation
-@import '../navigation/nav-core';
-@import '../navigation/nav-desktop';
-@import '../navigation/nav-mobile';
 
 // Views
 @import '../views/front-page';

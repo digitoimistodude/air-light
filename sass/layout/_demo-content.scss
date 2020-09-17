@@ -14,6 +14,27 @@ $color-cyan-bright: #60f4ea;
 .site-header {
   padding-top: 4rem;
   padding-bottom: 4rem;
+
+  @media (max-width: $responsivenav) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @media (max-width: $container-mobile) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+// Nav for demo
+.js .nav-primary {
+  // Default position, IE needs this
+  top: calc($mobile-nav-height + 10px);
+  left: 0;
+
+  @media (min-width: $container-mobile) {
+    top: calc(#{$mobile-nav-height} + 20px);
+  }
 }
 
 // Demo structure
