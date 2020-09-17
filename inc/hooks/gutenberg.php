@@ -60,10 +60,3 @@ function register_block_editor_assets() {
   wp_register_style( 'block-editor', get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ ), null, null ); // phpcs:ignore
 }
 add_action( 'admin_init', __NAMESPACE__ . '\register_block_editor_assets' );
-
-register_block_type( 'plugin-namespace/block', array(
-  'editor_script' => 'block-editor',
-  'editor_style'  => 'block-editor',
-  'script'        => 'block',
-  'style'         => 'block',
-));
