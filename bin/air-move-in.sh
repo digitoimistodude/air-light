@@ -2,7 +2,7 @@
 # A script for moving all dev files back to the theme
 
 mkdir -p ~/air-temp
-sudo mv ~/air-temp/.DS_Store ~/Projects/airdev/content/themes/air-light/
+sudo mv ~/air-temp/.vscode ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.accessibilityrc ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.git ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.gitignore ~/Projects/airdev/content/themes/air-light/

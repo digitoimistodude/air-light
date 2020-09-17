@@ -2,7 +2,8 @@
 # A script for moving all dev files out of the theme for testing with Theme Check plugin
 
 mkdir -p ~/air-temp
-sudo mv ~/Projects/airdev/content/themes/air-light/.DS_Store ~/air-temp/
+find . -name '.DS_Store' -type f -delete
+sudo mv ~/Projects/airdev/content/themes/air-light/.vscode ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.accessibilityrc ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.git ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.gitignore ~/air-temp/
@@ -20,12 +21,6 @@ sudo mv ~/Projects/airdev/content/themes/air-light/__MACOSX ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.scss-lint.yml ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/front-page.php ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/README.md ~/air-temp/
-sudo rm ~/Projects/airdev/content/themes/air-light/.DS_Store
-sudo rm ~/Projects/airdev/content/themes/air-light/js/.DS_Store
-sudo rm ~/Projects/airdev/content/themes/air-light/sass/.DS_Store
-sudo rm ~/Projects/airdev/content/themes/air-light/css/.DS_Store
-sudo rm ~/Projects/airdev/content/themes/air-light/fonts/.DS_Store
-sudo rm ~/Projects/airdev/content/themes/air-light/images/.DS_Store
 sudo mv ~/Projects/airdev/content/themes/air-light/.stylelintrc ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.editorconfig ~/air-temp/
 mkdir -p ~/air-temp/template-parts
