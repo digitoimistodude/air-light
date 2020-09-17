@@ -3,6 +3,7 @@
 
 mkdir -p ~/air-temp
 sudo mv ~/air-temp/.vscode ~/Projects/airdev/content/themes/air-light/
+sudo mv ~/air-temp/.svgo.yml ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.accessibilityrc ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.git ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.gitignore ~/Projects/airdev/content/themes/air-light/
