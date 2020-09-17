@@ -10,4 +10,3 @@ sh ~/Projects/airdev/content/themes/air-light/bin/air-move-out.sh
 cd ~/Projects/airdev/content/themes/
 zip -r air-light.zip air-light
 sh ~/air-temp/bin/air-move-in.sh
-
