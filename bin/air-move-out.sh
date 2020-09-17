@@ -4,7 +4,7 @@
 mkdir -p ~/air-temp
 find . -name '.DS_Store' -type f -delete
 sudo mv ~/Projects/airdev/content/themes/air-light/.vscode ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.svgo.yml ~/Projects/airdev/content/themes/air-light/
+sudo mv ~/Projects/airdev/content/themes/air-light/.svgo.yml ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.accessibilityrc ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.git ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.gitignore ~/air-temp/
