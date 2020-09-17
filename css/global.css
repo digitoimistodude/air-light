@@ -3085,7 +3085,7 @@ ul.tags {
 .block-blog article {
   margin-bottom: 6rem; }
   .block-blog article:last-child {
-    margin-botto: 0; }
+    margin-bottom: 0; }
 
 .block-blog ul.tags {
   padding-left: 0; }

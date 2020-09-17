@@ -25,6 +25,10 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
       <div class="gutenberg-content">
 
         <?php the_content(); ?>
+        <?php
+          // Required by WordPress Theme Check, feel free to remove as it's rarely used in starter themes
+          wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ), 'after' => '</div>' ) );
+        ?>
         <?php entry_footer(); ?>
 
         <?php if ( get_edit_post_link() ) : ?>
