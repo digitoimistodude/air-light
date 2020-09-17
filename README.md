@@ -451,7 +451,7 @@ After tagging and releasing version on GitHub, you need to complete these steps:
 3. `sh air-move-out.sh`
 4. Go to [Theme Check](http://airdev.test/wp/wp-admin/themes.php?page=themecheck)` and click "Check it!" button. Fix possible errors.
 5. `sh air-pack.sh`
-6. Upload *~/Projects/airdev/content/themes/air-light.zip* to [wordpress.org/themes/ulpoad](https://wordpress.org/themes/upload/)
+6. Upload *~/Projects/airdev/content/themes/air-light.zip* to [wordpress.org/themes/upload](https://wordpress.org/themes/upload/)
 
 ### Notes
 
