@@ -1437,7 +1437,7 @@ a[href^="mailto"]::after {
       .nav-primary .menu-items li > ul > li:last-child a {
         border-bottom: 0; }
       .nav-primary .menu-items a {
-        border-top: 1px solid #f4f4f4;
+        border-top: 1px solid #f0f0f0;
         padding-top: 1.2rem;
         padding-bottom: 1.2rem;
         padding-left: 0;
