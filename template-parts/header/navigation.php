@@ -22,7 +22,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
 
 <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-  <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php echo esc_html( $screenreadertext_expand_toggle ); ?>">
+  <button aria-controls="nav" id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php echo esc_html( $screenreadertext_expand_toggle ); ?>">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
