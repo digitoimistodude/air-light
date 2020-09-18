@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/digitoimistodude/air-light.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air-light) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air-light.svg?style=flat-square)](https://github.com/digitoimistodude/air-light/releases) [![GitHub contributors](https://img.shields.io/github/contributors/digitoimistodude/air-light.svg?style=flat-square)]()
 
-Air-light (or simply *Air*) is designed to be a minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is based on [_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
+Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
 
 ## [Demo](https://dudetest.xyz/air)
 
@@ -12,7 +12,9 @@ Air-light (or simply *Air*) is designed to be a minimal starting point for a Wor
 
 ![](https://i.imgur.com/s7qAN6U.png "Screenshot")
 
-This theme is built to be very straightforward, backwards compatible, front end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed.
+### Mission & Vision
+
+Air-light is built to be very straightforward, backwards compatible, front-end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed. **Our mission and goal** is **minimalism** and **simplicity**. **Our vision** is to build a theme that honors [WordPress Theme Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/), will not implement its own wrappers or functions, will not use any templating languages that would take things further from traditional PHP or CSS, will contain nothing that people will not use or need. Air-light will be free of weird "app-like" folder structures or odd syntaxes that nobody else uses. We love WordPress as it was and as it is.
 
 Air was renamed to air-light in version 3.7.8 (March 20th, 2018), because *air* was already taken in the official WordPress theme directory.
 
@@ -197,19 +199,23 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Navigation
 
+* WCAG 2.0 accessible with keyboard and screen readeres, aria roles and labels included
 * Custom navigation walker
 * Support for multi-level drop down submenus
 * Support for both absolute and relative navigation
 * Improved version of the [accessible menu for WordPress themes](https://github.com/theme-smith/accessible-nav-wp), fully accessible and responsive multi-level navigation
 * Support for animations
-* Pure CSS hoverintent
+* Hover intent with minimal animations
+* Accessible mobile menu
+* Wide selection of [tasty hamburger](https://github.com/jonsuh/hamburgers) animations
 
 #### WordPress & functions
 
-* Available for translation
+* Available for translation, full Polylang Pro support
 * Support for Post Thumbnails on posts and pages
+* Gutenberg support
 * HTML5 core markup for WordPress elements
-* **Air specific:** Templates for hero *blocks*
+* **Air specific:** Hero template, section *blocks*
 
 #### Custom Post Types
 
@@ -241,11 +247,14 @@ Air-light can register your Taxonomies automatically.
 Creating accessible websites is really important and our goal is to make air as accessible-ready as possible. Theme fully supports navigating with keyboard and screen-readers. Other accessible features:
 
 * [Navigation patterns](#navigation)
-* Skip link
+* Skip to content link
 * Smart focus for keyboard users, [what-input](https://github.com/ten1seven/what-input) baked in
 * Valid HTML
 * Accessible SVG icons
 * Screen reader class
+* External link indicators
+* Underlined links
+* Content-aware back to top link
 
 #### Lazy load
 
@@ -256,17 +265,15 @@ From 4.7.1 air-light has a lazy loading image features for background images and
 * Widgets
 * Post formats
 * Jetpack support
-* Customizer
-* RTL support
-* Threaded comments
-* Template tags (direct edit preferred)
-* No sidebar by default
+* (Threaded) comments
+* Underscores Template tags
+* Sidebar
 
 ### Extra building blocks
 
 #### Sticky navigation
 
-Air has sticky navigation baked in.
+Air has a sticky navigation baked in.
 
 ##### How to enable
 
