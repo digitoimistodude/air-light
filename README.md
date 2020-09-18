@@ -348,7 +348,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 ### Recommendations for development
 
-* Mac OS X
+* macOS
 * [Devpackages](https://github.com/digitoimistodude/devpackages) - Npm and Gulp + plugins
 * [Dudestack](https://github.com/digitoimistodude/dudestack) - A toolkit for creating a new professional WordPress project with deployments. Heavily based on Bedrock by Roots.
 
