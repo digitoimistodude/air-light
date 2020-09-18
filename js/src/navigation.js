@@ -68,7 +68,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   })();
 
   // Close focused dropdowns when pressing esc
-  $('.dropdown a, .dropdown button').on('keyup', function () {
+  $('.menu-item a, .dropdown button').on('keyup', function () {
     if ($('.dropdown').find(':focus').length !== 0) {
       // Close menu using Esc key.
       if (event.keyCode == 27) {
