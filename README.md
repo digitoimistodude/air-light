@@ -249,7 +249,7 @@ Creating accessible websites is really important and our goal is to make air as 
 
 #### Lazy load
 
-From 4.7.1 air-light has a lazy loading image features for background images and imgs. If you don't use this feature, remove it from gulpfile.js. This feature depends on [air-helper](https://github.com/digitoimistodude/air-helper), check out the documentation in air-helper for further instructions.
+From 4.7.1 air-light has a lazy loading image features for background images and imgs. If you don't use this feature, remove it from [scripts](https://github.com/digitoimistodude/air-light/blob/d517688bb400ac68100dcbdcd4bc7dbce7739099/js/src/scripts.js#L10). This feature depends on [air-helper](https://github.com/digitoimistodude/air-helper), check out [the documentation in air-helper](https://github.com/digitoimistodude/air-helper#image-lazyloading-1) for further instructions.
 
 #### Disabled features
 
