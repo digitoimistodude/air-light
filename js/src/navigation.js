@@ -98,7 +98,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       prevDropdown.find('.dropdown-toggle').removeClass('toggled-on');
       prevDropdown.find('.dropdown').removeClass('toggled-on');
       dropdownTogglePrev.attr('aria-expanded', 'false');
-      screenReaderSpanPrev.text(trey_screenReaderText.expand);
+      screenReaderSpanPrev.text(air_light_screenReaderText.expand);
 
       // Close next dropdown if we are on main level
       nextDropdown = $(this).parent().next();
@@ -109,8 +109,8 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       nextDropdown.find('.dropdown-toggle').removeClass('toggled-on');
       nextDropdown.find('.dropdown').removeClass('toggled-on');
       dropdownToggleNext.attr('aria-expanded', 'false');
-      screenReaderSpanNext.text(trey_screenReaderText.expand);
-    }    
+      screenReaderSpanNext.text(air_light_screenReaderText.expand);
+    }
   });
 
   // Adds aria attribute
