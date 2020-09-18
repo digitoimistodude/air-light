@@ -31,17 +31,33 @@ if ( function_exists( 'pll_the_languages' ) ) {
 
   <nav id="nav" class="nav-primary">
 
-    <?php wp_nav_menu( array(
-      'theme_location' => 'primary',
-      'container'      => false,
-      'depth'          => 4,
-      'menu_class'     => 'menu-items',
-      'menu_id'        => 'main-menu',
-      'echo'           => true,
-      'fallback_cb'    => __NAMESPACE__ . '\Nav_Walker::fallback',
-      'items_wrap'     => '<ul role="menubar" id="%1$s" class="%2$s">%3$s</ul>',
-      'walker'         => new Nav_Walker(),
-    ) ); ?>
+    <?php
+      if ( function_exists( 'pll_the_languages' ) ) {
+        if ( 'fi' === pll_current_language() ) {
+          $nav_label = ask__( 'Saavutettavuus: Päävalikko' );
+        } else {
+          $nav_label = ask__( 'Main navigation' );
+        }
+      } else {
+        if ( 'fi' === get_bloginfo( 'language' ) ) {
+          $nav_label = esc_html( 'Päävalikko' );
+        } else {
+          $nav_label = esc_html( 'Main navigation' );
+        }
+      }
+
+      wp_nav_menu( array(
+        'theme_location' => 'primary',
+        'container'      => false,
+        'depth'          => 4,
+        'menu_class'     => 'menu-items',
+        'menu_id'        => 'main-menu',
+        'echo'           => true,
+        'fallback_cb'    => __NAMESPACE__ . '\Nav_Walker::fallback',
+        'items_wrap'     => '<ul role="menu" aria-label="' . $nav_label . '" id="%1$s" class="%2$s">%3$s</ul>',
+        'walker'         => new Nav_Walker(),
+      ) );
+      ?>
 
   </nav><!-- #nav -->
 </div>
