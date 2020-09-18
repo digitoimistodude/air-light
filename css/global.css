@@ -3294,7 +3294,7 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
   @media (min-width: 1024px) {
     .block-search-results > .container {
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(1, minmax(0, 1fr));
       /* autoprefixer: off */
       grid-auto-rows: minmax(100px, auto);
       grid-column-gap: 16px;
