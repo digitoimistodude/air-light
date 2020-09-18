@@ -449,7 +449,7 @@ After tagging and releasing version on GitHub, you need to complete these steps:
 1. Release the dev version to the server with this magical command (you need to have pubkey auth on for auto-login): `rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} ~/Projects/airdev/content/themes/air-light/* you@the_server:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/`
 2. `cd ~/Projects/airdev/content/themes/air-light/bin`
 3. `sh air-move-out.sh`
-4. Go to [Theme Check](http://airdev.test/wp/wp-admin/themes.php?page=themecheck)` and click "Check it!" button. Fix possible errors.
+4. Go to [Theme Check](http://airdev.test/wp/wp-admin/themes.php?page=themecheck) and click "Check it!" button. Fix possible errors.
 5. `sh air-pack.sh`
 6. Upload *~/Projects/airdev/content/themes/air-light.zip* to [wordpress.org/themes/upload](https://wordpress.org/themes/upload/)
 
