@@ -279,12 +279,12 @@ template {
  * Background helpers
  */
 :root {
-  --font-size-tiny: $font-size-tiny;
-  --font-size-small: $font-size-small;
-  --font-size-medium: $font-size-medium;
-  --font-size-large: $font-size-large;
-  --font-size-extralarge: $font-size-extralarge;
-  --font-size-huge: $font-size-huge; }
+  --font-size-tiny: 14px;
+  --font-size-small: 16px;
+  --font-size-medium: 17px;
+  --font-size-large: 18px;
+  --font-size-extralarge: 20px;
+  --font-size-huge: 22px; }
   @media (max-width: 480px) {
     :root {
       --font-size-tiny: 16px;
