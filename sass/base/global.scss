@@ -11,14 +11,14 @@
 @import '../helpers/background';
 @import '../helpers/grid';
 
-// Style components
-// @import '../components/person-card';
-
 // Variables
 @import '../variables/colors';
 @import '../variables/breakpoints';
 @import '../variables/spacings';
 @import '../variables/fonts';
+
+// Style components
+// @import '../components/person-card';
 
 // Accessibility
 @import 'accessibility';
@@ -47,6 +47,7 @@
 // Views
 @import '../views/front-page';
 @import '../views/search';
+@import '../views/404';
 @import '../views/comments';
 
 // Gutenberg blocks
