@@ -29,6 +29,22 @@ $line-height-blog: 1.77;
 $font-weight-paragraphs: 400;
 $font-weight-headings: 700;
 
+// CSS Variables for responsive fonts
+:root {
+  --font-size-tiny: $font-size-tiny;
+  --font-size-small: $font-size-small;
+  --font-size-medium: $font-size-medium;
+  --font-size-large: $font-size-large;
+  --font-size-extralarge: $font-size-extralarge;
+  --font-size-huge: $font-size-huge;
+
+  // Vars in mobile
+  @media (max-width: $container-mobile) {
+    --font-size-tiny: 16px;
+    --font-size-small: 16px;
+  }
+}
+
 // Self-hosted fonts
 @include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-regular', 400);
 @include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);

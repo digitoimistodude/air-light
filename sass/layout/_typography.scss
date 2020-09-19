@@ -13,7 +13,7 @@
 
 // Start typography settings
 body {
-  font-size: $font-size-medium;
+  font-size: var(--font-size-medium);
   font-family: $font-paragraphs;
   color: $color-paragraphs;
   font-weight: $font-weight-paragraphs;
@@ -75,9 +75,13 @@ td,
 table,
 tr,
 %default {
-  @include responsive-font($font-size-min, $font-size-max);
+  font-size: var(--font-size-small);
   letter-spacing: -.003em;
   line-height: $line-height-paragraphs;
+
+  @media (min-width: 770px) {
+    @include responsive-font($font-size-min, $font-size-max);
+  }
 }
 
 p {

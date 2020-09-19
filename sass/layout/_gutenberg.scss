@@ -281,13 +281,12 @@
       figcaption {
         width: 100%;
         color: $color-white;
-        font-size: $font-size-small;
+        font-size: var(--font-size-small);
         padding: 0 2rem;
         line-height: 1.55;
         margin-bottom: $margin-between-text-elements;
 
         @media (max-width: 600px) {
-          font-size: $font-size-tiny;
           padding: 0;
         }
       }
@@ -425,7 +424,7 @@ pre {
   margin: 3rem 0;
   padding: 15px 16px 14px;
   overflow-x: auto;
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
   line-height: $line-height-blog;
   color: $color-lightgrey;
 
@@ -448,7 +447,7 @@ pre {
 
   a {
     color: $color-black;
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
     display: inline-block;
     border-color: rgba($color-blog-tags, .2);
     border-style: solid;

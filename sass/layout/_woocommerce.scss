@@ -9,7 +9,7 @@ body {
       color: $color-fog;
       font-family: $font-headings;
       text-transform: uppercase;
-      font-size: $font-size-small;
+      font-size: var(--font-size-small);
     }
 
     // Buttons
@@ -31,7 +31,7 @@ body {
 
     // Product archive listing
     ul.products .button {
-      font-size: $font-size-tiny;
+      font-size: var(--font-size-tiny);
     }
 
     // Default columns fix for air

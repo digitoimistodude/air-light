@@ -24,7 +24,7 @@ $background-inputs: $color-white;
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    font-size: $font-size-small;
+    font-size: var(--font-size-small);
     background: $color-darkgrey;
     color: $color-white;
     border: 0;
@@ -63,7 +63,7 @@ $background-inputs: $color-white;
 
     // Button sizes
     &.button-small {
-      font-size: $font-size-small;
+      font-size: var(--font-size-small);
       padding-top: 12px;
       padding-bottom: 12px;
       padding-left: 25px;
@@ -71,7 +71,7 @@ $background-inputs: $color-white;
     }
 
     &.button-medium {
-      font-size: $font-size-medium;
+      font-size: var(--font-size-medium);
       padding-top: 19px;
       padding-bottom: 19px;
       padding-left: 40px;
@@ -79,12 +79,12 @@ $background-inputs: $color-white;
     }
 
     &.button-large {
-      font-size: $font-size-large;
+      font-size: var(--font-size-large);
       padding: 14px 27px 16px;
     }
 
     &.button-action {
-      font-size: $font-size-small;
+      font-size: var(--font-size-small);
       padding-top: 14px;
       padding-bottom: 14px;
       padding-left: 25px;

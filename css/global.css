@@ -278,6 +278,18 @@ template {
 /**
  * Background helpers
  */
+:root {
+  --font-size-tiny: $font-size-tiny;
+  --font-size-small: $font-size-small;
+  --font-size-medium: $font-size-medium;
+  --font-size-large: $font-size-large;
+  --font-size-extralarge: $font-size-extralarge;
+  --font-size-huge: $font-size-huge; }
+  @media (max-width: 480px) {
+    :root {
+      --font-size-tiny: 16px;
+      --font-size-small: 16px; } }
+
 @font-face {
   font-family: "Archivo";
   font-display: auto;
@@ -1705,7 +1717,7 @@ a.global-link {
   font-size: 62.5%; }
 
 body {
-  font-size: 17px;
+  font-size: var(--font-size-medium);
   font-family: "Archivo", "Helvetica Neue", Helvetica, sans-serif;
   color: #4f5964;
   font-weight: 400;
@@ -1768,10 +1780,42 @@ input[type="month"],
 input[type="week"],
 input[type="email"],
 input[type="search"] {
-  font-size: 17px;
+  font-size: var(--font-size-small);
   letter-spacing: -.003em;
   line-height: 1.7; }
-  @media screen and (min-width: 320px) {
+  @media (min-width: 770px) {
+    p,
+    dd,
+    dt,
+    figcaption,
+    hr,
+    small,
+    ol,
+    ul,
+    li,
+    blockquote,
+    kbd,
+    pre,
+    samp,
+    code,
+    th,
+    td,
+    table,
+    tr,
+    body .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+    textarea,
+    select,
+    input[type="text"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="password"],
+    input[type="number"],
+    input[type="month"],
+    input[type="week"],
+    input[type="email"],
+    input[type="search"] {
+      font-size: 17px; } }
+  @media screen and (min-width: 770px) and (min-width: 320px) {
     p,
     dd,
     dt,
@@ -1803,7 +1847,7 @@ input[type="search"] {
     input[type="email"],
     input[type="search"] {
       font-size: calc(17px + 3 * ((100vw - 320px) / 1600)); } }
-  @media screen and (min-width: 1920px) {
+  @media screen and (min-width: 770px) and (min-width: 1920px) {
     p,
     dd,
     dt,
@@ -2104,7 +2148,7 @@ pre {
 .site-footer input[type="reset"],
 .site-footer input[type="submit"],
 .site-footer input[type="button"] {
-  font-size: 16px;
+  font-size: var(--font-size-small);
   background: #4f5964;
   color: #fff;
   border: 0;
@@ -2170,7 +2214,7 @@ pre {
   .site-footer input[type="reset"].button-small,
   .site-footer input[type="submit"].button-small,
   .site-footer input[type="button"].button-small {
-    font-size: 16px;
+    font-size: var(--font-size-small);
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 25px;
@@ -2185,7 +2229,7 @@ pre {
   .site-footer input[type="reset"].button-medium,
   .site-footer input[type="submit"].button-medium,
   .site-footer input[type="button"].button-medium {
-    font-size: 17px;
+    font-size: var(--font-size-medium);
     padding-top: 19px;
     padding-bottom: 19px;
     padding-left: 40px;
@@ -2200,7 +2244,7 @@ pre {
   .site-footer input[type="reset"].button-large,
   .site-footer input[type="submit"].button-large,
   .site-footer input[type="button"].button-large {
-    font-size: 20px;
+    font-size: var(--font-size-large);
     padding: 14px 27px 16px; }
   .content-area button.button-action,
   .content-area .button.button-action,
@@ -2212,7 +2256,7 @@ pre {
   .site-footer input[type="reset"].button-action,
   .site-footer input[type="submit"].button-action,
   .site-footer input[type="button"].button-action {
-    font-size: 16px;
+    font-size: var(--font-size-small);
     padding-top: 14px;
     padding-bottom: 14px;
     padding-left: 25px;
@@ -2708,13 +2752,12 @@ Usage: codyhouse.co/license
       .gutenberg-content > *.wp-block-gallery figcaption {
         width: 100%;
         color: #fff;
-        font-size: 16px;
+        font-size: var(--font-size-small);
         padding: 0 2rem;
         line-height: 1.55;
         margin-bottom: 4rem; }
         @media (max-width: 600px) {
           .gutenberg-content > *.wp-block-gallery figcaption {
-            font-size: 14px;
             padding: 0; } }
       .gutenberg-content > *.wp-block-gallery img {
         margin-bottom: 0; }
@@ -2817,7 +2860,7 @@ pre {
   margin: 3rem 0;
   padding: 15px 16px 14px;
   overflow-x: auto;
-  font-size: 16px;
+  font-size: var(--font-size-small);
   line-height: 1.77;
   color: #f5f5f5; }
   pre code {
@@ -2833,7 +2876,7 @@ pre {
   margin-bottom: 1rem; }
   .cat a {
     color: #222;
-    font-size: 16px;
+    font-size: var(--font-size-small);
     display: inline-block;
     border-color: rgba(6, 22, 41, 0.2);
     border-style: solid;
@@ -3367,7 +3410,7 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 
 article .content .comments-link,
 .comments-link {
-  font-size: 14px;
+  font-size: var(--font-size-tiny);
   text-align: right;
   display: block; }
   article .content .comments-link a,
@@ -3407,12 +3450,12 @@ article .content .comments-link,
   margin: 0;
   list-style: none; }
   .comment-list li {
-    font-size: 14px;
+    font-size: var(--font-size-tiny);
     padding: 0;
     margin-top: 0;
     margin-bottom: 70px; }
     .comment-list li p {
-      font-size: 14px;
+      font-size: var(--font-size-tiny);
       color: #4f5964; }
     .comment-list li .avatar {
       float: right;
@@ -3425,7 +3468,7 @@ article .content .comments-link,
       .comment-list li .comment-author a {
         color: #4f5964; }
     .comment-list li .comment-time {
-      font-size: 14px;
+      font-size: var(--font-size-tiny);
       padding: 0;
       margin: 0; }
       .comment-list li .comment-time svg {
