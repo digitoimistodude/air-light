@@ -287,6 +287,18 @@ a.global-link {
  * Background helpers
  */
 :root {
+  --padding-container-x-medium: 2rem;
+  --padding-container-x-small: 2rem;
+  --padding-container-y-medium: 6.4rem;
+  --padding-container-y-small: 5rem; }
+  @media (max-width: 480px) {
+    :root {
+      --padding-container-x-medium: 2rem;
+      --padding-container-x-small: 2rem;
+      --padding-container-y-medium: 4rem;
+      --padding-container-y-small: 4rem; } }
+
+:root {
   --font-size-tiny: 14px;
   --font-size-small: 16px;
   --font-size-medium: 17px;
@@ -1638,21 +1650,21 @@ a[href^="mailto"]::after {
 
 .container {
   margin: 0 auto;
-  padding-top: 6.4rem;
-  padding-bottom: 6.4rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-top: var(--padding-container-y-medium);
+  padding-bottom: var(--padding-container-y-medium);
+  padding-left: var(--padding-container-x-medium);
+  padding-right: var(--padding-container-x-medium);
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
   @media (max-width: 1350px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem; } }
+      padding-left: var(--padding-container-x-small);
+      padding-right: var(--padding-container-x-small); } }
   @media (max-width: 770px) {
     .container {
-      padding-top: 5rem;
-      padding-bottom: 5rem; } }
+      padding-top: var(--padding-container-y-small);
+      padding-bottom: var(--padding-container-y-small); } }
 
 .site-main .container {
   overflow: hidden;
@@ -2080,8 +2092,8 @@ pre {
   z-index: 15;
   padding-bottom: 2rem;
   padding-top: 2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: var(--padding-container-x-medium);
+  padding-right: var(--padding-container-x-medium);
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;

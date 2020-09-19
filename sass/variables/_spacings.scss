@@ -34,3 +34,19 @@ $padding-container-x-medium: 2rem;
 $padding-container-x-small: 2rem;
 $padding-container-y-medium: 6.4rem;
 $padding-container-y-small: 5rem;
+
+// CSS Variables for responsive paddings and margins
+:root {
+  --padding-container-x-medium: #{$padding-container-x-medium};
+  --padding-container-x-small: #{$padding-container-x-small};
+  --padding-container-y-medium: #{$padding-container-y-medium};
+  --padding-container-y-small: #{$padding-container-y-small};
+
+  // Vars in mobile
+  @media (max-width: $container-mobile) {
+    --padding-container-x-medium: 2rem;
+    --padding-container-x-small: 2rem;
+    --padding-container-y-medium: 4rem;
+    --padding-container-y-small: 4rem;
+  }
+}

@@ -1,5 +1,5 @@
 .notice {
-  padding: $padding-container-x-medium;
+  padding: var(--padding-container-x-medium);
   background-color: $color-lightgrey;
   border-left: 4px solid $color-darkgrey;
 }
