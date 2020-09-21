@@ -36,9 +36,10 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     5. [WordPress & functions](#wordpress--functions)
     6. [Custom Post Types](#custom-post-types)
     7. [Custom Taxonomies](#custom-taxonomies)
-    8. [Accessibility](#accessibility)
-    9. [Lazy load](#lazy-load)
-    10. [Disabled features](#disabled-features)
+    8. [Namespaced PHP](#namespaced-php)
+    9. [Accessibility](#accessibility)
+    10. [Lazy load](#lazy-load)
+    11. [Disabled features](#disabled-features)
 4. [Extra building blocks](#extra-building-blocks)
     1. [Sticky navigation](#sticky-navigation)
     2. [Slick slider](#slick-slider)
@@ -243,6 +244,28 @@ Air-light can register your Taxonomies automatically.
 ```
 2. Add a file `inc/taxonomies/your-taxonomy.php`
 3. Extend `Taxonomy` class with `Your_Taxonomy` and define your taxonomy in a public function called `register()`. See the example: `inc/taxonomies/your-taxonomy.php`.
+
+### Namespaced PHP
+
+Air-light uses namespaced PHP since 5.0.0. This means that we no longer need to prefix functions and hooks, because `namespace Air_Light;` takes care of that.
+
+When old function format was:
+``` php
+// Pre_get_posts
+add_action( 'pre_get_posts', 'dude_pre_get_posts' );
+function dude_pre_get_posts( $query ) {
+  // Do something
+}
+```
+
+New format goes like this:
+``` php
+// Pre_get_posts
+add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts' );
+function pre_get_posts( $query ) {
+  // Do something
+}
+```
 
 #### Accessibility
 
