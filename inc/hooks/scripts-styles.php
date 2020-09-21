@@ -45,7 +45,7 @@ function enqueue_theme_scripts() {
   }
 
   // Reminder for translated accessible labels
-  if ( function_exists( 'pll_the_languages' ) ) {
+  if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
     if ( 'fi' === pll_current_language() ) {
       $screenreadertext_expand = ask__( 'Saavutettavuus: Avaa alavalikko' );
       $screenreadertext_expand_toggle = ask__( 'Saavutettavuus: Avaa päävalikko' );

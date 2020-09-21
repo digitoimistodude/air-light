@@ -32,7 +32,7 @@ namespace Air_Light;
 
   <?php
     // Reminder for translated accessible labels
-    if ( function_exists( 'pll_the_languages' ) ) {
+    if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
       $screenreadertext_skip = ask__( 'Accessibility: Skip to content' );
     } else {
       $screenreadertext_skip = 'Skip to content';

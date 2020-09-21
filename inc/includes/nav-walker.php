@@ -33,7 +33,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
     $output .= '<button class="dropdown-toggle" aria-expanded="false">';
 
     // Reminder for translated accessible labels
-    if ( function_exists( 'pll_the_languages' ) ) {
+    if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
       if ( 'fi' === pll_current_language() ) {
         $screenreadertext = ask__( 'Saavutettavuus: Avaa alavalikko' );
       } else {

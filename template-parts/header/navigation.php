@@ -13,7 +13,7 @@
 namespace Air_Light;
 
 // Reminder for translated accessible labels
-if ( function_exists( 'pll_the_languages' ) ) {
+if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
   $screenreadertext_expand_toggle = ask__( 'Accessibility: Open main menu' );
 } else {
   $screenreadertext_expand_toggle = 'Open main menu';
@@ -32,7 +32,7 @@ if ( function_exists( 'pll_the_languages' ) ) {
   <nav id="nav" class="nav-primary">
 
     <?php
-      if ( function_exists( 'pll_the_languages' ) ) {
+      if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
         if ( 'fi' === pll_current_language() ) {
           $nav_label = ask__( 'Saavutettavuus: Päävalikko' );
         } else {
