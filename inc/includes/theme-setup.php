@@ -108,3 +108,9 @@ function build_theme_support() {
     ]
   );
 }
+
+/**
+ * Clean up some air-helper stuff by default
+ */
+remove_action( 'admin_init', __NAMESPACE__ . '\air_helper_clean_admin_notices', 9999 );
+// add_filter( 'air_helper_sendgrid', '__return_false' );

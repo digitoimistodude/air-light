@@ -36,13 +36,13 @@ if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
         if ( 'fi' === pll_current_language() ) {
           $nav_label = ask__( 'Saavutettavuus: Päävalikko' );
         } else {
-          $nav_label = ask__( 'Main navigation' );
+          $nav_label = ask__( 'Accessibility: Main navigation' );
         }
       } else {
         if ( 'fi' === get_bloginfo( 'language' ) ) {
           $nav_label = esc_html( 'Päävalikko' );
         } else {
-          $nav_label = esc_html( 'Main navigation' );
+          $nav_label = esc_html( 'Accessibility: Main navigation' );
         }
       }
 

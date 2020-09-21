@@ -10,6 +10,15 @@
 
 add_filter( 'air_helper_pll_register_strings', function() { // phpcs:ignore
   return array(
+    // Air defaults for screen readers
+    'Accessibility: Open main menu' => 'Open main menu',
+    'Accessibility: Main navigation' => 'Main navigation',
+    'Accessibility: Back to top' => 'Back to top',
+    'Accessibility: Open child menu' => 'Open child menu',
+    'Accessibility: Close child menu' => 'Close child menu',
+    'Accessibility: Skip to content' => 'Skip to content',
+
+    // Air defaults for screen readers in Finnish
     'Saavutettavuus: -etusivulle' => '-etusivulle',
     'Saavutettavuus: Siirry' => 'Siirry',
     'Saavutettavuus: Siirry sivustolle' => 'Siirry sivustolle',
