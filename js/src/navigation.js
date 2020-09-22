@@ -394,9 +394,9 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     navTogglescreenReaderText = $('#nav-toggle-label');
     navTogglescreenReaderText.text(
       navTogglescreenReaderText.text() ===
-      maailma2030_screenReaderText.expand_toggle ?
-      maailma2030_screenReaderText.collapse_toggle :
-      maailma2030_screenReaderText.expand_toggle
+      air_light_screenReaderText.expand_toggle ?
+      air_light_screenReaderText.collapse_toggle :
+      air_light_screenReaderText.expand_toggle
     );
 
     // Return focus to nav-toggle
