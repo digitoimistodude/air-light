@@ -3101,7 +3101,7 @@ ul.tags {
         fill: #fff; }
     .site-title a:hover svg {
       transition: transform 0.4s cubic-bezier(0.6, -0.68, 0.735, 0.045);
-      transform: translate(240%, -200%); }
+      transform: translate(260%, -220%); }
       .site-title a:hover svg .clr-i-solid-path-2 {
         display: block !important;
         fill: #60f4ea; }
