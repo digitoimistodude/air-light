@@ -63,6 +63,13 @@ $mobile-nav-height: 80px;
 
 // Mobile styles
 @media screen and (max-width: $responsivenav - 1px) {
+  [data-whatintent="mouse"],
+  [data-whatintet="touch"] {
+    .menu-item a:focus {
+      outline: none;
+    }
+  }
+
   .main-navigation-wrapper {
     order: 6;
     z-index: 999;
@@ -151,9 +158,6 @@ $mobile-nav-height: 80px;
       width: 100%;
       float: none;
       padding: 2rem 0;
-
-      // We have color here, so it's okay to remove outline
-      outline: none;
 
       li:first-child a {
         border-top: 0;
