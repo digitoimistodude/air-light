@@ -75,6 +75,18 @@ lazyload(images, {
     });
   });
 
+  // Accessibility add "External link:" aria label for external links
+  var currentHost = new RegExp(location.host);
+  $('a').each(function () {
+    var attr = $(this).attr('aria-label');
+    if (!currentHost.test($(this).attr('href')) && !attr) {
+      // A link that does not contain the current host
+      var txt = $(this).text();
+      $(this).addClass('is-external-link');
+      $(this).attr('aria-label', air_light_screenReaderText.external_link + ' ' + txt);
+    }
+  });
+
   // Hide or show the 'back to top' link
   $(window).scroll(function () {
     // Back to top
