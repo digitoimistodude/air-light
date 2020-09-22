@@ -32,7 +32,7 @@ namespace Air_Light;
     }
   ?>
 
-  <p class="back-to-top"><a href="#page" class="js-trigger top no-text-link" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html( $screenreadertext_top ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
+  <p class="back-to-top"><a href="#page" class="js-trigger top no-text-link no-external-link-indicator" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html( $screenreadertext_top ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
 
 </footer><!-- #colophon -->
 
