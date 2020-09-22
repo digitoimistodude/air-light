@@ -151,7 +151,10 @@ a.is-external-link:not(.no-external-link-indicator) {
   }
 }
 
-// Do not use email links as external links
-a[href^="mailto"]::after {
+// Do not use external links indicators in tel and email links
+a[href^="mailto"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator)::after,
+a.is-external-link:not(.no-external-link-indicator)[href^="mailto"]::after,
+a[href^="tel"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator)::after,
+a.is-external-link:not(.no-external-link-indicator)[href^="tel"]::after {
   display: none;
 }
