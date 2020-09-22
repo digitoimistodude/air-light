@@ -105,7 +105,6 @@ $background-inputs: $color-white;
 }
 
 // Form input elements and textareas
-body .gform_wrapper input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
 textarea,
 select,
 input[type="text"],
@@ -130,14 +129,15 @@ input[type="search"] {
   appearance: none;
   margin-bottom: 0;
   box-sizing: border-box;
+  font-size: var(--font-size-medium);
 
   &::placeholder {
-    color: #434343;
+    color: $color-paragraphs;
     opacity: .4;
   }
 
   &:focus {
-    background: #fbfbfb;
+    background: $background-inputs;
     border: $border-width solid darken(#d9d9d9, 12%);
     outline: 0;
 
@@ -153,8 +153,8 @@ select {
   border-radius: 0;
   background-image: url('../svg/select.svg');
   background-repeat: no-repeat;
-  background-position: right 17px center;
-  background-size: 11px auto;
+  background-position: right 0 center;
+  background-size: 40px auto;
   transition: none;
   width: 100%;
   max-width: 100%;
@@ -162,18 +162,19 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
-  text-overflow: '';
-  border: $border-width solid $color-paragraphs;
-  padding: 11px 28px 11px 10px;
-  line-height: 1;
+  border: $border-width solid $color-border-forms;
+  color: $color-paragraphs;
+  padding: 15px;
+  line-height: 24px;
+  font-size: var(--font-size-medium);
 
   &::-ms-expand {
     display: none;
   }
 
-  &:hover,
   &:focus {
-    border-color: #222;
+    background: $background-inputs;
+    border: $border-width solid darken(#d9d9d9, 12%);
   }
 }
 

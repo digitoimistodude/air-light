@@ -33,6 +33,7 @@ $font-weight-headings: 700;
 
 // CSS Variables for responsive fonts
 :root {
+  --font-size-default: #{$font-size-max};
   --font-size-tiny: #{$font-size-tiny};
   --font-size-small: #{$font-size-small};
   --font-size-medium: #{$font-size-medium};
@@ -44,6 +45,7 @@ $font-weight-headings: 700;
   @media (max-width: $container-mobile) {
     --font-size-tiny: 16px;
     --font-size-small: 16px;
+    --font-size-default: 16px;
   }
 }
 

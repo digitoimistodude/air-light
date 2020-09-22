@@ -1,4 +1,130 @@
 // Gravity forms
 // Please disable CSS in /admin.php?page=gf_settings
+
+// WCAG 2.0 errors
+[data-whatinput="keyboard"] div.validation_error,
+div.validation_error {
+  padding: 2rem;
+  background: $color-error;
+  font-size: var(--font-size-medium);
+  color: $color-white;
+  font-weight: 700;
+  margin-bottom: 2rem;
+
+  &:focus {
+    color: $color-white;
+  }
+}
+
+body *[aria-invalid="true"] {
+  border-color: $color-error;
+}
+
+.validation_message {
+  color: $color-error;
+  font-weight: 400;
+  font-size: var(--font-size-small);
+}
+
 .validation_list {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+
+  a {
+    color: $color-error;
+    text-decoration: none;
+  }
+
+  li {
+    color: $color-error;
+    font-weight: 700;
+  }
+}
+
+// Gravity forms minimal default styles
+.gform_body {
+  // Required star color
+  .gfield_required {
+    color: $color-main;
+    font-size: var(--font-size-huge);
+    position: relative;
+    top: 3px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .gform_fields li {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .gfieldset li {
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .gfield_label,
+  .ginput_container > span > label {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 1rem;
+  }
+
+  input:not([type="radio"]):not([type="checkbox"]),
+  textarea {
+    width: 100%;
+  }
+
+  @media (min-width: $container-mobile) {
+    // Complex fields
+    .ginput_full {
+      width: 100%;
+      display: block;
+    }
+
+    .ginput_complex {
+      margin-left: -.5rem;
+      margin-right: -.5rem;
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        margin-right: .5rem;
+        margin-left: .5rem;
+      }
+    }
+
+    .ginput_complex .ginput_left,
+    .ginput_complex .ginput_right {
+      width: calc(50% - 1rem);
+      display: inline-flex;
+      flex-wrap: wrap;
+
+      > label,
+      input {
+        width: 100%;
+        font-size: var(--font-size-small);
+      }
+    }
+  }
 }

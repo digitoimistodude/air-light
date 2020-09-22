@@ -122,6 +122,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   ├── features/                   # → Fuctionality styles
 │   │   ├── _breadcrumbs.scss       # → Styles for hybrid breadcrumbs
 │   │   ├── _gallery.scss           # → Default WordPress gallery feature styles
+│   │   ├── _gravity-forms.scss     # → Defaults for Gravity Forms + WCAG 2.0 form fields for Gravity Forms
 │   │   ├── _lazyload.scss          # → Styles for air-helper lazyload feature (lazyload.js needed)
 │   │   ├── _magnific-popup.scss    # → Defaults for magnific popup
 │   │   ├── _top.scss               # → Back to top styles
@@ -280,6 +281,7 @@ Creating accessible websites is really important and our goal is to make air as 
 * External link indicators
 * Underlined links
 * Content-aware back to top link
+* WCAG 2.0 AAA Accessible-ready Gravity Forms styles (needs [WCAG 2.0 form fields for Gravity Forms](https://wordpress.org/plugins/gravity-forms-wcag-20-form-fields/), included in [dudestack](https://github.com/digitoimistodude/dudestack))
 
 #### Lazy load
 
