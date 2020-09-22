@@ -348,9 +348,9 @@ $mobile-nav-height: 80px;
     }
   }
 
-  // Accessibility: Show for screen readers, hide visually if not visible label class added
+  // We already have aria-label for button, but if we want to show nav-toggle visually for seeing users, add has-visible-label to nav-toggle in header.php
   &:not(.has-visible-label) .nav-toggle-label {
-    @extend .screen-reader-text;
+    display: none;
   }
 
   @media (max-width: $responsivenav - 1px) {

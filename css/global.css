@@ -342,7 +342,7 @@ a.global-link {
   font-style: italic;
   font-weight: 700; }
 
-.screen-reader-text, .nav-toggle:not(.has-visible-label) .nav-toggle-label {
+.screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   clip-path: inset(50%);
@@ -353,13 +353,13 @@ a.global-link {
   position: absolute !important;
   width: 1px;
   word-wrap: normal !important; }
-  .screen-reader-text.skip-link, .nav-toggle:not(.has-visible-label) .skip-link.nav-toggle-label {
+  .screen-reader-text.skip-link {
     margin: 5px; }
-    .screen-reader-text.skip-link:focus, .nav-toggle:not(.has-visible-label) .skip-link.nav-toggle-label:focus {
+    .screen-reader-text.skip-link:focus {
       background: #fff;
       color: #4d4aff;
       outline: 2px solid #4d4aff; }
-  .screen-reader-text:focus, .nav-toggle:not(.has-visible-label) .nav-toggle-label:focus {
+  .screen-reader-text:focus {
     background-color: #f1f1f1;
     border-radius: 0;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
@@ -1587,6 +1587,8 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]::after {
     color: #fff; }
     .nav-toggle:hover span, .nav-toggle:active span {
       color: #fff; }
+  .nav-toggle:not(.has-visible-label) .nav-toggle-label {
+    display: none; }
   @media (max-width: 959px) {
     .nav-toggle {
       display: block; }
@@ -1722,6 +1724,9 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]::after {
 @media (min-width: 960px) {
   .hide-on-desktop-nav-view {
     display: none !important; } }
+
+.hide-completely {
+  display: none !important; }
 
 :root {
   font-size: 62.5%; }

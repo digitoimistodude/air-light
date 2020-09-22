@@ -12,17 +12,26 @@
 
 namespace Air_Light;
 
-// Reminder for translated accessible labels
+// Accessible labels
 if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
-  $screenreadertext_expand_toggle = ask__( 'Accessibility: Open main menu' );
+  if ( 'fi' === pll_current_language() ) {
+    $screenreadertext_expand_toggle = ask__( 'Saavutettavuus: Avaa päävalikko' );
+  } else {
+    $screenreadertext_expand_toggle = ask__( 'Accessibility: Open main menu' );
+  }
 } else {
-  $screenreadertext_expand_toggle = 'Open main menu';
+  if ( 'fi' === get_bloginfo( 'language' ) ) {
+    $screenreadertext_expand_toggle = esc_html__( 'Avaa päävalikko', 'air-light' );
+  } else {
+    $screenreadertext_expand_toggle = esc_html__( 'Open main menu', 'air-light' );
+  }
 }
 ?>
 
 <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-  <button aria-controls="nav" id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php echo esc_html( $screenreadertext_expand_toggle ); ?>">
+  <!-- NB! Accessibility: Add/remove has-visible-label class for button if you want to enable/disable visible "Show menu/Hide menu" label for seeing users -->
+  <button aria-controls="nav" id="nav-toggle" class="nav-toggle hamburger has-visible-label" type="button" aria-label="<?php echo esc_html( $screenreadertext_expand_toggle ); ?>">
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
     </span>
