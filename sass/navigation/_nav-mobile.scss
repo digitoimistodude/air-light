@@ -64,7 +64,7 @@ $mobile-nav-height: 80px;
 // Mobile styles
 @media screen and (max-width: $responsivenav - 1px) {
   [data-whatintent="mouse"],
-  [data-whatintet="touch"] {
+  [data-whatintent="touch"] {
     .menu-item a:focus {
       outline: none;
     }
@@ -188,10 +188,6 @@ $mobile-nav-height: 80px;
         z-index: 0;
         display: block;
         outline: none; // We have color here, so it's okay to remove outline
-      }
-
-      a:focus {
-        outline: none;
       }
 
       // Prevent nav item overlapping with dropdown opening toggle

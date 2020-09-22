@@ -116,6 +116,21 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   // Adds aria attribute
   siteHeaderMenu.find('.menu-item-has-children').attr('aria-haspopup', 'true');
 
+  // Open last dropdown by default on mobile
+  $(function () {
+    if (window.innerWidth < responsivenav) {
+      const screenReaderSpan = $('.menu-items > .dropdown-toggle').find('.screen-reader-text');
+      const dropdownMenu = $('.menu-items > .menu-item-has-children:last .sub-menu');
+      const dropdownItem = $('.menu-items > .menu-item-has-children:last .dropdown');
+
+      dropdownItem.addClass('toggled-on');
+      dropdownMenu.addClass('toggled-on');
+      dropdownItem.attr('aria-expanded', 'true');
+      dropdownItem.attr('aria-label', air_light_screenReaderText.collapse);
+      screenReaderSpan.text(air_light_screenReaderText.collapse);
+    }
+  });
+
   // Toggles the sub-menu when dropdown toggle button accessed
   siteHeaderMenu.find('.dropdown-toggle').click(function (e) {
     if (enterPressed || window.innerWidth < responsivenav) {

@@ -1413,6 +1413,9 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]::after {
     display: none !important; } }
 
 @media screen and (max-width: 959px) {
+  [data-whatintent="mouse"] .menu-item a:focus,
+  [data-whatintent="touch"] .menu-item a:focus {
+    outline: none; }
   .main-navigation-wrapper {
     order: 6;
     z-index: 999; }
@@ -1465,8 +1468,7 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]::after {
       margin: 0;
       width: 100%;
       float: none;
-      padding: 2rem 0;
-      outline: none; }
+      padding: 2rem 0; }
       .nav-primary .menu-items li:first-child a {
         border-top: 0; }
       .nav-primary .menu-items li > ul > li:last-child .main-title {
@@ -1489,8 +1491,6 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]::after {
         position: relative;
         z-index: 0;
         display: block;
-        outline: none; }
-      .nav-primary .menu-items a:focus {
         outline: none; }
       .nav-primary .menu-items a.has-submenu {
         width: 80%;
