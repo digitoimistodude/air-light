@@ -18,6 +18,7 @@ add_filter( 'air_helper_pll_register_strings', function() { // phpcs:ignore
     'Accessibility: Close child menu' => 'Close child menu',
     'Accessibility: Skip to content' => 'Skip to content',
     'Accessibility: External site:' => 'External site:',
+    'Accessibility: opens in a new window' => 'opens in a new window',
 
     // Air defaults for screen readers in Finnish
     'Saavutettavuus: -etusivulle' => '-etusivulle',
@@ -35,5 +36,6 @@ add_filter( 'air_helper_pll_register_strings', function() { // phpcs:ignore
     'Saavutettavuus: Sulje alavalikko' => 'Sulje alavalikko',
     'Saavutettavuus: Sulje päävalikko' => 'Sulje päävalikko',
     'Saavutettavuus: Ulkoinen sivusto:' => 'Ulkoinen sivusto:',
+    'Saavutettavuus: avautuu uuteen ikkunaan' => 'avautuu uuteen ikkunaan',
   );
 } );

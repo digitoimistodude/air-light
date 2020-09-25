@@ -87,6 +87,11 @@ lazyload(images, {
         $(this).attr('aria-label', air_light_screenReaderText.external_link + ' ' + txt);
       }
     }
+
+    // If is outside link and has target="_blank"
+    if (!currentHost.test($(this).attr('href')) && !attr && '_blank' === $(this).attr('target')) {
+      $(this).attr('aria-label', maailma2030_screenReaderText.external_link + ', ' + maailma2030_screenReaderText.target_blank + ' ' + txt);
+    }
   });
 
   // Hide or show the 'back to top' link
