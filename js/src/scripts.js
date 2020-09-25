@@ -80,10 +80,12 @@ lazyload(images, {
   $('a').each(function () {
     var attr = $(this).attr('aria-label');
     if (!currentHost.test($(this).attr('href')) && !attr) {
-      // A link that does not contain the current host
-      var txt = $(this).text();
-      $(this).addClass('is-external-link');
-      $(this).attr('aria-label', air_light_screenReaderText.external_link + ' ' + txt);
+      if ('#content' !== $(this).attr('href')) {
+        // A link that does not contain the current host
+        var txt = $(this).text();
+        $(this).addClass('is-external-link');
+        $(this).attr('aria-label', air_light_screenReaderText.external_link + ' ' + txt);
+      }
     }
   });
 
