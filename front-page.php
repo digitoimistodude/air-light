@@ -20,7 +20,7 @@ $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS[
 get_header(); ?>
 
 <div class="content-area">
-  <main role="main" id="main" class="site-main">
+  <main id="main" class="site-main">
 
     <?php get_template_part( 'template-parts/header/demo-content' ); ?>
 

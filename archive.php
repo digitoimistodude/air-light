@@ -16,7 +16,7 @@ get_header();
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
 <div class="content-area">
-	<main role="main" id="main" class="site-main">
+	<main id="main" class="site-main">
     <div class="container">
 
       <?php if ( have_posts() ) : ?>
