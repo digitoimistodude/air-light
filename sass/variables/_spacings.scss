@@ -42,6 +42,21 @@ $padding-container-y-small: 5rem;
   --padding-container-y-medium: #{$padding-container-y-medium};
   --padding-container-y-small: #{$padding-container-y-small};
 
+  // Codyhouse helper variables
+  --space-unit: 1em;
+  --space-xxxxs: calc(.125 * var(--space-unit));
+  --space-xxxs: calc(.25 * var(--space-unit));
+  --space-xxs: calc(.375 * var(--space-unit));
+  --space-xs: calc(.5 * var(--space-unit));
+  --space-sm: calc(.75 * var(--space-unit));
+  --space-md: calc(1.25 * var(--space-unit));
+  --space-lg: calc(2 * var(--space-unit));
+  --space-xl: calc(3.25 * var(--space-unit));
+  --space-xxl: calc(5.25 * var(--space-unit));
+  --space-xxxl: calc(8.5 * var(--space-unit));
+  --space-xxxxl: calc(13.75 * var(--space-unit));
+  --component-padding: var(--space-md);
+
   // Vars in mobile
   @media (max-width: $container-mobile) {
     --padding-container-x-medium: 2rem;

@@ -41,6 +41,10 @@ $font-weight-headings: 700;
   --font-size-extralarge: #{$font-size-extralarge};
   --font-size-huge: #{$font-size-huge};
 
+  // Codyhouse helper variables
+  --body-line-height: #{$line-height-paragraphs};
+  --heading-line-height: #{$line-height-headings};
+
   // Vars in mobile
   @media (max-width: $container-mobile) {
     --font-size-tiny: 16px;
