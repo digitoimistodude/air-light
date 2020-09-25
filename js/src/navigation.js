@@ -131,10 +131,14 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     }
   });
 
+  // Add default dropdown-toggle label
+  $('.dropdown-toggle').each(function () {
+    $(this).attr('aria-label', air_light_screenReaderText.expand_for + ' ' + $(this).prev().text());
+  });
+
   // Toggles the sub-menu when dropdown toggle button accessed
   siteHeaderMenu.find('.dropdown-toggle').click(function (e) {
     if (enterPressed || window.innerWidth < responsivenav) {
-      const screenReaderSpan = $(this).find('.screen-reader-text');
       const dropdownMenu = $(this).nextAll('.sub-menu');
 
       e.preventDefault();
@@ -147,10 +151,13 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
         $(this).attr('aria-expanded') === 'false' ? 'true' : 'false'
       );
       // jscs:enable
-      screenReaderSpan.text(
-        screenReaderSpan.text() === air_light_screenReaderText.expand ?
-        air_light_screenReaderText.collapse :
-        air_light_screenReaderText.expand
+      // Change screen reader open/close labels
+
+      $(this).attr(
+        'aria-label',
+        $(this).attr('aria-label') === air_light_screenReaderText.collapse_for + ' ' + $(this).prev().text() ?
+        air_light_screenReaderText.expand_for + ' ' + $(this).prev().text() :
+        air_light_screenReaderText.collapse_for + ' ' + $(this).prev().text()
       );
     }
   });
@@ -324,24 +331,16 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // What happens when clicking menu toggle
   button.onclick = function () {
-    // Change screen reader open/close labels
-    navTogglescreenReaderText = $(this).find('#nav-toggle-label');
-
+    // Change screen reader expanded state
     $(this).attr(
       'aria-expanded',
       $(this).attr('aria-expanded') === 'false' ? 'true' : 'false'
     );
 
+    // Change screen reader open/close labels
     $(this).attr(
       'aria-label',
       $(this).attr('aria-label') === air_light_screenReaderText.expand_toggle ?
-      air_light_screenReaderText.collapse_toggle :
-      air_light_screenReaderText.expand_toggle
-    );
-
-    navTogglescreenReaderText.text(
-      navTogglescreenReaderText.text() ===
-      air_light_screenReaderText.expand_toggle ?
       air_light_screenReaderText.collapse_toggle :
       air_light_screenReaderText.expand_toggle
     );

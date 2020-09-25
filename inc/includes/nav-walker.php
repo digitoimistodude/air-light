@@ -27,10 +27,8 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
     // Get the ico
     ob_start();
-    require get_theme_file_path( 'svg/chevron-down.svg' );
+    require get_theme_file_path( 'svg/chevron-down-main-nav.svg' );
     $icon = ob_get_clean();
-
-    $output .= '<button class="dropdown-toggle" aria-expanded="false">';
 
     // Reminder for translated accessible labels
     if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
@@ -47,7 +45,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
       }
     }
 
-    $output .= '<span class="screen-reader-text">' . $screenreadertext . '</span>';
+    $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . $screenreadertext . '">';
     $output .= $icon . '</button>';
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }
