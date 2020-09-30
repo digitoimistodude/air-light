@@ -44,12 +44,12 @@
   }
 
   .tags li a {
-    background-color: $color-ice;
+    background-color: $color-tags-and-search-items;
     color: $color-main;
 
     &:hover {
       background-color: $color-main;
-      color: $color-ice;
+      color: $color-tags-and-search-items;
     }
   }
 }
