@@ -515,15 +515,15 @@ body .block-image-links .cols .col,
 	text-decoration: none;
 }
 
-a[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator),
-a.is-external-link:not(.no-external-link-indicator) {
+a[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):not([href*='#']),
+a.is-external-link:not(.no-external-link-indicator):not([href*='#']) {
 	display: inline-flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-a[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator)::after,
-a.is-external-link:not(.no-external-link-indicator)::after {
+a[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):not([href*='#'])::after,
+a.is-external-link:not(.no-external-link-indicator):not([href*='#'])::after {
 	background-image: url("../svg/external-link.svg");
 	background-position: right center;
 	background-repeat: no-repeat;
@@ -540,10 +540,10 @@ a.is-external-link:not(.no-external-link-indicator)::after {
 	transition: all .18s ease-in-out;
 }
 
-a[href^="mailto"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator)::after,
+a[href^="mailto"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):not([href*='#'])::after,
 a.is-external-link:not(.no-external-link-indicator)[href^="mailto"]::after,
-a[href^="tel"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator)::after,
-a.is-external-link:not(.no-external-link-indicator)[href^="tel"]::after {
+a[href^="tel"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):not([href*='#'])::after,
+a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#'])::after {
 	display: none;
 }
 
