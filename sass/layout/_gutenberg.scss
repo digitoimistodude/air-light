@@ -9,13 +9,8 @@
   max-width: 100%;
   padding-right: 0;
   padding-left: 0;
-  padding-top: $padding-block-medium;
-  padding-bottom: $padding-block-medium;
-
-  @media (max-width: 600px) {
-    padding-top: $padding-block-small;
-    padding-bottom: $padding-block-small;
-  }
+  padding-top: var(--padding-block);
+  padding-bottom: var(--padding-block);
 
   .blocks-gallery-grid {
     display: grid;
@@ -284,7 +279,7 @@
         font-size: var(--font-size-small);
         padding: 0 2rem;
         line-height: 1.55;
-        margin-bottom: $margin-between-text-elements;
+        margin-bottom: var(--margin-between-text-elements);
 
         @media (max-width: 600px) {
           padding: 0;
@@ -470,7 +465,7 @@ pre {
 ul.tags {
   overflow: hidden;
   margin-top: 0;
-  margin-bottom: $margin-between-image-and-text;
+  margin-bottom: var(--margin-between-image-and-text);
   list-style: none;
 
   @media (min-width: $article-max-width + 40px) {

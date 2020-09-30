@@ -13,8 +13,11 @@ $background-inputs: $color-white;
 
 // CSS Variables for radios and checkboxes
 :root {
+  --space-unit: 1em;
+  --space-x-small: calc(.125 * var(--space-unit));
+  --space-small: calc(.25 * var(--space-unit));
   --checkbox-radio-size: 16px;
-  --checkbox-radio-gap: var(--space-xs);
+  --checkbox-radio-gap: calc(.5 * var(--space-unit));
   --checkbox-radio-border-width: 2px;
   --checkbox-radio-line-height: var(--body-line-height);
   --radio-marker-size: 8px;
@@ -296,7 +299,7 @@ input[type="checkbox"]:focus + label::before {
 // --radio--bg, --checkbox--bg -> variation with background color
 input[type="radio"]--bg + label,
 input[type="checkbox"]--bg + label {
-  padding: var(--space-xxxxs) var(--space-xxxs);
+  padding: var(--space-x-small) var(--space-small);
   border-radius: var(--radius-md);
   transition: background .2s;
 }

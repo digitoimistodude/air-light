@@ -24,6 +24,17 @@ $color-cyan-bright: #60f4ea;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
+  // Logo for demo
+  .site-title {
+    font-weight: 700;
+
+    a {
+      color: $color-links;
+      display: flex;
+      align-items: center;
+    }
+  }
 }
 
 // Nav for demo
@@ -260,7 +271,7 @@ $color-cyan-bright: #60f4ea;
 }
 
 .block-blog article {
-  margin-bottom: $padding-block-small;
+  margin-bottom: var(--padding-block);
 
   &:last-child {
     margin-bottom: 0;
