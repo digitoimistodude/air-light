@@ -97,6 +97,9 @@
         <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
         <exclude name="WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode" />
         <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query" />
+
+        <!-- Project based -->
+        <exclude name="Squiz.PHP.CommentedOutCode.Found" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.
