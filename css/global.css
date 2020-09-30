@@ -379,7 +379,7 @@ a.global-link {
 	--font-size-small: 16px;
 	--font-size-medium: 17px;
 	--font-size-large: 18px;
-	--font-size-extralarge: 20px;
+	--font-size-extra-large: 20px;
 	--font-size-huge: 22px;
 	--body-line-height: 1.7;
 	--heading-line-height: 1.5;
@@ -4782,6 +4782,7 @@ th {
 	--font-size-tiny: 16px;
 	--font-size-small: 16px;
 	--font-size-default: 16px;
+	--font-size-extra-large: 18px;
 }
 
 .hide-on-mobile {

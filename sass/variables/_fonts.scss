@@ -8,7 +8,7 @@ $font-size-tiny: 14px;
 $font-size-small: 16px;
 $font-size-medium: 17px;
 $font-size-large: 18px;
-$font-size-extralarge: 20px;
+$font-size-extra-large: 20px;
 $font-size-huge: 22px;
 $font-size-min: 17px;
 $font-size-max: 20px;
@@ -38,7 +38,7 @@ $font-weight-headings: 700;
   --font-size-small: #{$font-size-small};
   --font-size-medium: #{$font-size-medium};
   --font-size-large: #{$font-size-large};
-  --font-size-extralarge: #{$font-size-extralarge};
+  --font-size-extra-large: #{$font-size-extra-large};
   --font-size-huge: #{$font-size-huge};
 
   // Codyhouse helper variables
@@ -50,6 +50,7 @@ $font-weight-headings: 700;
     --font-size-tiny: 16px;
     --font-size-small: 16px;
     --font-size-default: 16px;
+    --font-size-extra-large: 18px;
   }
 }
 
