@@ -14,6 +14,7 @@ const {
 } = require('../helpers/handle-errors.js');
 const bs = require('browser-sync');
 const notify = require('gulp-notify');
+const mmq = require('gulp-merge-media-queries');
 
 function styles(done) {
   const plugins = [autoprefixer({
@@ -23,6 +24,11 @@ function styles(done) {
   return src(config.styles.main)
     .pipe(sass(config.styles.opts.development))
     .on('error', handleError('styles'))
+
+    // Merge media queries
+    .pipe(mmq({
+      log: true
+    }))
 
     // Save expanded version for development
     .pipe(dest(config.styles.dest))
