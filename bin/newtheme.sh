@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2020-10-01 17:32:03
+# @Last Modified time: 2020-10-01 17:37:36
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
@@ -86,6 +86,7 @@ npm install
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.browserslistrc ${PROJECTPATH}/
+cp ${PROJECTTHEMEPATH}/.stylelintrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
