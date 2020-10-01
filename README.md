@@ -10,6 +10,14 @@ Air-light (or simply *Air*) is designed to be a ultra minimal starting point for
 - **JS gzipped:** 3.4 KB *(10.8 KB original)*
 - **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
+## Team
+
+This theme is maintained by the following persons and a bunch of [awesome contributors](https://github.com/digitoimistodude/air-light/graphs/contributors). Wanna join in development? Let us know!
+
+[![Roni Laukkarinen](https://avatars3.githubusercontent.com/u/1534150?v=4&s=70)](https://github.com/ronilaukkarinen) | [![Timi Wahalahti](https://avatars1.githubusercontent.com/u/415544?s=70&v=4)](https://github.com/timiwahalahti) | [![Niku Hietanen](https://avatars3.githubusercontent.com/u/16206361?v=4&s=70)](https://github.com/Niq1982) |
+--- | --- |  --- |
+[Roni Laukkarinen](https://github.com/ronilaukkarinen) | [Timi Wahalahti](https://github.com/timiwahalahti) | [Niku Hietanen](https://github.com/Niq1982) |
+
 ![](https://i.imgur.com/s7qAN6U.png "Screenshot")
 
 ### Mission & vision
