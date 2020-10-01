@@ -1,1 +1,4 @@
-css/*.css
+node_modules
+bin
+*.*
+!*.scss

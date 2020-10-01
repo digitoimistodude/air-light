@@ -2,7 +2,6 @@
 const {
   src
 } = require('gulp');
-const postcss = require('gulp-postcss');
 const stylelint = require('gulp-stylelint');
 const config = require('../config.js');
 

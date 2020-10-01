@@ -7,8 +7,7 @@
   ],
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-recommended-scss",
-    "stylelint-config-wordpress/scss"
+    "stylelint-config-recommended-scss"
   ],
   "rules": {
     "csstools/value-no-unknown-custom-properties": [true, {
