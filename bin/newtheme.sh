@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2020-09-17 13:07:13
+# @Last Modified time: 2020-10-01 17:22:43
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
@@ -85,6 +85,7 @@ npm install
 
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
+cp ${PROJECTTHEMEPATH}/.browserslistrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
@@ -149,7 +150,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="6.0.0"
+newestair="5.9.9"
 newestwordpress="5.5"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
