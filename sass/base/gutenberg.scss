@@ -16,8 +16,21 @@
 @import '../gutenberg/boxed';
 
 // Editor styles
+/* stylelint-disable selector-class-pattern */
 .editor-styles-wrapper {
   color: $color-paragraphs;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  * {
+    font-family: $font-paragraphs;
+  }
 
   p {
     color: $color-paragraphs;
@@ -31,7 +44,7 @@
   }
 
   // No drop cap
-  .has-drop-cap:not(:focus):first-letter {
+  .has-drop-cap:not(:focus)::first-letter {
     text-transform: uppercase;
     font-style: normal;
     font-size: inherit;
@@ -44,23 +57,12 @@
     width: 100%;
   }
 
-  .block-editor-block-list__block[data-type="core/paragraph"] p,
+  p,
   .block-editor-block-list__block p,
-  p {
+  .block-editor-block-list__block[data-type="core/paragraph"] p {
     font-size: $font-size-max;
     font-family: $font-paragraphs !important;
     color: $color-paragraphs;
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  li,
-  * {
-    font-family: $font-paragraphs;
-  }
 }
+/* stylelint-enable selector-class-pattern */

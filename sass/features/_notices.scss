@@ -5,16 +5,16 @@
 }
 
 .notice-success {
-  background-color: lighten($color-success, 40%);
+  background-color: $color-success;
   border-color: $color-success;
 }
 
 .notice-warning {
-  background-color: lighten($color-warning, 40%);
+  background-color: $color-warning;
   border-color: $color-warning;
 }
 
 .notice-error {
-  background-color: lighten($color-error, 40%);
+  background-color: $color-error;
   border-color: $color-error;
 }

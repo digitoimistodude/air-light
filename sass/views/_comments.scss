@@ -11,38 +11,6 @@
   overflow: visible;
 }
 
-article .content .comments-link,
-.comments-link {
-  font-size: var(--font-size-tiny);
-  text-align: right;
-  display: block;
-
-  a {
-    color: $color-comments-link;
-    box-shadow: none;
-  }
-
-  svg {
-    fill: $color-comments-link;
-    position: relative;
-    top: 1px;
-    margin-right: 2px;
-  }
-
-  &:hover,
-  &:focus {
-    color: $color-black;
-
-    a,
-    a:link,
-    a:visited,
-    svg {
-      color: $color-black;
-      fill: $color-black;
-    }
-  }
-}
-
 .comment-list {
   padding: 0;
   margin: 0;
@@ -70,23 +38,28 @@ article .content .comments-link,
       margin-top: 0;
       margin-bottom: 10px;
       padding: 0;
+    }
 
-      a {
-        color: $color-paragraphs;
-      }
+    a {
+      color: $color-comments-link;
+      box-shadow: none;
+    }
+
+    .comment-author a {
+      color: $color-paragraphs;
+    }
+
+    .comments-link svg {
+      fill: $color-comments-link;
+      position: relative;
+      top: 1px;
+      margin-right: 2px;
     }
 
     .comment-time {
       font-size: var(--font-size-tiny);
       padding: 0;
       margin: 0;
-
-      svg {
-        fill: $color-darkgrey;
-        position: relative;
-        top: 2px;
-        margin-right: 5px;
-      }
 
       a {
         color: $color-darkgrey;
@@ -96,7 +69,36 @@ article .content .comments-link,
         opacity: 1;
       }
     }
+
+    .comment-time svg {
+      fill: $color-darkgrey;
+      position: relative;
+      top: 2px;
+      margin-right: 5px;
+    }
   }
+}
+
+.comments-link,
+article .content .comments-link {
+  font-size: var(--font-size-tiny);
+  text-align: right;
+  display: block;
+
+  /* stylelint-disable */
+  &:hover,
+  &:focus {
+    color: $color-black;
+
+    a,
+    a:link,
+    a:visited,
+    svg {
+      color: $color-black;
+      fill: $color-black;
+    }
+  }
+  /* stylelint-enable */
 }
 
 // Comment form grid
@@ -121,6 +123,12 @@ article .content .comments-link,
 .comment-respond {
   margin-bottom: 0;
   overflow: visible;
+
+  input {
+    @media (max-width: $container-mobile) {
+      width: 100%;
+    }
+  }
 
   .comment-form-author {
     margin-bottom: 20px;
@@ -167,12 +175,6 @@ article .content .comments-link,
 
   .comment-form-comment {
     margin-bottom: 20px;
-  }
-
-  input {
-    @media (max-width: $container-mobile) {
-      width: 100%;
-    }
   }
 
   textarea {

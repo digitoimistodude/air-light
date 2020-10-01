@@ -12,8 +12,8 @@
 
 .site-footer {
   padding: 20px;
-  background: #eaeaea;
-  color: #fff;
+  background: $color-demo-footer-background;
+  color: $color-white;
   overflow: hidden;
   clear: both;
 
@@ -25,11 +25,11 @@
 
   p,
   span {
-    color: #555;
+    color: $color-comments-link;
   }
 
   a {
-    color: #555;
+    color: $color-comments-link;
 
     &:hover {
       color: $color-links;

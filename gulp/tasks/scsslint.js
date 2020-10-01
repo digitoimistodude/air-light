@@ -1,14 +1,18 @@
 // Dependencies
-const { src } = require('gulp');
-const scsslintplugin = require('gulp-scss-lint');
+const {
+  src
+} = require('gulp');
+const postcss = require('gulp-postcss');
+const stylelint = require('gulp-stylelint');
 const config = require('../config.js');
 
 // Task
 function scsslint() {
-  return src(config.styles.src, config.scsslintexcludes)
+
+  return src(config.styles.src, config.styles.exclude)
 
     // Print linter report
-    .pipe(scsslintplugin());
+    .pipe(stylelint(config.styles.stylelint.opts));
 }
 
 exports.scsslint = scsslint;

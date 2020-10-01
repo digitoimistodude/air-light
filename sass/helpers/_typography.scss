@@ -2,6 +2,7 @@
  * Typography helpers
  */
 
+/* stylelint-disable declaration-property-unit-allowed-list */
 // Helper mixin for self-hosted fonts
 @mixin fontFace($family, $src, $weight: normal, $style: normal) {
   @font-face {
@@ -33,3 +34,4 @@
     }
   }
 }
+/* stylelint-enable declaration-property-unit-allowed-list */

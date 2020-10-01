@@ -1,4 +1,5 @@
 // Default overrides for WooCommerce
+/* stylelint-disable */
 body {
   &.woocommerce,
   &.woocommerce-page .site-content {
@@ -17,16 +18,9 @@ body {
     .button.disabled,
     .button.alt,
     .button[disabled] {
-      background: #222;
-      color: #fff;
+      background: $color-black;
+      color: $color-white;
       border-radius: 0;
-    }
-
-    .button:hover,
-    .button.disabled:hover,
-    .button.alt:hover,
-    .button[disabled]:hover {
-      background: #222;
     }
 
     // Product archive listing
@@ -67,6 +61,7 @@ body {
       @extend %default;
 
       // Star rating fix for air
+
       .star-rating {
         @extend %default;
         margin-top: 2px;
@@ -92,3 +87,4 @@ body {
     }
   }
 }
+/* stylelint-enable */

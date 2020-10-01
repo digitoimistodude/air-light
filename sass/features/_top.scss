@@ -5,6 +5,38 @@
 // when hitting the rock bottom.
 // ------------------------------------------------------------
 
+.top {
+  background: transparent;
+
+  // Makes it 50x50
+  padding: 16px;
+
+  svg {
+    fill: $color-black;
+    margin: 0;
+    opacity: .8;
+    transition: all .3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+
+    @media (max-width: $container-mobile) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    svg {
+      transform: translateY(-.5rem);
+    }
+  }
+}
+
 .back-to-top {
   margin: 0;
   position: fixed;
@@ -54,34 +86,3 @@
   }
 }
 
-.top {
-  background: transparent;
-
-  // Makes it 50x50
-  padding: 16px;
-
-  svg {
-    fill: $color-black;
-    margin: 0;
-    opacity: .8;
-    transition: all .3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 18px;
-    height: 18px;
-
-    @media (max-width: $container-mobile) {
-      width: 15px;
-      height: 15px;
-    }
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    svg {
-      transform: translateY(-.5rem);
-    }
-  }
-}

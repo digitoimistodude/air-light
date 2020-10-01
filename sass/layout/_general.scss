@@ -9,7 +9,7 @@
 // Default structural element
 .block:not(.block-footer) {
   @include background-cover();
-  background-color: #fff;
+  background-color: $color-white;
   position: relative;
   min-height: 100px;
   max-width: $layout-max-width;
@@ -93,15 +93,15 @@
     transition: all $transition-duration;
     display: block;
     padding: 2rem;
-    background: #fafafa;
-    color: #999;
-    border: 2px dashed #999;
+    background: $color-background-edit-link;
+    color: $color-edit-link;
+    border: 2px dashed $color-edit-link;
     margin: 0;
     text-decoration: none;
   }
 
   a:hover {
-    color: #999;
+    color: $color-edit-link;
     background: #efefef;
   }
 }

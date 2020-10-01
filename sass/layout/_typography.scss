@@ -7,9 +7,11 @@
 // -----------------------------------------------------------
 
 // Set root size for rems
+/* stylelint-disable declaration-property-unit-allowed-list */
 :root {
   font-size: 62.5%;
 }
+/* stylelint-enable declaration-property-unit-allowed-list */
 
 // Start typography settings
 body {
@@ -84,19 +86,6 @@ tr,
   }
 }
 
-p {
-  margin-top: 2.9rem;
-  margin-bottom: 2.9rem;
-
-  &:first-child {
-    margin-top: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
 // Heading defaults
 h1,
 h2,
@@ -109,10 +98,6 @@ h6 {
   font-weight: $font-weight-headings;
   margin-top: 2.7rem;
   margin-bottom: 2.7rem;
-
-  &:first-child {
-    margin-top: 0;
-  }
 }
 
 h2,
@@ -155,6 +140,15 @@ h6,
   @include responsive-font($font-size-min-h6, $font-size-max-h6);
 }
 
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
 // Lists
 ul {
   list-style: disc outside;
@@ -187,6 +181,63 @@ small {
   font-size: .875em;
 }
 
+// Default paragraphs
+p {
+  margin-top: 2.9rem;
+  margin-bottom: 2.9rem;
+}
+
+// Quotes.
+blockquote {
+  clear: both;
+  border: 0 none;
+  position: relative;
+  padding-bottom: 3rem;
+  margin: 0;
+
+  p {
+    font-style: italic;
+    margin-bottom: 0;
+    position: relative;
+    overflow: visible;
+    color: $color-blockquotes;
+  }
+
+  @media (min-width: $container-ipad) {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 147px;
+
+    @media (min-width: $container-mobile) {
+      width: 30%;
+    }
+  }
+}
+
+cite {
+  display: block;
+  font-style: italic;
+}
+
+// No margin top on first paragraph
+p:first-child {
+  margin-top: 0;
+}
+
+// No margin bottom on last paragraph
+p:last-child {
+  margin-bottom: 0;
+}
+
 // images
 img {
   -ms-interpolation-mode: bicubic;
@@ -211,48 +262,6 @@ figcaption {
   font-weight: $font-weight-paragraphs;
 }
 
-// Quotes.
-blockquote {
-  clear: both;
-  border: 0 none;
-  position: relative;
-  margin-top: 3rem;
-  padding-bottom: 3rem;
-  margin: 0;
-
-  p {
-    font-style: italic;
-    margin-bottom: 0;
-    position: relative;
-    overflow: visible;
-    color: #666;
-  }
-
-  @media (min-width: $container-ipad) {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    height: 4px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    max-width: 147px;
-
-    @media (min-width: $container-mobile) {
-      width: 30%;
-    }
-  }
-}
-
-cite {
-  display: block;
-  font-style: italic;
-}
-
 // Horizontal rule.
 hr {
   background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
@@ -274,8 +283,8 @@ samp {
 
 // Code block.
 code {
-  color: #c7254e;
-  background-color: #f9f2f4;
+  color: $color-code-blocks;
+  background-color: $color-code-blocks-background;
   font-family: $font-monospace;
   line-height: 1;
   padding: .375rem .5rem;

@@ -18,7 +18,15 @@
     line-height: normal;
     direction: ltr;
     text-align: left;
-    -webkit-tap-highlight-color: rgba(#000, 0);
+  }
+
+  ul {
+    margin-top: 0;
+    margin-left: 25px;
+
+    ul {
+      margin-left: 25px;
+    }
   }
 
   li,
@@ -47,23 +55,14 @@
   }
 }
 
-.nav-primary ul ul {
-  margin-top: 0;
-  margin-left: 25px;
-
-  ul {
-    margin-left: 25px;
-  }
-}
-
 @media only screen and (max-width: $responsivenav) {
   .js .nav-primary ul .sub-menu.toggled-on {
     display: block;
   }
 }
 
-.dropdown-toggle:after,
-.dropdown-toggle.toggled-on:after {
+.dropdown-toggle::after,
+.dropdown-toggle.toggled-on::after {
   font-size: 1.3rem;
 }
 

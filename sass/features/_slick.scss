@@ -8,9 +8,6 @@
 // Note: add class slick-slider to the actual slider
 
 .block.block-slider {
-  background-position: center;
-  background-color: #333;
-
   .item {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -23,12 +20,12 @@
 
   h1,
   h2 {
-    color: #fff;
+    color: $color-white;
     text-transform: uppercase;
   }
 
   p {
-    color: #fff;
+    color: $color-white;
     opacity: .7;
   }
 }
@@ -44,19 +41,9 @@
     outline: none;
   }
 
-  .slick-loading & {
-    // If you want to use a loading animation, enable it here:
-    // background: #fff slick-image-url('../images/loading.gif') center center no-repeat;
-  }
-
   &.dragging {
     cursor: hand;
   }
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-  transform: translate3d(0, 0, 0);
 }
 
 .slick-track {
@@ -67,19 +54,24 @@
   zoom: 1;
   z-index: 9999;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 
   .slick-loading & {
     visibility: hidden;
   }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
 }
 
 .slick-slide {
@@ -132,16 +124,7 @@
     padding: 0;
     cursor: pointer;
 
-    &.slick-active button,
-    &.slick-active button[type="button"],
-    &.slick-active button:focus,
-    &.slick-active button[type="button"]:focus {
-      opacity: 1;
-      background: #fff;
-    }
-
-    button,
-    button[type="button"] {
+    button {
       @include hiddentext();
       display: inline-block;
       width: 10px;
@@ -155,15 +138,23 @@
       padding: 0;
     }
 
-    button:hover,
-    button:focus[type="button"] {
+    button:focus,
+    button:hover {
       outline: none;
       background: transparent;
     }
 
-    button:hover:before,
-    button:focus[type="button"]:before {
+    button:hover::before,
+    button:focus::before {
       opacity: 1;
+    }
+
+    &.slick-active button,
+    &.slick-active button[type="button"],
+    &.slick-active button:focus,
+    &.slick-active button[type="button"]:focus {
+      opacity: 1;
+      background: #fff;
     }
   }
 }
@@ -183,6 +174,18 @@
 
   @media (max-width: $container-mobile) {
     max-height: 600px;
+  }
+
+  .slick-prev {
+    left: 0;
+    background-image: url('../svg/slider-left-arrow.svg');
+    background-color: transparent;
+  }
+
+  .slick-next {
+    right: 0;
+    background-image: url('../svg/slider-right-arrow.svg');
+    background-color: transparent;
   }
 
   // Arrows
@@ -219,26 +222,6 @@
       color: transparent;
       transition: all $transition-duration;
       background-color: transparent;
-    }
-  }
-
-  .slick-prev {
-    left: 0;
-    background-image: url('../svg/slider-left-arrow.svg');
-    background-color: transparent;
-
-    &:hover {
-      background-image: url('../svg/slider-left-arrow.svg');
-    }
-  }
-
-  .slick-next {
-    right: 0;
-    background-image: url('../svg/slider-right-arrow.svg');
-    background-color: transparent;
-
-    &:hover {
-      background-image: url('../svg/slider-right-arrow.svg');
     }
   }
 }

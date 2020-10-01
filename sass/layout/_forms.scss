@@ -118,6 +118,31 @@ $background-inputs: $color-white;
   }
 }
 
+// Select drop downs
+select {
+  border-radius: 0;
+  background-image: url('../svg/select.svg');
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 40px auto;
+  transition: none;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  border: $border-width solid $color-border-forms;
+  color: $color-paragraphs;
+  padding: 15px;
+  line-height: 24px;
+  font-size: var(--font-size-medium);
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
 // Form input elements and textareas
 textarea,
 select,
@@ -156,40 +181,15 @@ input[type="search"] {
     outline: 0;
 
     &::placeholder {
-      color: #222;
+      color: $color-black;
       opacity: .8;
     }
   }
 }
 
-// Select drop downs
-select {
-  border-radius: 0;
-  background-image: url('../svg/select.svg');
-  background-repeat: no-repeat;
-  background-position: right 0 center;
-  background-size: 40px auto;
-  transition: none;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  text-indent: 1px;
-  border: $border-width solid $color-border-forms;
-  color: $color-paragraphs;
-  padding: 15px;
-  line-height: 24px;
-  font-size: var(--font-size-medium);
-
-  &::-ms-expand {
-    display: none;
-  }
-
-  &:focus {
-    background: $background-inputs;
-    border: $border-width solid darken(#d9d9d9, 12%);
-  }
+select:focus {
+  background: $background-inputs;
+  border: $border-width solid darken(#d9d9d9, 12%);
 }
 
 // Radio buttons and checkboxes
@@ -236,12 +236,6 @@ input[type="checkbox"] + label::before {
   transition: transform .2s, border .2s;
 }
 
-// Radio button and checkbox hovers
-input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
-input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
-  border-color: lighten($color-main, 15%);
-}
-
 // Radio only style
 input[type="radio"] + label::before {
   border-radius: 50%;
@@ -268,13 +262,6 @@ input[type="checkbox"]:active + label::before {
   transition: transform .2s;
 }
 
-// Radio button and checkbox checked + active states
-input[type="radio"]:checked:active + label::before,
-input[type="checkbox"]:checked:active + label::before {
-  transform: none;
-  transition: none;
-}
-
 // Radio button icon
 input[type="radio"]:checked + label::before {
   background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg class='nc-icon-wrapper' fill='%23ffffff'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23ffffff'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
@@ -288,30 +275,25 @@ input[type="checkbox"]:checked + label::before {
 }
 
 // Radio button and checkbox focus states
-input[type="radio"]:checked:active + label::before,
-input[type="checkbox"]:checked:active + label::before,
 input[type="radio"]:focus + label::before,
-input[type="checkbox"]:focus + label::before {
+input[type="checkbox"]:focus + label::before,
+input[type="radio"]:checked:active + label::before,
+input[type="checkbox"]:checked:active + label::before {
   border-color: $color-main;
   box-shadow: 0 0 0 3px rgba($color-main, .2);
 }
 
-// --radio--bg, --checkbox--bg -> variation with background color
-input[type="radio"]--bg + label,
-input[type="checkbox"]--bg + label {
-  padding: var(--space-x-small) var(--space-small);
-  border-radius: var(--radius-md);
-  transition: background .2s;
+// Radio button and checkbox checked + active states
+input[type="radio"]:checked:active + label::before,
+input[type="checkbox"]:checked:active + label::before {
+  transform: none;
+  transition: none;
 }
 
-input[type="radio"]--bg + label:hover,
-input[type="checkbox"]--bg + label:hover {
-  background-color: $color-main;
-}
-
-input[type="radio"]--bg:active + label,
-input[type="checkbox"]--bg:active + label,
-input[type="radio"]--bg:focus + label,
-input[type="checkbox"]--bg:focus + label {
-  background-color: rgba($color-main, .1);
+// Radio button and checkbox hovers
+input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
+input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
+  /* stylelint-disable */
+  border-color: lighten($color-main, 15%);
+  /* stylelint-enable */
 }

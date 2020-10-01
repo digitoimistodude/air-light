@@ -13,9 +13,12 @@ const {
 // Task
 function watchfiles() {
   bs.init(config.browsersync.src, config.browsersync.opts);
-  watch(config.styles.src, series('scsslint', 'styles', 'gutenbergstyles')).on('error', handleError('styles'));
+  watch(config.styles.src, series('styles', 'gutenbergstyles')).on('error', handleError('styles'));
   watch(config.php.src, series('phpcs')).on('change', bs.reload);
   watch(config.js.src, parallel('js')).on('change', bs.reload);
+  watch(config.styles.src, parallel('scsslint')).on('error', function (err) {
+    this.emit('end');
+  })
 };
 
 exports.watch = watchfiles;

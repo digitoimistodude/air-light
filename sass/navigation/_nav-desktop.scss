@@ -83,7 +83,9 @@ $submenu-dropdown-toggle-hover: (
     position: absolute;
     width: 0;
     height: 0;
-    border-color: transparent transparent #fff;
+    /* stylelint-disable */
+    border-color: transparent transparent $color-white;
+    /* stylelint-enable */
     border-style: solid;
     border-width: 0 5px 5px;
     left: 50%;
@@ -183,15 +185,20 @@ $submenu-dropdown-toggle-hover: (
       // Main level
       > a {
         padding: $nav-link-padding-y $nav-link-padding-x;
+        /* stylelint-disable */
         color: map-get($nav-links, 'color');
         font-size: map-get($nav-links, 'font-size');
         font-weight: map-get($nav-links, 'font-weight');
+        /* stylelint-enable */
         display: inline-flex;
         align-items: center;
+
+        /* stylelint-disable */
         min-height: map-get($dropdown-toggle, 'size');
+        /* stylelint-enable */
 
         &.disabled {
-          color: #bbb;
+          color: $color-disabled;
         }
 
         // Actions in menu items
@@ -215,6 +222,12 @@ $submenu-dropdown-toggle-hover: (
         margin-top: map-get($dropdown, 'gap');
         z-index: 999;
 
+        li {
+          float: none;
+          width: map-get($dropdown, 'width');
+          padding: 0;
+        }
+
         &.sub-menu {
           padding-left: 0;
           padding-top: .5rem;
@@ -223,12 +236,6 @@ $submenu-dropdown-toggle-hover: (
 
         &.sub-menu li {
           margin: 0;
-        }
-
-        li {
-          float: none;
-          width: map-get($dropdown, 'width');
-          padding: 0;
         }
 
         // All dropdowns in level 2 and after
@@ -241,9 +248,11 @@ $submenu-dropdown-toggle-hover: (
 
         a {
           padding: $nav-link-padding-y-dropdown $nav-link-padding-x-dropdown;
+          /* stylelint-disable */
           font-size: map-get($nav-dropdown-links, 'font-size');
           font-weight: map-get($nav-dropdown-links, 'font-weight');
           color: map-get($nav-dropdown-links, 'color');
+          /* stylelint-enable */
           display: flex;
           align-items: center;
         }
@@ -256,8 +265,36 @@ $submenu-dropdown-toggle-hover: (
         }
 
         .disabled {
-          background: #fff;
-          color: #ccc;
+          background: $color-white;
+          color: $color-disabled;
+        }
+      }
+
+      // Main level toggle arrow
+      button.dropdown-toggle {
+        /* stylelint-disable */
+        background-color: map-get($dropdown-toggle, 'background');
+        border: map-get($dropdown-toggle, 'border');
+        border-radius: map-get($dropdown-toggle, 'border-radius');
+        color: map-get($submenu-dropdown-toggle, 'color');
+        height: map-get($submenu-dropdown-toggle, 'height');
+        width: map-get($submenu-dropdown-toggle, 'width');
+        /* stylelint-enable */
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          /* stylelint-disable */
+          transition: transform $transition-duration ease-in;
+          width: map-get($dropdown-toggle, 'arrow-size');
+          height: map-get($dropdown-toggle, 'arrow-size');
+          /* stylelint-enable */
+        }
+
+        &.toggled-on svg {
+          transform: rotateX(180deg);
         }
       }
 
@@ -272,43 +309,21 @@ $submenu-dropdown-toggle-hover: (
         flex-shrink: 0;
         align-self: center;
 
+        /* stylelint-disable */
         svg {
           transform: rotate(-90deg) rotateX(0deg);
           width: map-get($submenu-dropdown-toggle, 'arrow-size');
           height: map-get($submenu-dropdown-toggle, 'arrow-size');
         }
+        /* stylelint-enable */
 
         &.toggled-on svg {
           transform: rotate(-90deg) rotateX(180deg);
         }
       }
 
-      // Main level toggle arrow
-      button.dropdown-toggle {
-        background-color: map-get($dropdown-toggle, 'background');
-        border: map-get($dropdown-toggle, 'border');
-        border-radius: map-get($dropdown-toggle, 'border-radius');
-        color: map-get($submenu-dropdown-toggle, 'color');
-        height: map-get($submenu-dropdown-toggle, 'height');
-        width: map-get($submenu-dropdown-toggle, 'width');
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        svg {
-          transition: transform $transition-duration ease-in;
-          width: map-get($dropdown-toggle, 'arrow-size');
-          height: map-get($dropdown-toggle, 'arrow-size');
-        }
-
-        &.toggled-on svg {
-          transform: rotateX(180deg);
-        }
-      }
-
       // Bubble arrow
-      > li > ul:after {
+      > li > ul::after {
         content: '';
         position: absolute;
         width: 0;
@@ -318,7 +333,9 @@ $submenu-dropdown-toggle-hover: (
         top: -16px;
         left: 31px;
         border-width: 8px;
-        border-color: transparent transparent #fff;
+        /* stylelint-disable */
+        border-color: transparent transparent $color-white;
+        /* stylelint-enable */
       }
     }
 
@@ -331,7 +348,7 @@ $submenu-dropdown-toggle-hover: (
 
       // Add a pseudo element to fill the gap
       // between menu item and sub menu to help hovering
-      &:after {
+      &::after {
         display: block;
         position: absolute;
         content: '';
@@ -340,17 +357,17 @@ $submenu-dropdown-toggle-hover: (
         top: 100%;
       }
 
+      /* stylelint-disable */
       > a {
         // Let's make space for the nav-toggle/arrow
         padding-right: 1.5rem;
       }
+      /* stylelint-enable */
     } // .menu-item.menu-item-has-children
 
-    .sub-menu .menu-item-has-children {
-      // Don't use gap filler in sub menu items
-      &:after {
-        display: none;
-      }
+    // Don't use gap filler in sub menu items
+    .sub-menu .menu-item-has-children::after {
+      display: none;
     }
   }
 } // @media only screen and (min-width: $responsivenav)

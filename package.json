@@ -1,11 +1,11 @@
 {
   "name": "air-light",
-  "version": "5.9.9",
+  "version": "6.0.0",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
     "@wulechuan/printer-for-errors-of-gulp-plugins": "^1.0.0",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.12",
     "browserslist": [
@@ -18,20 +18,21 @@
     "gulp-merge-media-queries": "^0.2.1",
     "gulp-notify": "^3.2.0",
     "gulp-phpcs": "^3.1.0",
-    "gulp-postcss": "8.0.0",
+    "gulp-postcss": "9.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-scss-lint": "^1.0.0",
+    "gulp-stylelint": "^13.0.0",
     "gulp-uglify-es": "^2.0.0",
     "gulp-util": "^3.0.8",
-    "stylelint": "^13.6.1",
+    "stylelint": "^13.7.2",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-wordpress": "^17.0.0",
     "stylelint-declaration-use-variable": "^1.7.2",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
-    "webpack-stream": "^5.2.1"
+    "stylelint-value-no-unknown-custom-properties": "^3.0.0",
+    "webpack-stream": "^6.1.0"
   },
   "dependencies": {
     "hamburgers": "^1.1.3",

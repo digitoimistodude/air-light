@@ -6,9 +6,12 @@
 // and start over.
 // ------------------------------------------------
 
+/* stylelint-disable no-descending-specificity, selector-class-pattern */
+
 // Demo variables
 $color-cyan: #159d94;
 $color-cyan-bright: #60f4ea;
+$color-demo-footer-background: #eaeaea;
 
 // Header for demo nav
 .site-header {
@@ -25,14 +28,43 @@ $color-cyan-bright: #60f4ea;
     padding-bottom: 1rem;
   }
 
-  // Logo for demo
   .site-title {
     font-weight: 700;
+    margin: 0;
 
     a {
-      color: $color-links;
+      color: $color-cyan-bright;
       display: flex;
       align-items: center;
+
+      svg {
+        transition: transform 1s ease-in;
+
+        .clr-i-solid-path-2 {
+          fill: $color-white;
+        }
+      }
+
+      &:hover svg {
+        transition: transform .4s cubic-bezier(.6, -.68, .735, .045);
+        transform: translate(260%, -220%);
+
+        .clr-i-solid-path-2 {
+          display: block !important;
+          fill: $color-cyan-bright;
+        }
+      }
+    }
+
+    .logo-name {
+      content: 'Air';
+      display: block;
+      text-transform: lowercase;
+      letter-spacing: .1em;
+      font-weight: $font-weight-paragraphs;
+      color: $color-white;
+      margin-left: .75rem;
+      font-size: 2.2rem;
     }
   }
 }
@@ -57,7 +89,7 @@ $color-cyan-bright: #60f4ea;
   align-items: center;
   justify-content: center;
   position: relative;
-  text-shadow: 0 0px 30px $color-main;
+  text-shadow: 0 0 30px $color-main;
   min-height: 53rem;
   max-height: 80rem;
   height: 80vh;
@@ -71,6 +103,7 @@ $color-cyan-bright: #60f4ea;
   .inner {
     display: grid;
     grid-template-rows: 1fr 1fr;
+
     /* autoprefixer: off */
     align-items: center;
     max-height: 100%;
@@ -199,46 +232,7 @@ $color-cyan-bright: #60f4ea;
   display: block;
   position: relative;
   z-index: 2;
-  text-shadow: 0 0px 10px rgba($color-main, .5);
-}
-
-.site-title {
-  margin: 0;
-  font-weight: 700;
-
-  a {
-    color: $color-cyan-bright;
-    display: flex;
-
-    svg {
-      transition: transform 1s ease-in;
-
-      .clr-i-solid-path-2 {
-        fill: $color-white;
-      }
-    }
-
-    &:hover svg {
-      transition: transform .4s cubic-bezier(.6, -.68, .735, .045);
-      transform: translate(260%, -220%);
-
-      .clr-i-solid-path-2 {
-        display: block !important;
-        fill: $color-cyan-bright;
-      }
-    }
-  }
-
-  .logo-name {
-    content: 'Air';
-    display: block;
-    text-transform: lowercase;
-    letter-spacing: .1em;
-    font-weight: $font-weight-paragraphs;
-    color: $color-white;
-    margin-left: .75rem;
-    font-size: 2.2rem;
-  }
+  text-shadow: 0 0 10px rgba($color-main, .5);
 }
 
 @media (min-width: $responsivenav) {
@@ -295,3 +289,4 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
     }
   }
 }
+/* stylelint-enable no-descending-specificity */

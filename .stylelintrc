@@ -1,23 +1,32 @@
 {
+  "defaultSeverity": "warning",
   "plugins": [
+    "stylelint-value-no-unknown-custom-properties",
     "stylelint-declaration-use-variable",
     "stylelint-scss"
   ],
   "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
     "stylelint-config-wordpress/scss"
   ],
   "rules": {
-    "scss/at-each-key-value-single-line": false,
-    "sh-waqar/declaration-use-variable": [[
-      "/color/",
-      {
-        "ignoreValues": [
-          "transparent",
-          "inherit"
-        ],
-      }
-    ]],
-    "scss/dollar-variable-colon-newline-after": "always",
+    "csstools/value-no-unknown-custom-properties": [true, {
+      "importFrom": [
+        "css/global.css"
+      ]
+    }],
+    "sh-waqar/declaration-use-variable": [
+      [
+        "/color/",
+        {
+          "ignoreValues": [
+            "transparent",
+            "inherit"
+          ]
+        }
+      ]
+    ],
     "color-hex-case": "lower",
     "selector-pseudo-class-parentheses-space-inside": "never",
     "function-parentheses-space-inside": "never",
@@ -26,31 +35,25 @@
     "comment-whitespace-inside": "always",
     "indentation": 2,
     "block-no-empty": true,
-    "declaration-colon-newline-after": "never",
+    "declaration-colon-newline-after": null,
     "number-leading-zero": "never",
-    "value-list-comma-newline-after": "never",
+    "value-list-comma-newline-after": "never-multi-line",
     "selector-list-comma-newline-after": "always",
     "declaration-colon-space-before": "never",
     "declaration-block-trailing-semicolon": "always",
-    "no-eol-whitespace": "false",
-    "number-no-trailing-zeros": "true",
-    "block-opening-brace-newline-after": "never",
+    "no-eol-whitespace": true,
+    "number-no-trailing-zeros": true,
+    "block-opening-brace-newline-after": "always",
     "block-closing-brace-newline-after": "always-multi-line",
     "declaration-empty-line-before": "never",
-    "rule-empty-line-before": "always",
-    "string-quotes": "false",
-    "at-rule-empty-line-before": [
-      "always",
-      {
-        "except": [
-          "first-nested",
-          "after-same-name",
-          "blockless-after-same-name-blockless"
-        ],
-        "ignore": [
-          "after-comment"
-        ],
-      }
-    ]
-  },
+    "rule-empty-line-before": null,
+    "string-quotes": null,
+    "at-rule-empty-line-before": null,
+    "function-url-quotes": "always",
+    "declaration-property-unit-allowed-list": [{
+      "font-size": ["rem", "em", "px"],
+      "/^animation/": ["ms", "s"],
+      "line-height": ["px", "%", ""]
+    }]
+  }
 }

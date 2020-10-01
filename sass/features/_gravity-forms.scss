@@ -2,7 +2,7 @@
 // Please disable CSS in /admin.php?page=gf_settings
 
 // WCAG 2.0 errors
-[data-whatinput="keyboard"] div.validation_error,
+/* stylelint-disable selector-class-pattern */
 div.validation_error {
   padding: 2rem;
   background: $color-error;
@@ -62,10 +62,6 @@ body *[aria-invalid="true"] {
   .gform_fields li {
     margin-top: 1rem;
     margin-bottom: 1rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   .gfieldset li {
@@ -75,6 +71,10 @@ body *[aria-invalid="true"] {
     width: 100%;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  .gform_fields li:last-child {
+    margin-bottom: 0;
   }
 
   .gfield_label,
@@ -128,3 +128,4 @@ body *[aria-invalid="true"] {
     }
   }
 }
+/* stylelint-enable selector-class-pattern */

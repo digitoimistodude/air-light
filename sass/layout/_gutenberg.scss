@@ -5,6 +5,36 @@
 // classes and WordPress Gutenberg editor formatting.
 // ------------------------------------------------
 
+// Blog post category styles
+.cat {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+
+  a {
+    color: $color-black;
+    font-size: var(--font-size-small);
+    display: inline-block;
+    /* stylelint-disable */
+    border-color: rgba($color-blog-tags, .2);
+    /* stylelint-enable */
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    border-radius: 5px;
+    padding: .2em .6em;
+    margin-right: .4em;
+    box-shadow: none;
+    background: transparent;
+    transition: all $transition-duration;
+  }
+
+  a:hover,
+  a:focus {
+    /* stylelint-disable */
+    border-color: rgba($color-blog-tags, .4);
+    /* stylelint-enable */
+  }
+}
+
 .gutenberg-content {
   max-width: 100%;
   padding-right: 0;
@@ -52,7 +82,7 @@
 
   del {
     text-decoration: line-through;
-    color: #666;
+    color: $color-blockquotes;
   }
 
   p {
@@ -61,12 +91,31 @@
     font-weight: 400;
   }
 
+  // Lists
+  li {
+    @include responsive-font($font-size-min, $font-size-max-blog);
+
+    @media (max-width: $container-mobile) {
+      font-size: 15px;
+    }
+  }
+
   // Embeds
   embed,
   iframe,
   object,
   video {
     max-width: 100%;
+  }
+
+  // Title line-heights
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  .is-style-ingress {
+    line-height: 1.22;
   }
 
   // Don't add extra margin on top of first title
@@ -105,20 +154,12 @@
     }
   }
 
-  .wp-block-image .alignleft > figcaption,
-  .wp-block-image .alignright > figcaption,
-  .wp-block-image .aligncenter > figcaption,
-  .wp-block-image.is-resized > figcaption {
-    width: 100%;
-    display: block;
-  }
-
   figcaption,
   cite,
   small {
     font-size: 15px;
     font-style: normal;
-    color: rgba(#4b4b5a, .9);
+    color: $color-captions;
     border: 0;
     margin-left: auto;
     margin-right: auto;
@@ -134,17 +175,38 @@
     }
   }
 
-  a:hover {
-    text-decoration: none;
+  &.wp-block-gallery {
+    overflow: hidden;
+    color: $color-white;
+
+    figcaption {
+      width: 100%;
+      color: $color-white;
+      font-size: var(--font-size-small);
+      padding: 0 2rem;
+      line-height: 1.55;
+      margin-bottom: var(--margin-between-text-elements);
+
+      @media (max-width: 600px) {
+        padding: 0;
+      }
+    }
+
+    img {
+      margin-bottom: 0;
+    }
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  .is-style-ingress {
-    line-height: 1.22;
+  .wp-block-image .alignleft > figcaption,
+  .wp-block-image .alignright > figcaption,
+  .wp-block-image .aligncenter > figcaption,
+  .wp-block-image.is-resized > figcaption {
+    width: 100%;
+    display: block;
+  }
+
+  a:hover {
+    text-decoration: none;
   }
 
   iframe,
@@ -153,16 +215,8 @@
     display: block;
   }
 
-  ol,
-  ul li,
-  ol li,
-  ul,
-  li {
-    @include responsive-font($font-size-min, $font-size-max-blog);
-
-    @media (max-width: $container-mobile) {
-      font-size: 15px;
-    }
+  cite {
+    margin-bottom: 0;
   }
 
   > blockquote,
@@ -179,10 +233,6 @@
       text-align: left;
     }
 
-    * {
-      line-height: $line-height-blog;
-    }
-
     @media (max-width: $container-mobile) {
       padding: 4rem 4rem 4rem 2rem;
       margin-left: 2rem;
@@ -190,11 +240,8 @@
 
     > p {
       color: $color-links;
+      line-height: $line-height-blog;
     }
-  }
-
-  cite {
-    margin-bottom: 0;
   }
 
   div[style="width: 640px;"],
@@ -266,28 +313,6 @@
       @media (max-width: 480px) {
         padding-left: 2rem !important;
         padding-right: 2rem !important;
-      }
-    }
-
-    &.wp-block-gallery {
-      overflow: hidden;
-      color: $color-white;
-
-      figcaption {
-        width: 100%;
-        color: $color-white;
-        font-size: var(--font-size-small);
-        padding: 0 2rem;
-        line-height: 1.55;
-        margin-bottom: var(--margin-between-text-elements);
-
-        @media (max-width: 600px) {
-          padding: 0;
-        }
-      }
-
-      img {
-        margin-bottom: 0;
       }
     }
 
@@ -383,7 +408,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 dfn {
@@ -393,12 +418,12 @@ dfn {
 kbd {
   border: 1px solid #ccc;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f7f7f7;
+  background-color: $color-tags-and-search-items;
   color: $color-paragraphs;
-  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px #fff inset;
+  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px $color-white inset;
   border-radius: 4px;
   display: inline-block;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 $color-white;
   line-height: 1.4;
   white-space: nowrap;
   padding: 0 .5rem;
@@ -435,37 +460,11 @@ pre {
   justify-content: space-between;
 }
 
-// Blog post category styles
-.cat {
-  margin-top: 4rem;
-  margin-bottom: 1rem;
-
-  a {
-    color: $color-black;
-    font-size: var(--font-size-small);
-    display: inline-block;
-    border-color: rgba($color-blog-tags, .2);
-    border-style: solid;
-    border-width: 1px 1px 2px;
-    border-radius: 5px;
-    padding: .2em .6em;
-    margin-right: .4em;
-    box-shadow: none;
-    background: transparent;
-    transition: all $transition-duration;
-  }
-
-  a:hover,
-  a:focus {
-    border-color: rgba($color-blog-tags, .4);
-  }
-}
-
 // Blog post tag styles
 ul.tags {
   overflow: hidden;
   margin-top: 0;
-  margin-bottom: var(--margin-between-image-and-text);
+  margin-bottom: var(--margin-between-text-elements);
   list-style: none;
 
   @media (min-width: $article-max-width + 40px) {
@@ -484,7 +483,9 @@ ul.tags {
       color: $color-black;
       font-size: $font-size-tiny;
       display: inline-block;
+      /* stylelint-disable */
       border-color: rgba($color-blog-tags, .1);
+      /* stylelint-enable */
       border-style: solid;
       border-width: 1px 1px 2px;
       border-radius: 5px;
@@ -497,7 +498,9 @@ ul.tags {
 
     a:not(.button):not(.no-text-link):hover,
     a:not(.button):not(.no-text-link):focus {
+      /* stylelint-disable */
       border-color: rgba($color-blog-tags, .4);
+      /* stylelint-enable */
     }
   }
 }

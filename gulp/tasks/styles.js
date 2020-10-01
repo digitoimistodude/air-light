@@ -27,7 +27,7 @@ function styles(done) {
 
     // Merge media queries
     .pipe(mmq({
-      log: true
+      log: false
     }))
 
     // Save expanded version for development
