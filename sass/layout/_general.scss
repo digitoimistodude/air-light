@@ -40,24 +40,13 @@
 // Containers
 .container {
   margin: 0 auto;
-  padding-top: var(--padding-container-y-medium);
-  padding-bottom: var(--padding-container-y-medium);
-  padding-left: var(--padding-container-x-medium);
-  padding-right: var(--padding-container-x-medium);
+  padding-top: var(--padding-container-vertical);
+  padding-bottom: var(--padding-container-vertical);
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
   max-width: $grid-base-size;
   margin-left: auto;
   margin-right: auto;
-
-  // More reasonable paddings on mid-sized screens
-  @media (max-width: $grid-base-size + 150px) {
-    padding-left: var(--padding-container-x-small);
-    padding-right: var(--padding-container-x-small);
-  }
-
-  @media (max-width: $container-ipad) {
-    padding-top: var(--padding-container-y-small);
-    padding-bottom: var(--padding-container-y-small);
-  }
 }
 
 // Clear block containers by default

@@ -2,28 +2,35 @@
 :root {
   // Paddings
   --padding-container-horizontal: 2rem;
-  --padding-container-y-medium: 6.4rem;
-  --padding-container-y-small: 5rem;
+  --padding-container-vertical: 6.4rem;
   --padding-site-header-y: 2rem;
   --padding-block: 8rem;
 
   // Margins
   --margin-between-text-elements: 4rem;
 
+  // Mid-sized screens
+  @media (max-width: $grid-base-size + 150px) {
+    --padding-container-horizontal: 2rem;
+  }
+
   // When navigation transforms to a responsive hamburger menu
   @media (max-width: $responsivenav) {
     --padding-site-header-y: 1rem;
   }
 
+  // iPad
+  @media (max-width: $container-ipad) {
+    --padding-container-vertical: 5rem;
+  }
+
+  // Between iPad and a mobile phone
   @media (max-width: 600px) {
     --padding-block: 6rem;
   }
 
   // Vars in mobile
   @media (max-width: $container-mobile) {
-    --padding-container-x-medium: 2rem;
-    --padding-container-x-small: 2rem;
-    --padding-container-y-medium: 4rem;
-    --padding-container-y-small: 4rem;
+    --padding-container-vertical: 4rem;
   }
 }

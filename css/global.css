@@ -374,8 +374,7 @@ a.global-link {
 
 :root {
 	--padding-container-horizontal: 2rem;
-	--padding-container-y-medium: 6.4rem;
-	--padding-container-y-small: 5rem;
+	--padding-container-vertical: 6.4rem;
 	--padding-site-header-y: 2rem;
 	--padding-block: 8rem;
 	--margin-between-text-elements: 4rem;
@@ -1971,10 +1970,10 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 
 .container {
 	margin: 0 auto;
-	padding-top: var(--padding-container-y-medium);
-	padding-bottom: var(--padding-container-y-medium);
-	padding-left: var(--padding-container-x-medium);
-	padding-right: var(--padding-container-x-medium);
+	padding-top: var(--padding-container-vertical);
+	padding-bottom: var(--padding-container-vertical);
+	padding-left: var(--padding-container-horizontal);
+	padding-right: var(--padding-container-horizontal);
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -2307,8 +2306,8 @@ pre {
 	z-index: 15;
 	padding-bottom: var(--padding-site-header-y);
 	padding-top: var(--padding-site-header-y);
-	padding-left: var(--padding-container-x-medium);
-	padding-right: var(--padding-container-x-medium);
+	padding-left: var(--padding-container-horizontal);
+	padding-right: var(--padding-container-horizontal);
 	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
@@ -4373,9 +4372,8 @@ h6 {
 
 @media (max-width: 1350px) {
 
-.container {
-	padding-left: var(--padding-container-x-small);
-	padding-right: var(--padding-container-x-small);
+:root {
+	--padding-container-horizontal: 2rem;
 }
 
 }
@@ -4691,9 +4689,8 @@ h6 {
 
 @media (max-width: 770px) {
 
-.container {
-	padding-top: var(--padding-container-y-small);
-	padding-bottom: var(--padding-container-y-small);
+:root {
+	--padding-container-vertical: 5rem;
 }
 
 }
@@ -4733,10 +4730,7 @@ th {
 @media (max-width: 480px) {
 
 :root {
-	--padding-container-x-medium: 2rem;
-	--padding-container-x-small: 2rem;
-	--padding-container-y-medium: 4rem;
-	--padding-container-y-small: 4rem;
+	--padding-container-vertical: 4rem;
 }
 
 :root {
