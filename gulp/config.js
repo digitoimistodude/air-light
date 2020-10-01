@@ -59,7 +59,7 @@ module.exports = {
           formatter: 'string',
           console: true,
           failAfterError: false,
-          debug: false,
+          debug: false
         }]
       },
     },
