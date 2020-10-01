@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2020-10-01 17:37:36
+# @Last Modified time: 2020-10-01 17:41:29
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
@@ -86,10 +86,10 @@ npm install
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.browserslistrc ${PROJECTPATH}/
-cp ${PROJECTTHEMEPATH}/.stylelintrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
+cp ${PROJECTPATH}/devpackages/.stylelintrc ${PROJECTPATH}/
 cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
 cp -Rv ${PROJECTPATH}/devpackages/gulp ${PROJECTPATH}/
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/gulp/config.js > ${PROJECTPATH}/gulp/config2.js
@@ -98,6 +98,8 @@ sed -e "s/\PROJECTNAME/${PROJECTNAME}/" -e "s/\PROJECTNAME/${PROJECTNAME}/" -e "
 rm ${PROJECTPATH}/gulp/config2.js
 
 echo "${yellow}Cleaning up...${txtreset}"
+# We already have .stylelintrc in project root
+rm ${PROJECTTHEMEPATH}/.stylelintrc
 rm -rf ${PROJECTPATH}/devpackages
 rm -rf ${PROJECTTHEMEPATH}/bin
 rm -rf ${PROJECTTHEMEPATH}/gulp
