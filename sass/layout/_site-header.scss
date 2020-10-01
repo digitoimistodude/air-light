@@ -8,8 +8,8 @@
 .site-header {
   position: relative;
   z-index: 15;
-  padding-bottom: var(--padding-site-header-y);
-  padding-top: var(--padding-site-header-y);
+  padding-bottom: var(--padding-site-header-vertical);
+  padding-top: var(--padding-site-header-vertical);
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
   max-width: $grid-base-size;

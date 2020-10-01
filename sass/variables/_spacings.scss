@@ -3,7 +3,7 @@
   // Paddings
   --padding-container-horizontal: 2rem;
   --padding-container-vertical: 6.4rem;
-  --padding-site-header-y: 2rem;
+  --padding-site-header-vertical: 2rem;
   --padding-block: 8rem;
 
   // Margins
@@ -16,7 +16,7 @@
 
   // When navigation transforms to a responsive hamburger menu
   @media (max-width: $responsivenav) {
-    --padding-site-header-y: 1rem;
+    --padding-site-header-vertical: 1rem;
   }
 
   // iPad
