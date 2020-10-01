@@ -61,7 +61,7 @@ module.exports = {
           failAfterError: false,
           debug: false
         }]
-      },
+      }
     },
     opts: {
       development: {
