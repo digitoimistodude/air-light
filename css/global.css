@@ -3529,6 +3529,8 @@ body *[aria-invalid="true"] {
 	margin-bottom: 2rem;
 }
 
+/* stylelint-disable no-descending-specificity */
+
 .comments-area {
 	margin-top: 50px;
 	margin-bottom: 0;
@@ -3565,20 +3567,14 @@ body *[aria-invalid="true"] {
 	padding: 0;
 }
 
-.comment-list li a {
+.comment-list li a,
+.comment-list li .comments-link a {
 	color: #555;
 	box-shadow: none;
 }
 
 .comment-list li .comment-author a {
 	color: #4f5964;
-}
-
-.comment-list li .comments-link svg {
-	fill: #555;
-	position: relative;
-	top: 1px;
-	margin-right: 2px;
 }
 
 .comment-list li .comment-time {
@@ -3602,38 +3598,28 @@ body *[aria-invalid="true"] {
 	margin-right: 5px;
 }
 
-.comments-link,
-article .content .comments-link {
+.comments-link {
 	font-size: var(--font-size-tiny);
 	text-align: right;
-	display: block; /* stylelint-disable */ /* stylelint-enable */
+	display: inline-flex;
+	align-items: center;
+}
+
+.comments-link a {
+	color: #555;
 }
 
 .comments-link:hover,
 .comments-link:focus,
-article .content .comments-link:hover,
-article .content .comments-link:focus {
+.comments-link a:hover,
+.comments-link a:focus {
 	color: #222;
 }
 
-.comments-link:hover a,
-.comments-link:hover a:link,
-.comments-link:hover a:visited,
-.comments-link:hover svg,
-.comments-link:focus a,
-.comments-link:focus a:link,
-.comments-link:focus a:visited,
-.comments-link:focus svg,
-article .content .comments-link:hover a,
-article .content .comments-link:hover a:link,
-article .content .comments-link:hover a:visited,
-article .content .comments-link:hover svg,
-article .content .comments-link:focus a,
-article .content .comments-link:focus a:link,
-article .content .comments-link:focus a:visited,
-article .content .comments-link:focus svg {
-	color: #222;
-	fill: #222;
+.comments-link svg {
+	margin-right: 7px;
+	top: -1px;
+	position: relative;
 }
 
 .comment-respond {
@@ -3691,6 +3677,8 @@ article .content .comments-link:focus svg {
 .comment-respond textarea {
 	width: 100%;
 }
+
+/* stylelint-enable no-descending-specificity */
 
 .wp-block.is-style-boxed,
 p.is-style-boxed {

@@ -5,6 +5,7 @@
 // Custom comment template can be found in inc/comments.php
 // --------------------------------------------------------
 
+/* stylelint-disable no-descending-specificity */
 .comments-area {
   margin-top: 50px;
   margin-bottom: 0;
@@ -40,20 +41,14 @@
       padding: 0;
     }
 
-    a {
+    a,
+    .comments-link a {
       color: $color-comments-link;
       box-shadow: none;
     }
 
     .comment-author a {
       color: $color-paragraphs;
-    }
-
-    .comments-link svg {
-      fill: $color-comments-link;
-      position: relative;
-      top: 1px;
-      margin-right: 2px;
     }
 
     .comment-time {
@@ -79,26 +74,28 @@
   }
 }
 
-.comments-link,
-article .content .comments-link {
+.comments-link {
   font-size: var(--font-size-tiny);
   text-align: right;
-  display: block;
+  display: inline-flex;
+  align-items: center;
 
-  /* stylelint-disable */
-  &:hover,
-  &:focus {
-    color: $color-black;
-
-    a,
-    a:link,
-    a:visited,
-    svg {
-      color: $color-black;
-      fill: $color-black;
-    }
+  a {
+    color: $color-comments-link;
   }
-  /* stylelint-enable */
+
+  &:hover,
+  &:focus,
+  a:hover,
+  a:focus {
+    color: $color-black;
+  }
+
+  svg {
+    margin-right: 7px;
+    top: -1px;
+    position: relative;
+  }
 }
 
 // Comment form grid
@@ -181,3 +178,4 @@ article .content .comments-link {
     width: 100%;
   }
 }
+/* stylelint-enable no-descending-specificity */
