@@ -4,13 +4,13 @@
 
 // Import modules (comment to disable)
 import MoveTo from 'moveto';
-// import './sticky-nav.js'
+// import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
 import 'what-input';
-import './lazyload.js';
+import './modules/lazyload.js';
 
 // Navigation
-import './navigation.js';
+import './modules/navigation.js';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');

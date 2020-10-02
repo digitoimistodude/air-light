@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 13:48:46
+ * @Last Modified time: 2020-10-02 11:08:21
  */
 
 namespace Air_Light;
@@ -37,7 +37,7 @@ function enqueue_theme_scripts() {
 
   // Scripts.
   wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/all.js' ), array(), filemtime( get_theme_file_path( 'js/all.js' ) ), true );
+  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/dist/front-end.js' ), array(), filemtime( get_theme_file_path( 'js/dist/front-end.js' ) ), true );
 
   // Required comment-reply script
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -98,3 +98,32 @@ function enqueue_theme_scripts() {
     'target_blank' => $screenreadertext_target_blank,
   ) );
 } // end air_light_scripts
+
+/**
+ * Load polyfills for legacy browsers
+ */
+function enqueue_polyfills() {
+  $legacy_scripts = 'js/dist/legacy.js';
+  // Include polyfills
+  $script = '
+  var supportsES6 = (function () {
+  try {
+    new Function("(a = 0) => a");
+    return true;
+  } catch (err) {
+    return false;
+  }
+  }());
+  var legacyScript ="' . esc_url( get_theme_file_uri( $legacy_scripts ) ) . '";
+  if (!supportsES6) {
+    var script = document.createElement("script");
+    script.src = legacyScript;
+    document.head.appendChild(script);
+  }';
+
+  if ( file_exists( get_theme_file_path( $legacy_scripts ) ) ) {
+    wp_register_script( 'air_light_legacy', '' );
+    wp_enqueue_script( 'air_light_legacy', '', [], filemtime( get_theme_file_path( $legacy_scripts ) ), false );
+    wp_add_inline_script( 'air_light_legacy', $script, true);
+  }
+}
