@@ -111,10 +111,6 @@ $background-inputs: $color-white;
       background: $color-hover;
       border-color: $color-hover;
     }
-
-    @media (max-width: $container-mobile) {
-      font-size: 14px;
-    }
   }
 }
 

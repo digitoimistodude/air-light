@@ -4407,6 +4407,27 @@ h6 {
 
 }
 
+@media (max-width: 959px) {
+
+.nav-toggle {
+	display: block;
+}
+
+.nav-toggle.has-visible-label {
+	display: flex;
+	align-items: center;
+}
+
+.nav-toggle.has-visible-label .nav-toggle-label {
+	font-size: 17px;
+}
+
+.nav-toggle.has-visible-label .hamburger-box {
+	margin-right: 2rem;
+}
+
+}
+
 @media screen and (max-width: 959px) {
 
 .main-navigation-wrapper {
@@ -4605,27 +4626,6 @@ h6 {
 
 }
 
-@media (max-width: 959px) {
-
-.nav-toggle {
-	display: block;
-}
-
-.nav-toggle.has-visible-label {
-	display: flex;
-	align-items: center;
-}
-
-.nav-toggle.has-visible-label .nav-toggle-label {
-	font-size: 17px;
-}
-
-.nav-toggle.has-visible-label .hamburger-box {
-	margin-right: 2rem;
-}
-
-}
-
 @media (max-width: 840px) {
 
 .gutenberg-content {
@@ -4741,19 +4741,6 @@ th {
 	display: none !important;
 }
 
-.content-area button,
-.content-area .button,
-.content-area input[type="reset"],
-.content-area input[type="submit"],
-.content-area input[type="button"],
-.site-footer button,
-.site-footer .button,
-.site-footer input[type="reset"],
-.site-footer input[type="submit"],
-.site-footer input[type="button"] {
-	font-size: 14px;
-}
-
 .gutenberg-content li {
 	font-size: 15px;
 }
@@ -4794,6 +4781,15 @@ th {
 
 .comment-respond input {
 	width: 100%;
+}
+
+}
+
+@media (max-width: 420px) {
+
+:root {
+	--font-size-tiny: 14px;
+	--font-size-small: 14px;
 }
 
 }
