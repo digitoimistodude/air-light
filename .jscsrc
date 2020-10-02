@@ -15,6 +15,7 @@
     "js/src/legacy.js",
     "js/src/modules/lazyload.js",
     "js/src/modules/sticky-nav.js",
+    "js/src/modules/navigation.js",
     "js/all.js",
     "gulpfile.js"
   ]

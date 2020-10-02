@@ -85,7 +85,7 @@ module.exports = {
   js: {
     main: 'js/src/*.js',
     src: 'js/src/**/*.js',
-    dest: 'js/dist/',
+    dest: 'js/dist/'
   },
   php: {
     src: '**/*.php'
