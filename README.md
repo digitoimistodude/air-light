@@ -304,6 +304,22 @@ From 4.7.1 air-light has a lazy loading image features for background images and
 * Underscores Template tags
 * Sidebar
 
+### Javascript
+
+#### Structure
+
+All .js files in `/js/src/*` is built to `/js/dist/` with the same name. The main scripts file loaded in front end is `/js/src/front-end.js`.
+
+If you want to add a piece of custom JS, create a file under `/js/src/modules/` and import or require it in `/js/src/front-end.js`. If you need a admin-specific JS, add a `/js/src/admin.js` and then enqueue `/js/dist/admin.js` with `enqueue_admin_scripts`
+
+#### Legacy support
+
+Our build uses babel to translate scripts to ES2015 compatible JS, so you can use modern JS syntax without thinking about backwards compatibility. There is a `/js/src/legacy.js` file, which contains the needed polyfills for browsers not supporting the ES2015 syntax and is automatically loaded on the header when such browser is detected.
+
+#### Linter
+
+We use [Airbnb](https://github.com/airbnb/javascript) es-lint presets spiced up with our own flavors.
+
 ### Extra building blocks
 
 #### Sticky navigation
