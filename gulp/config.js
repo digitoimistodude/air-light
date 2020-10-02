@@ -83,15 +83,9 @@ module.exports = {
     }
   },
   js: {
-    main: 'js/src/scripts.js',
-    src: 'js/src/**/*.js',
-    dest: 'js',
-    uglify: {
-      opts: {
-        compress: true,
-        mangle: true
-      }
-    }
+    main: '/js/src/*.js',
+    src: '/js/src/**/*.js',
+    dest: '/js/dist/',
   },
   php: {
     src: '**/*.php'
