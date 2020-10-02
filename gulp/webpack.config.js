@@ -12,17 +12,13 @@ module.exports = {
           {
             loader: 'babel-loader',
             query: {
-              presets: [
-                [
-                  '@babel/preset-env',
-                  {
-                    useBuiltIns: 'entry',
-                    corejs: '3.3',
-                    targets: 'ie 11, >0.25%, not dead',
-                    forceAllTransforms: true,
-                  },
-                ],
-              ],
+              presets: [['airbnb', {
+                targets: {
+                  chrome: 50,
+                  ie: 11,
+                  firefox: 45,
+                },
+              }]],
             },
           },
         ],
