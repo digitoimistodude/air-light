@@ -484,18 +484,18 @@ a.global-link {
 	overflow: visible;
 }
 
-.container a {
+.gutenberg-content a {
 	text-decoration: underline;
 }
 
-.container a:hover,
-.container a:focus {
+.gutenberg-content a:hover,
+.gutenberg-content a:focus {
 	text-decoration: none;
 }
 
-.container .comments-link a,
-.container .tags a,
-.container .cat a {
+.gutenberg-content .comments-link a,
+.gutenberg-content .tags a,
+.gutenberg-content .cat a {
 	text-decoration: none;
 }
 

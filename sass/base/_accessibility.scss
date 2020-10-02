@@ -79,7 +79,7 @@ $tld-production: 'dudetest.xyz';
 
 // Links within content must be underlined
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
-.container {
+.gutenberg-content {
   a {
     text-decoration: underline;
 
