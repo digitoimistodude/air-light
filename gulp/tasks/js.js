@@ -1,3 +1,6 @@
+// Hide deprecation warnings
+process.env.NODE_PENDING_DEPRECATION = 0;
+
 // Dependencies
 const {
   dest,
@@ -5,8 +8,8 @@ const {
 } = require('gulp');
 const webpack = require('webpack-stream');
 const config = require('../config');
-const webpackConfig = require('../webpack.config');
-const named  = require('vinyl-named');
+const webpackConfig = require('../webpack.config.js');
+const named = require('vinyl-named');
 const eslint = require('gulp-eslint');
 
 // Task
