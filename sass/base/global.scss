@@ -18,7 +18,7 @@
 @import '../variables/fonts';
 
 // Style components
-// @import '../components/person-card';
+// @import '../components/box-with-shadow';
 
 // Accessibility
 @import 'accessibility';
@@ -50,6 +50,9 @@
 @import '../views/search';
 @import '../views/404';
 @import '../views/comments';
+
+// Modules
+// @import '../modules/some-module';
 
 // Gutenberg blocks
 @import '../gutenberg/boxed';
