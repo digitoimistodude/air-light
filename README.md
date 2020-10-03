@@ -427,7 +427,7 @@ Traditional way:
 
 1. Git clone or download zip
 2. Open Terminal and run `npm install`
-3. Open project to Atom (or your preferred editor) and run search and replace air-light => yourprojectname
+3. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run search and replace air-light => yourprojectname
 4. Run `gulp watch` and start coding
 
 If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your vagrant box is up and running at `10.1.2.4`, just
@@ -453,17 +453,17 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 2. `cd ~/Projects/dudestack && sh setup.sh`
 3. Run `createproject`, name project after *airdev* when asked
 4. Wait for the project to be created (get a coffee, first time can take couple of minutes)
-5. Create a fork of air-light
-6. `cd ~/Projects/airdev/content/themes`
-7. Fetch your fork with `git clone git@github.com:yourusername/air-light.git` (remember to replace yourusername with your actual username)
-8. `cd ~/Projects/airdev/content/themes/air-light`
-9. Get air dependencides by running `npm install` (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
-10. Wait npm to get through files (get a coffee)
-11. Activate theme - if you are using os x lemp: `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"`
-12. Open whole project to sublime, for example with `subl -n ~/Projects/airdev/content/themes/air-light` if you have Sublime Text.
-13. Go to back to air-light dir with `cd ~/Projects/airdev/content/themes/air-light` and then run `gulp watch` and start developing!
+5. Create a fork of air-light (press fork button on GitHub)
+6. Go to the theme folder of your WordPress instance via Terminal (`cd ~/Projects/airdev/content/themes`)
+7. Clone your fork with `git clone git@github.com:yourusername/air-light.git` (replace yourusername with your actual username)
+8. Cd to your new cloned repository `cd ~/Projects/airdev/content/themes/air-light`
+9. Get the dependencides by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
+10. Wait npm to get through files (get another cup of coffee)
+11. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"` (replace $PROJECTNAME with actual project name)
+12. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code ~/Projects/airdev/content/themes/air-light`.
+13. Go to back to air-light dir with `cd ~/Projects/airdev/content/themes/air-light` and then run `gulp` and start developing!
 
-You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for OS X lemp stack or `alias wp='ssh vagrant@10.1.2.4 "cd /var/www/"$(basename "$PWD")"; /var/www/"$(basename "$PWD")"/vendor/wp-cli/wp-cli/bin/wp"'` for marlin-vagrant to get to use wp-cli with simply `wp`.
+You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) or `alias wp='ssh vagrant@10.1.2.4 "cd /var/www/"$(basename "$PWD")"; /var/www/"$(basename "$PWD")"/vendor/wp-cli/wp-cli/bin/wp"'` for [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) to be able to use wp-cli with simply `wp`.
 
 ##### 2. Use your own stack
 
@@ -482,9 +482,13 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 ### Debuggers
 
-Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and [scss-lint](https://github.com/brigade/scss-lint) built inside gulpfile.js. **Please note, you need to configure these separately!**
+Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!**
 
 PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
+
+The golden rule here is to make sure the commands `stylelint`, `eslint` and `phpcs` work from command line.
+
+It's also best to have all `stylelint`, `eslint`, `phpcs`, `jscs`, `jshint` living inside your editor. We think [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) is best for this, check out the [plugins inside vscode-settings repository](https://github.com/ronilaukkarinen/vscode-settings)  to make sure everything is installed.
 
 ### Releasing a new version on git and tagging principles (staff only)
 
@@ -504,7 +508,7 @@ That's it, you released a new version!
 
 After tagging and releasing version on GitHub, you need to complete these steps:
 
-1. Release the dev version to the server with this magical command (you need to have pubkey auth on for auto-login): `rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} ~/Projects/airdev/content/themes/air-light/* you@the_server:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/`
+1. Release the dev version to the server with this magical command (you need to have pubkey auth on for auto-login): `rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} ~/Projects/airdev/content/themes/air-light/* you@the_server:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/` (consult your team's head developer for credentials)
 2. `cd ~/Projects/airdev/content/themes/air-light/bin`
 3. `sh air-move-out.sh`
 4. Go to [Theme Check](http://airdev.test/wp/wp-admin/themes.php?page=themecheck) and click "Check it!" button. Fix possible errors.
