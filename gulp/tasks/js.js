@@ -16,7 +16,6 @@ const eslint = require('gulp-eslint');
 function js() {
   return src(config.js.main)
     .pipe(eslint())
-    .pipe(eslint.format())
     .pipe(named())
     .pipe(webpack(webpackConfig))
     .pipe(dest(config.js.dest));
