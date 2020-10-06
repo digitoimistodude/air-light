@@ -122,8 +122,8 @@ function enqueue_polyfills() {
   }';
 
   if ( file_exists( get_theme_file_path( $legacy_scripts ) ) ) {
-    wp_register_script( 'air_light_legacy', '' );
+    wp_register_script( 'air_light_legacy', '' ); // phpcs:ignore
     wp_enqueue_script( 'air_light_legacy', '', [], filemtime( get_theme_file_path( $legacy_scripts ) ), false );
-    wp_add_inline_script( 'air_light_legacy', $script, true);
+    wp_add_inline_script( 'air_light_legacy', $script, true );
   }
 }
