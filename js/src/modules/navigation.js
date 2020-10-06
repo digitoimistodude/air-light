@@ -163,9 +163,9 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
       $(this).attr(
         'aria-label',
-        $(this).attr('aria-label') === `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}` // eslint-disable-line
-          ? `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}` // eslint-disable-line
-          : `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`, // eslint-disable-line
+        $(this).attr('aria-label') === `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}` // eslint-disable-line
+        ?        `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}` // eslint-disable-line
+        :        `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`, // eslint-disable-line
       );
     }
   });
@@ -403,9 +403,9 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     navTogglescreenReaderText = $('#nav-toggle-label'); // eslint-disable-line
     navTogglescreenReaderText.text( // eslint-disable-line
       navTogglescreenReaderText.text() // eslint-disable-line
-      === air_light_screenReaderText.expand_toggle // eslint-disable-line
-        ? air_light_screenReaderText.collapse_toggle // eslint-disable-line
-        : air_light_screenReaderText.expand_toggle, // eslint-disable-line
+      ===      air_light_screenReaderText.expand_toggle // eslint-disable-line
+      ?      air_light_screenReaderText.collapse_toggle // eslint-disable-line
+      :      air_light_screenReaderText.expand_toggle, // eslint-disable-line
     );
 
     // Return focus to nav-toggle
@@ -424,9 +424,9 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     // Change screen reader open/close labels
     $(this).attr(
       'aria-label',
-        $(this).attr('aria-label') === air_light_screenReaderText.expand_toggle // eslint-disable-line
-          ? air_light_screenReaderText.collapse_toggle // eslint-disable-line
-          : air_light_screenReaderText.expand_toggle, // eslint-disable-line
+      $(this).attr('aria-label') === air_light_screenReaderText.expand_toggle // eslint-disable-line
+      ?      air_light_screenReaderText.collapse_toggle // eslint-disable-line
+      :      air_light_screenReaderText.expand_toggle, // eslint-disable-line
     );
 
     if (container.className.indexOf('is-active') !== -1) {
@@ -457,7 +457,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   menuWrapper.onclick = function (e) { // eslint-disable-line
     if (
       e.target = menuWrapper // eslint-disable-line
-        && container.className.indexOf('is-active') !== -1
+      && container.className.indexOf('is-active') !== -1
     ) {
       closeMenu(); // Close menu.
     }
