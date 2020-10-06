@@ -10,47 +10,53 @@ https://github.com/WordPress/twentysixteen (GPL v.2)
 https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-arrow-nav (GPL v.2)
 */
 
+// eslint-disable-next-line func-names
 (function ($) {
   // Responsive nav width
-  var responsivenav = 960;
+  const responsivenav = 960;
 
   // Check if enter pressed
-  var enterPressed = false;
+  let enterPressed = false;
   $(window)
-    .keydown(function (evt) {
-      if (evt.which == 13) {
+    .keydown((evt) => {
+      if (evt.which === 13) {
         enterPressed = true;
       }
     })
-    .keyup(function (evt) {
-      if (evt.which == 13) {
+    .keyup((evt) => {
+      if (evt.which === 13) {
         enterPressed = false;
       }
     });
 
   // Hover intent
   $('.menu-item-has-children').hover(
+    // eslint-disable-next-line func-names
     function () {
       $(this).addClass('hover-intent');
     },
+    // eslint-disable-next-line func-names
     function () {
       setTimeout(() => {
         $(this).removeClass('hover-intent');
       }, 100);
-    });
+    },
+  );
 
-  var menuContainer = $('.nav-container');
-  var menuToggle = menuContainer.find('#nav-toggle');
-  var siteHeaderMenu = menuContainer.find('#main-navigation-wrapper');
-  var siteNavigation = menuContainer.find('#nav');
+  const menuContainer = $('.nav-container');
+  const menuToggle = menuContainer.find('#nav-toggle');
+  const siteHeaderMenu = menuContainer.find('#main-navigation-wrapper');
+  const siteNavigation = menuContainer.find('#nav');
 
   // Toggles the menu button
+  // eslint-disable-next-line
   (function () {
     if (!menuToggle.length) {
       return;
     }
 
     menuToggle.add(siteNavigation).attr('aria-expanded', 'false');
+    // eslint-disable-next-line func-names
     menuToggle.on('click', function () {
       $(this).add(siteHeaderMenu).toggleClass('toggled-on');
 
@@ -59,30 +65,30 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
         .add(siteNavigation)
         .attr(
           'aria-expanded',
-          $(this).add(siteNavigation).attr('aria-expanded') === 'false' ?
-          'true' :
-          'false'
+          $(this).add(siteNavigation).attr('aria-expanded') === 'false'
+            ? 'true'
+            : 'false',
         );
       // jscs:enable
     });
-  })();
+  }());
 
   // Close focused dropdowns when pressing esc
+  // eslint-disable-next-line func-names
   $('.menu-item a, .dropdown button').on('keyup', function () {
     if ($('.dropdown').find(':focus').length !== 0) {
       // Close menu using Esc key.
-      if (event.keyCode == 27) {
+      if (event.keyCode === 27) { // eslint-disable-line no-restricted-globals
         // Close the dropdown menu
-        thisDropdown = $(this).parent().parent().parent();
-
-        screenReaderSpan = thisDropdown.find('.screen-reader-text');
-        dropdownToggle = thisDropdown.find('.dropdown-toggle');
+        const thisDropdown = $(this).parent().parent().parent();
+        const screenReaderSpan = thisDropdown.find('.screen-reader-text');
+        const dropdownToggle = thisDropdown.find('.dropdown-toggle');
         thisDropdown.find('.sub-menu').removeClass('toggled-on');
         thisDropdown.find('.dropdown-toggle').removeClass('toggled-on');
         thisDropdown.find('.dropdown').removeClass('toggled-on');
         dropdownToggle.attr('aria-expanded', 'false');
         // jscs:enable
-        screenReaderSpan.text(air_light_screenReaderText.expand);
+        screenReaderSpan.text(air_light_screenReaderText.expand); // eslint-disable-line
         // Move focus back to previous dropdown select
         thisDropdown.find('.dropdown-toggle:first').focus();
       }
@@ -90,26 +96,26 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
     if (window.innerWidth > responsivenav) {
       // Close previous dropdown if we are on main level
-      prevDropdown = $(this).parent().prev();
+      const prevDropdown = $(this).parent().prev();
+      const screenReaderSpanPrev = prevDropdown.find('.screen-reader-text');
+      const dropdownTogglePrev = prevDropdown.find('.dropdown-toggle');
 
-      screenReaderSpanPrev = prevDropdown.find('.screen-reader-text');
-      dropdownTogglePrev = prevDropdown.find('.dropdown-toggle');
       prevDropdown.find('.sub-menu').removeClass('toggled-on');
       prevDropdown.find('.dropdown-toggle').removeClass('toggled-on');
       prevDropdown.find('.dropdown').removeClass('toggled-on');
       dropdownTogglePrev.attr('aria-expanded', 'false');
-      screenReaderSpanPrev.text(air_light_screenReaderText.expand);
+      screenReaderSpanPrev.text(air_light_screenReaderText.expand); // eslint-disable-line
 
       // Close next dropdown if we are on main level
-      nextDropdown = $(this).parent().next();
+      const nextDropdown = $(this).parent().next();
+      const screenReaderSpanNext = nextDropdown.find('.screen-reader-text');
+      const dropdownToggleNext = nextDropdown.find('.dropdown-toggle');
 
-      screenReaderSpanNext = nextDropdown.find('.screen-reader-text');
-      dropdownToggleNext = nextDropdown.find('.dropdown-toggle');
       nextDropdown.find('.sub-menu').removeClass('toggled-on');
       nextDropdown.find('.dropdown-toggle').removeClass('toggled-on');
       nextDropdown.find('.dropdown').removeClass('toggled-on');
       dropdownToggleNext.attr('aria-expanded', 'false');
-      screenReaderSpanNext.text(air_light_screenReaderText.expand);
+      screenReaderSpanNext.text(air_light_screenReaderText.expand); // eslint-disable-line
     }
   });
 
@@ -117,7 +123,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   siteHeaderMenu.find('.menu-item-has-children').attr('aria-haspopup', 'true');
 
   // Open last dropdown by default on mobile
-  $(function () {
+  $(() => {
     if (window.innerWidth < responsivenav) {
       const screenReaderSpan = $('.menu-items > .dropdown-toggle').find('.screen-reader-text');
       const dropdownMenu = $('.menu-items > .menu-item-has-children:last .sub-menu');
@@ -126,17 +132,19 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       dropdownItem.addClass('toggled-on');
       dropdownMenu.addClass('toggled-on');
       dropdownItem.attr('aria-expanded', 'true');
-      dropdownItem.attr('aria-label', air_light_screenReaderText.collapse);
-      screenReaderSpan.text(air_light_screenReaderText.collapse);
+      dropdownItem.attr('aria-label', air_light_screenReaderText.collapse); // eslint-disable-line
+      screenReaderSpan.text(air_light_screenReaderText.collapse); // eslint-disable-line
     }
   });
 
   // Add default dropdown-toggle label
+  // eslint-disable-next-line
   $('.dropdown-toggle').each(function () {
-    $(this).attr('aria-label', air_light_screenReaderText.expand_for + ' ' + $(this).prev().text());
+    $(this).attr('aria-label', `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`); // eslint-disable-line
   });
 
   // Toggles the sub-menu when dropdown toggle button accessed
+  // eslint-disable-next-line
   siteHeaderMenu.find('.dropdown-toggle').click(function (e) {
     if (enterPressed || window.innerWidth < responsivenav) {
       const dropdownMenu = $(this).nextAll('.sub-menu');
@@ -148,16 +156,16 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       // jscs:disable
       $(this).attr(
         'aria-expanded',
-        $(this).attr('aria-expanded') === 'false' ? 'true' : 'false'
+        $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
       );
       // jscs:enable
       // Change screen reader open/close labels
 
       $(this).attr(
         'aria-label',
-        $(this).attr('aria-label') === air_light_screenReaderText.collapse_for + ' ' + $(this).prev().text() ?
-        air_light_screenReaderText.expand_for + ' ' + $(this).prev().text() :
-        air_light_screenReaderText.collapse_for + ' ' + $(this).prev().text()
+        $(this).attr('aria-label') === `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}` // eslint-disable-line
+          ? `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}` // eslint-disable-line
+          : `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`, // eslint-disable-line
       );
     }
   });
@@ -168,271 +176,161 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     .addClass('has-sub-menu');
 
   // Keyboard navigation
+  // eslint-disable-next-line
   $('.menu-item a, button.dropdown-toggle').on('keydown', function (e) {
-    if ([37, 38, 39, 40].indexOf(e.keyCode) == -1) {
+    if ([37, 38, 39, 40].indexOf(e.keyCode) === -1) {
       return;
     }
 
+    // eslint-disable-next-line default-case
     switch (e.keyCode) {
-      case 37: // Left key
-        e.preventDefault();
-        e.stopPropagation();
+    case 37: // Left key
+      e.preventDefault();
+      e.stopPropagation();
 
-        if ($(this).hasClass('dropdown-toggle')) {
-          $(this).prev('a').focus();
-        } else {
-          if (
-            $(this).parent().prev().children('button.dropdown-toggle').length
-          ) {
-            $(this).parent().prev().children('button.dropdown-toggle').focus();
-          } else {
-            $(this).parent().prev().children('a').focus();
-          }
-        }
+      if ($(this).hasClass('dropdown-toggle')) {
+        $(this).prev('a').focus();
+      } else if (
+        $(this).parent().prev().children('button.dropdown-toggle').length
+      ) {
+        $(this).parent().prev().children('button.dropdown-toggle')
+          .focus();
+      } else {
+        $(this).parent().prev().children('a')
+          .focus();
+      }
 
-        if ($(this).is('ul ul ul.sub-menu.toggled-on li:first-child a')) {
-          $(this)
-            .parents('ul.sub-menu.toggled-on li')
-            .children('button.dropdown-toggle')
-            .focus();
-        }
+      if ($(this).is('ul ul ul.sub-menu.toggled-on li:first-child a')) {
+        $(this)
+          .parents('ul.sub-menu.toggled-on li')
+          .children('button.dropdown-toggle')
+          .focus();
+      }
 
-        break;
+      break;
 
-      case 39: // Right key
-        e.preventDefault();
-        e.stopPropagation();
+    case 39: // Right key
+      e.preventDefault();
+      e.stopPropagation();
 
-        if ($(this).next('button.dropdown-toggle').length) {
-          $(this).next('button.dropdown-toggle').focus();
-        } else if ($(this).parent().next().find('input').length) {
-          $(this).parent().next().find('input').focus();
-        } else {
-          $(this).parent().next().children('a').focus();
-        }
+      if ($(this).next('button.dropdown-toggle').length) {
+        $(this).next('button.dropdown-toggle').focus();
+      } else if ($(this).parent().next().find('input').length) {
+        $(this).parent().next().find('input')
+          .focus();
+      } else {
+        $(this).parent().next().children('a')
+          .focus();
+      }
 
-        if ($(this).is('ul.sub-menu .dropdown-toggle.toggled-on')) {
-          $(this).parent().find('ul.sub-menu li:first-child a').focus();
-        }
+      if ($(this).is('ul.sub-menu .dropdown-toggle.toggled-on')) {
+        $(this).parent().find('ul.sub-menu li:first-child a').focus();
+      }
 
-        break;
+      break;
 
-      case 40: // Down key
-        e.preventDefault();
-        e.stopPropagation();
+    case 40: // Down key
+      e.preventDefault();
+      e.stopPropagation();
 
-        if ($(this).next().length) {
-          $(this).next().find('li:first-child a').first().focus();
-        } else if ($(this).parent().next().find('input').length) {
-          $(this).parent().next().find('input').focus();
-        } else {
-          $(this).parent().next().children('a').focus();
-        }
+      if ($(this).next().length) {
+        $(this).next().find('li:first-child a').first()
+          .focus();
+      } else if ($(this).parent().next().find('input').length) {
+        $(this).parent().next().find('input')
+          .focus();
+      } else {
+        $(this).parent().next().children('a')
+          .focus();
+      }
 
-        if (
-          $(this).is('ul.sub-menu a') &&
-          $(this).next('button.dropdown-toggle').length
-        ) {
-          $(this).parent().next().children('a').focus();
-        }
+      if (
+        $(this).is('ul.sub-menu a')
+          && $(this).next('button.dropdown-toggle').length
+      ) {
+        $(this).parent().next().children('a')
+          .focus();
+      }
 
-        if (
-          $(this).is('ul.sub-menu .dropdown-toggle') &&
-          $(this).parent().next().children('.dropdown-toggle').length
-        ) {
-          $(this).parent().next().children('.dropdown-toggle').focus();
-        }
+      if (
+        $(this).is('ul.sub-menu .dropdown-toggle')
+          && $(this).parent().next().children('.dropdown-toggle').length
+      ) {
+        $(this).parent().next().children('.dropdown-toggle')
+          .focus();
+      }
 
-        break;
+      break;
 
-      case 38: // Up key
-        e.preventDefault();
-        e.stopPropagation();
+    case 38: // Up key
+      e.preventDefault();
+      e.stopPropagation();
 
-        if ($(this).parent().prev().length) {
-          $(this).parent().prev().children('a').focus();
-        } else {
-          $(this)
-            .parents('ul')
-            .first()
-            .prev('.dropdown-toggle.toggled-on')
-            .focus();
-        }
+      if ($(this).parent().prev().length) {
+        $(this).parent().prev().children('a')
+          .focus();
+      } else {
+        $(this)
+          .parents('ul')
+          .first()
+          .prev('.dropdown-toggle.toggled-on')
+          .focus();
+      }
 
-        if (
-          $(this).is('ul.sub-menu .dropdown-toggle') &&
-          $(this).parent().prev().children('.dropdown-toggle').length
-        ) {
-          $(this).parent().prev().children('.dropdown-toggle').focus();
-        }
+      if (
+        $(this).is('ul.sub-menu .dropdown-toggle')
+          && $(this).parent().prev().children('.dropdown-toggle').length
+      ) {
+        $(this).parent().prev().children('.dropdown-toggle')
+          .focus();
+      }
 
-        break;
+      break;
     }
   });
 
-  var html,
-    body,
-    container,
-    button,
-    menu,
-    menuWrapper,
-    links,
-    subMenus,
-    i,
-    len,
-    focusableElements,
-    firstFocusableElement,
-    lastFocusableElement;
+  var i; // eslint-disable-line
+  let len; // eslint-disable-line
+  let focusableElements; // eslint-disable-line
+  var firstFocusableElement; // eslint-disable-line
+  var lastFocusableElement; // eslint-disable-line
+  let html;
+  let body;
+  let container;
+  let button;
+  let menu;
+  let menuWrapper;
+  let links;
+  let subMenus;
 
-  container = document.getElementById('nav');
+  container = document.getElementById('nav'); // eslint-disable-line
   if (!container) {
     return;
   }
 
-  button = document.getElementById('nav-toggle');
-  if ('undefined' === typeof button) {
+  button = document.getElementById('nav-toggle'); // eslint-disable-line
+  if (typeof button === 'undefined') {
     return;
   }
 
   // Set vars.
-  html = document.getElementsByTagName('html')[0];
-  body = document.getElementsByTagName('body')[0];
-  menu = container.getElementsByTagName('ul')[0];
-  menuWrapper = document.getElementById('main-navigation-wrapper');
+  html = document.getElementsByTagName('html')[0]; // eslint-disable-line
+  body = document.getElementsByTagName('body')[0]; // eslint-disable-line
+  menu = container.getElementsByTagName('ul')[0]; // eslint-disable-line
+  menuWrapper = document.getElementById('main-navigation-wrapper'); // eslint-disable-line
 
   // Hide menu toggle button if menu is empty and return early.
-  if ('undefined' === typeof menu) {
+  if (typeof menu === 'undefined') {
     button.style.display = 'none';
     return;
   }
 
   menu.setAttribute('aria-expanded', 'false');
-  if (-1 === menu.className.indexOf('nav-menu')) {
+  if (menu.className.indexOf('nav-menu') === -1) {
     menu.className += ' nav-menu';
   }
 
-  // Focus trap for mobile navigation
-  if (window.innerWidth < responsivenav) {
-    var firstFocusableElement = null;
-    var lastFocusableElement = null;
-
-    // Select nav items
-    navElements = container.querySelectorAll([
-      '.nav-primary a[href]',
-      '.nav-primary button'
-    ]);
-
-    // Listen for key events on nav elements and the toggle button
-    // to trigger focus trap
-    for (var i = 0; i < navElements.length; i++) {
-      navElements[i].addEventListener('keydown', focusTrap);
-    }
-  }
-
-  // What happens when clicking menu toggle
-  button.onclick = function () {
-    // Change screen reader expanded state
-    $(this).attr(
-      'aria-expanded',
-      $(this).attr('aria-expanded') === 'false' ? 'true' : 'false'
-    );
-
-    // Change screen reader open/close labels
-    $(this).attr(
-      'aria-label',
-      $(this).attr('aria-label') === air_light_screenReaderText.expand_toggle ?
-      air_light_screenReaderText.collapse_toggle :
-      air_light_screenReaderText.expand_toggle
-    );
-
-    if (-1 !== container.className.indexOf('is-active')) {
-      closeMenu(); // Close menu.
-    } else {
-      html.className += ' disable-scroll';
-      body.className += ' js-nav-active';
-      container.className += ' is-active';
-      button.className += ' is-active';
-      button.setAttribute('aria-expanded', 'true');
-      menu.setAttribute('aria-expanded', 'true');
-
-      // Add focus trap when menu open
-      button.addEventListener('keydown', focusTrap, false);
-    }
-  };
-
-  // Close menu using Esc key.
-  document.addEventListener('keyup', function (event) {
-    if (event.keyCode == 27) {
-      if (-1 !== container.className.indexOf('is-active')) {
-        closeMenu(); // Close menu.
-      }
-    }
-  });
-
-  // Close menu clicking menu wrapper area.
-  menuWrapper.onclick = function (e) {
-    if (
-      e.target == menuWrapper &&
-      -1 !== container.className.indexOf('is-active')
-    ) {
-      closeMenu(); // Close menu.
-    }
-  };
-
-  // Close menu function.
-  function closeMenu() {
-    button.removeEventListener('keydown', focusTrap, false);
-    html.className = html.className.replace(' disable-scroll', '');
-    body.className = body.className.replace(' js-nav-active', '');
-    container.className = container.className.replace(' is-active', '');
-    button.className = button.className.replace(' is-active', '');
-    button.setAttribute('aria-expanded', 'false');
-    menu.setAttribute('aria-expanded', 'false');
-
-    // Change screen reader open/close labels
-    navTogglescreenReaderText = $('#nav-toggle-label');
-    navTogglescreenReaderText.text(
-      navTogglescreenReaderText.text() ===
-      air_light_screenReaderText.expand_toggle ?
-      air_light_screenReaderText.collapse_toggle :
-      air_light_screenReaderText.expand_toggle
-    );
-
-    // Return focus to nav-toggle
-    button.focus();
-  }
-
-  // Get all the link elements within the menu.
-  links = menu.getElementsByTagName('a');
-  subMenus = menu.getElementsByTagName('ul');
-
-  // Each time a menu link is focused or blurred, toggle focus.
-  for (i = 0, len = links.length; i < len; i++) {
-    links[i].addEventListener('focus', toggleFocus, true);
-    links[i].addEventListener('blur', toggleFocus, true);
-  }
-
-  /**
-   * Sets or removes .focus class on an element.
-   */
-  function toggleFocus() {
-    var self = this;
-
-    // Move up through the ancestors of the current link until we hit .nav-menu.
-    while (-1 === self.className.indexOf('nav-menu')) {
-      // On li elements toggle the class .focus.
-      if ('li' === self.tagName.toLowerCase()) {
-        if (-1 !== self.className.indexOf('focus')) {
-          self.className = self.className.replace(' focus', '');
-        } else {
-          self.className += ' focus';
-        }
-      }
-
-      self = self.parentElement;
-    }
-  }
-
+  // Focus trap function
   function focusTrap(e) {
     // Set focusable elements inside main navigation.
     focusableElements = container.querySelectorAll([
@@ -448,30 +346,153 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       'object',
       'embed',
       '[contenteditable]',
-      '[tabindex]:not([tabindex^=' - '])'
+      '[tabindex]:not([tabindex^=' - '])',
     ]);
-    firstFocusableElement = focusableElements[0];
-    lastFocusableElement = focusableElements[focusableElements.length - 1];
+    firstFocusableElement = focusableElements[0]; // eslint-disable-line
+    lastFocusableElement = focusableElements[focusableElements.length - 1]; // eslint-disable-line
 
     // Redirect last Tab to first focusable element.
-    if (lastFocusableElement === e.target && e.keyCode === 9 && !e.shiftKey) {
+    if (lastFocusableElement === e.target && e.keyCode === 9 && !e.shiftKey) { // eslint-disable-line
       e.preventDefault();
       button.focus(); // Set focus on first element - that's actually close menu button.
-      console.log(1);
     }
 
     // Redirect first Shift+Tab to toggle button element.
-    if (firstFocusableElement === e.target && e.keyCode === 9 && e.shiftKey) {
+    if (firstFocusableElement === e.target && e.keyCode === 9 && e.shiftKey) { // eslint-disable-line
       e.preventDefault();
       button.focus(); // Set focus on last element.
-      console.log(2);
     }
 
     // Redirect Shift+Tab from the toggle button to last focusable element.
     if (button === e.target && e.keyCode === 9 && e.shiftKey) {
       e.preventDefault();
+      // eslint-disable-next-line block-scoped-var
       lastFocusableElement.focus(); // Set focus on last element.
-      console.log(3);
     }
   }
-})(jQuery);
+
+  // Focus trap for mobile navigation
+  if (window.innerWidth < responsivenav) {
+    var firstFocusableElement = null; // eslint-disable-line
+    var lastFocusableElement = null; // eslint-disable-line
+
+    // Select nav items
+    navElements = container.querySelectorAll([ // eslint-disable-line
+      '.nav-primary a[href]',
+      '.nav-primary button',
+    ]);
+
+    // Listen for key events on nav elements and the toggle button
+    // to trigger focus trap
+    for (var i = 0; i < navElements.length; i++) { // eslint-disable-line
+      navElements[i].addEventListener('keydown', focusTrap); // eslint-disable-line
+    }
+  }
+
+  // Close menu function.
+  function closeMenu() {
+    button.removeEventListener('keydown', focusTrap, false);
+    html.className = html.className.replace(' disable-scroll', '');
+    body.className = body.className.replace(' js-nav-active', '');
+    container.className = container.className.replace(' is-active', '');
+    button.className = button.className.replace(' is-active', '');
+    button.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-expanded', 'false');
+
+    // Change screen reader open/close labels
+    navTogglescreenReaderText = $('#nav-toggle-label'); // eslint-disable-line
+    navTogglescreenReaderText.text( // eslint-disable-line
+      navTogglescreenReaderText.text() // eslint-disable-line
+      === air_light_screenReaderText.expand_toggle // eslint-disable-line
+        ? air_light_screenReaderText.collapse_toggle // eslint-disable-line
+        : air_light_screenReaderText.expand_toggle, // eslint-disable-line
+    );
+
+    // Return focus to nav-toggle
+    button.focus();
+  }
+
+  // What happens when clicking menu toggle
+  // eslint-disable-next-line
+  button.onclick = function () {
+    // Change screen reader expanded state
+    $(this).attr(
+      'aria-expanded',
+      $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
+    );
+
+    // Change screen reader open/close labels
+    $(this).attr(
+      'aria-label',
+        $(this).attr('aria-label') === air_light_screenReaderText.expand_toggle // eslint-disable-line
+          ? air_light_screenReaderText.collapse_toggle // eslint-disable-line
+          : air_light_screenReaderText.expand_toggle, // eslint-disable-line
+    );
+
+    if (container.className.indexOf('is-active') !== -1) {
+      closeMenu(); // Close menu.
+    } else {
+      html.className += ' disable-scroll';
+      body.className += ' js-nav-active';
+      container.className += ' is-active';
+      button.className += ' is-active';
+      button.setAttribute('aria-expanded', 'true');
+      menu.setAttribute('aria-expanded', 'true');
+
+      // Add focus trap when menu open
+      button.addEventListener('keydown', focusTrap, false);
+    }
+  };
+
+  // Close menu using Esc key.
+  document.addEventListener('keyup', (event) => {
+    if (event.keyCode == 27) { // eslint-disable-line
+      if (container.className.indexOf('is-active') !== -1) {
+        closeMenu(); // Close menu.
+      }
+    }
+  });
+
+  // Close menu clicking menu wrapper area.
+  menuWrapper.onclick = function (e) { // eslint-disable-line
+    if (
+      e.target = menuWrapper // eslint-disable-line
+        && container.className.indexOf('is-active') !== -1
+    ) {
+      closeMenu(); // Close menu.
+    }
+  };
+
+  /**
+   * Sets or removes .focus class on an element.
+   */
+  function toggleFocus() {
+    let self = this;
+
+    // Move up through the ancestors of the current link until we hit .nav-menu.
+    while (self.className.indexOf('nav-menu') === -1) {
+      // On li elements toggle the class .focus.
+      if (self.tagName.toLowerCase() === 'li') {
+        if (self.className.indexOf('focus') !== -1) {
+          self.className = self.className.replace(' focus', '');
+        } else {
+          self.className += ' focus';
+        }
+      }
+
+      self = self.parentElement;
+    }
+  }
+
+  // Get all the link elements within the menu.
+  links = menu.getElementsByTagName('a'); // eslint-disable-line
+  subMenus = menu.getElementsByTagName('ul'); // eslint-disable-line
+
+  // Each time a menu link is focused or blurred, toggle focus.
+  for (i = 0, len = links.length; i < len; i++) { // eslint-disable-line
+    // eslint-disable-next-line block-scoped-var
+    links[i].addEventListener('focus', toggleFocus, true);
+    // eslint-disable-next-line block-scoped-var
+    links[i].addEventListener('blur', toggleFocus, true);
+  }
+}(jQuery));
