@@ -1,3 +1,7 @@
+/* eslint-disable default-case */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
 /*
 An accessible menu for WordPress
 
@@ -18,12 +22,12 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   let enterPressed = false;
   $(window)
     .keydown((evt) => {
-      if (evt.which == 13) {
+      if (evt.which === 13) {
         enterPressed = true;
       }
     })
     .keyup((evt) => {
-      if (evt.which == 13) {
+      if (evt.which === 13) {
         enterPressed = false;
       }
     });
@@ -63,6 +67,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
       // Change screen reader open/close labels
       $('#nav-toggle-label').text(
+        // eslint-disable-next-line no-undef
         $('#nav-toggle-label').text() === air_light_screenReaderText.expand_toggle
           ? air_light_screenReaderText.collapse_toggle
           : air_light_screenReaderText.expand_toggle,
@@ -92,7 +97,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   $('.menu-item a, .dropdown button').on('keyup', function () {
     if ($('.dropdown').find(':focus').length !== 0) {
       // Close menu using Esc key.
-      if (event.keyCode == 27) {
+      if (event.keyCode === 27) {
         // Close the dropdown menu
         thisDropdown = $(this).parent().parent().parent();
 
@@ -464,21 +469,18 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     if (lastFocusableElement === e.target && e.keyCode === 9 && !e.shiftKey) {
       e.preventDefault();
       button.focus(); // Set focus on first element - that's actually close menu button.
-      console.log(1);
     }
 
     // Redirect first Shift+Tab to toggle button element.
     if (firstFocusableElement === e.target && e.keyCode === 9 && e.shiftKey) {
       e.preventDefault();
       button.focus(); // Set focus on last element.
-      console.log(2);
     }
 
     // Redirect Shift+Tab from the toggle button to last focusable element.
     if (button === e.target && e.keyCode === 9 && e.shiftKey) {
       e.preventDefault();
       lastFocusableElement.focus(); // Set focus on last element.
-      console.log(3);
     }
   }
 }(jQuery));
