@@ -90,7 +90,7 @@ lazyload(images, {
 
     // If is outside link and has target="_blank"
     if (!currentHost.test($(this).attr('href')) && !attr && '_blank' === $(this).attr('target')) {
-      $(this).attr('aria-label', maailma2030_screenReaderText.external_link + ', ' + maailma2030_screenReaderText.target_blank + ' ' + txt);
+      $(this).attr('aria-label', air_light_screenReaderText.external_link + ', ' + air_light_screenReaderText.target_blank + ' ' + txt);
     }
   });
 
