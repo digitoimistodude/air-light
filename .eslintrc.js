@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['temp.js', 'js/src/front-end.js'],
   parser: 'babel-eslint',
   extends: 'eslint-config-airbnb/base',
   rules: {
