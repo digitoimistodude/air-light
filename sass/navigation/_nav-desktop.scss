@@ -276,9 +276,9 @@ $submenu-dropdown-toggle-hover: (
         background-color: map-get($dropdown-toggle, 'background');
         border: map-get($dropdown-toggle, 'border');
         border-radius: map-get($dropdown-toggle, 'border-radius');
-        color: map-get($submenu-dropdown-toggle, 'color');
-        height: map-get($submenu-dropdown-toggle, 'height');
-        width: map-get($submenu-dropdown-toggle, 'width');
+        color: map-get($dropdown-toggle, 'color');
+        height: map-get($dropdown-toggle, 'height');
+        width: map-get($dropdown-toggle, 'width');
         /* stylelint-enable */
         padding: 0;
         display: inline-flex;

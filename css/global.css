@@ -4165,9 +4165,7 @@ ul.tags {
 	background-color: transparent;
 	border: none;
 	border-radius: 50%;
-	color: #3962c9;
-	height: auto;
-	width: 3rem; /* stylelint-enable */
+	color: #fff; /* stylelint-enable */
 	padding: 0;
 	display: inline-flex;
 	align-items: center;
