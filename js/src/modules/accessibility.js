@@ -2,7 +2,7 @@
  * Accessibility functions
  */
 
-import ask from './localization';
+import { ask } from './helpers';
 
 export default function externalLinks() {
   // Accessibility add "External link:" aria label for external links

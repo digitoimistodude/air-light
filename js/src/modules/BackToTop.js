@@ -3,7 +3,7 @@
  */
 
 import MoveTo from 'moveto';
-import debounce from './helpers';
+import { debounce } from './helpers';
 
 export default class backToTop {
   constructor() {
@@ -70,7 +70,7 @@ export default class backToTop {
         ease: 'easeInQuad',
       },
       easeFunctions);
-      moveTo.registerTrigger(this.moveTo);
+      moveTo.registerTrigger(this.backToTop);
     };
   }
 }
