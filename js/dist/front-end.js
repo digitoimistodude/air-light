@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return backToTop; });\n/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ \"./node_modules/@babel/runtime/helpers/toConsumableArray.js\");\n/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var moveto__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moveto */ \"./node_modules/moveto/dist/moveTo.js\");\n/* harmony import */ var moveto__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moveto__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers */ \"./js/src/modules/helpers.js\");\n\n\n\n\n/**\n * Back to top button\n */\n\n\n\nvar backToTop = /*#__PURE__*/function () {\n  function backToTop() {\n    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_1___default()(this, backToTop);\n\n    // Browser window scroll (in pixels) after which the 'back to top' link is shown\n    this.offset = 300;\n    this.offsetOpacity = 1200;\n    this.backToTop = document.querySelector('.back-to-top');\n    this.contentDivs = document.querySelectorAll('.block');\n  }\n  /**\n   * Initialize moveto and backto top button listeners\n   */\n\n\n  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(backToTop, [{\n    key: \"init\",\n    value: function init() {\n      window.addEventListener('scroll', Object(_helpers__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(this.toggleBackToTop(), 100));\n      window.addEventListener('scroll', Object(_helpers__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(this.changeBackToTopColor(), 100));\n      document.addEventListener('DOMContentLoaded', Object(_helpers__WEBPACK_IMPORTED_MODULE_4__[\"default\"])(this.registerMoveTo(), 100));\n    }\n  }, {\n    key: \"toggleBackToTop\",\n    value: function toggleBackToTop() {\n      var _this = this;\n\n      return function () {\n        if (window.scrollY > _this.offset) {\n          _this.backToTop.classList.add('is-visible');\n        } else {\n          _this.backToTop.classList.remove('is-visible');\n        }\n\n        if (window.scrollY > _this.offsetOpacity) {\n          _this.backToTop.classList.add('fade-out');\n        } else {\n          _this.backToTop.classList.remove('fade-out');\n        }\n      };\n    } // Accessibility: Ensure back to top is right color on right background\n    // Note: Needs .has-light-bg or .has-dark-bg class on all blocks\n\n  }, {\n    key: \"changeBackToTopColor\",\n    value: function changeBackToTopColor() {\n      var _this2 = this;\n\n      return function () {\n        var stickyOffset = _this2.backToTop.getBoundingClientRect().top; // eslint-disable-next-line consistent-return\n\n\n        _this2.contentDivs.forEach(function (contentDiv) {\n          var thisOffset = parseInt(contentDiv.getBoundingClientRect().bottom, 10);\n          var actPosition = parseInt(thisOffset - window.scrollY, 10);\n          console.table({\n            \"class\": _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0___default()(contentDiv.classList).join(','),\n            thisOffset: thisOffset,\n            scrollY: window.scrollY,\n            actPosition: actPosition,\n            stickyOffset: stickyOffset\n          });\n\n          if (actPosition < stickyOffset.top && actPosition + contentDiv.offsetHeight > 0) {\n            backToTop.removeClass('has-light-bg has-dark-bg').addClass(contentDiv.hasClass('has-light-bg') ? 'has-light-bg' : 'has-dark-bg');\n            return false;\n          }\n        });\n      };\n    }\n  }, {\n    key: \"registerMoveTo\",\n    value: function registerMoveTo() {\n      var _this3 = this;\n\n      return function () {\n        var easeFunctions = {\n          easeInQuad: function easeInQuad(currentTime, startValue, changeInValue, duration) {\n            var time = currentTime;\n            time /= duration;\n            return changeInValue * time * time + startValue;\n          },\n          easeOutQuad: function easeOutQuad(currentTime, startValue, changeInValue, duration) {\n            var time = currentTime;\n            time /= duration;\n            return -changeInValue * time * (time - 2) + startValue;\n          }\n        };\n        var moveTo = new moveto__WEBPACK_IMPORTED_MODULE_3___default.a({\n          ease: 'easeInQuad'\n        }, easeFunctions);\n        moveTo.registerTrigger(_this3.moveTo);\n      };\n    }\n  }]);\n\n  return backToTop;\n}();\n\n\n\n//# sourceURL=webpack:///./js/src/modules/BackToTop.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return backToTop; });\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var moveto__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moveto */ \"./node_modules/moveto/dist/moveTo.js\");\n/* harmony import */ var moveto__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moveto__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers */ \"./js/src/modules/helpers.js\");\n\n\n\n/**\n * Back to top button\n */\n\n\n\nvar backToTop = /*#__PURE__*/function () {\n  function backToTop() {\n    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, backToTop);\n\n    // Browser window scroll (in pixels) after which the 'back to top' link is shown\n    this.offset = 300;\n    this.offsetOpacity = 1200;\n    this.backToTop = document.querySelector('.back-to-top');\n    this.contentDivs = document.querySelectorAll('.block');\n  }\n  /**\n   * Initialize moveto and backto top button listeners\n   */\n\n\n  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_1___default()(backToTop, [{\n    key: \"init\",\n    value: function init() {\n      window.addEventListener('scroll', Object(_helpers__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(this.toggleBackToTop(), 50));\n      window.addEventListener('scroll', Object(_helpers__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(this.changeBackToTopColor(), 10));\n      document.addEventListener('DOMContentLoaded', this.registerMoveTo());\n    }\n  }, {\n    key: \"toggleBackToTop\",\n    value: function toggleBackToTop() {\n      var _this = this;\n\n      return function () {\n        _this.backToTop.classList.toggle('is-visible', window.scrollY > _this.offset);\n\n        _this.backToTop.classList.toggle('fade-out', window.scrollY > _this.offsetOpacity);\n      };\n    } // Accessibility: Ensure back to top is right color on right background\n    // Note: Needs .has-light-bg or .has-dark-bg class on all blocks\n\n  }, {\n    key: \"changeBackToTopColor\",\n    value: function changeBackToTopColor() {\n      var _this2 = this;\n\n      return function () {\n        var stickyTop = _this2.backToTop.getBoundingClientRect().top;\n\n        var stickyHeight = _this2.backToTop.offsetHeight;\n\n        for (var index = 0; index < _this2.contentDivs.length; index += 1) {\n          var contentDiv = _this2.contentDivs[index];\n          var contentBottom = parseInt(contentDiv.getBoundingClientRect().bottom, 10);\n          var contentTop = parseInt(contentDiv.getBoundingClientRect().top, 10);\n\n          if (contentBottom > stickyTop + stickyHeight / 3 && contentTop < stickyTop + stickyHeight / 2) {\n            _this2.backToTop.classList.remove('has-light-bg', 'has-dark-bg');\n\n            _this2.backToTop.classList.add(contentDiv.classList.contains('has-light-bg') ? 'has-light-bg' : 'has-dark-bg');\n\n            break;\n          }\n        }\n      };\n    }\n  }, {\n    key: \"registerMoveTo\",\n    value: function registerMoveTo() {\n      var _this3 = this;\n\n      return function () {\n        var easeFunctions = {\n          easeInQuad: function easeInQuad(currentTime, startValue, changeInValue, duration) {\n            var time = currentTime;\n            time /= duration;\n            return changeInValue * time * time + startValue;\n          },\n          easeOutQuad: function easeOutQuad(currentTime, startValue, changeInValue, duration) {\n            var time = currentTime;\n            time /= duration;\n            return -changeInValue * time * (time - 2) + startValue;\n          }\n        };\n        var moveTo = new moveto__WEBPACK_IMPORTED_MODULE_2___default.a({\n          ease: 'easeInQuad'\n        }, easeFunctions);\n        moveTo.registerTrigger(_this3.moveTo);\n      };\n    }\n  }]);\n\n  return backToTop;\n}();\n\n\n\n//# sourceURL=webpack:///./js/src/modules/BackToTop.js?");
 
 /***/ }),
 
@@ -145,28 +145,6 @@ eval("/*\nAn accessible menu for WordPress\n\nhttps://github.com/theme-smith/acc
 
 /***/ }),
 
-/***/ "./node_modules/@babel/runtime/helpers/arrayLikeToArray.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/arrayLikeToArray.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function _arrayLikeToArray(arr, len) {\n  if (len == null || len > arr.length) len = arr.length;\n\n  for (var i = 0, arr2 = new Array(len); i < len; i++) {\n    arr2[i] = arr[i];\n  }\n\n  return arr2;\n}\n\nmodule.exports = _arrayLikeToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/arrayLikeToArray.js?");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ \"./node_modules/@babel/runtime/helpers/arrayLikeToArray.js\");\n\nfunction _arrayWithoutHoles(arr) {\n  if (Array.isArray(arr)) return arrayLikeToArray(arr);\n}\n\nmodule.exports = _arrayWithoutHoles;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js?");
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime/helpers/classCallCheck.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/classCallCheck.js ***!
@@ -197,50 +175,6 @@ eval("function _defineProperties(target, props) {\n  for (var i = 0; i < props.l
 /***/ (function(module, exports) {
 
 eval("function _defineProperty(obj, key, value) {\n  if (key in obj) {\n    Object.defineProperty(obj, key, {\n      value: value,\n      enumerable: true,\n      configurable: true,\n      writable: true\n    });\n  } else {\n    obj[key] = value;\n  }\n\n  return obj;\n}\n\nmodule.exports = _defineProperty;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/defineProperty.js?");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/iterableToArray.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/iterableToArray.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function _iterableToArray(iter) {\n  if (typeof Symbol !== \"undefined\" && Symbol.iterator in Object(iter)) return Array.from(iter);\n}\n\nmodule.exports = _iterableToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/iterableToArray.js?");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/nonIterableSpread.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function _nonIterableSpread() {\n  throw new TypeError(\"Invalid attempt to spread non-iterable instance.\\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.\");\n}\n\nmodule.exports = _nonIterableSpread;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/nonIterableSpread.js?");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/toConsumableArray.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ \"./node_modules/@babel/runtime/helpers/arrayWithoutHoles.js\");\n\nvar iterableToArray = __webpack_require__(/*! ./iterableToArray */ \"./node_modules/@babel/runtime/helpers/iterableToArray.js\");\n\nvar unsupportedIterableToArray = __webpack_require__(/*! ./unsupportedIterableToArray */ \"./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js\");\n\nvar nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ \"./node_modules/@babel/runtime/helpers/nonIterableSpread.js\");\n\nfunction _toConsumableArray(arr) {\n  return arrayWithoutHoles(arr) || iterableToArray(arr) || unsupportedIterableToArray(arr) || nonIterableSpread();\n}\n\nmodule.exports = _toConsumableArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/toConsumableArray.js?");
-
-/***/ }),
-
-/***/ "./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("var arrayLikeToArray = __webpack_require__(/*! ./arrayLikeToArray */ \"./node_modules/@babel/runtime/helpers/arrayLikeToArray.js\");\n\nfunction _unsupportedIterableToArray(o, minLen) {\n  if (!o) return;\n  if (typeof o === \"string\") return arrayLikeToArray(o, minLen);\n  var n = Object.prototype.toString.call(o).slice(8, -1);\n  if (n === \"Object\" && o.constructor) n = o.constructor.name;\n  if (n === \"Map\" || n === \"Set\") return Array.from(o);\n  if (n === \"Arguments\" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);\n}\n\nmodule.exports = _unsupportedIterableToArray;\n\n//# sourceURL=webpack:///./node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js?");
 
 /***/ }),
 

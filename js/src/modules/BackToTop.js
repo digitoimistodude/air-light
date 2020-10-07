@@ -18,23 +18,15 @@ export default class backToTop {
    * Initialize moveto and backto top button listeners
    */
   init() {
-    window.addEventListener('scroll', debounce(this.toggleBackToTop(), 100));
-    window.addEventListener('scroll', debounce(this.changeBackToTopColor(), 100));
-    document.addEventListener('DOMContentLoaded', debounce(this.registerMoveTo(), 100));
+    window.addEventListener('scroll', debounce(this.toggleBackToTop(), 50));
+    window.addEventListener('scroll', debounce(this.changeBackToTopColor(), 10));
+    document.addEventListener('DOMContentLoaded', this.registerMoveTo());
   }
 
   toggleBackToTop() {
     return () => {
-      if (window.scrollY > this.offset) {
-        this.backToTop.classList.add('is-visible');
-      } else {
-        this.backToTop.classList.remove('is-visible');
-      }
-      if (window.scrollY > this.offsetOpacity) {
-        this.backToTop.classList.add('fade-out');
-      } else {
-        this.backToTop.classList.remove('fade-out');
-      }
+      this.backToTop.classList.toggle('is-visible', window.scrollY > this.offset);
+      this.backToTop.classList.toggle('fade-out', window.scrollY > this.offsetOpacity);
     };
   }
 
@@ -42,30 +34,21 @@ export default class backToTop {
   // Note: Needs .has-light-bg or .has-dark-bg class on all blocks
   changeBackToTopColor() {
     return () => {
-      const stickyOffset = this.backToTop.getBoundingClientRect().top;
-      // eslint-disable-next-line consistent-return
-      this.contentDivs.forEach((contentDiv) => {
-        const thisOffset = parseInt(contentDiv.getBoundingClientRect().bottom, 10);
-        const actPosition = parseInt(thisOffset - window.scrollY, 10);
-        console.table({
-          class: [...contentDiv.classList].join(','),
-          thisOffset,
-          scrollY: window.scrollY,
-          actPosition,
-          stickyOffset,
-        });
-        if (
-          actPosition < stickyOffset.top
-          && actPosition + contentDiv.offsetHeight > 0
-        ) {
-          backToTop
-            .removeClass('has-light-bg has-dark-bg')
-            .addClass(
-              contentDiv.hasClass('has-light-bg') ? 'has-light-bg' : 'has-dark-bg',
-            );
-          return false;
+      const stickyTop = this.backToTop.getBoundingClientRect().top;
+      const stickyHeight = this.backToTop.offsetHeight;
+      for (let index = 0; index < this.contentDivs.length; index += 1) {
+        const contentDiv = this.contentDivs[index];
+        const contentBottom = parseInt(contentDiv.getBoundingClientRect().bottom, 10);
+        const contentTop = parseInt(contentDiv.getBoundingClientRect().top, 10);
+
+        if (contentBottom > stickyTop + (stickyHeight / 3) && contentTop < stickyTop + (stickyHeight / 2)) {
+          this.backToTop.classList.remove('has-light-bg', 'has-dark-bg');
+          this.backToTop.classList.add(
+            contentDiv.classList.contains('has-light-bg') ? 'has-light-bg' : 'has-dark-bg',
+          );
+          break;
         }
-      });
+      }
     };
   }
 
