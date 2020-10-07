@@ -25,5 +25,6 @@ export function ask(slug) {
   if (typeof window.air_light_screenReaderText === 'object' && Object.prototype.hasOwnProperty.call(window.air_light_screenReaderText, slug)) {
     return window.air_light_screenReaderText[slug];
   }
-  return `Missing localized string: ${slug}`;
+  console.warn(`Missing localized string: ${slug}`);
+  return slug;
 }
