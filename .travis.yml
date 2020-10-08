@@ -92,7 +92,7 @@ script:
     # Run the theme through JavaScript Code Style checker.
     # - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # Run the theme through Eslint.
-    - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev eslint babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev airbnb-browser-shims eslint babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link eslint; fi
     - if [[ "$SNIFF" == "1" ]]; then eslint .; fi
     # WordPress Coding Standards.
