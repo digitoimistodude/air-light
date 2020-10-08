@@ -70,10 +70,10 @@ before_script:
     # - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
     # Install eslint.
     # @link https://eslint.org/
-    - if [[ "$SNIFF" == "1" ]]; then npm i eslint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint; fi
     # Pull in the Air-light eslint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.eslintrc.js; fi
-    - if [[ "$SNIFF" == "1" ]]; then npm i eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save; fi
     # Install JSHint, a JavaScript Code Quality Tool.
     # @link http://jshint.com/docs/
     # - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
