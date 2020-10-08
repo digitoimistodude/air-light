@@ -48,7 +48,6 @@ install:
     # Install eslint and its dependencies for this project.
     # @link https://eslint.org/
     - if [[ "$SNIFF" == "1" ]]; then npm i --g eslint; fi
-    - if [[ "$SNIFF" == "1" ]]; then npm i --no-save babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks; fi
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -93,7 +92,7 @@ script:
     # Run the theme through JavaScript Code Style checker.
     # - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # Run the theme through Eslint.
-    - if [[ "$SNIFF" == "1" ]]; then npm i --no-save eslint babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev eslint babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link eslint; fi
     - if [[ "$SNIFF" == "1" ]]; then eslint .; fi
     # WordPress Coding Standards.
