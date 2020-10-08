@@ -14,6 +14,9 @@ dist: xenial
 # @link https://about.travis-ci.org/docs/user/languages/php/
 language: php
 
+# Define node version
+node_js: node
+
 # Declare versions of PHP to use. Use one decimal max.
 # @link https://docs.travis-ci.com/user/build-configuration/
 matrix:
