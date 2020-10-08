@@ -66,11 +66,13 @@ before_script:
     # Install eslint.
     # @link https://eslint.org/
     - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint; fi
+    # Pull in the Air-light eslint rules.
+    - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.eslintrc.js; fi
     # Install JSHint, a JavaScript Code Quality Tool.
     # @link http://jshint.com/docs/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
+    # - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
     # Pull in the WP Core jshint rules.
-    - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
+    # - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -79,7 +81,7 @@ script:
     # Search for PHP syntax errors.
     - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
     # Run the theme through JSHint.
-    - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
+    # - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
     # Run the theme through JavaScript Code Style checker.
     # - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # Run the theme through Eslint.
