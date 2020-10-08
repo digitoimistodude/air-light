@@ -38,8 +38,10 @@ matrix:
 # e.g. sudo apt-get update.
 # Failures in this section will result in build status 'errored'.
 before_install:
+    - if [[ `npm -v` != 6* ]]; then npm i -g npm@6.14.6; fi
     - sudo rm -rf ~/.nvm - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     - sudo apt-get install -y nodejs
+    - if [[ `node -v` != v10* ]]; then nvm install stable; fi
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
