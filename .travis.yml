@@ -62,7 +62,10 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
     # Install JSCS: JavaScript Code Style checker.
     # @link http://jscs.info/
-    - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
+    # - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
+    # Install eslint.
+    # @link https://eslint.org/
+    - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint; fi
     # Install JSHint, a JavaScript Code Quality Tool.
     # @link http://jshint.com/docs/
     - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
@@ -78,7 +81,9 @@ script:
     # Run the theme through JSHint.
     - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
     # Run the theme through JavaScript Code Style checker.
-    - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
+    # - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
+    # Run the theme through Eslint.
+    - if [[ "$SNIFF" == "1" ]]; then eslint .; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
     # @link https://pear.php.net/package/PHP_CodeSniffer/
