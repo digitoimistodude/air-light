@@ -72,7 +72,8 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.eslintrc.js; fi
     # Install eslint and its dependencies for this project.
     # @link https://eslint.org/
-    - if [[ "$SNIFF" == "1" ]]; then npm i eslint babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks --save; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks -g; fi
     # Install JSHint, a JavaScript Code Quality Tool.
     # @link http://jshint.com/docs/
     # - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
