@@ -28,6 +28,7 @@ matrix:
         - php: '7.0'
         # aliased to a recent 7.2.x version
         - php: '7.2'
+          env: SNIFF=1
         # bleeding edge PHP
         - php: 'nightly'
 
@@ -42,6 +43,11 @@ before_install:
     - sudo rm -rf ~/.nvm - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     - sudo apt-get install -y nodejs
     - if [[ `node -v` != v10* ]]; then nvm install stable; fi
+    - npm i -g eslint-config-airbnb
+    - npm i -g eslint-plugin-import
+    - npm i -g eslint-plugin-jsx-a11y
+    - npm i -g eslint-plugin-react
+    - npm i -g eslint-plugin-react-hooks
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
