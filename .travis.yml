@@ -43,11 +43,6 @@ before_install:
     - sudo rm -rf ~/.nvm - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     - sudo apt-get install -y nodejs
     - if [[ `node -v` != v10* ]]; then nvm install stable; fi
-    - npm i -g eslint-config-airbnb
-    - npm i -g eslint-plugin-import
-    - npm i -g eslint-plugin-jsx-a11y
-    - npm i -g eslint-plugin-react
-    - npm i -g eslint-plugin-react-hooks
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -78,6 +73,7 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then npm install -g eslint; fi
     # Pull in the Air-light eslint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.eslintrc.js; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react; fi
     # Install JSHint, a JavaScript Code Quality Tool.
     # @link http://jshint.com/docs/
     # - if [[ "$SNIFF" == "1" ]]; then npm install -g jshint; fi
