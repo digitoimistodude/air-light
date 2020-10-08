@@ -93,7 +93,7 @@ script:
     # Run the theme through JavaScript Code Style checker.
     # - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
     # Run the theme through Eslint.
-    - if [[ "$SNIFF" == "1" ]]; then npm run eslint .; fi
+    - if [[ "$SNIFF" == "1" ]]; then eslint .; fi
     # WordPress Coding Standards.
     # @link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards
     # @link https://pear.php.net/package/PHP_CodeSniffer/
