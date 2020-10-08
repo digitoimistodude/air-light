@@ -66,6 +66,8 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
     # Install PHP Compatibility sniffs.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR; fi
+    # Pull in the Air-light phpcs rules.
+    - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/phpcs.xml; fi
     # Install JSCS: JavaScript Code Style checker.
     # @link http://jscs.info/
     # - if [[ "$SNIFF" == "1" ]]; then npm install -g jscs; fi
