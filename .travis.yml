@@ -61,7 +61,7 @@ before_script:
     # Install WordPress Coding Standards.
     - if [[ "$SNIFF" == "1" ]]; then git clone -b 2.2.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR; fi
     # Set install path for WordPress Coding Standards.
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths $SNIFFS_DIR; fi
+    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set $WPCS_DIR,$PHPCOMPAT_DIR,$SNIFFS_DIR; fi
     # After CodeSniffer install you should refresh your path.
     - if [[ "$SNIFF" == "1" ]]; then phpenv rehash; fi
     # Install PHP Compatibility sniffs.
@@ -106,7 +106,6 @@ script:
     # for example: `--standard=wpcs.xml`.
     # You can use any of the normal PHPCS command line arguments in the command:
     # https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs --config-set installed_paths --ignore=node_modules,*/css/* $WPCS_DIR,$PHPCOMPAT_DIR; fi
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/* --standard=WordPress; fi
     # Run the theme through stylelint.
     - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev stylelint stylelint-config-recommended stylelint-config-standard stylelint-config-wordpress stylelint-declaration-use-variable stylelint-order stylelint-scss stylelint-value-no-unknown-custom-properties; fi
