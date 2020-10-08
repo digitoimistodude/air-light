@@ -106,7 +106,7 @@ script:
     # for example: `--standard=wpcs.xml`.
     # You can use any of the normal PHPCS command line arguments in the command:
     # https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
-    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/* --standard=WordPress; fi
+    - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/* --standard=phpcs.xml; fi
     # Run the theme through stylelint.
     - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev postcss stylelint stylelint-config-recommended stylelint-config-standard stylelint-config-wordpress stylelint-declaration-use-variable stylelint-order stylelint-scss stylelint-value-no-unknown-custom-properties; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link postcss; fi
