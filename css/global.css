@@ -1878,7 +1878,7 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	animation: plane 10s cubic-bezier(0.86, 0, 0.07, 1) 1s infinite;
 }
 
-.block.block-entry-header-demo h1 {
+.block.block-entry-header-demo .main-heading {
 	font-size: 32px;
 	color: #fff;
 	margin: 0;
@@ -3694,7 +3694,7 @@ p.is-style-boxed {
 
 @media screen and (min-width: 320px) {
 
-.block.block-entry-header-demo h1 {
+.block.block-entry-header-demo .main-heading {
 	font-size: calc(32px + 30 * ((100vw - 320px) / 1600));
 }
 
@@ -3825,7 +3825,7 @@ blockquote::before {
 	padding: 2rem 4rem;
 }
 
-.block.block-entry-header-demo h1 {
+.block.block-entry-header-demo .main-heading {
 	padding: 2rem 4rem;
 	text-align: left;
 }
@@ -4312,7 +4312,7 @@ ul.tags {
 
 @media screen and (min-width: 1920px) {
 
-.block.block-entry-header-demo h1 {
+.block.block-entry-header-demo .main-heading {
 	font-size: 62px;
 }
 

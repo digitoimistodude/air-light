@@ -204,7 +204,7 @@ $color-demo-footer-background: #eaeaea;
     }
   }
 
-  h1 {
+  .main-heading {
     @include responsive-font(32px, 62px);
     color: $color-white;
     margin: 0;
