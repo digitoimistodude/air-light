@@ -37,7 +37,7 @@
     "stylelint-scss": "^3.18.0",
     "stylelint-value-no-unknown-custom-properties": "^3.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack-stream": "^6.1.1"
+    "webpack-stream": "^6.1.0"
   },
   "dependencies": {
     "airbnb-browser-shims": "^3.3.0",
