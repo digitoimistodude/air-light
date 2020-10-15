@@ -1,28 +1,28 @@
 ## Air-light - A minimalist WordPress starter theme
 
-[![Build Status](https://img.shields.io/travis/digitoimistodude/air-light.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air-light) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air-light.svg?style=flat-square)](https://github.com/digitoimistodude/air-light/releases) [![GitHub contributors](https://img.shields.io/github/contributors/digitoimistodude/air-light.svg?style=flat-square)]()
+[![Build Status](https://img.shields.io/travis/digitoimistodude/air-light.svg?style=flat-square)](https://travis-ci.org/digitoimistodude/air-light) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air-light.svg?style=flat-square)](https://github.com/digitoimistodude/releases) ![GitHub contributors](https://img.shields.io/github/contributors/digitoimistodude/air-light.svg?style=flat-square)
 
-Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
+Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
 
 ## [Demo](https://dudetest.xyz/air)
 
-- **CSS gzipped:** 12 KB *(113 KB original)*
-- **JS gzipped:** 3.4 KB *(10.8 KB original)*
-- **Front page HTML**: 7.4 KB *(29.4 KB original)*
+* **CSS gzipped:** 12 KB *(113 KB original)*
+* **JS gzipped:** 3.4 KB *(10.8 KB original)*
+* **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
-## Team
+## Top contributors
 
-This theme is maintained by the following persons and a bunch of [awesome contributors](https://github.com/digitoimistodude/air-light/graphs/contributors). Wanna join in development? Let us know!
+This theme is constantly kept up to date by the following persons and a bunch of [awesome contributors](https://github.com/digitoimistodude/graphs/contributors). Wanna join in development? Let us know!
 
-[![Roni Laukkarinen](https://avatars3.githubusercontent.com/u/1534150?v=4&s=70)](https://github.com/ronilaukkarinen) | [![Timi Wahalahti](https://avatars1.githubusercontent.com/u/415544?s=70&v=4)](https://github.com/timiwahalahti) | [![Niku Hietanen](https://avatars3.githubusercontent.com/u/16206361?v=4&s=70)](https://github.com/Niq1982) |
---- | --- |  --- |
-[Roni Laukkarinen](https://github.com/ronilaukkarinen) | [Timi Wahalahti](https://github.com/timiwahalahti) | [Niku Hietanen](https://github.com/Niq1982) |
+| [![Roni Laukkarinen](https://avatars3.githubusercontent.com/u/1534150?v=4&s=70)](https://github.com/ronilaukkarinen) | [![Timi Wahalahti](https://avatars1.githubusercontent.com/u/415544?s=70&v=4)](https://github.com/timiwahalahti) | [![Niku Hietanen](https://avatars3.githubusercontent.com/u/16206361?v=4&s=70)](https://github.com/Niq1982) | [![Michael Bourne](https://avatars3.githubusercontent.com/u/22846422?v=4&s=70)](https://github.com/ronilaukkarinen) |
+| --- | --- | --- | --- |
+| [Roni Laukkarinen](https://github.com/ronilaukkarinen) | [Timi Wahalahti](https://github.com/timiwahalahti) | [Niku Hietanen](https://github.com/Niq1982) | [Michael Bourne](https://github.com/michaelbourne) | |
 
-![](https://i.imgur.com/s7qAN6U.png "Screenshot")
+![](https://i.imgur.com/s7qAN6U.png)
 
 ### Mission & vision
 
-Air-light is built to be very straightforward, backwards compatible, front-end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in _s are implemented as soon as they are committed.
+Air-light is built to be very straightforward, backwards compatible, front-end developer friendly and modular by its structure. Following [Underscores](https://github.com/automattic/_s) and [WordPress Theme Coding Standards](https://codex.wordpress.org/Theme_Development#Theme_Development_Standards) best practices and most of the changes in \_s are implemented as soon as they are committed.
 
 **Our mission and goal** is **minimalism** and **simplicity**. **Our vision** is to build a theme that will not implement its own wrappers or functions, will not use any templating languages that would take things further from traditional PHP or CSS, will contain nothing that people will not use or need. Air-light will be free of weird "app-like" folder structures or odd syntaxes that nobody else uses. We love WordPress as it was and as it is.
 
@@ -30,7 +30,7 @@ Air was renamed to air-light in version 3.7.8 (March 20th, 2018), because *air* 
 
 ### Official, approved, accessibility-ready!
 
-Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://wordpress.org/themes/air-light/) on June 4, 2018. But please note, all changes you do to the theme without generating your own or changing textdomain will be overridden in theme updates - so if you use this theme as a starting point, please follow instructions and/or replace the textdomain with your own.
+Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://wordpress.org/themes/) on June 4, 2018. But please note, all changes you do to the theme without generating your own or changing textdomain will be overridden in theme updates - so if you use this theme as a starting point, please follow instructions and/or replace the textdomain with your own.
 
 ## Table of contents
 
@@ -79,7 +79,7 @@ Air is licensed with [The MIT License (MIT)](http://choosealicense.com/licenses/
 
 We try to achieve as classic WordPress theme structure as possible to make it possible for wider audience to use and understand and to go with official WordPress Theme Coding Standards.
 
-```shell
+``` shell
 themes/your-theme-name/             # → Root of your air-light based theme
 ├── 404.php                         # → Default "not found" page
 ├── archive.php                     # → Default archive template
@@ -191,7 +191,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 * All good things from the latest [Underscores](https://github.com/Automattic/_s)
 * [SASS](http://sass-lang.com/)-support (SCSS-syntax)
-* CSS reset with a combination with Nicolas Gallagher's [normalize*css](https://github.com/necolas/normalize.css/)
+* CSS reset with a combination with Nicolas Gallagher's [normalize\*css](https://github.com/necolas/normalize.css/)
 * Flexbox-ready
 * CSS Grid-ready
 * Section blocks and containers
@@ -200,8 +200,8 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Typography
 
-* Responsive typography with viewport units with fallbacks, see more in [sass/layout/_typography.scss](https://github.com/digitoimistodude/air/blob/master/sass/layout/_typography.scss) and [sass/base/_helpers.scss](https://github.com/digitoimistodude/air/blob/master/sass/base/_helpers.scss#L91), default syntax is `@include responsive-font($font-size-min, $font-size-max);` (formerly [Megatype](https://github.com/StudioThick/megatype), still recommended with blogs or text-only based sites, but **not** included by default after 1.5.0)
-* Web fonts file are preferred, helper included: [Sass Boilerplate's fontFace-mixin](https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss). Put files in `fonts/` directory, you'll need .odt, .ttf, .woff, .woff2. Then just `@include fontFace('Proxima Nova', '../fonts/proximanova-regular-webfont', 400);` in _typography.scss.
+* Responsive typography with viewport units with fallbacks, see more in [sass/layout/\_typography.scss](https://github.com/digitoimistodude/air/blob/master/sass/layout/_typography.scss) and [sass/base/\_helpers.scss](https://github.com/digitoimistodude/air/blob/master/sass/base/_helpers.scss#L91), default syntax is `@include responsive-font($font-size-min, $font-size-max);` (formerly [Megatype](https://github.com/StudioThick/megatype), still recommended with blogs or text-only based sites, but **not** included by default after 1.5.0)
+* Web fonts file are preferred, helper included: [Sass Boilerplate's fontFace-mixin](https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss). Put files in `fonts/` directory, you'll need .odt, .ttf, .woff, .woff2. Then just `@include fontFace('Proxima Nova', '../fonts/proximanova-regular-webfont', 400);` in \_typography.scss.
 
 #### Development
 
@@ -232,25 +232,31 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 #### Custom Post Types
 
 Air-light can register your CPT:s automatically.
-1. Add your custom post type to theme settings under post_types, located in `functions.php` like this:
+
+1. Add your custom post type to theme settings under post\_types, located in `functions.php` like this:
+
 ```
 'post_types' => [
   'your-post-type' => 'Your_Post_Type'
 ]
 ```
+
 2. Add a file `inc/post-types/your-post-type.php`
 3. Extend `Post_Type` class with `Your_Post_Type` and define your post type in a public function called `register()`. See the example: `inc/post-types/your-post-type.php`.
 
 #### Custom Taxonomies
 
 Air-light can register your Taxonomies automatically.
+
 1. Add your taxonomy to theme settings under taxonomies, located in `functions.php` like this:
+
 ```
 'your-taxonomy' => [
   'name' => 'Your_Taxonomy'
   'post_types' => 'post, page'
 ]
 ```
+
 2. Add a file `inc/taxonomies/your-taxonomy.php`
 3. Extend `Taxonomy` class with `Your_Taxonomy` and define your taxonomy in a public function called `register()`. See the example: `inc/taxonomies/your-taxonomy.php`.
 
@@ -259,6 +265,7 @@ Air-light can register your Taxonomies automatically.
 Air-light uses namespaced PHP since 5.0.0. This means that we no longer need to prefix functions and hooks, because `namespace Air_Light;` takes care of that.
 
 When old function format was:
+
 ``` php
 // Pre_get_posts
 add_action( 'pre_get_posts', 'dude_pre_get_posts' );
@@ -268,6 +275,7 @@ function dude_pre_get_posts( $query ) {
 ```
 
 New format goes like this:
+
 ``` php
 // Pre_get_posts
 add_action( 'pre_get_posts', __NAMESPACE__ . '\pre_get_posts' );
@@ -293,7 +301,7 @@ Creating accessible websites is really important and our goal is to make air as 
 
 #### Lazy load
 
-From 4.7.1 air-light has a lazy loading image features for background images and imgs. If you don't use this feature, remove it from [scripts](https://github.com/digitoimistodude/air-light/blob/d517688bb400ac68100dcbdcd4bc7dbce7739099/js/src/scripts.js#L10). This feature depends on [air-helper](https://github.com/digitoimistodude/air-helper), check out [the documentation in air-helper](https://github.com/digitoimistodude/air-helper#image-lazyloading-1) for further instructions.
+From 4.7.1 air-light has a lazy loading image features for background images and imgs. If you don't use this feature, remove it from [scripts](https://github.com/digitoimistodude/blob/d517688bb400ac68100dcbdcd4bc7dbce7739099/js/src/scripts.js#L10). This feature depends on [air-helper](https://github.com/digitoimistodude/air-helper), check out [the documentation in air-helper](https://github.com/digitoimistodude/air-helper#image-lazyloading-1) for further instructions.
 
 #### Disabled features
 
@@ -379,7 +387,7 @@ Please note: If you want to change the background to lighter, you will need to e
 
 #### WooCommerce support
 
-Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/air-light/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
+Air had by default a basic WooCommerce support [from version 1.9.2](https://github.com/digitoimistodude/commit/55c539bb9cd2e35fdbfdf4f39a136c542b42b884), and for a while it was been separated to its own repository, [air-woocommerce](https://github.com/digitoimistodude/air-woocommerce) since v2.5.6.
 
 ##### How to enable
 
@@ -398,8 +406,8 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 ### Recommendations for development
 
 * macOS
-* [Devpackages](https://github.com/digitoimistodude/devpackages) - Npm and Gulp + plugins
-* [Dudestack](https://github.com/digitoimistodude/dudestack) - A toolkit for creating a new professional WordPress project with deployments. Heavily based on Bedrock by Roots.
+* [Devpackages](https://github.com/digitoimistodude/devpackages) \- Npm and Gulp \+ plugins
+* [Dudestack](https://github.com/digitoimistodude/dudestack) \- A toolkit for creating a new professional WordPress project with deployments\. Heavily based on Bedrock by Roots\.
 
 ### Our way of building new themes
 
@@ -433,7 +441,7 @@ Traditional way:
 If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your vagrant box is up and running at `10.1.2.4`, just
 
 1. Open Terminal and cd to the bin directory under air-light theme
-2. Run `sh newtheme.sh` - the script takes care of the rest (updates textdomain with your project name, checks updates for air and npm packages, runs npm install, fetches devpackages, sets up gulp, cleans up the leftover files and activates the theme via wp-cli)
+2. Run `sh newtheme.sh` \- the script takes care of the rest \(updates textdomain with your project name\, checks updates for air and npm packages\, runs npm install\, fetches devpackages\, sets up gulp\, cleans up the leftover files and activates the theme via wp\-cli\)
 
 ### Contributing
 
@@ -445,7 +453,7 @@ If you have ideas about the theme or spot an issue, please let us know. Before c
 
 If you want to improve air, you have two options.
 
-##### 1. Use dudestack
+##### 1\. Use dudestack
 
 Air is originally built on [dudestack](https://github.com/digitoimistodude/dudestack). Install our development environment with these steps (unix only, sorry Windows!):
 
@@ -465,7 +473,7 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) or `alias wp='ssh vagrant@10.1.2.4 "cd /var/www/"$(basename "$PWD")"; /var/www/"$(basename "$PWD")"/vendor/wp-cli/wp-cli/bin/wp"'` for [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) to be able to use wp-cli with simply `wp`.
 
-##### 2. Use your own stack
+##### 2\. Use your own stack
 
 To install air-light to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
 
@@ -482,13 +490,13 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 ### Debuggers
 
-Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!**
+Air-light comes with [PHP\_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!**
 
-PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
+PHP\_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
 
 The golden rule here is to make sure the commands `stylelint`, `eslint` and `phpcs` work from command line.
 
-It's also best to have all `stylelint`, `eslint`, `phpcs`, `jscs`, `jshint` living inside your editor. We think [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) is best for this, check out the [plugins inside vscode-settings repository](https://github.com/ronilaukkarinen/vscode-settings)  to make sure everything is installed.
+It's also best to have all `stylelint`, `eslint`, `phpcs`, `jscs`, `jshint` living inside your editor. We think [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) is best for this, check out the [plugins inside vscode-settings repository](https://github.com/ronilaukkarinen/vscode-settings) to make sure everything is installed.
 
 ### Releasing a new version on git and tagging principles (staff only)
 
@@ -508,12 +516,12 @@ That's it, you released a new version!
 
 After tagging and releasing version on GitHub, you need to complete these steps:
 
-1. Release the dev version to the server with this magical command (you need to have pubkey auth on for auto-login): `rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} ~/Projects/airdev/content/themes/air-light/* you@the_server:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/` (consult your team's head developer for credentials)
-2. `cd ~/Projects/airdev/content/themes/air-light/bin`
+1. Release the dev version to the server with this magical command (you need to have pubkey auth on for auto-login): `rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} ~/Projects/airdev/content/themes/* you@the_server:/var/www/dudetest.xyz/public_html/air/content/themes/` (consult your team's head developer for credentials)
+2. `cd ~/Projects/airdev/content/themes/bin`
 3. `sh air-move-out.sh`
 4. Go to [Theme Check](http://airdev.test/wp/wp-admin/themes.php?page=themecheck) and click "Check it!" button. Fix possible errors.
 5. `sh air-pack.sh`
-6. Upload *~/Projects/airdev/content/themes/air-light.zip* to [wordpress.org/themes/upload](https://wordpress.org/themes/upload/)
+6. Upload *\~/Projects/airdev/content/themes/air-light.zip* to [wordpress.org/themes/upload](https://wordpress.org/themes/upload/)
 
 ### Notes
 
@@ -523,4 +531,4 @@ Gzip file sizes tested with `wc -c css/global.css` and `gzip -c css/global.css |
 
 ### Known issues
 
-See tool related issues in [devpackages](https://github.com/digitoimistodude/devpackages#known-issues) and [air-light issue tracker](https://github.com/digitoimistodude/air-light/issues).
+See tool related issues in [devpackages](https://github.com/digitoimistodude/devpackages#known-issues) and [air-light issue tracker](https://github.com/digitoimistodude/issues).
