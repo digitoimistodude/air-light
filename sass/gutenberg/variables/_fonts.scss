@@ -1,0 +1,69 @@
+// Font family settings for Gutenberg
+// Please note: Your font files are relative so this is why you need to
+// set up font paths separately for editors in "Self-hosted fonts" below.
+$font-paragraphs: 'Archivo', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-headings: 'Archivo', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-monospace: 'Inconsolata', 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
+
+// Font size settings
+$font-size-tiny: 14px;
+$font-size-small: 16px;
+$font-size-medium: 17px;
+$font-size-large: 18px;
+$font-size-extra-large: 20px;
+$font-size-huge: 22px;
+$font-size-min: 17px;
+$font-size-max: 20px;
+$font-size-max-blog: 19px;
+$font-size-min-h1: 32px;
+$font-size-max-h1: 51px;
+$font-size-min-h2: 24px;
+$font-size-max-h2: 38px;
+$font-size-min-h3: 21px;
+$font-size-max-h3: 28px;
+$font-size-min-h4: 18px;
+$font-size-max-h4: 21px;
+$font-size-min-h5: 14px;
+$font-size-max-h5: 17px;
+$font-size-min-h6: 12px;
+$font-size-max-h6: 14px;
+$line-height-paragraphs: 1.7;
+$line-height-headings: 1.5;
+$line-height-blog: 1.77;
+$font-weight-paragraphs: 400;
+$font-weight-headings: 700;
+
+// CSS Variables for responsive fonts
+:root {
+  --font-size-default: #{$font-size-max};
+  --font-size-tiny: #{$font-size-tiny};
+  --font-size-small: #{$font-size-small};
+  --font-size-medium: #{$font-size-medium};
+  --font-size-large: #{$font-size-large};
+  --font-size-extra-large: #{$font-size-extra-large};
+  --font-size-huge: #{$font-size-huge};
+
+  // Codyhouse helper variables
+  --body-line-height: #{$line-height-paragraphs};
+  --heading-line-height: #{$line-height-headings};
+
+  // Vars in mobile
+  @media (max-width: $container-mobile) {
+    --font-size-tiny: 16px;
+    --font-size-small: 16px;
+    --font-size-default: 16px;
+    --font-size-extra-large: 18px;
+  }
+
+  // Vars in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --font-size-tiny: 14px;
+    --font-size-small: 14px;
+  }
+}
+
+// Self-hosted fonts
+@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-regular', 400);
+@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
+@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700', 700);
+@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);

@@ -1,68 +1,30 @@
-@charset 'utf-8';
+// ------------------------------------------------
+// Gutenberg editor styles
+//
+// Please note: These styles affect only wp-admin
+// editor side. Please remember to add imports
+// from "Gutenberg blocks" also to the main
+// global.scss to see them on front end side.
+// ------------------------------------------------
 
 // Helpers
 @import '../helpers/typography';
+@import '../helpers/grid';
 
 // Variables
 @import '../variables/colors';
 @import '../variables/breakpoints';
 @import '../variables/spacings';
-@import '../variables/fonts';
 
-// Accessibility
-@import 'accessibility';
+// Gutenberg editor style specific variables
+@import '../gutenberg/variables/fonts';
 
 // Gutenberg blocks
 @import '../gutenberg/boxed';
 
-// Editor styles
-/* stylelint-disable selector-class-pattern */
-.editor-styles-wrapper {
-  color: $color-paragraphs;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  li,
-  * {
-    font-family: $font-paragraphs;
-  }
-
-  p {
-    color: $color-paragraphs;
-    line-height: $line-height-blog;
-  }
-
-  // Disable focus for us only
-  &:focus {
-    outline: 0 !important;
-    border: 0 !important;
-  }
-
-  // No drop cap
-  .has-drop-cap:not(:focus)::first-letter {
-    text-transform: uppercase;
-    font-style: normal;
-    font-size: inherit;
-    float: none;
-  }
-
-  // Make editor same width than on site
-  .wp-block:not([data-align="full"]):not([data-align="wide"]) {
-    max-width: $article-max-width;
-    width: 100%;
-  }
-
-  p,
-  .block-editor-block-list__block p,
-  .block-editor-block-list__block[data-type="core/paragraph"] p {
-    font-size: $font-size-max;
-    font-family: $font-paragraphs !important;
-    color: $color-paragraphs;
-  }
+// Wider editor
+// Default is 580px which is way too narrow
+.wp-block {
+  max-width: 1000px !important;
+  font-family: $font-paragraphs !important;
 }
-/* stylelint-enable selector-class-pattern */
