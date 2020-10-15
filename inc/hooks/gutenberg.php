@@ -46,9 +46,15 @@ function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
 }
 
 /**
- * Register Gutenberg blocks
+ * Enqueue block editor JavaScript and CSS
  */
 function register_block_editor_assets() {
+
+  // Make paths variables so we don't write them twice
+  $blocks = get_theme_file_uri( 'js/src/modules/block.js', __FILE__ );
+  $editorstyles = get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ );
+
+  // Dependencies
   $dependencies = array(
     'wp-blocks',    // Provides useful functions and components for extending the editor
     'wp-i18n',      // Provides localization functions
@@ -56,10 +62,14 @@ function register_block_editor_assets() {
     'wp-components', // Provides many prebuilt components and controls
   );
 
-  wp_register_script( 'block-editor', get_theme_file_uri( 'js/src/block.js', __FILE__ ), $dependencies, null ); // phpcs:ignore
-  wp_register_style( 'block-editor', get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ ), null, null ); // phpcs:ignore
+  // Enqueue the bundled block JS file
+  wp_enqueue_script( 'block-editor-js', $blocks, $dependencies, null, 'all' ); // phpcs:ignore
+
+  // Enqueue optional editor only styles
+  wp_enqueue_style( 'block-editor-css', $editorstyles, $dependencies, null, 'all' ); // phpcs:ignore
 }
-add_action( 'admin_init', __NAMESPACE__ . '\register_block_editor_assets' );
+// Hook scripts function into block editor hook
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\register_block_editor_assets' );
 
 /**
  * Register Gutenberg wp-admin editor style
