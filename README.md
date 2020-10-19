@@ -12,7 +12,7 @@ Air-light (or simply *Air*) is designed to be a ultra minimal starting point for
 
 ## Top contributors
 
-This theme is constantly kept up to date by the following persons and a bunch of [awesome contributors](https://github.com/digitoimistodude/graphs/contributors). Wanna join in development? Let us know!
+This theme is constantly kept up to date by the following persons and a bunch of [awesome contributors](https://github.com/digitoimistodude/air-light/graphs/contributors). Wanna join in development? Let us know!
 
 | [![Roni Laukkarinen](https://avatars3.githubusercontent.com/u/1534150?v=4&s=70)](https://github.com/ronilaukkarinen) | [![Timi Wahalahti](https://avatars1.githubusercontent.com/u/415544?s=70&v=4)](https://github.com/timiwahalahti) | [![Niku Hietanen](https://avatars3.githubusercontent.com/u/16206361?v=4&s=70)](https://github.com/Niq1982) | [![Michael Bourne](https://avatars3.githubusercontent.com/u/22846422?v=4&s=70)](https://github.com/ronilaukkarinen) |
 | --- | --- | --- | --- |
