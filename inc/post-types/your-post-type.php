@@ -3,8 +3,8 @@
  * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:45
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-18 15:07:08
+ * @Last Modified by: Timi Wahalahti
+ * @Last Modified time: 2020-10-15 17:08:38
  **/
 
 namespace Air_Light;
@@ -44,7 +44,7 @@ class Your_Post_Type extends Post_Type {
         'with_front'  => false,
         'slug'        => 'your-post-type',
       ],
-      'supports'            => [ 'title', 'editor', 'thumbnail' ],
+      'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions' ],
       'taxonomies'          => [],
       'public'              => false,
       'has_archive'         => false,
