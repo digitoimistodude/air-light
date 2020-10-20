@@ -22,10 +22,7 @@
   } else {
     root.LazyLoad = factory(root);
   }
-})(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
-
-  'use strict';
-
+}(typeof global !== 'undefined' ? global : this.window || this.global, (root) => {
   if (typeof define === 'function' && define.amd) {
     root = window;
   }
@@ -37,7 +34,7 @@
     selector: '.lazyload',
     root: null,
     rootMargin: '0px',
-    threshold: 0
+    threshold: 0,
   };
 
   /**
@@ -48,11 +45,10 @@
    * @returns {Object}          Merged values of defaults and options
    */
   const extend = function () {
-
-    let extended = {};
+    const extended = {};
     let deep = false;
     let i = 0;
-    let length = arguments.length;
+    const { length } = arguments;
 
     /* Check if a deep merge */
     if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
@@ -61,8 +57,8 @@
     }
 
     /* Merge the object into the extended object */
-    let merge = function (obj) {
-      for (let prop in obj) {
+    const merge = function (obj) {
+      for (const prop in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, prop)) {
           /* If deep merge and property is an object, merge properties */
           if (deep && Object.prototype.toString.call(obj[prop]) === '[object Object]') {
@@ -76,7 +72,7 @@
 
     /* Loop through each object and conduct a merge */
     for (; i < length; i++) {
-      let obj = arguments[i];
+      const obj = arguments[i];
       merge(obj);
     }
 
@@ -91,8 +87,7 @@
   }
 
   LazyLoad.prototype = {
-    init: function () {
-
+    init() {
       /* Without observers load everything and bail out early.
          This affects some iOS and Windows Phones */
       if (!root.IntersectionObserver) {
@@ -100,34 +95,32 @@
         return;
       }
 
-      let self = this;
-      let observerConfig = {
+      const self = this;
+      const observerConfig = {
         root: this.settings.root,
         rootMargin: this.settings.rootMargin,
-        threshold: [this.settings.threshold]
+        threshold: [this.settings.threshold],
       };
 
-      this.observer = new IntersectionObserver(function (entries) {
-        Array.prototype.forEach.call(entries, function (entry) {
-
+      this.observer = new IntersectionObserver(((entries) => {
+        Array.prototype.forEach.call(entries, (entry) => {
           /* If inside viewport */
           if (entry.isIntersecting) {
-
             /* Define image */
             const img = entry.target;
 
             /* Add animation class to full-image div */
-            if (typeof (img.nextElementSibling) != 'undefined' && img.nextElementSibling != null) {
+            if (typeof (img.nextElementSibling) !== 'undefined' && img.nextElementSibling != null) {
               img.nextElementSibling.classList.add('reveal');
             }
 
             self.observer.unobserve(entry.target);
-            let src = img.getAttribute(self.settings.src);
-            let srcset = img.getAttribute(self.settings.srcset);
-            let srcmobile = img.getAttribute(self.settings.srcmobile);
+            const src = img.getAttribute(self.settings.src);
+            const srcset = img.getAttribute(self.settings.srcset);
+            const srcmobile = img.getAttribute(self.settings.srcmobile);
 
             /* Replace fully loaded original background image to the img src */
-            if ('img' === img.tagName.toLowerCase()) {
+            if (img.tagName.toLowerCase() === 'img') {
               if (document.documentElement.clientWidth < 600) {
                 img.src = srcmobile;
               } else {
@@ -136,21 +129,21 @@
             } else {
               /* Add fully loaded original background image to next div element */
               if (document.documentElement.clientWidth < 600) {
-                img.nextElementSibling.style.backgroundImage = 'url(' + srcmobile + ')';
+                img.nextElementSibling.style.backgroundImage = `url(${srcmobile})`;
               } else {
-                img.nextElementSibling.style.backgroundImage = 'url(' + src + ')';
+                img.nextElementSibling.style.backgroundImage = `url(${src})`;
               }
             }
           }
         });
-      }, observerConfig);
+      }), observerConfig);
 
-      Array.prototype.forEach.call(this.images, function (image) {
+      Array.prototype.forEach.call(this.images, (image) => {
         self.observer.observe(image);
       });
     },
 
-    loadAndDestroy: function () {
+    loadAndDestroy() {
       if (!this.settings) {
         return;
       }
@@ -158,18 +151,18 @@
       this.destroy();
     },
 
-    loadImages: function () {
+    loadImages() {
       if (!this.settings) {
         return;
       }
 
-      let self = this;
-      Array.prototype.forEach.call(this.images, function (image) {
-        let src = image.getAttribute(self.settings.src);
-        let srcset = image.getAttribute(self.settings.srcset);
-        let srcmobile = image.getAttribute(self.settings.srcmobile);
+      const self = this;
+      Array.prototype.forEach.call(this.images, (image) => {
+        const src = image.getAttribute(self.settings.src);
+        const srcset = image.getAttribute(self.settings.srcset);
+        const srcmobile = image.getAttribute(self.settings.srcmobile);
 
-        if ('img' === image.tagName.toLowerCase()) {
+        if (image.tagName.toLowerCase() === 'img') {
           if (src) {
             image.src = src;
           }
@@ -179,23 +172,21 @@
           if (srcmobile) {
             image.srcmobile = srcmobile;
           }
+        } else if (document.documentElement.clientWidth < 600) {
+          image.style.backgroundImage = `url("${srcmobile}")`;
         } else {
-          if (document.documentElement.clientWidth < 600) {
-            image.style.backgroundImage = 'url("' + srcmobile + '")';
-          } else {
-            image.style.backgroundImage = 'url("' + src + '")';
-          }
+          image.style.backgroundImage = `url("${src}")`;
         }
       });
     },
 
-    destroy: function () {
+    destroy() {
       if (!this.settings) {
         return;
       }
       this.observer.disconnect();
       this.settings = null;
-    }
+    },
   };
 
   root.lazyload = function (images, options) {
@@ -213,4 +204,4 @@
   }
 
   return LazyLoad;
-});
+}));
