@@ -387,7 +387,8 @@ $mobile-nav-height: 80px;
     color: map-get($nav-toggle, 'active-color');
   }
 
-  &.is-active span.hamburger-box {
+  &.is-active .focus,
+  &.is-active span:focus {
     .hamburger-inner {
       background-color: map-get($nav-toggle, 'active-color');
     }
@@ -397,13 +398,12 @@ $mobile-nav-height: 80px;
     }
   }
 
-  &.is-active span:focus,
-  &.is-active span.focus {
-    .hamburger-box .hamburger-inner {
+  &.is-active span.hamburger-box {
+    .hamburger-inner {
       background-color: map-get($nav-toggle, 'active-color');
     }
 
-    .hamburger-box .hamburger-inner::after {
+    .hamburger-inner::after {
       background-color: map-get($nav-toggle, 'active-color');
     }
   }

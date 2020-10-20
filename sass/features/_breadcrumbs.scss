@@ -207,6 +207,7 @@
   }
 }
 
+/* stylelint-disable */
 .breadcrumbs .breadcrumbs__crumb--empty-label,
 .breadcrumbs .breadcrumbs__trail li.breadcrumbs__crumb.breadcrumbs__crumb--empty-label {
   display: none;
@@ -215,4 +216,4 @@
     display: none;
   }
 }
-/* stylelint-enable selector-class-pattern */
+/* stylelint-enable */

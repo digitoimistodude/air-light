@@ -6,7 +6,7 @@
 // and start over.
 // ------------------------------------------------
 
-/* stylelint-disable no-descending-specificity, selector-class-pattern */
+/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-specificity */
 
 // Demo variables
 $color-cyan: #159d94;
@@ -236,10 +236,10 @@ $color-demo-footer-background: #eaeaea;
 }
 
 @media (min-width: $responsivenav) {
-  .site-header .site-branding .site-title a,
-  .site-header .nav-primary .menu-items .menu-item .dropdown-toggle,
-  .site-header .nav-primary .menu-items .current-menu-parent > a,
-  .site-header .nav-primary .menu-items .current-menu-item > a {
+  .site-branding .site-title a,
+  .nav-primary .menu-items .menu-item .dropdown-toggle,
+  .nav-primary .menu-items .current-menu-parent > a,
+  .nav-primary .menu-items .current-menu-item > a {
     color: $color-cyan-bright;
 
     @media (max-width: $responsivenav) {
@@ -248,7 +248,7 @@ $color-demo-footer-background: #eaeaea;
   }
 }
 
-.site-header .nav-primary .menu-items .menu-item .menu-item .dropdown-toggle {
+.nav-primary .menu-items .menu-item .dropdown-toggle {
   color: $color-links;
 }
 
@@ -289,4 +289,4 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
     }
   }
 }
-/* stylelint-enable no-descending-specificity */
+/* stylelint-enable no-descending-specificity, selector-class-pattern, selector-max-specificity */

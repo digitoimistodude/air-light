@@ -13,66 +13,66 @@
   a {
     text-decoration: none;
   }
+}
 
-  .page-numbers {
-    border-top: 2px solid #ece6f2;
-    border-bottom: 2px solid #ece6f2;
-    border-left: 1px solid #ece6f2;
-    border-right: 1px solid #ece6f2;
-    background: $color-white;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0;
-    margin-left: 0;
-    color: $color-main;
-    font-weight: 500;
-    transition: all $transition-duration;
+.page-numbers {
+  border-top: 2px solid #ece6f2;
+  border-bottom: 2px solid #ece6f2;
+  border-left: 1px solid #ece6f2;
+  border-right: 1px solid #ece6f2;
+  background: $color-white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+  margin-left: 0;
+  color: $color-main;
+  font-weight: 500;
+  transition: all $transition-duration;
 
-    @media (max-width: 600px) {
-      width: 26px;
-      height: 26px;
-    }
-
-    &:last-child {
-      border-top-right-radius: 4px;
-      border-bottom-right-radius: 4px;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-
-    &:first-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-top-left-radius: 4px;
-      border-bottom-left-radius: 4px;
-    }
+  @media (max-width: 600px) {
+    width: 26px;
+    height: 26px;
   }
 
-  a.page-numbers:hover {
-    background: $color-main;
-    border-color: $color-main;
-    color: $color-white;
+  &:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 
-  .page-numbers.current {
-    background: $color-main;
-    border-color: $color-main;
-    color: $color-white;
+  &:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
   }
+}
 
-  // Remove this if you are using version with next/prev
-  .page-numbers.next,
-  .page-numbers.prev {
-    width: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+a.page-numbers:hover {
+  background: $color-main;
+  border-color: $color-main;
+  color: $color-white;
+}
 
-    @media (max-width: 600px) {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+.page-numbers.current {
+  background: $color-main;
+  border-color: $color-main;
+  color: $color-white;
+}
+
+// Remove this if you are using version with next/prev
+.page-numbers.next,
+.page-numbers.prev {
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (max-width: 600px) {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

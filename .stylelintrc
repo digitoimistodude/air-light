@@ -33,6 +33,7 @@
     "selector-attribute-brackets-space-inside": "never",
     "comment-whitespace-inside": "always",
     "indentation": 2,
+    "selector-max-specificity": "0,4,4",
     "block-no-empty": true,
     "declaration-colon-newline-after": null,
     "number-leading-zero": "never",
