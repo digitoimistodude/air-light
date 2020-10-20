@@ -59,6 +59,8 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
 9. [Contributing](#contributing)
     1. [Air development](#air-development)
     2. [Debuggers](#debuggers)
+        1. [For Gulp](#for-gulp)
+        2. [For your editor](#for-your-editor)
     3. [Releasing a new version on git and tagging principles (staff only)](#releasing-a-new-version-on-git-and-tagging-principles-staff-only)
     4. [Releasing a new version on the demo site and WordPress.org (staff only)](#releasing-a-new-version-on-the-demo-site-and-wordpressorg-staff-only)
 10. [Notes](#notes)
@@ -490,11 +492,32 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 ### Debuggers
 
-Air-light comes with [PHP\_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!**
+Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!** Here's how:
 
-PHP\_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
+#### For gulp
+
+PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
 
 The golden rule here is to make sure the commands `stylelint`, `eslint` and `phpcs` work from command line.
+
+#### How to install for Gulp
+
+1. `mkdir -p ~/Projects && cd ~/Projects && git clone https://github.com/squizlabs/PHP_CodeSniffer`
+2. `git clone https://github.com/PHPCompatibility/PHPCompatibility`
+3. `git clone -b 2.2.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs`
+4. **Please note: Replace _yourusername_ name with your actual user name!** `sudo ln -s /Users/rolle/Projects/phpcs/bin/phpcs /usr/local/bin/phpcs`
+5. `sudo chmod +x /usr/local/bin/phpcs`
+6. **Please note: Replace _yourusername_ name with your actual user name!** `phpcs --config-set installed_paths "/Users/rolle/Projects/wpcs","/Users/rolle/Projects/PHPCompatibility"`
+7. Test your standards with `phpcs -i`, it should display something like this:
+
+```bash $ phpcs -i
+The installed coding standards are PEAR, Zend, PSR2, MySource, Squiz, PSR1, PSR12, PHPCompatibility, WordPress, WordPress-Extra, WordPress-Docs and WordPress-Core
+```
+
+8. `npm i stylelint eslint -g`
+9. Check that other linters work: `stylelint -v`, `eslint -v`
+
+#### For your editor
 
 It's also best to have all `stylelint`, `eslint`, `phpcs`, `jscs`, `jshint` living inside your editor. We think [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) is best for this, check out the [plugins inside vscode-settings repository](https://github.com/ronilaukkarinen/vscode-settings) to make sure everything is installed.
 
