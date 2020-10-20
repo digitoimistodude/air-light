@@ -44,7 +44,6 @@ before_install:
     - if [[ `node -v` != v10* ]]; then nvm install stable; fi
     - nvm install-latest-npm
 
-
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
 # Failures in this section will result in build status 'errored'.
