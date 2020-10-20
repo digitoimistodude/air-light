@@ -82,9 +82,6 @@ $color-demo-footer-background: #eaeaea;
 
 // Demo structure
 .block.block-entry-header-demo {
-  @include background-cover();
-  background-image: url('../images/default.jpg');
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,6 +209,7 @@ $color-demo-footer-background: #eaeaea;
     position: relative;
     z-index: 2;
     text-align: center;
+    line-height: 1.23;
 
     @media (min-width: $container-ipad) {
       padding: 2rem 4rem;
