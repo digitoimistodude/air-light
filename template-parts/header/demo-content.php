@@ -10,7 +10,7 @@ namespace Air_Light;
 ?>
 
 <section class="block block-entry-header-demo has-dark-bg">
-  <div class="lazy" data-bg="<?php echo esc_url( get_template_directory_uri() ); ?>/images/default.jpg" aria-hidden="true"></div>
+  <div class="lazy" data-bg="<?php echo esc_url( get_template_directory_uri() ); ?>/images/default.webp" aria-hidden="true"></div>
   <div class="shade" aria-hidden="true"></div>
   <div class="inner">
     <div class="logo">
