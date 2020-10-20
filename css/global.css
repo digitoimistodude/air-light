@@ -1902,7 +1902,7 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	text-shadow: 0 0 10px rgba(57, 98, 201, 0.5);
 }
 
-.nav-primary .menu-items .menu-item .dropdown-toggle {
+.site-header .nav-primary .menu-items .menu-item .dropdown-toggle {
 	color: #3962c9;
 }
 
@@ -1934,6 +1934,10 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after,
 article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after {
 	background-image: url("../svg/external-link-white.svg");
+}
+
+.block:not(.site-footer) {
+	min-height: 100px;
 }
 
 /* stylelint-enable no-descending-specificity, selector-class-pattern, selector-max-specificity */
@@ -3970,10 +3974,10 @@ ul.tags {
 
 @media (min-width: 960px) and (max-width: 960px) {
 
-.site-branding .site-title a,
-.nav-primary .menu-items .menu-item .dropdown-toggle,
-.nav-primary .menu-items .current-menu-parent > a,
-.nav-primary .menu-items .current-menu-item > a {
+.site-header .site-branding .site-title a,
+.site-header .nav-primary .menu-items .menu-item .dropdown-toggle,
+.site-header .nav-primary .menu-items .current-menu-parent > a,
+.site-header .nav-primary .menu-items .current-menu-item > a {
 	color: #60f4ea;
 }
 
@@ -4252,11 +4256,15 @@ ul.tags {
 
 @media (min-width: 960px) {
 
-.site-branding .site-title a,
-.nav-primary .menu-items .menu-item .dropdown-toggle,
-.nav-primary .menu-items .current-menu-parent > a,
-.nav-primary .menu-items .current-menu-item > a {
+.site-header .site-branding .site-title a,
+.site-header .nav-primary .menu-items .menu-item .dropdown-toggle,
+.site-header .nav-primary .menu-items .current-menu-parent > a,
+.site-header .nav-primary .menu-items .current-menu-item > a {
 	color: #60f4ea;
+}
+
+.block:not(.site-footer) {
+	min-height: 78px;
 }
 
 .hide-on-desktop-nav-view {
