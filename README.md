@@ -502,9 +502,9 @@ The golden rule here is to make sure the commands `stylelint`, `eslint` and `php
 
 #### How to install for Gulp
 
-1. `mkdir -p ~/Projects && cd ~/Projects && git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git phpcs`
+1. `mkdir -p ~/Projects && cd ~/Projects && git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git phpcs`
 2. `git clone https://github.com/PHPCompatibility/PHPCompatibility`
-3. `git clone -b 2.2.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs`
+3. `git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs`
 4. **Please note: Replace _yourusername_ name with your actual user name!** `sudo ln -s /Users/rolle/Projects/phpcs/bin/phpcs /usr/local/bin/phpcs`
 5. `sudo chmod +x /usr/local/bin/phpcs`
 6. **Please note: Replace _yourusername_ name with your actual user name!** `phpcs --config-set installed_paths "/Users/rolle/Projects/wpcs","/Users/rolle/Projects/PHPCompatibility"`
