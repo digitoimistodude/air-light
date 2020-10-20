@@ -1,7 +1,5 @@
-/* eslint-disable default-case */
-/* eslint-disable eqeqeq */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-undef */
+// TODO: Refactor file
+/* eslint-disable default-case, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, prefer-const, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
 /*
 An accessible menu for WordPress
 
