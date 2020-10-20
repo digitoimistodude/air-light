@@ -112,7 +112,7 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   ├── includes.php                # → Include non-template features
 │   ├── template-tags.php           # → Include template functions and helpers
 ├── js/                             # → JavaScript files for production (never edit)
-│   ├── all.js                      # → Obfuscated, concatted, minified file that contains all site JS
+│   ├── dist/front-end.js           # → Obfuscated, concatted, minified file that contains all site JS
 │   ├── src/                        # → JavaScript files for development
 │   │   ├── lazyload.js             # → Script that lazyloads images to img or background (from 4.7.1)
 │   │   ├── navigation.js           # → Accessible multi-level navigation (from 3.4.5)

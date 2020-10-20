@@ -1,6 +1,6 @@
 {
   "name": "air-light",
-  "version": "6.1.7",
+  "version": "6.1.8",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -36,6 +36,7 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
     "stylelint-value-no-unknown-custom-properties": "^3.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^6.1.0"
   },
