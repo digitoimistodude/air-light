@@ -274,7 +274,7 @@ $submenu-dropdown-toggle-hover: (
       }
 
       // Main level toggle arrow
-      button.dropdown-toggle {
+      .dropdown-toggle {
         background-color: map-get($dropdown-toggle, 'background');
         border: map-get($dropdown-toggle, 'border');
         border-radius: map-get($dropdown-toggle, 'border-radius');
@@ -303,7 +303,7 @@ $submenu-dropdown-toggle-hover: (
 
       // Sub-level toggle arrow
       /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
-      ul li button.dropdown-toggle {
+      ul li .dropdown-toggle {
         background-color: map-get($submenu-dropdown-toggle, 'background');
         border: map-get($submenu-dropdown-toggle, 'border');
         border-radius: map-get($submenu-dropdown-toggle, 'border-radius');

@@ -4146,7 +4146,7 @@ ul li:hover > ul {
 	color: #bbb;
 }
 
-.nav-primary .menu-item button.dropdown-toggle {
+.nav-primary .menu-item .dropdown-toggle {
 	background-color: transparent;
 	border: none;
 	border-radius: 50%;
@@ -4157,17 +4157,17 @@ ul li:hover > ul {
 	justify-content: center; /* stylelint-disable selector-max-class, selector-max-compound-selectors */ /* stylelint-enable selector-max-class, selector-max-compound-selectors */
 }
 
-.nav-primary .menu-item button.dropdown-toggle svg { /* stylelint-disable no-descending-specificity */
+.nav-primary .menu-item .dropdown-toggle svg { /* stylelint-disable no-descending-specificity */
 	transition: transform 0.22s ease-in;
 	width: 1rem;
 	height: 1rem; /* stylelint-enable */
 }
 
-.nav-primary .menu-item button.dropdown-toggle.toggled-on svg {
+.nav-primary .menu-item .dropdown-toggle.toggled-on svg {
 	transform: rotateX(180deg);
 }
 
-.nav-primary .menu-item ul li button.dropdown-toggle {
+.nav-primary .menu-item ul li .dropdown-toggle {
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
@@ -4178,13 +4178,13 @@ ul li:hover > ul {
 	align-self: center; /* stylelint-disable no-descending-specificity */ /* stylelint-enable */ /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
 }
 
-.nav-primary .menu-item ul li button.dropdown-toggle svg {
+.nav-primary .menu-item ul li .dropdown-toggle svg {
 	transform: rotate(-90deg) rotateX(0deg);
 	width: 1rem;
 	height: 1rem;
 }
 
-.nav-primary .menu-item ul li button.dropdown-toggle.toggled-on svg {
+.nav-primary .menu-item ul li .dropdown-toggle.toggled-on svg {
 	transform: rotate(-90deg) rotateX(180deg);
 }
 
