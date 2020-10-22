@@ -139,7 +139,7 @@ $mobile-nav-height: 80px;
     }
 
     // Prevent nav item overlapping with dropdown opening toggle
-    a.has-submenu {
+    .has-submenu {
       width: 80%;
       position: static;
     }
@@ -161,18 +161,6 @@ $mobile-nav-height: 80px;
 
     .disabled {
       color: $color-disabled;
-    }
-
-    li:first-child a {
-      border-top: 0;
-    }
-
-    li > ul > li:last-child .main-title {
-      padding-bottom: 20px;
-    }
-
-    li > ul > li:last-child a {
-      border-bottom: 0;
     }
 
     // Dropdown toggle
@@ -224,27 +212,9 @@ $mobile-nav-height: 80px;
       padding-left: 1.5rem;
     }
 
-    // Third level
-    ul > li ul {
-      margin-left: -1.5rem;
-    }
-
-    ul > li ul li {
-      padding-left: 3rem;
-    }
-
-    // Fourth level
-    ul > li ul li ul {
-      margin-left: -3rem;
-    }
-
-    ul > li ul li ul li {
-      padding-left: 4.5rem;
-    }
-
     // Do not focus when seeing anyway
-    [data-whatintent="mouse"] .menu-items a:focus,
-    [data-whatintent="touch"] .menu-items a:focus {
+    [data-whatintent="mouse"] a:focus,
+    [data-whatintent="touch"] a:focus {
       outline: none;
     }
   }
@@ -275,10 +245,10 @@ $mobile-nav-height: 80px;
       opacity: 1;
       pointer-events: all;
       background: $nav-background-color;
+    }
 
-      .menu-items {
-        opacity: 1;
-      }
+    .menu-items {
+      opacity: 1;
     }
   }
 }
