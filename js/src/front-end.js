@@ -22,9 +22,9 @@ document.body.classList.add('js');
 // Refer to documentation:
 // 1) https://github.com/digitoimistodude/air-helper#image-lazyloading-1
 // 2) https://github.com/verlok/vanilla-lazyload#-getting-started---html
-var LazyLoad = new LazyLoad();
+var air_light_LazyLoad = new LazyLoad();
 // After your content has changed...
-LazyLoad.update();
+air_light_LazyLoad.update();
 
 // jQuery start
 (function ($) {
