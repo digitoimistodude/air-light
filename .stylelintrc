@@ -91,7 +91,7 @@
     "length-zero-no-unit": true,
     "font-weight-notation": "numeric",
     "number-max-precision": 3,
-    "selector-max-class": 3,
+    "selector-max-class": 4,
     "selector-max-combinators": 3,
     "selector-max-compound-selectors": 4,
     "selector-max-pseudo-class": 2,
