@@ -114,10 +114,10 @@ $mobile-nav-height: 80px;
       border-top: 1px solid $color-separator-nav-mobile;
       padding-top: 1.2rem;
       padding-bottom: 1.2rem;
-      padding-left: 0;
+      padding-left: 2.5rem;
       padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
-      margin-left: 2rem;
-      margin-right: 2rem;
+      margin-left: 0;
+      margin-right: 0;
       /* stylelint-disable */
       color: map-get($nav-links, 'color');
       font-size: map-get($nav-links, 'font-size');
@@ -229,7 +229,7 @@ $mobile-nav-height: 80px;
     left: 0;
 
     .menu-items {
-      padding: 5px 0 20px;
+      padding: 0;
 
       // Let's keep the content always full height
       height: 100vh;

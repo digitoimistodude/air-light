@@ -19,8 +19,8 @@ $color-demo-footer-background: #eaeaea;
   padding-bottom: 4rem;
 
   @media (max-width: $responsivenav) {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   @media (max-width: $container-mobile) {
@@ -289,7 +289,11 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 }
 
 .block:not(.site-footer) {
-  min-height: 100px;
+  min-height: $mobile-nav-height;
+
+  @media (min-width: $responsivenav) {
+    min-height: 100px;
+  }
 }
 
 @media (min-width: $responsivenav) {

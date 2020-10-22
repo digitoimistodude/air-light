@@ -141,19 +141,20 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   siteHeaderMenu.find('.menu-item-has-children').attr('aria-haspopup', 'true');
 
   // Open last dropdown by default on mobile
-  $(() => {
-    if (window.innerWidth < responsivenav) {
-      const screenReaderSpan = $('.menu-items > .dropdown-toggle').find('.screen-reader-text');
-      const dropdownMenu = $('.menu-items > .menu-item-has-children:last .sub-menu');
-      const dropdownItem = $('.menu-items > .menu-item-has-children:last .dropdown');
+  // TODO: Rather fix the issue: https://github.com/digitoimistodude/air-light/issues/26
+  // $(() => {
+  //   if (window.innerWidth < responsivenav) {
+  //     const screenReaderSpan = $('.menu-items > .dropdown-toggle').find('.screen-reader-text');
+  //     const dropdownMenu = $('.menu-items > .menu-item-has-children:last .sub-menu');
+  //     const dropdownItem = $('.menu-items > .menu-item-has-children:last .dropdown');
 
-      dropdownItem.addClass('toggled-on');
-      dropdownMenu.addClass('toggled-on');
-      dropdownItem.attr('aria-expanded', 'true');
-      dropdownItem.attr('aria-label', air_light_screenReaderText.collapse);
-      screenReaderSpan.text(air_light_screenReaderText.collapse);
-    }
-  });
+  //     dropdownItem.addClass('toggled-on');
+  //     dropdownMenu.addClass('toggled-on');
+  //     dropdownItem.attr('aria-expanded', 'true');
+  //     dropdownItem.attr('aria-label', air_light_screenReaderText.collapse);
+  //     screenReaderSpan.text(air_light_screenReaderText.collapse);
+  //   }
+  // });
 
   // Add default dropdown-toggle label
   $('.dropdown-toggle').each(function () {
