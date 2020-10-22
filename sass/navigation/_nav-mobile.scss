@@ -261,6 +261,7 @@ $mobile-nav-height: 80px;
 }
 
 // Hamburger menu icon
+/* stylelint-disable selector-max-class */
 .nav-toggle {
   list-style: none;
   z-index: 100000;
@@ -303,6 +304,15 @@ $mobile-nav-height: 80px;
     color: map-get($nav-toggle, 'active-color');
   }
 
+  &:hover,
+  &:active {
+    color: map-get($nav-toggle, 'color');
+
+    span {
+      color: map-get($nav-toggle, 'color');
+    }
+  }
+
   // Alternative focus for mobile nav
   &:focus {
     outline: none;
@@ -315,17 +325,6 @@ $mobile-nav-height: 80px;
     span span::after {
       background-color: map-get($nav-toggle, 'color');
     }
-  }
-
-  &:hover,
-  &:active {
-    /* stylelint-disable */
-    color: map-get($nav-toggle, 'color');
-
-    span {
-      color: map-get($nav-toggle, 'color');
-    }
-    /* stylelint-enable */
   }
 
   // We already have aria-label for button
@@ -357,8 +356,7 @@ $mobile-nav-height: 80px;
     color: map-get($nav-toggle, 'active-color');
   }
 
-  &.is-active .focus,
-  &.is-active span:focus {
+  &.is-active .hamburger-box {
     .hamburger-inner {
       background-color: map-get($nav-toggle, 'active-color');
     }
@@ -368,7 +366,8 @@ $mobile-nav-height: 80px;
     }
   }
 
-  &.is-active span.hamburger-box {
+  &.is-active .focus,
+  &.is-active span:focus {
     .hamburger-inner {
       background-color: map-get($nav-toggle, 'active-color');
     }
@@ -388,3 +387,4 @@ $mobile-nav-height: 80px;
     }
   }
 }
+/* stylelint-enable selector-max-class */

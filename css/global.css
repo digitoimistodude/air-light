@@ -1666,6 +1666,8 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	background: #fff;
 }
 
+/* stylelint-disable selector-max-class */
+
 .nav-toggle {
 	list-style: none;
 	z-index: 100000;
@@ -1706,6 +1708,16 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	color: #fff;
 }
 
+.nav-toggle:hover,
+.nav-toggle:active {
+	color: #fff;
+}
+
+.nav-toggle:hover span,
+.nav-toggle:active span {
+	color: #fff;
+}
+
 .nav-toggle:focus {
 	outline: none;
 }
@@ -1719,22 +1731,20 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	background-color: #fff;
 }
 
-.nav-toggle:hover,
-.nav-toggle:active { /* stylelint-disable */
-	color: #fff; /* stylelint-enable */
-}
-
-.nav-toggle:hover span,
-.nav-toggle:active span {
-	color: #fff;
-}
-
 .nav-toggle:not(.has-visible-label) .nav-toggle-label {
 	display: none;
 }
 
 .nav-toggle.is-active {
 	color: #fff;
+}
+
+.nav-toggle.is-active .hamburger-box .hamburger-inner {
+	background-color: #fff;
+}
+
+.nav-toggle.is-active .hamburger-box .hamburger-inner::after {
+	background-color: #fff;
 }
 
 .nav-toggle.is-active .focus .hamburger-inner,
@@ -1744,14 +1754,6 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 
 .nav-toggle.is-active .focus .hamburger-inner::after,
 .nav-toggle.is-active span:focus .hamburger-inner::after {
-	background-color: #fff;
-}
-
-.nav-toggle.is-active span.hamburger-box .hamburger-inner {
-	background-color: #fff;
-}
-
-.nav-toggle.is-active span.hamburger-box .hamburger-inner::after {
 	background-color: #fff;
 }
 
@@ -1766,6 +1768,8 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 .nav-toggle.is-active span:active span {
 	color: #fff;
 }
+
+/* stylelint-enable selector-max-class */
 
 /* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-specificity */
 
