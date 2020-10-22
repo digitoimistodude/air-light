@@ -78,7 +78,6 @@ table,
 tr,
 %default {
   font-size: var(--font-size-small);
-  letter-spacing: -.003em;
   line-height: $line-height-paragraphs;
 
   @media (min-width: 770px) {
@@ -178,7 +177,7 @@ i {
 // Inline small text.
 small {
   line-height: 1;
-  font-size: .875em;
+  font-size: .87em;
 }
 
 // Default paragraphs
@@ -287,7 +286,7 @@ code {
   background-color: $color-code-blocks-background;
   font-family: $font-monospace;
   line-height: 1;
-  padding: .375rem .5rem;
+  padding: .37rem .5rem;
   border-radius: .3rem;
   font-size: inherit; // normalize.css sets this as 1em by default
 

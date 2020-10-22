@@ -29,9 +29,9 @@
 
   a:hover,
   a:focus {
-    /* stylelint-disable */
+    /* stylelint-disable sh-waqar/declaration-use-variable */
     border-color: rgba($color-blog-tags, .4);
-    /* stylelint-enable */
+    /* stylelint-enable sh-waqar/declaration-use-variable */
   }
 }
 
@@ -197,13 +197,15 @@
     }
   }
 
-  .wp-block-image .alignleft > figcaption,
+  /* stylelint-disable selector-max-compound-selectors */
+  .wp-block-image figcaption,
   .wp-block-image .alignright > figcaption,
   .wp-block-image .aligncenter > figcaption,
   .wp-block-image.is-resized > figcaption {
     width: 100%;
     display: block;
   }
+  /* stylelint-enable selector-max-compound-selectors */
 
   a:hover {
     text-decoration: none;
@@ -496,11 +498,11 @@ ul.tags {
       transition: all $transition-duration;
     }
 
+    /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
     a:not(.button):not(.no-text-link):hover,
     a:not(.button):not(.no-text-link):focus {
-      /* stylelint-disable */
       border-color: rgba($color-blog-tags, .4);
-      /* stylelint-enable */
     }
+    /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
   }
 }

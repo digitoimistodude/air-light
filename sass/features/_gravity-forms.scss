@@ -78,7 +78,7 @@ body *[aria-invalid="true"] {
   }
 
   .gfield_label,
-  .ginput_container > span > label {
+  .ginput_container label {
     font-weight: 700;
     margin-bottom: 1rem;
     margin-top: 1rem;
@@ -114,8 +114,8 @@ body *[aria-invalid="true"] {
       }
     }
 
-    .ginput_complex .ginput_left,
-    .ginput_complex .ginput_right {
+    .ginput_left,
+    .ginput_right {
       width: calc(50% - 1rem);
       display: inline-flex;
       flex-wrap: wrap;

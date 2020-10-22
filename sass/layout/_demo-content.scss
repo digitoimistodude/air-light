@@ -6,7 +6,8 @@
 // and start over.
 // ------------------------------------------------
 
-/* stylelint-disable no-descending-specificity, selector-class-pattern, selector-max-specificity */
+// This is just for demoing purposes so let's give it some slack
+/* stylelint-disable */
 
 // Demo variables
 $color-cyan: #159d94;
@@ -32,27 +33,27 @@ $color-demo-footer-background: #eaeaea;
     font-weight: 700;
     margin: 0;
 
+    svg {
+      transition: transform 1s ease-in;
+    }
+
+    .clr-i-solid-path-2 {
+      fill: $color-white;
+    }
+
     a {
       color: $color-cyan-bright;
       display: flex;
       align-items: center;
+    }
 
-      svg {
-        transition: transform 1s ease-in;
+    a:hover svg {
+      transition: transform .4s cubic-bezier(.6, -.68, .73, .04);
+      transform: translate(260%, -220%);
 
-        .clr-i-solid-path-2 {
-          fill: $color-white;
-        }
-      }
-
-      &:hover svg {
-        transition: transform .4s cubic-bezier(.6, -.68, .735, .045);
-        transform: translate(260%, -220%);
-
-        .clr-i-solid-path-2 {
-          display: block !important;
-          fill: $color-cyan-bright;
-        }
+      .clr-i-solid-path-2 {
+        display: block !important;
+        fill: $color-cyan-bright;
       }
     }
 
@@ -301,4 +302,4 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
     min-height: 78px;
   }
 }
-/* stylelint-enable no-descending-specificity, selector-class-pattern, selector-max-specificity */
+/* stylelint-enable */

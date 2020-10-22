@@ -287,9 +287,9 @@ input[type="checkbox"]:checked:active + label::before {
 }
 
 // Radio button and checkbox hovers
+/* stylelint-disable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
 input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
 input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
-  /* stylelint-disable */
   border-color: lighten($color-main, 15%);
-  /* stylelint-enable */
 }
+/* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */

@@ -125,6 +125,7 @@ $tld-production: 'dudetest.xyz';
 }
 
 // Add icon to external links
+/* stylelint-disable selector-max-pseudo-class */
 a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator):not([href*='#']),
 a.is-external-link:not(.no-external-link-indicator):not([href*='#']) {
   display: inline-flex;
@@ -156,3 +157,4 @@ a[href^="tel"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):
 a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#'])::after {
   display: none;
 }
+/* stylelint-enable selector-max-pseudo-class */

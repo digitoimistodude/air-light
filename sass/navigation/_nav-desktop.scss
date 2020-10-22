@@ -63,6 +63,7 @@ $submenu-dropdown-toggle-hover: (
 
     @media only screen and (min-width: $responsivenav) {
       // Main level links
+      /* stylelint-disable selector-max-compound-selectors, selector-max-combinators */
       .nav-primary > ul > li > a,
       .nav-primary > ul > li > button {
         color: $color-white;
@@ -72,6 +73,7 @@ $submenu-dropdown-toggle-hover: (
       .nav-primary > ul > li > a:hover {
         color: $color-white;
       }
+      /* stylelint-enable selector-max-compound-selectors, selector-max-combinators */
     }
   }
 }
@@ -145,7 +147,7 @@ $submenu-dropdown-toggle-hover: (
   }
 
   @media only screen and (max-width: $responsivenav) {
-    .nav-primary ul li:hover > ul {
+    ul li:hover > ul {
       display: block;
     }
   }
@@ -153,7 +155,7 @@ $submenu-dropdown-toggle-hover: (
   // Disable animations on IE10 + IE11
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     // Enable hovers
-    .nav-primary ul li:hover > ul {
+    ul li:hover > ul {
       display: block;
     }
   }
@@ -212,6 +214,7 @@ $submenu-dropdown-toggle-hover: (
       }
 
       // Dropdowns
+      /* stylelint-disable selector-max-compound-selectors, selector-max-combinators, selector-max-class */
       .sub-menu {
         width: map-get($dropdown, 'width');
         left: 5%;
@@ -248,11 +251,11 @@ $submenu-dropdown-toggle-hover: (
 
         a {
           padding: $nav-link-padding-y-dropdown $nav-link-padding-x-dropdown;
-          /* stylelint-disable */
           font-size: map-get($nav-dropdown-links, 'font-size');
+          /* stylelint-disable font-weight-notation */
           font-weight: map-get($nav-dropdown-links, 'font-weight');
+          /* stylelint-enable font-weight-notation */
           color: map-get($nav-dropdown-links, 'color');
-          /* stylelint-enable */
           display: flex;
           align-items: center;
         }
@@ -272,33 +275,34 @@ $submenu-dropdown-toggle-hover: (
 
       // Main level toggle arrow
       button.dropdown-toggle {
-        /* stylelint-disable */
         background-color: map-get($dropdown-toggle, 'background');
         border: map-get($dropdown-toggle, 'border');
         border-radius: map-get($dropdown-toggle, 'border-radius');
         color: map-get($dropdown-toggle, 'color');
         height: map-get($dropdown-toggle, 'height');
         width: map-get($dropdown-toggle, 'width');
-        /* stylelint-enable */
         padding: 0;
         display: inline-flex;
         align-items: center;
         justify-content: center;
 
         svg {
-          /* stylelint-disable */
+          /* stylelint-disable no-descending-specificity */
           transition: transform $transition-duration ease-in;
           width: map-get($dropdown-toggle, 'arrow-size');
           height: map-get($dropdown-toggle, 'arrow-size');
           /* stylelint-enable */
         }
 
+        /* stylelint-disable selector-max-class, selector-max-compound-selectors */
         &.toggled-on svg {
           transform: rotateX(180deg);
         }
+        /* stylelint-enable selector-max-class, selector-max-compound-selectors */
       }
 
       // Sub-level toggle arrow
+      /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
       ul li .dropdown-toggle {
         background-color: map-get($submenu-dropdown-toggle, 'background');
         border: map-get($submenu-dropdown-toggle, 'border');
@@ -309,7 +313,7 @@ $submenu-dropdown-toggle-hover: (
         flex-shrink: 0;
         align-self: center;
 
-        /* stylelint-disable */
+        /* stylelint-disable no-descending-specificity */
         svg {
           transform: rotate(-90deg) rotateX(0deg);
           width: map-get($submenu-dropdown-toggle, 'arrow-size');
@@ -317,6 +321,7 @@ $submenu-dropdown-toggle-hover: (
         }
         /* stylelint-enable */
 
+        /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
         &.toggled-on svg {
           transform: rotate(-90deg) rotateX(180deg);
         }
@@ -333,7 +338,7 @@ $submenu-dropdown-toggle-hover: (
         top: -16px;
         left: 31px;
         border-width: 8px;
-        /* stylelint-disable */
+        /* stylelint-disable sh-waqar/declaration-use-variable */
         border-color: transparent transparent $color-white;
         /* stylelint-enable */
       }
