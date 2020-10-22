@@ -303,7 +303,7 @@ $submenu-dropdown-toggle-hover: (
 
       // Sub-level toggle arrow
       /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
-      ul li .dropdown-toggle {
+      ul li button.dropdown-toggle {
         background-color: map-get($submenu-dropdown-toggle, 'background');
         border: map-get($submenu-dropdown-toggle, 'border');
         border-radius: map-get($submenu-dropdown-toggle, 'border-radius');

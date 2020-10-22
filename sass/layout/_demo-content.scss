@@ -236,7 +236,7 @@ $color-demo-footer-background: #eaeaea;
 
 @media (min-width: $responsivenav) {
   .site-header .site-branding .site-title a,
-  .site-header .nav-primary .menu-items .menu-item .dropdown-toggle,
+  .site-header .nav-primary .menu-items.nav-menu .menu-item > .dropdown-toggle,
   .site-header .nav-primary .menu-items .current-menu-parent > a,
   .site-header .nav-primary .menu-items .current-menu-item > a {
     color: $color-cyan-bright;
@@ -247,7 +247,7 @@ $color-demo-footer-background: #eaeaea;
   }
 }
 
-.site-header .nav-primary .menu-items .menu-item .dropdown-toggle {
+.site-header .nav-primary .menu-items .menu-item ul.sub-menu .dropdown-toggle {
   color: $color-links;
 }
 
