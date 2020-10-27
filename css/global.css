@@ -4108,16 +4108,6 @@ ul li:hover > ul {
 	padding: 0;
 }
 
-.nav-primary .menu-item .sub-menu.sub-menu {
-	padding-left: 0;
-	padding-top: .5rem;
-	padding-bottom: .5rem;
-}
-
-.nav-primary .menu-item .sub-menu.sub-menu li {
-	margin: 0;
-}
-
 .nav-primary .menu-item .sub-menu .sub-menu {
 	top: 0;
 	left: 100%;

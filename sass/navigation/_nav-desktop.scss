@@ -239,16 +239,6 @@ $submenu-dropdown-toggle-hover: (
           padding: 0;
         }
 
-        &.sub-menu {
-          padding-left: 0;
-          padding-top: .5rem;
-          padding-bottom: .5rem;
-        }
-
-        &.sub-menu li {
-          margin: 0;
-        }
-
         // All dropdowns in level 2 and after
         .sub-menu {
           top: 0;
