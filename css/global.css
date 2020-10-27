@@ -600,10 +600,9 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 }
 
 .nav-container {
-	background-color: #0c142a;
-	box-shadow: 0 0 10px rgba(12, 20, 42, 0.1);
-	position: relative;
-	z-index: 222;
+	background-color: transparent;
+	position: absolute;
+	width: 100%;
 }
 
 /*!
@@ -3973,6 +3972,19 @@ ul li:hover > ul {
 
 @media only screen and (min-width: 960px) {
 
+.nav-container { /* stylelint-disable selector-max-compound-selectors, selector-max-combinators */ /* stylelint-enable selector-max-compound-selectors, selector-max-combinators */
+}
+
+.nav-container .nav-primary > ul > li > a,
+.nav-container .nav-primary > ul > li > button {
+	color: #fff;
+	position: relative;
+}
+
+.nav-container .nav-primary > ul > li > a:hover {
+	color: #fff;
+}
+
 .menu-item-has-children::before {
 	content: '';
 	display: block;
@@ -4031,7 +4043,7 @@ ul li:hover > ul {
 }
 
 .nav-container {
-	background: #0c142a;
+	background: #fff;
 }
 
 .nav-toggle {
@@ -4416,7 +4428,7 @@ h6 {
 
 .no-js .site-header {
 	position: static;
-	background: #0c142a;
+	background: #fff;
 }
 
 .disable-scroll {
@@ -4454,14 +4466,14 @@ h6 {
 }
 
 .nav-primary a {
-	border-top: 1px solid rgba(240, 240, 240, 0.1);
+	border-top: 1px solid #f0f0f0;
 	padding-top: 1.2rem;
 	padding-bottom: 1.2rem;
 	padding-left: 2.5rem;
 	padding-right: 5.8rem;
 	margin-left: 0;
 	margin-right: 0; /* stylelint-disable */
-	color: #fff;
+	color: #222;
 	font-size: 15px;
 	font-weight: 500; /* stylelint-enable */
 	text-decoration: none;
@@ -4568,7 +4580,7 @@ h6 {
 	visibility: visible;
 	opacity: 1;
 	pointer-events: all;
-	background: #0c142a;
+	background: #fff;
 }
 
 .js.js-nav-active .menu-items {

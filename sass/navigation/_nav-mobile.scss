@@ -4,7 +4,6 @@
 // The main layout for the website navigation, for the mobile
 // version only.
 // -----------------------------------------------------------
-$nav-background-color: $nav-desktop-background-color;
 $nav-toggle: (
   'color': $color-white,
   'active-color': $color-white,
@@ -72,7 +71,7 @@ $mobile-nav-height: 80px;
     position: static;
 
     // Use the same color than navigation
-    background: $nav-background-color;
+    background: $color-background-nav-mobile;
   }
 
   // Disable scroll on html body when menu is opened.
@@ -244,7 +243,7 @@ $mobile-nav-height: 80px;
       visibility: visible;
       opacity: 1;
       pointer-events: all;
-      background: $nav-background-color;
+      background: $color-background-nav-desktop;
     }
 
     .menu-items {

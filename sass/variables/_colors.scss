@@ -38,7 +38,11 @@ $color-captions: rgba(#4b4b5a, .9);
 // Nav specific
 $color-separator-nav-mobile-light: #f0f0f0;
 $color-separator-nav-mobile-dark: rgba(#f0f0f0, .1);
-$color-separator-nav-mobile: $color-separator-nav-mobile-dark;
+$color-separator-nav-mobile: $color-separator-nav-mobile-light;
+$color-background-nav-desktop-light: $color-white;
+$color-background-nav-desktop-dark: $color-dark;
+$color-background-nav-desktop: $color-background-nav-desktop-light;
+$color-background-nav-mobile: $color-background-nav-desktop;
 $color-nav-links-dark: $color-black;
 $color-nav-links-light: $color-white;
-$color-nav-links: $color-nav-links-light;
+$color-nav-links: $color-nav-links-dark;
