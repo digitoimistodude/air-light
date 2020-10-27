@@ -4,8 +4,8 @@
 // The main layout for the website navigation, for a desktop
 // devices only.
 // -----------------------------------------------------------
-$absolute-navigation: true;
-$nav-desktop-background-color: $color-default-background;
+$absolute-navigation: false;
+$nav-desktop-background-color: $color-dark;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
 $nav-link-padding-y-dropdown: .4rem;
@@ -54,6 +54,15 @@ $submenu-dropdown-toggle-hover: (
   'border': none,
   'color': $color-links,
 );
+
+@if $absolute-navigation == false {
+  .nav-container {
+    background-color: $nav-desktop-background-color;
+    box-shadow: 0 0 10px rgba($color-dark, .1);
+    position: relative;
+    z-index: 222;
+  }
+}
 
 @if $absolute-navigation == true {
   .nav-container {
