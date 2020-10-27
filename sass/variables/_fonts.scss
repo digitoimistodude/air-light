@@ -40,6 +40,7 @@ $font-weight-headings: 700;
   --font-size-large: #{$font-size-large};
   --font-size-extra-large: #{$font-size-extra-large};
   --font-size-huge: #{$font-size-huge};
+  --font-size-nav-toggle-label: 15px;
 
   // Codyhouse helper variables
   --body-line-height: #{$line-height-paragraphs};
@@ -55,6 +56,7 @@ $font-weight-headings: 700;
 
   // Vars in tiny phones like iPhone 5S
   @media (max-width: 420px) {
+    --font-size-nav-toggle-label: 13px;
     --font-size-tiny: 14px;
     --font-size-small: 14px;
   }

@@ -341,11 +341,18 @@ $mobile-nav-height: 80px;
       align-items: center;
 
       .nav-toggle-label {
-        font-size: $font-size-min;
+        font-size: var(--font-size-nav-toggle-label);
+
+        // Hide on smallest phones
+        @media (max-width: 410px) {
+          display: none;
+        }
       }
 
-      .hamburger-box {
-        margin-right: 2rem;
+      @media (min-width: 411px) {
+        .hamburger-box {
+          margin-right: 2rem;
+        }
       }
     }
   }
