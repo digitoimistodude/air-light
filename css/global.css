@@ -4539,8 +4539,8 @@ h6 {
 	padding: 0;
 }
 
-.nav-primary ul > li {
-	padding-left: 1.5rem;
+.nav-primary .sub-menu > li > a {
+	padding-left: 3.5rem;
 }
 
 .nav-primary [data-whatintent="mouse"] a:focus,

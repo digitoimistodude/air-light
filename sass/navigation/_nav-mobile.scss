@@ -208,8 +208,8 @@ $mobile-nav-height: 80px;
 
     // Slight margins to improve readability of sub-navs
     // Second level
-    ul > li {
-      padding-left: 1.5rem;
+    .sub-menu > li > a {
+      padding-left: 3.5rem;
     }
 
     // Do not focus when seeing anyway
