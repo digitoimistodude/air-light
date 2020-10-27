@@ -4454,14 +4454,14 @@ h6 {
 }
 
 .nav-primary a {
-	border-top: 1px solid #f0f0f0;
+	border-top: 1px solid rgba(240, 240, 240, 0.1);
 	padding-top: 1.2rem;
 	padding-bottom: 1.2rem;
 	padding-left: 2.5rem;
 	padding-right: 5.8rem;
 	margin-left: 0;
 	margin-right: 0; /* stylelint-disable */
-	color: #222;
+	color: #fff;
 	font-size: 15px;
 	font-weight: 500; /* stylelint-enable */
 	text-decoration: none;
