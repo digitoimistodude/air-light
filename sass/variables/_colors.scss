@@ -25,7 +25,6 @@ $color-code-blocks: #c7254e;
 $color-code-blocks-background: #f9f2f4;
 $color-border-forms: #d9d9d9;
 $color-code-background: #2b303c;
-$color-separator-nav-mobile: #f0f0f0;
 $color-comments-link: #555;
 $color-edit-link: #999;
 $color-background-edit-link: #fafafa;
@@ -35,3 +34,15 @@ $color-warning: lighten(#8e440b, 40%);
 $color-error: lighten(#903a37, 40%);
 $color-disabled: #bbb;
 $color-captions: rgba(#4b4b5a, .9);
+
+// Nav specific
+$color-separator-nav-mobile-light: #f0f0f0;
+$color-separator-nav-mobile-dark: rgba(#f0f0f0, .1);
+$color-separator-nav-mobile: $color-separator-nav-mobile-light;
+$color-background-nav-desktop-light: $color-white;
+$color-background-nav-desktop-dark: $color-dark;
+$color-background-nav-desktop: $color-background-nav-desktop-light;
+$color-background-nav-mobile: $color-background-nav-desktop;
+$color-nav-links-dark: $color-black;
+$color-nav-links-light: $color-white;
+$color-nav-links: $color-nav-links-dark;

@@ -5,7 +5,6 @@
 // devices only.
 // -----------------------------------------------------------
 $absolute-navigation: true;
-$nav-desktop-background-color: $color-default-background;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
 $nav-link-padding-y-dropdown: .4rem;
@@ -54,6 +53,15 @@ $submenu-dropdown-toggle-hover: (
   'border': none,
   'color': $color-links,
 );
+
+@if $absolute-navigation == false {
+  .nav-container {
+    background-color: $color-background-nav-desktop;
+    box-shadow: 0 0 10px rgba($color-dark, .1);
+    position: relative;
+    z-index: 222;
+  }
+}
 
 @if $absolute-navigation == true {
   .nav-container {
@@ -143,7 +151,7 @@ $submenu-dropdown-toggle-hover: (
 
 @media only screen and (min-width: $responsivenav) {
   .nav-container {
-    background: $nav-desktop-background-color;
+    background: $color-background-nav-desktop;
   }
 
   @media only screen and (max-width: $responsivenav) {
