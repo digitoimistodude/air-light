@@ -4647,6 +4647,10 @@ h6 {
 	--padding-container-vertical: 5rem;
 }
 
+:root {
+	--font-size-extra-large: 17px;
+}
+
 }
 
 @media (max-width: 600px) {
@@ -4691,7 +4695,6 @@ th {
 	--font-size-tiny: 16px;
 	--font-size-small: 16px;
 	--font-size-default: 16px;
-	--font-size-extra-large: 18px;
 }
 
 .site-header {
@@ -4755,6 +4758,7 @@ th {
 
 :root {
 	--font-size-nav-toggle-label: 13px;
+	--font-size-extra-large: 16px;
 	--font-size-tiny: 14px;
 	--font-size-small: 14px;
 }
