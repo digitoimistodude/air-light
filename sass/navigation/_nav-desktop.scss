@@ -4,6 +4,7 @@
 // The main layout for the website navigation, for a desktop
 // devices only.
 // -----------------------------------------------------------
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
 $absolute-navigation: true;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
