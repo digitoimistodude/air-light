@@ -420,6 +420,8 @@ a.global-link {
 	font-weight: 700;
 }
 
+/* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-pseudo-class */
+
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
@@ -511,8 +513,6 @@ a.global-link {
 	outline: 2px solid #4d4aff;
 }
 
-/* stylelint-disable selector-max-pseudo-class */
-
 a[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):not([href*='#']),
 a.is-external-link:not(.no-external-link-indicator):not([href*='#']) {
 	display: inline-flex;
@@ -545,7 +545,7 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	display: none;
 }
 
-/* stylelint-enable selector-max-pseudo-class */
+/* stylelint-enable */
 
 .menu-items {
 	position: relative;
@@ -600,11 +600,15 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	display: none;
 }
 
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
+
 .nav-container {
 	background-color: transparent;
 	position: absolute;
 	width: 100%;
 }
+
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
 
 /*!
  * Hamburgers
@@ -3292,6 +3296,8 @@ div.lazy {
 	background-position: center;
 	min-height: 200px;
 	z-index: 0;
+	top: 0;
+	left: 0;
 }
 
 .has-lazyload {
