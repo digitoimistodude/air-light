@@ -40,21 +40,28 @@ $font-weight-headings: 700;
   --font-size-large: #{$font-size-large};
   --font-size-extra-large: #{$font-size-extra-large};
   --font-size-huge: #{$font-size-huge};
+  --font-size-nav-toggle-label: 15px;
 
   // Codyhouse helper variables
   --body-line-height: #{$line-height-paragraphs};
   --heading-line-height: #{$line-height-headings};
+
+  // Vars on iPad
+  @media (max-width: $container-ipad) {
+    --font-size-extra-large: 17px;
+  }
 
   // Vars in mobile
   @media (max-width: $container-mobile) {
     --font-size-tiny: 16px;
     --font-size-small: 16px;
     --font-size-default: 16px;
-    --font-size-extra-large: 18px;
   }
 
   // Vars in tiny phones like iPhone 5S
   @media (max-width: 420px) {
+    --font-size-nav-toggle-label: 13px;
+    --font-size-extra-large: 16px;
     --font-size-tiny: 14px;
     --font-size-small: 14px;
   }

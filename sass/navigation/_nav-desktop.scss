@@ -4,6 +4,7 @@
 // The main layout for the website navigation, for a desktop
 // devices only.
 // -----------------------------------------------------------
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
 $absolute-navigation: true;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
@@ -237,16 +238,6 @@ $submenu-dropdown-toggle-hover: (
           float: none;
           width: map-get($dropdown, 'width');
           padding: 0;
-        }
-
-        &.sub-menu {
-          padding-left: 0;
-          padding-top: .5rem;
-          padding-bottom: .5rem;
-        }
-
-        &.sub-menu li {
-          margin: 0;
         }
 
         // All dropdowns in level 2 and after

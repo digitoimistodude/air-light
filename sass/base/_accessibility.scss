@@ -4,6 +4,7 @@
 // A hidden screen reader for readers, focus elements for
 // vision impaired and other useful a11y CSS hacks.
 // ---------------------------------------------------------
+/* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-pseudo-class */
 
 // Variables
 $focus-outline-color: #4d4aff;
@@ -125,7 +126,6 @@ $tld-production: 'dudetest.xyz';
 }
 
 // Add icon to external links
-/* stylelint-disable selector-max-pseudo-class */
 a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator):not([href*='#']),
 a.is-external-link:not(.no-external-link-indicator):not([href*='#']) {
   display: inline-flex;
@@ -157,4 +157,4 @@ a[href^="tel"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):
 a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#'])::after {
   display: none;
 }
-/* stylelint-enable selector-max-pseudo-class */
+/* stylelint-enable */

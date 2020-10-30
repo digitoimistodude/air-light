@@ -1,30 +1,14 @@
 // Built to work with:
 // https://github.com/justintadlock/hybrid-breadcrumbs
-// https://github.com/digitoimistodude/air-light
+// https://github.com/digitoimistodude/kpt
 
-/* stylelint-disable selector-class-pattern */
-.block.block-breadcrumb {
-  padding-bottom: 0;
-
-  > .container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-
-    @media (max-width: 650px) {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-  }
-}
-
+/* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-class, selector-max-specificity */
 .breadcrumbs {
-  @extend .nav-container;
   background: transparent;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 4rem;
   text-align: left;
   line-height: 1;
-  top: 104px;
   z-index: 100;
   border-bottom: 0;
 
@@ -85,23 +69,6 @@
     }
   }
 
-  .breadcrumbs__crumb--home {
-    padding-left: 0;
-
-    &::before,
-    &::after {
-      display: none;
-    }
-
-    a > span {
-      padding: 0;
-    }
-
-    abbr {
-      @extend .screen-reader-text;
-    }
-  }
-
   .breadcrumbs__trail {
     display: inline-flex;
     flex-wrap: wrap;
@@ -145,14 +112,14 @@
       display: none;
     }
 
-    .breadcrumbs__title {
-      display: none;
-    }
-
     .breadcrumbs__crumb {
       margin-right: 0;
       margin-left: 0;
       padding-left: 0;
+
+      .breadcrumbs__title {
+        display: none;
+      }
 
       &::before {
         text-indent: -9999px;
@@ -173,6 +140,23 @@
         margin-right: 10px;
         content: ' ';
         align-self: center;
+      }
+    }
+
+    .breadcrumbs__crumb--home {
+      padding-left: 0;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      a > span {
+        padding: 0;
+      }
+
+      abbr {
+        @extend .screen-reader-text;
       }
     }
 
@@ -207,7 +191,6 @@
   }
 }
 
-/* stylelint-disable */
 .breadcrumbs .breadcrumbs__crumb--empty-label,
 .breadcrumbs .breadcrumbs__trail li.breadcrumbs__crumb.breadcrumbs__crumb--empty-label {
   display: none;
@@ -216,4 +199,4 @@
     display: none;
   }
 }
-/* stylelint-enable */
+/* stylelint-enable selector-class-pattern */
