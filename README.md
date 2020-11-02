@@ -4,7 +4,7 @@
 
 Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
 
-## [Demo](https://dudetest.xyz/air)
+## [Demo](https://dudetest.xyz/air) | [Usage](#usage)
 
 * **CSS gzipped:** 12 KB *(113 KB original)*
 * **JS gzipped:** 3.4 KB *(10.8 KB original)*
@@ -34,9 +34,10 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
 
 ## Table of contents
 
-1. [Please note before using](#please-note-before-using)
-2. [License](#license)
-3. [Features](#features)
+1. [Usage](#usage)
+2. [Please note before using](#please-note-before-using)
+3. [License](#license)
+4. [Features](#features)
     1. [Layout base & grid](#layout-base--grid)
     2. [Typography](#typography)
     3. [Development](#development)
@@ -48,14 +49,13 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     9. [Accessibility](#accessibility)
     10. [Lazy load](#lazy-load)
     11. [Disabled features](#disabled-features)
-4. [Extra building blocks](#extra-building-blocks)
+5. [Extra building blocks](#extra-building-blocks)
     1. [Sticky navigation](#sticky-navigation)
     2. [Slick slider](#slick-slider)
     3. [WooCommerce support](#woocommerce-support)
-5. [Requirements](#requirements)
-6. [Recommendations for development](#recommendations-for-development)
-7. [Our way of building new themes](#our-way-of-building-new-themes)
-8. [Installation](#installation)
+6. [Requirements](#requirements)
+7. [Recommendations for development](#recommendations-for-development)
+8. [Our way of building new themes](#our-way-of-building-new-themes)
 9. [Contributing](#contributing)
     1. [Air development](#air-development)
     2. [Debuggers](#debuggers)
@@ -430,19 +430,37 @@ We use ACF and Gutenberg to build new websites on air-light. This is the default
 </section><!-- .block -->
 ````
 
-### Installation
+### Usage
 
-Traditional way:
+#### Option 1: Use in your own WordPress instance and with your own development environment like Docker, Local by Flywheel or MAMP
 
-1. Git clone or download zip
-2. Open Terminal and run `npm install`
-3. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run search and replace air-light => yourprojectname
+**If you want to set up this your own way**, install using the *traditional way*:
+
+1. Clone repo with `git clone https://github.com/digitoimistodude/air-light.git` to your preferred location on command line or [download zip](https://github.com/digitoimistodude/air-light/archive/master.zip)
+2. Run `npm install` in theme folder
+3. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run following search & replaces (note: *yourprojectname* is should always be lowercase without special characters):
+
+**Search:** air-light
+**Replace with:** *yourprojectname*
+
+**Search**: Air-light
+**Replace with:** *yourprojectname*
+
+**Search**: air_light_
+**Replace with:** *yourprojectname_*
+
+**Search**: Air_light_
+**Replace with:** *yourprojectname_*
+
 4. Run `gulp watch` and start coding
 
-If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your vagrant box is up and running at `10.1.2.4`, just
+#### Option 2: Use our WordPress stack and development environment
 
-1. Open Terminal and cd to the bin directory under air-light theme
+If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) has been set up (preferred) *OR* [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) box is up and running at `10.1.2.4`, use the following instructions:
+
+1. Open command line interface and cd into **bin folder** like `cd /path/to/air-light/bin`
 2. Run `sh newtheme.sh` \- the script takes care of the rest \(updates textdomain with your project name\, checks updates for air and npm packages\, runs npm install\, fetches devpackages\, sets up gulp\, cleans up the leftover files and activates the theme via wp\-cli\)
+3. Cd back to theme dir `cd ..`, run `gulp watch` and start coding
 
 ### Contributing
 
