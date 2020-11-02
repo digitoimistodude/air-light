@@ -440,16 +440,16 @@ We use ACF and Gutenberg to build new websites on air-light. This is the default
 2. Run `npm install` in theme folder
 3. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run following search & replaces (note: *yourprojectname* is should always be lowercase without special characters):
 
-**Search:** air-light
+**Search:** air-light<br>
 **Replace with:** *yourprojectname*
 
-**Search**: Air-light
+**Search**: Air-light<br>
 **Replace with:** *yourprojectname*
 
-**Search**: air_light_
+**Search**: air_light_<br>
 **Replace with:** *yourprojectname_*
 
-**Search**: Air_light_
+**Search**: Air_light_<br>
 **Replace with:** *yourprojectname_*
 
 4. Run `gulp watch` and start coding
