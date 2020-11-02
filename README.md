@@ -446,11 +446,11 @@ We use ACF and Gutenberg to build new websites on air-light. This is the default
 **Search**: Air-light<br>
 **Replace with:** *yourprojectname*
 
-**Search**: air_light_<br>
-**Replace with:** *yourprojectname_*
+**Search**: air_light<br>
+**Replace with:** *yourprojectname*
 
-**Search**: Air_light_<br>
-**Replace with:** *yourprojectname_*
+**Search**: Air_light<br>
+**Replace with:** *yourprojectname*
 
 4. Run `gulp watch` and start coding
 
