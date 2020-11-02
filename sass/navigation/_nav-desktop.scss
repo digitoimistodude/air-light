@@ -4,7 +4,7 @@
 // The main layout for the website navigation, for a desktop
 // devices only.
 // -----------------------------------------------------------
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, selector-max-class, no-descending-specificity */
 $absolute-navigation: true;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
@@ -72,7 +72,6 @@ $submenu-dropdown-toggle-hover: (
 
     @media only screen and (min-width: $responsivenav) {
       // Main level links
-      /* stylelint-disable selector-max-compound-selectors, selector-max-combinators */
       .nav-primary > ul > li > a,
       .nav-primary > ul > li > button {
         color: $color-white;
@@ -82,7 +81,6 @@ $submenu-dropdown-toggle-hover: (
       .nav-primary > ul > li > a:hover {
         color: $color-white;
       }
-      /* stylelint-enable selector-max-compound-selectors, selector-max-combinators */
     }
   }
 }
@@ -223,7 +221,6 @@ $submenu-dropdown-toggle-hover: (
       }
 
       // Dropdowns
-      /* stylelint-disable selector-max-compound-selectors, selector-max-combinators, selector-max-class */
       .sub-menu {
         width: map-get($dropdown, 'width');
         left: 5%;
@@ -293,15 +290,12 @@ $submenu-dropdown-toggle-hover: (
           /* stylelint-enable */
         }
 
-        /* stylelint-disable selector-max-class, selector-max-compound-selectors */
         &.toggled-on svg {
           transform: rotateX(180deg);
         }
-        /* stylelint-enable selector-max-class, selector-max-compound-selectors */
       }
 
       // Sub-level toggle arrow
-      /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
       ul li .dropdown-toggle {
         background-color: map-get($submenu-dropdown-toggle, 'background');
         border: map-get($submenu-dropdown-toggle, 'border');
@@ -312,15 +306,12 @@ $submenu-dropdown-toggle-hover: (
         flex-shrink: 0;
         align-self: center;
 
-        /* stylelint-disable no-descending-specificity */
         svg {
           transform: rotate(-90deg) rotateX(0deg);
           width: map-get($submenu-dropdown-toggle, 'arrow-size');
           height: map-get($submenu-dropdown-toggle, 'arrow-size');
         }
-        /* stylelint-enable */
 
-        /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
         &.toggled-on svg {
           transform: rotate(-90deg) rotateX(180deg);
         }
