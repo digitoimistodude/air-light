@@ -600,7 +600,7 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 	display: none;
 }
 
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, selector-max-class, no-descending-specificity */
 
 .nav-container {
 	background-color: transparent;
@@ -4010,9 +4010,6 @@ ul li:hover > ul {
 
 @media only screen and (min-width: 960px) {
 
-.nav-container { /* stylelint-disable selector-max-compound-selectors, selector-max-combinators */ /* stylelint-enable selector-max-compound-selectors, selector-max-combinators */
-}
-
 .nav-container .nav-primary > ul > li > a,
 .nav-container .nav-primary > ul > li > button {
 	color: #fff;
@@ -4104,7 +4101,7 @@ ul li:hover > ul {
 
 .nav-primary .menu-item {
 	position: relative;
-	margin: 0; /* stylelint-disable selector-max-compound-selectors, selector-max-combinators, selector-max-class */ /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
+	margin: 0;
 }
 
 .nav-primary .menu-item > a {
@@ -4182,7 +4179,7 @@ ul li:hover > ul {
 	padding: 0;
 	display: inline-flex;
 	align-items: center;
-	justify-content: center; /* stylelint-disable selector-max-class, selector-max-compound-selectors */ /* stylelint-enable selector-max-class, selector-max-compound-selectors */
+	justify-content: center;
 }
 
 .nav-primary .menu-item .dropdown-toggle svg { /* stylelint-disable no-descending-specificity */
@@ -4203,7 +4200,7 @@ ul li:hover > ul {
 	height: auto;
 	width: 3rem;
 	flex-shrink: 0;
-	align-self: center; /* stylelint-disable no-descending-specificity */ /* stylelint-enable */ /* stylelint-disable selector-max-class, selector-max-compound-selectors, selector-max-combinators */
+	align-self: center;
 }
 
 .nav-primary .menu-item ul li .dropdown-toggle svg {
@@ -4419,23 +4416,6 @@ h6 {
 	overflow: hidden;
 }
 
-.main-title {
-	font-size: 14px;
-	font-weight: 400;
-}
-
-.sub-title {
-	font-size: 1.6rem;
-	opacity: .5;
-	display: none !important;
-}
-
-.main-title,
-.sub-title {
-	width: 100%;
-	display: block;
-}
-
 .nav-primary {
 	height: 100vh;
 	width: 100vw;
@@ -4473,11 +4453,6 @@ h6 {
 	width: 100%;
 	float: none;
 	padding: 2rem 0;
-}
-
-.nav-primary .has-submenu {
-	width: 80%;
-	position: static;
 }
 
 .nav-primary a:hover,

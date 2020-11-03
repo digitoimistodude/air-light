@@ -80,23 +80,6 @@ $mobile-nav-height: 80px;
     overflow: hidden;
   }
 
-  .main-title {
-    font-size: 14px;
-    font-weight: 400;
-  }
-
-  .sub-title {
-    font-size: 1.6rem;
-    opacity: .5;
-    display: none !important;
-  }
-
-  .main-title,
-  .sub-title {
-    width: 100%;
-    display: block;
-  }
-
   .nav-primary {
     height: 100vh;
     width: 100vw;
@@ -136,12 +119,6 @@ $mobile-nav-height: 80px;
       width: 100%;
       float: none;
       padding: 2rem 0;
-    }
-
-    // Prevent nav item overlapping with dropdown opening toggle
-    .has-submenu {
-      width: 80%;
-      position: static;
     }
 
     a:hover,
