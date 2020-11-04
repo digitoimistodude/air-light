@@ -2407,33 +2407,6 @@ pre {
 	appearance: none;
 }
 
-.content-area button.button-grey,
-.content-area .button.button-grey,
-.content-area input[type="reset"].button-grey,
-.content-area input[type="submit"].button-grey,
-.content-area input[type="button"].button-grey,
-.site-footer button.button-grey,
-.site-footer .button.button-grey,
-.site-footer input[type="reset"].button-grey,
-.site-footer input[type="submit"].button-grey,
-.site-footer input[type="button"].button-grey {
-	color: #222;
-	background: #f5f5f5;
-}
-
-.content-area button.button-grey:hover,
-.content-area .button.button-grey:hover,
-.content-area input[type="reset"].button-grey:hover,
-.content-area input[type="submit"].button-grey:hover,
-.content-area input[type="button"].button-grey:hover,
-.site-footer button.button-grey:hover,
-.site-footer .button.button-grey:hover,
-.site-footer input[type="reset"].button-grey:hover,
-.site-footer input[type="submit"].button-grey:hover,
-.site-footer input[type="button"].button-grey:hover {
-	background: #0c142a;
-}
-
 .content-area button.button-ghost,
 .content-area .button.button-ghost,
 .content-area input[type="reset"].button-ghost,
@@ -2445,8 +2418,8 @@ pre {
 .site-footer input[type="submit"].button-ghost,
 .site-footer input[type="button"].button-ghost {
 	background-color: transparent;
-	border: 2px solid #3962c9;
-	color: #3962c9;
+	border: 2px solid #222;
+	color: #222;
 }
 
 .content-area button.button-small,
@@ -2477,10 +2450,10 @@ pre {
 .site-footer input[type="submit"].button-medium,
 .site-footer input[type="button"].button-medium {
 	font-size: var(--font-size-medium);
-	padding-top: 19px;
-	padding-bottom: 19px;
-	padding-left: 40px;
-	padding-right: 40px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .content-area button.button-large,
@@ -2493,25 +2466,8 @@ pre {
 .site-footer input[type="reset"].button-large,
 .site-footer input[type="submit"].button-large,
 .site-footer input[type="button"].button-large {
-	font-size: var(--font-size-large);
-	padding: 14px 27px 16px;
-}
-
-.content-area button.button-action,
-.content-area .button.button-action,
-.content-area input[type="reset"].button-action,
-.content-area input[type="submit"].button-action,
-.content-area input[type="button"].button-action,
-.site-footer button.button-action,
-.site-footer .button.button-action,
-.site-footer input[type="reset"].button-action,
-.site-footer input[type="submit"].button-action,
-.site-footer input[type="button"].button-action {
-	font-size: var(--font-size-small);
-	padding-top: 14px;
-	padding-bottom: 14px;
-	padding-left: 25px;
-	padding-right: 25px;
+	font-size: var(--font-size-extra-large);
+	padding: 21px 35px;
 }
 
 .content-area button:hover,
@@ -2535,8 +2491,8 @@ pre {
 .site-footer input[type="button"]:hover,
 .site-footer input[type="button"]:focus {
 	color: #fff;
-	background: #0c142a;
-	border-color: #0c142a;
+	background: #3962c9;
+	border-color: #3962c9;
 }
 
 select {

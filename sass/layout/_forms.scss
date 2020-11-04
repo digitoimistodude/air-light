@@ -60,19 +60,10 @@ $background-inputs: $color-white;
     appearance: none;
 
     // Button styles
-    &.button-grey {
-      color: $color-black;
-      background: $color-lightgrey;
-
-      &:hover {
-        background: $color-hover;
-      }
-    }
-
     &.button-ghost {
       background-color: transparent;
-      border: $border-width solid $color-links;
-      color: $color-links;
+      border: $border-width solid $color-buttons;
+      color: $color-buttons;
     }
 
     // Button sizes
@@ -86,30 +77,22 @@ $background-inputs: $color-white;
 
     &.button-medium {
       font-size: var(--font-size-medium);
-      padding-top: 19px;
-      padding-bottom: 19px;
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     &.button-large {
-      font-size: var(--font-size-large);
-      padding: 14px 27px 16px;
-    }
-
-    &.button-action {
-      font-size: var(--font-size-small);
-      padding-top: 14px;
-      padding-bottom: 14px;
-      padding-left: 25px;
-      padding-right: 25px;
+      font-size: var(--font-size-extra-large);
+      padding: 21px 35px;
     }
 
     &:hover,
     &:focus {
       color: $color-white;
-      background: $color-hover;
-      border-color: $color-hover;
+      background: $color-buttons-hover;
+      border-color: $color-buttons-hover;
     }
   }
 }
