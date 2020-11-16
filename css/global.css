@@ -2363,11 +2363,8 @@ pre {
 }
 
 :root {
-	--space-unit: 1em;
-	--space-x-small: calc(.125 * var(--space-unit));
-	--space-small: calc(.25 * var(--space-unit));
 	--checkbox-radio-size: 16px;
-	--checkbox-radio-gap: calc(.5 * var(--space-unit));
+	--checkbox-radio-gap: 10px;
 	--checkbox-radio-border-width: 2px;
 	--checkbox-radio-line-height: var(--body-line-height);
 	--radio-marker-size: 8px;
@@ -2624,9 +2621,10 @@ input[type="checkbox"] + label {
 input[type="radio"] + label::before,
 input[type="checkbox"] + label::before {
 	content: '';
-	display: inline-block;
+	display: inline-flex;
+	align-self: center;
 	position: relative;
-	top: calc((.8em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+	top: calc(var(--checkbox-radio-border-width) / 2);
 	flex-shrink: 0;
 	width: var(--checkbox-radio-size);
 	height: var(--checkbox-radio-size);
