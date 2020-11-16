@@ -52,12 +52,10 @@ body *[aria-invalid="true"] {
     position: relative;
     top: 3px;
   }
-  
+
   // Hide honeypot field
   .gform_validation_container {
-    display: none !important;
-    position: absolute !important;
-    left: -9000px;
+    @extend .screen-reader-text;
   }
 
   ul {
