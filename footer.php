@@ -7,20 +7,13 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:33:49
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 09:59:56
+ * @Last Modified time: 2020-11-19 11:24:01
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @package air-light
  */
 
 namespace Air_Light;
-
-// Reminder for translated accessible labels
-if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
-  $screenreadertext_top = ask__( 'Accessibility: Back to top' );
-} else {
-  $screenreadertext_top = 'Back to top';
-}
 
 ?>
 
@@ -30,7 +23,7 @@ if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
 
   <?php get_template_part( 'template-parts/footer/demo-content' ); ?>
 
-  <p class="back-to-top"><a href="#page" class="js-trigger top no-text-link no-external-link-indicator" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html( $screenreadertext_top ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
+  <p class="back-to-top"><a href="#page" class="js-trigger top no-text-link no-external-link-indicator" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html( get_default_localization( 'Back to top' ) ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
 
 </footer><!-- #colophon -->
 

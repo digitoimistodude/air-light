@@ -7,21 +7,15 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:17:32
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 10:00:12
+ * @Last Modified time: 2020-11-19 11:24:53
  *
  * @package air-light
  */
 
 namespace Air_Light;
 
-// Reminder for translated accessible labels
-if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
-  $screenreadertext_skip = ask__( 'Accessibility: Skip to content' );
-} else {
-  $screenreadertext_skip = 'Skip to content';
-}
-
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -37,7 +31,7 @@ if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
   <?php wp_body_open(); ?>
   <div id="page" class="site">
 
-    <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( $screenreadertext_skip ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( get_default_localization( 'Skip to content' ) ); ?></a>
 
     <div class="nav-container">
       <header class="site-header">

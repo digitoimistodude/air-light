@@ -10,7 +10,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 10:01:08
+ * @Last Modified time: 2020-11-19 11:24:38
  *
  * @package air-light
  */
@@ -25,27 +25,12 @@ class Nav_Walker extends \Walker_Nav_Menu {
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat( "\t", $depth );
 
-    // Reminder for translated accessible labels
-    if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
-      if ( 'fi' === pll_current_language() ) {
-        $screenreadertext = ask__( 'Saavutettavuus: Avaa alavalikko' );
-      } else {
-        $screenreadertext = ask__( 'Accessibility: Open child menu' );
-      }
-    } else {
-      if ( 'fi' === get_bloginfo( 'language' ) ) {
-        $screenreadertext = esc_html__( 'Avaa alavalikko', 'air-light' );
-      } else {
-        $screenreadertext = esc_html__( 'Open child menu', 'air-light' );
-      }
-    }
-
     // Get the ico
     ob_start();
     require get_theme_file_path( 'svg/chevron-down-main-nav.svg' );
     $icon = ob_get_clean();
 
-    $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . $screenreadertext . '">';
+    $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . get_default_localization( 'Open child menu' ) . '">';
     $output .= $icon . '</button>';
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }
