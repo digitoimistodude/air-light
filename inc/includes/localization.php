@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 11:23:46
+ * @Last Modified time: 2020-11-19 11:35:56
  *
  * @package air-light
  */
@@ -17,8 +17,7 @@ add_filter( 'air_helper_pll_register_strings', function() { // phpcs:ignore
 
   /**
    * Uncomment if you need to have default air-light accessibility strings
-   * translatable via Polylang string translations. By default these
-   * translations do come from theme translation files.
+   * translatable via Polylang string translations.
    */
   // foreach ( get_default_localization_strings() as $key => $value ) {
   // $strings[ "Accessibility: {$key}" ] = $value;
