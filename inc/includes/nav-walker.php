@@ -9,8 +9,8 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2019-12-30 21:58:07
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2020-11-19 11:24:38
  *
  * @package air-light
  */
@@ -30,22 +30,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
     require get_theme_file_path( 'svg/chevron-down-main-nav.svg' );
     $icon = ob_get_clean();
 
-    // Reminder for translated accessible labels
-    if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
-      if ( 'fi' === pll_current_language() ) {
-        $screenreadertext = ask__( 'Saavutettavuus: Avaa alavalikko' );
-      } else {
-        $screenreadertext = ask__( 'Accessibility: Open child menu' );
-      }
-    } else {
-      if ( 'fi' === get_bloginfo( 'language' ) ) {
-        $screenreadertext = esc_html__( 'Avaa alavalikko', 'air-light' );
-      } else {
-        $screenreadertext = esc_html__( 'Open child menu', 'air-light' );
-      }
-    }
-
-    $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . $screenreadertext . '">';
+    $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . get_default_localization( 'Open child menu' ) . '">';
     $output .= $icon . '</button>';
     $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }

@@ -18,11 +18,6 @@ namespace Air_Light;
 // require get_theme_file_path( 'inc/hooks/breadcrumb.php' );
 
 /**
- * Localized strings (Polylang Pro + Air Helper)
- */
-require get_theme_file_path( '/inc/includes/localization.php' );
-
-/**
  * Ensure HTML validation and cleanups
  */
 require get_theme_file_path( '/inc/includes/cleanups.php' );
