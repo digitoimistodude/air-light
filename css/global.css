@@ -3252,7 +3252,6 @@ div.lazy {
 	width: 100%;
 	background-size: cover;
 	background-position: center;
-	min-height: 200px;
 	z-index: 0;
 	top: 0;
 	left: 0;
