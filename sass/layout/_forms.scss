@@ -10,6 +10,7 @@ $border-radius: 3px;
 $border-width: 2px;
 $button-font-weight: 700;
 $background-inputs: $color-white;
+$color-checkboxes: $color-main;
 
 // CSS Variables for radios and checkboxes
 :root {
@@ -205,7 +206,7 @@ input[type="checkbox"] + label::before {
   height: var(--checkbox-radio-size);
   background-color: $color-white;
   border-width: var(--checkbox-radio-border-width);
-  border-color: $color-main;
+  border-color: $color-checkboxes;
   border-style: solid;
   background-repeat: no-repeat;
   background-position: center;
@@ -226,9 +227,9 @@ input[type="checkbox"] + label::before {
 // Radio button and checkbox checked states
 input[type="radio"]:checked + label::before,
 input[type="checkbox"]:checked + label::before {
-  background-color: $color-main;
+  background-color: $color-checkboxes;
   box-shadow: none;
-  border-color: $color-main;
+  border-color: $color-checkboxes;
   transition: transform .2s;
 }
 
@@ -256,8 +257,8 @@ input[type="radio"]:focus + label::before,
 input[type="checkbox"]:focus + label::before,
 input[type="radio"]:checked:active + label::before,
 input[type="checkbox"]:checked:active + label::before {
-  border-color: $color-main;
-  box-shadow: 0 0 0 3px rgba($color-main, .2);
+  border-color: $color-checkboxes;
+  box-shadow: 0 0 0 3px rgba($color-checkboxes, .2);
 }
 
 // Radio button and checkbox checked + active states
@@ -271,6 +272,6 @@ input[type="checkbox"]:checked:active + label::before {
 /* stylelint-disable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
 input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
 input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
-  border-color: lighten($color-main, 15%);
+  border-color: lighten($color-checkboxes, 15%);
 }
 /* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
