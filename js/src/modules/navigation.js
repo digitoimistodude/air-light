@@ -53,7 +53,11 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       return;
     }
 
-    menuToggle.add(siteNavigation).attr('aria-expanded', 'false');
+    // Do not set aria-expanded false on desktop
+    if (window.innerWidth < responsivenav) {
+      menuToggle.add(siteNavigation).attr('aria-expanded', 'false');
+    }
+
     menuToggle.on('click', function () {
       $(this).add(siteHeaderMenu).toggleClass('toggled-on');
 
@@ -340,7 +344,11 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     return;
   }
 
-  menu.setAttribute('aria-expanded', 'false');
+  // Do not set aria-expanded false on desktop
+  if (window.innerWidth < responsivenav) {
+    menu.setAttribute('aria-expanded', 'false');
+  }
+
   if (menu.className.indexOf('nav-menu') === -1) {
     menu.className += ' nav-menu';
   }
