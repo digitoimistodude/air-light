@@ -24,7 +24,7 @@ namespace Air_Light;
     <span id="nav-toggle-label" class="nav-toggle-label"><?php echo esc_html( get_default_localization( 'Open main menu' ) ); ?></span>
   </button>
 
-  <nav id="nav" class="nav-primary">
+  <nav id="nav" class="nav-primary" aria-label="<?php echo esc_html( get_default_localization( 'Main navigation' ) ); ?>">
 
     <?php wp_nav_menu( array(
       'theme_location' => 'primary',
@@ -34,7 +34,7 @@ namespace Air_Light;
       'menu_id'        => 'main-menu',
       'echo'           => true,
       'fallback_cb'    => __NAMESPACE__ . '\Nav_Walker::fallback',
-      'items_wrap'     => '<ul aria-label="' . get_default_localization( 'Main navigation' ) . '" id="%1$s" class="%2$s">%3$s</ul>',
+      'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
       'walker'         => new Nav_Walker(),
     ) ); ?>
 
