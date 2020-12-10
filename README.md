@@ -71,7 +71,7 @@ Air is a **development theme**, so it has updates very often. By using this star
 
 Air is not meant to be "a theme for everyone", which means it doesn't have all the parts that are generally included in multi-purpose themes for non-technical people (please see [Disabled features](#disabled-features)).
 
-If you want to use this theme as starter for your new theme, please note the theme won't necessarily be that much fun or won't look good by default and neads work from you. We recommend using [Sage](https://roots.io/sage/) if you need something more extended.
+If you want to use this theme as starter for your new theme, please note the theme won't necessarily be that much fun or won't look good by default and needs work from you. We recommend using [Sage](https://roots.io/sage/) if you need something more extended.
 
 ### License
 
