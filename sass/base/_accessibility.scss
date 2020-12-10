@@ -105,24 +105,42 @@ $tld-production: 'dudetest.xyz';
   select:focus,
   textarea:focus,
   div[tabindex]:focus,
+  nav ul li a:focus,
+  div[tabindex]:focus,
   a:focus {
     // Normalize the look of the outline across browsers
     // @link https://a11yproject.com/posts/never-remove-css-outlines/
-    outline: $focus-outline-style $focus-outline-color;
+    // outline: $focus-outline-style $focus-outline-color;
+
+    // Browser defaults:
+    /* stylelint-disable */
+    outline: 1px dotted $focus-outline-color;
+    outline: 5px auto -webkit-focus-ring-color;
     color: $focus-text-color;
+    /* stylelint-enable */
     opacity: 1;
     z-index: 99;
+
+    // Let's make a "padding" for focus and more clear outline
+    outline-width: 3px;
+    outline-offset: 5px;
   }
 
   // A bit better focus for large elements
   a.global-link:focus {
-    outline: $focus-outline-style-large-elements $focus-outline-color;
+    outline-width: 5px;
   }
 }
 
 // Make theme keyboard accessible with no Javascript enabled
 .no-js *:focus {
-  outline: $focus-outline-style $focus-outline-color;
+  // outline: $focus-outline-style $focus-outline-color;
+  // Browser defaults:
+  /* stylelint-disable */
+  outline: 1px dotted $focus-outline-color;
+  outline: 5px auto -webkit-focus-ring-color;
+  color: $focus-text-color;
+  /* stylelint-enable */
 }
 
 // Add icon to external links

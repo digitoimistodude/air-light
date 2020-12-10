@@ -502,19 +502,26 @@ a.global-link {
 [data-whatinput="keyboard"] select:focus,
 [data-whatinput="keyboard"] textarea:focus,
 [data-whatinput="keyboard"] div[tabindex]:focus,
-[data-whatinput="keyboard"] a:focus {
-	outline: 2px solid #4d4aff;
-	color: #222;
+[data-whatinput="keyboard"] nav ul li a:focus,
+[data-whatinput="keyboard"] div[tabindex]:focus,
+[data-whatinput="keyboard"] a:focus { /* stylelint-disable */
+	outline: 1px dotted #4d4aff;
+	outline: 5px auto -webkit-focus-ring-color;
+	color: #222; /* stylelint-enable */
 	opacity: 1;
 	z-index: 99;
+	outline-width: 3px;
+	outline-offset: 5px;
 }
 
 [data-whatinput="keyboard"] a.global-link:focus {
-	outline: 4px solid #4d4aff;
+	outline-width: 5px;
 }
 
-.no-js *:focus {
-	outline: 2px solid #4d4aff;
+.no-js *:focus { /* stylelint-disable */
+	outline: 1px dotted #4d4aff;
+	outline: 5px auto -webkit-focus-ring-color;
+	color: #222; /* stylelint-enable */
 }
 
 a[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):not([href*='#']),
