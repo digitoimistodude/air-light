@@ -73,7 +73,7 @@ $color-demo-footer-background: #eaeaea;
 // Nav for demo
 .js .nav-primary {
   // Default position, IE needs this
-  top: calc($mobile-nav-height + 10px);
+  top: calc(#{$mobile-nav-height} + 10px);
   left: 0;
 
   @media (min-width: $container-mobile) {

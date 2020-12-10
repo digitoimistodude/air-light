@@ -1823,7 +1823,7 @@ a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#']
 }
 
 .js .nav-primary {
-	top: calc($mobile-nav-height + 10px);
+	top: calc(80px + 10px);
 	left: 0;
 }
 
