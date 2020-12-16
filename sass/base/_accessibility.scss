@@ -100,14 +100,13 @@ $tld-production: 'dudetest.xyz';
 
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
+  a:focus,
   input:focus,
   button:focus,
   select:focus,
   textarea:focus,
-  div[tabindex]:focus,
   nav ul li a:focus,
-  div[tabindex]:focus,
-  a:focus {
+  div[tabindex]:focus {
     // Normalize the look of the outline across browsers
     // @link https://a11yproject.com/posts/never-remove-css-outlines/
     // outline: $focus-outline-style $focus-outline-color;
@@ -175,4 +174,3 @@ a[href^="tel"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):
 a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#'])::after {
   display: none;
 }
-/* stylelint-enable */
