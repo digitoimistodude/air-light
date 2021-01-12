@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 10:34:28
+ * @Last Modified time: 2021-01-12 17:14:50
  */
 
 namespace Air_Light;
@@ -79,8 +79,8 @@ function enqueue_polyfills() {
   }';
 
   if ( file_exists( get_theme_file_path( $legacy_scripts ) ) ) {
-    wp_register_script( 'air_light_legacy', '' ); // phpcs:ignore
-    wp_enqueue_script( 'air_light_legacy', '', [], filemtime( get_theme_file_path( $legacy_scripts ) ), false );
+    wp_register_script( 'air_light_legacy', '', [], filemtime( get_theme_file_path( $legacy_scripts ) ), false );
+    wp_enqueue_script( 'air_light_legacy' );
     wp_add_inline_script( 'air_light_legacy', $script, true );
   }
 }
