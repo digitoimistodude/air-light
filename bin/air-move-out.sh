@@ -4,7 +4,8 @@
 mkdir -p ~/air-temp
 find . -name '.DS_Store' -type f -delete
 find ../ -name '.DS_Store' -type f -delete
-sudo mv ~/Projects/airdev/content/themes/air-light/.gitkeep ~/air-temp/
+sudo rm ~/Projects/airdev/content/themes/air-light/sass/components/.gitkeep ~/air-temp/
+sudo mv ~/Projects/airdev/content/themes/air-light/sass/modules/.gitkeep ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.stylelintignore ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.nvmrc ~/air-temp/
 sudo mv ~/Projects/airdev/content/themes/air-light/.eslintrc.js ~/air-temp/
