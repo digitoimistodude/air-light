@@ -542,7 +542,7 @@ The installed coding standards are PEAR, Zend, PSR2, MySource, Squiz, PSR1, PSR1
 
 #### For your editor
 
-It's also best to have all `stylelint`, `eslint`, `phpcs`, `jscs`, `jshint` living inside your editor. We think [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) is best for this, check out the [plugins inside vscode-settings repository](https://github.com/ronilaukkarinen/vscode-settings) to make sure everything is installed.
+It's also best to have all `stylelint`, `eslint`, `phpcs` living inside your editor. We think [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) is best for this, check out the [plugins inside vscode-settings repository](https://github.com/ronilaukkarinen/vscode-settings) to make sure everything is installed.
 
 ### Releasing a new version on git and tagging principles (staff only)
 

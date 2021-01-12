@@ -497,14 +497,13 @@ a.global-link {
 	text-decoration: none;
 }
 
+[data-whatinput="keyboard"] a:focus,
 [data-whatinput="keyboard"] input:focus,
 [data-whatinput="keyboard"] button:focus,
 [data-whatinput="keyboard"] select:focus,
 [data-whatinput="keyboard"] textarea:focus,
-[data-whatinput="keyboard"] div[tabindex]:focus,
 [data-whatinput="keyboard"] nav ul li a:focus,
-[data-whatinput="keyboard"] div[tabindex]:focus,
-[data-whatinput="keyboard"] a:focus { /* stylelint-disable */
+[data-whatinput="keyboard"] div[tabindex]:focus { /* stylelint-disable */
 	outline: 1px dotted #4d4aff;
 	outline: 5px auto -webkit-focus-ring-color;
 	color: #222; /* stylelint-enable */
@@ -555,8 +554,6 @@ a[href^="tel"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([
 a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#'])::after {
 	display: none;
 }
-
-/* stylelint-enable */
 
 .menu-items {
 	position: relative;
@@ -1953,7 +1950,7 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 
 /* stylelint-enable */
 
-.block:not(.block-footer) {
+.block {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
