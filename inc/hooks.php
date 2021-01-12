@@ -18,11 +18,6 @@ namespace Air_Light;
 // require get_theme_file_path( 'inc/hooks/breadcrumb.php' );
 
 /**
- * Ensure HTML validation and cleanups
- */
-require get_theme_file_path( '/inc/includes/cleanups.php' );
-
-/**
  * General hooks
  */
 require get_theme_file_path( 'inc/hooks/general.php' );
