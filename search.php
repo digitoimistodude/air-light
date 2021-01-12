@@ -5,8 +5,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 15:10:57
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-01-12 17:19:31
  * @package air-light
  */
 
@@ -14,7 +14,7 @@ namespace Air_Light;
 
 $results = [];
 
-if ( ! empty( $_GET['s'] ) && have_posts() ) { // phpcs:ignore
+if ( ! empty( $_GET['s'] ) && have_posts() ) {
   while ( have_posts() ) {
     the_post();
     $post_type = get_post_type();
