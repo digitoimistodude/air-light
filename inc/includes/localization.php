@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 16:48:51
+ * @Last Modified time: 2021-01-12 17:24:21
  *
  * @package air-light
  */
@@ -41,6 +41,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'External site:'        => __( 'External site:', 'air-light' ),
       'opens in a new window' => __( 'opens in a new window', 'air-light' ),
       'Page not found'        => __( 'Page not found', 'air-light' ),
+      'Search'                => __( 'Search', 'air-light' ),
     ],
     'fi'  => [
       'Open main menu'        => 'Avaa päävalikko',
@@ -55,7 +56,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'External site:'        => 'Ulkoinen sivusto:',
       'opens in a new window' => 'avautuu uuteen ikkunaan',
       'Page not found'        => 'Sivua ei löytynyt',
-
+      'Search'                => 'Search',
     ],
   ];
 

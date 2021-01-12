@@ -6,7 +6,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 17:19:31
+ * @Last Modified time: 2021-01-12 17:23:47
  * @package air-light
  */
 
@@ -42,7 +42,7 @@ get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
     <section class="block block-search">
       <div class="container">
-        <h1>Search</h1>
+        <h1><?php echo esc_html( get_default_localization( 'Search' ) ); ?></h1>
         <?php get_search_form( true ); ?>
       </div>
     </section>
