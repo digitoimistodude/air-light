@@ -7,7 +7,7 @@
 // -----------------------------------------------------------
 
 // Default structural element
-.block:not(.block-footer) {
+.block {
   @include background-cover();
   background-color: $color-white;
   position: relative;
