@@ -5,8 +5,8 @@
  * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-03-02 10:36:44
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-01-12 16:27:13
  */
 
 namespace Air_Light;
@@ -49,16 +49,19 @@ function the_module( $post_id ) {
   } else {
     // module is exluded from cache or we are in development envarioment
     // add log message in development and staging
-    \do_action( 'qm/debug', "Module bypassed cache: {$module_name} ({$module_cache_key})" ); // phpcs:ignore
+    \do_action( 'qm/debug', "Module bypassed cache: {$module_name} ({$module_cache_key})" );
 
     $module_output = load_module( $module_path );
   }
 
   if ( empty( $module_output ) ) {
-    \do_action( 'qm/error', "Module {$module_name} output is empty" ); // phpcs:ignore
+    \do_action( 'qm/error', "Module {$module_name} output is empty" );
   }
 
-  // finally output module content.
+  /**
+   * Finally output module content.
+   * No espacing here, all content should be already espaced on the modules.
+   */
   echo $module_output; // phpcs:ignore
 }
 
@@ -78,10 +81,10 @@ function get_modular_rows_id() {
    *  page for post type (humanmade/page-for-post-type) plugins.
    */
   if ( \is_home() && \get_option( 'page_for_posts' ) ) {
-    $have_rows_id = \get_option( 'page_for_posts' ) ?: false; // phpcs:ignore
+    $have_rows_id = \get_option( 'page_for_posts' ) ?: false;
     $have_rows_id = \function_exists( 'pll_get_post' ) ? \pll_get_post( $have_rows_id ) : $have_rows_id;
   } elseif ( is_post_type_archive() ) {
-    $have_rows_id = \get_option( 'page_for_' . \get_post_type() ) ?: false; // phpcs:ignore
+    $have_rows_id = \get_option( 'page_for_' . \get_post_type() ) ?: false;
     $have_rows_id = \function_exists( 'pll_get_post' ) ? \pll_get_post( $have_rows_id ) : $have_rows_id;
   }
 
@@ -103,7 +106,7 @@ function load_module_from_cache( $module_cache_key, $module_name, $module_path )
   if ( $output ) {
     // Template loaded from cache
     // add log message in development and staging
-    \do_action( 'qm/debug', "Module served from cache: {$module_name} ({$module_cache_key})" ); // phpcs:ignore
+    \do_action( 'qm/debug', "Module served from cache: {$module_name} ({$module_cache_key})" );
     return $output;
   }
 
@@ -115,7 +118,7 @@ function load_module_from_cache( $module_cache_key, $module_name, $module_path )
   \wp_cache_set( $module_cache_key, $output, 'theme', HOUR_IN_SECONDS );
 
   // add log message in development and staging
-  \do_action( 'qm/debug', "Module cached: {$module_name} ({$module_cache_key})" ); // phpcs:ignore
+  \do_action( 'qm/debug', "Module cached: {$module_name} ({$module_cache_key})" );
 
   return $output;
 
@@ -123,7 +126,6 @@ function load_module_from_cache( $module_cache_key, $module_name, $module_path )
 
 /**
  * Load module file
- *
  * @param String  $module_path The module file path
  * @param Boolean $cache Use Gzip for caching
  *
@@ -134,7 +136,7 @@ function load_module( $module_path, $cache = false ) {
 
   // Validate that file actually exists.
   if ( ! \file_exists( $module_path ) ) {
-    \do_action( 'qm/error', "Module file not found: {$module_path})" ); // phpcs:ignore
+    \do_action( 'qm/error', "Module file not found: {$module_path})" );
     return '';
   }
 
