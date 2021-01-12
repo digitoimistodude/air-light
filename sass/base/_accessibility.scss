@@ -1,9 +1,7 @@
-// ---------------------------------------------------------
 // Accessibility
 //
 // A hidden screen reader for readers, focus elements for
 // vision impaired and other useful a11y CSS hacks.
-// ---------------------------------------------------------
 /* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-pseudo-class */
 
 // Variables
@@ -12,11 +10,11 @@ $focus-skip-link-color: #21759b;
 $focus-text-color: $color-black;
 $focus-outline-style: 2px solid;
 $focus-outline-style-large-elements: 4px solid;
-$tld-mobile: '192.168.196.2:3000';
-$tld-browsersync: 'localhost:3000';
-$tld-development: 'airdev.test';
-$tld-staging: 'air.vaiheessa.fi';
-$tld-production: 'dudetest.xyz';
+$domain-mobile: '192.168.196.2:3000';
+$domain-browsersync: 'localhost:3000';
+$domain-development: 'airdev.test';
+$domain-staging: 'air.vaiheessa.fi';
+$domain-production: 'dudetest.xyz';
 
 // Text meant only for screen readers.
 .screen-reader-text {

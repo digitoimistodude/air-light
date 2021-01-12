@@ -135,26 +135,23 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _lazyload.scss          # → Styles for air-helper lazyload feature (lazyload.js needed)
 │   │   ├── _magnific-popup.scss    # → Defaults for magnific popup
 │   │   ├── _top.scss               # → Back to top styles
-│   │   ├── _notices.scss           # → Default notices (not included by default)
 │   │   ├── _pagination.scss        # → Numbered pagination styles
 │   │   ├── _sticky-nav.scss        # → Sticky nav styles (not included by default)
 │   │   └── _slick.scss             # → Styles for slick-carousel (not included by default)
 │   ├── helpers/                    # → Helper mixins and functions
 │   │   ├── _animations.scss        # → Animations and effects
 │   │   ├── _aspect-ratio.scss      # → A mixin for aspect ratio
-│   │   ├── _background.scss        # → Background related mixins
 │   │   ├── _general.scss           # → Mixins for general use, or helpers of other mixins
 │   │   ├── _grid.scss              # → CSS Grid helper mixin
 │   │   └── _typography.scss        # → Typography style mixins
 │   ├── layout/                     # → Fuctionality styles
 │   │   ├── _demo-content.scss      # → Styles for demo, start script will delete this file
 │   │   ├── _forms.scss             # → Styles for general forms and Gravity Forms
-│   │   ├── _sidebar.scss           # → Sidebar (not included by default)
 │   │   ├── _site-footer.scss       # → Footer styles
 │   │   ├── _site-header.scss       # → Header styles
 │   │   ├── _typography.scss        # → Defaults for typography and fonts
-│   │   ├── _gutenberg.scss         # → Site-side styles for Gutenberg (pratically for single.php)
-│   │   └── _woocommerce.scss       # → WooCommerce webshop styles (not included by default)
+│   │   └── _gutenberg.scss         # → Site-side styles for Gutenberg (pratically for single.php)
+included by default)
 │   ├── navigation/                 # → Navigation styles
 │   │   ├── _burger.scss            # → Burger styles and animations
 │   │   ├── _nav-core.scss          # → Styles for both desktop and mobile navigation
@@ -396,8 +393,6 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 1. Get [Air helper](https://github.com/digitoimistodude/air-helper)
 2. Activate the plugin
-3. Uncomment woocommerce import in global.scss
-4. Run gulp again and save files
 
 ### Requirements
 

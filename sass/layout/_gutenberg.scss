@@ -1,9 +1,7 @@
-// ------------------------------------------------
 // WordPress blog & articles view
 //
 // The styles for most of the TinyMCE produced
 // classes and WordPress Gutenberg editor formatting.
-// ------------------------------------------------
 
 // Blog post category styles
 .cat {
@@ -246,6 +244,7 @@
     }
   }
 
+  // Forced to use important here, because embeds inline stuff
   div[style="width: 640px;"],
   .wp-video {
     width: 100% !important;
@@ -266,6 +265,7 @@
     margin-right: auto;
     line-height: $line-height-blog;
 
+    // Forced to use important here, because embeds inline stuff
     .twitter-tweet,
     .instagram-media,
     .wp-video,
@@ -361,6 +361,7 @@
 .wp-caption {
   max-width: 100%;
 
+  // Forced to use important here, because captions inline stuff
   @media (max-width: $article-max-width + 40px) {
     width: 100% !important;
   }

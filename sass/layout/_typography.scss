@@ -1,10 +1,8 @@
-// -----------------------------------------------------------
 // Typography
 //
 // Everything around fonts, font size definitions and typeset
 // presets. No modular scale, but a sophisticated viewport
 // based responsive mixin can be found in _helpers.scss
-// -----------------------------------------------------------
 
 // Set root size for rems
 /* stylelint-disable declaration-property-unit-allowed-list */
@@ -259,19 +257,6 @@ figcaption {
   margin-top: 0;
   font-style: normal;
   font-weight: $font-weight-paragraphs;
-}
-
-// Horizontal rule.
-hr {
-  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 50%;
-  border: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 0;
-  height: 0;
 }
 
 kbd,

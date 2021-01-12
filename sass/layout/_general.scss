@@ -1,14 +1,14 @@
-// -----------------------------------------------------------
 // General
 //
 // This file is meant for general styles and containers
 // that apply everywhere throughout the website. Add more
 // always repeating elements right below.
-// -----------------------------------------------------------
 
 // Default structural element
 .block {
-  @include background-cover();
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: $color-white;
   position: relative;
   max-width: $layout-max-width;
@@ -25,6 +25,18 @@
   left: 0;
   z-index: 0;
   opacity: .35;
+}
+
+// Global link helper
+// This is useful in services -type of areas where the whole block is a link
+// Remember to define aria-label or screen-reader-text for accessibility
+.global-link {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 // Site wrapper
@@ -97,12 +109,14 @@
 // Hide/show helpers
 .hide-on-desktop {
   @media (min-width: $container-mobile) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
 
 .hide-on-mobile {
   @media (max-width: $container-mobile) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
@@ -110,16 +124,19 @@
 // Only function of these is to force hide content based on the view
 .hide-on-mobile-nav-view {
   @media (max-width: $responsivenav) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
 
 .hide-on-desktop-nav-view {
   @media (min-width: $responsivenav) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
 
 .hide-completely {
+  // Forced to use important here, because makes no sense to write too specific selectors here
   display: none !important;
 }

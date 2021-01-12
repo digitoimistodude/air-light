@@ -128,13 +128,6 @@ read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
     echo ' '
   fi
 
-read -p "${boldyellow}Do we use woocommerce in this project? (y/n)${txtreset} " yn
-  if [ "$yn" = "n" ]; then
-      rm ${PROJECTTHEMEPATH}/sass/layout/_woocommerce.scss
-  else
-    echo ' '
-  fi
-
 echo "${yellow}Remove things we need to remove anyway in each start...${txtreset}"
 rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss

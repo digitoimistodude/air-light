@@ -342,26 +342,9 @@ template {
 
 /* stylelint-enable declaration-property-unit-allowed-list */
 
-/**
- * Typography helpers
- */
-
 /* stylelint-disable declaration-property-unit-allowed-list */
 
 /* stylelint-enable declaration-property-unit-allowed-list */
-
-a.global-link {
-	width: 100%;
-	height: 100%;
-	z-index: 3;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-/**
- * Background helpers
- */
 
 :root {
 	--padding-container-horizontal: 2rem;
@@ -1947,8 +1930,8 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 
 .block {
 	background-size: cover;
-	background-repeat: no-repeat;
 	background-position: center;
+	background-repeat: no-repeat;
 	background-color: #fff;
 	position: relative;
 	max-width: 100%;
@@ -1964,6 +1947,15 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 	left: 0;
 	z-index: 0;
 	opacity: .35;
+}
+
+.global-link {
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .site {
@@ -2262,18 +2254,6 @@ figcaption {
 	margin-top: 0;
 	font-style: normal;
 	font-weight: 400;
-}
-
-hr {
-	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000 50%);
-	background-repeat: repeat-x;
-	background-size: 2px 2px;
-	background-position: 0 50%;
-	border: 0;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	margin: 0;
-	height: 0;
 }
 
 kbd,
