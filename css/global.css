@@ -342,10 +342,6 @@ template {
 
 /* stylelint-enable declaration-property-unit-allowed-list */
 
-/**
- * Typography helpers
- */
-
 /* stylelint-disable declaration-property-unit-allowed-list */
 
 /* stylelint-enable declaration-property-unit-allowed-list */
@@ -2263,18 +2259,6 @@ figcaption {
 	margin-top: 0;
 	font-style: normal;
 	font-weight: 400;
-}
-
-hr {
-	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000 50%);
-	background-repeat: repeat-x;
-	background-size: 2px 2px;
-	background-position: 0 50%;
-	border: 0;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-	margin: 0;
-	height: 0;
 }
 
 kbd,

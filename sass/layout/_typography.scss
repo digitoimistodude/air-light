@@ -259,19 +259,6 @@ figcaption {
   font-weight: $font-weight-paragraphs;
 }
 
-// Horizontal rule.
-hr {
-  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 50%;
-  border: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 0;
-  height: 0;
-}
-
 kbd,
 pre,
 samp {
