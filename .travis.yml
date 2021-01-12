@@ -20,10 +20,6 @@ matrix:
     fast_finish: true
 
     include:
-        # Current $required_php_version for WordPress: 5.6.20 (updated to this config on 21.2.2020)
-        # aliased to a recent 5.6.x version
-        - php: '5.6'
-          env: SNIFF=1
         # aliased to a recent 7.0.x version
         - php: '7.0'
         # aliased to a recent 7.2.x version

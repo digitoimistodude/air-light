@@ -135,14 +135,12 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _lazyload.scss          # → Styles for air-helper lazyload feature (lazyload.js needed)
 │   │   ├── _magnific-popup.scss    # → Defaults for magnific popup
 │   │   ├── _top.scss               # → Back to top styles
-│   │   ├── _notices.scss           # → Default notices (not included by default)
 │   │   ├── _pagination.scss        # → Numbered pagination styles
 │   │   ├── _sticky-nav.scss        # → Sticky nav styles (not included by default)
 │   │   └── _slick.scss             # → Styles for slick-carousel (not included by default)
 │   ├── helpers/                    # → Helper mixins and functions
 │   │   ├── _animations.scss        # → Animations and effects
 │   │   ├── _aspect-ratio.scss      # → A mixin for aspect ratio
-│   │   ├── _background.scss        # → Background related mixins
 │   │   ├── _general.scss           # → Mixins for general use, or helpers of other mixins
 │   │   ├── _grid.scss              # → CSS Grid helper mixin
 │   │   └── _typography.scss        # → Typography style mixins

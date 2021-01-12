@@ -10,11 +10,11 @@ $focus-skip-link-color: #21759b;
 $focus-text-color: $color-black;
 $focus-outline-style: 2px solid;
 $focus-outline-style-large-elements: 4px solid;
-$tld-mobile: '192.168.196.2:3000';
-$tld-browsersync: 'localhost:3000';
-$tld-development: 'airdev.test';
-$tld-staging: 'air.vaiheessa.fi';
-$tld-production: 'dudetest.xyz';
+$domain-mobile: '192.168.196.2:3000';
+$domain-browsersync: 'localhost:3000';
+$domain-development: 'airdev.test';
+$domain-staging: 'air.vaiheessa.fi';
+$domain-production: 'dudetest.xyz';
 
 // Text meant only for screen readers.
 .screen-reader-text {
@@ -141,7 +141,7 @@ $tld-production: 'dudetest.xyz';
 }
 
 // Add icon to external links
-a[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator):not([href*='#']),
+a[href*="//"]:not([href*="#{$domain-production}"]):not([href*="#{$domain-staging}"]):not([href*="#{$domain-development}"]):not([href*="#{$domain-browsersync}"]):not([href*="#{$domain-mobile}"]):not(.no-external-link-indicator):not([href*='#']),
 a.is-external-link:not(.no-external-link-indicator):not([href*='#']) {
   display: inline-flex;
   justify-content: space-between;
@@ -166,9 +166,9 @@ a.is-external-link:not(.no-external-link-indicator):not([href*='#']) {
 }
 
 // Do not use external links indicators in tel and email links
-a[href^="mailto"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator):not([href*='#'])::after,
+a[href^="mailto"]:not([href*="#{$domain-production}"]):not([href*="#{$domain-staging}"]):not([href*="#{$domain-development}"]):not([href*="#{$domain-browsersync}"]):not([href*="#{$domain-mobile}"]):not(.no-external-link-indicator):not([href*='#'])::after,
 a.is-external-link:not(.no-external-link-indicator)[href^="mailto"]::after,
-a[href^="tel"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator):not([href*='#'])::after,
+a[href^="tel"]:not([href*="#{$domain-production}"]):not([href*="#{$domain-staging}"]):not([href*="#{$domain-development}"]):not([href*="#{$domain-browsersync}"]):not([href*="#{$domain-mobile}"]):not(.no-external-link-indicator):not([href*='#'])::after,
 a.is-external-link:not(.no-external-link-indicator)[href^="tel"]:not([href*='#'])::after {
   display: none;
 }
