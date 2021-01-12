@@ -8,7 +8,6 @@
 namespace Air_Light;
 
 function single_comment( $comment, $args, $depth ) { ?>
-
   <li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
     <div id="comment-<?php comment_ID(); ?>">
       <?php echo get_avatar( $comment, '62' ); ?>
@@ -28,9 +27,9 @@ function single_comment( $comment, $args, $depth ) { ?>
       <?php comment_text();
 
       comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) );
-      edit_comment_link( __( '&mdash; Edit', 'air-light' ), ' ', '' ) ?>
+      edit_comment_link( __( '&mdash; Edit', 'air-light' ), ' ', '' );
+      ?>
 
     </div>
   </li>
-<?php
-}
+<?php }

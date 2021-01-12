@@ -10,7 +10,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 15:54:12
+ * @Last Modified time: 2021-01-12 15:58:30
  *
  * @package air-light
  */
@@ -136,19 +136,19 @@ class Nav_Walker extends \Walker_Nav_Menu {
    * @return null   Null on failure with no changes to parameters.
    */
   public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-        if ( ! $element ) {
-            return;
-        }
-
-        $id_field = $this->db_fields['id'];
-
-        // Display this element.
-        if ( is_object( $args[0] ) ) {
-           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
-        }
-
-        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    if ( ! $element ) {
+        return;
     }
+
+    $id_field = $this->db_fields['id'];
+
+    // Display this element.
+    if ( is_object( $args[0] ) ) {
+      $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+    }
+
+    parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+  }
 
   /**
    * Menu Fallback
@@ -199,7 +199,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
         $fb_output .= '</' . $container . '>';
       }
 
-      echo $fb_output; // phpcs:ignore
+      echo wp_kses_post( $fb_output );
     }
   }
 }
