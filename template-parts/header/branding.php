@@ -29,7 +29,7 @@ namespace Air_Light;
 
   $description = get_bloginfo( 'description', 'display' );
   if ( $description || is_customize_preview() ) : ?>
-    <p class="site-description screen-reader-text"><?php echo $description; // phpcs:ignore ?></p>
+    <p class="site-description screen-reader-text"><?php echo esc_html( $description ); ?></p>
   <?php endif; ?>
 
 </div><!-- .site-branding -->

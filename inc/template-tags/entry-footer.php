@@ -11,10 +11,15 @@ function entry_footer() {
   echo '<div class="entry-footer">';
 
   if ( 'post' === get_post_type() ) :
-    $categories_list = get_the_category_list( _x( ' ', 'Used between list items, there is a space after the comma', 'air-light' ) ); // phpcs:ignore
-    if ( $categories_list ) : ?>
+    if ( has_category() ) : ?>
       <div class="entry-categories">
-        <p class="cat"><?php echo $categories_list; // phpcs:disable ?></p>
+        <p class="cat">
+          <?php wp_list_categories( [
+            'title_li'  => false,
+            'style'     => null,
+            'separator' => ' ',
+          ] ); ?>
+        </p>
       </div>
     <?php	endif;
 
