@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 16:19:44
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-01-12 16:21:35
  *
  * @package air-light
  */
@@ -51,7 +51,7 @@ function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
 function register_block_editor_assets() {
 
   // Make paths variables so we don't write them twice
-  $blocks = get_theme_file_uri( 'js/src/modules/block.js', __FILE__ );
+  $blocks = get_theme_file_uri( 'js/dist/block.js', __FILE__ );
   $editorstyles = get_theme_file_uri( 'css/gutenberg.min.css', __FILE__ );
 
   // Dependencies
