@@ -277,14 +277,6 @@ $color-demo-footer-background: #eaeaea;
 .gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
 article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
   @extend %textlink;
-
-  // External link hover and focus styles
-  &[href*="//"]:not([href*="#{$domain-production}"]):not([href*="#{$domain-staging}"]):not([href*="#{$domain-development}"]):not([href*="#{$domain-browsersync}"]):not([href*="#{$domain-mobile}"]):not(.no-external-link-indicator) {
-    &:hover::after,
-    &:focus::after {
-      background-image: url('../svg/external-link-white.svg');
-    }
-  }
 }
 
 .block:not(.site-footer) {

@@ -10,11 +10,6 @@ $focus-skip-link-color: #21759b;
 $focus-text-color: $color-black;
 $focus-outline-style: 2px solid;
 $focus-outline-style-large-elements: 4px solid;
-$domain-mobile: '192.168.196.2:3000';
-$domain-browsersync: 'localhost:3000';
-$domain-development: 'airdev.test';
-$domain-staging: 'air.vaiheessa.fi';
-$domain-production: 'dudetest.xyz';
 
 // Text meant only for screen readers.
 .screen-reader-text {
@@ -165,6 +160,6 @@ a.is-external-link {
 }
 
 // Do not use external links indicators in tel and email links
-a.is-external-link.no-external-link-indicator:after {
+a.is-external-link.no-external-link-indicator::after {
   display: none;
 }

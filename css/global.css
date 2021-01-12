@@ -529,7 +529,7 @@ a.is-external-link::after {
 	transition: all .18s ease-in-out;
 }
 
-a.is-external-link.no-external-link-indicator:after {
+a.is-external-link.no-external-link-indicator::after {
 	display: none;
 }
 
@@ -1913,13 +1913,6 @@ a.is-external-link.no-external-link-indicator:after {
 
 .block-blog ul.tags {
 	padding-left: 0;
-}
-
-.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after,
-.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after,
-article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):hover::after,
-article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel])[href*="//"]:not([href*="dudetest.xyz"]):not([href*="air.vaiheessa.fi"]):not([href*="airdev.test"]):not([href*="localhost:3000"]):not([href*="192.168.196.2:3000"]):not(.no-external-link-indicator):focus::after {
-	background-image: url("../svg/external-link-white.svg");
 }
 
 .block:not(.site-footer) {
