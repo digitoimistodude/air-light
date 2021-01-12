@@ -150,8 +150,8 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _site-footer.scss       # → Footer styles
 │   │   ├── _site-header.scss       # → Header styles
 │   │   ├── _typography.scss        # → Defaults for typography and fonts
-│   │   ├── _gutenberg.scss         # → Site-side styles for Gutenberg (pratically for single.php)
-│   │   └── _woocommerce.scss       # → WooCommerce webshop styles (not included by default)
+│   │   └── _gutenberg.scss         # → Site-side styles for Gutenberg (pratically for single.php)
+included by default)
 │   ├── navigation/                 # → Navigation styles
 │   │   ├── _burger.scss            # → Burger styles and animations
 │   │   ├── _nav-core.scss          # → Styles for both desktop and mobile navigation
@@ -393,8 +393,6 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 1. Get [Air helper](https://github.com/digitoimistodude/air-helper)
 2. Activate the plugin
-3. Uncomment woocommerce import in global.scss
-4. Run gulp again and save files
 
 ### Requirements
 
