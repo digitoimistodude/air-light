@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by: Roni Laukkarinen
- * @Last Modified time: 2020-04-28 09:45:24
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-01-12 15:28:58
  *
  * @package air-light
  */
@@ -155,3 +155,4 @@ require get_theme_file_path( '/inc/template-tags.php' );
 
 // Run theme setup
 add_action( 'init', __NAMESPACE__ . '\theme_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );

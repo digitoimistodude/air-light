@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 15:20:45
+ * @Last Modified time: 2021-01-12 15:28:47
  **/
 
 namespace Air_Light;
@@ -32,7 +32,6 @@ function theme_setup() {
   }
 
   // Run the rest of the setup
-  build_theme_support();
   build_taxonomies();
   build_post_types();
 }
