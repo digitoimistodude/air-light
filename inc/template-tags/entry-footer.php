@@ -10,20 +10,19 @@ namespace Air_Light;
 function entry_footer() {
   echo '<div class="entry-footer">';
 
-  if ( 'post' === get_post_type() ) {
+  if ( 'post' === get_post_type() ) :
     $categories_list = get_the_category_list( _x( ' ', 'Used between list items, there is a space after the comma', 'air-light' ) ); // phpcs:ignore
-
     if ( $categories_list ) : ?>
-    <div class="entry-categories">
-      <p class="cat"><?php echo $categories_list; // phpcs:disable ?></p>
-      <?php	endif;
-        $tags_list = get_the_tag_list( '', esc_attr_x( ', ', 'list item separator', 'air-light' ) );
+      <div class="entry-categories">
+        <p class="cat"><?php echo $categories_list; // phpcs:disable ?></p>
+      </div>
+    <?php	endif;
 
-        if ( $tags_list ) {
-          the_tags( '<ul class="tags"><li>', '</li><li>', '</li></ul>' );
-      } ?>
-    </div>
-  <?php }
+    $tags_list = get_the_tag_list( '', esc_attr_x( ', ', 'list item separator', 'air-light' ) );
+    if ( $tags_list ) {
+      the_tags( '<ul class="tags"><li>', '</li><li>', '</li></ul>' );
+    }
+  endif;
 
   if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
     echo '<span class="comments-link">
