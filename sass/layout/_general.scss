@@ -8,7 +8,9 @@
 
 // Default structural element
 .block {
-  @include background-cover();
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   background-color: $color-white;
   position: relative;
   max-width: $layout-max-width;

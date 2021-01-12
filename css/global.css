@@ -359,10 +359,6 @@ a.global-link {
 	left: 0;
 }
 
-/**
- * Background helpers
- */
-
 :root {
 	--padding-container-horizontal: 2rem;
 	--padding-container-vertical: 6.4rem;
@@ -1952,8 +1948,8 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 
 .block {
 	background-size: cover;
-	background-repeat: no-repeat;
 	background-position: center;
+	background-repeat: no-repeat;
 	background-color: #fff;
 	position: relative;
 	max-width: 100%;
