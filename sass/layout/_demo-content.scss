@@ -281,7 +281,7 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
   @extend %textlink;
 
   // External link hover and focus styles
-  &[href*="//"]:not([href*="#{$tld-production}"]):not([href*="#{$tld-staging}"]):not([href*="#{$tld-development}"]):not([href*="#{$tld-browsersync}"]):not([href*="#{$tld-mobile}"]):not(.no-external-link-indicator) {
+  &[href*="//"]:not([href*="#{$domain-production}"]):not([href*="#{$domain-staging}"]):not([href*="#{$domain-development}"]):not([href*="#{$domain-browsersync}"]):not([href*="#{$domain-mobile}"]):not(.no-external-link-indicator) {
     &:hover::after,
     &:focus::after {
       background-image: url('../svg/external-link-white.svg');

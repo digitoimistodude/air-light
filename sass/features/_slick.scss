@@ -3,33 +3,6 @@
 //
 // Style support for Slick slider.
 // -----------------------------------------------
-
-// Slider
-// Note: add class slick-slider to the actual slider
-
-.block.block-slider {
-  .item {
-    padding-left: 2rem;
-    padding-right: 2rem;
-
-    @media (max-width: $grid-base-size + 100) {
-      padding-left: 4rem;
-      padding-right: 4rem;
-    }
-  }
-
-  h1,
-  h2 {
-    color: $color-white;
-    text-transform: uppercase;
-  }
-
-  p {
-    color: $color-white;
-    opacity: .7;
-  }
-}
-
 .slick-list {
   position: relative;
   overflow: hidden;
@@ -159,7 +132,6 @@
   }
 }
 
-// Slider
 .slider {
   position: relative;
   display: block;
