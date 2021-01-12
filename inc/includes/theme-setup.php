@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 14:20:18
+ * @Last Modified time: 2021-01-12 15:20:45
  **/
 
 namespace Air_Light;
@@ -105,12 +105,8 @@ function build_theme_support() {
       'comment-list',
       'gallery',
       'caption',
+      'script',
+      'style',
     ]
   );
 }
-
-/**
- * Clean up some air-helper stuff by default
- */
-remove_action( 'admin_init', __NAMESPACE__ . '\air_helper_clean_admin_notices', 9999 );
-// add_filter( 'air_helper_sendgrid', '__return_false' );
