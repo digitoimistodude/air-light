@@ -109,12 +109,14 @@
 // Hide/show helpers
 .hide-on-desktop {
   @media (min-width: $container-mobile) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
 
 .hide-on-mobile {
   @media (max-width: $container-mobile) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
@@ -122,16 +124,19 @@
 // Only function of these is to force hide content based on the view
 .hide-on-mobile-nav-view {
   @media (max-width: $responsivenav) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
 
 .hide-on-desktop-nav-view {
   @media (min-width: $responsivenav) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
     display: none !important;
   }
 }
 
 .hide-completely {
+  // Forced to use important here, because makes no sense to write too specific selectors here
   display: none !important;
 }
