@@ -350,15 +350,6 @@ template {
 
 /* stylelint-enable declaration-property-unit-allowed-list */
 
-a.global-link {
-	width: 100%;
-	height: 100%;
-	z-index: 3;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
 :root {
 	--padding-container-horizontal: 2rem;
 	--padding-container-vertical: 6.4rem;
@@ -1965,6 +1956,15 @@ article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > 
 	left: 0;
 	z-index: 0;
 	opacity: .35;
+}
+
+.global-link {
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .site {

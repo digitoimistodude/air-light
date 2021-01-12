@@ -29,6 +29,18 @@
   opacity: .35;
 }
 
+// Global link helper
+// This is useful in services -type of areas where the whole block is a link
+// Remember to define aria-label or screen-reader-text for accessibility
+.global-link {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 // Site wrapper
 .site {
   max-width: 100%;
