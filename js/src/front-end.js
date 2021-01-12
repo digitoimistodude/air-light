@@ -5,6 +5,8 @@
 // Import modules (comment to disable)
 import MoveTo from 'moveto';
 import LazyLoad from "vanilla-lazyload";
+import getLocalization from './modules/localization';
+import styleExternalLinks from './modules/external-link';
 // import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
 import 'what-input';
@@ -15,6 +17,9 @@ import './modules/navigation.js';
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');
+
+// Style external links
+styleExternalLinks();
 
 // Init lazyload
 // Usage example on template side when air-helper enabled:
@@ -75,25 +80,6 @@ air_light_LazyLoad.update();
     });
   });
 
-  // Accessibility add "External link:" aria label for external links
-  var currentHost = new RegExp(location.host);
-  $('a').each(function () {
-    var attr = $(this).attr('aria-label');
-    if (!currentHost.test($(this).attr('href')) && !attr) {
-      if ('#content' !== $(this).attr('href')) {
-        // A link that does not contain the current host
-        var txt = $(this).text();
-        $(this).addClass('is-external-link');
-        $(this).attr('aria-label', air_light_screenReaderText.external_link + ' ' + txt);
-      }
-    }
-
-    // If is outside link and has target="_blank"
-    if (!currentHost.test($(this).attr('href')) && !attr && '_blank' === $(this).attr('target')) {
-      $(this).attr('aria-label', air_light_screenReaderText.external_link + ', ' + air_light_screenReaderText.target_blank + ' ' + txt);
-    }
-  });
-
   // Hide or show the 'back to top' link
   $(window).scroll(function () {
     // Back to top
@@ -142,3 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
     moveTo.registerTrigger(triggers[i]);
   }
 });
+
+

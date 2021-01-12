@@ -5,8 +5,8 @@
  * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 17:14:50
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-01-12 19:40:44
  */
 
 namespace Air_Light;
@@ -54,6 +54,17 @@ function enqueue_theme_scripts() {
     'external_link'   => get_default_localization( 'External site:' ),
     'target_blank'    => get_default_localization( 'opens in a new window' ),
   ) );
+
+  // Add domains/hosts to disable external link indicators
+  wp_localize_script(
+    'scripts',
+    'air_light_externalLinkDomains',
+    [
+      'localhost:3000',
+      'airdev.test',
+      'dudetest.xyz',
+    ]
+  );
 } // end air_light_scripts
 
 /**
