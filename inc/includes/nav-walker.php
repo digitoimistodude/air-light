@@ -9,8 +9,8 @@
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 11:24:38
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-01-12 15:54:12
  *
  * @package air-light
  */
@@ -25,14 +25,18 @@ class Nav_Walker extends \Walker_Nav_Menu {
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat( "\t", $depth );
 
-    // Get the ico
-    ob_start();
-    require get_theme_file_path( 'svg/chevron-down-main-nav.svg' );
-    $icon = ob_get_clean();
+    if ( isset( $args->has_dropdown ) && $args->has_dropdown ) {
+      // Get the icon
+      ob_start();
+      require get_theme_file_path( 'svg/chevron-down-main-nav.svg' );
+      $icon = ob_get_clean();
+      $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . get_default_localization( 'Open child menu' ) . '">';
+      $output .= $icon . '</button>';
+      $output .= "\n$indent<ul class=\"sub-menu\">\n";
+    } else {
+      $output .= "\n$indent<ul>\n";
+    }
 
-    $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . get_default_localization( 'Open child menu' ) . '">';
-    $output .= $icon . '</button>';
-    $output .= "\n$indent<ul class=\"sub-menu\">\n";
   }
 
   public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -57,10 +61,10 @@ class Nav_Walker extends \Walker_Nav_Menu {
     } else {
       $class_names = $value = '';
       $classes     = empty( $item->classes ) ? array() : (array) $item->classes;
-      $classes[]   = 'air-light-menu-item menu-item-' . $item->ID;
+      $classes[]   = 'greencare-menu-item menu-item-' . $item->ID;
       $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
-      if ( $args->has_children ) {
+      if ( $args->has_children && isset( $args->has_dropdown ) && $args->has_dropdown ) {
         $class_names .= ' dropdown';
       }
 
@@ -73,7 +77,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
       $id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args );
       $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-      $output .= $indent . '<li' . $id . $value . $class_names . '>';
+      $output .= $indent . '<li role="none"' . $id . $value . $class_names . '>';
 
       $atts           = array();
       $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
@@ -101,7 +105,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
       $item_output = $args->before;
 
-      $item_output .= '<a' . $attributes . '>';
+      $item_output .= '<a role="menuitem"' . $attributes . '>';
 
       $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
       $item_output .= ( $args->has_children && 0 === $depth ) ? ' </a>' : '</a>';
