@@ -10,7 +10,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 11:24:38
+ * @Last Modified time: 2021-01-12 15:36:22
  *
  * @package air-light
  */
@@ -132,19 +132,19 @@ class Nav_Walker extends \Walker_Nav_Menu {
    * @return null   Null on failure with no changes to parameters.
    */
   public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
-        if ( ! $element ) {
-            return;
-        }
-
-        $id_field = $this->db_fields['id'];
-
-        // Display this element.
-        if ( is_object( $args[0] ) ) {
-           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
-        }
-
-        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    if ( ! $element ) {
+        return;
     }
+
+    $id_field = $this->db_fields['id'];
+
+    // Display this element.
+    if ( is_object( $args[0] ) ) {
+      $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+    }
+
+    parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+  }
 
   /**
    * Menu Fallback
