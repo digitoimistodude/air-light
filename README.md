@@ -147,7 +147,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   ├── layout/                     # → Fuctionality styles
 │   │   ├── _demo-content.scss      # → Styles for demo, start script will delete this file
 │   │   ├── _forms.scss             # → Styles for general forms and Gravity Forms
-│   │   ├── _sidebar.scss           # → Sidebar (not included by default)
 │   │   ├── _site-footer.scss       # → Footer styles
 │   │   ├── _site-header.scss       # → Header styles
 │   │   ├── _typography.scss        # → Defaults for typography and fonts
