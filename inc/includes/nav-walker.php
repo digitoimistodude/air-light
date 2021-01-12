@@ -10,7 +10,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 15:36:22
+ * @Last Modified time: 2021-01-12 15:46:09
  *
  * @package air-light
  */
@@ -195,7 +195,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
         $fb_output .= '</' . $container . '>';
       }
 
-      echo $fb_output; // phpcs:ignore
+      echo wp_kses_post( $fb_output );
     }
   }
 }
