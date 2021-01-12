@@ -2,6 +2,12 @@
 # A script for moving all dev files back to the theme
 
 mkdir -p ~/air-temp
+sudo cp ~/air-temp/.gitkeep ~/Projects/airdev/content/themes/air-light/sass/components/
+sudo cp ~/air-temp/.gitkeep ~/Projects/airdev/content/themes/air-light/sass/modules/
+sudo mv ~/air-temp/.stylelintignore ~/Projects/airdev/content/themes/air-light/
+sudo mv ~/air-temp/.nvmrc ~/Projects/airdev/content/themes/air-light/
+sudo mv ~/air-temp/.eslintrc.js ~/Projects/airdev/content/themes/air-light/
+sudo mv ~/air-temp/.browserslistrc ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.vscode ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.svgo.yml ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.accessibilityrc ~/Projects/airdev/content/themes/air-light/
