@@ -4,8 +4,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:22:26
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 11:24:23
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-01-12 15:57:22
  *
  * @package air-light
  */
@@ -35,6 +35,7 @@ namespace Air_Light;
       'echo'           => true,
       'fallback_cb'    => __NAMESPACE__ . '\Nav_Walker::fallback',
       'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+      'has_dropdown'   => true,
       'walker'         => new Nav_Walker(),
     ) ); ?>
 
