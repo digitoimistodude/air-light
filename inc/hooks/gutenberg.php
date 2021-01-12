@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-06-03 13:08:26
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-01-12 16:19:44
  *
  * @package air-light
  */
@@ -63,10 +63,10 @@ function register_block_editor_assets() {
   );
 
   // Enqueue the bundled block JS file
-  wp_enqueue_script( 'block-editor-js', $blocks, $dependencies, null, 'all' ); // phpcs:ignore
+  wp_enqueue_script( 'block-editor-js', $blocks, $dependencies, filemtime( $blocks ), 'all' );
 
   // Enqueue optional editor only styles
-  wp_enqueue_style( 'block-editor-css', $editorstyles, $dependencies, null, 'all' ); // phpcs:ignore
+  wp_enqueue_style( 'block-editor-css', $editorstyles, $dependencies, filemtime( $editorstyles ), 'all' );
 }
 // Hook scripts function into block editor hook
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\register_block_editor_assets' );
