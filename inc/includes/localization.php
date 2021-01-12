@@ -3,14 +3,14 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 15:10:15
+ * @Last Modified time: 2021-01-12 16:48:51
  *
  * @package air-light
  */
 
 namespace Air_Light;
 
-add_filter( 'air_helper_pll_register_strings', function() { // phpcs:ignore
+add_filter( 'air_helper_pll_register_strings', function() {
   $strings = [
     // 'Key: String' => 'String',
   ];
