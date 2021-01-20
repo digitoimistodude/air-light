@@ -403,8 +403,6 @@ template {
 	font-weight: 700;
 }
 
-/* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-pseudo-class */
-
 .screen-reader-text,
 .gform_body .gform_validation_container {
 	border: 0;
@@ -414,9 +412,9 @@ template {
 	margin: -1px;
 	overflow: hidden;
 	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
+	position: absolute;
+	width: 1px; /* stylelint-disable declaration-no-important */
+	word-wrap: normal !important; /* stylelint-enable declaration-no-important */
 }
 
 .screen-reader-text.skip-link,
@@ -436,7 +434,7 @@ template {
 	background-color: #f5f5f5;
 	border-radius: 0;
 	box-shadow: 0 0 2px 2px rgba(34, 34, 34, 0.6);
-	clip: auto !important;
+	clip: auto;
 	clip-path: none;
 	color: #21759b;
 	display: block;
@@ -452,14 +450,14 @@ template {
 	z-index: 100000;
 }
 
-[tabindex="-1"]:focus {
-	outline: 0;
-}
+/* stylelint-disable a11y/no-outline-none */
 
 [data-whatinput="mouse"] *:focus,
 [data-whatinput="touch"] *:focus {
 	outline: none;
 }
+
+/* stylelint-enable a11y/no-outline-none */
 
 .col {
 	overflow: visible;
@@ -485,15 +483,15 @@ template {
 [data-whatinput="keyboard"] button:focus,
 [data-whatinput="keyboard"] select:focus,
 [data-whatinput="keyboard"] textarea:focus,
-[data-whatinput="keyboard"] nav ul li a:focus,
-[data-whatinput="keyboard"] div[tabindex]:focus { /* stylelint-disable */
+[data-whatinput="keyboard"] nav li a:focus,
+[data-whatinput="keyboard"] div[tabindex]:focus {
+	outline-offset: 5px;
+	outline-width: 3px; /* stylelint-disable */
 	outline: 1px dotted #4d4aff;
 	outline: 5px auto -webkit-focus-ring-color;
 	color: #222; /* stylelint-enable */
 	opacity: 1;
 	z-index: 99;
-	outline-width: 3px;
-	outline-offset: 5px;
 }
 
 [data-whatinput="keyboard"] a.global-link:focus {
@@ -507,31 +505,35 @@ template {
 }
 
 a.is-external-link {
+	align-items: center;
 	display: inline-flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
 a.is-external-link::after {
 	background-image: url("../svg/external-link.svg");
 	background-position: right center;
 	background-repeat: no-repeat;
-	content: '';
-	position: relative;
-	display: inline-flex;
-	width: 14px;
-	height: 14px;
 	background-size: 14px 14px;
-	right: 0;
-	top: 0;
+	content: '';
+	display: inline-flex;
+	height: 14px;
 	margin-left: 5px;
 	margin-right: 2px;
+	position: relative;
+	right: 0;
+	top: 0;
 	transition: all .18s ease-in-out;
+	width: 14px;
 }
+
+/* stylelint-disable a11y/no-display-none */
 
 a.is-external-link.no-external-link-indicator::after {
 	display: none;
 }
+
+/* stylelint-enable a11y/no-display-none */
 
 .menu-items {
 	position: relative;

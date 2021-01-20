@@ -29,6 +29,7 @@
     "gulp-util": "^3.0.8",
     "postcss": "^8.1.1",
     "stylelint": "^13.7.2",
+    "stylelint-a11y": "^1.2.3",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-wordpress": "^17.0.0",

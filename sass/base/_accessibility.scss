@@ -2,7 +2,6 @@
 //
 // A hidden screen reader for readers, focus elements for
 // vision impaired and other useful a11y CSS hacks.
-/* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-pseudo-class */
 
 // Variables
 $focus-outline-color: #4d4aff;
@@ -20,9 +19,12 @@ $focus-outline-style-large-elements: 4px solid;
   margin: -1px;
   overflow: hidden;
   padding: 0;
-  position: absolute !important;
+  position: absolute;
   width: 1px;
+
+  /* stylelint-disable declaration-no-important */
   word-wrap: normal !important; // Many screen reader and browser combinations announce broken words as they would appear visually.
+  /* stylelint-enable declaration-no-important */
 
   &.skip-link {
     margin: 5px;
@@ -38,7 +40,7 @@ $focus-outline-style-large-elements: 4px solid;
     background-color: $color-lightgrey;
     border-radius: 0;
     box-shadow: 0 0 2px 2px rgba($color-black, .6);
-    clip: auto !important;
+    clip: auto;
     clip-path: none;
     color: $focus-skip-link-color;
     display: block;
@@ -55,16 +57,13 @@ $focus-outline-style-large-elements: 4px solid;
   }
 }
 
-// Do not show the outline on the skip link target.
-[tabindex="-1"]:focus {
-  outline: 0;
-}
-
 // Suppress focus ring on for mouse and touch users for visual reasons
+/* stylelint-disable a11y/no-outline-none */
 [data-whatinput="mouse"] *:focus,
 [data-whatinput="touch"] *:focus {
   outline: none;
 }
+/* stylelint-enable a11y/no-outline-none */
 
 // Make sure outline is visible on cols that have .global-link
 .col {
@@ -98,11 +97,15 @@ $focus-outline-style-large-elements: 4px solid;
   button:focus,
   select:focus,
   textarea:focus,
-  nav ul li a:focus,
+  nav li a:focus,
   div[tabindex]:focus {
     // Normalize the look of the outline across browsers
     // @link https://a11yproject.com/posts/never-remove-css-outlines/
     // outline: $focus-outline-style $focus-outline-color;
+
+    // Let's make a "padding" for focus and more clear outline
+    outline-offset: 5px;
+    outline-width: 3px;
 
     // Browser defaults:
     /* stylelint-disable */
@@ -112,10 +115,6 @@ $focus-outline-style-large-elements: 4px solid;
     /* stylelint-enable */
     opacity: 1;
     z-index: 99;
-
-    // Let's make a "padding" for focus and more clear outline
-    outline-width: 3px;
-    outline-offset: 5px;
   }
 
   // A bit better focus for large elements
@@ -137,29 +136,31 @@ $focus-outline-style-large-elements: 4px solid;
 
 // Add icon to external links
 a.is-external-link {
+  align-items: center;
   display: inline-flex;
   justify-content: space-between;
-  align-items: center;
 
   &::after {
     background-image: url('../svg/external-link.svg');
     background-position: right center;
     background-repeat: no-repeat;
-    content: '';
-    position: relative;
-    display: inline-flex;
-    width: 14px;
-    height: 14px;
     background-size: 14px 14px;
-    right: 0;
-    top: 0;
+    content: '';
+    display: inline-flex;
+    height: 14px;
     margin-left: 5px;
     margin-right: 2px;
+    position: relative;
+    right: 0;
+    top: 0;
     transition: all .18s ease-in-out;
+    width: 14px;
   }
 }
 
 // Do not use external links indicators in tel and email links
+/* stylelint-disable a11y/no-display-none */
 a.is-external-link.no-external-link-indicator::after {
   display: none;
 }
+/* stylelint-enable a11y/no-display-none */

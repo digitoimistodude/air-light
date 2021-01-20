@@ -3,7 +3,9 @@
   "plugins": [
     "stylelint-value-no-unknown-custom-properties",
     "stylelint-declaration-use-variable",
-    "stylelint-scss"
+    "stylelint-scss",
+    "stylelint-a11y",
+		"stylelint-order"
   ],
   "extends": [
     "stylelint-config-standard",
@@ -78,12 +80,16 @@
     "font-family-no-missing-generic-family-keyword": true,
     "font-family-name-quotes": "always-where-required",
     "at-rule-empty-line-before": null,
+    "at-rule-no-unknown": null,
+    "declaration-no-important": true,
+    "comment-empty-line-before": null,
     "at-rule-name-newline-after": null,
     "at-rule-semicolon-newline-after": null,
     "at-rule-semicolon-space-before": "never",
     "at-rule-name-space-after": "always",
     "at-rule-name-case": "lower",
     "function-url-quotes": "always",
+    "no-descending-specificity": [true, { "severity": "warning" }],
     "unit-no-unknown": true,
     "property-no-unknown": true,
     "no-duplicate-selectors": true,
@@ -91,6 +97,7 @@
     "length-zero-no-unit": true,
     "font-weight-notation": "numeric",
     "number-max-precision": 3,
+    "selector-class-pattern": null,
     "selector-max-class": 4,
     "selector-max-combinators": 3,
     "selector-max-compound-selectors": 4,
@@ -108,6 +115,14 @@
       "font-size": ["rem", "em", "px"],
       "/^animation/": ["ms", "s"],
       "line-height": ["px", "%", ""]
-    }]
+    }],
+    "a11y/no-outline-none": true,
+		"a11y/selector-pseudo-class-focus": true,
+		"a11y/font-size-is-readable": [true, { "severity": "warning" }],
+		"a11y/line-height-is-vertical-rhythmed": [true, { "severity": "warning" }],
+		"a11y/no-display-none": [true, { "severity": "warning" }],
+		"a11y/no-obsolete-element": [true, { "severity": "warning" }],
+		"a11y/no-text-align-justify": [true, { "severity": "warning" }],
+    "order/properties-alphabetical-order": true
   }
 }
