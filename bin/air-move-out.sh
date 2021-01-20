@@ -1,6 +1,15 @@
 #!/bin/bash
 # A script for moving all dev files out of the theme for testing with Theme Check plugin
+txtbold=$(tput bold)
+boldyellow=${txtbold}$(tput setaf 3)
+boldgreen=${txtbold}$(tput setaf 2)
+boldwhite=${txtbold}$(tput setaf 7)
+yellow=$(tput setaf 3)
+green=$(tput setaf 2)
+white=$(tput setaf 7)
+txtreset=$(tput sgr0)
 
+echo "${yellow}Moving dev files out...${txtreset}"
 mkdir -p ~/air-temp
 find . -name '.DS_Store' -type f -delete
 find ../ -name '.DS_Store' -type f -delete
@@ -43,3 +52,14 @@ rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
 
 # Moving to bin dir
 cd ~/air-temp/bin
+
+echo "
+${boldgreen}Done! Next steps:${txtreset}"
+echo "
+${boldwhite}1. cd /Users/rolle/Projects/airdev/content/themes/air-light/bin
+2. sh air-move-out.sh
+3. http://airdev.test/wp/wp-admin/themes.php?page=themecheck
+4. sh air-pack.sh
+5. https://wordpress.org/themes/getting-started/
+6. sh air-move-in.sh
+${txtreset} "
