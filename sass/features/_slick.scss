@@ -2,15 +2,11 @@
 // Note: add class slick-slider to the actual slider
 
 .slick-list {
-  position: relative;
-  overflow: hidden;
   display: block;
   margin: 0;
+  overflow: hidden;
   padding: 0;
-
-  &:focus {
-    outline: none;
-  }
+  position: relative;
 
   &.dragging {
     cursor: hand;
@@ -18,12 +14,12 @@
 }
 
 .slick-track {
-  position: relative;
-  left: 0;
-  top: 0;
   display: block;
-  zoom: 1;
+  left: 0;
+  position: relative;
+  top: 0;
   z-index: 9999;
+  zoom: 1;
 
   &::before,
   &::after {
@@ -54,10 +50,6 @@
     display: block;
   }
 
-  &.slick-loading img {
-    display: none;
-  }
-
   &.dragging img {
     pointer-events: none;
   }
@@ -78,40 +70,39 @@
 
 // Dots
 .slick-dots {
-  position: absolute;
   bottom: 0;
-  list-style: none;
   display: block;
-  text-align: center;
+  list-style: none;
   padding: 0;
+  position: absolute;
+  text-align: center;
   width: 100%;
 
   li {
-    position: relative;
+    cursor: pointer;
     display: inline-block;
     height: 10px;
-    width: 10px;
     margin: 0 5px;
     padding: 0;
-    cursor: pointer;
+    position: relative;
+    width: 10px;
 
     button {
       @include hiddentext();
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 0 4px;
-      cursor: pointer;
-      transition: background $transition-duration, opacity $transition-duration;
-      opacity: .4;
       border: 2px solid #fff;
       border-radius: 6px;
+      cursor: pointer;
+      display: inline-block;
+      height: 10px;
+      margin: 0 4px;
+      opacity: .4;
       padding: 0;
+      transition: background $transition-duration, opacity $transition-duration;
+      width: 10px;
     }
 
     button:focus,
     button:hover {
-      outline: none;
       background: transparent;
     }
 
@@ -124,74 +115,73 @@
     &.slick-active button[type="button"],
     &.slick-active button:focus,
     &.slick-active button[type="button"]:focus {
-      opacity: 1;
       background: #fff;
+      opacity: 1;
     }
   }
 }
 
 .slider {
-  position: relative;
-  display: block;
 
   /* autoprefixer: ignore next */
   box-sizing: border-box;
-  user-select: none;
-  touch-action: pan-y;
   clear: both;
-  overflow: hidden;
+  display: block;
   margin-bottom: 0;
+  overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
+  user-select: none;
 
   @media (max-width: $container-mobile) {
     max-height: 600px;
   }
 
   .slick-prev {
-    left: 0;
-    background-image: url('../svg/slider-left-arrow.svg');
     background-color: transparent;
+    background-image: url('../svg/slider-left-arrow.svg');
+    left: 0;
   }
 
   .slick-next {
-    right: 0;
-    background-image: url('../svg/slider-right-arrow.svg');
     background-color: transparent;
+    background-image: url('../svg/slider-right-arrow.svg');
+    right: 0;
   }
 
   // Arrows
   .slick-prev,
   .slick-next {
-    position: absolute;
-    display: block;
-    height: 60px;
-    width: 60px;
-    line-height: 0;
-    font-size: 0;
-    cursor: pointer;
-    color: transparent;
-    top: 50%;
-    margin-top: -30px;
-    padding: 0;
-    border: 0;
-    outline: none;
-    z-index: 200;
-    transition: all $transition-duration;
     background-color: transparent;
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    height: 60px;
+    line-height: 0;
+    margin-top: -30px;
     opacity: .2;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transition: all $transition-duration;
+    width: 60px;
+    z-index: 200;
 
     &:hover {
-      outline: none;
-      color: transparent;
-      transition: all $transition-duration;
       background-color: transparent;
+      color: transparent;
       opacity: 1;
+      outline: none;
+      transition: all $transition-duration;
     }
 
     &:focus {
-      outline: none;
+      background-color: transparent;
       color: transparent;
       transition: all $transition-duration;
-      background-color: transparent;
     }
   }
 }

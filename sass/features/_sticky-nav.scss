@@ -7,12 +7,12 @@ $navheight-collapsed: 54px;
 }
 
 .nav-container {
+  height: $navheight-mobile;
+  overflow: visible;
   position: fixed;
   transition: all $transition-duration ease;
-  height: $navheight-mobile;
   width: 100%;
   z-index: 9999;
-  overflow: visible;
 
   .site-header {
     height: auto;
@@ -24,20 +24,20 @@ $navheight-collapsed: 54px;
 
   &.nav-container-sticky {
     background: #222;
+    left: 0;
     position: fixed;
     top: 0;
-    left: 0;
 
     .site-header {
-      padding-top: 5px;
       padding-bottom: 5px;
+      padding-top: 5px;
     }
 
     .site-title svg {
+      height: 32px;
       position: relative;
       top: 5px;
       width: 32px;
-      height: 32px;
     }
 
     @media (max-width: $responsivenav - 1px) {
@@ -47,13 +47,13 @@ $navheight-collapsed: 54px;
     }
 
     nav {
-      padding-top: 0;
       padding-bottom: 0;
+      padding-top: 0;
     }
 
     .nav-toggle {
-      top: 5px;
       right: 5px;
+      top: 5px;
     }
 
     @media (min-width: $responsivenav) {

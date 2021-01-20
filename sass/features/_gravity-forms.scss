@@ -4,12 +4,12 @@
 // WCAG 2.0 errors
 /* stylelint-disable selector-class-pattern */
 div.validation_error {
-  padding: 2rem;
   background: $color-error;
-  font-size: var(--font-size-medium);
   color: $color-white;
+  font-size: var(--font-size-medium);
   font-weight: 700;
   margin-bottom: 2rem;
+  padding: 2rem;
 
   &:focus {
     color: $color-white;
@@ -22,15 +22,15 @@ body *[aria-invalid="true"] {
 
 .validation_message {
   color: $color-error;
-  font-weight: 400;
   font-size: var(--font-size-small);
+  font-weight: 400;
 }
 
 .validation_list {
   list-style: none;
+  margin-bottom: 2rem;
   margin-left: 0;
   padding: 0;
-  margin-bottom: 2rem;
 
   a {
     color: $color-error;
@@ -59,23 +59,23 @@ body *[aria-invalid="true"] {
   }
 
   ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
   }
 
   .gform_fields li {
-    margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
   .gfieldset li {
-    margin: 0;
+    align-items: center;
     display: inline-flex;
     flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
     justify-content: flex-start;
+    margin: 0;
+    width: 100%;
   }
 
   .gform_fields li:last-child {
@@ -84,10 +84,10 @@ body *[aria-invalid="true"] {
 
   .gfield_label,
   .ginput_container label {
+    display: inline-block;
     font-weight: 700;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    display: inline-block;
   }
 
   input[type="radio"],
@@ -103,32 +103,32 @@ body *[aria-invalid="true"] {
   @media (min-width: $container-mobile) {
     // Complex fields
     .ginput_full {
-      width: 100%;
       display: block;
+      width: 100%;
     }
 
     .ginput_complex {
-      margin-left: -.5rem;
-      margin-right: -.5rem;
       display: flex;
       flex-wrap: wrap;
+      margin-left: -.5rem;
+      margin-right: -.5rem;
 
       span {
-        margin-right: .5rem;
         margin-left: .5rem;
+        margin-right: .5rem;
       }
     }
 
     .ginput_left,
     .ginput_right {
-      width: calc(50% - 1rem);
       display: inline-flex;
       flex-wrap: wrap;
+      width: calc(50% - 1rem);
 
       > label,
       input {
-        width: 100%;
         font-size: var(--font-size-small);
+        width: 100%;
       }
     }
   }

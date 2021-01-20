@@ -34,26 +34,26 @@ $color-checkboxes: $color-main;
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    font-size: var(--font-size-small);
+    appearance: none;
     background: $color-darkgrey;
-    color: $color-white;
     border: 0;
     border-radius: $border-radius;
-    width: auto;
+    color: $color-white;
+    cursor: pointer;
     display: inline-block;
-    padding-top: 12px;
+    font-family: $font-paragraphs;
+    font-size: var(--font-size-small);
+    font-weight: $button-font-weight;
+    line-height: 1;
+    margin-bottom: 0;
     padding-bottom: 12px;
     padding-left: 25px;
     padding-right: 25px;
-    margin-bottom: 0;
-    text-decoration: none;
+    padding-top: 12px;
     position: relative;
-    cursor: pointer;
+    text-decoration: none;
     transition: 150ms linear background;
-    font-family: $font-paragraphs;
-    font-weight: $button-font-weight;
-    line-height: 1;
-    appearance: none;
+    width: auto;
 
     // Button styles
     &.button-ghost {
@@ -65,18 +65,18 @@ $color-checkboxes: $color-main;
     // Button sizes
     &.button-small {
       font-size: var(--font-size-small);
-      padding-top: 12px;
       padding-bottom: 12px;
       padding-left: 25px;
       padding-right: 25px;
+      padding-top: 12px;
     }
 
     &.button-medium {
       font-size: var(--font-size-medium);
-      padding-top: 15px;
       padding-bottom: 15px;
       padding-left: 20px;
       padding-right: 20px;
+      padding-top: 15px;
     }
 
     &.button-large {
@@ -86,36 +86,32 @@ $color-checkboxes: $color-main;
 
     &:hover,
     &:focus {
-      color: $color-white;
       background: $color-buttons-hover;
       border-color: $color-buttons-hover;
+      color: $color-white;
     }
   }
 }
 
 // Select drop downs
 select {
-  border-radius: 0;
-  background-image: url('../svg/select.svg');
-  background-repeat: no-repeat;
-  background-position: right 0 center;
-  background-size: 40px auto;
-  transition: none;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
-  text-indent: 1px;
+  background-image: url('../svg/select.svg');
+  background-position: right 0 center;
+  background-repeat: no-repeat;
+  background-size: 40px auto;
   border: $border-width solid $color-border-forms;
+  border-radius: 0;
   color: $color-paragraphs;
-  padding: 15px;
-  line-height: 24px;
   font-size: var(--font-size-medium);
-
-  &::-ms-expand {
-    display: none;
-  }
+  line-height: 24px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 15px;
+  text-indent: 1px;
+  transition: none;
+  width: 100%;
 }
 
 // Form input elements and textareas
@@ -131,19 +127,19 @@ input[type="week"],
 input[type="email"],
 input[type="search"] {
   @extend %default;
-  border-radius: 3px;
-  font-family: $font-paragraphs;
+  appearance: none;
   background: $background-inputs;
   border: solid $border-width $color-border-forms;
-  padding: 15px;
-  line-height: 24px;
-  transition: background .55s;
-  text-decoration: none;
-  position: relative;
-  appearance: none;
-  margin-bottom: 0;
+  border-radius: 3px;
   box-sizing: border-box;
+  font-family: $font-paragraphs;
   font-size: var(--font-size-medium);
+  line-height: 24px;
+  margin-bottom: 0;
+  padding: 15px;
+  position: relative;
+  text-decoration: none;
+  transition: background .55s;
 
   &::placeholder {
     color: $color-paragraphs;
@@ -170,46 +166,46 @@ select:focus {
 // Radio buttons and checkboxes
 input[type="radio"],
 input[type="checkbox"] {
-  // Hide native buttons
-  position: absolute;
-  padding: 0;
+  height: var(--checkbox-radio-size);
   margin: 0;
   margin-top: calc((1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
   opacity: 0;
-  height: var(--checkbox-radio-size);
-  width: var(--checkbox-radio-size);
+  padding: 0;
   pointer-events: none;
+  // Hide native buttons
+  position: absolute;
+  width: var(--checkbox-radio-size);
 }
 
 // Labels for radio buttons and checkboxes
 input[type="radio"] + label,
 input[type="checkbox"] + label {
-  display: inline-flex;
   align-items: flex-start;
+  cursor: pointer;
+  display: inline-flex;
   line-height: var(--checkbox-radio-line-height);
   user-select: none;
-  cursor: pointer;
 }
 
 // Custom buttons - basic style
 input[type="radio"] + label::before,
 input[type="checkbox"] + label::before {
-  content: '';
-  display: inline-flex;
   align-self: center;
-  position: relative;
-  top: calc(var(--checkbox-radio-border-width) / 2);
-  flex-shrink: 0;
-  width: var(--checkbox-radio-size);
-  height: var(--checkbox-radio-size);
   background-color: $color-white;
-  border-width: var(--checkbox-radio-border-width);
+  background-position: center;
+  background-repeat: no-repeat;
   border-color: $color-checkboxes;
   border-style: solid;
-  background-repeat: no-repeat;
-  background-position: center;
+  border-width: var(--checkbox-radio-border-width);
+  content: '';
+  display: inline-flex;
+  flex-shrink: 0;
+  height: var(--checkbox-radio-size);
   margin-right: var(--checkbox-radio-gap);
+  position: relative;
+  top: calc(var(--checkbox-radio-border-width) / 2);
   transition: transform .2s, border .2s;
+  width: var(--checkbox-radio-size);
 }
 
 // Radio only style
@@ -226,8 +222,8 @@ input[type="checkbox"] + label::before {
 input[type="radio"]:checked + label::before,
 input[type="checkbox"]:checked + label::before {
   background-color: $color-checkboxes;
-  box-shadow: none;
   border-color: $color-checkboxes;
+  box-shadow: none;
   transition: transform .2s;
 }
 

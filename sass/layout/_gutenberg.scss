@@ -5,23 +5,21 @@
 
 // Blog post category styles
 .cat {
-  margin-top: 4rem;
   margin-bottom: 1rem;
+  margin-top: 4rem;
 
   a {
-    color: $color-black;
-    font-size: var(--font-size-small);
-    display: inline-block;
-    /* stylelint-disable */
-    border-color: rgba($color-blog-tags, .2);
-    /* stylelint-enable */
+    background: transparent;
+    border-color: $color-cat-borders;
+    border-radius: 5px;
     border-style: solid;
     border-width: 1px 1px 2px;
-    border-radius: 5px;
-    padding: .2em .6em;
-    margin-right: .4em;
     box-shadow: none;
-    background: transparent;
+    color: $color-black;
+    display: inline-block;
+    font-size: var(--font-size-small);
+    margin-right: .4em;
+    padding: .2em .6em;
     transition: all $transition-duration;
   }
 
@@ -35,10 +33,10 @@
 
 .gutenberg-content {
   max-width: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  padding-top: var(--padding-block);
   padding-bottom: var(--padding-block);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: var(--padding-block);
 
   .blocks-gallery-grid {
     display: grid;
@@ -51,8 +49,8 @@
   // Loops to enumerate the classes for columns.
   @for $i from 2 through 9 {
     .columns-#{$i} .blocks-gallery-grid {
-      grid-template-columns: repeat($i, 1fr);
       grid-column-gap: 3rem;
+      grid-template-columns: repeat($i, 1fr);
     }
   }
 
@@ -79,14 +77,14 @@
   }
 
   del {
-    text-decoration: line-through;
     color: $color-blockquotes;
+    text-decoration: line-through;
   }
 
   p {
-    line-height: $line-height-blog;
     color: $color-paragraphs;
     font-weight: 400;
+    line-height: $line-height-blog;
   }
 
   // Lists
@@ -133,9 +131,9 @@
   }
 
   @media (max-width: $article-max-width + 40px) {
-    width: calc(100% - 4rem);
     padding-left: 2rem;
     padding-right: 2rem;
+    width: calc(100% - 4rem);
 
     pre {
       margin-left: 2rem;
@@ -155,17 +153,17 @@
   figcaption,
   cite,
   small {
+    border: 0;
+    color: $color-captions;
     font-size: 15px;
     font-style: normal;
-    color: $color-captions;
-    border: 0;
+    margin-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    margin-top: 3rem;
     max-width: $article-max-width;
     padding-bottom: 0;
-    margin-top: 3rem;
-    margin-bottom: 6rem;
+    text-align: center;
     width: 100%;
 
     @media (max-width: $container-mobile) {
@@ -174,16 +172,16 @@
   }
 
   &.wp-block-gallery {
-    overflow: hidden;
     color: $color-white;
+    overflow: hidden;
 
     figcaption {
-      width: 100%;
       color: $color-white;
       font-size: var(--font-size-small);
-      padding: 0 2rem;
       line-height: 1.55;
       margin-bottom: var(--margin-between-text-elements);
+      padding: 0 2rem;
+      width: 100%;
 
       @media (max-width: 600px) {
         padding: 0;
@@ -200,12 +198,13 @@
   .wp-block-image .alignright > figcaption,
   .wp-block-image .aligncenter > figcaption,
   .wp-block-image.is-resized > figcaption {
-    width: 100%;
     display: block;
+    width: 100%;
   }
   /* stylelint-enable selector-max-compound-selectors */
 
-  a:hover {
+  a:hover,
+  &:focus {
     text-decoration: none;
   }
 
@@ -221,21 +220,21 @@
 
   > blockquote,
   > blockquote.wp-block-quote {
+    border-left: 2px solid $color-links;
+    line-height: $line-height-blog;
+    margin-bottom: 4rem;
     margin-left: auto;
     margin-right: auto;
-    border-left: 2px solid $color-links;
     margin-top: 4rem;
-    margin-bottom: 4rem;
     padding: 3.5rem 6rem;
-    line-height: $line-height-blog;
 
     cite {
       text-align: left;
     }
 
     @media (max-width: $container-mobile) {
-      padding: 4rem 4rem 4rem 2rem;
       margin-left: 2rem;
+      padding: 4rem 4rem 4rem 2rem;
     }
 
     > p {
@@ -244,38 +243,44 @@
     }
   }
 
-  // Forced to use important here, because embeds inline stuff
   div[style="width: 640px;"],
   .wp-video {
-    width: 100% !important;
-    max-width: $article-max-width !important;
+    // Forced to use important here, because embeds inline stuff
+    /* stylelint-disable declaration-no-important */
     margin-left: auto !important;
     margin-right: auto !important;
+    max-width: $article-max-width !important;
+    width: 100% !important;
+    /* stylelint-enable */
   }
 
   > figure.wp-caption {
-    width: 100% !important;
+    // Forced to use important here, because embeds inline stuff
+    /* stylelint-disable declaration-no-important */
     max-width: $article-max-width !important;
+    width: 100% !important;
+    /* stylelint-enable */
   }
 
   > * {
-    max-width: $article-max-width;
-    width: 100%;
+    line-height: $line-height-blog;
     margin-left: auto;
     margin-right: auto;
-    line-height: $line-height-blog;
+    max-width: $article-max-width;
+    width: 100%;
 
-    // Forced to use important here, because embeds inline stuff
     .twitter-tweet,
     .instagram-media,
     .wp-video,
     .is-provider-instagram,
     .is-provider-twitter,
     .is-provider-facebook {
-      width: 100% !important;
-      max-width: $article-max-width !important;
+      // Forced to use important here, because embeds inline stuff
+      /* stylelint-disable declaration-no-important */
       margin-left: auto !important;
       margin-right: auto !important;
+      max-width: $article-max-width !important;
+      width: 100% !important;
 
       @media (max-width: 800px) {
         padding-left: 4rem !important;
@@ -286,26 +291,29 @@
         padding-left: 2rem !important;
         padding-right: 2rem !important;
       }
+      /* stylelint-enable */
     }
 
     &.wp-block-image {
-      margin-top: 4rem;
       margin-bottom: 4rem;
+      margin-top: 4rem;
 
       img {
+        height: auto;
         max-width: 100%;
         width: 100%;
-        height: auto;
       }
     }
 
     &.twitter-tweet,
     &.instagram-media,
     &.wp-video {
-      width: 100% !important;
-      max-width: $article-max-width !important;
+      // Forced to use important here, because embeds inline stuff
+      /* stylelint-disable declaration-no-important */
       margin-left: auto !important;
       margin-right: auto !important;
+      max-width: $article-max-width !important;
+      width: 100% !important;
 
       @media (max-width: 800px) {
         padding-left: 4rem !important;
@@ -316,16 +324,17 @@
         padding-left: 2rem !important;
         padding-right: 2rem !important;
       }
+      /* stylelint-enable */
     }
 
     &.alignwide {
-      width: 100%;
-      margin-top: 4rem;
       margin-bottom: 4rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 4rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      width: 100%;
 
       @media (min-width: 870px) {
         max-width: $grid-base-size;
@@ -335,10 +344,10 @@
     }
 
     &.alignfull {
+      margin-bottom: 8rem;
+      margin-top: 8rem;
       max-width: 100%;
       width: 100%;
-      margin-top: 8rem;
-      margin-bottom: 8rem;
 
       img {
         border-radius: 0;
@@ -348,11 +357,11 @@
 
   @media (min-width: 1170px) {
     small[style="text-align: center;"] {
-      width: 100%;
-      max-width: 100%;
       display: block;
       margin-bottom: 8rem;
       margin-top: -4rem;
+      max-width: 100%;
+      width: 100%;
     }
   }
 }
@@ -361,9 +370,11 @@
 .wp-caption {
   max-width: 100%;
 
-  // Forced to use important here, because captions inline stuff
   @media (max-width: $article-max-width + 40px) {
+    // Forced to use important here, because embeds inline stuff
+    /* stylelint-disable declaration-no-important */
     width: 100% !important;
+    /* stylelint-enable */
   }
 
   img[class*="wp-image-"] {
@@ -372,17 +383,17 @@
   }
 
   .wp-caption-text {
-    text-align: left;
     font-style: italic;
-    padding: 1rem 0;
     margin-bottom: 20px;
+    padding: 1rem 0;
+    text-align: left;
   }
 }
 
 // Tables, codes and pres
 table {
-  border-spacing: 0;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
 td,
@@ -392,11 +403,11 @@ th {
   padding: 1rem;
 
   @media (max-width: 600px) {
-    width: 100%;
     display: inline-block;
     height: auto;
     padding: 10px 0;
     text-align: center;
+    width: 100%;
   }
 }
 
@@ -419,37 +430,36 @@ dfn {
 }
 
 kbd {
-  border: 1px solid #ccc;
-  font-family: Arial, Helvetica, sans-serif;
   background-color: $color-tags-and-search-items;
-  color: $color-paragraphs;
-  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px $color-white inset;
+  border: 1px solid #ccc;
   border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(#000, .2), 0 0 0 2px $color-white inset;
+  color: $color-paragraphs;
   display: inline-block;
-  text-shadow: 0 1px 0 $color-white;
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-  white-space: nowrap;
   padding: 0 .5rem;
+  text-shadow: 0 1px 0 $color-white;
+  white-space: nowrap;
 }
 
 // Preformatted text.
 // CSS Simple Pre Code
 pre {
   background: $color-code-background;
-  white-space: pre;
-  word-wrap: break-word;
-  overflow: auto;
-  border-radius: 4px;
   border: 1px solid $color-code-background;
-  position: relative;
-  font-family: $font-monospace;
+  border-radius: 4px;
+  color: $color-lightgrey;
   display: block;
-  margin: 3rem 0;
-  padding: 15px 16px 14px;
-  overflow-x: auto;
+  font-family: $font-monospace;
   font-size: var(--font-size-small);
   line-height: $line-height-blog;
-  color: $color-lightgrey;
+  margin: 3rem 0;
+  overflow: auto;
+  padding: 15px 16px 14px;
+  position: relative;
+  white-space: pre;
+  word-wrap: break-word;
 
   code {
     border-radius: 4px;
@@ -465,37 +475,35 @@ pre {
 
 // Blog post tag styles
 ul.tags {
-  overflow: hidden;
-  margin-top: 0;
-  margin-bottom: var(--margin-between-text-elements);
   list-style: none;
+  margin-bottom: var(--margin-between-text-elements);
+  margin-top: 0;
+  overflow: hidden;
 
   @media (min-width: $article-max-width + 40px) {
     padding: 0;
   }
 
   li {
+    float: left;
+    margin-bottom: 10px;
     margin-left: 0;
     margin-right: 10px;
-    margin-bottom: 10px;
-    padding-left: 0;
-    float: left;
     margin-top: 0;
+    padding-left: 0;
 
     a:not(.button):not(.no-text-link) {
-      color: $color-black;
-      font-size: $font-size-tiny;
-      display: inline-block;
-      /* stylelint-disable */
-      border-color: rgba($color-blog-tags, .1);
-      /* stylelint-enable */
+      background: transparent;
+      border-color: $color-tag-borders;
+      border-radius: 5px;
       border-style: solid;
       border-width: 1px 1px 2px;
-      border-radius: 5px;
-      padding: .2em .6em;
-      margin-right: .4em;
       box-shadow: none;
-      background: transparent;
+      color: $color-black;
+      display: inline-block;
+      font-size: $font-size-tiny;
+      margin-right: .4em;
+      padding: .2em .6em;
       transition: all $transition-duration;
     }
 

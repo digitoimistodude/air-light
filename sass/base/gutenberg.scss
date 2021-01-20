@@ -23,6 +23,9 @@
 // Wider editor
 // Default is 580px which is way too narrow
 .wp-block {
-  max-width: 1000px !important;
+  // Forced to use important here, because WordPress uses too specific selectors
+  /* stylelint-disable declaration-no-important */
   font-family: $font-paragraphs !important;
+  max-width: 1000px !important;
+  /* stylelint-enable */
 }

@@ -4,20 +4,25 @@
 //
 // Import this file after magnific-popup/dist/magnific-popup
 
+// Forced to use important here, because of inline styles
+/* stylelint-disable declaration-no-important */
 .mfp-bg {
   background: rgba(#000, .8);
   opacity: 1;
   z-index: 99999 !important;
 }
+/* stylelint-enable */
 
 .mfp-title {
-  font-family: $font-paragraphs;
   color: $color-paragraphs;
-  opacity: 1;
+  font-family: $font-paragraphs;
   font-size: 1.5rem;
   margin-left: 1.5rem;
+  opacity: 1;
 }
 
+// Forced to use important here, because of inline styles
+/* stylelint-disable declaration-no-important */
 .mfp-wrap {
   opacity: 1;
   transition: all $transition-duration ease-out;
@@ -34,21 +39,24 @@
 
   button.mfp-arrow-left,
   button.mfp-arrow-right {
-    background-size: 64px 64px;
+    background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: transparent;
-    width: 64px;
+    background-size: 64px 64px;
     height: 64px;
-    position: absolute;
     margin-bottom: 0;
     margin-top: 0;
+    position: absolute;
+    width: 64px;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: transparent;
     }
   }
 
+  // Forced to use display none here, because of inline styles
+  /* stylelint-disable a11y/no-display-none */
   .mfp-arrow-left {
     background-image: url('../svg/left-arrow.svg');
 
@@ -62,7 +70,10 @@
       display: none;
     }
   }
+  /* stylelint-enable */
 
+  // Forced to use display none here, because of inline styles
+  /* stylelint-disable a11y/no-display-none */
   .mfp-arrow-right {
     background: url('../svg/right-arrow.svg');
 
@@ -76,16 +87,19 @@
       display: none;
     }
   }
+  /* stylelint-enable */
 
   &.mfp-animate {
-    transform: scale(1.2);
     opacity: 0;
+    transform: scale(1.2);
   }
 
+  // Forced to use display none here, because of inline styles
+  /* stylelint-disable a11y/no-display-none */
   .mfp-figure {
+    opacity: .5;
     transform: scale(.95);
     transition: all $transition-duration ease-out;
-    opacity: .5;
 
     &::after {
       display: none;
@@ -94,8 +108,8 @@
 
   &.mfp-image-loaded {
     .mfp-figure {
-      transform: scale(1);
       opacity: 1;
+      transform: scale(1);
     }
   }
 
@@ -104,25 +118,27 @@
     padding: 0;
 
     .mfp-close {
-      width: 70px;
-      height: 70px;
-      text-align: center;
-      border: 2px solid transparent;
-      line-height: 38px;
-      padding: 0;
-      transition: all $transition-duration ease-out;
-      color: $color-white;
       background: #000;
-      margin-top: 40px;
-      margin-right: 5px;
-      position: absolute;
-      font-size: 40px;
+      border: 2px solid transparent;
       border-radius: 0;
+      color: $color-white;
+      font-size: 40px;
+      height: 70px;
+      line-height: 38px;
+      margin-right: 5px;
+      margin-top: 40px;
       opacity: 1;
+      padding: 0;
+      position: absolute;
+      text-align: center;
+      transition: all $transition-duration ease-out;
+      width: 70px;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background: $color-links;
       }
     }
   }
 }
+/* stylelint-enable */

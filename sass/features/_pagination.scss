@@ -1,58 +1,61 @@
 // Alternative style: https://i.imgur.com/A8gUyu2.png
+/* stylelint-disable a11y/font-size-is-readable */
 .navigation:not(.post-navigation) .nav-links {
-  text-align: left;
-  display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-  overflow: hidden;
-  font-size: 14px;
+  display: flex;
   font-family: $font-headings;
+  font-size: 14px;
+  justify-content: flex-start;
   margin-top: 4rem;
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
 
   a {
     text-decoration: none;
   }
 }
+/* stylelint-enable */
 
 .page-numbers {
-  border-top: 2px solid #ece6f2;
+  align-items: center;
+  background: $color-white;
   border-bottom: 2px solid #ece6f2;
   border-left: 1px solid #ece6f2;
   border-right: 1px solid #ece6f2;
-  background: $color-white;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 0;
-  margin-left: 0;
+  border-top: 2px solid #ece6f2;
   color: $color-main;
+  display: flex;
   font-weight: 500;
+  height: 35px;
+  justify-content: center;
+  margin-left: 0;
+  margin-right: 0;
   transition: all $transition-duration;
+  width: 35px;
 
   @media (max-width: 600px) {
-    width: 26px;
     height: 26px;
+    width: 26px;
   }
 
   &:last-child {
-    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
     border-bottom-right-radius: 4px;
     border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    border-top-right-radius: 4px;
   }
 
   &:first-child {
-    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
     border-bottom-right-radius: 0;
     border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    border-top-right-radius: 0;
   }
 }
 
-a.page-numbers:hover {
+a.page-numbers:hover,
+a.page-numbers:focus {
   background: $color-main;
   border-color: $color-main;
   color: $color-white;
@@ -67,9 +70,9 @@ a.page-numbers:hover {
 // Remove this if you are using version with next/prev
 .page-numbers.next,
 .page-numbers.prev {
-  width: auto;
   padding-left: 20px;
   padding-right: 20px;
+  width: auto;
 
   @media (max-width: 600px) {
     padding-left: 10px;

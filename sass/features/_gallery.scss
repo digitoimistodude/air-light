@@ -2,11 +2,11 @@
 // @source https://github.com/Automattic/_s/blob/50ce93c7cd478871c9ae7504f0ef4748f5de449f/sass/media/_galleries.scss
 
 .gallery {
-  margin-bottom: 1.5em;
   display: grid;
 
   /* autoprefixer: off */
   grid-gap: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .gallery-item {

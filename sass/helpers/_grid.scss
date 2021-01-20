@@ -1,12 +1,12 @@
 // CSS Grid mixin with flexbox fallback for IE and Edge
 @mixin grid($columns, $max_width: 1fr, $min_width: 0, $min_height: 0, $max_height: auto, $gutter_x: 16px, $gutter_y: 16px) {
   display: grid;
-  grid-template-columns: repeat($columns, minmax($min_width, $max_width));
 
   /* autoprefixer: off */
   grid-auto-rows: minmax($min_height, $max_height);
   grid-column-gap: $gutter_x;
   grid-row-gap: $gutter_y;
+  grid-template-columns: repeat($columns, minmax($min_width, $max_width));
 
   // For browser versions that do not support CSS grid
   @supports not (display: grid) {
@@ -16,9 +16,9 @@
 
     > div {
       $grid_width: 100% / $columns;
-      width: calc(#{$grid_width} - #{$gutter_x});
-      margin-right: $gutter_x;
       margin-bottom: $gutter_y;
+      margin-right: $gutter_x;
+      width: calc(#{$grid_width} - #{$gutter_x});
 
       &:nth-child(#{$columns}n+#{$columns}) {
         margin-right: 0;
@@ -34,9 +34,9 @@
 
     > div {
       $grid_width: 100% / $columns;
-      width: calc(#{$grid_width} - #{$gutter_x});
-      margin-right: $gutter_x;
       margin-bottom: $gutter_y;
+      margin-right: $gutter_x;
+      width: calc(#{$grid_width} - #{$gutter_x});
 
       &:nth-child(#{$columns}n+#{$columns}) {
         margin-right: 0;
@@ -52,9 +52,9 @@
 
     > div {
       $grid_width: 100% / $columns;
-      width: calc(#{$grid_width} - #{$gutter_x});
-      margin-right: $gutter_x;
       margin-bottom: $gutter_y;
+      margin-right: $gutter_x;
+      width: calc(#{$grid_width} - #{$gutter_x});
 
       &:nth-child(#{$columns}n+#{$columns}) {
         margin-right: 0;

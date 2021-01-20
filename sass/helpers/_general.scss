@@ -4,12 +4,12 @@
 
 // General
 @mixin hiddentext() {
-  text-indent: -9999px;
-  overflow: hidden;
-  text-decoration: none;
   display: block;
   font-size: 0;
+  overflow: hidden;
   text-align: start;
+  text-decoration: none;
+  text-indent: -9999px;
 }
 
 @function strip-unit($value) {
