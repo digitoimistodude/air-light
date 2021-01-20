@@ -89,7 +89,7 @@ cp ${PROJECTTHEMEPATH}/.browserslistrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
-sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.stylelintrc > ${PROJECTPATH}/gulp/.stylelintrc2
+sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.stylelintrc > ${PROJECTPATH}/devpackages/.stylelintrc2
 cp ${PROJECTPATH}/devpackages/.stylelintrc2 ${PROJECTPATH}/.stylelintrc
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.eslintrc.js > ${PROJECTPATH}/gulp/.eslintrc.js2
 cp ${PROJECTPATH}/devpackages/.eslintrc.js2 ${PROJECTPATH}/.eslintrc.js
