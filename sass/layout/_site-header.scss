@@ -4,27 +4,25 @@
 // the site navigation and search for example.
 
 .site-header {
-  position: relative;
-  z-index: 15;
-  padding-bottom: var(--padding-site-header-vertical);
-  padding-top: var(--padding-site-header-vertical);
-  padding-left: var(--padding-container-horizontal);
-  padding-right: var(--padding-container-horizontal);
-  max-width: $grid-base-size;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-
-  // Easier flex way to align logo and navigation
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: $grid-base-size;
+  padding-bottom: var(--padding-site-header-vertical);
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  padding-top: var(--padding-site-header-vertical);
+  position: relative;
+  z-index: 15;
 }
 
 .site-title {
   margin: 0;
 
   a {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 }

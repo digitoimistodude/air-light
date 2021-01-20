@@ -9,15 +9,15 @@
 // and start over.
 
 .site-footer {
-  padding: 20px;
   background: $color-demo-footer-background;
+  clear: both;
   color: $color-white;
   overflow: hidden;
-  clear: both;
+  padding: 20px;
 
   svg {
-    margin-right: 5px;
     fill: #555;
+    margin-right: 5px;
     position: relative;
   }
 
@@ -29,7 +29,8 @@
   a {
     color: $color-comments-link;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $color-links;
     }
   }
@@ -39,8 +40,8 @@
   overflow: hidden;
 
   @media (min-width: $container-ipad) {
-    width: 60%;
-    text-align: right;
     float: right;
+    text-align: right;
+    width: 60%;
   }
 }

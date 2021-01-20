@@ -2,7 +2,10 @@
 //
 // The main layout for the website navigation, for a desktop
 // devices only.
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, selector-max-class, no-descending-specificity */
+//
+// TODO: Needs harsh refactoring!
+//
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important, no-descending-specificity */
 $absolute-navigation: true;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
@@ -76,6 +79,7 @@ $submenu-dropdown-toggle-hover: (
         position: relative;
       }
 
+      .nav-primary > ul > li > a:focus,
       .nav-primary > ul > li > a:hover {
         color: $color-white;
       }
@@ -103,6 +107,7 @@ $submenu-dropdown-toggle-hover: (
     transition: none;
   }
 
+  .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
   .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
     transform: scale(1);
     transition: all .25s cubic-bezier(.19, 1, .22, 1);
@@ -152,6 +157,7 @@ $submenu-dropdown-toggle-hover: (
   }
 
   @media only screen and (max-width: $responsivenav) {
+    ul li:focus > ul,
     ul li:hover > ul {
       display: block;
     }
@@ -160,6 +166,7 @@ $submenu-dropdown-toggle-hover: (
   // Disable animations on IE10 + IE11
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     // Enable hovers
+    ul li:focus > ul,
     ul li:hover > ul {
       display: block;
     }

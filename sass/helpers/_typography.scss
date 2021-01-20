@@ -4,12 +4,12 @@
 // Helper mixin for self-hosted fonts
 @mixin fontFace($family, $src, $weight: normal, $style: normal) {
   @font-face {
-    font-family: $family;
     font-display: auto;
-    src: url('#{$src}.eot');
-    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), url('#{$src}.woff') format('woff'), url('#{$src}.woff2') format('woff2'), url('#{$src}.ttf') format('truetype'), url('#{$src}.svg##{$family}') format('svg');
+    font-family: $family;
     font-style: $style;
     font-weight: $weight;
+    src: url('#{$src}.eot');
+    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), url('#{$src}.woff') format('woff'), url('#{$src}.woff2') format('woff2'), url('#{$src}.ttf') format('truetype'), url('#{$src}.svg##{$family}') format('svg');
   }
 }
 

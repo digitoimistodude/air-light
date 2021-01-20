@@ -13,16 +13,14 @@
 
 // Start typography settings
 body {
-  font-size: var(--font-size-medium);
-  font-family: $font-paragraphs;
   color: $color-paragraphs;
-  font-weight: $font-weight-paragraphs;
-
-  // Font smoothing options
-  text-size-adjust: none;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
+  font-family: $font-paragraphs;
+  font-size: var(--font-size-medium);
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: $font-weight-paragraphs;
+  text-rendering: geometricPrecision;
+  text-size-adjust: none;
 }
 
 // Links
@@ -30,23 +28,24 @@ a {
   color: $color-links;
   text-decoration: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $color-hover;
   }
 }
 
 // Special link styles for example in blog posts, use with @extend
 %textlink {
-  position: relative;
-  overflow: visible;
-  font-weight: 700;
-  z-index: 1;
-  text-decoration: none;
-  transition: all .18s ease-in-out;
-  display: inline-flex;
-  color: $color-paragraphs;
   border-bottom: 1px solid $color-links;
   box-shadow: inset 0 -.1rem 0 $color-links;
+  color: $color-paragraphs;
+  display: inline-flex;
+  font-weight: 700;
+  overflow: visible;
+  position: relative;
+  text-decoration: none;
+  transition: all .18s ease-in-out;
+  z-index: 1;
 
   &:hover,
   &:focus {
@@ -93,8 +92,8 @@ h6 {
   color: $color-headings;
   font-family: $font-headings;
   font-weight: $font-weight-headings;
-  margin-top: 2.7rem;
   margin-bottom: 2.7rem;
+  margin-top: 2.7rem;
 }
 
 h2,
@@ -174,30 +173,29 @@ i {
 
 // Inline small text.
 small {
-  line-height: 1;
   font-size: .87em;
 }
 
 // Default paragraphs
 p {
-  margin-top: 2.9rem;
   margin-bottom: 2.9rem;
+  margin-top: 2.9rem;
 }
 
 // Quotes.
 blockquote {
-  clear: both;
   border: 0 none;
-  position: relative;
-  padding-bottom: 3rem;
+  clear: both;
   margin: 0;
+  padding-bottom: 3rem;
+  position: relative;
 
   p {
+    color: $color-blockquotes;
     font-style: italic;
     margin-bottom: 0;
-    position: relative;
     overflow: visible;
-    color: $color-blockquotes;
+    position: relative;
   }
 
   @media (min-width: $container-ipad) {
@@ -209,10 +207,10 @@ blockquote {
     content: '';
     display: block;
     height: 4px;
-    position: absolute;
     left: 0;
-    top: 0;
     max-width: 147px;
+    position: absolute;
+    top: 0;
 
     @media (min-width: $container-mobile) {
       width: 30%;
@@ -237,26 +235,26 @@ p:last-child {
 
 // images
 img {
-  -ms-interpolation-mode: bicubic;
   height: auto;
-  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 // Figures and captions
 figure {
-  position: relative;
   margin-bottom: 1rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  position: relative;
 }
 
 // Figcaption.
 figcaption {
-  margin-top: 0;
   font-style: normal;
   font-weight: $font-weight-paragraphs;
+  margin-top: 0;
 }
 
 kbd,
@@ -267,13 +265,12 @@ samp {
 
 // Code block.
 code {
-  color: $color-code-blocks;
   background-color: $color-code-blocks-background;
-  font-family: $font-monospace;
-  line-height: 1;
-  padding: .37rem .5rem;
   border-radius: .3rem;
+  color: $color-code-blocks;
+  font-family: $font-monospace;
   font-size: inherit; // normalize.css sets this as 1em by default
+  padding: .37rem .5rem;
 
   pre & {
     display: inline-block;
@@ -285,8 +282,8 @@ code {
 pre {
   border-radius: .3rem;
   display: block;
+  margin-bottom: 2rem;
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  margin-bottom: 2rem;
 }

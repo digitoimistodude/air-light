@@ -7,10 +7,9 @@
 
 .block-search form {
   display: grid;
-  grid-template-columns: 9fr 1fr;
-
   /* autoprefixer: off */
   grid-gap: 1rem;
+  grid-template-columns: 9fr 1fr;
 
   input,
   label {
@@ -29,8 +28,8 @@
   }
 
   .row-result {
-    padding: 2rem 0;
     border-top: 2px solid $color-border-forms;
+    padding: 2rem 0;
 
     &:last-of-type {
       border-bottom: 2px solid $color-border-forms;
@@ -50,7 +49,8 @@
     background-color: $color-tags-and-search-items;
     color: $color-main;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-main;
       color: $color-tags-and-search-items;
     }

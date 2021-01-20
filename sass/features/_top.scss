@@ -10,19 +10,19 @@
   padding: 16px;
 
   svg {
+    align-items: center;
+    display: flex;
     fill: $color-black;
+    height: 18px;
+    justify-content: center;
     margin: 0;
     opacity: .8;
     transition: all .3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 18px;
-    height: 18px;
 
     @media (max-width: $container-mobile) {
-      width: 15px;
       height: 15px;
+      width: 15px;
     }
   }
 
@@ -36,21 +36,17 @@
 }
 
 .back-to-top {
-  margin: 0;
-  position: fixed;
+  align-items: center;
   bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  opacity: 0;
+  position: fixed;
   right: 1rem;
   text-decoration: none;
-  opacity: 0;
   transition: opacity $transition-duration 0s, visibility 0s $transition-duration;
   z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:focus {
-    outline: none;
-  }
 
   // Accessibility: Change color based on background color the element is on
   &.has-light-bg svg {
@@ -62,8 +58,7 @@
   }
 
   &.is-visible,
-  &.fade-out,
-  .no-touch &:hover {
+  &.fade-out {
     transition: opacity $transition-duration 0s, visibility 0s 0s;
   }
 
@@ -74,12 +69,9 @@
   &.fade-out { // If the user keeps scrolling down, the button is out of focus and becomes less visible
     opacity: 1;
 
+    &:focus,
     &:hover {
       opacity: 1;
     }
-  }
-
-  .no-touch &:hover {
-    opacity: 1;
   }
 }

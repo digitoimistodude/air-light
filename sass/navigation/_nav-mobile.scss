@@ -2,7 +2,10 @@
 //
 // The main layout for the website navigation, for the mobile
 // version only.
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth */
+//
+// TODO: Needs harsh refactoring!
+//
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important */
 $nav-toggle: (
   'color': $color-white,
   'active-color': $color-white,
@@ -186,12 +189,6 @@ $mobile-nav-height: 80px;
     .sub-menu > li > a {
       padding-left: 3.5rem;
     }
-
-    // Do not focus when seeing anyway
-    [data-whatintent="mouse"] a:focus,
-    [data-whatintent="touch"] a:focus {
-      outline: none;
-    }
   }
 
   .js .nav-primary {
@@ -266,7 +263,8 @@ $mobile-nav-height: 80px;
   }
 
   &.is-active .hamburger-inner,
-  &:hover .hamburger-inner {
+  &:hover .hamburger-inner,
+  &:focus .hamburger-inner {
     width: $hamburger-layer-width;
   }
 
@@ -290,8 +288,6 @@ $mobile-nav-height: 80px;
 
   // Alternative focus for mobile nav
   &:focus {
-    outline: none;
-
     span span {
       background-color: map-get($nav-toggle, 'color');
     }

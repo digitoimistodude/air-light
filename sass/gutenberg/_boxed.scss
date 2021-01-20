@@ -3,11 +3,11 @@
 .is-style-boxed {
   border: 2px solid $color-paragraphs;
   color: $color-paragraphs;
-  font-weight: 500;
+  font-size: 17px;
   font-style: normal;
+  font-weight: 500;
   line-height: $line-height-blog;
   padding: 2rem;
-  font-size: 17px;
   width: calc(100% - 4rem);
 }
 

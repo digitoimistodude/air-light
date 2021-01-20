@@ -9,18 +9,18 @@
 
   ul,
   li {
+    direction: ltr;
     display: block;
+    line-height: normal;
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: normal;
-    direction: ltr;
     text-align: left;
   }
 
   ul {
-    margin-top: 0;
     margin-left: 25px;
+    margin-top: 0;
 
     ul {
       margin-left: 25px;
@@ -48,9 +48,12 @@
 }
 
 @media only screen and (max-width: $responsivenav) {
+  // Functionality needs display: none here for visual reasons
+  /* stylelint-disable a11y/no-display-none */
   .js .menu-items ul {
     display: none;
   }
+  /* stylelint-enable */
 }
 
 @media only screen and (max-width: $responsivenav) {
@@ -64,6 +67,9 @@
   font-size: 1.3rem;
 }
 
+// Functionality needs display: none here for visual reasons
+/* stylelint-disable a11y/no-display-none */
 .no-js .nav-toggle {
   display: none;
 }
+/* stylelint-enable */
