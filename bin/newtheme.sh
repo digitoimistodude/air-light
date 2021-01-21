@@ -138,10 +138,6 @@ rm -rf ${PROJECTTHEMEPATH}/template-parts/footer
 find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
 find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'footer.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>//g" {} +
 
-echo "${yellow}Running project gulp styles once...${txtreset}"
-cd ${PROJECTPATH}
-gulp styles
-
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media
 echo "" > ${PROJECTPATH}/media/index.php
@@ -194,4 +190,17 @@ Run project with \`gulp\`." > "${HOME}/Projects/${PROJECTNAME}/README.md"
 #echo "${yellow}Activating theme...${txtreset}"
 #cd ${PROJECTPATH}
 #ssh vagrant@10.1.2.4 "cd /var/www/$PROJECTNAME/;vendor/wp-cli/wp-cli/bin/wp theme activate $THEMENAME"
+
+echo "${yellow}Installing theme npm packages...${txtreset}"
+cd ${PROJECTTHEMEPATH}
+npm install
+
+echo "${yellow}Running project gulp js once...${txtreset}"
+cd ${PROJECTPATH}
+gulp js
+
+echo "${yellow}Running project gulp styles once...${txtreset}"
+cd ${PROJECTPATH}
+gulp styles
+
 echo "${boldgreen}All done! Theme generated. Go to $PROJECTNAME.test/wp/wp-admin/themes.php and activate your theme, then run gulp watch in project root and start coding! Your project can be found at $PROJECTPATH and your theme can be found at $PROJECTTHEMEPATH${txtreset}"
