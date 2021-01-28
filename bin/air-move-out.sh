@@ -56,10 +56,8 @@ cd ~/air-temp/bin
 echo "
 ${boldgreen}Done! Next steps:${txtreset}"
 echo "
-${boldwhite}1. cd /Users/rolle/Projects/airdev/content/themes/air-light/bin
-2. sh air-move-out.sh
-3. http://airdev.test/wp/wp-admin/themes.php?page=themecheck
-4. sh air-pack.sh
-5. https://wordpress.org/themes/getting-started/
-6. sh air-move-in.sh
+${boldwhite}1. Click the Check it -button: http://airdev.test/wp/wp-admin/themes.php?page=themecheck
+2. sh air-pack.sh
+3. https://wordpress.org/themes/getting-started/
+4. sh air-move-in.sh
 ${txtreset} "
