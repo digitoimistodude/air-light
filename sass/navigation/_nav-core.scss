@@ -18,32 +18,9 @@
     text-align: left;
   }
 
-  ul {
-    margin-left: 25px;
-    margin-top: 0;
-
-    ul {
-      margin-left: 25px;
-    }
-  }
-
   li,
   a {
     position: relative;
-  }
-
-  .disabled {
-    cursor: not-allowed;
-  }
-
-  li > h1,
-  li > h2,
-  li > h3,
-  li > h4,
-  li > h5,
-  li > h6 {
-    margin: 0;
-    padding: 0;
   }
 }
 

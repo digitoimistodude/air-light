@@ -17,8 +17,6 @@ $color-separator-nav-mobile: #f0f0f0;
 $font-weight-main-level-mobile: 600;
 
 // Sub menu settings
-$color-background-sub-menu-mobile: $color-white;
-$color-border-sub-menu-mobile: $color-hover;
 $color-sub-menu-mobile: $color-links;
 $font-weight-sub-menu-mobile: 600;
 
@@ -41,7 +39,7 @@ $mobile-nav-height: 80px;
 :root {
   // Main level CSS vars
   --font-size-main-level-mobile: 17px;
-  --font-size-sub-menu-mobile: 14px;
+  --font-size-sub-menu-mobile: 16px;
   --padding-main-level-vertical-mobile: .6rem;
   --padding-main-level-horizontal-mobile: 2rem;
 
@@ -134,6 +132,13 @@ $mobile-nav-height: 80px;
     z-index: 0;
   }
 
+  // Sub menu items
+  .sub-menu a {
+    color: $color-sub-menu-mobile;
+    font-size: var(--font-size-sub-menu-mobile);
+    font-weight: $font-weight-sub-menu-mobile;
+  }
+
   .menu-item a:hover,
   .menu-item a:focus {
     color: $color-active-main-level-mobile;
@@ -199,7 +204,6 @@ $mobile-nav-height: 80px;
     z-index: 5;
 
     .menu-items {
-
       // Let's keep the content always full height
       height: 100vh;
       padding: 0;

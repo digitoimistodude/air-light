@@ -530,32 +530,9 @@ a.is-external-link.no-external-link-indicator::after {
 	text-align: left;
 }
 
-.menu-items ul {
-	margin-left: 25px;
-	margin-top: 0;
-}
-
-.menu-items ul ul {
-	margin-left: 25px;
-}
-
 .menu-items li,
 .menu-items a {
 	position: relative;
-}
-
-.menu-items .disabled {
-	cursor: not-allowed;
-}
-
-.menu-items li > h1,
-.menu-items li > h2,
-.menu-items li > h3,
-.menu-items li > h4,
-.menu-items li > h5,
-.menu-items li > h6 {
-	margin: 0;
-	padding: 0;
 }
 
 .dropdown-toggle::after,
@@ -583,7 +560,7 @@ a.is-external-link.no-external-link-indicator::after {
 
 :root {
 	--font-size-main-level-mobile: 17px;
-	--font-size-sub-menu-mobile: 14px;
+	--font-size-sub-menu-mobile: 16px;
 	--padding-main-level-vertical-mobile: .6rem;
 	--padding-main-level-horizontal-mobile: 2rem;
 	--padding-sub-menu-vertical-mobile: .4rem;
@@ -4339,6 +4316,12 @@ h6 {
 	position: relative;
 	text-decoration: none;
 	z-index: 0;
+}
+
+.sub-menu a {
+	color: #3962c9;
+	font-size: var(--font-size-sub-menu-mobile);
+	font-weight: 600;
 }
 
 .menu-item a:hover,
