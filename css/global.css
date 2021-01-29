@@ -573,6 +573,10 @@ a.is-external-link.no-external-link-indicator::after {
 
 /* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important, no-descending-specificity */
 
+:root {
+	--font-size-main-level: 16px;
+}
+
 .nav-container {
 	background-color: transparent;
 	position: absolute;
@@ -4031,10 +4035,10 @@ ul li:hover > ul {
 }
 
 .nav-primary .menu-item > a {
-	padding: 0.6rem 2rem; /* stylelint-disable */
+	padding: 0.6rem 2rem;
 	color: #fff;
-	font-size: 1.6rem;
-	font-weight: 700; /* stylelint-enable */
+	font-size: var(--font-size-main-level);
+	font-weight: 700;
 	display: inline-flex;
 	align-items: center; /* stylelint-disable */
 	min-height: auto; /* stylelint-enable */

@@ -6,17 +6,25 @@
 // TODO: Needs harsh refactoring!
 //
 /* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important, no-descending-specificity */
+
+// Navigation settings
 $absolute-navigation: true;
 $nav-link-padding-y: .6rem;
 $nav-link-padding-x: 2rem;
 $nav-link-padding-y-dropdown: .4rem;
 $nav-link-padding-x-dropdown: 1.5rem;
-$nav-links: (
-  'color': $color-white,
-  'hover-color': $color-white,
-  'font-weight': 700,
-  'font-size': 1.6rem
-);
+
+// Navigation color variables
+$color-main-level: $color-white;
+$color-hover-main-level: $color-white;
+
+// Navigation font style variables
+$font-weight-main-level: 700;
+
+// Navigation font variables
+:root {
+  --font-size-main-level: 16px;
+}
 $nav-dropdown-links: (
   'color': $color-links,
   'hover-color': $color-hover,
@@ -199,11 +207,9 @@ $submenu-dropdown-toggle-hover: (
       // Main level
       > a {
         padding: $nav-link-padding-y $nav-link-padding-x;
-        /* stylelint-disable */
-        color: map-get($nav-links, 'color');
-        font-size: map-get($nav-links, 'font-size');
-        font-weight: map-get($nav-links, 'font-weight');
-        /* stylelint-enable */
+        color: $color-main-level;
+        font-size: var(--font-size-main-level);
+        font-weight: $font-weight-main-level;
         display: inline-flex;
         align-items: center;
 
@@ -221,7 +227,7 @@ $submenu-dropdown-toggle-hover: (
         &:active,
         &.highlighted,
         &.current {
-          color: map-get($nav-links, 'hover-color');
+          color: $color-hover-main-level;
         }
       }
 
