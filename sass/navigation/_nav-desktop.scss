@@ -226,6 +226,31 @@ $color-background-toggle-icon: transparent;
       }
     }
 
+    // Sub menu items that have items under them
+    .menu-item.menu-item-has-children {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-right: .8rem;
+      position: relative;
+
+      // Add a pseudo element to fill the gap
+      // between menu item and sub menu to help hovering
+      &::after {
+        content: '';
+        display: block;
+        height: var(--gap-dropdown);
+        position: absolute;
+        top: 100%;
+        width: 100%;
+      }
+
+      > a {
+        // Let's make space for the nav-toggle/arrow
+        padding-right: 1.5rem;
+      }
+    }
+
     // Main level toggle icon
     .dropdown-toggle.toggled-on svg {
       transform: rotateX(180deg);
@@ -253,32 +278,6 @@ $color-background-toggle-icon: transparent;
       transform: rotate(-90deg) rotateX(180deg);
     }
   }
-
-  .menu-item.menu-item-has-children {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-right: .8rem;
-    position: relative;
-
-    // Add a pseudo element to fill the gap
-    // between menu item and sub menu to help hovering
-    &::after {
-      content: '';
-      display: block;
-      height: var(--gap-dropdown);
-      position: absolute;
-      top: 100%;
-      width: 100%;
-    }
-
-    /* stylelint-disable */
-    > a {
-      // Let's make space for the nav-toggle/arrow
-      padding-right: 1.5rem;
-    }
-    /* stylelint-enable */
-  } // .menu-item.menu-item-has-children
 
   // Don't use gap filler in sub menu items
   // Acceptable use of display: none here, for visual/technical purposes

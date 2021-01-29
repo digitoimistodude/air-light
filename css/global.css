@@ -4086,6 +4086,27 @@ ul li:hover > ul {
 	color: #3962c9;
 }
 
+.menu-item .menu-item.menu-item-has-children {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-right: .8rem;
+	position: relative;
+}
+
+.menu-item .menu-item.menu-item-has-children::after {
+	content: '';
+	display: block;
+	height: var(--gap-dropdown);
+	position: absolute;
+	top: 100%;
+	width: 100%;
+}
+
+.menu-item .menu-item.menu-item-has-children > a {
+	padding-right: 1.5rem;
+}
+
 .menu-item .dropdown-toggle.toggled-on svg {
 	transform: rotateX(180deg);
 }
@@ -4109,27 +4130,6 @@ ul li:hover > ul {
 
 .menu-item .sub-menu .dropdown-toggle.toggled-on svg {
 	transform: rotate(-90deg) rotateX(180deg);
-}
-
-.menu-item.menu-item-has-children {
-	align-items: center;
-	display: flex;
-	justify-content: space-between;
-	margin-right: .8rem;
-	position: relative; /* stylelint-disable */ /* stylelint-enable */
-}
-
-.menu-item.menu-item-has-children::after {
-	content: '';
-	display: block;
-	height: var(--gap-dropdown);
-	position: absolute;
-	top: 100%;
-	width: 100%;
-}
-
-.menu-item.menu-item-has-children > a {
-	padding-right: 1.5rem;
 }
 
 /* stylelint-disable a11y/no-display-none */
