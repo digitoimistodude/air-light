@@ -571,8 +571,6 @@ a.is-external-link.no-external-link-indicator::after {
 
 /* stylelint-enable */
 
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important, no-descending-specificity */
-
 :root {
 	--font-size-main-level: 16px;
 	--font-size-sub-menu: 14px;
@@ -582,12 +580,6 @@ a.is-external-link.no-external-link-indicator::after {
 	--padding-sub-menu-horizontal: 1.5rem;
 	--gap-dropdown: 1rem;
 	--size-dropdown-icon: 1rem;
-}
-
-.nav-container {
-	background-color: transparent;
-	position: absolute;
-	width: 100%;
 }
 
 /* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important */
@@ -3945,17 +3937,6 @@ ul li:hover > ul {
 
 @media only screen and (min-width: 960px) {
 
-.nav-container .nav-primary > ul > li > a,
-.nav-container .nav-primary > ul > li > button {
-	color: #fff;
-	position: relative;
-}
-
-.nav-container .nav-primary > ul > li > a:focus,
-.nav-container .nav-primary > ul > li > a:hover {
-	color: #fff;
-}
-
 .menu-item-has-children::before {
 	content: '';
 	display: block;
@@ -4015,7 +3996,9 @@ ul li:hover > ul {
 }
 
 .nav-container {
-	background: #fff;
+	background-color: transparent;
+	position: absolute;
+	width: 100%;
 }
 
 .nav-toggle {

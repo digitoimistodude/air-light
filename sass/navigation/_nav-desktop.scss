@@ -4,8 +4,6 @@
 // devices only.
 //
 // TODO: Needs harsh refactoring!
-//
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important, no-descending-specificity */
 
 // Main level settings
 $absolute-navigation: true;
@@ -37,37 +35,6 @@ $color-background-toggle-icon: transparent;
 
   // Dimension variables
   --size-dropdown-icon: 1rem;
-}
-
-@if $absolute-navigation == false {
-  .nav-container {
-    background-color: $color-background-nav-desktop;
-    box-shadow: 0 0 10px rgba($color-dark, .1);
-    position: relative;
-    z-index: 222;
-  }
-}
-
-@if $absolute-navigation == true {
-  .nav-container {
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-
-    @media only screen and (min-width: $responsivenav) {
-      // Main level links
-      .nav-primary > ul > li > a,
-      .nav-primary > ul > li > button {
-        color: $color-white;
-        position: relative;
-      }
-
-      .nav-primary > ul > li > a:focus,
-      .nav-primary > ul > li > a:hover {
-        color: $color-white;
-      }
-    }
-  }
 }
 
 @media only screen and (min-width: $responsivenav) {
@@ -136,7 +103,18 @@ $color-background-toggle-icon: transparent;
 
 @media only screen and (min-width: $responsivenav) {
   .nav-container {
-    background: $color-background-nav-desktop;
+    @if $absolute-navigation == false {
+      background-color: $color-background-nav-desktop;
+      box-shadow: 0 0 10px rgba($color-dark, .1);
+      position: relative;
+      z-index: 222;
+    }
+
+    @if $absolute-navigation == true {
+      background-color: transparent;
+      position: absolute;
+      width: 100%;
+    }
   }
 
   @media only screen and (max-width: $responsivenav) {
