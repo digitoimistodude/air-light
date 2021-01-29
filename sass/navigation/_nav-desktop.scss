@@ -182,14 +182,10 @@ $color-background-toggle-icon: transparent;
 
       // Actions in menu items
       &:hover,
-      &:focus,
-      &:active,
-      &.highlighted,
-      &.current {
+      &:focus {
         color: $color-hover-main-level;
       }
     }
-
 
     // Dropdowns
     .sub-menu {
@@ -229,34 +225,16 @@ $color-background-toggle-icon: transparent;
       }
 
       a:hover,
-      a:focus,
-      a:active,
-      a.highlighted {
+      a:focus {
         color: $color-sub-menu;
       }
-
-      .disabled {
-        background: $color-white;
-        color: $color-disabled;
-      }
     }
 
-    // Sub-menu toggle arrow
-    ul .dropdown-toggle {
-      background-color: transparent;
-      border: 0;
-      width: 3rem;
-
-      svg {
-        transform: rotate(-90deg) rotateX(0deg);
-      }
-
-      &.toggled-on svg {
-        transform: rotate(-90deg) rotateX(180deg);
-      }
+    // Main level toggle icon
+    .dropdown-toggle.toggled-on svg {
+      transform: rotateX(180deg);
     }
 
-    // Main level toggle arrow
     .dropdown-toggle {
       align-items: center;
       background-color: transparent;
@@ -264,16 +242,19 @@ $color-background-toggle-icon: transparent;
       display: inline-flex;
       justify-content: center;
       padding: 0;
+    }
 
-      svg {
-        height: var(--size-dropdown-icon);
-        transition: transform $transition-duration ease-in;
-        width: var(--size-dropdown-icon);
-      }
+    // Sub-menu toggle icon
+    .sub-menu .dropdown-toggle {
+      width: 3rem;
+    }
 
-      &.toggled-on svg {
-        transform: rotateX(180deg);
-      }
+    .sub-menu .dropdown-toggle svg {
+      transform: rotate(-90deg) rotateX(0deg);
+    }
+
+    .sub-menu .dropdown-toggle.toggled-on svg {
+      transform: rotate(-90deg) rotateX(180deg);
     }
   }
 
@@ -304,7 +285,10 @@ $color-background-toggle-icon: transparent;
   } // .menu-item.menu-item-has-children
 
   // Don't use gap filler in sub menu items
+  // Acceptable use of display: none here, for visual/technical purposes
+  /* stylelint-disable a11y/no-display-none */
   .sub-menu .menu-item-has-children::after {
     display: none;
   }
+  /* stylelint-enable */
 } // @media only screen and (min-width: $responsivenav)
