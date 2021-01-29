@@ -85,10 +85,8 @@ $mobile-nav-height: 80px;
 
   // Users that don't have Javascript enabled
   .no-js .site-header {
-    position: static;
-
-    // Use the same color than navigation
     background: $color-background-nav-mobile-header;
+    position: static;
   }
 
   // Disable scroll on html body when menu is opened.
@@ -97,43 +95,43 @@ $mobile-nav-height: 80px;
   }
 
   .nav-primary {
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
-    transition: all $transition-duration ease-in-out;
-    margin: 0;
     display: block;
-    will-change: opacity;
-    visibility: hidden;
+    height: 100vh;
+    margin: 0;
     opacity: 0;
+    overflow: auto;
     pointer-events: none;
+    transition: all $transition-duration ease-in-out;
+    visibility: hidden;
+    width: 100vw;
+    will-change: opacity;
   }
 
   .menu-items {
-    opacity: 0;
-    margin: 0;
-    width: 100%;
     float: none;
+    margin: 0;
+    opacity: 0;
     padding: 2rem 0;
+    width: 100%;
   }
 
   // Main level mobile navigation links
   .menu-item a {
     border-top: 1px solid $color-separator-nav-mobile;
-    padding-top: 1.2rem;
+    color: $color-main-level-mobile;
+    display: block;
+    font-size: var(--font-size-main-level-mobile);
+    font-weight: $font-weight-main-level-mobile;
+    margin-left: 0;
+    margin-right: 0;
+    outline: none; // We have color here, so it's okay to remove outline
     padding-bottom: 1.2rem;
     padding-left: 2.5rem;
     padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
-    margin-left: 0;
-    margin-right: 0;
-    color: $color-main-level-mobile;
-    font-size: var(--font-size-main-level-mobile);
-    font-weight: $font-weight-main-level-mobile;
-    text-decoration: none;
+    padding-top: 1.2rem;
     position: relative;
+    text-decoration: none;
     z-index: 0;
-    display: block;
-    outline: none; // We have color here, so it's okay to remove outline
   }
 
   .menu-item a:hover,
@@ -148,23 +146,23 @@ $mobile-nav-height: 80px;
 
   // Dropdown toggle
   .dropdown-toggle {
-    position: absolute;
-    top: 0;
-    left: auto;
-    right: 10px;
-    width: 12px;
-    height: 7px;
-    overflow: hidden;
     background: transparent;
-    border: 0;
-    padding: 20px;
-    z-index: 9999;
     background-image: url('../svg/mobile-nav-arrow-down.svg');
     background-position: center;
-    background-size: 12px 7px;
     background-repeat: no-repeat;
-    transition: all $transition-duration;
+    background-size: 12px 7px;
+    border: 0;
+    height: 7px;
+    left: auto;
+    overflow: hidden;
+    padding: 20px;
+    position: absolute;
+    right: 10px;
+    top: 0;
     transform: rotate(0);
+    transition: all $transition-duration;
+    width: 12px;
+    z-index: 9999;
   }
 
   .dropdown-toggle:focus {
@@ -172,14 +170,17 @@ $mobile-nav-height: 80px;
   }
 
   // Hide desktop toggles
+  // Need to use display: none here to make sure there are visually no double toggles
+  /* stylelint-disable a11y/no-display-none */
   .dropdown-toggle svg {
     display: none;
   }
+  /* stylelint-enable */
 
   .dropdown-toggle.toggled-on {
     background-color: transparent;
-    transform: rotate(-180deg);
     cursor: pointer;
+    transform: rotate(-180deg);
   }
 
   // Dropdowns
@@ -189,19 +190,19 @@ $mobile-nav-height: 80px;
 
   // Mobile navigation core functionality
   .js .nav-primary {
+    left: 0;
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
-    z-index: 5;
 
     // Default position, some browsers need this
     top: $mobile-nav-height;
-    left: 0;
+    z-index: 5;
 
     .menu-items {
-      padding: 0;
 
       // Let's keep the content always full height
       height: 100vh;
+      padding: 0;
     }
   }
 
@@ -210,9 +211,9 @@ $mobile-nav-height: 80px;
     overflow: hidden;
 
     .nav-primary {
-      visibility: visible;
       opacity: 1;
       pointer-events: all;
+      visibility: visible;
     }
 
     .menu-items {
@@ -225,33 +226,30 @@ $mobile-nav-height: 80px;
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  color: $color-hamburger-active;
   background: $color-hamburger-active;
+  color: $color-hamburger-active;
 }
 
 .nav-toggle {
-  list-style: none;
-  z-index: 100000;
-  border: 0;
-  overflow: visible;
-  color: $color-hamburger;
-  font-weight: 700;
-  user-select: none;
-  text-decoration: none;
-  padding: 2rem;
-  margin: 0 -2rem 0 0;
   background: transparent;
+  border: 0;
+  color: $color-hamburger;
   cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+  margin: 0 -2rem 0 0;
+  overflow: visible;
+  padding: 2rem;
   position: relative;
+  text-decoration: none;
   top: 0;
-
-  // Hide from desktops
-  display: none;
+  user-select: none;
+  z-index: 100000;
 
   // Modern stuff (::after is first line, without ::after is first)
   &:not(.toggled-on) .hamburger-inner {
-    width: 18px;
     transition: width $transition-duration;
+    width: 18px;
   }
 
   &.is-active .hamburger-inner,
@@ -293,30 +291,32 @@ $mobile-nav-height: 80px;
   // We already have aria-label for button
   // But we want to show nav-toggle visually for seeing users
   // So we'll add has-visible-label to nav-toggle in header.php
+  /* stylelint-disable a11y/no-display-none */
   &:not(.has-visible-label) .nav-toggle-label {
     display: none;
   }
+  /* stylelint-enable */
 
   @media (max-width: $responsivenav - 1px) {
     display: block;
 
     &.has-visible-label {
-      display: flex;
       align-items: center;
+      display: flex;
+    }
 
-      .nav-toggle-label {
-        font-size: var(--font-size-nav-toggle-label);
+    &.has-visible-label .nav-toggle-label {
+      font-size: var(--font-size-nav-toggle-label);
 
-        // Hide on smallest phones
-        @media (max-width: 410px) {
-          display: none;
-        }
+      // Hide on smallest phones
+      @media (max-width: 410px) {
+        display: none;
       }
+    }
 
-      @media (min-width: 411px) {
-        .hamburger-box {
-          margin-right: 2rem;
-        }
+    @media (min-width: 411px) {
+      .hamburger-box {
+        margin-right: 2rem;
       }
     }
   }
@@ -357,4 +357,3 @@ $mobile-nav-height: 80px;
     }
   }
 }
-

@@ -5,16 +5,15 @@
 
 // Main level settings
 $absolute-navigation: true;
-$color-main-level: $color-white;
-$color-hover-main-level: $color-white;
 $color-background-nav-desktop: $color-white;
+$color-hover-main-level: $color-white;
+$color-main-level: $color-white;
 $font-weight-main-level: 700;
 $use-dropdown-bubble: true;
 
 // Sub menu settings
 $border-radius-sub-menu: 4px;
 $color-background-sub-menu: $color-white;
-$color-background-toggle-icon: transparent;
 $color-border-sub-menu: rgba($color-black, .05);
 $color-hover-sub-menu: $color-hover;
 $color-sub-menu: $color-links;
