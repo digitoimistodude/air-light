@@ -7,62 +7,37 @@
 //
 /* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important, no-descending-specificity */
 
-// Navigation settings
+// Main level settings
 $absolute-navigation: true;
-$nav-link-padding-y: .6rem;
-$nav-link-padding-x: 2rem;
-$nav-link-padding-y-dropdown: .4rem;
-$nav-link-padding-x-dropdown: 1.5rem;
-
-// Navigation color variables
+$font-weight-main-level: 700;
 $color-main-level: $color-white;
 $color-hover-main-level: $color-white;
 
-// Navigation font style variables
-$font-weight-main-level: 700;
+// Sub menu settings
+$font-weight-sub-menu: 400;
+$border-radius-sub-menu: 4px;
+$width-sub-menu: 22rem;
+$color-sub-menu: $color-links;
+$color-hover-sub-menu: $color-hover;
+$color-background-sub-menu: $color-white;
+$color-border-sub-menu: rgba($color-black, .05);
+$color-background-toggle-icon: transparent;
 
-// Navigation font variables
 :root {
+  // Navigation font variables
   --font-size-main-level: 16px;
+  --font-size-sub-menu: 14px;
+
+  // Spacing variables
+  --padding-main-level-vertical: .6rem;
+  --padding-sub-menu-vertical: .4rem;
+  --padding-main-level-horizontal: 2rem;
+  --padding-sub-menu-horizontal: 1.5rem;
+  --gap-dropdown: 1rem;
+
+  // Dimension variables
+  --size-dropdown-icon: 1rem;
 }
-$nav-dropdown-links: (
-  'color': $color-links,
-  'hover-color': $color-hover,
-  'font-weight': 400,
-  'font-size': 1.4rem
-);
-$dropdown: (
-  'background': $color-white,
-  'gap': 1rem,
-  'width': 22rem,
-  'border-radius': 4px
-);
-$dropdown-toggle: (
-  'background': transparent,
-  'border': none, 'border-radius': 50%,
-  'color': $color-white,
-  'size': auto,
-  'arrow-size': 1rem
-);
-$dropdown-toggle-hover: (
-  'background': $color-white,
-  'border': 1px solid $color-white,
-  'color': $color-links,
-);
-$submenu-dropdown-toggle: (
-  'background': transparent,
-  'border': none,
-  'border-radius': 0,
-  'color': $color-links,
-  'height': auto,
-  'width': 3rem,
-  'arrow-size': 1rem
-);
-$submenu-dropdown-toggle-hover: (
-  'background': $color-white,
-  'border': none,
-  'color': $color-links,
-);
 
 @if $absolute-navigation == false {
   .nav-container {
@@ -122,17 +97,17 @@ $submenu-dropdown-toggle-hover: (
   }
 
   .sub-menu {
-    background: map-get($dropdown, 'background');
-    width: map-get($dropdown, 'width');
+    background: $color-background-sub-menu;
+    width: $width-sub-menu;
     left: 0;
     z-index: -1;
-    border-top-left-radius: map-get($dropdown, 'border-radius');
-    border-top-right-radius: map-get($dropdown, 'border-radius');
-    border-bottom-left-radius: map-get($dropdown, 'border-radius');
-    border-bottom-right-radius: map-get($dropdown, 'border-radius');
-    border-left: 1px solid rgba(0, 0, 0, .05);
-    border-right: 1px solid rgba(0, 0, 0, .05);
-    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    border-top-left-radius: $border-radius-sub-menu;
+    border-top-right-radius: $border-radius-sub-menu;
+    border-bottom-left-radius: $border-radius-sub-menu;
+    border-bottom-right-radius: $border-radius-sub-menu;
+    border-left: 1px solid $color-border-sub-menu;
+    border-right: 1px solid $color-border-sub-menu;
+    border-bottom: 1px solid $color-border-sub-menu;
     box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
     transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
 
@@ -206,16 +181,15 @@ $submenu-dropdown-toggle-hover: (
 
       // Main level
       > a {
-        padding: $nav-link-padding-y $nav-link-padding-x;
+        padding-left: var(--padding-main-level-horizontal);
+        padding-right: var(--padding-main-level-horizontal);
+        padding-top: var(--padding-main-level-vertical);
+        padding-bottom: var(--padding-main-level-vertical);
         color: $color-main-level;
         font-size: var(--font-size-main-level);
         font-weight: $font-weight-main-level;
         display: inline-flex;
         align-items: center;
-
-        /* stylelint-disable */
-        min-height: map-get($dropdown-toggle, 'size');
-        /* stylelint-enable */
 
         &.disabled {
           color: $color-disabled;
@@ -233,18 +207,18 @@ $submenu-dropdown-toggle-hover: (
 
       // Dropdowns
       .sub-menu {
-        width: map-get($dropdown, 'width');
+        width: $width-sub-menu;
         left: 5%;
         margin-left: 0;
         padding-bottom: .5rem;
         padding-top: .5rem;
         padding-left: 0;
-        margin-top: map-get($dropdown, 'gap');
+        margin-top: var(--gap-dropdown);
         z-index: 999;
 
         li {
           float: none;
-          width: map-get($dropdown, 'width');
+          width: $width-sub-menu;
           padding: 0;
         }
 
@@ -257,12 +231,13 @@ $submenu-dropdown-toggle-hover: (
         }
 
         a {
-          padding: $nav-link-padding-y-dropdown $nav-link-padding-x-dropdown;
-          font-size: map-get($nav-dropdown-links, 'font-size');
-          /* stylelint-disable font-weight-notation */
-          font-weight: map-get($nav-dropdown-links, 'font-weight');
-          /* stylelint-enable font-weight-notation */
-          color: map-get($nav-dropdown-links, 'color');
+          padding-left: var(--padding-sub-menu-horizontal);
+          padding-right: var(--padding-sub-menu-horizontal);
+          padding-top: var(--padding-sub-menu-vertical);
+          padding-bottom: var(--padding-sub-menu-vertical);
+          font-size: var(--font-size-sub-menu);
+          font-weight: $font-weight-sub-menu;
+          color: $color-sub-menu;
           display: flex;
           align-items: center;
         }
@@ -271,7 +246,7 @@ $submenu-dropdown-toggle-hover: (
         a:focus,
         a:active,
         a.highlighted {
-          color: map-get($nav-dropdown-links, 'hover-color');
+          color: $color-sub-menu;
         }
 
         .disabled {
@@ -282,23 +257,17 @@ $submenu-dropdown-toggle-hover: (
 
       // Main level toggle arrow
       .dropdown-toggle {
-        background-color: map-get($dropdown-toggle, 'background');
-        border: map-get($dropdown-toggle, 'border');
-        border-radius: map-get($dropdown-toggle, 'border-radius');
-        color: map-get($dropdown-toggle, 'color');
-        height: map-get($dropdown-toggle, 'height');
-        width: map-get($dropdown-toggle, 'width');
+        border: 0;
         padding: 0;
+        background-color: transparent;
         display: inline-flex;
         align-items: center;
         justify-content: center;
 
         svg {
-          /* stylelint-disable no-descending-specificity */
           transition: transform $transition-duration ease-in;
-          width: map-get($dropdown-toggle, 'arrow-size');
-          height: map-get($dropdown-toggle, 'arrow-size');
-          /* stylelint-enable */
+          width: var(--size-dropdown-icon);
+          height: var(--size-dropdown-icon);
         }
 
         &.toggled-on svg {
@@ -306,21 +275,14 @@ $submenu-dropdown-toggle-hover: (
         }
       }
 
-      // Sub-level toggle arrow
+      // Sub-menu toggle arrow
       ul li .dropdown-toggle {
-        background-color: map-get($submenu-dropdown-toggle, 'background');
-        border: map-get($submenu-dropdown-toggle, 'border');
-        border-radius: map-get($submenu-dropdown-toggle, 'border-radius');
-        color: map-get($submenu-dropdown-toggle, 'color');
-        height: map-get($submenu-dropdown-toggle, 'height');
-        width: map-get($submenu-dropdown-toggle, 'width');
-        flex-shrink: 0;
-        align-self: center;
+        background-color: transparent;
+        border: 0;
+        width: 3rem;
 
         svg {
           transform: rotate(-90deg) rotateX(0deg);
-          width: map-get($submenu-dropdown-toggle, 'arrow-size');
-          height: map-get($submenu-dropdown-toggle, 'arrow-size');
         }
 
         &.toggled-on svg {
@@ -358,7 +320,7 @@ $submenu-dropdown-toggle-hover: (
         display: block;
         position: absolute;
         content: '';
-        height: map-get($dropdown, 'gap');
+        height: var(--gap-dropdown);
         width: 100%;
         top: 100%;
       }
