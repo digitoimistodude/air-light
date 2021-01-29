@@ -2,40 +2,38 @@
 //
 // The main layout for the website navigation, for a desktop
 // devices only.
-//
-// TODO: Needs harsh refactoring!
 
 // Main level settings
 $absolute-navigation: true;
-$use-dropdown-bubble: true;
-$font-weight-main-level: 700;
 $color-main-level: $color-white;
 $color-hover-main-level: $color-white;
+$color-background-nav-desktop: $color-white;
+$font-weight-main-level: 700;
+$use-dropdown-bubble: true;
 
 // Sub menu settings
-$font-weight-sub-menu: 400;
 $border-radius-sub-menu: 4px;
-$width-sub-menu: 22rem;
-$color-sub-menu: $color-links;
-$color-hover-sub-menu: $color-hover;
 $color-background-sub-menu: $color-white;
-$color-border-sub-menu: rgba($color-black, .05);
 $color-background-toggle-icon: transparent;
+$color-border-sub-menu: rgba($color-black, .05);
+$color-hover-sub-menu: $color-hover;
+$color-sub-menu: $color-links;
+$font-weight-sub-menu: 400;
+$width-sub-menu: 22rem;
 
+// CSS variables
+// These can be adjusted with media queries for in-between breakpoints
 :root {
-  // Navigation font variables
+  // Main level CSS vars
   --font-size-main-level: 16px;
   --font-size-sub-menu: 14px;
-
-  // Spacing variables
   --padding-main-level-vertical: .6rem;
-  --padding-sub-menu-vertical: .4rem;
   --padding-main-level-horizontal: 2rem;
-  --padding-sub-menu-horizontal: 1.5rem;
-  --gap-dropdown: 1rem;
 
-  // Dimension variables
-  --size-dropdown-icon: 1rem;
+  // Sub menu CSS vars
+  --gap-dropdown: 1rem;
+  --padding-sub-menu-vertical: .4rem;
+  --padding-sub-menu-horizontal: 1.5rem;
 }
 
 @media only screen and (min-width: $responsivenav) {
