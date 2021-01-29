@@ -1,8 +1,5 @@
 // Site navigation mobile layout
-//
-// The main layout for the website navigation, for the mobile
-// version only.
-//
+// The main layout for the website navigation, for the mobile version only.
 
 // Main level settings
 $absolute-navigation-mobile: true;
@@ -17,7 +14,7 @@ $color-separator-nav-mobile: #f0f0f0;
 $font-weight-main-level-mobile: 600;
 
 // Sub menu settings
-$color-sub-menu-mobile: $color-links;
+$color-sub-menu-mobile: #555;
 $font-weight-sub-menu-mobile: 600;
 
 // Settings for jonsuh/hamburgers
@@ -39,13 +36,14 @@ $mobile-nav-height: 80px;
 :root {
   // Main level CSS vars
   --font-size-main-level-mobile: 17px;
-  --font-size-sub-menu-mobile: 16px;
+  --font-size-sub-menu-mobile: 17px;
   --padding-main-level-vertical-mobile: .6rem;
   --padding-main-level-horizontal-mobile: 2rem;
 
   // Sub menu CSS vars
-  --padding-sub-menu-vertical-mobile: .4rem;
-  --padding-sub-menu-horizontal-mobile: 1.5rem;
+  --padding-sub-menu-vertical-mobile: 1.2rem;
+  --padding-sub-menu-horizontal-mobile: 2.5rem;
+  --margin-left-sub-menu: 1rem;
 }
 
 // Init Tasty Hamburger navigation toggle
@@ -122,11 +120,13 @@ $mobile-nav-height: 80px;
     font-weight: $font-weight-main-level-mobile;
     margin-left: 0;
     margin-right: 0;
-    outline: none; // We have color here, so it's okay to remove outline
-    padding-bottom: 1.2rem;
-    padding-left: 2.5rem;
-    padding-right: 5.8rem; // Make room for the toggle button (sub indicator)
-    padding-top: 1.2rem;
+
+    // We have color here, so it's okay to remove outline
+    outline: 0;
+    padding-bottom: var(--padding-sub-menu-vertical-mobile);
+    padding-left: var(--padding-sub-menu-horizontal-mobile);
+    padding-right: var(--padding-sub-menu-horizontal-mobile);
+    padding-top: var(--padding-sub-menu-vertical-mobile);
     position: relative;
     text-decoration: none;
     z-index: 0;
@@ -137,6 +137,11 @@ $mobile-nav-height: 80px;
     color: $color-sub-menu-mobile;
     font-size: var(--font-size-sub-menu-mobile);
     font-weight: $font-weight-sub-menu-mobile;
+    padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu));
+  }
+
+  .sub-menu .sub-menu {
+    margin-left: var(--margin-left-sub-menu);
   }
 
   .menu-item a:hover,
