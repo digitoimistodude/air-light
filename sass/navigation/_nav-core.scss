@@ -1,29 +1,4 @@
-// Site navigation core
-//
-// The main layout for the website navigation, for both mobile
-// and desktop devices.
-
-.menu-items {
-  position: relative;
-  z-index: 9999;
-
-  ul,
-  li {
-    direction: ltr;
-    display: block;
-    line-height: normal;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-  }
-
-  li,
-  a {
-    position: relative;
-  }
-}
-
+// Navigation reset
 @media only screen and (max-width: $responsivenav) {
   // Functionality needs display: none here for visual reasons
   /* stylelint-disable a11y/no-display-none */
@@ -37,11 +12,6 @@
   .js ul .sub-menu.toggled-on {
     display: block;
   }
-}
-
-.dropdown-toggle::after,
-.dropdown-toggle.toggled-on::after {
-  font-size: 1.3rem;
 }
 
 // Functionality needs display: none here for visual reasons

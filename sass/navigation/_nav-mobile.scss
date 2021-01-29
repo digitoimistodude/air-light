@@ -74,6 +74,13 @@ $mobile-nav-height: 80px;
 
 // Mobile styles
 @media screen and (max-width: $responsivenav - 1px) {
+  // General navigation resets for mobile
+  .site-header ul,
+  .site-header li,
+  .site-header a {
+    position: relative;
+  }
+
   .main-navigation-wrapper {
     order: 6;
     z-index: 999;
@@ -100,11 +107,9 @@ $mobile-nav-height: 80px;
     transition: all $transition-duration ease-in-out;
     visibility: hidden;
     width: 100vw;
-    will-change: opacity;
   }
 
   .menu-items {
-    float: none;
     margin: 0;
     opacity: 0;
     padding: 2rem 0;
@@ -245,7 +250,6 @@ $mobile-nav-height: 80px;
   color: $color-hamburger;
   cursor: pointer;
   font-weight: 700;
-  list-style: none;
   margin: 0 -2rem 0 0;
   overflow: visible;
   padding: 2rem;

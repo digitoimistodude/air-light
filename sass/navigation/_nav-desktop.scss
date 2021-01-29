@@ -99,6 +99,11 @@ $width-sub-menu: 22rem;
   }
 }
 
+// General navigation resets
+.site-header ul {
+  list-style: none;
+}
+
 @media only screen and (min-width: $responsivenav) {
   .nav-container {
     @if $absolute-navigation == false {
