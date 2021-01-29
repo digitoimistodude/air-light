@@ -581,10 +581,8 @@ a.is-external-link.no-external-link-indicator::after {
 	--padding-sub-menu-horizontal: 1.5rem;
 }
 
-/* stylelint-disable selector-max-combinators, selector-max-compound-selectors, max-nesting-depth, a11y/no-display-none, order/properties-alphabetical-order, declaration-no-important */
-
 :root {
-	--font-size-main-level-mobile: 16px;
+	--font-size-main-level-mobile: 17px;
 	--font-size-sub-menu-mobile: 14px;
 	--padding-main-level-vertical-mobile: .6rem;
 	--padding-main-level-horizontal-mobile: 2rem;
@@ -1648,8 +1646,6 @@ a.is-external-link.no-external-link-indicator::after {
 	background: #fff;
 }
 
-/* stylelint-disable selector-max-class */
-
 .nav-toggle {
 	list-style: none;
 	z-index: 100000;
@@ -1744,8 +1740,6 @@ a.is-external-link.no-external-link-indicator::after {
 .nav-toggle.is-active span:active span {
 	color: #fff;
 }
-
-/* stylelint-enable selector-max-class */
 
 /* stylelint-disable */
 
@@ -4322,7 +4316,15 @@ h6 {
 	pointer-events: none;
 }
 
-.nav-primary a {
+.menu-items {
+	opacity: 0;
+	margin: 0;
+	width: 100%;
+	float: none;
+	padding: 2rem 0;
+}
+
+.menu-item a {
 	border-top: 1px solid #f0f0f0;
 	padding-top: 1.2rem;
 	padding-bottom: 1.2rem;
@@ -4330,7 +4332,7 @@ h6 {
 	padding-right: 5.8rem;
 	margin-left: 0;
 	margin-right: 0;
-	color: #fff;
+	color: #222;
 	font-size: var(--font-size-main-level-mobile);
 	font-weight: 600;
 	text-decoration: none;
@@ -4340,25 +4342,17 @@ h6 {
 	outline: none;
 }
 
-.nav-primary .menu-items {
-	opacity: 0;
-	margin: 0;
-	width: 100%;
-	float: none;
-	padding: 2rem 0;
-}
-
-.nav-primary a:hover,
-.nav-primary a:focus {
+.menu-item a:hover,
+.menu-item a:focus {
 	color: #3962c9;
 }
 
-.nav-primary .current-menu-parent > a,
-.nav-primary .current-menu-item > a {
+.menu-item.current-menu-parent > a,
+.menu-item.current-menu-item > a {
 	color: #3962c9;
 }
 
-.nav-primary .dropdown-toggle {
+.dropdown-toggle {
 	position: absolute;
 	top: 0;
 	left: auto;
@@ -4378,28 +4372,22 @@ h6 {
 	transform: rotate(0);
 }
 
-.nav-primary .dropdown-toggle:focus {
+.dropdown-toggle:focus {
 	z-index: 10000;
 }
 
-.nav-primary .dropdown-toggle svg {
+.dropdown-toggle svg {
 	display: none;
 }
 
-.nav-primary .dropdown-toggle.toggled-on {
+.dropdown-toggle.toggled-on {
 	background-color: transparent;
 	transform: rotate(-180deg);
 	cursor: pointer;
 }
 
-.nav-primary ul {
+ul {
 	background: #fff;
-	margin-left: 0;
-	padding: 0;
-}
-
-.nav-primary .sub-menu > li > a {
-	padding-left: 3.5rem;
 }
 
 .js .nav-primary {
@@ -4422,7 +4410,6 @@ h6 {
 	visibility: visible;
 	opacity: 1;
 	pointer-events: all;
-	background: #fff;
 }
 
 .js.js-nav-active .menu-items {
