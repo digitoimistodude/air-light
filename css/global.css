@@ -4040,10 +4040,6 @@ ul li:hover > ul {
 	padding-top: var(--padding-main-level-vertical);
 }
 
-.menu-item > a.disabled {
-	color: #bbb;
-}
-
 .menu-item > a:hover,
 .menu-item > a:focus {
 	color: #fff;

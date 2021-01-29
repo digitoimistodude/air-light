@@ -176,10 +176,6 @@ $color-background-toggle-icon: transparent;
       padding-right: var(--padding-main-level-horizontal);
       padding-top: var(--padding-main-level-vertical);
 
-      &.disabled {
-        color: $color-disabled;
-      }
-
       // Actions in menu items
       &:hover,
       &:focus {
