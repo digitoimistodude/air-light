@@ -514,14 +514,6 @@ a.is-external-link.no-external-link-indicator::after {
 
 /* stylelint-enable a11y/no-display-none */
 
-/* stylelint-disable a11y/no-display-none */
-
-.no-js .nav-toggle {
-	display: none;
-}
-
-/* stylelint-enable */
-
 :root {
 	--font-size-main-level: 16px;
 	--font-size-sub-menu: 14px;
@@ -539,8 +531,6 @@ a.is-external-link.no-external-link-indicator::after {
 :root {
 	--font-size-main-level-mobile: 17px;
 	--font-size-sub-menu-mobile: 17px;
-	--padding-main-level-vertical-mobile: .6rem;
-	--padding-main-level-horizontal-mobile: 2rem;
 	--padding-sub-menu-vertical-mobile: 1.2rem;
 	--padding-sub-menu-horizontal-mobile: 2.5rem;
 	--margin-left-sub-menu: 1rem;
@@ -4328,13 +4318,17 @@ h6 {
 	background-repeat: no-repeat;
 	background-size: 12px 7px;
 	border: 0;
-	height: 7px;
+	height: auto;
 	left: auto;
+	margin-top: var(--padding-sub-menu-vertical-mobile);
 	overflow: hidden;
-	padding: 20px;
+	padding-bottom: var(--padding-sub-menu-vertical-mobile);
+	padding-left: var(--padding-sub-menu-horizontal-mobile);
+	padding-right: var(--padding-sub-menu-horizontal-mobile);
+	padding-top: var(--padding-sub-menu-vertical-mobile);
 	position: absolute;
-	right: 10px;
-	top: 0;
+	right: 1rem;
+	top: 2px;
 	transform: rotate(0);
 	transition: all 0.22s;
 	width: 12px;
