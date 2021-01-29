@@ -3983,33 +3983,8 @@ ul li:hover > ul {
 	padding-top: var(--padding-main-level-vertical);
 }
 
-.menu-item > a:hover,
-.menu-item > a:focus {
-	color: #fff;
-}
-
-.menu-item .sub-menu {
-	left: 5%;
-	margin-left: 0;
-	margin-top: var(--gap-dropdown);
-	padding-bottom: .5rem;
-	padding-left: 0;
-	padding-top: .5rem;
-	width: 22rem;
-	z-index: 999;
-}
-
-.menu-item .sub-menu li {
-	float: none;
-	padding: 0;
-	width: 22rem;
-}
-
-.menu-item .sub-menu .sub-menu {
-	left: 100%;
-	margin-left: 0;
-	margin-top: -5px;
-	top: 0;
+.menu-item.menu-item-has-children a {
+	padding-right: 1.5rem;
 }
 
 .menu-item .sub-menu a {
@@ -4024,12 +3999,41 @@ ul li:hover > ul {
 	padding-top: var(--padding-sub-menu-vertical);
 }
 
+.menu-item > a:hover,
+.menu-item > a:focus {
+	color: #fff;
+}
+
 .menu-item .sub-menu a:hover,
 .menu-item .sub-menu a:focus {
 	color: #3962c9;
 }
 
-.menu-item .menu-item.menu-item-has-children {
+.sub-menu {
+	left: 5%;
+	margin-left: 0;
+	margin-top: var(--gap-dropdown);
+	padding-bottom: .5rem;
+	padding-left: 0;
+	padding-top: .5rem;
+	width: 22rem;
+	z-index: 999;
+}
+
+.sub-menu .sub-menu {
+	left: 100%;
+	margin-left: 0;
+	margin-top: -5px;
+	top: 0;
+}
+
+.sub-menu li {
+	float: none;
+	padding: 0;
+	width: 22rem;
+}
+
+.menu-item.menu-item-has-children {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
@@ -4037,7 +4041,7 @@ ul li:hover > ul {
 	position: relative;
 }
 
-.menu-item .menu-item.menu-item-has-children::after {
+.menu-item.menu-item-has-children::after {
 	content: '';
 	display: block;
 	height: var(--gap-dropdown);
@@ -4046,15 +4050,11 @@ ul li:hover > ul {
 	width: 100%;
 }
 
-.menu-item .menu-item.menu-item-has-children > a {
-	padding-right: 1.5rem;
-}
-
-.menu-item .dropdown-toggle.toggled-on svg {
+.dropdown-toggle.toggled-on svg {
 	transform: rotateX(180deg);
 }
 
-.menu-item .dropdown-toggle {
+.dropdown-toggle {
 	align-items: center;
 	background-color: transparent;
 	border: 0;
@@ -4063,15 +4063,15 @@ ul li:hover > ul {
 	padding: 0;
 }
 
-.menu-item .sub-menu .dropdown-toggle {
+.sub-menu .dropdown-toggle {
 	width: 3rem;
 }
 
-.menu-item .sub-menu .dropdown-toggle svg {
+.sub-menu .dropdown-toggle svg {
 	transform: rotate(-90deg) rotateX(0deg);
 }
 
-.menu-item .sub-menu .dropdown-toggle.toggled-on svg {
+.sub-menu .dropdown-toggle.toggled-on svg {
 	transform: rotate(-90deg) rotateX(180deg);
 }
 
@@ -4353,10 +4353,6 @@ h6 {
 	transform: rotate(-180deg);
 }
 
-ul {
-	background: #fff;
-}
-
 .js .nav-primary {
 	left: 0;
 	position: fixed;
@@ -4365,6 +4361,7 @@ ul {
 }
 
 .js .nav-primary .menu-items {
+	background: #fff;
 	height: 100vh;
 	padding: 0;
 }
