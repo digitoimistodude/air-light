@@ -273,12 +273,6 @@ $color-demo-footer-background: #eaeaea;
   padding-left: 0;
 }
 
-// Examples for text links. You can add @extend %textlink to any content
-.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
-  @extend %textlink;
-}
-
 .block:not(.site-footer) {
   min-height: $mobile-nav-height;
 

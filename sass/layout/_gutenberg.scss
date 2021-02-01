@@ -5,7 +5,7 @@
 
 // Blog post category styles
 .cat {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   margin-top: 4rem;
 
   a {
@@ -18,7 +18,8 @@
     color: $color-black;
     display: inline-block;
     font-size: var(--font-size-small);
-    margin-right: .4em;
+    margin-bottom: .5rem;
+    margin-right: .5em;
     padding: .2em .6em;
     transition: all $transition-duration;
   }

@@ -1991,28 +1991,6 @@ a:focus {
 	color: #0c142a;
 }
 
-.gutenberg-content a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
-	border-bottom: 1px solid #3962c9;
-	box-shadow: inset 0 -0.1rem 0 #3962c9;
-	color: #4f5964;
-	display: inline-flex;
-	font-weight: 700;
-	overflow: visible;
-	position: relative;
-	text-decoration: none;
-	transition: all .18s ease-in-out;
-	z-index: 1;
-}
-
-.gutenberg-content a:hover:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:hover:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-.gutenberg-content a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]),
-article > div *:not(.entry-footer):not(.entry-categories):not(.comments-link) > a:focus:not(.button):not(.url):not(.no-text-link):not(.wp-block-button__link):not(.post-edit-link):not(.contact-detail):not([rel]) {
-	box-shadow: inset 0 -100px 0 #3962c9;
-	color: #fff;
-}
-
 p,
 dd,
 dt,
@@ -2608,7 +2586,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 /* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
 
 .cat {
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
 	margin-top: 4rem;
 }
 
@@ -2622,7 +2600,8 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 	color: #222;
 	display: inline-block;
 	font-size: var(--font-size-small);
-	margin-right: .4em;
+	margin-bottom: .5rem;
+	margin-right: .5em;
 	padding: .2em .6em;
 	transition: all 0.22s;
 }

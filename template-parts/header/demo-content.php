@@ -26,7 +26,7 @@ namespace Air_Light;
 </section>
 
 <section class="block has-light-bg">
-  <div class="container">
+  <div class="container gutenberg-content">
     <?php if ( have_posts() ) : ?>
       <?php while ( have_posts() ) : the_post(); ?>
         <?php the_content(); ?>
