@@ -462,7 +462,6 @@ template {
 [data-whatinput="keyboard"] button:focus,
 [data-whatinput="keyboard"] select:focus,
 [data-whatinput="keyboard"] textarea:focus,
-[data-whatinput="keyboard"] nav li a:focus,
 [data-whatinput="keyboard"] div[tabindex]:focus {
 	outline-offset: 5px;
 	outline-width: 3px; /* stylelint-disable */

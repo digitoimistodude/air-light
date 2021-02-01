@@ -97,8 +97,9 @@ $focus-outline-style-large-elements: 4px solid;
   button:focus,
   select:focus,
   textarea:focus,
-  nav li a:focus,
   div[tabindex]:focus {
+    opacity: 1;
+
     // Normalize the look of the outline across browsers
     // @link https://a11yproject.com/posts/never-remove-css-outlines/
     // outline: $focus-outline-style $focus-outline-color;
@@ -111,9 +112,7 @@ $focus-outline-style-large-elements: 4px solid;
     /* stylelint-disable */
     outline: 1px dotted $focus-outline-color;
     outline: 5px auto -webkit-focus-ring-color;
-    color: $focus-text-color;
     /* stylelint-enable */
-    opacity: 1;
     z-index: 99;
   }
 
