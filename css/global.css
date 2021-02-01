@@ -3088,35 +3088,6 @@ ul.tags li a:not(.button):not(.no-text-link):focus {
 	padding: 2rem;
 }
 
-.site-footer .top {
-	background: transparent;
-	padding: 16px;
-}
-
-.site-footer .top svg {
-	align-items: center;
-	display: flex;
-	fill: #222;
-	height: 18px;
-	justify-content: center;
-	margin: 0;
-	opacity: .8;
-	transition: all .3s ease;
-	width: 18px;
-}
-
-.site-footer .top:hover,
-.site-footer .top:focus,
-.site-footer .top:active {
-	opacity: 1;
-}
-
-.site-footer .top:hover svg,
-.site-footer .top:focus svg,
-.site-footer .top:active svg {
-	transform: translateY(-0.5rem);
-}
-
 .back-to-top {
 	align-items: center;
 	bottom: 1rem;
@@ -3155,6 +3126,35 @@ ul.tags li a:not(.button):not(.no-text-link):focus {
 .back-to-top.fade-out:focus,
 .back-to-top.fade-out:hover {
 	opacity: 1;
+}
+
+.site-footer .top {
+	background: transparent;
+	padding: 16px;
+}
+
+.site-footer .top svg {
+	align-items: center;
+	display: flex;
+	fill: #222;
+	height: 18px;
+	justify-content: center;
+	margin: 0;
+	opacity: .8;
+	transition: all .3s ease;
+	width: 18px;
+}
+
+.site-footer .top:hover,
+.site-footer .top:focus,
+.site-footer .top:active {
+	opacity: 1;
+}
+
+.site-footer .top:hover svg,
+.site-footer .top:focus svg,
+.site-footer .top:active svg {
+	transform: translateY(-0.5rem);
 }
 
 .gallery {
@@ -4582,6 +4582,11 @@ th {
 .site-header {
 	padding-top: 1rem;
 	padding-bottom: 1rem;
+}
+
+.block.block-entry-header-demo {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
 }
 
 .block.block-entry-header-demo .logo svg {

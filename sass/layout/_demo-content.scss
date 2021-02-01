@@ -105,6 +105,11 @@ $color-border-demo-header: rgba($color-bright, .5);
   max-width: $width-max-layout;
   margin: 0 auto;
 
+  @media (max-width: $container-mobile) {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
   .shade {
     opacity: .4;
   }
