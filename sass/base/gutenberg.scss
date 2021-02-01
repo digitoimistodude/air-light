@@ -24,20 +24,21 @@
 // Hack for achieving the same than in gutenberg-helpers.js
 [data-align="right"] figcaption,
 [data-align="left"] figcaption {
-  max-width: 200px;
-}
-
-[data-align="right"] figcaption {
   margin-left: auto;
-  text-align: right;
+  margin-right: auto;
+  max-width: 200px;
+  text-align: center;
 }
 
 // Wider editor
 // Default is 580px which is way too narrow
+// Forced to use important here, because WordPress uses too specific selectors
+/* stylelint-disable declaration-no-important */
 .wp-block {
-  // Forced to use important here, because WordPress uses too specific selectors
-  /* stylelint-disable declaration-no-important */
   font-family: $font-paragraphs !important;
-  max-width: 1000px !important;
-  /* stylelint-enable */
+
+  &:not([data-align="wide"]),
+  &:not([data-align="full"]) {
+    max-width: $article-max-width !important;
+  }
 }

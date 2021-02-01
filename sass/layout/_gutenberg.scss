@@ -62,12 +62,12 @@
 
   .alignleft {
     float: left;
-    margin-right: 20px;
+    margin-right: 3rem;
   }
 
   .alignright {
     float: right;
-    margin-left: 20px;
+    margin-left: 3rem;
   }
 
   .aligncenter {
@@ -203,6 +203,39 @@
   }
   /* stylelint-enable selector-max-compound-selectors */
 
+  .wp-block-image > figure {
+    display: inline-block;
+    width: auto;
+
+    &.alignleft,
+    &.alignright,
+    &.aligncenter {
+      figcaption {
+        margin-bottom: 2rem;
+      }
+
+      @media (max-width: $container-mobile) {
+        float: none;
+        margin: 0;
+
+        // Has to be important because we want to override inline width
+        /* stylelint-disable declaration-no-important */
+        width: 100% !important;
+        /* stylelint-enable */
+      }
+
+      @media (max-width: $container-mobile) {
+        &.alignleft img,
+        &.alignright img,
+        &.aligncenter img {
+          float: none;
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
   a:hover,
   &:focus {
     text-decoration: none;
@@ -297,12 +330,6 @@
     &.wp-block-image {
       margin-bottom: 4rem;
       margin-top: 4rem;
-
-      img {
-        height: auto;
-        max-width: 100%;
-        width: 100%;
-      }
     }
 
     &.twitter-tweet,

@@ -2695,12 +2695,12 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 
 .gutenberg-content .alignleft {
 	float: left;
-	margin-right: 20px;
+	margin-right: 3rem;
 }
 
 .gutenberg-content .alignright {
 	float: right;
-	margin-left: 20px;
+	margin-left: 3rem;
 }
 
 .gutenberg-content .aligncenter {
@@ -2796,6 +2796,17 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 	width: 100%;
 }
 
+.gutenberg-content .wp-block-image > figure {
+	display: inline-block;
+	width: auto;
+}
+
+.gutenberg-content .wp-block-image > figure.alignleft figcaption,
+.gutenberg-content .wp-block-image > figure.alignright figcaption,
+.gutenberg-content .wp-block-image > figure.aligncenter figcaption {
+	margin-bottom: 2rem;
+}
+
 .gutenberg-content a:hover,
 .gutenberg-content:focus {
 	text-decoration: none;
@@ -2869,12 +2880,6 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 .gutenberg-content > *.wp-block-image {
 	margin-bottom: 4rem;
 	margin-top: 4rem;
-}
-
-.gutenberg-content > *.wp-block-image img {
-	height: auto;
-	max-width: 100%;
-	width: 100%;
 }
 
 .gutenberg-content > *.twitter-tweet,
@@ -4534,6 +4539,28 @@ th {
 .gutenberg-content cite,
 .gutenberg-content small {
 	margin-top: 2rem;
+}
+
+.gutenberg-content .wp-block-image > figure.alignleft,
+.gutenberg-content .wp-block-image > figure.alignright,
+.gutenberg-content .wp-block-image > figure.aligncenter {
+	float: none;
+	margin: 0; /* stylelint-disable declaration-no-important */
+	width: 100% !important; /* stylelint-enable */
+}
+
+.gutenberg-content .wp-block-image > figure.alignleft.alignleft img,
+.gutenberg-content .wp-block-image > figure.alignleft.alignright img,
+.gutenberg-content .wp-block-image > figure.alignleft.aligncenter img,
+.gutenberg-content .wp-block-image > figure.alignright.alignleft img,
+.gutenberg-content .wp-block-image > figure.alignright.alignright img,
+.gutenberg-content .wp-block-image > figure.alignright.aligncenter img,
+.gutenberg-content .wp-block-image > figure.aligncenter.alignleft img,
+.gutenberg-content .wp-block-image > figure.aligncenter.alignright img,
+.gutenberg-content .wp-block-image > figure.aligncenter.aligncenter img {
+	float: none;
+	height: auto;
+	width: 100%;
 }
 
 .gutenberg-content > blockquote,

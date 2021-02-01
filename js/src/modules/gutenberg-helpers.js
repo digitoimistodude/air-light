@@ -5,8 +5,9 @@ const figures = [
 ];
 figures.forEach((figure) => {
   const img = figure.querySelector('img');
-  if ( typeof img === 'undefined' ) {
+  if (typeof img === 'undefined') {
     return;
   }
+  // eslint-disable-next-line no-param-reassign
   figure.style.width = `${img.clientWidth}px`;
 });
