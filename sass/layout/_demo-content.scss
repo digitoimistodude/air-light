@@ -35,6 +35,11 @@ $color-border-demo-header: rgba($color-bright, .5);
 
     svg {
       transition: transform 1s ease-in;
+
+      // Accessibilit: Disable animation if reduce motion is enabled
+      @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+        transition: none;
+      }
     }
 
     .clr-i-solid-path-2 {
@@ -50,6 +55,12 @@ $color-border-demo-header: rgba($color-bright, .5);
     a:hover svg {
       transition: transform .4s cubic-bezier(.6, -.68, .73, .04);
       transform: translate(260%, -220%);
+
+      // Accessibilit: Disable animation if reduce motion is enabled
+      @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+        transition: none;
+        transform: none;
+      }
 
       .clr-i-solid-path-2 {
         display: block !important;
@@ -187,6 +198,13 @@ $color-border-demo-header: rgba($color-bright, .5);
       animation-delay: -5s;
       position: relative;
       z-index: 6;
+
+      // Accessibilit: Disable animation if reduce motion is enabled
+      @media screen and (prefers-reduced-motion: reduce), (update: slow) {
+        animation: none;
+        transform: none;
+        opacity: 1;
+      }
 
       @media (max-width: $container-mobile) {
         max-width: 15rem;

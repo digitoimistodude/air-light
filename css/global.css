@@ -3598,6 +3598,25 @@ body *[aria-invalid="true"] {
 	width: calc(100% - 4rem);
 }
 
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+
+.site-header .site-title svg {
+	transition: none;
+}
+
+.site-header .site-title a:hover svg {
+	transition: none;
+	transform: none;
+}
+
+.block.block-entry-header-demo .logo svg {
+	animation: none;
+	transform: none;
+	opacity: 1;
+}
+
+}
+
 @media screen and (min-width: 320px) {
 
 .block.block-entry-header-demo .main-heading {
