@@ -36,7 +36,7 @@ $color-border-demo-header: rgba($color-bright, .5);
     svg {
       transition: transform 1s ease-in;
 
-      // Accessibilit: Disable animation if reduce motion is enabled
+      // Accessibility: Disable animation if reduce motion is enabled
       @media screen and (prefers-reduced-motion: reduce), (update: slow) {
         transition: none;
       }
@@ -56,7 +56,7 @@ $color-border-demo-header: rgba($color-bright, .5);
       transition: transform .4s cubic-bezier(.6, -.68, .73, .04);
       transform: translate(260%, -220%);
 
-      // Accessibilit: Disable animation if reduce motion is enabled
+      // Accessibility: Disable animation if reduce motion is enabled
       @media screen and (prefers-reduced-motion: reduce), (update: slow) {
         transition: none;
         transform: none;
@@ -199,7 +199,7 @@ $color-border-demo-header: rgba($color-bright, .5);
       position: relative;
       z-index: 6;
 
-      // Accessibilit: Disable animation if reduce motion is enabled
+      // Accessibility: Disable animation if reduce motion is enabled
       @media screen and (prefers-reduced-motion: reduce), (update: slow) {
         animation: none;
         transform: none;
