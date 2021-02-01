@@ -12,6 +12,7 @@ $color-cyan: #159d94;
 $color-cyan-bright: #60f4ea;
 $color-demo-footer-background: #2a2d3e;
 $color-demo-footer-foreground: $color-white;
+$color-border-demo-header: rgba($color-bright, .5);
 
 // Header for demo nav
 .site-header {
@@ -82,14 +83,14 @@ $color-demo-footer-foreground: $color-white;
 
 // Demo structure
 .block.block-entry-header-demo {
+  background: $color-demo-footer-background;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  text-shadow: 0 0 30px $color-main;
   min-height: 53rem;
   max-height: 80rem;
-  height: 80vh;
+  height: 60vh;
   max-width: $width-max-layout;
   margin: 0 auto;
 
@@ -135,7 +136,7 @@ $color-demo-footer-foreground: $color-white;
 
   .logo {
     color: $color-cyan-bright;
-    border-top: 2px solid $color-white;
+    border-top: 2px solid $color-border-demo-header;
     border-right: 0;
     width: 100%;
     text-align: center;
@@ -191,7 +192,7 @@ $color-demo-footer-foreground: $color-white;
 
     @media (min-width: $container-ipad) {
       border-top: 0;
-      border-right: 2px solid $color-white;
+      border-right: 2px solid $color-border-demo-header;
       order: 0;
       text-align: right;
 
@@ -230,7 +231,6 @@ $color-demo-footer-foreground: $color-white;
   display: block;
   position: relative;
   z-index: 2;
-  text-shadow: 0 0 10px rgba($color-main, .5);
 }
 
 @media (min-width: $width-max-mobile) {
