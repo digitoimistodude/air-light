@@ -33,72 +33,6 @@ $width-sub-menu: 22rem;
   --padding-sub-menu-horizontal: 1.5rem;
 }
 
-@media only screen and (min-width: $width-max-mobile) {
-  // Dropdown bubble
-  @if $use-dropdown-bubble == true {
-    .menu-item-has-children::before {
-      // Use of non-variable is acceptable here because bubble needs it
-      /* stylelint-disable sh-waqar/declaration-use-variable */
-      border-color: transparent transparent $color-white;
-      border-style: solid;
-      border-width: 0 5px 5px;
-      /* stylelint-enable */
-      bottom: -10px;
-      content: '';
-      display: block;
-      height: 0;
-      left: 50%;
-      margin-left: -20px;
-      position: absolute;
-      transform: scale(0);
-      transform-origin: center bottom;
-      transition: none;
-      width: 0;
-    }
-  }
-
-  .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
-  .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
-    transform: scale(1);
-    transition: all .25s cubic-bezier(.19, 1, .22, 1);
-  }
-
-  .sub-menu {
-    background: $color-background-sub-menu;
-    border-bottom: 1px solid $color-border-sub-menu;
-    border-bottom-left-radius: $border-radius-sub-menu;
-    border-bottom-right-radius: $border-radius-sub-menu;
-    border-left: 1px solid $color-border-sub-menu;
-    border-right: 1px solid $color-border-sub-menu;
-    border-top-left-radius: $border-radius-sub-menu;
-    border-top-right-radius: $border-radius-sub-menu;
-    box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    top: -9999px;
-    transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
-    visibility: hidden;
-    width: $width-sub-menu;
-    z-index: -1;
-
-    a {
-      line-height: 1.5;
-    }
-  }
-
-  .nav-primary ul .sub-menu.toggled-on,
-  .menu-item-has-children:focus > .sub-menu,
-  .menu-item-has-children:hover > .sub-menu,
-  .menu-item-has-children.hover-intent > .sub-menu {
-    opacity: 1;
-    top: 100%;
-    transform: translateY(0%);
-    visibility: visible;
-    z-index: 1;
-  }
-}
-
 // General navigation resets
 .site-header ul {
   list-style: none;
@@ -178,21 +112,22 @@ $width-sub-menu: 22rem;
     padding-top: var(--padding-main-level-vertical);
   }
 
-  // Let's make space for the nav-toggle/arrow
-  .menu-item.menu-item-has-children a {
-    padding-right: 1.5rem;
-  }
-
   .menu-item .sub-menu a {
     align-items: center;
     color: $color-sub-menu;
     display: flex;
     font-size: var(--font-size-sub-menu);
     font-weight: $font-weight-sub-menu;
+    line-height: 1.5;
     padding-bottom: var(--padding-sub-menu-vertical);
     padding-left: var(--padding-sub-menu-horizontal);
     padding-right: var(--padding-sub-menu-horizontal);
     padding-top: var(--padding-sub-menu-vertical);
+  }
+
+  // Let's make space for the nav-toggle/arrow
+  .menu-item.menu-item-has-children a {
+    padding-right: 1.5rem;
   }
 
   .menu-item > a:hover,
@@ -205,16 +140,36 @@ $width-sub-menu: 22rem;
     color: $color-sub-menu;
   }
 
+  .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
+  .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
+    transform: scale(1);
+    transition: all .25s cubic-bezier(.19, 1, .22, 1);
+  }
+
   // Dropdowns
   .sub-menu {
+    background: $color-background-sub-menu;
+    border-bottom: 1px solid $color-border-sub-menu;
+    border-bottom-left-radius: $border-radius-sub-menu;
+    border-bottom-right-radius: $border-radius-sub-menu;
+    border-left: 1px solid $color-border-sub-menu;
+    border-right: 1px solid $color-border-sub-menu;
+    border-top-left-radius: $border-radius-sub-menu;
+    border-top-right-radius: $border-radius-sub-menu;
+    box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
     left: 5%;
     margin-left: 0;
     margin-top: var(--gap-dropdown);
+    opacity: 0;
     padding-bottom: .5rem;
     padding-left: 0;
     padding-top: .5rem;
+    position: absolute;
+    top: -9999px;
+    transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
+    visibility: hidden;
     width: $width-sub-menu;
-    z-index: 999;
+    z-index: 9;
 
     // All dropdowns in level 2 and after
     .sub-menu {
@@ -229,6 +184,26 @@ $width-sub-menu: 22rem;
       padding: 0;
       width: $width-sub-menu;
     }
+  }
+
+  // This is where the magic happens
+  .menu-item-has-children:hover > .sub-menu.toggled-on,
+  .menu-item-has-children:focus > .sub-menu.toggled-on,
+  .menu-item-has-children:focus > .sub-menu,
+  .menu-item-has-children:hover > .sub-menu,
+  .menu-item-has-children.hover-intent > .sub-menu {
+    opacity: 1;
+    top: 100%;
+    transform: translateY(0%);
+    visibility: visible;
+    z-index: 1;
+  }
+
+  .menu-item-has-children:focus .sub-menu .sub-menu,
+  .menu-item-has-children:hover .sub-menu .sub-menu {
+    margin-top: -5px;
+    top: 0;
+    z-index: 10;
   }
 
   // Sub menu items that have items under them
@@ -285,4 +260,27 @@ $width-sub-menu: 22rem;
     display: none;
   }
   /* stylelint-enable */
+
+  // Dropdown bubble
+  @if $use-dropdown-bubble == true {
+    .menu-item-has-children::before {
+      // Use of non-variable is acceptable here because bubble needs it
+      /* stylelint-disable sh-waqar/declaration-use-variable */
+      border-color: transparent transparent $color-white;
+      border-style: solid;
+      border-width: 0 5px 5px;
+      /* stylelint-enable */
+      bottom: -10px;
+      content: '';
+      display: block;
+      height: 0;
+      left: 50%;
+      margin-left: -20px;
+      position: absolute;
+      transform: scale(0);
+      transform-origin: center bottom;
+      transition: none;
+      width: 0;
+    }
+  }
 } // @media only screen and (min-width: $width-max-mobile)
