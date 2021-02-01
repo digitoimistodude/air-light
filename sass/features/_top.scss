@@ -3,7 +3,7 @@
 // The one and only anchor link that brings user back to top
 // when hitting the rock bottom.
 
-.top {
+.site-footer .top {
   background: transparent;
 
   // Makes it 50x50
@@ -29,6 +29,8 @@
   &:hover,
   &:focus,
   &:active {
+    opacity: 1;
+
     svg {
       transform: translateY(-.5rem);
     }

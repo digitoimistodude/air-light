@@ -70,7 +70,7 @@ air_light_LazyLoad.update();
 
   // Accessibility: Ensure back to top is right color on right background
   $(window).on('resize scroll', function () {
-    $('.block').each(function () {
+    $('.block, .site-footer').each(function () {
       if ($(this).isInViewport()) {
         $('.back-to-top')
           .removeClass('has-light-bg has-dark-bg')

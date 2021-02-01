@@ -3088,12 +3088,12 @@ ul.tags li a:not(.button):not(.no-text-link):focus {
 	padding: 2rem;
 }
 
-.top {
+.site-footer .top {
 	background: transparent;
 	padding: 16px;
 }
 
-.top svg {
+.site-footer .top svg {
 	align-items: center;
 	display: flex;
 	fill: #222;
@@ -3105,9 +3105,15 @@ ul.tags li a:not(.button):not(.no-text-link):focus {
 	width: 18px;
 }
 
-.top:hover svg,
-.top:focus svg,
-.top:active svg {
+.site-footer .top:hover,
+.site-footer .top:focus,
+.site-footer .top:active {
+	opacity: 1;
+}
+
+.site-footer .top:hover svg,
+.site-footer .top:focus svg,
+.site-footer .top:active svg {
 	transform: translateY(-0.5rem);
 }
 
@@ -4641,7 +4647,7 @@ th {
 	padding-right: 2rem !important;
 }
 
-.top svg {
+.site-footer .top svg {
 	height: 15px;
 	width: 15px;
 }
