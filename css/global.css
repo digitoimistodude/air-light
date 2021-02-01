@@ -4061,8 +4061,7 @@ ul li:hover > ul {
 	width: 22rem;
 }
 
-.menu-item-has-children:hover > .sub-menu.toggled-on,
-.menu-item-has-children:focus > .sub-menu.toggled-on,
+.menu-item-has-children > .sub-menu.toggled-on,
 .menu-item-has-children:focus > .sub-menu,
 .menu-item-has-children:hover > .sub-menu,
 .menu-item-has-children.hover-intent > .sub-menu {
@@ -4073,6 +4072,8 @@ ul li:hover > ul {
 	z-index: 1;
 }
 
+.menu-item-has-children .sub-menu.toggled-on .sub-menu,
+.menu-item-has-children .sub-menu .sub-menu.toggled-on,
 .menu-item-has-children:focus .sub-menu .sub-menu,
 .menu-item-has-children:hover .sub-menu .sub-menu {
 	margin-top: -5px;

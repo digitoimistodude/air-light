@@ -187,8 +187,7 @@ $width-sub-menu: 22rem;
   }
 
   // This is where the magic happens
-  .menu-item-has-children:hover > .sub-menu.toggled-on,
-  .menu-item-has-children:focus > .sub-menu.toggled-on,
+  .menu-item-has-children > .sub-menu.toggled-on,
   .menu-item-has-children:focus > .sub-menu,
   .menu-item-has-children:hover > .sub-menu,
   .menu-item-has-children.hover-intent > .sub-menu {
@@ -199,6 +198,8 @@ $width-sub-menu: 22rem;
     z-index: 1;
   }
 
+  .menu-item-has-children .sub-menu.toggled-on .sub-menu,
+  .menu-item-has-children .sub-menu .sub-menu.toggled-on,
   .menu-item-has-children:focus .sub-menu .sub-menu,
   .menu-item-has-children:hover .sub-menu .sub-menu {
     margin-top: -5px;
