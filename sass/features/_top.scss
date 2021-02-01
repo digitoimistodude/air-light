@@ -3,7 +3,41 @@
 // The one and only anchor link that brings user back to top
 // when hitting the rock bottom.
 
-.back-to-top {
+.site-footer .top {
+  background: transparent;
+
+  // Makes it 50x50
+  padding: 16px;
+
+  svg {
+    align-items: center;
+    display: flex;
+    fill: $color-black;
+    height: 18px;
+    justify-content: center;
+    margin: 0;
+    opacity: .8;
+    transition: all .3s ease;
+    width: 18px;
+
+    @media (max-width: $container-mobile) {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+
+    svg {
+      transform: translateY(-.5rem);
+    }
+  }
+}
+
+.site-footer .back-to-top {
   align-items: center;
   bottom: 1rem;
   display: flex;
@@ -40,40 +74,6 @@
     &:focus,
     &:hover {
       opacity: 1;
-    }
-  }
-}
-
-.site-footer .top {
-  background: transparent;
-
-  // Makes it 50x50
-  padding: 16px;
-
-  svg {
-    align-items: center;
-    display: flex;
-    fill: $color-black;
-    height: 18px;
-    justify-content: center;
-    margin: 0;
-    opacity: .8;
-    transition: all .3s ease;
-    width: 18px;
-
-    @media (max-width: $container-mobile) {
-      height: 15px;
-      width: 15px;
-    }
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    opacity: 1;
-
-    svg {
-      transform: translateY(-.5rem);
     }
   }
 }
