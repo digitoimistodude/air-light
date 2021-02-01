@@ -1,10 +1,12 @@
 // Layout widths
-$layout-max-width: 100%;
-$grid-base-size: 1200px;
-$article-max-width: 800px;
-$responsivenav: 960px;
+$width-max-layout: 100%;
+$width-max-article: 800px;
+$width-grid-base: 1200px;
 
-// Breakpoints
+// This is the breakpoint navigation transforms into mobile menu
+$width-max-mobile: 960px;
+
+// Breakpoints for comntainers
 $container-mobile: 480px;
 $container-ipad: 770px;
 $container-ipad-landscape: 1024px;

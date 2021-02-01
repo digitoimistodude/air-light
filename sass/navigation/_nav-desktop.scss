@@ -33,7 +33,7 @@ $width-sub-menu: 22rem;
   --padding-sub-menu-horizontal: 1.5rem;
 }
 
-@media only screen and (min-width: $responsivenav) {
+@media only screen and (min-width: $width-max-mobile) {
   // Dropdown bubble
   @if $use-dropdown-bubble == true {
     .menu-item-has-children::before {
@@ -104,7 +104,7 @@ $width-sub-menu: 22rem;
   list-style: none;
 }
 
-@media only screen and (min-width: $responsivenav) {
+@media only screen and (min-width: $width-max-mobile) {
   .nav-container {
     @if $absolute-navigation == false {
       background-color: $color-background-nav-desktop;
@@ -120,7 +120,7 @@ $width-sub-menu: 22rem;
     }
   }
 
-  @media only screen and (max-width: $responsivenav) {
+  @media only screen and (max-width: $width-max-mobile) {
     ul li:focus > ul,
     ul li:hover > ul {
       display: block;
@@ -285,4 +285,4 @@ $width-sub-menu: 22rem;
     display: none;
   }
   /* stylelint-enable */
-} // @media only screen and (min-width: $responsivenav)
+} // @media only screen and (min-width: $width-max-mobile)

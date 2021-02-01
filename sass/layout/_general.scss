@@ -11,7 +11,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0 auto;
-  max-width: $layout-max-width;
+  max-width: $width-max-layout;
   position: relative;
 }
 
@@ -53,7 +53,7 @@
   margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
-  max-width: $grid-base-size;
+  max-width: $width-grid-base;
   padding-bottom: var(--padding-container-vertical);
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
@@ -130,7 +130,7 @@
 // Forced to use important here, because makes no sense to write too specific selectors here
 /* stylelint-disable declaration-no-important, a11y/no-display-none */
 .hide-on-mobile-nav-view {
-  @media (max-width: $responsivenav) {
+  @media (max-width: $width-max-mobile) {
     display: none !important;
   }
 }
@@ -138,7 +138,7 @@
 // Forced to use important here, because makes no sense to write too specific selectors here
 /* stylelint-disable declaration-no-important, a11y/no-display-none */
 .hide-on-desktop-nav-view {
-  @media (min-width: $responsivenav) {
+  @media (min-width: $width-max-mobile) {
     display: none !important;
   }
 }

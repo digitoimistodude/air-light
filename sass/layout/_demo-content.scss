@@ -17,7 +17,7 @@ $color-demo-footer-background: #eaeaea;
   padding-top: 4rem;
   padding-bottom: 4rem;
 
-  @media (max-width: $responsivenav) {
+  @media (max-width: $width-max-mobile) {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
@@ -89,7 +89,7 @@ $color-demo-footer-background: #eaeaea;
   min-height: 53rem;
   max-height: 80rem;
   height: 80vh;
-  max-width: $layout-max-width;
+  max-width: $width-max-layout;
   margin: 0 auto;
 
   .shade {
@@ -114,7 +114,7 @@ $color-demo-footer-background: #eaeaea;
       display: grid;
       grid-template-rows: none;
       grid-template-columns: 3fr 5fr;
-      max-width: $article-max-width;
+      max-width: $width-max-article;
     }
   }
 
@@ -232,14 +232,14 @@ $color-demo-footer-background: #eaeaea;
   text-shadow: 0 0 10px rgba($color-main, .5);
 }
 
-@media (min-width: $responsivenav) {
+@media (min-width: $width-max-mobile) {
   .site-header .site-branding .site-title a,
   .site-header .nav-primary .menu-items.nav-menu .menu-item > .dropdown-toggle,
   .site-header .nav-primary .menu-items .current-menu-parent > a,
   .site-header .nav-primary .menu-items .current-menu-item > a {
     color: $color-cyan-bright;
 
-    @media (max-width: $responsivenav) {
+    @media (max-width: $width-max-mobile) {
       color: $color-cyan-bright;
     }
   }
@@ -250,13 +250,13 @@ $color-demo-footer-background: #eaeaea;
 }
 
 .block.block-entry-header-demo + .block .container {
-  max-width: $article-max-width;
+  max-width: $width-max-article;
 }
 
 // Build these to views/_index.scss for example
 .block.block-blog article,
 .block.block-blog nav {
-  max-width: $article-max-width;
+  max-width: $width-max-article;
   margin-left: auto;
   margin-right: auto;
 }
@@ -276,12 +276,12 @@ $color-demo-footer-background: #eaeaea;
 .block:not(.site-footer) {
   min-height: $mobile-nav-height;
 
-  @media (min-width: $responsivenav) {
+  @media (min-width: $width-max-mobile) {
     min-height: 100px;
   }
 }
 
-@media (min-width: $responsivenav) {
+@media (min-width: $width-max-mobile) {
   .block:not(.site-footer) {
     min-height: 78px;
   }

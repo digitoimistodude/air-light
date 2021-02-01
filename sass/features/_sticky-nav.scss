@@ -18,7 +18,7 @@ $navheight-collapsed: 54px;
     height: auto;
   }
 
-  @media (min-width: $responsivenav) {
+  @media (min-width: $width-max-mobile) {
     height: $navheight-expanded;
   }
 
@@ -40,7 +40,7 @@ $navheight-collapsed: 54px;
       width: 32px;
     }
 
-    @media (max-width: $responsivenav - 1px) {
+    @media (max-width: $width-max-mobile - 1px) {
       .site-title {
         margin-top: 0;
       }
@@ -56,13 +56,13 @@ $navheight-collapsed: 54px;
       top: 5px;
     }
 
-    @media (min-width: $responsivenav) {
+    @media (min-width: $width-max-mobile) {
       height: $navheight-collapsed;
     }
 
     // Hide when scrolling down, show again when scrolling up
     &.scrolling-down {
-      @media (min-width: $responsivenav) {
+      @media (min-width: $width-max-mobile) {
         margin-top: -$navheight-expanded;
       }
     }

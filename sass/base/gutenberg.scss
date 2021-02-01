@@ -39,6 +39,6 @@
 
   &:not([data-align="wide"]),
   &:not([data-align="full"]) {
-    max-width: $article-max-width !important;
+    max-width: $width-max-article !important;
   }
 }

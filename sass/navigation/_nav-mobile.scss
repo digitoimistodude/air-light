@@ -54,7 +54,7 @@ $mobile-nav-height: 80px;
 }
 
 // Navigation core functionality
-@media only screen and (max-width: $responsivenav) {
+@media only screen and (max-width: $width-max-mobile) {
   // Functionality needs display: none here for visual reasons
   /* stylelint-disable a11y/no-display-none */
   .js .menu-items ul {
@@ -63,14 +63,14 @@ $mobile-nav-height: 80px;
   /* stylelint-enable */
 }
 
-@media only screen and (max-width: $responsivenav) {
+@media only screen and (max-width: $width-max-mobile) {
   .js ul .sub-menu.toggled-on {
     display: block;
   }
 }
 
 // Let's ensure site-header loads properly and doesn't leave empty spaces
-@media (max-width: $responsivenav) {
+@media (max-width: $width-max-mobile) {
   .nav-container {
     @if $absolute-navigation-mobile == false {
       background-color: $color-background-nav-mobile-header;
@@ -87,7 +87,7 @@ $mobile-nav-height: 80px;
 }
 
 // Mobile styles
-@media screen and (max-width: $responsivenav - 1px) {
+@media screen and (max-width: $width-max-mobile - 1px) {
   // General navigation resets for mobile
   .site-header ul,
   .site-header li,
@@ -325,7 +325,7 @@ $mobile-nav-height: 80px;
   }
   /* stylelint-enable */
 
-  @media (max-width: $responsivenav - 1px) {
+  @media (max-width: $width-max-mobile - 1px) {
     display: block;
 
     &.has-visible-label {

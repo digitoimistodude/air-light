@@ -11,7 +11,7 @@
   width: calc(100% - 4rem);
 }
 
-@media (min-width: $article-max-width + 40px) {
+@media (min-width: $width-max-article + 40px) {
   .gutenberg-content .is-style-boxed {
     transform: translate(2rem, 0);
   }
