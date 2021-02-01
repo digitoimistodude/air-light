@@ -2227,35 +2227,96 @@ pre {
 }
 
 .site-footer {
-	background: #eaeaea;
+	background: #2a2d3e;
 	clear: both;
 	color: #fff;
 	overflow: hidden;
-	padding: 20px;
+	padding: 6rem 2rem;
+	text-align: center; /* stylelint-disable a11y/no-display-none */ /* stylelint-enable */
+}
+
+.site-footer .wordpress-logo {
+	display: block;
+	margin-bottom: 2rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.site-footer span {
+	display: block;
+	text-align: center;
 }
 
 .site-footer svg {
-	fill: #555;
 	margin-right: 5px;
 	position: relative;
 }
 
 .site-footer p,
 .site-footer span {
-	color: #555;
+	color: #fff;
+}
+
+.site-footer .is-external-link::after {
+	display: none;
+}
+
+.site-footer .powered-by-wordpress {
+	display: inline-block;
+	font-weight: 600;
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.site-footer .github-link {
+	margin-left: 8px;
+	margin-top: 4px;
+	overflow: hidden;
+	padding-bottom: 4px;
+	position: relative;
+}
+
+.site-footer .github-link.is-external-link::after {
+	background: #fff;
+	bottom: 0;
+	content: '';
+	display: block;
+	height: 1px;
+	opacity: .4;
+	position: absolute;
+	top: auto;
+	transition: opacity 0.22s;
+	width: 100%;
 }
 
 .site-footer a {
-	color: #555;
+	color: #fff;
+	transition: opacity 0.22s;
 }
 
 .site-footer a:hover,
 .site-footer a:focus {
-	color: #3962c9;
+	color: #fff;
+	opacity: .5;
 }
 
-.theme-info {
-	overflow: hidden;
+.site-footer a:hover::after,
+.site-footer a:focus::after {
+	opacity: .2;
+}
+
+.site-footer .theme-info {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	line-height: 1.5;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.site-footer .theme-info i {
+	margin: 0 5px;
 }
 
 :root {
@@ -3708,12 +3769,6 @@ input[type="search"] {
 blockquote {
 	margin-top: 4rem;
 	padding-bottom: 4rem;
-}
-
-.theme-info {
-	float: right;
-	text-align: right;
-	width: 60%;
 }
 
 }

@@ -13,35 +13,92 @@
   clear: both;
   color: $color-white;
   overflow: hidden;
-  padding: 20px;
+  padding: 6rem 2rem;
+  text-align: center;
+
+  .wordpress-logo {
+    display: block;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  span {
+    display: block;
+    text-align: center;
+  }
 
   svg {
-    fill: #555;
     margin-right: 5px;
     position: relative;
   }
 
   p,
   span {
-    color: $color-comments-link;
+    color: $color-demo-footer-foreground;
+  }
+
+  // Hiding for aesthetic reasons
+  /* stylelint-disable a11y/no-display-none */
+  .is-external-link::after {
+    display: none;
+  }
+  /* stylelint-enable */
+
+  .powered-by-wordpress {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .github-link {
+    margin-left: 8px;
+    margin-top: 4px;
+    overflow: hidden;
+    padding-bottom: 4px;
+    position: relative;
+
+    &.is-external-link::after {
+      background: $color-demo-footer-foreground;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 1px;
+      opacity: .4;
+      position: absolute;
+      top: auto;
+      transition: opacity $transition-duration;
+      width: 100%;
+    }
   }
 
   a {
-    color: $color-comments-link;
+    color: $color-demo-footer-foreground;
+    transition: opacity $transition-duration;
 
     &:hover,
     &:focus {
-      color: $color-links;
+      color: $color-demo-footer-foreground;
+      opacity: .5;
+
+      &::after {
+        opacity: .2;
+      }
     }
   }
-}
 
-.theme-info {
-  overflow: hidden;
+  .theme-info {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    line-height: 1.5;
+    margin: 0 auto;
+    text-align: center;
 
-  @media (min-width: $container-ipad) {
-    float: right;
-    text-align: right;
-    width: 60%;
+    i {
+      margin: 0 5px;
+    }
   }
 }

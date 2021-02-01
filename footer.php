@@ -19,7 +19,7 @@ namespace Air_Light;
 
 </div><!-- #content -->
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer has-dark-bg">
 
   <?php get_template_part( 'template-parts/footer/demo-content' ); ?>
 

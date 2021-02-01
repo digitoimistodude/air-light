@@ -37,7 +37,7 @@ air_light_LazyLoad.update();
   // Accessibility: Ensure back to top is right color on right background
   // Note: Needs .has-light-bg or .has-dark-bg class on all blocks
   var stickyOffset = $('.back-to-top').offset();
-  var $contentDivs = $('.block');
+  var $contentDivs = $('.block, .site-footer');
   $(document).scroll(function () {
     $contentDivs.each(function (k) {
       var _thisOffset = $(this).offset();
