@@ -164,3 +164,8 @@ a.is-external-link.no-external-link-indicator::after {
   display: none;
 }
 /* stylelint-enable a11y/no-display-none */
+
+// Accessibility: Disable animation if reduce motion is enabled
+@media screen and (prefers-reduced-motion: reduce), (update: slow) {
+  // Your animations here
+}
