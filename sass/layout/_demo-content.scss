@@ -14,7 +14,13 @@ $color-demo-footer-background: #2a2d3e;
 $color-demo-footer-foreground: $color-white;
 $color-border-demo-header: rgba($color-bright, .5);
 
-// Header for demo nav
+// Demo navigation background on sub pages
+@media (min-width: $width-max-mobile) {
+  body .nav-container {
+    background-color: $color-main;
+  }
+}
+
 .site-header {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -99,15 +105,18 @@ $color-border-demo-header: rgba($color-bright, .5);
   align-items: center;
   justify-content: center;
   position: relative;
-  min-height: 53rem;
   max-height: 80rem;
   height: 60vh;
   max-width: $width-max-layout;
   margin: 0 auto;
 
+  @media (min-width: $container-mobile) {
+    min-height: 60rem;
+  }
+
   @media (max-width: $container-mobile) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .shade {
@@ -300,16 +309,8 @@ $color-border-demo-header: rgba($color-bright, .5);
   padding-left: 0;
 }
 
-.block:not(.site-footer) {
-  min-height: $mobile-nav-height;
-
-  @media (min-width: $width-max-mobile) {
-    min-height: 100px;
-  }
-}
-
 @media (min-width: $width-max-mobile) {
-  .block:not(.site-footer) {
+  .block {
     min-height: 78px;
   }
 }

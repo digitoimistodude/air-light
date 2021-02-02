@@ -27,3 +27,8 @@
     display: flex;
   }
 }
+
+// Nav container visibility fix
+.nav-container {
+  z-index: 10;
+}
