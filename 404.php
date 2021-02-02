@@ -21,7 +21,7 @@ get_header(); ?>
         <div class="content">
 
           <h1 aria-hidden="true">404</h1>
-          <p id="content"><?php echo esc_html( get_default_localization( 'Page not found' ) ); ?></p>
+          <p id="content"><?php echo esc_html( get_default_localization( 'Page not found' ) ); ?>.</p>
 
         </div>
       </div>
