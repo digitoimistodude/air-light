@@ -1,24 +1,33 @@
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   optimization: {
     minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          warnings: false,
+      new TerserPlugin({
+        terserOptions: {
+          // ecma: 6,
           parse: {},
           compress: {},
           mangle: true, // Note `mangle.properties` is `false` by default.
-          output: null,
+          module: false,
           toplevel: false,
           nameCache: null,
           ie8: false,
           keep_fnames: false,
-          preserveComments: false
+          safari10: false,
+          banner: false,
+          output: {
+            comments: false,
+          },
+          format: {
+            comments: false,
+          },
         },
+        extractComments: false,
       }),
-    ]
+    ],
   },
   externals: {
     jquery: 'jQuery' // Available and loaded through WordPress.
