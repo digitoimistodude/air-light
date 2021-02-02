@@ -4,7 +4,7 @@
 
 // Import modules (comment to disable)
 import MoveTo from 'moveto';
-import LazyLoad from "vanilla-lazyload";
+import LazyLoad from 'vanilla-lazyload';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 import './modules/gutenberg-helpers';
