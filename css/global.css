@@ -3917,6 +3917,11 @@ ul li:hover > ul {
 	color: #60f4ea;
 }
 
+.site-header .nav-primary .menu-items .sub-menu .current-menu-parent > a,
+.site-header .nav-primary .menu-items .sub-menu .current-menu-item > a {
+	color: #2a2d3e;
+}
+
 }
 
 @media (min-width: 960px) {
@@ -3930,6 +3935,11 @@ body .nav-container {
 .site-header .nav-primary .menu-items .current-menu-parent > a,
 .site-header .nav-primary .menu-items .current-menu-item > a {
 	color: #60f4ea;
+}
+
+.site-header .nav-primary .menu-items .sub-menu .current-menu-parent > a,
+.site-header .nav-primary .menu-items .sub-menu .current-menu-item > a {
+	color: #2a2d3e;
 }
 
 .block {
@@ -4000,6 +4010,11 @@ body .nav-container {
 	padding-left: var(--padding-sub-menu-horizontal);
 	padding-right: var(--padding-sub-menu-horizontal);
 	padding-top: var(--padding-sub-menu-vertical);
+}
+
+.menu-item.current-menu-parent > a,
+.menu-item.current-menu-item > a {
+	color: #2a2d3e;
 }
 
 .menu-item.menu-item-has-children a {

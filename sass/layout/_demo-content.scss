@@ -90,11 +90,11 @@ $color-border-demo-header: rgba($color-bright, .5);
 // Nav for demo
 .js .nav-primary {
   // Default position, IE needs this
-  top: calc(#{$mobile-nav-height} + 10px);
+  top: calc(#{$height-navigation-mobile} + 10px);
   left: 0;
 
   @media (min-width: $container-mobile) {
-    top: calc(#{$mobile-nav-height} + 20px);
+    top: calc(#{$height-navigation-mobile} + 20px);
   }
 }
 
@@ -277,6 +277,15 @@ $color-border-demo-header: rgba($color-bright, .5);
 
     @media (max-width: $width-max-mobile) {
       color: $color-cyan-bright;
+    }
+  }
+
+  .site-header .nav-primary .menu-items .sub-menu .current-menu-parent > a,
+  .site-header .nav-primary .menu-items .sub-menu .current-menu-item > a {
+    color: $color-current;
+
+    @media (max-width: $width-max-mobile) {
+      color: $color-current;
     }
   }
 }

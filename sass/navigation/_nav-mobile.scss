@@ -12,6 +12,7 @@ $color-active-main-level-mobile: $color-links;
 $color-main-level-mobile: $color-black;
 $color-separator-nav-mobile: #f0f0f0;
 $font-weight-main-level-mobile: 600;
+$height-navigation-mobile: 80px;
 
 // Sub menu settings
 $color-sub-menu-mobile: #555;
@@ -29,7 +30,6 @@ $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
 $hamburger-hover-transition-timing-function: linear;
 $nav-open-from-direction: top;
-$mobile-nav-height: 80px;
 
 // CSS variables
 // These can be adjusted with media queries for in-between breakpoints
@@ -168,6 +168,7 @@ $mobile-nav-height: 80px;
     color: $color-active-main-level-mobile;
   }
 
+  // Current menu item color
   .menu-item.current-menu-parent > a,
   .menu-item.current-menu-item > a {
     color: $color-current-mobile;
@@ -223,7 +224,7 @@ $mobile-nav-height: 80px;
     position: fixed;
 
     // Default position, some browsers need this
-    top: $mobile-nav-height;
+    top: $height-navigation-mobile;
     z-index: 5;
 
     .menu-items {

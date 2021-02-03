@@ -6,6 +6,7 @@ $absolute-navigation: true;
 $color-background-nav-desktop: $color-white;
 $color-hover-main-level: $color-white;
 $color-main-level: $color-white;
+$color-current: $color-main;
 $font-weight-main-level: 700;
 $use-dropdown-bubble: true;
 
@@ -123,6 +124,12 @@ $width-sub-menu: 22rem;
     padding-left: var(--padding-sub-menu-horizontal);
     padding-right: var(--padding-sub-menu-horizontal);
     padding-top: var(--padding-sub-menu-vertical);
+  }
+
+  // Current menu item color
+  .menu-item.current-menu-parent > a,
+  .menu-item.current-menu-item > a {
+    color: $color-current;
   }
 
   // Let's make space for the nav-toggle/arrow
