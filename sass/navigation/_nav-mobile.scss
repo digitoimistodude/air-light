@@ -81,8 +81,16 @@ $nav-open-from-direction: top;
     }
 
     @if $absolute-navigation-mobile == true {
+      left: 0;
       position: absolute;
+      top: 0;
       width: 100%;
+    }
+  }
+
+  @if $absolute-navigation-mobile == true {
+    .site {
+      padding-top: $height-navigation-mobile;
     }
   }
 }

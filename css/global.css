@@ -4293,8 +4293,14 @@ h6 {
 
 .nav-container {
 	background-color: #2a2d3e;
+	left: 0;
 	position: absolute;
+	top: 0;
 	width: 100%;
+}
+
+.site {
+	padding-top: 77px;
 }
 
 .site-header {
