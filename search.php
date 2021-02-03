@@ -33,12 +33,11 @@ foreach ( $results as $slug => $post_type ) {
   $results[ $slug ]['count']  = (int) count( $results[ $slug ]['posts'] );
 }
 
-get_header();
-
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+get_header(); ?>
 
 <main id="main" class="site-main">
 
+  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
   <section class="block block-search">
     <div class="container">
       <h1><?php echo esc_html( get_default_localization( 'Search' ) ); ?></h1>

@@ -13,13 +13,11 @@
 namespace Air_Light;
 
 the_post();
-
-get_header();
-
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+get_header(); ?>
 
 <main id="main" class="site-main">
 
+  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
   <section class="block block-single has-light-bg">
     <div class="gutenberg-content">
 
