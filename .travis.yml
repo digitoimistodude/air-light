@@ -40,6 +40,7 @@ before_install:
     - sudo apt-get install -y nodejs
     - if [[ `node -v` != v10* ]]; then nvm install stable; fi
     - nvm install-latest-npm
+    - nvm install 10.22.0
     - nvm use 10.22.0
 
 # Use this to prepare your build for testing.
