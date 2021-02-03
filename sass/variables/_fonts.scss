@@ -68,6 +68,7 @@ $font-weight-headings: 700;
 }
 
 // Self-hosted fonts
+// Remember to add these to gutenberg/variables/_fonts as well with their relative paths
 @include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-regular', 400);
 @include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
 @include fontFace('Archivo', '../fonts/archivo-v6-latin_latin-ext-700', 700);
