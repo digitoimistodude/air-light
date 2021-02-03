@@ -18,7 +18,7 @@ namespace Air_Light;
 
 get_header(); ?>
 
-<main id="main" class="site-main">
+<main class="site-main">
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
   <section class="block block-blog has-light-bg">

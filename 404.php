@@ -13,7 +13,7 @@ namespace Air_Light;
 
 get_header(); ?>
 
-<main id="main" class="site-main">
+<main class="site-main">
 
   <section class="block block-error-404">
     <div class="container">

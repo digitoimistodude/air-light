@@ -35,7 +35,7 @@ foreach ( $results as $slug => $post_type ) {
 
 get_header(); ?>
 
-<main id="main" class="site-main">
+<main class="site-main">
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
   <section class="block block-search">
