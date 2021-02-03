@@ -35,10 +35,12 @@ matrix:
 # e.g. sudo apt-get update.
 # Failures in this section will result in build status 'errored'.
 before_install:
-    - sudo rm -rf ~/.nvm - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+    - sudo rm -rf ~/.nvm
+    - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     - sudo apt-get install -y nodejs
     - if [[ `node -v` != v10* ]]; then nvm install stable; fi
     - nvm install-latest-npm
+    - nvm use 10.22.0
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
