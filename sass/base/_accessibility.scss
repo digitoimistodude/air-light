@@ -119,6 +119,7 @@ a.is-external-link {
 
 // Do not use external links indicators in tel and email links
 /* stylelint-disable a11y/no-display-none */
+a.is-external-link.global-link::after,
 a.is-external-link.no-external-link-indicator::after {
   display: none;
 }

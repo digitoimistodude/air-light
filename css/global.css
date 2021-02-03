@@ -506,6 +506,7 @@ a.is-external-link::after {
 
 /* stylelint-disable a11y/no-display-none */
 
+a.is-external-link.global-link::after,
 a.is-external-link.no-external-link-indicator::after {
 	display: none;
 }
@@ -1851,7 +1852,7 @@ a.is-external-link.no-external-link-indicator::after {
 }
 
 .shade {
-	background: #03061b;
+	background: #2a2d3e;
 	height: 100%;
 	left: 0;
 	opacity: .35;
