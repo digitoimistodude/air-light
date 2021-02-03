@@ -58,6 +58,6 @@ ${boldgreen}Done! Next steps:${txtreset}"
 echo "
 ${boldwhite}1. Click the Check it -button: http://airdev.test/wp/wp-admin/themes.php?page=themecheck
 2. sh air-pack.sh
-3. https://wordpress.org/themes/getting-started/
+3. Upload: https://wordpress.org/themes/upload/
 4. sh air-move-in.sh
 ${txtreset} "

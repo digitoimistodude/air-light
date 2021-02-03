@@ -33,3 +33,4 @@ sudo mv ~/air-temp/template-parts/footer/demo-content.php ~/Projects/airdev/cont
 
 # Restore repository state before move
 cd ~/Projects/airdev/content/themes/air-light/ && git stash
+git status
