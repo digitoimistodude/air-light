@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-02-02 10:55:52
+ * @Last Modified time: 2021-02-03 12:04:46
  *
  * @package air-light
  */
@@ -53,12 +53,12 @@ function get_default_localization_strings( $language = 'en' ) {
       'Open child menu for'   => 'Avaa alavalikko kohteelle',
       'Close child menu'      => 'Sulje alavalikko',
       'Close child menu for'  => 'Sulje alavalikko kohteelle',
-      'Skip to content'       => 'Takaisin ylös',
+      'Skip to content'       => 'Siirry suoraan sisältöön',
       'External site:'        => 'Ulkoinen sivusto:',
       'opens in a new window' => 'avautuu uuteen ikkunaan',
       'Page not found.'       => 'Hups. Näyttää, ettei sivua löydy.',
       'The reason might be mistyped or expired URL.' => 'Syynä voi olla virheellisesti kirjoitettu tai vanhentunut linkki.',
-      'Search'                => 'Search',
+      'Search'                => 'Haku',
     ],
   ];
 
