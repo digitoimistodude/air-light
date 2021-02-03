@@ -22,23 +22,21 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div class="content-area">
-  <main id="main" class="site-main">
+<main id="main" class="site-main">
 
-    <section class="block block-page has-light-bg">
-      <div class="container">
+  <section class="block block-page has-light-bg">
+    <div class="container">
 
-        <h1 id="content"><?php the_title(); ?></h1>
-        <?php the_content(); ?>
+      <h1 id="content"><?php the_title(); ?></h1>
+      <?php the_content(); ?>
 
-        <?php if ( get_edit_post_link() ) {
-          edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
-        } ?>
+      <?php if ( get_edit_post_link() ) {
+        edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
+      } ?>
 
-      </div><!-- .container -->
-    </section>
+    </div><!-- .container -->
+  </section>
 
-  </main><!-- #main -->
-</div><!-- #primary -->
+</main>
 
 <?php get_footer();

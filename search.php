@@ -37,47 +37,45 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div id="content" class="content-area">
-	<main id="main" class="site-main">
+<main id="main" class="site-main">
 
-    <section class="block block-search">
+  <section class="block block-search">
+    <div class="container">
+      <h1><?php echo esc_html( get_default_localization( 'Search' ) ); ?></h1>
+      <?php get_search_form( true ); ?>
+    </div>
+  </section>
+
+  <?php if ( ! empty( $results ) ) : ?>
+    <section class="block block-search-results">
       <div class="container">
-        <h1><?php echo esc_html( get_default_localization( 'Search' ) ); ?></h1>
-        <?php get_search_form( true ); ?>
+
+        <?php foreach ( $results as $slug => $post_type ) : ?>
+
+          <div class="col col-results col-results-<?php echo esc_attr( $slug ) ?>">
+            <h2><?php echo esc_html( $post_type['object']->labels->name ); ?>&nbsp;
+              (<?php echo esc_html( $post_type['count'] ); ?>)</h2>
+
+            <?php foreach ( $post_type['posts'] as $post ) : ?>
+              <div class="row row-result row-result-<?php echo esc_attr( $slug ) ?>">
+
+                <div class="content">
+                  <h3><a href="<?php echo esc_url( $post['permalink'] ) ?>"><?php echo esc_html( $post['title'] ) ?></a></h3>
+
+                  <p><?php echo wp_kses_post( $post['excerpt'] ) ?></p>
+
+                </div>
+
+              </div>
+
+            <?php endforeach; ?>
+          </div>
+        <?php endforeach; ?>
+
       </div>
     </section>
+  <?php endif; ?>
 
-    <?php if ( ! empty( $results ) ) : ?>
-      <section class="block block-search-results">
-        <div class="container">
-
-          <?php foreach ( $results as $slug => $post_type ) : ?>
-
-            <div class="col col-results col-results-<?php echo esc_attr( $slug ) ?>">
-              <h2><?php echo esc_html( $post_type['object']->labels->name ); ?>&nbsp;
-                (<?php echo esc_html( $post_type['count'] ); ?>)</h2>
-
-              <?php foreach ( $post_type['posts'] as $post ) : ?>
-                <div class="row row-result row-result-<?php echo esc_attr( $slug ) ?>">
-
-                  <div class="content">
-                    <h3><a href="<?php echo esc_url( $post['permalink'] ) ?>"><?php echo esc_html( $post['title'] ) ?></a></h3>
-
-                    <p><?php echo wp_kses_post( $post['excerpt'] ) ?></p>
-
-                  </div><!-- .content -->
-
-                </div><!-- .row -->
-
-              <?php endforeach; ?>
-            </div>
-          <?php endforeach; ?>
-
-        </div>
-      </section>
-    <?php endif; ?>
-
-  </main><!-- #main -->
-</div><!-- #primary -->
+</main>
 
 <?php get_footer();

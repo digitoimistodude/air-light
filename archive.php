@@ -15,29 +15,27 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div class="content-area">
-	<main id="main" class="site-main">
-    <div class="container">
+<main id="main" class="site-main">
+  <div class="container">
 
-      <?php if ( have_posts() ) : ?>
-        <header class="entry-header">
-          <?php
-            the_archive_title( '<h1 class="entry-title" id="content">', '</h1>' );
-            the_archive_description( '<div class="taxonomy-description">', '</div>' );
-          ?>
-        </header><!-- .entry-header -->
+    <?php if ( have_posts() ) : ?>
+      <header class="entry-header">
+        <?php
+          the_archive_title( '<h1 class="entry-title" id="content">', '</h1>' );
+          the_archive_description( '<div class="taxonomy-description">', '</div>' );
+        ?>
+      </header><!-- .entry-header -->
 
-        <?php while ( have_posts() ) {
-          the_post();
-          get_template_part( 'template-parts/content', get_post_type() );
-        }
+      <?php while ( have_posts() ) {
+        the_post();
+        get_template_part( 'template-parts/content', get_post_type() );
+      }
 
-        the_posts_pagination();
-      endif; ?>
+      the_posts_pagination();
+    endif; ?>
 
-    </div><!-- .container -->
+  </div><!-- .container -->
 
-	</main><!-- #main -->
-</div><!-- #primary -->
+</main>
 
 <?php get_footer();

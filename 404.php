@@ -13,23 +13,21 @@ namespace Air_Light;
 
 get_header(); ?>
 
-<div class="content-area">
-  <main id="main" class="site-main">
+<main id="main" class="site-main">
 
-    <section class="block block-error-404">
-      <div class="container">
-        <div class="content">
+  <section class="block block-error-404">
+    <div class="container">
+      <div class="content">
 
-          <h1 id="content">404 <span class="screen-reader-text"><?php echo esc_html( get_default_localization( 'Page not found.' ) ); ?></span></h1>
-          <h2 aria-hidden="true"><?php echo esc_html( get_default_localization( 'Page not found.' ) ); ?></h2>
-          <p><?php echo esc_html( get_default_localization( 'The reason might be mistyped or expired URL.' ) ); ?></p>
+        <h1 id="content">404 <span class="screen-reader-text"><?php echo esc_html( get_default_localization( 'Page not found.' ) ); ?></span></h1>
+        <h2 aria-hidden="true"><?php echo esc_html( get_default_localization( 'Page not found.' ) ); ?></h2>
+        <p><?php echo esc_html( get_default_localization( 'The reason might be mistyped or expired URL.' ) ); ?></p>
 
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main><!-- #main -->
-</div><!-- #primary -->
+</main>
 
 <?php
 

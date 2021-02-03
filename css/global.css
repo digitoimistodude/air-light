@@ -453,10 +453,6 @@ template {
 
 /* stylelint-enable a11y/no-outline-none */
 
-.col {
-	overflow: visible;
-}
-
 .gutenberg-content a {
 	text-decoration: underline;
 }
@@ -2332,11 +2328,11 @@ pre {
 	margin-bottom: 0;
 }
 
-.content-area button,
-.content-area .button,
-.content-area input[type="reset"],
-.content-area input[type="submit"],
-.content-area input[type="button"],
+.site-main button,
+.site-main .button,
+.site-main input[type="reset"],
+.site-main input[type="submit"],
+.site-main input[type="button"],
 .site-footer button,
 .site-footer .button,
 .site-footer input[type="reset"],
@@ -2364,11 +2360,11 @@ pre {
 	width: auto;
 }
 
-.content-area button.button-ghost,
-.content-area .button.button-ghost,
-.content-area input[type="reset"].button-ghost,
-.content-area input[type="submit"].button-ghost,
-.content-area input[type="button"].button-ghost,
+.site-main button.button-ghost,
+.site-main .button.button-ghost,
+.site-main input[type="reset"].button-ghost,
+.site-main input[type="submit"].button-ghost,
+.site-main input[type="button"].button-ghost,
 .site-footer button.button-ghost,
 .site-footer .button.button-ghost,
 .site-footer input[type="reset"].button-ghost,
@@ -2379,11 +2375,11 @@ pre {
 	color: #222;
 }
 
-.content-area button.button-small,
-.content-area .button.button-small,
-.content-area input[type="reset"].button-small,
-.content-area input[type="submit"].button-small,
-.content-area input[type="button"].button-small,
+.site-main button.button-small,
+.site-main .button.button-small,
+.site-main input[type="reset"].button-small,
+.site-main input[type="submit"].button-small,
+.site-main input[type="button"].button-small,
 .site-footer button.button-small,
 .site-footer .button.button-small,
 .site-footer input[type="reset"].button-small,
@@ -2396,11 +2392,11 @@ pre {
 	padding-top: 12px;
 }
 
-.content-area button.button-medium,
-.content-area .button.button-medium,
-.content-area input[type="reset"].button-medium,
-.content-area input[type="submit"].button-medium,
-.content-area input[type="button"].button-medium,
+.site-main button.button-medium,
+.site-main .button.button-medium,
+.site-main input[type="reset"].button-medium,
+.site-main input[type="submit"].button-medium,
+.site-main input[type="button"].button-medium,
 .site-footer button.button-medium,
 .site-footer .button.button-medium,
 .site-footer input[type="reset"].button-medium,
@@ -2413,11 +2409,11 @@ pre {
 	padding-top: 15px;
 }
 
-.content-area button.button-large,
-.content-area .button.button-large,
-.content-area input[type="reset"].button-large,
-.content-area input[type="submit"].button-large,
-.content-area input[type="button"].button-large,
+.site-main button.button-large,
+.site-main .button.button-large,
+.site-main input[type="reset"].button-large,
+.site-main input[type="submit"].button-large,
+.site-main input[type="button"].button-large,
 .site-footer button.button-large,
 .site-footer .button.button-large,
 .site-footer input[type="reset"].button-large,
@@ -2427,16 +2423,16 @@ pre {
 	padding: 21px 35px;
 }
 
-.content-area button:hover,
-.content-area button:focus,
-.content-area .button:hover,
-.content-area .button:focus,
-.content-area input[type="reset"]:hover,
-.content-area input[type="reset"]:focus,
-.content-area input[type="submit"]:hover,
-.content-area input[type="submit"]:focus,
-.content-area input[type="button"]:hover,
-.content-area input[type="button"]:focus,
+.site-main button:hover,
+.site-main button:focus,
+.site-main .button:hover,
+.site-main .button:focus,
+.site-main input[type="reset"]:hover,
+.site-main input[type="reset"]:focus,
+.site-main input[type="submit"]:hover,
+.site-main input[type="submit"]:focus,
+.site-main input[type="button"]:hover,
+.site-main input[type="button"]:focus,
 .site-footer button:hover,
 .site-footer button:focus,
 .site-footer .button:hover,

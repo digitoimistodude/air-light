@@ -56,11 +56,6 @@
 }
 /* stylelint-enable a11y/no-outline-none */
 
-// Make sure outline is visible on cols that have .global-link
-.col {
-  overflow: visible;
-}
-
 // Links within content must be underlined
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
 .gutenberg-content {

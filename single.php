@@ -18,34 +18,32 @@ get_header();
 
 get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-<div class="content-area">
-	<main id="main" class="site-main">
+<main id="main" class="site-main">
 
-    <section class="block block-single has-light-bg">
-      <div class="gutenberg-content">
+  <section class="block block-single has-light-bg">
+    <div class="gutenberg-content">
 
-        <?php the_content();
+      <?php the_content();
 
-        // Required by WordPress Theme Check, feel free to remove as it's rarely used in starter themes
-        wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ), 'after' => '</div>' ) );
+      // Required by WordPress Theme Check, feel free to remove as it's rarely used in starter themes
+      wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ), 'after' => '</div>' ) );
 
-        entry_footer();
+      entry_footer();
 
-        if ( get_edit_post_link() ) {
-          edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
-        }
+      if ( get_edit_post_link() ) {
+        edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
+      }
 
-        the_post_navigation();
+      the_post_navigation();
 
-  			// If comments are open or we have at least one comment, load up the comment template.
-        if ( comments_open() || get_comments_number() ) {
-          comments_template();
-        } ?>
+  		// If comments are open or we have at least one comment, load up the comment template.
+      if ( comments_open() || get_comments_number() ) {
+        comments_template();
+      } ?>
 
-      </div>
-    </section>
+    </div>
+  </section>
 
-	</main><!-- #main -->
-</div><!-- #primary -->
+</main>
 
 <?php get_footer();
