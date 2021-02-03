@@ -274,24 +274,16 @@ $color-border-demo-header: rgba($color-bright, .5);
   .site-header .nav-primary .menu-items .current-menu-parent > a,
   .site-header .nav-primary .menu-items .current-menu-item > a {
     color: $color-cyan-bright;
-
-    @media (max-width: $width-max-mobile) {
-      color: $color-cyan-bright;
-    }
   }
 
   .site-header .nav-primary .menu-items .sub-menu .current-menu-parent > a,
   .site-header .nav-primary .menu-items .sub-menu .current-menu-item > a {
     color: $color-current;
-
-    @media (max-width: $width-max-mobile) {
-      color: $color-current;
-    }
   }
-}
 
-.site-header .nav-primary .menu-items .menu-item ul.sub-menu .dropdown-toggle {
-  color: $color-links;
+  .site-header .nav-primary .menu-items.nav-menu .sub-menu .menu-item > .dropdown-toggle {
+    color: $color-dark;
+  }
 }
 
 .block.block-entry-header-demo + .block .container {

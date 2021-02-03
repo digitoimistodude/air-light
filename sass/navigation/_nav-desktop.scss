@@ -4,6 +4,7 @@
 // Main level settings
 $absolute-navigation: true;
 $color-background-nav-desktop: $color-white;
+$color-dropdown-toggle: $color-dark;
 $color-hover-main-level: $color-white;
 $color-main-level: $color-white;
 $color-current: $color-main;
@@ -13,9 +14,9 @@ $use-dropdown-bubble: true;
 // Sub menu settings
 $border-radius-sub-menu: 4px;
 $color-background-sub-menu: $color-white;
-$color-border-sub-menu: rgba($color-black, .05);
+$color-border-sub-menu: rgba($color-dark, .05);
 $color-hover-sub-menu: $color-hover;
-$color-sub-menu: $color-links;
+$color-sub-menu: $color-dark;
 $font-weight-sub-menu: 400;
 $width-sub-menu: 22rem;
 
@@ -234,6 +235,12 @@ $width-sub-menu: 22rem;
     }
   }
 
+  // Toggle icon dimensions on desktop
+  .dropdown-toggle svg {
+    height: 9px;
+    width: 9px;
+  }
+
   // Main level toggle icon
   .dropdown-toggle.toggled-on svg {
     transform: rotateX(180deg);
@@ -243,6 +250,7 @@ $width-sub-menu: 22rem;
     align-items: center;
     background-color: transparent;
     border: 0;
+    color: $color-dropdown-toggle;
     display: inline-flex;
     justify-content: center;
     padding: 0;

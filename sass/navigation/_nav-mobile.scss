@@ -4,18 +4,19 @@
 // Main level settings
 $absolute-navigation-mobile: true;
 $color-background-nav-mobile-header: $color-main;
-$color-background-nav-mobile-layer: $color-white;
-$color-current-mobile: $color-links;
-$color-hamburger-active: $color-white;
-$color-hamburger: $color-white;
-$color-active-main-level-mobile: $color-links;
-$color-main-level-mobile: $color-black;
-$color-separator-nav-mobile: #f0f0f0;
+$color-background-nav-mobile-layer: $color-main;
+$color-current-mobile: choose-contrast-color($color-background-nav-mobile-layer);
+$color-dropdown-toggle: choose-contrast-color($color-background-nav-mobile-layer);
+$color-hamburger-active: choose-contrast-color($color-background-nav-mobile-header);
+$color-hamburger: choose-contrast-color($color-background-nav-mobile-header);
+$color-active-main-level-mobile: choose-contrast-color($color-main);
+$color-main-level-mobile: choose-contrast-color($color-background-nav-mobile-layer);
+$color-separator-nav-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .1);
 $font-weight-main-level-mobile: 600;
-$height-navigation-mobile: 80px;
+$height-navigation-mobile: 77px;
 
 // Sub menu settings
-$color-sub-menu-mobile: #555;
+$color-sub-menu-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .8);
 $font-weight-sub-menu-mobile: 600;
 
 // Settings for jonsuh/hamburgers
@@ -41,7 +42,7 @@ $nav-open-from-direction: top;
   // Sub menu CSS vars
   --padding-sub-menu-vertical-mobile: 1.2rem;
   --padding-sub-menu-horizontal-mobile: 2.5rem;
-  --margin-left-sub-menu: 1rem;
+  --margin-left-sub-menu: 2rem;
 }
 
 // Init Tasty Hamburger navigation toggle
@@ -72,14 +73,14 @@ $nav-open-from-direction: top;
 // Let's ensure site-header loads properly and doesn't leave empty spaces
 @media (max-width: $width-max-mobile) {
   .nav-container {
+    background-color: $color-background-nav-mobile-header;
+
     @if $absolute-navigation-mobile == false {
-      background-color: $color-background-nav-mobile-header;
       position: relative;
       z-index: 222;
     }
 
     @if $absolute-navigation-mobile == true {
-      background-color: transparent;
       position: absolute;
       width: 100%;
     }
@@ -139,9 +140,6 @@ $nav-open-from-direction: top;
     font-weight: $font-weight-main-level-mobile;
     margin-left: 0;
     margin-right: 0;
-
-    // We have color here, so it's okay to remove outline
-    outline: 0;
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: var(--padding-sub-menu-horizontal-mobile);
     padding-right: var(--padding-sub-menu-horizontal-mobile);
@@ -159,8 +157,13 @@ $nav-open-from-direction: top;
     padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu));
   }
 
-  .sub-menu .sub-menu {
-    margin-left: var(--margin-left-sub-menu);
+  .sub-menu {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .sub-menu .sub-menu a {
+    padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu) + var(--margin-left-sub-menu));
   }
 
   .menu-item a:hover,
@@ -176,26 +179,31 @@ $nav-open-from-direction: top;
 
   // Dropdown toggle
   .dropdown-toggle {
-    background: transparent;
-    background-image: url('../svg/mobile-nav-arrow-down.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 12px 7px;
+    align-items: center;
+    background-color: transparent;
+
+    // Alternative + and minus effect
+    // background-image: url('../svg/nav-open.svg');
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: 12px 7px;
     border: 0;
-    height: auto;
+    color: $color-dropdown-toggle;
+    display: inline-flex;
+    height: 100%;
     left: auto;
-    margin-top: var(--padding-sub-menu-vertical-mobile);
+    margin-top: 0;
+    max-height: 52px;
     overflow: hidden;
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: var(--padding-sub-menu-horizontal-mobile);
     padding-right: var(--padding-sub-menu-horizontal-mobile);
     padding-top: var(--padding-sub-menu-vertical-mobile);
     position: absolute;
-    right: 1rem;
+    right: 0;
     top: 2px;
     transform: rotate(0);
     transition: all $transition-duration;
-    width: 12px;
     z-index: 9999;
   }
 
@@ -203,16 +211,26 @@ $nav-open-from-direction: top;
     z-index: 10000;
   }
 
-  // Hide desktop toggles
-  // Need to use display: none here to make sure there are visually no double toggles
-  /* stylelint-disable a11y/no-display-none */
-  .dropdown-toggle svg {
-    display: none;
+  .sub-menu .dropdown-toggle {
+    color: $color-sub-menu-mobile;
   }
-  /* stylelint-enable */
+
+  // Hide desktop toggles
+  .dropdown-toggle svg {
+    height: 7px;
+    width: 12px;
+    // Enable for alternative + and minus effect
+    // Need to use display: none here to make sure there are visually no double toggles
+    /* stylelint-disable a11y/no-display-none */
+    // display: none;
+    /* stylelint-enable */
+  }
 
   .dropdown-toggle.toggled-on {
     background-color: transparent;
+
+    // Alternative + and minus effect
+    // background-image: url('../svg/nav-close.svg');
     cursor: pointer;
     transform: rotate(-180deg);
   }
