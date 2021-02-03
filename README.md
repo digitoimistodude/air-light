@@ -18,7 +18,7 @@ This theme is constantly kept up to date by the following persons and a bunch of
 | --- | --- | --- | --- |
 | [Roni Laukkarinen](https://github.com/ronilaukkarinen) | [Timi Wahalahti](https://github.com/timiwahalahti) | [Niku Hietanen](https://github.com/Niq1982) | [Michael Bourne](https://github.com/michaelbourne) | |
 
-![](https://i.imgur.com/CDyMXPE.png)
+![](https://i.imgur.com/PXX3Z1v.png)
 
 ### Mission & vision
 
