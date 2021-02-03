@@ -3,13 +3,6 @@
 // A hidden screen reader for readers, focus elements for
 // vision impaired and other useful a11y CSS hacks.
 
-// Variables
-$focus-outline-color: #4d4aff;
-$focus-skip-link-color: #21759b;
-$focus-text-color: $color-black;
-$focus-outline-style: 2px solid;
-$focus-outline-style-large-elements: 4px solid;
-
 // Text meant only for screen readers.
 .screen-reader-text {
   border: 0;
@@ -30,9 +23,8 @@ $focus-outline-style-large-elements: 4px solid;
     margin: 5px;
 
     &:focus {
-      background: $color-white;
-      color: $focus-outline-color;
-      outline: 2px solid $focus-outline-color;
+      background: $color-main;
+      color: $color-white;
     }
   }
 
@@ -42,7 +34,6 @@ $focus-outline-style-large-elements: 4px solid;
     box-shadow: 0 0 2px 2px rgba($color-black, .6);
     clip: auto;
     clip-path: none;
-    color: $focus-skip-link-color;
     display: block;
     font-size: 1.7rem;
     font-weight: 700;
@@ -99,38 +90,12 @@ $focus-outline-style-large-elements: 4px solid;
   textarea:focus,
   div[tabindex]:focus {
     opacity: 1;
-
-    // Normalize the look of the outline across browsers
-    // @link https://a11yproject.com/posts/never-remove-css-outlines/
-    // outline: $focus-outline-style $focus-outline-color;
-
-    // Let's make a "padding" for focus and more clear outline
-    outline-offset: 5px;
-    outline-width: 3px;
-
-    // Browser defaults:
-    /* stylelint-disable */
-    outline: 1px dotted $focus-outline-color;
-    outline: 5px auto -webkit-focus-ring-color;
-    /* stylelint-enable */
-    z-index: 99;
   }
 
   // A bit better focus for large elements
   a.global-link:focus {
     outline-width: 5px;
   }
-}
-
-// Make theme keyboard accessible with no Javascript enabled
-.no-js *:focus {
-  // outline: $focus-outline-style $focus-outline-color;
-  // Browser defaults:
-  /* stylelint-disable */
-  outline: 1px dotted $focus-outline-color;
-  outline: 5px auto -webkit-focus-ring-color;
-  color: $focus-text-color;
-  /* stylelint-enable */
 }
 
 // Add icon to external links

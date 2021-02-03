@@ -403,9 +403,8 @@ template {
 
 .screen-reader-text.skip-link:focus,
 .gform_body .skip-link.gform_validation_container:focus {
-	background: #fff;
-	color: #4d4aff;
-	outline: 2px solid #4d4aff;
+	background: #2a2d3e;
+	color: #fff;
 }
 
 .screen-reader-text:focus,
@@ -415,7 +414,6 @@ template {
 	box-shadow: 0 0 2px 2px rgba(34, 34, 34, 0.6);
 	clip: auto;
 	clip-path: none;
-	color: #21759b;
 	display: block;
 	font-size: 1.7rem;
 	font-weight: 700;
@@ -464,21 +462,10 @@ template {
 [data-whatinput="keyboard"] textarea:focus,
 [data-whatinput="keyboard"] div[tabindex]:focus {
 	opacity: 1;
-	outline-offset: 5px;
-	outline-width: 3px; /* stylelint-disable */
-	outline: 1px dotted #4d4aff;
-	outline: 5px auto -webkit-focus-ring-color; /* stylelint-enable */
-	z-index: 99;
 }
 
 [data-whatinput="keyboard"] a.global-link:focus {
 	outline-width: 5px;
-}
-
-.no-js *:focus { /* stylelint-disable */
-	outline: 1px dotted #4d4aff;
-	outline: 5px auto -webkit-focus-ring-color;
-	color: #222; /* stylelint-enable */
 }
 
 a.is-external-link {
