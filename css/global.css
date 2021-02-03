@@ -321,6 +321,23 @@ template {
 
 /* stylelint-enable declaration-property-unit-allowed-list */
 
+/* stylelint-disable number-max-precision, block-closing-brace-newline-after */
+
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns black for dark text and white for light text.
+ */
+
 /* stylelint-disable declaration-property-unit-allowed-list */
 
 /* stylelint-enable declaration-property-unit-allowed-list */
@@ -404,7 +421,7 @@ template {
 .screen-reader-text.skip-link:focus,
 .gform_body .skip-link.gform_validation_container:focus {
 	background: #2a2d3e;
-	color: #fff;
+	color: white;
 }
 
 .screen-reader-text:focus,

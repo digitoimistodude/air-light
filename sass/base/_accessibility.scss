@@ -24,7 +24,7 @@
 
     &:focus {
       background: $color-main;
-      color: $color-white;
+      color: choose-contrast-color($color-main);
     }
   }
 
