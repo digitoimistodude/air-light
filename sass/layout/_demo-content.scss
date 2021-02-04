@@ -26,13 +26,8 @@ $color-border-demo-header: rgba($color-bright, .5);
   padding-bottom: 4rem;
 
   @media (max-width: $width-max-mobile) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  @media (max-width: $container-mobile) {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .site-title {

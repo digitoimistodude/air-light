@@ -1587,9 +1587,9 @@ a.is-external-link.no-external-link-indicator::after {
 	color: white;
 	cursor: pointer;
 	font-weight: 700;
-	margin: 0 -2rem 0 0;
+	margin: 0;
 	overflow: visible;
-	padding: 2rem;
+	padding: 0;
 	position: relative;
 	text-decoration: none;
 	top: 0;
@@ -1722,7 +1722,7 @@ a.is-external-link.no-external-link-indicator::after {
 }
 
 .js .nav-primary {
-	top: calc(77px + 10px);
+	top: calc(72px + 10px);
 	left: 0;
 }
 
@@ -3668,7 +3668,7 @@ h6 {
 @media (min-width: 480px) {
 
 .js .nav-primary {
-	top: calc(77px + 20px);
+	top: calc(72px + 20px);
 }
 
 .block.block-entry-header-demo {
@@ -4287,7 +4287,7 @@ h6 {
 @media (max-width: 960px) {
 
 :root {
-	--padding-site-header-vertical: 1rem;
+	--padding-site-header-vertical: 2rem;
 }
 
 .nav-container {
@@ -4299,12 +4299,12 @@ h6 {
 }
 
 .site {
-	padding-top: 77px;
+	padding-top: 72px;
 }
 
 .site-header {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 }
 
 .hide-on-mobile-nav-view {
@@ -4442,7 +4442,7 @@ h6 {
 .js .nav-primary {
 	left: 0;
 	position: fixed;
-	top: 77px;
+	top: 72px;
 	z-index: 5;
 }
 
@@ -4596,11 +4596,6 @@ th {
 	--font-size-tiny: 16px;
 	--font-size-small: 16px;
 	--font-size-default: 16px;
-}
-
-.site-header {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
 }
 
 .block.block-entry-header-demo {

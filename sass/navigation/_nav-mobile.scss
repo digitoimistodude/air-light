@@ -13,7 +13,7 @@ $color-active-main-level-mobile: choose-contrast-color($color-main);
 $color-main-level-mobile: choose-contrast-color($color-background-nav-mobile-layer);
 $color-separator-nav-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .1);
 $font-weight-main-level-mobile: 600;
-$height-navigation-mobile: 77px;
+$height-navigation-mobile: 72px;
 
 // Sub menu settings
 $color-sub-menu-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .8);
@@ -292,9 +292,9 @@ $nav-open-from-direction: top;
   color: $color-hamburger;
   cursor: pointer;
   font-weight: 700;
-  margin: 0 -2rem 0 0;
+  margin: 0;
   overflow: visible;
-  padding: 2rem;
+  padding: 0;
   position: relative;
   text-decoration: none;
   top: 0;
