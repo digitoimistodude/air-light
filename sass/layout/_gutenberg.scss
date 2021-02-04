@@ -9,7 +9,7 @@
   margin-top: 4rem;
 
   a {
-    background: transparent;
+    background-color: transparent;
     border-color: $color-cat-borders;
     border-radius: 5px;
     border-style: solid;
@@ -474,7 +474,7 @@ kbd {
 // Preformatted text.
 // CSS Simple Pre Code
 pre {
-  background: $color-code-background;
+  background-color: $color-code-background;
   border: 1px solid $color-code-background;
   border-radius: 4px;
   color: $color-lightgrey;
@@ -521,7 +521,7 @@ ul.tags {
     padding-left: 0;
 
     a:not(.button):not(.no-text-link) {
-      background: transparent;
+      background-color: transparent;
       border-color: $color-tag-borders;
       border-radius: 5px;
       border-style: solid;

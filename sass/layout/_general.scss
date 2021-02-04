@@ -17,7 +17,7 @@
 
 // Default shade on top of blocks
 .shade {
-  background: $color-main;
+  background-color: $color-main;
   height: 100%;
   left: 0;
   opacity: .35;
@@ -88,7 +88,7 @@
   width: 100%;
 
   a {
-    background: $color-background-edit-link;
+    background-color: $color-background-edit-link;
     border: 2px dashed $color-edit-link;
     clear: both;
     color: $color-edit-link;
@@ -102,7 +102,7 @@
 
   &:focus,
   a:hover {
-    background: #efefef;
+    background-color: $color-background-hover-edit-link;
     color: $color-edit-link;
   }
 }

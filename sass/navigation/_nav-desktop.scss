@@ -88,7 +88,7 @@ $width-sub-menu: 22rem;
   // Navigation unordered list wrapper element
   .menu-items {
     align-items: center;
-    background: transparent;
+    background-color: transparent;
     display: flex;
     margin: 0;
     padding: 0;
@@ -156,7 +156,7 @@ $width-sub-menu: 22rem;
 
   // Dropdowns
   .sub-menu {
-    background: $color-background-sub-menu;
+    background-color: $color-background-sub-menu;
     border-bottom: 1px solid $color-border-sub-menu;
     border-bottom-left-radius: $border-radius-sub-menu;
     border-bottom-right-radius: $border-radius-sub-menu;

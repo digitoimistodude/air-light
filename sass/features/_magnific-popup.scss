@@ -7,7 +7,7 @@
 // Forced to use important here, because of inline styles
 /* stylelint-disable declaration-no-important */
 .mfp-bg {
-  background: rgba(#000, .8);
+  background-color: $color-dark;
   opacity: 1;
   z-index: 99999 !important;
 }
@@ -75,7 +75,7 @@
   // Forced to use display none here, because of inline styles
   /* stylelint-disable a11y/no-display-none */
   .mfp-arrow-right {
-    background: url('../svg/right-arrow.svg');
+    background-image: url('../svg/right-arrow.svg');
 
     &:hover,
     &:focus {
@@ -114,11 +114,11 @@
   }
 
   .mfp-content {
-    background: transparent;
+    background-color: transparent;
     padding: 0;
 
     .mfp-close {
-      background: #000;
+      background-color: $color-black;
       border: 2px solid transparent;
       border-radius: 0;
       color: $color-white;
@@ -136,7 +136,7 @@
 
       &:hover,
       &:focus {
-        background: $color-links;
+        background-color: $color-links;
       }
     }
   }

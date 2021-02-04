@@ -19,7 +19,7 @@
 
 .page-numbers {
   align-items: center;
-  background: $color-white;
+  background-color: $color-white;
   border-bottom: 2px solid #ece6f2;
   border-left: 1px solid #ece6f2;
   border-right: 1px solid #ece6f2;
@@ -56,13 +56,13 @@
 
 a.page-numbers:hover,
 a.page-numbers:focus {
-  background: $color-main;
+  background-color: $color-main;
   border-color: $color-main;
   color: $color-white;
 }
 
 .page-numbers.current {
-  background: $color-main;
+  background-color: $color-main;
   border-color: $color-main;
   color: $color-white;
 }

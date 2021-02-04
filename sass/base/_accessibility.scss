@@ -23,7 +23,7 @@
     margin: 5px;
 
     &:focus {
-      background: $color-main;
+      background-color: $color-main;
       color: choose-contrast-color($color-main);
     }
   }

@@ -4,7 +4,7 @@
 
 /* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-class, selector-max-specificity, a11y/font-size-is-readable, a11y/no-display-none */
 .breadcrumbs {
-  background: transparent;
+  background-color: transparent;
   border-bottom: 0;
   line-height: 1;
   margin-bottom: 4rem;
@@ -81,7 +81,6 @@
     text-align: left;
 
     li {
-      background: none;
       display: inline-block;
       font-weight: 500;
       line-height: 1;

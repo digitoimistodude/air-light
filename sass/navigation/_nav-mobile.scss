@@ -111,7 +111,7 @@ $nav-open-from-direction: top;
 
   // Users that don't have Javascript enabled
   .no-js .site-header {
-    background: $color-background-nav-mobile-header;
+    background-color: $color-background-nav-mobile-header;
     position: static;
   }
 
@@ -254,7 +254,7 @@ $nav-open-from-direction: top;
     z-index: 5;
 
     .menu-items {
-      background: $color-background-nav-mobile-layer;
+      background-color: $color-background-nav-mobile-layer;
 
       // Let's keep the content always full height
       height: 100vh;
@@ -282,12 +282,12 @@ $nav-open-from-direction: top;
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background: $color-hamburger-active;
+  background-color: $color-hamburger-active;
   color: $color-hamburger-active;
 }
 
 .nav-toggle {
-  background: transparent;
+  background-color: transparent;
   border: 0;
   color: $color-hamburger;
   cursor: pointer;

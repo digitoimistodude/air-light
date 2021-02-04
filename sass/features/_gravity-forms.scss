@@ -4,7 +4,7 @@
 // WCAG 2.0 errors
 /* stylelint-disable selector-class-pattern */
 div.validation_error {
-  background: $color-error;
+  background-color: $color-error;
   color: $color-white;
   font-size: var(--font-size-medium);
   font-weight: 700;

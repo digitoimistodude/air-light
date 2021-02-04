@@ -103,7 +103,7 @@
 
     button:focus,
     button:hover {
-      background: transparent;
+      background-color: transparent;
     }
 
     button:hover::before,
@@ -115,7 +115,7 @@
     &.slick-active button[type="button"],
     &.slick-active button:focus,
     &.slick-active button[type="button"]:focus {
-      background: #fff;
+      background-color: $color-white;
       opacity: 1;
     }
   }

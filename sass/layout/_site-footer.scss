@@ -9,7 +9,7 @@
 // and start over.
 
 .site-footer {
-  background: $color-demo-footer-background;
+  background-color: $color-demo-footer-background;
   clear: both;
   color: $color-white;
   overflow: hidden;
@@ -60,7 +60,7 @@
     position: relative;
 
     &.is-external-link::after {
-      background: $color-demo-footer-foreground;
+      background-color: $color-demo-footer-foreground;
       bottom: 0;
       content: '';
       display: block;

@@ -1,6 +1,6 @@
 // Use with @include box-with-shadow();
 @mixin box-with-shadow($border_radius: 10px, $box_shadow_amount: 37px, $padding: 55px) {
-  background: $color-white;
+  background-color: $color-white;
   border-radius: $border_radius;
   box-shadow: 1px 1px $box_shadow_amount 0 rgba(0, 0, 0, .05);
   padding: $padding;
