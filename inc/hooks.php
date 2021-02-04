@@ -39,3 +39,9 @@ add_filter( 'allowed_block_types', __NAMESPACE__ . '\allowed_block_types', 10, 2
 add_filter( 'use_block_editor_for_post_type', __NAMESPACE__ . '\use_block_editor_for_post_type', 10, 2 );
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\register_block_editor_assets' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup_editor_styles' );
+
+/**
+ * Form related hooks
+ */
+require get_theme_file_path( 'inc/hooks/forms.php' );
+add_action( 'gform_enqueue_scripts', __NAMESPACE__ . '\dequeue_gf_stylesheets', 999 );
