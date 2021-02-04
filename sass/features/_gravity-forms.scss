@@ -69,6 +69,12 @@ body *[aria-invalid="true"] {
     margin-top: 1rem;
   }
 
+  .gfield_radio li,
+  .gfield_checkbox li {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
   .gfieldset li {
     align-items: center;
     display: inline-flex;
@@ -93,6 +99,12 @@ body *[aria-invalid="true"] {
   input[type="radio"],
   input[type="checkbox"] {
     margin-right: 1rem;
+  }
+
+  .gfield_radio li label,
+  .gfield_checkbox li label {
+    margin-bottom: 0;
+    margin-top: 0;
   }
 
   input:not([type="radio"]):not([type="checkbox"]),

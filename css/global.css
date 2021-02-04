@@ -3337,6 +3337,12 @@ body *[aria-invalid="true"] {
 	margin-top: 1rem;
 }
 
+.gform_body .gfield_radio li,
+.gform_body .gfield_checkbox li {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
 .gform_body .gfieldset li {
 	align-items: center;
 	display: inline-flex;
@@ -3361,6 +3367,12 @@ body *[aria-invalid="true"] {
 .gform_body input[type="radio"],
 .gform_body input[type="checkbox"] {
 	margin-right: 1rem;
+}
+
+.gform_body .gfield_radio li label,
+.gform_body .gfield_checkbox li label {
+	margin-bottom: 0;
+	margin-top: 0;
 }
 
 .gform_body input:not([type="radio"]):not([type="checkbox"]),
