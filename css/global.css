@@ -4507,7 +4507,7 @@ h6 {
 }
 
 .gutenberg-content ol,
-.gutenberg-content ul:not(.tags) {
+.gutenberg-content ul {
 	padding-left: calc(2rem + 2.7rem);
 }
 
