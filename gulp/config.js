@@ -66,17 +66,15 @@ module.exports = {
     opts: {
       development: {
         bundleExec: true,
-        style: 'expanded',
+        outputStyle: 'expanded',
         debugInfo: true,
-        lineNumbers: true,
         errLogToConsole: true,
         includePaths: ['node_modules/']
       },
       production: {
         bundleExec: true,
-        style: 'compressed',
+        outputStyle: 'compressed',
         debugInfo: true,
-        lineNumbers: true,
         errLogToConsole: true,
         includePaths: ['node_modules/']
       }

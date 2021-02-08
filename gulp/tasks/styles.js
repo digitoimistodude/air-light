@@ -14,23 +14,20 @@ const {
 } = require('../helpers/handle-errors.js');
 const bs = require('browser-sync');
 const notify = require('gulp-notify');
-const mmq = require('gulp-merge-media-queries');
+const mqpacker = require('mqpacker');
 
 function styles(done) {
-  return src(config.styles.main)
+  return src(config.styles.main, config.styles.exclude)
     .pipe(sass(config.styles.opts.development))
 
-    // Merge media queries
-    .pipe(mmq({
-      log: false
-    }))
+    // Run PostCSS plugins
+    .pipe(postcss([autoprefixer(), mqpacker()]))
 
     // Save expanded version for development
     .pipe(dest(config.styles.dest))
 
     // Production settings
     .pipe(sass(config.styles.opts.production))
-    .pipe(postcss([autoprefixer()]))
 
     .pipe(cleancss(config.cleancss.opts,
       function (details) {
