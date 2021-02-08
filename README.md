@@ -427,6 +427,8 @@ We use ACF and Gutenberg to build new websites on air-light. This is the default
 
 ### Usage
 
+**NB!** We recommend you DO NOT use this theme by installing it from [WordPress Theme Directory](https://wordpress.org/themes/air-light/), instead use the development version from GitHub by doing the following:
+
 #### Option 1: Use in your own WordPress instance and with your own development environment like Docker, Local by Flywheel or MAMP
 
 **If you want to set up this your own way**, install using the *traditional way*:
