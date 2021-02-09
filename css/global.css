@@ -1914,6 +1914,8 @@ a.is-external-link.no-external-link-indicator::after {
 }
 
 /* stylelint-enable */
+/* stylelint-disable a11y/no-display-none */
+
 /* stylelint-disable declaration-property-unit-allowed-list */
 :root {
   font-size: 62.5%;
@@ -4312,6 +4314,13 @@ body *[aria-invalid="true"] {
   }
   .block-error-404 h1 {
     font-size: 200px;
+  }
+}
+@media print {
+  .nav-container,
+  .site-footer,
+  .side-nav {
+    display: none;
   }
 }
 @media screen and (min-width: 770px) and (min-width: 320px) {
