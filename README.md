@@ -429,13 +429,28 @@ We use ACF and Gutenberg to build new websites on air-light. This is the default
 
 **NB!** We recommend you DO NOT use this theme by installing it from [WordPress Theme Directory](https://wordpress.org/themes/air-light/), instead use the development version from GitHub by doing the following:
 
-#### Option 1: Use in your own WordPress instance and with your own development environment like Docker, Local by Flywheel or MAMP
+#### Option 1: Use our WordPress stack and development environment
 
-**If you want to set up this your own way**, install using the *traditional way*:
+This is an option we at Dude use. Please note: This way requires many packages and is a bit of work to get up and running. I recommend you read all the documentation thoroughly. You can always use [your own setup and try option 2](#option-2-use-in-your-own-wordpress-instance-and-with-your-own-development-environment-like-docker-local-by-flywheel-or-mamp).
 
-1. Clone repo with `git clone https://github.com/digitoimistodude/air-light.git` to your preferred location on command line or [download zip](https://github.com/digitoimistodude/air-light/archive/master.zip)
-2. Run `npm install` in theme folder
-3. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run following search & replaces (note: *yourprojectname* is should always be lowercase without special characters):
+1. Follow instructions to install [macos-lemp-stack](https://github.com/digitoimistodude/macos-lemp-setup#installation-steps)
+2. Ensure that http://localhost works and ~/Projects is linked to /var/www and both exist
+3. Install [dudestack](https://github.com/digitoimistodude/dudestack#installation)
+4. Create new project by using dudestack's `createproject` command (explained [here](https://github.com/digitoimistodude/dudestack#starting-a-new-project-with-createproject-bash-script))
+5. From Terminal cd into **bin folder** like `cd /path/to/where/you/cloned/air-light/bin`
+6. Run `sh newtheme.sh` \- the script takes care of the rest \(updates textdomain with your project name\, checks updates for air and npm packages\, runs npm install\, fetches devpackages\, sets up gulp\, cleans up the leftover files and activates the theme via wp\-cli\)
+7. Cd back to project directory `cd ~/Projects/yourproject`, run `gulp` and start coding
+
+#### Option 2: Use in your own WordPress instance and with your own development environment like Docker, Local by Flywheel or MAMP
+
+**If you want to set up this your own way**, install using the *traditional way* because we don't currently provide a cleanup or [_s-like](https://underscores.me/) theme generation script for other WP-stacks:
+
+1. Get the cleaned up version of Air-light from [WordPress Theme Directory](https://wordpress.org/themes/air-light/), download zip by clicking the blue Download button
+2. Rename the theme folder from air-light to *yourprojectname* (your project name here all lowercase without spaces or special characters)
+3. Move theme folder under your WordPress installation
+4. Download Air-light [package.json (right click here and select Save as...)](https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json), save it to your theme's folder root
+5. Open Terminal, cd into theme folder and run `npm install` inside the theme folder
+6. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run following search & replaces (note: *yourprojectname* is should always be lowercase without special characters):
 
 **Search:** air-light<br>
 **Replace with:** *yourprojectname*
@@ -449,15 +464,9 @@ We use ACF and Gutenberg to build new websites on air-light. This is the default
 **Search**: Air_light<br>
 **Replace with:** *yourprojectname*
 
-4. Run `gulp watch` and start coding
-
-#### Option 2: Use our WordPress stack and development environment
-
-If you are using [Dudestack](https://github.com/digitoimistodude/dudestack) and [Devpackages](https://github.com/digitoimistodude/devpackages), your project folder is located at `~/Projects`, your [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) has been set up (preferred) *OR* [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) box is up and running at `10.1.2.4`, use the following instructions:
-
-1. Open command line interface and cd into **bin folder** like `cd /path/to/air-light/bin`
-2. Run `sh newtheme.sh` \- the script takes care of the rest \(updates textdomain with your project name\, checks updates for air and npm packages\, runs npm install\, fetches devpackages\, sets up gulp\, cleans up the leftover files and activates the theme via wp\-cli\)
-3. Cd back to theme dir `cd ..`, run `gulp watch` and start coding
+7. Get [devpackages](https://github.com/digitoimistodude/devpackages) and extract them to your **project root** folder.
+8. Run npm install on your **project root** folder from Terminal
+9. Run `gulp` and start coding
 
 ### Contributing
 
