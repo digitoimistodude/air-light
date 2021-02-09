@@ -465,8 +465,9 @@ This is an option we at Dude use. Please note: This way requires many packages a
 **Replace with:** *yourprojectname*
 
 7. Get [devpackages](https://github.com/digitoimistodude/devpackages) and extract them to your **project root** folder.
-8. Run npm install on your **project root** folder from Terminal
-9. Run `gulp` and start coding
+8. Edit all paths in [these files](https://github.com/digitoimistodude/devpackages/search?q=THEMENAME) based on your setup
+9. Run npm install on your **project root** folder from Terminal
+10. Activate theme on wp-admin, run `gulp` and start coding
 
 ### Contributing
 
