@@ -37,14 +37,16 @@
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
     "stylelint-value-no-unknown-custom-properties": "^3.0.0",
-    "vanilla-lazyload": "^17.1.3",
     "terser-webpack-plugin": "^4.2.3",
+    "vanilla-lazyload": "^17.1.3",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.2.6",
     "webpack-stream": "^6.1.2"
   },
   "dependencies": {
     "airbnb-browser-shims": "^3.3.0",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgmin": "^3.0.0",
     "hamburgers": "^1.1.3",
     "moveto": "^1.8.2",
     "slick-carousel": "^1.8.1",

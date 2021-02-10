@@ -1,5 +1,6 @@
 // Export tasks
 exports.js = require('./gulp/tasks/js.js').js;
+exports.svg = require('./gulp/tasks/svg.js').svg;
 exports.phpcs = require('./gulp/tasks/phpcs.js').phpcs;
 exports.scsslint = require('./gulp/tasks/scsslint.js').scsslint;
 exports.styles = require('./gulp/tasks/styles.js').styles;

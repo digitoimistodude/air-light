@@ -87,6 +87,10 @@ module.exports = {
     src: 'js/src/**/*.js',
     dest: 'js/dist/'
   },
+  svg: {
+    src: 'svg/src/**/*.svg',
+    dest: 'svg/dist/'
+  },
   php: {
     src: '**/*.php'
   },

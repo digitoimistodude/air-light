@@ -16,6 +16,8 @@ function watchfiles() {
   watch(config.php.src, series('phpcs')).on('change', bs.reload);
   watch(config.js.src).on('change', series('js'));
   watch(config.js.src).on('change', bs.reload);
+  watch(config.svg.src).on('change', series('svg'));
+  watch(config.svg.src).on('change', bs.reload);
 };
 
 exports.watch = watchfiles;
