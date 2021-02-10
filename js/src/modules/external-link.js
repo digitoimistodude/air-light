@@ -27,7 +27,14 @@ function isLinkExternal(link, localDomains) {
     return false;
   }
 
-  const linkUrl = new URL(link);
+  let linkUrl;
+  try {
+    linkUrl = new URL(link);
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.log(`Invalid URL: ${link}`);
+    return false;
+  }
   // Check if host is one of the local domains
   return !localDomains.some((domain) => linkUrl.host === domain);
 }
