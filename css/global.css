@@ -3974,7 +3974,7 @@ body *[aria-invalid="true"] {
   color: white;
 }
 
-.wp-block-file__button {
+.wp-block-file .wp-block-file__button {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -3999,17 +3999,19 @@ body *[aria-invalid="true"] {
   padding-left: 17px;
   padding-right: 17px;
   padding-top: 8px;
+  font-size: .8em;
+  padding: .3em .8em;
 }
 
-.wp-block-file__button.is-external-link::after {
+.wp-block-file .wp-block-file__button.is-external-link::after {
   display: none;
 }
 
-.wp-block-file__button svg {
+.wp-block-file .wp-block-file__button svg {
   margin-left: 2rem;
 }
 
-.wp-block-file__button:hover, .wp-block-file__button:focus {
+.wp-block-file .wp-block-file__button:hover, .wp-block-file .wp-block-file__button:focus {
   background-color: #2a2d3e;
   border-color: #2a2d3e;
   color: white;
