@@ -3382,8 +3382,8 @@ ul.tags li {
   margin-right: 10px;
   margin-top: 0;
   padding-left: 0;
-  /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
-  /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
+  /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class */
+  /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class */
 }
 
 ul.tags li a:not(.button):not(.no-text-link) {
