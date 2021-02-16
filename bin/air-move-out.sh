@@ -46,10 +46,6 @@ mkdir -p ~/air-temp/template-parts/footer
 sudo mv ~/Projects/airdev/content/themes/air-light/template-parts/header/demo-content.php ~/air-temp/template-parts/header/
 sudo mv ~/Projects/airdev/content/themes/air-light/template-parts/footer/demo-content.php ~/air-temp/template-parts/footer/
 
-# Remove custom stuff that are not part of an official WordPress theme in WP theme directory
-rm ~/Projects/airdev/content/themes/air-light/inc/includes/taxonomy.php
-rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
-
 # Moving to bin dir
 cd ~/air-temp/bin
 
