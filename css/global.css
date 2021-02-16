@@ -2826,6 +2826,12 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   width: auto;
 }
 
+.gutenberg-content .wp-block-image > figure.alignleft, .gutenberg-content .wp-block-image > figure.alignright {
+  /* stylelint-disable csstools/value-no-unknown-custom-properties */
+  max-width: var(--child-img-width);
+  /* stylelint-enable */
+}
+
 .gutenberg-content .wp-block-image > figure.alignleft figcaption, .gutenberg-content .wp-block-image > figure.alignright figcaption, .gutenberg-content .wp-block-image > figure.aligncenter figcaption {
   margin-bottom: 2rem;
 }
