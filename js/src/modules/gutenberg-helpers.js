@@ -1,13 +1,11 @@
 // Gutengerg magic for alignright and alignleft images
 const figures = [
-  ...document.querySelectorAll('figure.alignright'),
-  ...document.querySelectorAll('figure.alignleft'),
+  ...document.querySelectorAll('figure'),
 ];
 figures.forEach((figure) => {
   const img = figure.querySelector('img');
   if (typeof img === 'undefined') {
     return;
   }
-  // eslint-disable-next-line no-param-reassign
-  figure.style.width = `${img.clientWidth}px`;
+  figure.style.setProperty('--child-img-width', `${img.clientWidth}px`);
 });
