@@ -459,12 +459,6 @@ This is an option we at Dude use. Please note: This way requires many packages a
 **Search**: Air-light<br>
 **Replace with:** *yourprojectname*
 
-**Search**: air_light<br>
-**Replace with:** *yourprojectname*
-
-**Search**: Air_light<br>
-**Replace with:** *yourprojectname*
-
 7. Get [devpackages](https://github.com/digitoimistodude/devpackages) and extract them to your **project root** folder.
 8. Edit all paths in [these files](https://github.com/digitoimistodude/devpackages/search?q=THEMENAME) based on your setup
 9. Run npm install on your **project root** folder from Terminal
