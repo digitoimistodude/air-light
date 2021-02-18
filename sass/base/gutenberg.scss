@@ -17,8 +17,17 @@
 // Gutenberg editor style specific variables
 @import '../gutenberg/variables/fonts';
 
+// Components needed by gutenberg
+@import '../components/button';
+@import '../components/button-size-small';
+@import '../components/button-size-medium';
+@import '../components/button-size-large';
+@import '../components/button-style-ghost';
+
 // Gutenberg blocks
 @import '../gutenberg/boxed';
+@import '../gutenberg/button';
+@import '../gutenberg/button-file';
 
 // Fix alignleft and alignright figcaption width
 // Hack for achieving the same than in gutenberg-helpers.js

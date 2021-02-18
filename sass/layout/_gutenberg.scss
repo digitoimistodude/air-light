@@ -543,11 +543,11 @@ ul.tags {
       transition: all $transition-duration;
     }
 
-    /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
+    /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class */
     a:not(.button):not(.no-text-link):hover,
     a:not(.button):not(.no-text-link):focus {
-      border-color: rgba($color-blog-tags, .4);
+      border-color: $color-tag-borders-hover;
     }
-    /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class, sh-waqar/declaration-use-variable */
+    /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class */
   }
 }

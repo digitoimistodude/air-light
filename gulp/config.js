@@ -35,7 +35,7 @@ module.exports = {
     opts: {
       logLevel: 'debug',
       injectChanges: true,
-      proxy: 'airdev.test',
+      proxy: 'https://airdev.test',
       browser: 'Google Chrome',
       open: false,
       notify: true,
