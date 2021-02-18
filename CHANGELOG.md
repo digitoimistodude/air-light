@@ -1,3 +1,8 @@
+### 6.7.1: 2021-02-18
+
+* Accessibility: Add required outline parameters for global links, [ab54efc](https://github.com/digitoimistodude/air-light/commit/ab54efc820bfd94a6a15ea492e143971c54ea684)
+* Add button components, [#62](https://github.com/digitoimistodude/air-light/pull/62)
+
 ### 6.7.0: 2021-02-18
 
 * Add correct protocol to newtheme script final output
