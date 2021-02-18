@@ -87,9 +87,16 @@
     opacity: 1;
   }
 
+  .global-link {
+    transition: none;
+  }
+
   // A bit better focus for large elements
   a.global-link:focus {
-    outline-width: 5px;
+    outline-color: $color-outline-overlay-items;
+    outline-offset: -1px;
+    outline-style: solid;
+    outline-width: 4px;
   }
 }
 
@@ -129,3 +136,12 @@ a.is-external-link.no-external-link-indicator::after {
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
   // Your animations here
 }
+
+// Define here the upsell blocks that have overlay link areas
+// inside them
+// These should always have overflow visible, because otherwise
+// the outline will not be visible outside the element
+// .block.block-three-upsells .container,
+// body .block .container .col {
+//   overflow: visible;
+// }

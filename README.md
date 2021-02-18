@@ -449,7 +449,7 @@ This is an option we at Dude use. Please note: This way requires many packages a
 1. Get the cleaned up version of Air-light from [WordPress Theme Directory](https://wordpress.org/themes/air-light/), download zip by clicking the blue Download button
 2. Rename the theme folder from air-light to *yourprojectname* (your project name here all lowercase without spaces or special characters)
 3. Move theme folder under your WordPress installation
-4. Download Air-light [package.json (right click here and select Save as...)](https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json), save it to your theme's folder root
+4. Download Air-light [package.json (right click here and select Save Link As...)](https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json), save it to your theme's folder root
 5. Open Terminal, cd into theme folder and run `npm install` inside the theme folder
 6. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run following search & replaces (note: *yourprojectname* is should always be lowercase without special characters):
 
@@ -459,16 +459,14 @@ This is an option we at Dude use. Please note: This way requires many packages a
 **Search**: Air-light<br>
 **Replace with:** *yourprojectname*
 
-**Search**: air_light<br>
-**Replace with:** *yourprojectname*
+7. If you use custom post types, you need to copy over [post-type.php](https://raw.githubusercontent.com/digitoimistodude/air-light/master/inc/includes/post-type.php (right click here and select Save Link As...)) and [taxonomy.php (right click here and select Save Link As...)](https://raw.githubusercontent.com/digitoimistodude/air-light/master/inc/includes/taxonomy.php) since they are not allowed in WordPress Theme Directory thus not included in the cleaned up version of the theme.
 
-**Search**: Air_light<br>
-**Replace with:** *yourprojectname*
+#### Optional for compiling styles and scripts (Please [see this support forum answer](https://wordpress.org/support/topic/many-problems-15/#post-14026724)):
 
-7. Get [devpackages](https://github.com/digitoimistodude/devpackages) and extract them to your **project root** folder.
-8. Edit all paths in [these files](https://github.com/digitoimistodude/devpackages/search?q=THEMENAME) based on your setup
-9. Run npm install on your **project root** folder from Terminal
-10. Activate theme on wp-admin, run `gulp` and start coding
+8. Get [devpackages](https://github.com/digitoimistodude/devpackages) and extract them to your **project root** folder.
+9. Edit all paths in [these files](https://github.com/digitoimistodude/devpackages/search?q=THEMENAME) based on your setup
+10. Run npm install on your **project root** folder from Terminal
+11. Activate theme on wp-admin, run `gulp` and start coding (or alternatively do changes and then run single tasks like `gulp styles` or `gulp js`)
 
 ### Contributing
 

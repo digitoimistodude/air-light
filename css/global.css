@@ -423,8 +423,15 @@ template {
   opacity: 1;
 }
 
+[data-whatinput="keyboard"] .global-link {
+  transition: none;
+}
+
 [data-whatinput="keyboard"] a.global-link:focus {
-  outline-width: 5px;
+  outline-color: #ff848a;
+  outline-offset: -1px;
+  outline-style: solid;
+  outline-width: 4px;
 }
 
 a.is-external-link {

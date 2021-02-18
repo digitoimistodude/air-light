@@ -145,7 +145,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="6.6.7"
+newestair="6.7.0"
 newestwordpress="5.5"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
@@ -203,4 +203,4 @@ echo "${yellow}Running project gulp styles once...${txtreset}"
 cd ${PROJECTPATH}
 gulp styles
 
-echo "${boldgreen}All done! Theme generated. Go to $PROJECTNAME.test/wp/wp-admin/themes.php and activate your theme, then run gulp watch in project root and start coding! Your project can be found at $PROJECTPATH and your theme can be found at $PROJECTTHEMEPATH${txtreset}"
+echo "${boldgreen}All done! Theme generated. Go to https://$PROJECTNAME.test/wp/wp-admin/themes.php and activate your theme, then run gulp watch in project root and start coding! Your project can be found at $PROJECTPATH and your theme can be found at $PROJECTTHEMEPATH${txtreset}"
