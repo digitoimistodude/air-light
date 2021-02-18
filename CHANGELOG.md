@@ -1,3 +1,6 @@
+### 6.7.0: 2021-02-18
+
+* Add correct protocol to newtheme script final output
 ### 6.6.9: 2021-02-16
 
 * Update documentation about installing Air-light on any development environment
