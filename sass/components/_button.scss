@@ -1,5 +1,4 @@
-@mixin button($color: $color-white, $background: $color-darkgrey, $radius: 3px, $border-width: 2px, $font-weight: 700, $size: default, $ghost: false) {
-  // These are the settings that are always on and cannot be overridden
+@mixin button($color: $color-white, $background: $color-darkgrey, $radius: 3px, $border-width: 2px, $font-weight: 700, $arrow: false) {
   appearance: none;
   background-color: $background;
   border: 0;
@@ -8,9 +7,14 @@
   cursor: pointer;
   display: inline-block;
   font-family: $font-paragraphs;
+  font-size: var(--font-size-small);
   font-weight: $font-weight;
   line-height: 1;
   margin-bottom: 0;
+  padding-bottom: 12px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 12px;
   position: relative;
   text-decoration: none;
   transition: 150ms linear background;
@@ -24,80 +28,16 @@
   /* stylelint-enable */
 
   // Arrow icon
-  svg {
-    margin-left: 2rem;
-  }
-
-  @if $size == 'small' {
-    font-size: var(--font-size-small);
-    padding-bottom: 8px;
-    padding-left: 17px;
-    padding-right: 17px;
-    padding-top: 8px;
-
-    &:hover,
-    &:focus {
-      background-color: $color-buttons-hover;
-      border-color: $color-buttons-hover;
-      color: choose-contrast-color($color-buttons-hover);
+  @if $arrow {
+    svg {
+      margin-left: 2rem;
     }
   }
 
-  @else if $size == 'medium' {
-    font-size: var(--font-size-medium);
-    padding-bottom: 14px;
-    padding-left: 27px;
-    padding-right: 27px;
-    padding-top: 14px;
-
-    &:hover,
-    &:focus {
-      background-color: $color-buttons-hover;
-      border-color: $color-buttons-hover;
-      color: choose-contrast-color($color-buttons-hover);
-    }
-  }
-
-  @else if $size == 'large' {
-    font-size: var(--font-size-extra-large);
-    padding-bottom: 19px;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 19px;
-
-    &:hover,
-    &:focus {
-      background-color: $color-buttons-hover;
-      border-color: $color-buttons-hover;
-      color: choose-contrast-color($color-buttons-hover);
-    }
-  }
-
-  @else {
-    font-size: var(--font-size-small);
-    padding-bottom: 12px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 12px;
-
-    &:hover,
-    &:focus {
-      background-color: $color-buttons-hover;
-      border-color: $color-buttons-hover;
-      color: choose-contrast-color($color-buttons-hover);
-    }
-  }
-
-  @if $ghost {
-    background-color: transparent;
-    border: $border-width solid $background;
-    color: $background;
-
-    &:focus,
-    &:hover {
-      background-color: $color-buttons-hover;
-      border-color: $color-buttons-hover;
-      color: choose-contrast-color($color-buttons-hover);
-    }
+  &:hover,
+  &:focus {
+    background-color: $color-buttons-hover;
+    border-color: $color-buttons-hover;
+    color: choose-contrast-color($color-buttons-hover);
   }
 }

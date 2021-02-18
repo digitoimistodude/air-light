@@ -36,20 +36,20 @@ $border-width-inputs: 2px;
 
     // Button styles
     &.button-ghost {
-      @include button($ghost: true);
+      @include button-style-ghost();
     }
 
     // Button sizes
     &.button-small {
-      @include button($size: small);
+      @include button-size-small();
     }
 
     &.button-medium {
-      @include button($size: medium);
+      @include button-size-medium();
     }
 
     &.button-large {
-      @include button($size: large);
+      @include button-size-large();
     }
   }
 }
