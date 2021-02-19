@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-02-19 15:43:33
+ * @Last Modified time: 2021-02-19 15:47:59
  */
 
 namespace Air_Light;
@@ -104,13 +104,13 @@ function enqueue_polyfills() {
  * Returns the built asset filename and path depending on
  * current environment.
  *
- * @param string $name File name with the extension
+ * @param string $filename File name with the extension
  * @return string file and path of the asset file
  */
 function get_asset_file( $filename ) {
   $env = 'development' === wp_get_environment_type() && ! isset( $_GET['load_production_builds'] ) ? 'dev' : 'prod';
 
-  $filetype = pathinfo($filename)['extension'];
+  $filetype = pathinfo( $filename )['extension'];
 
   return "${filetype}/${env}/${filename}";
 }
