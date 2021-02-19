@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {

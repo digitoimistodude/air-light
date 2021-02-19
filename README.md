@@ -314,7 +314,7 @@ From 4.7.1 air-light has a lazy loading image features for background images and
 
 #### Structure
 
-All .js files in `/js/src/*` is built to `/js/dist/` with the same name. The main scripts file loaded in front end is `/js/src/front-end.js`.
+All .js files in `/js/src/*` is built to production bundles in `/js/prod/` folder and development bundles in `/js/dev/` folder with the same name and loaded corresponding to the WP_ENV environment variable. The production scripts can be loaded on development by using `?load_production_builds` URL parameter. The main scripts file loaded in front end is `/js/src/front-end.js`.
 
 If you want to add a piece of custom JS, create a file under `/js/src/modules/` and import or require it in `/js/src/front-end.js`. If you need a admin-specific JS, add a `/js/src/admin.js` and then enqueue `/js/dist/admin.js` with `enqueue_admin_scripts`
 
@@ -472,7 +472,7 @@ This is an option we at Dude use. Please note: This way requires many packages a
 
 If you have ideas about the theme or spot an issue, please let us know. Before contributing ideas or reporting an issue about "missing" features or things regarding to the nature of that matter, please read [Please note](#please-note-before-using) section. Thank you very much.
 
-If you want to contribute to the development, please follow these instructions: 
+If you want to contribute to the development, please follow these instructions:
 
 1. Create a fork of this repository (or new branch if you have editor/maintainer permissions)
 2. Make your changes

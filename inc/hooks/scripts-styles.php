@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 19:40:44
+ * @Last Modified time: 2021-02-19 14:50:05
  */
 
 namespace Air_Light;
@@ -26,18 +26,23 @@ function move_jquery_into_footer( $wp_scripts ) {
  * Enqueue scripts and styles.
  */
 function enqueue_theme_scripts() {
-  if ( 'development' === getenv( 'WP_ENV' ) ) {
-    $air_light_template = 'global';
-  } else {
-    $air_light_template = 'global.min';
-  }
 
-  // Styles.
-  wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_light_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_light_template}.css" ) ) );
+  // Enqueue global.css
+  wp_enqueue_style(
+    'styles',
+    get_theme_file_uri( get_asset_file( 'global', 'css' ) ),
+    [],
+    filemtime( get_theme_file_path( get_asset_file( 'global', 'css' ) ) )
+  );
 
-  // Scripts.
+  // Enqueue jquery and front-end.js
   wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/dist/front-end.js' ), array(), filemtime( get_theme_file_path( 'js/dist/front-end.js' ) ), true );
+  wp_enqueue_script(
+    'scripts',
+    get_theme_file_uri( get_asset_file( 'front-end', 'js' ) ),
+    [],
+    filemtime( get_theme_file_path( get_asset_file( 'front-end', 'js' ) ) ), true
+  );
 
   // Required comment-reply script
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -71,7 +76,6 @@ function enqueue_theme_scripts() {
  * Load polyfills for legacy browsers
  */
 function enqueue_polyfills() {
-  $legacy_scripts = 'js/dist/legacy.js';
   // Include polyfills
   $script = '
   var supportsES6 = (function () {
@@ -82,16 +86,40 @@ function enqueue_polyfills() {
     return false;
   }
   }());
-  var legacyScript ="' . esc_url( get_theme_file_uri( $legacy_scripts ) ) . '";
+  var legacyScript ="' . esc_url( get_theme_file_uri( get_asset_file( 'legacy', 'js' ) ) ) . '";
   if (!supportsES6) {
     var script = document.createElement("script");
     script.src = legacyScript;
     document.head.appendChild(script);
   }';
 
-  if ( file_exists( get_theme_file_path( $legacy_scripts ) ) ) {
-    wp_register_script( 'air_light_legacy', '', [], filemtime( get_theme_file_path( $legacy_scripts ) ), false );
+  if ( file_exists( get_theme_file_path( get_asset_file( 'legacy', 'js' ) ) ) ) {
+    wp_register_script( 'air_light_legacy', '', [], filemtime( get_theme_file_path( get_asset_file( 'legacy', 'js' ) ) ), false );
     wp_enqueue_script( 'air_light_legacy' );
     wp_add_inline_script( 'air_light_legacy', $script, true );
+  }
+}
+
+/**
+ * Returns the built asset filename and path depending on
+ * current environment.
+ *
+ * @param string $name File name without file extension
+ * @param string $type File type (as in extension)
+ * @return string file and path of the asset file
+ */
+function get_asset_file( $name, $type ) {
+  $is_dev = 'development' === wp_get_environment_type() && ! isset( $_GET['load_production_builds'] );
+
+  if ( 'css' === $type ) {
+    $filename = $is_dev ? $name . '.css' : $name . '.min.css';
+
+    return 'css/' . $filename;
+  }
+
+  if ( 'js' === $type ) {
+    $path = $is_dev ? 'js/dev/' : 'js/prod/';
+
+    return $path . $name . '.js';
   }
 }
