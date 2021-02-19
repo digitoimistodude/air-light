@@ -11,19 +11,31 @@ const config = require('../config');
 const {
   handleError
 } = require('../helpers/handle-errors.js');
-const webpackConfig = require('../webpack.config.js');
+const webpackConfigProduction = require('../webpack.config.prod.js');
+const webpackConfigDevelopment = require('../webpack.config.dev.js');
 const named = require('vinyl-named');
 const eslint = require('gulp-eslint');
 
 // Task
 function js() {
-  return src(config.js.main)
-    .pipe(eslint())
-    .pipe(eslint.format())
+  const lintedJs = src(config.js.src)
+  .pipe(eslint())
+  .pipe(eslint.format());
+
+  const production = lintedJs
     .pipe(named())
-    .pipe(webpack(webpackConfig))
+    .pipe(webpack(webpackConfigProduction))
     .on('error', handleError())
-    .pipe(dest(config.js.dest));
+    .pipe(dest(config.js.production));
+
+  const development = lintedJs
+    .pipe(named())
+    .pipe(webpack(webpackConfigDevelopment))
+    .on('error', handleError())
+    .pipe(dest(config.js.development));
+
+
+  return { production, development };
 }
 
 exports.js = js;
