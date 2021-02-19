@@ -46,7 +46,10 @@ mkdir -p ~/air-temp/template-parts/footer
 sudo mv ~/Projects/airdev/content/themes/air-light/template-parts/header/demo-content.php ~/air-temp/template-parts/header/
 sudo mv ~/Projects/airdev/content/themes/air-light/template-parts/footer/demo-content.php ~/air-temp/template-parts/footer/
 
-# Remove custom stuff that are not part of an official WordPress theme in WP theme directory
+# Remove custom stuff that are not part of an official WordPress theme in WP theme directory,
+# Because:
+# REQUIRED: The theme uses the register_taxonomy() function, which is plugin-territory functionality.
+# REQUIRED: The theme uses the register_post_type() function, which is plugin-territory functionality.
 rm ~/Projects/airdev/content/themes/air-light/inc/includes/taxonomy.php
 rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
 

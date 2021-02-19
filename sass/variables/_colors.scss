@@ -22,6 +22,7 @@ $color-blockquotes: #666;
 $color-blog-tags: #061629;
 $color-tags-and-search-items: #eaf1f8;
 $color-tag-borders: rgba($color-blog-tags, .1);
+$color-tag-borders-hover: rgba($color-blog-tags, .4);
 $color-cat-borders: rgba($color-blog-tags, .2);
 $color-code-blocks: #c7254e;
 $color-code-blocks-background: #f9f2f4;
@@ -39,3 +40,6 @@ $color-disabled: #bbb;
 $color-captions: rgba(#4b4b5a, .9);
 $color-buttons: $color-black;
 $color-buttons-hover: $color-main;
+
+// Accessibility
+$color-outline-overlay-items: #ff848a;
