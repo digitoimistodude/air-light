@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 16:27:13
+ * @Last Modified time: 2021-02-19 14:20:44
  */
 
 namespace Air_Light;
@@ -44,7 +44,7 @@ function the_module( $post_id ) {
    *  If it in cache, we get content to variable. If not in cache, put it in there and to variable.
    *  In both cases, variable is returned in the end of this functon.
    */
-  if ( $enable_caching && ! \array_key_exists( $module_name, $excluded_modules ) && \getenv( 'WP_ENV' ) !== 'development' ) {
+  if ( $enable_caching && ! \array_key_exists( $module_name, $excluded_modules ) && 'development' !== wp_get_environment_type() ) {
     $module_output = load_module_from_cache( $module_cache_key, $module_name, $module_path );
   } else {
     // module is exluded from cache or we are in development envarioment
