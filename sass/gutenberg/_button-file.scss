@@ -1,0 +1,5 @@
+.wp-block-file .wp-block-file__button {
+  @include button-size-small();
+  font-size: .8em;
+  padding: .3em .8em;
+}

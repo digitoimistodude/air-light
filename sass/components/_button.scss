@@ -1,0 +1,43 @@
+@mixin button($color: $color-white, $background: $color-darkgrey, $radius: 3px, $border-width: 2px, $font-weight: 700, $arrow: false) {
+  appearance: none;
+  background-color: $background;
+  border: 0;
+  border-radius: $radius;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-paragraphs;
+  font-size: var(--font-size-small);
+  font-weight: $font-weight;
+  line-height: 1;
+  margin-bottom: 0;
+  padding-bottom: 12px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 12px;
+  position: relative;
+  text-decoration: none;
+  transition: 150ms linear background;
+  width: auto;
+
+  // Buttons usually already have arrows
+  /* stylelint-disable a11y/no-display-none */
+  &.is-external-link::after {
+    display: none;
+  }
+  /* stylelint-enable */
+
+  // Arrow icon
+  @if $arrow {
+    svg {
+      margin-left: 2rem;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-buttons-hover;
+    border-color: $color-buttons-hover;
+    color: choose-contrast-color($color-buttons-hover);
+  }
+}
