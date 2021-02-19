@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-02-19 12:03:30
+ * @Last Modified time: 2021-02-19 12:17:00
  */
 
 namespace Air_Light;
@@ -82,7 +82,14 @@ function enqueue_theme_scripts() {
  * Load polyfills for legacy browsers
  */
 function enqueue_polyfills() {
-  $legacy_scripts = 'js/dist/legacy.js';
+  if ( 'development' === getenv( 'WP_ENV' ) && ! isset( $_GET['load_production_builds'] ) ) {
+    $js_dir = 'js/dev/';
+  } else {
+    $js_dir = 'js/prod/';
+  }
+
+  $legacy_scripts = $js_dir . 'legacy.js';
+
   // Include polyfills
   $script = '
   var supportsES6 = (function () {
