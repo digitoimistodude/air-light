@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-02-19 12:17:00
+ * @Last Modified time: 2021-02-19 12:47:40
  */
 
 namespace Air_Light;
@@ -45,9 +45,9 @@ function enqueue_theme_scripts() {
   wp_enqueue_script( 'jquery-core' );
   wp_enqueue_script(
     'scripts',
-    get_theme_file_uri( $js_dir .'front-end.js' ),
+    get_theme_file_uri( $js_dir . 'front-end.js' ),
     [],
-    filemtime( get_theme_file_path( $js_dir .'front-end.js' ) ), true
+    filemtime( get_theme_file_path( $js_dir . 'front-end.js' ) ), true
   );
 
   // Required comment-reply script
