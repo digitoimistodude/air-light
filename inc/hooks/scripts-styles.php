@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 19:40:44
+ * @Last Modified time: 2021-02-19 12:03:30
  */
 
 namespace Air_Light;
@@ -26,18 +26,29 @@ function move_jquery_into_footer( $wp_scripts ) {
  * Enqueue scripts and styles.
  */
 function enqueue_theme_scripts() {
-  if ( 'development' === getenv( 'WP_ENV' ) ) {
+  if ( 'development' === getenv( 'WP_ENV' ) && ! isset( $_GET['load_production_builds'] ) ) {
     $air_light_template = 'global';
+    $js_dir = 'js/dev/';
   } else {
     $air_light_template = 'global.min';
+    $js_dir = 'js/prod/';
   }
 
   // Styles.
-  wp_enqueue_style( 'styles', get_theme_file_uri( "css/{$air_light_template}.css" ), array(), filemtime( get_theme_file_path( "css/{$air_light_template}.css" ) ) );
+  wp_enqueue_style(
+    'styles',
+    get_theme_file_uri( "css/{$air_light_template}.css" ),
+    [],
+    filemtime( get_theme_file_path( "css/{$air_light_template}.css" ) ) );
 
   // Scripts.
   wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script( 'scripts', get_theme_file_uri( 'js/dist/front-end.js' ), array(), filemtime( get_theme_file_path( 'js/dist/front-end.js' ) ), true );
+  wp_enqueue_script(
+    'scripts',
+    get_theme_file_uri( $js_dir .'front-end.js' ),
+    [],
+    filemtime( get_theme_file_path( $js_dir .'front-end.js' ) ), true
+  );
 
   // Required comment-reply script
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
