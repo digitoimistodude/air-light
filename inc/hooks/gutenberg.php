@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 16:36:55
+ * @Last Modified time: 2021-02-19 13:34:45
  *
  * @package air-light
  */
@@ -45,9 +45,6 @@ function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
  * Enqueue block editor JavaScript and CSS
  */
 function register_block_editor_assets() {
-  // Make paths variables so we don't write them twice
-  $editor_scripts = 'js/dist/block.js';
-  $editor_styles = 'css/gutenberg.min.css';
 
   // Dependencies
   $dependencies = array(
@@ -60,18 +57,18 @@ function register_block_editor_assets() {
   // Enqueue the bundled block JS file
   wp_enqueue_script(
     'block-editor-js',
-    get_theme_file_uri( $editor_scripts, __FILE__ ),
+    get_theme_file_uri( get_asset_file( 'block', 'js' ) ),
     $dependencies,
-    filemtime( get_theme_file_path( $editor_scripts ) ),
+    filemtime( get_theme_file_path( get_asset_file( 'block', 'js' ) ) ),
     'all'
   );
 
   // Enqueue optional editor only styles
   wp_enqueue_style(
     'block-editor-css',
-    get_theme_file_uri( $editor_styles, __FILE__ ),
+    get_theme_file_uri( get_asset_file( 'gutenberg', 'css' ) ),
     $dependencies,
-    filemtime( get_theme_file_path( $editor_styles ) ),
+    filemtime( get_theme_file_path( get_asset_file( 'gutenberg', 'css' ) ) ),
     'all'
   );
 }
@@ -84,5 +81,5 @@ function setup_editor_styles() {
   add_theme_support( 'editor-styles' );
 
   // Enqueue editor styles.
-  add_editor_style( get_theme_file_uri( 'css/gutenberg.min.css' ) );
+  add_editor_style( get_theme_file_uri( get_asset_file( 'gutenberg', 'css' ) ) );
 }
