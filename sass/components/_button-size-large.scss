@@ -1,0 +1,7 @@
+@mixin button-size-large() {
+  font-size: var(--font-size-extra-large);
+  padding-bottom: 19px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 19px;
+}

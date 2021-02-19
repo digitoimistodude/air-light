@@ -4,11 +4,9 @@
 // the Gravity Forms styles out of the box.
 
 // Variables
-$border-radius: 3px;
-$border-width: 2px;
-$button-font-weight: 700;
 $background-inputs: $color-white;
 $color-checkboxes: $color-paragraphs;
+$border-width-inputs: 2px;
 
 // CSS Variables for radios and checkboxes
 :root {
@@ -34,61 +32,24 @@ $color-checkboxes: $color-paragraphs;
   input[type="reset"],
   input[type="submit"],
   input[type="button"] {
-    appearance: none;
-    background-color: $color-darkgrey;
-    border: 0;
-    border-radius: $border-radius;
-    color: $color-white;
-    cursor: pointer;
-    display: inline-block;
-    font-family: $font-paragraphs;
-    font-size: var(--font-size-small);
-    font-weight: $button-font-weight;
-    line-height: 1;
-    margin-bottom: 0;
-    padding-bottom: 12px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 12px;
-    position: relative;
-    text-decoration: none;
-    transition: 150ms linear background;
-    width: auto;
+    @include button();
 
     // Button styles
     &.button-ghost {
-      background-color: transparent;
-      border: $border-width solid $color-buttons;
-      color: $color-buttons;
+      @include button-style-ghost();
     }
 
     // Button sizes
     &.button-small {
-      font-size: var(--font-size-small);
-      padding-bottom: 12px;
-      padding-left: 25px;
-      padding-right: 25px;
-      padding-top: 12px;
+      @include button-size-small();
     }
 
     &.button-medium {
-      font-size: var(--font-size-medium);
-      padding-bottom: 15px;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 15px;
+      @include button-size-medium();
     }
 
     &.button-large {
-      font-size: var(--font-size-extra-large);
-      padding: 21px 35px;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: $color-buttons-hover;
-      border-color: $color-buttons-hover;
-      color: $color-white;
+      @include button-size-large();
     }
   }
 }
@@ -101,7 +62,7 @@ select {
   background-position: right 0 center;
   background-repeat: no-repeat;
   background-size: 40px auto;
-  border: $border-width solid $color-border-forms;
+  border: $border-width-inputs solid $color-border-forms;
   border-radius: 0;
   color: $color-paragraphs;
   font-size: var(--font-size-medium);
@@ -129,7 +90,7 @@ input[type="search"] {
   @extend %default;
   appearance: none;
   background-color: $background-inputs;
-  border: solid $border-width $color-border-forms;
+  border: solid $border-width-inputs $color-border-forms;
   border-radius: 3px;
   box-sizing: border-box;
   font-family: $font-paragraphs;
@@ -148,7 +109,7 @@ input[type="search"] {
 
   &:focus {
     background-color: $background-inputs;
-    border: $border-width solid darken(#d9d9d9, 12%);
+    border: $border-width-inputs solid darken(#d9d9d9, 12%);
     outline: 0;
 
     &::placeholder {
@@ -160,7 +121,7 @@ input[type="search"] {
 
 select:focus {
   background-color: $background-inputs;
-  border: $border-width solid darken(#d9d9d9, 12%);
+  border: $border-width-inputs solid darken(#d9d9d9, 12%);
 }
 
 // Radio buttons and checkboxes

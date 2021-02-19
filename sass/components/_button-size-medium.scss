@@ -1,0 +1,7 @@
+@mixin button-size-medium() {
+  font-size: var(--font-size-medium);
+  padding-bottom: 14px;
+  padding-left: 27px;
+  padding-right: 27px;
+  padding-top: 14px;
+}

@@ -1,0 +1,12 @@
+@mixin button-style-ghost($background: $color-darkgrey, $border-width: 2px) {
+  background-color: transparent;
+  border: $border-width solid $background;
+  color: $background;
+
+  &:focus,
+  &:hover {
+    background-color: $color-buttons-hover;
+    border-color: $color-buttons-hover;
+    color: choose-contrast-color($color-buttons-hover);
+  }
+}
