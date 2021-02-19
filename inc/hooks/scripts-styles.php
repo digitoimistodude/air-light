@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-02-19 13:56:48
+ * @Last Modified time: 2021-02-19 14:50:05
  */
 
 namespace Air_Light;
@@ -109,7 +109,7 @@ function enqueue_polyfills() {
  * @return string file and path of the asset file
  */
 function get_asset_file( $name, $type ) {
-  $is_dev = 'development' === getenv( 'WP_ENV' ) && ! isset( $_GET['load_production_builds'] );
+  $is_dev = 'development' === wp_get_environment_type() && ! isset( $_GET['load_production_builds'] );
 
   if ( 'css' === $type ) {
     $filename = $is_dev ? $name . '.css' : $name . '.min.css';
