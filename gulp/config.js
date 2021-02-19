@@ -52,10 +52,10 @@ module.exports = {
   },
   styles: {
     gutenberg: 'sass/base/gutenberg.scss',
-    main: 'sass/*.scss',
-    src: 'sass/**/*.{sass,scss}',
-    dest: 'css',
-    exclude: ['!' + 'sass/navigation/_burger.scss', '!' + 'sass/base/_normalize.scss', '!' + 'css/global.css', '!' + 'css/global.min.css'],
+    src: 'sass/*.scss',
+    watch: 'sass/**/*.{sass,scss}',
+    development: 'css/dev/',
+    production: 'css/prod/',
     stylelint: {
       opts: {
         fix: false,

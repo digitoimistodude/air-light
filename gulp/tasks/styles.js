@@ -17,14 +17,14 @@ const notify = require('gulp-notify');
 const mqpacker = require('mqpacker');
 
 function styles(done) {
-  return src(config.styles.main, config.styles.exclude)
+  return src(config.styles.src)
     .pipe(sass(config.styles.opts.development))
 
     // Run PostCSS plugins
     .pipe(postcss([autoprefixer(), mqpacker()]))
 
     // Save expanded version for development
-    .pipe(dest(config.styles.dest))
+    .pipe(dest(config.styles.development))
 
     // Production settings
     .pipe(sass(config.styles.opts.production))
@@ -38,8 +38,7 @@ function styles(done) {
       }), )
 
     // Save minified version for production
-    .pipe(rename(config.rename.min))
-    .pipe(dest(config.styles.dest))
+    .pipe(dest(config.styles.production))
 
     // Inject changes to browser
     .pipe(bs.stream());

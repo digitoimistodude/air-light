@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-02-19 13:34:45
+ * @Last Modified time: 2021-02-19 15:42:38
  *
  * @package air-light
  */
@@ -81,5 +81,5 @@ function setup_editor_styles() {
   add_theme_support( 'editor-styles' );
 
   // Enqueue editor styles.
-  add_editor_style( get_theme_file_uri( get_asset_file( 'gutenberg', 'css' ) ) );
+  add_editor_style( get_theme_file_uri( get_asset_file( 'gutenberg.css' ) ) );
 }

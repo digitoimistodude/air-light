@@ -14,7 +14,7 @@
   "rules": {
     "csstools/value-no-unknown-custom-properties": [true, {
       "importFrom": [
-        "css/global.css"
+        "css/dev/global.css"
       ]
     }],
     "sh-waqar/declaration-use-variable": [
