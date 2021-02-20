@@ -61,7 +61,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
     } else {
       $class_names = $value = '';
       $classes     = empty( $item->classes ) ? array() : (array) $item->classes;
-      $classes[]   = 'greencare-menu-item menu-item-' . $item->ID;
+      $classes[]   = 'air-light-menu-item menu-item-' . $item->ID;
       $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
       if ( $args->has_children && isset( $args->has_dropdown ) && $args->has_dropdown ) {

@@ -1,3 +1,7 @@
+### 6.7.3: 2021-02-20
+
+* Fix mistake in CSS class name
+
 ### 6.7.2: 2021-02-19
 
 * Build production and development JS builds in gulp watch, [#63](https://github.com/digitoimistodude/air-light/pull/63)
