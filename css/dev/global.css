@@ -3804,7 +3804,6 @@ body *[aria-invalid="true"] {
   }
   .gutenberg-content > blockquote,
   .gutenberg-content > blockquote.wp-block-quote {
-    margin-left: 2rem;
     padding: 4rem 4rem 4rem 2rem;
   }
   .gutenberg-content > * .twitter-tweet,
@@ -4531,6 +4530,11 @@ body *[aria-invalid="true"] {
   }
   .gutenberg-content ul.tags {
     padding-left: 0;
+  }
+  .gutenberg-content > blockquote,
+  .gutenberg-content > blockquote.wp-block-quote {
+    padding: 3.5rem 2rem;
+    width: calc(100% - 4rem);
   }
   .wp-caption {
     /* stylelint-disable declaration-no-important */

@@ -270,12 +270,16 @@
     margin-top: 4rem;
     padding: 3.5rem 6rem;
 
+    @media (max-width: $width-max-article + 40px) {
+      padding: 3.5rem 2rem;
+      width: calc(100% - 4rem);
+    }
+
     cite {
       text-align: left;
     }
 
     @media (max-width: $container-mobile) {
-      margin-left: 2rem;
       padding: 4rem 4rem 4rem 2rem;
     }
 
