@@ -328,7 +328,7 @@
       max-width: $width-max-article !important;
       width: 100% !important;
 
-      @media (max-width: 800px) {
+      @media (max-width: $width-max-article + 40px) {
         padding-left: 4rem !important;
         padding-right: 4rem !important;
       }
@@ -355,7 +355,7 @@
       max-width: $width-max-article !important;
       width: 100% !important;
 
-      @media (max-width: 800px) {
+      @media (max-width: $width-max-article + 40px) {
         padding-left: 4rem !important;
         padding-right: 4rem !important;
       }

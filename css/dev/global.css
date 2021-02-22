@@ -4536,14 +4536,6 @@ body *[aria-invalid="true"] {
     padding: 3.5rem 2rem;
     width: calc(100% - 4rem);
   }
-  .wp-caption {
-    /* stylelint-disable declaration-no-important */
-    width: 100% !important;
-    /* stylelint-enable */
-  }
-}
-
-@media (max-width: 800px) {
   .gutenberg-content > * .twitter-tweet,
   .gutenberg-content > * .instagram-media,
   .gutenberg-content > * .wp-video,
@@ -4556,6 +4548,11 @@ body *[aria-invalid="true"] {
   .gutenberg-content > *.twitter-tweet, .gutenberg-content > *.instagram-media, .gutenberg-content > *.wp-video {
     padding-left: 4rem !important;
     padding-right: 4rem !important;
+  }
+  .wp-caption {
+    /* stylelint-disable declaration-no-important */
+    width: 100% !important;
+    /* stylelint-enable */
   }
 }
 
