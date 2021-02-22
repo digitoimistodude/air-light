@@ -58,11 +58,11 @@
   // Forced to use display none here, because of inline styles
   /* stylelint-disable a11y/no-display-none */
   .mfp-arrow-left {
-    background-image: url('../svg/left-arrow.svg');
+    background-image: url('../../svg/left-arrow.svg');
 
     &:hover,
     &:focus {
-      background-image: url('../svg/left-arrow.svg');
+      background-image: url('../../svg/left-arrow.svg');
     }
 
     &::before,
@@ -75,11 +75,11 @@
   // Forced to use display none here, because of inline styles
   /* stylelint-disable a11y/no-display-none */
   .mfp-arrow-right {
-    background-image: url('../svg/right-arrow.svg');
+    background-image: url('../../svg/right-arrow.svg');
 
     &:hover,
     &:focus {
-      background-image: url('../svg/right-arrow.svg');
+      background-image: url('../../svg/right-arrow.svg');
     }
 
     &::before,

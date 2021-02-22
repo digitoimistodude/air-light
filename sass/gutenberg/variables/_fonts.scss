@@ -63,7 +63,7 @@ $font-weight-headings: 700;
 }
 
 // Self-hosted fonts
-@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-regular', 400);
-@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
-@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700', 700);
-@include fontFace('Archivo', '../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
+@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-regular', 400);
+@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
+@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700', 700);
+@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
