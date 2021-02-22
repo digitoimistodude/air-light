@@ -31,7 +31,8 @@ module.exports = {
     }
   },
   browsersync: {
-    src: ['css/*'],
+    // Important! If src is wrong, styles will not inject
+    src: ['css/**/*'],
     opts: {
       logLevel: 'debug',
       injectChanges: true,
@@ -52,10 +53,10 @@ module.exports = {
   },
   styles: {
     gutenberg: 'sass/base/gutenberg.scss',
-    src: 'sass/*.scss',
+    src: 'sass/**/*.{sass,scss}',
     watch: 'sass/**/*.{sass,scss}',
-    development: 'css/dev/',
-    production: 'css/prod/',
+    development: 'css/dev',
+    production: 'css/prod',
     stylelint: {
       opts: {
         fix: false,
