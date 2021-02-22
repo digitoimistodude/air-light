@@ -31,7 +31,7 @@ module.exports = {
     }
   },
   browsersync: {
-    // Important! If src is wrong, styles will not inject
+    // Important! If src is wrong, styles will not inject to the browser
     src: ['css/**/*'],
     opts: {
       logLevel: 'debug',
