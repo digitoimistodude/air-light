@@ -192,7 +192,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
       }
 
       $fb_output .= '>';
-      $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+      $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">' . esc_html( get_default_localization( 'Add a menu' ) ) . '</a></li>';
       $fb_output .= '</ul>';
 
       if ( $container ) {

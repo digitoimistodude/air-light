@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-02-03 12:04:46
+ * @Last Modified by:   Your name
+ * @Last Modified time: 2021-02-22 19:03:53
  *
  * @package air-light
  */
@@ -29,6 +29,7 @@ add_filter( 'air_helper_pll_register_strings', function() {
 function get_default_localization_strings( $language = 'en' ) {
   $strings = [
     'en'  => [
+      'Add a menu'            => __( 'Add a menu', 'air-light' ),
       'Open main menu'        => __( 'Open main menu', 'air-light' ),
       'Close main menu'       => __( 'Close main menu', 'air-light' ),
       'Main navigation'       => __( 'Main navigation', 'air-light' ),
@@ -45,6 +46,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Search'                => __( 'Search', 'air-light' ),
     ],
     'fi'  => [
+      'Add a menu'            => 'Luo uusi valikko',
       'Open main menu'        => 'Avaa päävalikko',
       'Close main menu'       => 'Sulje päävalikko',
       'Main navigation'       => 'Päävalikko',
