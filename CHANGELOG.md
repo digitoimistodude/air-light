@@ -1,3 +1,14 @@
+### 6.8.0: 2021-02-22
+
+* Localize add a menu label, Fixes #64
+* Change static breakpoints as variables
+* Fix styles not injecting to the browser on save
+* Fix issue with blockquote flowing out of viewport, Fixes #66
+* Fix all relative paths due structure change
+* Add missing default title for a blog post
+* Fix get_asset_file calls on gutenberg script enqueues
+* Check if img element has clientWidth before setting CSS variable
+
 ### 6.7.3: 2021-02-20
 
 * Fix mistake in CSS class name
