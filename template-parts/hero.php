@@ -20,4 +20,7 @@ $featured_image = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbna
 
 <section class="block block-hero<?php echo esc_attr( $block_class ); ?>" style="background-image: url('<?php echo esc_url( $featured_image ); ?>');">
   <div class="shade" aria-hidden="true"></div>
+
+  <!-- <div class="container">
+  </div> -->
 </section>

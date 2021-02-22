@@ -21,6 +21,8 @@ get_header(); ?>
   <section class="block block-single has-light-bg">
     <div class="gutenberg-content">
 
+      <h1><?php the_title(); ?></h1>
+
       <?php the_content();
 
       // Required by WordPress Theme Check, feel free to remove as it's rarely used in starter themes
