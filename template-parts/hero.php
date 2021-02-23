@@ -12,7 +12,7 @@
  */
 
 // Block settings
-$block_class = is_front_page() ? ' block-front' : ' block-' . get_post_type();
+$block_class = is_front_page() ? ' block-hero-front' : ' block-hero-' . get_post_type();
 
 // Featured image
 $featured_image = has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : THEME_SETTINGS['default_featured_image'];
