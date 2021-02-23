@@ -1,3 +1,9 @@
+### 6.8.2: 2021-02-23
+
+* Update release cycle steps to documentation
+* Update bash alias `release_new_air_version`
+* Add packing and cleaning up files part of the same process
+
 ### 6.8.1: 2021-02-23
 
 * Fix block class post type prefix #71

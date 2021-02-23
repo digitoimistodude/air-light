@@ -34,3 +34,10 @@ sudo mv ~/air-temp/template-parts/footer/demo-content.php ~/Projects/airdev/cont
 # Restore repository state before move
 cd ~/Projects/airdev/content/themes/air-light/ && git stash
 git status
+
+echo "
+${boldgreen}Done! Next steps:${txtreset}"
+echo "
+${boldwhite}1. Click the Check it -button: http://airdev.test/wp/wp-admin/themes.php?page=themecheck
+2. Upload: https://wordpress.org/themes/upload/
+${txtreset} "
