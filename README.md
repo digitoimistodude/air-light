@@ -61,8 +61,7 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     2. [Debuggers](#debuggers)
         1. [For Gulp](#for-gulp)
         2. [For your editor](#for-your-editor)
-    3. [Releasing a new version on git and tagging principles (staff only)](#releasing-a-new-version-on-git-and-tagging-principles-staff-only)
-    4. [Releasing a new version on the demo site and WordPress.org (staff only)](#releasing-a-new-version-on-the-demo-site-and-wordpressorg-staff-only)
+    3. [Releasing a new version (staff only)](#releasing-a-new-version-staff-only)
 10. [Notes](#notes)
 
 ### Please note before using
@@ -550,30 +549,30 @@ The installed coding standards are PEAR, Zend, PSR2, MySource, Squiz, PSR1, PSR1
 
 It's also best to have all `stylelint`, `eslint`, `phpcs` living inside your editor. We think [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) is best for this, check out the [plugins inside vscode-settings repository](https://github.com/ronilaukkarinen/vscode-settings) to make sure everything is installed.
 
-### Releasing a new version on git and tagging principles (staff only)
+### Releasing a new version (staff only)
 
-Other than Dude staff should make pull requests, but the senior developers can push new versions directly. Whenever you have updates that are worthwile, commit them with clear commit messages and then do versioning. Every meaningful commit or bunch of commits that form a feature together make the version go up semantically 0.0.1.
+This release cycle will release a new version to:
 
-The tag-release cycle:
+- [GitHub](https://github.com/digitoimistodude/air-light)
+- [WordPress.org](https://wordpress.org/themes/air-light/)
+- [Demo site](https://dudetest.xyz/air/)
 
-1. Commit your changes
-2. Search and replace version in style.css, functions.php, package.json, readme.txt. Remember update Tested up WordPress version as well.
-3. Add a tag with `git tag -a x.x.x` commands
-4. Add description for a feature or just name it by version name x.x.x if the changes are small
-5. `git push -u origin HEAD && git push --tags` (or `p && git push --tags` if you use our term aliases)
+Whenever you have updates that are worthwile, commit them with clear commit messages and then do versioning. Every meaningful commit or bunch of commits that form a feature together make the version go up semantically 0.0.1.
+
+Use bash alias (replace YOURUSERNAME with your own):
+
+``` bash
+alias release_new_air_version='git push && git push --tags && rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} $HOME/Projects/airdev/content/themes/air-light/* YOURUSERNAME@185.87.110.7:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/ && cd $HOME/Projects/airdev/content/themes/air-light/bin && sh air-move-out.sh && sh air-pack.sh'
+```
+
+The release cycle:
+
+1. Commit your changes or merge a pull request
+2. Search and replace version in style.css, functions.php, package.json, readme.txt, CHANGELOG.md. Remember update Tested up WordPress version as well.
+3. Add a tag with `git tag -a x.x.x` commands, add the same description than in CHANGELOG.md
+4. Run `release_new_air_version` (this will take care of packing and will give the URL for uploading to WordPress.org)
 
 That's it, you released a new version!
-
-### Releasing a new version on the demo site and WordPress.org (staff only)
-
-After tagging and releasing version on GitHub, you need to complete these steps:
-
-1. Release the dev version to the server with this magical command (you need to have pubkey auth on for auto-login): `rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} ~/Projects/airdev/content/themes/* you@the_server:/var/www/dudetest.xyz/public_html/air/content/themes/` (consult your team's head developer for credentials)
-2. `cd ~/Projects/airdev/content/themes/bin`
-3. `sh air-move-out.sh`
-4. Go to [Theme Check](http://airdev.test/wp/wp-admin/themes.php?page=themecheck) and click "Check it!" button. Fix possible errors.
-5. `sh air-pack.sh`
-6. Upload *\~/Projects/airdev/content/themes/air-light.zip* to [wordpress.org/themes/upload](https://wordpress.org/themes/upload/)
 
 ### Notes
 
