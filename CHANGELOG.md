@@ -1,3 +1,7 @@
+### 6.8.1: 2021-02-23
+
+* Fix block class post type prefix #71
+
 ### 6.8.0: 2021-02-22
 
 * Localize add a menu label, Fixes #64
