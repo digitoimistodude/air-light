@@ -1,5 +1,13 @@
 #!/bin/bash
 # A script for moving all dev files back to the theme
+txtbold=$(tput bold)
+boldyellow=${txtbold}$(tput setaf 3)
+boldgreen=${txtbold}$(tput setaf 2)
+boldwhite=${txtbold}$(tput setaf 7)
+yellow=$(tput setaf 3)
+green=$(tput setaf 2)
+white=$(tput setaf 7)
+txtreset=$(tput sgr0)
 
 mkdir -p ~/air-temp
 sudo cp ~/air-temp/.gitkeep ~/Projects/airdev/content/themes/air-light/sass/components/
@@ -38,6 +46,6 @@ git status
 echo "
 ${boldgreen}Done! Next steps:${txtreset}"
 echo "
-${boldwhite}1. Click the Check it -button: http://airdev.test/wp/wp-admin/themes.php?page=themecheck
-2. Upload: https://wordpress.org/themes/upload/
+1. Upload (if you didn't already): https://wordpress.org/themes/upload/
+2. All done!
 ${txtreset} "

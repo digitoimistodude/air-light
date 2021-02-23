@@ -562,7 +562,7 @@ Whenever you have updates that are worthwile, commit them with clear commit mess
 Use bash alias (replace YOURUSERNAME with your own):
 
 ``` bash
-alias release_new_air_version='git push && git push --tags && rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} $HOME/Projects/airdev/content/themes/air-light/* YOURUSERNAME@185.87.110.7:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/ && cd $HOME/Projects/airdev/content/themes/air-light/bin && sh air-move-out.sh && sh air-pack.sh && sh air-move-in.sh'
+alias release_new_air_version='git push && git push --tags && rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} $HOME/Projects/airdev/content/themes/air-light/* YOURUSERNAME@185.87.110.7:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/ && cd $HOME/Projects/airdev/content/themes/air-light/bin && sh air-move-out.sh && sh air-pack.sh'
 ```
 
 The release cycle:
@@ -570,7 +570,9 @@ The release cycle:
 1. Commit your changes or merge a pull request
 2. Search and replace version in style.css, functions.php, package.json, readme.txt, CHANGELOG.md. Remember update Tested up WordPress version as well.
 3. Add a tag with `git tag -a x.x.x` commands, add the same description than in CHANGELOG.md
-4. Run `release_new_air_version` (this will take care of packing and will give the URL for uploading to WordPress.org)
+4. Run `release_new_air_version` (this will move dotfiles etc. out, take care of packing and will give the URL for uploading to WordPress.org)
+5. Follow script instructions (do a theme check and upload the theme)
+6. Run `sh air-move-in.sh`. This will move dev-version back and restore the git functionality.
 
 That's it, you released a new version!
 
