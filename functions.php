@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 15:28:58
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-02-23 13:40:37
  *
  * @package air-light
  */
@@ -37,7 +37,7 @@ $theme_settings = [
   /**
    * Logo and featured image
    */
-  'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
+  'default_featured_image' => null,
   'logo' => '/svg/logo.svg',
 
   /**
