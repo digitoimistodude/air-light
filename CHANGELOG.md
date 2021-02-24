@@ -1,3 +1,7 @@
+### 6.8.4: 2021-02-24
+
+* No default_featured_image by default, improvements to hero #73, Fixes #72
+
 ### 6.8.3: 2021-02-24
 
 * Fix burger margin that should be only present with label
