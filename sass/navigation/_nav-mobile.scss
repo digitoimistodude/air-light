@@ -370,7 +370,7 @@ $nav-open-from-direction: top;
     }
 
     @media (min-width: 411px) {
-      .hamburger-box {
+      &.has-visible-label .hamburger-box {
         margin-right: 2rem;
       }
     }

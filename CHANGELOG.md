@@ -1,3 +1,7 @@
+### 6.8.3: 2021-02-24
+
+* Fix burger margin that should be only present with label
+
 ### 6.8.2: 2021-02-23
 
 * Update release cycle steps to documentation
