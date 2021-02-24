@@ -18,10 +18,3 @@ sh ~/Projects/airdev/content/themes/air-light/bin/air-move-out.sh
 cd ~/Projects/airdev/content/themes/
 zip -r air-light.zip air-light
 sh ~/air-temp/bin/air-move-in.sh
-
-echo "
-${boldgreen}Done! Steps left to do:${txtreset}"
-echo "
-${boldwhite}1. Click the Check it -button: http://airdev.test/wp/wp-admin/themes.php?page=themecheck
-2. Upload: https://wordpress.org/themes/upload/
-${txtreset} "
