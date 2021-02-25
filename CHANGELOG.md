@@ -1,5 +1,9 @@
 ### 6.8.6: 2021-02-25
 
+* Fix js task signal async completion
+
+### 6.8.5: 2021-02-25
+
 * Fix newtheme.sh theme generate script clean ups for new CSS structure
 * Documentation updates for the release cycle
 
