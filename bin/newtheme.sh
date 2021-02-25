@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2021-02-25 10:34:50
+# @Last Modified time: 2021-02-25 10:57:29
 #!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
 
@@ -115,14 +115,14 @@ rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
 
 echo "${yellow}Removing demo content...${txtreset}"
-find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import '..\/layout\/demo-content';//g" {} +
-find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import '..\/layout\/wordpress';//g" {} +
+find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'layout\/demo-content';//g" {} +
+find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'layout\/wordpress';//g" {} +
 rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_wordpress.scss
 
 read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
   if [ "$yn" = "n" ]; then
-    find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import '..\/views\/comments';//g" {} +
+    find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'views\/comments';//g" {} +
     rm ${PROJECTTHEMEPATH}/sass/views/_comments.scss
   else
     echo ' '
@@ -145,7 +145,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="6.8.4"
+newestair="6.8.5"
 newestwordpress="5.5"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');

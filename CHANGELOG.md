@@ -1,3 +1,8 @@
+### 6.8.5: 2021-02-25
+
+* Fix newtheme.sh theme generate script clean ups for new CSS structure
+* Documentation updates for the release cycle
+
 ### 6.8.4: 2021-02-24
 
 * No default_featured_image by default, improvements to hero #73, Fixes #72
