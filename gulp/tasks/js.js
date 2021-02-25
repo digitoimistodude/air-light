@@ -34,7 +34,6 @@ function js() {
     .on('error', handleError())
     .pipe(dest(config.js.development));
 
-
   return { production, development };
 }
 
