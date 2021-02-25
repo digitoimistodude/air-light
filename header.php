@@ -6,8 +6,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:17:32
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2020-11-19 11:24:53
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-02-25 13:47:40
  *
  * @package air-light
  */
@@ -28,10 +28,10 @@ namespace Air_Light;
 </head>
 
 <body <?php body_class( 'no-js' ); ?>>
+  <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( get_default_localization( 'Skip to content' ) ); ?></a>
+
   <?php wp_body_open(); ?>
   <div id="page" class="site">
-
-    <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( get_default_localization( 'Skip to content' ) ); ?></a>
 
     <div class="nav-container">
       <header class="site-header">
