@@ -2327,7 +2327,7 @@ pre {
   padding-top: 12px;
   position: relative;
   text-decoration: none;
-  transition: 150ms linear background;
+  transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: auto;
   /* stylelint-disable a11y/no-display-none */
   /* stylelint-enable */
@@ -2382,7 +2382,9 @@ pre {
 .site-footer input[type="button"].button-ghost {
   background-color: transparent;
   border: 2px solid #545773;
+  border-radius: 3px;
   color: #545773;
+  transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .site-main button.button-ghost:focus, .site-main button.button-ghost:hover,
@@ -3667,7 +3669,7 @@ body *[aria-invalid="true"] {
   padding-top: 12px;
   position: relative;
   text-decoration: none;
-  transition: 150ms linear background;
+  transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: auto;
   /* stylelint-disable a11y/no-display-none */
   /* stylelint-enable */

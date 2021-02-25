@@ -1,12 +1,14 @@
-@mixin button-style-ghost($background: $color-darkgrey, $border-width: 2px) {
-  background-color: transparent;
-  border: $border-width solid $background;
-  color: $background;
+@mixin button-style-ghost($background: transparent, $background-hover: $color-buttons-hover, $color: $color-buttons, $hover: choose-contrast-color($color-buttons-hover), $radius: 3px, $border: 2px solid $color-buttons, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
+  background-color: $background;
+  border: $border;
+  border-radius: $radius;
+  color: $color;
+  transition: $transition;
 
   &:focus,
   &:hover {
-    background-color: $color-buttons-hover;
-    border-color: $color-buttons-hover;
-    color: choose-contrast-color($color-buttons-hover);
+    background-color: $background-hover;
+    border-color: $background-hover;
+    color: $hover;
   }
 }

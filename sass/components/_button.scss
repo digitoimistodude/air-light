@@ -1,14 +1,14 @@
-@mixin button($color: $color-white, $background: $color-darkgrey, $radius: 3px, $border-width: 2px, $font-weight: 700, $arrow: false) {
+@mixin button($color: $color-white, $hover: choose-contrast-color($color-buttons-hover), $background: $color-buttons, $background-hover: $color-buttons-hover, $radius: 3px, $border: 0, $border-hover: $color-buttons-hover, $weight: 700, $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
   appearance: none;
   background-color: $background;
-  border: 0;
+  border: $border;
   border-radius: $radius;
   color: $color;
   cursor: pointer;
   display: inline-block;
   font-family: $font-paragraphs;
   font-size: var(--font-size-small);
-  font-weight: $font-weight;
+  font-weight: $weight;
   line-height: 1;
   margin-bottom: 0;
   padding-bottom: 12px;
@@ -17,7 +17,7 @@
   padding-top: 12px;
   position: relative;
   text-decoration: none;
-  transition: 150ms linear background;
+  transition: $transition;
   width: auto;
 
   // Buttons usually already have arrows
@@ -36,8 +36,8 @@
 
   &:hover,
   &:focus {
-    background-color: $color-buttons-hover;
-    border-color: $color-buttons-hover;
-    color: choose-contrast-color($color-buttons-hover);
+    background-color: $background-hover;
+    border-color: $border-hover;
+    color: $hover;
   }
 }

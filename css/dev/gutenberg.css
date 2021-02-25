@@ -89,7 +89,7 @@
   padding-top: 12px;
   position: relative;
   text-decoration: none;
-  transition: 150ms linear background;
+  transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   width: auto;
   /* stylelint-disable a11y/no-display-none */
   /* stylelint-enable */
