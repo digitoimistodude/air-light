@@ -578,7 +578,7 @@ That's it, you released a new version!
 
 ### Notes
 
-Gzip file sizes tested with `wc -c css/global.css` and `gzip -c css/global.css | wc -c` commands.
+Gzip file sizes tested with `wc -c css/dist/global.css` and `gzip -c css/dist/global.css | wc -c` commands.
 
 **Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-light subfolders inside theme directory for it to work on both global projects and with air-light.
 
