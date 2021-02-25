@@ -17,7 +17,7 @@ const named = require('vinyl-named');
 const eslint = require('gulp-eslint');
 
 // Task
-function js() {
+function js(done) {
   const lintedJs = src(config.js.src)
   .pipe(eslint())
   .pipe(eslint.format());
@@ -34,7 +34,7 @@ function js() {
     .on('error', handleError())
     .pipe(dest(config.js.development));
 
-  return { production, development };
+    done();
 }
 
 exports.js = js;
