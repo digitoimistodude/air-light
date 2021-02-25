@@ -1,3 +1,9 @@
+### 6.8.7: 2021-02-25
+
+* Accessibility and best practices: Move skip link to right after body tag
+* Add consistent arguments for default button style components
+* Off-repository: Add ghost button to the examples
+
 ### 6.8.6: 2021-02-25
 
 * Fix js task signal async completion
