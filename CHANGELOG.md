@@ -1,3 +1,7 @@
+### 6.8.8: 2021-02-26
+
+* Add themeDir to all asset file paths/names to match devpackages #75
+
 ### 6.8.7: 2021-02-25
 
 * Accessibility and best practices: Move skip link to right after body tag
