@@ -1,3 +1,7 @@
+### 6.8.9: 2021-02-26
+
+* Cleaner HTML markup for branding (thanks [@samikeijonen](https://github.com/samikeijonen))
+
 ### 6.8.8: 2021-02-26
 
 * Add themeDir to all asset file paths/names to match devpackages #75
