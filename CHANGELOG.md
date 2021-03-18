@@ -1,4 +1,10 @@
-### 6.9.0: 2021-02-26
+### 6.9.0: 2021-03-18
+
+* Remove mqpacker that is causing problems with media queries
+* Update packages (linters, postcss and browsersync)
+* Bump tested WP version to 5.7
+
+### 6.8.9: 2021-02-26
 
 * Cleaner HTML markup for branding (thanks [@samikeijonen](https://github.com/samikeijonen))
 
