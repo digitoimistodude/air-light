@@ -1,3 +1,7 @@
+### 6.9.1: 2021-03-18
+
+* Fix gulp watch task causing CPU hogging
+
 ### 6.9.0: 2021-03-18
 
 * Remove mqpacker that is causing problems with media queries
