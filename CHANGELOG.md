@@ -1,3 +1,8 @@
+### 6.9.2: 2021-03-18
+
+* Fix nav toggle visibility on desktop
+* Fix sub menu link hover color
+
 ### 6.9.1: 2021-03-18
 
 * Fix gulp watch task causing CPU hogging
