@@ -1,4 +1,4 @@
-### 6.8.9: 2021-02-26
+### 6.9.0: 2021-02-26
 
 * Cleaner HTML markup for branding (thanks [@samikeijonen](https://github.com/samikeijonen))
 
