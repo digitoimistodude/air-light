@@ -14,14 +14,13 @@ const {
 } = require('../helpers/handle-errors.js');
 const bs = require('browser-sync');
 const notify = require('gulp-notify');
-const mqpacker = require('mqpacker');
 
 function styles(done) {
   return src(config.styles.src)
     .pipe(sass(config.styles.opts.development))
 
     // Run PostCSS plugins
-    .pipe(postcss([autoprefixer(), mqpacker()]))
+    .pipe(postcss([autoprefixer()]))
 
     // Save expanded version for development
     .pipe(dest(config.styles.development))
