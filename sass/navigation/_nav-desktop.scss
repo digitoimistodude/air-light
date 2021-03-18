@@ -145,7 +145,7 @@ $width-sub-menu: 22rem;
 
   .menu-item .sub-menu a:hover,
   .menu-item .sub-menu a:focus {
-    color: $color-sub-menu;
+    color: $color-hover-sub-menu;
   }
 
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
