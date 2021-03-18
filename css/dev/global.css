@@ -1927,6 +1927,12 @@ a.is-external-link.no-external-link-indicator::after {
   /* stylelint-enable */
 }
 
+@media (min-width: 960px) {
+  .nav-toggle {
+    display: none;
+  }
+}
+
 .nav-toggle:not(.toggled-on) .hamburger-inner {
   transition: width 0.22s;
   width: 18px;
