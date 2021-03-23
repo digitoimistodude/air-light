@@ -2105,17 +2105,6 @@ a.is-external-link.no-external-link-indicator::after {
   font-size: 2.2rem;
 }
 
-.js .nav-primary {
-  top: calc(72px + 10px);
-  left: 0;
-}
-
-@media (min-width: 480px) {
-  .js .nav-primary {
-    top: calc(72px + 20px);
-  }
-}
-
 .block.block-entry-header-demo {
   background-color: #2a2d3e;
   display: flex;

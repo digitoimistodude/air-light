@@ -82,17 +82,6 @@ $color-border-demo-header: rgba($color-bright, .5);
   }
 }
 
-// Nav for demo
-.js .nav-primary {
-  // Default position, IE needs this
-  top: calc(#{$height-navigation-mobile} + 10px);
-  left: 0;
-
-  @media (min-width: $container-mobile) {
-    top: calc(#{$height-navigation-mobile} + 20px);
-  }
-}
-
 // Demo structure
 .block.block-entry-header-demo {
   background-color: $color-demo-footer-background;

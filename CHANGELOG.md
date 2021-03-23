@@ -1,3 +1,8 @@
+### 6.9.3: 2021-03-23
+
+* Add reminder note about responsive navigation breakpoint width in JS
+* Fix demo content navigation padding
+
 ### 6.9.2: 2021-03-18
 
 * Fix nav toggle visibility on desktop
