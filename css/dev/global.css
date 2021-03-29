@@ -518,12 +518,12 @@ a.is-external-link.no-external-link-indicator::after {
 
 /* stylelint-enable a11y/no-display-none */
 :root {
-  --font-size-main-level: 16px;
-  --font-size-sub-menu: 14px;
+  --font-size-main-level: 17px;
+  --font-size-sub-menu: 16px;
   --padding-main-level-vertical: .6rem;
   --padding-main-level-horizontal: 2rem;
   --gap-dropdown: 1rem;
-  --padding-sub-menu-vertical: .4rem;
+  --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-horizontal: 1.5rem;
 }
 
@@ -646,7 +646,7 @@ a.is-external-link.no-external-link-indicator::after {
     padding-top: .5rem;
     position: absolute;
     top: -9999px;
-    transition: opacity 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: padding 0.2s cubic-bezier(0.19, 1, 0.22, 1);
     visibility: hidden;
     width: 22rem;
     z-index: 9;

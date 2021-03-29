@@ -26,14 +26,14 @@ $width-sub-menu: 22rem;
 // These can be adjusted with media queries for in-between breakpoints
 :root {
   // Main level CSS vars
-  --font-size-main-level: 16px;
-  --font-size-sub-menu: 14px;
+  --font-size-main-level: 17px;
+  --font-size-sub-menu: 16px;
   --padding-main-level-vertical: .6rem;
   --padding-main-level-horizontal: 2rem;
 
   // Sub menu CSS vars
   --gap-dropdown: 1rem;
-  --padding-sub-menu-vertical: .4rem;
+  --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-horizontal: 1.5rem;
 }
 
@@ -186,7 +186,7 @@ $width-sub-menu: 22rem;
     padding-top: .5rem;
     position: absolute;
     top: -9999px;
-    transition: opacity .2s cubic-bezier(.19, 1, .22, 1);
+    transition: padding .2s cubic-bezier(.19, 1, .22, 1);
     visibility: hidden;
     width: $width-sub-menu;
     z-index: 9;
