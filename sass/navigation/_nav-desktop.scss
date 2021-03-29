@@ -209,8 +209,9 @@ $width-sub-menu: 22rem;
   // This is where the magic happens
   .menu-item-has-children > .sub-menu.toggled-on,
   .menu-item-has-children:focus > .sub-menu,
-  .menu-item-has-children:hover > .sub-menu,
-  .menu-item-has-children.hover-intent > .sub-menu {
+  .menu-item-has-children:hover > .sub-menu {
+    // If you want to use "out"-animation, add this:
+    // .menu-item-has-children.hover-intent > .sub-menu {
     opacity: 1;
     top: 100%;
     transform: translateY(0%);

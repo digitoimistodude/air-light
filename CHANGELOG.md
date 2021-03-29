@@ -1,3 +1,7 @@
+### 6.9.5: 2021-03-29
+
+* Disable sub-menu "out"-animation for slicker navigation experience (.hover-intent)
+
 ### 6.9.4: 2021-03-29
 
 * Smooth and fast animation update for desktop sub-menus
