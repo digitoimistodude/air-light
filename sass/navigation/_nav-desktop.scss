@@ -137,12 +137,21 @@ $width-sub-menu: 22rem;
 
   // Let's make space for the nav-toggle/arrow
   .menu-item.menu-item-has-children a {
+    padding-bottom: 0;
     padding-right: 1.5rem;
+    padding-top: 0;
+    transition: padding .25s cubic-bezier(.19, 1, .22, 1), background-color .25s cubic-bezier(.19, 1, .22, 1);
   }
 
   .menu-item > a:hover,
   .menu-item > a:focus {
     color: $color-hover-main-level;
+  }
+
+  .menu-item.menu-item-has-children:hover a,
+  .menu-item.menu-item-has-children:focus a {
+    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-top: var(--padding-sub-menu-vertical);
   }
 
   .menu-item .sub-menu a:hover,
@@ -175,7 +184,7 @@ $width-sub-menu: 22rem;
     padding-left: 0;
     padding-top: .5rem;
     position: absolute;
-    top: -9999px;
+    top: 100%;
     transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
     visibility: hidden;
     width: $width-sub-menu;

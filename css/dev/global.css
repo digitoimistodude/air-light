@@ -603,11 +603,19 @@ a.is-external-link.no-external-link-indicator::after {
     color: #2a2d3e;
   }
   .menu-item.menu-item-has-children a {
+    padding-bottom: 0;
     padding-right: 1.5rem;
+    padding-top: 0;
+    transition: padding 0.25s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   }
   .menu-item > a:hover,
   .menu-item > a:focus {
     color: #fff;
+  }
+  .menu-item.menu-item-has-children:hover a,
+  .menu-item.menu-item-has-children:focus a {
+    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-top: var(--padding-sub-menu-vertical);
   }
   .menu-item .sub-menu a:hover,
   .menu-item .sub-menu a:focus {
@@ -636,7 +644,7 @@ a.is-external-link.no-external-link-indicator::after {
     padding-left: 0;
     padding-top: .5rem;
     position: absolute;
-    top: -9999px;
+    top: 100%;
     transition: opacity 0.25s cubic-bezier(0.19, 1, 0.22, 1);
     visibility: hidden;
     width: 22rem;
