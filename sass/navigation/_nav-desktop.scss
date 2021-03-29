@@ -10,6 +10,8 @@ $color-main-level: $color-white;
 $color-current: $color-main;
 $font-weight-main-level: 700;
 $use-dropdown-bubble: true;
+$use-dropdown-toggle-animation: true;
+$dropdown-toggle-size: 12px;
 
 // Sub menu settings
 $border-radius-sub-menu: 4px;
@@ -237,9 +239,12 @@ $width-sub-menu: 22rem;
 
   // Toggle icon dimensions on desktop
   .dropdown-toggle svg {
-    height: 12px;
-    transition: all .35s cubic-bezier(.19, 1, .22, 1);
-    width: 12px;
+    height: $dropdown-toggle-size;
+    width: $dropdown-toggle-size;
+
+    @if $use-dropdown-toggle-animation == true {
+      transition: all .35s cubic-bezier(.19, 1, .22, 1);
+    }
   }
 
   // Main level toggle icon
@@ -271,18 +276,20 @@ $width-sub-menu: 22rem;
   }
 
   // Smooth animation
-  .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
-  .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
-    transform: translateY(0%) rotate(180deg);
-  }
+  @if $use-dropdown-toggle-animation == true {
+    .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+    .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+      transform: translateY(0%) rotate(180deg);
+    }
 
-  // Smooth animation
-  /* stylelint-disable selector-max-specificity, selector-max-class */
-  .menu-item.menu-item-has-children .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
-  .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
-    transform: translateY(0%) rotate(90deg);
+    // Smooth animation
+    /* stylelint-disable selector-max-specificity, selector-max-class */
+    .menu-item.menu-item-has-children .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+    .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+      transform: translateY(0%) rotate(90deg);
+    }
+    /* stylelint-enable */
   }
-  /* stylelint-enable */
 
   // Don't use gap filler in sub menu items
   // Acceptable use of display: none here, for visual/technical purposes

@@ -688,8 +688,8 @@ a.is-external-link.no-external-link-indicator::after {
   }
   .dropdown-toggle svg {
     height: 12px;
-    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
     width: 12px;
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
   }
   .dropdown-toggle.toggled-on svg {
     transform: rotateX(180deg);
@@ -1876,7 +1876,7 @@ a.is-external-link.no-external-link-indicator::after {
     color: rgba(255, 255, 255, 0.8);
   }
   .dropdown-toggle svg {
-    height: 7px;
+    height: 12px;
     width: 12px;
     /* stylelint-disable a11y/no-display-none */
     /* stylelint-enable */

@@ -14,6 +14,7 @@ $color-main-level-mobile: choose-contrast-color($color-background-nav-mobile-lay
 $color-separator-nav-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .1);
 $font-weight-main-level-mobile: 600;
 $height-navigation-mobile: 72px;
+$dropdown-toggle-size-mobile: 12px;
 
 // Sub menu settings
 $color-sub-menu-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .8);
@@ -194,7 +195,7 @@ $nav-open-from-direction: top;
     // background-image: url('../../svg/nav-open.svg');
     // background-position: center;
     // background-repeat: no-repeat;
-    // background-size: 12px 7px;
+    // background-size: $dropdown-toggle-size-mobile $dropdown-toggle-size-mobile;
     border: 0;
     color: $color-dropdown-toggle;
     display: inline-flex;
@@ -225,8 +226,8 @@ $nav-open-from-direction: top;
 
   // Hide desktop toggles
   .dropdown-toggle svg {
-    height: 7px;
-    width: 12px;
+    height: $dropdown-toggle-size-mobile;
+    width: $dropdown-toggle-size-mobile;
     // Enable for alternative + and minus effect
     // Need to use display: none here to make sure there are visually no double toggles
     /* stylelint-disable a11y/no-display-none */
