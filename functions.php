@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '6.9.3' );
+define( 'AIR_LIGHT_VERSION', '6.9.4' );
 
 /**
  * Theme settings

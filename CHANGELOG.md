@@ -1,3 +1,9 @@
+### 6.9.4: 2021-03-29
+
+* Smooth and fast animation update for desktop sub-menus
+* Use 20ms padding animation instead of opacity
+* Add vars for $dropdown-toggle-size and $use-dropdown-toggle-animation
+
 ### 6.9.3: 2021-03-23
 
 * Add reminder note about responsive navigation breakpoint width in JS
