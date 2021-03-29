@@ -14,7 +14,7 @@ $use-dropdown-toggle-animation: true;
 $dropdown-toggle-size: 12px;
 
 // Sub menu settings
-$border-radius-sub-menu: 4px;
+$border-radius-sub-menu: 0;
 $color-background-sub-menu: $color-white;
 $color-border-sub-menu: rgba($color-dark, .05);
 $color-hover-sub-menu: $color-hover;
@@ -140,7 +140,7 @@ $width-sub-menu: 22rem;
     padding-bottom: 0;
     padding-right: 1.5rem;
     padding-top: 0;
-    transition: padding .25s cubic-bezier(.19, 1, .22, 1), background-color .25s cubic-bezier(.19, 1, .22, 1);
+    transition: padding .2s cubic-bezier(.19, 1, .22, 1), background-color .2s cubic-bezier(.19, 1, .22, 1);
   }
 
   .menu-item > a:hover,
@@ -148,6 +148,7 @@ $width-sub-menu: 22rem;
     color: $color-hover-main-level;
   }
 
+  .sub-menu.toggled-on li a,
   .menu-item.menu-item-has-children:hover a,
   .menu-item.menu-item-has-children:focus a {
     padding-bottom: var(--padding-sub-menu-vertical);
@@ -162,7 +163,7 @@ $width-sub-menu: 22rem;
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
   .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
     transform: scale(1);
-    transition: all .25s cubic-bezier(.19, 1, .22, 1);
+    transition: all .2s cubic-bezier(.19, 1, .22, 1);
   }
 
   // Dropdowns
@@ -184,8 +185,8 @@ $width-sub-menu: 22rem;
     padding-left: 0;
     padding-top: .5rem;
     position: absolute;
-    top: 100%;
-    transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
+    top: -9999px;
+    transition: opacity .2s cubic-bezier(.19, 1, .22, 1);
     visibility: hidden;
     width: $width-sub-menu;
     z-index: 9;
@@ -286,6 +287,7 @@ $width-sub-menu: 22rem;
 
   // Smooth animation
   @if $use-dropdown-toggle-animation == true {
+    .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
     .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
     .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
       transform: translateY(0%) rotate(180deg);
@@ -293,6 +295,7 @@ $width-sub-menu: 22rem;
 
     // Smooth animation
     /* stylelint-disable selector-max-specificity, selector-max-class */
+    .menu-item.menu-item-has-children .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
       transform: translateY(0%) rotate(90deg);
