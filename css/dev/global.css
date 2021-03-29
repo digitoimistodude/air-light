@@ -687,8 +687,9 @@ a.is-external-link.no-external-link-indicator::after {
     width: 100%;
   }
   .dropdown-toggle svg {
-    height: 9px;
-    width: 9px;
+    height: 12px;
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
+    width: 12px;
   }
   .dropdown-toggle.toggled-on svg {
     transform: rotateX(180deg);
@@ -711,6 +712,16 @@ a.is-external-link.no-external-link-indicator::after {
   .sub-menu .dropdown-toggle.toggled-on svg {
     transform: rotate(-90deg) rotateX(180deg);
   }
+  .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+  .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+    transform: translateY(0%) rotate(180deg);
+  }
+  /* stylelint-disable selector-max-specificity, selector-max-class */
+  .menu-item.menu-item-has-children .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+  .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+    transform: translateY(0%) rotate(90deg);
+  }
+  /* stylelint-enable */
   /* stylelint-disable a11y/no-display-none */
   .sub-menu .menu-item-has-children::after {
     display: none;
