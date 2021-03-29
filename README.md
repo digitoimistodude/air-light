@@ -6,8 +6,8 @@ Air-light (or simply *Air*) is designed to be a ultra minimal starting point for
 
 ## [Demo](https://dudetest.xyz/air) | [Usage](#usage)
 
-* **CSS gzipped:** 12 KB *(113 KB original)*
-* **JS gzipped:** 3.4 KB *(10.8 KB original)*
+* **CSS gzipped:** 13 KB *(81.2 original)*
+* **JS gzipped:** 7.8 KB *(26.5 KB original)*
 * **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
 ## Top contributors
@@ -578,7 +578,7 @@ That's it, you released a new version!
 
 ### Notes
 
-Gzip file sizes tested with `wc -c css/dist/global.css` and `gzip -c css/dist/global.css | wc -c` commands.
+Gzip file sizes tested with `wc -c css/prod/global.css` and `gzip -c css/prod/global.css | wc -c` commands.
 
 **Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-light subfolders inside theme directory for it to work on both global projects and with air-light.
 
