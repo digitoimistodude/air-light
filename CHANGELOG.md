@@ -1,5 +1,10 @@
 ### 6.9.8: 2021-03-30
 
+* Improve documentation
+* Fix navigation sub-menu hover animation: Hover padding should only emerge on sub-menu items, not to main menu items
+
+### 6.9.7: 2021-03-30
+
 * Add space after blockquote cite
 * Update @font-face for Slightly Deeper Browser Support
 * Remove excess amount of fonts
