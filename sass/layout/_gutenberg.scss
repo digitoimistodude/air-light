@@ -260,6 +260,11 @@
     margin-bottom: 0;
   }
 
+  blockquote + p > cite,
+  blockquote + cite {
+    margin-bottom: 4rem;
+  }
+
   > blockquote,
   > blockquote.wp-block-quote {
     border-left: 2px solid $color-links;

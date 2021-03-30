@@ -3767,6 +3767,11 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   margin-bottom: 0;
 }
 
+.gutenberg-content blockquote + p > cite,
+.gutenberg-content blockquote + cite {
+  margin-bottom: 4rem;
+}
+
 .gutenberg-content > blockquote,
 .gutenberg-content > blockquote.wp-block-quote {
   border-left: 2px solid #2a2d3e;
