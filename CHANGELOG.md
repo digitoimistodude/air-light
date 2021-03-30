@@ -1,4 +1,4 @@
-### 6.9.7: 2021-03-30
+### 6.9.8: 2021-03-30
 
 * Add space after blockquote cite
 * Update @font-face for Slightly Deeper Browser Support

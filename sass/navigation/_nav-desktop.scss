@@ -148,16 +148,17 @@ $width-sub-menu: 22rem;
     color: $color-hover-main-level;
   }
 
-  .sub-menu.toggled-on li a,
-  .menu-item.menu-item-has-children:hover a,
-  .menu-item.menu-item-has-children:focus a {
-    padding-bottom: var(--padding-sub-menu-vertical);
-    padding-top: var(--padding-sub-menu-vertical);
-  }
-
   .menu-item .sub-menu a:hover,
   .menu-item .sub-menu a:focus {
     color: $color-hover-sub-menu;
+  }
+
+  // Create animation illusion
+  .sub-menu.toggled-on .sub-menu a,
+  .menu-item.menu-item-has-children:hover .sub-menu a,
+  .menu-item.menu-item-has-children:focus .sub-menu a {
+    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-top: var(--padding-sub-menu-vertical);
   }
 
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
