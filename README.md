@@ -91,14 +91,14 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   ├── newtheme.sh                 # → The start script for creating YOUR own theme out of air-light
 ├── comments.php                    # → Default comments template (can be deleted if not needed)
 ├── css/                            # → CSS files for production (never edit)
-│   ├── global.css                  # → Unminified, stylefmtd CSS file
-│   └── global.min.css              # → Minified theme CSS, this file is called in scripts-styles.php
-│   └── gutenberg.min.css           # → Minified Gutenberg CSS for editor, this file is called in gutenberg.php
-├── fonts/                          # → Your webfont files
+│   ├── dev/                        # → Unminified stylesheet files for debugging (never edit)
+│   └── prod/                       # → Minified stylesheet files for production (never edit)
+├── fonts/                          # → Your webfont files (woff, woff2, ttf needed)
 ├── footer.php                      # → Site footer
 ├── front-page.php                  # → Demo front-page template (not included in wordpress.org version)
 ├── functions.php                   # → Set up your theme basic settings
-├── gulpfile.js                     # → Gulpfile for air-light development
+├── gulp/                           # → Gulp related settings and tasks
+├── gulpfile.js                     # → Core gulpfile for air-light development
 ├── header.php                      # → Site header
 ├── images/                         # → Your theme images, for example default featured images and placeholders
 ├── inc/                            # → Theme core PHP
@@ -110,22 +110,22 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   ├── hooks.php                   # → All hooks the theme runs are here
 │   ├── includes.php                # → Include non-template features
 │   ├── template-tags.php           # → Include template functions and helpers
-├── js/                             # → JavaScript files for production (never edit)
-│   ├── dist/front-end.js           # → Obfuscated, concatted, minified file that contains all site JS
-│   ├── src/                        # → JavaScript files for development
-│   │   ├── navigation.js           # → Accessible multi-level navigation (from 3.4.5)
-│   │   ├── scripts.js              # → Theme core JavaScript file (from 1.0.0)
-│   │   └── sticky-nav.js           # → Sticky nav functionality (optional)based themes
-├── node_modules/                   # → Node.js packages (never edit)
+├── js/                             # → JavaScript files
+│   ├── dev/                        # → Unminified script files for debugging (never edit)
+│   ├── prod/                       # → Minified script files for production (never edit)
+│   └── src/                        # → Script files for development (edit these)
+│       ├── navigation.js           # → Accessible multi-level navigation (from 3.4.5)
+│       ├── front-end.js            # → Theme core JavaScript file (from 1.0.0, before: scripts.js)
+│       └── sticky-nav.js           # → Sticky nav functionality (optional)
 ├── package.json                    # → Node.js dependencies and scripts
 ├── page.php                        # → Default page template
 ├── phpcs.xml                       # → PHPCodeSniffer/WordPress Theme Coding Standards settings
 ├── sass/                           # → CSS files for development
 │   ├── base/                       # → Theme base styles
 │   │   ├── _accessibility.scss     # → Accessibility
-│   │   ├── _normalize.scss         # → Browser reset
-│   │   └── global.scss             # → Core CSS file that calls all the modular files
-│   │   └── gutenberg.scss          # → Core CSS file for Gutenberg editor and blocks
+│   │   └── _normalize.scss         # → Browser reset
+│   ├── global.scss                 # → Core CSS file that calls all the modular files
+│   ├── gutenberg.scss              # → Core CSS file for Gutenberg editor and blocks
 │   ├── components/                 # → Add your style components to this folder
 │   ├── features/                   # → Fuctionality styles
 │   │   ├── _breadcrumbs.scss       # → Styles for hybrid breadcrumbs
@@ -150,10 +150,8 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _site-header.scss       # → Header styles
 │   │   ├── _typography.scss        # → Defaults for typography and fonts
 │   │   └── _gutenberg.scss         # → Site-side styles for Gutenberg (pratically for single.php)
-included by default)
 │   ├── navigation/                 # → Navigation styles
 │   │   ├── _burger.scss            # → Burger styles and animations
-│   │   ├── _nav-core.scss          # → Styles for both desktop and mobile navigation
 │   │   ├── _nav-desktop.scss       # → Desktop navigation styles and dropdowns
 │   │   └── _nav-mobile.scss        # → Navigation styles for mobile and touch devices
 │   ├── variables/                  # → Configurations
