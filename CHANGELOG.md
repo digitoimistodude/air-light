@@ -1,3 +1,9 @@
+### 6.9.7: 2021-03-30
+
+* Add space after blockquote cite
+* Update @font-face for Slightly Deeper Browser Support
+* Remove excess amount of fonts
+
 ### 6.9.6: 2021-03-30
 
 * Change default demo font to Inter
