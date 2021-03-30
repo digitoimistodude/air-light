@@ -88,45 +88,9 @@
   font-display: auto;
   font-family: "Inter";
   font-style: normal;
-  font-weight: 500;
-  src: url("../../../content/themes/air-light/fonts/Inter-Medium.eot");
-  src: url("../../../content/themes/air-light/fonts/Inter-Medium.eot?#iefix") format("embedded-opentype"), url("../../../content/themes/air-light/fonts/Inter-Medium.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-Medium.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-Medium.ttf") format("truetype"), url("../../../content/themes/air-light/fonts/Inter-Medium.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../../../content/themes/air-light/fonts/Inter-SemiBold.eot");
-  src: url("../../../content/themes/air-light/fonts/Inter-SemiBold.eot?#iefix") format("embedded-opentype"), url("../../../content/themes/air-light/fonts/Inter-SemiBold.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-SemiBold.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-SemiBold.ttf") format("truetype"), url("../../../content/themes/air-light/fonts/Inter-SemiBold.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
   src: url("../../../content/themes/air-light/fonts/Inter-Bold.eot");
   src: url("../../../content/themes/air-light/fonts/Inter-Bold.eot?#iefix") format("embedded-opentype"), url("../../../content/themes/air-light/fonts/Inter-Bold.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-Bold.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-Bold.ttf") format("truetype"), url("../../../content/themes/air-light/fonts/Inter-Bold.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 800;
-  src: url("../../../content/themes/air-light/fonts/Inter-ExtraBold.eot");
-  src: url("../../../content/themes/air-light/fonts/Inter-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../../../content/themes/air-light/fonts/Inter-ExtraBold.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-ExtraBold.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-ExtraBold.ttf") format("truetype"), url("../../../content/themes/air-light/fonts/Inter-ExtraBold.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 900;
-  src: url("../../../content/themes/air-light/fonts/Inter-Black.eot");
-  src: url("../../../content/themes/air-light/fonts/Inter-Black.eot?#iefix") format("embedded-opentype"), url("../../../content/themes/air-light/fonts/Inter-Black.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-Black.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-Black.ttf") format("truetype"), url("../../../content/themes/air-light/fonts/Inter-Black.svg#Inter") format("svg");
 }
 
 .wp-block.is-style-boxed,

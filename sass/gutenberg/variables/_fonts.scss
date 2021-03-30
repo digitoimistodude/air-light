@@ -65,8 +65,4 @@ $font-weight-headings: 700;
 // Self-hosted fonts
 @include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Regular', 400);
 @include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Italic', 400, italic);
-@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Medium', 500);
-@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-SemiBold', 600);
 @include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Bold', 700);
-@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-ExtraBold', 800);
-@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Black', 900);

@@ -71,8 +71,4 @@ $font-weight-headings: 700;
 // Remember to add these to gutenberg/variables/_fonts as well with their relative paths
 @include fontFace('Inter', '../../fonts/Inter-Regular', 400);
 @include fontFace('Inter', '../../fonts/Inter-Italic', 400, italic);
-@include fontFace('Inter', '../../fonts/Inter-Medium', 500);
-@include fontFace('Inter', '../../fonts/Inter-SemiBold', 600);
 @include fontFace('Inter', '../../fonts/Inter-Bold', 700);
-@include fontFace('Inter', '../../fonts/Inter-ExtraBold', 800);
-@include fontFace('Inter', '../../fonts/Inter-Black', 900);

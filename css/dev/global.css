@@ -387,45 +387,9 @@ template {
   font-display: auto;
   font-family: "Inter";
   font-style: normal;
-  font-weight: 500;
-  src: url("../../fonts/Inter-Medium.eot");
-  src: url("../../fonts/Inter-Medium.eot?#iefix") format("embedded-opentype"), url("../../fonts/Inter-Medium.woff") format("woff"), url("../../fonts/Inter-Medium.woff2") format("woff2"), url("../../fonts/Inter-Medium.ttf") format("truetype"), url("../../fonts/Inter-Medium.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../../fonts/Inter-SemiBold.eot");
-  src: url("../../fonts/Inter-SemiBold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Inter-SemiBold.woff") format("woff"), url("../../fonts/Inter-SemiBold.woff2") format("woff2"), url("../../fonts/Inter-SemiBold.ttf") format("truetype"), url("../../fonts/Inter-SemiBold.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
   src: url("../../fonts/Inter-Bold.eot");
   src: url("../../fonts/Inter-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Inter-Bold.woff") format("woff"), url("../../fonts/Inter-Bold.woff2") format("woff2"), url("../../fonts/Inter-Bold.ttf") format("truetype"), url("../../fonts/Inter-Bold.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 800;
-  src: url("../../fonts/Inter-ExtraBold.eot");
-  src: url("../../fonts/Inter-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Inter-ExtraBold.woff") format("woff"), url("../../fonts/Inter-ExtraBold.woff2") format("woff2"), url("../../fonts/Inter-ExtraBold.ttf") format("truetype"), url("../../fonts/Inter-ExtraBold.svg#Inter") format("svg");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 900;
-  src: url("../../fonts/Inter-Black.eot");
-  src: url("../../fonts/Inter-Black.eot?#iefix") format("embedded-opentype"), url("../../fonts/Inter-Black.woff") format("woff"), url("../../fonts/Inter-Black.woff2") format("woff2"), url("../../fonts/Inter-Black.ttf") format("truetype"), url("../../fonts/Inter-Black.svg#Inter") format("svg");
 }
 
 .screen-reader-text, .gform_body .gform_validation_container {
