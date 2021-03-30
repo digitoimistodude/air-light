@@ -170,12 +170,12 @@ themes/your-theme-name/             # → Root of your air-light based theme
 ├── single.php                      # → Default single article or CPT view
 ├── style.css                       # → Theme meta information
 ├── svg/                            # → Your theme SVG graphics and icons
-├── template-parts/                 # → WordPress template parts. Modules go under this folder.
-│   ├── header/                     # → Header modules
-│   │   ├── branding.php            # → Site branding
-│   │   ├── navigation.php          # → Site navigation
-│   ├── content-modular.php         # → ACF flexible content
-│   └── hero.php                    # → Default hero
+└── template-parts/                 # → WordPress template parts. Modules go under this folder.
+    ├── header/                     # → Header modules
+    │   ├── branding.php            # → Site branding
+    │   ├── navigation.php          # → Site navigation
+    ├── content-modular.php         # → ACF flexible content
+    └── hero.php                    # → Default hero
 ```
 
 ### Features
