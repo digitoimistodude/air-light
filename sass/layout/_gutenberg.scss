@@ -269,6 +269,7 @@
     margin-right: auto;
     margin-top: 4rem;
     padding: 3.5rem 6rem;
+    width: calc(100% - 12rem);
 
     @media (max-width: $width-max-article + 40px) {
       padding: 3.5rem 2rem;

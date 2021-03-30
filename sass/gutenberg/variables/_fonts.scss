@@ -1,8 +1,8 @@
 // Font family settings for Gutenberg
 // Please note: Your font files are relative so this is why you need to
 // set up font paths separately for editors in "Self-hosted fonts" below.
-$font-paragraphs: 'Archivo', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
-$font-headings: 'Archivo', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-paragraphs: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-headings: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 $font-monospace: 'Inconsolata', 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
 
 // Font size settings
@@ -63,7 +63,10 @@ $font-weight-headings: 700;
 }
 
 // Self-hosted fonts
-@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-regular', 400);
-@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-italic', 400, italic);
-@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700', 700);
-@include fontFace('Archivo', '../../../content/themes/air-light/fonts/archivo-v6-latin_latin-ext-700italic', 700, italic);
+@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Regular', 400);
+@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Italic', 400, italic);
+@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Medium', 500);
+@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-SemiBold', 600);
+@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Bold', 700);
+@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-ExtraBold', 800);
+@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Black', 900);

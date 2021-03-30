@@ -1,3 +1,8 @@
+### 6.9.6: 2021-03-30
+
+* Change default demo font to Inter
+* Fix problem with blockquote overflow on desktop
+
 ### 6.9.5: 2021-03-29
 
 * Disable sub-menu "out"-animation for slicker navigation experience (.hover-intent)
