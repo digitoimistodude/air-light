@@ -4,7 +4,7 @@
 
 Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
 
-## [Demo](https://dudetest.xyz/air) | [Usage](#usage)
+## [Demo](https://airwptheme.com/demo) | [Usage](#usage)
 
 * **CSS gzipped:** 13 KB *(81.2 original)*
 * **JS gzipped:** 7.8 KB *(26.5 KB original)*
