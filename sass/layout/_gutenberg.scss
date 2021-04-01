@@ -260,8 +260,8 @@
     margin-bottom: 0;
   }
 
-  blockquote + p > cite,
-  blockquote + cite {
+  blockquote + cite,
+  blockquote + p > cite {
     margin-bottom: 4rem;
   }
 
@@ -279,10 +279,6 @@
     @media (max-width: $width-max-article + 40px) {
       padding: 3.5rem 2rem;
       width: calc(100% - 4rem);
-    }
-
-    cite {
-      text-align: left;
     }
 
     @media (max-width: $container-mobile) {

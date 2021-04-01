@@ -1,3 +1,9 @@
+### 7.0.0: 2021-04-01
+
+* Prevent FOUT when loading webfonts
+* Allow email notifications in Travis unit tests
+* Fix stylelint error reporting in Travis unit tests
+
 ### 6.9.9: 2021-04-01
 
 * Implement [devpackages 2.0.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.0.7): Fix stylelint task not showing report
