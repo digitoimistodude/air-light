@@ -1,3 +1,8 @@
+### 6.9.9: 2021-04-01
+
+* Implement [devpackages 2.0.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.0.7): Fix stylelint task not showing report
+* Implement [devpackages 2.0.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.0.7): Remove unused browsersync watch
+
 ### 6.9.8: 2021-03-30
 
 * Improve documentation
