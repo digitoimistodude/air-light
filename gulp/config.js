@@ -48,10 +48,6 @@ module.exports = {
         cert: "/var/www/certs/localhost.pem",
       }
     },
-    watch: [
-      themeDir + '**/*.php',
-      themeDir + 'js/src/**/*.js'
-    ]
   },
   styles: {
     gutenberg: themeDir + 'sass/base/gutenberg.scss',
