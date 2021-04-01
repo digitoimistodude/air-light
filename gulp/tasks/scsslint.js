@@ -8,7 +8,7 @@ const config = require('../config.js');
 // Task
 function scsslint() {
 
-  return src([config.styles.src])
+  return src([config.styles.stylelint.src])
 
     // Print linter report
     .pipe(stylelint(config.styles.stylelint.opts));

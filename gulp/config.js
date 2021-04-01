@@ -60,9 +60,9 @@ module.exports = {
     development: themeDir + 'css/dev/',
     production: themeDir + 'css/prod/',
     stylelint: {
+      src: themeDir + 'sass/*/*.scss',
       opts: {
         fix: false,
-        ignoreFiles: ['!*.scss'],
         reporters: [{
           formatter: 'string',
           console: true,
