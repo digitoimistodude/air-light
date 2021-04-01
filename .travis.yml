@@ -116,4 +116,4 @@ script:
 # Receive notifications for build results.
 # @link https://docs.travis-ci.com/user/notifications/#Email-notifications
 notifications:
-    email: false
+    email: true
