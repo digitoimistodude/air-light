@@ -4,7 +4,9 @@
 // Helper mixin for self-hosted fonts
 @mixin fontFace($family, $src, $weight: normal, $style: normal) {
   @font-face {
-    font-display: optional;
+    // Prevent FOUT
+    // @source https://css-tricks.com/almanac/properties/f/font-display/
+    font-display: fallback;
     font-family: $family;
     font-style: $style;
     font-weight: $weight;
