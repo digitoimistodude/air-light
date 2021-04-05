@@ -1048,6 +1048,10 @@ th {
   padding: .3em .8em;
 }
 
+.editor-styles-wrapper {
+  overflow-x: hidden;
+}
+
 [data-align="right"] figcaption,
 [data-align="left"] figcaption {
   margin-left: auto;
