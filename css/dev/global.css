@@ -331,7 +331,7 @@ template {
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: auto;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -339,7 +339,7 @@ template {
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: auto;
   font-family: "Inter";
   font-style: italic;
   font-weight: 400;
@@ -347,7 +347,7 @@ template {
 }
 
 @font-face {
-  font-display: fallback;
+  font-display: auto;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
