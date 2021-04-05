@@ -104,11 +104,10 @@
   }
 
   // Embeds
-  embed,
-  iframe,
-  object,
-  video {
+  .wp-block-embed iframe,
+  .wp-block-embed video {
     max-width: 100%;
+    width: 100%;
   }
 
   // Title line-heights

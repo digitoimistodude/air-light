@@ -3615,11 +3615,10 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   }
 }
 
-.gutenberg-content embed,
-.gutenberg-content iframe,
-.gutenberg-content object,
-.gutenberg-content video {
+.gutenberg-content .wp-block-embed iframe,
+.gutenberg-content .wp-block-embed video {
   max-width: 100%;
+  width: 100%;
 }
 
 .gutenberg-content h1,
