@@ -89,6 +89,11 @@
   }
 
   // Lists
+  ol,
+  ul {
+    padding-left: calc(2rem + 2.7rem);
+  }
+
   li {
     @include responsive-font($font-size-min, $font-size-max-blog);
 
@@ -139,11 +144,6 @@
     pre {
       margin-left: 2rem;
       width: calc(100% - 8rem);
-    }
-
-    ol,
-    ul {
-      padding-left: calc(2rem + 2.7rem);
     }
 
     ul.tags {

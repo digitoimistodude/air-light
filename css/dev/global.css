@@ -3587,6 +3587,11 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   line-height: 1.77;
 }
 
+.gutenberg-content ol,
+.gutenberg-content ul {
+  padding-left: calc(2rem + 2.7rem);
+}
+
 .gutenberg-content li {
   font-size: 17px;
 }
@@ -3647,10 +3652,6 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   .gutenberg-content pre {
     margin-left: 2rem;
     width: calc(100% - 8rem);
-  }
-  .gutenberg-content ol,
-  .gutenberg-content ul {
-    padding-left: calc(2rem + 2.7rem);
   }
   .gutenberg-content ul.tags {
     padding-left: 0;
