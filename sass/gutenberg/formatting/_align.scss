@@ -1,14 +1,14 @@
 // Alignments
 .editor-styles-wrapper,
 .gutenberg-content {
-  .alignleft {
+  .alignleft > * {
     float: left;
     margin-bottom: var(--margin-between-paragraphs);
     margin-right: var(--padding-container-horizontal);
     margin-top: var(--margin-between-paragraphs);
   }
 
-  .alignright {
+  .alignright > * {
     float: right;
     margin-bottom: var(--margin-between-paragraphs);
     margin-left: var(--padding-container-horizontal);

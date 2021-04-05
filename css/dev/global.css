@@ -5437,16 +5437,16 @@ th {
   padding: .3em .8em;
 }
 
-.editor-styles-wrapper .alignleft,
-.gutenberg-content .alignleft {
+.editor-styles-wrapper .alignleft > *,
+.gutenberg-content .alignleft > * {
   float: left;
   margin-bottom: var(--margin-between-paragraphs);
   margin-right: var(--padding-container-horizontal);
   margin-top: var(--margin-between-paragraphs);
 }
 
-.editor-styles-wrapper .alignright,
-.gutenberg-content .alignright {
+.editor-styles-wrapper .alignright > *,
+.gutenberg-content .alignright > * {
   float: right;
   margin-bottom: var(--margin-between-paragraphs);
   margin-left: var(--padding-container-horizontal);
