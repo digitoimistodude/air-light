@@ -1,6 +1,20 @@
 // Alignments
 .editor-styles-wrapper,
 .gutenberg-content {
+  .alignleft {
+    float: left;
+    margin-bottom: var(--margin-between-paragraphs);
+    margin-right: var(--padding-container-horizontal);
+    margin-top: var(--margin-between-paragraphs);
+  }
+
+  .alignright {
+    float: right;
+    margin-bottom: var(--margin-between-paragraphs);
+    margin-left: var(--padding-container-horizontal);
+    margin-top: var(--margin-between-paragraphs);
+  }
+
   .alignwide {
     @media (min-width: $width-grid-base + 40px) {
       max-width: $width-grid-base;

@@ -72,6 +72,7 @@
   --padding-block: 8rem;
   --margin-between-text-elements: 4rem;
   --margin-wp-block-image: 4rem;
+  --margin-between-paragraphs: 2.7rem;
 }
 
 @media (max-width: 1350px) {
@@ -888,7 +889,7 @@ pre code {
 .gutenberg-content .wp-block-categories-list,
 .gutenberg-content ol:not([class]),
 .gutenberg-content ul:not([class]) {
-  padding-left: calc(2rem + 2.7rem);
+  padding-left: calc(2rem + var(--margin-between-paragraphs));
 }
 
 .editor-styles-wrapper p,

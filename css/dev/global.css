@@ -298,6 +298,7 @@ template {
   --padding-block: 8rem;
   --margin-between-text-elements: 4rem;
   --margin-wp-block-image: 4rem;
+  --margin-between-paragraphs: 2.7rem;
 }
 
 @media (max-width: 1350px) {
@@ -2709,8 +2710,8 @@ h6 {
   color: #2a2d3e;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
   font-weight: var(--font-weight-headings);
-  margin-bottom: 2.7rem;
-  margin-top: 2.7rem;
+  margin-bottom: var(--margin-between-paragraphs);
+  margin-top: var(--margin-between-paragraphs);
 }
 
 h2,
@@ -4990,7 +4991,7 @@ pre code {
 .gutenberg-content .wp-block-categories-list,
 .gutenberg-content ol:not([class]),
 .gutenberg-content ul:not([class]) {
-  padding-left: calc(2rem + 2.7rem);
+  padding-left: calc(2rem + var(--margin-between-paragraphs));
 }
 
 .editor-styles-wrapper p,
@@ -5426,6 +5427,22 @@ th {
   padding-top: 8px;
   font-size: .8em;
   padding: .3em .8em;
+}
+
+.editor-styles-wrapper .alignleft,
+.gutenberg-content .alignleft {
+  float: left;
+  margin-bottom: var(--margin-between-paragraphs);
+  margin-right: var(--padding-container-horizontal);
+  margin-top: var(--margin-between-paragraphs);
+}
+
+.editor-styles-wrapper .alignright,
+.gutenberg-content .alignright {
+  float: right;
+  margin-bottom: var(--margin-between-paragraphs);
+  margin-left: var(--padding-container-horizontal);
+  margin-top: var(--margin-between-paragraphs);
 }
 
 @media (min-width: 1240px) {
