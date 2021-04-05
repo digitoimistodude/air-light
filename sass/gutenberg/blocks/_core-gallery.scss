@@ -50,6 +50,7 @@
       }
 
       @media (max-width: 670px) {
+        grid-gap: 2rem;
         grid-template-columns: repeat(2, 1fr);
       }
     }

@@ -4726,6 +4726,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-2 .blocks-gallery-grid,
   .gutenberg-content .columns-2 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -4746,6 +4747,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-3 .blocks-gallery-grid,
   .gutenberg-content .columns-3 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -4766,6 +4768,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-4 .blocks-gallery-grid,
   .gutenberg-content .columns-4 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -4786,6 +4789,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-5 .blocks-gallery-grid,
   .gutenberg-content .columns-5 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -4806,6 +4810,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-6 .blocks-gallery-grid,
   .gutenberg-content .columns-6 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -4826,6 +4831,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-7 .blocks-gallery-grid,
   .gutenberg-content .columns-7 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -4846,6 +4852,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-8 .blocks-gallery-grid,
   .gutenberg-content .columns-8 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -4866,6 +4873,7 @@ pre code {
 @media (max-width: 670px) {
   .editor-styles-wrapper .columns-9 .blocks-gallery-grid,
   .gutenberg-content .columns-9 .blocks-gallery-grid {
+    grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
