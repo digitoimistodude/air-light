@@ -2,24 +2,20 @@
 .editor-styles-wrapper,
 .gutenberg-content {
   .alignwide {
-    margin-bottom: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    width: 100%;
-
-    @media (min-width: 870px) {
+    @media (min-width: $width-grid-base + 40px) {
       max-width: $width-grid-base;
+      width: 100%;
     }
   }
 
   .alignfull {
     margin-bottom: var(--padding-block);
     margin-top: var(--padding-block);
-    max-width: 100%;
-    width: 100%;
+
+    @media (min-width: $width-grid-base + 40px) {
+      max-width: 100%;
+      width: 100%;
+    }
 
     &.wp-block-image img {
       border-radius: 0;

@@ -5237,21 +5237,11 @@ th {
   padding: .3em .8em;
 }
 
-.editor-styles-wrapper .alignwide,
-.gutenberg-content .alignwide {
-  margin-bottom: 4rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  width: 100%;
-}
-
-@media (min-width: 870px) {
+@media (min-width: 1240px) {
   .editor-styles-wrapper .alignwide,
   .gutenberg-content .alignwide {
     max-width: 1200px;
+    width: 100%;
   }
 }
 
@@ -5259,8 +5249,14 @@ th {
 .gutenberg-content .alignfull {
   margin-bottom: var(--padding-block);
   margin-top: var(--padding-block);
-  max-width: 100%;
-  width: 100%;
+}
+
+@media (min-width: 1240px) {
+  .editor-styles-wrapper .alignfull,
+  .gutenberg-content .alignfull {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .editor-styles-wrapper .alignfull.wp-block-image img,
