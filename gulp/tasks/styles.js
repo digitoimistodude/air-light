@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
 const autoprefixer = require('autoprefixer');
 const cleancss = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
 const config = require('../config.js');
 const {
   handleError
@@ -17,10 +18,17 @@ const notify = require('gulp-notify');
 
 function styles(done) {
   return src(config.styles.src)
+
+    // Init source maps
+    .pipe(sourcemaps.init())
+
     .pipe(sass(config.styles.opts.development))
 
     // Run PostCSS plugins
     .pipe(postcss([autoprefixer()]))
+
+    // Write inline source maps
+    .pipe(sourcemaps.write())
 
     // Save expanded version for development
     .pipe(dest(config.styles.development))
