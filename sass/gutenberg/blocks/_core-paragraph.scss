@@ -3,6 +3,6 @@
 .gutenberg-content {
   p {
     color: $color-paragraphs;
-    line-height: $line-height-blog;
+    line-height: var(--line-height-paragraphs-blog);
   }
 }

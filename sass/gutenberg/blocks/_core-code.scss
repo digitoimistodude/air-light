@@ -7,7 +7,7 @@ pre {
   display: block;
   font-family: $font-monospace;
   font-size: var(--font-size-small);
-  line-height: $line-height-blog;
+  line-height: var(--line-height-paragraphs-blog);
   margin: 3rem 0;
   overflow: auto;
   padding: 15px 16px 14px;

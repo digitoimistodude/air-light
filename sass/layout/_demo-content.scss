@@ -74,7 +74,7 @@ $color-border-demo-header: rgba($color-bright, .5);
       display: block;
       text-transform: lowercase;
       letter-spacing: .1em;
-      font-weight: $font-weight-paragraphs;
+      font-weight: var(--font-weight-paragraphs);
       color: $color-white;
       margin-left: .75rem;
       font-size: 2.2rem;

@@ -9,7 +9,7 @@
   > blockquote,
   > blockquote.wp-block-quote {
     border-left: 2px solid $color-links;
-    line-height: $line-height-blog;
+    line-height: var(--line-height-paragraphs-blog);
     margin-bottom: 4rem;
     margin-left: auto;
     margin-right: auto;
@@ -28,7 +28,7 @@
 
     > p {
       color: $color-links;
-      line-height: $line-height-blog;
+      line-height: var(--line-height-paragraphs-blog);
     }
   }
 }

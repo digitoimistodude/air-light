@@ -52,7 +52,7 @@
     box-shadow: none;
     color: $color-black;
     display: inline-block;
-    font-size: $font-size-tiny;
+    font-size: var(--font-size-tiny);
     margin-right: .4em;
     padding: .2em .6em;
     transition: all $transition-duration;

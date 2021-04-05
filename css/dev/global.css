@@ -363,9 +363,12 @@ template {
   --font-size-extra-large: 20px;
   --font-size-huge: 22px;
   --font-size-nav-toggle-label: 15px;
+  --line-height-headings: 1.5;
   --line-height-core-heading: 1.23;
-  --body-line-height: 1.7;
-  --heading-line-height: 1.5;
+  --line-height-paragraphs: 1.7;
+  --line-height-paragraphs-blog: 1.77;
+  --font-weight-paragraphs: 400;
+  --font-weight-headings: 700;
 }
 
 @media (max-width: 770px) {
@@ -2110,7 +2113,7 @@ a.is-external-link.no-external-link-indicator::after {
   display: block;
   text-transform: lowercase;
   letter-spacing: .1em;
-  font-weight: 400;
+  font-weight: var(--font-weight-paragraphs);
   color: #fff;
   margin-left: .75rem;
   font-size: 2.2rem;
@@ -2538,7 +2541,7 @@ body {
   font-size: var(--font-size-medium);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: var(--font-weight-paragraphs);
   text-rendering: geometricPrecision;
   -webkit-text-size-adjust: none;
      -moz-text-size-adjust: none;
@@ -2584,7 +2587,7 @@ input[type="week"],
 input[type="email"],
 input[type="search"] {
   font-size: var(--font-size-small);
-  line-height: 1.7;
+  line-height: var(--line-height-paragraphs);
 }
 
 @media (min-width: 770px) {
@@ -2697,7 +2700,7 @@ h5,
 h6 {
   color: #2a2d3e;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-  font-weight: 700;
+  font-weight: var(--font-weight-headings);
   margin-bottom: 2.7rem;
   margin-top: 2.7rem;
 }
@@ -2707,7 +2710,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.5;
+  line-height: var(--line-height-headings);
 }
 
 h1 {
@@ -2922,7 +2925,7 @@ figure {
 
 figcaption {
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-paragraphs);
   margin-top: 0;
 }
 
@@ -3081,7 +3084,7 @@ pre {
   --checkbox-radio-size: 16px;
   --checkbox-radio-gap: 10px;
   --checkbox-radio-border-width: 2px;
-  --checkbox-radio-line-height: var(--body-line-height);
+  --checkbox-radio-line-height: var(--line-height-paragraphs);
   --radio-marker-size: 8px;
   --checkbox-marker-size: 12px;
   --checkbox-radius: 4px;
@@ -3524,7 +3527,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   box-shadow: none;
   color: #222;
   display: inline-block;
-  font-size: 14px;
+  font-size: var(--font-size-tiny);
   margin-right: .4em;
   padding: .2em .6em;
   transition: all 0.22s;
@@ -4229,7 +4232,7 @@ body *[aria-invalid="true"] {
 }
 
 .gutenberg-content > * {
-  line-height: 1.77;
+  line-height: var(--line-height-paragraphs-blog);
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
@@ -4263,7 +4266,7 @@ body *[aria-invalid="true"] {
 .gutenberg-content > blockquote,
 .gutenberg-content > blockquote.wp-block-quote {
   border-left: 2px solid #2a2d3e;
-  line-height: 1.77;
+  line-height: var(--line-height-paragraphs-blog);
   margin-bottom: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -4296,7 +4299,7 @@ body *[aria-invalid="true"] {
 .gutenberg-content > blockquote > p,
 .gutenberg-content > blockquote.wp-block-quote > p {
   color: #2a2d3e;
-  line-height: 1.77;
+  line-height: var(--line-height-paragraphs-blog);
 }
 
 .editor-styles-wrapper > *.wp-block-blockquote.alignwide, .editor-styles-wrapper > *.wp-block-blockquote.alignfull,
@@ -4320,7 +4323,7 @@ pre {
   display: block;
   font-family: "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
   font-size: var(--font-size-small);
-  line-height: 1.77;
+  line-height: var(--line-height-paragraphs-blog);
   margin: 3rem 0;
   overflow: auto;
   padding: 15px 16px 14px;
@@ -5045,7 +5048,7 @@ pre code {
 .editor-styles-wrapper p,
 .gutenberg-content p {
   color: #545773;
-  line-height: 1.77;
+  line-height: var(--line-height-paragraphs-blog);
 }
 
 .editor-styles-wrapper > *.wp-block-pullquote.alignwide, .editor-styles-wrapper > *.wp-block-pullquote.alignfull,
@@ -5117,7 +5120,7 @@ th {
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.77;
+  line-height: var(--line-height-paragraphs-blog);
   padding: 2rem;
   width: calc(100% - 4rem);
 }
