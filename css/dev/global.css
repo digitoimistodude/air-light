@@ -5448,17 +5448,35 @@ th {
 .editor-styles-wrapper .alignleft > *,
 .gutenberg-content .alignleft > * {
   float: left;
-  margin-bottom: var(--margin-between-paragraphs);
-  margin-right: var(--padding-container-horizontal);
-  margin-top: var(--margin-between-paragraphs);
 }
 
 .editor-styles-wrapper .alignright > *,
 .gutenberg-content .alignright > * {
   float: right;
+}
+
+.editor-styles-wrapper .alignleft > img,
+.gutenberg-content .alignleft > img {
+  margin-bottom: var(--margin-between-paragraphs);
+  margin-right: var(--padding-container-horizontal);
+  margin-top: var(--margin-between-paragraphs);
+}
+
+.editor-styles-wrapper .alignleft > img + figcaption,
+.gutenberg-content .alignleft > img + figcaption {
+  margin-top: 0;
+}
+
+.editor-styles-wrapper .alignright > img,
+.gutenberg-content .alignright > img {
   margin-bottom: var(--margin-between-paragraphs);
   margin-left: var(--padding-container-horizontal);
   margin-top: var(--margin-between-paragraphs);
+}
+
+.editor-styles-wrapper .alignright > img + figcaption,
+.gutenberg-content .alignright > img + figcaption {
+  margin-top: 0;
 }
 
 @media (min-width: 1240px) {
