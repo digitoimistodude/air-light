@@ -4031,7 +4031,9 @@ pre {
 }
 
 pre code {
+  background-color: transparent;
   border-radius: 4px;
+  color: #f5f5f5;
 }
 
 .post-navigation .nav-links {
