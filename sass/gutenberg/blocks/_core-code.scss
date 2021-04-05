@@ -1,0 +1,32 @@
+// Preformatted text.
+pre {
+  background-color: $color-code-background;
+  border: 1px solid $color-code-background;
+  border-radius: 4px;
+  color: $color-lightgrey;
+  display: block;
+  font-family: $font-monospace;
+  font-size: var(--font-size-small);
+  line-height: $line-height-blog;
+  margin: 3rem 0;
+  overflow: auto;
+  padding: 15px 16px 14px;
+  position: relative;
+  white-space: pre;
+  word-wrap: break-word;
+
+  code {
+    background-color: transparent;
+    border-radius: 4px;
+    color: $color-lightgrey;
+  }
+}
+
+// Core/code block
+.editor-styles-wrapper,
+.gutenberg-content {
+  pre {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+  }
+}

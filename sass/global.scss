@@ -41,7 +41,6 @@
 @import 'layout/site-footer';
 @import 'layout/forms';
 @import 'layout/blog';
-@import 'layout/gutenberg';
 @import 'layout/wordpress';
 
 // Global features
@@ -57,10 +56,14 @@
 @import 'views/404';
 @import 'views/comments';
 
-// Modules
-// @import 'modules/some-module';
+// Gutenberg layout outside blocks
+@import 'gutenberg/layout/content';
 
 // Gutenberg blocks
-@import 'gutenberg/boxed';
-@import 'gutenberg/button';
-@import 'gutenberg/button-file';
+@import 'gutenberg/blocks';
+
+// Gutenberg formatting
+@import 'gutenberg/formatting';
+
+// Modules
+// @import 'modules/some-module';

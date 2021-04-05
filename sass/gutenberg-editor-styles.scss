@@ -1,6 +1,9 @@
-// Gutenberg styles
-// Please note, this file includes things that are
-// imported both on front-end and editor
+// Gutenberg editor styles
+//
+// Please note: These styles affect only wp-admin
+// editor side. Please remember to add imports
+// from "Gutenberg blocks" also to the main
+// global.scss to see them on front end side.
 
 // Helpers
 @import 'helpers/typography';
@@ -26,9 +29,6 @@
 
 // Gutenberg blocks
 @import 'gutenberg/blocks';
-
-// Gutenberg formatting
-@import 'gutenberg/formatting';
 
 // Fix alignleft and alignright figcaption width
 // Hack for achieving the same than in gutenberg-helpers.js

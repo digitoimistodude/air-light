@@ -1,0 +1,25 @@
+// Core/table block
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  font-family: $font-paragraphs;
+  height: 3rem;
+  padding: 1rem;
+
+  @media (max-width: 600px) {
+    display: inline-block;
+    height: auto;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+// Table heading cells
+th {
+  font-weight: 700;
+}

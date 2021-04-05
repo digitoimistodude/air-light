@@ -1,0 +1,16 @@
+// Default Gutenberg core block styles
+@import 'gutenberg/blocks/core-blockquote';
+@import 'gutenberg/blocks/core-code';
+@import 'gutenberg/blocks/core-cover';
+@import 'gutenberg/blocks/core-embed';
+@import 'gutenberg/blocks/core-gallery';
+@import 'gutenberg/blocks/core-heading';
+@import 'gutenberg/blocks/core-image';
+@import 'gutenberg/blocks/core-list';
+@import 'gutenberg/blocks/core-paragraph';
+@import 'gutenberg/blocks/core-table';
+
+// Custom Gutenberg block styles
+@import 'gutenberg/blocks/boxed';
+@import 'gutenberg/blocks/button';
+@import 'gutenberg/blocks/button-file';

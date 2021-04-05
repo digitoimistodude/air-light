@@ -1,0 +1,28 @@
+// Alignments
+.editor-styles-wrapper > *,
+.gutenberg-content > * {
+  &.alignwide {
+    margin-bottom: 4rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+
+    @media (min-width: 870px) {
+      max-width: $width-grid-base;
+    }
+  }
+
+  &.alignfull {
+    margin-bottom: var(--padding-block);
+    margin-top: var(--padding-block);
+    max-width: 100%;
+    width: 100%;
+
+    &.wp-block-image img {
+      border-radius: 0;
+    }
+  }
+}
