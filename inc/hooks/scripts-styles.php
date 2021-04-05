@@ -67,7 +67,7 @@ function enqueue_theme_scripts() {
     [
       'localhost:3000',
       'airdev.test',
-      'dudetest.xyz',
+      'airwptheme.com',
     ]
   );
 } // end air_light_scripts
