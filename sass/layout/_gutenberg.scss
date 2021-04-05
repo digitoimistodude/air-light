@@ -39,23 +39,6 @@
   padding-right: 0;
   padding-top: var(--padding-block);
 
-  .blocks-gallery-grid {
-    display: grid;
-    padding-left: 0;
-
-    .blocks-gallery-item {
-      width: 100%;
-    }
-  }
-
-  // Loops to enumerate the classes for columns.
-  @for $i from 2 through 9 {
-    .columns-#{$i} .blocks-gallery-grid {
-      grid-column-gap: 3rem;
-      grid-template-columns: repeat($i, 1fr);
-    }
-  }
-
   // WordPress alignments
   .cat-links,
   .tags-links {
@@ -136,21 +119,6 @@
     border-radius: 4px;
   }
 
-  @media (max-width: $width-max-article + 40px) {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    width: calc(100% - 4rem);
-
-    pre {
-      margin-left: 2rem;
-      width: calc(100% - 8rem);
-    }
-
-    ul.tags {
-      padding-left: 0;
-    }
-  }
-
   figcaption,
   cite,
   small {
@@ -194,6 +162,38 @@
     }
   }
 
+  // Galleries
+  .wp-block-gallery {
+    &.alignwide {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+    }
+
+    &.alignfull {
+      max-width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+    }
+  }
+
+  .blocks-gallery-grid {
+    display: grid;
+    padding-left: 0;
+
+    .blocks-gallery-item {
+      width: 100%;
+    }
+  }
+
+  // Loops to enumerate the classes for columns.
+  @for $i from 2 through 9 {
+    .columns-#{$i} .blocks-gallery-grid {
+      grid-column-gap: 3rem;
+      grid-template-columns: repeat($i, 1fr);
+    }
+  }
+
+  // Images
   /* stylelint-disable selector-max-compound-selectors */
   .wp-block-image figcaption,
   .wp-block-image .alignright > figcaption,
@@ -248,12 +248,6 @@
   a:hover,
   &:focus {
     text-decoration: none;
-  }
-
-  iframe,
-  .fb-post,
-  small {
-    display: block;
   }
 
   cite {
@@ -315,7 +309,21 @@
     margin-left: auto;
     margin-right: auto;
     max-width: $width-max-article;
+    padding-left: 0;
+    padding-right: 0;
     width: 100%;
+
+    @media (max-width: $width-max-article + 40px) {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+
+      &.alignfull {
+        padding-left: var(--padding-container-horizontal);
+        padding-right: var(--padding-container-horizontal);
+        width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+      }
+    }
 
     .twitter-tweet,
     .instagram-media,
@@ -369,6 +377,11 @@
       /* stylelint-enable */
     }
 
+    &.alignwide img,
+    &.alignfull img {
+      width: 100%;
+    }
+
     &.alignwide {
       margin-bottom: 4rem;
       margin-left: auto;
@@ -378,20 +391,26 @@
       padding-right: 2rem;
       width: 100%;
 
-      @media (min-width: 870px) {
-        max-width: $width-grid-base;
+      &.wp-block-image {
         padding-left: 0;
         padding-right: 0;
+      }
+
+      @media (min-width: 870px) {
+        max-width: $width-grid-base;
       }
     }
 
     &.alignfull {
-      margin-bottom: 8rem;
-      margin-top: 8rem;
-      max-width: 100%;
-      width: 100%;
+      margin-bottom: var(--padding-block);
+      margin-top: var(--padding-block);
 
-      img {
+      &.wp-block-image {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &.wp-block-image img {
         border-radius: 0;
       }
     }
