@@ -193,56 +193,78 @@
     }
   }
 
-  // Images
+  // Image block
   /* stylelint-disable selector-max-compound-selectors */
+  .wp-block-image {
+    display: block;
+    margin-bottom: var(--margin-wp-block-image);
+    margin-top: var(--margin-wp-block-image);
+
+    &.alignwide,
+    &.alignfull {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .alignwide img,
+    .alignfull img {
+      width: 100%;
+    }
+
+    > figure {
+      display: block;
+      width: auto;
+
+      &.alignleft,
+      &.alignright {
+        // Hack for keeping figcaption from flowing over floated image, this variable is set inline to the corresponding figure with gutenberg-helpers.js
+        /* stylelint-disable csstools/value-no-unknown-custom-properties */
+        max-width: var(--child-img-width);
+        /* stylelint-enable */
+      }
+    }
+
+    figcaption {
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: $container-mobile) {
+      float: none;
+      margin: 0;
+
+      // Has to be important because we want to override inline width
+      /* stylelint-disable declaration-no-important */
+      width: 100% !important;
+      /* stylelint-enable */
+    }
+
+    @media (max-width: $container-mobile) {
+      &.alignleft img,
+      &.alignright img,
+      &.aligncenter img {
+        float: none;
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    .aligncenter {
+      text-align: center;
+    }
+
+    .aligncenter img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  // Captions
   .wp-block-image figcaption,
   .wp-block-image .alignright > figcaption,
   .wp-block-image .aligncenter > figcaption,
   .wp-block-image.is-resized > figcaption {
     display: block;
     width: 100%;
-  }
-  /* stylelint-enable selector-max-compound-selectors */
-
-  .wp-block-image > figure {
-    display: inline-block;
-    width: auto;
-
-    &.alignleft,
-    &.alignright {
-      // Hack for keeping figcaption from flowing over floated image, this variable is set inline to the corresponding figure with gutenberg-helpers.js
-      /* stylelint-disable csstools/value-no-unknown-custom-properties */
-      max-width: var(--child-img-width);
-      /* stylelint-enable */
-    }
-
-    &.alignleft,
-    &.alignright,
-    &.aligncenter {
-      figcaption {
-        margin-bottom: 2rem;
-      }
-
-      @media (max-width: $container-mobile) {
-        float: none;
-        margin: 0;
-
-        // Has to be important because we want to override inline width
-        /* stylelint-disable declaration-no-important */
-        width: 100% !important;
-        /* stylelint-enable */
-      }
-
-      @media (max-width: $container-mobile) {
-        &.alignleft img,
-        &.alignright img,
-        &.aligncenter img {
-          float: none;
-          height: auto;
-          width: 100%;
-        }
-      }
-    }
   }
 
   a:hover,
@@ -350,11 +372,6 @@
       /* stylelint-enable */
     }
 
-    &.wp-block-image {
-      margin-bottom: 4rem;
-      margin-top: 4rem;
-    }
-
     &.twitter-tweet,
     &.instagram-media,
     &.wp-video {
@@ -377,11 +394,6 @@
       /* stylelint-enable */
     }
 
-    &.alignwide img,
-    &.alignfull img {
-      width: 100%;
-    }
-
     &.alignwide {
       margin-bottom: 4rem;
       margin-left: auto;
@@ -391,11 +403,6 @@
       padding-right: 2rem;
       width: 100%;
 
-      &.wp-block-image {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
       @media (min-width: 870px) {
         max-width: $width-grid-base;
       }
@@ -404,11 +411,6 @@
     &.alignfull {
       margin-bottom: var(--padding-block);
       margin-top: var(--padding-block);
-
-      &.wp-block-image {
-        padding-left: 0;
-        padding-right: 0;
-      }
 
       &.wp-block-image img {
         border-radius: 0;

@@ -6,6 +6,7 @@
   --padding-site-header-vertical: 2rem;
   --padding-block: 8rem;
   --margin-between-text-elements: 4rem;
+  --margin-wp-block-image: 4rem;
 }
 
 @media (max-width: 1350px) {
