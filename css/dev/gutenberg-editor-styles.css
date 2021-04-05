@@ -577,13 +577,6 @@ pre code {
   width: 100%;
 }
 
-@media (max-width: 600px) {
-  .editor-styles-wrapper .wp-block-gallery figcaption,
-  .gutenberg-content .wp-block-gallery figcaption {
-    padding: 0;
-  }
-}
-
 .editor-styles-wrapper .wp-block-gallery img,
 .gutenberg-content .wp-block-gallery img {
   margin-bottom: 0;
