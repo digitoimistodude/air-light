@@ -30,6 +30,7 @@
       max-width: calc(100% - calc(var(--padding-container-horizontal) * 2));
       padding-left: var(--padding-container-horizontal);
       padding-right: var(--padding-container-horizontal);
+      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
     }
   }
 
@@ -47,6 +48,14 @@
     .columns-#{$i} .blocks-gallery-grid {
       grid-column-gap: 3rem;
       grid-template-columns: repeat($i, 1fr);
+
+      @media (max-width: 1000px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media (max-width: 670px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 

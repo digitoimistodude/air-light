@@ -14,4 +14,12 @@
   &.wp-block-embed.alignfull {
     width: calc(100% - calc(var(--padding-container-horizontal) * 2));
   }
+
+  &.wp-block-embed.alignfull.is-type-video {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
 }
