@@ -9,5 +9,9 @@
   .has-larger-font-size,
   .has-large-font-size {
     line-height: var(--line-height-headings);
+
+    @media (max-width: $container-mobile) {
+      font-size: var(--font-size-large);
+    }
   }
 }
