@@ -1,3 +1,7 @@
+### 7.0.1: 2021-04-05
+
+* Fix Gutenberg editor styles not loading: #78: Remove dependencies from style enqueue fixes #77
+
 ### 7.0.0: 2021-04-01
 
 * Prevent FOUT when loading webfonts
