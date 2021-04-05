@@ -108,7 +108,7 @@ function enqueue_polyfills() {
  * @return string file and path of the asset file
  */
 function get_asset_file( $filename ) {
-  $env = 'development' === wp_get_environment_type() && ! isset( $_GET['load_production_builds'] ) ? 'dev' : 'prod';
+  $env = 'development' === wp_get_environment_type() && ! isset( $_GET['load_production_builds'] ) ? 'dev' : 'prod'; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
   $filetype = pathinfo( $filename )['extension'];
 
