@@ -3509,6 +3509,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 
 .gutenberg-content .blocks-gallery-grid {
   display: grid;
+  padding-left: 0;
 }
 
 .gutenberg-content .blocks-gallery-grid .blocks-gallery-item {
