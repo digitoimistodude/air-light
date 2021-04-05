@@ -7,5 +7,5 @@ figures.forEach((figure) => {
   if (typeof img === 'undefined' || !img) {
     return;
   }
-  figure.style.setProperty('--child-img-width', `${img.clientWidth}px`);
+  figure.style.setProperty('--width-child-img', `${img.clientWidth}px`);
 });

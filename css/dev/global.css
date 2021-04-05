@@ -330,6 +330,30 @@ template {
   }
 }
 
+@font-face {
+  font-display: fallback;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/Inter-Regular.woff") format("woff"), url("../../fonts/Inter-Regular.woff2") format("woff2"), url("../../fonts/Inter-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../../fonts/Inter-Italic.woff") format("woff"), url("../../fonts/Inter-Italic.woff2") format("woff2"), url("../../fonts/Inter-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../fonts/Inter-Bold.woff") format("woff"), url("../../fonts/Inter-Bold.woff2") format("woff2"), url("../../fonts/Inter-Bold.ttf") format("truetype");
+}
+
 :root {
   --font-size-default: 20px;
   --font-size-tiny: 14px;
@@ -365,30 +389,6 @@ template {
     --font-size-tiny: 14px;
     --font-size-small: 14px;
   }
-}
-
-@font-face {
-  font-display: fallback;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../../fonts/Inter-Regular.woff") format("woff"), url("../../fonts/Inter-Regular.woff2") format("woff2"), url("../../fonts/Inter-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-display: fallback;
-  font-family: "Inter";
-  font-style: italic;
-  font-weight: 400;
-  src: url("../../fonts/Inter-Italic.woff") format("woff"), url("../../fonts/Inter-Italic.woff2") format("woff2"), url("../../fonts/Inter-Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-display: fallback;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../../fonts/Inter-Bold.woff") format("woff"), url("../../fonts/Inter-Bold.woff2") format("woff2"), url("../../fonts/Inter-Bold.ttf") format("truetype");
 }
 
 .screen-reader-text, .gform_body .gform_validation_container {
@@ -5000,7 +5000,7 @@ pre code {
 .gutenberg-content .wp-block-image > figure.alignleft,
 .gutenberg-content .wp-block-image > figure.alignright {
   /* stylelint-disable csstools/value-no-unknown-custom-properties */
-  max-width: var(--child-img-width);
+  max-width: var(--width-child-img);
   /* stylelint-enable */
 }
 

@@ -15,10 +15,12 @@
 // Variables
 @import 'variables/colors';
 @import 'variables/breakpoints';
+@import 'variables/font-family';
+@import 'variables/font-sizes';
 @import 'variables/spacings';
 
-// Gutenberg editor style specific variables
-@import 'gutenberg/variables/fonts';
+// Gutenberg editor specific webfonts
+@import 'gutenberg/variables/font-family';
 
 // Components needed by gutenberg
 @import 'components/button';
@@ -37,6 +39,20 @@
 // These styles are NO USE to front-end
 .editor-styles-wrapper {
   overflow-x: hidden;
+}
+
+// Fix alignleft and alignright figcaption width
+// Hack for achieving the same than in gutenberg-helpers.js
+[data-align="right"] figcaption,
+[data-align="left"] figcaption {
+  margin-left: auto;
+  margin-right: auto;
+
+  // Hack for keeping figcaption from flowing over floated image, this variable is set inline to the corresponding figure with gutenberg-helpers.js
+  /* stylelint-disable csstools/value-no-unknown-custom-properties */
+  max-width: var(--width-child-img);
+  text-align: center;
+  /* stylelint-enable */
 }
 
 // Fix alignleft and alignright figcaption width
