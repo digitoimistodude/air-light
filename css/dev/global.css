@@ -2362,6 +2362,10 @@ a.is-external-link.no-external-link-indicator::after {
   max-width: 800px;
 }
 
+.block.block-entry-header-demo + .block .container.gutenberg-content {
+  max-width: 100%;
+}
+
 .block.block-blog article,
 .block.block-blog nav {
   max-width: 800px;
