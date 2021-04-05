@@ -108,7 +108,7 @@ script:
     # https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/* --standard=phpcs.xml; fi
     # Run the theme through stylelint.
-    - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev postcss stylelint stylelint-a11y stylelint-order stylelint-config-recommended stylelint-config-standard stylelint-config-wordpress stylelint-declaration-use-variable stylelint-order stylelint-scss stylelint-value-no-unknown-custom-properties; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev postcss stylelint stylelint-a11y stylelint-order stylelint-config-recommended stylelint-config-standard stylelint-declaration-use-variable stylelint-order stylelint-scss stylelint-value-no-unknown-custom-properties; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link postcss; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link stylelint; fi
     - if [[ "$SNIFF" == "1" ]]; then stylelint . --max-warnings 0; fi
