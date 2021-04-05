@@ -3943,7 +3943,7 @@ body *[aria-invalid="true"] {
     display: grid;
     /* autoprefixer: off */
     grid-auto-rows: minmax(0, auto);
-    grid-column-gap: 16px;
+    grid-gap: 16px;
     grid-row-gap: 16px;
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -4156,7 +4156,7 @@ body *[aria-invalid="true"] {
 @media (min-width: 480px) {
   .comment-form {
     display: grid;
-    grid-column-gap: 1em;
+    grid-gap: 1em;
     grid-template-columns: 1fr 1fr;
     /* autoprefixer: off */
     justify-content: center;
@@ -4706,12 +4706,13 @@ pre code {
 
 .editor-styles-wrapper .blocks-gallery-grid .blocks-gallery-item,
 .gutenberg-content .blocks-gallery-grid .blocks-gallery-item {
+  margin: 0;
   width: 100%;
 }
 
 .editor-styles-wrapper .columns-2 .blocks-gallery-grid,
 .gutenberg-content .columns-2 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(2, 1fr);
 }
 
@@ -4731,7 +4732,7 @@ pre code {
 
 .editor-styles-wrapper .columns-3 .blocks-gallery-grid,
 .gutenberg-content .columns-3 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -4751,7 +4752,7 @@ pre code {
 
 .editor-styles-wrapper .columns-4 .blocks-gallery-grid,
 .gutenberg-content .columns-4 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -4771,7 +4772,7 @@ pre code {
 
 .editor-styles-wrapper .columns-5 .blocks-gallery-grid,
 .gutenberg-content .columns-5 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(5, 1fr);
 }
 
@@ -4791,7 +4792,7 @@ pre code {
 
 .editor-styles-wrapper .columns-6 .blocks-gallery-grid,
 .gutenberg-content .columns-6 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(6, 1fr);
 }
 
@@ -4811,7 +4812,7 @@ pre code {
 
 .editor-styles-wrapper .columns-7 .blocks-gallery-grid,
 .gutenberg-content .columns-7 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(7, 1fr);
 }
 
@@ -4831,7 +4832,7 @@ pre code {
 
 .editor-styles-wrapper .columns-8 .blocks-gallery-grid,
 .gutenberg-content .columns-8 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(8, 1fr);
 }
 
@@ -4851,7 +4852,7 @@ pre code {
 
 .editor-styles-wrapper .columns-9 .blocks-gallery-grid,
 .gutenberg-content .columns-9 .blocks-gallery-grid {
-  grid-column-gap: 3rem;
+  grid-gap: 3rem;
   grid-template-columns: repeat(9, 1fr);
 }
 

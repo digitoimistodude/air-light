@@ -4,7 +4,7 @@
 
   /* autoprefixer: off */
   grid-auto-rows: minmax($min_height, $max_height);
-  grid-column-gap: $gutter_x;
+  grid-gap: $gutter_x;
   grid-row-gap: $gutter_y;
   grid-template-columns: repeat($columns, minmax($min_width, $max_width));
 
