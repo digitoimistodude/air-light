@@ -4665,13 +4665,16 @@ pre code {
   width: 100%;
 }
 
+.editor-styles-wrapper .is-grid,
 .editor-styles-wrapper .wp-block-gallery,
+.gutenberg-content .is-grid,
 .gutenberg-content .wp-block-gallery {
-  color: #fff;
   overflow: hidden;
 }
 
+.editor-styles-wrapper .is-grid figcaption,
 .editor-styles-wrapper .wp-block-gallery figcaption,
+.gutenberg-content .is-grid figcaption,
 .gutenberg-content .wp-block-gallery figcaption {
   color: #fff;
   font-size: var(--font-size-small);
@@ -4680,198 +4683,256 @@ pre code {
   width: 100%;
 }
 
+.editor-styles-wrapper .is-grid img,
 .editor-styles-wrapper .wp-block-gallery img,
+.gutenberg-content .is-grid img,
 .gutenberg-content .wp-block-gallery img {
   margin-bottom: 0;
 }
 
+.editor-styles-wrapper .is-grid.alignwide,
 .editor-styles-wrapper .wp-block-gallery.alignwide,
+.gutenberg-content .is-grid.alignwide,
 .gutenberg-content .wp-block-gallery.alignwide {
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
 }
 
+.editor-styles-wrapper .is-grid.alignfull,
 .editor-styles-wrapper .wp-block-gallery.alignfull,
+.gutenberg-content .is-grid.alignfull,
 .gutenberg-content .wp-block-gallery.alignfull {
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
   width: calc(100% - calc(var(--padding-container-horizontal) * 2));
 }
 
+.editor-styles-wrapper .is-grid,
 .editor-styles-wrapper .blocks-gallery-grid,
+.gutenberg-content .is-grid,
 .gutenberg-content .blocks-gallery-grid {
   display: grid;
   padding-left: 0;
 }
 
+.editor-styles-wrapper .is-grid .blocks-gallery-item,
 .editor-styles-wrapper .blocks-gallery-grid .blocks-gallery-item,
+.gutenberg-content .is-grid .blocks-gallery-item,
 .gutenberg-content .blocks-gallery-grid .blocks-gallery-item {
   margin: 0;
   width: 100%;
 }
 
+.editor-styles-wrapper .is-grid.columns-2,
 .editor-styles-wrapper .columns-2 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-2,
 .gutenberg-content .columns-2 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(2, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-2,
   .editor-styles-wrapper .columns-2 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-2,
   .gutenberg-content .columns-2 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-2,
   .editor-styles-wrapper .columns-2 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-2,
   .gutenberg-content .columns-2 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.editor-styles-wrapper .is-grid.columns-3,
 .editor-styles-wrapper .columns-3 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-3,
 .gutenberg-content .columns-3 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(3, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-3,
   .editor-styles-wrapper .columns-3 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-3,
   .gutenberg-content .columns-3 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-3,
   .editor-styles-wrapper .columns-3 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-3,
   .gutenberg-content .columns-3 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.editor-styles-wrapper .is-grid.columns-4,
 .editor-styles-wrapper .columns-4 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-4,
 .gutenberg-content .columns-4 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(4, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-4,
   .editor-styles-wrapper .columns-4 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-4,
   .gutenberg-content .columns-4 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-4,
   .editor-styles-wrapper .columns-4 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-4,
   .gutenberg-content .columns-4 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.editor-styles-wrapper .is-grid.columns-5,
 .editor-styles-wrapper .columns-5 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-5,
 .gutenberg-content .columns-5 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(5, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-5,
   .editor-styles-wrapper .columns-5 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-5,
   .gutenberg-content .columns-5 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-5,
   .editor-styles-wrapper .columns-5 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-5,
   .gutenberg-content .columns-5 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.editor-styles-wrapper .is-grid.columns-6,
 .editor-styles-wrapper .columns-6 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-6,
 .gutenberg-content .columns-6 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(6, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-6,
   .editor-styles-wrapper .columns-6 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-6,
   .gutenberg-content .columns-6 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-6,
   .editor-styles-wrapper .columns-6 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-6,
   .gutenberg-content .columns-6 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.editor-styles-wrapper .is-grid.columns-7,
 .editor-styles-wrapper .columns-7 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-7,
 .gutenberg-content .columns-7 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(7, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-7,
   .editor-styles-wrapper .columns-7 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-7,
   .gutenberg-content .columns-7 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-7,
   .editor-styles-wrapper .columns-7 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-7,
   .gutenberg-content .columns-7 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.editor-styles-wrapper .is-grid.columns-8,
 .editor-styles-wrapper .columns-8 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-8,
 .gutenberg-content .columns-8 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(8, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-8,
   .editor-styles-wrapper .columns-8 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-8,
   .gutenberg-content .columns-8 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-8,
   .editor-styles-wrapper .columns-8 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-8,
   .gutenberg-content .columns-8 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+.editor-styles-wrapper .is-grid.columns-9,
 .editor-styles-wrapper .columns-9 .blocks-gallery-grid,
+.gutenberg-content .is-grid.columns-9,
 .gutenberg-content .columns-9 .blocks-gallery-grid {
   grid-gap: 3rem;
   grid-template-columns: repeat(9, 1fr);
 }
 
 @media (max-width: 1000px) {
+  .editor-styles-wrapper .is-grid.columns-9,
   .editor-styles-wrapper .columns-9 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-9,
   .gutenberg-content .columns-9 .blocks-gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 670px) {
+  .editor-styles-wrapper .is-grid.columns-9,
   .editor-styles-wrapper .columns-9 .blocks-gallery-grid,
+  .gutenberg-content .is-grid.columns-9,
   .gutenberg-content .columns-9 .blocks-gallery-grid {
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
