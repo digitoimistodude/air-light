@@ -5022,6 +5022,13 @@ pre code {
 }
 
 @media (max-width: 1240px) {
+  .editor-styles-wrapper .has-background,
+  .gutenberg-content .has-background {
+    width: calc(100% - calc(2.375em * 2));
+  }
+}
+
+@media (max-width: 1240px) {
   .editor-styles-wrapper .wp-block-preformatted,
   .gutenberg-content .wp-block-preformatted {
     margin-left: var(--padding-container-horizontal);

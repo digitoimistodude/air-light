@@ -22,4 +22,10 @@
       font-size: var(--font-size-huge);
     }
   }
+
+  @media (max-width: $width-grid-base + 40px) {
+    .has-background {
+      width: calc(100% - calc(2.375em * 2));
+    }
+  }
 }
