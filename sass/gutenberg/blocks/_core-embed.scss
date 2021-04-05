@@ -1,10 +1,6 @@
 // Core/embed block
 .editor-styles-wrapper,
 .gutenberg-content {
-  .wp-block-embed {
-    width: 100%;
-  }
-
   .wp-block-embed iframe,
   .wp-block-embed video {
     max-width: 100%;

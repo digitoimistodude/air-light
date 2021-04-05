@@ -4641,11 +4641,6 @@ pre code {
   line-height: var(--line-height-core-heading);
 }
 
-.editor-styles-wrapper .wp-block-embed,
-.gutenberg-content .wp-block-embed {
-  width: 100%;
-}
-
 .editor-styles-wrapper .wp-block-embed iframe,
 .editor-styles-wrapper .wp-block-embed video,
 .gutenberg-content .wp-block-embed iframe,
@@ -5447,11 +5442,6 @@ th {
     margin-right: var(--padding-container-horizontal);
     width: calc(100% - calc(var(--padding-container-horizontal) * 4));
   }
-}
-
-.editor-styles-wrapper .wp-block-video,
-.gutenberg-content .wp-block-video {
-  width: 100%;
 }
 
 .editor-styles-wrapper .wp-block-video video,
