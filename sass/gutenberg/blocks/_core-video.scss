@@ -1,24 +1,23 @@
-// Core/embed block
+// Core/video block
 .editor-styles-wrapper,
 .gutenberg-content {
-  .wp-block-embed {
+  .wp-block-video {
     width: 100%;
   }
 
-  .wp-block-embed iframe,
-  .wp-block-embed video {
+  .wp-block-video video {
     max-width: 100%;
     width: 100%;
   }
 
   @media (max-width: $width-grid-base + 40px) {
-    .wp-block-embed.alignwide,
-    .wp-block-embed.alignfull {
+    .wp-block-video.alignwide,
+    .wp-block-video.alignfull {
       width: calc(100% - calc(var(--padding-container-horizontal) * 2));
     }
   }
 
-  .wp-block-embed.alignfull {
+  .wp-block-video.alignfull {
     margin-left: 0;
     margin-right: 0;
     max-width: 100%;
