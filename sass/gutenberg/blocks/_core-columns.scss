@@ -1,20 +1,20 @@
 // Core/columns block
-.editor-styles-wrapper > *,
-.gutenberg-content > * {
-  &.wp-block-columns.alignfull {
+.editor-styles-wrapper,
+.gutenberg-content {
+  .wp-block-columns.alignfull {
     padding-left: var(--padding-container-horizontal);
     padding-right: var(--padding-container-horizontal);
   }
 
   // Loops to enumerate the classes for columns.
   @for $i from 1 through 9 {
-    &.columns-#{$i}.alignfull {
+    .columns-#{$i}.alignfull {
       padding-left: var(--padding-container-horizontal);
       padding-right: var(--padding-container-horizontal);
       width: calc(100% - calc(var(--padding-container-horizontal) * 2));
     }
 
-    &.columns-#{$i} {
+    .columns-#{$i} {
       @media (max-width: 1000px) {
         display: grid;
         grid-gap: 1em;

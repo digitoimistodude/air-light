@@ -6,16 +6,13 @@
     max-width: 100%;
     width: 100%;
   }
-}
 
-.editor-styles-wrapper > *,
-.gutenberg-content > * {
-  &.wp-block-embed.alignwide,
-  &.wp-block-embed.alignfull {
+  .wp-block-embed.alignwide,
+  .wp-block-embed.alignfull {
     width: calc(100% - calc(var(--padding-container-horizontal) * 2));
   }
 
-  &.wp-block-embed.alignfull.is-type-video {
+  .wp-block-embed.alignfull.is-type-video {
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;
