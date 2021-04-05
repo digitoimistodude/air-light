@@ -3494,9 +3494,57 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 
 .cat a:hover,
 .cat a:focus {
-  /* stylelint-disable sh-waqar/declaration-use-variable */
   border-color: rgba(6, 22, 41, 0.4);
-  /* stylelint-enable sh-waqar/declaration-use-variable */
+}
+
+.tags {
+  list-style: none;
+  margin-bottom: var(--margin-between-text-elements);
+  margin-top: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 840px) {
+  .tags {
+    padding: 0;
+  }
+}
+
+.tags li {
+  float: left;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 10px;
+  margin-top: 0;
+  padding-left: 0;
+  /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class */
+  /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class */
+}
+
+.tags li a:not(.button):not(.no-text-link) {
+  background-color: transparent;
+  border-color: rgba(6, 22, 41, 0.1);
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px 1px 2px;
+  box-shadow: none;
+  color: #222;
+  display: inline-block;
+  font-size: 14px;
+  margin-right: .4em;
+  padding: .2em .6em;
+  transition: all 0.22s;
+}
+
+.tags li a:not(.button):not(.no-text-link):hover,
+.tags li a:not(.button):not(.no-text-link):focus {
+  border-color: rgba(6, 22, 41, 0.4);
+}
+
+.post-navigation .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .gutenberg-content {
@@ -4053,56 +4101,6 @@ pre code {
   background-color: transparent;
   border-radius: 4px;
   color: #f5f5f5;
-}
-
-.post-navigation .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-ul.tags {
-  list-style: none;
-  margin-bottom: var(--margin-between-text-elements);
-  margin-top: 0;
-  overflow: hidden;
-}
-
-@media (min-width: 840px) {
-  ul.tags {
-    padding: 0;
-  }
-}
-
-ul.tags li {
-  float: left;
-  margin-bottom: 10px;
-  margin-left: 0;
-  margin-right: 10px;
-  margin-top: 0;
-  padding-left: 0;
-  /* stylelint-disable selector-max-compound-selectors, selector-max-pseudo-class */
-  /* stylelint-enable selector-max-compound-selectors, selector-max-pseudo-class */
-}
-
-ul.tags li a:not(.button):not(.no-text-link) {
-  background-color: transparent;
-  border-color: rgba(6, 22, 41, 0.1);
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px 1px 2px;
-  box-shadow: none;
-  color: #222;
-  display: inline-block;
-  font-size: 14px;
-  margin-right: .4em;
-  padding: .2em .6em;
-  transition: all 0.22s;
-}
-
-ul.tags li a:not(.button):not(.no-text-link):hover,
-ul.tags li a:not(.button):not(.no-text-link):focus {
-  border-color: rgba(6, 22, 41, 0.4);
 }
 
 .sticky {
