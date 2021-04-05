@@ -2441,6 +2441,7 @@ a.is-external-link.no-external-link-indicator::after {
   clear: both;
   display: flex;
   justify-content: space-between;
+  margin-top: var(--padding-container-vertical);
   overflow: hidden;
 }
 
