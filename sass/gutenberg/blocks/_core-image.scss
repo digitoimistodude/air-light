@@ -7,15 +7,32 @@
     margin-bottom: var(--margin-wp-block-image);
     margin-top: var(--margin-wp-block-image);
 
-    &.alignwide,
     &.alignfull {
       padding-left: 0;
       padding-right: 0;
     }
 
+    @media (min-width: $width-grid-base + 40px) {
+      &.alignwide {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: $width-grid-base + 40px) {
+      &.alignwide {
+        width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+      }
+    }
+
     .alignwide img,
     .alignfull img {
       width: 100%;
+    }
+
+    // No border radius on full width image and wide on small screens
+    .alignfull img {
+      border-radius: 0;
     }
 
     > figure {
@@ -33,16 +50,6 @@
 
     figcaption {
       margin-bottom: 2rem;
-    }
-
-    @media (max-width: $container-mobile) {
-      float: none;
-      margin: 0;
-
-      // Has to be important because we want to override inline width
-      /* stylelint-disable declaration-no-important */
-      width: 100% !important;
-      /* stylelint-enable */
     }
 
     @media (max-width: $container-mobile) {

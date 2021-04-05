@@ -1,0 +1,16 @@
+// Core/columns block
+.editor-styles-wrapper > *,
+.gutenberg-content > * {
+  &.wp-block-columns.alignfull {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+  }
+
+  // Loops to enumerate the classes for columns.
+  @for $i from 2 through 9 {
+    &.columns-#{$i}.alignfull {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+    }
+  }
+}

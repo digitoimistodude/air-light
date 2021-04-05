@@ -1,0 +1,12 @@
+// Core/pullquote block
+.editor-styles-wrapper > *,
+.gutenberg-content > * {
+  &.wp-block-pullquote.alignwide,
+  &.wp-block-pullquote.alignfull {
+    margin-left: var(--padding-container-horizontal);
+    margin-right: var(--padding-container-horizontal);
+    padding-left: 0;
+    padding-right: 0;
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  }
+}

@@ -1,5 +1,8 @@
 // Gutenberg editor styles
 //
+// Forced to use important here, because WordPress uses too specific selectors
+/* stylelint-disable declaration-no-important */
+//
 // Please note: These styles affect only wp-admin
 // editor side. Please remember to add imports
 // from "Gutenberg blocks" also to the main
@@ -30,6 +33,9 @@
 // Gutenberg blocks
 @import 'gutenberg/blocks';
 
+// Editor exceptions below
+// These styles are NO USE to front-end
+
 // Fix alignleft and alignright figcaption width
 // Hack for achieving the same than in gutenberg-helpers.js
 [data-align="right"] figcaption,
@@ -42,13 +48,24 @@
 
 // Wider editor
 // Default is 580px which is way too narrow
-// Forced to use important here, because WordPress uses too specific selectors
-/* stylelint-disable declaration-no-important */
 .wp-block {
   font-family: $font-paragraphs !important;
+  max-width: $width-max-article !important;
 
-  &:not([data-align="wide"]),
-  &:not([data-align="full"]) {
-    max-width: $width-max-article !important;
+  // Full width block
+  &[data-align="full"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  // Wide width block
+  &[data-align="wide"] {
+    max-width: $width-grid-base !important;
+    width: 100% !important;
+
+    @media (min-width: 870px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }

@@ -1,0 +1,8 @@
+// Core/text-columns block
+.editor-styles-wrapper > *,
+.gutenberg-content > * {
+  &.wp-block-text-columns.alignfull {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+  }
+}

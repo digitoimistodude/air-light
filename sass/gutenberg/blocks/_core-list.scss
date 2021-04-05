@@ -1,16 +1,9 @@
 // List block
 .editor-styles-wrapper,
 .gutenberg-content {
-  ol,
-  ul {
+  .wp-block-categories-list,
+  ol:not([class]),
+  ul:not([class]) {
     padding-left: calc(2rem + 2.7rem);
-  }
-
-  li {
-    @include responsive-font($font-size-min, $font-size-max-blog);
-
-    @media (max-width: $container-mobile) {
-      font-size: 15px;
-    }
   }
 }
