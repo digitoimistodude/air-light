@@ -526,10 +526,24 @@ pre code {
 .editor-styles-wrapper > *.wp-block-pullquote.alignwide, .editor-styles-wrapper > *.wp-block-pullquote.alignfull,
 .gutenberg-content > *.wp-block-pullquote.alignwide,
 .gutenberg-content > *.wp-block-pullquote.alignfull {
-  margin-left: var(--padding-container-horizontal);
-  margin-right: var(--padding-container-horizontal);
   padding-left: 0;
   padding-right: 0;
+}
+
+@media (max-width: 1240px) {
+  .editor-styles-wrapper > *.wp-block-pullquote.alignwide, .editor-styles-wrapper > *.wp-block-pullquote.alignfull,
+  .gutenberg-content > *.wp-block-pullquote.alignwide,
+  .gutenberg-content > *.wp-block-pullquote.alignfull {
+    margin-left: var(--padding-container-horizontal);
+    margin-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  }
+}
+
+.editor-styles-wrapper > *.wp-block-pullquote.alignfull,
+.gutenberg-content > *.wp-block-pullquote.alignfull {
+  margin-left: var(--padding-container-horizontal);
+  margin-right: var(--padding-container-horizontal);
   width: calc(100% - calc(var(--padding-container-horizontal) * 2));
 }
 
