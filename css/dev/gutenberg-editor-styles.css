@@ -244,6 +244,15 @@ pre code {
   color: #f5f5f5;
 }
 
+@media (max-width: 1240px) {
+  .editor-styles-wrapper .wp-block-code,
+  .gutenberg-content .wp-block-code {
+    margin-left: var(--padding-container-horizontal);
+    margin-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 4));
+  }
+}
+
 .editor-styles-wrapper pre,
 .gutenberg-content pre {
   padding-left: var(--padding-container-horizontal);
@@ -649,7 +658,6 @@ pre code {
 
 .editor-styles-wrapper .wp-block-gallery.alignfull,
 .gutenberg-content .wp-block-gallery.alignfull {
-  max-width: calc(100% - calc(var(--padding-container-horizontal) * 2));
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
   width: calc(100% - calc(var(--padding-container-horizontal) * 2));
@@ -978,6 +986,15 @@ pre code {
   }
 }
 
+@media (max-width: 1240px) {
+  .editor-styles-wrapper .wp-block-preformatted,
+  .gutenberg-content .wp-block-preformatted {
+    margin-left: var(--padding-container-horizontal);
+    margin-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 4));
+  }
+}
+
 .editor-styles-wrapper > *.wp-block-pullquote.alignwide, .editor-styles-wrapper > *.wp-block-pullquote.alignfull,
 .gutenberg-content > *.wp-block-pullquote.alignwide,
 .gutenberg-content > *.wp-block-pullquote.alignfull {
@@ -1038,6 +1055,15 @@ th {
 .gutenberg-content > *.wp-block-text-columns.alignfull {
   padding-left: var(--padding-container-horizontal);
   padding-right: var(--padding-container-horizontal);
+}
+
+@media (max-width: 1240px) {
+  .editor-styles-wrapper .wp-block-verse,
+  .gutenberg-content .wp-block-verse {
+    margin-left: var(--padding-container-horizontal);
+    margin-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 4));
+  }
 }
 
 .wp-block.is-style-boxed,

@@ -27,7 +27,6 @@
     }
 
     &.alignfull {
-      max-width: calc(100% - calc(var(--padding-container-horizontal) * 2));
       padding-left: var(--padding-container-horizontal);
       padding-right: var(--padding-container-horizontal);
       width: calc(100% - calc(var(--padding-container-horizontal) * 2));
