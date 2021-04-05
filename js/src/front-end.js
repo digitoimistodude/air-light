@@ -21,7 +21,7 @@ document.body.classList.remove('no-js');
 document.body.classList.add('js');
 
 // Fit video embeds to container
-reframe('iframe');
+reframe('.wp-has-aspect-ratio iframe');
 
 // Style external links
 styleExternalLinks();
