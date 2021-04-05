@@ -5,4 +5,9 @@
     color: $color-paragraphs;
     line-height: var(--line-height-paragraphs-blog);
   }
+
+  .has-larger-font-size,
+  .has-large-font-size {
+    line-height: var(--line-height-headings);
+  }
 }

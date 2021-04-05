@@ -5059,6 +5059,13 @@ pre code {
   line-height: var(--line-height-paragraphs-blog);
 }
 
+.editor-styles-wrapper .has-larger-font-size,
+.editor-styles-wrapper .has-large-font-size,
+.gutenberg-content .has-larger-font-size,
+.gutenberg-content .has-large-font-size {
+  line-height: var(--line-height-headings);
+}
+
 .editor-styles-wrapper > *.wp-block-pullquote.alignwide, .editor-styles-wrapper > *.wp-block-pullquote.alignfull,
 .gutenberg-content > *.wp-block-pullquote.alignwide,
 .gutenberg-content > *.wp-block-pullquote.alignfull {
