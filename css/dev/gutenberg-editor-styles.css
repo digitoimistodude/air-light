@@ -965,11 +965,16 @@ pre code {
 }
 
 @media (max-width: 480px) {
-  .editor-styles-wrapper .has-larger-font-size,
   .editor-styles-wrapper .has-large-font-size,
-  .gutenberg-content .has-larger-font-size,
   .gutenberg-content .has-large-font-size {
     font-size: var(--font-size-large);
+  }
+}
+
+@media (max-width: 480px) {
+  .editor-styles-wrapper .has-larger-font-size,
+  .gutenberg-content .has-larger-font-size {
+    font-size: var(--font-size-huge);
   }
 }
 
