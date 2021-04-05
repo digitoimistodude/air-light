@@ -2343,6 +2343,9 @@ a.is-external-link.no-external-link-indicator::after {
 }
 
 @media (min-width: 960px) {
+  .dropdown-toggle,
+  .menu-item.current-menu-item > a,
+  .menu-item.current-menu-parent > a,
   .site-header .site-branding .site-title a,
   .site-header .nav-primary .menu-items.nav-menu .menu-item > .dropdown-toggle,
   .site-header .nav-primary .menu-items .current-menu-parent > a,
@@ -2350,7 +2353,8 @@ a.is-external-link.no-external-link-indicator::after {
     color: #60f4ea;
   }
   .site-header .nav-primary .menu-items .sub-menu .current-menu-parent > a,
-  .site-header .nav-primary .menu-items .sub-menu .current-menu-item > a {
+  .site-header .nav-primary .menu-items .sub-menu .current-menu-item > a,
+  .site-header .nav-primary .menu-items .sub-menu .dropdown-toggle {
     color: #2a2d3e;
   }
   .site-header .nav-primary .menu-items.nav-menu .sub-menu .menu-item > .dropdown-toggle {
