@@ -5469,15 +5469,11 @@ th {
   }
 }
 
-.editor-styles-wrapper .alignfull,
-.gutenberg-content .alignfull {
-  margin-bottom: var(--padding-block);
-  margin-top: var(--padding-block);
-}
-
 @media (min-width: 1240px) {
   .editor-styles-wrapper .alignfull,
   .gutenberg-content .alignfull {
+    margin-bottom: var(--padding-block);
+    margin-top: var(--padding-block);
     max-width: 100%;
     width: 100%;
   }

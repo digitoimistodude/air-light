@@ -23,10 +23,9 @@
   }
 
   .alignfull {
-    margin-bottom: var(--padding-block);
-    margin-top: var(--padding-block);
-
     @media (min-width: $width-grid-base + 40px) {
+      margin-bottom: var(--padding-block);
+      margin-top: var(--padding-block);
       max-width: 100%;
       width: 100%;
     }
