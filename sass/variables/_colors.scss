@@ -28,11 +28,11 @@ $color-main: $color-valhalla;
   // Element colors
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
 
 // Element text and background colors
-$color-headings: $color-main;
 $color-blockquotes: #666;
 $color-blog-tags: #061629;
 $color-border-blog-categories: rgba($color-blog-tags, .4);

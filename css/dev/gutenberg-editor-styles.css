@@ -16,6 +16,7 @@
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
 

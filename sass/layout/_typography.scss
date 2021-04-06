@@ -68,7 +68,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-headings;
+  color: var(--color-headings);
   font-family: $font-headings;
   font-weight: var(--font-weight-headings);
   margin-bottom: var(--margin-between-paragraphs);

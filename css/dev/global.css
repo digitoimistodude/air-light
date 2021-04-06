@@ -310,6 +310,7 @@ template {
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
 
@@ -2736,7 +2737,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #2a2d3e;
+  color: var(--color-headings);
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
   font-weight: var(--font-weight-headings);
   margin-bottom: var(--margin-between-paragraphs);
