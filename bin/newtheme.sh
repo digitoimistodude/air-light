@@ -86,8 +86,9 @@ npm install
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.browserslistrc ${PROJECTPATH}/
-rm ${PROJECTTHEMEPATH}/.hintrc
+rm ${PROJECTTHEMEPATH}/.browserslistrc
 cp ${PROJECTTHEMEPATH}/.hintrc ${PROJECTPATH}/
+rm ${PROJECTTHEMEPATH}/.hintrc
 cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
