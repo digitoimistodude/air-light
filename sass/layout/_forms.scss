@@ -4,12 +4,12 @@
 // the Gravity Forms styles out of the box.
 
 // Variables
-$background-inputs: var(--color-white);
-$color-checkboxes: $color-paragraphs;
+$color-checkboxes: $color-east-bay;
 $border-width-inputs: 2px;
 
 // CSS Variables for radios and checkboxes
 :root {
+  --color-background-inputs: var(--color-white);
   --checkbox-radio-size: 16px;
   --checkbox-radio-gap: 10px;
   --checkbox-radio-border-width: 2px;
@@ -64,7 +64,7 @@ select {
   background-size: 40px auto;
   border: $border-width-inputs solid $color-border-forms;
   border-radius: 0;
-  color: $color-paragraphs;
+  color: var(--color-paragraphs);
   font-size: var(--font-size-medium);
   line-height: 24px;
   max-width: 100%;
@@ -89,7 +89,7 @@ input[type="email"],
 input[type="search"] {
   @extend %default;
   appearance: none;
-  background-color: $background-inputs;
+  background-color: var(--color-background-inputs);
   border: solid $border-width-inputs $color-border-forms;
   border-radius: 3px;
   box-sizing: border-box;
@@ -103,12 +103,12 @@ input[type="search"] {
   transition: background .55s;
 
   &::placeholder {
-    color: $color-paragraphs;
+    color: var(--color-paragraphs);
     opacity: .4;
   }
 
   &:focus {
-    background-color: $background-inputs;
+    background-color: var(--color-background-inputs);
     border: $border-width-inputs solid darken(#d9d9d9, 12%);
     outline: 0;
 
@@ -120,7 +120,7 @@ input[type="search"] {
 }
 
 select:focus {
-  background-color: $background-inputs;
+  background-color: var(--color-background-inputs);
   border: $border-width-inputs solid darken(#d9d9d9, 12%);
 }
 

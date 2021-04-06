@@ -1,6 +1,7 @@
 // Colors that we need as SCSS variables
 // for mixins and other SCSS-related functions like rgba
 $color-black: #222;
+$color-east-bay: #545773;
 $color-valhalla: #2a2d3e;
 $color-main: $color-valhalla;
 
@@ -11,9 +12,10 @@ $color-main: $color-valhalla;
   --color-black: #{$color-black};
   --color-black-rgb: #{hextorgb($color-black)};
   --color-blue-chalk: #ece6f2;
-  --color-east-bay: #545773;
+  --color-east-bay: #{$color-east-bay};
   --color-valhalla: #{$color-valhalla};
   --color-valhalla-rgb: #{hextorgb($color-valhalla)};
+  --color-very-light-grey: #ccc;
   --color-white: #fff;
   --color-white-smoke: #f5f5f5;
 
@@ -26,10 +28,10 @@ $color-main: $color-valhalla;
   // Element colors
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-paragraphs: var(--color-east-bay);
 }
 
 // Element text and background colors
-$color-paragraphs: #545773;
 $color-headings: $color-main;
 $color-blockquotes: #666;
 $color-blog-tags: #061629;

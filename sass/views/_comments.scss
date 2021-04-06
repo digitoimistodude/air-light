@@ -33,7 +33,7 @@
 
   .comment-author {
     @extend %h4;
-    color: $color-paragraphs;
+    color: var(--color-paragraphs);
     margin-bottom: 10px;
     margin-top: 0;
     padding: 0;
@@ -46,7 +46,7 @@
   }
 
   .comment-author a {
-    color: $color-paragraphs;
+    color: var(--color-paragraphs);
   }
 
   .comment-time {

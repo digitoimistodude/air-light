@@ -1,8 +1,8 @@
 // Boxed block style
 .wp-block.is-style-boxed,
 .is-style-boxed {
-  border: 2px solid $color-paragraphs;
-  color: $color-paragraphs;
+  border: 2px solid var(--color-paragraphs);
+  color: var(--color-paragraphs);
   font-size: 17px;
   font-style: normal;
   font-weight: 500;

@@ -14,7 +14,7 @@
 /* stylelint-enable */
 
 .mfp-title {
-  color: $color-paragraphs;
+  color: var(--color-paragraphs);
   font-family: $font-paragraphs;
   font-size: 1.5rem;
   margin-left: 1.5rem;

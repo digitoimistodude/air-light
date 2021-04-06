@@ -7,6 +7,7 @@
   --color-east-bay: #545773;
   --color-valhalla: #2a2d3e;
   --color-valhalla-rgb: hextorgb(#2a2d3e);
+  --color-very-light-grey: #ccc;
   --color-white: #fff;
   --color-white-smoke: #f5f5f5;
   --color-hover: var(--color-valhalla);
@@ -15,6 +16,7 @@
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-paragraphs: var(--color-east-bay);
 }
 
 @font-face {
@@ -984,7 +986,7 @@ pre code {
 
 .editor-styles-wrapper p,
 .gutenberg-content p {
-  color: #545773;
+  color: var(--color-paragraphs);
   line-height: var(--line-height-paragraphs-blog);
 }
 
@@ -1386,8 +1388,8 @@ th {
 
 .wp-block.is-style-boxed,
 .is-style-boxed {
-  border: 2px solid #545773;
-  color: #545773;
+  border: 2px solid var(--color-paragraphs);
+  color: var(--color-paragraphs);
   font-size: 17px;
   font-style: normal;
   font-weight: 500;

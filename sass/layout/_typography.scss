@@ -13,7 +13,7 @@
 
 // Start typography settings
 body {
-  color: $color-paragraphs;
+  color: var(--color-paragraphs);
   font-family: $font-paragraphs;
   font-size: var(--font-size-medium);
   -moz-osx-font-smoothing: grayscale;

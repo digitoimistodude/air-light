@@ -301,6 +301,7 @@ template {
   --color-east-bay: #545773;
   --color-valhalla: #2a2d3e;
   --color-valhalla-rgb: hextorgb(#2a2d3e);
+  --color-very-light-grey: #ccc;
   --color-white: #fff;
   --color-white-smoke: #f5f5f5;
   --color-hover: var(--color-valhalla);
@@ -309,6 +310,7 @@ template {
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-paragraphs: var(--color-east-bay);
 }
 
 :root {
@@ -2575,7 +2577,7 @@ a.is-external-link.no-external-link-indicator::after {
 
 /* stylelint-enable declaration-property-unit-allowed-list */
 body {
-  color: #545773;
+  color: var(--color-paragraphs);
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
   font-size: var(--font-size-medium);
   -moz-osx-font-smoothing: grayscale;
@@ -3116,6 +3118,7 @@ pre {
 }
 
 :root {
+  --color-background-inputs: var(--color-white);
   --checkbox-radio-size: 16px;
   --checkbox-radio-gap: 10px;
   --checkbox-radio-border-width: 2px;
@@ -3303,7 +3306,7 @@ select {
   background-size: 40px auto;
   border: 2px solid #d9d9d9;
   border-radius: 0;
-  color: #545773;
+  color: var(--color-paragraphs);
   font-size: var(--font-size-medium);
   line-height: 24px;
   max-width: 100%;
@@ -3328,7 +3331,7 @@ input[type="search"] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--color-white);
+  background-color: var(--color-background-inputs);
   border: solid 2px #d9d9d9;
   border-radius: 3px;
   box-sizing: border-box;
@@ -3343,7 +3346,7 @@ input[type="search"] {
 }
 
 textarea::-moz-placeholder, select::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="month"]::-moz-placeholder, input[type="week"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="search"]::-moz-placeholder {
-  color: #545773;
+  color: var(--color-paragraphs);
   opacity: .4;
 }
 
@@ -3358,7 +3361,7 @@ input[type="month"]::placeholder,
 input[type="week"]::placeholder,
 input[type="email"]::placeholder,
 input[type="search"]::placeholder {
-  color: #545773;
+  color: var(--color-paragraphs);
   opacity: .4;
 }
 
@@ -3373,7 +3376,7 @@ input[type="month"]:focus,
 input[type="week"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus {
-  background-color: var(--color-white);
+  background-color: var(--color-background-inputs);
   border: 2px solid #bababa;
   outline: 0;
 }
@@ -3399,7 +3402,7 @@ input[type="search"]:focus::placeholder {
 }
 
 select:focus {
-  background-color: var(--color-white);
+  background-color: var(--color-background-inputs);
   border: 2px solid #bababa;
 }
 
@@ -4123,7 +4126,7 @@ body *[aria-invalid="true"] {
 }
 
 .comment-list .comment-author {
-  color: #545773;
+  color: var(--color-paragraphs);
   margin-bottom: 10px;
   margin-top: 0;
   padding: 0;
@@ -4136,7 +4139,7 @@ body *[aria-invalid="true"] {
 }
 
 .comment-list .comment-author a {
-  color: #545773;
+  color: var(--color-paragraphs);
 }
 
 .comment-list .comment-time {
@@ -5099,7 +5102,7 @@ pre code {
 
 .editor-styles-wrapper p,
 .gutenberg-content p {
-  color: #545773;
+  color: var(--color-paragraphs);
   line-height: var(--line-height-paragraphs-blog);
 }
 
@@ -5501,8 +5504,8 @@ th {
 
 .wp-block.is-style-boxed,
 .is-style-boxed {
-  border: 2px solid #545773;
-  color: #545773;
+  border: 2px solid var(--color-paragraphs);
+  color: var(--color-paragraphs);
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
@@ -5672,10 +5675,10 @@ th {
 
 kbd {
   background-color: #eaf1f8;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-very-light-grey);
   border-radius: 4px;
   box-shadow: 0 1px 0 rgba(var(--color-black-rgb), 0.2), 0 0 0 2px var(--color-white) inset;
-  color: #545773;
+  color: var(--color-paragraphs);
   display: inline-block;
   line-height: 1.4;
   padding: 0 .5rem;
