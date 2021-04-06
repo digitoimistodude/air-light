@@ -170,7 +170,7 @@ blockquote {
   position: relative;
 
   p {
-    color: $color-blockquotes;
+    color: var(--color-blockquote);
     font-style: italic;
     margin-bottom: 0;
     overflow: visible;

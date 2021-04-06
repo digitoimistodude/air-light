@@ -1,6 +1,7 @@
 // Colors that we need as SCSS variables
 // for mixins and other SCSS-related functions like rgba
 $color-black: #222;
+$color-black-pearl: #061629;
 $color-east-bay: #545773;
 $color-valhalla: #2a2d3e;
 $color-main: $color-valhalla;
@@ -11,6 +12,8 @@ $color-main: $color-valhalla;
   // Colors
   --color-black: #{$color-black};
   --color-black-rgb: #{hextorgb($color-black)};
+  --color-black-pearl: #{$color-black-pearl};
+  --color-black-pearl-rgb: #{hextorgb($color-black-pearl)};
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #{$color-east-bay};
   --color-valhalla: #{$color-valhalla};
@@ -28,18 +31,17 @@ $color-main: $color-valhalla;
   // Element colors
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-border-tag-base: var(--color-black-pearl-rgb);
+  --color-border-tag: rgba(var(--color-border-tag-base), .1);
+  --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
+  --color-border-category: rgba(var(--color-border-tag-base), .2);
   --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
 
 // Element text and background colors
-$color-blockquotes: #666;
-$color-blog-tags: #061629;
-$color-border-blog-categories: rgba($color-blog-tags, .4);
+$color-border-blog-categories: rgba(var(--color-black-pearl-rgb), .4);
 $color-tags-and-search-items: #eaf1f8;
-$color-tag-borders: rgba($color-blog-tags, .1);
-$color-tag-borders-hover: rgba($color-blog-tags, .4);
-$color-cat-borders: rgba($color-blog-tags, .2);
 $color-code-blocks: #c7254e;
 $color-code-blocks-background: #f9f2f4;
 $color-border-forms: #d9d9d9;

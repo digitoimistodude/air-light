@@ -3,6 +3,8 @@
 :root {
   --color-black: #222;
   --color-black-rgb: hextorgb(#222);
+  --color-black-pearl: #061629;
+  --color-black-pearl-rgb: hextorgb(#061629);
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
   --color-valhalla: #2a2d3e;
@@ -16,6 +18,10 @@
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-shade: #03061b;
   --color-blockquote: var(--color-links);
+  --color-border-tag-base: var(--color-black-pearl-rgb);
+  --color-border-tag: rgba(var(--color-border-tag-base), .1);
+  --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
+  --color-border-category: rgba(var(--color-border-tag-base), .2);
   --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
