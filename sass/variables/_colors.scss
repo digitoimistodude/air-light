@@ -3,6 +3,7 @@
 $color-black: #222;
 $color-black-pearl: #061629;
 $color-east-bay: #545773;
+$color-pattens-blue: #eaf1f8;
 $color-valhalla: #2a2d3e;
 $color-main: $color-valhalla;
 
@@ -21,7 +22,9 @@ $color-main: $color-valhalla;
   --color-link-water: #cdcfd4;
   --color-maroon-flush: #c7254e;
   --color-mortar: #555;
-  --color-pattens-blue: #eaf1f8;
+  --color-pattens-blue: #{$color-pattens-blue};
+  --color-pattens-blue-rgb: #{hextorgb($color-pattens-blue)};
+  --color-pattens-blue-20: darken($color-pattens-blue, 20%);
   --color-soft-peach: #f9f2f4;
   --color-valhalla: #{$color-valhalla};
   --color-valhalla-rgb: #{hextorgb($color-valhalla)};
@@ -52,7 +55,6 @@ $color-main: $color-valhalla;
 }
 
 // Element text and background colors
-$color-edit-link: #999;
 $color-background-edit-link: #fafafa;
 $color-background-hover-edit-link: #efefef;
 $color-background-default: #f0f0f0;

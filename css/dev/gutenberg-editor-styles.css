@@ -13,6 +13,8 @@
   --color-maroon-flush: #c7254e;
   --color-mortar: #555;
   --color-pattens-blue: #eaf1f8;
+  --color-pattens-blue-rgb: hextorgb(#eaf1f8);
+  --color-pattens-blue-20: darken($color-pattens-blue, 20%);
   --color-soft-peach: #f9f2f4;
   --color-valhalla: #2a2d3e;
   --color-valhalla-rgb: hextorgb(#2a2d3e);
