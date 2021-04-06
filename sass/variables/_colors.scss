@@ -16,6 +16,8 @@ $color-main: $color-valhalla;
   --color-black-pearl-rgb: #{hextorgb($color-black-pearl)};
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #{$color-east-bay};
+  --color-link-water: #cdcfd4;
+  --color-pattens-blue: #eaf1f8;
   --color-valhalla: #{$color-valhalla};
   --color-valhalla-rgb: #{hextorgb($color-valhalla)};
   --color-very-light-grey: #ccc;
@@ -30,18 +32,17 @@ $color-main: $color-valhalla;
 
   // Element colors
   --color-background-shade: #03061b;
+  --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-links);
   --color-border-tag-base: var(--color-black-pearl-rgb);
   --color-border-tag: rgba(var(--color-border-tag-base), .1);
   --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
-  --color-border-category: rgba(var(--color-border-tag-base), .2);
+  --color-border-category: var(--color-link-water);
   --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
 
 // Element text and background colors
-$color-border-blog-categories: rgba(var(--color-black-pearl-rgb), .4);
-$color-tags-and-search-items: #eaf1f8;
 $color-code-blocks: #c7254e;
 $color-code-blocks-background: #f9f2f4;
 $color-border-forms: #d9d9d9;

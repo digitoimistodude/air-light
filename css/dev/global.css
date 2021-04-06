@@ -301,6 +301,8 @@ template {
   --color-black-pearl-rgb: hextorgb(#061629);
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
+  --color-link-water: #cdcfd4;
+  --color-pattens-blue: #eaf1f8;
   --color-valhalla: #2a2d3e;
   --color-valhalla-rgb: hextorgb(#2a2d3e);
   --color-very-light-grey: #ccc;
@@ -311,11 +313,12 @@ template {
   --color-main: #2a2d3e;
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-shade: #03061b;
+  --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-links);
   --color-border-tag-base: var(--color-black-pearl-rgb);
   --color-border-tag: rgba(var(--color-border-tag-base), .1);
   --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
-  --color-border-category: rgba(var(--color-border-tag-base), .2);
+  --color-border-category: var(--color-link-water);
   --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
@@ -3533,7 +3536,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 
 .cat a:hover,
 .cat a:focus {
-  border-color: rgba(var(--color-black-pearl-rgb), 0.4);
+  border-color: var(--color-border-tag-hover);
 }
 
 .tags {
@@ -3578,8 +3581,12 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   justify-content: space-between;
 }
 
+:root {
+  --color-border-sticky: #d7e4f2;
+}
+
 .sticky {
-  border: 1px dashed #d7e4f2;
+  border: 1px dashed var(--color-border-sticky);
   margin-bottom: 2rem;
   padding: 2rem;
 }
@@ -4069,13 +4076,13 @@ body *[aria-invalid="true"] {
 }
 
 .block-search-results .tags a {
-  background-color: #eaf1f8;
+  background-color: var(--color-background-tag);
   color: var(--color-main);
 }
 
 .block-search-results .tags a:hover, .block-search-results .tags a:focus {
   background-color: var(--color-main);
-  color: #eaf1f8;
+  color: var(--color-background-tag);
 }
 
 @media (min-width: 480px) {
@@ -5681,7 +5688,7 @@ th {
 }
 
 kbd {
-  background-color: #eaf1f8;
+  background-color: var(--color-pattens-blue);
   border: 1px solid var(--color-very-light-grey);
   border-radius: 4px;
   box-shadow: 0 1px 0 rgba(var(--color-black-rgb), 0.2), 0 0 0 2px var(--color-white) inset;

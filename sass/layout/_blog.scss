@@ -23,7 +23,7 @@
 
   a:hover,
   a:focus {
-    border-color: $color-border-blog-categories;
+    border-color: var(--color-border-tag-hover);
   }
 }
 
