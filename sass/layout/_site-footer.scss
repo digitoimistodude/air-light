@@ -9,12 +9,16 @@
 // and start over.
 
 .site-footer {
-  background-color: $color-demo-footer-background;
   clear: both;
   color: var(--color-white);
   overflow: hidden;
   padding: 6rem 2rem;
   text-align: center;
+
+  p,
+  span {
+    color: var(--color-white);
+  }
 
   .wordpress-logo {
     display: block;
@@ -31,11 +35,6 @@
   svg {
     margin-right: 5px;
     position: relative;
-  }
-
-  p,
-  span {
-    color: $color-demo-footer-foreground;
   }
 
   // Hiding for aesthetic reasons
@@ -60,7 +59,7 @@
     position: relative;
 
     &.is-external-link::after {
-      background-color: $color-demo-footer-foreground;
+      background-color: var(--color-white);
       bottom: 0;
       content: '';
       display: block;
@@ -74,12 +73,12 @@
   }
 
   a {
-    color: $color-demo-footer-foreground;
+    color: var(--color-white);
     transition: opacity $transition-duration;
 
     &:hover,
     &:focus {
-      color: $color-demo-footer-foreground;
+      color: var(--color-white);
       opacity: .5;
 
       &::after {
