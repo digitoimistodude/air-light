@@ -1,4 +1,4 @@
-@mixin button-style-ghost($background: transparent, $background-hover: $color-buttons-hover, $color: $color-buttons, $hover: choose-contrast-color($color-buttons-hover), $radius: 3px, $border: 2px solid $color-buttons, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
+@mixin button-style-ghost($background: transparent, $background-hover: var(--color-button-hover), $color: var(--color-button), $hover: choose-contrast-color($color-button-hover), $radius: 3px, $border: 2px solid var(--color-button), $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
   background-color: $background;
   border: $border;
   border-radius: $radius;

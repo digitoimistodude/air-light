@@ -300,8 +300,10 @@ template {
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
   --color-gainsboro: #d9d9d9;
+  --color-gallery: #f0f0f0;
   --color-link-water: #cdcfd4;
   --color-maroon-flush: #c7254e;
+  --color-mid-grey: #5c5c6a;
   --color-mortar: #555;
   --color-pattens-blue: #eaf1f8;
   --color-pattens-blue-rgb: 234, 241, 248;
@@ -316,6 +318,9 @@ template {
   --color-links: var(--color-valhalla);
   --color-main: #2a2d3e;
   --color-main-rgb: 42, 45, 62;
+  --color-background-code-block: var(--color-black-rock);
+  --color-background-code-inline: var(--color-soft-peach);
+  --color-background-default: var(--color-gallery);
   --color-background-shade: #03061b;
   --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-links);
@@ -324,11 +329,16 @@ template {
   --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
   --color-border-category: var(--color-link-water);
   --color-border-forms: var(--color-gainsboro);
+  --color-button: #545773;
+  --color-button-hover: #2a2d3e;
+  --color-captions: var(--color-mid-grey);
   --color-code-block: var(--color-maroon-flush);
-  --color-background-code-block: var(--color-black-rock);
-  --color-background-code-inline: var(--color-soft-peach);
-  --color-headings: var(--color-main);
+  --color-error: #e1b3b2;
+  --color-outline-overlay-items: #ff848a;
   --color-paragraphs: var(--color-east-bay);
+  --color-success: #8ed185;
+  --color-headings: var(--color-main);
+  --color-warning: #f4aa71;
 }
 
 :root {
@@ -515,7 +525,7 @@ template {
 }
 
 [data-whatinput="keyboard"] a.global-link:focus {
-  outline-color: #ff848a;
+  outline-color: var(--color-outline-overlay-items);
   outline-offset: -1px;
   outline-style: solid;
   outline-width: 4px;
@@ -3164,7 +3174,7 @@ pre {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--color-east-bay);
+  background-color: #545773;
   border: 0;
   border-radius: 3px;
   color: var(--color-white);
@@ -3235,9 +3245,9 @@ pre {
 .site-footer input[type="submit"].button-ghost,
 .site-footer input[type="button"].button-ghost {
   background-color: transparent;
-  border: 2px solid var(--color-east-bay);
+  border: 2px solid var(--color-button);
   border-radius: 3px;
-  color: var(--color-east-bay);
+  color: var(--color-button);
   transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -3260,8 +3270,8 @@ pre {
 .site-footer input[type="submit"].button-ghost:hover,
 .site-footer input[type="button"].button-ghost:focus,
 .site-footer input[type="button"].button-ghost:hover {
-  background-color: #2a2d3e;
-  border-color: #2a2d3e;
+  background-color: var(--color-button-hover);
+  border-color: var(--color-button-hover);
   color: white;
 }
 
@@ -3833,7 +3843,7 @@ a.page-numbers:focus {
 
 /* stylelint-disable selector-class-pattern */
 div.validation_error {
-  background-color: #e1b3b2;
+  background-color: var(--color-error);
   color: var(--color-white);
   font-size: var(--font-size-medium);
   font-weight: 700;
@@ -3846,11 +3856,11 @@ div.validation_error:focus {
 }
 
 body *[aria-invalid="true"] {
-  border-color: #e1b3b2;
+  border-color: var(--color-error);
 }
 
 .validation_message {
-  color: #e1b3b2;
+  color: var(--color-error);
   font-size: var(--font-size-small);
   font-weight: 400;
 }
@@ -3863,12 +3873,12 @@ body *[aria-invalid="true"] {
 }
 
 .validation_list a {
-  color: #e1b3b2;
+  color: var(--color-error);
   text-decoration: none;
 }
 
 .validation_list li {
-  color: #e1b3b2;
+  color: var(--color-error);
   font-weight: 700;
 }
 
@@ -5537,7 +5547,7 @@ th {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--color-east-bay);
+  background-color: #545773;
   border: 0;
   border-radius: 3px;
   color: var(--color-white);
@@ -5645,7 +5655,7 @@ th {
 .gutenberg-content cite,
 .gutenberg-content small {
   border: 0;
-  color: rgba(75, 75, 90, 0.9);
+  color: var(--color-captions);
   font-size: var(--font-size-captions);
   font-style: normal;
   margin-bottom: 6rem;

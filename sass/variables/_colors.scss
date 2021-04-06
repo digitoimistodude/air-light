@@ -6,6 +6,8 @@ $color-east-bay: #545773;
 $color-pattens-blue: #eaf1f8;
 $color-valhalla: #2a2d3e;
 $color-main: $color-valhalla;
+$color-button: $color-east-bay;
+$color-button-hover: $color-valhalla;
 
 // CSS variables
 // Names: https://www.color-blindness.com/color-name-hue/
@@ -19,8 +21,10 @@ $color-main: $color-valhalla;
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #{$color-east-bay};
   --color-gainsboro: #d9d9d9;
+  --color-gallery: #f0f0f0;
   --color-link-water: #cdcfd4;
   --color-maroon-flush: #c7254e;
+  --color-mid-grey: #5c5c6a;
   --color-mortar: #555;
   --color-pattens-blue: #{$color-pattens-blue};
   --color-pattens-blue-rgb: #{hextorgb($color-pattens-blue)};
@@ -39,6 +43,9 @@ $color-main: $color-valhalla;
   --color-main-rgb: #{hextorgb($color-main)};
 
   // Element colors
+  --color-background-code-block: var(--color-black-rock);
+  --color-background-code-inline: var(--color-soft-peach);
+  --color-background-default: var(--color-gallery);
   --color-background-shade: #03061b;
   --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-links);
@@ -47,24 +54,14 @@ $color-main: $color-valhalla;
   --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
   --color-border-category: var(--color-link-water);
   --color-border-forms: var(--color-gainsboro);
+  --color-button: #{$color-button};
+  --color-button-hover: #{$color-button-hover};
+  --color-captions: var(--color-mid-grey);
   --color-code-block: var(--color-maroon-flush);
-  --color-background-code-block: var(--color-black-rock);
-  --color-background-code-inline: var(--color-soft-peach);
-  --color-headings: var(--color-main);
+  --color-error: #e1b3b2;
+  --color-outline-overlay-items: #ff848a;
   --color-paragraphs: var(--color-east-bay);
+  --color-success: #8ed185;
+  --color-headings: var(--color-main);
+  --color-warning: #f4aa71;
 }
-
-// Element text and background colors
-$color-background-edit-link: #fafafa;
-$color-background-hover-edit-link: #efefef;
-$color-background-default: #f0f0f0;
-$color-success: lighten(#2d6426, 40%);
-$color-warning: lighten(#8e440b, 40%);
-$color-error: lighten(#903a37, 40%);
-$color-disabled: #bbb;
-$color-captions: rgba(#4b4b5a, .9);
-$color-buttons: var(--color-east-bay);
-$color-buttons-hover: $color-main;
-
-// Accessibility
-$color-outline-overlay-items: #ff848a;

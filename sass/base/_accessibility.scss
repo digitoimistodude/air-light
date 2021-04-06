@@ -92,7 +92,7 @@
 
   // A bit better focus for large elements
   a.global-link:focus {
-    outline-color: $color-outline-overlay-items;
+    outline-color: var(--color-outline-overlay-items);
     outline-offset: -1px;
     outline-style: solid;
     outline-width: 4px;

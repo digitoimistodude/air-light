@@ -9,8 +9,10 @@
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
   --color-gainsboro: #d9d9d9;
+  --color-gallery: #f0f0f0;
   --color-link-water: #cdcfd4;
   --color-maroon-flush: #c7254e;
+  --color-mid-grey: #5c5c6a;
   --color-mortar: #555;
   --color-pattens-blue: #eaf1f8;
   --color-pattens-blue-rgb: hextorgb(#eaf1f8);
@@ -25,6 +27,9 @@
   --color-links: var(--color-valhalla);
   --color-main: #2a2d3e;
   --color-main-rgb: hextorgb(#2a2d3e);
+  --color-background-code-block: var(--color-black-rock);
+  --color-background-code-inline: var(--color-soft-peach);
+  --color-background-default: var(--color-gallery);
   --color-background-shade: #03061b;
   --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-links);
@@ -33,11 +38,16 @@
   --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
   --color-border-category: var(--color-link-water);
   --color-border-forms: var(--color-gainsboro);
+  --color-button: #545773;
+  --color-button-hover: #2a2d3e;
+  --color-captions: var(--color-mid-grey);
   --color-code-block: var(--color-maroon-flush);
-  --color-background-code-block: var(--color-black-rock);
-  --color-background-code-inline: var(--color-soft-peach);
-  --color-headings: var(--color-main);
+  --color-error: #e1b3b2;
+  --color-outline-overlay-items: #ff848a;
   --color-paragraphs: var(--color-east-bay);
+  --color-success: #8ed185;
+  --color-headings: var(--color-main);
+  --color-warning: #f4aa71;
 }
 
 @font-face {
@@ -1429,7 +1439,7 @@ th {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: var(--color-east-bay);
+  background-color: #545773;
   border: 0;
   border-radius: 3px;
   color: var(--color-white);

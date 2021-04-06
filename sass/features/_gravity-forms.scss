@@ -4,7 +4,7 @@
 // WCAG 2.0 errors
 /* stylelint-disable selector-class-pattern */
 div.validation_error {
-  background-color: $color-error;
+  background-color: var(--color-error);
   color: var(--color-white);
   font-size: var(--font-size-medium);
   font-weight: 700;
@@ -17,11 +17,11 @@ div.validation_error {
 }
 
 body *[aria-invalid="true"] {
-  border-color: $color-error;
+  border-color: var(--color-error);
 }
 
 .validation_message {
-  color: $color-error;
+  color: var(--color-error);
   font-size: var(--font-size-small);
   font-weight: 400;
 }
@@ -33,12 +33,12 @@ body *[aria-invalid="true"] {
   padding: 0;
 
   a {
-    color: $color-error;
+    color: var(--color-error);
     text-decoration: none;
   }
 
   li {
-    color: $color-error;
+    color: var(--color-error);
     font-weight: 700;
   }
 }

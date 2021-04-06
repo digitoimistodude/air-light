@@ -1,4 +1,4 @@
-@mixin button($color: var(--color-white), $hover: choose-contrast-color($color-buttons-hover), $background: $color-buttons, $background-hover: $color-buttons-hover, $radius: 3px, $border: 0, $border-hover: $color-buttons-hover, $weight: 700, $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
+@mixin button($color: var(--color-white), $hover: choose-contrast-color($color-button-hover), $background: $color-button, $background-hover: $color-button-hover, $radius: 3px, $border: 0, $border-hover: $color-button-hover, $weight: 700, $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
   appearance: none;
   background-color: $background;
   border: $border;
