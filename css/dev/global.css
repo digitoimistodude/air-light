@@ -298,6 +298,7 @@ template {
   --color-white: #fff;
   --color-black: #222;
   --color-black-rgb: hextorgb(#222);
+  --color-east-bay: #545773;
 }
 
 :root {
@@ -3122,7 +3123,7 @@ pre {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #545773;
+  background-color: var(--color-east-bay);
   border: 0;
   border-radius: 3px;
   color: var(--color-white);
@@ -3193,9 +3194,9 @@ pre {
 .site-footer input[type="submit"].button-ghost,
 .site-footer input[type="button"].button-ghost {
   background-color: transparent;
-  border: 2px solid #545773;
+  border: 2px solid var(--color-east-bay);
   border-radius: 3px;
-  color: #545773;
+  color: var(--color-east-bay);
   transition: all 0.08s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -4093,7 +4094,7 @@ body *[aria-invalid="true"] {
 }
 
 .comment-list p {
-  color: #545773;
+  color: var(--color-east-bay);
   font-size: var(--font-size-tiny);
 }
 
@@ -4126,7 +4127,7 @@ body *[aria-invalid="true"] {
 }
 
 .comment-list .comment-time a {
-  color: #545773;
+  color: var(--color-east-bay);
 }
 
 .comment-list .comment-time:focus, .comment-list .comment-time:hover {
@@ -4134,7 +4135,7 @@ body *[aria-invalid="true"] {
 }
 
 .comment-list .comment-time svg {
-  fill: #545773;
+  fill: var(--color-east-bay);
   margin-right: 5px;
   position: relative;
   top: 2px;
@@ -5501,7 +5502,7 @@ th {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #545773;
+  background-color: var(--color-east-bay);
   border: 0;
   border-radius: 3px;
   color: var(--color-white);

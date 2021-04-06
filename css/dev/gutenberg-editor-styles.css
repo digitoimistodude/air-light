@@ -4,6 +4,7 @@
   --color-white: #fff;
   --color-black: #222;
   --color-black-rgb: hextorgb(#222);
+  --color-east-bay: #545773;
 }
 
 @font-face {
@@ -1395,7 +1396,7 @@ th {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #545773;
+  background-color: var(--color-east-bay);
   border: 0;
   border-radius: 3px;
   color: var(--color-white);

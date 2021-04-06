@@ -22,7 +22,7 @@
   }
 
   p {
-    color: $color-darkgrey;
+    color: var(--color-east-bay);
     font-size: var(--font-size-tiny);
   }
 
@@ -55,7 +55,7 @@
     padding: 0;
 
     a {
-      color: $color-darkgrey;
+      color: var(--color-east-bay);
     }
 
     &:focus,
@@ -65,7 +65,7 @@
   }
 
   .comment-time svg {
-    fill: $color-darkgrey;
+    fill: var(--color-east-bay);
     margin-right: 5px;
     position: relative;
     top: 2px;
