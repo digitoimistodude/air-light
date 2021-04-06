@@ -66,9 +66,9 @@ function register_block_editor_assets() {
   // Enqueue optional editor only styles
   wp_enqueue_style(
     'block-editor-styles',
-    get_theme_file_uri( get_asset_file( 'gutenberg.css' ) ),
+    get_theme_file_uri( get_asset_file( 'gutenberg-editor-styles.css' ) ),
     [],
-    filemtime( get_theme_file_path( get_asset_file( 'gutenberg.css' ) ) ),
+    filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor-styles.css' ) ) ),
     'all'
   );
 }

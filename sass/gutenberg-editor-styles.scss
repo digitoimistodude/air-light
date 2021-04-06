@@ -12,10 +12,12 @@
 // Variables
 @import 'variables/colors';
 @import 'variables/breakpoints';
+@import 'variables/font-family';
+@import 'variables/font-sizes';
 @import 'variables/spacings';
 
-// Gutenberg editor style specific variables
-@import 'gutenberg/variables/fonts';
+// Gutenberg editor specific webfonts
+@import 'gutenberg/variables/font-family';
 
 // Components needed by gutenberg
 @import 'components/button';
@@ -24,10 +26,17 @@
 @import 'components/button-size-large';
 @import 'components/button-style-ghost';
 
+// Gutenberg layout outside blocks
+@import 'gutenberg/layout/content';
+
 // Gutenberg blocks
-@import 'gutenberg/boxed';
-@import 'gutenberg/button';
-@import 'gutenberg/button-file';
+@import 'gutenberg/blocks';
+
+// Editor exceptions below
+// These styles are NO USE to front-end
+.editor-styles-wrapper {
+  overflow-x: hidden;
+}
 
 // Fix alignleft and alignright figcaption width
 // Hack for achieving the same than in gutenberg-helpers.js
@@ -35,8 +44,12 @@
 [data-align="left"] figcaption {
   margin-left: auto;
   margin-right: auto;
-  max-width: 200px;
+
+  // Hack for keeping figcaption from flowing over floated image, this variable is set inline to the corresponding figure with gutenberg-helpers.js
+  /* stylelint-disable csstools/value-no-unknown-custom-properties */
+  max-width: var(--width-child-img);
   text-align: center;
+  /* stylelint-enable */
 }
 
 // Wider editor
@@ -45,9 +58,22 @@
 /* stylelint-disable declaration-no-important */
 .wp-block {
   font-family: $font-paragraphs !important;
+  max-width: $width-max-article !important;
 
-  &:not([data-align="wide"]),
-  &:not([data-align="full"]) {
-    max-width: $width-max-article !important;
+  // Full width block
+  &[data-align="full"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  // Wide width block
+  &[data-align="wide"] {
+    max-width: $width-grid-base !important;
+    width: 100% !important;
+
+    @media (min-width: 870px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }

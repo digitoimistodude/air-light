@@ -1,0 +1,32 @@
+// Gutenberg content
+.editor-styles-wrapper,
+.gutenberg-content {
+  max-width: 100%;
+  padding-bottom: var(--padding-block);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: var(--padding-block);
+}
+
+// Gutenberg core magic
+.gutenberg-content > * {
+  line-height: var(--line-height-paragraphs-blog);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width-max-article;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+
+  @media (max-width: $width-max-article + 40px) {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+
+    &.alignfull {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    }
+  }
+}

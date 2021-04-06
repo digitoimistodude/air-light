@@ -1,0 +1,74 @@
+// Core/heading block
+.editor-styles-wrapper,
+.gutenberg-content {
+  // Image block
+  .wp-block-image {
+    display: block;
+    margin-bottom: var(--margin-wp-block-image);
+    margin-top: var(--margin-wp-block-image);
+
+    &.alignfull {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @media (min-width: $width-grid-base + 40px) {
+      &.alignwide {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: $width-grid-base + 40px) {
+      &.alignwide {
+        width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+      }
+    }
+
+    .alignwide img,
+    .alignfull img {
+      width: 100%;
+    }
+
+    // No border radius on full width image and wide on small screens
+    .alignfull img {
+      border-radius: 0;
+    }
+
+    > figure {
+      display: block;
+      width: auto;
+
+      &.alignleft,
+      &.alignright {
+        // Hack for keeping figcaption from flowing over floated image, this variable is set inline to the corresponding figure with gutenberg-helpers.js
+        /* stylelint-disable csstools/value-no-unknown-custom-properties */
+        max-width: var(--width-child-img);
+        /* stylelint-enable */
+      }
+    }
+
+    figcaption {
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: $container-mobile) {
+      &.alignleft img,
+      &.alignright img,
+      &.aligncenter img {
+        float: none;
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    .aligncenter {
+      text-align: center;
+    }
+
+    .aligncenter img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

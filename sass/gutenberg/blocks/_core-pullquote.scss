@@ -1,0 +1,21 @@
+// Core/pullquote block
+.editor-styles-wrapper,
+.gutenberg-content {
+  .wp-block-pullquote.alignwide,
+  .wp-block-pullquote.alignfull {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (max-width: $width-grid-base + 40px) {
+      margin-left: var(--padding-container-horizontal);
+      margin-right: var(--padding-container-horizontal);
+      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    }
+  }
+
+  .wp-block-pullquote.alignfull {
+    margin-left: var(--padding-container-horizontal);
+    margin-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  }
+}

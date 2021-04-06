@@ -1,0 +1,34 @@
+// Core/table block
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  font-family: $font-paragraphs;
+  height: 3rem;
+  padding: 1rem;
+}
+
+// Table heading cells
+th {
+  font-weight: 700;
+}
+
+.editor-styles-wrapper,
+.gutenberg-content {
+  .wp-block-table.alignfull {
+    margin-left: var(--padding-container-horizontal);
+    margin-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  }
+
+  @media (max-width: $width-grid-base + 40px) {
+    .wp-block-table.alignwide {
+      margin-left: var(--padding-container-horizontal);
+      margin-right: var(--padding-container-horizontal);
+      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    }
+  }
+}

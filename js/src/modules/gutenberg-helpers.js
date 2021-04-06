@@ -4,8 +4,8 @@ const figures = [
 ];
 figures.forEach((figure) => {
   const img = figure.querySelector('img');
-  if (typeof img === 'undefined' || !('clientWidth' in img)) {
+  if (typeof img === 'undefined' || !img) {
     return;
   }
-  figure.style.setProperty('--child-img-width', `${img.clientWidth}px`);
+  figure.style.setProperty('--width-child-img', `${img.clientWidth}px`);
 });

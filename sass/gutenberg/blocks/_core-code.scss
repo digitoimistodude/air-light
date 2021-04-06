@@ -1,0 +1,40 @@
+// Preformatted text.
+pre {
+  background-color: $color-code-background;
+  border: 1px solid $color-code-background;
+  border-radius: 4px;
+  color: $color-lightgrey;
+  display: block;
+  font-family: $font-monospace;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-paragraphs-blog);
+  margin: 3rem 0;
+  overflow: auto;
+  padding: 15px 16px 14px;
+  position: relative;
+  white-space: pre;
+  word-wrap: break-word;
+
+  code {
+    background-color: transparent;
+    border-radius: 4px;
+    color: $color-lightgrey;
+  }
+}
+
+// Core/code block
+.editor-styles-wrapper,
+.gutenberg-content {
+  .wp-block-code {
+    @media (max-width: $width-grid-base + 40px) {
+      margin-left: var(--padding-container-horizontal);
+      margin-right: var(--padding-container-horizontal);
+      width: calc(100% - calc(var(--padding-container-horizontal) * 4));
+    }
+  }
+
+  pre {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+  }
+}

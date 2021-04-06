@@ -1,0 +1,24 @@
+// Core/heading block
+.editor-styles-wrapper,
+.gutenberg-content {
+  // Title line-heights
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    line-height: var(--line-height-core-heading);
+  }
+
+  // Don't add extra margin on top of first title
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

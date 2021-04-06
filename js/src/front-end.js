@@ -5,6 +5,7 @@
 // Import modules (comment to disable)
 import MoveTo from 'moveto';
 import LazyLoad from 'vanilla-lazyload';
+import reframe from 'reframe.js';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
 import './modules/gutenberg-helpers';
@@ -18,6 +19,9 @@ import './modules/navigation.js';
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');
+
+// Fit video embeds to container
+reframe('.wp-has-aspect-ratio iframe');
 
 // Style external links
 styleExternalLinks();

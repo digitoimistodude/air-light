@@ -1,17 +1,9 @@
-// Font family settings for Gutenberg
-// Please note: Your font files are relative so this is why you need to
-// set up font paths separately for editors in "Self-hosted fonts" below.
+// Font family settings
 $font-paragraphs: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 $font-headings: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 $font-monospace: 'Inconsolata', 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
 
 // Font size settings
-$font-size-tiny: 14px;
-$font-size-small: 16px;
-$font-size-medium: 17px;
-$font-size-large: 18px;
-$font-size-extra-large: 20px;
-$font-size-huge: 22px;
 $font-size-min: 17px;
 $font-size-max: 20px;
 $font-size-max-blog: 19px;
@@ -27,42 +19,45 @@ $font-size-min-h5: 14px;
 $font-size-max-h5: 17px;
 $font-size-min-h6: 12px;
 $font-size-max-h6: 14px;
-$line-height-paragraphs: 1.7;
-$line-height-headings: 1.5;
-$line-height-blog: 1.77;
-$font-weight-paragraphs: 400;
-$font-weight-headings: 700;
 
 // CSS Variables for responsive fonts
 :root {
   --font-size-default: #{$font-size-max};
-  --font-size-tiny: #{$font-size-tiny};
-  --font-size-small: #{$font-size-small};
-  --font-size-medium: #{$font-size-medium};
-  --font-size-large: #{$font-size-large};
-  --font-size-extra-large: #{$font-size-extra-large};
-  --font-size-huge: #{$font-size-huge};
+  --font-size-tiny: 14px;
+  --font-size-small: 16px;
+  --font-size-medium: 17px;
+  --font-size-large: 18px;
+  --font-size-extra-large: 20px;
+  --font-size-huge: 22px;
+  --font-size-nav-toggle-label: 15px;
 
-  // Codyhouse helper variables
-  --body-line-height: #{$line-height-paragraphs};
-  --heading-line-height: #{$line-height-headings};
+  // Line-heights
+  --line-height-headings: 1.5;
+  --line-height-core-heading: 1.23;
+  --line-height-paragraphs: 1.7;
+  --line-height-paragraphs-blog: 1.77;
+
+  // Font weights
+  --font-weight-paragraphs: 400;
+  --font-weight-headings: 700;
+
+  // Vars on iPad
+  @media (max-width: $container-ipad) {
+    --font-size-extra-large: 17px;
+  }
 
   // Vars in mobile
   @media (max-width: $container-mobile) {
     --font-size-tiny: 16px;
     --font-size-small: 16px;
     --font-size-default: 16px;
-    --font-size-extra-large: 18px;
   }
 
   // Vars in tiny phones like iPhone 5S
   @media (max-width: 420px) {
+    --font-size-nav-toggle-label: 13px;
+    --font-size-extra-large: 16px;
     --font-size-tiny: 14px;
     --font-size-small: 14px;
   }
 }
-
-// Self-hosted fonts
-@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Regular', 400);
-@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Italic', 400, italic);
-@include fontFace('Inter', '../../../content/themes/air-light/fonts/Inter-Bold', 700);

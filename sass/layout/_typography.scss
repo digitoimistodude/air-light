@@ -18,7 +18,7 @@ body {
   font-size: var(--font-size-medium);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: $font-weight-paragraphs;
+  font-weight: var(--font-weight-paragraphs);
   text-rendering: geometricPrecision;
 }
 
@@ -74,7 +74,7 @@ table,
 tr,
 %default {
   font-size: var(--font-size-small);
-  line-height: $line-height-paragraphs;
+  line-height: var(--line-height-paragraphs);
 
   @media (min-width: 770px) {
     @include responsive-font($font-size-min, $font-size-max);
@@ -90,9 +90,9 @@ h5,
 h6 {
   color: $color-headings;
   font-family: $font-headings;
-  font-weight: $font-weight-headings;
-  margin-bottom: 2.7rem;
-  margin-top: 2.7rem;
+  font-weight: var(--font-weight-headings);
+  margin-bottom: var(--margin-between-paragraphs);
+  margin-top: var(--margin-between-paragraphs);
 }
 
 h2,
@@ -100,7 +100,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: $line-height-headings;
+  line-height: var(--line-height-headings);
 }
 
 // Define heading scales
@@ -252,7 +252,7 @@ figure {
 // Figcaption.
 figcaption {
   font-style: normal;
-  font-weight: $font-weight-paragraphs;
+  font-weight: var(--font-weight-paragraphs);
   margin-top: 0;
 }
 
