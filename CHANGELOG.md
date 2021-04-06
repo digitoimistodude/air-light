@@ -1,3 +1,9 @@
+### 7.0.3: 2021-04-06
+
+* Merge PR #82: Gutenberg improvements
+* Merge PR #84, Fixes #83
+* Major Gutenberg updates as proposed in #82
+
 ### 7.0.2: 2021-04-06
 
 * Add .hintrc for webhint
