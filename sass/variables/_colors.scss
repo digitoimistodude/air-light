@@ -25,10 +25,10 @@ $color-main: $color-valhalla;
 
   // Element colors
   --color-background-shade: #03061b;
+  --color-blockquote: var(--color-links);
 }
 
 // Element text and background colors
-$color-links: $color-main;
 $color-paragraphs: #545773;
 $color-headings: $color-main;
 $color-blockquotes: #666;

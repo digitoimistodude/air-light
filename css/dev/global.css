@@ -308,6 +308,7 @@ template {
   --color-main: #2a2d3e;
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-shade: #03061b;
+  --color-blockquote: var(--color-links);
 }
 
 :root {
@@ -2584,7 +2585,7 @@ body {
 }
 
 a {
-  color: #2a2d3e;
+  color: var(--color-links);
   text-decoration: none;
 }
 
@@ -4303,7 +4304,7 @@ body *[aria-invalid="true"] {
 .editor-styles-wrapper > blockquote.wp-block-quote,
 .gutenberg-content > blockquote,
 .gutenberg-content > blockquote.wp-block-quote {
-  border-left: 2px solid #2a2d3e;
+  border-left: 2px solid var(--color-blockquote);
   line-height: var(--line-height-paragraphs-blog);
   margin-bottom: 4rem;
   margin-left: auto;
@@ -4336,7 +4337,7 @@ body *[aria-invalid="true"] {
 .editor-styles-wrapper > blockquote.wp-block-quote > p,
 .gutenberg-content > blockquote > p,
 .gutenberg-content > blockquote.wp-block-quote > p {
-  color: #2a2d3e;
+  color: var(--color-blockquote);
   line-height: var(--line-height-paragraphs-blog);
 }
 

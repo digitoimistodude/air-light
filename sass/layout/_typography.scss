@@ -24,32 +24,12 @@ body {
 
 // Links
 a {
-  color: $color-links;
+  color: var(--color-links);
   text-decoration: none;
 
   &:hover,
   &:focus {
     color: var(--color-hover);
-  }
-}
-
-// Special link styles for example in blog posts, use with @extend
-%textlink {
-  border-bottom: 1px solid $color-links;
-  box-shadow: inset 0 -.1rem 0 $color-links;
-  color: $color-paragraphs;
-  display: inline-flex;
-  font-weight: 700;
-  overflow: visible;
-  position: relative;
-  text-decoration: none;
-  transition: all .18s ease-in-out;
-  z-index: 1;
-
-  &:hover,
-  &:focus {
-    box-shadow: inset 0 -100px 0 $color-links;
-    color: var(--color-white);
   }
 }
 

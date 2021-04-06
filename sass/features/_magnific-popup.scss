@@ -136,7 +136,7 @@
 
       &:hover,
       &:focus {
-        background-color: $color-links;
+        background-color: var(--color-valhalla);
       }
     }
   }
