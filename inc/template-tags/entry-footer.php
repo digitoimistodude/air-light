@@ -14,11 +14,12 @@ function entry_footer() {
     if ( has_category() ) : ?>
       <div class="entry-categories">
         <p class="cat">
-          <?php wp_list_categories( [
-            'title_li'  => false,
-            'style'     => null,
-            'separator' => ' ',
-          ] ); ?>
+          <?php $categories = wp_get_post_categories( get_the_id(), [ 'fields' => 'all' ] );
+          if ( ! empty( $categories ) ) {
+            foreach ( $categories as $category ) {
+              echo '<a href="' . get_category_link( $category ) . '">' . $category->name . '</a>';
+            }
+          } ?>
         </p>
       </div>
     <?php	endif;
