@@ -10,10 +10,8 @@ $color-black: #222;
   --color-black: #{$color-black};
   --color-black-rgb: #{hextorgb($color-black)};
   --color-east-bay: #545773;
+  --color-white-smoke: #f5f5f5;
 }
-
-// Base colors
-$color-lightgrey: #f5f5f5;
 
 // Required brand colors
 $color-main: #2a2d3e;
