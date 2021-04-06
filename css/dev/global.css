@@ -1935,7 +1935,6 @@ a.is-external-link.no-external-link-indicator::after {
   top: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   z-index: 100000;
   /* stylelint-disable a11y/no-display-none */
@@ -2552,9 +2551,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: var(--font-weight-paragraphs);
   text-rendering: geometricPrecision;
-  -webkit-text-size-adjust: none;
-     -moz-text-size-adjust: none;
-          text-size-adjust: none;
 }
 
 a {
@@ -3321,11 +3317,6 @@ textarea::-moz-placeholder, select::-moz-placeholder, input[type="text"]::-moz-p
   opacity: .4;
 }
 
-textarea:-ms-input-placeholder, select:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder {
-  color: #545773;
-  opacity: .4;
-}
-
 textarea::placeholder,
 select::placeholder,
 input[type="text"]::placeholder,
@@ -3358,11 +3349,6 @@ input[type="search"]:focus {
 }
 
 textarea:focus::-moz-placeholder, select:focus::-moz-placeholder, input[type="text"]:focus::-moz-placeholder, input[type="tel"]:focus::-moz-placeholder, input[type="url"]:focus::-moz-placeholder, input[type="password"]:focus::-moz-placeholder, input[type="number"]:focus::-moz-placeholder, input[type="month"]:focus::-moz-placeholder, input[type="week"]:focus::-moz-placeholder, input[type="email"]:focus::-moz-placeholder, input[type="search"]:focus::-moz-placeholder {
-  color: #222;
-  opacity: .8;
-}
-
-textarea:focus:-ms-input-placeholder, select:focus:-ms-input-placeholder, input[type="text"]:focus:-ms-input-placeholder, input[type="tel"]:focus:-ms-input-placeholder, input[type="url"]:focus:-ms-input-placeholder, input[type="password"]:focus:-ms-input-placeholder, input[type="number"]:focus:-ms-input-placeholder, input[type="month"]:focus:-ms-input-placeholder, input[type="week"]:focus:-ms-input-placeholder, input[type="email"]:focus:-ms-input-placeholder, input[type="search"]:focus:-ms-input-placeholder {
   color: #222;
   opacity: .8;
 }
@@ -3407,7 +3393,6 @@ input[type="checkbox"] + label {
   line-height: var(--checkbox-radio-line-height);
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -3563,6 +3548,22 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 .bypostauthor {
   border: 1px dashed rgba(42, 45, 62, 0.5);
   padding: 2rem;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.wp-caption .wp-caption-text {
+  font-style: italic;
+  margin-bottom: 20px;
+  padding: 1rem 0;
+  text-align: left;
 }
 
 .site-footer .top {
@@ -3941,7 +3942,6 @@ body *[aria-invalid="true"] {
 @media (min-width: 1024px) {
   .block-search-results > .container {
     display: grid;
-    /* autoprefixer: off */
     grid-auto-rows: minmax(0, auto);
     grid-gap: 16px;
     grid-row-gap: 16px;

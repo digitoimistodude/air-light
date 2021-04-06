@@ -1,4 +1,6 @@
 // These styles are required by WordPress.org Theme Check
+// REQUIRED: .sticky css class is needed in your theme css.
+// REQUIRED: .bypostauthor css class is needed in your theme css.
 .sticky {
   border: 1px dashed darken($color-tags-and-search-items, 5%);
   margin-bottom: 2rem;
@@ -9,4 +11,23 @@
 .bypostauthor {
   border: 1px dashed rgba($color-main, .5);
   padding: 2rem;
+}
+
+// WordPress captions
+// REQUIRED: .wp-caption css class is needed in your theme css.
+// REQUIRED: .wp-caption-text css class is needed in your theme css.
+.wp-caption {
+  max-width: 100%;
+
+  img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .wp-caption-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    padding: 1rem 0;
+    text-align: left;
+  }
 }
