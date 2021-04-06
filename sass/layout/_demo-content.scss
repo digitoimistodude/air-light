@@ -17,7 +17,7 @@ $color-border-demo-header: rgba($color-bright, .5);
 // Demo navigation background on sub pages
 @media (min-width: $width-max-mobile) {
   body .nav-container {
-    background-color: $color-main;
+    background-color: var(--color-main);
   }
 }
 
@@ -270,7 +270,7 @@ $color-border-demo-header: rgba($color-bright, .5);
   }
 
   .site-header .nav-primary .menu-items.nav-menu .sub-menu .menu-item > .dropdown-toggle {
-    color: $color-dark;
+    color: var(--color-valhalla);
   }
 }
 

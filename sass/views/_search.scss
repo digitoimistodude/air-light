@@ -47,11 +47,11 @@
 
   .tags a {
     background-color: $color-tags-and-search-items;
-    color: $color-main;
+    color: var(--color-main);
 
     &:hover,
     &:focus {
-      background-color: $color-main;
+      background-color: var(--color-main);
       color: $color-tags-and-search-items;
     }
   }

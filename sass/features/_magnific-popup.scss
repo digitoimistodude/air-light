@@ -7,7 +7,7 @@
 // Forced to use important here, because of inline styles
 /* stylelint-disable declaration-no-important */
 .mfp-bg {
-  background-color: $color-dark;
+  background-color: var(--color-valhalla);
   opacity: 1;
   z-index: 99999 !important;
 }

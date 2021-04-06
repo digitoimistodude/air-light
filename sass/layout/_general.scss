@@ -17,7 +17,7 @@
 
 // Default shade on top of blocks
 .shade {
-  background-color: $color-main;
+  background-color: var(--color-background-shade);
   height: 100%;
   left: 0;
   opacity: .35;

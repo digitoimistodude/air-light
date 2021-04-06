@@ -9,7 +9,7 @@
 
 .comment-list li.bypostauthor,
 .bypostauthor {
-  border: 1px dashed rgba($color-main, .5);
+  border: 1px dashed rgba(var(--color-main-rgb), .5);
   padding: 2rem;
 }
 

@@ -29,7 +29,7 @@ a {
 
   &:hover,
   &:focus {
-    color: $color-hover;
+    color: var(--color-hover);
   }
 }
 

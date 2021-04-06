@@ -1,14 +1,19 @@
 /* stylelint-disable declaration-property-unit-allowed-list */
 /* stylelint-enable declaration-property-unit-allowed-list */
 :root {
-  --color-white: #fff;
   --color-black: #222;
   --color-black-rgb: hextorgb(#222);
+  --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
-  --color-white-smoke: #f5f5f5;
   --color-valhalla: #2a2d3e;
+  --color-valhalla-rgb: hextorgb(#2a2d3e);
+  --color-white: #fff;
+  --color-white-smoke: #f5f5f5;
+  --color-hover: var(--color-valhalla);
+  --color-links: var(--color-valhalla);
   --color-main: #2a2d3e;
-  --color-links: #2a2d3e;
+  --color-main-rgb: hextorgb(#2a2d3e);
+  --color-background-shade: #03061b;
 }
 
 @font-face {

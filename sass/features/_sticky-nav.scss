@@ -23,7 +23,7 @@ $navheight-collapsed: 54px;
   }
 
   &.nav-container-sticky {
-    background-color: $color-dark;
+    background-color: var(--color-valhalla);
     left: 0;
     position: fixed;
     top: 0;
