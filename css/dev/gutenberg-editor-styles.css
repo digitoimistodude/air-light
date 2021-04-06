@@ -1,5 +1,9 @@
 /* stylelint-disable declaration-property-unit-allowed-list */
 /* stylelint-enable declaration-property-unit-allowed-list */
+:root {
+  --color-white: #fff;
+}
+
 @font-face {
   font-display: auto;
   font-family: "Inter";
@@ -577,7 +581,7 @@ pre code {
 .editor-styles-wrapper .wp-block-gallery figcaption,
 .gutenberg-content .is-grid figcaption,
 .gutenberg-content .wp-block-gallery figcaption {
-  color: #fff;
+  color: var(--color-white);
   font-size: var(--font-size-small);
   line-height: 1.55;
   margin-bottom: var(--margin-between-text-elements);
@@ -1392,7 +1396,7 @@ th {
   background-color: #545773;
   border: 0;
   border-radius: 3px;
-  color: #fff;
+  color: var(--color-white);
   cursor: pointer;
   display: inline-block;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;

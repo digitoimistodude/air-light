@@ -5,14 +5,14 @@
 /* stylelint-disable selector-class-pattern */
 div.validation_error {
   background-color: $color-error;
-  color: $color-white;
+  color: var(--color-white);
   font-size: var(--font-size-medium);
   font-weight: 700;
   margin-bottom: 2rem;
   padding: 2rem;
 
   &:focus {
-    color: $color-white;
+    color: var(--color-white);
   }
 }
 

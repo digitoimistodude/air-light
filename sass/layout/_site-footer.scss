@@ -11,7 +11,7 @@
 .site-footer {
   background-color: $color-demo-footer-background;
   clear: both;
-  color: $color-white;
+  color: var(--color-white);
   overflow: hidden;
   padding: 6rem 2rem;
   text-align: center;

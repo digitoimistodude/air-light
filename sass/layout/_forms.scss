@@ -4,7 +4,7 @@
 // the Gravity Forms styles out of the box.
 
 // Variables
-$background-inputs: $color-white;
+$background-inputs: var(--color-white);
 $color-checkboxes: $color-paragraphs;
 $border-width-inputs: 2px;
 
@@ -152,7 +152,7 @@ input[type="checkbox"] + label {
 input[type="radio"] + label::before,
 input[type="checkbox"] + label::before {
   align-self: center;
-  background-color: $color-white;
+  background-color: var(--color-white);
   background-position: center;
   background-repeat: no-repeat;
   border-color: $color-checkboxes;

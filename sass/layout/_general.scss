@@ -6,7 +6,7 @@
 
 // Default structural element
 .block {
-  background-color: $color-white;
+  background-color: var(--color-white);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

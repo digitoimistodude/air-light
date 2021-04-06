@@ -11,7 +11,7 @@
 $color-cyan: #159d94;
 $color-cyan-bright: #60f4ea;
 $color-demo-footer-background: #2a2d3e;
-$color-demo-footer-foreground: $color-white;
+$color-demo-footer-foreground: var(--color-white);
 $color-border-demo-header: rgba($color-bright, .5);
 
 // Demo navigation background on sub pages
@@ -44,7 +44,7 @@ $color-border-demo-header: rgba($color-bright, .5);
     }
 
     .clr-i-solid-path-2 {
-      fill: $color-white;
+      fill: var(--color-white);
     }
 
     a {
@@ -75,7 +75,7 @@ $color-border-demo-header: rgba($color-bright, .5);
       text-transform: lowercase;
       letter-spacing: .1em;
       font-weight: var(--font-weight-paragraphs);
-      color: $color-white;
+      color: var(--color-white);
       margin-left: .75rem;
       font-size: 2.2rem;
     }
@@ -223,7 +223,7 @@ $color-border-demo-header: rgba($color-bright, .5);
 
   .main-heading {
     @include responsive-font(32px, 62px);
-    color: $color-white;
+    color: var(--color-white);
     margin: 0;
     padding: 2rem;
     position: relative;

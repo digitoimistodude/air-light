@@ -56,7 +56,7 @@
   }
 
   &.has-dark-bg svg {
-    fill: $color-white;
+    fill: var(--color-white);
   }
 
   &.is-visible,
