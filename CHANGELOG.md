@@ -1,3 +1,15 @@
+### 7.0.3: 2021-04-06
+
+* Merge PR #82: Gutenberg improvements
+* Merge PR #84, Fixes #83
+* Major Gutenberg updates as proposed in #82
+
+### 7.0.2: 2021-04-06
+
+* Add .hintrc for webhint
+* Update .browserslistrc, deprecate Internet Explorer and Opera mobile browsers
+* Update packages and scripts
+
 ### 7.0.1: 2021-04-05
 
 * Fix Gutenberg editor styles not loading: #78: Remove dependencies from style enqueue fixes #77

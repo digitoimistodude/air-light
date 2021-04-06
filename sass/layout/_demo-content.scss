@@ -253,6 +253,9 @@ $color-border-demo-header: rgba($color-bright, .5);
 }
 
 @media (min-width: $width-max-mobile) {
+  .dropdown-toggle,
+  .menu-item.current-menu-item > a,
+  .menu-item.current-menu-parent > a,
   .site-header .site-branding .site-title a,
   .site-header .nav-primary .menu-items.nav-menu .menu-item > .dropdown-toggle,
   .site-header .nav-primary .menu-items .current-menu-parent > a,
@@ -261,7 +264,8 @@ $color-border-demo-header: rgba($color-bright, .5);
   }
 
   .site-header .nav-primary .menu-items .sub-menu .current-menu-parent > a,
-  .site-header .nav-primary .menu-items .sub-menu .current-menu-item > a {
+  .site-header .nav-primary .menu-items .sub-menu .current-menu-item > a,
+  .site-header .nav-primary .menu-items .sub-menu .dropdown-toggle {
     color: $color-current;
   }
 
@@ -272,6 +276,10 @@ $color-border-demo-header: rgba($color-bright, .5);
 
 .block.block-entry-header-demo + .block .container {
   max-width: $width-max-article;
+
+  &.gutenberg-content {
+    max-width: 100%;
+  }
 }
 
 // Build these to views/_index.scss for example

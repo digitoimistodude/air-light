@@ -100,7 +100,7 @@
 .comment-form {
   @media (min-width: $container-mobile) {
     display: grid;
-    grid-column-gap: 1em;
+    grid-gap: 1em;
     grid-template-columns: 1fr 1fr;
 
     /* autoprefixer: off */

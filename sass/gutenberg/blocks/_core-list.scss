@@ -4,6 +4,6 @@
   .wp-block-categories-list,
   ol:not([class]),
   ul:not([class]) {
-    padding-left: calc(2rem + 2.7rem);
+    padding-left: calc(2rem + var(--margin-between-paragraphs));
   }
 }

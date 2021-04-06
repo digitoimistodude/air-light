@@ -5,4 +5,27 @@
     color: $color-paragraphs;
     line-height: var(--line-height-paragraphs-blog);
   }
+
+  .has-larger-font-size,
+  .has-large-font-size {
+    line-height: var(--line-height-headings);
+  }
+
+  .has-large-font-size {
+    @media (max-width: $container-mobile) {
+      font-size: var(--font-size-large);
+    }
+  }
+
+  .has-larger-font-size {
+    @media (max-width: $container-mobile) {
+      font-size: var(--font-size-huge);
+    }
+  }
+
+  @media (max-width: $width-grid-base + 40px) {
+    .has-background {
+      width: calc(100% - calc(2.375em * 2));
+    }
+  }
 }

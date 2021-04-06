@@ -86,12 +86,16 @@ npm install
 echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${txtreset}"
 cp ${PROJECTTHEMEPATH}/.scss-lint.yml ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.browserslistrc ${PROJECTPATH}/
+rm ${PROJECTTHEMEPATH}/.browserslistrc
+cp ${PROJECTTHEMEPATH}/.hintrc ${PROJECTPATH}/
+rm ${PROJECTTHEMEPATH}/.hintrc
 cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.stylelintrc > ${PROJECTPATH}/devpackages/.stylelintrc2
 cp ${PROJECTPATH}/devpackages/.stylelintrc2 ${PROJECTPATH}/.stylelintrc
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.eslintrc.js > ${PROJECTPATH}/gulp/.eslintrc.js2
+rm ${PROJECTTHEMEPATH}/.stylelintrc
 cp ${PROJECTPATH}/devpackages/.eslintrc.js2 ${PROJECTPATH}/.eslintrc.js
 cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
 cp -Rv ${PROJECTPATH}/devpackages/gulp ${PROJECTPATH}/
@@ -145,7 +149,7 @@ chmod 777 ${PROJECTPATH}/media
 
 echo "${yellow}Generating default README.md...${txtreset}"
 
-newestair="7.0.1"
+newestair="7.0.3"
 newestwordpress="5.5"
 newestphp="7.2"
 currentdate=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
