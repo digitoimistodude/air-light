@@ -1,8 +1,6 @@
 // CSS Grid mixin with flexbox fallback for IE and Edge
 @mixin grid($columns, $max_width: 1fr, $min_width: 0, $min_height: 0, $max_height: auto, $gutter_x: 16px, $gutter_y: 16px) {
   display: grid;
-
-  /* autoprefixer: off */
   grid-auto-rows: minmax($min_height, $max_height);
   grid-column-gap: $gutter_x;
   grid-row-gap: $gutter_y;
