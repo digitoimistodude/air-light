@@ -113,7 +113,7 @@ input[type="search"] {
     outline: 0;
 
     &::placeholder {
-      color: $color-black;
+      color: var(--color-black);
       opacity: .8;
     }
   }

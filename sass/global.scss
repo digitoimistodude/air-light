@@ -4,12 +4,13 @@
 @import 'base/normalize';
 
 // Helpers
-@import 'helpers/auto-color';
 @import 'helpers/animations';
-@import 'helpers/typography';
-@import 'helpers/general';
+@import 'helpers/auto-color';
 @import 'helpers/aspect-ratio';
+@import 'helpers/general';
 @import 'helpers/grid';
+@import 'helpers/hex-to-rgb';
+@import 'helpers/typography';
 
 // Variables
 @import 'variables/colors';

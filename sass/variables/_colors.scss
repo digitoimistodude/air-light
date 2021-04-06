@@ -1,10 +1,16 @@
+// Colors that we need as SCSS variables
+// for mixins and other SCSS-related functions like rgba
+$color-black: #222;
+
+// CSS variables
 :root {
   // Base colors
   --color-white: #fff;
+  --color-black: #{$color-black};
+  --color-black-rgb: #{hextorgb($color-black)};
 }
 
 // Base colors
-$color-black: #222;
 $color-shadows: #b8bbb3;
 $color-darkgrey: #545773;
 $color-lightgrey: #f5f5f5;

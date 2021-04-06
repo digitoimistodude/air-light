@@ -86,7 +86,7 @@
   &:focus,
   a:hover,
   a:focus {
-    color: $color-black;
+    color: var(--color-black);
   }
 
   svg {

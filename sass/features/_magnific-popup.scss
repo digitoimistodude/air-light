@@ -118,7 +118,7 @@
     padding: 0;
 
     .mfp-close {
-      background-color: $color-black;
+      background-color: var(--color-black);
       border: 2px solid transparent;
       border-radius: 0;
       color: var(--color-white);

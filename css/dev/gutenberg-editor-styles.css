@@ -2,6 +2,8 @@
 /* stylelint-enable declaration-property-unit-allowed-list */
 :root {
   --color-white: #fff;
+  --color-black: #222;
+  --color-black-rgb: hextorgb(#222);
 }
 
 @font-face {

@@ -12,7 +12,7 @@
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: none;
-    color: $color-black;
+    color: var(--color-black);
     display: inline-block;
     font-size: var(--font-size-small);
     margin-bottom: .5rem;
@@ -50,7 +50,7 @@
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: none;
-    color: $color-black;
+    color: var(--color-black);
     display: inline-block;
     font-size: var(--font-size-tiny);
     margin-right: .4em;
