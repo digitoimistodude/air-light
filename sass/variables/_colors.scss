@@ -1,20 +1,26 @@
 // Colors that we need as SCSS variables
 // for mixins and other SCSS-related functions like rgba
 $color-black: #222;
+$color-valhalla: #2a2d3e;
+$color-main: #2a2d3e;
 
 // CSS variables
 // Names: https://www.color-blindness.com/color-name-hue/
 :root {
-  // Base colors
+  // Colors
   --color-white: #fff;
   --color-black: #{$color-black};
   --color-black-rgb: #{hextorgb($color-black)};
   --color-east-bay: #545773;
   --color-white-smoke: #f5f5f5;
+  --color-valhalla: #{$color-valhalla};
+
+  // Brand colors
+  --color-main: #{$color-valhalla};
+  --color-links: #{$color-valhalla};
 }
 
 // Required brand colors
-$color-main: #2a2d3e;
 $color-dark: #2a2d3e;
 $color-shade: #03061b;
 

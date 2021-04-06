@@ -300,6 +300,9 @@ template {
   --color-black-rgb: hextorgb(#222);
   --color-east-bay: #545773;
   --color-white-smoke: #f5f5f5;
+  --color-valhalla: #2a2d3e;
+  --color-main: #2a2d3e;
+  --color-links: #2a2d3e;
 }
 
 :root {
@@ -428,7 +431,6 @@ template {
 }
 
 .screen-reader-text.skip-link:focus, .gform_body .skip-link.gform_validation_container:focus {
-  background-color: #2a2d3e;
   color: white;
 }
 
@@ -3839,7 +3841,7 @@ body *[aria-invalid="true"] {
 }
 
 .gform_body .gfield_required {
-  color: #2a2d3e;
+  color: var(--color-main);
   font-size: var(--font-size-huge);
   position: relative;
   top: 3px;

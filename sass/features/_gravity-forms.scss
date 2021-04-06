@@ -47,7 +47,7 @@ body *[aria-invalid="true"] {
 .gform_body {
   // Required star color
   .gfield_required {
-    color: $color-main;
+    color: var(--color-main);
     font-size: var(--font-size-huge);
     position: relative;
     top: 3px;
