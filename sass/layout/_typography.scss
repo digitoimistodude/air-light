@@ -244,9 +244,9 @@ samp {
 
 // Code block.
 code {
-  background-color: $color-code-blocks-background;
+  background-color: var(--color-background-code-inline);
   border-radius: .3rem;
-  color: $color-code-blocks;
+  color: var(--color-code-block);
   font-family: $font-monospace;
   font-size: inherit; // normalize.css sets this as 1em by default
   padding: .37rem .5rem;

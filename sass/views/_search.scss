@@ -28,11 +28,11 @@
   }
 
   .row-result {
-    border-top: 2px solid $color-border-forms;
+    border-top: 2px solid var(--color-border-forms);
     padding: 2rem 0;
 
     &:last-of-type {
-      border-bottom: 2px solid $color-border-forms;
+      border-bottom: 2px solid var(--color-border-forms);
     }
   }
 

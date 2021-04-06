@@ -1,7 +1,7 @@
 // Preformatted text.
 pre {
-  background-color: $color-code-background;
-  border: 1px solid $color-code-background;
+  background-color: var(--color-background-code-block);
+  border: 1px solid var(--color-background-code-block);
   border-radius: 4px;
   color: var(--color-white-smoke);
   display: block;

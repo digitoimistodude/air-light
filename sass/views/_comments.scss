@@ -42,7 +42,7 @@
   a,
   .comments-link a {
     box-shadow: none;
-    color: $color-comments-link;
+    color: var(--color-mortar);
   }
 
   .comment-author a {
@@ -79,7 +79,7 @@
   text-align: right;
 
   a {
-    color: $color-comments-link;
+    color: var(--color-mortar);
   }
 
   &:hover,

@@ -14,10 +14,8 @@ $color-wild-blue-yonder: #737fbf;
   --color-baby-blue: #60f4ea;
   --color-wild-blue-yonder: #{$color-wild-blue-yonder};
   --color-wild-blue-yonder-rgb: #{hextorgb($color-wild-blue-yonder)};
-  --color-border-demo-header: rgba(var(--color-wild-blue-yonder-rgb, .5));
+  --color-border-demo-header: rgba(var(--color-wild-blue-yonder-rgb), .5);
 }
-
-
 
 // Demo navigation background on sub pages
 @media (min-width: $width-max-mobile) {
@@ -316,4 +314,3 @@ $color-wild-blue-yonder: #737fbf;
 .site-footer {
   background-color: var(--color-valhalla);
 }
-/* stylelint-enable */

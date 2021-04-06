@@ -14,10 +14,15 @@ $color-main: $color-valhalla;
   --color-black-rgb: #{hextorgb($color-black)};
   --color-black-pearl: #{$color-black-pearl};
   --color-black-pearl-rgb: #{hextorgb($color-black-pearl)};
+  --color-black-rock: #2b303c;
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #{$color-east-bay};
+  --color-gainsboro: #d9d9d9;
   --color-link-water: #cdcfd4;
+  --color-maroon-flush: #c7254e;
+  --color-mortar: #555;
   --color-pattens-blue: #eaf1f8;
+  --color-soft-peach: #f9f2f4;
   --color-valhalla: #{$color-valhalla};
   --color-valhalla-rgb: #{hextorgb($color-valhalla)};
   --color-very-light-grey: #ccc;
@@ -38,16 +43,15 @@ $color-main: $color-valhalla;
   --color-border-tag: rgba(var(--color-border-tag-base), .1);
   --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
   --color-border-category: var(--color-link-water);
+  --color-border-forms: var(--color-gainsboro);
+  --color-code-block: var(--color-maroon-flush);
+  --color-background-code-block: var(--color-black-rock);
+  --color-background-code-inline: var(--color-soft-peach);
   --color-headings: var(--color-main);
   --color-paragraphs: var(--color-east-bay);
 }
 
 // Element text and background colors
-$color-code-blocks: #c7254e;
-$color-code-blocks-background: #f9f2f4;
-$color-border-forms: #d9d9d9;
-$color-code-background: #2b303c;
-$color-comments-link: #555;
 $color-edit-link: #999;
 $color-background-edit-link: #fafafa;
 $color-background-hover-edit-link: #efefef;
