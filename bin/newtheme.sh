@@ -38,6 +38,7 @@ echo "${yellow}Checking air updates...${txtreset}"
 cd $HOME
 git clone https://github.com/digitoimistodude/air
 cd $STARTERTHEMEPATH
+git stash
 git pull
 echo "${yellow}Copying starter theme to project folder ${HOME}/Projects/${PROJECTNAME}/content/themes/${THEMENAME}${txtreset}"
 cp -R ${STARTERTHEMEPATH} ${PROJECTTHEMEPATH}
