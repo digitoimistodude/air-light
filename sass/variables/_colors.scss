@@ -30,6 +30,7 @@ $color-button-hover: $color-valhalla;
   --color-pattens-blue-rgb: #{hextorgb($color-pattens-blue)};
   --color-pattens-blue-20: darken($color-pattens-blue, 20%);
   --color-soft-peach: #f9f2f4;
+  --color-science-blue: #0049d1;
   --color-valhalla: #{$color-valhalla};
   --color-valhalla-rgb: #{hextorgb($color-valhalla)};
   --color-very-light-grey: #ccc;
@@ -38,7 +39,7 @@ $color-button-hover: $color-valhalla;
 
   // Brand colors
   --color-hover: var(--color-valhalla);
-  --color-links: var(--color-valhalla);
+  --color-links: var(--color-science-blue);
   --color-main: #{$color-main};
   --color-main-rgb: #{hextorgb($color-main)};
 

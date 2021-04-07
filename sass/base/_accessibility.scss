@@ -55,26 +55,6 @@
 }
 /* stylelint-enable a11y/no-outline-none */
 
-// Links within content must be underlined
-// @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
-.gutenberg-content {
-  a {
-    text-decoration: underline;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
-  // With exceptions for those that are already styled:
-  .comments-link a,
-  .tags a,
-  .cat a {
-    text-decoration: none;
-  }
-}
-
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
   a:focus,

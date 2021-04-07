@@ -309,13 +309,14 @@ template {
   --color-pattens-blue-rgb: 234, 241, 248;
   --color-pattens-blue-20: darken($color-pattens-blue, 20%);
   --color-soft-peach: #f9f2f4;
+  --color-science-blue: #0049d1;
   --color-valhalla: #2a2d3e;
   --color-valhalla-rgb: 42, 45, 62;
   --color-very-light-grey: #ccc;
   --color-white: #fff;
   --color-white-smoke: #f5f5f5;
   --color-hover: var(--color-valhalla);
-  --color-links: var(--color-valhalla);
+  --color-links: var(--color-science-blue);
   --color-main: #2a2d3e;
   --color-main-rgb: 42, 45, 62;
   --color-background-code-block: var(--color-black-rock);
@@ -497,20 +498,6 @@ template {
 }
 
 /* stylelint-enable a11y/no-outline-none */
-.gutenberg-content a {
-  text-decoration: underline;
-}
-
-.gutenberg-content a:hover, .gutenberg-content a:focus {
-  text-decoration: none;
-}
-
-.gutenberg-content .comments-link a,
-.gutenberg-content .tags a,
-.gutenberg-content .cat a {
-  text-decoration: none;
-}
-
 [data-whatinput="keyboard"] a:focus,
 [data-whatinput="keyboard"] input:focus,
 [data-whatinput="keyboard"] button:focus,
@@ -2611,15 +2598,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: var(--font-weight-paragraphs);
   text-rendering: geometricPrecision;
-}
-
-a {
-  color: var(--color-links);
-  text-decoration: none;
-}
-
-a:hover, a:focus {
-  color: var(--color-hover);
 }
 
 p,
@@ -5696,6 +5674,11 @@ th {
   margin-bottom: 0;
 }
 
+.editor-styles-wrapper img,
+.gutenberg-content img {
+  border-radius: 4px;
+}
+
 kbd {
   background-color: var(--color-pattens-blue);
   border: 1px solid var(--color-very-light-grey);
@@ -5709,7 +5692,104 @@ kbd {
   white-space: nowrap;
 }
 
-.editor-styles-wrapper img,
-.gutenberg-content img {
-  border-radius: 4px;
+/* stylelint-disable a11y/no-display-none, no-descending-specificity, selector-max-pseudo-class */
+a {
+  color: var(--color-links);
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: var(--color-hover);
+}
+
+.editor-styles-wrapper li > a::after,
+.gutenberg-content li > a::after {
+  display: none;
+}
+
+.editor-styles-wrapper li > a,
+.editor-styles-wrapper p > strong > a,
+.editor-styles-wrapper p > em > a,
+.editor-styles-wrapper p:not([class]) > a:not([class]),
+.editor-styles-wrapper p:not([class]) > a.is-external-link,
+.gutenberg-content li > a,
+.gutenberg-content p > strong > a,
+.gutenberg-content p > em > a,
+.gutenberg-content p:not([class]) > a:not([class]),
+.gutenberg-content p:not([class]) > a.is-external-link {
+  border-bottom: 1px solid var(--color-links);
+  box-shadow: inset 0 0 0 var(--color-links);
+  color: var(--color-links);
+  display: inline;
+  text-decoration: none;
+  transition: box-shadow 0.1s cubic-bezier(0.19, 1, 0.22, 1), color 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.editor-styles-wrapper li > a::after,
+.editor-styles-wrapper p > strong > a::after,
+.editor-styles-wrapper p > em > a::after,
+.editor-styles-wrapper p:not([class]) > a:not([class])::after,
+.editor-styles-wrapper p:not([class]) > a.is-external-link::after,
+.gutenberg-content li > a::after,
+.gutenberg-content p > strong > a::after,
+.gutenberg-content p > em > a::after,
+.gutenberg-content p:not([class]) > a:not([class])::after,
+.gutenberg-content p:not([class]) > a.is-external-link::after {
+  background-image: url("../../svg/external-link-styled-links.svg");
+}
+
+.editor-styles-wrapper li > a:hover,
+.editor-styles-wrapper p > strong > a:hover,
+.editor-styles-wrapper p > em > a:hover,
+.editor-styles-wrapper p:not([class]) > a:not([class]):hover,
+.editor-styles-wrapper p:not([class]) > a.is-external-link:hover,
+.gutenberg-content li > a:hover,
+.gutenberg-content p > strong > a:hover,
+.gutenberg-content p > em > a:hover,
+.gutenberg-content p:not([class]) > a:not([class]):hover,
+.gutenberg-content p:not([class]) > a.is-external-link:hover {
+  border-color: transparent;
+  box-shadow: inset 0 -3.3rem 0 var(--color-links);
+  color: var(--color-white);
+}
+
+.editor-styles-wrapper li > a:hover::after,
+.editor-styles-wrapper p > strong > a:hover::after,
+.editor-styles-wrapper p > em > a:hover::after,
+.editor-styles-wrapper p:not([class]) > a:not([class]):hover::after,
+.editor-styles-wrapper p:not([class]) > a.is-external-link:hover::after,
+.gutenberg-content li > a:hover::after,
+.gutenberg-content p > strong > a:hover::after,
+.gutenberg-content p > em > a:hover::after,
+.gutenberg-content p:not([class]) > a:not([class]):hover::after,
+.gutenberg-content p:not([class]) > a.is-external-link:hover::after {
+  background-image: url("../../svg/external-link-white.svg");
+}
+
+.editor-styles-wrapper li > a:focus,
+.editor-styles-wrapper p > strong > a:focus,
+.editor-styles-wrapper p > em > a:focus,
+.editor-styles-wrapper p:not([class]) > a:not([class]):focus,
+.editor-styles-wrapper p:not([class]) > a.is-external-link:focus,
+.gutenberg-content li > a:focus,
+.gutenberg-content p > strong > a:focus,
+.gutenberg-content p > em > a:focus,
+.gutenberg-content p:not([class]) > a:not([class]):focus,
+.gutenberg-content p:not([class]) > a.is-external-link:focus {
+  border-color: var(--color-black);
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.editor-styles-wrapper li > a:focus::after,
+.editor-styles-wrapper p > strong > a:focus::after,
+.editor-styles-wrapper p > em > a:focus::after,
+.editor-styles-wrapper p:not([class]) > a:not([class]):focus::after,
+.editor-styles-wrapper p:not([class]) > a.is-external-link:focus::after,
+.gutenberg-content li > a:focus::after,
+.gutenberg-content p > strong > a:focus::after,
+.gutenberg-content p > em > a:focus::after,
+.gutenberg-content p:not([class]) > a:not([class]):focus::after,
+.gutenberg-content p:not([class]) > a.is-external-link:focus::after {
+  background-image: url("../../svg/external-link-black.svg");
 }

@@ -22,17 +22,6 @@ body {
   text-rendering: geometricPrecision;
 }
 
-// Links
-a {
-  color: var(--color-links);
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: var(--color-hover);
-  }
-}
-
 // Defaults
 p,
 dd,

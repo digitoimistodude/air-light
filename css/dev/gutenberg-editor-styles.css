@@ -18,13 +18,14 @@
   --color-pattens-blue-rgb: hextorgb(#eaf1f8);
   --color-pattens-blue-20: darken($color-pattens-blue, 20%);
   --color-soft-peach: #f9f2f4;
+  --color-science-blue: #0049d1;
   --color-valhalla: #2a2d3e;
   --color-valhalla-rgb: hextorgb(#2a2d3e);
   --color-very-light-grey: #ccc;
   --color-white: #fff;
   --color-white-smoke: #f5f5f5;
   --color-hover: var(--color-valhalla);
-  --color-links: var(--color-valhalla);
+  --color-links: var(--color-science-blue);
   --color-main: #2a2d3e;
   --color-main-rgb: hextorgb(#2a2d3e);
   --color-background-code-block: var(--color-black-rock);
