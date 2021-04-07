@@ -46,7 +46,7 @@ $width-sub-menu: 22rem;
   .nav-container {
     @if $absolute-navigation == false {
       background-color: $color-background-nav-desktop;
-      box-shadow: 0 0 10px rgba($color-dark, .1);
+      box-shadow: 0 0 10px rgba($color-east-bay, .1);
       position: relative;
       z-index: 222;
     }

@@ -1,3 +1,7 @@
+### 7.0.6: 2021-04-07
+
+* Fix color variable inside conditional
+
 ### 7.0.5: 2021-04-07
 
 * CSS variables #85
