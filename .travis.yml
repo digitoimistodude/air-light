@@ -20,8 +20,6 @@ matrix:
     fast_finish: true
 
     include:
-        # aliased to a recent 7.0.x version
-        - php: '7.0'
         # aliased to a recent 7.2.x version
         - php: '7.2'
           env: SNIFF=1
