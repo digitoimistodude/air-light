@@ -17,7 +17,7 @@ function entry_footer() {
           <?php $categories = wp_get_post_categories( get_the_id(), [ 'fields' => 'all' ] );
           if ( ! empty( $categories ) ) {
             foreach ( $categories as $category ) {
-              echo '<a href="' . get_category_link( $category ) . '">' . $category->name . '</a>';
+              echo '<a href="' . esc_url( get_category_link( $category ) ) . '">' . esc_html( $category->name ) . '</a>';
             }
           } ?>
         </p>

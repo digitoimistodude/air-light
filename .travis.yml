@@ -1,5 +1,5 @@
 # Travis CI (MIT License) configuration file for the Air-light WordPress theme.
-# @link https://travis-ci.org/
+# @link https://travis-ci.com/
 
 # For use with the Air-light WordPress theme.
 # @link https://github.com/digitoimistodude/air-light
@@ -11,7 +11,7 @@ sudo: required
 dist: xenial
 
 # Declare project language.
-# @link https://about.travis-ci.org/docs/user/languages/php/
+# @link https://about.travis-ci.com/docs/user/languages/php/
 language: php
 
 # Declare versions of PHP to use. Use one decimal max.

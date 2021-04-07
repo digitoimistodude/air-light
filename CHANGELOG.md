@@ -1,3 +1,9 @@
+### 7.0.4: 2021-04-07
+
+* Remove PHP 7.0 from unit tests
+* Migrate from travis-ci.org to travis-ci.com
+* Fix build, add escapes and missing npm package
+
 ### 7.0.3: 2021-04-06
 
 * Merge PR #82: Gutenberg improvements
