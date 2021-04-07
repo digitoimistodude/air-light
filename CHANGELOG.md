@@ -1,3 +1,9 @@
+### 7.0.5: 2021-04-07
+
+* CSS variables #85
+* Add default link within content styles
+* Fix Gutenberg formatting
+
 ### 7.0.4: 2021-04-07
 
 * Remove PHP 7.0 from unit tests
