@@ -115,15 +115,13 @@
     &.slick-active button[type="button"],
     &.slick-active button:focus,
     &.slick-active button[type="button"]:focus {
-      background-color: $color-white;
+      background-color: var(--color-white);
       opacity: 1;
     }
   }
 }
 
 .slider {
-
-  /* autoprefixer: ignore next */
   box-sizing: border-box;
   clear: both;
   display: block;

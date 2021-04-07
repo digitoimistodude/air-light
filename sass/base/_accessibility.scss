@@ -23,15 +23,14 @@
     margin: 5px;
 
     &:focus {
-      background-color: $color-main;
       color: choose-contrast-color($color-main);
     }
   }
 
   &:focus {
-    background-color: $color-lightgrey;
+    background-color: var(--color-white-smoke);
     border-radius: 0;
-    box-shadow: 0 0 2px 2px rgba($color-black, .6);
+    box-shadow: 0 0 2px 2px rgba(var(--color-black-rgb), .6);
     clip: auto;
     clip-path: none;
     display: block;
@@ -56,26 +55,6 @@
 }
 /* stylelint-enable a11y/no-outline-none */
 
-// Links within content must be underlined
-// @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
-.gutenberg-content {
-  a {
-    text-decoration: underline;
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
-  // With exceptions for those that are already styled:
-  .comments-link a,
-  .tags a,
-  .cat a {
-    text-decoration: none;
-  }
-}
-
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
   a:focus,
@@ -93,7 +72,7 @@
 
   // A bit better focus for large elements
   a.global-link:focus {
-    outline-color: $color-outline-overlay-items;
+    outline-color: var(--color-outline-overlay-items);
     outline-offset: -1px;
     outline-style: solid;
     outline-width: 4px;

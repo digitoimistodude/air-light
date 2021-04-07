@@ -60,7 +60,7 @@
   span,
   a,
   h2 {
-    color: $color-paragraphs;
+    color: var(--color-paragraphs);
     font-size: 14px;
     font-weight: 400;
 
@@ -177,13 +177,13 @@
     }
 
     a {
-      color: $color-paragraphs;
+      color: var(--color-paragraphs);
       text-decoration: none;
     }
 
     &:focus,
     a:hover {
-      color: $color-paragraphs;
+      color: var(--color-paragraphs);
     }
 
     &:last-of-type::after {

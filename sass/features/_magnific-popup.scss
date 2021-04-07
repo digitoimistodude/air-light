@@ -7,14 +7,14 @@
 // Forced to use important here, because of inline styles
 /* stylelint-disable declaration-no-important */
 .mfp-bg {
-  background-color: $color-dark;
+  background-color: var(--color-valhalla);
   opacity: 1;
   z-index: 99999 !important;
 }
 /* stylelint-enable */
 
 .mfp-title {
-  color: $color-paragraphs;
+  color: var(--color-paragraphs);
   font-family: $font-paragraphs;
   font-size: 1.5rem;
   margin-left: 1.5rem;
@@ -118,10 +118,10 @@
     padding: 0;
 
     .mfp-close {
-      background-color: $color-black;
+      background-color: var(--color-black);
       border: 2px solid transparent;
       border-radius: 0;
-      color: $color-white;
+      color: var(--color-white);
       font-size: 40px;
       height: 70px;
       line-height: 38px;
@@ -136,7 +136,7 @@
 
       &:hover,
       &:focus {
-        background-color: $color-links;
+        background-color: var(--color-valhalla);
       }
     }
   }

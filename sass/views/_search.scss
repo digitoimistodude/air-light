@@ -2,7 +2,7 @@
 
 .block-search,
 .block-search-results {
-  background-color: $color-white;
+  background-color: var(--color-white);
 }
 
 .block-search form {
@@ -28,11 +28,11 @@
   }
 
   .row-result {
-    border-top: 2px solid $color-border-forms;
+    border-top: 2px solid var(--color-border-forms);
     padding: 2rem 0;
 
     &:last-of-type {
-      border-bottom: 2px solid $color-border-forms;
+      border-bottom: 2px solid var(--color-border-forms);
     }
   }
 
@@ -46,13 +46,13 @@
   }
 
   .tags a {
-    background-color: $color-tags-and-search-items;
-    color: $color-main;
+    background-color: var(--color-background-tag);
+    color: var(--color-main);
 
     &:hover,
     &:focus {
-      background-color: $color-main;
-      color: $color-tags-and-search-items;
+      background-color: var(--color-main);
+      color: var(--color-background-tag);
     }
   }
 }

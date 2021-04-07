@@ -12,7 +12,7 @@
   svg {
     align-items: center;
     display: flex;
-    fill: $color-black;
+    fill: var(--color-black);
     height: 18px;
     justify-content: center;
     margin: 0;
@@ -52,11 +52,11 @@
 
   // Accessibility: Change color based on background color the element is on
   &.has-light-bg svg {
-    fill: $color-black;
+    fill: var(--color-black);
   }
 
   &.has-dark-bg svg {
-    fill: $color-white;
+    fill: var(--color-white);
   }
 
   &.is-visible,

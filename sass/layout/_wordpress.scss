@@ -1,15 +1,19 @@
 // These styles are required by WordPress.org Theme Check
 // REQUIRED: .sticky css class is needed in your theme css.
 // REQUIRED: .bypostauthor css class is needed in your theme css.
+:root {
+  --color-border-sticky: #d7e4f2;
+}
+
 .sticky {
-  border: 1px dashed darken($color-tags-and-search-items, 5%);
+  border: 1px dashed var(--color-border-sticky);
   margin-bottom: 2rem;
   padding: 2rem;
 }
 
 .comment-list li.bypostauthor,
 .bypostauthor {
-  border: 1px dashed rgba($color-main, .5);
+  border: 1px dashed rgba(var(--color-main-rgb), .5);
   padding: 2rem;
 }
 

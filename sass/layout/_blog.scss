@@ -7,12 +7,12 @@
 
   a {
     background-color: transparent;
-    border-color: $color-cat-borders;
+    border-color: var(--color-border-category);
     border-radius: 5px;
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: none;
-    color: $color-black;
+    color: var(--color-black);
     display: inline-block;
     font-size: var(--font-size-small);
     margin-bottom: .5rem;
@@ -23,7 +23,7 @@
 
   a:hover,
   a:focus {
-    border-color: $color-border-blog-categories;
+    border-color: var(--color-border-tag-hover);
   }
 }
 
@@ -45,12 +45,12 @@
 
   a {
     background-color: transparent;
-    border-color: $color-tag-borders;
+    border-color: var(--color-border-tag);
     border-radius: 5px;
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: none;
-    color: $color-black;
+    color: var(--color-black);
     display: inline-block;
     font-size: var(--font-size-tiny);
     margin-right: .4em;
@@ -60,7 +60,7 @@
 
   a:hover,
   a:focus {
-    border-color: $color-tag-borders-hover;
+    border-color: var(--color-border-tag-hover);
   }
 }
 

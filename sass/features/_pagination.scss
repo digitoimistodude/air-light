@@ -19,12 +19,12 @@
 
 .page-numbers {
   align-items: center;
-  background-color: $color-white;
-  border-bottom: 2px solid #ece6f2;
-  border-left: 1px solid #ece6f2;
-  border-right: 1px solid #ece6f2;
-  border-top: 2px solid #ece6f2;
-  color: $color-main;
+  background-color: var(--color-white);
+  border-bottom: 2px solid var(--color-blue-chalk);
+  border-left: 1px solid var(--color-blue-chalk);
+  border-right: 1px solid var(--color-blue-chalk);
+  border-top: 2px solid var(--color-blue-chalk);
+  color: var(--color-valhalla);
   display: flex;
   font-weight: 500;
   height: 35px;
@@ -56,15 +56,15 @@
 
 a.page-numbers:hover,
 a.page-numbers:focus {
-  background-color: $color-main;
-  border-color: $color-main;
-  color: $color-white;
+  background-color: var(--color-valhalla);
+  border-color: var(--color-valhalla);
+  color: var(--color-white);
 }
 
 .page-numbers.current {
-  background-color: $color-main;
-  border-color: $color-main;
-  color: $color-white;
+  background-color: var(--color-valhalla);
+  border-color: var(--color-valhalla);
+  color: var(--color-white);
 }
 
 // Remove this if you are using version with next/prev

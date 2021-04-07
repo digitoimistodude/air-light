@@ -3,11 +3,11 @@
 
 // Main level settings
 $absolute-navigation: true;
-$color-background-nav-desktop: $color-white;
-$color-dropdown-toggle: $color-dark;
-$color-hover-main-level: $color-white;
-$color-main-level: $color-white;
-$color-current: $color-main;
+$color-background-nav-desktop: var(--color-white);
+$color-dropdown-toggle: var(--color-valhalla);
+$color-hover-main-level: var(--color-white);
+$color-main-level: var(--color-white);
+$color-current: var(--color-main);
 $font-weight-main-level: 700;
 $use-dropdown-bubble: true;
 $use-dropdown-toggle-animation: true;
@@ -15,10 +15,10 @@ $dropdown-toggle-size: 12px;
 
 // Sub menu settings
 $border-radius-sub-menu: 0;
-$color-background-sub-menu: $color-white;
-$color-border-sub-menu: rgba($color-dark, .05);
-$color-hover-sub-menu: $color-hover;
-$color-sub-menu: $color-dark;
+$color-background-sub-menu: var(--color-white);
+$color-border-sub-menu: rgba(var(--color-valhalla-rgb), .05);
+$color-hover-sub-menu: var(--color-hover);
+$color-sub-menu: var(--color-valhalla);
 $font-weight-sub-menu: 400;
 $width-sub-menu: 22rem;
 
@@ -318,7 +318,7 @@ $width-sub-menu: 22rem;
     .menu-item-has-children::before {
       // Use of non-variable is acceptable here because bubble needs it
       /* stylelint-disable sh-waqar/declaration-use-variable */
-      border-color: transparent transparent $color-white;
+      border-color: transparent transparent var(--color-white);
       border-style: solid;
       border-width: 0 5px 5px;
       /* stylelint-enable */

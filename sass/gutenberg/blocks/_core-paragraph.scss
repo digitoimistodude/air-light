@@ -2,7 +2,7 @@
 .editor-styles-wrapper,
 .gutenberg-content {
   p {
-    color: $color-paragraphs;
+    color: var(--color-paragraphs);
     line-height: var(--line-height-paragraphs-blog);
   }
 

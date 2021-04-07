@@ -13,44 +13,13 @@
 
 // Start typography settings
 body {
-  color: $color-paragraphs;
+  color: var(--color-paragraphs);
   font-family: $font-paragraphs;
   font-size: var(--font-size-medium);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: var(--font-weight-paragraphs);
   text-rendering: geometricPrecision;
-}
-
-// Links
-a {
-  color: $color-links;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    color: $color-hover;
-  }
-}
-
-// Special link styles for example in blog posts, use with @extend
-%textlink {
-  border-bottom: 1px solid $color-links;
-  box-shadow: inset 0 -.1rem 0 $color-links;
-  color: $color-paragraphs;
-  display: inline-flex;
-  font-weight: 700;
-  overflow: visible;
-  position: relative;
-  text-decoration: none;
-  transition: all .18s ease-in-out;
-  z-index: 1;
-
-  &:hover,
-  &:focus {
-    box-shadow: inset 0 -100px 0 $color-links;
-    color: $color-white;
-  }
 }
 
 // Defaults
@@ -88,7 +57,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-headings;
+  color: var(--color-headings);
   font-family: $font-headings;
   font-weight: var(--font-weight-headings);
   margin-bottom: var(--margin-between-paragraphs);
@@ -190,7 +159,7 @@ blockquote {
   position: relative;
 
   p {
-    color: $color-blockquotes;
+    color: var(--color-blockquote);
     font-style: italic;
     margin-bottom: 0;
     overflow: visible;
@@ -264,9 +233,9 @@ samp {
 
 // Code block.
 code {
-  background-color: $color-code-blocks-background;
+  background-color: var(--color-background-code-inline);
   border-radius: .3rem;
-  color: $color-code-blocks;
+  color: var(--color-code-block);
   font-family: $font-monospace;
   font-size: inherit; // normalize.css sets this as 1em by default
   padding: .37rem .5rem;

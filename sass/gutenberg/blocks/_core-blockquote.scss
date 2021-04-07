@@ -8,7 +8,7 @@
 
   > blockquote,
   > blockquote.wp-block-quote {
-    border-left: 2px solid $color-links;
+    border-left: 2px solid var(--color-blockquote);
     line-height: var(--line-height-paragraphs-blog);
     margin-bottom: 4rem;
     margin-left: auto;
@@ -27,7 +27,7 @@
     }
 
     > p {
-      color: $color-links;
+      color: var(--color-blockquote);
       line-height: var(--line-height-paragraphs-blog);
     }
   }
