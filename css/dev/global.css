@@ -5707,15 +5707,27 @@ a:hover, a:focus {
   display: none;
 }
 
+.editor-styles-wrapper [data-type="core/paragraph"] > a,
 .editor-styles-wrapper li > a,
 .editor-styles-wrapper p > strong > a,
 .editor-styles-wrapper p > em > a,
 .editor-styles-wrapper p:not([class]) > a:not([class]),
+.editor-styles-wrapper p.has-text-align-left > a,
+.editor-styles-wrapper p.has-text-align-center > a,
+.editor-styles-wrapper p.has-text-align-right > a,
+.editor-styles-wrapper p.has-small-font-size > a,
+.editor-styles-wrapper figcaption > a,
 .editor-styles-wrapper p:not([class]) > a.is-external-link,
+.gutenberg-content [data-type="core/paragraph"] > a,
 .gutenberg-content li > a,
 .gutenberg-content p > strong > a,
 .gutenberg-content p > em > a,
 .gutenberg-content p:not([class]) > a:not([class]),
+.gutenberg-content p.has-text-align-left > a,
+.gutenberg-content p.has-text-align-center > a,
+.gutenberg-content p.has-text-align-right > a,
+.gutenberg-content p.has-small-font-size > a,
+.gutenberg-content figcaption > a,
 .gutenberg-content p:not([class]) > a.is-external-link {
   border-bottom: 1px solid var(--color-links);
   box-shadow: inset 0 0 0 var(--color-links);
@@ -5725,71 +5737,131 @@ a:hover, a:focus {
   transition: box-shadow 0.1s cubic-bezier(0.19, 1, 0.22, 1), color 0.1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+.editor-styles-wrapper [data-type="core/paragraph"] > a::after,
 .editor-styles-wrapper li > a::after,
 .editor-styles-wrapper p > strong > a::after,
 .editor-styles-wrapper p > em > a::after,
 .editor-styles-wrapper p:not([class]) > a:not([class])::after,
+.editor-styles-wrapper p.has-text-align-left > a::after,
+.editor-styles-wrapper p.has-text-align-center > a::after,
+.editor-styles-wrapper p.has-text-align-right > a::after,
+.editor-styles-wrapper p.has-small-font-size > a::after,
+.editor-styles-wrapper figcaption > a::after,
 .editor-styles-wrapper p:not([class]) > a.is-external-link::after,
+.gutenberg-content [data-type="core/paragraph"] > a::after,
 .gutenberg-content li > a::after,
 .gutenberg-content p > strong > a::after,
 .gutenberg-content p > em > a::after,
 .gutenberg-content p:not([class]) > a:not([class])::after,
+.gutenberg-content p.has-text-align-left > a::after,
+.gutenberg-content p.has-text-align-center > a::after,
+.gutenberg-content p.has-text-align-right > a::after,
+.gutenberg-content p.has-small-font-size > a::after,
+.gutenberg-content figcaption > a::after,
 .gutenberg-content p:not([class]) > a.is-external-link::after {
   background-image: url("../../svg/external-link-styled-links.svg");
 }
 
+.editor-styles-wrapper [data-type="core/paragraph"] > a:hover,
 .editor-styles-wrapper li > a:hover,
 .editor-styles-wrapper p > strong > a:hover,
 .editor-styles-wrapper p > em > a:hover,
 .editor-styles-wrapper p:not([class]) > a:not([class]):hover,
+.editor-styles-wrapper p.has-text-align-left > a:hover,
+.editor-styles-wrapper p.has-text-align-center > a:hover,
+.editor-styles-wrapper p.has-text-align-right > a:hover,
+.editor-styles-wrapper p.has-small-font-size > a:hover,
+.editor-styles-wrapper figcaption > a:hover,
 .editor-styles-wrapper p:not([class]) > a.is-external-link:hover,
+.gutenberg-content [data-type="core/paragraph"] > a:hover,
 .gutenberg-content li > a:hover,
 .gutenberg-content p > strong > a:hover,
 .gutenberg-content p > em > a:hover,
 .gutenberg-content p:not([class]) > a:not([class]):hover,
+.gutenberg-content p.has-text-align-left > a:hover,
+.gutenberg-content p.has-text-align-center > a:hover,
+.gutenberg-content p.has-text-align-right > a:hover,
+.gutenberg-content p.has-small-font-size > a:hover,
+.gutenberg-content figcaption > a:hover,
 .gutenberg-content p:not([class]) > a.is-external-link:hover {
   border-color: transparent;
   box-shadow: inset 0 -3.3rem 0 var(--color-links);
   color: var(--color-white);
 }
 
+.editor-styles-wrapper [data-type="core/paragraph"] > a:hover::after,
 .editor-styles-wrapper li > a:hover::after,
 .editor-styles-wrapper p > strong > a:hover::after,
 .editor-styles-wrapper p > em > a:hover::after,
 .editor-styles-wrapper p:not([class]) > a:not([class]):hover::after,
+.editor-styles-wrapper p.has-text-align-left > a:hover::after,
+.editor-styles-wrapper p.has-text-align-center > a:hover::after,
+.editor-styles-wrapper p.has-text-align-right > a:hover::after,
+.editor-styles-wrapper p.has-small-font-size > a:hover::after,
+.editor-styles-wrapper figcaption > a:hover::after,
 .editor-styles-wrapper p:not([class]) > a.is-external-link:hover::after,
+.gutenberg-content [data-type="core/paragraph"] > a:hover::after,
 .gutenberg-content li > a:hover::after,
 .gutenberg-content p > strong > a:hover::after,
 .gutenberg-content p > em > a:hover::after,
 .gutenberg-content p:not([class]) > a:not([class]):hover::after,
+.gutenberg-content p.has-text-align-left > a:hover::after,
+.gutenberg-content p.has-text-align-center > a:hover::after,
+.gutenberg-content p.has-text-align-right > a:hover::after,
+.gutenberg-content p.has-small-font-size > a:hover::after,
+.gutenberg-content figcaption > a:hover::after,
 .gutenberg-content p:not([class]) > a.is-external-link:hover::after {
   background-image: url("../../svg/external-link-white.svg");
 }
 
+.editor-styles-wrapper [data-type="core/paragraph"] > a:focus,
 .editor-styles-wrapper li > a:focus,
 .editor-styles-wrapper p > strong > a:focus,
 .editor-styles-wrapper p > em > a:focus,
 .editor-styles-wrapper p:not([class]) > a:not([class]):focus,
+.editor-styles-wrapper p.has-text-align-left > a:focus,
+.editor-styles-wrapper p.has-text-align-center > a:focus,
+.editor-styles-wrapper p.has-text-align-right > a:focus,
+.editor-styles-wrapper p.has-small-font-size > a:focus,
+.editor-styles-wrapper figcaption > a:focus,
 .editor-styles-wrapper p:not([class]) > a.is-external-link:focus,
+.gutenberg-content [data-type="core/paragraph"] > a:focus,
 .gutenberg-content li > a:focus,
 .gutenberg-content p > strong > a:focus,
 .gutenberg-content p > em > a:focus,
 .gutenberg-content p:not([class]) > a:not([class]):focus,
+.gutenberg-content p.has-text-align-left > a:focus,
+.gutenberg-content p.has-text-align-center > a:focus,
+.gutenberg-content p.has-text-align-right > a:focus,
+.gutenberg-content p.has-small-font-size > a:focus,
+.gutenberg-content figcaption > a:focus,
 .gutenberg-content p:not([class]) > a.is-external-link:focus {
   border-color: var(--color-black);
   color: var(--color-black);
   text-decoration: none;
 }
 
+.editor-styles-wrapper [data-type="core/paragraph"] > a:focus::after,
 .editor-styles-wrapper li > a:focus::after,
 .editor-styles-wrapper p > strong > a:focus::after,
 .editor-styles-wrapper p > em > a:focus::after,
 .editor-styles-wrapper p:not([class]) > a:not([class]):focus::after,
+.editor-styles-wrapper p.has-text-align-left > a:focus::after,
+.editor-styles-wrapper p.has-text-align-center > a:focus::after,
+.editor-styles-wrapper p.has-text-align-right > a:focus::after,
+.editor-styles-wrapper p.has-small-font-size > a:focus::after,
+.editor-styles-wrapper figcaption > a:focus::after,
 .editor-styles-wrapper p:not([class]) > a.is-external-link:focus::after,
+.gutenberg-content [data-type="core/paragraph"] > a:focus::after,
 .gutenberg-content li > a:focus::after,
 .gutenberg-content p > strong > a:focus::after,
 .gutenberg-content p > em > a:focus::after,
 .gutenberg-content p:not([class]) > a:not([class]):focus::after,
+.gutenberg-content p.has-text-align-left > a:focus::after,
+.gutenberg-content p.has-text-align-center > a:focus::after,
+.gutenberg-content p.has-text-align-right > a:focus::after,
+.gutenberg-content p.has-small-font-size > a:focus::after,
+.gutenberg-content figcaption > a:focus::after,
 .gutenberg-content p:not([class]) > a.is-external-link:focus::after {
   background-image: url("../../svg/external-link-black.svg");
 }

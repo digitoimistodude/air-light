@@ -25,12 +25,16 @@
 @import 'components/button-size-medium';
 @import 'components/button-size-large';
 @import 'components/button-style-ghost';
+@import 'components/link';
 
 // Gutenberg layout outside blocks
 @import 'gutenberg/layout/content';
 
 // Gutenberg blocks
 @import 'gutenberg/blocks';
+
+// Gutenberg formatting
+@import 'gutenberg/formatting';
 
 // Editor exceptions below
 // These styles are NO USE to front-end
