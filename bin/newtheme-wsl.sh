@@ -107,9 +107,8 @@ cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.stylelintrc > ${PROJECTPATH}/devpackages/.stylelintrc2
 cp ${PROJECTPATH}/devpackages/.stylelintrc2 ${PROJECTPATH}/.stylelintrc
-sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.eslintrc.js > ${PROJECTPATH}/gulp/.eslintrc.js2
-rm ${PROJECTTHEMEPATH}/.stylelintrc
-cp ${PROJECTPATH}/devpackages/.eslintrc.js2 ${PROJECTPATH}/.eslintrc.js
+sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.eslintrc.js > ${PROJECTPATH}/devpackages/.eslintrc2.js
+cp ${PROJECTPATH}/devpackages/.eslintrc2.js ${PROJECTPATH}/.eslintrc.js
 cp ${PROJECTPATH}/devpackages/gulpfile.js ${PROJECTPATH}/
 cp -Rv ${PROJECTPATH}/devpackages/gulp ${PROJECTPATH}/
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/gulp/config.js > ${PROJECTPATH}/gulp/config2.js
