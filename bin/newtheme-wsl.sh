@@ -103,7 +103,6 @@ cp ${PROJECTTHEMEPATH}/.browserslistrc ${PROJECTPATH}/
 rm ${PROJECTTHEMEPATH}/.browserslistrc
 cp ${PROJECTTHEMEPATH}/.hintrc ${PROJECTPATH}/
 rm ${PROJECTTHEMEPATH}/.hintrc
-cp ${PROJECTTHEMEPATH}/.jscsrc ${PROJECTPATH}/
 cp ${PROJECTTHEMEPATH}/.svgo.yml ${PROJECTPATH}/
 cd ${PROJECTPATH}/devpackages
 sed -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" -e "s/\THEMENAME/${THEMENAME}/" ${PROJECTPATH}/devpackages/.stylelintrc > ${PROJECTPATH}/devpackages/.stylelintrc2

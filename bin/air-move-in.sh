@@ -28,7 +28,6 @@ sudo mv ~/air-temp/package.json ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/package-lock.json ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/phpcs.xml ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/node_modules ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.jscsrc ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/gulpfile.js ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/bin ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/content ~/Projects/airdev/content/themes/air-light/content
