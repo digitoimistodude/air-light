@@ -15,6 +15,11 @@ white=$(tput setaf 7)
 txtreset=$(tput sgr0)
 PROJECTS_HOME='/var/www/'
 
+# Note about running directly as we can't prevent people running this via sh or bash pre-cmd
+echo ""
+echo "${boldwhite}Note:${txtreset} Please do NOT prepend sh or bash to run this script (${white}sh $0${txtreset} or ${white}bash $0${txtreset}), just execute it directly instead like this: ${white}./$0${txtreset} (if no permissions, run sudo chmod +x $0 first)${txtreset}" 1>&2
+echo ""
+
 while true; do
 read -p "${boldyellow}Project created? (y/n)${txtreset} " yn
     case $yn in
@@ -131,14 +136,18 @@ rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
 
 echo "${yellow}Removing demo content...${txtreset}"
-find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i "s/@import 'layout\/demo-content';//g" {} +
-find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i "s/@import 'layout\/wordpress';//g" {} +
+
+for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i -e "s;Air_light_;${THEMENAME}_;" $i; done
+
+# Note: find + -exec sed doesn't work in WSL for some weird reason
+LC_ALL=C sed -i -e "s;@import 'layout\/demo-content'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
+LC_ALL=C sed -i -e "s;s/@import 'layout\/wordpress'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_wordpress.scss
 
 read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
   if [ "$yn" = "n" ]; then
-    find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i "s/@import 'views\/comments';//g" {} +
+    LC_ALL=C sed -i -e "s;@import 'views\/comments'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
     rm ${PROJECTTHEMEPATH}/sass/views/_comments.scss
   else
     echo ' '
@@ -151,8 +160,11 @@ rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 touch ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
 rm ${PROJECTTHEMEPATH}/template-parts/header/demo-content.php
 rm -rf ${PROJECTTHEMEPATH}/template-parts/footer
-find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
-find ${PROJECTTHEMEPATH}/ -maxdepth 2 -name 'footer.php' -exec sed -i -e "s/<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>//g" {} +
+
+# Remove demo includes
+# Note: find + -exec sed doesn't work in WSL for some weird reason
+LC_ALL=C sed -i -e "s;<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>;;" ${PROJECTTHEMEPATH}/front-page.php
+LC_ALL=C sed -i -e "s;<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>;;" ${PROJECTTHEMEPATH}/footer.php
 
 echo "${yellow}Adding media library folder...${txtreset}"
 mkdir -p ${PROJECTPATH}/media

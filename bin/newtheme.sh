@@ -5,11 +5,6 @@
 # @Last Modified time: 2021-02-25 10:57:29
 # Theme starting bash script (github.com/digitoimistodude)
 
-if [ ! "$BASH_VERSION" ] ; then
-    echo "Please do not use sh to run this script ($0), just execute it directly" 1>&2
-    exit 1
-fi
-
 txtbold=$(tput bold)
 boldyellow=${txtbold}$(tput setaf 3)
 boldgreen=${txtbold}$(tput setaf 2)
@@ -18,6 +13,11 @@ yellow=$(tput setaf 3)
 green=$(tput setaf 2)
 white=$(tput setaf 7)
 txtreset=$(tput sgr0)
+
+# Note about running directly as we can't prevent people running this via sh or bash pre-cmd
+echo ""
+echo "${boldwhite}Note:${txtreset} Please do NOT prepend sh or bash to run this script (${white}sh $0${txtreset} or ${white}bash $0${txtreset}), just execute it directly instead like this: ${white}./$0${txtreset} (if no permissions, run sudo chmod +x $0 first)${txtreset}" 1>&2
+echo ""
 
 while true; do
 read -p "${boldyellow}Project created? (y/n)${txtreset} " yn
