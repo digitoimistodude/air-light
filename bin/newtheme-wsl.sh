@@ -131,14 +131,14 @@ rm ${PROJECTTHEMEPATH}/README.md
 rm ${PROJECTTHEMEPATH}/LICENSE.md
 
 echo "${yellow}Removing demo content...${txtreset}"
-find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i -e "s/@import 'layout\/demo-content';//g" {} +
-find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i -e "s/@import 'layout\/wordpress';//g" {} +
+find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i "s/@import 'layout\/demo-content';//g" {} +
+find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i "s/@import 'layout\/wordpress';//g" {} +
 rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_wordpress.scss
 
 read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
   if [ "$yn" = "n" ]; then
-    find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i -e "s/@import 'views\/comments';//g" {} +
+    find ${PROJECTTHEMEPATH}/sass/ -name 'global.scss' -exec sed -i "s/@import 'views\/comments';//g" {} +
     rm ${PROJECTTHEMEPATH}/sass/views/_comments.scss
   else
     echo ' '
