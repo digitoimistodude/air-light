@@ -146,12 +146,12 @@ rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_wordpress.scss
 
 read -p "${boldyellow}Do we use comments in this project? (y/n)${txtreset} " yn
-  if [ "$yn" = "n" ]; then
-    LC_ALL=C sed -i -e "s;@import 'views\/comments'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
-    rm ${PROJECTTHEMEPATH}/sass/views/_comments.scss
-  else
-    echo ' '
-  fi
+if [ "$yn" = "n" ]; then
+  LC_ALL=C sed -i -e "s;@import 'views\/comments'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
+  rm ${PROJECTTHEMEPATH}/sass/views/_comments.scss
+else
+  echo ' '
+fi
 
 echo "${yellow}Remove things we need to remove anyway in each start...${txtreset}"
 rm ${PROJECTTHEMEPATH}/sass/layout/_site-footer.scss
