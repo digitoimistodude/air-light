@@ -141,7 +141,7 @@ for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i -e "s;Air_light_;${TH
 
 # Note: find + -exec sed doesn't work in WSL for some weird reason
 LC_ALL=C sed -i -e "s;@import 'layout\/demo-content'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
-LC_ALL=C sed -i -e "s;s/@import 'layout\/wordpress'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
+LC_ALL=C sed -i -e "s;@import 'layout\/wordpress'\;;;" ${PROJECTTHEMEPATH}/sass/global.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_demo-content.scss
 rm ${PROJECTTHEMEPATH}/sass/layout/_wordpress.scss
 
