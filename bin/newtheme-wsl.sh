@@ -58,7 +58,7 @@ git stash
 git pull
 echo "${yellow}Copying starter theme to project folder ${PROJECTS_HOME}${PROJECTNAME}/content/themes/${THEMENAME}${txtreset}"
 cp -R ${STARTERTHEMEPATH} ${PROJECTTHEMEPATH}
-echo "${yellow}Generating theme files with theme name and texdomain called ${THEMENAME}${txtreset}"
+echo "${yellow}Generating theme files with theme name and textdomain called ${THEMENAME}${txtreset}"
 cd $PROJECTTHEMEPATH && rm -rf .git
 
 # THE magical sed command by rolle (goes through every single file in theme folder and searchs and replaces every air instance with THEMENAME):

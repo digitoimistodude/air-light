@@ -3,8 +3,12 @@
 # @Date:   2020-05-11 13:29:39
 # @Last Modified by:   Roni Laukkarinen
 # @Last Modified time: 2021-02-25 10:57:29
-#!/bin/bash
 # Theme starting bash script (github.com/digitoimistodude)
+
+if [ ! "$BASH_VERSION" ] ; then
+    echo "Please do not use sh to run this script ($0), just execute it directly" 1>&2
+    exit 1
+fi
 
 txtbold=$(tput bold)
 boldyellow=${txtbold}$(tput setaf 3)
@@ -42,7 +46,7 @@ git stash
 git pull
 echo "${yellow}Copying starter theme to project folder ${HOME}/Projects/${PROJECTNAME}/content/themes/${THEMENAME}${txtreset}"
 cp -R ${STARTERTHEMEPATH} ${PROJECTTHEMEPATH}
-echo "${yellow}Generating theme files with theme name and texdomain called ${THEMENAME}${txtreset}"
+echo "${yellow}Generating theme files with theme name and textdomain called ${THEMENAME}${txtreset}"
 cd $PROJECTTHEMEPATH && rm -rf .git
 
 # THE magical sed command by rolle (goes through every single file in theme folder and searchs and replaces every air instance with THEMENAME):
