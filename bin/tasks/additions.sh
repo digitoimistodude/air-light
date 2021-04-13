@@ -1,9 +1,9 @@
-echo "${yellow}Adding media library folder...${TXTRESET}"
+echo "${YELLOW}Adding media library folder...${TXTRESET}"
 mkdir -p ${PROJECT_PATH}/media
 echo "" > ${PROJECT_PATH}/media/index.php
 chmod 777 ${PROJECT_PATH}/media
 
-echo "${yellow}Generating default README.md...${TXTRESET}"
+echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
 newestair="7.0.6"
 NEWEST_WORDPRESS_VERSION="5.5"

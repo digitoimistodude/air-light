@@ -1,4 +1,4 @@
-echo "${yellow}Generating theme files with theme name and textdomain called ${THEME_NAME}${TXTRESET}"
+echo "${YELLOW}Generating theme files with theme name and textdomain called ${THEME_NAME}${TXTRESET}"
 # THE magical sed command by rolle (goes through every single file in theme folder and searchs and replaces every air instance with THEME_NAME):
 # WSL/Ubuntu version of sed binary, different format than on macOS
 for i in `grep -rl air-light * 2> /dev/null`; do LC_ALL=C sed -i -e "s;air-light;${THEME_NAME};" $i; done
@@ -8,7 +8,7 @@ for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i -e "s;air_light_;${TH
 for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i -e "s;Air_light_;${THEME_NAME}_;" $i; done
 
 # Remove demo content
-echo "${yellow}Removing demo content...${TXTRESET}"
+echo "${YELLOW}Removing demo content...${TXTRESET}"
 for i in `grep -rl air * 2> /dev/null`; do LC_ALL=C sed -i -e "s;Air_light_;${THEME_NAME}_;" $i; done
 
 # Note: find + -exec sed doesn't work in WSL for some weird reason

@@ -1,4 +1,4 @@
-echo "${yellow}Cleaning up...${TXTRESET}"
+echo "${YELLOW}Cleaning up...${TXTRESET}"
 # We do not want Air-light to be in git any more since this a new theme
 cd $PROJECT_THEME_PATH && rm -rf .git
 
@@ -19,7 +19,7 @@ rm ${PROJECT_THEME_PATH}/LICENSE.md
 rm ${PROJECT_THEME_PATH}/sass/layout/_demo-content.scss
 rm ${PROJECT_THEME_PATH}/sass/layout/_wordpress.scss
 
-echo "${yellow}Remove things we need to remove anyway in each start...${TXTRESET}"
+echo "${YELLOW}Remove things we need to remove anyway in each start...${TXTRESET}"
 rm ${PROJECT_THEME_PATH}/sass/layout/_site-footer.scss
 touch ${PROJECT_THEME_PATH}/sass/layout/_site-footer.scss
 rm ${PROJECT_THEME_PATH}/sass/layout/_site-footer.scss

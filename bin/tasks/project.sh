@@ -1,4 +1,4 @@
-echo "${yellow}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${TXTRESET}"
+echo "${YELLOW}Generating gulp tasks and configuration from https://github.com/digitoimistodude/devpackages${TXTRESET}"
 cp ${PROJECT_THEME_PATH}/.scss-lint.yml ${PROJECT_PATH}/
 cp ${PROJECT_THEME_PATH}/.browserslistrc ${PROJECT_PATH}/
 rm ${PROJECT_THEME_PATH}/.browserslistrc

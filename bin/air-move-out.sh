@@ -9,7 +9,7 @@ green=$(tput setaf 2)
 white=$(tput setaf 7)
 txtreset=$(tput sgr0)
 
-echo "${yellow}Moving dev files out...${TXTRESET}"
+echo "${YELLOW}Moving dev files out...${TXTRESET}"
 mkdir -p ~/air-temp
 find . -name '.DS_Store' -type f -delete
 find ../ -name '.DS_Store' -type f -delete
