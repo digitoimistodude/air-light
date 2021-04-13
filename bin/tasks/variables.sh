@@ -14,3 +14,5 @@ LOCAL_IP=$(ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | grep -Eo "([
 YEAR=$(date +%y)
 CURRENTFILE=`basename $0`
 STARTER_THEME_PATH_TEMP="${HOME}/air"
+PROJECT_PATH="${PROJECTS_HOME}/${PROJECT_NAME}"
+PROJECT_THEME_PATH="${PROJECTS_HOME}/${PROJECT_NAME}/content/themes/${THEME_NAME}"
