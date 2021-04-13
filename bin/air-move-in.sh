@@ -44,8 +44,8 @@ cd ~/Projects/airdev/content/themes/air-light/ && git stash
 git status
 
 echo "
-${boldgreen}Air files moved in, now just do the following:${txtreset}"
+${boldgreen}Air files moved in, now just do the following:${TXTRESET}"
 echo "
 1. Upload (if you didn't already): https://wordpress.org/themes/upload/
 2. All done! You do not need to run air-move-in.sh any more.
-${txtreset} "
+${TXTRESET} "
