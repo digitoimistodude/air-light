@@ -12,10 +12,6 @@ echo "${YELLOW}Installing theme npm packages (like JS/CSS dependencies) for the 
 cd ${PROJECT_THEME_PATH}
 npm install
 
-echo "${YELLOW}Running project gulp js once...${TXTRESET}"
-cd ${PROJECT_PATH}
-gulp js
-
 echo "${YELLOW}Running project gulp styles once...${TXTRESET}"
 cd ${PROJECT_PATH}
 gulp styles
