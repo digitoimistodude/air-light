@@ -13,7 +13,7 @@ find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@impo
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'footer.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>//g" {} +
 
-read -p "${boldyellow}Do we use comments in this project? (y/n)${TXTRESET} " yn
+read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
   if [ "$yn" = "n" ]; then
     find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'views\/comments';//g" {} +
     rm ${PROJECT_THEME_PATH}/sass/views/_comments.scss

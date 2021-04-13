@@ -1,5 +1,5 @@
 echo ""
-echo "${boldgreen}All done!"
+echo "${BOLDGREEN}All done!"
 echo ""
 echo "Front end: https://${PROJECT_NAME}.test"
 echo "WP-admin:  https://${PROJECT_NAME}.test/wp/wp-login.php"
