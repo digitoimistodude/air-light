@@ -4,6 +4,9 @@ source ${SCRIPTS_LOCATION}/tasks/variables.sh
 # Script header
 source ${SCRIPTS_LOCATION}/tasks/header.sh
 
+# Ask names and credentials
+source ${SCRIPTS_LOCATION}/tasks/askvars.sh
+
 # Get latest Air-light version with updates and copy it over to your project
 source ${SCRIPTS_LOCATION}/tasks/get-theme.sh
 
