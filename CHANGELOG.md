@@ -1,4 +1,16 @@
-### 7.0.7: 2021-04-14
+### 7.0.8: 2021-04-14
+
+* Fix skip link color on focus
+* Fix sub-navigation padding when toggled on keyboard
+* CSS variablize nav-mobile
+* Add CSS variables to desktop nav, add font-weights as vars
+* Fix editor font paths
+* More CPU friendly php watch
+* Set figure widths for gutenberg
+* Helper variables $font-sans and $font-serif
+* Add _font-face for defining webfont files, clarify font-family
+
+### 7.0.8: 2021-04-14
 
 See [pull request #89](https://github.com/digitoimistodude/air-light/pull/89).
 
