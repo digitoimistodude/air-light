@@ -1,32 +1,17 @@
 // Site navigation mobile layout
 // The main layout for the website navigation, for the mobile version only.
 
-// Main level settings
+// Settings
 $absolute-navigation-mobile: true;
-$color-background-nav-mobile-header: $color-main;
-$color-background-nav-mobile-layer: $color-main;
-$color-current-mobile: choose-contrast-color($color-background-nav-mobile-layer);
-$color-dropdown-toggle: choose-contrast-color($color-background-nav-mobile-layer);
-$color-hamburger-active: choose-contrast-color($color-background-nav-mobile-header);
-$color-hamburger: choose-contrast-color($color-background-nav-mobile-header);
-$color-active-main-level-mobile: choose-contrast-color($color-main);
-$color-main-level-mobile: choose-contrast-color($color-background-nav-mobile-layer);
-$color-separator-nav-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .1);
-$font-weight-main-level-mobile: 600;
-$height-navigation-mobile: 72px;
-$dropdown-toggle-size-mobile: 12px;
-
-// Sub menu settings
-$color-sub-menu-mobile: rgba(choose-contrast-color($color-background-nav-mobile-layer), .8);
-$font-weight-sub-menu-mobile: 600;
 
 // Settings for jonsuh/hamburgers
+// These need to be SCSS variables
 $hamburger-padding-x: 1.5rem;
 $hamburger-padding-y: 4rem;
 $hamburger-layer-width: 3rem;
 $hamburger-layer-height: .2rem;
 $hamburger-layer-spacing: .5rem;
-$hamburger-layer-color: $color-hamburger;
+$hamburger-layer-color: var(--color-hamburger);
 $hamburger-layer-border-radius: 0;
 $hamburger-hover-opacity: .8;
 $hamburger-hover-transition-duration: .15s;
@@ -36,14 +21,28 @@ $nav-open-from-direction: top;
 // CSS variables
 // These can be adjusted with media queries for in-between breakpoints
 :root {
-  // Main level CSS vars
+  // Dimensions, gaps and spacings
   --font-size-main-level-mobile: 17px;
   --font-size-sub-menu-mobile: 17px;
-
-  // Sub menu CSS vars
+  --font-weight-main-level-mobile: 600;
+  --font-weight-sub-menu-mobile: 600;
+  --dropdown-toggle-size-mobile: 12px;
+  --height-navigation-mobile: 72px;
+  --margin-left-sub-menu: 2rem;
   --padding-sub-menu-vertical-mobile: 1.2rem;
   --padding-sub-menu-horizontal-mobile: 2.5rem;
-  --margin-left-sub-menu: 2rem;
+
+  // Colors
+  --color-active-main-level-mobile: var(--color-white);
+  --color-background-nav-mobile-header: var(--color-main);
+  --color-background-nav-mobile-layer: var(--color-main);
+  --color-current-mobile: var(--color-white);
+  --color-dropdown-toggle: var(--color-white);
+  --color-hamburger-active: var(--color-white);
+  --color-hamburger: var(--color-white);
+  --color-main-level-mobile: var(--color-white);
+  --color-separator-nav-mobile: rgba(255, 255, 255, .1);
+  --color-sub-menu-mobile: rgba(255, 255, 255, .8);
 }
 
 // Init Tasty Hamburger navigation toggle
@@ -74,7 +73,7 @@ $nav-open-from-direction: top;
 // Let's ensure site-header loads properly and doesn't leave empty spaces
 @media (max-width: $width-max-mobile) {
   .nav-container {
-    background-color: $color-background-nav-mobile-header;
+    background-color: var(--color-background-nav-mobile-header);
 
     @if $absolute-navigation-mobile == false {
       position: relative;
@@ -91,7 +90,7 @@ $nav-open-from-direction: top;
 
   @if $absolute-navigation-mobile == true {
     .site {
-      padding-top: $height-navigation-mobile;
+      padding-top: var(--height-navigation-mobile);
     }
   }
 }
@@ -112,7 +111,7 @@ $nav-open-from-direction: top;
 
   // Users that don't have Javascript enabled
   .no-js .site-header {
-    background-color: $color-background-nav-mobile-header;
+    background-color: var(--color-background-nav-mobile-header);
     position: static;
   }
 
@@ -142,11 +141,11 @@ $nav-open-from-direction: top;
 
   // Main level mobile navigation links
   .menu-item a {
-    border-top: 1px solid $color-separator-nav-mobile;
-    color: $color-main-level-mobile;
+    border-top: 1px solid var(--color-separator-nav-mobile);
+    color: var(--color-main-level-mobile);
     display: block;
     font-size: var(--font-size-main-level-mobile);
-    font-weight: $font-weight-main-level-mobile;
+    font-weight: var(--font-weight-main-level-mobile);
     margin-left: 0;
     margin-right: 0;
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
@@ -160,9 +159,9 @@ $nav-open-from-direction: top;
 
   // Sub menu items
   .sub-menu a {
-    color: $color-sub-menu-mobile;
+    color: var(--color-sub-menu-mobile);
     font-size: var(--font-size-sub-menu-mobile);
-    font-weight: $font-weight-sub-menu-mobile;
+    font-weight: var(--font-weight-sub-menu-mobile);
     padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu));
   }
 
@@ -177,13 +176,13 @@ $nav-open-from-direction: top;
 
   .menu-item a:hover,
   .menu-item a:focus {
-    color: $color-active-main-level-mobile;
+    color: var(--color-active-main-level-mobile);
   }
 
   // Current menu item color
   .menu-item.current-menu-parent > a,
   .menu-item.current-menu-item > a {
-    color: $color-current-mobile;
+    color: var(--color-current-mobile);
   }
 
   // Dropdown toggle
@@ -195,9 +194,9 @@ $nav-open-from-direction: top;
     // background-image: url('../../svg/nav-open.svg');
     // background-position: center;
     // background-repeat: no-repeat;
-    // background-size: $dropdown-toggle-size-mobile $dropdown-toggle-size-mobile;
+    // background-size: var(--dropdown-toggle-size-mobile) var(--dropdown-toggle-size-mobile);
     border: 0;
-    color: $color-dropdown-toggle;
+    color: var(--color-dropdown-toggle);
     display: inline-flex;
     height: 100%;
     left: auto;
@@ -221,13 +220,13 @@ $nav-open-from-direction: top;
   }
 
   .sub-menu .dropdown-toggle {
-    color: $color-sub-menu-mobile;
+    color: var(--color-sub-menu-mobile);
   }
 
   // Hide desktop toggles
   .dropdown-toggle svg {
-    height: $dropdown-toggle-size-mobile;
-    width: $dropdown-toggle-size-mobile;
+    height: var(--dropdown-toggle-size-mobile);
+    width: var(--dropdown-toggle-size-mobile);
     // Enable for alternative + and minus effect
     // Need to use display: none here to make sure there are visually no double toggles
     /* stylelint-disable a11y/no-display-none */
@@ -251,11 +250,11 @@ $nav-open-from-direction: top;
     position: fixed;
 
     // Default position, some browsers need this
-    top: $height-navigation-mobile;
+    top: var(--height-navigation-mobile);
     z-index: 5;
 
     .menu-items {
-      background-color: $color-background-nav-mobile-layer;
+      background-color: var(--color-background-nav-mobile-layer);
 
       // Let's keep the content always full height
       height: 100vh;
@@ -283,14 +282,14 @@ $nav-open-from-direction: top;
 .hamburger.is-active .hamburger-inner,
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: $color-hamburger-active;
-  color: $color-hamburger-active;
+  background-color: var(--color-hamburger-active);
+  color: var(--color-hamburger-active);
 }
 
 .nav-toggle {
   background-color: transparent;
   border: 0;
-  color: $color-hamburger;
+  color: var(--color-hamburger);
   cursor: pointer;
   font-weight: var(--font-weight-bold);
   margin: 0;
@@ -319,32 +318,32 @@ $nav-open-from-direction: top;
   }
 
   span {
-    color: $color-hamburger;
+    color: var(--color-hamburger);
     font-size: 1.2em;
   }
 
   &.is-active span {
-    color: $color-hamburger-active;
+    color: var(--color-hamburger-active);
   }
 
   &:hover,
   &:active {
-    color: $color-hamburger;
+    color: var(--color-hamburger);
 
     span {
-      color: $color-hamburger;
+      color: var(--color-hamburger);
     }
   }
 
   // Alternative focus for mobile nav
   &:focus {
     span span {
-      background-color: $color-hamburger;
+      background-color: var(--color-hamburger);
     }
 
     span span::before,
     span span::after {
-      background-color: $color-hamburger;
+      background-color: var(--color-hamburger);
     }
   }
 
@@ -383,37 +382,37 @@ $nav-open-from-direction: top;
 
   // Separate active colors for opened state
   &.is-active {
-    color: $color-hamburger-active;
+    color: var(--color-hamburger-active);
   }
 
   &.is-active .hamburger-box {
     .hamburger-inner {
-      background-color: $color-hamburger-active;
+      background-color: var(--color-hamburger-active);
     }
 
     .hamburger-inner::after {
-      background-color: $color-hamburger-active;
+      background-color: var(--color-hamburger-active);
     }
   }
 
   &.is-active .focus,
   &.is-active span:focus {
     .hamburger-inner {
-      background-color: $color-hamburger-active;
+      background-color: var(--color-hamburger-active);
     }
 
     .hamburger-inner::after {
-      background-color: $color-hamburger-active;
+      background-color: var(--color-hamburger-active);
     }
   }
 
   &.is-active span:focus,
   &.is-active span:hover,
   &.is-active span:active {
-    color: $color-hamburger-active;
+    color: var(--color-hamburger-active);
 
     span {
-      color: $color-hamburger-active;
+      color: var(--color-hamburger-active);
     }
   }
 }
