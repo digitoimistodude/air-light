@@ -13,6 +13,9 @@ source ${SCRIPTS_LOCATION}/tasks/get-theme.sh
 # Set needed file and directory permissions
 source ${SCRIPTS_LOCATION}/tasks/permissions.sh
 
+# Get and install theme dependencies, npm and devpackages
+source ${SCRIPTS_LOCATION}/tasks/dependencies.sh
+
 # Create latest Air-light development packages for project root level (gulp paths etc.)
 source ${SCRIPTS_LOCATION}/tasks/project.sh
 
@@ -21,6 +24,3 @@ source ${SCRIPTS_LOCATION}/tasks/cleanups.sh
 
 # Add media folder, generate README.md for project etc.
 source ${SCRIPTS_LOCATION}/tasks/additions.sh
-
-# Get and install theme dependencies, npm and devpackages
-source ${SCRIPTS_LOCATION}/tasks/dependencies.sh
