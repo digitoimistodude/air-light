@@ -1,6 +1,4 @@
-// Self-hosted fonts
-// Remember to add these also to gutenberg/variables/_font-family.scss
-// with correct paths
-@include fontFace('Inter', '../../fonts/Inter-Regular', 400);
-@include fontFace('Inter', '../../fonts/Inter-Italic', 400, italic);
-@include fontFace('Inter', '../../fonts/Inter-Bold', 700);
+// Font family settings
+$font-paragraphs: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-headings: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+$font-monospace: 'Inconsolata', 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;

@@ -51,30 +51,6 @@
   --color-warning: #f4aa71;
 }
 
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: url("../../fonts/Inter-Regular.woff") format("woff"), url("../../fonts/Inter-Regular.woff2") format("woff2"), url("../../fonts/Inter-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: italic;
-  font-weight: 400;
-  src: url("../../fonts/Inter-Italic.woff") format("woff"), url("../../fonts/Inter-Italic.woff2") format("woff2"), url("../../fonts/Inter-Italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-display: auto;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../../fonts/Inter-Bold.woff") format("woff"), url("../../fonts/Inter-Bold.woff2") format("woff2"), url("../../fonts/Inter-Bold.ttf") format("truetype");
-}
-
 :root {
   --font-size-default: 20px;
   --font-size-tiny: 14px;
