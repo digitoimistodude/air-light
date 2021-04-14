@@ -1,3 +1,20 @@
+### 7.0.7: 2021-04-14
+
+See [pull request #89](https://github.com/digitoimistodude/air-light/pull/89).
+
+Project start scripts have been refactored completely same manner than in this [dudestack PR](https://github.com/digitoimistodude/dudestack/pull/11).
+
+### Changes:
+
+- Add working WSL support, linked also to [windows-lemp-setup](https://github.com/digitoimistodude/windows-lemp-setup)
+- Modularize bash scripts, add files as partials. From now on we need to edit files under bin/tasks. Only couple of files are different, for example sed commands for debian and macOS vary, that's why
+- Beautiful formatting and instructions for the start script (header.sh, footer.sh)
+- Prevent running directly with bash or sh to prevent possible issues with them
+- Variable all the things - no need to search and replace stuff
+- Fix typos
+- Add checks for missing packages (WSL mainly)
+- Add extra notifications that these scripts need Air-light and dev servers to work
+
 ### 7.0.6: 2021-04-07
 
 * Fix color variable inside conditional
