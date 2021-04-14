@@ -137,7 +137,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  src: url("../../../content/themes/air-light/fonts/Inter-Regular.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-Regular.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-Regular.ttf") format("truetype");
+  src: url("../../../../../content/themes/air-light/fonts/Inter-Regular.woff") format("woff"), url("../../../../../content/themes/air-light/fonts/Inter-Regular.woff2") format("woff2"), url("../../../../../content/themes/air-light/fonts/Inter-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -145,7 +145,7 @@
   font-family: "Inter";
   font-style: italic;
   font-weight: 400;
-  src: url("../../../content/themes/air-light/fonts/Inter-Italic.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-Italic.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-Italic.ttf") format("truetype");
+  src: url("../../../../../content/themes/air-light/fonts/Inter-Italic.woff") format("woff"), url("../../../../../content/themes/air-light/fonts/Inter-Italic.woff2") format("woff2"), url("../../../../../content/themes/air-light/fonts/Inter-Italic.ttf") format("truetype");
 }
 
 @font-face {
@@ -153,7 +153,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  src: url("../../../content/themes/air-light/fonts/Inter-Bold.woff") format("woff"), url("../../../content/themes/air-light/fonts/Inter-Bold.woff2") format("woff2"), url("../../../content/themes/air-light/fonts/Inter-Bold.ttf") format("truetype");
+  src: url("../../../../../content/themes/air-light/fonts/Inter-Bold.woff") format("woff"), url("../../../../../content/themes/air-light/fonts/Inter-Bold.woff2") format("woff2"), url("../../../../../content/themes/air-light/fonts/Inter-Bold.ttf") format("truetype");
 }
 
 .editor-styles-wrapper,
