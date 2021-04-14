@@ -34,7 +34,6 @@ $color-wild-blue-yonder: #737fbf;
   }
 
   .site-title {
-    font-weight: 700;
     margin: 0;
 
     svg {
@@ -246,7 +245,7 @@ $color-wild-blue-yonder: #737fbf;
   font-style: normal;
   letter-spacing: .05em;
   text-transform: lowercase;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   margin: 0;
   margin-bottom: 1rem;
   color: var(--color-wild-blue-yonder);
@@ -269,7 +268,7 @@ $color-wild-blue-yonder: #737fbf;
   .site-header .nav-primary .menu-items .sub-menu .current-menu-parent > a,
   .site-header .nav-primary .menu-items .sub-menu .current-menu-item > a,
   .site-header .nav-primary .menu-items .sub-menu .dropdown-toggle {
-    color: $color-current;
+    color: var(--color-current);
   }
 
   .site-header .nav-primary .menu-items.nav-menu .sub-menu .menu-item > .dropdown-toggle {

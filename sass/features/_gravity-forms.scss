@@ -7,7 +7,7 @@ div.validation_error {
   background-color: var(--color-error);
   color: var(--color-white);
   font-size: var(--font-size-medium);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   margin-bottom: 2rem;
   padding: 2rem;
 
@@ -23,7 +23,7 @@ body *[aria-invalid="true"] {
 .validation_message {
   color: var(--color-error);
   font-size: var(--font-size-small);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
 }
 
 .validation_list {
@@ -39,7 +39,7 @@ body *[aria-invalid="true"] {
 
   li {
     color: var(--color-error);
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
   }
 }
 
@@ -91,7 +91,7 @@ body *[aria-invalid="true"] {
   .gfield_label,
   .ginput_container label {
     display: inline-block;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     margin-bottom: 1rem;
     margin-top: 1rem;
   }

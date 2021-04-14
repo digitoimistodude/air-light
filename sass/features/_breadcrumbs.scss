@@ -62,7 +62,7 @@
   h2 {
     color: var(--color-paragraphs);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
 
     @media (max-width: 600px) {
       font-size: 1.3rem;
@@ -82,7 +82,7 @@
 
     li {
       display: inline-block;
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       line-height: 1;
       margin-bottom: 0;
       margin-right: 0;

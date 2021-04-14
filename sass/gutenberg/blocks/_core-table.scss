@@ -13,7 +13,7 @@ th {
 
 // Table heading cells
 th {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .editor-styles-wrapper,

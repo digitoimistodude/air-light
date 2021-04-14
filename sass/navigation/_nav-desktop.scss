@@ -1,40 +1,40 @@
 // Site navigation desktop layout
 // The main layout for the website navigation, for a desktop devices only.
 
-// Main level settings
+// Settings
 $absolute-navigation: true;
-$color-background-nav-desktop: var(--color-white);
-$color-dropdown-toggle: var(--color-valhalla);
-$color-hover-main-level: var(--color-white);
-$color-main-level: var(--color-white);
-$color-current: var(--color-main);
-$font-weight-main-level: 700;
 $use-dropdown-bubble: true;
 $use-dropdown-toggle-animation: true;
-$dropdown-toggle-size: 12px;
-
-// Sub menu settings
-$border-radius-sub-menu: 0;
-$color-background-sub-menu: var(--color-white);
-$color-border-sub-menu: rgba(var(--color-valhalla-rgb), .05);
-$color-hover-sub-menu: var(--color-hover);
-$color-sub-menu: var(--color-valhalla);
-$font-weight-sub-menu: 400;
-$width-sub-menu: 22rem;
 
 // CSS variables
 // These can be adjusted with media queries for in-between breakpoints
 :root {
-  // Main level CSS vars
-  --font-size-main-level: 17px;
-  --font-size-sub-menu: 16px;
+  // Dimensions, gaps and spacings
+  --border-radius-sub-menu: 0;
+  --dropdown-toggle-size: 12px;
+  --gap-dropdown: 1rem;
   --padding-main-level-vertical: .6rem;
   --padding-main-level-horizontal: 2rem;
-
-  // Sub menu CSS vars
-  --gap-dropdown: 1rem;
   --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-horizontal: 1.5rem;
+  --width-sub-menu: 22rem;
+
+  // Colors
+  --color-background-nav-desktop: var(--color-white);
+  --color-background-sub-menu: var(--color-white);
+  --color-border-sub-menu: rgba(var(--color-valhalla-rgb), .05);
+  --color-dropdown-toggle: var(--color-valhalla);
+  --color-sub-menu: var(--color-valhalla);
+  --color-hover-main-level: var(--color-white);
+  --color-hover-sub-menu: var(--color-hover);
+  --color-main-level: var(--color-white);
+  --color-current: var(--color-main);
+
+  // Font styles
+  --font-size-main-level: 17px;
+  --font-size-sub-menu: 16px;
+  --font-weight-main-level: var(--font-weight-bold);
+  --font-weight-sub-menu: var(--font-weight-regular);
 }
 
 // General navigation resets
@@ -45,7 +45,7 @@ $width-sub-menu: 22rem;
 @media only screen and (min-width: $width-max-mobile) {
   .nav-container {
     @if $absolute-navigation == false {
-      background-color: $color-background-nav-desktop;
+      background-color: var(--color-background-nav-desktop);
       box-shadow: 0 0 10px rgba($color-east-bay, .1);
       position: relative;
       z-index: 222;
@@ -106,10 +106,10 @@ $width-sub-menu: 22rem;
   // Menu items
   .menu-item > a {
     align-items: center;
-    color: $color-main-level;
+    color: var(--color-main-level);
     display: inline-flex;
     font-size: var(--font-size-main-level);
-    font-weight: $font-weight-main-level;
+    font-weight: var(--font-weight-main-level);
     padding-bottom: var(--padding-main-level-vertical);
     padding-left: var(--padding-main-level-horizontal);
     padding-right: var(--padding-main-level-horizontal);
@@ -118,10 +118,10 @@ $width-sub-menu: 22rem;
 
   .menu-item .sub-menu a {
     align-items: center;
-    color: $color-sub-menu;
+    color: var(--color-sub-menu);
     display: flex;
     font-size: var(--font-size-sub-menu);
-    font-weight: $font-weight-sub-menu;
+    font-weight: var(--font-weight-sub-menu);
     line-height: 1.5;
     padding-bottom: var(--padding-sub-menu-vertical);
     padding-left: var(--padding-sub-menu-horizontal);
@@ -132,7 +132,7 @@ $width-sub-menu: 22rem;
   // Current menu item color
   .menu-item.current-menu-parent > a,
   .menu-item.current-menu-item > a {
-    color: $color-current;
+    color: var(--color-current);
   }
 
   // Let's make space for the nav-toggle/arrow
@@ -145,12 +145,12 @@ $width-sub-menu: 22rem;
 
   .menu-item > a:hover,
   .menu-item > a:focus {
-    color: $color-hover-main-level;
+    color: var(--color-hover-main-level);
   }
 
   .menu-item .sub-menu a:hover,
   .menu-item .sub-menu a:focus {
-    color: $color-hover-sub-menu;
+    color: var(--color-hover-sub-menu);
   }
 
   // Create animation illusion
@@ -169,14 +169,14 @@ $width-sub-menu: 22rem;
 
   // Dropdowns
   .sub-menu {
-    background-color: $color-background-sub-menu;
-    border-bottom: 1px solid $color-border-sub-menu;
-    border-bottom-left-radius: $border-radius-sub-menu;
-    border-bottom-right-radius: $border-radius-sub-menu;
-    border-left: 1px solid $color-border-sub-menu;
-    border-right: 1px solid $color-border-sub-menu;
-    border-top-left-radius: $border-radius-sub-menu;
-    border-top-right-radius: $border-radius-sub-menu;
+    background-color: var(--color-background-sub-menu);
+    border-bottom: 1px solid var(--color-border-sub-menu);
+    border-bottom-left-radius: var(--border-radius-sub-menu);
+    border-bottom-right-radius: var(--border-radius-sub-menu);
+    border-left: 1px solid var(--color-border-sub-menu);
+    border-right: 1px solid var(--color-border-sub-menu);
+    border-top-left-radius: var(--border-radius-sub-menu);
+    border-top-right-radius: var(--border-radius-sub-menu);
     box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
     left: 5%;
     margin-left: 0;
@@ -189,7 +189,7 @@ $width-sub-menu: 22rem;
     top: -9999px;
     transition: padding .2s cubic-bezier(.19, 1, .22, 1);
     visibility: hidden;
-    width: $width-sub-menu;
+    width: var(--width-sub-menu);
     z-index: 9;
 
     // All dropdowns in level 2 and after
@@ -203,7 +203,7 @@ $width-sub-menu: 22rem;
     li {
       float: none;
       padding: 0;
-      width: $width-sub-menu;
+      width: var(--width-sub-menu);
     }
   }
 
@@ -251,8 +251,8 @@ $width-sub-menu: 22rem;
 
   // Toggle icon dimensions on desktop
   .dropdown-toggle svg {
-    height: $dropdown-toggle-size;
-    width: $dropdown-toggle-size;
+    height: var(--dropdown-toggle-size);
+    width: var(--dropdown-toggle-size);
 
     @if $use-dropdown-toggle-animation == true {
       transition: all .35s cubic-bezier(.19, 1, .22, 1);
@@ -268,7 +268,7 @@ $width-sub-menu: 22rem;
     align-items: center;
     background-color: transparent;
     border: 0;
-    color: $color-dropdown-toggle;
+    color: var(--color-dropdown-toggle);
     display: inline-flex;
     justify-content: center;
     padding: 0;
