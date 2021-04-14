@@ -32,7 +32,10 @@ styleExternalLinks();
 // Refer to documentation:
 // 1) https://github.com/digitoimistodude/air-helper#image-lazyloading-1
 // 2) https://github.com/verlok/vanilla-lazyload#-getting-started---html
-var air_light_LazyLoad = new LazyLoad();
+var air_light_LazyLoad = new LazyLoad({
+  callback_loaded: setLazyLoadedFigureWidth,
+});
+
 // After your content has changed...
 air_light_LazyLoad.update();
 

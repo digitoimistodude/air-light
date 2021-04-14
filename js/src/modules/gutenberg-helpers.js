@@ -1,11 +1,21 @@
-// Gutengerg magic for alignright and alignleft images
-const figures = [
-  ...document.querySelectorAll('figure'),
-];
-figures.forEach((figure) => {
+const setFigureWidth = (figure) => {
   const img = figure.querySelector('img');
-  if (typeof img === 'undefined' || !img) {
+  if (!img || typeof img !== 'object' || !('clientWidth' in img)) {
     return;
   }
-  figure.style.setProperty('--width-child-img', `${img.clientWidth}px`);
-});
+  figure.style.setProperty('--child-img-width', `${img.clientWidth}px`);
+};
+
+const setFigureWidths = (figures) => {
+  // Gutengerg magic for alignright and alignleft images
+  figures.forEach((figure) => {
+    setFigureWidth(figure);
+  });
+};
+
+const setLazyLoadedFigureWidth = (image) => {
+  if (image.parentElement.tagName === 'figure') {
+    setFigureWidth(image.parentElement);
+  }
+};
+export { setFigureWidths, setLazyLoadedFigureWidth };
