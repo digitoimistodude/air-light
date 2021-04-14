@@ -472,7 +472,7 @@ template {
 }
 
 .screen-reader-text.skip-link:focus, .gform_body .skip-link.gform_validation_container:focus {
-  color: white;
+  color: #222;
 }
 
 .screen-reader-text:focus, .gform_body .gform_validation_container:focus {
