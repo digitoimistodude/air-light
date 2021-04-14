@@ -9,7 +9,7 @@ green=$(tput setaf 2)
 white=$(tput setaf 7)
 txtreset=$(tput sgr0)
 
-echo "${yellow}Moving dev files out...${txtreset}"
+echo "${YELLOW}Moving dev files out...${TXTRESET}"
 mkdir -p ~/air-temp
 find . -name '.DS_Store' -type f -delete
 find ../ -name '.DS_Store' -type f -delete
@@ -57,10 +57,10 @@ rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
 cd ~/air-temp/bin
 
 echo "
-${boldgreen}Done! Next steps:${txtreset}"
+${boldgreen}Done! Next steps:${TXTRESET}"
 echo "
 ${boldwhite}1. Click the Check it -button: http://airdev.test/wp/wp-admin/themes.php?page=themecheck
 2. sh air-pack.sh
 3. Upload: https://wordpress.org/themes/upload/
 4. sh air-move-in.sh
-${txtreset} "
+${TXTRESET} "
