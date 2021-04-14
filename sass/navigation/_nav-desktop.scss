@@ -154,12 +154,15 @@ $use-dropdown-toggle-animation: true;
   }
 
   // Create animation illusion
+  /* stylelint-disable no-descending-specificity */
+  .sub-menu.toggled-on a,
   .sub-menu.toggled-on .sub-menu a,
   .menu-item.menu-item-has-children:hover .sub-menu a,
   .menu-item.menu-item-has-children:focus .sub-menu a {
     padding-bottom: var(--padding-sub-menu-vertical);
     padding-top: var(--padding-sub-menu-vertical);
   }
+  /* stylelint-enable */
 
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
   .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {

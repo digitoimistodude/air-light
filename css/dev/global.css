@@ -665,12 +665,15 @@ a.is-external-link.no-external-link-indicator::after {
   .menu-item .sub-menu a:focus {
     color: var(--color-hover-sub-menu);
   }
+  /* stylelint-disable no-descending-specificity */
+  .sub-menu.toggled-on a,
   .sub-menu.toggled-on .sub-menu a,
   .menu-item.menu-item-has-children:hover .sub-menu a,
   .menu-item.menu-item-has-children:focus .sub-menu a {
     padding-bottom: var(--padding-sub-menu-vertical);
     padding-top: var(--padding-sub-menu-vertical);
   }
+  /* stylelint-enable */
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
   .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
     transform: scale(1);
