@@ -1,3 +1,7 @@
+### 7.1.0: 2021-04-15
+
+* Font size variables to be more precise and fail-proof #91
+
 ### 7.0.9: 2021-04-15
 
 * Fix conflicting duplicate CSS variable `var(--color-dropdown-toggle)`.
