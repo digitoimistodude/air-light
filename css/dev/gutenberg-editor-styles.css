@@ -2,9 +2,7 @@
 /* stylelint-enable declaration-property-unit-allowed-list */
 :root {
   --color-black: #222;
-  --color-black-rgb: hextorgb(#222);
   --color-black-pearl: #061629;
-  --color-black-pearl-rgb: hextorgb(#061629);
   --color-black-rock: #2b303c;
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
@@ -15,39 +13,32 @@
   --color-mid-grey: #5c5c6a;
   --color-mortar: #555;
   --color-pattens-blue: #eaf1f8;
-  --color-pattens-blue-rgb: hextorgb(#eaf1f8);
-  --color-pattens-blue-20: darken($color-pattens-blue, 20%);
+  --color-pattens-blue-20: darken(#eaf1f8, 20%);
   --color-soft-peach: #f9f2f4;
   --color-science-blue: #0049d1;
   --color-valhalla: #2a2d3e;
-  --color-valhalla-rgb: hextorgb(#2a2d3e);
   --color-very-light-grey: #ccc;
   --color-white: #fff;
   --color-white-smoke: #f5f5f5;
   --color-hover: var(--color-valhalla);
+  --color-headings: var(--color-main);
   --color-links: var(--color-science-blue);
-  --color-main: #2a2d3e;
-  --color-main-rgb: hextorgb(#2a2d3e);
+  --color-main: var(--color-valhalla);
+  --color-paragraphs: var(--color-east-bay);
   --color-background-code-block: var(--color-black-rock);
   --color-background-code-inline: var(--color-soft-peach);
   --color-background-default: var(--color-gallery);
   --color-background-shade: #03061b;
   --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-links);
-  --color-border-tag-base: var(--color-black-pearl-rgb);
-  --color-border-tag: rgba(var(--color-border-tag-base), .1);
-  --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
+  --color-border-tag: rgba(6, 22, 41, .1);
+  --color-border-tag-hover: rgba(6, 22, 41, .4);
   --color-border-category: var(--color-link-water);
-  --color-border-forms: var(--color-gainsboro);
-  --color-button: #545773;
-  --color-button-hover: #2a2d3e;
   --color-captions: var(--color-mid-grey);
   --color-code-block: var(--color-maroon-flush);
   --color-error: #e1b3b2;
   --color-outline-overlay-items: #ff848a;
-  --color-paragraphs: var(--color-east-bay);
   --color-success: #8ed185;
-  --color-headings: var(--color-main);
   --color-warning: #f4aa71;
 }
 
@@ -1434,10 +1425,10 @@ th {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #545773;
+  background-color: var(--color-button-background);
   border: 0;
   border-radius: 3px;
-  color: var(--color-white);
+  color: var(--color-button);
   cursor: pointer;
   display: inline-block;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
@@ -1462,9 +1453,9 @@ th {
 }
 
 .wp-block-button__link:hover, .wp-block-button__link:focus {
-  background-color: #2a2d3e;
-  border-color: #2a2d3e;
-  color: choose-contrast-color(#2a2d3e);
+  background-color: var(--color-button-background-hover);
+  border-color: var(--color-button-hover);
+  color: var(--color-button-hover);
 }
 
 .wp-block-file .wp-block-file__button {
@@ -1592,7 +1583,7 @@ kbd {
   background-color: var(--color-pattens-blue);
   border: 1px solid var(--color-very-light-grey);
   border-radius: 4px;
-  box-shadow: 0 1px 0 rgba(var(--color-black-rgb), 0.2), 0 0 0 2px var(--color-white) inset;
+  box-shadow: 0 1px 0 rgba(22, 22, 22, 0.2), 0 0 0 2px var(--color-white) inset;
   color: var(--color-paragraphs);
   display: inline-block;
   line-height: 1.4;

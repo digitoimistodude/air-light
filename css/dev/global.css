@@ -273,19 +273,6 @@ template {
 }
 
 /* stylelint-enable declaration-property-unit-allowed-list */
-/* stylelint-disable number-max-precision, block-closing-brace-newline-after */
-/**
- * Calculate the luminance for a color.
- * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- */
-/**
- * Calculate the contrast ratio between two colors.
- * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- */
-/**
- * Determine whether to use dark or light text on top of given color.
- * Returns black for dark text and white for light text.
- */
 /**
  * Convert hex color to RGB color format
  */
@@ -293,9 +280,7 @@ template {
 /* stylelint-enable declaration-property-unit-allowed-list */
 :root {
   --color-black: #222;
-  --color-black-rgb: 34, 34, 34;
   --color-black-pearl: #061629;
-  --color-black-pearl-rgb: 6, 22, 41;
   --color-black-rock: #2b303c;
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
@@ -306,39 +291,32 @@ template {
   --color-mid-grey: #5c5c6a;
   --color-mortar: #555;
   --color-pattens-blue: #eaf1f8;
-  --color-pattens-blue-rgb: 234, 241, 248;
-  --color-pattens-blue-20: darken($color-pattens-blue, 20%);
+  --color-pattens-blue-20: darken(#eaf1f8, 20%);
   --color-soft-peach: #f9f2f4;
   --color-science-blue: #0049d1;
   --color-valhalla: #2a2d3e;
-  --color-valhalla-rgb: 42, 45, 62;
   --color-very-light-grey: #ccc;
   --color-white: #fff;
   --color-white-smoke: #f5f5f5;
   --color-hover: var(--color-valhalla);
+  --color-headings: var(--color-main);
   --color-links: var(--color-science-blue);
-  --color-main: #2a2d3e;
-  --color-main-rgb: 42, 45, 62;
+  --color-main: var(--color-valhalla);
+  --color-paragraphs: var(--color-east-bay);
   --color-background-code-block: var(--color-black-rock);
   --color-background-code-inline: var(--color-soft-peach);
   --color-background-default: var(--color-gallery);
   --color-background-shade: #03061b;
   --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-links);
-  --color-border-tag-base: var(--color-black-pearl-rgb);
-  --color-border-tag: rgba(var(--color-border-tag-base), .1);
-  --color-border-tag-hover: rgba(var(--color-border-tag-base), .4);
+  --color-border-tag: rgba(6, 22, 41, .1);
+  --color-border-tag-hover: rgba(6, 22, 41, .4);
   --color-border-category: var(--color-link-water);
-  --color-border-forms: var(--color-gainsboro);
-  --color-button: #545773;
-  --color-button-hover: #2a2d3e;
   --color-captions: var(--color-mid-grey);
   --color-code-block: var(--color-maroon-flush);
   --color-error: #e1b3b2;
   --color-outline-overlay-items: #ff848a;
-  --color-paragraphs: var(--color-east-bay);
   --color-success: #8ed185;
-  --color-headings: var(--color-main);
   --color-warning: #f4aa71;
 }
 
@@ -486,13 +464,13 @@ template {
 }
 
 .screen-reader-text.skip-link:focus, .gform_body .skip-link.gform_validation_container:focus {
-  color: #222;
+  color: var(--color-black);
 }
 
 .screen-reader-text:focus, .gform_body .gform_validation_container:focus {
   background-color: var(--color-white-smoke);
   border-radius: 0;
-  box-shadow: 0 0 2px 2px rgba(var(--color-black-rgb), 0.6);
+  box-shadow: 0 0 2px 2px rgba(22, 22, 22, 0.6);
   clip: auto;
   -webkit-clip-path: none;
           clip-path: none;
@@ -577,7 +555,7 @@ a.is-external-link.no-external-link-indicator::after {
   --width-sub-menu: 22rem;
   --color-background-nav-desktop: var(--color-white);
   --color-background-sub-menu: var(--color-white);
-  --color-border-sub-menu: rgba(var(--color-valhalla-rgb), .05);
+  --color-border-sub-menu: rgba(41, 44, 61, .05);
   --color-dropdown-toggle: var(--color-valhalla);
   --color-sub-menu: var(--color-valhalla);
   --color-hover-main-level: var(--color-white);
@@ -2993,15 +2971,22 @@ pre {
 
 :root {
   --color-background-inputs: var(--color-white);
-  --color-checkbox: #545773;
-  --color-checkbox-rgb: 84, 87, 115;
-  --checkbox-radio-size: 16px;
-  --checkbox-radio-gap: 10px;
-  --checkbox-radio-border-width: 2px;
-  --checkbox-radio-line-height: var(--line-height-paragraphs);
-  --radio-marker-size: 8px;
+  --color-border-forms: var(--color-gainsboro);
+  --color-border-forms-focus: rgba(42, 45, 62, .3);
+  --color-button: var(--color-white);
+  --color-button-background: var(--color-east-bay);
+  --color-button-background-hover: var(--color-valhalla);
+  --color-checkbox: var(--color-east-bay);
+  --color-checkbox-outline: 0 0 0 3px rgba(84, 87, 115, .2);
+  --color-checkbox-border-hover: lighten(#545773, 15%);
+  --border-width-inputs: 2px;
   --checkbox-marker-size: 12px;
+  --checkbox-radio-border-width: 2px;
+  --checkbox-radio-gap: 10px;
+  --checkbox-radio-line-height: var(--line-height-paragraphs);
+  --checkbox-radio-size: 16px;
   --checkbox-radius: 4px;
+  --radio-marker-size: 8px;
 }
 
 .button-wrapper {
@@ -3021,10 +3006,10 @@ pre {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #545773;
+  background-color: var(--color-button-background);
   border: 0;
   border-radius: 3px;
-  color: var(--color-white);
+  color: var(--color-button);
   cursor: pointer;
   display: inline-block;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
@@ -3076,9 +3061,9 @@ pre {
 .site-footer input[type="submit"]:focus,
 .site-footer input[type="button"]:hover,
 .site-footer input[type="button"]:focus {
-  background-color: #2a2d3e;
-  border-color: #2a2d3e;
-  color: white;
+  background-color: var(--color-button-background-hover);
+  border-color: var(--color-button-hover);
+  color: var(--color-button-hover);
 }
 
 .site-main button.button-ghost,
@@ -3119,7 +3104,7 @@ pre {
 .site-footer input[type="button"].button-ghost:hover {
   background-color: var(--color-button-hover);
   border-color: var(--color-button-hover);
-  color: white;
+  color: var(--color-white);
 }
 
 .site-main button.button-small,
@@ -3181,7 +3166,7 @@ select {
   border-color: var(--color-border-forms);
   border-radius: 0;
   border-style: solid;
-  border-width: 2px;
+  border-width: var(--border-width-inputs);
   color: var(--color-paragraphs);
   font-size: var(--font-size-17);
   line-height: 24px;
@@ -3208,7 +3193,7 @@ input[type="search"] {
   border-color: var(--color-border-forms);
   border-radius: 3px;
   border-style: solid;
-  border-width: 2px;
+  border-width: var(--border-width-inputs);
   box-sizing: border-box;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
   font-size: var(--font-size-17);
@@ -3252,7 +3237,7 @@ input[type="week"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus {
   background-color: var(--color-background-inputs);
-  border-color: rgba(var(--color-valhalla-rgb), 0.3);
+  border-color: var(--color-border-forms-focus);
 }
 
 textarea:focus::-moz-placeholder, select:focus::-moz-placeholder, input[type="text"]:focus::-moz-placeholder, input[type="tel"]:focus::-moz-placeholder, input[type="url"]:focus::-moz-placeholder, input[type="password"]:focus::-moz-placeholder, input[type="number"]:focus::-moz-placeholder, input[type="month"]:focus::-moz-placeholder, input[type="week"]:focus::-moz-placeholder, input[type="email"]:focus::-moz-placeholder, input[type="search"]:focus::-moz-placeholder {
@@ -3352,7 +3337,7 @@ input[type="checkbox"]:focus + label::before,
 input[type="radio"]:checked:active + label::before,
 input[type="checkbox"]:checked:active + label::before {
   border-color: var(--color-checkbox);
-  box-shadow: 0 0 0 3px rgba(var(--color-checkbox-rgb), 0.2);
+  box-shadow: var(--color-checkbox-outline);
 }
 
 input[type="radio"]:checked:active + label::before,
@@ -3361,13 +3346,13 @@ input[type="checkbox"]:checked:active + label::before {
   transition: none;
 }
 
-/* stylelint-disable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
+/* stylelint-disable selector-max-pseudo-class */
 input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
 input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
-  border-color: #777b9c;
+  border-color: var(--color-checkbox-border-hover);
 }
 
-/* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
+/* stylelint-enable selector-max-pseudo-class */
 /* stylelint-disable no-descending-specificity */
 .cat {
   margin-bottom: .5rem;
@@ -3439,6 +3424,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 
 :root {
   --color-border-sticky: #d7e4f2;
+  --color-bypostauthor: rgba(42, 45, 62, .5);
 }
 
 .sticky {
@@ -3449,7 +3435,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
 
 .comment-list li.bypostauthor,
 .bypostauthor {
-  border: 1px dashed rgba(var(--color-main-rgb), 0.5);
+  border: 1px dashed var(--color-bypostauthor);
   padding: 2rem;
 }
 
@@ -5383,10 +5369,10 @@ th {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background-color: #545773;
+  background-color: var(--color-button-background);
   border: 0;
   border-radius: 3px;
-  color: var(--color-white);
+  color: var(--color-button);
   cursor: pointer;
   display: inline-block;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
@@ -5411,9 +5397,9 @@ th {
 }
 
 .wp-block-button__link:hover, .wp-block-button__link:focus {
-  background-color: #2a2d3e;
-  border-color: #2a2d3e;
-  color: white;
+  background-color: var(--color-button-background-hover);
+  border-color: var(--color-button-hover);
+  color: var(--color-button-hover);
 }
 
 .wp-block-file .wp-block-file__button {
@@ -5541,7 +5527,7 @@ kbd {
   background-color: var(--color-pattens-blue);
   border: 1px solid var(--color-very-light-grey);
   border-radius: 4px;
-  box-shadow: 0 1px 0 rgba(var(--color-black-rgb), 0.2), 0 0 0 2px var(--color-white) inset;
+  box-shadow: 0 1px 0 rgba(22, 22, 22, 0.2), 0 0 0 2px var(--color-white) inset;
   color: var(--color-paragraphs);
   display: inline-block;
   line-height: 1.4;

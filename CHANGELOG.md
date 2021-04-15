@@ -1,3 +1,7 @@
+### 7.1.1: 2021-04-15
+
+* Remove auto-color function, transform all the rest of the color variables as CSS variables
+
 ### 7.1.0: 2021-04-15
 
 * Font size variables to be more precise and fail-proof #91

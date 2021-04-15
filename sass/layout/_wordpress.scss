@@ -3,6 +3,7 @@
 // REQUIRED: .bypostauthor css class is needed in your theme css.
 :root {
   --color-border-sticky: #d7e4f2;
+  --color-bypostauthor: rgba(42, 45, 62, .5);
 }
 
 .sticky {
@@ -13,7 +14,7 @@
 
 .comment-list li.bypostauthor,
 .bypostauthor {
-  border: 1px dashed rgba(var(--color-main-rgb), .5);
+  border: 1px dashed var(--color-bypostauthor);
   padding: 2rem;
 }
 

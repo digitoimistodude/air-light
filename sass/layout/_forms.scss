@@ -3,22 +3,28 @@
 // All the forms on the site. General styles. Supports most of
 // the Gravity Forms styles out of the box.
 
-// Variables
-$color-checkbox: $color-east-bay;
-$border-width-inputs: 2px;
-
 // CSS Variables for radios and checkboxes
 :root {
+  // Form element colors
   --color-background-inputs: var(--color-white);
-  --color-checkbox: #{$color-checkbox};
-  --color-checkbox-rgb: #{hextorgb($color-checkbox)};
-  --checkbox-radio-size: 16px;
-  --checkbox-radio-gap: 10px;
-  --checkbox-radio-border-width: 2px;
-  --checkbox-radio-line-height: var(--line-height-paragraphs);
-  --radio-marker-size: 8px;
+  --color-border-forms: var(--color-gainsboro);
+  --color-border-forms-focus: rgba(42, 45, 62, .3);
+  --color-button: var(--color-white);
+  --color-button-background: var(--color-east-bay);
+  --color-button-background-hover: var(--color-valhalla);
+  --color-checkbox: var(--color-east-bay);
+  --color-checkbox-outline: 0 0 0 3px rgba(84, 87, 115, .2);
+  --color-checkbox-border-hover: lighten(#545773, 15%);
+
+  // Form element colors
+  --border-width-inputs: 2px;
   --checkbox-marker-size: 12px;
+  --checkbox-radio-border-width: 2px;
+  --checkbox-radio-gap: 10px;
+  --checkbox-radio-line-height: var(--line-height-paragraphs);
+  --checkbox-radio-size: 16px;
   --checkbox-radius: 4px;
+  --radio-marker-size: 8px;
 }
 
 // Buttons
@@ -65,7 +71,7 @@ select {
   border-color: var(--color-border-forms);
   border-radius: 0;
   border-style: solid;
-  border-width: $border-width-inputs;
+  border-width: var(--border-width-inputs);
   color: var(--color-paragraphs);
   font-size: var(--font-size-17);
   line-height: 24px;
@@ -94,7 +100,7 @@ input[type="search"] {
   border-color: var(--color-border-forms);
   border-radius: 3px;
   border-style: solid;
-  border-width: $border-width-inputs;
+  border-width: var(--border-width-inputs);
   box-sizing: border-box;
   font-family: $font-paragraphs;
   font-size: var(--font-size-17);
@@ -112,7 +118,7 @@ input[type="search"] {
 
   &:focus {
     background-color: var(--color-background-inputs);
-    border-color: rgba(var(--color-valhalla-rgb), .3);
+    border-color: var(--color-border-forms-focus);
 
     &::placeholder {
       color: var(--color-black);
@@ -209,7 +215,7 @@ input[type="checkbox"]:focus + label::before,
 input[type="radio"]:checked:active + label::before,
 input[type="checkbox"]:checked:active + label::before {
   border-color: var(--color-checkbox);
-  box-shadow: 0 0 0 3px rgba(var(--color-checkbox-rgb), .2);
+  box-shadow: var(--color-checkbox-outline);
 }
 
 // Radio button and checkbox checked + active states
@@ -220,9 +226,9 @@ input[type="checkbox"]:checked:active + label::before {
 }
 
 // Radio button and checkbox hovers
-/* stylelint-disable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
+/* stylelint-disable selector-max-pseudo-class */
 input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
 input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
-  border-color: lighten($color-checkbox, 15%);
+  border-color: var(--color-checkbox-border-hover);
 }
-/* stylelint-enable sh-waqar/declaration-use-variable, selector-max-pseudo-class */
+/* stylelint-enable selector-max-pseudo-class */
