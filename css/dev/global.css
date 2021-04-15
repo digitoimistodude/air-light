@@ -823,7 +823,7 @@ a.is-external-link.no-external-link-indicator::after {
   --color-background-nav-mobile-header: var(--color-main);
   --color-background-nav-mobile-layer: var(--color-main);
   --color-current-mobile: var(--color-white);
-  --color-dropdown-toggle: var(--color-white);
+  --color-dropdown-toggle-mobile: var(--color-white);
   --color-hamburger-active: var(--color-white);
   --color-hamburger: var(--color-white);
   --color-main-level-mobile: var(--color-white);
@@ -1927,7 +1927,7 @@ a.is-external-link.no-external-link-indicator::after {
     align-items: center;
     background-color: transparent;
     border: 0;
-    color: var(--color-dropdown-toggle);
+    color: var(--color-dropdown-toggle-mobile);
     display: inline-flex;
     height: 100%;
     left: auto;

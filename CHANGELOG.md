@@ -1,3 +1,7 @@
+### 7.0.9: 2021-04-15
+
+* Fix conflicting duplicate CSS variable `var(--color-dropdown-toggle)`.
+
 ### 7.0.8: 2021-04-14
 
 * Fix skip link color on focus
@@ -10,7 +14,7 @@
 * Helper variables $font-sans and $font-serif
 * Add _font-face for defining webfont files, clarify font-family
 
-### 7.0.8: 2021-04-14
+### 7.0.7: 2021-04-14
 
 See [pull request #89](https://github.com/digitoimistodude/air-light/pull/89).
 
