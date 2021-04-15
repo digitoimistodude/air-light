@@ -1,3 +1,7 @@
+### 7.1.3: 2021-04-15
+
+* Fix failing build with missing color variable
+
 ### 7.1.2: 2021-04-15
 
 * Add more element color variables
