@@ -25,9 +25,14 @@
   // Element colors
   --color-hover: var(--color-valhalla);
   --color-headings: var(--color-main);
-  --color-link: var(--color-science-blue);
   --color-main: var(--color-valhalla);
   --color-paragraphs: var(--color-east-bay);
+
+  // Modern link that has background effect on hover
+  --color-link-border-bottom: var(--color-science-blue);
+  --color-link-text: var(--color-science-blue);
+  --color-link-text-hover: var(--color-white);
+  --color-link-background-hover: var(--color-link-text);
 
   // Element colors
   --color-background-code-block: var(--color-black-rock);
@@ -35,7 +40,7 @@
   --color-background-default: var(--color-gallery);
   --color-background-shade: #03061b;
   --color-background-tag: var(--color-pattens-blue);
-  --color-blockquote: var(--color-link);
+  --color-blockquote: var(--color-science-blue);
   --color-border-tag: rgba(6, 22, 41, .1);
   --color-border-tag-hover: rgba(6, 22, 41, .4);
   --color-border-category: var(--color-link-water);
