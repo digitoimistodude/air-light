@@ -22,7 +22,7 @@
   }
 
   p {
-    color: var(--color-east-bay);
+    color: var(--color-comment-text);
     font-size: var(--font-size-14);
   }
 
@@ -32,7 +32,7 @@
   }
 
   .comment-author {
-    color: var(--color-paragraphs);
+    color: var(--color-comment-author-text);
     font-size: var(--font-size-h4);
     margin-bottom: 10px;
     margin-top: 0;
@@ -42,11 +42,11 @@
   a,
   .comments-link a {
     box-shadow: none;
-    color: var(--color-mortar);
+    color: var(--color-link-comment);
   }
 
   .comment-author a {
-    color: var(--color-paragraphs);
+    color: var(--color-paragraph);
   }
 
   .comment-time {
@@ -55,7 +55,7 @@
     padding: 0;
 
     a {
-      color: var(--color-east-bay);
+      color: var(--color-link-comment-time-anchor);
     }
 
     &:focus,
@@ -65,7 +65,7 @@
   }
 
   .comment-time svg {
-    fill: var(--color-east-bay);
+    fill: var(--color-link-comment-time-anchor);
     margin-right: 5px;
     position: relative;
     top: 2px;
@@ -79,7 +79,7 @@
   text-align: right;
 
   a {
-    color: var(--color-mortar);
+    color: var(--color-link-comment);
   }
 
   &:hover,

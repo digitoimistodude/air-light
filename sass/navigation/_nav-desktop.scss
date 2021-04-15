@@ -11,6 +11,7 @@ $use-dropdown-toggle-animation: true;
 :root {
   // Dimensions, gaps and spacings
   --border-radius-sub-menu: 0;
+  --box-shadow-navigation-static: 0 0 10px rgba(84, 87, 115, .1);
   --dropdown-toggle-size: 12px;
   --gap-dropdown: 1rem;
   --padding-main-level-vertical: .6rem;
@@ -26,7 +27,7 @@ $use-dropdown-toggle-animation: true;
   --color-dropdown-toggle: var(--color-valhalla);
   --color-sub-menu: var(--color-valhalla);
   --color-hover-main-level: var(--color-white);
-  --color-hover-sub-menu: var(--color-hover);
+  --color-hover-sub-menu: var(--color-valhalla);
   --color-main-level: var(--color-white);
   --color-current: var(--color-main);
 
@@ -46,7 +47,7 @@ $use-dropdown-toggle-animation: true;
   .nav-container {
     @if $absolute-navigation == false {
       background-color: var(--color-background-nav-desktop);
-      box-shadow: 0 0 10px rgba($color-east-bay, .1);
+      box-shadow: var(--box-shadow-navigation-static);
       position: relative;
       z-index: 222;
     }

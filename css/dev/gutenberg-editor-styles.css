@@ -2,46 +2,57 @@
 /* stylelint-enable declaration-property-unit-allowed-list */
 :root {
   --color-black: #222;
-  --color-black-pearl: #061629;
   --color-black-rock: #2b303c;
   --color-blue-chalk: #ece6f2;
   --color-east-bay: #545773;
-  --color-gainsboro: #d9d9d9;
-  --color-gallery: #f0f0f0;
-  --color-link-water: #cdcfd4;
-  --color-maroon-flush: #c7254e;
-  --color-mid-grey: #5c5c6a;
-  --color-mortar: #555;
   --color-pattens-blue: #eaf1f8;
-  --color-pattens-blue-20: darken(#eaf1f8, 20%);
-  --color-soft-peach: #f9f2f4;
   --color-science-blue: #0049d1;
   --color-valhalla: #2a2d3e;
-  --color-very-light-grey: #ccc;
   --color-white: #fff;
-  --color-white-smoke: #f5f5f5;
-  --color-hover: var(--color-valhalla);
-  --color-headings: var(--color-main);
+  --color-heading: var(--color-main);
   --color-main: var(--color-valhalla);
-  --color-paragraphs: var(--color-east-bay);
+  --color-paragraph: var(--color-east-bay);
   --color-link-border-bottom: var(--color-science-blue);
+  --color-link-border-focus: var(--color-black);
+  --color-link-comment: #555;
+  --color-link-comment-time-anchor: var(--color-east-bay);
+  --color-link-edit-background-hover: var(--color-pattens-blue);
+  --color-link-edit-border: var(--color-pattens-blue);
+  --color-link-edit-text: darken(#eaf1f8, 20%);
+  --color-link-edit-text-hover: var(--color-east-bay);
   --color-link-text: var(--color-science-blue);
+  --color-link-text-focus: var(--color-black);
   --color-link-text-hover: var(--color-white);
   --color-link-background-hover: var(--color-link-text);
   --color-background-code-block: var(--color-black-rock);
-  --color-background-code-inline: var(--color-soft-peach);
-  --color-background-default: var(--color-gallery);
+  --color-background-code-inline: #f9f2f4;
+  --color-background-default: #f0f0f0;
   --color-background-shade: #03061b;
   --color-background-tag: var(--color-pattens-blue);
   --color-blockquote: var(--color-science-blue);
-  --color-border-tag: rgba(6, 22, 41, .1);
-  --color-border-tag-hover: rgba(6, 22, 41, .4);
-  --color-border-category: var(--color-link-water);
-  --color-captions: var(--color-mid-grey);
-  --color-code-block: var(--color-maroon-flush);
+  --color-comment-text: var(--color-east-bay);
+  --color-comment-author-text: var(--color-east-bay);
+  --color-tag-border: rgba(6, 22, 41, .1);
+  --color-tag-border-hover: rgba(6, 22, 41, .4);
+  --color-tag-text: var(--color-black);
+  --color-category-border: #cdcfd4;
+  --color-category-text: var(--color-black);
+  --color-caption: #5c5c6a;
+  --color-code-block: #c7254e;
+  --color-code-text: #f5f5f5;
   --color-error: #e1b3b2;
+  --color-kbd-background: var(--color-pattens-blue);
   --color-outline-overlay-items: #ff848a;
+  --color-pagination-text: var(--color-valhalla);
+  --color-pagination-background-hover: var(--color-valhalla);
+  --color-pagination-border-hover: var(--color-valhalla);
+  --color-pagination-text-hover: var(--color-white);
+  --color-pagination-background-current: var(--color-valhalla);
+  --color-pagination-border-current: var(--color-valhalla);
+  --color-pagination-text-current: var(--color-white);
   --color-success: #8ed185;
+  --color-top-arrow-dark: var(--color-black);
+  --color-top-arrow-light: var(--color-white);
   --color-warning: #f4aa71;
 }
 
@@ -266,7 +277,7 @@ pre {
   background-color: var(--color-background-code-block);
   border: 1px solid var(--color-background-code-block);
   border-radius: 4px;
-  color: var(--color-white-smoke);
+  color: var(--color-code-text);
   display: block;
   font-family: "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
   font-size: var(--font-size-16);
@@ -282,7 +293,7 @@ pre {
 pre code {
   background-color: transparent;
   border-radius: 4px;
-  color: var(--color-white-smoke);
+  color: var(--color-code-text);
 }
 
 @media (max-width: 1240px) {
@@ -1006,7 +1017,7 @@ pre code {
 
 .editor-styles-wrapper p,
 .gutenberg-content p {
-  color: var(--color-paragraphs);
+  color: var(--color-paragraph);
   line-height: var(--line-height-paragraphs-blog);
 }
 
@@ -1408,8 +1419,8 @@ th {
 
 .wp-block.is-style-boxed,
 .is-style-boxed {
-  border: 2px solid var(--color-paragraphs);
-  color: var(--color-paragraphs);
+  border: 2px solid var(--color-paragraph);
+  color: var(--color-paragraph);
   font-size: 17px;
   font-style: normal;
   font-weight: var(--font-weight-medium);
@@ -1536,7 +1547,7 @@ th {
 .gutenberg-content cite,
 .gutenberg-content small {
   border: 0;
-  color: var(--color-captions);
+  color: var(--color-caption);
   font-size: var(--font-size-captions);
   font-style: normal;
   margin-bottom: 6rem;
@@ -1583,11 +1594,11 @@ th {
 }
 
 kbd {
-  background-color: var(--color-pattens-blue);
+  background-color: var(--color-kbd-background);
   border: 1px solid var(--color-very-light-grey);
   border-radius: 4px;
   box-shadow: 0 1px 0 rgba(22, 22, 22, 0.2), 0 0 0 2px var(--color-white) inset;
-  color: var(--color-paragraphs);
+  color: var(--color-paragraph);
   display: inline-block;
   line-height: 1.4;
   padding: 0 .5rem;
@@ -1597,12 +1608,12 @@ kbd {
 
 /* stylelint-disable a11y/no-display-none, no-descending-specificity, selector-max-pseudo-class */
 a {
-  color: var(--color-link);
+  color: var(--color-link-text);
   text-decoration: none;
 }
 
 a:hover, a:focus {
-  color: var(--color-hover);
+  color: var(--color-link-text);
 }
 
 .editor-styles-wrapper li > a::after,
@@ -1739,8 +1750,8 @@ a:hover, a:focus {
 .gutenberg-content p.has-small-font-size > a:focus,
 .gutenberg-content figcaption > a:focus,
 .gutenberg-content p:not([class]) > a.is-external-link:focus {
-  border-color: var(--color-black);
-  color: var(--color-black);
+  border-color: var(--color-link-border-focus);
+  color: var(--color-link-text-focus);
   text-decoration: none;
 }
 

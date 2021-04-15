@@ -90,9 +90,9 @@
 
   a {
     background-color: var(--color-white);
-    border: 2px dashed var(--color-pattens-blue);
+    border: 2px dashed var(--color-link-edit-border);
     clear: both;
-    color: var(--color-pattens-blue-20);
+    color: var(--color-link-edit-text);
     display: block;
     margin: 0;
     padding: 2rem;
@@ -103,8 +103,8 @@
 
   &:focus,
   a:hover {
-    background-color: var(--color-pattens-blue);
-    color: var(--color-east-bay);
+    background-color: var(--color-link-edit-background-hover);
+    color: var(--color-link-edit-text-hover);
   }
 }
 

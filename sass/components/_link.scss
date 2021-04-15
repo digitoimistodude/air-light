@@ -25,8 +25,8 @@
   }
 
   &:focus {
-    border-color: var(--color-black);
-    color: var(--color-black);
+    border-color: var(--color-link-border-focus);
+    color: var(--color-link-text-focus);
     text-decoration: none;
 
     &::after {

@@ -1,3 +1,10 @@
+### 7.1.2: 2021-04-15
+
+* Add more element color variables
+* Remove unused magnific popup styles from the theme
+* More sensible link variables
+* Do not depend on brand color pool variables, use element variables instead in partials
+
 ### 7.1.1: 2021-04-15
 
 * Remove auto-color function, transform all the rest of the color variables as CSS variables

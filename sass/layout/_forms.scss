@@ -7,7 +7,7 @@
 :root {
   // Form element colors
   --color-background-inputs: var(--color-white);
-  --color-border-forms: var(--color-gainsboro);
+  --color-border-forms: #d9d9d9;
   --color-border-forms-focus: rgba(42, 45, 62, .3);
   --color-button: var(--color-white);
   --color-button-background: var(--color-east-bay);
@@ -15,8 +15,12 @@
   --color-checkbox: var(--color-east-bay);
   --color-checkbox-outline: 0 0 0 3px rgba(84, 87, 115, .2);
   --color-checkbox-border-hover: lighten(#545773, 15%);
+  --color-placeholder: var(--color-paragraph);
+  --color-placeholder-focus: var(--color-black);
+  --opacity-placeholder: .4;
+  --opacity-placeholder-focus: .8;
 
-  // Form element colors
+  // Form element settings
   --border-width-inputs: 2px;
   --checkbox-marker-size: 12px;
   --checkbox-radio-border-width: 2px;
@@ -72,7 +76,7 @@ select {
   border-radius: 0;
   border-style: solid;
   border-width: var(--border-width-inputs);
-  color: var(--color-paragraphs);
+  color: var(--color-paragraph);
   font-size: var(--font-size-17);
   line-height: 24px;
   max-width: 100%;
@@ -112,8 +116,8 @@ input[type="search"] {
   transition: background .55s;
 
   &::placeholder {
-    color: var(--color-paragraphs);
-    opacity: .4;
+    color: var(--color-placeholder);
+    opacity: var(--opacity-placeholder);
   }
 
   &:focus {
@@ -121,8 +125,8 @@ input[type="search"] {
     border-color: var(--color-border-forms-focus);
 
     &::placeholder {
-      color: var(--color-black);
-      opacity: .8;
+      color: var(--color-placeholder-focus);
+      opacity: var(--opacity-placeholder-focus);
     }
   }
 }

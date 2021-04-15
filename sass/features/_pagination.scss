@@ -24,7 +24,7 @@
   border-left: 1px solid var(--color-blue-chalk);
   border-right: 1px solid var(--color-blue-chalk);
   border-top: 2px solid var(--color-blue-chalk);
-  color: var(--color-valhalla);
+  color: var(--color-pagination-text);
   display: flex;
   font-weight: var(--font-weight-medium);
   height: 35px;
@@ -56,15 +56,15 @@
 
 a.page-numbers:hover,
 a.page-numbers:focus {
-  background-color: var(--color-valhalla);
-  border-color: var(--color-valhalla);
-  color: var(--color-white);
+  background-color: var(--color-pagination-background-hover);
+  border-color: var(--color-pagination-border-hover);
+  color: var(--color-pagination-text-hover);
 }
 
 .page-numbers.current {
-  background-color: var(--color-valhalla);
-  border-color: var(--color-valhalla);
-  color: var(--color-white);
+  background-color: var(--color-pagination-background-current);
+  border-color: var(--color-pagination-border-current);
+  color: var(--color-pagination-text-current);
 }
 
 // Remove this if you are using version with next/prev

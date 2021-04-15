@@ -13,7 +13,7 @@
 
 // Start typography settings
 body {
-  color: var(--color-paragraphs);
+  color: var(--color-paragraph);
   font-family: $font-paragraphs;
   font-size: var(--font-size-default);
   -moz-osx-font-smoothing: grayscale;
@@ -53,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-headings);
+  color: var(--color-heading);
   font-family: $font-headings;
   font-weight: var(--font-weight-headings);
   margin-bottom: var(--margin-between-paragraphs);

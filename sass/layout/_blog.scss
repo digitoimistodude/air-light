@@ -7,12 +7,12 @@
 
   a {
     background-color: transparent;
-    border-color: var(--color-border-category);
+    border-color: var(--color-category-border);
     border-radius: 5px;
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: none;
-    color: var(--color-black);
+    color: var(--color-category-text);
     display: inline-block;
     font-size: var(--font-size-16);
     margin-bottom: .5rem;
@@ -23,7 +23,7 @@
 
   a:hover,
   a:focus {
-    border-color: var(--color-border-tag-hover);
+    border-color: var(--color-tag-border-hover);
   }
 }
 
@@ -45,12 +45,12 @@
 
   a {
     background-color: transparent;
-    border-color: var(--color-border-tag);
+    border-color: var(--color-tag-border);
     border-radius: 5px;
     border-style: solid;
     border-width: 1px 1px 2px;
     box-shadow: none;
-    color: var(--color-black);
+    color: var(--color-tag-text);
     display: inline-block;
     font-size: var(--font-size-14);
     margin-right: .4em;
@@ -60,7 +60,7 @@
 
   a:hover,
   a:focus {
-    border-color: var(--color-border-tag-hover);
+    border-color: var(--color-tag-border-hover);
   }
 }
 
