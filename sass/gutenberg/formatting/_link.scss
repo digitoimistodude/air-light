@@ -1,7 +1,7 @@
 /* stylelint-disable a11y/no-display-none, no-descending-specificity, selector-max-pseudo-class */
 // Default links everywhere
 a {
-  color: var(--color-links);
+  color: var(--color-link);
   text-decoration: none;
 
   &:hover,
