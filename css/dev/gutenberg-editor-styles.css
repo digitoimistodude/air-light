@@ -52,13 +52,20 @@
 }
 
 :root {
-  --font-size-default: 20px;
-  --font-size-tiny: 14px;
-  --font-size-small: 16px;
-  --font-size-medium: 17px;
-  --font-size-large: 18px;
-  --font-size-extra-large: 20px;
-  --font-size-huge: 22px;
+  --font-size-h1: 51px;
+  --font-size-h2: 38px;
+  --font-size-h3: 28px;
+  --font-size-h4: 21px;
+  --font-size-h5: 17px;
+  --font-size-h6: 14px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-default: var(--font-size-17);
+  --font-size-paragraphs: var(--font-size-18);
   --font-size-nav-toggle-label: 15px;
   --font-size-captions: 15px;
   --line-height-headings: 1.5;
@@ -73,16 +80,26 @@
   --font-weight-headings: var(--font-weight-bold);
 }
 
-@media (max-width: 770px) {
+@media (max-width: 480px) {
   :root {
-    --font-size-extra-large: 17px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --font-size-16: 14px;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --font-size-tiny: 16px;
-    --font-size-small: 16px;
+    --font-size-paragraphs: 16px;
     --font-size-default: 16px;
   }
 }
@@ -90,9 +107,6 @@
 @media (max-width: 420px) {
   :root {
     --font-size-nav-toggle-label: 13px;
-    --font-size-extra-large: 16px;
-    --font-size-tiny: 14px;
-    --font-size-small: 14px;
   }
 }
 
@@ -261,7 +275,7 @@ pre {
   color: var(--color-white-smoke);
   display: block;
   font-family: "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   line-height: var(--line-height-paragraphs-blog);
   margin: 3rem 0;
   overflow: auto;
@@ -609,7 +623,7 @@ pre code {
 .gutenberg-content .is-grid figcaption,
 .gutenberg-content .wp-block-gallery figcaption {
   color: var(--color-white);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   line-height: 1.55;
   margin-bottom: var(--margin-between-text-elements);
   width: 100%;
@@ -1012,14 +1026,14 @@ pre code {
 @media (max-width: 480px) {
   .editor-styles-wrapper .has-large-font-size,
   .gutenberg-content .has-large-font-size {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-18);
   }
 }
 
 @media (max-width: 480px) {
   .editor-styles-wrapper .has-larger-font-size,
   .gutenberg-content .has-larger-font-size {
-    font-size: var(--font-size-huge);
+    font-size: var(--font-size-22);
   }
 }
 
@@ -1427,7 +1441,7 @@ th {
   cursor: pointer;
   display: inline-block;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 0;
@@ -1454,7 +1468,7 @@ th {
 }
 
 .wp-block-file .wp-block-file__button {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   padding-bottom: 8px;
   padding-left: 17px;
   padding-right: 17px;

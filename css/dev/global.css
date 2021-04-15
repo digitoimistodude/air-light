@@ -407,13 +407,20 @@ template {
 }
 
 :root {
-  --font-size-default: 20px;
-  --font-size-tiny: 14px;
-  --font-size-small: 16px;
-  --font-size-medium: 17px;
-  --font-size-large: 18px;
-  --font-size-extra-large: 20px;
-  --font-size-huge: 22px;
+  --font-size-h1: 51px;
+  --font-size-h2: 38px;
+  --font-size-h3: 28px;
+  --font-size-h4: 21px;
+  --font-size-h5: 17px;
+  --font-size-h6: 14px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+  --font-size-default: var(--font-size-17);
+  --font-size-paragraphs: var(--font-size-18);
   --font-size-nav-toggle-label: 15px;
   --font-size-captions: 15px;
   --line-height-headings: 1.5;
@@ -428,16 +435,26 @@ template {
   --font-weight-headings: var(--font-weight-bold);
 }
 
-@media (max-width: 770px) {
+@media (max-width: 480px) {
   :root {
-    --font-size-extra-large: 17px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --font-size-16: 14px;
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --font-size-tiny: 16px;
-    --font-size-small: 16px;
+    --font-size-paragraphs: 16px;
     --font-size-default: 16px;
   }
 }
@@ -445,9 +462,6 @@ template {
 @media (max-width: 420px) {
   :root {
     --font-size-nav-toggle-label: 13px;
-    --font-size-extra-large: 16px;
-    --font-size-tiny: 14px;
-    --font-size-small: 14px;
   }
 }
 
@@ -2408,6 +2422,7 @@ a.is-external-link.no-external-link-indicator::after {
 }
 
 .accent {
+  font-size: var(--font-size-h3);
   font-style: normal;
   letter-spacing: .05em;
   text-transform: lowercase;
@@ -2627,7 +2642,7 @@ a.is-external-link.no-external-link-indicator::after {
 body {
   color: var(--color-paragraphs);
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-default);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: var(--font-weight-paragraphs);
@@ -2663,110 +2678,8 @@ input[type="month"],
 input[type="week"],
 input[type="email"],
 input[type="search"] {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-paragraphs);
   line-height: var(--line-height-paragraphs);
-}
-
-@media (min-width: 770px) {
-  p,
-  dd,
-  dt,
-  figcaption,
-  hr,
-  small,
-  ol,
-  ul,
-  li,
-  blockquote,
-  kbd,
-  pre,
-  samp,
-  code,
-  th,
-  td,
-  table,
-  tr,
-  textarea,
-  select,
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
-  input[type="number"],
-  input[type="month"],
-  input[type="week"],
-  input[type="email"],
-  input[type="search"] {
-    font-size: 17px;
-  }
-}
-
-@media screen and (min-width: 770px) and (min-width: 320px) {
-  p,
-  dd,
-  dt,
-  figcaption,
-  hr,
-  small,
-  ol,
-  ul,
-  li,
-  blockquote,
-  kbd,
-  pre,
-  samp,
-  code,
-  th,
-  td,
-  table,
-  tr,
-  textarea,
-  select,
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
-  input[type="number"],
-  input[type="month"],
-  input[type="week"],
-  input[type="email"],
-  input[type="search"] {
-    font-size: calc(17px + 3 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 770px) and (min-width: 1920px) {
-  p,
-  dd,
-  dt,
-  figcaption,
-  hr,
-  small,
-  ol,
-  ul,
-  li,
-  blockquote,
-  kbd,
-  pre,
-  samp,
-  code,
-  th,
-  td,
-  table,
-  tr,
-  textarea,
-  select,
-  input[type="text"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="password"],
-  input[type="number"],
-  input[type="month"],
-  input[type="week"],
-  input[type="email"],
-  input[type="search"] {
-    font-size: 20px;
-  }
 }
 
 h1,
@@ -2791,105 +2704,27 @@ h6 {
 }
 
 h1 {
-  font-size: 32px;
-}
-
-@media screen and (min-width: 320px) {
-  h1 {
-    font-size: calc(32px + 19 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  h1 {
-    font-size: 51px;
-  }
+  font-size: var(--font-size-h1);
 }
 
 h2 {
-  font-size: 24px;
+  font-size: var(--font-size-h2);
 }
 
-@media screen and (min-width: 320px) {
-  h2 {
-    font-size: calc(24px + 14 * ((100vw - 320px) / 1600));
-  }
+h3 {
+  font-size: var(--font-size-h3);
 }
 
-@media screen and (min-width: 1920px) {
-  h2 {
-    font-size: 38px;
-  }
-}
-
-h3,
-.accent {
-  font-size: 21px;
-}
-
-@media screen and (min-width: 320px) {
-  h3,
-  .accent {
-    font-size: calc(21px + 7 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  h3,
-  .accent {
-    font-size: 28px;
-  }
-}
-
-h4,
-.comment-list .comment-author {
-  font-size: 18px;
-}
-
-@media screen and (min-width: 320px) {
-  h4,
-  .comment-list .comment-author {
-    font-size: calc(18px + 3 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  h4,
-  .comment-list .comment-author {
-    font-size: 21px;
-  }
+h4 {
+  font-size: var(--font-size-h4);
 }
 
 h5 {
-  font-size: 14px;
-}
-
-@media screen and (min-width: 320px) {
-  h5 {
-    font-size: calc(14px + 3 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  h5 {
-    font-size: 17px;
-  }
+  font-size: var(--font-size-h5);
 }
 
 h6 {
-  font-size: 12px;
-}
-
-@media screen and (min-width: 320px) {
-  h6 {
-    font-size: calc(12px + 2 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  h6 {
-    font-size: 14px;
-  }
+  font-size: var(--font-size-h6);
 }
 
 h1:first-child,
@@ -3193,7 +3028,7 @@ pre {
   cursor: pointer;
   display: inline-block;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 0;
@@ -3297,7 +3132,7 @@ pre {
 .site-footer input[type="reset"].button-small,
 .site-footer input[type="submit"].button-small,
 .site-footer input[type="button"].button-small {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   padding-bottom: 8px;
   padding-left: 17px;
   padding-right: 17px;
@@ -3314,7 +3149,7 @@ pre {
 .site-footer input[type="reset"].button-medium,
 .site-footer input[type="submit"].button-medium,
 .site-footer input[type="button"].button-medium {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-17);
   padding-bottom: 14px;
   padding-left: 27px;
   padding-right: 27px;
@@ -3331,7 +3166,7 @@ pre {
 .site-footer input[type="reset"].button-large,
 .site-footer input[type="submit"].button-large,
 .site-footer input[type="button"].button-large {
-  font-size: var(--font-size-extra-large);
+  font-size: var(--font-size-20);
   padding-bottom: 19px;
   padding-left: 40px;
   padding-right: 40px;
@@ -3348,7 +3183,7 @@ select {
   border-style: solid;
   border-width: 2px;
   color: var(--color-paragraphs);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-17);
   line-height: 24px;
   max-width: 100%;
   min-width: 0;
@@ -3376,7 +3211,7 @@ input[type="search"] {
   border-width: 2px;
   box-sizing: border-box;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-17);
   line-height: 24px;
   margin-bottom: 0;
   padding: 15px;
@@ -3548,7 +3383,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   box-shadow: none;
   color: var(--color-black);
   display: inline-block;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   margin-bottom: .5rem;
   margin-right: .5em;
   padding: .2em .6em;
@@ -3585,7 +3420,7 @@ input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   box-shadow: none;
   color: var(--color-black);
   display: inline-block;
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-14);
   margin-right: .4em;
   padding: .2em .6em;
   transition: all 0.22s;
@@ -3857,7 +3692,7 @@ a.page-numbers:focus {
 div.validation_error {
   background-color: var(--color-error);
   color: var(--color-white);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-17);
   font-weight: var(--font-weight-bold);
   margin-bottom: 2rem;
   padding: 2rem;
@@ -3873,7 +3708,7 @@ body *[aria-invalid="true"] {
 
 .validation_message {
   color: var(--color-error);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   font-weight: var(--font-weight-regular);
 }
 
@@ -3896,7 +3731,7 @@ body *[aria-invalid="true"] {
 
 .gform_body .gfield_required {
   color: var(--color-main);
-  font-size: var(--font-size-huge);
+  font-size: var(--font-size-22);
   position: relative;
   top: 3px;
 }
@@ -3980,7 +3815,7 @@ body *[aria-invalid="true"] {
   .gform_body .ginput_left input,
   .gform_body .ginput_right > label,
   .gform_body .ginput_right input {
-    font-size: var(--font-size-small);
+    font-size: var(--font-size-16);
     width: 100%;
   }
 }
@@ -4076,20 +3911,8 @@ body *[aria-invalid="true"] {
 }
 
 .block-search-results h3 {
-  font-size: 18px;
+  font-size: var(--font-size-h4);
   margin-bottom: 1rem;
-}
-
-@media screen and (min-width: 320px) {
-  .block-search-results h3 {
-    font-size: calc(18px + 3 * ((100vw - 320px) / 1600));
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  .block-search-results h3 {
-    font-size: 21px;
-  }
 }
 
 .block-search-results p {
@@ -4144,7 +3967,7 @@ body *[aria-invalid="true"] {
 }
 
 .comment-list li {
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-14);
   margin-bottom: 70px;
   margin-top: 0;
   padding: 0;
@@ -4152,7 +3975,7 @@ body *[aria-invalid="true"] {
 
 .comment-list p {
   color: var(--color-east-bay);
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-14);
 }
 
 .comment-list .avatar {
@@ -4162,6 +3985,7 @@ body *[aria-invalid="true"] {
 
 .comment-list .comment-author {
   color: var(--color-paragraphs);
+  font-size: var(--font-size-h4);
   margin-bottom: 10px;
   margin-top: 0;
   padding: 0;
@@ -4178,7 +4002,7 @@ body *[aria-invalid="true"] {
 }
 
 .comment-list .comment-time {
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-14);
   margin: 0;
   padding: 0;
 }
@@ -4201,7 +4025,7 @@ body *[aria-invalid="true"] {
 .comments-link {
   align-items: center;
   display: inline-flex;
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-14);
   text-align: right;
 }
 
@@ -4400,7 +4224,7 @@ pre {
   color: var(--color-white-smoke);
   display: block;
   font-family: "Inconsolata", "Menlo", "Monaco", "Consolas", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", monospace;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   line-height: var(--line-height-paragraphs-blog);
   margin: 3rem 0;
   overflow: auto;
@@ -4748,7 +4572,7 @@ pre code {
 .gutenberg-content .is-grid figcaption,
 .gutenberg-content .wp-block-gallery figcaption {
   color: var(--color-white);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   line-height: 1.55;
   margin-bottom: var(--margin-between-text-elements);
   width: 100%;
@@ -5151,14 +4975,14 @@ pre code {
 @media (max-width: 480px) {
   .editor-styles-wrapper .has-large-font-size,
   .gutenberg-content .has-large-font-size {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-18);
   }
 }
 
 @media (max-width: 480px) {
   .editor-styles-wrapper .has-larger-font-size,
   .gutenberg-content .has-larger-font-size {
-    font-size: var(--font-size-huge);
+    font-size: var(--font-size-22);
   }
 }
 
@@ -5566,7 +5390,7 @@ th {
   cursor: pointer;
   display: inline-block;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 0;
@@ -5593,7 +5417,7 @@ th {
 }
 
 .wp-block-file .wp-block-file__button {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   padding-bottom: 8px;
   padding-left: 17px;
   padding-right: 17px;

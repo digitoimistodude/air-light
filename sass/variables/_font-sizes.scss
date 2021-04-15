@@ -1,31 +1,52 @@
-// Font size settings
-$font-size-min: 17px;
-$font-size-max: 20px;
-$font-size-max-blog: 19px;
-$font-size-min-h1: 32px;
-$font-size-max-h1: 51px;
-$font-size-min-h2: 24px;
-$font-size-max-h2: 38px;
-$font-size-min-h3: 21px;
-$font-size-max-h3: 28px;
-$font-size-min-h4: 18px;
-$font-size-max-h4: 21px;
-$font-size-min-h5: 14px;
-$font-size-max-h5: 17px;
-$font-size-min-h6: 12px;
-$font-size-max-h6: 14px;
-
 // CSS Variables for responsive fonts
 :root {
-  --font-size-default: #{$font-size-max};
-  --font-size-tiny: 14px;
-  --font-size-small: 16px;
-  --font-size-medium: 17px;
-  --font-size-large: 18px;
-  --font-size-extra-large: 20px;
-  --font-size-huge: 22px;
+  // Heading font sizes
+  --font-size-h1: 51px;
+  --font-size-h2: 38px;
+  --font-size-h3: 28px;
+  --font-size-h4: 21px;
+  --font-size-h5: 17px;
+  --font-size-h6: 14px;
+
+  // Heading font sizes in mobile
+  @media (max-width: $container-mobile) {
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+  }
+
+  // Paragraph font sizes
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+
+  // Paragraph font sizes in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --font-size-16: 14px;
+  }
+
+  // Element font sizes
+  --font-size-default: var(--font-size-17);
+  --font-size-paragraphs: var(--font-size-18);
   --font-size-nav-toggle-label: 15px;
   --font-size-captions: 15px;
+
+  // Element font sizes in mobile
+  @media (max-width: $container-mobile) {
+    --font-size-paragraphs: 16px;
+    --font-size-default: 16px;
+  }
+
+  // Element font sizes in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --font-size-nav-toggle-label: 13px;
+  }
 
   // Line-heights
   --line-height-headings: 1.5;
@@ -40,24 +61,4 @@ $font-size-max-h6: 14px;
   --font-weight-bold: 700;
   --font-weight-paragraphs: var(--font-weight-regular);
   --font-weight-headings: var(--font-weight-bold);
-
-  // Vars on iPad
-  @media (max-width: $container-ipad) {
-    --font-size-extra-large: 17px;
-  }
-
-  // Vars in mobile
-  @media (max-width: $container-mobile) {
-    --font-size-tiny: 16px;
-    --font-size-small: 16px;
-    --font-size-default: 16px;
-  }
-
-  // Vars in tiny phones like iPhone 5S
-  @media (max-width: 420px) {
-    --font-size-nav-toggle-label: 13px;
-    --font-size-extra-large: 16px;
-    --font-size-tiny: 14px;
-    --font-size-small: 14px;
-  }
 }

@@ -15,7 +15,7 @@
   padding: 0;
 
   li {
-    font-size: var(--font-size-tiny);
+    font-size: var(--font-size-14);
     margin-bottom: 70px;
     margin-top: 0;
     padding: 0;
@@ -23,7 +23,7 @@
 
   p {
     color: var(--color-east-bay);
-    font-size: var(--font-size-tiny);
+    font-size: var(--font-size-14);
   }
 
   .avatar {
@@ -32,8 +32,8 @@
   }
 
   .comment-author {
-    @extend %h4;
     color: var(--color-paragraphs);
+    font-size: var(--font-size-h4);
     margin-bottom: 10px;
     margin-top: 0;
     padding: 0;
@@ -50,7 +50,7 @@
   }
 
   .comment-time {
-    font-size: var(--font-size-tiny);
+    font-size: var(--font-size-14);
     margin: 0;
     padding: 0;
 
@@ -75,7 +75,7 @@
 .comments-link {
   align-items: center;
   display: inline-flex;
-  font-size: var(--font-size-tiny);
+  font-size: var(--font-size-14);
   text-align: right;
 
   a {

@@ -37,7 +37,7 @@
   }
 
   h3 {
-    @include responsive-font($font-size-min-h4, $font-size-max-h4);
+    font-size: var(--font-size-h4);
     margin-bottom: 1rem;
   }
 

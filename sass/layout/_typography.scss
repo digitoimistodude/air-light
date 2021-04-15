@@ -15,7 +15,7 @@
 body {
   color: var(--color-paragraphs);
   font-family: $font-paragraphs;
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-default);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: var(--font-weight-paragraphs);
@@ -42,12 +42,8 @@ td,
 table,
 tr,
 %default {
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-paragraphs);
   line-height: var(--line-height-paragraphs);
-
-  @media (min-width: 770px) {
-    @include responsive-font($font-size-min, $font-size-max);
-  }
 }
 
 // Heading defaults
@@ -74,34 +70,28 @@ h6 {
 
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
-h1,
-%h1 {
-  @include responsive-font($font-size-min-h1, $font-size-max-h1);
+h1 {
+  font-size: var(--font-size-h1);
 }
 
-h2,
-%h2 {
-  @include responsive-font($font-size-min-h2, $font-size-max-h2);
+h2 {
+  font-size: var(--font-size-h2);
 }
 
-h3,
-%h3 {
-  @include responsive-font($font-size-min-h3, $font-size-max-h3);
+h3 {
+  font-size: var(--font-size-h3);
 }
 
-h4,
-%h4 {
-  @include responsive-font($font-size-min-h4, $font-size-max-h4);
+h4 {
+  font-size: var(--font-size-h4);
 }
 
-h5,
-%h5 {
-  @include responsive-font($font-size-min-h5, $font-size-max-h5);
+h5 {
+  font-size: var(--font-size-h5);
 }
 
-h6,
-%h6 {
-  @include responsive-font($font-size-min-h6, $font-size-max-h6);
+h6 {
+  font-size: var(--font-size-h6);
 }
 
 h1:first-child,

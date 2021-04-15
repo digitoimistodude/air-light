@@ -241,7 +241,7 @@ $color-wild-blue-yonder: #737fbf;
 }
 
 .accent {
-  @extend %h3;
+  font-size: var(--font-size-h3);
   font-style: normal;
   letter-spacing: .05em;
   text-transform: lowercase;

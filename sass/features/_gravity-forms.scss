@@ -6,7 +6,7 @@
 div.validation_error {
   background-color: var(--color-error);
   color: var(--color-white);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-17);
   font-weight: var(--font-weight-bold);
   margin-bottom: 2rem;
   padding: 2rem;
@@ -22,7 +22,7 @@ body *[aria-invalid="true"] {
 
 .validation_message {
   color: var(--color-error);
-  font-size: var(--font-size-small);
+  font-size: var(--font-size-16);
   font-weight: var(--font-weight-regular);
 }
 
@@ -48,7 +48,7 @@ body *[aria-invalid="true"] {
   // Required star color
   .gfield_required {
     color: var(--color-main);
-    font-size: var(--font-size-huge);
+    font-size: var(--font-size-22);
     position: relative;
     top: 3px;
   }
@@ -139,7 +139,7 @@ body *[aria-invalid="true"] {
 
       > label,
       input {
-        font-size: var(--font-size-small);
+        font-size: var(--font-size-16);
         width: 100%;
       }
     }
