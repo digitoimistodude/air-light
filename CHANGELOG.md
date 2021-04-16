@@ -1,3 +1,9 @@
+### 7.1.4: 2021-04-16
+
+* Add Laragon support #92 (thank you @divn!)
+* New theme script dependencies partial: Gulp styles to later stage
+* Release version 1.0.5 of newtheme starting scripts
+
 ### 7.1.3: 2021-04-15
 
 * Fix failing build with missing color variable
