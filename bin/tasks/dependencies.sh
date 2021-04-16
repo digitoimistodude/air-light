@@ -11,7 +11,3 @@ npm install
 echo "${YELLOW}Installing theme npm packages (like JS/CSS dependencies) for the new theme...${TXTRESET}"
 cd ${PROJECT_THEME_PATH}
 npm install
-
-echo "${YELLOW}Running project gulp styles once...${TXTRESET}"
-cd ${PROJECT_PATH}
-gulp styles
