@@ -4,7 +4,7 @@
 
 Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
 
-## [Demo](https://airwptheme.com/demo) | [Usage](#usage)
+## [Demo](https://airwptheme.com/demo) | [Documentation](https://github.com/digitoimistodude/air-light/wiki)
 
 * **CSS gzipped:** 13 KB *(81.2 original)*
 * **JS gzipped:** 7.8 KB *(26.5 KB original)*
@@ -424,45 +424,7 @@ We use ACF and Gutenberg to build new websites on air-light. This is the default
 
 ### Usage
 
-**NB!** We recommend you DO NOT use this theme by installing it from [WordPress Theme Directory](https://wordpress.org/themes/air-light/), instead use the development version from GitHub by doing the following:
-
-#### Option 1: Use our WordPress stack and development environment
-
-This is an option we at Dude use. Please note: This way requires many packages and is a bit of work to get up and running. I recommend you read all the documentation thoroughly. You can always use [your own setup and try option 2](#option-2-use-in-your-own-wordpress-instance-and-with-your-own-development-environment-like-docker-local-by-flywheel-or-mamp).
-
-1. Follow instructions to install [macos-lemp-stack](https://github.com/digitoimistodude/macos-lemp-setup#installation-steps)
-2. Ensure that http://localhost works and ~/Projects is linked to /var/www and both exist
-3. Install [dudestack](https://github.com/digitoimistodude/dudestack#installation)
-4. Create new project by using dudestack's `createproject` command (explained [here](https://github.com/digitoimistodude/dudestack#starting-a-new-project-with-createproject-bash-script))
-5. From Terminal cd into **bin folder** like `cd /path/to/where/you/cloned/air-light/bin`
-6. Run `sh newtheme.sh` \- the script takes care of the rest \(updates textdomain with your project name\, checks updates for air and npm packages\, runs npm install\, fetches devpackages\, sets up gulp\, cleans up the leftover files and activates the theme via wp\-cli\)
-7. Cd back to project directory `cd ~/Projects/yourproject`, run `gulp` and start coding
-
-#### Option 2: Use in your own WordPress instance and with your own development environment like Docker, Local by Flywheel or MAMP
-
-**If you want to set up this your own way**, install using the *traditional way* because we don't currently provide a cleanup or [_s-like](https://underscores.me/) theme generation script for other WP-stacks:
-
-1. Get the cleaned up version of Air-light from [WordPress Theme Directory](https://wordpress.org/themes/air-light/), download zip by clicking the blue Download button
-2. Rename the theme folder from air-light to *yourprojectname* (your project name here all lowercase without spaces or special characters)
-3. Move theme folder under your WordPress installation
-4. Download Air-light [package.json (right click here and select Save Link As...)](https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json), save it to your theme's folder root
-5. Open Terminal, cd into theme folder and run `npm install` inside the theme folder
-6. Open project to [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) (or to your preferred editor) and run following search & replaces (note: *yourprojectname* is should always be lowercase without special characters):
-
-**Search:** air-light<br>
-**Replace with:** *yourprojectname*
-
-**Search**: Air-light<br>
-**Replace with:** *yourprojectname*
-
-7. If you use custom post types, you need to copy over [post-type.php](https://raw.githubusercontent.com/digitoimistodude/air-light/master/inc/includes/post-type.php (right click here and select Save Link As...)) and [taxonomy.php (right click here and select Save Link As...)](https://raw.githubusercontent.com/digitoimistodude/air-light/master/inc/includes/taxonomy.php) since they are not allowed in WordPress Theme Directory thus not included in the cleaned up version of the theme.
-
-#### Optional for compiling styles and scripts (Please [see this support forum answer](https://wordpress.org/support/topic/many-problems-15/#post-14026724)):
-
-8. Get [devpackages](https://github.com/digitoimistodude/devpackages) and extract them to your **project root** folder.
-9. Edit all paths in [these files](https://github.com/digitoimistodude/devpackages/search?q=THEMENAME) based on your setup
-10. Run npm install on your **project root** folder from Terminal
-11. Activate theme on wp-admin, run `gulp` and start coding (or alternatively do changes and then run single tasks like `gulp styles` or `gulp js`)
+See [Documentation](https://github.com/digitoimistodude/air-light/wiki).
 
 ### Contributing
 
