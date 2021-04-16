@@ -132,7 +132,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _gallery.scss           # → Default WordPress gallery feature styles
 │   │   ├── _gravity-forms.scss     # → Defaults for Gravity Forms + WCAG 2.0 form fields for Gravity Forms
 │   │   ├── _lazyload.scss          # → Styles for air-helper lazyload feature (lazyload.js needed)
-│   │   ├── _magnific-popup.scss    # → Defaults for magnific popup
 │   │   ├── _top.scss               # → Back to top styles
 │   │   ├── _pagination.scss        # → Numbered pagination styles
 │   │   ├── _sticky-nav.scss        # → Sticky nav styles (not included by default)
