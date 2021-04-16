@@ -14,6 +14,7 @@ $use-dropdown-toggle-animation: true;
   --box-shadow-navigation-static: 0 0 10px rgba(84, 87, 115, .1);
   --dropdown-toggle-size: 12px;
   --gap-dropdown: 1rem;
+  --gap-between-dropdown-toggle: 1.5rem;
   --padding-main-level-vertical: .6rem;
   --padding-main-level-horizontal: 2rem;
   --padding-sub-menu-vertical: .6rem;
@@ -139,7 +140,7 @@ $use-dropdown-toggle-animation: true;
   // Let's make space for the nav-toggle/arrow
   .menu-item.menu-item-has-children a {
     padding-bottom: 0;
-    padding-right: 1.5rem;
+    padding-right: var(--gap-between-dropdown-toggle);
     padding-top: 0;
     transition: padding .2s cubic-bezier(.19, 1, .22, 1), background-color .2s cubic-bezier(.19, 1, .22, 1);
   }

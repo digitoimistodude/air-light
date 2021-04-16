@@ -564,6 +564,7 @@ a.is-external-link.no-external-link-indicator::after {
   --box-shadow-navigation-static: 0 0 10px rgba(84, 87, 115, .1);
   --dropdown-toggle-size: 12px;
   --gap-dropdown: 1rem;
+  --gap-between-dropdown-toggle: 1.5rem;
   --padding-main-level-vertical: .6rem;
   --padding-main-level-horizontal: 2rem;
   --padding-sub-menu-vertical: .6rem;
@@ -661,7 +662,7 @@ a.is-external-link.no-external-link-indicator::after {
   }
   .menu-item.menu-item-has-children a {
     padding-bottom: 0;
-    padding-right: 1.5rem;
+    padding-right: var(--gap-between-dropdown-toggle);
     padding-top: 0;
     transition: padding 0.2s cubic-bezier(0.19, 1, 0.22, 1), background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   }
