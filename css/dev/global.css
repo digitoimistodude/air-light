@@ -2987,7 +2987,7 @@ pre {
 }
 
 :root {
-  --color-background-inputs: var(--color-white);
+  --color-background-input-field: var(--color-white);
   --color-border-forms: #d9d9d9;
   --color-border-forms-focus: rgba(42, 45, 62, .3);
   --color-button: var(--color-white);
@@ -3000,14 +3000,16 @@ pre {
   --color-placeholder-focus: var(--color-black);
   --opacity-placeholder: .4;
   --opacity-placeholder-focus: .8;
-  --border-width-inputs: 2px;
-  --checkbox-marker-size: 12px;
-  --checkbox-radio-border-width: 2px;
-  --checkbox-radio-gap: 10px;
-  --checkbox-radio-line-height: var(--line-height-paragraphs);
-  --checkbox-radio-size: 16px;
-  --checkbox-radius: 4px;
-  --radio-marker-size: 8px;
+  --border-radius-checkbox: 4px;
+  --border-radius-input-field: 3px;
+  --border-radius-select: 0;
+  --border-width-checkbox: 2px;
+  --border-width-input-field: 2px;
+  --gap-checkbox: 10px;
+  --line-height-checkbox: var(--line-height-paragraphs);
+  --size-checkbox-marker: 12px;
+  --size-radio-button: 16px;
+  --size-radio-button-marker: 8px;
 }
 
 .button-wrapper {
@@ -3185,9 +3187,9 @@ select {
   background-repeat: no-repeat;
   background-size: 40px auto;
   border-color: var(--color-border-forms);
-  border-radius: 0;
+  border-radius: var(--border-radius-select);
   border-style: solid;
-  border-width: var(--border-width-inputs);
+  border-width: var(--border-width-input-field);
   color: var(--color-paragraph);
   font-size: var(--font-size-17);
   line-height: 24px;
@@ -3210,11 +3212,11 @@ input[type="month"],
 input[type="week"],
 input[type="email"],
 input[type="search"] {
-  background-color: var(--color-background-inputs);
+  background-color: var(--color-background-input-field);
   border-color: var(--color-border-forms);
-  border-radius: 3px;
+  border-radius: var(--border-radius-input-field);
   border-style: solid;
-  border-width: var(--border-width-inputs);
+  border-width: var(--border-width-input-field);
   box-sizing: border-box;
   font-family: "Inter", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
   font-size: var(--font-size-17);
@@ -3257,7 +3259,7 @@ input[type="month"]:focus,
 input[type="week"]:focus,
 input[type="email"]:focus,
 input[type="search"]:focus {
-  background-color: var(--color-background-inputs);
+  background-color: var(--color-background-input-field);
   border-color: var(--color-border-forms-focus);
 }
 
@@ -3283,14 +3285,14 @@ input[type="search"]:focus::placeholder {
 
 input[type="radio"],
 input[type="checkbox"] {
-  height: var(--checkbox-radio-size);
+  height: var(--size-radio-button);
   margin: 0;
-  margin-top: calc((1em * var(--checkbox-radio-line-height) - var(--checkbox-radio-size)) / 2);
+  margin-top: calc((1em * var(--line-height-checkbox) - var(--size-radio-button)) / 2);
   opacity: 0;
   padding: 0;
   pointer-events: none;
   position: absolute;
-  width: var(--checkbox-radio-size);
+  width: var(--size-radio-button);
 }
 
 input[type="radio"] + label,
@@ -3298,7 +3300,7 @@ input[type="checkbox"] + label {
   align-items: flex-start;
   cursor: pointer;
   display: inline-flex;
-  line-height: var(--checkbox-radio-line-height);
+  line-height: var(--line-height-checkbox);
 }
 
 input[type="radio"] + label::before,
@@ -3309,16 +3311,16 @@ input[type="checkbox"] + label::before {
   background-repeat: no-repeat;
   border-color: var(--color-checkbox);
   border-style: solid;
-  border-width: var(--checkbox-radio-border-width);
+  border-width: var(--border-width-checkbox);
   content: '';
   display: inline-flex;
   flex-shrink: 0;
-  height: var(--checkbox-radio-size);
-  margin-right: var(--checkbox-radio-gap);
+  height: var(--size-radio-button);
+  margin-right: var(--gap-checkbox);
   position: relative;
-  top: calc(var(--checkbox-radio-border-width) / 2);
+  top: calc(var(--border-width-checkbox) / 2);
   transition: transform .2s, border .2s;
-  width: var(--checkbox-radio-size);
+  width: var(--size-radio-button);
 }
 
 input[type="radio"] + label::before {
@@ -3326,7 +3328,7 @@ input[type="radio"] + label::before {
 }
 
 input[type="checkbox"] + label::before {
-  border-radius: var(--checkbox-radius);
+  border-radius: var(--border-radius-checkbox);
 }
 
 input[type="radio"]:checked + label::before,
@@ -3345,12 +3347,12 @@ input[type="checkbox"]:active + label::before {
 
 input[type="radio"]:checked + label::before {
   background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg class='nc-icon-wrapper' fill='%23ffffff'%3E%3Ccircle cx='8' cy='8' r='8' fill='%23ffffff'%3E%3C/circle%3E%3C/g%3E%3C/svg%3E");
-  background-size: var(--radio-marker-size);
+  background-size: var(--size-radio-button-marker);
 }
 
 input[type="checkbox"]:checked + label::before {
   background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolyline points='1 6.5 4 9.5 11 2.5' fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'/%3E%3C/svg%3E");
-  background-size: var(--checkbox-marker-size);
+  background-size: var(--size-checkbox-marker);
 }
 
 input[type="radio"]:focus + label::before,
