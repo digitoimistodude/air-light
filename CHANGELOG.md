@@ -1,3 +1,10 @@
+### 7.1.5: 2021-04-16
+
+* More consistency in form variables
+* Add --gap-between-dropdown-toggle as CSS variable
+* Color links for AA and AAA
+* Move theme documentation to Wiki
+
 ### 7.1.4: 2021-04-16
 
 * Add Laragon support #92 (thank you @divn!)
