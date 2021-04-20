@@ -91,7 +91,7 @@ module.exports = {
     development: themeDir + 'js/dev/',
   },
   php: {
-    src: [
+    watch: [
       themeDir + '*.php',
       themeDir + 'inc/**/*.php',
       themeDir + 'template-parts/**/*.php'
