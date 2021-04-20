@@ -14,7 +14,7 @@
 // Start typography settings
 body {
   color: var(--color-paragraph);
-  font-family: $font-paragraphs;
+  font-family: var(--font-paragraph);
   font-size: var(--font-size-default);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -54,7 +54,7 @@ h4,
 h5,
 h6 {
   color: var(--color-heading);
-  font-family: $font-headings;
+  font-family: var(--font-heading);
   font-weight: var(--font-weight-headings);
   margin-bottom: var(--margin-between-paragraphs);
   margin-top: var(--margin-between-paragraphs);
@@ -218,7 +218,7 @@ figcaption {
 kbd,
 pre,
 samp {
-  font-family: $font-monospace;
+  font-family: var(--font-monospace);
 }
 
 // Code block.
@@ -226,7 +226,7 @@ code {
   background-color: var(--color-background-code-inline);
   border-radius: .3rem;
   color: var(--color-code-block);
-  font-family: $font-monospace;
+  font-family: var(--font-monospace);
   font-size: inherit; // normalize.css sets this as 1em by default
   padding: .37rem .5rem;
 

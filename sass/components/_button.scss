@@ -6,7 +6,7 @@
   color: $color;
   cursor: pointer;
   display: inline-block;
-  font-family: $font-paragraphs;
+  font-family: var(--font-paragraph);
   font-size: var(--font-size-16);
   font-weight: $weight;
   line-height: 1;

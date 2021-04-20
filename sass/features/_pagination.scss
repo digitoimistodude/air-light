@@ -3,7 +3,7 @@
 .navigation:not(.post-navigation) .nav-links {
   align-items: flex-start;
   display: flex;
-  font-family: $font-headings;
+  font-family: var(--font-heading);
   font-size: 14px;
   justify-content: flex-start;
   margin-top: 4rem;

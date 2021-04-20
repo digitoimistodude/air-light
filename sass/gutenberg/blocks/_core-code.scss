@@ -5,7 +5,7 @@ pre {
   border-radius: 4px;
   color: var(--color-code-text);
   display: block;
-  font-family: $font-monospace;
+  font-family: var(--font-monospace);
   font-size: var(--font-size-16);
   line-height: var(--line-height-paragraphs-blog);
   margin: 3rem 0;

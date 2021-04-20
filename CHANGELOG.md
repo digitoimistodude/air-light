@@ -1,3 +1,7 @@
+### 7.1.9: 2021-04-20
+
+* Change font-family attributes from SCSS variables to CSS variables
+
 ### 7.1.8: 2021-04-20
 
 * Support for SCSS source maps [(devpackages 2.1.5)](https://github.com/digitoimistodude/devpackages/releases/tag/2.1.5)

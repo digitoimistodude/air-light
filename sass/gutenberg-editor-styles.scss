@@ -61,7 +61,7 @@
 // Forced to use important here, because WordPress uses too specific selectors
 /* stylelint-disable declaration-no-important */
 .wp-block {
-  font-family: $font-paragraphs !important;
+  font-family: var(--font-paragraph) !important;
   max-width: $width-max-article !important;
 
   // Full width block

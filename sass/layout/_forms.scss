@@ -108,7 +108,7 @@ input[type="search"] {
   border-style: solid;
   border-width: var(--border-width-input-field);
   box-sizing: border-box;
-  font-family: $font-paragraphs;
+  font-family: var(--font-paragraph);
   font-size: var(--font-size-17);
   line-height: 24px;
   margin-bottom: 0;

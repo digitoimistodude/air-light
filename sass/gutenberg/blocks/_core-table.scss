@@ -6,7 +6,7 @@ table {
 
 td,
 th {
-  font-family: $font-paragraphs;
+  font-family: var(--font-paragraph);
   height: 3rem;
   padding: 1rem;
 }
