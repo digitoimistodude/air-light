@@ -1,3 +1,7 @@
+### 7.1.7: 2021-04-20
+
+* Get updates from [devpackages 2.1.3](https://github.com/digitoimistodude/devpackages/releases/tag/2.1.3)
+
 ### 7.1.6: 2021-04-20
 
 * Styles related performance update for gulp from [devpackages 2.1.2](https://github.com/digitoimistodude/devpackages/releases/tag/2.1.2)
