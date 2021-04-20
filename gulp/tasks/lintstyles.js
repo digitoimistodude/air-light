@@ -6,7 +6,7 @@ const stylelint = require('gulp-stylelint');
 const config = require('../config.js');
 
 // Task
-function scsslint() {
+function lintstyles() {
 
   return src([config.styles.stylelint.src])
 
@@ -14,4 +14,4 @@ function scsslint() {
     .pipe(stylelint(config.styles.stylelint.opts));
 }
 
-exports.scsslint = scsslint;
+exports.lintstyles = lintstyles;

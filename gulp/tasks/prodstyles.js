@@ -3,31 +3,28 @@ const {
   dest,
   src
 } = require('gulp');
-const sass = require('gulp-sass');
+const Fiber = require('fibers');
+const sass = require('gulp-dart-sass');
+
+// Using node-sass in production because we don't care how much it takes (from 200ms to 2s)
+sass.compiler = require('node-sass');
 const postcss = require('gulp-postcss');
-const rename = require('gulp-rename');
 const autoprefixer = require('autoprefixer');
 const cleancss = require('gulp-clean-css');
 const config = require('../config.js');
-const {
-  handleError
-} = require('../helpers/handle-errors.js');
-const bs = require('browser-sync');
-const notify = require('gulp-notify');
 
-function styles(done) {
+function prodstyles() {
   return src(config.styles.src)
+    // Compile first time to CSS to be able to parse CSS files
     .pipe(sass(config.styles.opts.development))
 
     // Run PostCSS plugins
     .pipe(postcss([autoprefixer()]))
 
-    // Save expanded version for development
-    .pipe(dest(config.styles.development))
-
     // Production settings
     .pipe(sass(config.styles.opts.production))
 
+    // Compress and minify CSS files
     .pipe(cleancss(config.cleancss.opts,
       function (details) {
         console.log('[clean-css] Original: ' + details.stats.originalSize / 1000 + ' kB');
@@ -36,13 +33,8 @@ function styles(done) {
         console.log('[clean-css] Compression rate: ' + details.stats.efficiency * 100 + ' %');
       }), )
 
-    // Save minified version for production
-    .pipe(dest(config.styles.production))
-
-    // Inject changes to browser
-    .pipe(bs.stream());
-
-  done();
+    // Save the final version for production
+    .pipe(dest(config.styles.production));
 }
 
-exports.styles = styles;
+exports.prodstyles = prodstyles;

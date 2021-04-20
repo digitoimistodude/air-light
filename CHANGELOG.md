@@ -1,3 +1,7 @@
+### 7.1.6: 2021-04-20
+
+* Styles related performance update for gulp from [devpackages 2.1.2](https://github.com/digitoimistodude/devpackages/releases/tag/2.1.2)
+
 ### 7.1.5: 2021-04-16
 
 * More consistency in form variables
