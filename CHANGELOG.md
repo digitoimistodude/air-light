@@ -1,6 +1,7 @@
 ### 7.2.0: 2021-04-21
 
 * Fix critical style bug with default button hover and ghost button colors
+* Fix phpcs task src
 
 ### 7.1.9: 2021-04-20
 
