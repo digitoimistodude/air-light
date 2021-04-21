@@ -1,5 +1,5 @@
 /* stylelint-disable number-max-precision */
-@mixin button($color: var(--color-button), $hover: var(--color-button-hover), $background: var(--color-button-background), $background-hover: var(--color-button-background-hover), $radius: var(--border-radius-input-field), $border: 2px solid var(--color-button-background), $border-hover: 2px solid $background-hover, $weight: var(--font-weight-semibold), $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
+@mixin button($max-width: 230px, $color: var(--color-button), $hover: var(--color-button-hover), $background: var(--color-button-background), $background-hover: var(--color-button-background-hover), $radius: var(--border-radius-input-field), $border: 2px solid var(--color-button-background), $border-hover: 2px solid $background-hover, $weight: var(--font-weight-semibold), $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
   appearance: none;
   background-color: $background;
   border: $border;
@@ -12,13 +12,17 @@
   font-weight: $weight;
   line-height: 19.6364px;
   margin-bottom: 0;
+  max-width: $max-width;
+  overflow: hidden;
   padding-bottom: 14px;
   padding-left: 21px;
   padding-right: 21px;
   padding-top: 14px;
   position: relative;
   text-decoration: none;
+  text-overflow: ellipsis;
   transition: $transition;
+  white-space: nowrap;
   width: auto;
 
   // Capsized tweaks
