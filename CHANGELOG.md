@@ -1,3 +1,8 @@
+### 7.2.2: 2021-04-21
+
+* Include missing heading-hero component
+* Add default core/table styles
+
 ### 7.2.1: 2021-04-21
 
 * Refine heading levels
