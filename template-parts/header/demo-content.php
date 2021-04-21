@@ -14,7 +14,7 @@ namespace Air_Light;
     <div class="logo">
       <?php include get_theme_file_path( THEME_SETTINGS['logo'] ); ?>
     </div>
-    <h1 class="main-heading" id="content">
+    <h1 class="heading-hero" id="content">
       <span class="accent">
         <?php echo esc_html_e( 'air-light ', 'air-light' ); ?><?php echo esc_html( AIR_LIGHT_VERSION ); ?>
       </span>

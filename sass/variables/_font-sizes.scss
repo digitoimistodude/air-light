@@ -1,15 +1,17 @@
 // CSS Variables for responsive fonts
 :root {
   // Heading font sizes
-  --font-size-h1: 51px;
-  --font-size-h2: 38px;
-  --font-size-h3: 28px;
-  --font-size-h4: 21px;
-  --font-size-h5: 17px;
+  --font-size-hero: 52px;
+  --font-size-h1: 40px;
+  --font-size-h2: 30px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-h5: 16px;
   --font-size-h6: 14px;
 
   // Heading font sizes in mobile
   @media (max-width: $container-mobile) {
+    --font-size-hero: 38px;
     --font-size-h1: 32px;
     --font-size-h2: 24px;
     --font-size-h3: 21px;

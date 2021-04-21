@@ -223,8 +223,7 @@ $color-wild-blue-yonder: #737fbf;
     }
   }
 
-  .main-heading {
-    @include responsive-font(32px, 62px);
+  .heading-hero {
     color: var(--color-white);
     margin: 0;
     padding: 2rem;
