@@ -28,8 +28,7 @@ function move_jquery_into_footer( $wp_scripts ) {
 function enqueue_theme_scripts() {
 
   // Enqueue global.css
-  wp_enqueue_style(
-    'styles',
+  wp_enqueue_style( 'styles',
     get_theme_file_uri( get_asset_file( 'global.css' ) ),
     [],
     filemtime( get_theme_file_path( get_asset_file( 'global.css' ) ) )
@@ -37,11 +36,11 @@ function enqueue_theme_scripts() {
 
   // Enqueue jquery and front-end.js
   wp_enqueue_script( 'jquery-core' );
-  wp_enqueue_script(
-    'scripts',
+  wp_enqueue_script( 'scripts',
     get_theme_file_uri( get_asset_file( 'front-end.js' ) ),
     [],
-    filemtime( get_theme_file_path( get_asset_file( 'front-end.js' ) ) ), true
+    filemtime( get_theme_file_path( get_asset_file( 'front-end.js' ) ) ),
+    true
   );
 
   // Required comment-reply script
@@ -49,7 +48,7 @@ function enqueue_theme_scripts() {
     wp_enqueue_script( 'comment-reply' );
   }
 
-  wp_localize_script( 'scripts', 'air_light_screenReaderText', array(
+  wp_localize_script( 'scripts', 'air_light_screenReaderText', [
     'expand'          => get_default_localization( 'Open child menu' ),
     'collapse'        => get_default_localization( 'Close child menu' ),
     'expand_for'      => get_default_localization( 'Open child menu for' ),
@@ -58,18 +57,14 @@ function enqueue_theme_scripts() {
     'collapse_toggle' => get_default_localization( 'Close main menu' ),
     'external_link'   => get_default_localization( 'External site:' ),
     'target_blank'    => get_default_localization( 'opens in a new window' ),
-  ) );
+  ] );
 
   // Add domains/hosts to disable external link indicators
-  wp_localize_script(
-    'scripts',
-    'air_light_externalLinkDomains',
-    [
+  wp_localize_script( 'scripts', 'air_light_externalLinkDomains', [
       'localhost:3000',
       'airdev.test',
       'airwptheme.com',
-    ]
-  );
+  ] );
 } // end air_light_scripts
 
 /**
@@ -98,7 +93,7 @@ function enqueue_polyfills() {
     wp_enqueue_script( 'air_light_legacy' );
     wp_add_inline_script( 'air_light_legacy', $script, true );
   }
-}
+} // end enqueue_polyfills
 
 /**
  * Returns the built asset filename and path depending on
@@ -113,4 +108,4 @@ function get_asset_file( $filename ) {
   $filetype = pathinfo( $filename )['extension'];
 
   return "${filetype}/${env}/${filename}";
-}
+} // end get_asset_file
