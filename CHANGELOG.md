@@ -1,8 +1,11 @@
 ### 7.2.1: 2021-04-21
 
-* Refine heading level
+* Refine heading levels
+* Refine button components
 * Add wide core/separator block
 * Add function end comments and few minor PHP styling changes
+* Truncate too long button texts
+* Components more presentable way in demo, fix button styles and sizes
 
 ### 7.2.0: 2021-04-21
 
