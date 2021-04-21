@@ -1,3 +1,9 @@
+### 7.2.1: 2021-04-21
+
+* Refine heading level
+* Add wide core/separator block
+* Add function end comments and few minor PHP styling changes
+
 ### 7.2.0: 2021-04-21
 
 * Fix critical style bug with default button hover and ghost button colors
