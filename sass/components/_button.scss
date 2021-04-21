@@ -1,4 +1,5 @@
-@mixin button($color: var(--color-button), $hover: var(--color-button-hover), $background: var(--color-button-background), $background-hover: var(--color-button-background-hover), $radius: 3px, $border: 0, $border-hover: var(--color-button-hover), $weight: 700, $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
+/* stylelint-disable number-max-precision */
+@mixin button($color: var(--color-button), $hover: var(--color-button-hover), $background: var(--color-button-background), $background-hover: var(--color-button-background-hover), $radius: var(--border-radius-input-field), $border: 2px solid var(--color-button-background), $border-hover: 2px solid $background-hover, $weight: var(--font-weight-semibold), $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
   appearance: none;
   background-color: $background;
   border: $border;
@@ -9,16 +10,32 @@
   font-family: var(--font-paragraph);
   font-size: var(--font-size-16);
   font-weight: $weight;
-  line-height: 1;
+  line-height: 19.6364px;
   margin-bottom: 0;
-  padding-bottom: 12px;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 12px;
+  padding-bottom: 14px;
+  padding-left: 21px;
+  padding-right: 21px;
+  padding-top: 14px;
   position: relative;
   text-decoration: none;
   transition: $transition;
   width: auto;
+
+  // Capsized tweaks
+  // https://seek-oss.github.io/capsize/
+  @media (min-width: 600px) {
+    &::before {
+      content: "";
+      display: table;
+      margin-bottom: -.25em;
+    }
+
+    &::after {
+      content: "";
+      display: table;
+      margin-top: -.25em;
+    }
+  }
 
   // Buttons usually already have arrows
   /* stylelint-disable a11y/no-display-none */
@@ -37,7 +54,7 @@
   &:hover,
   &:focus {
     background-color: $background-hover;
-    border-color: $border-hover;
+    border: $border-hover;
     color: $hover;
   }
 }

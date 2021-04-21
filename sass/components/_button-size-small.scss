@@ -1,7 +1,23 @@
+/* stylelint-disable number-max-precision */
 @mixin button-size-small() {
-  font-size: var(--font-size-16);
-  padding-bottom: 8px;
-  padding-left: 17px;
-  padding-right: 17px;
-  padding-top: 8px;
+  font-size: var(--font-size-15);
+  line-height: 20.9091px;
+  padding-bottom: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 12px;
+
+  // Capsized tweaks
+  // https://seek-oss.github.io/capsize/
+  &::before {
+    content: "";
+    display: table;
+    margin-bottom: -.3333em;
+  }
+
+  &::after {
+    content: "";
+    display: table;
+    margin-top: -.3333em;
+  }
 }
