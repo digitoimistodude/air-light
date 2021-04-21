@@ -1,151 +1,68 @@
-// -----------------------------------------------------------
 // Site navigation desktop layout
-//
-// The main layout for the website navigation, for a desktop
-// devices only.
-// -----------------------------------------------------------
+// The main layout for the website navigation, for a desktop devices only.
+
+// Settings
 $absolute-navigation: true;
-$nav-desktop-background-color: $color-default-background;
-$nav-link-padding-y: .6rem;
-$nav-link-padding-x: 2rem;
-$nav-link-padding-y-dropdown: .4rem;
-$nav-link-padding-x-dropdown: 1.5rem;
-$nav-links: (
-  'color': $color-white,
-  'hover-color': $color-white,
-  'font-weight': 700,
-  'font-size': 1.6rem
-);
-$nav-dropdown-links: (
-  'color': $color-links,
-  'hover-color': $color-hover,
-  'font-weight': 400,
-  'font-size': 1.4rem
-);
-$dropdown: (
-  'background': $color-white,
-  'gap': 1rem,
-  'width': 22rem,
-  'border-radius': 4px
-);
-$dropdown-toggle: (
-  'background': transparent,
-  'border': none, 'border-radius': 50%,
-  'color': $color-white,
-  'size': auto,
-  'arrow-size': 1rem
-);
-$dropdown-toggle-hover: (
-  'background': $color-white,
-  'border': 1px solid $color-white,
-  'color': $color-links,
-);
-$submenu-dropdown-toggle: (
-  'background': transparent,
-  'border': none,
-  'border-radius': 0,
-  'color': $color-links,
-  'height': auto,
-  'width': 3rem,
-  'arrow-size': 1rem
-);
-$submenu-dropdown-toggle-hover: (
-  'background': $color-white,
-  'border': none,
-  'color': $color-links,
-);
+$use-dropdown-bubble: true;
+$use-dropdown-toggle-animation: true;
 
-@if $absolute-navigation == true {
-  .nav-container {
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
+// CSS variables
+// These can be adjusted with media queries for in-between breakpoints
+:root {
+  // Dimensions, gaps and spacings
+  --border-radius-sub-menu: 0;
+  --box-shadow-navigation-static: 0 0 10px rgba(84, 87, 115, .1);
+  --dropdown-toggle-size: 12px;
+  --gap-dropdown: 1rem;
+  --gap-between-dropdown-toggle: 1.5rem;
+  --padding-main-level-vertical: .6rem;
+  --padding-main-level-horizontal: 2rem;
+  --padding-sub-menu-vertical: .6rem;
+  --padding-sub-menu-horizontal: 1.5rem;
+  --width-sub-menu: 22rem;
 
-    @media only screen and (min-width: $responsivenav) {
-      // Main level links
-      .nav-primary > ul > li > a,
-      .nav-primary > ul > li > button {
-        color: $color-white;
-        position: relative;
-      }
+  // Colors
+  --color-background-nav-desktop: var(--color-white);
+  --color-background-sub-menu: var(--color-white);
+  --color-border-sub-menu: rgba(41, 44, 61, .05);
+  --color-dropdown-toggle: var(--color-valhalla);
+  --color-sub-menu: var(--color-valhalla);
+  --color-hover-main-level: var(--color-white);
+  --color-hover-sub-menu: var(--color-valhalla);
+  --color-main-level: var(--color-white);
+  --color-current: var(--color-main);
 
-      .nav-primary > ul > li > a:hover {
-        color: $color-white;
-      }
-    }
-  }
+  // Font styles
+  --font-size-main-level: 17px;
+  --font-size-sub-menu: 16px;
+  --font-weight-main-level: var(--font-weight-bold);
+  --font-weight-sub-menu: var(--font-weight-regular);
 }
 
-@media only screen and (min-width: $responsivenav) {
-  .menu-item-has-children::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    /* stylelint-disable */
-    border-color: transparent transparent $color-white;
-    /* stylelint-enable */
-    border-style: solid;
-    border-width: 0 5px 5px;
-    left: 50%;
-    bottom: -10px;
-    transform: scale(0);
-    margin-left: -20px;
-    transform-origin: center bottom;
-    transition: none;
-  }
+// General navigation resets
+.site-header ul {
+  list-style: none;
+}
 
-  .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
-    transform: scale(1);
-    transition: all .25s cubic-bezier(.19, 1, .22, 1);
-  }
+@media only screen and (min-width: $width-max-mobile) {
+  .nav-container {
+    @if $absolute-navigation == false {
+      background-color: var(--color-background-nav-desktop);
+      box-shadow: var(--box-shadow-navigation-static);
+      position: relative;
+      z-index: 222;
+    }
 
-  .sub-menu {
-    background: map-get($dropdown, 'background');
-    width: map-get($dropdown, 'width');
-    left: 0;
-    z-index: -1;
-    border-top-left-radius: map-get($dropdown, 'border-radius');
-    border-top-right-radius: map-get($dropdown, 'border-radius');
-    border-bottom-left-radius: map-get($dropdown, 'border-radius');
-    border-bottom-right-radius: map-get($dropdown, 'border-radius');
-    border-left: 1px solid rgba(0, 0, 0, .05);
-    border-right: 1px solid rgba(0, 0, 0, .05);
-    border-bottom: 1px solid rgba(0, 0, 0, .05);
-    box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
-    transition: opacity .25s cubic-bezier(.19, 1, .22, 1);
-
-    // Hide by default
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: -9999px;
-
-    a {
-      line-height: 1.5;
+    @if $absolute-navigation == true {
+      background-color: transparent;
+      position: absolute;
+      width: 100%;
     }
   }
 
-  .nav-primary ul .sub-menu.toggled-on,
-  .menu-item-has-children:focus > .sub-menu,
-  .menu-item-has-children:hover > .sub-menu,
-  .menu-item-has-children.hover-intent > .sub-menu {
-    top: 100%;
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transform: translateY(0%);
-  }
-}
-
-@media only screen and (min-width: $responsivenav) {
-  .nav-container {
-    background: $nav-desktop-background-color;
-  }
-
-  @media only screen and (max-width: $responsivenav) {
-    .nav-primary ul li:hover > ul {
+  @media only screen and (max-width: $width-max-mobile) {
+    ul li:focus > ul,
+    ul li:hover > ul {
       display: block;
     }
   }
@@ -153,221 +70,274 @@ $submenu-dropdown-toggle-hover: (
   // Disable animations on IE10 + IE11
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     // Enable hovers
-    .nav-primary ul li:hover > ul {
+    ul li:focus > ul,
+    ul li:hover > ul {
       display: block;
     }
   }
 
-  // Make sure mobile nav-toggle is hidden on desktop
+  // Need to use display: none here to make sure mobile nav-toggle is visually hidden on desktop
+  /* stylelint-disable a11y/no-display-none */
   .nav-toggle {
     display: none;
   }
+  /* stylelint-enable */
 
-  // Start navigation
+  // Navigation wrapper
   .nav-primary {
-    padding-top: 0;
     padding-bottom: 0;
+    padding-top: 0;
+  }
 
-    .menu-items {
-      margin: 0;
+  // Navigation unordered list wrapper element
+  .menu-items {
+    align-items: center;
+    background-color: transparent;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  // Navigation list item
+  .menu-item {
+    margin: 0;
+    position: relative;
+  }
+
+  // Menu items
+  .menu-item > a {
+    align-items: center;
+    color: var(--color-main-level);
+    display: inline-flex;
+    font-size: var(--font-size-main-level);
+    font-weight: var(--font-weight-main-level);
+    padding-bottom: var(--padding-main-level-vertical);
+    padding-left: var(--padding-main-level-horizontal);
+    padding-right: var(--padding-main-level-horizontal);
+    padding-top: var(--padding-main-level-vertical);
+  }
+
+  .menu-item .sub-menu a {
+    align-items: center;
+    color: var(--color-sub-menu);
+    display: flex;
+    font-size: var(--font-size-sub-menu);
+    font-weight: var(--font-weight-sub-menu);
+    line-height: 1.5;
+    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-left: var(--padding-sub-menu-horizontal);
+    padding-right: var(--padding-sub-menu-horizontal);
+    padding-top: var(--padding-sub-menu-vertical);
+  }
+
+  // Current menu item color
+  .menu-item.current-menu-parent > a,
+  .menu-item.current-menu-item > a {
+    color: var(--color-current);
+  }
+
+  // Let's make space for the nav-toggle/arrow
+  .menu-item.menu-item-has-children a {
+    padding-bottom: 0;
+    padding-right: var(--gap-between-dropdown-toggle);
+    padding-top: 0;
+    transition: padding .2s cubic-bezier(.19, 1, .22, 1), background-color .2s cubic-bezier(.19, 1, .22, 1);
+  }
+
+  .menu-item > a:hover,
+  .menu-item > a:focus {
+    color: var(--color-hover-main-level);
+  }
+
+  .menu-item .sub-menu a:hover,
+  .menu-item .sub-menu a:focus {
+    color: var(--color-hover-sub-menu);
+  }
+
+  // Create animation illusion
+  /* stylelint-disable no-descending-specificity */
+  .sub-menu.toggled-on a,
+  .sub-menu.toggled-on .sub-menu a,
+  .menu-item.menu-item-has-children:hover .sub-menu a,
+  .menu-item.menu-item-has-children:focus .sub-menu a {
+    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-top: var(--padding-sub-menu-vertical);
+  }
+  /* stylelint-enable */
+
+  .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
+  .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
+    transform: scale(1);
+    transition: all .2s cubic-bezier(.19, 1, .22, 1);
+  }
+
+  // Dropdowns
+  .sub-menu {
+    background-color: var(--color-background-sub-menu);
+    border-bottom: 1px solid var(--color-border-sub-menu);
+    border-bottom-left-radius: var(--border-radius-sub-menu);
+    border-bottom-right-radius: var(--border-radius-sub-menu);
+    border-left: 1px solid var(--color-border-sub-menu);
+    border-right: 1px solid var(--color-border-sub-menu);
+    border-top-left-radius: var(--border-radius-sub-menu);
+    border-top-right-radius: var(--border-radius-sub-menu);
+    box-shadow: 0 25px 20px -10px rgba(5, 4, 25, .05);
+    left: 5%;
+    margin-left: 0;
+    margin-top: var(--gap-dropdown);
+    opacity: 0;
+    padding-bottom: .5rem;
+    padding-left: 0;
+    padding-top: .5rem;
+    position: absolute;
+    top: -9999px;
+    transition: padding .2s cubic-bezier(.19, 1, .22, 1);
+    visibility: hidden;
+    width: var(--width-sub-menu);
+    z-index: 9;
+
+    // All dropdowns in level 2 and after
+    .sub-menu {
+      left: 100%;
+      margin-left: 0;
+      margin-top: -5px;
+      top: 0;
+    }
+
+    li {
+      float: none;
       padding: 0;
-      background: transparent;
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    // General menu items
-    .menu-item {
-      position: relative;
-      margin: 0;
-
-      // Main level
-      > a {
-        padding: $nav-link-padding-y $nav-link-padding-x;
-        /* stylelint-disable */
-        color: map-get($nav-links, 'color');
-        font-size: map-get($nav-links, 'font-size');
-        font-weight: map-get($nav-links, 'font-weight');
-        /* stylelint-enable */
-        display: inline-flex;
-        align-items: center;
-
-        /* stylelint-disable */
-        min-height: map-get($dropdown-toggle, 'size');
-        /* stylelint-enable */
-
-        &.disabled {
-          color: $color-disabled;
-        }
-
-        // Actions in menu items
-        &:hover,
-        &:focus,
-        &:active,
-        &.highlighted,
-        &.current {
-          color: map-get($nav-links, 'hover-color');
-        }
-      }
-
-      // Dropdowns
-      .sub-menu {
-        width: map-get($dropdown, 'width');
-        left: 5%;
-        margin-left: 0;
-        padding-bottom: .5rem;
-        padding-top: .5rem;
-        padding-left: 0;
-        margin-top: map-get($dropdown, 'gap');
-        z-index: 999;
-
-        li {
-          float: none;
-          width: map-get($dropdown, 'width');
-          padding: 0;
-        }
-
-        &.sub-menu {
-          padding-left: 0;
-          padding-top: .5rem;
-          padding-bottom: .5rem;
-        }
-
-        &.sub-menu li {
-          margin: 0;
-        }
-
-        // All dropdowns in level 2 and after
-        .sub-menu {
-          top: 0;
-          left: 100%;
-          margin-left: 0;
-          margin-top: -5px;
-        }
-
-        a {
-          padding: $nav-link-padding-y-dropdown $nav-link-padding-x-dropdown;
-          /* stylelint-disable */
-          font-size: map-get($nav-dropdown-links, 'font-size');
-          font-weight: map-get($nav-dropdown-links, 'font-weight');
-          color: map-get($nav-dropdown-links, 'color');
-          /* stylelint-enable */
-          display: flex;
-          align-items: center;
-        }
-
-        a:hover,
-        a:focus,
-        a:active,
-        a.highlighted {
-          color: map-get($nav-dropdown-links, 'hover-color');
-        }
-
-        .disabled {
-          background: $color-white;
-          color: $color-disabled;
-        }
-      }
-
-      // Main level toggle arrow
-      button.dropdown-toggle {
-        /* stylelint-disable */
-        background-color: map-get($dropdown-toggle, 'background');
-        border: map-get($dropdown-toggle, 'border');
-        border-radius: map-get($dropdown-toggle, 'border-radius');
-        color: map-get($dropdown-toggle, 'color');
-        height: map-get($dropdown-toggle, 'height');
-        width: map-get($dropdown-toggle, 'width');
-        /* stylelint-enable */
-        padding: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-
-        svg {
-          /* stylelint-disable */
-          transition: transform $transition-duration ease-in;
-          width: map-get($dropdown-toggle, 'arrow-size');
-          height: map-get($dropdown-toggle, 'arrow-size');
-          /* stylelint-enable */
-        }
-
-        &.toggled-on svg {
-          transform: rotateX(180deg);
-        }
-      }
-
-      // Sub-level toggle arrow
-      ul li .dropdown-toggle {
-        background-color: map-get($submenu-dropdown-toggle, 'background');
-        border: map-get($submenu-dropdown-toggle, 'border');
-        border-radius: map-get($submenu-dropdown-toggle, 'border-radius');
-        color: map-get($submenu-dropdown-toggle, 'color');
-        height: map-get($submenu-dropdown-toggle, 'height');
-        width: map-get($submenu-dropdown-toggle, 'width');
-        flex-shrink: 0;
-        align-self: center;
-
-        /* stylelint-disable */
-        svg {
-          transform: rotate(-90deg) rotateX(0deg);
-          width: map-get($submenu-dropdown-toggle, 'arrow-size');
-          height: map-get($submenu-dropdown-toggle, 'arrow-size');
-        }
-        /* stylelint-enable */
-
-        &.toggled-on svg {
-          transform: rotate(-90deg) rotateX(180deg);
-        }
-      }
-
-      // Bubble arrow
-      > li > ul::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-        overflow: hidden;
-        border-style: dashed dashed solid;
-        top: -16px;
-        left: 31px;
-        border-width: 8px;
-        /* stylelint-disable */
-        border-color: transparent transparent $color-white;
-        /* stylelint-enable */
-      }
-    }
-
-    .menu-item.menu-item-has-children {
-      margin-right: .8rem;
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      // Add a pseudo element to fill the gap
-      // between menu item and sub menu to help hovering
-      &::after {
-        display: block;
-        position: absolute;
-        content: '';
-        height: map-get($dropdown, 'gap');
-        width: 100%;
-        top: 100%;
-      }
-
-      /* stylelint-disable */
-      > a {
-        // Let's make space for the nav-toggle/arrow
-        padding-right: 1.5rem;
-      }
-      /* stylelint-enable */
-    } // .menu-item.menu-item-has-children
-
-    // Don't use gap filler in sub menu items
-    .sub-menu .menu-item-has-children::after {
-      display: none;
+      width: var(--width-sub-menu);
     }
   }
-} // @media only screen and (min-width: $responsivenav)
+
+  // This is where the magic happens
+  .menu-item-has-children > .sub-menu.toggled-on,
+  .menu-item-has-children:focus > .sub-menu,
+  .menu-item-has-children:hover > .sub-menu {
+    // If you want to use "out"-animation, add this:
+    // .menu-item-has-children.hover-intent > .sub-menu {
+    opacity: 1;
+    top: 100%;
+    transform: translateY(0%);
+    visibility: visible;
+    z-index: 1;
+  }
+
+  .menu-item-has-children .sub-menu.toggled-on .sub-menu,
+  .menu-item-has-children .sub-menu .sub-menu.toggled-on,
+  .menu-item-has-children:focus .sub-menu .sub-menu,
+  .menu-item-has-children:hover .sub-menu .sub-menu {
+    margin-top: -5px;
+    top: 0;
+    z-index: 10;
+  }
+
+  // Sub menu items that have items under them
+  .menu-item.menu-item-has-children {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: .8rem;
+    position: relative;
+
+    // Add a pseudo element to fill the gap
+    // between menu item and sub menu to help hovering
+    &::after {
+      content: '';
+      display: block;
+      height: var(--gap-dropdown);
+      position: absolute;
+      top: 100%;
+      width: 100%;
+    }
+  }
+
+  // Toggle icon dimensions on desktop
+  .dropdown-toggle svg {
+    height: var(--dropdown-toggle-size);
+    width: var(--dropdown-toggle-size);
+
+    @if $use-dropdown-toggle-animation == true {
+      transition: all .35s cubic-bezier(.19, 1, .22, 1);
+    }
+  }
+
+  // Main level toggle icon
+  .dropdown-toggle.toggled-on svg {
+    transform: rotateX(180deg);
+  }
+
+  .dropdown-toggle {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: var(--color-dropdown-toggle);
+    display: inline-flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  // Sub-menu toggle icon
+  .sub-menu .dropdown-toggle {
+    width: 3rem;
+  }
+
+  .sub-menu .dropdown-toggle svg {
+    transform: rotate(-90deg) rotateX(0deg);
+  }
+
+  .sub-menu .dropdown-toggle.toggled-on svg {
+    transform: rotate(-90deg) rotateX(180deg);
+  }
+
+  // Smooth animation
+  @if $use-dropdown-toggle-animation == true {
+    .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
+    .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+    .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+      transform: translateY(0%) rotate(180deg);
+    }
+
+    // Smooth animation
+    /* stylelint-disable selector-max-specificity, selector-max-class */
+    .menu-item.menu-item-has-children .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
+    .menu-item.menu-item-has-children .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+    .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+      transform: translateY(0%) rotate(90deg);
+    }
+    /* stylelint-enable */
+  }
+
+  // Don't use gap filler in sub menu items
+  // Acceptable use of display: none here, for visual/technical purposes
+  /* stylelint-disable a11y/no-display-none */
+  .sub-menu .menu-item-has-children::after {
+    display: none;
+  }
+  /* stylelint-enable */
+
+  // Dropdown bubble
+  @if $use-dropdown-bubble == true {
+    .menu-item-has-children::before {
+      // Use of non-variable is acceptable here because bubble needs it
+      /* stylelint-disable sh-waqar/declaration-use-variable */
+      border-color: transparent transparent var(--color-white);
+      border-style: solid;
+      border-width: 0 5px 5px;
+      /* stylelint-enable */
+      bottom: -10px;
+      content: '';
+      display: block;
+      height: 0;
+      left: 50%;
+      margin-left: -20px;
+      position: absolute;
+      transform: scale(0);
+      transform-origin: center bottom;
+      transition: none;
+      width: 0;
+    }
+  }
+} // @media only screen and (min-width: $width-max-mobile)

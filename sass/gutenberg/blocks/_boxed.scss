@@ -1,0 +1,18 @@
+// Boxed block style
+.wp-block.is-style-boxed,
+.is-style-boxed {
+  border: 2px solid var(--color-paragraph);
+  color: var(--color-paragraph);
+  font-size: 17px;
+  font-style: normal;
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-paragraphs-blog);
+  padding: 2rem;
+  width: calc(100% - 4rem);
+}
+
+@media (min-width: $width-max-article + 40px) {
+  .gutenberg-content .is-style-boxed {
+    transform: translate(2rem, 0);
+  }
+}

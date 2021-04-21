@@ -1,0 +1,35 @@
+// Core/text-columns block
+.editor-styles-wrapper,
+.gutenberg-content {
+  .wp-block-text-columns.alignfull {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+  }
+
+  // Loops to enumerate the classes for columns.
+  @for $i from 1 through 9 {
+    .wp-block-text-columns.columns-#{$i}.alignfull {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    }
+
+    .wp-block-text-columns.columns-#{$i} {
+      @media (max-width: 900px) {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: repeat(2, 1fr);
+        width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+
+        .wp-block-column {
+          margin: 0;
+          width: 100%;
+        }
+      }
+
+      @media (max-width: $container-mobile) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}

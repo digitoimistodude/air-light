@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by: Roni Laukkarinen
- * @Last Modified time: 2020-04-28 09:45:24
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-02-23 13:40:37
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '6.1.2' );
+define( 'AIR_LIGHT_VERSION', '7.2.2' );
 
 /**
  * Theme settings
@@ -37,7 +37,7 @@ $theme_settings = [
   /**
    * Logo and featured image
    */
-  'default_featured_image' => get_theme_file_uri( 'images/default.jpg' ),
+  'default_featured_image' => null,
   'logo' => '/svg/logo.svg',
 
   /**
@@ -155,3 +155,4 @@ require get_theme_file_path( '/inc/template-tags.php' );
 
 // Run theme setup
 add_action( 'init', __NAMESPACE__ . '\theme_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );

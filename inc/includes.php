@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:07:17
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-03-02 10:52:23
+ * @Last Modified by: Roni Laukkarinen
+ * @Last Modified time: 2021-04-14 18:20:51
  * @package air-light
  */
 
@@ -13,6 +13,9 @@ namespace Air_Light;
 
 // Theme setup
 require get_theme_file_path( '/inc/includes/theme-setup.php' );
+
+// Localized strings
+require get_theme_file_path( '/inc/includes/localization.php' );
 
 // Nav Walker
 require get_theme_file_path( '/inc/includes/nav-walker.php' );

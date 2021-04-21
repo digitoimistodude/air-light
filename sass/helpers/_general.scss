@@ -1,31 +1,17 @@
-// ---------------------------------------------------------
 // Helpers
 //
 // Mixins and other essentials for global theme development.
-// ---------------------------------------------------------
 
 // General
 @mixin hiddentext() {
-  text-indent: -9999px;
-  overflow: hidden;
-  text-decoration: none;
   display: block;
   font-size: 0;
+  overflow: hidden;
   text-align: start;
+  text-decoration: none;
+  text-indent: -9999px;
 }
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
-}
-
-// Global link helper
-// This is useful in services -type of areas where the whole block is a link
-// Remember to define aria-label or screen-reader-text for accessibility
-a.global-link {
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-  position: absolute;
-  top: 0;
-  left: 0;
 }

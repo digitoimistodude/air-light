@@ -1,0 +1,12 @@
+// Font family settings
+// You can define your own font families here, like --font-barlow
+// and then attach them to elements: --font-paragraph: var(--font-barlow)
+:root {
+  --font-serif: sans-serif;
+  --font-sans: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+  --font-monospace: 'Inconsolata', 'Menlo', 'Monaco', 'Consolas', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
+
+  // Fonts in use for content
+  --font-paragraph: var(--font-sans);
+  --font-heading: var(--font-sans);
+}

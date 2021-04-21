@@ -1,32 +1,34 @@
-// -----------------------------------------------------------
 // Site header
 //
 // The very top of the site, element that usually includes
 // the site navigation and search for example.
-// -----------------------------------------------------------
 
 .site-header {
-  position: relative;
-  z-index: 15;
-  padding-bottom: var(--padding-site-header-vertical);
-  padding-top: var(--padding-site-header-vertical);
-  padding-left: var(--padding-container-horizontal);
-  padding-right: var(--padding-container-horizontal);
-  max-width: $grid-base-size;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-
-  // Easier flex way to align logo and navigation
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: $width-grid-base;
+  padding-bottom: var(--padding-site-header-vertical);
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  padding-top: var(--padding-site-header-vertical);
+  position: relative;
+  z-index: 15;
 }
 
 .site-title {
+  line-height: 0;
   margin: 0;
 
   a {
-    display: flex;
     align-items: center;
+    display: flex;
   }
+}
+
+// Nav container visibility fix
+.nav-container {
+  z-index: 10;
 }

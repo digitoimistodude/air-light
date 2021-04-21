@@ -1,0 +1,49 @@
+/* stylelint-disable number-max-precision */
+@mixin button($max-width: 230px, $color: var(--color-button), $hover: var(--color-button-hover), $background: var(--color-button-background), $background-hover: var(--color-button-background-hover), $radius: var(--border-radius-input-field), $border: var(--border-width-input-field) solid var(--color-button-background), $border-hover: var(--border-width-input-field) solid $background-hover, $weight: var(--font-weight-semibold), $arrow: false, $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
+  appearance: none;
+  background-color: $background;
+  border: $border;
+  border-radius: $radius;
+  color: $color;
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--font-paragraph);
+  font-size: var(--font-size-16);
+  font-weight: $weight;
+  line-height: 19.6364px;
+  margin-bottom: 0;
+  max-width: $max-width;
+  overflow: hidden;
+  padding-bottom: calc(14px - calc(var(--border-width-input-field) * 2));
+  padding-left: calc(21px - calc(var(--border-width-input-field) * 2));
+  padding-right: calc(21px - calc(var(--border-width-input-field) * 2));
+  padding-top: calc(14px - calc(var(--border-width-input-field) * 2));
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  transition: $transition;
+  white-space: nowrap;
+  width: auto;
+
+  // Buttons usually already have arrows
+  /* stylelint-disable a11y/no-display-none */
+  &.is-external-link::after {
+    display: none;
+  }
+  /* stylelint-enable */
+
+  // Arrow icon
+  @if $arrow {
+    svg {
+      margin-left: 2rem;
+    }
+  }
+
+  &.focus,
+  &:hover,
+  &:focus {
+    background-color: $background-hover;
+    border: $border-hover;
+    color: $hover;
+  }
+}

@@ -1,14 +1,15 @@
+// Search
+
 .block-search,
 .block-search-results {
-  background-color: $color-white;
+  background-color: var(--color-white);
 }
 
 .block-search form {
   display: grid;
-  grid-template-columns: 9fr 1fr;
-
   /* autoprefixer: off */
   grid-gap: 1rem;
+  grid-template-columns: 9fr 1fr;
 
   input,
   label {
@@ -27,16 +28,16 @@
   }
 
   .row-result {
+    border-top: 2px solid var(--color-border-forms);
     padding: 2rem 0;
-    border-top: 2px solid $color-border-forms;
 
     &:last-of-type {
-      border-bottom: 2px solid $color-border-forms;
+      border-bottom: 2px solid var(--color-border-forms);
     }
   }
 
   h3 {
-    @include responsive-font($font-size-min-h4, $font-size-max-h4);
+    font-size: var(--font-size-h4);
     margin-bottom: 1rem;
   }
 
@@ -44,13 +45,14 @@
     margin-top: 1rem;
   }
 
-  .tags li a {
-    background-color: $color-tags-and-search-items;
-    color: $color-main;
+  .tags a {
+    background-color: var(--color-background-tag);
+    color: var(--color-main);
 
-    &:hover {
-      background-color: $color-main;
-      color: $color-tags-and-search-items;
+    &:hover,
+    &:focus {
+      background-color: var(--color-main);
+      color: var(--color-background-tag);
     }
   }
 }

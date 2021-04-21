@@ -1,10 +1,8 @@
-// -----------------------------------------------------------
 // Typography
 //
 // Everything around fonts, font size definitions and typeset
 // presets. No modular scale, but a sophisticated viewport
 // based responsive mixin can be found in _helpers.scss
-// -----------------------------------------------------------
 
 // Set root size for rems
 /* stylelint-disable declaration-property-unit-allowed-list */
@@ -15,46 +13,13 @@
 
 // Start typography settings
 body {
-  font-size: var(--font-size-medium);
-  font-family: $font-paragraphs;
-  color: $color-paragraphs;
-  font-weight: $font-weight-paragraphs;
-
-  // Font smoothing options
-  text-size-adjust: none;
-  text-rendering: geometricPrecision;
-  -webkit-font-smoothing: antialiased;
+  color: var(--color-paragraph);
+  font-family: var(--font-paragraph);
+  font-size: var(--font-size-default);
   -moz-osx-font-smoothing: grayscale;
-}
-
-// Links
-a {
-  color: $color-links;
-  text-decoration: none;
-
-  &:hover {
-    color: $color-hover;
-  }
-}
-
-// Special link styles for example in blog posts, use with @extend
-%textlink {
-  position: relative;
-  overflow: visible;
-  font-weight: 700;
-  z-index: 1;
-  text-decoration: none;
-  transition: all .18s ease-in-out;
-  display: inline-flex;
-  color: $color-paragraphs;
-  border-bottom: 1px solid $color-links;
-  box-shadow: inset 0 -.1rem 0 $color-links;
-
-  &:hover,
-  &:focus {
-    box-shadow: inset 0 -100px 0 $color-links;
-    color: $color-white;
-  }
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--font-weight-paragraphs);
+  text-rendering: geometricPrecision;
 }
 
 // Defaults
@@ -77,13 +42,8 @@ td,
 table,
 tr,
 %default {
-  font-size: var(--font-size-small);
-  letter-spacing: -.003em;
-  line-height: $line-height-paragraphs;
-
-  @media (min-width: 770px) {
-    @include responsive-font($font-size-min, $font-size-max);
-  }
+  font-size: var(--font-size-paragraphs);
+  line-height: var(--line-height-paragraphs);
 }
 
 // Heading defaults
@@ -93,11 +53,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: $color-headings;
-  font-family: $font-headings;
-  font-weight: $font-weight-headings;
-  margin-top: 2.7rem;
-  margin-bottom: 2.7rem;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-headings);
+  margin-bottom: var(--margin-between-paragraphs);
+  margin-top: var(--margin-between-paragraphs);
 }
 
 h2,
@@ -105,39 +65,33 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: $line-height-headings;
+  line-height: var(--line-height-headings);
 }
 
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
-h1,
-%h1 {
-  @include responsive-font($font-size-min-h1, $font-size-max-h1);
+h1 {
+  font-size: var(--font-size-h1);
 }
 
-h2,
-%h2 {
-  @include responsive-font($font-size-min-h2, $font-size-max-h2);
+h2 {
+  font-size: var(--font-size-h2);
 }
 
-h3,
-%h3 {
-  @include responsive-font($font-size-min-h3, $font-size-max-h3);
+h3 {
+  font-size: var(--font-size-h3);
 }
 
-h4,
-%h4 {
-  @include responsive-font($font-size-min-h4, $font-size-max-h4);
+h4 {
+  font-size: var(--font-size-h4);
 }
 
-h5,
-%h5 {
-  @include responsive-font($font-size-min-h5, $font-size-max-h5);
+h5 {
+  font-size: var(--font-size-h5);
 }
 
-h6,
-%h6 {
-  @include responsive-font($font-size-min-h6, $font-size-max-h6);
+h6 {
+  font-size: var(--font-size-h6);
 }
 
 h1:first-child,
@@ -166,7 +120,7 @@ ol {
 // Bold.
 b,
 strong {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 // Italic.
@@ -177,30 +131,29 @@ i {
 
 // Inline small text.
 small {
-  line-height: 1;
-  font-size: .875em;
+  font-size: .87em;
 }
 
 // Default paragraphs
 p {
-  margin-top: 2.9rem;
   margin-bottom: 2.9rem;
+  margin-top: 2.9rem;
 }
 
 // Quotes.
 blockquote {
-  clear: both;
   border: 0 none;
-  position: relative;
-  padding-bottom: 3rem;
+  clear: both;
   margin: 0;
+  padding-bottom: 3rem;
+  position: relative;
 
   p {
+    color: var(--color-blockquote);
     font-style: italic;
     margin-bottom: 0;
-    position: relative;
     overflow: visible;
-    color: $color-blockquotes;
+    position: relative;
   }
 
   @media (min-width: $container-ipad) {
@@ -212,10 +165,10 @@ blockquote {
     content: '';
     display: block;
     height: 4px;
-    position: absolute;
     left: 0;
-    top: 0;
     max-width: 147px;
+    position: absolute;
+    top: 0;
 
     @media (min-width: $container-mobile) {
       width: 30%;
@@ -240,56 +193,42 @@ p:last-child {
 
 // images
 img {
-  -ms-interpolation-mode: bicubic;
   height: auto;
-  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
   max-width: 100%;
+  vertical-align: middle;
 }
 
 // Figures and captions
 figure {
-  position: relative;
   margin-bottom: 1rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  position: relative;
 }
 
 // Figcaption.
 figcaption {
-  margin-top: 0;
   font-style: normal;
-  font-weight: $font-weight-paragraphs;
-}
-
-// Horizontal rule.
-hr {
-  background-image: linear-gradient(to bottom, rgba(#000, 0) 50%, #000 50%);
-  background-repeat: repeat-x;
-  background-size: 2px 2px;
-  background-position: 0 50%;
-  border: 0;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 0;
-  height: 0;
+  font-weight: var(--font-weight-paragraphs);
+  margin-top: 0;
 }
 
 kbd,
 pre,
 samp {
-  font-family: $font-monospace;
+  font-family: var(--font-monospace);
 }
 
 // Code block.
 code {
-  color: $color-code-blocks;
-  background-color: $color-code-blocks-background;
-  font-family: $font-monospace;
-  line-height: 1;
-  padding: .375rem .5rem;
+  background-color: var(--color-background-code-inline);
   border-radius: .3rem;
+  color: var(--color-code-block);
+  font-family: var(--font-monospace);
   font-size: inherit; // normalize.css sets this as 1em by default
+  padding: .37rem .5rem;
 
   pre & {
     display: inline-block;
@@ -301,8 +240,8 @@ code {
 pre {
   border-radius: .3rem;
   display: block;
+  margin-bottom: 2rem;
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  margin-bottom: 2rem;
 }

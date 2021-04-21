@@ -6,7 +6,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 14:20:18
+ * @Last Modified time: 2021-01-12 16:31:11
  **/
 
 namespace Air_Light;
@@ -32,7 +32,6 @@ function theme_setup() {
   }
 
   // Run the rest of the setup
-  build_theme_support();
   build_taxonomies();
   build_post_types();
 }
@@ -97,6 +96,8 @@ function build_theme_support() {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'align-wide' );
+  add_theme_support( 'wp-block-styles' );
   add_theme_support(
     'html5',
     [
@@ -105,12 +106,8 @@ function build_theme_support() {
       'comment-list',
       'gallery',
       'caption',
+      'script',
+      'style',
     ]
   );
 }
-
-/**
- * Clean up some air-helper stuff by default
- */
-remove_action( 'admin_init', __NAMESPACE__ . '\air_helper_clean_admin_notices', 9999 );
-// add_filter( 'air_helper_sendgrid', '__return_false' );

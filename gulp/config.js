@@ -1,3 +1,5 @@
+const themeDir = './';
+
 module.exports = {
   cleancss: {
     opts: {
@@ -31,30 +33,32 @@ module.exports = {
     }
   },
   browsersync: {
-    src: ['css/*'],
+    // Important! If src is wrong, styles will not inject to the browser
+    src: [themeDir + 'css/**/*'],
     opts: {
       logLevel: 'debug',
       injectChanges: true,
-      proxy: 'airdev.test',
+      proxy: 'https://airdev.test',
       browser: 'Google Chrome',
       open: false,
-      notify: true
+      notify: true,
+      // Generate with: mkdir -p /var/www/certs && cd /var/www/certs && mkcert localhost 192.168.x.xxx ::1
+      https: {
+        key: "/var/www/certs/localhost-key.pem",
+        cert: "/var/www/certs/localhost.pem",
+      }
     },
-    watch: [
-      '**/*.php',
-      'js/src/**/*.js'
-    ]
   },
   styles: {
-    gutenberg: 'sass/base/gutenberg.scss',
-    main: 'sass/base/global.scss',
-    src: 'sass/**/*.{sass,scss}',
-    dest: 'css',
-    exclude: ['!' + 'sass/navigation/_burger.scss', '!' + 'sass/base/_normalize.scss', '!' + 'css/global.css', '!' + 'css/global.min.css'],
+    gutenberg: themeDir + 'sass/base/gutenberg.scss',
+    src: themeDir + 'sass/*.scss',
+    watch: themeDir + 'sass/**/*.{sass,scss}',
+    development: themeDir + 'css/dev/',
+    production: themeDir + 'css/prod/',
     stylelint: {
+      src: themeDir + 'sass/*/*.scss',
       opts: {
         fix: false,
-        ignoreFiles: ['!*.scss'],
         reporters: [{
           formatter: 'string',
           console: true,
@@ -66,35 +70,37 @@ module.exports = {
     opts: {
       development: {
         bundleExec: true,
-        style: 'expanded',
+        outputStyle: 'expanded',
         debugInfo: true,
-        lineNumbers: true,
         errLogToConsole: true,
-        includePaths: ['node_modules/']
+        includePaths: [themeDir + 'node_modules/']
       },
       production: {
         bundleExec: true,
-        style: 'compressed',
+        outputStyle: 'compressed',
         debugInfo: true,
-        lineNumbers: true,
         errLogToConsole: true,
-        includePaths: ['node_modules/']
+        includePaths: [themeDir + 'node_modules/']
       }
     }
   },
   js: {
-    main: 'js/src/*.js',
-    src: 'js/src/**/*.js',
-    dest: 'js/dist/'
+    src: themeDir + 'js/src/*.js',
+    watch: themeDir + 'js/src/**/*',
+    production: themeDir + 'js/prod/',
+    development: themeDir + 'js/dev/',
   },
   php: {
-    src: '**/*.php'
+    watch: [
+      themeDir + '*.php',
+      themeDir + 'inc/**/*.php',
+      themeDir + 'template-parts/**/*.php'
+    ]
   },
   phpcs: {
-    src: ['**/*.php', '!' + 'node_modules/**/*'],
     opts: {
       bin: '/usr/local/bin/phpcs',
-      standard: 'phpcs.xml',
+      standard: themeDir + 'phpcs.xml',
       warningSeverity: 0
     }
   }

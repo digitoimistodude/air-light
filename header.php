@@ -6,8 +6,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:17:32
- * @Last Modified by: Roni Laukkarinen
- * @Last Modified time: 2020-05-11 13:17:32
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-02-25 13:47:40
  *
  * @package air-light
  */
@@ -15,6 +15,7 @@
 namespace Air_Light;
 
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 
@@ -27,19 +28,10 @@ namespace Air_Light;
 </head>
 
 <body <?php body_class( 'no-js' ); ?>>
+  <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( get_default_localization( 'Skip to content' ) ); ?></a>
+
   <?php wp_body_open(); ?>
   <div id="page" class="site">
-
-  <?php
-    // Reminder for translated accessible labels
-    if ( function_exists( 'pll_the_languages' ) && function_exists( 'ask_e' ) ) {
-      $screenreadertext_skip = ask__( 'Accessibility: Skip to content' );
-    } else {
-      $screenreadertext_skip = 'Skip to content';
-    }
-  ?>
-
-    <a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( $screenreadertext_skip ); ?></a>
 
     <div class="nav-container">
       <header class="site-header">

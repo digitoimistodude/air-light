@@ -1,0 +1,15 @@
+@mixin button-style-ghost($background: transparent, $background-hover: var(--color-button-background), $color: var(--color-button-background), $hover: var(--color-white), $radius: var(--border-radius-input-field), $border: var(--border-width-input-field) solid var(--color-button-background), $transition: all .08s cubic-bezier(.25, .46, .45, .94)) {
+  background-color: $background;
+  border: $border;
+  border-radius: $radius;
+  color: $color;
+  transition: $transition;
+
+  &.focus,
+  &:focus,
+  &:hover {
+    background-color: $background-hover;
+    border-color: $background-hover;
+    color: $hover;
+  }
+}

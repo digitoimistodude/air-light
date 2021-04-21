@@ -1,0 +1,33 @@
+{
+  "formatters": [
+    "css",
+    "summary",
+    "html",
+    "js"
+  ],
+  "parsers": [
+    "css",
+    "sass",
+    "html",
+    "javascript"
+  ],
+  "extends": [
+    "web-recommended",
+    "accessibility"
+  ],
+  "hints": {
+    "axe/aria": "error",
+    "axe/color": "error",
+    "axe/forms": "error",
+    "axe/language": "error",
+    "axe/name-role-value": "error",
+    "axe/parsing": "error",
+    "axe/semantics": "error",
+    "axe/sensory-and-visual-cues": "error",
+    "axe/structure": "error",
+    "axe/text-alternatives": "error",
+    "button-type": "error",
+    "compat-api/css": "error",
+    "compat-api/html": "error"
+  }
+}

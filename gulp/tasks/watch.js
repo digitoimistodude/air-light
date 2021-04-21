@@ -12,9 +12,9 @@ const {
 // Task
 function watchfiles() {
   bs.init(config.browsersync.src, config.browsersync.opts);
-  watch(config.styles.src, series('styles', 'gutenbergstyles', 'scsslint')).on('error', handleError('styles'));
-  watch(config.php.src, series('phpcs')).on('change', bs.reload);
-  watch(config.js.src, series('js')).on('change', bs.reload);
+  watch(config.styles.watch, series('devstyles', 'prodstyles', 'lintstyles')).on('error', handleError());
+  watch(config.php.watch, series('phpcs')).on('change', bs.reload);
+  watch(config.js.watch).on('change', series('js'), bs.reload);
 };
 
 exports.watch = watchfiles;

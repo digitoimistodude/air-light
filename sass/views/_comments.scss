@@ -1,100 +1,98 @@
-// --------------------------------------------------------
 // Comments
 //
 // WordPress built-in comments with comment_form().
 // Custom comment template can be found in inc/comments.php
-// --------------------------------------------------------
-
 /* stylelint-disable no-descending-specificity */
 .comments-area {
-  margin-top: 50px;
   margin-bottom: 0;
+  margin-top: 50px;
   overflow: visible;
 }
 
 .comment-list {
-  padding: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
+  padding: 0;
 
   li {
-    font-size: var(--font-size-tiny);
-    padding: 0;
-    margin-top: 0;
+    font-size: var(--font-size-14);
     margin-bottom: 70px;
+    margin-top: 0;
+    padding: 0;
+  }
 
-    p {
-      font-size: var(--font-size-tiny);
-      color: $color-darkgrey;
+  p {
+    color: var(--color-comment-text);
+    font-size: var(--font-size-14);
+  }
+
+  .avatar {
+    border-radius: 50%;
+    float: right;
+  }
+
+  .comment-author {
+    color: var(--color-comment-author-text);
+    font-size: var(--font-size-h4);
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  a,
+  .comments-link a {
+    box-shadow: none;
+    color: var(--color-link-comment);
+  }
+
+  .comment-author a {
+    color: var(--color-paragraph);
+  }
+
+  .comment-time {
+    font-size: var(--font-size-14);
+    margin: 0;
+    padding: 0;
+
+    a {
+      color: var(--color-link-comment-time-anchor);
     }
 
-    .avatar {
-      float: right;
-      border-radius: 50%;
+    &:focus,
+    &:hover {
+      opacity: 1;
     }
+  }
 
-    .comment-author {
-      @extend %h4;
-      color: $color-paragraphs;
-      margin-top: 0;
-      margin-bottom: 10px;
-      padding: 0;
-    }
-
-    a,
-    .comments-link a {
-      color: $color-comments-link;
-      box-shadow: none;
-    }
-
-    .comment-author a {
-      color: $color-paragraphs;
-    }
-
-    .comment-time {
-      font-size: var(--font-size-tiny);
-      padding: 0;
-      margin: 0;
-
-      a {
-        color: $color-darkgrey;
-      }
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-
-    .comment-time svg {
-      fill: $color-darkgrey;
-      position: relative;
-      top: 2px;
-      margin-right: 5px;
-    }
+  .comment-time svg {
+    fill: var(--color-link-comment-time-anchor);
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
   }
 }
 
 .comments-link {
-  font-size: var(--font-size-tiny);
-  text-align: right;
-  display: inline-flex;
   align-items: center;
+  display: inline-flex;
+  font-size: var(--font-size-14);
+  text-align: right;
 
   a {
-    color: $color-comments-link;
+    color: var(--color-link-comment);
   }
 
   &:hover,
   &:focus,
   a:hover,
   a:focus {
-    color: $color-black;
+    color: var(--color-black);
   }
 
   svg {
     margin-right: 7px;
-    top: -1px;
     position: relative;
+    top: -1px;
   }
 }
 
@@ -102,8 +100,8 @@
 .comment-form {
   @media (min-width: $container-mobile) {
     display: grid;
+    grid-gap: 1em;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1em;
 
     /* autoprefixer: off */
     justify-content: center;
@@ -132,40 +130,40 @@
     margin-top: 0;
 
     input {
-      padding: 15px;
       border-width: 1px;
+      padding: 15px;
       width: 100%;
     }
   }
 
   .comment-form-email {
-    margin-right: 0;
     clear: right;
     margin-bottom: 20px;
+    margin-right: 0;
     margin-top: 0;
 
     input {
-      padding: 15px;
       border-width: 1px;
+      padding: 15px;
       width: 100%;
     }
   }
 
   .comment-form-url {
-    position: relative;
-    margin-top: 0;
     margin-bottom: 30px;
+    margin-top: 0;
+    position: relative;
 
     input {
-      padding: 15px;
       border-width: 1px;
+      padding: 15px;
       width: 100%;
     }
   }
 
   .form-submit {
-    display: block;
     clear: both;
+    display: block;
     margin-bottom: 0;
     margin-top: 0;
   }

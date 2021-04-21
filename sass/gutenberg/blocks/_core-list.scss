@@ -1,0 +1,9 @@
+// List block
+.editor-styles-wrapper,
+.gutenberg-content {
+  .wp-block-categories-list,
+  ol:not([class]),
+  ul:not([class]) {
+    padding-left: calc(2rem + var(--margin-between-paragraphs));
+  }
+}

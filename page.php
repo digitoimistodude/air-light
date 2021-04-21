@@ -8,8 +8,8 @@
  * different template.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-01-16 09:39:53
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-01-12 16:10:58
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */
@@ -17,30 +17,24 @@
 namespace Air_Light;
 
 the_post();
+get_header(); ?>
 
-get_header();
+<main class="site-main">
 
-get_template_part( 'template-parts/hero', get_post_type() ); ?>
+  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
+  <section class="block block-page has-light-bg">
+    <div class="container">
 
-<div class="content-area">
-  <main id="main" class="site-main">
+      <h1 id="content"><?php the_title(); ?></h1>
+      <?php the_content(); ?>
 
-    <section class="block block-page has-light-bg">
-      <div class="container">
+      <?php if ( get_edit_post_link() ) {
+        edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
+      } ?>
 
-        <h1 id="content"><?php the_title(); ?></h1>
-        <?php the_content(); ?>
+    </div><!-- .container -->
+  </section>
 
-        <?php if ( get_edit_post_link() ) : ?>
-          <?php
-            edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
-          ?>
-        <?php endif; ?>
-
-      </div><!-- .container -->
-    </section>
-
-  </main><!-- #main -->
-</div><!-- #primary -->
+</main>
 
 <?php get_footer();

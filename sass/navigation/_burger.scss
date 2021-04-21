@@ -10,9 +10,9 @@ $sass-burger-add-vendor-prefixes: true !default;
 @mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
   $burger-height: $height !global;
   $burger-gutter: $gutter !global;
-  position: relative;
-  margin-top: $height + $gutter;
   margin-bottom: $height + $gutter;
+  margin-top: $height + $gutter;
+  position: relative;
   user-select: none;
 
   @if $sass-burger-add-vendor-prefixes {
@@ -22,10 +22,12 @@ $sass-burger-add-vendor-prefixes: true !default;
   &,
   &::before,
   &::after {
-    display: block;
-    width: $width;
-    height: $height;
     background-color: $color;
+    display: block;
+    height: $height;
+    transition-duration: $transition-duration;
+    transition-property: background-color, transform;
+    width: $width;
 
     @if $border-radius != 0 {
       border-radius: $border-radius;
@@ -34,18 +36,16 @@ $sass-burger-add-vendor-prefixes: true !default;
     @if $sass-burger-add-vendor-prefixes {
       transition-property: background-color, -o-transform;
     }
-    transition-property: background-color, transform;
 
     @if $sass-burger-add-vendor-prefixes {
       transition-duration: $transition-duration;
     }
-    transition-duration: $transition-duration;
   }
 
   &::before,
   &::after {
-    position: absolute;
     content: '';
+    position: absolute;
   }
 
   &::before {

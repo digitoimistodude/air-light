@@ -14,17 +14,14 @@
 
 namespace Air_Light;
 
-// Featured image.
-$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS['default_featured_image']; // phpcs:ignore
+// Featured image for Theme Checker (it's a requirement for theme to pass in official Theme directory)
+// NB! Our dev version uses newtheme.sh build script which cleans ups things including this next line
+$thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS['default_featured_image'];
 
 get_header(); ?>
 
-<div class="content-area">
-  <main id="main" class="site-main">
-
-    <?php get_template_part( 'template-parts/header/demo-content' ); ?>
-
-  </main><!-- #main -->
-</div><!-- #primary -->
+<main class="site-main">
+  <?php get_template_part( 'template-parts/header/demo-content' ); ?>
+</main>
 
 <?php get_footer();

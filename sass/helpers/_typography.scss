@@ -1,17 +1,18 @@
-/**
- * Typography helpers
- */
+// Typography helpers
 
 /* stylelint-disable declaration-property-unit-allowed-list */
 // Helper mixin for self-hosted fonts
 @mixin fontFace($family, $src, $weight: normal, $style: normal) {
   @font-face {
-    font-family: $family;
+    // @link https://css-tricks.com/almanac/properties/f/font-display/
     font-display: auto;
-    src: url('#{$src}.eot');
-    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), url('#{$src}.woff') format('woff'), url('#{$src}.woff2') format('woff2'), url('#{$src}.ttf') format('truetype'), url('#{$src}.svg##{$family}') format('svg');
+    font-family: $family;
     font-style: $style;
     font-weight: $weight;
+
+    // Slightly Deeper Browser Support
+    // @source https://css-tricks.com/snippets/css/using-font-face/#slightly-deeper-browser-support
+    src: url('#{$src}.woff') format('woff'), url('#{$src}.woff2') format('woff2'), url('#{$src}.ttf') format('truetype');
   }
 }
 

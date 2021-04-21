@@ -8,15 +8,17 @@
 
   // Margins
   --margin-between-text-elements: 4rem;
+  --margin-wp-block-image: 4rem;
+  --margin-between-paragraphs: 2.7rem;
 
   // Mid-sized screens
-  @media (max-width: $grid-base-size + 150px) {
+  @media (max-width: $width-grid-base + 150px) {
     --padding-container-horizontal: 2rem;
   }
 
   // When navigation transforms to a responsive hamburger menu
-  @media (max-width: $responsivenav) {
-    --padding-site-header-vertical: 1rem;
+  @media (max-width: $width-max-mobile) {
+    --padding-site-header-vertical: 2rem;
   }
 
   // iPad

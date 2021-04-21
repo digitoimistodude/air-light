@@ -1,37 +1,71 @@
-// Base colors
-$color-white: #fff;
-$color-black: #222;
-$color-shadows: #b8bbb3;
-$color-darkgrey: #4f5964;
-$color-lightgrey: #f5f5f5;
+// CSS variables
+// Define names:
+// For AAA: https://www.color-blindness.com/color-name-hue/
+// For AA: https://chir.ag/projects/name-that-color/
+// ------------------------------------------------------
+:root {
+  // Brand color pool
+  --color-black: #222;
+  --color-black-rock: #2b303c;
+  --color-blue-chalk: #ece6f2;
+  --color-east-bay: #545773;
+  --color-pattens-blue: #eaf1f8;
+  --color-science-blue: #0049d1;
+  --color-scropion: #5f5f5f;
+  --color-valhalla: #2a2d3e;
+  --color-white: #fff;
 
-// Required brand colors
-$color-main: #3962c9;
-$color-dark: darken($color-main, 40%);
-$color-shade: #03061b;
+  // Main element colors
+  --color-heading: var(--color-main);
+  --color-main: var(--color-valhalla);
+  --color-paragraph: var(--color-east-bay);
 
-// Official brand colors
-$color-bright: #81a9ff;
+  // Modern link that has background effect on hover
+  --color-link-border-bottom: var(--color-science-blue);
+  --color-link-border-focus: var(--color-black);
+  --color-link-comment: var(--color-scropion);
+  --color-link-comment-time-anchor: var(--color-east-bay);
+  --color-link-edit-background-hover: var(--color-pattens-blue);
+  --color-link-edit-border: var(--color-pattens-blue);
+  --color-link-edit-text: darken(#eaf1f8, 20%);
+  --color-link-edit-text-hover: var(--color-east-bay);
+  --color-link-text: var(--color-science-blue);
+  --color-link-text-focus: var(--color-black);
+  --color-link-text-hover: var(--color-white);
+  --color-link-background-hover: var(--color-link-text);
 
-// Element text and background colors
-$color-links: $color-main;
-$color-hover: $color-dark;
-$color-paragraphs: $color-darkgrey;
-$color-headings: $color-main;
-$color-blockquotes: #666;
-$color-blog-tags: #061629;
-$color-tags-and-search-items: #eaf1f8;
-$color-code-blocks: #c7254e;
-$color-code-blocks-background: #f9f2f4;
-$color-border-forms: #d9d9d9;
-$color-code-background: #2b303c;
-$color-separator-nav-mobile: #f0f0f0;
-$color-comments-link: #555;
-$color-edit-link: #999;
-$color-background-edit-link: #fafafa;
-$color-default-background: $color-dark;
-$color-success: lighten(#2d6426, 40%);
-$color-warning: lighten(#8e440b, 40%);
-$color-error: lighten(#903a37, 40%);
-$color-disabled: #bbb;
-$color-captions: rgba(#4b4b5a, .9);
+  // Element colors
+  --color-background-code-block: var(--color-black-rock);
+  --color-background-code-inline: #f9f2f4;
+  --color-background-default: #f0f0f0;
+  --color-background-shade: #03061b;
+  --color-background-table-cell-odd: var(--color-white);
+  --color-background-table-cell-even: #f3f3f3;
+  --color-background-tag: var(--color-pattens-blue);
+  --color-blockquote: var(--color-science-blue);
+  --color-comment-text: var(--color-east-bay);
+  --color-comment-author-text: var(--color-east-bay);
+  --color-tag-border: rgba(6, 22, 41, .1);
+  --color-tag-border-hover: rgba(6, 22, 41, .4);
+  --color-tag-text: var(--color-black);
+  --color-category-border: #cdcfd4;
+  --color-category-text: var(--color-black);
+  --color-caption: #5c5c6a;
+  --color-code-block: #c7254e;
+  --color-code-text: #f5f5f5;
+  --color-error: #e1b3b2;
+  --color-kbd-border: #ccc;
+  --color-kbd-background: var(--color-pattens-blue);
+  --color-outline-overlay-items: #ff848a;
+  --color-pagination-text: var(--color-valhalla);
+  --color-pagination-background-hover: var(--color-valhalla);
+  --color-pagination-border-hover: var(--color-valhalla);
+  --color-pagination-text-hover: var(--color-white);
+  --color-pagination-background-current: var(--color-valhalla);
+  --color-pagination-border-current: var(--color-valhalla);
+  --color-pagination-text-current: var(--color-white);
+  --color-success: #8ed185;
+  --color-top-arrow-dark: var(--color-black);
+  --color-top-arrow-light: var(--color-white);
+  --color-warning: #f4aa71;
+}

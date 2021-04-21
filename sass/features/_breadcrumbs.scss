@@ -1,32 +1,16 @@
 // Built to work with:
 // https://github.com/justintadlock/hybrid-breadcrumbs
-// https://github.com/digitoimistodude/air-light
+// https://github.com/digitoimistodude/kpt
 
-/* stylelint-disable selector-class-pattern */
-.block.block-breadcrumb {
-  padding-bottom: 0;
-
-  > .container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-
-    @media (max-width: 650px) {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-  }
-}
-
+/* stylelint-disable selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-class, selector-max-specificity, a11y/font-size-is-readable, a11y/no-display-none */
 .breadcrumbs {
-  @extend .nav-container;
-  background: transparent;
-  margin-top: 0;
-  margin-bottom: 0;
-  text-align: left;
-  line-height: 1;
-  top: 104px;
-  z-index: 100;
+  background-color: transparent;
   border-bottom: 0;
+  line-height: 1;
+  margin-bottom: 4rem;
+  margin-top: 0;
+  text-align: left;
+  z-index: 100;
 
   .breadcrumbs__title {
     @extend .screen-reader-text;
@@ -51,24 +35,24 @@
     }
 
     &::after {
-      text-indent: -9999px;
-      overflow: hidden;
-      text-decoration: none;
-      text-align: start;
+      align-self: center;
+      background-image: url('../../svg/breadcrumbs-arrow.svg');
+      background-position: 0;
+      background-repeat: no-repeat;
+      background-size: inherit;
+      content: ' ';
+      display: inline-flex;
       font-size: 14px;
       height: 10px;
-      width: 10px;
-      background-image: url('../svg/breadcrumbs-arrow.svg');
-      background-repeat: no-repeat;
-      background-position: 0;
-      background-size: inherit;
-      position: relative;
-      display: inline-flex;
-      padding: 0;
       margin-left: 5px;
       margin-right: 5px;
-      content: ' ';
-      align-self: center;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      text-align: start;
+      text-decoration: none;
+      text-indent: -9999px;
+      width: 10px;
     }
   }
 
@@ -76,9 +60,9 @@
   span,
   a,
   h2 {
+    color: var(--color-paragraph);
     font-size: 14px;
-    font-weight: 400;
-    color: $color-paragraphs;
+    font-weight: var(--font-weight-regular);
 
     @media (max-width: 600px) {
       font-size: 1.3rem;
@@ -86,31 +70,31 @@
   }
 
   .breadcrumbs__trail {
+    align-items: center;
     display: inline-flex;
     flex-wrap: wrap;
-    align-items: center;
-    margin-bottom: 0;
-    overflow: visible;
     line-height: 1.22;
+    margin-bottom: 0;
     margin-top: 0;
+    overflow: visible;
     padding: 0;
     text-align: left;
 
     li {
-      text-align: left;
-      background: none;
-      margin-bottom: 0;
-      margin-top: 0;
       display: inline-block;
-      padding-top: 0;
-      padding-left: 5px;
+      font-weight: var(--font-weight-medium);
       line-height: 1;
-      position: relative;
+      margin-bottom: 0;
       margin-right: 0;
+      margin-top: 0;
       opacity: .3;
-      font-weight: 500;
+      padding-left: 5px;
+      padding-top: 0;
+      position: relative;
+      text-align: left;
       transition: all $transition-duration;
 
+      &:focus,
       &:hover {
         opacity: .6;
       }
@@ -129,8 +113,8 @@
     }
 
     .breadcrumbs__crumb {
-      margin-right: 0;
       margin-left: 0;
+      margin-right: 0;
       padding-left: 0;
 
       .breadcrumbs__title {
@@ -138,24 +122,24 @@
       }
 
       &::before {
-        text-indent: -9999px;
-        overflow: hidden;
-        text-decoration: none;
-        text-align: start;
+        align-self: center;
+        background-image: url('../../svg/breadcrumbs-arrow.svg');
+        background-position: 0;
+        background-repeat: no-repeat;
+        background-size: inherit;
+        content: ' ';
+        display: inline-flex;
         font-size: 14px;
         height: 10px;
-        width: 10px;
-        background-image: url('../svg/breadcrumbs-arrow.svg');
-        background-repeat: no-repeat;
-        background-position: 0;
-        background-size: inherit;
-        position: relative;
-        display: inline-flex;
-        padding: 0;
         margin-left: 12px;
         margin-right: 10px;
-        content: ' ';
-        align-self: center;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        text-align: start;
+        text-decoration: none;
+        text-indent: -9999px;
+        width: 10px;
       }
     }
 
@@ -193,12 +177,13 @@
     }
 
     a {
-      color: $color-paragraphs;
+      color: var(--color-paragraph);
       text-decoration: none;
     }
 
+    &:focus,
     a:hover {
-      color: $color-paragraphs;
+      color: var(--color-paragraph);
     }
 
     &:last-of-type::after {

@@ -1,40 +1,14 @@
-.background-image {
-  @include background-cover();
-  position: absolute;
-  width: 100%;
+// Styling lazy loading div
+// @link https://github.com/verlok/vanilla-lazyload#lazy-background-image
+div.lazy {
+  background-position: center;
+  background-size: cover;
   height: 100%;
-  top: 0;
   left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
   z-index: 0;
-  overflow: hidden;
-
-  &.reveal {
-    filter: none;
-    will-change: transform, opacity;
-    animation: progressive-reveal 1s ease-out;
-  }
-
-  &.preview {
-    filter: blur(1vw);
-    transform: scale(1.05);
-  }
-
-  &.full-image {
-    z-index: 1;
-    transition: all $transition-duration;
-  }
-}
-
-@keyframes progressive-reveal {
-  0% {
-    // transform: scale(1.05);
-    opacity: .2;
-  }
-
-  100% {
-    // transform: scale(1);
-    opacity: 1;
-  }
 }
 
 // General class for any lazy load container

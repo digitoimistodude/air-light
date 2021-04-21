@@ -1,7 +1,5 @@
-/* eslint-disable default-case */
-/* eslint-disable eqeqeq */
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-undef */
+// TODO: Refactor file
+/* eslint-disable default-case, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, prefer-const, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
 /*
 An accessible menu for WordPress
 
@@ -55,7 +53,11 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       return;
     }
 
-    menuToggle.add(siteNavigation).attr('aria-expanded', 'false');
+    // Do not set aria-expanded false on desktop
+    if (window.innerWidth < responsivenav) {
+      menuToggle.add(siteNavigation).attr('aria-expanded', 'false');
+    }
+
     menuToggle.on('click', function () {
       $(this).add(siteHeaderMenu).toggleClass('toggled-on');
 
@@ -143,19 +145,20 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   siteHeaderMenu.find('.menu-item-has-children').attr('aria-haspopup', 'true');
 
   // Open last dropdown by default on mobile
-  $(() => {
-    if (window.innerWidth < responsivenav) {
-      const screenReaderSpan = $('.menu-items > .dropdown-toggle').find('.screen-reader-text');
-      const dropdownMenu = $('.menu-items > .menu-item-has-children:last .sub-menu');
-      const dropdownItem = $('.menu-items > .menu-item-has-children:last .dropdown');
+  // TODO: Rather fix the issue: https://github.com/digitoimistodude/air-light/issues/26
+  // $(() => {
+  //   if (window.innerWidth < responsivenav) {
+  //     const screenReaderSpan = $('.menu-items > .dropdown-toggle').find('.screen-reader-text');
+  //     const dropdownMenu = $('.menu-items > .menu-item-has-children:last .sub-menu');
+  //     const dropdownItem = $('.menu-items > .menu-item-has-children:last .dropdown');
 
-      dropdownItem.addClass('toggled-on');
-      dropdownMenu.addClass('toggled-on');
-      dropdownItem.attr('aria-expanded', 'true');
-      dropdownItem.attr('aria-label', air_light_screenReaderText.collapse);
-      screenReaderSpan.text(air_light_screenReaderText.collapse);
-    }
-  });
+  //     dropdownItem.addClass('toggled-on');
+  //     dropdownMenu.addClass('toggled-on');
+  //     dropdownItem.attr('aria-expanded', 'true');
+  //     dropdownItem.attr('aria-label', air_light_screenReaderText.collapse);
+  //     screenReaderSpan.text(air_light_screenReaderText.collapse);
+  //   }
+  // });
 
   // Add default dropdown-toggle label
   $('.dropdown-toggle').each(function () {
@@ -341,7 +344,11 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     return;
   }
 
-  menu.setAttribute('aria-expanded', 'false');
+  // Do not set aria-expanded false on desktop
+  if (window.innerWidth < responsivenav) {
+    menu.setAttribute('aria-expanded', 'false');
+  }
+
   if (menu.className.indexOf('nav-menu') === -1) {
     menu.className += ' nav-menu';
   }

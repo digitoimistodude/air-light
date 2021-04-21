@@ -1,0 +1,67 @@
+// CSS Variables for responsive fonts
+:root {
+  // Heading font sizes
+  --font-size-hero: 52px;
+  --font-size-h1: 40px;
+  --font-size-h2: 30px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-h5: 16px;
+  --font-size-h6: 14px;
+
+  // Heading font sizes in mobile
+  @media (max-width: $container-mobile) {
+    --font-size-hero: 38px;
+    --font-size-h1: 32px;
+    --font-size-h2: 24px;
+    --font-size-h3: 21px;
+    --font-size-h4: 18px;
+    --font-size-h5: 14px;
+    --font-size-h6: 12px;
+  }
+
+  // Paragraph font sizes
+  --font-size-14: 14px;
+  --font-size-15: 15px;
+  --font-size-16: 16px;
+  --font-size-17: 17px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-22: 22px;
+
+  // Paragraph font sizes in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --font-size-16: 14px;
+  }
+
+  // Element font sizes
+  --font-size-default: var(--font-size-17);
+  --font-size-paragraphs: var(--font-size-18);
+  --font-size-nav-toggle-label: 15px;
+  --font-size-captions: 15px;
+
+  // Element font sizes in mobile
+  @media (max-width: $container-mobile) {
+    --font-size-paragraphs: 16px;
+    --font-size-default: 16px;
+  }
+
+  // Element font sizes in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --font-size-nav-toggle-label: 13px;
+  }
+
+  // Line-heights
+  --line-height-headings: 1.5;
+  --line-height-core-heading: 1.23;
+  --line-height-paragraphs: 1.7;
+  --line-height-paragraphs-blog: 1.77;
+
+  // Font weights
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-paragraphs: var(--font-weight-regular);
+  --font-weight-headings: var(--font-weight-bold);
+}

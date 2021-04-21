@@ -1,0 +1,15 @@
+// It is acceptable to hide things for print
+/* stylelint-disable a11y/no-display-none */
+@media print {
+  .nav-container,
+  .site-footer,
+  .side-nav {
+    display: none;
+  }
+
+  // Add colors, disable spacings or images,
+  // etc. define here
+  // * {
+  //   color: var(--color-black) !important;
+  // }
+}

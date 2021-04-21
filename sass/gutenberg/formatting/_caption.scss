@@ -1,0 +1,37 @@
+// Captions
+/* stylelint-disable selector-max-combinators, selector-max-compound-selectors */
+.editor-styles-wrapper,
+.gutenberg-content {
+  figcaption,
+  cite,
+  small {
+    border: 0;
+    color: var(--color-caption);
+    font-size: var(--font-size-captions);
+    font-style: normal;
+    margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    max-width: $width-max-article;
+    padding-bottom: 0;
+    text-align: center;
+    width: 100%;
+
+    @media (max-width: $container-mobile) {
+      margin-top: 2rem;
+    }
+  }
+
+  .wp-block-image figcaption,
+  .wp-block-image .alignright > figcaption,
+  .wp-block-image .aligncenter > figcaption,
+  .wp-block-image.is-resized > figcaption {
+    display: block;
+    width: 100%;
+  }
+
+  cite {
+    margin-bottom: 0;
+  }
+}

@@ -4,10 +4,14 @@
 
 // Import modules (comment to disable)
 import MoveTo from 'moveto';
+import LazyLoad from 'vanilla-lazyload';
+import reframe from 'reframe.js';
+import getLocalization from './modules/localization';
+import styleExternalLinks from './modules/external-link';
+import './modules/gutenberg-helpers';
 // import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
 import 'what-input';
-import './modules/lazyload.js';
 
 // Navigation
 import './modules/navigation.js';
@@ -16,22 +20,31 @@ import './modules/navigation.js';
 document.body.classList.remove('no-js');
 document.body.classList.add('js');
 
+// Fit video embeds to container
+reframe('.wp-has-aspect-ratio iframe');
+
+// Style external links
+styleExternalLinks();
+
 // Init lazyload
 // Usage example on template side when air-helper enabled:
-// <?php image_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
-let images = document.querySelectorAll('.lazyload');
-lazyload(images, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0
+// <?php vanilla_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
+// Refer to documentation:
+// 1) https://github.com/digitoimistodude/air-helper#image-lazyloading-1
+// 2) https://github.com/verlok/vanilla-lazyload#-getting-started---html
+var air_light_LazyLoad = new LazyLoad({
+  callback_loaded: setLazyLoadedFigureWidth,
 });
+
+// After your content has changed...
+air_light_LazyLoad.update();
 
 // jQuery start
 (function ($) {
   // Accessibility: Ensure back to top is right color on right background
   // Note: Needs .has-light-bg or .has-dark-bg class on all blocks
   var stickyOffset = $('.back-to-top').offset();
-  var $contentDivs = $('.block');
+  var $contentDivs = $('.block, .site-footer');
   $(document).scroll(function () {
     $contentDivs.each(function (k) {
       var _thisOffset = $(this).offset();
@@ -64,7 +77,7 @@ lazyload(images, {
 
   // Accessibility: Ensure back to top is right color on right background
   $(window).on('resize scroll', function () {
-    $('.block').each(function () {
+    $('.block, .site-footer').each(function () {
       if ($(this).isInViewport()) {
         $('.back-to-top')
           .removeClass('has-light-bg has-dark-bg')
@@ -73,25 +86,6 @@ lazyload(images, {
           );
       }
     });
-  });
-
-  // Accessibility add "External link:" aria label for external links
-  var currentHost = new RegExp(location.host);
-  $('a').each(function () {
-    var attr = $(this).attr('aria-label');
-    if (!currentHost.test($(this).attr('href')) && !attr) {
-      if ('#content' !== $(this).attr('href')) {
-        // A link that does not contain the current host
-        var txt = $(this).text();
-        $(this).addClass('is-external-link');
-        $(this).attr('aria-label', air_light_screenReaderText.external_link + ' ' + txt);
-      }
-    }
-
-    // If is outside link and has target="_blank"
-    if (!currentHost.test($(this).attr('href')) && !attr && '_blank' === $(this).attr('target')) {
-      $(this).attr('aria-label', air_light_screenReaderText.external_link + ', ' + air_light_screenReaderText.target_blank + ' ' + txt);
-    }
   });
 
   // Hide or show the 'back to top' link
@@ -142,3 +136,5 @@ document.addEventListener('DOMContentLoaded', function () {
     moveTo.registerTrigger(triggers[i]);
   }
 });
+
+

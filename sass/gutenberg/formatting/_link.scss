@@ -1,0 +1,35 @@
+/* stylelint-disable a11y/no-display-none, no-descending-specificity, selector-max-pseudo-class */
+// Default links everywhere
+a {
+  color: var(--color-link-text);
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--color-link-text);
+    // text-decoration: underline;
+  }
+}
+
+// Links within content
+.editor-styles-wrapper,
+.gutenberg-content {
+  // Style choice not to have external link indicators in a list
+  li > a::after {
+    display: none;
+  }
+
+  [data-type="core/paragraph"] > a,
+  li > a,
+  p > strong > a,
+  p > em > a,
+  p:not([class]) > a:not([class]),
+  p.has-text-align-left > a,
+  p.has-text-align-center > a,
+  p.has-text-align-right > a,
+  p.has-small-font-size > a,
+  figcaption > a,
+  p:not([class]) > a.is-external-link {
+    @include link();
+  }
+}

@@ -1,0 +1,51 @@
+// Alignments
+.editor-styles-wrapper,
+.gutenberg-content {
+  .alignleft > * {
+    float: left;
+  }
+
+  .alignright > * {
+    float: right;
+  }
+
+  .alignleft > img {
+    margin-bottom: var(--margin-between-paragraphs);
+    margin-right: var(--padding-container-horizontal);
+    margin-top: var(--margin-between-paragraphs);
+
+    + figcaption {
+      margin-top: 0;
+    }
+  }
+
+  .alignright > img {
+    margin-bottom: var(--margin-between-paragraphs);
+    margin-left: var(--padding-container-horizontal);
+    margin-top: var(--margin-between-paragraphs);
+
+    + figcaption {
+      margin-top: 0;
+    }
+  }
+
+  .alignwide {
+    @media (min-width: $width-grid-base + 40px) {
+      max-width: $width-grid-base;
+      width: 100%;
+    }
+  }
+
+  .alignfull {
+    @media (min-width: $width-grid-base + 40px) {
+      margin-bottom: var(--padding-block);
+      margin-top: var(--padding-block);
+      max-width: 100%;
+      width: 100%;
+    }
+
+    &.wp-block-image img {
+      border-radius: 0;
+    }
+  }
+}
