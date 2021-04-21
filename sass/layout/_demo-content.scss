@@ -12,6 +12,7 @@ $color-wild-blue-yonder: #737fbf;
 
 :root {
   --color-baby-blue: #60f4ea;
+  --color-heliotrope: #866cff;
   --color-wild-blue-yonder: #{$color-wild-blue-yonder};
   --color-wild-blue-yonder-rgb: #{hextorgb($color-wild-blue-yonder)};
   --color-border-demo-header: rgba(var(--color-wild-blue-yonder-rgb), .5);
@@ -311,4 +312,56 @@ $color-wild-blue-yonder: #737fbf;
 
 .site-footer {
   background-color: var(--color-valhalla);
+}
+
+// Demo components
+.components {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 6rem;
+  margin-bottom: -4rem;
+  align-items: flex-start;
+}
+
+.heading-demo {
+  margin-top: 6rem;
+}
+
+.link-demo {
+  @include link();
+}
+
+.site-main .component {
+  border: 1px dashed var(--color-heliotrope);
+  padding: 19px;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+
+  .component-label {
+    color: var(--color-heliotrope);
+    font-size: 12px;
+    position: absolute;
+    margin-top: -42px;
+    margin-left: -20px;
+
+    &::before {
+      background-image: url('https://airwptheme.com/demo/figma-component.svg');
+      background-repeat: no-repeat;
+      content: '';
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      margin-right: 5px;
+    }
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    margin: 0 0 2rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

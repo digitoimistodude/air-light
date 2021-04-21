@@ -20,12 +20,7 @@
 @import 'gutenberg/variables/font-face';
 
 // Components needed by gutenberg
-@import 'components/button';
-@import 'components/button-size-small';
-@import 'components/button-size-medium';
-@import 'components/button-size-large';
-@import 'components/button-style-ghost';
-@import 'components/link';
+@import 'components/components';
 
 // Gutenberg layout outside blocks
 @import 'gutenberg/layout/content';

@@ -49,22 +49,18 @@
   input[type="button"] {
     @include button();
 
-    // Button styles
-    &.button-ghost {
-      @include button-style-ghost();
-    }
-
     // Button sizes
     &.button-small {
       @include button-size-small();
     }
 
-    &.button-medium {
-      @include button-size-medium();
-    }
-
     &.button-large {
       @include button-size-large();
+    }
+
+    // Button styles
+    &.button-ghost {
+      @include button-style-ghost();
     }
   }
 }
