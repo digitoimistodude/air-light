@@ -121,8 +121,9 @@ $nav-open-from-direction: top;
   }
 
   .nav-primary {
+    background-color: var(--color-background-nav-mobile-layer);
     display: block;
-    height: 100vh;
+    height: calc(100vh - var(--height-navigation-mobile));
     margin: 0;
     opacity: 0;
     overflow: auto;
@@ -255,9 +256,6 @@ $nav-open-from-direction: top;
 
     .menu-items {
       background-color: var(--color-background-nav-mobile-layer);
-
-      // Let's keep the content always full height
-      height: 100vh;
       padding: 0;
     }
   }
