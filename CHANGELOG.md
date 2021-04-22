@@ -1,3 +1,10 @@
+### 7.2.3: 2021-04-22
+
+* Mobile nav overflow fix #95 (thanks @Tumppex and congrats for the first pull request!)
+* Documenting code: Add comment about Gravity Forms with ajax
+* Remove deprecated vagrant instructions from the Read me file
+* Theme metadata in style.css: Add more clear instructions, update date format
+
 ### 7.2.2: 2021-04-21
 
 * Include missing heading-hero component
