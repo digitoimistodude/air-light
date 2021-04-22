@@ -456,11 +456,11 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 8. Cd to your new cloned repository `cd ~/Projects/airdev/content/themes/air-light`
 9. Get the dependencides by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
 10. Wait npm to get through files (get another cup of coffee)
-11. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light` if [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant): `ssh vagrant@10.1.2.4 "cd /var/www/$PROJECT_NAME/;vendor/wp-cli/wp-cli/bin/wp theme activate air"` (replace $PROJECT_NAME with actual project name)
+11. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
 12. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code ~/Projects/airdev/content/themes/air-light`.
 13. Go to back to air-light dir with `cd ~/Projects/airdev/content/themes/air-light` and then run `gulp` and start developing!
 
-You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) or `alias wp='ssh vagrant@10.1.2.4 "cd /var/www/"$(basename "$PWD")"; /var/www/"$(basename "$PWD")"/vendor/wp-cli/wp-cli/bin/wp"'` for [marlin-vagrant](https://github.com/digitoimistodude/marlin-vagrant) to be able to use wp-cli with simply `wp`.
+You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) to be able to run WP-CLI with just `wp`.
 
 ##### 2\. Use your own stack
 
