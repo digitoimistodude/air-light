@@ -1,5 +1,5 @@
 // TODO: Refactor file
-/* eslint-disable default-case, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, prefer-var, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
+/* eslint-disable default-case, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
 /*
 An accessible menu for WordPress
 
@@ -31,18 +31,18 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Check if enter pressed
   var enterPressed = false;
-  $(window).on('keydown', function(evt){
-    if (evt.code === "Enter") {
+  $(window).on('keydown', (evt) => {
+    if (evt.code === 'Enter') {
       enterPressed = true;
     }
-  }).on('keyup', function(evt){
-    if (evt.which === "Enter") {
+  }).on('keyup', (evt) => {
+    if (evt.code === 'Enter') {
       enterPressed = false;
     }
   });
 
   // Hover intent
-  $('.menu-item-has-children').on('hover', function(){
+  $('.menu-item-has-children').on('hover', function () {
     $(this).addClass('hover-intent');
     setTimeout(() => {
       $(this).removeClass('hover-intent');
@@ -103,168 +103,169 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   // Adds aria attribute
   siteHeaderMenu.find('.menu-item-has-children').attr('aria-haspopup', 'true');
 
-  
-    // Add default dropdown-toggle label
-    $('.dropdown-toggle').each(function () {
-      $(this).attr('aria-label', `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`);
-    });
+  // Add default dropdown-toggle label
+  $('.dropdown-toggle').each(function () {
+    $(this).attr('aria-label', `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`);
+  });
 
-    // Toggles the sub-menu when dropdown toggle button accessed
-    siteHeaderMenu.find('.dropdown-toggle').on('click', function (e) {
-      if (enterPressed || window.innerWidth < responsivenav) {
-        var dropdownMenu = $(this).nextAll('.sub-menu');
+  // Toggles the sub-menu when dropdown toggle button accessed
+  siteHeaderMenu.find('.dropdown-toggle').on('click', function (e) {
+    if (enterPressed || window.innerWidth < responsivenav) {
+      var dropdownMenu = $(this).nextAll('.sub-menu');
 
-        e.preventDefault();
-        $(this).toggleClass('toggled-on');
-        dropdownMenu.toggleClass('toggled-on');
+      e.preventDefault();
+      $(this).toggleClass('toggled-on');
+      dropdownMenu.toggleClass('toggled-on');
 
-        // jscs:disable
-        $(this).attr(
-          'aria-expanded',
-          $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
-        );
-        // jscs:enable
-        // Change screen reader open/close labels
+      // jscs:disable
+      $(this).attr(
+        'aria-expanded',
+        $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
+      );
+      // jscs:enable
+      // Change screen reader open/close labels
 
-        $(this).attr(
-          'aria-label',
-          $(this).attr('aria-label') === `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`
-            ? `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`
-            : `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`,
-        );
-      }
-    });
+      $(this).attr(
+        'aria-label',
+        $(this).attr('aria-label') === `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`
+          ? `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`
+          : `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`,
+      );
+    }
+  });
 
-    // Adds a class to sub-menus for styling
-    $('.sub-menu .menu-item-has-children')
-      .parent('.sub-menu')
-      .addClass('has-sub-menu');
+  // Adds a class to sub-menus for styling
+  $('.sub-menu .menu-item-has-children')
+    .parent('.sub-menu')
+    .addClass('has-sub-menu');
 
-    // Keyboard navigation
-    $('.menu-item a, button.dropdown-toggle').on('keydown', function (e) {
-      if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(e.code) == -1) {
-        return;
-      }
-
-      switch (e.code) {
-      case 'ArrowLeft': // Left key
-        e.preventDefault();
-        e.stopPropagation();
-
-        if ($(this).hasClass('dropdown-toggle')) {
-          $(this).prev('a').trigger('focus');
-        } else if (
-          $(this).parent().prev().children('button.dropdown-toggle').length
-        ) {
-          $(this).parent().prev().children('button.dropdown-toggle').trigger('focus');
-        } else {
-          $(this).parent().prev().children('a').trigger('focus');
-        }
-
-        if ($(this).is('ul ul ul.sub-menu.toggled-on li:first-child a')) {
-          $(this)
-            .parents('ul.sub-menu.toggled-on li')
-            .children('button.dropdown-toggle')
-            .trigger('focus');
-        }
-
-        break;
-
-      case 'ArrowRight': // Right key
-        e.preventDefault();
-        e.stopPropagation();
-
-        if ($(this).next('button.dropdown-toggle').length) {
-          $(this).next('button.dropdown-toggle').trigger('focus');
-        } else if ($(this).parent().next().find('input').length) {
-          $(this).parent().next().find('input')
-          .trigger('focus');
-        } else {
-          $(this).parent().next().children('a')
-          .trigger('focus');
-        }
-
-        if ($(this).is('ul.sub-menu .dropdown-toggle.toggled-on')) {
-          $(this).parent().find('ul.sub-menu li:first-child a').trigger('focus');
-        }
-
-        break;
-
-      case 'ArrowDown': // Down key
-        e.preventDefault();
-        e.stopPropagation();
-
-        if ($(this).next().length) {
-          $(this).next().find('li:first-child a').first()
-          .trigger('focus');
-        } else if ($(this).parent().next().find('input').length) {
-          $(this).parent().next().find('input')
-          .trigger('focus');
-        } else {
-          $(this).parent().next().children('a')
-          .trigger('focus');
-        }
-
-        if (
-          $(this).is('ul.sub-menu a')
-            && $(this).next('button.dropdown-toggle').length
-        ) {
-          $(this).parent().next().children('a')
-          .trigger('focus');
-        }
-
-        if (
-          $(this).is('ul.sub-menu .dropdown-toggle')
-            && $(this).parent().next().children('.dropdown-toggle').length
-        ) {
-          $(this).parent().next().children('.dropdown-toggle')
-          .trigger('focus');
-        }
-
-        break;
-
-      case 'ArrowUp': // Up key
-        e.preventDefault();
-        e.stopPropagation();
-
-        if ($(this).parent().prev().length) {
-          $(this).parent().prev().children('a')
-            .trigger('focus');
-        } else {
-          $(this)
-            .parents('ul')
-            .first()
-            .prev('.dropdown-toggle.toggled-on')
-            .trigger('focus');
-        }
-
-        if (
-          $(this).is('ul.sub-menu .dropdown-toggle')
-            && $(this).parent().prev().children('.dropdown-toggle').length
-        ) {
-          $(this).parent().prev().children('.dropdown-toggle')
-            .trigger('focus');
-        }
-
-        break;
-      }
-    });
-
-    container = document.getElementById('nav');
-    if (!container) {
+  // Keyboard navigation
+  $('.menu-item a, button.dropdown-toggle').on('keydown', function (e) {
+    if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].indexOf(e.code) == -1) {
       return;
     }
 
-    button = document.getElementById('nav-toggle');
-    if (typeof button === 'undefined') {
-      return;
-    }
+    switch (e.code) {
+    case 'ArrowLeft': // Left key
+      e.preventDefault();
+      e.stopPropagation();
 
-    // Set vars.
-    html = document.getElementsByTagName('html')[0];
-    body = document.getElementsByTagName('body')[0];
-    menu = container.getElementsByTagName('ul')[0];
-    menuWrapper = document.getElementById('main-navigation-wrapper');
+      if ($(this).hasClass('dropdown-toggle')) {
+        $(this).prev('a').trigger('focus');
+      } else if (
+        $(this).parent().prev().children('button.dropdown-toggle').length
+      ) {
+        $(this).parent().prev().children('button.dropdown-toggle')
+          .trigger('focus');
+      } else {
+        $(this).parent().prev().children('a')
+          .trigger('focus');
+      }
+
+      if ($(this).is('ul ul ul.sub-menu.toggled-on li:first-child a')) {
+        $(this)
+          .parents('ul.sub-menu.toggled-on li')
+          .children('button.dropdown-toggle')
+          .trigger('focus');
+      }
+
+      break;
+
+    case 'ArrowRight': // Right key
+      e.preventDefault();
+      e.stopPropagation();
+
+      if ($(this).next('button.dropdown-toggle').length) {
+        $(this).next('button.dropdown-toggle').trigger('focus');
+      } else if ($(this).parent().next().find('input').length) {
+        $(this).parent().next().find('input')
+          .trigger('focus');
+      } else {
+        $(this).parent().next().children('a')
+          .trigger('focus');
+      }
+
+      if ($(this).is('ul.sub-menu .dropdown-toggle.toggled-on')) {
+        $(this).parent().find('ul.sub-menu li:first-child a').trigger('focus');
+      }
+
+      break;
+
+    case 'ArrowDown': // Down key
+      e.preventDefault();
+      e.stopPropagation();
+
+      if ($(this).next().length) {
+        $(this).next().find('li:first-child a').first()
+          .trigger('focus');
+      } else if ($(this).parent().next().find('input').length) {
+        $(this).parent().next().find('input')
+          .trigger('focus');
+      } else {
+        $(this).parent().next().children('a')
+          .trigger('focus');
+      }
+
+      if (
+        $(this).is('ul.sub-menu a')
+          && $(this).next('button.dropdown-toggle').length
+      ) {
+        $(this).parent().next().children('a')
+          .trigger('focus');
+      }
+
+      if (
+        $(this).is('ul.sub-menu .dropdown-toggle')
+          && $(this).parent().next().children('.dropdown-toggle').length
+      ) {
+        $(this).parent().next().children('.dropdown-toggle')
+          .trigger('focus');
+      }
+
+      break;
+
+    case 'ArrowUp': // Up key
+      e.preventDefault();
+      e.stopPropagation();
+
+      if ($(this).parent().prev().length) {
+        $(this).parent().prev().children('a')
+          .trigger('focus');
+      } else {
+        $(this)
+          .parents('ul')
+          .first()
+          .prev('.dropdown-toggle.toggled-on')
+          .trigger('focus');
+      }
+
+      if (
+        $(this).is('ul.sub-menu .dropdown-toggle')
+          && $(this).parent().prev().children('.dropdown-toggle').length
+      ) {
+        $(this).parent().prev().children('.dropdown-toggle')
+          .trigger('focus');
+      }
+
+      break;
+    }
+  });
+
+  container = document.getElementById('nav');
+  if (!container) {
+    return;
+  }
+
+  button = document.getElementById('nav-toggle');
+  if (typeof button === 'undefined') {
+    return;
+  }
+
+  // Set vars.
+  html = document.getElementsByTagName('html')[0];
+  body = document.getElementsByTagName('body')[0];
+  menu = container.getElementsByTagName('ul')[0];
+  menuWrapper = document.getElementById('main-navigation-wrapper');
 
   function mobileNav() {
     var mobileNavInstance;
@@ -343,8 +344,8 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
       // Listen for key events on nav elements and the toggle button
       // to trigger focus trap
-      for (var i = 0; i < navElements.length; i++) {
-        navElements[i].addEventListener('keydown', focusTrap);
+      for (var ii = 0; ii < navElements.length; ii++) {
+        navElements[ii].addEventListener('keydown', focusTrap);
       }
     }
 
@@ -367,7 +368,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
     // Close menu using Esc key.
     document.addEventListener('keyup', (event) => {
-      if (event.code == 'Escape' || event.code == 'Esc' ) {
+      if (event.code == 'Escape' || event.code == 'Esc') {
         if (container.className.indexOf('is-active') !== -1) {
           closeMenu(); // Close menu.
         }
@@ -384,7 +385,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       }
     };
   }
-  if (window.innerWidth < responsivenav ) {
+  if (window.innerWidth < responsivenav) {
     mobileNav(); // fire right away for mobile devices
   }
 
@@ -437,8 +438,8 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   function focusTrap(e) {
     // Set focusable elements inside main navigation.
     focusableElements = [...container.querySelectorAll(
-      'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
-    )].filter(el => !el.hasAttribute('disabled')).filter(el => !!( el.offsetWidth || el.offsetHeight || el.getClientRects().length ));
+      'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])',
+    )].filter((el) => !el.hasAttribute('disabled')).filter((el) => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
 
     firstFocusableElement = focusableElements[0];
     lastFocusableElement = focusableElements[focusableElements.length - 1];
@@ -462,12 +463,11 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     }
   }
 
-  $(window).on('resize', function(){
+  $(window).on('resize', () => {
     if (window.innerWidth > responsivenav && body.className.indexOf('js-nav-active') !== -1) {
       closeMenu(); // Close menu.
-    } else if (window.innerWidth < responsivenav && typeof window.mobileNavInstance == 'undefined' ) {
+    } else if (window.innerWidth < responsivenav && typeof window.mobileNavInstance == 'undefined') {
       mobileNav();
     }
   });
-
 }(jQuery));
