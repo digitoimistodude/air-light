@@ -446,19 +446,19 @@ If you want to improve air, you have two options.
 
 Air is originally built on [dudestack](https://github.com/digitoimistodude/dudestack). Install our development environment with these steps (unix only, sorry Windows!):
 
-1. `mkdir ~/Projects && git clone https://github.com/digitoimistodude/dudestack`
-2. `cd ~/Projects/dudestack && sh setup.sh`
+1. `mkdir -p /var/www && cd /var/www/ && git clone https://github.com/digitoimistodude/dudestack`
+2. Go to bin folder `cd /var/www/dudestack/bin` and run `bash wsl.sh` or `bash macos.sh` depending on your platform. Follow instructions.
 3. Run `createproject`, name project after *airdev* when asked
 4. Wait for the project to be created (get a coffee, first time can take couple of minutes)
-5. Create a fork of air-light (press fork button on GitHub)
-6. Go to the theme folder of your WordPress instance via Terminal (`cd ~/Projects/airdev/content/themes`)
+5. Create a fork of air-light (press fork button on GitHub) (or if you are Dude staff, just create new branch for changes)
+6. Go to the theme folder of your WordPress instance via Terminal (`cd /var/www/airdev/content/themes`)
 7. Clone your fork with `git clone git@github.com:yourusername/air-light.git` (replace yourusername with your actual username)
-8. Cd to your new cloned repository `cd ~/Projects/airdev/content/themes/air-light`
+8. Cd to your new cloned repository `cd /var/www/airdev/content/themes/air-light`
 9. Get the dependencides by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
 10. Wait npm to get through files (get another cup of coffee)
-11. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd ~/Projects/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
-12. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code ~/Projects/airdev/content/themes/air-light`.
-13. Go to back to air-light dir with `cd ~/Projects/airdev/content/themes/air-light` and then run `gulp` and start developing!
+11. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
+12. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
+13. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) to be able to run WP-CLI with just `wp`.
 
