@@ -6,11 +6,20 @@ Author URI: https://www.dude.fi
 Description: Hi. I'm a starter theme called <code>Air-light</code>, or <em>air</em>, if you like. I'm a theme based on Automattic's underscores and I'm meant for hacking so don't use me as a <em>Parent Theme</em> as-is. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 Version: 7.2.2
 
-Please remove the comments below, as soon as you have your actual theme ready.
-Please also edit Theme URI, Author, Author URI, Description and Version.
-
-This metadata should not be visible in production.
 ------8<----------
+Please do this before your actual theme is ready to go live:
+
+1. Cut everything between "------8<----------" including the separator
+2. Theme Name should be already replaced, but double check it
+3. Edit Theme URI, Author, Author URI, Description
+4. Add Version as 1.0.0.
+
+This metadata and guide should not be visible in production.
+If you see this, contact the site admin.
+
+/*----------------------------------------------------------
+>>> Air-light theme version information, only for developers
+------------------------------------------------------------
 
 Tested up to: 5.7.1
 Requires PHP: 7.2
@@ -26,14 +35,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
-/*---------------------------------
->>> AIR theme version information
------------------------------------
-
 Last implemented _s commit: 7226368 (May 15, 2020)
 Last checked _s commit: e78a808 (May 16, 2020)
 @link https://github.com/Automattic/_s/commits/master
 
-@version 21.04.2021
-@since 28.01.2016
+@version 2021-04-22
+@since 2016-01-28
+------8<----------
 */
