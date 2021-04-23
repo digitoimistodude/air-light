@@ -1,4 +1,11 @@
-### 7.2.3: 2021-04-22
+### 7.2.4: 2021-04-23
+
+* Fix navigation #94 (huge thanks to @michaelbourne!)
+* Fix focus trap problems in mobile navigation if last nav item is a dropdown #26
+* Fix issue with setLazyLoadedFigureWidth not imported properly
+* Contributing instructions up to date according to the latest version of dudestack
+
+### 7.2.4: 2021-04-22
 
 * Mobile nav overflow fix #95 (thanks @Tumppex and congrats for the first pull request!)
 * Documenting code: Add comment about Gravity Forms with ajax
