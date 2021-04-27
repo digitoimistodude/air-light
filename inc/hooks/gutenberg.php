@@ -82,4 +82,10 @@ function setup_editor_styles() {
 
   // Enqueue editor styles.
   add_editor_style( get_theme_file_uri( get_asset_file( 'gutenberg.css' ) ) );
+
+  // Custom padding controls
+  add_theme_support( 'custom-spacing' );
+  
+  // Custom units for heights
+  add_theme_support( 'custom-units' );
 }
