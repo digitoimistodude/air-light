@@ -8,7 +8,7 @@ import LazyLoad from 'vanilla-lazyload';
 import reframe from 'reframe.js';
 import getLocalization from './modules/localization';
 import styleExternalLinks from './modules/external-link';
-import './modules/gutenberg-helpers';
+import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
 // import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
 import 'what-input';
