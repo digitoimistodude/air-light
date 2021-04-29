@@ -14,6 +14,11 @@
   margin: 0;
   padding: 0;
 
+  // Make sure children don't have list bullets
+  .children {
+    list-style: none;
+  }
+
   li {
     font-size: var(--font-size-14);
     margin-bottom: 70px;
