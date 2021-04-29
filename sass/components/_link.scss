@@ -25,9 +25,19 @@
   }
 
   &:focus {
+    background-color: transparent;
     border-color: var(--color-link-border-focus);
+    box-shadow: none;
     color: var(--color-link-text-focus);
     text-decoration: none;
+
+    // Make focus a little more engaging
+    // @source https://twitter.com/argyleink/status/1387072095159406596?s=19
+    // @link https://codepen.io/argyleink/pen/JjEzeLp
+    @media (prefers-reduced-motion: no-preference) {
+      outline-offset: 5px;
+      transition: outline-offset .25s ease;
+    }
 
     &::after {
       background-image: url('../../svg/external-link-black.svg');

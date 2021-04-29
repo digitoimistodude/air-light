@@ -124,3 +124,16 @@ a.is-external-link.no-external-link-indicator::after {
 // body .block .container .col {
 //   overflow: visible;
 // }
+
+// Make focus a little more engaging
+// @source https://twitter.com/argyleink/status/1387072095159406596?s=19
+// @link https://codepen.io/argyleink/pen/JjEzeLp
+@media (prefers-reduced-motion: no-preference) {
+  :focus,
+  *:focus,
+  [data-whatinput="keyboard"] :focus,
+  [data-whatinput="keyboard"] a:focus {
+    outline-offset: 5px;
+    transition: outline-offset .25s ease;
+  }
+}
