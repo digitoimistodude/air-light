@@ -1,7 +1,7 @@
 ### 7.2.5: 2021-04-29
 
 * Make sure children don't have list bullets
-* Accessibility:Make focus ring a little more engaging ([source](https://twitter.com/argyleink/status/1387072095159406596))
+* Accessibility: Make focus ring a little more engaging ([source](https://twitter.com/argyleink/status/1387072095159406596))
 
 ### 7.2.4: 2021-04-23
 
