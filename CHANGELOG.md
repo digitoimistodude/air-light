@@ -1,3 +1,8 @@
+### 7.2.5: 2021-04-29
+
+* Make sure children don't have list bullets
+* Accessibility:Make focus ring a little more engaging ([source](https://twitter.com/argyleink/status/1387072095159406596))
+
 ### 7.2.4: 2021-04-23
 
 * Fix navigation #94 (huge thanks to @michaelbourne!)
@@ -5,7 +10,7 @@
 * Fix issue with setLazyLoadedFigureWidth not imported properly
 * Contributing instructions up to date according to the latest version of dudestack
 
-### 7.2.4: 2021-04-22
+### 7.2.5: 2021-04-22
 
 * Mobile nav overflow fix #95 (thanks @Tumppex and congrats for the first pull request!)
 * Documenting code: Add comment about Gravity Forms with ajax
