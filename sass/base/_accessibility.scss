@@ -57,6 +57,8 @@
 
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
+
+  // Make sure every focusable element has opacity 100%
   a:focus,
   input:focus,
   button:focus,
