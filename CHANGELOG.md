@@ -1,3 +1,7 @@
+### 7.2.7: 2021-05-04
+
+* Fix NEWEST_AIR_VERSION variable in additions script
+
 ### 7.2.6: 2021-05-04
 
 * Fix gulp command syntax for development and production environments in new theme starting script
@@ -14,7 +18,7 @@
 * Fix issue with setLazyLoadedFigureWidth not imported properly
 * Contributing instructions up to date according to the latest version of dudestack
 
-### 7.2.6: 2021-04-22
+### 7.2.7: 2021-04-22
 
 * Mobile nav overflow fix #95 (thanks @Tumppex and congrats for the first pull request!)
 * Documenting code: Add comment about Gravity Forms with ajax
