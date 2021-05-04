@@ -3,7 +3,7 @@
 
 # Script specific vars
 SCRIPT_LABEL='with WSL support'
-SCRIPT_VERSION='1.0.5'
+SCRIPT_VERSION='1.0.6'
 
 # Vars needed for this file to function globally
 CURRENTFILE=`basename $0`
