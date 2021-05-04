@@ -4,5 +4,5 @@ echo "${BOLDYELLOW}Theme name in lowercase (no spaces or special characters):${T
 read -e THEME_NAME
 
 # Add these variables based on asked vars
-PROJECT_PATH="${PROJECTS_HOME}/${PROJECT_NAME}"
-PROJECT_THEME_PATH="${PROJECTS_HOME}/${PROJECT_NAME}/content/themes/${THEME_NAME}"
+export PROJECT_PATH="${PROJECTS_HOME}/${PROJECT_NAME}"
+export PROJECT_THEME_PATH="${PROJECTS_HOME}/${PROJECT_NAME}/content/themes/${THEME_NAME}"
