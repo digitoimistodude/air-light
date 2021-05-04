@@ -2,11 +2,12 @@
 /**
  * The base for a post type object
  *
- * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:45:26
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 13:45:58
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-05-04 11:12:42
+ *
+ * @package air-light
  */
 
 namespace Air_Light;

@@ -1,10 +1,11 @@
 <?php
 /**
- * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:23
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2020-02-20 13:46:26
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-05-04 11:12:50
+ *
+ * @package air-light
  */
 
 namespace Air_Light;

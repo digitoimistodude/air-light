@@ -2,11 +2,12 @@
 /**
  * Theme setup
  *
- * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 16:31:11
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-05-04 11:13:01
+ *
+ * @package air-light
  **/
 
 namespace Air_Light;

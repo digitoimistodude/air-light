@@ -2,11 +2,12 @@
 /**
  * Single module builder
  *
- * @package air-light
  * @Author: Niku Hietanen
  * @Date: 2020-02-28 15:47:10
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-02-19 14:20:44
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-05-04 11:13:30
+ *
+ * @package air-light
  */
 
 namespace Air_Light;
