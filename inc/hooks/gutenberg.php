@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-05 13:11:23
+ * @Last Modified time: 2021-05-05 13:39:26
  *
  * @package air-light
  */
@@ -71,6 +71,15 @@ function register_block_editor_assets() {
     filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor-styles.css' ) ) ),
     'all'
   );
+}
+
+// Remove Gutenberg inline "Normalization styles" like .editor-styles-wrapper h1
+// color: inherit;
+// @source https://github.com/WordPress/gutenberg/issues/18595#issuecomment-599588153
+add_filter( 'block_editor_settings', __NAMESPACE__ . '\remove_gutenberg_inline_styles', 10, 2 );
+function remove_gutenberg_inline_styles( $editor_settings, $post ) {
+  unset( $editor_settings['styles'][0] );
+  return $editor_settings;
 }
 
 /**
