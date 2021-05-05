@@ -6,6 +6,7 @@
 // global.scss to see them on front end side.
 
 // Helpers
+@import 'helpers/animations';
 @import 'helpers/typography';
 @import 'helpers/grid';
 
@@ -27,6 +28,10 @@
 
 // Gutenberg blocks
 @import 'gutenberg/blocks';
+
+// Apply general styles from site front-end
+@import 'layout/general';
+@import 'layout/typography';
 
 // Gutenberg formatting
 @import 'gutenberg/formatting';

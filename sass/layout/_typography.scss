@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-property-unit-allowed-list, no-descending-specificity */
 // Typography
 //
 // Everything around fonts, font size definitions and typeset
@@ -5,11 +6,9 @@
 // based responsive mixin can be found in _helpers.scss
 
 // Set root size for rems
-/* stylelint-disable declaration-property-unit-allowed-list */
 :root {
   font-size: 62.5%;
 }
-/* stylelint-enable declaration-property-unit-allowed-list */
 
 // Start typography settings
 body {
@@ -23,225 +22,228 @@ body {
 }
 
 // Defaults
-p,
-dd,
-dt,
-figcaption,
-hr,
-small,
-ol,
-ul,
-li,
-blockquote,
-kbd,
-pre,
-samp,
-code,
-th,
-td,
-table,
-tr,
-%default {
-  font-size: var(--font-size-paragraphs);
-  line-height: var(--line-height-paragraphs);
-}
-
-// Heading defaults
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-heading);
-  font-family: var(--font-heading);
-  font-weight: var(--font-weight-headings);
-  margin-bottom: var(--margin-between-paragraphs);
-  margin-top: var(--margin-between-paragraphs);
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--line-height-headings);
-}
-
-// Define heading scales
-// Current: Perfect fourth: https://type-scale.com/
-h1 {
-  font-size: var(--font-size-h1);
-}
-
-h2 {
-  font-size: var(--font-size-h2);
-}
-
-h3 {
-  font-size: var(--font-size-h3);
-}
-
-h4 {
-  font-size: var(--font-size-h4);
-}
-
-h5 {
-  font-size: var(--font-size-h5);
-}
-
-h6 {
-  font-size: var(--font-size-h6);
-}
-
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
-
-// Lists
-ul {
-  list-style: disc outside;
-  padding-left: 1.9rem;
-
-  li {
-    padding-left: 0;
+html,
+.editor-styles-wrapper {
+  p,
+  dd,
+  dt,
+  figcaption,
+  hr,
+  small,
+  ol,
+  ul,
+  li,
+  blockquote,
+  kbd,
+  pre,
+  samp,
+  code,
+  th,
+  td,
+  table,
+  tr,
+  %default {
+    font-size: var(--font-size-paragraphs);
+    line-height: var(--line-height-paragraphs);
   }
-}
 
-ol {
-  padding-left: 1.9rem;
-}
+  // Heading defaults
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-headings);
+    margin-bottom: var(--margin-between-paragraphs);
+    margin-top: var(--margin-between-paragraphs);
+  }
 
-// Bold.
-b,
-strong {
-  font-weight: var(--font-weight-bold);
-}
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: var(--line-height-headings);
+  }
 
-// Italic.
-em,
-i {
-  font-style: italic;
-}
+  // Define heading scales
+  // Current: Perfect fourth: https://type-scale.com/
+  h1 {
+    font-size: var(--font-size-h1);
+  }
 
-// Inline small text.
-small {
-  font-size: .87em;
-}
+  h2 {
+    font-size: var(--font-size-h2);
+  }
 
-// Default paragraphs
-p {
-  margin-bottom: 2.9rem;
-  margin-top: 2.9rem;
-}
+  h3 {
+    font-size: var(--font-size-h3);
+  }
 
-// Quotes.
-blockquote {
-  border: 0 none;
-  clear: both;
-  margin: 0;
-  padding-bottom: 3rem;
-  position: relative;
+  h4 {
+    font-size: var(--font-size-h4);
+  }
 
-  p {
-    color: var(--color-blockquote);
+  h5 {
+    font-size: var(--font-size-h5);
+  }
+
+  h6 {
+    font-size: var(--font-size-h6);
+  }
+
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    margin-top: 0;
+  }
+
+  // Lists
+  ul {
+    list-style: disc outside;
+    padding-left: 1.9rem;
+
+    li {
+      padding-left: 0;
+    }
+  }
+
+  ol {
+    padding-left: 1.9rem;
+  }
+
+  // Bold.
+  b,
+  strong {
+    font-weight: var(--font-weight-bold);
+  }
+
+  // Italic.
+  em,
+  i {
     font-style: italic;
+  }
+
+  // Inline small text.
+  small {
+    font-size: .87em;
+  }
+
+  // Default paragraphs
+  p {
+    margin-bottom: 2.9rem;
+    margin-top: 2.9rem;
+  }
+
+  // Quotes.
+  blockquote {
+    border: 0 none;
+    clear: both;
+    margin: 0;
+    padding-bottom: 3rem;
+    position: relative;
+
+    p {
+      color: var(--color-blockquote);
+      font-style: italic;
+      margin-bottom: 0;
+      overflow: visible;
+      position: relative;
+    }
+
+    @media (min-width: $container-ipad) {
+      margin-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      height: 4px;
+      left: 0;
+      max-width: 147px;
+      position: absolute;
+      top: 0;
+
+      @media (min-width: $container-mobile) {
+        width: 30%;
+      }
+    }
+  }
+
+  cite {
+    display: block;
+    font-style: italic;
+  }
+
+  // No margin top on first paragraph
+  p:first-child {
+    margin-top: 0;
+  }
+
+  // No margin bottom on last paragraph
+  p:last-child {
     margin-bottom: 0;
-    overflow: visible;
+  }
+
+  // images
+  img {
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  // Figures and captions
+  figure {
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
     position: relative;
   }
 
-  @media (min-width: $container-ipad) {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
+  // Figcaption.
+  figcaption {
+    font-style: normal;
+    font-weight: var(--font-weight-paragraphs);
+    margin-top: 0;
   }
 
-  &::before {
-    content: '';
-    display: block;
-    height: 4px;
-    left: 0;
-    max-width: 147px;
-    position: absolute;
-    top: 0;
+  kbd,
+  pre,
+  samp {
+    font-family: var(--font-monospace);
+  }
 
-    @media (min-width: $container-mobile) {
-      width: 30%;
+  // Code block.
+  code {
+    background-color: var(--color-background-code-inline);
+    border-radius: .3rem;
+    color: var(--color-code-block);
+    font-family: var(--font-monospace);
+    font-size: inherit; // normalize.css sets this as 1em by default
+    padding: .37rem .5rem;
+
+    pre & {
+      display: inline-block;
+      padding: 1.15rem 1rem .85rem;
     }
   }
-}
 
-cite {
-  display: block;
-  font-style: italic;
-}
-
-// No margin top on first paragraph
-p:first-child {
-  margin-top: 0;
-}
-
-// No margin bottom on last paragraph
-p:last-child {
-  margin-bottom: 0;
-}
-
-// images
-img {
-  height: auto;
-  -ms-interpolation-mode: bicubic;
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-// Figures and captions
-figure {
-  margin-bottom: 1rem;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  position: relative;
-}
-
-// Figcaption.
-figcaption {
-  font-style: normal;
-  font-weight: var(--font-weight-paragraphs);
-  margin-top: 0;
-}
-
-kbd,
-pre,
-samp {
-  font-family: var(--font-monospace);
-}
-
-// Code block.
-code {
-  background-color: var(--color-background-code-inline);
-  border-radius: .3rem;
-  color: var(--color-code-block);
-  font-family: var(--font-monospace);
-  font-size: inherit; // normalize.css sets this as 1em by default
-  padding: .37rem .5rem;
-
-  pre & {
-    display: inline-block;
-    padding: 1.15rem 1rem .85rem;
+  // Preformatted text.
+  pre {
+    border-radius: .3rem;
+    display: block;
+    margin-bottom: 2rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
   }
-}
-
-// Preformatted text.
-pre {
-  border-radius: .3rem;
-  display: block;
-  margin-bottom: 2rem;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
 }
