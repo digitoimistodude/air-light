@@ -1,0 +1,30 @@
+// CSS Variables for radios and checkboxes
+:root {
+  // Form element colors
+  --color-background-input-field: var(--color-white);
+  --color-border-forms: #d9d9d9;
+  --color-border-forms-focus: rgba(42, 45, 62, .3);
+  --color-button: var(--color-white);
+  --color-button-hover: var(--color-white);
+  --color-button-background: var(--color-east-bay);
+  --color-button-background-hover: var(--color-valhalla);
+  --color-checkbox: var(--color-east-bay);
+  --color-checkbox-outline: 0 0 0 3px rgba(84, 87, 115, .2);
+  --color-checkbox-border-hover: lighten(#545773, 15%);
+  --color-placeholder: var(--color-paragraph);
+  --color-placeholder-focus: var(--color-black);
+  --opacity-placeholder: .4;
+  --opacity-placeholder-focus: .8;
+
+  // Form element settings
+  --border-radius-checkbox: 4px;
+  --border-radius-input-field: 4px;
+  --border-radius-select: 0;
+  --border-width-checkbox: 2px;
+  --border-width-input-field: 2px;
+  --gap-checkbox: 10px;
+  --line-height-checkbox: var(--line-height-paragraphs);
+  --size-checkbox-marker: 12px;
+  --size-radio-button: 16px;
+  --size-radio-button-marker: 8px;
+}
