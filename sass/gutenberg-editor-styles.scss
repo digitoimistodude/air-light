@@ -36,6 +36,9 @@
 // Gutenberg formatting
 @import 'gutenberg/formatting';
 
+// Global features needed by editor
+@import 'features/lazyload';
+
 // Editor exceptions below
 // These styles are NO USE to front-end
 .editor-styles-wrapper {
