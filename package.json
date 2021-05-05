@@ -45,7 +45,6 @@
     "stylelint-scss": "^3.19.0",
     "stylelint-value-no-unknown-custom-properties": "^3.0.0",
     "terser-webpack-plugin": "^4.2.3",
-    "vanilla-lazyload": "^17.3.1",
     "vinyl-named": "^1.1.0",
     "webpack": "^4.46.0",
     "webpack-stream": "^6.1.2"
@@ -56,6 +55,7 @@
     "moveto": "^1.8.2",
     "reframe.js": "^3.0.2",
     "slick-carousel": "^1.8.1",
+    "vanilla-lazyload": "^17.3.1",
     "what-input": "^5.2.10"
   }
 }
