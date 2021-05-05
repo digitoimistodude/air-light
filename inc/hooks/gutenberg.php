@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-05 09:31:21
+ * @Last Modified time: 2021-05-05 09:32:34
  *
  * @package air-light
  */
@@ -57,9 +57,9 @@ function register_block_editor_assets() {
   // Enqueue the bundled block JS file
   wp_enqueue_script(
     'block-editor-js',
-    get_theme_file_uri( get_asset_file( 'block.js' ) ),
+    get_theme_file_uri( get_asset_file( 'gutenberg-editor.js' ) ),
     $dependencies,
-    filemtime( get_theme_file_path( get_asset_file( 'block.js' ) ) ),
+    filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor.js' ) ) ),
     'all'
   );
 
