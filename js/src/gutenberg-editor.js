@@ -1,4 +1,4 @@
-/* eslint-disable camelcase, prefer-arrow-callback, no-unused-vars, no-undef, vars-on-top, no-var, func-names, max-len */
+/* eslint-disable camelcase, prefer-arrow-callback, no-unused-vars, no-undef, vars-on-top, no-var, func-names, max-len, import/no-unresolved */
 import LazyLoad from 'vanilla-lazyload';
 import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
 
