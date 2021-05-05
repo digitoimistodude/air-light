@@ -89,3 +89,10 @@
 .wp-block[data-type^=acf] {
   max-width: 100%;
 }
+
+// Reset admin lists
+.wp-admin .edit-post-sidebar ul,
+.wp-admin .edit-post-sidebar ol {
+  list-style: none;
+  padding-left: 0;
+}
