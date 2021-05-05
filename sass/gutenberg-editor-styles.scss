@@ -84,3 +84,9 @@
     }
   }
 }
+
+// Allow ACF blocks to be full width by default
+/* stylelint-disable */
+.wp-block[data-type^=acf] {
+  max-width: 100%;
+}
