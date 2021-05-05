@@ -59,24 +59,23 @@
   /* stylelint-enable */
 }
 
-// Wider editor
-// Default is 580px which is way too narrow
-// Forced to use important here, because WordPress uses too specific selectors
-/* stylelint-disable declaration-no-important */
+// Default editor blocks
 .wp-block {
-  font-family: var(--font-paragraph) !important;
-  max-width: $width-max-article !important;
+  font-family: var(--font-paragraph);
+
+  // Let's use maximum article width on article content
+  max-width: $width-max-article;
 
   // Full width block
   &[data-align="full"] {
-    max-width: 100% !important;
-    width: 100% !important;
+    max-width: 100%;
+    width: 100%;
   }
 
   // Wide width block
   &[data-align="wide"] {
-    max-width: $width-grid-base !important;
-    width: 100% !important;
+    max-width: $width-grid-base;
+    width: 100%;
 
     @media (min-width: 870px) {
       padding-left: 0;
