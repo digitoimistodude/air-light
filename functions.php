@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-11 14:26:36
+ * @Last Modified time: 2021-05-11 14:33:17
  *
  * @package air-light
  */
@@ -28,9 +28,9 @@ $theme_settings = [
    * Image and content sizes
    */
   'image_sizes' => [
-    'small' => 300,
-    'medium' => 700,
-    'large' => 1200,
+    'small'   => 300,
+    'medium'  => 700,
+    'large'   => 1200,
   ],
   'content_width' => 800,
 
@@ -49,7 +49,7 @@ $theme_settings = [
    * Menu locations
    */
   'menu_locations' => [
-      'primary' => __( 'Primary Menu', 'air-light' ),
+    'primary' => __( 'Primary Menu', 'air-light' ),
   ],
 
   /**
@@ -58,42 +58,89 @@ $theme_settings = [
    * See the instructions:
    * https://github.com/digitoimistodude/air-light#custom-taxonomies
    */
-    'taxonomies' => [
+  'taxonomies' => [
+    // 'your-taxonomy' => [
+    //   'name' => 'Your_Taxonomy',
+    //   'post_types' => [ 'post', 'page' ],
+    // ],
+  ],
+
   /**
-  'your-taxonomy' => [
-  'name' => 'Your_Taxonomy',
-  'post_types' => [ 'post', 'page' ],
-  ],
-  */
-  ],
-
-/**
- * Post types
- *
- * See the instructions:
- * https://github.com/digitoimistodude/air-light#custom-post-types
- */
-// TODO Instructions how to add post types
-
+   * Post types
+   *
+   * See the instructions:
+   * https://github.com/digitoimistodude/air-light#custom-post-types
+   */
   'post_types' => [
-  // 'your-post-type' => 'Your_Post_Type',
+    // 'your-post-type' => 'Your_Post_Type',
   ],
 
   /**
    * Gutenberg -related settings
    */
+  // Register custom ACF Blocks
+  'acf_blocks' => [
+    [
+      'name'      => 'bb-hero',
+      'title'     => 'Sivun yläalue',
+    ],
+    [
+      'name'      => 'title-left-content',
+      'title'     => 'Otsikko vasemmalla ja sisältö oikealla',
+    ],
+    [
+      'name'      => 'upsell-columns',
+      'title'     => 'Sisältönostot',
+    ],
+    [
+      'name'      => 'product-slider',
+      'title'     => 'Tuotekaruselli',
+    ],
+    [
+      'name'      => 'zick-zack',
+      'title'     => 'Zick-zack',
+    ],
+    [
+      'name'      => 'upsell',
+      'title'     => 'Upsell',
+    ],
+    [
+      'name'      => 'text-columns',
+      'title'     => 'Text-columns',
+    ],
+    [
+      'name'      => 'quote',
+      'title'     => 'Quote',
+    ],
+    [
+      'name'      => 'upcoming-events',
+      'title'     => 'Upcoming events',
+    ],
+  ],
 
-  // If you want to use classic editor somewhere, define it here
-  'use_classic_editor' => [ 'page' ],
+  // Set which custom ACF blocks should not be cached
+  'acf_blocks_prevent_cache'  => [],
 
-  // Don't restrict blocks
-  // 'allowed_blocks' => 'all',
+  // Custom ACF block default settings
+  'acf_block_defaults' => [
+    'category'          => 'air-light',
+    'mode'              => 'auto',
+    'align'             => 'full',
+    'post_types'        => [
+      'page',
+    ],
+    'supports'          => [
+      'align' => false,
+    ],
+    'render_callback'   => __NAMESPACE__ . '\render_acf_block',
+  ],
 
   // Restrict to only selected blocks
-  'allowed_blocks' => [
-
-    // Set default blocks allowed in every post type
+  // Set the value to 'all' to allow all blocks everywhere
+ 'allowed_blocks' => [
     'default' => [
+    ],
+    'post' => [
       'core/archives',
       'core/audio',
       'core/buttons',
@@ -101,7 +148,7 @@ $theme_settings = [
       'core/code',
       'core/column',
       'core/columns',
-      // 'core/coverImage',
+      'core/coverImage',
       'core/embed',
       'core/file',
       'core/freeform',
@@ -128,10 +175,10 @@ $theme_settings = [
       'core/verse',
       'core/video',
     ],
-      'post' => [
-      'core/coverImage', // This block is now allowed only in posts
-    ],
   ],
+
+  // If you want to use classic editor somewhere, define it here
+  'use_classic_editor' => [],
 
   // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
   'my_custom_setting' => true,
