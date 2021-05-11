@@ -44,6 +44,13 @@ add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\register_block_edit
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup_editor_styles' );
 
 /**
+ * ACF blocks
+ */
+require get_theme_file_path( 'inc/hooks/acf-blocks.php' );
+add_filter( 'block_categories', __NAMESPACE__ . '\acf_blocks_add_category_in_gutenberg', 10, 2 );
+add_action( 'acf/init', __NAMESPACE__ . '\acf_blocks_init' );
+
+/**
  * Form related hooks
  */
 require get_theme_file_path( 'inc/hooks/forms.php' );
