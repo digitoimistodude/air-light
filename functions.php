@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-02-23 13:40:37
+ * @Last Modified time: 2021-05-11 14:26:36
  *
  * @package air-light
  */
@@ -132,11 +132,6 @@ $theme_settings = [
       'core/coverImage', // This block is now allowed only in posts
     ],
   ],
-    // Module caching
-    'enable_module_caching' => true,
-    'exclude_module_from_cache' => [
-      'contact-form' => true,
-    ],
 
   // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
   'my_custom_setting' => true,
