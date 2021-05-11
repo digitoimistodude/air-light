@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-11 14:33:17
+ * @Last Modified time: 2021-05-11 14:36:25
  *
  * @package air-light
  */
@@ -80,42 +80,10 @@ $theme_settings = [
    */
   // Register custom ACF Blocks
   'acf_blocks' => [
-    [
-      'name'      => 'bb-hero',
-      'title'     => 'Sivun yläalue',
-    ],
-    [
-      'name'      => 'title-left-content',
-      'title'     => 'Otsikko vasemmalla ja sisältö oikealla',
-    ],
-    [
-      'name'      => 'upsell-columns',
-      'title'     => 'Sisältönostot',
-    ],
-    [
-      'name'      => 'product-slider',
-      'title'     => 'Tuotekaruselli',
-    ],
-    [
-      'name'      => 'zick-zack',
-      'title'     => 'Zick-zack',
-    ],
-    [
-      'name'      => 'upsell',
-      'title'     => 'Upsell',
-    ],
-    [
-      'name'      => 'text-columns',
-      'title'     => 'Text-columns',
-    ],
-    [
-      'name'      => 'quote',
-      'title'     => 'Quote',
-    ],
-    [
-      'name'      => 'upcoming-events',
-      'title'     => 'Upcoming events',
-    ],
+    // [
+    //   'name'      => 'block-file-slug',
+    //   'title'     => 'Block Visible Name',
+    // ],
   ],
 
   // Set which custom ACF blocks should not be cached
