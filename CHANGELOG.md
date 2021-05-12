@@ -1,3 +1,7 @@
+### 7.3.1: 2021-05-12
+
+* Fix: Add missing autoprefixer for dev styles gulp task
+
 ### 7.3.0: 2021-05-12
 
 * Fix select dropdowns showing toggle icon twice (`appearance: none;` is well supported by Safari 14)
@@ -31,7 +35,7 @@
 * Fix issue with setLazyLoadedFigureWidth not imported properly
 * Contributing instructions up to date according to the latest version of dudestack
 
-### 7.3.0: 2021-04-22
+### 7.3.1: 2021-04-22
 
 * Mobile nav overflow fix #95 (thanks @Tumppex and congrats for the first pull request!)
 * Documenting code: Add comment about Gravity Forms with ajax
