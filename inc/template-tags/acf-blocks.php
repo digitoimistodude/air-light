@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-11 14:38:58
+ * @Last Modified time: 2021-05-12 10:54:50
  * @package air-light
  */
 
@@ -111,7 +111,7 @@ function check_acf_block_fields( $data, $required = [], $message = '', $log_leve
   // Loop data and check if required fields are empty
   $empty_fields = [];
   foreach ( $data as $key => $value ) {
-    if ( in_array( $key, $required ) && empty( $value ) ) {
+    if ( in_array( $key, $required ) && ( empty( $value ) || is_wp_error( $value ) ) ) {
       $empty_fields[] = $key;
     }
   }
