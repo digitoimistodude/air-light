@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:34:14
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-11 14:35:13
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-05-11 15:04:45
  * @package air-light
  */
 
@@ -19,7 +19,7 @@ function acf_blocks_add_category_in_gutenberg( $categories, $post ) {
 } // end acf_blocks_add_category_in_gutenberg
 
 function acf_blocks_init() {
-  if ( ! function_exists('acf_register_block_type') ) {
+  if ( ! function_exists( 'acf_register_block_type' ) ) {
     return;
   }
 

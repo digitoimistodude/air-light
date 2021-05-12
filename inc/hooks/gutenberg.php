@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-11 14:37:53
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-05-11 15:04:37
  *
  * @package air-light
  */
@@ -32,7 +32,7 @@ function allowed_block_types( $allowed_blocks, $post ) {
 
   // Add custom blocks
   if ( isset( THEME_SETTINGS['acf_blocks'] ) ) {
-    foreach( THEME_SETTINGS['acf_blocks'] as $custom_block ) {
+    foreach ( THEME_SETTINGS['acf_blocks'] as $custom_block ) {
       $allowed_blocks[] = 'acf/' . $custom_block['name'];
     }
   }

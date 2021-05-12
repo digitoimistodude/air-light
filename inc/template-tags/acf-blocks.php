@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-12 10:54:50
+ * @Last Modified time: 2021-05-12 10:55:32
  * @package air-light
  */
 
@@ -53,8 +53,8 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
     $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path );
   }
 
-  // Output block contents
-  echo $block_output;
+  // Output block contents (this is safe unescaped)
+  echo $block_output; // phpcs:ignore
 } // end render_acf_block
 
 function load_acf_block_from_cache( $cache_key, $block_slug, $block_path ) {
@@ -124,8 +124,9 @@ function check_acf_block_fields( $data, $required = [], $message = '', $log_leve
     \do_action( "qm/{$log_level}", $message );
 
     // Show message when editing in dashboard
+    // This is safe unescaped
     if ( is_admin() ) {
-      echo $message;
+      echo $message; // phpcs:ignore
     }
 
     // Empty required fields, bail the show
