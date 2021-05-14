@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-11 15:04:37
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-05-14 11:04:01
  *
  * @package air-light
  */
@@ -26,8 +26,8 @@ function allowed_block_types( $allowed_blocks, $post ) {
   $allowed_blocks = isset( THEME_SETTINGS['allowed_blocks']['default'] ) ? THEME_SETTINGS['allowed_blocks']['default'] : [];
 
   // If there is post type specific blocks, add them to the allowed blocks list
-  if ( isset( THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] ) ) {
-    $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type( $post->post_type ) ] );
+  if ( isset( THEME_SETTINGS['allowed_blocks'][ $post->post_type ] ) ) {
+    $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ $post->post_type ] );
   }
 
   // Add custom blocks
