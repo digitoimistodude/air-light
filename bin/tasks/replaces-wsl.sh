@@ -13,7 +13,6 @@ echo "${YELLOW}Removing demo content...${TXTRESET}"
 LC_ALL=C sed -i -e "s;@import 'layout\/demo-content'\;;;" ${PROJECT_THEME_PATH}/sass/global.scss
 LC_ALL=C sed -i -e "s;@import 'layout\/wordpress'\;;;" ${PROJECT_THEME_PATH}/sass/global.scss
 LC_ALL=C sed -i -e "s;<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>;;" ${PROJECT_THEME_PATH}/front-page.php
-LC_ALL=C sed -i -e "s;<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>;;" ${PROJECT_THEME_PATH}/footer.php
 
 read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
   if [ "$yn" = "n" ]; then
