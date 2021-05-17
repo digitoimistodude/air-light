@@ -1,64 +1,61 @@
 // Core/gallery block
-.editor-styles-wrapper,
-.gutenberg-content {
-  .is-grid,
-  .wp-block-gallery {
-    overflow: hidden;
+.is-grid,
+.wp-block-gallery {
+  overflow: hidden;
 
-    figcaption {
-      color: var(--color-white);
-      font-size: var(--font-size-16);
-      line-height: 1.55;
-      margin-bottom: var(--margin-between-text-elements);
-      width: 100%;
-    }
-
-    img {
-      margin-bottom: 0;
-    }
-
-    &.alignwide {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
-    }
-
-    &.alignfull {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
-      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
-    }
+  figcaption {
+    color: var(--color-white);
+    font-size: var(--font-size-16);
+    line-height: 1.55;
+    margin-bottom: var(--margin-between-text-elements);
+    width: 100%;
   }
 
-  .is-grid,
-  .blocks-gallery-grid {
-    display: grid;
-    padding-left: 0;
-
-    .blocks-gallery-item {
-      margin: 0;
-      width: 100%;
-    }
-  }
-
-  // Loops to enumerate the classes for columns.
-  @for $i from 2 through 9 {
-    .is-grid.columns-#{$i},
-    .columns-#{$i} .blocks-gallery-grid {
-      grid-gap: 3rem;
-      grid-template-columns: repeat($i, 1fr);
-
-      @media (max-width: 1000px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @media (max-width: 670px) {
-        grid-gap: 2rem;
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-  }
-
-  .blocks-gallery-item > figure figcaption {
+  img {
     margin-bottom: 0;
   }
+
+  &.alignwide {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+  }
+
+  &.alignfull {
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  }
+}
+
+.is-grid,
+.blocks-gallery-grid {
+  display: grid;
+  padding-left: 0;
+
+  .blocks-gallery-item {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+// Loops to enumerate the classes for columns.
+@for $i from 2 through 9 {
+  .is-grid.columns-#{$i},
+  .columns-#{$i} .blocks-gallery-grid {
+    grid-gap: 3rem;
+    grid-template-columns: repeat($i, 1fr);
+
+    @media (max-width: 1000px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 670px) {
+      grid-gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.blocks-gallery-item > figure figcaption {
+  margin-bottom: 0;
 }

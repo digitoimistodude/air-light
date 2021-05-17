@@ -1,13 +1,10 @@
 // Core/separator block
-.editor-styles-wrapper,
-.gutenberg-content {
-  hr,
-  .wp-block-separator {
-    margin-bottom: calc(var(--margin-between-paragraphs) * 2);
-    margin-top: calc(var(--margin-between-paragraphs) * 2);
-  }
+hr,
+.wp-block-separator {
+  margin-bottom: calc(var(--margin-between-paragraphs) * 2);
+  margin-top: calc(var(--margin-between-paragraphs) * 2);
+}
 
-  .wp-block-separator.is-style-default {
-    max-width: $width-max-article;
-  }
+.wp-block-separator.is-style-default {
+  max-width: $width-max-article;
 }
