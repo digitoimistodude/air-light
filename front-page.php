@@ -22,7 +22,7 @@ $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS[
 get_header(); ?>
 
 <main class="site-main">
-  <?php get_template_part( 'template-parts/header/demo-content' ); ?>
+  <?php the_content(); ?>
 </main>
 
 <?php get_footer();

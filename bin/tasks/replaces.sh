@@ -10,7 +10,6 @@ for i in `grep -rl airwptheme * --exclude-dir=node_modules 2> /dev/null`; do LC_
 
 # Remove demo content
 echo "${YELLOW}Removing demo content...${TXTRESET}"
-find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'layout\/demo-content';//g" {} +
 find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'layout\/wordpress';//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/\/\/ Featured image for Theme Checker (it\'s a requirement for theme to pass in official Theme directory)//g" {} +

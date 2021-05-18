@@ -143,7 +143,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _grid.scss              # → CSS Grid helper mixin
 │   │   └── _typography.scss        # → Typography style mixins
 │   ├── layout/                     # → Fuctionality styles
-│   │   ├── _demo-content.scss      # → Styles for demo, start script will delete this file
 │   │   ├── _forms.scss             # → Styles for general forms and Gravity Forms
 │   │   ├── _site-footer.scss       # → Footer styles
 │   │   ├── _site-header.scss       # → Header styles

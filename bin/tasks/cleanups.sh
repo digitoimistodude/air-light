@@ -16,7 +16,6 @@ rm ${PROJECT_THEME_PATH}/README.md
 rm ${PROJECT_THEME_PATH}/LICENSE.md
 
 # Remove demo content leftover files
-rm ${PROJECT_THEME_PATH}/sass/layout/_demo-content.scss
 rm ${PROJECT_THEME_PATH}/sass/layout/_wordpress.scss
 
 echo "${YELLOW}Remove things we need to remove anyway in each start...${TXTRESET}"
