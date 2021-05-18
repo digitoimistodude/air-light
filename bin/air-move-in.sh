@@ -36,8 +36,6 @@ sudo mv ~/air-temp/front-page.php ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/README.md ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.stylelintrc ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.editorconfig ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/template-parts/header/demo-content.php ~/Projects/airdev/content/themes/air-light/template-parts/header/
-sudo mv ~/air-temp/template-parts/footer/demo-content.php ~/Projects/airdev/content/themes/air-light/template-parts/footer/
 
 # Restore repository state before move
 cd ~/Projects/airdev/content/themes/air-light/ && git stash

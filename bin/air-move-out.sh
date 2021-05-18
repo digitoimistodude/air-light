@@ -43,8 +43,6 @@ sudo mv ~/Projects/airdev/content/themes/air-light/.editorconfig ~/air-temp/
 mkdir -p ~/air-temp/template-parts
 mkdir -p ~/air-temp/template-parts/header
 mkdir -p ~/air-temp/template-parts/footer
-sudo mv ~/Projects/airdev/content/themes/air-light/template-parts/header/demo-content.php ~/air-temp/template-parts/header/
-sudo mv ~/Projects/airdev/content/themes/air-light/template-parts/footer/demo-content.php ~/air-temp/template-parts/footer/
 
 # Remove custom stuff that are not part of an official WordPress theme in WP theme directory,
 # Because:

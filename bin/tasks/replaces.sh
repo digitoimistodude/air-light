@@ -10,13 +10,11 @@ for i in `grep -rl airwptheme * --exclude-dir=node_modules 2> /dev/null`; do LC_
 
 # Remove demo content
 echo "${YELLOW}Removing demo content...${TXTRESET}"
-find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'layout\/demo-content';//g" {} +
 find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'layout\/wordpress';//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/\/\/ Featured image for Theme Checker (it\'s a requirement for theme to pass in official Theme directory)//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/\/\/ NB\! Our dev version uses newtheme.sh build script which cleans ups things including this next line//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/\$thumbnail \= wp_get_attachment_url( get_post_thumbnail_id() ) \?\: THEME_SETTINGS\['default_featured_image'\];//g" {} +
-find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'footer.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/footer\/demo-content\' ); \?>//g" {} +
 
 read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
   if [ "$yn" = "n" ]; then

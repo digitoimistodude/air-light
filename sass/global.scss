@@ -14,10 +14,11 @@
 // Variables
 @import 'variables/colors';
 @import 'variables/breakpoints';
-@import 'variables/spacings';
 @import 'variables/font-face';
 @import 'variables/font-family';
 @import 'variables/font-sizes';
+@import 'variables/forms';
+@import 'variables/spacings';
 
 // Style components
 @import 'components/components';
@@ -30,7 +31,6 @@
 @import 'navigation/nav-mobile';
 
 // Structure
-@import 'layout/demo-content';
 @import 'layout/general';
 @import 'layout/print';
 @import 'layout/typography';

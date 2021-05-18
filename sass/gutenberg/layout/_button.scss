@@ -1,0 +1,25 @@
+// Buttons inside Gutenberg
+// We have to override default wp-admin blue buttons
+.wp-block .acf-block-preview {
+  button,
+  .button,
+  input[type="reset"],
+  input[type="submit"],
+  input[type="button"] {
+    @include button();
+
+    // Button sizes
+    &.button-small {
+      @include button-size-small();
+    }
+
+    &.button-large {
+      @include button-size-large();
+    }
+
+    // Button styles
+    &.button-ghost {
+      @include button-style-ghost();
+    }
+  }
+}

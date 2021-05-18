@@ -1,45 +1,43 @@
 // Core/blockquote block
-.editor-styles-wrapper,
-.gutenberg-content {
-  blockquote + cite,
-  blockquote + p > cite {
-    margin-bottom: 4rem;
+
+blockquote + cite,
+blockquote + p > cite {
+  margin-bottom: 4rem;
+}
+
+blockquote,
+blockquote.wp-block-quote {
+  border-left: 2px solid var(--color-blockquote);
+  line-height: var(--line-height-paragraphs-blog);
+  margin-bottom: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  padding: 3.5rem 6rem;
+  width: calc(100% - 12rem);
+
+  @media (max-width: $width-max-article + 40px) {
+    padding: 3.5rem 2rem;
+    width: calc(100% - 4rem);
   }
 
-  > blockquote,
-  > blockquote.wp-block-quote {
-    border-left: 2px solid var(--color-blockquote);
+  @media (max-width: $container-mobile) {
+    padding: 4rem 4rem 4rem 2rem;
+  }
+
+  > p {
+    color: var(--color-blockquote);
     line-height: var(--line-height-paragraphs-blog);
-    margin-bottom: 4rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4rem;
-    padding: 3.5rem 6rem;
-    width: calc(100% - 12rem);
-
-    @media (max-width: $width-max-article + 40px) {
-      padding: 3.5rem 2rem;
-      width: calc(100% - 4rem);
-    }
-
-    @media (max-width: $container-mobile) {
-      padding: 4rem 4rem 4rem 2rem;
-    }
-
-    > p {
-      color: var(--color-blockquote);
-      line-height: var(--line-height-paragraphs-blog);
-    }
   }
+}
 
-  .wp-block-blockquote.alignwide,
-  .wp-block-blockquote.alignfull {
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
-    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
-  }
+.wp-block-blockquote.alignwide,
+.wp-block-blockquote.alignfull {
+  padding-left: var(--padding-container-horizontal);
+  padding-right: var(--padding-container-horizontal);
+  width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+}
 
-  .wp-block-blockquote blockquote {
-    padding-bottom: 0;
-  }
+.wp-block-blockquote blockquote {
+  padding-bottom: 0;
 }

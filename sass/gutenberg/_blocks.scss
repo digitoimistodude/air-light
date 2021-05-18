@@ -1,24 +1,27 @@
 // List of all blocks: https://wordpress.org/support/article/blocks/
 // Default Gutenberg core block styles
-@import 'gutenberg/blocks/core-blockquote';
-@import 'gutenberg/blocks/core-code';
-@import 'gutenberg/blocks/core-columns';
-@import 'gutenberg/blocks/core-cover';
-@import 'gutenberg/blocks/core-embed';
-@import 'gutenberg/blocks/core-gallery';
-@import 'gutenberg/blocks/core-separator';
-@import 'gutenberg/blocks/core-heading';
-@import 'gutenberg/blocks/core-image';
-@import 'gutenberg/blocks/core-list';
-@import 'gutenberg/blocks/core-paragraph';
-@import 'gutenberg/blocks/core-preformatted';
-@import 'gutenberg/blocks/core-pullquote';
-@import 'gutenberg/blocks/core-table';
-@import 'gutenberg/blocks/core-text-columns';
-@import 'gutenberg/blocks/core-verse';
-@import 'gutenberg/blocks/core-video';
+.editor-styles-wrapper,
+.gutenberg-content {
+  @import 'gutenberg/blocks/core-blockquote';
+  @import 'gutenberg/blocks/core-code';
+  @import 'gutenberg/blocks/core-columns';
+  @import 'gutenberg/blocks/core-cover';
+  @import 'gutenberg/blocks/core-embed';
+  @import 'gutenberg/blocks/core-gallery';
+  @import 'gutenberg/blocks/core-separator';
+  @import 'gutenberg/blocks/core-heading';
+  @import 'gutenberg/blocks/core-image';
+  @import 'gutenberg/blocks/core-list';
+  @import 'gutenberg/blocks/core-paragraph';
+  @import 'gutenberg/blocks/core-preformatted';
+  @import 'gutenberg/blocks/core-pullquote';
+  @import 'gutenberg/blocks/core-table';
+  @import 'gutenberg/blocks/core-text-columns';
+  @import 'gutenberg/blocks/core-verse';
+  @import 'gutenberg/blocks/core-video';
 
-// Custom Gutenberg block styles
-@import 'gutenberg/blocks/boxed';
-@import 'gutenberg/blocks/button';
-@import 'gutenberg/blocks/button-file';
+  // Custom Gutenberg block styles
+  @import 'gutenberg/blocks/boxed';
+  @import 'gutenberg/blocks/button';
+  @import 'gutenberg/blocks/button-file';
+}

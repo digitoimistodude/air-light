@@ -143,7 +143,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
 │   │   ├── _grid.scss              # → CSS Grid helper mixin
 │   │   └── _typography.scss        # → Typography style mixins
 │   ├── layout/                     # → Fuctionality styles
-│   │   ├── _demo-content.scss      # → Styles for demo, start script will delete this file
 │   │   ├── _forms.scss             # → Styles for general forms and Gravity Forms
 │   │   ├── _site-footer.scss       # → Footer styles
 │   │   ├── _site-header.scss       # → Header styles
@@ -173,7 +172,6 @@ themes/your-theme-name/             # → Root of your air-light based theme
     ├── header/                     # → Header modules
     │   ├── branding.php            # → Site branding
     │   ├── navigation.php          # → Site navigation
-    ├── content-modular.php         # → ACF flexible content
     └── hero.php                    # → Default hero
 ```
 
@@ -404,7 +402,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 ### Our way of building new themes
 
-We use ACF and Gutenberg to build new websites on air-light. This is the default block structure we are used to have:
+We use Gutenberg and ACF to build new websites on air-light. This is the default block structure we are used to have:
 
 ```` html
 <section class="block block-something has-dark-bg">
@@ -479,7 +477,9 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 ### Debuggers
 
-Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!** Here's how:
+Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!**
+
+It's also recommended to use [Query Monitor](https://wordpress.org/plugins/query-monitor/) plugin, as some debugging messages goes straight to it's logger.
 
 #### For gulp
 

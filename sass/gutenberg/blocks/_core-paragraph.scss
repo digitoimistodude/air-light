@@ -1,31 +1,28 @@
 // Core/paragraph block
-.editor-styles-wrapper,
-.gutenberg-content {
-  p {
-    color: var(--color-paragraph);
-    line-height: var(--line-height-paragraphs-blog);
-  }
+p {
+  color: var(--color-paragraph);
+  line-height: var(--line-height-paragraphs-blog);
+}
 
-  .has-larger-font-size,
-  .has-large-font-size {
-    line-height: var(--line-height-headings);
-  }
+.has-larger-font-size,
+.has-large-font-size {
+  line-height: var(--line-height-headings);
+}
 
-  .has-large-font-size {
-    @media (max-width: $container-mobile) {
-      font-size: var(--font-size-18);
-    }
+.has-large-font-size {
+  @media (max-width: $container-mobile) {
+    font-size: var(--font-size-18);
   }
+}
 
-  .has-larger-font-size {
-    @media (max-width: $container-mobile) {
-      font-size: var(--font-size-22);
-    }
+.has-larger-font-size {
+  @media (max-width: $container-mobile) {
+    font-size: var(--font-size-22);
   }
+}
 
-  @media (max-width: $width-grid-base + 40px) {
-    .has-background {
-      width: calc(100% - calc(2.375em * 2));
-    }
+@media (max-width: $width-grid-base + 40px) {
+  .has-background {
+    width: calc(100% - calc(2.375em * 2));
   }
 }

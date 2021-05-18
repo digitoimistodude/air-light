@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
- * @Last Modified by:   Your name
- * @Last Modified time: 2021-02-22 19:03:53
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-05-11 14:40:19
  *
  * @package air-light
  */
@@ -29,38 +29,40 @@ add_filter( 'air_helper_pll_register_strings', function() {
 function get_default_localization_strings( $language = 'en' ) {
   $strings = [
     'en'  => [
-      'Add a menu'            => __( 'Add a menu', 'air-light' ),
-      'Open main menu'        => __( 'Open main menu', 'air-light' ),
-      'Close main menu'       => __( 'Close main menu', 'air-light' ),
-      'Main navigation'       => __( 'Main navigation', 'air-light' ),
-      'Back to top'           => __( 'Back to top', 'air-light' ),
-      'Open child menu'       => __( 'Open child menu', 'air-light' ),
-      'Open child menu for'   => __( 'Open child menu for', 'air-light' ),
-      'Close child menu'      => __( 'Close child menu', 'air-light' ),
-      'Close child menu for'  => __( 'Close child menu for', 'air-light' ),
-      'Skip to content'       => __( 'Skip to content', 'air-light' ),
-      'External site:'        => __( 'External site:', 'air-light' ),
-      'opens in a new window' => __( 'opens in a new window', 'air-light' ),
-      'Page not found.'       => __( 'Page not found.', 'air-light' ),
+      'Add a menu'                  => __( 'Add a menu', 'air-light' ),
+      'Open main menu'              => __( 'Open main menu', 'air-light' ),
+      'Close main menu'             => __( 'Close main menu', 'air-light' ),
+      'Main navigation'             => __( 'Main navigation', 'air-light' ),
+      'Back to top'                 => __( 'Back to top', 'air-light' ),
+      'Open child menu'             => __( 'Open child menu', 'air-light' ),
+      'Open child menu for'         => __( 'Open child menu for', 'air-light' ),
+      'Close child menu'            => __( 'Close child menu', 'air-light' ),
+      'Close child menu for'        => __( 'Close child menu for', 'air-light' ),
+      'Skip to content'             => __( 'Skip to content', 'air-light' ),
+      'External site:'              => __( 'External site:', 'air-light' ),
+      'opens in a new window'       => __( 'opens in a new window', 'air-light' ),
+      'Page not found.'             => __( 'Page not found.', 'air-light' ),
       'The reason might be mistyped or expired URL.' => __( 'The reason might be mistyped or expired URL.', 'air-light' ),
-      'Search'                => __( 'Search', 'air-light' ),
+      'Search'                      => __( 'Search', 'air-light' ),
+      'Block missing required data' => __( 'Block missing required data', 'air-light' ),
     ],
     'fi'  => [
-      'Add a menu'            => 'Luo uusi valikko',
-      'Open main menu'        => 'Avaa päävalikko',
-      'Close main menu'       => 'Sulje päävalikko',
-      'Main navigation'       => 'Päävalikko',
-      'Back to top'           => 'Takaisin ylös',
-      'Open child menu'       => 'Avaa alavalikko',
-      'Open child menu for'   => 'Avaa alavalikko kohteelle',
-      'Close child menu'      => 'Sulje alavalikko',
-      'Close child menu for'  => 'Sulje alavalikko kohteelle',
-      'Skip to content'       => 'Siirry suoraan sisältöön',
-      'External site:'        => 'Ulkoinen sivusto:',
-      'opens in a new window' => 'avautuu uuteen ikkunaan',
-      'Page not found.'       => 'Hups. Näyttää, ettei sivua löydy.',
+      'Add a menu'                  => 'Luo uusi valikko',
+      'Open main menu'              => 'Avaa päävalikko',
+      'Close main menu'             => 'Sulje päävalikko',
+      'Main navigation'             => 'Päävalikko',
+      'Back to top'                 => 'Takaisin ylös',
+      'Open child menu'             => 'Avaa alavalikko',
+      'Open child menu for'         => 'Avaa alavalikko kohteelle',
+      'Close child menu'            => 'Sulje alavalikko',
+      'Close child menu for'        => 'Sulje alavalikko kohteelle',
+      'Skip to content'             => 'Siirry suoraan sisältöön',
+      'External site:'              => 'Ulkoinen sivusto:',
+      'opens in a new window'       => 'avautuu uuteen ikkunaan',
+      'Page not found.'             => 'Hups. Näyttää, ettei sivua löydy.',
       'The reason might be mistyped or expired URL.' => 'Syynä voi olla virheellisesti kirjoitettu tai vanhentunut linkki.',
-      'Search'                => 'Haku',
+      'Search'                      => 'Haku',
+      'Block missing required data' => 'Lohkon pakollisia tietoja puuttuu',
     ],
   ];
 

@@ -6,6 +6,7 @@
 // global.scss to see them on front end side.
 
 // Helpers
+@import 'helpers/animations';
 @import 'helpers/typography';
 @import 'helpers/grid';
 
@@ -14,6 +15,7 @@
 @import 'variables/breakpoints';
 @import 'variables/font-family';
 @import 'variables/font-sizes';
+@import 'variables/forms';
 @import 'variables/spacings';
 
 // Gutenberg editor specific webfonts
@@ -24,12 +26,20 @@
 
 // Gutenberg layout outside blocks
 @import 'gutenberg/layout/content';
+@import 'gutenberg/layout/button';
 
 // Gutenberg blocks
 @import 'gutenberg/blocks';
 
+// Apply general styles from site front-end
+@import 'layout/general';
+@import 'layout/typography';
+
 // Gutenberg formatting
 @import 'gutenberg/formatting';
+
+// Global features needed by editor
+@import 'features/lazyload';
 
 // Editor exceptions below
 // These styles are NO USE to front-end
@@ -51,28 +61,40 @@
   /* stylelint-enable */
 }
 
-// Wider editor
-// Default is 580px which is way too narrow
-// Forced to use important here, because WordPress uses too specific selectors
-/* stylelint-disable declaration-no-important */
+// Default editor blocks
 .wp-block {
-  font-family: var(--font-paragraph) !important;
-  max-width: $width-max-article !important;
+  font-family: var(--font-paragraph);
+
+  // Let's use maximum article width on article content
+  max-width: $width-max-article;
 
   // Full width block
   &[data-align="full"] {
-    max-width: 100% !important;
-    width: 100% !important;
+    max-width: 100%;
+    width: 100%;
   }
 
   // Wide width block
   &[data-align="wide"] {
-    max-width: $width-grid-base !important;
-    width: 100% !important;
+    max-width: $width-grid-base;
+    width: 100%;
 
     @media (min-width: 870px) {
       padding-left: 0;
       padding-right: 0;
     }
   }
+}
+
+// Allow ACF blocks to be full width by default
+/* stylelint-disable */
+.wp-block[data-type^=acf] {
+  max-width: 100%;
+}
+
+// Reset admin lists
+.wp-admin .edit-post-sidebar ul,
+.wp-admin .edit-post-sidebar ol {
+  list-style: none;
+  padding-left: 0;
 }
