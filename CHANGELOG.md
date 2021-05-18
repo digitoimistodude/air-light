@@ -1,3 +1,15 @@
+### 7.4.0: 2021-05-18
+
+#### Major Gutenberg update
+
+* This version adds ACF-Gutenberg blocks (PR: Moving on from modular content to ACF-Gutenberg blocks #100)
+* Fixes for stylelint (most notably getting rid of vendor prefixes in styles)
+* Fully working editor styles
+* Editor JS and editor lazyload support
+* Deprecate modular-content.php
+* Remove demo content from the theme (from now on it's a separate WordPress plugin)
+* Bunch of small fixes
+
 ### 7.3.1: 2021-05-12
 
 * Fix: Add missing autoprefixer for dev styles gulp task
