@@ -104,6 +104,7 @@
     "selector-max-pseudo-class": 2,
     "selector-max-universal": 1,
     "selector-no-vendor-prefix": true,
+    "property-no-vendor-prefix": true,
     "selector-no-qualifying-type": null,
     "max-nesting-depth": [ 3, { "ignore": ["blockless-at-rules", "pseudo-classes"] } ],
     "declaration-block-no-duplicate-properties": true,

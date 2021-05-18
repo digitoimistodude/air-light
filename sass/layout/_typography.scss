@@ -182,12 +182,6 @@ html,
     font-style: italic;
   }
 
-  // No margin top on first paragraph
-  p:first-child {
-    margin-top: 0;
-  }
-
-  // No margin bottom on last paragraph
   p:last-child {
     margin-bottom: 0;
   }
@@ -195,7 +189,6 @@ html,
   // images
   img {
     height: auto;
-    -ms-interpolation-mode: bicubic;
     max-width: 100%;
     vertical-align: middle;
   }

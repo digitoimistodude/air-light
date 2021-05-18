@@ -41,18 +41,18 @@ class Your_Post_Type extends Post_Type {
       'labels'              => $generated_labels,
       'description'         => '',
       'menu_icon'           => null,
-      'rewrite'             => [
-        'with_front'  => false,
-        'slug'        => 'your-post-type',
-      ],
-      'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions' ],
-      'taxonomies'          => [],
       'public'              => false,
       'has_archive'         => false,
       'exclude_from_search' => false,
       'show_ui'             => true,
       'show_in_menu'        => true,
       'show_in_rest'        => false,
+      'rewrite'             => [
+        'with_front'  => false,
+        'slug'        => 'your-post-type',
+      ],
+      'supports'            => [ 'title', 'editor', 'thumbnail', 'revisions' ],
+      'taxonomies'          => [],
     ];
 
     $this->register_wp_post_type( $this->slug, $args );

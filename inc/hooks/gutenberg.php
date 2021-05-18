@@ -4,13 +4,11 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-14 11:04:01
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-05-18 10:29:16
  *
  * @package air-light
  */
-
-namespace Air_Light;
 
 namespace Air_Light;
 
@@ -101,4 +99,4 @@ function setup_editor_styles() {
 
   // Enqueue editor styles.
   add_editor_style( get_theme_file_uri( get_asset_file( 'gutenberg-editor-styles.css' ) ) );
-} // end setup_editor_styles
+}
