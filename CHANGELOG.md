@@ -1,3 +1,8 @@
+### 7.4.1: 2021-05-18
+
+* Deprecate modules SCSS
+* Example of your next ACF Gutenberg block
+
 ### 7.4.0: 2021-05-18
 
 #### Major Gutenberg update

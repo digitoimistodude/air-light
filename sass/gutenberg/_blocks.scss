@@ -1,7 +1,8 @@
 // List of all blocks: https://wordpress.org/support/article/blocks/
 // Default Gutenberg core block styles
 .editor-styles-wrapper,
-.gutenberg-content {
+.gutenberg-content,
+.site-main {
   @import 'gutenberg/blocks/core-blockquote';
   @import 'gutenberg/blocks/core-code';
   @import 'gutenberg/blocks/core-columns';
@@ -24,4 +25,7 @@
   @import 'gutenberg/blocks/boxed';
   @import 'gutenberg/blocks/button';
   @import 'gutenberg/blocks/button-file';
+
+  // ACF blocks
+  // @import 'gutenberg/blocks/your-new-acf-block';
 }
