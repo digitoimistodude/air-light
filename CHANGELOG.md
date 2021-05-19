@@ -1,3 +1,7 @@
+### 7.4.2: 2021-05-19
+
+* Improve block functionality #102
+
 ### 7.4.1: 2021-05-18
 
 * Deprecate modules SCSS
