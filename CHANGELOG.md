@@ -1,3 +1,7 @@
+### 7.4.4: 2021-05-19
+
+* Fix alignwide and alignfull variables in front end
+
 ### 7.4.3: 2021-05-19
 
 * Add variables $width-full and $width-wide for default Gutenberg blocks styling
