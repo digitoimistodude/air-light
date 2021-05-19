@@ -70,13 +70,13 @@
 
   // Full width block
   &[data-align="full"] {
-    max-width: 100%;
+    max-width: $width-full;
     width: 100%;
   }
 
   // Wide width block
   &[data-align="wide"] {
-    max-width: $width-grid-base;
+    max-width: $width-wide;
     width: 100%;
 
     @media (min-width: 870px) {
