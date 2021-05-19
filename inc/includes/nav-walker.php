@@ -30,7 +30,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
    * @param int              $depth  Depth of menu item. Used for padding.
    * @param WP_Nav_Menu_Args $args   An object of wp_nav_menu() arguments.
    */
-  public function start_lvl( &$output, $depth = 0, $args = array() ) {
+  public function start_lvl( &$output, $depth = 0, $args = null ) {
     if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
       $t = '';
       $n = '';
@@ -40,6 +40,21 @@ class Nav_Walker extends \Walker_Nav_Menu {
     }
     $indent = str_repeat( $t, $depth );
 
+    // Default class to add to the file.
+		$classes = array( 'sub-menu' );
+
+    /**
+		 * Filters the CSS class(es) applied to a menu list element.
+		 *
+		 * @since WP 4.8.0
+		 *
+		 * @param array    $classes The CSS classes that are applied to the menu `<ul>` element.
+		 * @param stdClass $args    An object of `wp_nav_menu()` arguments.
+		 * @param int      $depth   Depth of menu item. Used for padding.
+		 */
+		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+
     if ( isset( $args->has_dropdown ) && $args->has_dropdown ) {
       // Get the icon
       ob_start();
@@ -47,9 +62,27 @@ class Nav_Walker extends \Walker_Nav_Menu {
       $icon = ob_get_clean();
       $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . get_default_localization( 'Open child menu' ) . '">';
       $output .= $icon . '</button>';
-      $output .= "\n$indent<ul class=\"sub-menu\">\n";
+
+			/*
+			 * The `.dropdown-menu` container needs to have a labelledby
+			 * attribute which points to it's trigger link.
+			 *
+			 * Form a string for the labelledby attribute from the the latest
+			 * link with an id that was added to the $output.
+			 */
+			$labelledby = '';
+			// Find all links with an id in the output.
+			preg_match_all( '/(<a.*?id=\"|\')(.*?)\"|\'.*?>/im', $output, $matches );
+			// With pointer at end of array check if we got an ID match.
+
+			if ( end( $matches[2] ) ) {
+				// Build a string to use as aria-labelledby.
+				$labelledby = 'aria-labelledby="' . esc_attr( end( $matches[2] ) ) . '"';
+			}
+			$output .= "{$n}{$indent}<ul$class_names $labelledby>{$n}";
+
     } else {
-      $output .= "\n$indent<ul>\n";
+      $output .= "\n{$n}{$indent}<ul>{$n}";
     }
 
   }
