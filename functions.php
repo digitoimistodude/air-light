@@ -111,6 +111,7 @@ $theme_settings = [
     'post' => [
       'core/archives',
       'core/audio',
+      'core/button',
       'core/buttons',
       'core/categories',
       'core/code',
