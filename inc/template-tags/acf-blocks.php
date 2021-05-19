@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-12 10:55:32
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-05-19 08:32:18
  * @package air-light
  */
 
@@ -12,7 +12,9 @@ namespace Air_Light;
 function render_acf_block( $block, $content = '', $is_preview = false, $post_id = 0 ) {
   $block_slug = str_replace( 'acf/', '', $block['name'] );
   $block_path = get_theme_file_path( "template-parts/blocks/{$block_slug}.php" );
-  $cache = true;
+
+  // Always bypass cache if is preview from editor or in development phase
+  $block_cache_enabled = $is_preview || 'development' === wp_get_environment_type() ? false : acf_block_maybe_enable_cache( $block_slug );
 
   \do_action( 'qm/debug', "Block {$block_slug} output started" );
 
@@ -26,38 +28,21 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
    * block cache when contents are updated.
    */
   $content_hash = crc32( serialize( get_fields() ) );
-  $cache_key = "post_{$post_id}_{$block['id']}|{$content_hash}";
-
-  // Always bypass cache if is preview from editor
-  if ( $is_preview ) {
-    $cache = false;
-  }
-
-  // Always bypass cache in development phase
-  if ( 'development' === wp_get_environment_type() ) {
-    $cache = false;
-  }
-
-  // Check if block is set to be bypassed always
-  if ( ! empty( THEME_SETTINGS ) && array_key_exists( 'acf_blocks_prevent_cache', THEME_SETTINGS ) ) {
-    if ( array_key_exists( $block_slug, THEME_SETTINGS['acf_blocks_prevent_cache'] ) ) {
-      $cache = false;
-    }
-  }
+  $cache_key    = "post_{$post_id}_{$block['id']}|{$content_hash}";
 
   // Get block contents
-  if ( ! $cache ) {
+  if ( ! $block_cache_enabled ) {
     \do_action( 'qm/debug', "Block {$block_slug} bypassed cache ({$cache_key})" );
-    $block_output = load_acf_block( $block_path );
+    $block_output = load_acf_block( $block_path, false, $block, $is_preview );
   } else {
-    $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path );
+    $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block );
   }
 
   // Output block contents (this is safe unescaped)
   echo $block_output; // phpcs:ignore
 } // end render_acf_block
 
-function load_acf_block_from_cache( $cache_key, $block_slug, $block_path ) {
+function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block ) {
   // Block can be cached, try to find it is already in cache
   $output = \wp_cache_get( $cache_key, 'theme' );
 
@@ -67,7 +52,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path ) {
   }
 
   // Block is not found in cache, load block content
-  $output = load_acf_block( $block_path, true );
+  $output = load_acf_block( $block_path, true, $block );
 
   // Save block to cache
   \wp_cache_set( $cache_key, $output, 'theme', HOUR_IN_SECONDS );
@@ -76,7 +61,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path ) {
   return $output;
 } // end load_acf_block_from_cache
 
-function load_acf_block( $block_path, $cache = false ) {
+function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false ) {
   $output_callback = $cache ? 'ob_gzhandler' : null;
 
   // Validate that file actually exists
@@ -136,3 +121,30 @@ function check_acf_block_fields( $data, $required = [], $message = '', $log_leve
   // All required fields had data, allow show
   return false;
 } // end check_acf_block_fields
+
+/**
+ * Check if block can be cached
+ *
+ * @param string $block_slug The block slug
+ * @return bool True if block can be cached, false if not
+ */
+function acf_block_maybe_enable_cache( string $block_slug ) {
+  $enable_cache = true; // Default value
+
+  // This function shouldn't really be running if we don't have these, but check to be safe
+  if ( empty( THEME_SETTINGS ) || empty( THEME_SETTINGS['acf_blocks'] ) || empty( THEME_SETTINGS['acf_blocks'][ $block_slug ] ) ) {
+    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" );
+
+    return apply_filters( 'acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+  } else if ( empty( THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ) ) {
+    return apply_filters( 'acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+  } else {
+    // Check from block settings if we should prevent cache
+    $enable_cache = THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ? false : true;
+  }
+
+  // Check from block settings if we should prevent cache
+  $enable_cache = THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ? false : true;
+
+  return apply_filters( 'acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+}
