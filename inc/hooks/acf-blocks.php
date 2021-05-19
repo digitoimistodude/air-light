@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:34:14
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-11 15:04:45
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-05-19 08:40:13
  * @package air-light
  */
 
@@ -27,7 +27,19 @@ function acf_blocks_init() {
     return;
   }
 
+  $example_data = apply_filters( 'air_acf_blocks_example_data', [] );
+
   foreach ( THEME_SETTINGS['acf_blocks'] as $block ) {
+    // Check if we have added example data via hook
+    if ( empty( $block['example'] ) && ! empty( $example_data[ $block['name'] ] ) ) {
+      $block['example'] = [
+        'attributes' => [
+          'mode' => 'preview',
+          'data' => $example_data[ $block['name'] ],
+        ],
+      ];
+    }
+
     acf_register_block_type( wp_parse_args( $block, THEME_SETTINGS['acf_block_defaults'] ) );
   }
 } // end acf_blocks_init

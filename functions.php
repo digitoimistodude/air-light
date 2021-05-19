@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-11 14:36:25
+ * @Last Modified by: Niku Hietanen
+ * @Last Modified time: 2021-05-19 08:37:57
  *
  * @package air-light
  */
@@ -83,13 +83,11 @@ $theme_settings = [
   // Register custom ACF Blocks
   'acf_blocks' => [
     // [
-    //   'name'      => 'block-file-slug',
-    //   'title'     => 'Block Visible Name',
+    //   'name'          => 'block-file-slug',
+    //   'title'         => 'Block Visible Name',
+    //   'prevent_cache' => true // Default value false
     // ],
   ],
-
-  // Set which custom ACF blocks should not be cached
-  'acf_blocks_prevent_cache'  => [],
 
   // Custom ACF block default settings
   'acf_block_defaults' => [
