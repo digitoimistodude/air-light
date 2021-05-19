@@ -3,14 +3,11 @@
  * The core navigation file
  *
  * Original GitHub URI: https://github.com/twittem/wp-bootstrap-navwalker
- * Version: 2.0.4
- * Author: Originally Edward McIntyre - @twittem
+ * Version: 2.0.5
+ * Author: Digitoimisto Dude Oy
+ * Original Author: Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
- *
- * @Date:   2019-10-15 12:30:02
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-01-12 15:58:30
  *
  * @package air-light
  */
@@ -22,8 +19,26 @@ namespace Air_Light;
  */
 class Nav_Walker extends \Walker_Nav_Menu {
 
+  /**
+   * Starts the list before the elements are added.
+   *
+   * @since WP 3.0.0
+   *
+   * @see Walker_Nav_Menu::start_lvl()
+   *
+   * @param string           $output Used to append additional content (passed by reference).
+   * @param int              $depth  Depth of menu item. Used for padding.
+   * @param WP_Nav_Menu_Args $args   An object of wp_nav_menu() arguments.
+   */
   public function start_lvl( &$output, $depth = 0, $args = array() ) {
-    $indent = str_repeat( "\t", $depth );
+    if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+      $t = '';
+      $n = '';
+    } else {
+      $t = "\t";
+      $n = "\n";
+    }
+    $indent = str_repeat( $t, $depth );
 
     if ( isset( $args->has_dropdown ) && $args->has_dropdown ) {
       // Get the icon
