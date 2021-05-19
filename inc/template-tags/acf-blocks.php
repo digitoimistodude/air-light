@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-05-19 08:32:18
+ * @Last Modified time: 2021-05-19 08:53:57
  * @package air-light
  */
 
@@ -135,9 +135,9 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
   if ( empty( THEME_SETTINGS ) || empty( THEME_SETTINGS['acf_blocks'] ) || empty( THEME_SETTINGS['acf_blocks'][ $block_slug ] ) ) {
     \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" );
 
-    return apply_filters( 'acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+    return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
   } else if ( empty( THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ) ) {
-    return apply_filters( 'acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+    return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
   } else {
     // Check from block settings if we should prevent cache
     $enable_cache = THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ? false : true;
@@ -146,5 +146,5 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
   // Check from block settings if we should prevent cache
   $enable_cache = THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ? false : true;
 
-  return apply_filters( 'acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+  return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
 }
