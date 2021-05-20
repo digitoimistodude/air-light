@@ -86,8 +86,12 @@ add_action( 'after_setup_theme', function() {
       // [
       //   'name'           => 'block-file-slug',
       //   'title'          => 'Block Visible Name',
-      //   'prevent_cache'  => false, // Defaults to false
-      //   'icon'           => 'block', // Icon defaults to svg file inside svg/block-icons named after the block name, eg. svg/block-icons/block-file-slug.svg
+      //   'prevent_cache'  => false, // Defaults to false,
+      //   // Icon defaults to svg file inside svg/block-icons named after the block name,
+      //   // eg. svg/block-icons/block-file-slug.svg
+      //   //
+      //   // Icon setting defines the dashicon equivalent: https://developer.wordpress.org/resource/dashicons/#block-default
+      //   // 'icon'  => 'block-default',
       // ],
     ],
 
