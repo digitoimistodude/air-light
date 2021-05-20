@@ -1,12 +1,11 @@
 .block-error {
+  background-color: var(--color-error-block-background);
   border: 1px solid var(--color-error-block-border);
   border-left: 10px solid var(--color-error);
-  background-color: var(--color-error-block-background);
-
 
   .container {
-    padding-top: 2rem;
     padding-bottom: 2rem;
+    padding-top: 2rem;
   }
 
   p {
