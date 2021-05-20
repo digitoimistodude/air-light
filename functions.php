@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-20 11:15:39
+ * @Last Modified time: 2021-05-20 16:03:24
  *
  * @package air-light
  */
@@ -84,11 +84,10 @@ add_action( 'after_setup_theme', function() {
     // Register custom ACF Blocks
     'acf_blocks' => [
       // [
-      //   'name'          => 'block-file-slug',
-      //   'title'         => 'Block Visible Name',
-      //   'prevent_cache' => true, // Default value false,
-      //   // Icon: https://iconic.app/box/
-      //   'icon' => '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 8L12 4.75 19.25 8 12 11.25 4.75 8zM4.75 16L12 19.25 19.25 16M19.25 8v8M4.75 8v8M12 11.5V19"/></svg>',
+      //   'name'           => 'block-file-slug',
+      //   'title'          => 'Block Visible Name',
+      //   'prevent_cache'  => false, // Defaults to false
+      //   'icon'           => 'heart', // Icon defaults to svg file inside svg/block-icons named after the block name, eg. svg/block-icons/block-file-slug.svg
       // ],
     ],
 
