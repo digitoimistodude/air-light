@@ -70,7 +70,8 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
    * This might happen when we build a reusable block in a page and
    * then add that reusable block to post
    */
-  if ( is_array( $block['post_types'] ) && ! in_array( get_post_type(), $block['post_types'] ) ) {
+  $post_type = get_post_type();
+  if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) {
     return '';
   }
 
