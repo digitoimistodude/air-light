@@ -107,14 +107,14 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
  * Show error block if user is allowed to see error blocks
  *
  * @param string $message Error message to be shown
- * @param mixed $title Set to false to show default title, a string for block title or an empty string to hide the title
+ * @param mixed  $title Set to false to show default title, a string for block title or an empty string to hide the title
  */
 function maybe_show_error_block( $message, $title = false ) {
   if ( ! current_user_can( 'edit_posts' ) ) {
     return;
   }
 
-  if ( $title === false ) {
+  if ( false === $title ) {
     $title = get_default_localization( 'Block missing required data' );
   }
   ?>
