@@ -87,7 +87,7 @@ add_action( 'after_setup_theme', function() {
       //   'name'           => 'block-file-slug',
       //   'title'          => 'Block Visible Name',
       //   'prevent_cache'  => false, // Defaults to false
-      //   'icon'           => 'heart', // Icon defaults to svg file inside svg/block-icons named after the block name, eg. svg/block-icons/block-file-slug.svg
+      //   'icon'           => 'block', // Icon defaults to svg file inside svg/block-icons named after the block name, eg. svg/block-icons/block-file-slug.svg
       // ],
     ],
 
