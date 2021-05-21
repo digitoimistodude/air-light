@@ -86,6 +86,7 @@ add_action( 'after_setup_theme', function() {
       // [
       //   'name'           => 'block-file-slug',
       //   'title'          => 'Block Visible Name',
+      //   // You can safely remove lines below if you find no use for them
       //   'prevent_cache'  => false, // Defaults to false,
       //   // Icon defaults to svg file inside svg/block-icons named after the block name,
       //   // eg. svg/block-icons/block-file-slug.svg
