@@ -11,6 +11,8 @@
 * Update nav walker to 4.3.0: Accessibility, schema and security updates #103
 * Remove deprecated blocks, Fixes #93 (thanks @LukaszJaro!)
 * Fix too specific paragraph styles (moved from gutenberg/block/core-paragraph.scss to gutenberg/formatting/_paragraph.scss)
+* Add cubic-brezier() mixin
+* Bump tested WP version to 5.7.2
 
 ### 7.4.5: 2021-05-20
 
