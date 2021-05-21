@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:12:20
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-05-20 18:20:58
  *
  * @package air-light
  */
@@ -28,3 +28,14 @@ function widgets_init() {
     'after_title'   => '</h2>',
   ) );
 } // end widgets_init
+
+/**
+ * Register custom setting group post ids for Air Helper.
+ */
+function custom_settings_post_ids( $post_ids = [] ) {
+  if ( ! isset( THEME_SETTINGS['custom_settings_post_ids'] ) ) {
+    return $post_ids;
+  }
+
+  return wp_parse_args( THEME_SETTINGS['custom_settings_post_ids'], $post_ids );
+} // end custom_settings_post_ids
