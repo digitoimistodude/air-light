@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-20 11:15:39
+ * @Last Modified time: 2021-05-21 10:41:06
  *
  * @package air-light
  */
@@ -47,6 +47,13 @@ add_action( 'after_setup_theme', function() {
      * Theme textdomain
      */
     'textdomain' => 'air-light',
+
+    'social_media_accounts'  => [
+      // 'twitter' => [
+      //   'title' => 'Twitter',
+      //   'url'   => 'https://twitter.com/digitoimistodude',
+      // ],
+    ],
 
     /**
      * Menu locations
