@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:34:14
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-05-19 08:40:13
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-05-20 15:50:05
  * @package air-light
  */
 
@@ -38,6 +38,15 @@ function acf_blocks_init() {
           'data' => $example_data[ $block['name'] ],
         ],
       ];
+    }
+
+    // Check if icon is set, otherwise try to load svg icon
+    if ( ! isset( $block['icon'] ) || empty( $block['icon'] ) ) {
+      $icon_path = get_theme_file_path( "svg/block-icons/{$block['name']}.svg" );
+      $icon_path = apply_filters( 'air_light_acf_block_icon', $icon_path, $block['name'], $block );
+      if ( file_exists( $icon_path ) ) {
+        $block['icon'] = file_get_contents( $icon_path );
+      }
     }
 
     acf_register_block_type( wp_parse_args( $block, THEME_SETTINGS['acf_block_defaults'] ) );

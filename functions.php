@@ -93,11 +93,15 @@ add_action( 'after_setup_theme', function() {
     // Register custom ACF Blocks
     'acf_blocks' => [
       // [
-      //   'name'          => 'block-file-slug',
-      //   'title'         => 'Block Visible Name',
-      //   'prevent_cache' => true, // Default value false,
-      //   // Icon: https://iconic.app/box/
-      //   'icon' => '<svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.75 8L12 4.75 19.25 8 12 11.25 4.75 8zM4.75 16L12 19.25 19.25 16M19.25 8v8M4.75 8v8M12 11.5V19"/></svg>',
+      //   'name'           => 'block-file-slug',
+      //   'title'          => 'Block Visible Name',
+      //   // You can safely remove lines below if you find no use for them
+      //   'prevent_cache'  => false, // Defaults to false,
+      //   // Icon defaults to svg file inside svg/block-icons named after the block name,
+      //   // eg. svg/block-icons/block-file-slug.svg
+      //   //
+      //   // Icon setting defines the dashicon equivalent: https://developer.wordpress.org/resource/dashicons/#block-default
+      //   // 'icon'  => 'block-default',
       // ],
     ],
 

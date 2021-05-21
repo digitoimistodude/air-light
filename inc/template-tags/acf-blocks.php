@@ -64,6 +64,17 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
 function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false ) {
   $output_callback = $cache ? 'ob_gzhandler' : null;
 
+  /**
+   * Check if it's allowed to show this block in this context
+   *
+   * This might happen when we build a reusable block in a page and
+   * then add that reusable block to post
+   */
+  $post_type = get_post_type();
+  if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) {
+    return '';
+  }
+
   // Validate that file actually exists
   if ( ! \file_exists( $block_path ) ) {
     \do_action( 'qm/error', "Block file {$block_path} not found" );
