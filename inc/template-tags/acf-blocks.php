@@ -64,6 +64,17 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
 function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false ) {
   $output_callback = $cache ? 'ob_gzhandler' : null;
 
+  /**
+   * Check if it's allowed to show this block in this context
+   *
+   * This might happen when we build a reusable block in a page and
+   * then add that reusable block to post
+   */
+  $post_type = get_post_type();
+  if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) {
+    return '';
+  }
+
   // Validate that file actually exists
   if ( ! \file_exists( $block_path ) ) {
     \do_action( 'qm/error', "Block file {$block_path} not found" );
@@ -75,52 +86,6 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
   include $block_path;
   return \ob_get_clean();
 } // end load_acf_block(
-
-/**
- * Check if ACF block should be shown.
- * Returns false when field should not be shown.
- */
-function check_acf_block_fields( $data, $required = [], $message = '', $log_level = 'error' ) {
-  if ( ! is_array( $data ) ) {
-    \do_action( 'qm/error', 'Block data is not array!' );
-    return true;
-  }
-
-  // No required fields, allow show always
-  if ( empty( $required ) ) {
-    return false;
-  }
-
-  $message = ! empty( $message ) ? $message : get_default_localization( 'Block missing required data' );
-
-  // Loop data and check if required fields are empty
-  $empty_fields = [];
-  foreach ( $data as $key => $value ) {
-    if ( in_array( $key, $required ) && ( empty( $value ) || is_wp_error( $value ) ) ) {
-      $empty_fields[] = $key;
-    }
-  }
-
-  // There is empty fields, warn and bail
-  if ( $empty_fields ) {
-    $message = $message . ' (' . implode( ', ', $empty_fields ) . ')';
-
-    // Log QM message always
-    \do_action( "qm/{$log_level}", $message );
-
-    // Show message when editing in dashboard
-    // This is safe unescaped
-    if ( is_admin() ) {
-      echo $message; // phpcs:ignore
-    }
-
-    // Empty required fields, bail the show
-    return true;
-  }
-
-  // All required fields had data, allow show
-  return false;
-} // end check_acf_block_fields
 
 /**
  * Check if block can be cached
@@ -147,4 +112,35 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
   $enable_cache = THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ? false : true;
 
   return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+}
+
+/**
+ * Show error block if user is allowed to see error blocks
+ *
+ * @param string $message Error message to be shown
+ * @param mixed  $title Set to false to show default title, a string for block title or an empty string to hide the title
+ */
+function maybe_show_error_block( $message, $title = false ) {
+  if ( ! current_user_can( 'edit_posts' ) ) {
+    return;
+  }
+
+  if ( false === $title ) {
+    $title = get_default_localization( 'Block missing required data' );
+  }
+  ?>
+  <div class="block block-error">
+    <div class="container">
+      <?php if ( ! empty( $title ) ) : ?>
+        <h2><?php echo esc_html( get_default_localization( 'Block missing required data' ) ); ?></h2>
+      <?php endif; ?>
+
+      <?php if ( ! empty( $message ) ) : ?>
+        <p class="error-message"><?php echo wp_kses_post( $message ) ?></p>
+      <?php endif; ?>
+
+      <p class="info"><?php echo esc_html( get_default_localization( 'This error is shown only for logged in users' ) ); ?></p>
+    </div>
+  </div>
+  <?php
 }
