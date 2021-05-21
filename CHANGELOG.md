@@ -1,3 +1,17 @@
+### 7.5.0: 2021-05-21
+
+#### Major update
+
+* Add social media accounts to theme settings #109
+* Add custom setting groups support #108
+* Automate acf block icon from svg file #107
+* Check if it's allowed to show this block in the context #106
+* Add error block functionality #105
+* Wrap theme settings to after_setup_theme action, fix filter name #104
+* Update nav walker to 4.3.0: Accessibility, schema and security updates #103
+* Remove deprecated blocks, Fixes #93 (thanks @LukaszJaro!)
+* Fix too specific paragraph styles (moved from gutenberg/block/core-paragraph.scss to gutenberg/formatting/_paragraph.scss)
+
 ### 7.4.5: 2021-05-20
 
 * Add example block icon SVG for ACF Gutenberg block init
