@@ -1,3 +1,8 @@
+### 7.4.5: 2021-05-20
+
+* Add example block icon SVG for ACF Gutenberg block init
+* Wrap theme settings to after_setup_theme action, fix filter name #104
+
 ### 7.4.4: 2021-05-19
 
 * Fix alignwide and alignfull variables in front end

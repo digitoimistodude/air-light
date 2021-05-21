@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-20 11:15:39
+ * @Last Modified time: 2021-05-20 16:03:24
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '7.4.4' );
+define( 'AIR_LIGHT_VERSION', '7.4.5' );
 
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
@@ -84,9 +84,15 @@ add_action( 'after_setup_theme', function() {
     // Register custom ACF Blocks
     'acf_blocks' => [
       // [
-      //   'name'          => 'block-file-slug',
-      //   'title'         => 'Block Visible Name',
-      //   'prevent_cache' => true // Default value false
+      //   'name'           => 'block-file-slug',
+      //   'title'          => 'Block Visible Name',
+      //   // You can safely remove lines below if you find no use for them
+      //   'prevent_cache'  => false, // Defaults to false,
+      //   // Icon defaults to svg file inside svg/block-icons named after the block name,
+      //   // eg. svg/block-icons/block-file-slug.svg
+      //   //
+      //   // Icon setting defines the dashicon equivalent: https://developer.wordpress.org/resource/dashicons/#block-default
+      //   // 'icon'  => 'block-default',
       // ],
     ],
 
