@@ -31,7 +31,7 @@
 
   .alignwide {
     @media (min-width: $width-grid-base + 40px) {
-      max-width: $width-grid-base;
+      max-width: $width-wide;
       width: 100%;
     }
   }
@@ -40,7 +40,7 @@
     @media (min-width: $width-grid-base + 40px) {
       margin-bottom: var(--padding-block);
       margin-top: var(--padding-block);
-      max-width: 100%;
+      max-width: $width-full;
       width: 100%;
     }
 

@@ -9,8 +9,12 @@ $width-grid-base: 1200px;
 // If these are not the same, navigation toggles will not work properly.
 $width-max-mobile: 960px;
 
-// Breakpoints for comntainers
+// Breakpoints for containers
 $container-mobile: 480px;
 $container-ipad: 770px;
 $container-ipad-landscape: 1024px;
 $container-desktop: 1200px;
+
+// Gutenberg widths
+$width-wide: 1200px;
+$width-full: 100%;

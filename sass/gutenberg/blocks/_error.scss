@@ -1,0 +1,22 @@
+.block-error {
+  background-color: var(--color-error-block-background);
+  border: 1px solid var(--color-error-block-border);
+  border-left: 10px solid var(--color-error);
+
+  .container {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  p {
+    font-size: var(--font-size-14);
+  }
+
+  p.error-message {
+    font-size: var(--font-size-16);
+  }
+
+  h2 {
+    font-size: var(--font-size-h4);
+  }
+}
