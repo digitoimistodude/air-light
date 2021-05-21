@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-20 16:03:24
+ * @Last Modified time: 2021-05-20 18:19:49
  *
  * @package air-light
  */
@@ -28,6 +28,11 @@ define( 'AIR_LIGHT_VERSION', '7.4.5' );
 add_action( 'after_setup_theme', function() {
   $theme_settings = [
     /**
+     * Theme textdomain
+     */
+    'textdomain' => 'air-light',
+
+    /**
      * Image and content sizes
      */
     'image_sizes' => [
@@ -40,13 +45,17 @@ add_action( 'after_setup_theme', function() {
     /**
      * Logo and featured image
      */
-    'default_featured_image' => null,
-    'logo' => '/svg/logo.svg',
+    'default_featured_image'  => null,
+    'logo'                    => '/svg/logo.svg',
 
     /**
-     * Theme textdomain
+     * Custom setting group post ids when using Air Helper's custom setting
+     * feature and settings CPT. On multilingual sites using Polylang,
+     * translations are handled automatically.
      */
-    'textdomain' => 'air-light',
+    'custom_settings_post_ids' => [
+      // 'setting-group' => 0,
+    ],
 
     /**
      * Menu locations
