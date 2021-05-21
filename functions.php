@@ -7,7 +7,11 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
+<<<<<<< HEAD
+ * @Last Modified time: 2021-05-21 10:41:06
+=======
  * @Last Modified time: 2021-05-20 18:19:49
+>>>>>>> master
  *
  * @package air-light
  */
@@ -55,6 +59,13 @@ add_action( 'after_setup_theme', function() {
      */
     'custom_settings_post_ids' => [
       // 'setting-group' => 0,
+    ],
+
+    'social_media_accounts'  => [
+      // 'twitter' => [
+      //   'title' => 'Twitter',
+      //   'url'   => 'https://twitter.com/digitoimistodude',
+      // ],
     ],
 
     /**
