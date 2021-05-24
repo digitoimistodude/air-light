@@ -1,3 +1,9 @@
+### 7.5.1: 2021-05-24
+
+* Include sanitize.css 12.0.1 and reduce motion from repo
+* Make possible to change active mobile nav bg color
+* Change nav desktop font sizes as vars
+
 ### 7.5.0: 2021-05-21
 
 #### Major update
