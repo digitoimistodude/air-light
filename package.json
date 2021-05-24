@@ -54,6 +54,7 @@
     "hamburgers": "^1.1.3",
     "moveto": "^1.8.2",
     "reframe.js": "^3.0.2",
+    "sanitize.css": "^12.0.1",
     "slick-carousel": "^1.8.1",
     "vanilla-lazyload": "^17.3",
     "what-input": "^5.2.10"
