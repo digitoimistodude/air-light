@@ -35,7 +35,9 @@ $nav-open-from-direction: top;
   // Colors
   --color-active-main-level-mobile: var(--color-white);
   --color-background-nav-mobile-header: var(--color-main);
+  --color-background-nav-mobile-header-active: var(--color-main);
   --color-background-nav-mobile-layer: var(--color-main);
+  --color-background-nav-mobile-layer-active: var(--color-main);
   --color-current-mobile: var(--color-white);
   --color-dropdown-toggle-mobile: var(--color-white);
   --color-hamburger-active: var(--color-white);
@@ -271,7 +273,12 @@ $nav-open-from-direction: top;
     }
 
     .menu-items {
+      background-color: var(--color-background-nav-mobile-layer-active);
       opacity: 1;
+    }
+
+    .nav-container {
+      background-color: var(--color-background-nav-mobile-header-active);
     }
   }
 }
