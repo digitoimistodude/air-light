@@ -1,3 +1,7 @@
+### 7.5.2: 2021-05-24
+
+* Fix unexpected flexbox style bug with sub menu items
+
 ### 7.5.1: 2021-05-24
 
 * Include sanitize.css 12.0.1 and reduce motion from repo
