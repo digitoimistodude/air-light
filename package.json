@@ -1,13 +1,13 @@
 {
   "name": "air-light",
-  "version": "7.5.3",
+  "version": "7.5.4",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
     "@hint/hint-axe": "^4.4.3",
     "@hint/hint-button-type": "^3.0.5",
     "@hint/hint-compat-api": "^4.4.2",
-    "ansi-colors": "^4.1.1",
+    "@ronilaukkarinen/printer-for-errors-of-gulp-plugins": "^1.0.1",
     "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",

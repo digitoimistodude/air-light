@@ -1,4 +1,8 @@
-### 7.5.3: 2021-05-24
+### 7.5.4: 2021-05-24
+
+* Updates from [devpackages 2.1.8](https://github.com/digitoimistodude/devpackages/releases/tag/2.1.8)
+
+### 7.5.4: 2021-05-24
 
 * Updates from [devpackages 2.1.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.1.7)
 

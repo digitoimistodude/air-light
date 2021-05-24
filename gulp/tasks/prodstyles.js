@@ -15,6 +15,7 @@ const config = require('../config.js');
 
 function prodstyles() {
   return src(config.styles.src)
+
     // Compile first time to CSS to be able to parse CSS files
     .pipe(sass(config.styles.opts.development))
 

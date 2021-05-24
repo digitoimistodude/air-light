@@ -15,6 +15,7 @@ const config = require('../config.js');
 
 function devstyles() {
   return src(config.styles.src)
+
     // Init source maps
     .pipe(sourcemaps.init())
 
