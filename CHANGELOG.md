@@ -1,3 +1,7 @@
+### 7.5.3: 2021-05-24
+
+* Updates from [devpackages 2.1.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.1.7)
+
 ### 7.5.2: 2021-05-24
 
 * Fix unexpected flexbox style bug with sub menu items
