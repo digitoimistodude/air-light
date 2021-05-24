@@ -33,8 +33,8 @@ $use-dropdown-toggle-animation: true;
   --color-current: var(--color-main);
 
   // Font styles
-  --font-size-main-level: 17px;
-  --font-size-sub-menu: 16px;
+  --font-size-main-level: var(--font-size-16);
+  --font-size-sub-menu: var(--font-size-16);
   --font-weight-main-level: var(--font-weight-bold);
   --font-weight-sub-menu: var(--font-weight-regular);
 }
