@@ -1,3 +1,7 @@
+### 7.5.6: 2021-05-29
+
+* Add $container-macbook-air breakpoint and --padding-container-horizontal-large for better fit to smaller screens
+
 ### 7.5.5: 2021-05-26
 
 * Bypass the file_get_contents restriction [#112](https://github.com/digitoimistodude/air-light/pull/112)
