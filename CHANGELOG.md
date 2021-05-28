@@ -1,9 +1,14 @@
-### 7.5.7: 2021-05-29
+### 7.5.8: 2021-05-28
+
+* Add missing --padding-main-level-vertical-mobile, fix incorrect --padding-sub-menu-vertical-mobile
+* Use git version of sanitize.css, fix navigation white space
+
+### 7.5.7: 2021-05-28
 
 * Fixes for gutenberg blocks on mobile, fix table block width
 * Fix core gutenberg block widths/paddings on small mobile screens
 
-### 7.5.6: 2021-05-29
+### 7.5.6: 2021-05-28
 
 * Add $container-macbook-air breakpoint and --padding-container-horizontal-large for better fit to smaller screens
 
