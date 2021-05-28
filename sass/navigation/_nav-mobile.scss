@@ -29,7 +29,8 @@ $nav-open-from-direction: top;
   --dropdown-toggle-size-mobile: 12px;
   --height-navigation-mobile: 72px;
   --margin-left-sub-menu: 2rem;
-  --padding-sub-menu-vertical-mobile: 1.2rem;
+  --padding-main-level-vertical-mobile: 1.2rem;
+  --padding-sub-menu-vertical-mobile: .8rem;
   --padding-sub-menu-horizontal-mobile: 2.5rem;
 
   // Colors
@@ -151,10 +152,10 @@ $nav-open-from-direction: top;
     font-weight: var(--font-weight-main-level-mobile);
     margin-left: 0;
     margin-right: 0;
-    padding-bottom: var(--padding-sub-menu-vertical-mobile);
+    padding-bottom: var(--padding-main-level-vertical-mobile);
     padding-left: var(--padding-sub-menu-horizontal-mobile);
     padding-right: var(--padding-sub-menu-horizontal-mobile);
-    padding-top: var(--padding-sub-menu-vertical-mobile);
+    padding-top: var(--padding-main-level-vertical-mobile);
     position: relative;
     text-decoration: none;
     z-index: 0;
@@ -165,7 +166,9 @@ $nav-open-from-direction: top;
     color: var(--color-sub-menu-mobile);
     font-size: var(--font-size-sub-menu-mobile);
     font-weight: var(--font-weight-sub-menu-mobile);
+    padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu));
+    padding-top: var(--padding-sub-menu-vertical-mobile);
   }
 
   .sub-menu {
