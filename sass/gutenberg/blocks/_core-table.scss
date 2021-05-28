@@ -52,6 +52,12 @@ table {
   border-spacing: 0;
 }
 
+.wp-block-table {
+  @media (max-width: $width-grid-base + 40px) {
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  }
+}
+
 .wp-block-table.alignfull {
   margin-left: var(--padding-container-horizontal);
   margin-right: var(--padding-container-horizontal);
