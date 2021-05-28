@@ -1,3 +1,7 @@
+### 7.5.9: 2021-05-28
+
+* Add --grid-gap for grid mixin defaults
+
 ### 7.5.8: 2021-05-28
 
 * Add missing --padding-main-level-vertical-mobile, fix incorrect --padding-sub-menu-vertical-mobile

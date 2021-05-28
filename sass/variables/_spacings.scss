@@ -1,5 +1,8 @@
 // CSS Variables for responsive paddings and margins
 :root {
+  // Gaps
+  --grid-gap: 4.8rem;
+
   // Paddings
   --padding-container-horizontal: 2rem;
   --padding-container-horizontal-large: 6.4rem;
@@ -23,7 +26,12 @@
   }
 
   // iPad
+  @media (max-width: $container-ipad-landscape) {
+    --grid-gap: 3.2rem;
+  }
+
   @media (max-width: $container-ipad) {
+    --grid-gap: var(--padding-container-horizontal);
     --padding-container-vertical: 5rem;
   }
 
