@@ -1,3 +1,8 @@
+### 7.5.7: 2021-05-29
+
+* Fixes for gutenberg blocks on mobile, fix table block width
+* Fix core gutenberg block widths/paddings on small mobile screens
+
 ### 7.5.6: 2021-05-29
 
 * Add $container-macbook-air breakpoint and --padding-container-horizontal-large for better fit to smaller screens
