@@ -1,3 +1,7 @@
+### 7.6.0: 2021-05-31
+
+* Update devpackages to [devpackages 2.2.0](https://github.com/digitoimistodude/devpackages/releases/tag/2.2.0)
+
 ### 7.5.9: 2021-05-28
 
 * Add --grid-gap for grid mixin defaults

@@ -3,26 +3,36 @@ const themeDir = './';
 module.exports = {
   cleancss: {
     opts: {
-      compatibility: 'ie11,-properties.merging',
+      compatibility: '-properties.merging',
       level: {
         1: {
+          optimizeFont: false,
+          optimizeFontWeight: true,
+          optimizeOutline: true,
           specialComments: false,
-          removeQuotes: true,
+          removeQuotes: false,
           removeWhitespace: true,
+          removeEmpty: true,
           tidyAtRules: true,
+          tidyBlockScopes: true,
+          tidySelectors: true,
           cleanupCharsets: true,
-          selectorsSortingMethod: 'natural'
+          replaceMultipleZeros: true,
+          selectorsSortingMethod: 'standard'
         },
         2: {
           mergeSemantically: false,
+          mergeMedia: true,
+          mergeIntoShorthands: true,
           overrideProperties: true,
           removeEmpty: true,
           removeDuplicateRules: true,
           reduceNonAdjacentRules: true,
           removeDuplicateFontRules: true,
           removeDuplicateMediaBlocks: true,
-          removeUnusedAtRules: true,
-          restructureRules: true
+          removeUnusedAtRules: false,
+          restructureRules: false,
+          urlQuotes: true
         }
       }
     }
