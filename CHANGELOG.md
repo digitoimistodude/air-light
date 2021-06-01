@@ -1,3 +1,7 @@
+### 7.6.1: 2021-06-01
+
+* Reset wp-admin list styles on metabox UI
+
 ### 7.6.0: 2021-05-31
 
 * Update devpackages to [2.2.0](https://github.com/digitoimistodude/devpackages/releases/tag/2.2.0)
