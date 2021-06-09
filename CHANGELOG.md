@@ -1,3 +1,8 @@
+### 7.6.3: 2021-06-09
+
+* Fix too quick transition-duration (.08, one zero too much, thx @Tumppex for stpotting this!)
+* Add WCAG AAA+ compliant validation error colors for gravity forms 2.5
+
 ### 7.6.2: 2021-06-09
 
 * Gravity Forms 2.5 base styles
