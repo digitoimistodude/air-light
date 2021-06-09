@@ -1,3 +1,8 @@
+### 7.6.2: 2021-06-09
+
+* Gravity Forms 2.5 base styles
+* Fix main navigation link item having only hash instead of link
+
 ### 7.6.1: 2021-06-01
 
 * Reset wp-admin list styles on metabox UI
