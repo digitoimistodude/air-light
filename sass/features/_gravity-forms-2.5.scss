@@ -1,0 +1,12 @@
+// Gravity forms styles >= 2.5
+// Please disable CSS in /admin.php?page=gf_settings
+
+.gfield_required::before {
+  content: '*';
+  display: inline-block;
+  margin-left: .5rem;
+}
+
+.gfield_required > span {
+  @extend .screen-reader-text;
+}
