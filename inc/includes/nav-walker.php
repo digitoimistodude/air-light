@@ -2,7 +2,8 @@
 /**
  * The core navigation file.
  *
- * Version: 4.3.0
+ * Version: 4.3.1
+ * Based on version: 4.3.0
  * Author: Digitoimisto Dude Oy
  * Original Author: Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz
  * GitHub Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
@@ -227,7 +228,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
     // If the item has_children add atts to <a>.
 		if ( $this->has_children && 0 === $depth ) {
-			$atts['href']          = '#';
+			$atts['href']          = ! empty( $item->url ) ? $item->url : '';
 			$atts['data-toggle']   = 'dropdown';
 			$atts['aria-haspopup'] = 'true';
 			$atts['aria-expanded'] = 'false';
