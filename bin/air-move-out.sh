@@ -51,6 +51,12 @@ mkdir -p ~/air-temp/template-parts/footer
 rm ~/Projects/airdev/content/themes/air-light/inc/includes/taxonomy.php
 rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
 
+# Screenshot, related to: https://themes.trac.wordpress.org/ticket/100180#comment:2
+mv ~/Projects/airdev/content/themes/air-light/screenshot.png ~/air-temp/
+cd ~/Projects/airdev/content/themes/air-light/
+wget https://i.imgur.com/Pwz9nc4.png
+mv Pwz9nc4.png screenshot.png
+
 # Moving to bin dir
 cd ~/air-temp/bin
 

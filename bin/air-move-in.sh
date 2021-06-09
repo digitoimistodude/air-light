@@ -37,6 +37,10 @@ sudo mv ~/air-temp/README.md ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.stylelintrc ~/Projects/airdev/content/themes/air-light/
 sudo mv ~/air-temp/.editorconfig ~/Projects/airdev/content/themes/air-light/
 
+# Move the original starter screenshot back in, related to: https://themes.trac.wordpress.org/ticket/100180#comment:2
+rm ~/Projects/airdev/content/themes/air-light/screenshot.png
+mv ~/air-temp/screenshot.png ~/Projects/airdev/content/themes/air-light/
+
 # Restore repository state before move
 cd ~/Projects/airdev/content/themes/air-light/ && git stash
 git status
