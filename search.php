@@ -15,6 +15,7 @@ namespace Air_Light;
 
 $results = [];
 
+// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 if ( ! empty( $_GET['s'] ) && have_posts() ) {
   while ( have_posts() ) {
     the_post();
@@ -72,6 +73,17 @@ get_header(); ?>
           </div>
         <?php endforeach; ?>
 
+      </div>
+    </section>
+  <?php endif; ?>
+
+  <?php
+  // "No results" message block
+  // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+  if ( ! empty( $_GET['s'] ) && ! have_posts() ) : ?>
+    <section class="block block-search-results">
+      <div class="container">
+        <h2><?php echo esc_html( get_default_localization( 'No results found for your search' ) ); ?>.</h2>
       </div>
     </section>
   <?php endif; ?>

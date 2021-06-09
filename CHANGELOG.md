@@ -1,3 +1,8 @@
+### 7.6.4: 2021-06-09
+
+* Show message if no search results found
+* Add default localization for "No results for your search"
+
 ### 7.6.3: 2021-06-09
 
 * Fix too quick transition-duration (.08, one zero too much, thx @Tumppex for stpotting this!)
