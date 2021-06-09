@@ -1,6 +1,48 @@
 // Gravity forms styles >= 2.5
 // Please disable CSS in /admin.php?page=gf_settings
 
+// WCAG 2.0 errors
+/* stylelint-disable selector-class-pattern */
+div.validation_error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+  font-size: var(--font-size-17);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 2rem;
+  padding: 2rem;
+
+  &:focus {
+    color: var(--color-white);
+  }
+}
+
+body *[aria-invalid="true"] {
+  border-color: var(--color-error);
+}
+
+.validation_message {
+  color: var(--color-error);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-regular);
+}
+
+.validation_list {
+  list-style: none;
+  margin-bottom: 2rem;
+  margin-left: 0;
+  padding: 0;
+
+  a {
+    color: var(--color-error);
+    text-decoration: none;
+  }
+
+  li {
+    color: var(--color-error);
+    font-weight: var(--font-weight-bold);
+  }
+}
+
 // Default required label
 .gfield_required::before {
   color: var(--color-main);
@@ -17,7 +59,7 @@
   @extend .screen-reader-text;
 }
 
-// Form basics
+// Gravity forms minimal default styles
 .gform-body {
   .gfield {
     border: 0;
