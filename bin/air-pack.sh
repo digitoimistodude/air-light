@@ -15,6 +15,12 @@ mkdir -p ~/Projects/airdev/content
 mkdir -p ~/Projects/airdev/content/themes
 rm ~/Projects/airdev/content/themes/air-light.zip
 sh ~/Projects/airdev/content/themes/air-light/bin/air-move-out.sh
+mv ~/Projects/airdev/content/themes/air-light/screenshot.png ~/air-temp/
+cd ~/Projects/airdev/content/themes/air-light/
+wget https://i.imgur.com/Pwz9nc4.png
+mv Pwz9nc4.png screenshot.png
 cd ~/Projects/airdev/content/themes/
 zip -r air-light.zip air-light
+rm ~/Projects/airdev/content/themes/air-light/screenshot.png
+mv ~/air-temp/screenshot.png ~/Projects/airdev/content/themes/air-light/
 sh ~/air-temp/bin/air-move-in.sh
