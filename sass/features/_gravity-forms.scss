@@ -1,148 +1,41 @@
-// Gravity forms styles for up to version 2.4
+// Gravity forms styles >= 2.5
 // Please disable CSS in /admin.php?page=gf_settings
 
-// WCAG 2.0 errors
-/* stylelint-disable selector-class-pattern */
-div.validation_error {
-  background-color: var(--color-error);
-  color: var(--color-white);
-  font-size: var(--font-size-17);
-  font-weight: var(--font-weight-bold);
-  margin-bottom: 2rem;
-  padding: 2rem;
-
-  &:focus {
-    color: var(--color-white);
-  }
+// Default required label
+.gfield_required::before {
+  color: var(--color-main);
+  content: '*';
+  display: inline-block;
+  font-size: var(--font-size-22);
+  margin-left: .5rem;
+  position: relative;
+  top: .5rem;
 }
 
-body *[aria-invalid="true"] {
-  border-color: var(--color-error);
+// Add "(Required)" text as screen reader text
+.gfield_required > span {
+  @extend .screen-reader-text;
 }
 
-.validation_message {
-  color: var(--color-error);
-  font-size: var(--font-size-16);
-  font-weight: var(--font-weight-regular);
-}
-
-.validation_list {
-  list-style: none;
-  margin-bottom: 2rem;
-  margin-left: 0;
-  padding: 0;
-
-  a {
-    color: var(--color-error);
-    text-decoration: none;
-  }
-
-  li {
-    color: var(--color-error);
-    font-weight: var(--font-weight-bold);
-  }
-}
-
-// Gravity forms minimal default styles
-.gform_body {
-  // Required star color
-  .gfield_required {
-    color: var(--color-main);
-    font-size: var(--font-size-22);
-    position: relative;
-    top: 3px;
-  }
-
-  // Hide honeypot field
-  .gform_validation_container {
-    @extend .screen-reader-text;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
+// Form basics
+.gform-body {
+  .gfield {
+    border: 0;
+    margin-bottom: 2rem;
     padding: 0;
   }
 
-  .gform_fields li {
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-  }
-
-  .gfield_radio li,
-  .gfield_checkbox li {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  .gfieldset li {
-    align-items: center;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 0;
-    width: 100%;
-  }
-
-  .gform_fields li:last-child {
-    margin-bottom: 0;
-  }
-
-  .gfield_label,
-  .ginput_container label {
+  .gfield_label {
     display: inline-block;
     font-weight: var(--font-weight-bold);
     margin-bottom: 1rem;
     margin-top: 1rem;
+    padding-inline-end: 0;
+    padding-inline-start: 0;
   }
 
-  input[type="radio"],
-  input[type="checkbox"] {
-    margin-right: 1rem;
-  }
-
-  .gfield_radio li label,
-  .gfield_checkbox li label {
-    margin-bottom: 0;
-    margin-top: 0;
-  }
-
-  input:not([type="radio"]):not([type="checkbox"]),
-  textarea {
+  textarea,
+  input {
     width: 100%;
   }
-
-  @media (min-width: $container-mobile) {
-    // Complex fields
-    .ginput_full {
-      display: block;
-      width: 100%;
-    }
-
-    .ginput_complex {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: -.5rem;
-      margin-right: -.5rem;
-
-      span {
-        margin-left: .5rem;
-        margin-right: .5rem;
-      }
-    }
-
-    .ginput_left,
-    .ginput_right {
-      display: inline-flex;
-      flex-wrap: wrap;
-      width: calc(50% - 1rem);
-
-      > label,
-      input {
-        font-size: var(--font-size-16);
-        width: 100%;
-      }
-    }
-  }
 }
-/* stylelint-enable selector-class-pattern */
