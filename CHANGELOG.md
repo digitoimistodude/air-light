@@ -1,3 +1,8 @@
+### 7.6.5: 2021-06-15
+
+* Allow list items to have external links
+* Fix list widths in gutenberg, add default style for ::marker
+
 ### 7.6.4: 2021-06-09
 
 * Show message if no search results found
