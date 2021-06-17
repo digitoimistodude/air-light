@@ -116,6 +116,7 @@ $use-dropdown-toggle-animation: true;
     padding-left: var(--padding-main-level-horizontal);
     padding-right: var(--padding-main-level-horizontal);
     padding-top: var(--padding-main-level-vertical);
+    white-space: nowrap;
   }
 
   .menu-item .sub-menu a {
@@ -129,6 +130,7 @@ $use-dropdown-toggle-animation: true;
     padding-left: var(--padding-sub-menu-horizontal);
     padding-right: var(--padding-sub-menu-horizontal);
     padding-top: var(--padding-sub-menu-vertical);
+    white-space: normal;
   }
 
   // Current menu item color

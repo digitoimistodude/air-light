@@ -1,3 +1,7 @@
+### 7.6.6: 2021-06-17
+
+* Improve nav layout with in between breakpoints: Do not wrap main level menu items by default on desktop
+
 ### 7.6.5: 2021-06-15
 
 * Allow list items to have external links
