@@ -12,6 +12,20 @@
     "stylelint-config-recommended-scss"
   ],
   "rules": {
+    "order/order": [
+      {
+        "type": "at-rule",
+        "name": "include"
+      },
+      'custom-properties',
+      'dollar-variables',
+      'declarations',
+      'rules',
+      {
+        "type": "at-rule",
+        "name": "media"
+      },
+		],
     "csstools/value-no-unknown-custom-properties": [true, {
       "importFrom": [
         "css/dev/global.css"
@@ -56,7 +70,21 @@
     "selector-max-specificity": "0,4,4",
     "block-no-empty": true,
     "declaration-colon-newline-after": null,
-    "declaration-empty-line-before": "never",
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before": [
+        "never",
+        {
+            "except": ["after-rule", "inside-block"],
+            "ignore": ["first-nested", "after-comment"]
+        }
+    ],
+    "at-rule-empty-line-before": [
+        "always",
+        {
+            "except": ["first-nested", "blockless-after-same-name-blockless", "blockless-after-blockless"],
+            "ignore": ["after-comment"]
+        }
+    ],
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
     "value-list-comma-newline-after": "never-multi-line",
@@ -68,7 +96,6 @@
     "no-missing-end-of-source-newline": true,
     "block-opening-brace-newline-after": "always",
     "block-closing-brace-newline-after": "always-multi-line",
-    "rule-empty-line-before": null,
     "string-quotes": null,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
@@ -79,7 +106,6 @@
     "media-feature-name-case": "lower",
     "font-family-no-missing-generic-family-keyword": true,
     "font-family-name-quotes": "always-where-required",
-    "at-rule-empty-line-before": null,
     "at-rule-no-unknown": null,
     "declaration-no-important": true,
     "comment-empty-line-before": null,
@@ -103,8 +129,8 @@
     "selector-max-compound-selectors": 4,
     "selector-max-pseudo-class": 2,
     "selector-max-universal": 1,
-    "selector-no-vendor-prefix": true,
     "property-no-vendor-prefix": true,
+    "selector-no-vendor-prefix": true,
     "selector-no-qualifying-type": null,
     "max-nesting-depth": [ 3, { "ignore": ["blockless-at-rules", "pseudo-classes"] } ],
     "declaration-block-no-duplicate-properties": true,

@@ -1,3 +1,7 @@
+### 7.7.1: 2021-06-22
+
+* Update to devpackages 2.2.1
+
 ### 7.7.0: 2021-06-22
 
 * Add editor-post-title styles for Gutenberg
