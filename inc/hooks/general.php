@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-06-22 09:48:28
+ * @Last Modified time: 2021-06-22 10:15:07
  *
  * @package air-light
  */
@@ -39,11 +39,3 @@ function custom_settings_post_ids( $post_ids = [] ) {
 
   return wp_parse_args( THEME_SETTINGS['custom_settings_post_ids'], $post_ids );
 } // end custom_settings_post_ids
-
-/**
- * Remove WP REST API json links in <head> html
- * TODO: Remove when implemented: https://github.com/digitoimistodude/air-helper/issues/42
- */
-remove_action( 'wp_head', 'rest_output_link_wp_head' );
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-remove_action( 'template_redirect', 'rest_output_link_header', 11 );
