@@ -181,14 +181,14 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Layout base & grid
 
-* All good things from the latest [Underscores](https://github.com/Automattic/_s)
-* [SASS](http://sass-lang.com/)-support (SCSS-syntax)
-* CSS reset with a combination with Nicolas Gallagher's [normalize\*css](https://github.com/necolas/normalize.css/)
+* Gutenberg-ready
 * Flexbox-ready
 * CSS Grid-ready
+* SVG-ready
+* [SASS](http://sass-lang.com/)-support (SCSS-syntax)
+* CSS reset from [sanitize.css](https://github.com/csstools/sanitize.css)
 * Section blocks and containers
 * Basic and minimal CSS framework for forms, commenting and typography
-* Inline SVG-ready
 
 #### Typography
 
