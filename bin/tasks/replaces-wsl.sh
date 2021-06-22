@@ -24,3 +24,7 @@ echo "${YELLOW}Running project gulp styles once...${TXTRESET}"
 cd ${PROJECT_PATH}
 gulp devstyles
 gulp prodstyles
+
+echo "${YELLOW}Running project gulp scripts task once...${TXTRESET}"
+cd ${PROJECT_PATH}
+gulp js

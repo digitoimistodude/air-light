@@ -24,8 +24,11 @@ read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
     echo ' '
   fi
 
-echo "${YELLOW}Running project gulp styles once...${TXTRESET}"
+echo "${YELLOW}Running project gulp styles tasks once...${TXTRESET}"
 cd ${PROJECT_PATH}
 gulp devstyles
 gulp prodstyles
 
+echo "${YELLOW}Running project gulp scripts task once...${TXTRESET}"
+cd ${PROJECT_PATH}
+gulp js
