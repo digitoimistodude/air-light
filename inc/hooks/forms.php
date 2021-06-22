@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-02-04 18:15:59
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-02-04 18:19:44
+ * @Last Modified time: 2021-06-22 09:33:02
  *
  * @package air-light
  */
@@ -18,3 +18,6 @@ function dequeue_gf_stylesheets() {
   wp_dequeue_style( 'gforms_ready_class_css' );
   wp_dequeue_style( 'gforms_browsers_css' );
 }
+
+// Disable printing Gravity Forms js straight after <head> (invalid HTML)
+add_filter( 'gform_force_hooks_js_output', '__return_false' );
