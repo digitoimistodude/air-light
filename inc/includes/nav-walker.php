@@ -213,7 +213,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
     // Output
-    $output .= $indent . '<li role="none"' . $id . $class_names . '>';
+    $output .= $indent . '<li' . $id . $class_names . '>';
 
     // Initialize array for holding the $atts for the link item.
 	  $atts           = array();
@@ -281,7 +281,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 			$item_output .= self::linkmod_element_open( $linkmod_type, $attributes );
 		} else {
 			// With no link mod type set this must be a standard <a> tag.
-      $item_output .= '<a role="menuitem"' . $attributes . '>';
+      $item_output .= '<a' . $attributes . '>';
 		}
 
     /** This filter is documented in wp-includes/post-template.php */
