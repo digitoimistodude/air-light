@@ -2,7 +2,7 @@
 /**
  * The core navigation file.
  *
- * Version: 4.3.3
+ * Version: 4.3.4
  * Based on version: 4.3.0
  * Author: Digitoimisto Dude Oy
  * Original Author: Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz
@@ -229,9 +229,8 @@ class Nav_Walker extends \Walker_Nav_Menu {
     // If the item has_children add atts to <a>.
 		if ( $this->has_children && 0 === $depth ) {
 			$atts['href']          = ! empty( $item->url ) ? $item->url : '';
-			$atts['data-toggle']   = 'dropdown';
 			$atts['aria-haspopup'] = 'true';
-			$atts['class']         = 'dropdown-toggle nav-link';
+			$atts['class']         = 'dropdown nav-link';
 			$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 		} else {
 			if ( true === $this->has_schema ) {
