@@ -231,7 +231,6 @@ class Nav_Walker extends \Walker_Nav_Menu {
 			$atts['href']          = ! empty( $item->url ) ? $item->url : '';
 			$atts['data-toggle']   = 'dropdown';
 			$atts['aria-haspopup'] = 'true';
-			$atts['aria-expanded'] = 'false';
 			$atts['class']         = 'dropdown-toggle nav-link';
 			$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 		} else {
