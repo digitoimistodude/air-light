@@ -1,6 +1,5 @@
 // Style support for Slick slider.
 // Note: add class slick-slider to the actual slider
-
 .slick-list {
   display: block;
   margin: 0;
@@ -130,10 +129,6 @@
   touch-action: pan-y;
   user-select: none;
 
-  @media (max-width: $container-mobile) {
-    max-height: 600px;
-  }
-
   .slick-prev {
     background-color: transparent;
     background-image: url('../../svg/slider-left-arrow.svg');
@@ -180,5 +175,9 @@
       color: transparent;
       transition: all $transition-duration;
     }
+  }
+
+  @media (max-width: $container-mobile) {
+    max-height: 600px;
   }
 }

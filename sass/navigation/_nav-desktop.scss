@@ -60,22 +60,6 @@ $use-dropdown-toggle-animation: true;
     }
   }
 
-  @media only screen and (max-width: $width-max-mobile) {
-    ul li:focus > ul,
-    ul li:hover > ul {
-      display: block;
-    }
-  }
-
-  // Disable animations on IE10 + IE11
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    // Enable hovers
-    ul li:focus > ul,
-    ul li:hover > ul {
-      display: block;
-    }
-  }
-
   // Need to use display: none here to make sure mobile nav-toggle is visually hidden on desktop
   /* stylelint-disable a11y/no-display-none */
   .nav-toggle {
@@ -294,6 +278,29 @@ $use-dropdown-toggle-animation: true;
     transform: rotate(-90deg) rotateX(180deg);
   }
 
+  // Don't use gap filler in sub menu items
+  // Acceptable use of display: none here, for visual/technical purposes
+  /* stylelint-disable a11y/no-display-none */
+  .sub-menu .menu-item-has-children::after {
+    display: none;
+  }
+
+  @media only screen and (max-width: $width-max-mobile) {
+    ul li:focus > ul,
+    ul li:hover > ul {
+      display: block;
+    }
+  }
+
+  // Disable animations on IE10 + IE11
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    // Enable hovers
+    ul li:focus > ul,
+    ul li:hover > ul {
+      display: block;
+    }
+  }
+
   // Smooth animation
   @if $use-dropdown-toggle-animation == true {
     .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
@@ -311,14 +318,6 @@ $use-dropdown-toggle-animation: true;
     }
     /* stylelint-enable */
   }
-
-  // Don't use gap filler in sub menu items
-  // Acceptable use of display: none here, for visual/technical purposes
-  /* stylelint-disable a11y/no-display-none */
-  .sub-menu .menu-item-has-children::after {
-    display: none;
-  }
-  /* stylelint-enable */
 
   // Dropdown bubble
   @if $use-dropdown-bubble == true {

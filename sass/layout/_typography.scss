@@ -157,11 +157,6 @@ html,
       position: relative;
     }
 
-    @media (min-width: $container-ipad) {
-      margin-top: 4rem;
-      padding-bottom: 4rem;
-    }
-
     &::before {
       content: '';
       display: block;
@@ -174,6 +169,11 @@ html,
       @media (min-width: $container-mobile) {
         width: 30%;
       }
+    }
+
+    @media (min-width: $container-ipad) {
+      margin-top: 4rem;
+      padding-bottom: 4rem;
     }
   }
 

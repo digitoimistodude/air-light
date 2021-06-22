@@ -1,3 +1,8 @@
+### 7.7.2: 2021-06-22
+
+* Fix build: Lint theme SCSS with new rules
+* Fix stylelint syntax error in _nav-desktop.scss
+
 ### 7.7.1: 2021-06-22
 
 * Update to devpackages 2.2.1

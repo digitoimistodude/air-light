@@ -16,23 +16,10 @@
     @extend .screen-reader-text;
   }
 
-  @media (min-width: 900px) {
-    white-space: nowrap;
-
-    * {
-      white-space: nowrap;
-    }
-  }
-
   h2 {
     display: inline;
     margin-right: 0;
     position: relative;
-
-    @media (max-width: $container-mobile) {
-      position: relative;
-      top: 1px;
-    }
 
     &::after {
       align-self: center;
@@ -53,6 +40,11 @@
       text-decoration: none;
       text-indent: -9999px;
       width: 10px;
+    }
+
+    @media (max-width: $container-mobile) {
+      position: relative;
+      top: 1px;
     }
   }
 
@@ -188,6 +180,14 @@
 
     &:last-of-type::after {
       display: none;
+    }
+  }
+
+  @media (min-width: 900px) {
+    white-space: nowrap;
+
+    * {
+      white-space: nowrap;
     }
   }
 }

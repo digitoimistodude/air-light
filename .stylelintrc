@@ -72,10 +72,10 @@
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
     "rule-empty-line-before": [
-        "never",
+        "always-multi-line",
         {
-            "except": ["after-rule", "inside-block"],
-            "ignore": ["first-nested", "after-comment"]
+            "except": ["first-nested", "after-single-line-comment"],
+            "ignore": ["inside-block"]
         }
     ],
     "at-rule-empty-line-before": [
