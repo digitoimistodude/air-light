@@ -2,7 +2,7 @@
 /**
  * The core navigation file.
  *
- * Version: 4.3.1
+ * Version: 4.3.3
  * Based on version: 4.3.0
  * Author: Digitoimisto Dude Oy
  * Original Author: Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz
@@ -298,10 +298,10 @@ class Nav_Walker extends \Walker_Nav_Menu {
 		*/
 		$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-		// If the .sr-only class was set apply to the nav items text only.
-		if ( in_array( 'sr-only', $linkmod_classes, true ) ) {
+		// If the .screen-reader-text class was set apply to the nav items text only.
+		if ( in_array( 'screen-reader-text', $linkmod_classes, true ) ) {
 			$title         = self::wrap_for_screen_reader( $title );
-			$keys_to_unset = array_keys( $linkmod_classes, 'sr-only', true );
+			$keys_to_unset = array_keys( $linkmod_classes, 'screen-reader-text', true );
 			foreach ( $keys_to_unset as $k ) {
 				unset( $linkmod_classes[ $k ] );
 			}
@@ -409,7 +409,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 		 * Find any custom linkmod classes and store in their holder
 		 * arrays then remove them from the main classes array.
 		 *
-		 * Supported linkmods: .disabled, .dropdown-header, .dropdown-divider, .sr-only
+		 * Supported linkmods: .disabled, .dropdown-header, .dropdown-divider, .screen-reader-text
 		 *
 		 * NOTE: This accepts the linkmod arrays by reference.
 		 *
@@ -428,8 +428,8 @@ class Nav_Walker extends \Walker_Nav_Menu {
 				 * If any special classes are found, store the class in it's
 				 * holder array and and unset the item from $classes.
 				 */
-				if ( preg_match( '/^disabled|^sr-only/i', $class ) ) {
-					// Test for .disabled or .sr-only classes.
+				if ( preg_match( '/^disabled|^screen-reader-text/i', $class ) ) {
+					// Test for .disabled or .screen-reader-text classes.
 					$linkmod_classes[] = $class;
 					unset( $classes[ $key ] );
 				} elseif ( preg_match( '/^dropdown-header|^dropdown-divider|^dropdown-item-text/i', $class ) && $depth > 0 ) {
@@ -492,9 +492,9 @@ class Nav_Walker extends \Walker_Nav_Menu {
 					if ( ! empty( $link_class ) ) {
 						/*
 						 * Update $atts with a space and the extra classname
-						 * so long as it's not a sr-only class.
+						 * so long as it's not a screen-reader-text class.
 						 */
-						if ( 'sr-only' !== $link_class ) {
+						if ( 'screen-reader-text' !== $link_class ) {
 							$atts['class'] .= ' ' . esc_attr( $link_class );
 						}
 						// Check for special class types we need additional handling for.
@@ -523,7 +523,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 		 */
 		private function wrap_for_screen_reader( $text = '' ) {
 			if ( $text ) {
-				$text = '<span class="sr-only">' . $text . '</span>';
+				$text = '<span class="screen-reader-text">' . $text . '</span>';
 			}
 			return $text;
 		}
