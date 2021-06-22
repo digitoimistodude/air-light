@@ -2,6 +2,7 @@
 
 * Fix build: Lint theme SCSS with new rules
 * Fix stylelint syntax error in _nav-desktop.scss
+* Update html-validator-cli for travis unit tests
 
 ### 7.7.1: 2021-06-22
 

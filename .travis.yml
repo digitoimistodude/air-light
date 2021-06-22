@@ -85,7 +85,7 @@ before_script:
     - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.stylelintrc; fi
 
     # Install nu-html-checker
-    - if [[ "$SNIFF" == "1" ]]; then npm i -g nu-html-checker; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g html-validator-cli; fi
 
 # Run test script commands.
 # Default is specific to project language.
@@ -120,7 +120,7 @@ script:
     - if [[ "$SNIFF" == "1" ]]; then stylelint . --max-warnings 0; fi
 
     # Check for valid HTML
-    - if [[ "$SNIFF" == "1" ]]; then nu-html-checker "https://airwptheme.com/demo"; fi
+    - if [[ "$SNIFF" == "1" ]]; then html-validator "https://airwptheme.com/demo" --format=text --quiet; fi
 
 # Receive notifications for build results.
 # @link https://docs.travis-ci.com/user/notifications/#Email-notifications
