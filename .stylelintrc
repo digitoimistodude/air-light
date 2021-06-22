@@ -107,6 +107,7 @@
     "font-family-no-missing-generic-family-keyword": true,
     "font-family-name-quotes": "always-where-required",
     "at-rule-no-unknown": null,
+    "no-invalid-position-at-import-rule": null,
     "declaration-no-important": true,
     "comment-empty-line-before": null,
     "at-rule-name-newline-after": null,
