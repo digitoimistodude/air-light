@@ -1,6 +1,10 @@
+### 7.7.3: 2021-06-22
+
+* Fix order/order errors, fix build
+
 ### 7.7.2: 2021-06-22
 
-* Fix build: Lint theme SCSS with new rules
+* Attempt to fix build: Lint theme SCSS with new rules
 * Fix stylelint syntax error in _nav-desktop.scss
 * Update html-validator-cli for travis unit tests
 

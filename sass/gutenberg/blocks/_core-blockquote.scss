@@ -14,6 +14,11 @@ blockquote + p > cite {
   padding: 3.5rem 6rem;
   width: calc(100% - 12rem);
 
+  > p {
+    color: var(--color-blockquote);
+    line-height: var(--line-height-paragraphs-blog);
+  }
+
   @media (max-width: $width-max-article + 40px) {
     padding: 3.5rem 2rem;
     width: calc(100% - calc(var(--padding-container-horizontal) * 2));
@@ -21,11 +26,6 @@ blockquote + p > cite {
 
   @media (max-width: $container-mobile) {
     padding: 4rem 4rem 4rem 2rem;
-  }
-
-  > p {
-    color: var(--color-blockquote);
-    line-height: var(--line-height-paragraphs-blog);
   }
 }
 

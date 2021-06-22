@@ -37,15 +37,15 @@
   }
 
   .alignfull {
+    &.wp-block-image img {
+      border-radius: 0;
+    }
+
     @media (min-width: $width-grid-base + 40px) {
       margin-bottom: var(--padding-block);
       margin-top: var(--padding-block);
       max-width: $width-full;
       width: 100%;
-    }
-
-    &.wp-block-image img {
-      border-radius: 0;
     }
   }
 }
