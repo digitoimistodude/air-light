@@ -1,3 +1,13 @@
+### 7.6.7: 2021-06-22
+
+* Navigation accessibility: Remove incorrect attributes from dropdown link
+* Navigation accessibility: Fix screen reader class
+* Navigation accessibility: Fix invalid aria-expanded
+* Navigation accessibility: Fix crucial landmark role issues, revert from 6.3.4 c93af48d5e793bc24b9932b72069da1b21c1af83
+* Clean up <head> for valid HTML
+* Fix gravity forms styles reset
+* Disable printing Gravity Forms js straight after <head> (invalid HTML)
+
 ### 7.6.6: 2021-06-17
 
 * Improve nav layout with in between breakpoints: Do not wrap main level menu items by default on desktop
