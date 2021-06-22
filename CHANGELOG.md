@@ -1,3 +1,8 @@
+### 7.6.8: 2021-06-22
+
+* Fix broken js after generating air as mentioned in #119
+* Incorporate nu-html-checker to be part of travis unit tests
+
 ### 7.6.7: 2021-06-22
 
 * Navigation accessibility: Remove incorrect attributes from dropdown link
