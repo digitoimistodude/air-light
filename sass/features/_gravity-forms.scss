@@ -61,6 +61,12 @@ body *[aria-invalid="true"] {
 
 // Gravity forms minimal default styles
 .gform-body {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .gfield {
     border: 0;
     margin-bottom: 2rem;
@@ -80,4 +86,10 @@ body *[aria-invalid="true"] {
   input {
     width: 100%;
   }
+}
+
+// Hide validation fields
+/* stylelint-disable-next-line */
+.gform_validation_container {
+  display: none;
 }
