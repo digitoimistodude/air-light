@@ -84,32 +84,43 @@ before_script:
     # Pull in the Air-light stylelint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.stylelintrc; fi
 
+    # Install nu-html-checker
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g nu-html-checker; fi
+
 # Run test script commands.
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
     # Search for PHP syntax errors.
     - find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+
     # Run the theme through JSHint.
     # - if [[ "$SNIFF" == "1" ]]; then jshint .; fi
+
     # Run the theme through JavaScript Code Style checker.
     # - if [[ "$SNIFF" == "1" ]]; then jscs .; fi
+
     # Run the theme through Eslint.
     - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev eslint babel-eslint babel-loader babel-preset-airbnb eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks; fi
     - if [[ "$SNIFF" == "1" ]]; then npm i --save airbnb-browser-shims; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link eslint; fi
     - if [[ "$SNIFF" == "1" ]]; then eslint .; fi
+
     # Run against WordPress Coding Standards.
     # If you use a custom ruleset, change `--standard=WordPress` to point to your ruleset file,
     # for example: `--standard=wpcs.xml`.
     # You can use any of the normal PHPCS command line arguments in the command:
     # https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage
     - if [[ "$SNIFF" == "1" ]]; then $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/* --standard=phpcs.xml; fi
+
     # Run the theme through stylelint.
     - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev postcss stylelint stylelint-a11y stylelint-order stylelint-config-recommended-scss stylelint-config-recommended stylelint-config-standard stylelint-declaration-use-variable stylelint-order stylelint-scss stylelint-value-no-unknown-custom-properties; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link postcss; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link stylelint; fi
     - if [[ "$SNIFF" == "1" ]]; then stylelint . --max-warnings 0; fi
+
+    # Check for valid HTML
+    - if [[ "$SNIFF" == "1" ]]; then nu-html-checker "https://airwptheme.com/demo"; fi
 
 # Receive notifications for build results.
 # @link https://docs.travis-ci.com/user/notifications/#Email-notifications
