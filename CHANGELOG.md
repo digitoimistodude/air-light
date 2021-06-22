@@ -1,3 +1,7 @@
+### 7.7.0: 2021-06-22
+
+* Add editor-post-title styles for Gutenberg
+
 ### 7.6.9: 2021-06-22
 
 * Remove plugin territory hooks in favor of [air-helper#42](https://github.com/digitoimistodude/air-helper/issues/42)
