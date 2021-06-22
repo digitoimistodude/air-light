@@ -1,3 +1,7 @@
+### 7.6.9: 2021-06-22
+
+* Remove plugin territory hooks in favor of [air-helper#42](https://github.com/digitoimistodude/air-helper/issues/42)
+
 ### 7.6.8: 2021-06-22
 
 * Fix broken js after generating air as mentioned in #119
