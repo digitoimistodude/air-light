@@ -1,3 +1,7 @@
+### 7.7.4: 2021-06-23
+
+* Updates from [devpackages](https://github.com/digitoimistodude/devpackages) 2.2.4: Speed up styles tasks by adding a separate watch for prodstyles
+
 ### 7.7.3: 2021-06-22
 
 * Fix order/order errors, fix build
