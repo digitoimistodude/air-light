@@ -17,6 +17,10 @@
         "type": "at-rule",
         "name": "include"
       },
+      {
+        "type": "at-rule",
+        "name": "extend"
+      },
       'custom-properties',
       'dollar-variables',
       'declarations',
