@@ -22,7 +22,7 @@ module.exports = {
         },
         2: {
           mergeSemantically: false,
-          mergeMedia: true,
+          mergeMedia: false,
           mergeIntoShorthands: true,
           overrideProperties: true,
           removeEmpty: true,
