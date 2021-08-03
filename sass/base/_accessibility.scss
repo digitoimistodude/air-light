@@ -23,7 +23,8 @@
     margin: 5px;
 
     &:focus {
-      color: var(--color-black);
+      /* stylelint-disable-next-line */
+      color: currentColor;
     }
   }
 
@@ -66,6 +67,9 @@
   textarea:focus,
   div[tabindex]:focus {
     opacity: 1;
+
+    /* stylelint-disable-next-line */
+    outline-color: currentColor;
   }
 
   .global-link {
@@ -74,10 +78,12 @@
 
   // A bit better focus for large elements
   a.global-link:focus {
-    outline-color: var(--color-outline-overlay-items);
-    outline-offset: -1px;
+    /* stylelint-disable-next-line */
+    outline-color: currentColor;
+    outline-offset: 5px;
     outline-style: solid;
     outline-width: 4px;
+    transition: outline-offset .25s ease;
   }
 }
 
