@@ -1,4 +1,4 @@
-### 7.7.6: 2021-08-23
+### 7.7.6: 2021-08-03
 
 * Consistency update for accessibility: Use currentColor in :focus and skip-link outline, add outline-offset for global area links to make their outlines more visible
 * Bump tested WordPress version to 5.8
