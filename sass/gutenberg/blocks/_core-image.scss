@@ -26,9 +26,8 @@
     &.alignleft,
     &.alignright {
       // Hack for keeping figcaption from flowing over floated image, this variable is set inline to the corresponding figure with gutenberg-helpers.js
-      /* stylelint-disable csstools/value-no-unknown-custom-properties */
+      /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
       max-width: var(--width-child-img);
-      /* stylelint-enable */
     }
   }
 

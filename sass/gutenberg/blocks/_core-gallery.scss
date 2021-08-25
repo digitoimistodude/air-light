@@ -1,14 +1,26 @@
 // Core/gallery block
 .is-grid,
-.wp-block-gallery {
+.blocks-gallery-grid {
+  display: grid;
+  padding-left: 0;
+
+  .blocks-gallery-item {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.is-grid,
+.wp-block-gallery:not([data-type]) {
   overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
   width: calc(100% - calc(var(--padding-container-horizontal) * 2));
 
   figcaption {
     color: var(--color-white);
     font-size: var(--font-size-16);
     line-height: 1.55;
-    margin-bottom: var(--margin-between-text-elements);
     width: 100%;
   }
 
@@ -17,8 +29,8 @@
   }
 
   &.alignwide {
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
+    padding-left: 0;
+    padding-right: 0;
     width: calc(100% - calc(var(--padding-container-horizontal) * 2));
   }
 
@@ -27,16 +39,44 @@
     padding-right: var(--padding-container-horizontal);
     width: 100%;
   }
-}
 
-.is-grid,
-.blocks-gallery-grid {
-  display: grid;
-  padding-left: 0;
+  // If we have only one column
+  &.columns-1 {
+    max-width: $width-max-article;
+    padding: 0;
 
-  .blocks-gallery-item {
-    margin: 0;
-    width: 100%;
+    figure {
+      // May be not ideal for big image sizes
+      /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+      max-width: var(--width-child-img);
+    }
+
+    @media (min-width: $width-max-article) {
+      display: block;
+      overflow: visible;
+
+      // If the one column is aligned
+      /* stylelint-disable-next-line selector-max-specificity */
+      &.alignleft > .blocks-gallery-grid {
+        margin-bottom: 4rem;
+        margin-right: 4rem;
+      }
+
+      /* stylelint-disable-next-line selector-max-specificity, no-descending-specificity */
+      &.alignright > .blocks-gallery-grid {
+        margin-bottom: 4rem;
+        margin-left: 4rem;
+      }
+    }
+
+    @media (max-width: $width-max-article) {
+      /* stylelint-disable selector-max-specificity, no-descending-specificity */
+      &.alignleft > .blocks-gallery-grid,
+      &.alignright > .blocks-gallery-grid {
+        float: none;
+        width: 100%;
+      }
+    }
   }
 }
 
