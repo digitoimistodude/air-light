@@ -2,6 +2,7 @@
 .is-grid,
 .wp-block-gallery {
   overflow: hidden;
+  width: calc(100% - calc(var(--padding-container-horizontal) * 2));
 
   figcaption {
     color: var(--color-white);
@@ -18,6 +19,7 @@
   &.alignwide {
     padding-left: var(--padding-container-horizontal);
     padding-right: var(--padding-container-horizontal);
+    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
   }
 
   &.alignfull {
