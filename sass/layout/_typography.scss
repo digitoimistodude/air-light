@@ -14,14 +14,11 @@
 body {
   color: var(--color-paragraph);
   font-family: var(--font-paragraph);
+  font-size: var(--font-size-default);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  font-weight: var(--font-weight-paragraphs);
   text-rendering: geometricPrecision;
-
-  &:not(.wp-admin):not(.wp-core-ui) {
-    font-size: var(--font-size-default);
-    font-weight: var(--font-weight-paragraphs);
-  }
 }
 
 // Defaults
