@@ -1,3 +1,9 @@
+### 7.7.8: 2021-08-25
+
+* Fix --width-child-img CSS variable name
+* Fix core-gallery block width
+* Fix typo in script comment
+
 ### 7.7.7: 2021-08-06
 
 * Don't force outline-color for general items which colors we don't know
