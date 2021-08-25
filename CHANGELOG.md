@@ -1,3 +1,7 @@
+### 7.7.9: 2021-08-25
+
+* Set non lazyloaded figure widths #121
+
 ### 7.7.8: 2021-08-25
 
 * Fix --width-child-img CSS variable name
