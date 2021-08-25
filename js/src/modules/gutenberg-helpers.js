@@ -7,7 +7,7 @@ const setFigureWidth = (figure) => {
 };
 
 const setFigureWidths = (figures) => {
-  // Gutengerg magic for alignright and alignleft images
+  // Gutenberg magic for alignright and alignleft images
   figures.forEach((figure) => {
     setFigureWidth(figure);
   });
