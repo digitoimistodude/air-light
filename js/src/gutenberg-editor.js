@@ -35,6 +35,10 @@ window.addEventListener('load', function () {
   // Initialize each block on page load (front end).
   air_light_LazyLoad.update();
 
+  // Set non-lazyloaded figures width so captions in aligned images will be same width as image
+  const figures = document.querySelectorAll('figure');
+  setFigureWidths(figures);
+
   // Initialize dynamic block preview (editor).
   if (window.acf) {
     window.acf.addAction('render_block_preview', initializeBlock);
