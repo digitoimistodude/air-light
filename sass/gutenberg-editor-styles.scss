@@ -33,19 +33,20 @@
 
 // Apply general styles from site front-end
 @import 'layout/general';
-@import 'layout/typography';
+
+// Editor exceptions below
+// These styles are NO USE to front-end
+// Need to be right after general, because after typography comes block styles
+.editor-styles-wrapper {
+  @import 'layout/typography';
+  overflow-x: hidden;
+}
 
 // Gutenberg formatting
 @import 'gutenberg/formatting';
 
 // Global features needed by editor
 @import 'features/lazyload';
-
-// Editor exceptions below
-// These styles are NO USE to front-end
-.editor-styles-wrapper {
-  overflow-x: hidden;
-}
 
 // Fix alignleft and alignright figcaption width
 // Hack for achieving the same than in gutenberg-helpers.js
