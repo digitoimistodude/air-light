@@ -26,6 +26,10 @@ reframe('.wp-has-aspect-ratio iframe');
 // Style external links
 styleExternalLinks();
 
+// Set non-lazyloaded figures width so captions in aligned images will be same width as image
+const figures = document.querySelectorAll('figure');
+setFigureWidths(figures);
+
 // Init lazyload
 // Usage example on template side when air-helper enabled:
 // <?php vanilla_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
@@ -33,7 +37,7 @@ styleExternalLinks();
 // 1) https://github.com/digitoimistodude/air-helper#image-lazyloading-1
 // 2) https://github.com/verlok/vanilla-lazyload#-getting-started---html
 var air_light_LazyLoad = new LazyLoad({
-  callback_loaded: setLazyLoadedFigureWidth,
+  callback_loaded: (el) => setLazyLoadedFigureWidth, // Set lazyloaded figure width so captions in aligned images will be same width as image
 });
 
 // After your content has changed...
