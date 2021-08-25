@@ -1,3 +1,8 @@
+### 7.8.0: 2021-08-25
+
+* Fix setFigureWidths in gutenberg-editor.js
+* Aligned single gallery fixes for Gutenberg
+
 ### 7.7.9: 2021-08-25
 
 * Set non lazyloaded figure widths #121
