@@ -44,8 +44,8 @@
 // These styles are NO USE to front-end
 // Need to be right after general, because after typography comes block styles
 .editor-styles-wrapper {
-  overflow-x: hidden;
   @import 'layout/typography';
+  overflow-x: hidden;
 }
 
 // Gutenberg formatting

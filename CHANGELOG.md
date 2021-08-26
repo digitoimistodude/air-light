@@ -1,3 +1,7 @@
+### 7.8.2: 2021-08-26
+
+* [devpackages 2.2.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.2.7): Stylelint/order: Add order rule for @import
+
 ### 7.8.1: 2021-08-26
 
 * Set root size for rems for Gutenberg editor

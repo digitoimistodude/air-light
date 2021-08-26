@@ -5,7 +5,7 @@
     "stylelint-declaration-use-variable",
     "stylelint-scss",
     "stylelint-a11y",
-		"stylelint-order"
+    "stylelint-order"
   ],
   "extends": [
     "stylelint-config-standard",
@@ -13,6 +13,10 @@
   ],
   "rules": {
     "order/order": [
+      {
+        "type": "at-rule",
+        "name": "import"
+      },
       {
         "type": "at-rule",
         "name": "include"
@@ -29,12 +33,15 @@
         "type": "at-rule",
         "name": "media"
       },
-		],
-    "csstools/value-no-unknown-custom-properties": [true, {
-      "importFrom": [
-        "css/dev/global.css"
-      ]
-    }],
+    ],
+    "csstools/value-no-unknown-custom-properties": [
+      true,
+      {
+        "importFrom": [
+          "css/dev/global.css"
+        ]
+      }
+    ],
     "sh-waqar/declaration-use-variable": [
       [
         "/color/",
@@ -76,18 +83,29 @@
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
     "rule-empty-line-before": [
-        "always-multi-line",
-        {
-            "except": ["first-nested", "after-single-line-comment"],
-            "ignore": ["inside-block"]
-        }
+      "always-multi-line",
+      {
+        "except": [
+          "first-nested",
+          "after-single-line-comment"
+        ],
+        "ignore": [
+          "inside-block"
+        ]
+      }
     ],
     "at-rule-empty-line-before": [
-        "always",
-        {
-            "except": ["first-nested", "blockless-after-same-name-blockless", "blockless-after-blockless"],
-            "ignore": ["after-comment"]
-        }
+      "always",
+      {
+        "except": [
+          "first-nested",
+          "blockless-after-same-name-blockless",
+          "blockless-after-blockless"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
     ],
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
@@ -120,7 +138,12 @@
     "at-rule-name-space-after": "always",
     "at-rule-name-case": "lower",
     "function-url-quotes": "always",
-    "no-descending-specificity": [true, { "severity": "warning" }],
+    "no-descending-specificity": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
     "unit-no-unknown": true,
     "property-no-unknown": true,
     "no-duplicate-selectors": true,
@@ -137,25 +160,75 @@
     "property-no-vendor-prefix": true,
     "selector-no-vendor-prefix": true,
     "selector-no-qualifying-type": null,
-    "max-nesting-depth": [ 3, { "ignore": ["blockless-at-rules", "pseudo-classes"] } ],
+    "max-nesting-depth": [
+      3,
+      {
+        "ignore": [
+          "blockless-at-rules",
+          "pseudo-classes"
+        ]
+      }
+    ],
     "declaration-block-no-duplicate-properties": true,
     "no-unknown-animations": true,
     "selector-pseudo-element-colon-notation": "double",
     "shorthand-property-no-redundant-values": true,
     "declaration-block-single-line-max-declarations": 1,
-    "declaration-property-unit-allowed-list": [{
-      "font-size": ["rem", "em", "px"],
-      "/^animation/": ["ms", "s"],
-      "line-height": ["px", "%", ""]
-    }],
+    "declaration-property-unit-allowed-list": [
+      {
+        "font-size": [
+          "rem",
+          "em",
+          "px"
+        ],
+        "/^animation/": [
+          "ms",
+          "s"
+        ],
+        "line-height": [
+          "px",
+          "%",
+          ""
+        ]
+      }
+    ],
     "a11y/no-outline-none": true,
-		"a11y/selector-pseudo-class-focus": true,
-		"a11y/font-size-is-readable": [true, { "severity": "warning" }],
-		"a11y/line-height-is-vertical-rhythmed": [null, { "severity": "warning" }],
-		"a11y/no-display-none": [true, { "severity": "warning" }],
-		"a11y/no-obsolete-element": [true, { "severity": "warning" }],
-		"a11y/no-text-align-justify": [true, { "severity": "warning" }],
+    "a11y/selector-pseudo-class-focus": true,
+    "a11y/font-size-is-readable": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "a11y/line-height-is-vertical-rhythmed": [
+      null,
+      {
+        "severity": "warning"
+      }
+    ],
+    "a11y/no-display-none": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "a11y/no-obsolete-element": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
+    "a11y/no-text-align-justify": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
     "order/properties-alphabetical-order": true,
-    "property-disallowed-list": ["font", "animation", "background"]
+    "property-disallowed-list": [
+      "font",
+      "animation",
+      "background"
+    ]
   }
 }
