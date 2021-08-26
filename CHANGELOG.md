@@ -1,3 +1,8 @@
+### 7.8.1: 2021-08-26
+
+* Set root size for rems for Gutenberg editor
+* Fix CSS leak to wp-core-ui items #123
+
 ### 7.8.0: 2021-08-25
 
 * Fix setFigureWidths in gutenberg-editor.js
