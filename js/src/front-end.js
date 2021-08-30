@@ -7,7 +7,7 @@ import MoveTo from 'moveto';
 import LazyLoad from 'vanilla-lazyload';
 import reframe from 'reframe.js';
 import getLocalization from './modules/localization';
-import styleExternalLinks from './modules/external-link';
+import { styleExternalLinks, getChildAltText } from './modules/external-link';
 import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
 // import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
@@ -141,4 +141,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+// Add aria-labels to links without text or aria-labels and contain image with alt text
+const links = [...document.querySelectorAll('a')];
+const linksWithImgChildren = links.forEach(link => {
+  // If link already has text content or an aria label no need to add aria-label
+  if (link.textContent.trim() !== '' || link.ariaLabel) {
+    return;
+  }
+
+  const ariaLabel = getChildAltText(link);
+  if (ariaLabel !== '') {
+    link.ariaLabel = ariaLabel;
+  }
+});
 
