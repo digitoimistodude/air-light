@@ -2744,7 +2744,7 @@ eval("/* jshint browser:true\n *\n * window-location-origin - version 0.0.1\n * 
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! /Users/rolle/Projects/airdev/content/themes/air-light/js/src/legacy.js */\"./js/src/legacy.js\");\n\n\n//# sourceURL=webpack:///multi_./js/src/legacy.js?");
+eval("module.exports = __webpack_require__(/*! /Users/niq/Projects/airdev/content/themes/air-light/js/src/legacy.js */\"./js/src/legacy.js\");\n\n\n//# sourceURL=webpack:///multi_./js/src/legacy.js?");
 
 /***/ }),
 
