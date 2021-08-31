@@ -40,19 +40,21 @@ function isLinkExternal(link, localDomains) {
 }
 
 /**
- * Try to get image alt texts from inside a link to use in aria-label
+ * Try to get image alt texts from inside a link
+ * to use in aria-label, when only elements inside
+ * of link are images
  * @param {*} link DOM link element
  * @returns string
  */
 export function getChildAltText(link) {
   const children = [...link.children];
-  console.log(children);
+
   if (children.length === 0) {
     return '';
   }
 
   const childImgs = children.filter((child) => child.tagName.toLowerCase() === 'img');
-  console.log(childImgs);
+
   // If there are other elements than img elements, no need to add aria-label
   if (children.length !== childImgs.length) {
     return '';
