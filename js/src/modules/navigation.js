@@ -56,6 +56,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Close focused dropdowns when pressing esc
   $('.menu-item a, .dropdown button').on('keyup', function (e) {
+
     if ($('.dropdown').find(':focus').length !== 0) {
       // Close menu using Esc key.
       if (e.code === 'Escape') {
@@ -113,7 +114,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     if (enterPressed || window.innerWidth < responsivenav) {
       var dropdownMenu = $(this).nextAll('.sub-menu');
 
-      e.preventDefault();
       $(this).toggleClass('toggled-on');
       dropdownMenu.toggleClass('toggled-on');
 
@@ -147,7 +147,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
     switch (e.code) {
     case 'ArrowLeft': // Left key
-      e.preventDefault();
       e.stopPropagation();
 
       if ($(this).hasClass('dropdown-toggle')) {
@@ -172,7 +171,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       break;
 
     case 'ArrowRight': // Right key
-      e.preventDefault();
       e.stopPropagation();
 
       if ($(this).next('button.dropdown-toggle').length) {
@@ -192,7 +190,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       break;
 
     case 'ArrowDown': // Down key
-      e.preventDefault();
       e.stopPropagation();
 
       if ($(this).next().length) {
@@ -225,7 +222,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       break;
 
     case 'ArrowUp': // Up key
-      e.preventDefault();
       e.stopPropagation();
 
       if ($(this).parent().prev().length) {
@@ -446,19 +442,16 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
     // Redirect last Tab to first focusable element.
     if (lastFocusableElement === e.target && e.code === 'Tab' && !e.shiftKey) {
-      e.preventDefault();
       button.focus(); // Set focus on first element - that's actually close menu button.
     }
 
     // Redirect first Shift+Tab to toggle button element.
     if (firstFocusableElement === e.target && e.code === 'Tab' && e.shiftKey) {
-      e.preventDefault();
       button.focus(); // Set focus on last element.
     }
 
     // Redirect Shift+Tab from the toggle button to last focusable element.
     if (button === e.target && e.code === 'Tab' && e.shiftKey) {
-      e.preventDefault();
       lastFocusableElement.focus(); // Set focus on last element.
     }
   }
