@@ -1,3 +1,7 @@
+### 7.8.4: 2021-09-01
+
+* Accessibility: Prevent navigation dropdown toggle to be opened by mouse since we already use hover event and don't want it to get stuck open without consent
+
 ### 7.8.3: 2021-09-01
 
 * Accessibility: Navigation patterns: Make it possible to close with ESC while hovering
