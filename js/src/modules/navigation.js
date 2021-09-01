@@ -31,7 +31,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Hover intent
   const menuItems = document.querySelectorAll('.menu-item');
-  const hoverIntentTimeout = 1000;
+  // const hoverIntentTimeout = 1000;
 
   menuItems.forEach(li => {
     li.addEventListener('mouseover', function( event ) {
@@ -40,10 +40,11 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     });
 
     li.addEventListener('mouseleave', function( event ) {
-      setTimeout(() => {
+
+      // setTimeout(() => {
         this.classList.remove('hover-intent');
         this.parentNode.classList.remove('hover-intent');
-      }, hoverIntentTimeout);
+      // }, hoverIntentTimeout);
     });
   });
 
