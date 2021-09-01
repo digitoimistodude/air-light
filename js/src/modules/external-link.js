@@ -39,7 +39,39 @@ function isLinkExternal(link, localDomains) {
   return !localDomains.some((domain) => linkUrl.host === domain);
 }
 
-export default function styleExternalLinks() {
+/**
+ * Try to get image alt texts from inside a link
+ * to use in aria-label, when only elements inside
+ * of link are images
+ * @param {*} link DOM link element
+ * @returns string
+ */
+export function getChildAltText(link) {
+  const children = [...link.children];
+
+  if (children.length === 0) {
+    return '';
+  }
+
+  const childImgs = children.filter((child) => child.tagName.toLowerCase() === 'img');
+
+  // If there are other elements than img elements, no need to add aria-label
+  if (children.length !== childImgs.length) {
+    return '';
+  }
+
+  // Find alt texts and add to array
+  const altTexts = childImgs.filter((child) => child.alt && child.alt !== '').map((child) => child.alt);
+
+  // If there is no alt texts,
+  if (!altTexts.length) {
+    return '';
+  }
+
+  return altTexts.join(', ');
+}
+
+export function styleExternalLinks() {
   let localDomains = [
     window.location.host,
   ];
@@ -53,7 +85,9 @@ export default function styleExternalLinks() {
   const externalLinks = [...links].filter((link) => isLinkExternal(link.href, localDomains));
 
   externalLinks.forEach((externalLink) => {
-    const ariaLabel = externalLink.target === '_blank' ? `${getLocalization('external_link')} ${externalLink.textContent}, ${getLocalization('target_blank')}` : `${getLocalization('external_link')} ${externalLink.textContent}`;
+    const textContent = externalLink.textContent.trim().length
+      ? externalLink.textContent.trim() : getChildAltText(externalLink);
+    const ariaLabel = externalLink.target === '_blank' ? `${getLocalization('external_link')} ${textContent}, ${getLocalization('target_blank')}` : `${getLocalization('external_link')} ${textContent}`;
     externalLink.setAttribute('aria-label', ariaLabel);
     externalLink.classList.add('is-external-link');
   });
