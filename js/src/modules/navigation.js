@@ -37,6 +37,14 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
     li.addEventListener('mouseover', function( event ) {
       this.classList.add('hover-intent');
       this.parentNode.classList.add('hover-intent');
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          li.classList.remove('hover-intent');
+          li.parentNode.classList.remove('hover-intent');
+          li.parentNode.parentNode.classList.remove('hover-intent');
+        }
+      });
     });
 
     li.addEventListener('mouseleave', function( event ) {
@@ -45,6 +53,14 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
         this.classList.remove('hover-intent');
         this.parentNode.classList.remove('hover-intent');
       // }, hoverIntentTimeout);
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+          li.classList.remove('hover-intent');
+          li.parentNode.classList.remove('hover-intent');
+          li.parentNode.parentNode.classList.remove('hover-intent');
+        }
+      });
     });
   });
 
