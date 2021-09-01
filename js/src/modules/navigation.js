@@ -29,18 +29,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   var firstFocusableElement;
   var lastFocusableElement;
 
-  // Check if enter pressed
-  var enterPressed = false;
-  $(window).on('keydown', (evt) => {
-    if (evt.code === 'Enter') {
-      enterPressed = true;
-    }
-  }).on('keyup', (evt) => {
-    if (evt.code === 'Enter') {
-      enterPressed = false;
-    }
-  });
-
   // Hover intent
   $('.menu-item-has-children').on('hover', function () {
     $(this).addClass('hover-intent');
@@ -111,7 +99,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Toggles the sub-menu when dropdown toggle button accessed
   siteHeaderMenu.find('.dropdown-toggle').on('click', function (e) {
-    if (enterPressed || window.innerWidth < responsivenav) {
+
       var dropdownMenu = $(this).nextAll('.sub-menu');
 
       $(this).toggleClass('toggled-on');
@@ -131,7 +119,7 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
           ? `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`
           : `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`,
       );
-    }
+
   });
 
   // Adds a class to sub-menus for styling
