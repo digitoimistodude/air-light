@@ -263,6 +263,7 @@ $use-dropdown-toggle-animation: true;
     display: inline-flex;
     justify-content: center;
     padding: 0;
+    pointer-events: none;
   }
 
   // Sub-menu toggle icon
