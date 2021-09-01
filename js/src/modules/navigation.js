@@ -30,17 +30,19 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   var lastFocusableElement;
 
   // Hover intent
-  const menuListItems = Object.values(document.getElementsByClassName('menu-item-has-children'));
+  const menuItems = document.querySelectorAll('.menu-item');
   const hoverIntentTimeout = 1000;
 
-  menuListItems.forEach(li => {
+  menuItems.forEach(li => {
     li.addEventListener('mouseover', function( event ) {
       this.classList.add('hover-intent');
+      this.parentNode.classList.add('hover-intent');
     });
 
-    li.addEventListener('mouseout', function( event ) {
+    li.addEventListener('mouseleave', function( event ) {
       setTimeout(() => {
         this.classList.remove('hover-intent');
+        this.parentNode.classList.remove('hover-intent');
       }, hoverIntentTimeout);
     });
   });
