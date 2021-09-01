@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:22:26
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-02-24 17:17:18
+ * @Last Modified time: 2021-09-01 12:26:25
  *
  * @package air-light
  */
@@ -24,7 +24,7 @@ namespace Air_Light;
     <span id="nav-toggle-label" class="nav-toggle-label"><?php echo esc_html( get_default_localization( 'Open main menu' ) ); ?></span>
   </button>
 
-  <nav id="nav" class="nav-primary" aria-label="<?php echo esc_html( get_default_localization( 'Main navigation' ) ); ?>">
+  <nav id="nav" class="nav-primary nav-menu" aria-label="<?php echo esc_html( get_default_localization( 'Main navigation' ) ); ?>">
 
     <?php wp_nav_menu( array(
       'theme_location' => 'primary',
