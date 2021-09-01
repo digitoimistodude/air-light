@@ -1,3 +1,8 @@
+### 7.8.5: 2021-09-01
+
+* Fix eslint picking up the wrong module .eslintrc
+* Fix build, lint JS
+
 ### 7.8.4: 2021-09-01
 
 * Accessibility: Prevent navigation dropdown toggle to be opened by mouse since we already use hover event and don't want it to get stuck open without consent

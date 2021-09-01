@@ -33,13 +33,13 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   const menuItems = document.querySelectorAll('.menu-item');
   // const hoverIntentTimeout = 1000;
 
-  menuItems.forEach(li => {
-    li.addEventListener('mouseover', function( event ) {
+  menuItems.forEach((li) => {
+    li.addEventListener('mouseover', function () {
       this.classList.add('hover-intent');
       this.parentNode.classList.add('hover-intent');
 
-      document.addEventListener('keydown', function(event) {
-        if (event.key === "Escape") {
+      document.addEventListener('keydown', (keydownMouseoverEvent) => {
+        if (keydownMouseoverEvent.key === 'Escape') {
           li.classList.remove('hover-intent');
           li.parentNode.classList.remove('hover-intent');
           li.parentNode.parentNode.classList.remove('hover-intent');
@@ -47,15 +47,14 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
       });
     });
 
-    li.addEventListener('mouseleave', function( event ) {
-
+    li.addEventListener('mouseleave', function () {
       // setTimeout(() => {
-        this.classList.remove('hover-intent');
-        this.parentNode.classList.remove('hover-intent');
+      this.classList.remove('hover-intent');
+      this.parentNode.classList.remove('hover-intent');
       // }, hoverIntentTimeout);
 
-      document.addEventListener('keydown', function(event) {
-        if (event.key === "Escape") {
+      document.addEventListener('keydown', (keydownMouseleaveEvent) => {
+        if (keydownMouseleaveEvent.key === 'Escape') {
           li.classList.remove('hover-intent');
           li.parentNode.classList.remove('hover-intent');
           li.parentNode.parentNode.classList.remove('hover-intent');
@@ -72,7 +71,6 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Close focused dropdowns when pressing esc
   $('.menu-item a, .dropdown button').on('keyup', function (e) {
-
     if ($('.dropdown').find(':focus').length !== 0) {
       // Close menu using Esc key.
       if (e.code === 'Escape') {
@@ -127,27 +125,25 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Toggles the sub-menu when dropdown toggle button accessed
   siteHeaderMenu.find('.dropdown-toggle').on('click', function (e) {
+    var dropdownMenu = $(this).nextAll('.sub-menu');
 
-      var dropdownMenu = $(this).nextAll('.sub-menu');
+    $(this).toggleClass('toggled-on');
+    dropdownMenu.toggleClass('toggled-on');
 
-      $(this).toggleClass('toggled-on');
-      dropdownMenu.toggleClass('toggled-on');
+    // jscs:disable
+    $(this).attr(
+      'aria-expanded',
+      $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
+    );
+    // jscs:enable
+    // Change screen reader open/close labels
 
-      // jscs:disable
-      $(this).attr(
-        'aria-expanded',
-        $(this).attr('aria-expanded') === 'false' ? 'true' : 'false',
-      );
-      // jscs:enable
-      // Change screen reader open/close labels
-
-      $(this).attr(
-        'aria-label',
-        $(this).attr('aria-label') === `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`
-          ? `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`
-          : `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`,
-      );
-
+    $(this).attr(
+      'aria-label',
+      $(this).attr('aria-label') === `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`
+        ? `${air_light_screenReaderText.expand_for} ${$(this).prev().text()}`
+        : `${air_light_screenReaderText.collapse_for} ${$(this).prev().text()}`,
+    );
   });
 
   // Adds a class to sub-menus for styling
