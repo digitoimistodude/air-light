@@ -30,13 +30,22 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   var lastFocusableElement;
 
   // Hover intent
-  $('.menu-item-has-children').on('hover', function () {
-    $(this).addClass('hover-intent');
-    setTimeout(() => {
-      $(this).removeClass('hover-intent');
-    }, 100);
+  const menuListItems = Object.values(document.getElementsByClassName('menu-item-has-children'));
+  const hoverIntentTimeout = 1000;
+
+  menuListItems.forEach(li => {
+    li.addEventListener('mouseover', function( event ) {
+      this.classList.add('hover-intent');
+    });
+
+    li.addEventListener('mouseout', function( event ) {
+      setTimeout(() => {
+        this.classList.remove('hover-intent');
+      }, hoverIntentTimeout);
+    });
   });
 
+  // Define menu items
   var menuContainer = $('.nav-container');
   var menuToggle = menuContainer.find('#nav-toggle');
   var siteHeaderMenu = menuContainer.find('#main-navigation-wrapper');
