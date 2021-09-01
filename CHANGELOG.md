@@ -1,3 +1,12 @@
+### 7.8.3: 2021-09-01
+
+* Accessibility: Navigation patterns: Make it possible to close with ESC while hovering
+* Accessibility: Add hover event via JS instead of CSS (to be able to untrigger)
+* Navigation JS: Add missing class
+* Navigation JS: Remove preventdefaults as there are no defaults for these items
+* Accessibility: Fix keyboard navigation for NVDA screen reader
+* Add aria labels to links with img inside, Fixes #111 (PR #124)
+
 ### 7.8.2: 2021-08-26
 
 * [devpackages 2.2.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.2.7): Stylelint/order: Add order rule for @import
