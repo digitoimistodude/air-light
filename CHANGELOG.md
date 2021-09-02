@@ -1,3 +1,7 @@
+### 7.8.6: 2021-09-02
+
+* Accessibility: Switch order of external link label text so that the actual link text comes first, then "External site" and "opens in a new window" (thanks @samikeijonen), Fixes #125
+
 ### 7.8.5: 2021-09-01
 
 * Fix eslint picking up the wrong module .eslintrc

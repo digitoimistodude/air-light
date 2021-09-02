@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:12:29
+ * @Last Modified time: 2021-09-02 10:44:32
  *
  * @package air-light
  */
@@ -56,7 +56,7 @@ function enqueue_theme_scripts() {
     'collapse_for'    => get_default_localization( 'Close child menu for' ),
     'expand_toggle'   => get_default_localization( 'Open main menu' ),
     'collapse_toggle' => get_default_localization( 'Close main menu' ),
-    'external_link'   => get_default_localization( 'External site:' ),
+    'external_link'   => get_default_localization( 'External site' ),
     'target_blank'    => get_default_localization( 'opens in a new window' ),
   ] );
 

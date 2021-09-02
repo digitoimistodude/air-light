@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-08-06 14:21:17
+ * @Last Modified time: 2021-09-02 10:43:53
  *
  * @package air-light
  */
@@ -39,7 +39,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Close child menu'                             => __( 'Close child menu', 'air-light' ),
       'Close child menu for'                         => __( 'Close child menu for', 'air-light' ),
       'Skip to content'                              => __( 'Skip to content', 'air-light' ),
-      'External site:'                               => __( 'External site:', 'air-light' ),
+      'External site'                                => __( 'External site', 'air-light' ),
       'opens in a new window'                        => __( 'opens in a new window', 'air-light' ),
       'Page not found.'                              => __( 'Page not found.', 'air-light' ),
       'The reason might be mistyped or expired URL.' => __( 'The reason might be mistyped or expired URL.', 'air-light' ),
@@ -59,7 +59,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Close child menu'                             => 'Sulje alavalikko',
       'Close child menu for'                         => 'Sulje alavalikko kohteelle',
       'Skip to content'                              => 'Siirry suoraan sisältöön',
-      'External site:'                               => 'Ulkoinen sivusto:',
+      'External site'                                => 'Ulkoinen sivusto',
       'opens in a new window'                        => 'avautuu uuteen ikkunaan',
       'Page not found.'                              => 'Hups. Näyttää, ettei sivua löydy.',
       'The reason might be mistyped or expired URL.' => 'Syynä voi olla virheellisesti kirjoitettu tai vanhentunut linkki.',

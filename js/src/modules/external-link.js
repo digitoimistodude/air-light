@@ -87,7 +87,7 @@ export function styleExternalLinks() {
   externalLinks.forEach((externalLink) => {
     const textContent = externalLink.textContent.trim().length
       ? externalLink.textContent.trim() : getChildAltText(externalLink);
-    const ariaLabel = externalLink.target === '_blank' ? `${getLocalization('external_link')} ${textContent}, ${getLocalization('target_blank')}` : `${getLocalization('external_link')} ${textContent}`;
+    const ariaLabel = externalLink.target === '_blank' ? `${textContent}: ${getLocalization('external_link')}, ${getLocalization('target_blank')}` : `${textContent}: ${getLocalization('external_link')}`;
     externalLink.setAttribute('aria-label', ariaLabel);
     externalLink.classList.add('is-external-link');
   });
