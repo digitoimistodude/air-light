@@ -1,3 +1,7 @@
+### 7.8.7: 2021-09-03
+
+* Accessibility: Trigger closing the dropdown to ESC key only if we are already browsing the dropdown menus in sub navigation. Fixes the bug where focus point jumps also in all other situations as well for example when no dropdowns are open.
+
 ### 7.8.6: 2021-09-02
 
 * Accessibility: Switch order of external link label text so that the actual link text comes first, then "External site" and "opens in a new window" (thanks @samikeijonen), Fixes #125

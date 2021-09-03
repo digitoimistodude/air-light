@@ -71,22 +71,35 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
 
   // Close focused dropdowns when pressing esc
   $('.menu-item a, .dropdown button').on('keyup', function (e) {
-    if ($('.dropdown').find(':focus').length !== 0) {
-      // Close menu using Esc key.
-      if (e.code === 'Escape') {
-        // Close the dropdown menu
-        var thisDropdown = $(this).parent().parent().parent();
+    // Checking are menu items open or not
+    const isSubMenuDropdownOpen = $(this).parent().parent().parent()
+      .find('.sub-menu')
+      .prev('.dropdown-toggle')
+      .attr('aria-expanded');
+    const isMainMenuDropdownOpen = $(this).closest('.menu-item').find('.dropdown-toggle').attr('aria-expanded');
+    const areWeInDropdown = $(this).parent().parent().hasClass('sub-menu');
 
-        var screenReaderSpan = thisDropdown.find('.screen-reader-text');
-        var dropdownToggle = thisDropdown.find('.dropdown-toggle');
-        thisDropdown.find('.sub-menu').removeClass('toggled-on');
-        thisDropdown.find('.dropdown-toggle').removeClass('toggled-on');
-        thisDropdown.find('.dropdown').removeClass('toggled-on');
-        dropdownToggle.attr('aria-expanded', 'false');
-        // jscs:enable
-        screenReaderSpan.text(air_light_screenReaderText.expand);
-        // Move focus back to previous dropdown select
-        thisDropdown.find('.dropdown-toggle:first').trigger('focus');
+    if (isSubMenuDropdownOpen === 'true' || isMainMenuDropdownOpen === 'true') {
+      if ($('.dropdown').find(':focus').length !== 0) {
+      // Close menu using Esc key but only if dropdown is open
+        if (e.code === 'Escape') {
+          // Close the dropdown menu
+          var thisDropdown = $(this).parent().parent().parent();
+
+          var screenReaderSpan = thisDropdown.find('.screen-reader-text');
+          var dropdownToggle = thisDropdown.find('.dropdown-toggle');
+          thisDropdown.find('.sub-menu').removeClass('toggled-on');
+          thisDropdown.find('.dropdown-toggle').removeClass('toggled-on');
+          thisDropdown.find('.dropdown').removeClass('toggled-on');
+          dropdownToggle.attr('aria-expanded', 'false');
+          // jscs:enable
+          screenReaderSpan.text(air_light_screenReaderText.expand);
+          // Move focus back to previous dropdown select
+          // But only if we are not already in the toggle of the first dropdown menu
+          if (areWeInDropdown === true) {
+            thisDropdown.find('.dropdown-toggle:first').trigger('focus');
+          }
+        }
       }
     }
 
