@@ -1,3 +1,9 @@
+### 7.8.8: 2021-09-15
+
+* Fixes for alignwide and alignfull logic: Make them behave exactly the same in breakpoints other than desktop
+* Add missing .wp-block-list class to _core-list.scss
+* Bump tested WordPress version to 5.8.1
+
 ### 7.8.7: 2021-09-03
 
 * Accessibility: Trigger closing the dropdown to ESC key only if we are already browsing the dropdown menus in sub navigation. Fixes the bug where focus point jumps also in all other situations as well for example when no dropdowns are open.

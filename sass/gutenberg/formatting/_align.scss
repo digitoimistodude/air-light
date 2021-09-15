@@ -30,22 +30,30 @@
   }
 
   .alignwide {
-    @media (min-width: $width-grid-base + 40px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    @media (min-width: $width-max-article + 40px) {
       max-width: $width-wide;
       width: 100%;
     }
   }
 
   .alignfull {
+    max-width: $width-full;
+    padding-left: 0;
+    padding-right: 0;
+    width: $width-full;
+
     &.wp-block-image img {
       border-radius: 0;
     }
 
-    @media (min-width: $width-grid-base + 40px) {
+    @media (min-width: $width-max-article + 40px) {
       margin-bottom: var(--padding-block);
       margin-top: var(--padding-block);
       max-width: $width-full;
-      width: 100%;
+      width: $width-full;
     }
   }
 }
