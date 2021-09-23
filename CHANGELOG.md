@@ -1,3 +1,8 @@
+### 7.8.9: 2021-09-23
+
+* Ensure Gravity Forms honeypot is hidden
+* Add support for native columns in Gravity Forms 2.5+
+
 ### 7.8.8: 2021-09-15
 
 * Fixes for alignwide and alignfull logic: Make them behave exactly the same in breakpoints other than desktop
