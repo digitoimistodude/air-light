@@ -67,10 +67,9 @@ body *[aria-invalid="true"] {
     padding: 0;
   }
 
-  .gfield {
-    border: 0;
-    margin-bottom: 2rem;
-    padding: 0;
+  textarea,
+  input {
+    width: 100%;
   }
 
   .gfield_label {
@@ -82,9 +81,69 @@ body *[aria-invalid="true"] {
     padding-inline-start: 0;
   }
 
-  textarea,
-  input {
+  // 2.5 built-in multi column support
+  .gform_fields {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(auto-fill, auto);
     width: 100%;
+  }
+
+  .gfield {
+    border: 0;
+    grid-column: 1 / -1;
+    padding: 0;
+  }
+
+  .gfield.gfield--width-full {
+    grid-column: span 12;
+  }
+
+  .gfield.gfield--width-eleven-twelfths {
+    grid-column: span 11;
+  }
+
+  .gfield.gfield--width-five-sixths {
+    grid-column: span 10;
+  }
+
+  .gfield.gfield--width-three-quarter {
+    grid-column: span 9;
+  }
+
+  .gfield.gfield--width-two-thirds {
+    grid-column: span 8;
+  }
+
+  .gfield.gfield--width-seven-twelfths {
+    grid-column: span 7;
+  }
+
+  .gfield.gfield--width-half {
+    grid-column: span 6;
+  }
+
+  .gfield.gfield--width-five-twelfths {
+    grid-column: span 5;
+  }
+
+  .gfield.gfield--width-third {
+    grid-column: span 4;
+  }
+
+  .gfield.gfield--width-quarter {
+    grid-column: span 3;
+  }
+
+  @media (max-width: 640px) {
+    .gform_fields {
+      grid-column-gap: 0;
+    }
+
+    .gfield:not(.gfield--width-full) {
+      grid-column: 1 / -1;
+    }
   }
 }
 
