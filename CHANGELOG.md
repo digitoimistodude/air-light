@@ -1,3 +1,8 @@
+### 7.9.0: 2021-09-24
+
+* Fix typography line-height leaking from core heading block (kudos to @Tumppex for noticing this!)
+* Change gutenberg-content div to HTML5 article element with class article-content to be more clear (since all content are now Gutenberg)
+
 ### 7.8.9: 2021-09-23
 
 * Ensure Gravity Forms honeypot is hidden
@@ -129,7 +134,7 @@
 
 ### 7.6.3: 2021-06-09
 
-* Fix too quick transition-duration (.08, one zero too much, thx @Tumppex for stpotting this!)
+* Fix too quick transition-duration (.08, one zero too much, thx @Tumppex for spotting this!)
 * Add WCAG AAA+ compliant validation error colors for gravity forms 2.5
 
 ### 7.6.2: 2021-06-09

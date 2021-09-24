@@ -19,7 +19,7 @@ get_header(); ?>
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
   <section class="block block-single has-light-bg">
-    <div class="gutenberg-content">
+    <article class="article-content">
 
       <h1><?php the_title(); ?></h1>
 
@@ -41,7 +41,7 @@ get_header(); ?>
         comments_template();
       } ?>
 
-    </div>
+    </article>
   </section>
 
 </main>
