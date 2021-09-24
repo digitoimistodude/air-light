@@ -1,8 +1,3 @@
-// Settings
-$navheight-expanded: 92px;
-$navheight-mobile: 54px;
-$navheight-collapsed: 54px;
-
 // Colors
 :root {
   --color-sticky-navigation-background: var(--color-valhalla);
@@ -13,68 +8,29 @@ $navheight-collapsed: 54px;
 }
 
 .nav-container {
-  height: $navheight-mobile;
   overflow: visible;
-  position: fixed;
-  transition: all $transition-duration ease;
   width: 100%;
-  z-index: 9999;
+  z-index: 100;
 
-  .site-header {
-    height: auto;
-  }
-
-  &.nav-container-sticky {
+  &.is-fixed {
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    animation-name: roll-in;
     background-color: var(--color-sticky-navigation-background);
     left: 0;
     position: fixed;
     top: 0;
+  }
+}
 
-    .site-header {
-      padding-bottom: 5px;
-      padding-top: 5px;
-    }
-
-    .site-title svg {
-      height: 32px;
-      position: relative;
-      top: 5px;
-      width: 32px;
-    }
-
-    nav {
-      padding-bottom: 0;
-      padding-top: 0;
-    }
-
-    .nav-toggle {
-      right: 5px;
-      top: 5px;
-    }
-
-    // Hide when scrolling down, show again when scrolling up
-    &.scrolling-down {
-      @media (min-width: $width-max-mobile) {
-        margin-top: -$navheight-expanded;
-      }
-    }
-
-    &.scrolling-up {
-      top: 0;
-    }
-
-    @media (max-width: $width-max-mobile - 1px) {
-      .site-title {
-        margin-top: 0;
-      }
-    }
-
-    @media (min-width: $width-max-mobile) {
-      height: $navheight-collapsed;
-    }
+@keyframes roll-in {
+  0% {
+    opacity: 0;
+    top: -100%;
   }
 
-  @media (min-width: $width-max-mobile) {
-    height: $navheight-expanded;
+  100% {
+    opacity: 1;
+    top: 0;
   }
 }

@@ -9,9 +9,11 @@ import reframe from 'reframe.js';
 import getLocalization from './modules/localization';
 import { styleExternalLinks, getChildAltText } from './modules/external-link';
 import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
+import 'what-input';
+
+// Features
 // import './modules/sticky-nav.js'
 // import slick from 'slick-carousel';
-import 'what-input';
 
 // Navigation
 import './modules/navigation.js';

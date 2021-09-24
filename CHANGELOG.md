@@ -1,3 +1,7 @@
+### 7.9.1: 2021-09-24
+
+* Simplify sticky navigation, rewrite in Vanilla JS
+
 ### 7.9.0: 2021-09-24
 
 * Fix typography line-height leaking from core heading block (kudos to @Tumppex for noticing this!)
