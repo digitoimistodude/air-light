@@ -1,3 +1,8 @@
+### 7.9.2: 2021-09-28
+
+* Fix a bug on Firefox in sticky nav in situations where user refreshes the browser in the middle of the page before any scrolling done
+* Fix extra gap in Gutenberg editor's .wp-block
+
 ### 7.9.1: 2021-09-24
 
 * Simplify sticky navigation, rewrite in Vanilla JS

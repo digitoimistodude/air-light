@@ -9,6 +9,11 @@ function stickyNav() {
   } else if (scrollValue < headerHeight) {
     navbar.classList.remove('is-fixed');
   }
+
+  if (window.pageYOffset > headerHeight) {
+    navbar.classList.add('is-fixed');
+  }
 }
 
 window.addEventListener('scroll', stickyNav);
+window.addEventListener('DOMContentLoaded', stickyNav);

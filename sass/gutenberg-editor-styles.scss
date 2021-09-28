@@ -72,6 +72,9 @@
 .wp-block {
   font-family: var(--font-paragraph);
 
+  // Fix extra gap in editor
+  margin-top: 0;
+
   // Let's use maximum article width on article content
   max-width: $width-max-article;
 
