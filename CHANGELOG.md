@@ -1,3 +1,7 @@
+### 7.9.3: 2021-09-29
+
+* Group accessible color variables for error, success and warning states
+
 ### 7.9.2: 2021-09-28
 
 * Fix a bug on Firefox in sticky nav in situations where user refreshes the browser in the middle of the page before any scrolling done
