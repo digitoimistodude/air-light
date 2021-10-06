@@ -38,19 +38,22 @@
 select {
   appearance: none;
   background-image: url('../../svg/select.svg');
-  background-position: right 10px center;
+  background-position: right var(--gap-select-icon) center;
   background-repeat: no-repeat;
   background-size: 11px auto;
   border-color: var(--color-border-forms);
   border-radius: var(--border-radius-select);
   border-style: solid;
   border-width: var(--border-width-input-field);
-  color: var(--color-paragraph);
+  color: var(--color-forms-text);
   font-size: var(--font-size-input-fields);
-  line-height: 18px;
+  line-height: var(--form-line-height);
   max-width: 100%;
   min-width: 0;
-  padding: .8rem 1.5rem;
+  padding-bottom: var(--form-padding-vertical);
+  padding-left: var(--form-padding-horizontal);
+  padding-right: var(--form-padding-horizontal);
+  padding-top: var(--form-padding-vertical);
   text-indent: 1px;
   transition: none;
   width: 100%;
@@ -73,11 +76,15 @@ input[type="search"] {
   border-radius: var(--border-radius-input-field);
   border-style: solid;
   border-width: var(--border-width-input-field);
+  color: var(--color-forms-text);
   font-family: var(--font-paragraph);
   font-size: var(--font-size-input-fields);
-  line-height: 24px;
+  line-height: var(--form-line-height);
   margin-bottom: 0;
-  padding: 15px;
+  padding-bottom: var(--form-padding-vertical);
+  padding-left: var(--form-padding-horizontal);
+  padding-right: var(--form-padding-horizontal);
+  padding-top: var(--form-padding-vertical);
   position: relative;
   text-decoration: none;
   transition: background .55s;
@@ -90,6 +97,7 @@ input[type="search"] {
   &:focus {
     background-color: var(--color-background-input-field);
     border-color: var(--color-border-forms-focus);
+    color: var(--color-forms-text);
 
     &::placeholder {
       color: var(--color-placeholder-focus);

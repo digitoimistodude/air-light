@@ -2,8 +2,9 @@
 :root {
   // Form element colors
   --color-background-input-field: var(--color-white);
+  --color-forms-text: var(--color-paragraph);
   --color-border-forms: var(--color-paragraph);
-  --color-border-forms-focus: var(--color-black);
+  --color-border-forms-focus: var(--color-paragraph);
   --color-button: var(--color-white);
   --color-button-hover: var(--color-white);
   --color-button-background: var(--color-east-bay);
@@ -24,7 +25,11 @@
   --border-width-input-field: 1px;
   --font-size-input-fields: var(--font-size-15);
   --form-gap: 2rem;
+  --form-line-height: 24px;
+  --form-padding-vertical: 1rem;
+  --form-padding-horizontal: 1.5rem;
   --gap-checkbox: 10px;
+  --gap-select-icon: 10px;
   --line-height-checkbox: var(--line-height-paragraphs);
   --size-checkbox-marker: 12px;
   --size-radio-button: 16px;
