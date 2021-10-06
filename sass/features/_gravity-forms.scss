@@ -51,14 +51,16 @@ body *[aria-invalid="true"] {
 
 // Default required label
 .gfield_required.gfield_required_asterisk {
-  color: var(--color-main);
-  font-size: var(--font-size-22);
-  position: relative;
-  top: .5rem;
+  font-size: var(--font-size-required-asterisk-label);
+}
+
+.gfield_required.gfield_required_asterisk,
+.gfield_required.gfield_required_text {
+  color: var(--color-required-label-text);
 }
 
 .gfield_required.gfield_required_text {
-  margin-left: .5rem;
+  font-size: var(--font-size-required-text-label);
 }
 
 // Gravity forms minimal default styles
@@ -85,8 +87,9 @@ body *[aria-invalid="true"] {
   }
 
   .gfield_label {
-    display: inline-block;
+    display: inline-flex;
     font-weight: var(--font-weight-bold);
+    gap: var(--form-required-gap);
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding-inline-end: 0;

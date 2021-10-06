@@ -2,7 +2,9 @@
 :root {
   // Form element colors
   --color-background-input-field: var(--color-white);
-  --color-forms-text: var(--color-paragraph);
+  --color-form-text: var(--color-paragraph);
+  --color-form-label-text: var(--color-form-text);
+  --color-required-label-text: var(--color-form-text);
   --color-border-forms: var(--color-paragraph);
   --color-border-forms-focus: var(--color-paragraph);
   --color-button: var(--color-white);
@@ -25,7 +27,10 @@
   --border-width-input-field: 1px;
   --font-size-input-fields: var(--font-size-17);
   --font-size-input-labels: var(--font-size-input-fields);
+  --font-size-required-text-label: var(--font-size-input-fields);
+  --font-size-required-asterisk-label: 22px;
   --form-gap: 2rem;
+  --form-required-gap: .5rem;
   --form-line-height: 24px;
   --form-padding-vertical: 1rem;
   --form-padding-horizontal: 1.5rem;
