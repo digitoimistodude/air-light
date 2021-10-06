@@ -59,6 +59,12 @@ select {
   width: 100%;
 }
 
+// Labels
+legend,
+label {
+  font-size: var(--font-size-input-fields);
+}
+
 // Form input elements and textareas
 textarea,
 input[type="text"],
