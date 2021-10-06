@@ -1,3 +1,17 @@
+### 7.9.4: 2021-10-06
+
+This release includes only form style and accessibility improvements.
+
+* Consistency in form variables, fix issues with required labels
+* Add support for gravity forms baked in required labels
+* Fix select icon gap
+* Bigger default font-size for inputs in demo
+* Consistent label font size
+* Add consistent variables and sizes for form elements
+* Fix conflicting select styles
+* Add consistent --form-gap for gravity form elements
+* Improve form styles
+
 ### 7.9.3: 2021-09-29
 
 * Group accessible color variables for error, success and warning states
