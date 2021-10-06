@@ -8,7 +8,7 @@ div.validation_error {
   color: var(--color-white);
   font-size: var(--font-size-17);
   font-weight: var(--font-weight-bold);
-  margin-bottom: 2rem;
+  margin-bottom: var(--form-gap);
   padding: 2rem;
 
   &:focus {
@@ -28,7 +28,7 @@ body *[aria-invalid="true"] {
 
 .validation_list {
   list-style: none;
-  margin-bottom: 2rem;
+  margin-bottom: var(--form-gap);
   margin-left: 0;
   padding: 0;
 
@@ -60,6 +60,11 @@ body *[aria-invalid="true"] {
 }
 
 // Gravity forms minimal default styles
+.gform_wrapper > form {
+  display: grid;
+  grid-gap: var(--form-gap);
+}
+
 .gform-body {
   ul {
     list-style: none;
@@ -70,6 +75,11 @@ body *[aria-invalid="true"] {
   textarea,
   input {
     width: 100%;
+  }
+
+  // Fix textarea not full width
+  .ginput_container.ginput_container_textarea {
+    display: flex;
   }
 
   .gfield_label {
@@ -84,7 +94,7 @@ body *[aria-invalid="true"] {
   // 2.5 built-in multi column support
   .gform_fields {
     display: grid;
-    grid-gap: 2rem;
+    grid-gap: var(--form-gap);
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(auto-fill, auto);
     width: 100%;
