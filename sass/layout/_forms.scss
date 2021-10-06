@@ -38,19 +38,19 @@
 select {
   appearance: none;
   background-image: url('../../svg/select.svg');
-  background-position: right 0 center;
+  background-position: right 10px center;
   background-repeat: no-repeat;
-  background-size: 40px auto;
+  background-size: 11px auto;
   border-color: var(--color-border-forms);
   border-radius: var(--border-radius-select);
   border-style: solid;
   border-width: var(--border-width-input-field);
   color: var(--color-paragraph);
-  font-size: var(--font-size-17);
-  line-height: 24px;
+  font-size: var(--font-size-input-fields);
+  line-height: 18px;
   max-width: 100%;
   min-width: 0;
-  padding: 15px;
+  padding: .8rem 1.5rem;
   text-indent: 1px;
   transition: none;
   width: 100%;
@@ -75,7 +75,7 @@ input[type="search"] {
   border-style: solid;
   border-width: var(--border-width-input-field);
   font-family: var(--font-paragraph);
-  font-size: var(--font-size-17);
+  font-size: var(--font-size-input-fields);
   line-height: 24px;
   margin-bottom: 0;
   padding: 15px;
@@ -102,6 +102,7 @@ input[type="search"] {
 // Radio buttons and checkboxes
 input[type="radio"],
 input[type="checkbox"] {
+  font-size: var(--font-size-input-fields);
   height: var(--size-radio-button);
   margin: 0;
   margin-top: calc((1em * var(--line-height-checkbox) - var(--size-radio-button)) / 2);
