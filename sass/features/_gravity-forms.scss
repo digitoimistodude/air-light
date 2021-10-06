@@ -43,20 +43,22 @@ body *[aria-invalid="true"] {
   }
 }
 
+// Form screen reader texts
+.gform_required_legend,
+.sr-only {
+  @extend %screen-reader-text;
+}
+
 // Default required label
-.gfield_required::before {
+.gfield_required.gfield_required_asterisk {
   color: var(--color-main);
-  content: '*';
-  display: inline-block;
   font-size: var(--font-size-22);
-  margin-left: .5rem;
   position: relative;
   top: .5rem;
 }
 
-// Add "(Required)" text as screen reader text
-.gfield_required > span {
-  @extend .screen-reader-text;
+.gfield_required.gfield_required_text {
+  margin-left: .5rem;
 }
 
 // Gravity forms minimal default styles
