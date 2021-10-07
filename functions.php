@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '7.9.4' );
+define( 'AIR_LIGHT_VERSION', '7.9.5' );
 
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
@@ -156,7 +156,7 @@ add_action( 'after_setup_theme', function() {
         'core/preformatted',
         'core/pullquote',
         'core/quote',
-        'core/reusableBlock',
+        'core/block',
         'core/separator',
         'core/shortcode',
         'core/spacer',

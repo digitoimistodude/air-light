@@ -1,3 +1,7 @@
+### 7.9.5: 2021-10-07
+
+* Fix: Reusable Blocks are not available #116
+
 ### 7.9.4: 2021-10-06
 
 This release includes only form style and accessibility improvements.
