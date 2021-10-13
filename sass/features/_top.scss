@@ -47,7 +47,7 @@
   right: 1rem;
   text-decoration: none;
   transition: opacity $transition-duration 0s, visibility 0s $transition-duration;
-  z-index: 9999;
+  z-index: 1;
 
   // Accessibility: Change color based on background color the element is on
   &.has-light-bg svg {

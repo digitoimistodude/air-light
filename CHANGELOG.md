@@ -1,3 +1,7 @@
+### 7.9.6: 2021-10-13
+
+* Fix: Floating back to top element has too much z-index priority
+
 ### 7.9.5: 2021-10-07
 
 * Fix: Reusable Blocks are not available #116
