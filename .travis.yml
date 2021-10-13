@@ -76,7 +76,7 @@ before_script:
     # - if [[ "$SNIFF" == "1" ]]; then wget https://develop.svn.wordpress.org/trunk/.jshintrc; fi
     # Install eslint.
     # @link https://eslint.org/
-    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g eslint@7.22.0; fi
 
     # Install stylelint.
     # @link https://stylelint.io/
