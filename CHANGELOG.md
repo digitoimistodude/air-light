@@ -1,6 +1,7 @@
 ### 7.9.7: 2021-10-20
 
 * Replace margin-right with more flexible `gap: var(--gap-between-dropdown-toggle);`
+* Use gap in desktop main level menu-items instead of margin
 
 ### 7.9.6: 2021-10-13
 
