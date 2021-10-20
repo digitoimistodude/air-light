@@ -1,3 +1,7 @@
+### 7.9.7: 2021-10-20
+
+* Replace margin-right with more flexible `gap: var(--gap-between-dropdown-toggle);`
+
 ### 7.9.6: 2021-10-13
 
 * Fix: Floating back to top element has too much z-index priority

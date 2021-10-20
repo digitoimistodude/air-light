@@ -126,7 +126,7 @@ $use-dropdown-toggle-animation: true;
   // Let's make space for the nav-toggle/arrow
   .menu-item.menu-item-has-children a {
     padding-bottom: 0;
-    padding-right: var(--gap-between-dropdown-toggle);
+    padding-right: 0;
     padding-top: 0;
     transition: padding .2s cubic-bezier(.19, 1, .22, 1), background-color .2s cubic-bezier(.19, 1, .22, 1);
   }
@@ -224,6 +224,7 @@ $use-dropdown-toggle-animation: true;
   .menu-item.menu-item-has-children {
     align-items: center;
     display: flex;
+    gap: var(--gap-between-dropdown-toggle);
     justify-content: space-between;
     margin-right: .8rem;
     position: relative;
