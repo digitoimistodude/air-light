@@ -80,7 +80,7 @@ before_script:
 
     # Install stylelint.
     # @link https://stylelint.io/
-    - if [[ "$SNIFF" == "1" ]]; then npm i -g stylelint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g stylelint@13.13.1; fi
     # Pull in the Air-light stylelint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.stylelintrc; fi
 
