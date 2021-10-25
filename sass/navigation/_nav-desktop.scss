@@ -233,12 +233,12 @@ $use-dropdown-toggle-animation: true;
     margin-right: .8rem;
     position: relative;
 
-    // Add a pseudo element to fill the gap
-    // between menu item and sub menu to help hovering
+    // Add a pseudo element to fill the gap between menu item and sub menu to help hovering
     &::after {
       content: '';
       display: block;
       height: var(--gap-dropdown);
+      max-width: var(--width-sub-menu);
       position: absolute;
       top: 100%;
       width: 100%;

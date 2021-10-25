@@ -1,3 +1,8 @@
+### 7.9.8: 2021-10-25
+
+* Add max-width variable for navigation dropdown helper pseudo element, in some situations causes unwanted dropdown triggering
+* Update default README.md boilerplate for project
+
 ### 7.9.7: 2021-10-20
 
 * Replace margin-right with more flexible `gap: var(--gap-between-dropdown-toggle);`
