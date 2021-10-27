@@ -1,3 +1,8 @@
+### 7.9.9: 2021-10-27
+
+* Increase default gap between main level nav items
+* Remove leftover margin-right from nav item that has sub items
+
 ### 7.9.8: 2021-10-25
 
 * Add max-width variable for navigation dropdown helper pseudo element, in some situations causes unwanted dropdown triggering

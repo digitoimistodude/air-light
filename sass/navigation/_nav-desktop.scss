@@ -15,7 +15,7 @@ $use-dropdown-toggle-animation: true;
   --dropdown-toggle-size: 12px;
   --gap-dropdown: 1rem;
   --gap-between-dropdown-toggle: 1.5rem;
-  --gap-main-level-horizontal: 2rem;
+  --gap-main-level-horizontal: 2.5rem;
   --padding-main-level-vertical: .6rem;
   --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-horizontal: 1.5rem;
@@ -230,7 +230,6 @@ $use-dropdown-toggle-animation: true;
     display: flex;
     gap: var(--gap-between-dropdown-toggle);
     justify-content: space-between;
-    margin-right: .8rem;
     position: relative;
 
     // Add a pseudo element to fill the gap between menu item and sub menu to help hovering
