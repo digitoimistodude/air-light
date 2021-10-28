@@ -94,14 +94,17 @@ figure.wp-block-gallery[data-block] {
   .is-grid.columns-#{$i},
   .columns-#{$i} .blocks-gallery-grid {
     grid-gap: 3rem;
+    // doiuse-disable
     grid-template-columns: repeat($i, 1fr);
 
     @media (max-width: 1000px) {
+      // doiuse-disable
       grid-template-columns: repeat(3, 1fr);
     }
 
     @media (max-width: 670px) {
       grid-gap: 2rem;
+      // doiuse-disable
       grid-template-columns: repeat(2, 1fr);
     }
   }

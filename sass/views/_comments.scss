@@ -105,6 +105,7 @@
   @media (min-width: $container-mobile) {
     display: grid;
     grid-gap: 1em;
+    // doiuse-disable
     grid-template-columns: 1fr 1fr;
 
     /* autoprefixer: off */
