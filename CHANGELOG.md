@@ -5,7 +5,8 @@
 * Drop node-sass and fibers support
 * Lint styles with new rules
 * Add new stylelint rules
-* Improve watch task
+* Improve watch task, inject CSS first in dev environment
+* Change stylelint-disable exceptions per line and with double slash scss syntax
 
 ### 7.9.9: 2021-10-27
 

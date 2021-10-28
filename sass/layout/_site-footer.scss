@@ -35,11 +35,10 @@
   }
 
   // Hiding for aesthetic reasons
-  /* stylelint-disable a11y/no-display-none */
+  // stylelint-disable-next-line a11y/no-display-none
   .is-external-link::after {
     display: none;
   }
-  /* stylelint-enable */
 
   .powered-by-wordpress {
     display: inline-block;

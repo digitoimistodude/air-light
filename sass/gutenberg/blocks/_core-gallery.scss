@@ -15,7 +15,7 @@ figure.wp-block-gallery[data-block] {
   margin-left: 0;
   margin-right: 0;
   // May be not ideal for big image sizes
-  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
   max-width: var(--width-child-img);
 }
 
@@ -56,7 +56,7 @@ figure.wp-block-gallery[data-block] {
 
     figure {
       // May be not ideal for big image sizes
-      /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+      // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
       max-width: var(--width-child-img);
     }
 
@@ -65,13 +65,13 @@ figure.wp-block-gallery[data-block] {
       overflow: visible;
 
       // If the one column is aligned
-      /* stylelint-disable-next-line selector-max-specificity */
+      // stylelint-disable-next-line selector-max-specificity
       &.alignleft > .blocks-gallery-grid {
         margin-bottom: 4rem;
         margin-right: 4rem;
       }
 
-      /* stylelint-disable-next-line selector-max-specificity, no-descending-specificity */
+      // stylelint-disable-next-line selector-max-specificity, no-descending-specificity
       &.alignright > .blocks-gallery-grid {
         margin-bottom: 4rem;
         margin-left: 4rem;
@@ -79,7 +79,7 @@ figure.wp-block-gallery[data-block] {
     }
 
     @media (max-width: $width-max-article) {
-      /* stylelint-disable selector-max-specificity, no-descending-specificity */
+      // stylelint-disable selector-max-specificity, no-descending-specificity
       &.alignleft > .blocks-gallery-grid,
       &.alignright > .blocks-gallery-grid {
         float: none;

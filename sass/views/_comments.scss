@@ -1,6 +1,5 @@
 // WordPress built-in comments with comment_form().
 // Custom comment template can be found in inc/comments.php
-// stylelint-disable no-descending-specificity
 .comments-area {
   margin-bottom: 0;
   margin-top: 50px;
@@ -81,6 +80,7 @@
   font-size: var(--font-size-14);
   text-align: right;
 
+  // stylelint-disable-next-line no-descending-specificity
   a {
     color: var(--color-link-comment);
   }
@@ -92,6 +92,7 @@
     color: var(--color-black);
   }
 
+  // stylelint-disable-next-line no-descending-specificity
   svg {
     margin-right: 7px;
     position: relative;
@@ -179,4 +180,3 @@
     width: 100%;
   }
 }
-/* stylelint-enable no-descending-specificity */

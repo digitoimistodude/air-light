@@ -2,7 +2,9 @@
 // https://github.com/justintadlock/hybrid-breadcrumbs
 // https://github.com/digitoimistodude/kpt
 
-/* stylelint-disable max-line-length, selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-class, selector-max-specificity, a11y/font-size-is-readable, a11y/no-display-none */
+// Disabling some rules because of the plugin specificity
+
+// stylelint-disable max-line-length, selector-class-pattern, selector-max-combinators, selector-max-compound-selectors, selector-max-class, selector-max-specificity, a11y/font-size-is-readable, a11y/no-display-none
 .breadcrumbs {
   background-color: transparent;
   border-bottom: 0;
@@ -200,4 +202,3 @@
     display: none;
   }
 }
-/* stylelint-enable selector-class-pattern */

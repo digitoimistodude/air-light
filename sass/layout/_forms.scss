@@ -208,9 +208,8 @@ input[type="checkbox"]:checked:active + label::before {
 }
 
 // Radio button and checkbox hovers
-/* stylelint-disable selector-max-pseudo-class */
+// stylelint-disable-next-line selector-max-pseudo-class
 input[type="radio"]:not(:checked):not(:focus) + label:hover::before,
 input[type="checkbox"]:not(:checked):not(:focus) + label:hover::before {
   border-color: var(--color-checkbox-border-hover);
 }
-/* stylelint-enable selector-max-pseudo-class */

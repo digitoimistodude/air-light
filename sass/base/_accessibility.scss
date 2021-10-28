@@ -48,12 +48,11 @@
 }
 
 // Suppress focus ring on for mouse and touch users for visual reasons
-/* stylelint-disable a11y/no-outline-none */
+// stylelint-disable-next-line a11y/no-outline-none
 [data-whatinput="mouse"] *:focus,
 [data-whatinput="touch"] *:focus {
   outline: none;
 }
-/* stylelint-enable a11y/no-outline-none */
 
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
@@ -105,13 +104,12 @@ a.is-external-link {
   }
 }
 
-// Do not use external links indicators in areas that they don't look good or fit
-/* stylelint-disable a11y/no-display-none */
+// Do not use external links indicators in decorative areas
+// stylelint-disable-next-line a11y/no-display-none
 a.is-external-link.global-link::after,
 a.is-external-link.no-external-link-indicator::after {
   display: none;
 }
-/* stylelint-enable a11y/no-display-none */
 
 // Define here the upsell blocks that have overlay link areas
 // inside them

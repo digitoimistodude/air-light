@@ -115,45 +115,46 @@
 }
 
 // Hide/show helpers
+// stylelint-disable-next-line a11y/no-display-none
 .hide-on-desktop {
   @media (min-width: $container-mobile) {
     // Forced to use important here, because makes no sense to write too specific selectors here
-    /* stylelint-disable declaration-no-important */
+    // stylelint-disable-next-line declaration-no-important
     display: none !important;
-    /* stylelint-enable */
   }
 }
 
 // Forced to use important here, because makes no sense to write too specific selectors here
-/* stylelint-disable declaration-no-important, a11y/no-display-none */
+// stylelint-disable-next-line a11y/no-display-none
 .hide-on-mobile {
   @media (max-width: $container-mobile) {
+    // stylelint-disable-next-line declaration-no-important
     display: none !important;
   }
 }
-/* stylelint-enable */
 
 // Only function of these is to force hide content based on the view
 // Forced to use important here, because makes no sense to write too specific selectors here
-/* stylelint-disable declaration-no-important, a11y/no-display-none */
+// stylelint-disable-next-line a11y/no-display-none
 .hide-on-mobile-nav-view {
   @media (max-width: $width-max-mobile) {
+    // stylelint-disable-next-line declaration-no-important
     display: none !important;
   }
 }
-/* stylelint-enable */
-// Forced to use important here, because makes no sense to write too specific selectors here
-/* stylelint-disable declaration-no-important, a11y/no-display-none */
-.hide-on-desktop-nav-view {
-  @media (min-width: $width-max-mobile) {
-    display: none !important;
-  }
-}
-/* stylelint-enable */
 
 // Forced to use important here, because makes no sense to write too specific selectors here
-/* stylelint-disable declaration-no-important, a11y/no-display-none */
+// stylelint-disable-next-line a11y/no-display-none
+.hide-on-desktop-nav-view {
+  @media (min-width: $width-max-mobile) {
+    // stylelint-disable-next-line declaration-no-important
+    display: none !important;
+  }
+}
+
+// Forced to use important here, because makes no sense to write too specific selectors here
+// stylelint-disable-next-line a11y/no-display-none
 .hide-completely {
+  // stylelint-disable-next-line declaration-no-important
   display: none !important;
 }
-/* stylelint-enable */

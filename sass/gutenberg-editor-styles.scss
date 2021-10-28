@@ -3,10 +3,9 @@
 // editor side. Please remember to add imports
 // from "Gutenberg blocks" also to the main
 // global.scss to see them on front end side.
-
-// Set root size for rems
 :root {
-  /* stylelint-disable-next-line */
+  // Set root size for rems so that 1rem = 10px
+  // stylelint-disable-next-line declaration-property-unit-allowed-list
   font-size: 62.5%;
 }
 
@@ -62,10 +61,9 @@
 
   // Hack for keeping figcaption from flowing over floated image
   // This variable is set inline to the corresponding figure with gutenberg-helpers.js
-  /* stylelint-disable csstools/value-no-unknown-custom-properties */
+  // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
   max-width: var(--width-child-img);
   text-align: center;
-  /* stylelint-enable */
 }
 
 // Default editor blocks
@@ -97,7 +95,7 @@
 }
 
 // Allow ACF blocks to be full width by default
-/* stylelint-disable */
+// stylelint-disable-next-line selector-attribute-quotes
 .wp-block[data-type^=acf] {
   max-width: 100%;
 }

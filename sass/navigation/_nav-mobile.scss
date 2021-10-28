@@ -62,11 +62,10 @@ $nav-open-from-direction: top;
 // Navigation core functionality
 @media only screen and (max-width: $width-max-mobile) {
   // Functionality needs display: none here for visual reasons
-  /* stylelint-disable a11y/no-display-none */
+  // stylelint-disable-next-line a11y/no-display-none
   .js .menu-items ul {
     display: none;
   }
-  /* stylelint-enable */
 }
 
 @media only screen and (max-width: $width-max-mobile) {
@@ -238,9 +237,8 @@ $nav-open-from-direction: top;
     width: var(--dropdown-toggle-size-mobile);
     // Enable for alternative + and minus effect
     // Need to use display: none here to make sure there are visually no double toggles
-    /* stylelint-disable a11y/no-display-none */
+    // stylelint-disable-next-line a11y/no-display-none
     // display: none;
-    /* stylelint-enable */
   }
 
   .dropdown-toggle.toggled-on {
@@ -357,7 +355,7 @@ $nav-open-from-direction: top;
   // We already have aria-label for button
   // But we want to show nav-toggle visually for seeing users
   // So we'll add has-visible-label to nav-toggle in header.php
-  /* stylelint-disable a11y/no-display-none */
+  // stylelint-disable-next-line a11y/no-display-none
   &:not(.has-visible-label) .nav-toggle-label {
     display: none;
   }
@@ -401,7 +399,6 @@ $nav-open-from-direction: top;
   @media (min-width: $width-max-mobile) {
     display: none;
   }
-  /* stylelint-enable */
 
   @media (max-width: $width-max-mobile - 1px) {
     display: block;

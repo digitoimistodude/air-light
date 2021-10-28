@@ -26,7 +26,7 @@
   width: auto;
 
   // Buttons usually already have arrows
-  /* stylelint-disable a11y/no-display-none */
+  // stylelint-disable-next-line a11y/no-display-none
   &.is-external-link::after {
     display: none;
   }
@@ -38,7 +38,6 @@
     border: $border-hover;
     color: $hover;
   }
-  /* stylelint-enable */
 
   // Arrow icon
   @if $arrow {

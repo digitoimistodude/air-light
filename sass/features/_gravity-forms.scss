@@ -2,7 +2,7 @@
 // Please disable CSS in /admin.php?page=gf_settings
 
 // WCAG 2.0 errors
-/* stylelint-disable selector-class-pattern */
+// stylelint-disable selector-class-pattern
 div.validation_error {
   background-color: var(--color-error);
   color: var(--color-white);
@@ -163,7 +163,7 @@ body *[aria-invalid="true"] {
 }
 
 // Hide SPAM Honeypot fields
-/* stylelint-disable-next-line */
+// stylelint-disable-next-line a11y/no-display-none
 .gform_validation_container {
   display: none;
 }
