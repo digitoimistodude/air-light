@@ -3,11 +3,10 @@ const {
   dest,
   src
 } = require('gulp');
-const Fiber = require('fibers');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-dart-sass');
 
-// Using dart-sass in development because want to have CSS injected at once (from 50ms to 500ms)
+// Using dart-sass in development because want to have CSS injected at once (from 500ms to 50ms)
 sass.compiler = require('sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -21,8 +20,7 @@ function devstyles() {
 
     // Compile SCSS asynchronously
     .pipe(sass({
-      includePaths: config.styles.opts.development.includePaths,
-      fiber: Fiber
+      includePaths: config.styles.opts.development.includePaths
     }))
 
     // Run PostCSS plugins

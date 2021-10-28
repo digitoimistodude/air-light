@@ -38,8 +38,8 @@ before_install:
     - sudo apt-get install -y nodejs
     - if [[ `node -v` != v10* ]]; then nvm install stable; fi
     - nvm install-latest-npm
-    - nvm install 16.13.0
-    - nvm use 16.13.0
+    - nvm install 15.14.0
+    - nvm use 15.14.0
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.
@@ -81,6 +81,7 @@ before_script:
     # Install stylelint.
     # @link https://stylelint.io/
     - if [[ "$SNIFF" == "1" ]]; then npm i -g stylelint@14.0.1; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i -g stylelint-scss@4.0.0; fi
     - if [[ "$SNIFF" == "1" ]]; then npm i -g postcss-scss@4.0.1; fi
     # Pull in the Air-light stylelint rules.
     - if [[ "$SNIFF" == "1" ]]; then wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.stylelintrc; fi
@@ -118,7 +119,7 @@ script:
     - if [[ "$SNIFF" == "1" ]]; then npm i --save-dev postcss stylelint stylelint-a11y stylelint-order stylelint-config-recommended-scss stylelint-config-recommended stylelint-config-standard stylelint-declaration-use-variable stylelint-order stylelint-scss stylelint-value-no-unknown-custom-properties; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link postcss; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link stylelint; fi
-    - if [[ "$SNIFF" == "1" ]]; then stylelint . --max-warnings 0; fi
+    - if [[ "$SNIFF" == "1" ]]; then stylelint . --max-warnings 0 --config .stylelintrc; fi
 
     # Check for valid HTML
     - if [[ "$SNIFF" == "1" ]]; then html-validator "https://airwptheme.com/demo" --format=text --quiet; fi

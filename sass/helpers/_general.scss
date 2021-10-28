@@ -1,8 +1,4 @@
-// Helpers
-//
 // Mixins and other essentials for global theme development.
-
-// General
 @mixin hiddentext() {
   display: block;
   font-size: 0;
@@ -10,8 +6,4 @@
   text-align: start;
   text-decoration: none;
   text-indent: -9999px;
-}
-
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
 }

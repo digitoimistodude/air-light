@@ -1,4 +1,4 @@
-/* stylelint-disable number-max-precision */
+// stylelint-disable number-max-precision, max-line-length
 @mixin button($max-width: 230px, $color: var(--color-button), $hover: var(--color-button-hover), $background: var(--color-button-background), $background-hover: var(--color-button-background-hover), $radius: var(--border-radius-input-field), $border: var(--border-width-input-field) solid var(--color-button-background), $border-hover: var(--border-width-input-field) solid $background-hover, $weight: var(--font-weight-semibold), $arrow: false, $transition: all $transition-duration cubic-bezier(.25, .46, .45, .94)) {
   appearance: none;
   background-color: $background;
@@ -30,14 +30,6 @@
   &.is-external-link::after {
     display: none;
   }
-  /* stylelint-enable */
-
-  // Arrow icon
-  @if $arrow {
-    svg {
-      margin-left: 2rem;
-    }
-  }
 
   &.focus,
   &:hover,
@@ -45,5 +37,13 @@
     background-color: $background-hover;
     border: $border-hover;
     color: $hover;
+  }
+  /* stylelint-enable */
+
+  // Arrow icon
+  @if $arrow {
+    svg {
+      margin-left: 2rem;
+    }
   }
 }

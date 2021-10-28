@@ -3,11 +3,7 @@ const {
   dest,
   src
 } = require('gulp');
-const Fiber = require('fibers');
 const sass = require('gulp-dart-sass');
-
-// Using node-sass in production because we don't care how much it takes (from 200ms to 2s)
-sass.compiler = require('node-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleancss = require('gulp-clean-css');

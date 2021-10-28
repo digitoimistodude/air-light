@@ -1,3 +1,11 @@
+### 8.0.0: 2021-10-28
+
+* Upgrade stylelint to v14
+* Drop nodejs 12 support
+* Drop node-sass and fibers support
+* Lint styles with new rules
+* Add new stylelint rules
+
 ### 7.9.9: 2021-10-27
 
 * Increase default gap between main level nav items

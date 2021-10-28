@@ -1,5 +1,4 @@
 // Burger parts
-//
 // (---) top    -> &::before
 // [---] middle -> &
 // (---) bottom -> &::after
@@ -14,10 +13,6 @@ $sass-burger-add-vendor-prefixes: true !default;
   margin-top: $height + $gutter;
   position: relative;
   user-select: none;
-
-  @if $sass-burger-add-vendor-prefixes {
-    user-select: none;
-  }
 
   &,
   &::before,
@@ -55,6 +50,10 @@ $sass-burger-add-vendor-prefixes: true !default;
   &::after {
     top: $height + $gutter;
   }
+
+  @if $sass-burger-add-vendor-prefixes {
+    user-select: none;
+  }
 }
 
 // Select parts of the burger
@@ -86,24 +85,26 @@ $sass-burger-add-vendor-prefixes: true !default;
 @mixin burger-to-cross($color: auto) {
   background-color: transparent;
 
+  &::before {
+    transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+
+    @if $sass-burger-add-vendor-prefixes {
+      transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+  }
+
+  &::after {
+    transform: translateY(- ($burger-gutter + $burger-height)) rotate(-45deg);
+
+    @if $sass-burger-add-vendor-prefixes {
+      transform: translateY(- ($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+  }
+
   @if ($color != auto) {
     &::before,
     &::after {
       background-color: $color;
     }
-  }
-
-  &::before {
-    @if $sass-burger-add-vendor-prefixes {
-      transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-    }
-    transform: translateY($burger-gutter + $burger-height) rotate(45deg);
-  }
-
-  &::after {
-    @if $sass-burger-add-vendor-prefixes {
-      transform: translateY(- ($burger-gutter + $burger-height)) rotate(-45deg);
-    }
-    transform: translateY(- ($burger-gutter + $burger-height)) rotate(-45deg);
   }
 }

@@ -3,7 +3,7 @@
 // REQUIRED: .bypostauthor css class is needed in your theme css.
 :root {
   --color-border-sticky: #d7e4f2;
-  --color-bypostauthor: rgba(42, 45, 62, .5);
+  --color-bypostauthor: rgb(42 45 62 / .5);
 }
 
 .sticky {

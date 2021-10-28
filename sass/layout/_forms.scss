@@ -1,16 +1,11 @@
-// Forms and input fields
-//
-// All the forms on the site. General styles. Supports most of
-// the Gravity Forms styles out of the box.
-
-// Buttons
-.button-wrapper {
-  margin-bottom: 0;
-}
-
-// Buttons
 .site-main,
 .site-footer {
+
+  // Buttons
+  .button-wrapper {
+    margin-bottom: 0;
+  }
+
   button,
   .button,
   input[type="reset"],

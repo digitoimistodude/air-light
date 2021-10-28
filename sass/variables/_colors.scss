@@ -27,7 +27,7 @@
   --color-link-comment-time-anchor: var(--color-east-bay);
   --color-link-edit-background-hover: var(--color-pattens-blue);
   --color-link-edit-border: var(--color-pattens-blue);
-  --color-link-edit-text: darken(#eaf1f8, 20%);
+  --color-link-edit-text: color.adjust(#eaf1f8, -20%);
   --color-link-edit-text-hover: var(--color-east-bay);
   --color-link-text: var(--color-science-blue);
   --color-link-text-focus: var(--color-black);
@@ -45,8 +45,8 @@
   --color-blockquote: var(--color-science-blue);
   --color-comment-text: var(--color-east-bay);
   --color-comment-author-text: var(--color-east-bay);
-  --color-tag-border: rgba(6, 22, 41, .1);
-  --color-tag-border-hover: rgba(6, 22, 41, .4);
+  --color-tag-border: rgb(6 22 41 / .1);
+  --color-tag-border-hover: rgb(6 22 41 / .4);
   --color-tag-text: var(--color-black);
   --color-category-border: #cdcfd4;
   --color-category-text: var(--color-black);

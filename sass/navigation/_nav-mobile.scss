@@ -44,8 +44,8 @@ $nav-open-from-direction: top;
   --color-hamburger-active: var(--color-white);
   --color-hamburger: var(--color-white);
   --color-main-level-mobile: var(--color-white);
-  --color-separator-nav-mobile: rgba(255, 255, 255, .1);
-  --color-sub-menu-mobile: rgba(255, 255, 255, .8);
+  --color-separator-nav-mobile: rgb(255 255 255 / .1);
+  --color-sub-menu-mobile: rgb(255 255 255 / .8);
 }
 
 // Init Tasty Hamburger navigation toggle
@@ -54,6 +54,8 @@ $nav-open-from-direction: top;
 // Init hamburger animation
 // Choose from animations: https://jonsuh.com/hamburgers/
 .hamburger {
+  // This comes from node module so can't do anything about the selector
+  // stylelint-disable-next-line
   @extend .hamburger--collapse;
 }
 
@@ -177,6 +179,7 @@ $nav-open-from-direction: top;
   }
 
   .sub-menu .sub-menu a {
+    // stylelint-disable-next-line max-line-length
     padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu) + var(--margin-left-sub-menu));
   }
 
