@@ -12,8 +12,7 @@ const {
 // Task
 function watchfiles() {
   bs.init(config.browsersync.src, config.browsersync.opts);
-  watch(config.styles.watch, series('devstyles', 'lintstyles')).on('error', handleError());
-  watch(config.styles.watchprod, series('prodstyles')).on('error', handleError());
+  watch(config.styles.watch, series('devstyles', 'prodstyles', 'lintstyles')).on('error', handleError());
   watch(config.php.watch, series('phpcs')).on('change', bs.reload);
   watch(config.js.watch).on('change', series('js'), bs.reload);
 };

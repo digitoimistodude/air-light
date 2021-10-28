@@ -5,6 +5,7 @@
 * Drop node-sass and fibers support
 * Lint styles with new rules
 * Add new stylelint rules
+* Improve watch task
 
 ### 7.9.9: 2021-10-27
 

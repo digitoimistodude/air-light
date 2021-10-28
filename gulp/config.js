@@ -44,7 +44,7 @@ module.exports = {
   },
   browsersync: {
     // Important! If src is wrong, styles will not inject to the browser
-    src: [themeDir + 'css/**/*'],
+    src: [themeDir + 'css/dev/global.css'],
     opts: {
       logLevel: 'debug',
       injectChanges: true,
@@ -62,12 +62,11 @@ module.exports = {
   styles: {
     gutenberg: themeDir + 'sass/base/gutenberg.scss',
     src: themeDir + 'sass/*.scss',
-    watch: themeDir + 'sass/**/*.{sass,scss}',
-    watchprod: themeDir + 'css/dev/*.css',
+    watch: themeDir + 'sass/**/*.scss',
     development: themeDir + 'css/dev/',
     production: themeDir + 'css/prod/',
     stylelint: {
-      src: themeDir + 'sass/*/*.scss',
+      src: themeDir + 'sass/**/*.scss',
       opts: {
         fix: false,
         reporters: [{

@@ -3,17 +3,18 @@ const {
   dest,
   src
 } = require('gulp');
+const bs = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-dart-sass');
-
-// Using dart-sass in development because want to have CSS injected at once (from 500ms to 50ms)
-sass.compiler = require('sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const config = require('../config.js');
 
 function devstyles() {
   return src(config.styles.src)
+
+    // Try to inject CSS first
+    .pipe(bs.stream())
 
     // Init source maps
     .pipe(sourcemaps.init())
