@@ -35,25 +35,9 @@
         "name": "media"
       }
     ],
-    "csstools/value-no-unknown-custom-properties": [
-      true,
-      {
-        "importFrom": [
-          "css/dev/global.css"
-        ]
-      }
-    ],
-    "sh-waqar/declaration-use-variable": [
-      [
-        "/color/",
-        {
-          "ignoreValues": [
-            "transparent",
-            "inherit"
-          ]
-        }
-      ]
-    ],
+    "order/properties-alphabetical-order": true,
+    "a11y/no-outline-none": true,
+    "a11y/selector-pseudo-class-focus": true,
     "alpha-value-notation": "number",
     "declaration-block-no-redundant-longhand-properties": null,
     "custom-property-empty-line-before": "never",
@@ -85,31 +69,6 @@
     "block-no-empty": true,
     "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
-    "rule-empty-line-before": [
-      "always-multi-line",
-      {
-        "except": [
-          "first-nested",
-          "after-single-line-comment"
-        ],
-        "ignore": [
-          "inside-block"
-        ]
-      }
-    ],
-    "at-rule-empty-line-before": [
-      "always",
-      {
-        "except": [
-          "first-nested",
-          "blockless-after-same-name-blockless",
-          "blockless-after-blockless"
-        ],
-        "ignore": [
-          "after-comment"
-        ]
-      }
-    ],
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
     "value-list-comma-newline-after": "never-multi-line",
@@ -141,12 +100,6 @@
     "at-rule-name-space-after": "always",
     "at-rule-name-case": "lower",
     "function-url-quotes": "always",
-    "no-descending-specificity": [
-      true,
-      {
-        "severity": "warning"
-      }
-    ],
     "unit-no-unknown": true,
     "property-no-unknown": true,
     "no-duplicate-selectors": true,
@@ -163,6 +116,61 @@
     "property-no-vendor-prefix": true,
     "selector-no-vendor-prefix": true,
     "selector-no-qualifying-type": null,
+    "declaration-block-no-duplicate-properties": true,
+    "no-unknown-animations": true,
+    "selector-pseudo-element-colon-notation": "double",
+    "shorthand-property-no-redundant-values": true,
+    "declaration-block-single-line-max-declarations": 1,
+    "csstools/value-no-unknown-custom-properties": [
+      true,
+      {
+        "importFrom": [
+          "css/dev/global.css"
+        ]
+      }
+    ],
+    "sh-waqar/declaration-use-variable": [
+      [
+        "/color/",
+        {
+          "ignoreValues": [
+            "transparent",
+            "inherit"
+          ]
+        }
+      ]
+    ],
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": [
+          "first-nested",
+          "after-single-line-comment"
+        ],
+        "ignore": [
+          "inside-block"
+        ]
+      }
+    ],
+    "at-rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "first-nested",
+          "blockless-after-same-name-blockless",
+          "blockless-after-blockless"
+        ],
+        "ignore": [
+          "after-comment"
+        ]
+      }
+    ],
+    "no-descending-specificity": [
+      true,
+      {
+        "severity": "warning"
+      }
+    ],
     "max-nesting-depth": [
       3,
       {
@@ -172,11 +180,6 @@
         ]
       }
     ],
-    "declaration-block-no-duplicate-properties": true,
-    "no-unknown-animations": true,
-    "selector-pseudo-element-colon-notation": "double",
-    "shorthand-property-no-redundant-values": true,
-    "declaration-block-single-line-max-declarations": 1,
     "declaration-property-unit-allowed-list": [
       {
         "font-size": [
@@ -195,8 +198,6 @@
         ]
       }
     ],
-    "a11y/no-outline-none": true,
-    "a11y/selector-pseudo-class-focus": true,
     "a11y/font-size-is-readable": [
       true,
       {
@@ -227,7 +228,6 @@
         "severity": "warning"
       }
     ],
-    "order/properties-alphabetical-order": true,
     "property-disallowed-list": [
       "font",
       "animation",
