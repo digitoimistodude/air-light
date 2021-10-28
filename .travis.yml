@@ -121,6 +121,7 @@ script:
     - if [[ "$SNIFF" == "1" ]]; then npm i; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link postcss; fi
     - if [[ "$SNIFF" == "1" ]]; then npm link stylelint; fi
+    - if [[ "$SNIFF" == "1" ]]; then npm i stylelint-config-standard -g; fi
     - if [[ "$SNIFF" == "1" ]]; then stylelint . --max-warnings 0 --config .stylelintrc; fi
 
     # Check for valid HTML
