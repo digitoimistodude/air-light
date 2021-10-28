@@ -3,7 +3,7 @@ const {
   dest,
   src
 } = require('gulp');
-const sass = require('gulp-dart-sass');
+const sass = require('gulp-sass')( require('sass') );
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cleancss = require('gulp-clean-css');
@@ -19,7 +19,7 @@ function prodstyles() {
     .pipe(postcss([autoprefixer()]))
 
     // Production settings
-    .pipe(sass(config.styles.opts.production))
+    .pipe(sass.sync(config.styles.opts.production))
 
     // Compress and minify CSS files
     .pipe(cleancss(config.cleancss.opts,

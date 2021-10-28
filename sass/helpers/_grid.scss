@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // CSS Grid mixin with flexbox fallback for IE and Edge
 // stylelint-disable-next-line max-line-length
 @mixin grid($columns, $max_width: 1fr, $min_width: 0, $min_height: 0, $max_height: auto, $gutter_x: var(--grid-gap), $gutter_y: var(--grid-gap)) {
@@ -7,14 +9,14 @@
   grid-row-gap: $gutter_y;
   grid-template-columns: repeat($columns, minmax($min_width, $max_width));
 
-  // For browser versions that do not support CSS grid
-  @supports not (display: grid) {
+  // Internet Explorer
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
 
     > div {
-      $grid_width: 100% / $columns;
+      $grid_width: math.div(100%, $columns);
       margin-bottom: $gutter_y;
       margin-right: $gutter_x;
       width: calc(#{$grid_width} - #{$gutter_x});
@@ -25,14 +27,14 @@
     }
   }
 
-  // Internet Explorer
-  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  // For browser versions that do not support CSS grid
+  @supports not (display: grid) {
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
 
     > div {
-      $grid_width: 100% / $columns;
+      $grid_width: math.div(100%, $columns);
       margin-bottom: $gutter_y;
       margin-right: $gutter_x;
       width: calc(#{$grid_width} - #{$gutter_x});
@@ -50,7 +52,7 @@
     overflow: hidden;
 
     > div {
-      $grid_width: 100% / $columns;
+      $grid_width: math.div(100%, $columns);
       margin-bottom: $gutter_y;
       margin-right: $gutter_x;
       width: calc(#{$grid_width} - #{$gutter_x});

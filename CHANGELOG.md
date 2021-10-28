@@ -1,4 +1,10 @@
-### 8.0.1: 2021-10-29
+### 8.0.2: 2021-10-28
+
+* Update sass to 1.43.4
+* Sass speed improvements with dart-sass, Fiber and sass.sync()
+* Fix deprecations in helper scss mixins
+
+### 8.0.1: 2021-10-28
 
 * Remove outdated printer-for-errors-of-gulp-plugins, trade-off with performance and watch task crash on SCSS errors
 * Theme file structure up to date, update font-sizes file to be more consistent as singular file name

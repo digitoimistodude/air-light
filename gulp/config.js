@@ -1,4 +1,8 @@
+// Set theme dir
 const themeDir = './';
+
+// Fiber improves Dart Sass compilation speed
+const Fiber = require('fibers')
 
 module.exports = {
   cleancss: {
@@ -79,18 +83,24 @@ module.exports = {
     },
     opts: {
       development: {
-        bundleExec: true,
+        verbose: true,
+        bundleExec: false,
         outputStyle: 'expanded',
         debugInfo: true,
         errLogToConsole: true,
-        includePaths: [themeDir + 'node_modules/']
+        includePaths: [themeDir + 'node_modules/'],
+        fiber: Fiber,
+        quietDeps: true,
       },
       production: {
-        bundleExec: true,
+        verbose: false,
+        bundleExec: false,
         outputStyle: 'compressed',
-        debugInfo: true,
-        errLogToConsole: true,
-        includePaths: [themeDir + 'node_modules/']
+        debugInfo: false,
+        errLogToConsole: false,
+        includePaths: [themeDir + 'node_modules/'],
+        fiber: Fiber,
+        quietDeps: true,
       }
     }
   },

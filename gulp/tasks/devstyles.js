@@ -5,7 +5,7 @@ const {
 } = require('gulp');
 const bs = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
-const sass = require('gulp-dart-sass');
+const sass = require('gulp-sass')( require('sass') );
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const config = require('../config.js');
@@ -20,9 +20,7 @@ function devstyles() {
     .pipe(sourcemaps.init())
 
     // Compile SCSS asynchronously
-    .pipe(sass({
-      includePaths: config.styles.opts.development.includePaths
-    }))
+    .pipe(sass.sync(config.styles.opts.development))
 
     // Run PostCSS plugins
     .pipe(postcss([autoprefixer()]))
