@@ -11,6 +11,7 @@
     "stylelint-config-standard",
     "stylelint-config-recommended-scss"
   ],
+  "customSyntax": "postcss-scss",
   "rules": {
     "order/order": [
       {
