@@ -20,10 +20,8 @@ matrix:
     fast_finish: true
 
     include:
-        # aliased to a recent 7.2.x version
-        - php: '7.2'
+        - php: '7.4'
           env: SNIFF=1
-        # bleeding edge PHP
         - php: 'nightly'
 
     allow_failures:
@@ -38,8 +36,8 @@ before_install:
     - sudo apt-get install -y nodejs
     - if [[ `node -v` != v10* ]]; then nvm install stable; fi
     - nvm install-latest-npm
-    - nvm install 15.14.0
-    - nvm use 15.14.0
+    - nvm install 14.13.1
+    - nvm use 14.13.1
 
 # Use this to prepare your build for testing.
 # e.g. copy database configurations, environment variables, etc.

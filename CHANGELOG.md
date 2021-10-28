@@ -9,6 +9,7 @@
 * Change stylelint-disable exceptions per line and with double slash scss syntax
 * Add doiuse exceptions with doiuse-disable
 * Update .browserslistrc
+* Require node 14+ and PHP 7.4+
 
 ### 7.9.9: 2021-10-27
 
