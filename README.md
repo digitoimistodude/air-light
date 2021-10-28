@@ -78,101 +78,108 @@ Air is licensed with [The MIT License (MIT)](http://choosealicense.com/licenses/
 
 ## Theme structure
 
-We try to achieve as classic WordPress theme structure as possible to make it possible for wider audience to use and understand and to go with official WordPress Theme Coding Standards.
+We try to follow traditional WordPress [Template Hierarchy](https://developer.wordpress.org/themes/basics/template-hierarchy) as much as possible. This way we will provide a low threshold for junior developers and go hand in hand with official [WordPress Theme Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/).
+
+Please see [Visual Overview](https://developer.wordpress.org/themes/basics/template-hierarchy/#visual-overview) if you are interested in how the WordPress theme structure works.
+
+Here's the current Air-light theme structure (prone to changes, not updating in real time, but stays mostly the same in its pricinpals):
 
 ``` shell
-themes/your-theme-name/             # → Root of your air-light based theme
-├── 404.php                         # → Default "not found" page
-├── archive.php                     # → Default archive template
-├── bin/                            # → Scripts
-│   ├── air-move-in.sh              # → A script for moving all dev files back to the theme
-│   ├── air-move-out.sh             # → A script for moving all dev files out of the theme for testing with Theme Check plugin
-│   ├── air-pack.sh                 # → A script that makes a package for WordPress Theme Directory
-│   ├── newtheme.sh                 # → The start script for creating YOUR own theme out of air-light
-├── comments.php                    # → Default comments template (can be deleted if not needed)
-├── css/                            # → CSS files for production (never edit)
-│   ├── dev/                        # → Unminified stylesheet files for debugging (never edit)
-│   └── prod/                       # → Minified stylesheet files for production (never edit)
-├── fonts/                          # → Your webfont files (woff, woff2, ttf needed)
-├── footer.php                      # → Site footer
-├── front-page.php                  # → Demo front-page template (not included in wordpress.org version)
-├── functions.php                   # → Set up your theme basic settings
-├── gulp/                           # → Gulp related settings and tasks
-├── gulpfile.js                     # → Core gulpfile for air-light development
-├── header.php                      # → Site header
-├── images/                         # → Your theme images, for example default featured images and placeholders
-├── inc/                            # → Theme core PHP
-│   ├── hooks/                      # → Hook functions
-│   ├── includes/                   # → Non-template features
-│   ├── template-tags/              # → Template functions and helpers
-│   ├── post-types/                 # → Custom Post Types
-│   ├── taxonomies/                 # → Custom Taxonomies
-│   ├── hooks.php                   # → All hooks the theme runs are here
-│   ├── includes.php                # → Include non-template features
-│   ├── template-tags.php           # → Include template functions and helpers
-├── js/                             # → JavaScript files
-│   ├── dev/                        # → Unminified script files for debugging (never edit)
-│   ├── prod/                       # → Minified script files for production (never edit)
-│   └── src/                        # → Script files for development (edit these)
-│       ├── navigation.js           # → Accessible multi-level navigation (from 3.4.5)
-│       ├── front-end.js            # → Theme core JavaScript file (from 1.0.0, before: scripts.js)
-│       └── sticky-nav.js           # → Sticky nav functionality (optional)
-├── package.json                    # → Node.js dependencies and scripts
-├── page.php                        # → Default page template
-├── phpcs.xml                       # → PHPCodeSniffer/WordPress Theme Coding Standards settings
-├── sass/                           # → CSS files for development
-│   ├── base/                       # → Theme base styles
-│   │   ├── _accessibility.scss     # → Accessibility
-│   │   └── _normalize.scss         # → Browser reset
-│   ├── global.scss                 # → Core CSS file that calls all the modular files
-│   ├── gutenberg.scss              # → Core CSS file for Gutenberg editor and blocks
-│   ├── components/                 # → Add your style components to this folder
-│   ├── features/                   # → Fuctionality styles
-│   │   ├── _breadcrumbs.scss       # → Styles for hybrid breadcrumbs
-│   │   ├── _gallery.scss           # → Default WordPress gallery feature styles
-│   │   ├── _gravity-forms.scss     # → Defaults for Gravity Forms + WCAG 2.0 form fields for Gravity Forms
-│   │   ├── _lazyload.scss          # → Styles for air-helper lazyload feature (lazyload.js needed)
-│   │   ├── _top.scss               # → Back to top styles
-│   │   ├── _pagination.scss        # → Numbered pagination styles
-│   │   ├── _sticky-nav.scss        # → Sticky nav styles (not included by default)
-│   │   └── _slick.scss             # → Styles for slick-carousel (not included by default)
-│   ├── helpers/                    # → Helper mixins and functions
-│   │   ├── _animations.scss        # → Animations and effects
-│   │   ├── _aspect-ratio.scss      # → A mixin for aspect ratio
-│   │   ├── _general.scss           # → Mixins for general use, or helpers of other mixins
-│   │   ├── _grid.scss              # → CSS Grid helper mixin
-│   │   └── _typography.scss        # → Typography style mixins
-│   ├── layout/                     # → Fuctionality styles
-│   │   ├── _forms.scss             # → Styles for general forms and Gravity Forms
-│   │   ├── _site-footer.scss       # → Footer styles
-│   │   ├── _site-header.scss       # → Header styles
-│   │   ├── _typography.scss        # → Defaults for typography and fonts
-│   │   └── _gutenberg.scss         # → Site-side styles for Gutenberg (pratically for single.php)
-│   ├── navigation/                 # → Navigation styles
-│   │   ├── _burger.scss            # → Burger styles and animations
-│   │   ├── _nav-desktop.scss       # → Desktop navigation styles and dropdowns
-│   │   └── _nav-mobile.scss        # → Navigation styles for mobile and touch devices
-│   ├── variables/                  # → Configurations
-│   │   ├── _breakpoints.scss       # → Widths from mobile to TV screens
-│   │   ├── _colors.scss            # → All the colors of the theme
-│   │   ├── _fonts.scss             # → Font settings
-│   │   └── _spacings.scss          # → Margins and paddings
-│   ├── views/                      # → Templates, archives, pages and views go here
-│   │   ├── _blog.scss              # → General blog archive and post styles
-│   │   ├── _comments.scss          # → Comment styles (optional)
-│   │   ├── _front-page.scss        # → Front page styles (demo content, optional)
-│   │   └── _page.scss              # → Default single page styles
-├── screenshot.png                  # → Theme screenshot for WP admin
-├── search.php                      # → Default search view
-├── sidebar.php                     # → Default sidebar (optional)
-├── single.php                      # → Default single article or CPT view
-├── style.css                       # → Theme meta information
-├── svg/                            # → Your theme SVG graphics and icons
-└── template-parts/                 # → WordPress template parts. Modules go under this folder.
-    ├── header/                     # → Header modules
-    │   ├── branding.php            # → Site branding
-    │   ├── navigation.php          # → Site navigation
-    └── hero.php                    # → Default hero
+themes/your-theme-name/              # → Root of your air-light based theme
+├── 404.php                          # → Default "not found" page
+├── archive.php                      # → Default archive template
+├── bin/                             # → Scripts
+│   ├── ...                          # → This scripts are used for generating themes or new Air-light version
+│   └── newtheme.sh                  # → The start script for creating YOUR own theme out of Air-light
+├── comments.php                     # → Default comments template (can be deleted if not needed)
+├── css/                             # → CSS files for production (never edit)
+│   ├── dev/                         # → Unminified stylesheet files for debugging (never edit)
+│   └── prod/                        # → Minified stylesheet files for production (never edit)
+├── fonts/                           # → Your webfont files (woff, woff2, ttf needed)
+├── footer.php                       # → Site footer
+├── front-page.php                   # → Demo front-page template (not included in wordpress.org version)
+├── functions.php                    # → Set up your theme basic settings
+├── gulp/                            # → Gulp related settings and tasks
+│   └── ...                          #
+├── gulpfile.js                      # → Core gulpfile for air-light development
+├── header.php                       # → Site header
+├── images/                          # → Your theme images, for example default featured images and placeholders
+├── inc/                             # → Theme core PHP
+│   ├── hooks/                       # → Hook functions
+│   ├── includes/                    # → Non-template features
+│   ├── template-tags/               # → Template functions and helpers
+│   ├── post-types/                  # → Custom Post Types
+│   ├── taxonomies/                  # → Custom Taxonomies
+│   ├── hooks.php                    # → All hooks the theme runs are here
+│   ├── includes.php                 # → Include non-template features
+│   └── template-tags.php            # → Include template functions and helpers
+├── js/                              # → JavaScript files
+│   ├── dev/                         # → Unminified script files for debugging (never edit)
+│   ├── prod/                        # → Minified script files for production (never edit)
+│   └── src/                         # → Script files for development (edit these)
+│       ├── navigation.js            # → Accessible multi-level navigation (from 3.4.5)
+│       ├── front-end.js             # → Theme core JavaScript file (from 1.0.0, before: scripts.js)
+│       └── sticky-nav.js            # → Sticky nav functionality (optional)
+├── package.json                     # → Node.js dependencies and scripts
+├── page.php                         # → Default page template
+├── phpcs.xml                        # → PHPCodeSniffer/WordPress Theme Coding Standards settings
+├── sass/                            # → SCSS files for CSS development
+│   ├── base/                        # → Theme base styles
+│   │   └── _accessibility.scss      # → Accessibility
+│   ├── global.scss                  # → Core CSS file that calls all the modular files
+│   ├── gutenberg-editor-styles.scss # → Core CSS file for Gutenberg editor and blocks
+│   ├── components/                  # → Add your style components to this folder
+│   ├── features/                    # → Fuctionality styles
+│   │   ├── _breadcrumbs.scss        # → Styles for hybrid breadcrumbs
+│   │   ├── _gallery.scss            # → Default WordPress gallery feature styles
+│   │   ├── _gravity-forms.scss      # → Defaults for Gravity Forms + WCAG 2.0 form fields for Gravity Forms
+│   │   ├── _lazyload.scss           # → Styles for air-helper lazyload feature (lazyload.js needed)
+│   │   ├── _top.scss                # → Back to top styles
+│   │   ├── _pagination.scss         # → Numbered pagination styles
+│   │   ├── _sticky-nav.scss         # → Sticky nav styles (not included by default)
+│   │   └── _slick.scss              # → Styles for slick-carousel (not included by default)
+│   ├── gutenberg/                   # → Gutenberg block styles for both core and custom blocks
+│   │   └── ...                      # → WIP
+│   ├── helpers/                     # → Helper mixins and functions
+│   │   ├── _animations.scss         # → Animations and effects
+│   │   ├── _aspect-ratio.scss       # → A mixin for aspect ratio
+│   │   ├── _general.scss            # → Mixins for general use, or helpers of other mixins
+│   │   ├── _grid.scss               # → CSS Grid helper mixin
+│   │   └── _typography.scss         # → Typography style mixins
+│   ├── layout/                      # → Fuctionality styles
+│   │   ├── _forms.scss              # → Styles for general forms and Gravity Forms
+│   │   ├── _site-footer.scss        # → Footer styles
+│   │   ├── _site-header.scss        # → Header styles
+│   │   ├── _typography.scss         # → Defaults for typography and fonts
+│   │   └── _gutenberg.scss          # → Site-side styles for Gutenberg (pratically for single.php)
+│   ├── navigation/                  # → Navigation styles
+│   │   ├── _burger.scss             # → Burger styles and animations
+│   │   ├── _nav-desktop.scss        # → Desktop navigation styles and dropdowns
+│   │   └── _nav-mobile.scss         # → Navigation styles for mobile and touch devices
+│   ├── variables/                   # → Configurations
+│   │   ├── _breakpoints.scss        # → Widths from mobile to TV screens
+│   │   ├── _colors.scss             # → All the colors of the theme
+│   │   ├── _font-face.scss          # → Define font variables here
+│   │   ├── _font-family.scss        # → Define font paths
+│   │   ├── _font-size.scss          # → Define font related sizes
+│   │   ├── _forms.scss              # → Form related variables
+│   │   └── _spacings.scss           # → Margins and paddings
+│   ├── views/                       # → Templates, archives, pages and views go here
+│   │   ├── _404.scss                # → Default 404 styles
+│   │   ├── _comments.scss           # → Comment styles (optional)
+│   │   ├── _front-page.scss         # → Front page styles (empty by default)
+│   │   └── _search.scss             # → Default search result styles
+├── screenshot.png                   # → Theme screenshot for WP admin
+├── search.php                       # → Default search view
+├── sidebar.php                      # → Default sidebar (optional)
+├── single.php                       # → Default single article or CPT view
+├── style.css                        # → Theme meta information
+├── svg/                             # → Your theme SVG graphics and icons
+└── template-parts/                  # → WordPress template parts. Modules go under this folder.
+    ├── header/                      # → Header modules
+    │   ├── branding.php             # → Site branding
+    │   ├── navigation.php           # → Site navigation
+    └── hero.php                     # → Default hero
 ```
 
 ### Features

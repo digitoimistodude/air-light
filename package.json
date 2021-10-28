@@ -7,7 +7,6 @@
     "@hint/hint-axe": "^4.4.5",
     "@hint/hint-button-type": "^3.0.7",
     "@hint/hint-compat-api": "^4.4.4",
-    "@ronilaukkarinen/printer-for-errors-of-gulp-plugins": "^1.0.1",
     "autoprefixer": "^10.3.7",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",

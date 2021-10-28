@@ -1,3 +1,8 @@
+### 8.0.1: 2021-10-29
+
+* Remove outdated printer-for-errors-of-gulp-plugins, trade-off with performance and watch task crash on SCSS errors
+* Theme file structure up to date, update font-sizes file to be more consistent as singular file name
+
 ### 8.0.0: 2021-10-28
 
 * Upgrade stylelint to v14
