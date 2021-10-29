@@ -1,3 +1,7 @@
+### 8.0.3: 2021-10-29
+
+* Update to devpackages 2.3.0 (switches gulp-stylelint to stylelint from exec/cli)
+
 ### 8.0.2: 2021-10-28
 
 * Update sass to 1.43.4

@@ -2,7 +2,7 @@
 const {
   src
 } = require('gulp');
-const stylelint = require('gulp-stylelint');
+const exec = require('gulp-exec');
 const config = require('../config.js');
 
 // Task
@@ -11,7 +11,9 @@ function lintstyles() {
   return src([config.styles.stylelint.src])
 
     // Print linter report
-    .pipe(stylelint(config.styles.stylelint.opts));
+    .pipe(exec(`stylelint ` + config.styles.stylelint.cli.src, config.styles.stylelint.cli.options))
+    .pipe(exec.reporter(config.styles.stylelint.cli.reportOptions));
+
 }
 
 exports.lintstyles = lintstyles;

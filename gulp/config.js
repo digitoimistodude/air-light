@@ -70,7 +70,7 @@ module.exports = {
     development: themeDir + 'css/dev/',
     production: themeDir + 'css/prod/',
     stylelint: {
-      src: themeDir + 'sass/**/*.scss',
+      src: themeDir + 'sass/*/*.scss',
       opts: {
         fix: false,
         reporters: [{
@@ -79,6 +79,18 @@ module.exports = {
           failAfterError: false,
           debug: false
         }]
+      },
+      cli: {
+        src: themeDir + 'sass/',
+        options: {
+          continueOnError: false, // default = false, true means don't emit error event
+          pipeStdout: false, // default = false, true means stdout is written to file.contents
+        },
+        reportOptions: {
+          err: true, // default = true, false means don't write err
+          stderr: true, // default = true, false means don't write stderr
+          stdout: true // default = true, false means don't write stdout
+        },
       }
     },
     opts: {
