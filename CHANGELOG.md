@@ -1,3 +1,7 @@
+### 8.0.5: 2021-11-02
+
+* Remove outdated breadcrumbs scss and hooks that are no longer supported in-theme
+
 ### 8.0.4: 2021-11-02
 
 * Update to devpackages 2.3.1 (switch to @ronilaukkarinen/gulp-stylelint, watch task improvements)

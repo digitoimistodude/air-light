@@ -130,7 +130,6 @@ themes/your-theme-name/              # → Root of your air-light based theme
 │   ├── gutenberg-editor-styles.scss # → Core CSS file for Gutenberg editor and blocks
 │   ├── components/                  # → Add your style components to this folder
 │   ├── features/                    # → Fuctionality styles
-│   │   ├── _breadcrumbs.scss        # → Styles for hybrid breadcrumbs
 │   │   ├── _gallery.scss            # → Default WordPress gallery feature styles
 │   │   ├── _gravity-forms.scss      # → Defaults for Gravity Forms + WCAG 2.0 form fields for Gravity Forms
 │   │   ├── _lazyload.scss           # → Styles for air-helper lazyload feature (lazyload.js needed)
