@@ -1,9 +1,6 @@
 // Set theme dir
 const themeDir = './';
 
-// Fiber improves Dart Sass compilation speed
-const Fiber = require('fibers')
-
 module.exports = {
   cleancss: {
     opts: {
@@ -66,11 +63,14 @@ module.exports = {
   styles: {
     gutenberg: themeDir + 'sass/base/gutenberg.scss',
     src: themeDir + 'sass/*.scss',
-    watch: themeDir + 'sass/**/*.scss',
     development: themeDir + 'css/dev/',
     production: themeDir + 'css/prod/',
+    watch: {
+      development: themeDir + 'sass/**/*.scss',
+      production: themeDir + 'css/dev/*.css',
+    },
     stylelint: {
-      src: themeDir + 'sass/*/*.scss',
+      src: themeDir + 'sass/**/*.scss',
       opts: {
         fix: false,
         reporters: [{
@@ -80,18 +80,6 @@ module.exports = {
           debug: false
         }]
       },
-      cli: {
-        src: themeDir + 'sass/',
-        options: {
-          continueOnError: false, // default = false, true means don't emit error event
-          pipeStdout: false, // default = false, true means stdout is written to file.contents
-        },
-        reportOptions: {
-          err: true, // default = true, false means don't write err
-          stderr: true, // default = true, false means don't write stderr
-          stdout: true // default = true, false means don't write stdout
-        },
-      }
     },
     opts: {
       development: {
@@ -101,7 +89,6 @@ module.exports = {
         debugInfo: true,
         errLogToConsole: true,
         includePaths: [themeDir + 'node_modules/'],
-        fiber: Fiber,
         quietDeps: true,
       },
       production: {
@@ -111,7 +98,6 @@ module.exports = {
         debugInfo: false,
         errLogToConsole: false,
         includePaths: [themeDir + 'node_modules/'],
-        fiber: Fiber,
         quietDeps: true,
       }
     }

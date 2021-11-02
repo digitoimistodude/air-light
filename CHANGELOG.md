@@ -1,3 +1,7 @@
+### 8.0.4: 2021-11-02
+
+* Update to devpackages 2.3.1 (switch to @ronilaukkarinen/gulp-stylelint, watch task improvements)
+
 ### 8.0.3: 2021-10-29
 
 * Update to devpackages 2.3.0 (switches gulp-stylelint to stylelint from exec/cli)
