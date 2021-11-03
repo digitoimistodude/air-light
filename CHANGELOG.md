@@ -1,3 +1,7 @@
+### 8.0.6: 2021-11-03
+
+* Update to devpackages 2.3.2
+
 ### 8.0.5: 2021-11-02
 
 * Remove outdated breadcrumbs scss and hooks that are no longer supported in-theme
