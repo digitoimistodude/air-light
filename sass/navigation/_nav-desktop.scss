@@ -230,7 +230,8 @@ $use-dropdown-toggle-animation: true;
     justify-content: space-between;
     position: relative;
 
-    // Add a pseudo element to fill the gap between menu item and sub menu to help hovering
+    // Add a "safe area" pseudo element to fill the gap
+    // between menu item and sub menu to help hovering
     &::after {
       content: '';
       display: block;
@@ -238,8 +239,17 @@ $use-dropdown-toggle-animation: true;
       max-width: var(--width-sub-menu);
       position: absolute;
       top: 100%;
+      visibility: hidden;
       width: 100%;
     }
+  }
+
+  // Ensure "safe area" is visible only after triggering submenu with mouse
+  .menu-item.menu-item-has-children.hover-intent::after {
+    visibility: visible;
+
+    // Make sure it's on top of everything
+    z-index: 9999999;
   }
 
   // Toggle icon dimensions on desktop
