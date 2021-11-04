@@ -1,10 +1,10 @@
 {
   "defaultSeverity": "warning",
   "plugins": [
-    "stylelint-value-no-unknown-custom-properties",
-    "stylelint-declaration-use-variable",
+    "@ronilaukkarinen/stylelint-a11y",
+    "@ronilaukkarinen/stylelint-value-no-unknown-custom-properties",
+    "@ronilaukkarinen/stylelint-declaration-strict-value",
     "stylelint-scss",
-    "stylelint-a11y",
     "stylelint-order"
   ],
   "extends": [
@@ -121,24 +121,25 @@
     "selector-pseudo-element-colon-notation": "double",
     "shorthand-property-no-redundant-values": true,
     "declaration-block-single-line-max-declarations": 1,
+    "scale-unlimited/declaration-strict-value": [
+      "/color$/",
+      {
+        "ignoreValues": [
+          "currentColor",
+          "transparent",
+          "inherit",
+          "unset",
+          "/^#[0-9a-fA-F]{3,6}$/"
+        ]
+      }
+    ],
     "csstools/value-no-unknown-custom-properties": [
       true,
       {
         "importFrom": [
-          "css/dev/global.css"
+          "content/themes/otava/css/dev/global.css"
         ]
       }
-    ],
-    "sh-waqar/declaration-use-variable": [
-      [
-        "/color/",
-        {
-          "ignoreValues": [
-            "transparent",
-            "inherit"
-          ]
-        }
-      ]
     ],
     "rule-empty-line-before": [
       "always-multi-line",
