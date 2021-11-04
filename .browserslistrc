@@ -5,6 +5,13 @@ last 1 firefox version
 not firefox > 90
 not dead
 not ie > 0
+not ucandroid > 0
+not ucandroid all
+not firefoxandroid > 0
+not firefoxandroid all
+not samsung > 0
+not samsung all
 not op_mob > 0
+not op_mob all
 not op_mini all
-> 1%
+> 1% in FI

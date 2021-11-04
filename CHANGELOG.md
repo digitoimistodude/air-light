@@ -3,6 +3,8 @@
 * Fix var(--padding-sub-menu-vertical), add separate var for var(--padding-sub-menu-link-vertical)
 * Fix sub-menu of sub-menu vertical alignment based on the variable and not fixed amount
 * Fix dropdown alignment to left, remove deprecated fixed 5%
+* Add simpler link component with text-underline-offset
+* Update .browserslistrc, ignore older Edge and Samsung Browser
 
 ### 8.0.9: 2021-11-04
 
