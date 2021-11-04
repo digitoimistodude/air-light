@@ -1,3 +1,7 @@
+### 8.0.8: 2021-11-04
+
+* Update to devpackages 2.3.4
+
 ### 8.0.7: 2021-11-04
 
 * Fix safe space visibility before triggering submenu with mouse
