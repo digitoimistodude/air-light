@@ -137,7 +137,7 @@
       true,
       {
         "importFrom": [
-          "content/themes/otava/css/dev/global.css"
+          "css/dev/global.css"
         ]
       }
     ],
