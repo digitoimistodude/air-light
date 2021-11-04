@@ -1,3 +1,8 @@
+### 8.1.0: 2021-11-04
+
+* Fix var(--padding-sub-menu-vertical), add separate var for var(--padding-sub-menu-link-vertical)
+* Fix sub-menu of sub-menu vertical alignment based on the variable and not fixed amount
+
 ### 8.0.9: 2021-11-04
 
 * Update to devpackages 2.3.5

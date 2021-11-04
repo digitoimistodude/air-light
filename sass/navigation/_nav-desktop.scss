@@ -18,6 +18,7 @@ $use-dropdown-toggle-animation: true;
   --gap-main-level-horizontal: 2.5rem;
   --padding-main-level-vertical: .6rem;
   --padding-sub-menu-vertical: .6rem;
+  --padding-sub-menu-link-vertical: .6rem;
   --padding-sub-menu-horizontal: 1.5rem;
   --width-sub-menu: 22rem;
 
@@ -112,10 +113,10 @@ $use-dropdown-toggle-animation: true;
     font-size: var(--font-size-sub-menu);
     font-weight: var(--font-weight-sub-menu);
     line-height: 1.5;
-    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-bottom: var(--padding-sub-menu-link-vertical);
     padding-left: var(--padding-sub-menu-horizontal);
     padding-right: var(--padding-sub-menu-horizontal);
-    padding-top: var(--padding-sub-menu-vertical);
+    padding-top: var(--padding-sub-menu-link-vertical);
     white-space: normal;
   }
 
@@ -150,8 +151,8 @@ $use-dropdown-toggle-animation: true;
   .sub-menu.toggled-on .sub-menu a,
   .menu-item.menu-item-has-children.hover-intent .sub-menu a,
   .menu-item.menu-item-has-children:focus .sub-menu a {
-    padding-bottom: var(--padding-sub-menu-vertical);
-    padding-top: var(--padding-sub-menu-vertical);
+    padding-bottom: var(--padding-sub-menu-link-vertical);
+    padding-top: var(--padding-sub-menu-link-vertical);
   }
 
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
@@ -175,9 +176,9 @@ $use-dropdown-toggle-animation: true;
     margin-left: 0;
     margin-top: var(--gap-dropdown);
     opacity: 0;
-    padding-bottom: .5rem;
+    padding-bottom: var(--padding-sub-menu-vertical);
     padding-left: 0;
-    padding-top: .5rem;
+    padding-top: var(--padding-sub-menu-vertical);
     position: absolute;
     top: -9999px;
     transition: padding .2s cubic-bezier(.19, 1, .22, 1);
@@ -189,7 +190,7 @@ $use-dropdown-toggle-animation: true;
     .sub-menu {
       left: 100%;
       margin-left: 0;
-      margin-top: -5px;
+      margin-top: calc(-1 * var(--padding-sub-menu-vertical));
       top: 0;
     }
 
@@ -217,7 +218,7 @@ $use-dropdown-toggle-animation: true;
   .menu-item-has-children .sub-menu .sub-menu.toggled-on,
   .menu-item-has-children:focus .sub-menu .sub-menu,
   .menu-item-has-children.hover-intent .sub-menu .sub-menu {
-    margin-top: -5px;
+    margin-top: calc(-1 * var(--padding-sub-menu-vertical));
     top: 0;
     z-index: 10;
   }
