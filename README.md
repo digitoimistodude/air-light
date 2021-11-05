@@ -55,7 +55,7 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
     3. [WooCommerce support](#woocommerce-support)
 6. [Requirements](#requirements)
 7. [Recommendations for development](#recommendations-for-development)
-8. [Our way of building new themes](#our-way-of-building-new-themes)
+8. [How to build a new theme](#how-to-build-a-new-theme)
 9. [Contributing](#contributing)
     1. [Air development](#air-development)
     2. [Debuggers](#debuggers)
@@ -406,25 +406,9 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 * [Devpackages](https://github.com/digitoimistodude/devpackages) \- Npm and Gulp \+ plugins
 * [Dudestack](https://github.com/digitoimistodude/dudestack) \- A toolkit for creating a new professional WordPress project with deployments\. Heavily based on Bedrock by Roots\.
 
-### Our way of building new themes
+### How to build a new theme
 
-We use Gutenberg and ACF to build new websites on air-light. This is the default block structure we are used to have:
-
-```` html
-<section class="block block-something has-dark-bg">
-  <div class="container">
-    <div class="cols cols-two">
-      <div class="col">
-        <p><b>Column item 1</b> Some other content. Lorem ipsum in proident deserunt nostrud. Lorem ipsum in proident deserunt nostrud.</p>
-      </div><!-- .col -->
-
-      <div class="col">
-        <p><b>Column item 2</b> Something different to see the change. Lorem ipsum in proident deserunt nostrud culpa veniam sed esse aliqua ea velit aute.</p>
-      </div><!-- .col -->
-    </div>
-  </div>
-</section><!-- .block -->
-````
+Please refer to Wiki section [Getting started in theming with Air-light](https://github.com/digitoimistodude/air-light/wiki#2-getting-started-in-theming-with-air-light).
 
 ### Usage
 
