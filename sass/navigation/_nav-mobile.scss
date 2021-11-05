@@ -419,8 +419,8 @@ $nav-open-from-direction: top;
     }
 
     @media (min-width: 411px) {
-      &.has-visible-label .hamburger-box {
-        margin-right: 2rem;
+      &.has-visible-label {
+        gap: 1.5rem;
       }
     }
   }
