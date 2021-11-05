@@ -1,3 +1,8 @@
+### 8.1.1: 2021-11-05
+
+* Nav-toggle label text improvements
+* Replace nav toggle margin with more bulletproof `gap` attribute
+
 ### 8.1.0: 2021-11-04
 
 * Fix var(--padding-sub-menu-vertical), add separate var for var(--padding-sub-menu-link-vertical)
