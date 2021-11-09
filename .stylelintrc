@@ -122,7 +122,13 @@
     "shorthand-property-no-redundant-values": true,
     "declaration-block-single-line-max-declarations": 1,
     "scale-unlimited/declaration-strict-value": [
-      "/color$/"
+      "/color$/",
+      {
+        "ignoreValues": [
+          "transparent",
+          "currentColor"
+        ]
+      }
     ],
     "csstools/value-no-unknown-custom-properties": [
       true,

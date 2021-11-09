@@ -2,6 +2,8 @@
 
 * Devpackages 2.3.7: Change back from @ronilaukkarinen/stylelint-declaration-strict-value@1.7.13 to official stylelint-declaration-strict-value@1.8.0
 * Devpackages 2.3.7: Fix rule for declaration-strict-value
+* Devpackages 2.3.7: Upgade to webpack 5
+* Devpackages 2.3.7: Update packages
 
 ### 8.1.1: 2021-11-05
 
