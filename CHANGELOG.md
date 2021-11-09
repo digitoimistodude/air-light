@@ -1,3 +1,8 @@
+### 8.1.2: 2021-11-09
+
+* Devpackages 2.3.7: Change back from @ronilaukkarinen/stylelint-declaration-strict-value@1.7.13 to official stylelint-declaration-strict-value@1.8.0
+* Devpackages 2.3.7: Fix rule for declaration-strict-value
+
 ### 8.1.1: 2021-11-05
 
 * Nav-toggle label text improvements

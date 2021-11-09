@@ -3,7 +3,7 @@
   "plugins": [
     "@ronilaukkarinen/stylelint-a11y",
     "@ronilaukkarinen/stylelint-value-no-unknown-custom-properties",
-    "@ronilaukkarinen/stylelint-declaration-strict-value",
+    "stylelint-declaration-strict-value",
     "stylelint-scss",
     "stylelint-order"
   ],
@@ -122,16 +122,7 @@
     "shorthand-property-no-redundant-values": true,
     "declaration-block-single-line-max-declarations": 1,
     "scale-unlimited/declaration-strict-value": [
-      "/color$/",
-      {
-        "ignoreValues": [
-          "currentColor",
-          "transparent",
-          "inherit",
-          "unset",
-          "/^#[0-9a-fA-F]{3,6}$/"
-        ]
-      }
+      "/color$/"
     ],
     "csstools/value-no-unknown-custom-properties": [
       true,
