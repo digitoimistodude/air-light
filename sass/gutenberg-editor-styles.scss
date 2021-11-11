@@ -38,12 +38,54 @@
 // Apply general styles from site front-end
 @import 'layout/general';
 
+// Use only this from _accessibility.scss in the editor
+%screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  // doiuse-disable
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 // Editor exceptions below
 // These styles are NO USE to front-end
 // Need to be right after general, because after typography comes block styles
 .editor-styles-wrapper {
+  // Import typography related styles inside blocks
   @import 'layout/typography';
+
+  // Import gravity forms inside Gutenberg editor
+  @import 'features/gravity-forms';
+
+  // Prevent horizontal scrolling
   overflow-x: hidden;
+
+  // Use ACF defined font styles in ACF fields
+  *[class^='acf-'] {
+    font-family: inherit;
+    font-size: unset;
+  }
+
+  // We have to force buttons and some form styles for Gutenberg editor
+  .block {
+    .button,
+    input[type="submit"] {
+      @include button();
+    }
+
+    .button.button-ghost {
+      @include button-style-ghost();
+    }
+  }
+
+  .block-form {
+    @import 'layout/forms';
+  }
 }
 
 // Gutenberg formatting
