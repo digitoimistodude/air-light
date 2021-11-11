@@ -1,3 +1,8 @@
+### 8.1.4: 2021-11-11
+
+* Replace static contributors with Repobeats analytics image
+* Bump tested WordPress version to 5.8.2
+
 ### 8.1.3: 2021-11-09
 
 * Add has-unified-padding-if-stacked helper class for stacked blocks

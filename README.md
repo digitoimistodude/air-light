@@ -4,21 +4,19 @@
 
 Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
 
-## [Demo](https://airwptheme.com/demo) | [Documentation](https://github.com/digitoimistodude/air-light/wiki)
+## [Demo](https://airwptheme.com/demo) | [Documentation](https://github.com/digitoimistodude/air-light/wiki)
 
 * **CSS gzipped:** 13 KB *(81.2 original)*
 * **JS gzipped:** 7.8 KB *(26.5 KB original)*
 * **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
+![](https://i.imgur.com/PXX3Z1v.png)
+
 ## Top contributors
 
 This theme is constantly kept up to date by the following persons and a bunch of [awesome contributors](https://github.com/digitoimistodude/air-light/graphs/contributors). Wanna join in development? Read [the instructions for contributing](#contributing) and let us know about your first PR!
 
-| [![Roni Laukkarinen](https://avatars3.githubusercontent.com/u/1534150?v=4&s=70)](https://github.com/ronilaukkarinen) | [![Timi Wahalahti](https://avatars1.githubusercontent.com/u/415544?s=70&v=4)](https://github.com/timiwahalahti) | [![Niku Hietanen](https://avatars3.githubusercontent.com/u/16206361?v=4&s=70)](https://github.com/Niq1982) | [![Michael Bourne](https://avatars3.githubusercontent.com/u/22846422?v=4&s=70)](https://github.com/ronilaukkarinen) |
-| --- | --- | --- | --- |
-| [Roni Laukkarinen](https://github.com/ronilaukkarinen) | [Timi Wahalahti](https://github.com/timiwahalahti) | [Niku Hietanen](https://github.com/Niq1982) | [Michael Bourne](https://github.com/michaelbourne) | |
-
-![](https://i.imgur.com/PXX3Z1v.png)
+![Alt](https://repobeats.axiom.co/api/embed/bd95f5747b41d3cf662e033044af08dee9a15f9f.svg "Repobeats analytics image")
 
 ### Mission & vision
 
@@ -398,7 +396,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 * PHP >= 7.4
 * Requires at least: WordPress 4.7.1
-* Tested up to WordPress 5.8.1
+* Tested up to WordPress 5.8.2
 
 ### Recommendations for development
 
