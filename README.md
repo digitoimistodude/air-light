@@ -12,9 +12,9 @@ Air-light (or simply *Air*) is designed to be a ultra minimal starting point for
 
 ![](https://i.imgur.com/PXX3Z1v.png)
 
-## Top contributors
+## Weekly updates!
 
-This theme is constantly kept up to date by the following persons and a bunch of [awesome contributors](https://github.com/digitoimistodude/air-light/graphs/contributors). Wanna join in development? Read [the instructions for contributing](#contributing) and let us know about your first PR!
+This theme is constantly kept up to date by a bunch of [awesome contributors](https://github.com/digitoimistodude/air-light/graphs/contributors). Wanna join in development? Read [the instructions for contributing](#contributing) and let us know about your first PR!
 
 ![Alt](https://repobeats.axiom.co/api/embed/bd95f5747b41d3cf662e033044af08dee9a15f9f.svg "Repobeats analytics image")
 
