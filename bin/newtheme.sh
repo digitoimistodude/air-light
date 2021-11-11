@@ -1,9 +1,13 @@
 #!/bin/bash
 # WordPress theme starting bash script for Air-light
+# @Author: Roni Laukkarinen
+# @Date:   2021-04-22 08:06:02
+# @Last Modified by:   Roni Laukkarinen
+# @Last Modified time: 2021-11-11 11:55:24
 
 # Script specific vars
 SCRIPT_LABEL='for macOS'
-SCRIPT_VERSION='1.0.8'
+SCRIPT_VERSION='1.0.9'
 
 # Vars needed for this file to function globally
 CURRENTFILE=`basename $0`

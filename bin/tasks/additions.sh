@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2021-05-21 14:40:29
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2021-11-11 11:41:19
+# @Last Modified time: 2021-11-11 11:54:27
 echo "${YELLOW}Adding media library folder...${TXTRESET}"
 mkdir -p ${PROJECT_PATH}/media
 echo "" > ${PROJECT_PATH}/media/index.php
@@ -19,8 +19,8 @@ echo "# ${PROJECT_NAME}
 
 This project is hand made for customer by Dude.
 
-------8<----------
-**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, `git blame` is in place ;)
+------8<----------<br>
+**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, `git blame` is in place ;)<br>
 ------8<----------
 
 ## Stack
@@ -33,8 +33,7 @@ This project is hand made for customer by Dude.
 
 ### Recommended development environment
 
-* [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/
-macos-lemp-setup)
+* [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup)
 
 ## Theme screenshot
 
