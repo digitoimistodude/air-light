@@ -1,3 +1,8 @@
+### 8.1.5: 2021-11-15
+
+* Remove unused CSS from _typography.scss
+* Move blockquote styles inside core-blockquote block
+
 ### 8.1.4: 2021-11-11
 
 * Replace static contributors with Repobeats analytics image
