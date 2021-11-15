@@ -132,28 +132,6 @@ p {
   margin-top: 2.9rem;
 }
 
-// Quotes.
-blockquote {
-  border: 0 none;
-  clear: both;
-  margin: 0;
-  padding-bottom: 3rem;
-  position: relative;
-
-  p {
-    color: var(--color-blockquote);
-    font-style: italic;
-    margin-bottom: 0;
-    overflow: visible;
-    position: relative;
-  }
-
-  @media (min-width: $container-ipad) {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
-  }
-}
-
 p:last-child {
   margin-bottom: 0;
 }
