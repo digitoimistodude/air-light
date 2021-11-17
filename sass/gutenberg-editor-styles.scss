@@ -66,7 +66,8 @@
   overflow-x: hidden;
 
   // Use ACF defined font styles in ACF fields
-  *[class^='acf-'] {
+  .acf-fields *[class^='acf-'],
+  .acf-fields [class^='acf-'] * {
     font-family: inherit;
     font-size: unset;
   }
