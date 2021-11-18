@@ -1,3 +1,7 @@
+### 8.1.8: 2021-11-18
+
+* Fix `var(--gap-between-dropdown-toggle)` defined two times
+
 ### 8.1.7: 2021-11-18
 
 * Improve `var(--padding-sub-menu-vertical)` behaviour in animations
