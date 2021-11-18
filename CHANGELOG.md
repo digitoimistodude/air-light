@@ -4,6 +4,7 @@
 * Change `var(--padding-sub-menu-horizontal)` to more describing `var(--padding-sub-menu-link-horizontal)`
 * Add out animation for desktop navigation
 * Remove aspect-ratio() mixin that is no longer needed (CSS has `aspect-ratio`) natively
+* Remove hex-to-rgb() mixin that is no longer used
 
 ### 8.1.6: 2021-11-17
 
