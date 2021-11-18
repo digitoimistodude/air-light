@@ -1,3 +1,8 @@
+### 8.1.7: 2021-11-18
+
+* Improve `var(--padding-sub-menu-vertical)` behaviour in animations
+* Change `var(--padding-sub-menu-horizontal)` to more describing `var(--padding-sub-menu-link-horizontal)`
+
 ### 8.1.6: 2021-11-17
 
 * Fix ACF field reset specificity that aws affecting block styles

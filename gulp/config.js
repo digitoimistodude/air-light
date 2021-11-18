@@ -1,3 +1,9 @@
+/**
+ * @Author: Roni Laukkarinen
+ * @Date:   2021-04-22 08:06:03
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2021-11-18 12:58:39
+ */
 // Set theme dir
 const themeDir = './';
 
