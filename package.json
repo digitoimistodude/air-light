@@ -44,9 +44,9 @@
     "stylelint-declaration-strict-value": "^1.8.0",
     "stylelint-order": "^5.0.0",
     "stylelint-scss": "^4.0.0",
-    "terser-webpack-plugin": "^5.2.5",
+    "terser-webpack-plugin": "^5.2.4",
     "vinyl-named": "^1.1.0",
-    "webpack": "^5.62.2",
+    "webpack": "^5.61.0",
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
