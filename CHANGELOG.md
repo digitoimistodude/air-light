@@ -1,3 +1,7 @@
+### 8.1.9: 2021-11-19
+
+* Add missing strip-unit SCSS function
+
 ### 8.1.8: 2021-11-18
 
 * Fix `var(--gap-between-dropdown-toggle)` defined two times

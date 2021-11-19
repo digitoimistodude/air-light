@@ -17,6 +17,10 @@
 }
 
 // Responsive fonts
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
 @mixin responsive-font($min-font-size, $max-font-size, $min-vw: 320px, $max-vw: 1920px) {
   // stylelint-disable scss/no-global-function-names
   $u1: unit($min-vw);
