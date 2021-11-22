@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-04-22 08:06:03
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-18 12:58:39
+ * @Last Modified time: 2021-11-22 17:26:46
  */
 // Set theme dir
 const themeDir = './';
@@ -28,9 +28,11 @@ module.exports = {
           selectorsSortingMethod: 'standard'
         },
         2: {
-          mergeSemantically: false,
-          mergeMedia: false,
+          mergeAdjacentRules: true,
           mergeIntoShorthands: true,
+          mergeMedia: false,
+          mergeNonAdjacentRules: true,
+          mergeSemantically: true,
           overrideProperties: true,
           removeEmpty: true,
           removeDuplicateRules: true,
