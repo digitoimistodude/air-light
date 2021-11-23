@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-04-22 08:06:03
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-22 17:26:46
+ * @Last Modified time: 2021-11-23 09:52:07
  */
 // Set theme dir
 const themeDir = './';
@@ -53,7 +53,7 @@ module.exports = {
   },
   browsersync: {
     // Important! If src is wrong, styles will not inject to the browser
-    src: [themeDir + 'css/dev/global.css'],
+    src: [themeDir + 'css/**/*', themeDir + 'js/dev/**/*'],
     opts: {
       logLevel: 'debug',
       injectChanges: true,
