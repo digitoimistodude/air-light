@@ -1,6 +1,7 @@
 ### 8.2.0: 2021-11-24
 
 * Fix acf-reset interfering with WYSIWYG editor toolbar icon fonts
+* Update to devpackages 2.4.1
 
 ### 8.1.9: 2021-11-19
 
