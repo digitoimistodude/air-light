@@ -67,7 +67,7 @@
 
   // Use ACF defined font styles in ACF fields
   .acf-fields *[class^='acf-'],
-  .acf-fields [class^='acf-'] * {
+  .acf-fields [class^='acf-'] *:not(.mce-ico) {
     font-family: inherit;
     font-size: unset;
   }
