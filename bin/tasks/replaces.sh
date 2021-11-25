@@ -29,10 +29,6 @@ read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
     echo ' '
   fi
 
-echo "${YELLOW}Installing theme dependencies...${TXTRESET}"
-cd ${PROJECT_THEME_PATH}
-npm install
-
 echo "${YELLOW}Running project gulp styles tasks once...${TXTRESET}"
 cd ${PROJECT_PATH}
 gulp devstyles
