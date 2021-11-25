@@ -1,3 +1,8 @@
+### 8.2.1: 2021-11-25
+
+* Fix `newtheme` starting script not generating a README.md
+* Fix `newtheme` starting script not building theme JS and CSS for the first time
+
 ### 8.2.0: 2021-11-24
 
 * Fix acf-reset interfering with WYSIWYG editor toolbar icon fonts
