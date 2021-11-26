@@ -1,3 +1,7 @@
+### 8.2.2: 2021-11-26
+
+* Add default gform_confirmation_message styles
+
 ### 8.2.1: 2021-11-25
 
 * Fix `newtheme` starting script not generating a README.md

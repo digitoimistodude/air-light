@@ -168,3 +168,13 @@ body *[aria-invalid="true"] {
 .gform_validation_container {
   display: none;
 }
+
+// Default confirmation message styles
+.gform_confirmation_message {
+  background-color: transparent;
+  border: 2px solid var(--color-success);
+  color: var(--color-success);
+  font-size: var(--font-size-default);
+  font-weight: var(--font-weight-semibold);
+  padding: 2rem;
+}
