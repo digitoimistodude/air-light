@@ -113,7 +113,8 @@
 .wp-block {
   font-family: var(--font-paragraph);
 
-  // Fix extra gap in editor
+  // Reset 28px gap that comes from wp-includes/css/dist/edit-post/classic.css
+  margin-bottom: 0;
   margin-top: 0;
 
   // Let's use maximum article width on article content
