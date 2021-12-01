@@ -1,6 +1,7 @@
 ### 8.2.3: 2021-12-01
 
 * Reset default gap in .wp-block in Gutenberg editor
+* Fix align wide paddings for certain breakpoints and blocks
 
 ### 8.2.2: 2021-11-26
 
