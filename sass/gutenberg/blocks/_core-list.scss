@@ -1,6 +1,8 @@
 // List block
 .wp-block-list,
 .wp-block-categories-list,
+ul.is-style-default,
+ol.is-style-default,
 ol:not([class]),
 ul:not([class]) {
   padding-left: var(--margin-between-paragraphs);
