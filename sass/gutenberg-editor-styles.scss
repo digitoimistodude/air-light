@@ -96,6 +96,8 @@
       padding-right: var(--padding-container-horizontal);
       width: 100%;
 
+      &.alignleft,
+      &.alignright,
       &.alignwide,
       &.alignfull {
         padding-left: 0;
