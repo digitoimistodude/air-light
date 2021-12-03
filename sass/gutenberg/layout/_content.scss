@@ -9,6 +9,7 @@
 }
 
 // Gutenberg core magic
+.is-root-container > *,
 .article-content > * {
   line-height: var(--line-height-paragraphs-blog);
   margin-left: auto;
