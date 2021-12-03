@@ -1,3 +1,14 @@
+### 8.2.4: 2021-12-03
+
+* Fix gallery and image block wide and full width version paddings in mobile editor
+* Fix aligned image paddings in gutenberg editor
+* Fix wide gallery mobile padding issue in Gutenberg editor
+* Fix standard view gallery block alignment issue in Gutenberg Editor
+* Fix block gallery full width padding issues in mobile gutenberg editor
+* Fix for gutenberg edirot alignleft/alignright images: Do not force widths via var for galleries in gutenberg-editor
+* Fix padding for post title block in article view
+* Fix padding in mobile view of the gutenberg editor
+
 ### 8.2.3: 2021-12-01
 
 * Reset default gap in .wp-block in Gutenberg editor
