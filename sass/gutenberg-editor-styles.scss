@@ -136,6 +136,14 @@
       padding-right: 0;
     }
   }
+
+  // Fix padding for post title block in article view
+  &.editor-post-title {
+    @media (max-width: $width-max-article + 40px) {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+    }
+  }
 }
 
 // Allow ACF blocks to be full width by default
