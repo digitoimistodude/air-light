@@ -87,6 +87,21 @@
   .block-form {
     @import 'layout/forms';
   }
+
+  // Fix padding for certain native blocks in article view
+  .block-editor-block-list__block.wp-block-gallery,
+  .wp-block.editor-post-title {
+    @media (max-width: $width-max-article + 40px) {
+      padding-left: var(--padding-container-horizontal);
+      padding-right: var(--padding-container-horizontal);
+      width: 100%;
+
+      &.alignfull {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
 }
 
 // Gutenberg formatting
@@ -134,14 +149,6 @@
     @media (min-width: 870px) {
       padding-left: 0;
       padding-right: 0;
-    }
-  }
-
-  // Fix padding for post title block in article view
-  &.editor-post-title {
-    @media (max-width: $width-max-article + 40px) {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
     }
   }
 }
