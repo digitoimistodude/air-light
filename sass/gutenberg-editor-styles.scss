@@ -167,3 +167,10 @@
   list-style: none;
   padding-left: 0;
 }
+
+// Reset minus margins in Gutenberg editor
+// stylelint-disable selector-max-specificity
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+  margin-left: unset;
+  margin-right: unset;
+}
