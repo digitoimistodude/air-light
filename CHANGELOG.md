@@ -1,3 +1,6 @@
+### Unreleased
+* Added $is_preview and $post_id to be always handed over to block template
+
 ### 8.2.4: 2021-12-03
 
 * Fix gallery and image block wide and full width version paddings in mobile editor

@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-05-19 08:53:57
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-12-10 10:45:21
  * @package air-light
  */
 
@@ -33,16 +33,16 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
   // Get block contents
   if ( ! $block_cache_enabled ) {
     \do_action( 'qm/debug', "Block {$block_slug} bypassed cache ({$cache_key})" );
-    $block_output = load_acf_block( $block_path, false, $block, $is_preview );
+    $block_output = load_acf_block( $block_path, false, $block, $is_preview, $post_id );
   } else {
-    $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block );
+    $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block, $is_preview, $post_id );
   }
 
   // Output block contents (this is safe unescaped)
   echo $block_output; // phpcs:ignore
 } // end render_acf_block
 
-function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block ) {
+function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block, $is_preview = false, $post_id = 0 ) {
   // Block can be cached, try to find it is already in cache
   $output = \wp_cache_get( $cache_key, 'theme' );
 
@@ -52,7 +52,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
   }
 
   // Block is not found in cache, load block content
-  $output = load_acf_block( $block_path, true, $block );
+  $output = load_acf_block( $block_path, true, $block, $is_preview, $post_id );
 
   // Save block to cache
   \wp_cache_set( $cache_key, $output, 'theme', HOUR_IN_SECONDS );
@@ -61,7 +61,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
   return $output;
 } // end load_acf_block_from_cache
 
-function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false ) {
+function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false, $post_id = 0 ) {
   $output_callback = $cache ? 'ob_gzhandler' : null;
 
   /**
