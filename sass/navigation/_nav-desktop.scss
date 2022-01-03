@@ -194,6 +194,24 @@ $use-dropdown-toggle-animation: true;
     width: var(--width-sub-menu);
     z-index: 9;
 
+    // If dropdown is out of viewport from the right, move it to the left
+    &.is-out-of-viewport {
+      left: unset;
+      right: 0;
+
+      // All dropdowns in level 2 and after
+      .sub-menu {
+        left: unset;
+        right: 100%;
+      }
+    }
+
+    // If main level is not out of viewport but if sub-menu under it is
+    .sub-menu.is-out-of-viewport {
+      left: unset;
+      right: 100%;
+    }
+
     // All dropdowns in level 2 and after
     .sub-menu {
       left: 100%;
