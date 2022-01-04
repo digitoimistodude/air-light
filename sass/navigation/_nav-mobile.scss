@@ -126,7 +126,7 @@ $nav-open-from-direction: top;
 
   .nav-primary {
     background-color: var(--color-background-nav-mobile-layer);
-    display: block;
+    display: none;
     height: calc(100vh - var(--height-navigation-mobile));
     margin: 0;
     opacity: 0;
@@ -274,6 +274,7 @@ $nav-open-from-direction: top;
       opacity: 1;
       pointer-events: all;
       visibility: visible;
+      display: block;
     }
 
     .menu-items {
