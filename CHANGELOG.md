@@ -64,7 +64,7 @@
 ### 8.1.4: 2021-11-11
 
 * Replace static contributors with Repobeats analytics image
-* Bump tested WordPress version to 5.8.2
+* Bump tested WordPress version to 5.8.3
 * Fix ACF element font styles by unsetting them
 * Add default form styles for Gutenberg editor
 * Fix line breaks and formatting in the generated default README.md
