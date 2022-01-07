@@ -102,16 +102,11 @@ h6:first-child {
 
 // Lists
 ul {
-  list-style: disc outside;
-  padding-left: 1.9rem;
-
-  li {
-    padding-left: 0;
-  }
+  list-style-type: disc;
 }
 
 ol {
-  padding-left: 1.9rem;
+  list-style-type: decimal;
 }
 
 // Bold
