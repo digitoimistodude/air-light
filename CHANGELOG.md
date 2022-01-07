@@ -1,3 +1,9 @@
+### 8.2.6: 2022-01-07
+
+* Open submenus on the left if the nav items go over the viewport, Fixes #5
+* Added $is_preview and $post_id to be always handed over to block template
+* Create empty inc/functions directory for custom funtions
+
 ### 8.2.5: 2022-01-03
 
 * Open submenus on the left if the nav items go over the viewport, Fixes #5
