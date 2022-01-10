@@ -132,7 +132,7 @@ function maybe_show_error_block( $message, $title = false ) {
   <div class="block block-error">
     <div class="container">
       <?php if ( ! empty( $title ) ) : ?>
-        <h2><?php echo esc_html( get_default_localization( 'Block missing required data' ) ); ?></h2>
+        <h2><?php echo esc_html( $title ); ?></h2>
       <?php endif; ?>
 
       <?php if ( ! empty( $message ) ) : ?>
