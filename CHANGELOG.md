@@ -1,3 +1,7 @@
+### Unreleased
+
+* Fix maybe_show_error_block function title not showing if manually set
+
 ### 8.2.6: 2022-01-07
 
 * Fixes for wp-block-list
