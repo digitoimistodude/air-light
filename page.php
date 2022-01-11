@@ -9,7 +9,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-01-12 16:10:58
+ * @Last Modified time: 2022-01-11 09:02:12
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -18,11 +18,13 @@
 namespace Air_Light;
 
 the_post();
+
 get_header(); ?>
 
 <main class="site-main">
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
+
   <section class="block block-page has-light-bg">
     <div class="container">
 
