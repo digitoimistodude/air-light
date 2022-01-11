@@ -1,6 +1,7 @@
 ### Unreleased
 
 * Fix maybe_show_error_block function title not showing if manually set
+* Fix archive template single post item
 
 ### 8.2.6: 2022-01-07
 
