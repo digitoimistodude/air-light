@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-01-20 16:41:43
+ * @Last Modified time: 2022-01-21 07:31:26
  * @package air-light
  */
 
@@ -55,7 +55,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
   $output = load_acf_block( $block_path, true, $block, $is_preview, $post_id );
 
   // Save block to cache
-  \wp_cache_set( $cache_key, $output, 'theme', HOUR_IN_SECONDS );
+  \wp_cache_set( $cache_key, $output, 'theme', apply_filters( 'air_acf_block_cache_lifetime', HOUR_IN_SECONDS, $block_slug, $post_id ) );
   \do_action( 'qm/debug', "Block {$block_slug} cached ({$cache_key})" );
 
   return $output;

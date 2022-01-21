@@ -3,6 +3,7 @@
 * Fix maybe_show_error_block function title not showing if manually set
 * Fix archive template single post item
 * Fix acf block cache check
+* Added filter air_acf_block_cache_lifetime to adjust blocks cache lifetime
 
 ### 8.2.6: 2022-01-07
 
