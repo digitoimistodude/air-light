@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-26 16:39:14
+ * @Last Modified time: 2022-01-26 16:41:27
  *
  * @package air-light
  */
@@ -163,11 +163,11 @@ function block_editor_title_input_styles() {
   }
 
   body.locale-fi .editor-styles-wrapper .editor-post-title::before {
-    content: "Post name shown in the browser tab and menus";
+    content: "Nimi, joka näkyy selaimen välilehdessä ja valikossa";
   }
 
   body.locale-en-us .editor-styles-wrapper .editor-post-title::before {
-    content: "Nimi, joka näkyy selaimen välilehdessä ja valikossa";
+    content: "Post name shown in the browser tab and menus";
   }
   ';
   wp_add_inline_style( 'block-editor-styles',  $styles );
