@@ -1,8 +1,16 @@
-### Unreleased
+### 8.2.7: 2022-01-26
 
+* Add new styles for page/post title
+* Remove page/post title input styles that are no longer in Gutenberg of 5.9
+* Fix title edit styles for Gutenberg in 5.9
+* Add separate locales for title related instruction text
+* Fix remove_gutenberg_inline_styles hook, add extra check, Fixes #144
+* Update deprecated filters and their parameters #141 (thanks @dylanelliott27!)
+* Update file sizes to README.md
 * Fix maybe_show_error_block function title not showing if manually set
 * Fix archive template single post item
 * Fix acf block cache check
+* Bump tested up WordPress version to 5.9.0
 
 ### 8.2.6: 2022-01-07
 
