@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-26 16:33:22
+ * @Last Modified time: 2022-01-26 16:33:44
  *
  * @package air-light
  */
@@ -165,50 +165,6 @@ function block_editor_title_input_styles() {
   body.locale-fi-fi .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after,
   body.locale-fi .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
     content: "(näkyy mm. valikossa, selainikkunan nimessä ja murupolussa)";
-  }
-
-  .block-editor .editor-styles-wrapper .editor-post-title .components-visually-hidden {
-    border: initial;
-    clip: initial;
-    -webkit-clip-path: initial;
-    clip-path: initial;
-    color: rgba(255, 255, 255, .5);
-    font-size: var(--font-size-15);
-    display: block;
-    height: initial;
-    margin: initial;
-    margin-bottom: 1.2rem;
-    overflow: initial;
-    padding: initial;
-    position: initial;
-    width: initial;
-    word-wrap: initial;
-  }
-
-  .block-editor .editor-styles-wrapper .editor-post-title .editor-post-title__input {
-    line-height: 1.3;
-    background-color: #2e3338;
-    border-color: #2e3338;
-    color: rgba(255, 255, 255, .5);
-    border-radius: 3px;
-    border-style: solid;
-    border-width: 2px;
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: var(--font-size-22);
-    font-weight: 400;
-    line-height: 24px;
-    margin-bottom: 0;
-    padding: 15px;
-    position: relative;
-    text-decoration: none;
-    transition: all 0.55s;
-  }
-
-  .block-editor .editor-styles-wrapper .editor-post-title .editor-post-title__input:focus {
-    background-color: #000;
-    border-color: #000;
-    color: #fff;
   }
   ';
   wp_add_inline_style( 'block-editor-styles',  $styles );
