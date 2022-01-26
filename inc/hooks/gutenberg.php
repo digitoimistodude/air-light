@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-26 16:30:27
+ * @Last Modified time: 2022-01-26 16:33:22
  *
  * @package air-light
  */
@@ -141,6 +141,23 @@ function block_editor_title_input_styles() {
     color: #fff;
   }
 
+  .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
+    color: rgba(255, 255, 255, .5);
+    display: inline;
+    margin-left: 5px;
+  }
+
+  .edit-post-visual-editor__post-title-wrapper {
+    margin: 0;
+  }
+
+  .block-editor .editor-styles-wrapper .editor-post-title {
+    padding: 4rem 2rem;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 20px;
+  }
+
   body.locale-en-us .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
     content: "(is shown for example in navigation, browser window name and in breadcrumbs)";
   }
@@ -148,17 +165,6 @@ function block_editor_title_input_styles() {
   body.locale-fi-fi .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after,
   body.locale-fi .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
     content: "(näkyy mm. valikossa, selainikkunan nimessä ja murupolussa)";
-  }
-
-  .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
-    color: rgba(255, 255, 255, .5);
-    display: inline;
-    margin-left: 5px;
-  }
-
-  .block-editor .editor-styles-wrapper .editor-post-title {
-    padding: 4rem 2rem;
-    margin: 0 auto;
   }
 
   .block-editor .editor-styles-wrapper .editor-post-title .components-visually-hidden {
