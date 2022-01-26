@@ -15,7 +15,7 @@ namespace Air_Light;
 /**
  * Restrict blocks to only allowed blocks in the settings
  */
-function allowed_block_types( $allowed_blocks, $post ) {
+function allowed_block_types( $allowed_blocks, $editor_context ) {
   if ( ! isset( THEME_SETTINGS['allowed_blocks'] ) || 'all' === THEME_SETTINGS['allowed_blocks'] ) {
     return $allowed_blocks;
   }
@@ -24,8 +24,8 @@ function allowed_block_types( $allowed_blocks, $post ) {
   $allowed_blocks = isset( THEME_SETTINGS['allowed_blocks']['default'] ) ? THEME_SETTINGS['allowed_blocks']['default'] : [];
 
   // If there is post type specific blocks, add them to the allowed blocks list
-  if ( isset( THEME_SETTINGS['allowed_blocks'][ $post->post_type ] ) ) {
-    $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ $post->post_type ] );
+  if ( isset( THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] ) ) {
+    $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] );
   }
 
   // Add custom blocks
@@ -85,7 +85,7 @@ function register_block_editor_assets() {
 // Remove Gutenberg inline "Normalization styles" like .editor-styles-wrapper h1
 // color: inherit;
 // @source https://github.com/WordPress/gutenberg/issues/18595#issuecomment-599588153
-function remove_gutenberg_inline_styles( $editor_settings, $post ) {
+function remove_gutenberg_inline_styles( $editor_settings, $editor_context ) {
   unset( $editor_settings['styles'][0] );
   return $editor_settings;
 } // end remove_gutenberg_inline_styles
