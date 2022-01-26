@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-26 16:33:44
+ * @Last Modified time: 2022-01-26 16:39:14
  *
  * @package air-light
  */
@@ -136,15 +136,9 @@ function block_editor_title_input_styles() {
   .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
     background-color: #23282e;
     border-bottom: 1px solid #23282e;
+    color: #fff;
     position: relative;
     z-index: 3;
-    color: #fff;
-  }
-
-  .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
-    color: rgba(255, 255, 255, .5);
-    display: inline;
-    margin-left: 5px;
   }
 
   .edit-post-visual-editor__post-title-wrapper {
@@ -152,19 +146,28 @@ function block_editor_title_input_styles() {
   }
 
   .block-editor .editor-styles-wrapper .editor-post-title {
-    padding: 4rem 2rem;
-    margin: 0 auto;
     color: #fff;
     font-size: 20px;
+    font-weight: 600;
+    margin: 0 auto;
+    padding: 4rem 2rem;
   }
 
-  body.locale-en-us .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
-    content: "(is shown for example in navigation, browser window name and in breadcrumbs)";
+  .block-editor .editor-styles-wrapper .editor-post-title::before {
+    color: rgb(255 255 255 / .5);
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    position: relative;
   }
 
-  body.locale-fi-fi .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after,
-  body.locale-fi .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .components-visually-hidden::after {
-    content: "(näkyy mm. valikossa, selainikkunan nimessä ja murupolussa)";
+  body.locale-fi .editor-styles-wrapper .editor-post-title::before {
+    content: "Post name shown in the browser tab and menus";
+  }
+
+  body.locale-en-us .editor-styles-wrapper .editor-post-title::before {
+    content: "Nimi, joka näkyy selaimen välilehdessä ja valikossa";
   }
   ';
   wp_add_inline_style( 'block-editor-styles',  $styles );
