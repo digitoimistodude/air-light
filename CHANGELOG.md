@@ -1,3 +1,7 @@
+### Unreleased
+
+* Modified functions.php custom settings to work with Air setting groups plugin.
+
 ### 8.1.1: 2021-11-05
 
 * Nav-toggle label text improvements

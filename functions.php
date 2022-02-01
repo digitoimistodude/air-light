@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-20 18:19:49
+ * @Last Modified by:   Elias Kautto
+ * @Last Modified time: 2022-02-01 11:31:49
  *
  * @package air-light
  */
@@ -49,12 +49,15 @@ add_action( 'after_setup_theme', function() {
     'logo'                    => '/svg/logo.svg',
 
     /**
-     * Custom setting group post ids when using Air Helper's custom setting
-     * feature and settings CPT. On multilingual sites using Polylang,
-     * translations are handled automatically.
+     * Custom setting group settings when using Air setting groups plugin.
+     * On multilingual sites using Polylang, translations are handled automatically.
      */
-    'custom_settings_post_ids' => [
-      // 'setting-group' => 0,
+    'custom_settings' => [
+      // 'your-custom-setting' => [
+      //   'id' => Your custom setting post id,
+      //   'title' => 'Your custom setting',
+      //   'block-editor' => true,
+      //  ],
     ],
 
     'social_media_accounts'  => [
