@@ -30,12 +30,14 @@
   }
 
   .alignwide {
-    padding-left: 0;
-    padding-right: 0;
+    max-width: $width-wide;
+    padding-left: var(--padding-container-horizontal);
+    padding-right: var(--padding-container-horizontal);
+    width: 100%;
 
-    @media (min-width: $width-max-article + 40px) {
-      max-width: $width-wide;
-      width: 100%;
+    @media (min-width: $width-wide + 40px) {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 

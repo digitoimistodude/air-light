@@ -64,7 +64,6 @@ echo "
 ${boldgreen}Done! Next steps:${TXTRESET}"
 echo "
 ${boldwhite}1. Click the Check it -button: http://airdev.test/wp/wp-admin/themes.php?page=themecheck
-2. sh air-pack.sh
-3. Upload: https://wordpress.org/themes/upload/
-4. sh air-move-in.sh
+2. Run: sh air-pack.sh (this also runs air-move-in.sh)
+3. Follow instructions
 ${TXTRESET} "

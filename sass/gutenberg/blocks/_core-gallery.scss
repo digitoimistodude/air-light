@@ -12,11 +12,8 @@
 
 // Editor fix
 figure.wp-block-gallery[data-block] {
-  margin-left: 0;
-  margin-right: 0;
-  // May be not ideal for big image sizes
-  // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
-  max-width: var(--width-child-img);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .is-grid,

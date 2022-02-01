@@ -3,7 +3,7 @@
   "plugins": [
     "@ronilaukkarinen/stylelint-a11y",
     "@ronilaukkarinen/stylelint-value-no-unknown-custom-properties",
-    "@ronilaukkarinen/stylelint-declaration-strict-value",
+    "stylelint-declaration-strict-value",
     "stylelint-scss",
     "stylelint-order"
   ],
@@ -125,11 +125,8 @@
       "/color$/",
       {
         "ignoreValues": [
-          "currentColor",
           "transparent",
-          "inherit",
-          "unset",
-          "/^#[0-9a-fA-F]{3,6}$/"
+          "currentColor"
         ]
       }
     ],

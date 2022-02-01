@@ -1,3 +1,8 @@
+#!/bin/bash
+# @Author: Roni Laukkarinen
+# @Date:   2021-05-21 14:40:29
+# @Last Modified by:   Roni Laukkarinen
+# @Last Modified time: 2022-01-26 16:44:49
 echo "${YELLOW}Adding media library folder...${TXTRESET}"
 mkdir -p ${PROJECT_PATH}/media
 echo "" > ${PROJECT_PATH}/media/index.php
@@ -5,8 +10,8 @@ chmod 777 ${PROJECT_PATH}/media
 
 echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
-NEWEST_AIR_VERSION="8.1.1"
-NEWEST_WORDPRESS_VERSION="5.8.1"
+NEWEST_AIR_VERSION="8.2.7"
+NEWEST_WORDPRESS_VERSION="5.9.0"
 NEWEST_PHP_VERSION="7.4"
 CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
 echo "# ${PROJECT_NAME}
@@ -14,8 +19,8 @@ echo "# ${PROJECT_NAME}
 
 This project is hand made for customer by Dude.
 
-------8<----------
-**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, `git blame` is in place ;)
+------8<----------<br>
+**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, \`git blame\` is in place ;)<br>
 ------8<----------
 
 ## Stack
@@ -28,8 +33,7 @@ This project is hand made for customer by Dude.
 
 ### Recommended development environment
 
-* [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/
-macos-lemp-setup)
+* [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup)
 
 ## Theme screenshot
 

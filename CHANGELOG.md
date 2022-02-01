@@ -2,6 +2,108 @@
 
 * Modified functions.php custom settings to work with Air setting groups plugin.
 
+### 8.2.7: 2022-01-26
+
+* Add new styles for page/post title
+* Remove page/post title input styles that are no longer in Gutenberg of 5.9
+* Fix title edit styles for Gutenberg in 5.9
+* Add separate locales for title related instruction text
+* Fix remove_gutenberg_inline_styles hook, add extra check, Fixes #144
+* Update deprecated filters and their parameters #141 (thanks @dylanelliott27!)
+* Update file sizes to README.md
+* Fix maybe_show_error_block function title not showing if manually set
+* Fix archive template single post item
+* Fix acf block cache check
+* Bump tested up WordPress version to 5.9.0
+
+### 8.2.6: 2022-01-07
+
+* Fixes for wp-block-list
+* Auto-indent multi-line list blocks
+* Bump tested up WordPress version to 5.8.3
+
+### 8.2.5: 2022-01-03
+
+* Open submenus on the left if the nav items go over the viewport, Fixes #5
+* Added $is_preview and $post_id to be always handed over to block template
+* Create empty inc/functions directory for custom funtions
+
+### 8.2.4: 2021-12-03
+
+* Fix gallery and image block wide and full width version paddings in mobile editor
+* Fix aligned image paddings in gutenberg editor
+* Fix wide gallery mobile padding issue in Gutenberg editor
+* Fix standard view gallery block alignment issue in Gutenberg Editor
+* Fix block gallery full width padding issues in mobile gutenberg editor
+* Fix for gutenberg edirot alignleft/alignright images: Do not force widths via var for galleries in gutenberg-editor
+* Fix padding for post title block in article view
+* Fix padding in mobile view of the gutenberg editor
+
+### 8.2.3: 2021-12-01
+
+* Reset default gap in .wp-block in Gutenberg editor
+* Fix align wide paddings for certain breakpoints and blocks
+* Fix core/list with is-style-default set
+* Better default core/separator styles
+
+### 8.2.2: 2021-11-26
+
+* Add default gform_confirmation_message styles
+
+### 8.2.1: 2021-11-25
+
+* Fix `newtheme` starting script not generating a README.md
+* Fix `newtheme` starting script not building theme JS and CSS for the first time
+
+### 8.2.0: 2021-11-24
+
+* Fix acf-reset interfering with WYSIWYG editor toolbar icon fonts
+* Update to devpackages 2.4.1
+
+### 8.1.9: 2021-11-19
+
+* Add missing strip-unit SCSS function
+
+### 8.1.8: 2021-11-18
+
+* Fix `var(--gap-between-dropdown-toggle)` defined two times
+
+### 8.1.7: 2021-11-18
+
+* Improve `var(--padding-sub-menu-vertical)` behaviour in animations
+* Change `var(--padding-sub-menu-horizontal)` to more describing `var(--padding-sub-menu-link-horizontal)`
+* Add out animation for desktop navigation
+* Remove aspect-ratio() mixin that is no longer needed (CSS has `aspect-ratio`) natively
+* Remove hex-to-rgb() mixin that is no longer used
+
+### 8.1.6: 2021-11-17
+
+* Fix ACF field reset specificity that aws affecting block styles
+
+### 8.1.5: 2021-11-15
+
+* Remove unused CSS from _typography.scss
+* Move blockquote styles inside core-blockquote block
+
+### 8.1.4: 2021-11-11
+
+* Replace static contributors with Repobeats analytics image
+* Bump tested WordPress version to 5.8.3
+* Fix ACF element font styles by unsetting them
+* Add default form styles for Gutenberg editor
+* Fix line breaks and formatting in the generated default README.md
+
+### 8.1.3: 2021-11-09
+
+* Add has-unified-padding-if-stacked helper class for stacked blocks
+
+### 8.1.2: 2021-11-09
+
+* Devpackages 2.3.7: Change back from @ronilaukkarinen/stylelint-declaration-strict-value@1.7.13 to official stylelint-declaration-strict-value@1.8.0
+* Devpackages 2.3.7: Fix rule for declaration-strict-value
+* Devpackages 2.3.7: Upgade to webpack 5
+* Devpackages 2.3.7: Update packages
+
 ### 8.1.1: 2021-11-05
 
 * Nav-toggle label text improvements

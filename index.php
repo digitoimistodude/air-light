@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-17 10:17:21
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-01-11 09:00:03
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -22,6 +22,7 @@ get_header(); ?>
 <main class="site-main">
 
   <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
+
   <section class="block block-blog has-light-bg">
     <div class="container">
 
@@ -31,10 +32,21 @@ get_header(); ?>
           <h1 id="content" class="screen-reader-text"><?php single_post_title(); ?></h1>
         <?php endif; ?>
 
-        <?php while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) :
+          the_post(); ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <h2><a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php the_title(); ?></a></h2>
-            <p><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date( get_option( 'date_format' ) ); ?></time></p>
+
+            <h2>
+              <a href="<?php echo esc_url( get_the_permalink() ); ?>">
+                <?php the_title(); ?>
+              </a>
+            </h2>
+
+            <p>
+              <time datetime="<?php the_time( 'c' ); ?>">
+                <?php echo get_the_date( get_option( 'date_format' ) ); ?>
+              </time>
+            </p>
 
             <div class="content">
               <?php
@@ -42,6 +54,7 @@ get_header(); ?>
                 entry_footer();
               ?>
             </div>
+
           </article>
         <?php endwhile; ?>
 

@@ -13,6 +13,13 @@
   position: relative;
 }
 
+// Block padding exceptions
+// This class is useful when we have multiple blocks stacked with same background-color
+// stylelint-disable-next-line selector-max-class, selector-max-specificity, no-descending-specificity
+.block.has-unified-padding-if-stacked + .block.has-unified-padding-if-stacked .container {
+  padding-top: 0;
+}
+
 // Default shade on top of blocks
 .shade {
   background-color: var(--color-background-shade);
@@ -47,6 +54,7 @@
 }
 
 // Containers
+// stylelint-disable-next-line no-descending-specificity
 .container {
   margin: 0 auto;
   margin-left: auto;
@@ -67,6 +75,7 @@
 }
 
 // Clear block containers by default
+// stylelint-disable-next-line no-descending-specificity
 .site-main .container {
   clear: both;
   overflow: hidden;

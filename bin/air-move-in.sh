@@ -48,7 +48,7 @@ git status
 echo "
 ${boldgreen}Air files moved in and github repository restored, now just do the following:${TXTRESET}"
 echo "
-1. Upload (if you didn't already): https://wordpress.org/themes/upload/
+1. Upload: https://wordpress.org/themes/upload/
 2. Create new release: https://github.com/digitoimistodude/air-light/releases
 3. Update version to https://airwptheme.com
 4. All done!

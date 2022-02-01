@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:07:17
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:12:06
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2021-12-10 11:48:15
  *
  * @package air-light
  */
@@ -30,3 +30,5 @@ if ( file_exists( get_theme_file_path( '/inc/includes/taxonomy.php' ) ) ) {
 if ( file_exists( get_theme_file_path( '/inc/includes/post-type.php' ) ) ) {
   require get_theme_file_path( '/inc/includes/post-type.php' );
 }
+
+// Custom functions

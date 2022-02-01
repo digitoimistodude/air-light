@@ -5,10 +5,14 @@
 }
 
 @media (max-width: $width-grid-base + 40px) {
-  .wp-block-video.alignwide,
-  .wp-block-video.alignfull {
+  .wp-block-video.alignwide {
     width: calc(100% - calc(var(--padding-container-horizontal) * 2));
   }
+}
+
+.wp-block-video.alignwide {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .wp-block-video.alignfull {

@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
- * @Last Modified by: Niku Hietanen
- * @Last Modified time: 2021-05-19 08:53:57
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-01-20 16:41:43
  * @package air-light
  */
 
@@ -33,16 +33,16 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
   // Get block contents
   if ( ! $block_cache_enabled ) {
     \do_action( 'qm/debug', "Block {$block_slug} bypassed cache ({$cache_key})" );
-    $block_output = load_acf_block( $block_path, false, $block, $is_preview );
+    $block_output = load_acf_block( $block_path, false, $block, $is_preview, $post_id );
   } else {
-    $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block );
+    $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block, $is_preview, $post_id );
   }
 
   // Output block contents (this is safe unescaped)
   echo $block_output; // phpcs:ignore
 } // end render_acf_block
 
-function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block ) {
+function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block, $is_preview = false, $post_id = 0 ) {
   // Block can be cached, try to find it is already in cache
   $output = \wp_cache_get( $cache_key, 'theme' );
 
@@ -52,7 +52,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
   }
 
   // Block is not found in cache, load block content
-  $output = load_acf_block( $block_path, true, $block );
+  $output = load_acf_block( $block_path, true, $block, $is_preview, $post_id );
 
   // Save block to cache
   \wp_cache_set( $cache_key, $output, 'theme', HOUR_IN_SECONDS );
@@ -61,7 +61,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
   return $output;
 } // end load_acf_block_from_cache
 
-function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false ) {
+function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false, $post_id = 0 ) {
   $output_callback = $cache ? 'ob_gzhandler' : null;
 
   /**
@@ -97,22 +97,28 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
   $enable_cache = true; // Default value
 
   // This function shouldn't really be running if we don't have these, but check to be safe
-  if ( empty( THEME_SETTINGS ) || empty( THEME_SETTINGS['acf_blocks'] ) || empty( THEME_SETTINGS['acf_blocks'][ $block_slug ] ) ) {
-    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" );
+  if ( empty( THEME_SETTINGS ) || empty( THEME_SETTINGS['acf_blocks'] ) ) {
+    \do_action( 'qm/debug', 'Blocks couldnt be found in theme settings' );
+    return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, null );
+  }
 
+  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) );
+  if ( false === $block_key ) {
+    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" );
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
-  } else if ( empty( THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ) ) {
+  }
+
+  $block = THEME_SETTINGS['acf_blocks'][ $block_key ];
+
+  if ( ! isset( $block['prevent_cache'] ) ) {
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
-  } else {
-    // Check from block settings if we should prevent cache
-    $enable_cache = THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ? false : true;
   }
 
   // Check from block settings if we should prevent cache
-  $enable_cache = THEME_SETTINGS['acf_blocks'][ $block_slug ]['prevent_cache'] ? false : true;
+  $enable_cache = $block['prevent_cache'] ? false : true;
 
   return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
-}
+} // end acf_block_maybe_enable_cache
 
 /**
  * Show error block if user is allowed to see error blocks
@@ -132,7 +138,7 @@ function maybe_show_error_block( $message, $title = false ) {
   <div class="block block-error">
     <div class="container">
       <?php if ( ! empty( $title ) ) : ?>
-        <h2><?php echo esc_html( get_default_localization( 'Block missing required data' ) ); ?></h2>
+        <h2><?php echo esc_html( $title ); ?></h2>
       <?php endif; ?>
 
       <?php if ( ! empty( $message ) ) : ?>

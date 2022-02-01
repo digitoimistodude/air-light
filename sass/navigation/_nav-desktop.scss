@@ -1,6 +1,9 @@
 // Site navigation desktop layout
 // The main layout for the website navigation, for a desktop devices only.
 
+// Disable some rules that are not needed here
+// stylelint-disable no-descending-specificity
+
 // Settings
 $absolute-navigation: true;
 $use-dropdown-bubble: true;
@@ -16,10 +19,11 @@ $use-dropdown-toggle-animation: true;
   --gap-dropdown: 1rem;
   --gap-between-dropdown-toggle: 1.5rem;
   --gap-main-level-horizontal: 2.5rem;
+  --padding-main-level-horizontal: 0;
   --padding-main-level-vertical: .6rem;
   --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-link-vertical: .6rem;
-  --padding-sub-menu-horizontal: 1.5rem;
+  --padding-sub-menu-link-horizontal: 1.5rem;
   --width-sub-menu: 22rem;
 
   // Colors
@@ -100,8 +104,8 @@ $use-dropdown-toggle-animation: true;
     margin-left: 0;
     margin-right: 0;
     padding-bottom: var(--padding-main-level-vertical);
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: var(--padding-main-level-horizontal);
+    padding-right: var(--padding-main-level-horizontal);
     padding-top: var(--padding-main-level-vertical);
     white-space: nowrap;
   }
@@ -114,8 +118,8 @@ $use-dropdown-toggle-animation: true;
     font-weight: var(--font-weight-sub-menu);
     line-height: 1.5;
     padding-bottom: var(--padding-sub-menu-link-vertical);
-    padding-left: var(--padding-sub-menu-horizontal);
-    padding-right: var(--padding-sub-menu-horizontal);
+    padding-left: var(--padding-sub-menu-link-horizontal);
+    padding-right: var(--padding-sub-menu-link-horizontal);
     padding-top: var(--padding-sub-menu-link-vertical);
     white-space: normal;
   }
@@ -128,10 +132,6 @@ $use-dropdown-toggle-animation: true;
 
   // Let's make space for the nav-toggle/arrow
   .menu-item.menu-item-has-children a {
-    margin-right: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-    padding-top: 0;
     transition: padding .2s cubic-bezier(.19, 1, .22, 1), background-color .2s cubic-bezier(.19, 1, .22, 1);
   }
 
@@ -146,13 +146,20 @@ $use-dropdown-toggle-animation: true;
   }
 
   // Create animation illusion
-  // stylelint-disable-next-line no-descending-specificity
   .sub-menu.toggled-on a,
   .sub-menu.toggled-on .sub-menu a,
   .menu-item.menu-item-has-children.hover-intent .sub-menu a,
   .menu-item.menu-item-has-children:focus .sub-menu a {
     padding-bottom: var(--padding-sub-menu-link-vertical);
     padding-top: var(--padding-sub-menu-link-vertical);
+  }
+
+  .sub-menu.toggled-on,
+  .sub-menu.toggled-on .sub-menu,
+  .menu-item.menu-item-has-children.hover-intent .sub-menu,
+  .menu-item.menu-item-has-children:focus .sub-menu {
+    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-top: var(--padding-sub-menu-vertical);
   }
 
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
@@ -176,15 +183,34 @@ $use-dropdown-toggle-animation: true;
     margin-left: 0;
     margin-top: var(--gap-dropdown);
     opacity: 0;
-    padding-bottom: var(--padding-sub-menu-vertical);
+    padding-bottom: 0;
     padding-left: 0;
-    padding-top: var(--padding-sub-menu-vertical);
+    padding-right: 0;
+    padding-top: 0;
     position: absolute;
-    top: -9999px;
-    transition: padding .2s cubic-bezier(.19, 1, .22, 1);
+    top: 100%;
+    transition: all .2s cubic-bezier(.19, 1, .22, 1);
     visibility: hidden;
     width: var(--width-sub-menu);
     z-index: 9;
+
+    // If dropdown is out of viewport from the right, move it to the left
+    &.is-out-of-viewport {
+      left: unset;
+      right: 0;
+
+      // All dropdowns in level 2 and after
+      .sub-menu {
+        left: unset;
+        right: 100%;
+      }
+    }
+
+    // If main level is not out of viewport but if sub-menu under it is
+    .sub-menu.is-out-of-viewport {
+      left: unset;
+      right: 100%;
+    }
 
     // All dropdowns in level 2 and after
     .sub-menu {
@@ -205,13 +231,10 @@ $use-dropdown-toggle-animation: true;
   .menu-item-has-children > .sub-menu.toggled-on,
   .menu-item-has-children:focus > .sub-menu,
   .menu-item-has-children.hover-intent > .sub-menu {
-    // If you want to use "out"-animation, add this:
-    // .menu-item-has-children.hover-intent > .sub-menu {
     opacity: 1;
-    top: 100%;
     transform: translateY(0%);
     visibility: visible;
-    z-index: 1;
+    z-index: 12;
   }
 
   .menu-item-has-children .sub-menu.toggled-on .sub-menu,

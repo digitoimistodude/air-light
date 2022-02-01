@@ -1,3 +1,9 @@
+/**
+ * @Author: Roni Laukkarinen
+ * @Date:   2021-04-23 13:10:51
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-01-03 15:27:02
+ */
 // TODO: Refactor file
 /* eslint-disable default-case, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
 /*
@@ -12,6 +18,29 @@ https://github.com/WordPress/twentysixteen (GPL v.2)
 https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-arrow-nav (GPL v.2)
 */
 
+/*!
+ * Check if an element is out of the viewport
+ * (c) 2018 Chris Ferdinandi, MIT License, https://gomakethings.com
+ * @param  {Node}  elem The element to check
+ * @return {Object}     A set of booleans for each side of the element
+ * @source https://gomakethings.com/how-to-check-if-any-part-of-an-element-is-out-of-the-viewport-with-vanilla-js/
+ */
+var isOutOfViewport = function (elem) {
+  // Get element's bounding
+  var bounding = elem.getBoundingClientRect();
+
+  // Check if it's out of the viewport on each side
+  var out = {};
+  out.top = bounding.top < 0;
+  out.left = bounding.left < 0;
+  out.bottom = bounding.bottom > (window.innerHeight || document.documentElement.clientHeight);
+  out.right = bounding.right > (window.innerWidth || document.documentElement.clientWidth);
+  out.any = out.top || out.left || out.bottom || out.right;
+
+  return out;
+};
+
+// Navigation.js start
 (function ($) {
   // Responsive nav width
   var responsivenav = 960;
@@ -34,6 +63,23 @@ https://github.com/wpaccessibility/a11ythemepatterns/tree/master/menu-keyboard-a
   // const hoverIntentTimeout = 1000;
 
   menuItems.forEach((li) => {
+    // Find sub menus
+    var subMenusUnderMenuItem = li.querySelectorAll('.sub-menu');
+
+    // Loop through sub menus
+    subMenusUnderMenuItem.forEach((subMenu) => {
+      // First let's check if submenu exists
+      if (typeof subMenusUnderMenuItem !== 'undefined') {
+      // Check if the sub menu is out of viewport or not
+        var isOut = isOutOfViewport(subMenu);
+
+        // At least one side of the element is out of viewport
+        if (isOut.any) {
+          subMenu.classList.add('is-out-of-viewport');
+        }
+      }
+    });
+
     li.addEventListener('mouseover', function () {
       this.classList.add('hover-intent');
       this.parentNode.classList.add('hover-intent');

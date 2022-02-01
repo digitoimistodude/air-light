@@ -4,6 +4,7 @@
   margin-bottom: var(--margin-wp-block-image);
   margin-top: var(--margin-wp-block-image);
 
+  &.alignwide,
   &.alignfull {
     padding-left: 0;
     padding-right: 0;
@@ -43,13 +44,6 @@
   .aligncenter img {
     margin-left: auto;
     margin-right: auto;
-  }
-
-  @media (min-width: $width-grid-base + 40px) {
-    &.alignwide {
-      padding-left: 0;
-      padding-right: 0;
-    }
   }
 
   @media (max-width: $width-grid-base + 40px) {

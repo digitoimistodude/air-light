@@ -1,7 +1,0 @@
-/**
- * Convert hex color to RGB color format
- */
-
-@function hextorgb($hex) {
-  @return red($hex), green($hex), blue($hex);
-}

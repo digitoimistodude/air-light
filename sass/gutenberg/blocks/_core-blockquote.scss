@@ -4,6 +4,28 @@ blockquote + p > cite {
   margin-bottom: 4rem;
 }
 
+// General blockquote styles
+blockquote {
+  border: 0 none;
+  clear: both;
+  margin: 0;
+  padding-bottom: 3rem;
+  position: relative;
+
+  p {
+    color: var(--color-blockquote);
+    font-style: italic;
+    margin-bottom: 0;
+    overflow: visible;
+    position: relative;
+  }
+
+  @media (min-width: $container-ipad) {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
 .wp-block-quote {
   border-left: 2px solid var(--color-blockquote);
   line-height: var(--line-height-paragraphs-blog);

@@ -3,8 +3,8 @@
  * The template for displaying archive pages
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-17 10:17:20
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-01-11 09:01:58
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -15,26 +15,53 @@ namespace Air_Light;
 get_header(); ?>
 
 <main class="site-main">
-  <div class="container">
 
-    <?php get_template_part( 'template-parts/hero', get_post_type() );
-    if ( have_posts() ) : ?>
-      <header class="entry-header">
-        <?php
-          the_archive_title( '<h1 class="entry-title" id="content">', '</h1>' );
-          the_archive_description( '<div class="taxonomy-description">', '</div>' );
-        ?>
-      </header><!-- .entry-header -->
+  <?php get_template_part( 'template-parts/hero', get_post_type() ); ?>
 
-      <?php while ( have_posts() ) {
-        the_post();
-        get_template_part( 'template-parts/content', get_post_type() );
-      }
+  <section class="block block-blog has-light-bg">
+    <div class="container">
 
-      the_posts_pagination();
-    endif; ?>
+      <?php if ( have_posts() ) : ?>
 
-  </div><!-- .container -->
+        <header class="entry-header">
+          <?php
+            the_archive_title( '<h1 class="entry-title" id="content">', '</h1>' );
+            the_archive_description( '<div class="taxonomy-description">', '</div>' );
+          ?>
+        </header><!-- .entry-header -->
+
+        <?php while ( have_posts() ) :
+          the_post(); ?>
+          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+            <h2>
+              <a href="<?php echo esc_url( get_the_permalink() ); ?>">
+                <?php the_title(); ?>
+              </a>
+            </h2>
+
+            <p>
+              <time datetime="<?php the_time( 'c' ); ?>">
+                <?php echo get_the_date( get_option( 'date_format' ) ); ?>
+              </time>
+            </p>
+
+            <div class="content">
+              <?php
+                the_content();
+                entry_footer();
+              ?>
+            </div>
+
+          </article>
+        <?php endwhile; ?>
+
+        <?php the_posts_pagination(); ?>
+
+      <?php endif; ?>
+
+    </div>
+  </section>
 
 </main>
 
