@@ -10,9 +10,9 @@ Source: https://stocksnap.io/photo/nature-mountains-3T1GEXSD0R
 Contributors: Digitoimisto Dude Oy
 Tags: one-column, accessibility-ready, translation-ready
 
-Requires at least: 5.0
+Requires at least: 5.9
 Tested up to: 5.9.0
-Stable tag: 8.2.7
+Stable tag: 8.2.8
 License: MIT License
 License URI: https://opensource.org/licenses/MIT
 
