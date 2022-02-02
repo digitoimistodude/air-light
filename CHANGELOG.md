@@ -1,3 +1,7 @@
+### 8.3.0: 2022-02-02
+
+* This updates removes some fonts that should not be there, sorry about that
+
 ### 8.2.9: 2022-02-02
 
 * Add more weights for Inter font family, fix issue with font file capitalizations and rendering
