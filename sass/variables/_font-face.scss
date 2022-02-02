@@ -1,6 +1,8 @@
 // Self-hosted fonts
 // Remember to add these also to gutenberg/variables/_font-family.scss
 // with correct paths
-@include fontFace('Inter', '../../fonts/Inter-Regular', 400);
-@include fontFace('Inter', '../../fonts/Inter-Italic', 400, italic);
-@include fontFace('Inter', '../../fonts/Inter-Bold', 700);
+@include fontFace('Inter', '../../fonts/inter-400', 400);
+@include fontFace('Inter', '../../fonts/inter-400-italic', 400, italic);
+@include fontFace('Inter', '../../fonts/inter-500', 500);
+@include fontFace('Inter', '../../fonts/inter-600', 600);
+@include fontFace('Inter', '../../fonts/inter-700', 700);

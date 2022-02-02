@@ -1,7 +1,11 @@
+### 8.2.9: 2022-02-02
+
+* Add more weights for Inter font family, fix issue with font file capitalizations and rendering
+
 ### 8.2.8: 2022-02-02
 
 * Modified functions.php custom settings to work with Air setting groups plugin.
-* Drop CSS grid mixin as all major browsers support it and we no longer need fallbacks for Edge and Safari
+* Dropped CSS grid mixin as all major browsers support it and we no longer need fallbacks for Edge and Safari
 
 ### 8.2.7: 2022-01-26
 
