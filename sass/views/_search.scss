@@ -21,8 +21,8 @@
     padding-top: 0;
 
     @media (min-width: $container-ipad-landscape) {
-      // Change this to 2 if you use other post type results
-      @include grid(1);
+      // Make a CSS grid for multiple columns if you use other post type results
+      display: grid;
     }
   }
 

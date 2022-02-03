@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-07 13:55:38
+ * @Last Modified time: 2022-02-02 17:05:53
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '8.2.6' );
+define( 'AIR_LIGHT_VERSION', '8.3.0' );
 
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
@@ -49,12 +49,15 @@ add_action( 'after_setup_theme', function() {
     'logo'                    => '/svg/logo.svg',
 
     /**
-     * Custom setting group post ids when using Air Helper's custom setting
-     * feature and settings CPT. On multilingual sites using Polylang,
-     * translations are handled automatically.
+     * Custom setting group settings when using Air setting groups plugin.
+     * On multilingual sites using Polylang, translations are handled automatically.
      */
-    'custom_settings_post_ids' => [
-      // 'setting-group' => 0,
+    'custom_settings' => [
+      // 'your-custom-setting' => [
+      //   'id' => Your custom setting post id,
+      //   'title' => 'Your custom setting',
+      //   'block-editor' => true,
+      //  ],
     ],
 
     'social_media_accounts'  => [

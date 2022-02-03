@@ -6,8 +6,8 @@ Air-light (or simply *Air*) is designed to be a ultra minimal starting point for
 
 ## [Demo](https://airwptheme.com/demo) | [Documentation](https://github.com/digitoimistodude/air-light/wiki)
 
-* **CSS gzipped:** 13 KB *(81.2 original)*
-* **JS gzipped:** 7.8 KB *(26.5 KB original)*
+* **CSS gzipped:** 16.8 KB *(originally 124.4 KB)*
+* **JS gzipped:** 8.6 KB *(28.6 KB original)*
 * **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
 ![](https://i.imgur.com/PXX3Z1v.png)
@@ -396,7 +396,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 * PHP >= 7.4
 * Requires at least: WordPress 4.7.1
-* Tested up to WordPress 5.8.3
+* Tested up to WordPress 5.9.0
 
 ### Recommendations for development
 

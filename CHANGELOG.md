@@ -1,9 +1,37 @@
 ### Unreleased
+#### Changed
+* Always allow loading ACF block on preview
 
+### 8.3.0: 2022-02-02
+
+* This updates removes some fonts that should not be there, sorry about that
+
+### 8.2.9: 2022-02-02
+
+* Add more weights for Inter font family, fix issue with font file capitalizations and rendering
+
+### 8.2.8: 2022-02-02
+
+* Modified functions.php custom settings to work with Air setting groups plugin.
+* Dropped CSS grid mixin as all major browsers support it and we no longer need fallbacks for Edge and Safari
+
+### 8.2.7: 2022-01-26
+
+* Add new styles for page/post title
+* Remove page/post title input styles that are no longer in Gutenberg of 5.9
+* Fix title edit styles for Gutenberg in 5.9
+* Add separate locales for title related instruction text
+* Fix remove_gutenberg_inline_styles hook, add extra check, Fixes #144
+* Update deprecated filters and their parameters #141 (thanks @dylanelliott27!)
+* Update file sizes to README.md
 * Fix maybe_show_error_block function title not showing if manually set
 * Fix archive template single post item
 * Fix acf block cache check
+<<<<<<< HEAD
 * Added filter air_acf_block_cache_lifetime to adjust blocks cache lifetime
+=======
+* Bump tested up WordPress version to 5.9.0
+>>>>>>> 6671bef7e738c9e9a952c6af0ed1e414f3e796e9
 
 ### 8.2.6: 2022-01-07
 

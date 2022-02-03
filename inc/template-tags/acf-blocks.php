@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-01-21 07:31:26
+ * @Last Modified time: 2022-02-03 15:05:17
  * @package air-light
  */
 
@@ -65,14 +65,17 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
   $output_callback = $cache ? 'ob_gzhandler' : null;
 
   /**
-   * Check if it's allowed to show this block in this context
+   * Check if it's allowed to show this block in this context.
+   * Always allow in preview mode.
    *
    * This might happen when we build a reusable block in a page and
    * then add that reusable block to post
    */
-  $post_type = get_post_type();
-  if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) {
-    return '';
+  if ( ! $is_preview ) {
+    $post_type = get_post_type();
+    if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) {
+      return '';
+    }
   }
 
   // Validate that file actually exists
