@@ -8,8 +8,8 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-01-11 09:00:03
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-02-08 17:03:18
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/

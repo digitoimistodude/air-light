@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-09-02 10:43:53
+ * @Last Modified time: 2022-02-08 17:08:22
  *
  * @package air-light
  */
@@ -46,7 +46,8 @@ function get_default_localization_strings( $language = 'en' ) {
       'Search'                                       => __( 'Search', 'air-light' ),
       'Block missing required data'                  => __( 'Block missing required data', 'air-light' ),
       'This error is shown only for logged in users' => __( 'This error is shown only for logged in users', 'air-light' ),
-      'No results found for your search'                   => __( 'No results found for your search', 'air-light' ),
+      'No results found for your search'             => __( 'No results found for your search', 'air-light' ),
+      'Edit'                                         => __( 'Edit', 'air-light' ),
     ],
     'fi'  => [
       'Add a menu'                                   => 'Luo uusi valikko',
@@ -67,6 +68,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Block missing required data'                  => 'Lohkon pakollisia tietoja puuttuu',
       'This error is shown only for logged in users' => 'Tämä virhe näytetään vain kirjautuneille käyttäjille',
       'No results for your search'                   => 'Haullasi ei löytynyt tuloksia',
+      'Edit'                                         => 'Muokkaa',
     ],
   ];
 

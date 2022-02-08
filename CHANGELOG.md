@@ -1,6 +1,11 @@
 ### Unreleased
 
-#### Changed
+#### Major update
+
+* Support new native_lazyload_tag() from air-helper
+* Add edit link to page
+* Move edit link to its own template tag function
+* Clean up page.php
 * Always allow loading ACF block on preview
 * Add a filter to allow modidying ACF block cache keys
 * Deprecate default hero template part as it's never used (it's recommended to use a Gutenberg block for it)

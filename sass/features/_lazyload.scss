@@ -1,6 +1,8 @@
-// Styling lazy loading div
-// @link https://github.com/verlok/vanilla-lazyload#lazy-background-image
-div.lazy {
+// Styling lazy loading images
+// @link https://github.com/digitoimistodude/air-helper#image-lazyloading-1
+.has-lazyload > [loading="lazy"],
+div.lazy,
+div.full-image {
   background-position: center;
   background-size: cover;
   height: 100%;
@@ -9,6 +11,12 @@ div.lazy {
   top: 0;
   width: 100%;
   z-index: 0;
+}
+
+.has-lazyload > [loading="lazy"] {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 // General class for any lazy load container

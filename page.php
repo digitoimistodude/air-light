@@ -8,8 +8,8 @@
  * different template.
  *
  * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-01-11 09:02:12
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-02-08 17:03:18
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
@@ -22,20 +22,10 @@ the_post();
 get_header(); ?>
 
 <main class="site-main">
-
-  <section class="block block-page has-light-bg">
-    <div class="container">
-
-      <h1 id="content"><?php the_title(); ?></h1>
-      <?php the_content(); ?>
-
-      <?php if ( get_edit_post_link() ) {
-        edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
-      } ?>
-
-    </div><!-- .container -->
-  </section>
-
+  <?php
+    the_content();
+    air_edit_link();
+  ?>
 </main>
 
 <?php get_footer();

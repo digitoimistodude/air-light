@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-03-03 14:38:06
+ * @Last Modified time: 2022-02-08 17:22:02
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -22,7 +22,10 @@ $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS[
 get_header(); ?>
 
 <main class="site-main">
-  <?php the_content(); ?>
+  <?php
+    the_content();
+    air_edit_link();
+  ?>
 </main>
 
 <?php get_footer();

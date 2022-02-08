@@ -1,8 +1,16 @@
 <?php
 /**
- *  Show categories, tags, comment and edit links after post.
+ * Entry footer
+ *
+ * Show categories, tags, comment and edit links after post.
+ *
+ * @Author:		Roni Laukkarinen
+ * @Date:   		2021-04-22 08:06:03
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-02-08 17:20:50
  *
  * @package air-light
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */
 
 namespace Air_Light;
