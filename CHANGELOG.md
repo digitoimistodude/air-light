@@ -10,6 +10,7 @@
 * Add a filter to allow modidying ACF block cache keys
 * Deprecate default hero template part as it's never used (it's recommended to use a Gutenberg block for it)
 * Remove archive.php (it's rarely used, it's similar to index.php and when used, it's always customized anyway)
+* Change var(--form-gap) to support both grid-row-gap and grid-column-gap
 
 ### 8.3.0: 2022-02-02
 
