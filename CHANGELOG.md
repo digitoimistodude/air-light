@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Reset blockquote margins as it breaks the auto layout in some situations
+
 ### 8.3.1: 2022-02-08
 
 #### Major update
