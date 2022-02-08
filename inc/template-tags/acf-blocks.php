@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-02-03 15:05:17
+ * @Last Modified time: 2022-02-08 10:43:53
  * @package air-light
  */
 
@@ -29,6 +29,7 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
    */
   $content_hash = crc32( serialize( get_fields() ) );
   $cache_key    = "post_{$post_id}_{$block['id']}|{$content_hash}";
+  $cache_key    = apply_filters( 'air_acf_block_cache_key', $cache_key, $block_slug, $post_id );
 
   // Get block contents
   if ( ! $block_cache_enabled ) {

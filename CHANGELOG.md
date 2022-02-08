@@ -1,6 +1,7 @@
 ### Unreleased
 #### Changed
 * Always allow loading ACF block on preview
+* Add a filter to allow modidying ACF block cache keys
 
 ### 8.3.0: 2022-02-02
 
@@ -27,11 +28,8 @@
 * Fix maybe_show_error_block function title not showing if manually set
 * Fix archive template single post item
 * Fix acf block cache check
-<<<<<<< HEAD
 * Added filter air_acf_block_cache_lifetime to adjust blocks cache lifetime
-=======
 * Bump tested up WordPress version to 5.9.0
->>>>>>> 6671bef7e738c9e9a952c6af0ed1e414f3e796e9
 
 ### 8.2.6: 2022-01-07
 
