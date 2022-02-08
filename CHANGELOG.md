@@ -1,7 +1,9 @@
 ### Unreleased
+
 #### Changed
 * Always allow loading ACF block on preview
 * Add a filter to allow modidying ACF block cache keys
+* Remove archive.php (it's rarely used, it's similar to index.php and when used, it's always customized anyway)
 
 ### 8.3.0: 2022-02-02
 

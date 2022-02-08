@@ -8,7 +8,7 @@ div.validation_error {
   color: var(--color-white);
   font-size: var(--font-size-17);
   font-weight: var(--font-weight-bold);
-  margin-bottom: var(--form-gap);
+  margin-bottom: var(--form-row-gap);
   padding: 2rem;
 
   &:focus {
@@ -28,7 +28,7 @@ body *[aria-invalid="true"] {
 
 .validation_list {
   list-style: none;
-  margin-bottom: var(--form-gap);
+  margin-bottom: var(--form-row-gap);
   margin-left: 0;
   padding: 0;
 
@@ -66,7 +66,8 @@ body *[aria-invalid="true"] {
 // Gravity forms minimal default styles
 .gform_wrapper > form {
   display: grid;
-  grid-gap: var(--form-gap);
+  grid-column-gap: var(--form-column-gap);
+  grid-row-gap: var(--form-row-gap);
 }
 
 .gform-body {
@@ -99,7 +100,8 @@ body *[aria-invalid="true"] {
   // 2.5 built-in multi column support
   .gform_fields {
     display: grid;
-    grid-gap: var(--form-gap);
+    grid-column-gap: var(--form-column-gap);
+    grid-row-gap: var(--form-row-gap);
     // doiuse-disable
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(auto-fill, auto);
