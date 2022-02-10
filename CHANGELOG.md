@@ -1,6 +1,7 @@
-### [Unreleased]
+### 8.3.2: 2022-02-10
 
 * Reset blockquote margins as it breaks the auto layout in some situations
+* Deprecate hiddentext() mixin that is not used anymore
 
 ### 8.3.1: 2022-02-08
 

@@ -1,9 +1,0 @@
-// Mixins and other essentials for global theme development.
-@mixin hiddentext() {
-  display: block;
-  font-size: 0;
-  overflow: hidden;
-  text-align: start;
-  text-decoration: none;
-  text-indent: -9999px;
-}
