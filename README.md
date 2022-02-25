@@ -30,6 +30,9 @@ Air was renamed to air-light in version 3.7.8 (March 20th, 2018), because *air* 
 
 Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://wordpress.org/themes/air-light/) on June 4, 2018. But please note, all changes you do to the theme without generating your own or changing textdomain will be overridden in theme updates - so if you use this theme as a starting point, please follow instructions and/or replace the textdomain with your own.
 
+![accessibility](https://user-images.githubusercontent.com/1534150/155683656-aab335d3-8e11-4600-ade7-f7c332ade87d.gif)
+_Fully keyboard accessible navigation!_
+
 ## Table of contents
 
 1. [Usage](#usage)
