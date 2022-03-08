@@ -4,12 +4,10 @@
     "@ronilaukkarinen/stylelint-a11y",
     "@ronilaukkarinen/stylelint-value-no-unknown-custom-properties",
     "stylelint-declaration-strict-value",
-    "stylelint-scss",
     "stylelint-order"
   ],
   "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-recommended-scss"
+    "stylelint-config-standard-scss"
   ],
   "customSyntax": "postcss-scss",
   "rules": {
@@ -35,6 +33,10 @@
         "name": "media"
       }
     ],
+    "scss/at-mixin-argumentless-call-parentheses": null,
+    "scss/double-slash-comment-empty-line-before": null,
+    "scss/at-rule-conditional-no-parentheses": null,
+    "scss/dollar-variable-pattern": null,
     "order/properties-alphabetical-order": true,
     "a11y/no-outline-none": true,
     "a11y/selector-pseudo-class-focus": true,
@@ -56,7 +58,6 @@
     "max-empty-lines": 1,
     "unit-case": "lower",
     "selector-pseudo-class-case": "lower",
-    "value-keyword-case": "lower",
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-quotes": "always",
     "selector-combinator-space-after": "always",
@@ -121,6 +122,12 @@
     "selector-pseudo-element-colon-notation": "double",
     "shorthand-property-no-redundant-values": true,
     "declaration-block-single-line-max-declarations": 1,
+    "value-keyword-case": [
+      "lower",
+      {
+        "camelCaseSvgKeywords": true
+      }
+    ],
     "scale-unlimited/declaration-strict-value": [
       "/color$/",
       {

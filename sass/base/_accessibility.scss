@@ -6,6 +6,7 @@
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
+
   // doiuse-disable
   clip-path: inset(50%);
   height: 1px;
@@ -23,7 +24,6 @@
     margin: 5px;
 
     &:focus {
-      // stylelint-disable-next-line sh-waqar/declaration-use-variable
       color: currentColor;
     }
   }
@@ -57,7 +57,6 @@
 
 // Visually distinct focus color on keyboard
 [data-whatinput="keyboard"] {
-
   // Make sure every focusable element has opacity 100%
   a:focus,
   input:focus,

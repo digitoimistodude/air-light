@@ -1,3 +1,4 @@
+/* eslint-disable max-len, no-underscore-dangle, no-param-reassign */
 /**
  * Air theme JavaScript.
  */
@@ -6,6 +7,7 @@
 import MoveTo from 'moveto';
 import LazyLoad from 'vanilla-lazyload';
 import reframe from 'reframe.js';
+// eslint-disable-next-line no-unused-vars
 import getLocalization from './modules/localization';
 import { styleExternalLinks, getChildAltText } from './modules/external-link';
 import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
@@ -16,7 +18,7 @@ import 'what-input';
 // import slick from 'slick-carousel';
 
 // Navigation
-import './modules/navigation.js';
+import './modules/navigation';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
@@ -38,31 +40,36 @@ setFigureWidths(figures);
 // Refer to documentation:
 // 1) https://github.com/digitoimistodude/air-helper#image-lazyloading-1
 // 2) https://github.com/verlok/vanilla-lazyload#-getting-started---html
-var air_light_LazyLoad = new LazyLoad({
+// eslint-disable-next-line camelcase
+const air_light_LazyLoad = new LazyLoad({
+  // eslint-disable-next-line no-unused-vars
   callback_loaded: (el) => setLazyLoadedFigureWidth, // Set lazyloaded figure width so captions in aligned images will be same width as image
 });
 
 // After your content has changed...
+// eslint-disable-next-line camelcase
 air_light_LazyLoad.update();
 
 // jQuery start
+// eslint-disable-next-line func-names
 (function ($) {
   // Accessibility: Ensure back to top is right color on right background
   // Note: Needs .has-light-bg or .has-dark-bg class on all blocks
-  var stickyOffset = $('.back-to-top').offset();
-  var $contentDivs = $('.block, .site-footer');
-  $(document).scroll(function () {
+  const stickyOffset = $('.back-to-top').offset();
+  const $contentDivs = $('.block, .site-footer');
+  $(document).scroll(() => {
+    // eslint-disable-next-line no-unused-vars, func-names, consistent-return
     $contentDivs.each(function (k) {
-      var _thisOffset = $(this).offset();
-      var _actPosition = _thisOffset.top - $(window).scrollTop();
+      const _thisOffset = $(this).offset();
+      const _actPosition = _thisOffset.top - $(window).scrollTop();
       if (
-        _actPosition < stickyOffset.top &&
-        _actPosition + $(this).height() > 0
+        _actPosition < stickyOffset.top
+        && _actPosition + $(this).height() > 0
       ) {
         $('.back-to-top')
           .removeClass('has-light-bg has-dark-bg')
           .addClass(
-            $(this).hasClass('has-light-bg') ? 'has-light-bg' : 'has-dark-bg'
+            $(this).hasClass('has-light-bg') ? 'has-light-bg' : 'has-dark-bg',
           );
         return false;
       }
@@ -71,81 +78,86 @@ air_light_LazyLoad.update();
 
   // Detect Visible section on viewport from bottom
   // @link https://codepen.io/BoyWithSilverWings/pen/MJgQqR
+  // eslint-disable-next-line func-names
   $.fn.isInViewport = function () {
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
+    const elementTop = $(this).offset().top;
+    const elementBottom = elementTop + $(this).outerHeight();
 
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
+    const viewportTop = $(window).scrollTop();
+    const viewportBottom = viewportTop + $(window).height();
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
   };
 
   // Accessibility: Ensure back to top is right color on right background
-  $(window).on('resize scroll', function () {
+  $(window).on('resize scroll', () => {
+    // eslint-disable-next-line func-names
     $('.block, .site-footer').each(function () {
       if ($(this).isInViewport()) {
         $('.back-to-top')
           .removeClass('has-light-bg has-dark-bg')
           .addClass(
-            $(this).hasClass('has-light-bg') ? 'has-light-bg' : 'has-dark-bg'
+            $(this).hasClass('has-light-bg') ? 'has-light-bg' : 'has-dark-bg',
           );
       }
     });
   });
 
   // Hide or show the 'back to top' link
+  // eslint-disable-next-line func-names
   $(window).scroll(function () {
     // Back to top
-    var offset = 300; // Browser window scroll (in pixels) after which the 'back to top' link is shown
-    var offset_opacity = 1200; // Browser window scroll (in pixels) after which the link opacity is reduced
-    var scroll_top_duration = 700; // Duration of the top scrolling animation (in ms)
-    var link_class = '.back-to-top';
+    const offset = 300; // Browser window scroll (in pixels) after which the 'back to top' link is shown
+    const offsetOpacity = 1200; // Browser window scroll (in pixels) after which the link opacity is reduced
+    const linkClass = '.back-to-top';
 
     if ($(this).scrollTop() > offset) {
-      $(link_class).addClass('is-visible');
+      $(linkClass).addClass('is-visible');
     } else {
-      $(link_class).removeClass('is-visible');
+      $(linkClass).removeClass('is-visible');
     }
 
-    if ($(this).scrollTop() > offset_opacity) {
-      $(link_class).addClass('fade-out');
+    if ($(this).scrollTop() > offsetOpacity) {
+      $(linkClass).addClass('fade-out');
     } else {
-      $(link_class).removeClass('fade-out');
+      $(linkClass).removeClass('fade-out');
     }
   });
 
   // Document ready start
-  $(function () {
+  $(() => {
     // Your JavaScript here
   });
-})(jQuery);
+}(jQuery));
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const easeFunctions = {
-    easeInQuad: function (t, b, c, d) {
+    easeInQuad(t, b, c, d) {
       t /= d;
       return c * t * t + b;
     },
-    easeOutQuad: function (t, b, c, d) {
+    easeOutQuad(t, b, c, d) {
       t /= d;
       return -c * t * (t - 2) + b;
-    }
-  };
-  const moveTo = new MoveTo({
-      ease: 'easeInQuad'
     },
-    easeFunctions
+  };
+  const moveTo = new MoveTo(
+    {
+      ease: 'easeInQuad',
+    },
+    easeFunctions,
   );
   const triggers = document.getElementsByClassName('js-trigger');
-  for (var i = 0; i < triggers.length; i++) {
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < triggers.length; i++) {
     moveTo.registerTrigger(triggers[i]);
   }
 });
 
 // Add aria-labels to links without text or aria-labels and contain image with alt text
 const links = [...document.querySelectorAll('a')];
-const linksWithImgChildren = links.forEach(link => {
+// eslint-disable-next-line no-unused-vars
+const linksWithImgChildren = links.forEach((link) => {
   // If link already has text content or an aria label no need to add aria-label
   if (link.textContent.trim() !== '' || link.ariaLabel) {
     return;
@@ -156,4 +168,3 @@ const linksWithImgChildren = links.forEach(link => {
     link.ariaLabel = ariaLabel;
   }
 });
-

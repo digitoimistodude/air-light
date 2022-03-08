@@ -1,3 +1,16 @@
+### 8.3.3: 2022-03-08
+
+* Upgrade to [devpackages 2.4.2](https://github.com/digitoimistodude/devpackages/releases/tag/2.4.2) (details below)
+* Upgrade stylelint to 14.5.3
+* Update .stylelintrc rules as per the [official recommendations](https://github.com/stylelint/stylelint-config-recommended/issues/157#issuecomment-1056967465)
+* Use kebab-kase in fontface mixin from now on
+* Bump tested up WordPress version to 5.9.1
+* Upgrade eslint to 8.10.0
+* Upgrade eslint-config-airbnb to 19.0.4
+* Remove deprecated babel-eslint and use @babel/eslint-parser instead
+* Revove outdated and unmaintained gulp-eslint and use gulp-eslint-new instead
+* Allow js/src/front-end.js to be linted, fix file for JS warnings
+
 ### 8.3.2: 2022-02-10
 
 * Reset blockquote margins as it breaks the auto layout in some situations

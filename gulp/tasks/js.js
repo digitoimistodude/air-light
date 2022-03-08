@@ -14,7 +14,7 @@ const {
 const webpackConfigProduction = require('../webpack.config.prod.js');
 const webpackConfigDevelopment = require('../webpack.config.dev.js');
 const named = require('vinyl-named');
-const eslint = require('gulp-eslint');
+const eslint = require('gulp-eslint-new');
 
 // Task
 function js(done) {
