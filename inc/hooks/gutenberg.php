@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-26 16:41:27
+ * @Last Modified time: 2022-03-16 15:35:47
  *
  * @package air-light
  */
@@ -134,8 +134,8 @@ function block_editor_title_input_styles() {
   }
 
   .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
-    background-color: #23282e;
-    border-bottom: 1px solid #23282e;
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #1e1e1e;
     color: #fff;
     position: relative;
     z-index: 3;

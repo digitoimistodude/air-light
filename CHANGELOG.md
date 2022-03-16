@@ -1,3 +1,7 @@
+### 8.3.4: 2022-03-16
+
+* Make edit-post-visual-editor__post-title-wrapper background to match WordPress brand color
+
 ### 8.3.3: 2022-03-08
 
 * Upgrade to [devpackages 2.4.2](https://github.com/digitoimistodude/devpackages/releases/tag/2.4.2) (details below)
