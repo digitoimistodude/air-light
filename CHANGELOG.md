@@ -1,6 +1,7 @@
 ### 8.3.4: 2022-03-16
 
 * Make edit-post-visual-editor__post-title-wrapper background to match WordPress brand color
+* Bump tested up WordPress version to 5.9.2
 
 ### 8.3.3: 2022-03-08
 
