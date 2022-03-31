@@ -155,8 +155,12 @@
 .is-root-container > .wp-block {
   font-family: var(--font-paragraph);
 
-  // Let's use maximum article width on article content
-  max-width: $width-max-article;
+  // Font smoothing
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
 
   // Full width block
   &[data-align="full"] {
@@ -209,6 +213,23 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   max-width: $width-max-article;
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
+}
+
+// Enable fonts in articles and Gutenberg editor in article view
+.is-root-container > .wp-block.block-editor-rich-text__editable,
+.is-root-container > .block-editor-rich-text__editable,
+.is-root-container .wp-block.wp-block-quote,
+.is-root-container .wp-block[data-type^="core"],
+.is-root-container [contenteditable] p {
+  font-family: var(--font-paragraph);
+
+  // Font smoothing
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  max-width: $width-max-article;
+
   // stylelint-disable-next-line value-keyword-case
   text-rendering: geometricPrecision;
 }

@@ -1,6 +1,8 @@
-### [Unreleased]
+### 8.3.6: 2022-03-31
 
 * Update browser-sync to 2.27.9 (devpackages 2.4.3)
+* Fix main title width in article editor
+* Add fonts and font-smoothing in article view of the Gutenberg editor
 
 ### 8.3.5: 2022-03-25
 
