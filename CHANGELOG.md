@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Update browser-sync to 2.27.9 (devpackages 2.4.3)
+
 ### 8.3.5: 2022-03-25
 
 * Fix: Margin reset breaks article blocks in editor, limit it for ACF blocks only
