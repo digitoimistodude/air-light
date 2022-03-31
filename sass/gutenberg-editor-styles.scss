@@ -203,3 +203,12 @@
   margin-left: unset;
   margin-right: unset;
 }
+
+// Article view main title in Gutenberg editor
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .editor-post-title {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  max-width: $width-max-article;
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
+}
