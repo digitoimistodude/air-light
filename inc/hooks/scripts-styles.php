@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-03 15:12:02
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-04-08 13:04:00
  *
  * @package air-light
  */
@@ -61,11 +61,7 @@ function enqueue_theme_scripts() {
   ] );
 
   // Add domains/hosts to disable external link indicators
-  wp_localize_script( 'scripts', 'air_light_externalLinkDomains', [
-      'localhost:3000',
-      'airdev.test',
-      'airwptheme.com',
-  ] );
+  wp_localize_script( 'scripts', 'air_light_externalLinkDomains', THEME_SETTINGS['external_link_domains_exclude'] );
 } // end air_light_scripts
 
 /**
