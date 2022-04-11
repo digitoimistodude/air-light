@@ -8,6 +8,8 @@ const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass')( require('sass') );
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
+const calcFunction = require('postcss-calc');
+const colormin = require('postcss-colormin');
 const config = require('../config.js');
 
 function devstyles() {
@@ -23,7 +25,7 @@ function devstyles() {
     .pipe(sass.sync(config.styles.opts.development))
 
     // Run PostCSS plugins
-    .pipe(postcss([autoprefixer()]))
+    .pipe(postcss([autoprefixer(), calcFunction(), colormin()]))
 
     // Write source maps
     .pipe(sourcemaps.write())

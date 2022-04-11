@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const calcFunction = require('postcss-calc');
+const colormin = require('postcss-colormin');
 const size = require('gulp-size');
 const config = require('../config.js');
 
@@ -21,7 +22,7 @@ function prodstyles() {
     .pipe(sass.sync(config.styles.opts.production))
 
     // Run PostCSS plugins
-    .pipe(postcss([autoprefixer(), cssnano(config.cssnano), calcFunction()]))
+    .pipe(postcss([autoprefixer(), calcFunction(), colormin(), cssnano(config.cssnano)]))
 
     // Output production CSS size
     .pipe(size(config.size))
