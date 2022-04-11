@@ -71,18 +71,6 @@
     font-size: unset;
   }
 
-  // We have to force buttons and some form styles for Gutenberg editor
-  .block {
-    .button,
-    input[type="submit"] {
-      @include button();
-    }
-
-    .button.button-ghost {
-      @include button-style-ghost();
-    }
-  }
-
   .block-form {
     @import 'layout/forms';
   }
