@@ -1,7 +1,14 @@
-### [Unreleased]
+### 8.3.7: 2022-04-11
 
 * Remove leftover code from Gutenberg editor
-* Move externalLinkDomains list to theme settings for consistency
+* Move externalLinkDomains list to theme settings for consistency (devpackages 2.4.4)
+* Add cssnano and related postcss-plugins, deprecate gulp-clean-css that is in maintenance-mode (devpackages 2.4.4)
+* Improve watch task to be more performant (devpackages 2.4.4)
+* Add gulp-size and verbose information to console (devpackages 2.4.4)
+* Add instructions on how to contribute (devpackages 2.4.4)
+* Update stylelint-config-standard, stylelint-config-recommended-css, caniuse-lite and js related packages (devpackages 2.4.4)
+* Get phpcs task from devpackages 2.4.4
+* Bump tested up WordPress version to 5.9.3
 
 ### 8.3.6: 2022-03-31
 
