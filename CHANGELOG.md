@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Remove leftover code from Gutenberg editor
+* Move externalLinkDomains list to theme settings for consistency
 
 ### 8.3.6: 2022-03-31
 

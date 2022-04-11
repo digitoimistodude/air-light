@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-03-31 16:45:41
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-04-08 13:05:16
  *
  * @package air-light
  */
@@ -65,6 +65,16 @@ add_action( 'after_setup_theme', function() {
       //   'title' => 'Twitter',
       //   'url'   => 'https://twitter.com/digitoimistodude',
       // ],
+    ],
+
+    /**
+     * All links are cheked with JS, if those direct to external site and if,
+     * indicator of that is included. Exclude domains from that check in this array.
+     */
+    'external_link_domains_exclude' => [
+      'localhost:3000',
+      'airdev.test',
+      'airwptheme.com',
     ],
 
     /**
