@@ -28,7 +28,7 @@ function prodstyles() {
     // Compile first time to CSS to be able to parse CSS files
     .pipe(sass(config.styles.opts.development))
 
-    // Production settings
+    // Compile SCSS synchronously
     .pipe(sass.sync(config.styles.opts.production))
 
     // Run PostCSS plugins

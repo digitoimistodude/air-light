@@ -31,7 +31,7 @@ function devstyles() {
     // Init source maps
     .pipe(sourcemaps.init())
 
-    // Compile SCSS asynchronously
+    // Compile SCSS synchronously
     .pipe(sass.sync(config.styles.opts.development))
 
     // Run PostCSS plugins

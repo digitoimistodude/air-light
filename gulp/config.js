@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2021-04-22 08:06:03
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-23 09:52:07
- */
 // Set theme dir
 const themeDir = './';
 
@@ -32,7 +26,11 @@ module.exports = {
   },
   browsersync: {
     // Important! If src is wrong, styles will not inject to the browser
-    src: [themeDir + 'css/**/*', themeDir + 'js/dev/**/*'],
+    src: [
+      themeDir + '**/*.php',
+      themeDir + 'css/**/*',
+      themeDir + 'js/dev/**/*'
+    ],
     opts: {
       logLevel: 'debug',
       injectChanges: true,
@@ -49,7 +47,7 @@ module.exports = {
   },
   styles: {
     gutenberg: themeDir + 'sass/base/gutenberg.scss',
-    src: themeDir + 'sass/*.scss',
+    src: themeDir + 'sass/global.scss',
     development: themeDir + 'css/dev/',
     production: themeDir + 'css/prod/',
     watch: {
