@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add proxyUrl from devpackages 2.4.5
+
 ### 8.3.7: 2022-04-11
 
 * Remove leftover code from Gutenberg editor
