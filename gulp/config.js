@@ -47,8 +47,7 @@ module.exports = {
     },
   },
   styles: {
-    gutenberg: themeDir + 'sass/base/gutenberg.scss',
-    src: themeDir + 'sass/global.scss',
+    src: themeDir + 'sass/*.scss',
     development: themeDir + 'css/dev/',
     production: themeDir + 'css/prod/',
     watch: {
