@@ -1,4 +1,4 @@
-### [Unreleased]
+### 8.3.8: 2022-04-29
 
 * Fix variable name in link formatting (--color-link-text-hover)
 * Add proxyUrl (devpackages 2.4.5)
