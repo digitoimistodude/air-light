@@ -1,5 +1,6 @@
 ### [Unreleased]
 
+* Fix variable name in link formatting (--color-link-text-hover)
 * Add proxyUrl (devpackages 2.4.5)
 * Fix config.styles.src that causes gutenberg styles not to compile (devpackages 2.4.6)
 
