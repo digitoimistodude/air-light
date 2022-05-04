@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Smaller external link icon
+* Fix overflow in stacked blocks
 
 ### 8.3.8: 2022-04-29
 
