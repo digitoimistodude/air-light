@@ -17,6 +17,7 @@
 // This class is useful when we have multiple blocks stacked with same background-color
 // stylelint-disable-next-line selector-max-class, selector-max-specificity, no-descending-specificity
 .block.has-unified-padding-if-stacked + .block.has-unified-padding-if-stacked .container {
+  overflow: visible;
   padding-top: 0;
 }
 
