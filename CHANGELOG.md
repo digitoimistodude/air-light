@@ -1,3 +1,9 @@
+### 8.4.1: 2022-05-12
+
+* Fix paddings on editor
+* Remove deprecated text columns block
+* Remove default list-type from typography scss and use core-list instead
+
 ### 8.4.0: 2022-05-12
 
 * Fix cover block default text color
