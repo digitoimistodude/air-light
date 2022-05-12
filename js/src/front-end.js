@@ -14,7 +14,7 @@ import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-h
 import 'what-input';
 
 // Features
-// import './modules/sticky-nav.js'
+// import './modules/sticky-nav';
 // import slick from 'slick-carousel';
 
 // Navigation

@@ -5,6 +5,7 @@
 * Fix core-list not working properly on Gutenberg editor preview
 * Simplify core-list block
 * Fix navigation dropdown menus opening inside viewport after resizing window
+* Scroll to top when triggering mobile navigation to ensure no gaps are between header and navigation (thanks @Tumppex!)
 
 ### 8.3.8: 2022-04-29
 

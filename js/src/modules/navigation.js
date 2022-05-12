@@ -2,10 +2,10 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-04-23 13:10:51
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-12 15:01:23
+ * @Last Modified time: 2022-05-12 15:10:04
  */
 // TODO: Refactor file
-/* eslint-disable default-case, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
+/* eslint-disable default-case, camelcase, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
 /*
 An accessible menu for WordPress
 
@@ -106,7 +106,6 @@ var isOutOfViewport = function (elem) {
         if (typeof subMenusUnderMenuItem !== 'undefined') {
           // Check if the sub menu is out of viewport or not
           var isOut = isOutOfViewport(subMenu);
-          console.log(isOut);
 
           // At least one side of the element is out of viewport
           if (isOut.right) {
@@ -395,6 +394,11 @@ var isOutOfViewport = function (elem) {
             ? 'true'
             : 'false',
         );
+
+      // Scroll to top when triggering mobile navigation
+      // to ensure no gaps are between header and navigation
+      // Please note, if you use sticky-nav, comment out the next line
+      window.scrollTo(0, 0);
       // jscs:enable
     });
 
