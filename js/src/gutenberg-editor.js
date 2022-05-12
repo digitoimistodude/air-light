@@ -1,5 +1,10 @@
+/**
+ * @Author: Roni Laukkarinen
+ * @Date:   2022-02-11 15:38:14
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-05-12 17:49:01
+ */
 /* eslint-disable camelcase, prefer-arrow-callback, no-unused-vars, no-undef, vars-on-top, no-var, func-names, max-len, import/no-unresolved */
-import LazyLoad from 'vanilla-lazyload';
 import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
 
 // Declare the block you'd like to style.

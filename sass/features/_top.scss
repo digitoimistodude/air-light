@@ -1,76 +1,33 @@
 // The one and only anchor link that brings user back to top
-// when hitting the rock bottom.
-.site-footer .top {
-  background-color: transparent;
+.top {
+  background-color: var(--color-background-top);
+  border-radius: 2px;
+  bottom: var(--padding-container-horizontal);
+  color: var(--color-black);
+  cursor: pointer;
+  font-size: var(--font-size-16);
+  height: 3rem;
+  line-height: 30px;
+  opacity: 0;
+  position: fixed;
+  right: var(--padding-container-horizontal);
+  text-align: center;
+  text-decoration: none;
+  transition: 500ms opacity;
+  visibility: hidden;
+  width: 3rem;
+  z-index: 1;
 
-  // Makes it 50x50
-  padding: 16px;
-
-  svg {
-    align-items: center;
-    display: flex;
-    fill: var(--color-top-arrow-dark);
-    height: 18px;
-    justify-content: center;
-    margin: 0;
-    opacity: .8;
-    transition: all .3s ease;
-    width: 18px;
-
-    @media (max-width: $container-mobile) {
-      height: 15px;
-      width: 15px;
-    }
+  &:hover {
+    background-color: var(--color-background-top-hover);
   }
 
-  &:hover,
-  &:focus,
-  &:active {
-    opacity: 1;
-
-    svg {
-      transform: translateY(-.5rem);
-    }
+  &:focus {
+    background-color: var(--color-background-top);
   }
 }
 
-.site-footer .back-to-top {
-  align-items: center;
-  bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  opacity: 0;
-  position: fixed;
-  right: 1rem;
-  text-decoration: none;
-  transition: opacity $transition-duration 0s, visibility 0s $transition-duration;
-  z-index: 1;
-
-  // Accessibility: Change color based on background color the element is on
-  &.has-light-bg svg {
-    fill: var(--color-top-arrow-dark);
-  }
-
-  &.has-dark-bg svg {
-    fill: var(--color-top-arrow-light);
-  }
-
-  &.is-visible,
-  &.fade-out {
-    transition: opacity $transition-duration 0s, visibility 0s 0s;
-  }
-
-  &.is-visible { // The button becomes visible
-    opacity: 1;
-  }
-
-  &.fade-out { // If the user keeps scrolling down, the button is out of focus and becomes less visible
-    opacity: 1;
-
-    &:focus,
-    &:hover {
-      opacity: 1;
-    }
-  }
+.top.is-visible {
+  opacity: 1;
+  visibility: visible;
 }

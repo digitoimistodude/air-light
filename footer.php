@@ -7,7 +7,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:33:49
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-17 13:36:44
+ * @Last Modified time: 2022-05-12 18:00:38
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @package air-light
@@ -39,13 +39,19 @@ namespace Air_Light;
   </div>
   <!-- ...up until here -->
 
-  <p class="back-to-top"><a href="#page" class="js-trigger top no-text-link no-external-link-indicator" data-mt-duration="300"><span class="screen-reader-text"><?php echo esc_html( get_default_localization( 'Back to top' ) ); ?></span><?php include get_theme_file_path( '/svg/chevron-up.svg' ); ?></a></p>
-
 </footer><!-- #colophon -->
 
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
+<a
+  href="#page"
+  id="top"
+  class="top no-external-link-indicator"
+  aria-title="<?php echo esc_html( get_default_localization( 'Back to top' ) ); ?>"
+>&uarr;</a>
+
 </body>
 
 </html>

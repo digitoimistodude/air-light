@@ -9,6 +9,7 @@ import reframe from 'reframe.js';
 import getLocalization from './modules/localization';
 import { styleExternalLinks, getChildAltText } from './modules/external-link';
 import initAnchors from './modules/anchors';
+import backToTop from './modules/top';
 import 'what-input';
 import './modules/navigation';
 // import './modules/sticky-nav';
@@ -25,6 +26,7 @@ styleExternalLinks();
 
 document.addEventListener('DOMContentLoaded', () => {
   initAnchors();
+  backToTop();
 });
 
 // Add aria-labels to links without text or aria-labels and contain image with alt text

@@ -2,6 +2,8 @@
 
 * Add anchors as JS module
 * Deprecate vanilla-lazyload and support for older JS-based lazy loading methods
+* Drop jQuery
+* Rewrite accessible back to top functionality and styles
 
 ### 8.4.1: 2022-05-12
 

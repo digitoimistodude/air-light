@@ -3,11 +3,12 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-05-07 12:20:13
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-07 12:22:07
+ * @Last Modified time: 2022-05-12 17:32:43
  */
 import MoveTo from 'moveto';
 
 const initAnchors = () => {
+  // General anchors used in links with class "js-trigger"
   const easeFunctions = {
     easeInQuad(t, b, c, d) {
       t /= d;
