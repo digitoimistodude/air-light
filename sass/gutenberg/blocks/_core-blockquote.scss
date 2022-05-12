@@ -13,7 +13,8 @@ blockquote {
 
   p {
     color: var(--color-blockquote);
-    font-style: italic;
+    font-style: normal;
+    font-weight: var(--font-weight-semibold);
     margin-bottom: 0;
     overflow: visible;
     position: relative;

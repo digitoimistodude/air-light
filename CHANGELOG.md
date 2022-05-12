@@ -8,6 +8,8 @@
 * Smaller external link icon
 * Remove deprecated core-gallery styles, use Gutenberg core styles instead
 * Scroll to top when triggering mobile navigation to ensure no gaps are between header and navigation (thanks @Tumppex!)
+* Fix pullquote blockquote alignment
+* Use var(--color-blockquote) color variable in pull quotes
 
 ### 8.3.8: 2022-04-29
 

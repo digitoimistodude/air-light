@@ -1,5 +1,15 @@
 // Core/pullquote block
 .wp-block-pullquote {
+  border-color: var(--color-blockquote);
+  border-width: 3px;
+  display: grid;
+
+  [aria-label="Pullquote citation text"],
+  cite {
+    display: block;
+    margin-top: 3rem;
+  }
+
   @media (max-width: $width-grid-base + 40px) {
     width: calc(100% - calc(var(--padding-container-horizontal) * 2));
   }
@@ -9,6 +19,10 @@
 .wp-block-pullquote.alignfull {
   padding-left: 0;
   padding-right: 0;
+
+  blockquote {
+    justify-self: center;
+  }
 
   @media (max-width: $width-grid-base + 40px) {
     margin-left: var(--padding-container-horizontal);
