@@ -1,51 +1,22 @@
 // stylelint-disable no-descending-specificity
 // Default list block
-.wp-block-list,
-.wp-block-categories-list,
-ul.is-style-default,
-ol.is-style-default,
-ol:not([class]),
-ul:not([class]) {
-  list-style: none;
-  padding-left: 0;
+ul,
+ol {
+  list-style-position: outside;
   width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
-
-  li {
-    display: table-row;
-    padding: 0;
-  }
-
-  li::before {
-    display: table-cell;
-  }
-
-  li::before,
-  li::marker {
-    color: var(--color-link-text);
-  }
 }
 
-// Custom list styles to auto-indent multi-line list blocks because
-// list-style-position: inside; produces extra padding between ::marker and text (a browser bug?)
-ul.is-style-default,
-ul:not([class]) {
-  li::before {
-    content: '\2022';
-    padding-right: .8rem;
-  }
+ul {
+  list-style-type: '\2022  ';
+  padding-left: 1em;
 }
 
-// Custom list to auto-indent multi-line ordered lists
-ol.is-style-default,
-ol:not([class]) {
-  counter-reset: ol;
+ol {
+  padding-left: 1.25em;
+}
 
-  li {
-    counter-increment: ol;
-  }
-
-  li::before {
-    content: counter(ol) '.';
-    padding-right: .3rem;
-  }
+// Colorized markers
+li::marker {
+  color: var(--color-link-text);
+  font-size: var(--font-size-16);
 }
