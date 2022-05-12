@@ -3,6 +3,7 @@
 * Fix paddings on editor
 * Remove deprecated text columns block
 * Remove default list-type from typography scss and use core-list instead
+* Fix responsive lists on gutenberg editor
 
 ### 8.4.0: 2022-05-12
 
