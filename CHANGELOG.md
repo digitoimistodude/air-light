@@ -1,10 +1,12 @@
 ### [Unreleased]
 
+* Fix cover block default text color
 * Fix overflow in stacked blocks
 * Fix core-list not working properly on Gutenberg editor preview
 * Fix navigation dropdown menus opening inside viewport after resizing window
 * Simplify core-list block
 * Smaller external link icon
+* Remove deprecated core-gallery styles, use Gutenberg core styles instead
 * Scroll to top when triggering mobile navigation to ensure no gaps are between header and navigation (thanks @Tumppex!)
 
 ### 8.3.8: 2022-04-29
