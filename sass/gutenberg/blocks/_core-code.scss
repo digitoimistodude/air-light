@@ -1,5 +1,5 @@
-// Preformatted text.
-pre {
+// Code block
+.wp-block-code {
   background-color: var(--color-background-code-block);
   border: 1px solid var(--color-background-code-block);
   border-radius: 4px;
@@ -11,23 +11,17 @@ pre {
   margin-bottom: var(--margin-between-text-elements);
   margin-top: var(--margin-between-text-elements);
   overflow: auto;
-  padding: 15px 16px 14px;
+  padding: var(--padding-container-horizontal);
   position: relative;
   white-space: pre;
   word-wrap: break-word;
 
-  code {
+  > code {
     background-color: transparent;
+    border: 0;
     border-radius: 4px;
     color: var(--color-code-text);
-  }
-}
-
-// Core/code block
-.wp-block-code {
-  pre {
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
+    padding: 0;
   }
 
   @media (max-width: $width-grid-base + 40px) {
