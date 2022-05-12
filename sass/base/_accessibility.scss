@@ -82,10 +82,6 @@
 
 // Add icon to external links
 a.is-external-link {
-  align-items: center;
-  display: inline-flex;
-  justify-content: space-between;
-
   &::after {
     background-image: url('../../svg/external-link.svg');
     background-position: right center;

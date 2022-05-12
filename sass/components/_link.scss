@@ -2,10 +2,6 @@
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
 @mixin link() {
   color: var(--color-link-text);
-
-  // Override possible flex styles to enable link wrapping
-  // stylelint-disable-next-line declaration-no-important
-  display: inline !important;
   // Create your own default content link styles here
   // for pages and articles
   text-decoration: underline;
@@ -13,7 +9,7 @@
   text-underline-offset: 6px;
   transition: all .18s ease-in-out;
 
-  &::after {
+  &.is-external-link::after {
     background-image: url('../../svg/external-link-styled-links.svg');
   }
 
@@ -21,10 +17,11 @@
   &:focus {
     color: var(--color-link-text-hover);
     text-decoration-color: var(--color-link-text-hover);
+  }
 
-    &::after {
-      background-image: url('../../svg/external-link-black.svg');
-    }
+  &.is-external-link:hover::after,
+  &.is-external-link:focus::after {
+    background-image: url('../../svg/external-link-black.svg');
   }
 
   // Make focus a little more engaging
