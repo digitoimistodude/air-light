@@ -1,4 +1,4 @@
-### [Unreleased]
+### 8.4.0: 2022-05-12
 
 * Fix cover block default text color
 * Fix overflow in stacked blocks
