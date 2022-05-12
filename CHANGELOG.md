@@ -2,6 +2,8 @@
 
 * Smaller external link icon
 * Fix overflow in stacked blocks
+* Fix core-list not working properly on Gutenberg editor preview
+* Simplify core-list block
 
 ### 8.3.8: 2022-04-29
 
