@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-04-23 13:10:51
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-01-03 15:27:02
+ * @Last Modified time: 2022-05-12 15:01:23
  */
 // TODO: Refactor file
 /* eslint-disable default-case, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
@@ -63,23 +63,6 @@ var isOutOfViewport = function (elem) {
   // const hoverIntentTimeout = 1000;
 
   menuItems.forEach((li) => {
-    // Find sub menus
-    var subMenusUnderMenuItem = li.querySelectorAll('.sub-menu');
-
-    // Loop through sub menus
-    subMenusUnderMenuItem.forEach((subMenu) => {
-      // First let's check if submenu exists
-      if (typeof subMenusUnderMenuItem !== 'undefined') {
-      // Check if the sub menu is out of viewport or not
-        var isOut = isOutOfViewport(subMenu);
-
-        // At least one side of the element is out of viewport
-        if (isOut.any) {
-          subMenu.classList.add('is-out-of-viewport');
-        }
-      }
-    });
-
     li.addEventListener('mouseover', function () {
       this.classList.add('hover-intent');
       this.parentNode.classList.add('hover-intent');
@@ -108,6 +91,38 @@ var isOutOfViewport = function (elem) {
       });
     });
   });
+
+  // Init isOut check
+  checkForSubmenuOverflow();
+
+  function checkForSubmenuOverflow() {
+    menuItems.forEach((li) => {
+      // Find sub menus
+      var subMenusUnderMenuItem = li.querySelectorAll('.sub-menu');
+
+      // Loop through sub menus
+      subMenusUnderMenuItem.forEach((subMenu) => {
+        // First let's check if submenu exists
+        if (typeof subMenusUnderMenuItem !== 'undefined') {
+          // Check if the sub menu is out of viewport or not
+          var isOut = isOutOfViewport(subMenu);
+          console.log(isOut);
+
+          // At least one side of the element is out of viewport
+          if (isOut.right) {
+            subMenu.classList.add('is-out-of-viewport');
+            subMenu.parentElement.parentElement.classList.add('is-out-of-viewport');
+          } else {
+            subMenu.classList.remove('is-out-of-viewport');
+            subMenu.parentElement.parentElement.classList.remove('is-out-of-viewport');
+          }
+        }
+      });
+    });
+  }
+
+  // Reinit viewport check on resize event
+  window.addEventListener('resize', checkForSubmenuOverflow);
 
   // Define menu items
   var menuContainer = $('.nav-container');
