@@ -3,22 +3,17 @@
  * Air theme JavaScript.
  */
 
-// Import modules (comment to disable)
-import MoveTo from 'moveto';
+// Import modules
 import LazyLoad from 'vanilla-lazyload';
 import reframe from 'reframe.js';
 // eslint-disable-next-line no-unused-vars
 import getLocalization from './modules/localization';
 import { styleExternalLinks, getChildAltText } from './modules/external-link';
 import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
+import initAnchors from './modules/anchors';
 import 'what-input';
-
-// Features
-// import './modules/sticky-nav';
-// import slick from 'slick-carousel';
-
-// Navigation
 import './modules/navigation';
+// import './modules/sticky-nav';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
@@ -49,6 +44,10 @@ const air_light_LazyLoad = new LazyLoad({
 // After your content has changed...
 // eslint-disable-next-line camelcase
 air_light_LazyLoad.update();
+
+document.addEventListener('DOMContentLoaded', () => {
+  initAnchors();
+});
 
 // jQuery start
 // eslint-disable-next-line func-names
@@ -129,30 +128,6 @@ air_light_LazyLoad.update();
     // Your JavaScript here
   });
 }(jQuery));
-
-document.addEventListener('DOMContentLoaded', () => {
-  const easeFunctions = {
-    easeInQuad(t, b, c, d) {
-      t /= d;
-      return c * t * t + b;
-    },
-    easeOutQuad(t, b, c, d) {
-      t /= d;
-      return -c * t * (t - 2) + b;
-    },
-  };
-  const moveTo = new MoveTo(
-    {
-      ease: 'easeInQuad',
-    },
-    easeFunctions,
-  );
-  const triggers = document.getElementsByClassName('js-trigger');
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < triggers.length; i++) {
-    moveTo.registerTrigger(triggers[i]);
-  }
-});
 
 // Add aria-labels to links without text or aria-labels and contain image with alt text
 const links = [...document.querySelectorAll('a')];
