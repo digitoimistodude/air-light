@@ -1,4 +1,10 @@
 /**
+ * @Author: Roni Laukkarinen
+ * @Date:   2021-09-01 11:55:37
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-05-12 18:08:33
+ */
+/**
  * Style external links
  */
 
@@ -90,5 +96,22 @@ export function styleExternalLinks() {
     const ariaLabel = externalLink.target === '_blank' ? `${textContent}: ${getLocalization('external_link')}, ${getLocalization('target_blank')}` : `${textContent}: ${getLocalization('external_link')}`;
     externalLink.setAttribute('aria-label', ariaLabel);
     externalLink.classList.add('is-external-link');
+  });
+}
+
+export function initExternalLinkLabels() {
+  // Add aria-labels to links without text or aria-labels and contain image with alt text
+  const links = [...document.querySelectorAll('a')];
+  // eslint-disable-next-line no-unused-vars
+  const linksWithImgChildren = links.forEach((link) => {
+    // If link already has text content or an aria label no need to add aria-label
+    if (link.textContent.trim() !== '' || link.ariaLabel) {
+      return;
+    }
+
+    const ariaLabel = getChildAltText(link);
+    if (ariaLabel !== '') {
+      link.ariaLabel = ariaLabel;
+    }
   });
 }

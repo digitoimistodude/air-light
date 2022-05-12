@@ -4,6 +4,8 @@
 * Deprecate vanilla-lazyload and support for older JS-based lazy loading methods
 * Drop jQuery
 * Rewrite accessible back to top functionality and styles
+* Combine external link labels with external link JS module
+* Refactor front-end.js
 
 ### 8.4.1: 2022-05-12
 
