@@ -3,6 +3,7 @@
 .editor-styles-wrapper,
 .article-content {
   @import 'gutenberg/blocks/core-blockquote';
+  @import 'gutenberg/blocks/core-buttons';
   @import 'gutenberg/blocks/core-code';
   @import 'gutenberg/blocks/core-columns';
   @import 'gutenberg/blocks/core-cover';
@@ -21,7 +22,6 @@
 
   // Custom Gutenberg block styles
   @import 'gutenberg/blocks/boxed';
-  @import 'gutenberg/blocks/button';
   @import 'gutenberg/blocks/button-file';
 
   // Add here those ACF Gutenberg blocks you want to use inside article-content

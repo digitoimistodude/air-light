@@ -6,6 +6,7 @@
 * Fix navigation dropdown menus opening inside viewport after resizing window
 * Fix code block style bugs
 * Fix pullquote blockquote alignment
+* Fix naming of core-button to core-buttons
 * Use var(--color-blockquote) color variable in pull quotes
 * Simplify core-list block
 * Smaller external link icon
