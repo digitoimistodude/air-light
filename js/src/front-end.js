@@ -4,12 +4,10 @@
  */
 
 // Import modules
-import LazyLoad from 'vanilla-lazyload';
 import reframe from 'reframe.js';
 // eslint-disable-next-line no-unused-vars
 import getLocalization from './modules/localization';
 import { styleExternalLinks, getChildAltText } from './modules/external-link';
-import { setFigureWidths, setLazyLoadedFigureWidth } from './modules/gutenberg-helpers';
 import initAnchors from './modules/anchors';
 import 'what-input';
 import './modules/navigation';
@@ -24,26 +22,6 @@ reframe('.wp-has-aspect-ratio iframe');
 
 // Style external links
 styleExternalLinks();
-
-// Set non-lazyloaded figures width so captions in aligned images will be same width as image
-const figures = document.querySelectorAll('figure');
-setFigureWidths(figures);
-
-// Init lazyload
-// Usage example on template side when air-helper enabled:
-// <?php vanilla_lazyload_tag( get_post_thumbnail_id( $post->ID ) ); ?>
-// Refer to documentation:
-// 1) https://github.com/digitoimistodude/air-helper#image-lazyloading-1
-// 2) https://github.com/verlok/vanilla-lazyload#-getting-started---html
-// eslint-disable-next-line camelcase
-const air_light_LazyLoad = new LazyLoad({
-  // eslint-disable-next-line no-unused-vars
-  callback_loaded: (el) => setLazyLoadedFigureWidth, // Set lazyloaded figure width so captions in aligned images will be same width as image
-});
-
-// After your content has changed...
-// eslint-disable-next-line camelcase
-air_light_LazyLoad.update();
 
 document.addEventListener('DOMContentLoaded', () => {
   initAnchors();

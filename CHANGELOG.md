@@ -1,3 +1,8 @@
+### 8.4.2: 2022-05-12
+
+* Add anchors as JS module
+* Deprecate vanilla-lazyload and support for older JS-based lazy loading methods
+
 ### 8.4.1: 2022-05-12
 
 * Fix paddings on editor
