@@ -1,3 +1,7 @@
+### 8.4.3: 2022-05-13
+
+* Fixes #134, nav-toggle menu position shifting on iOS 15.1
+
 ### 8.4.2: 2022-05-12
 
 * Add anchors as JS module
