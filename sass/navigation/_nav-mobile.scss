@@ -135,6 +135,12 @@ $nav-open-from-direction: top;
     transition: all $transition-duration ease-in-out;
     visibility: hidden;
     width: 100vw;
+
+    // iOS only: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-touch-callout
+    @supports (-webkit-touch-callout: none) {
+      transition: opacity $transition-duration ease-in-out;
+      width: unset;
+    }
   }
 
   .menu-items {
