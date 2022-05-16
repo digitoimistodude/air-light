@@ -25,7 +25,7 @@
      <!-- Include the WordPress ruleset, with exclusions. -->
      <rule ref="WordPress">
 
-        <!-- Nazi-strict intendation rules we want to exclude -->
+        <!-- Strict intendation rules we want to exclude -->
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
