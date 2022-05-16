@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add js-trigger to skip-link
+
 ### 8.4.3: 2022-05-13
 
 * Fixes #134, nav-toggle menu position shifting on iOS 15.1
