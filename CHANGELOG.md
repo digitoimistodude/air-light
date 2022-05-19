@@ -1,5 +1,6 @@
 ### [Unreleased]
 
+* Simplify external link selector
 * Add js-trigger to skip-link
 
 ### 8.4.3: 2022-05-13

@@ -81,23 +81,21 @@
 }
 
 // Add icon to external links
-a.is-external-link {
-  &::after {
-    background-image: url('../../svg/external-link.svg');
-    background-position: right center;
-    background-repeat: no-repeat;
-    background-size: 12px 12px;
-    content: '';
-    display: inline-flex;
-    height: 12px;
-    margin-left: 5px;
-    margin-right: 2px;
-    position: relative;
-    right: 0;
-    top: 0;
-    transition: all .18s ease-in-out;
-    width: 12px;
-  }
+a.is-external-link::after {
+  background-image: url('../../svg/external-link.svg');
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  content: '';
+  display: inline-flex;
+  height: 12px;
+  margin-left: 5px;
+  margin-right: 2px;
+  position: relative;
+  right: 0;
+  top: 0;
+  transition: all .18s ease-in-out;
+  width: 12px;
 }
 
 // Do not use external links indicators in decorative areas
