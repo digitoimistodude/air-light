@@ -55,13 +55,8 @@ $hamburger-hover-transition-timing-function: linear;
 // Choose from animations: https://jonsuh.com/hamburgers/
 .hamburger {
   // This comes from node module so can't do anything about the selector
-  @if $nav-slide-animation == true {
-    // stylelint-disable-next-line
-    @extend .hamburger--stand;
-  } @else {
-    // stylelint-disable-next-line
-    @extend .hamburger--collapse;
-  }
+  // stylelint-disable-next-line
+  @extend .hamburger--collapse;
 }
 
 // Navigation core functionality

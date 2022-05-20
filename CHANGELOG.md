@@ -1,3 +1,7 @@
+### 8.4.5: 2022-05-20
+
+* Use only one burger animation, revert burger style on mobile
+
 ### 8.4.4: 2022-05-20
 
 * Simplify external link selector
