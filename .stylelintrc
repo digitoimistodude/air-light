@@ -80,7 +80,15 @@
     "no-empty-first-line": true,
     "no-missing-end-of-source-newline": true,
     "block-opening-brace-newline-after": "always",
-    "block-closing-brace-newline-after": "always-multi-line",
+    "block-closing-brace-newline-after": [
+      "always-multi-line",
+      {
+        "ignoreAtRules": [
+          "if",
+          "else"
+        ]
+      }
+    ],
     "string-quotes": null,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
@@ -100,6 +108,7 @@
     "at-rule-semicolon-space-before": "never",
     "at-rule-name-space-after": "always",
     "at-rule-name-case": "lower",
+    "scss/at-else-empty-line-before": "never",
     "function-url-quotes": "always",
     "unit-no-unknown": true,
     "property-no-unknown": true,
@@ -160,6 +169,10 @@
     "at-rule-empty-line-before": [
       "always",
       {
+        "ignoreAtRules": [
+          "if",
+          "else"
+        ],
         "except": [
           "first-nested",
           "blockless-after-same-name-blockless",

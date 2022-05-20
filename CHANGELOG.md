@@ -1,7 +1,13 @@
-### [Unreleased]
+### 8.4.4: 2022-05-20
 
 * Simplify external link selector
 * Add js-trigger to skip-link
+* Combine nav-mobile media queries
+* Update stylelintrc rules block-closing-brace-newline-after and at-rule-empty-line-before
+* Fix cubic-bezier mixin $duration variable
+* Fix iOS 15 nav width style bug
+* Fix iOS 15 scrolling bug with `height: -webkit-fill-available;`
+* New navigation animation: slide (default), change to fade by setting `$nav-slide-animation: false;`
 
 ### 8.4.3: 2022-05-13
 
