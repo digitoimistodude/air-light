@@ -1,6 +1,7 @@
 ### 8.4.6: 2022-05-23
 
 * Combine media queries
+* Deprecate heading-hero component
 
 ### 8.4.5: 2022-05-20
 
