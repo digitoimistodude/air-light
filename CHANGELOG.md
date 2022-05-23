@@ -1,3 +1,7 @@
+### 8.4.6: 2022-05-23
+
+* Combine media queries
+
 ### 8.4.5: 2022-05-20
 
 * Use only one burger animation, revert burger style on mobile

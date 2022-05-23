@@ -47,21 +47,13 @@
     --font-size-h4: 18px;
     --font-size-h5: 14px;
     --font-size-h6: 12px;
-  }
-
-  // Paragraph font sizes in tiny phones like iPhone 5S
-  @media (max-width: 420px) {
-    --font-size-16: 14px;
-  }
-
-  // Element font sizes in mobile
-  @media (max-width: $container-mobile) {
     --font-size-paragraphs: 16px;
     --font-size-default: 16px;
   }
 
   // Element font sizes in tiny phones like iPhone 5S
   @media (max-width: 420px) {
+    --font-size-16: 14px;
     --font-size-nav-toggle-label: 13px;
   }
 }
