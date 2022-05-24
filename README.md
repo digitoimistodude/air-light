@@ -52,8 +52,7 @@ _Fully keyboard accessible navigation!_
     11. [Disabled features](#disabled-features)
 5. [Extra building blocks](#extra-building-blocks)
     1. [Sticky navigation](#sticky-navigation)
-    2. [Slick slider](#slick-slider)
-    3. [WooCommerce support](#woocommerce-support)
+    2. [WooCommerce support](#woocommerce-support)
 6. [Requirements](#requirements)
 7. [Recommendations for development](#recommendations-for-development)
 8. [How to build a new theme](#how-to-build-a-new-theme)
@@ -136,8 +135,7 @@ themes/your-theme-name/              # → Root of your air-light based theme
 │   │   ├── _lazyload.scss           # → Styles for air-helper lazyload feature (lazyload.js needed)
 │   │   ├── _top.scss                # → Back to top styles
 │   │   ├── _pagination.scss         # → Numbered pagination styles
-│   │   ├── _sticky-nav.scss         # → Sticky nav styles (not included by default)
-│   │   └── _slick.scss              # → Styles for slick-carousel (not included by default)
+│   │   └── _sticky-nav.scss         # → Sticky nav styles (not included by default)
 │   ├── gutenberg/                   # → Gutenberg block styles for both core and custom blocks
 │   │   └── ...                      # → WIP
 │   ├── helpers/                     # → Helper mixins and functions
@@ -340,49 +338,6 @@ You can enable the navigation by
 1. Adding sticky-nav.js to your gulpfile (already included with [Devpackages](https://github.com/digitoimistodude/devpackages) and bin/newtheme.sh start script)
 2. Uncommeting sticky-nav import in global.scss
 3. Restart gulp and save scripts.js once to compile working combined javascript file
-
-#### Slick slider
-
-Air includes sassified version, clean SCSS file for slick carousel.
-
-##### How to enable
-
-To enable Slick carousel support,
-
-1. Run `npm install slick-carousel --save` in theme directory
-2. Run `npm update` in theme directory
-3. Uncomment `// import slick from 'slick-carousel';` in scripts.js
-4. Add slick init to document ready in scripts.js, like this, tweak to your needs:
-
-```` javascript
-$('.slider').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  dots: false,
-  fade: true
-});
-````
-
-5. Construct your slider like this:
-
-```` html
-<section class="block block-slider">
-  <div class="container">
-    <div class="cols slider">
-      <div class="col item">
-        <p><b>Slider item 1</b> Some other content. Lorem ipsum in proident deserunt nostrud. Lorem ipsum in proident deserunt nostrud.</p>
-      </div><!-- .item -->
-
-      <div class="col item">
-        <p><b>Slider item 2</b> Something different to see the change. Lorem ipsum in proident deserunt nostrud culpa veniam sed esse aliqua ea velit aute.</p>
-      </div><!-- .item -->
-    </div>
-  </div>
-</section><!-- .block -->
-````
-
-Please note: If you want to change the background to lighter, you will need to edit the svg arrows accordingly.
 
 #### WooCommerce support
 

@@ -1,3 +1,7 @@
+### 8.4.7: 2022-05-24
+
+* Remove _slick.scss, deprecate slick-carousel slider (carousel block is part of [air-blocks](https://github.com/digitoimistodude/air-blocks) now)
+
 ### 8.4.6: 2022-05-23
 
 * Combine media queries
