@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Disable dropdown box-shadow by default
+* Improve placeholder for new project
 
 ### 9.0.0: 2022-05-24
 

@@ -30,8 +30,13 @@
   z-index: 10;
 }
 
-// Delete these styles when you start!
-.nav-container::after {
+// Delete the following styles when you start! (marked with --clip--)
+// --clip--
+.site-main {
+  display: grid;
+}
+
+.site-main::after {
   align-items: center;
   // stylelint-disable-next-line
   background-image: linear-gradient(var(--color-black), var(--color-science-blue)), linear-gradient(var(--color-black), var(--color-science-blue));
@@ -47,11 +52,16 @@
   font-size: clamp(.5rem, 3.4vw, 3rem);
   font-weight: var(--font-weight-semibold);
   justify-content: center;
-  margin: 4rem auto;
-  max-width: $width-grid-base;
+  margin-bottom: var(--padding-container-vertical);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: calc(var(--padding-container-vertical) * 2);
+  max-width: $width-grid-base - 40px;
   opacity: .7;
+  order: -1;
   padding: 4rem;
   position: relative;
   text-align: center;
-  width: 100%;
+  width: calc(100% - 4rem);
 }
+// --clip--
