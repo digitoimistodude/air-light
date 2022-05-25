@@ -1,3 +1,8 @@
+### 8.4.8: 2022-05-24
+
+* Fix back to top label for screen readers
+* Add data-version attribute to footer indicating Air-light version in use
+
 ### 8.4.7: 2022-05-24
 
 * Remove _slick.scss, deprecate slick-carousel slider (carousel block is part of [air-blocks](https://github.com/digitoimistodude/air-blocks) now)

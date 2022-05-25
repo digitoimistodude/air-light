@@ -7,7 +7,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:33:49
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-12 18:00:38
+ * @Last Modified time: 2022-05-25 14:25:42
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  * @package air-light
@@ -49,9 +49,11 @@ namespace Air_Light;
   href="#page"
   id="top"
   class="top no-external-link-indicator"
-  aria-title="<?php echo esc_html( get_default_localization( 'Back to top' ) ); ?>"
->&uarr;</a>
+  data-version="<?php echo esc_attr( AIR_LIGHT_VERSION ); ?>"
+>
+  <span class="screen-reader-text"><?php echo esc_html( get_default_localization( 'Back to top' ) ); ?></span>
+  <span aria-hidden="true">&uarr;</span>
+</a>
 
 </body>
-
 </html>
