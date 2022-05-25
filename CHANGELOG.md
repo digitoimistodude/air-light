@@ -1,3 +1,8 @@
+### 9.0.0: 2022-05-24
+
+* Update default logo
+* Deprecate %screen-reader-text, use mixin instead
+
 ### 8.4.8: 2022-05-24
 
 * Fix back to top label for screen readers

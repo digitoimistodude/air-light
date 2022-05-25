@@ -17,11 +17,11 @@
 @import 'variables/forms';
 @import 'variables/spacings';
 
-// Style components
-@import 'components/components';
-
 // Accessibility
 @import 'base/accessibility';
+
+// Style components
+@import 'components/components';
 
 // Navigation
 @import 'navigation/nav-desktop';

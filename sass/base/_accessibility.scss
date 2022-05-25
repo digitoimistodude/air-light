@@ -2,8 +2,7 @@
 // vision impaired and other useful a11y CSS hacks.
 
 // Text meant only for screen readers.
-%screen-reader-text,
-.screen-reader-text {
+@mixin screen-reader-text() {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
 
@@ -19,14 +18,6 @@
   // Many screen reader and browser combinations announce broken words as they would appear visually.
   // stylelint-disable-next-line declaration-no-important, max-line-length
   word-wrap: normal !important;
-
-  &.skip-link {
-    margin: 5px;
-
-    &:focus {
-      color: currentColor;
-    }
-  }
 
   &:focus {
     background-color: var(--color-white);
@@ -45,6 +36,18 @@
     top: 5px;
     width: auto;
     z-index: 100000; // Above WP toolbar.
+  }
+}
+
+.screen-reader-text {
+  @include screen-reader-text();
+
+  &.skip-link {
+    margin: 5px;
+
+    &:focus {
+      color: currentColor;
+    }
   }
 }
 

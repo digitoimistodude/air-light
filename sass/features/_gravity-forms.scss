@@ -46,7 +46,7 @@ body *[aria-invalid="true"] {
 // Form screen reader texts
 .gform_required_legend,
 .sr-only {
-  @extend %screen-reader-text;
+  @include screen-reader-text();
 }
 
 // Default required label
