@@ -1,22 +1,13 @@
 // Styling lazy loading images
 // @link https://github.com/digitoimistodude/air-helper#image-lazyloading-1
-.has-lazyload > [loading="lazy"],
-div.lazy,
-div.full-image {
-  background-position: center;
-  background-size: cover;
+.has-lazyload > [loading="lazy"] {
   height: 100%;
   left: 0;
+  object-fit: cover;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 0;
-}
-
-.has-lazyload > [loading="lazy"] {
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
 }
 
 // General class for any lazy load container

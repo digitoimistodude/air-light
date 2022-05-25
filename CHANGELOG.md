@@ -2,6 +2,7 @@
 
 * Update default logo
 * Deprecate %screen-reader-text, use mixin instead
+* Deprecate old lazy load styles from future themes
 
 ### 8.4.8: 2022-05-24
 
