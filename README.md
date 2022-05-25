@@ -10,7 +10,7 @@ Air-light (or simply *Air*) is designed to be a ultra minimal starting point for
 * **JS gzipped:** 8.6 KB *(28.6 KB original)*
 * **Front page HTML**: 7.4 KB *(29.4 KB original)*
 
-![](https://i.imgur.com/PXX3Z1v.png)
+![air-light-readme-mockup-latest](https://user-images.githubusercontent.com/1534150/170326942-b7404051-7621-4df3-9294-0ccd5e6f59a7.png)
 
 ## Weekly updates!
 
