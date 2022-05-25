@@ -2,6 +2,7 @@
 
 * Disable dropdown box-shadow by default
 * Improve placeholder for new project
+* Fix typo in CSS variable name
 
 ### 9.0.0: 2022-05-24
 
