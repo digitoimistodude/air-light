@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-25 14:27:07
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-05-25 16:08:04
  *
  * @package air-light
  */
@@ -134,7 +134,8 @@ add_action( 'after_setup_theme', function() {
         'page',
       ],
       'supports'          => [
-        'align' => false,
+        'align'   => false,
+        'anchor'  => true,
       ],
       'render_callback'   => __NAMESPACE__ . '\render_acf_block',
     ],

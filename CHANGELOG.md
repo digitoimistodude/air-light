@@ -1,3 +1,6 @@
+### Unreleased
+* Added support for anchors in the block
+
 ### 8.4.8: 2022-05-24
 
 * Fix back to top label for screen readers
