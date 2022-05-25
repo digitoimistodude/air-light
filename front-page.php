@@ -7,7 +7,7 @@
  *
  * @Date:   2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-25 19:22:51
+ * @Last Modified time: 2022-05-25 20:18:40
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
