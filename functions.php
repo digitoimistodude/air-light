@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-05-25 16:08:04
+ * @Last Modified time: 2022-05-25 16:15:05
  *
  * @package air-light
  */
@@ -133,9 +133,10 @@ add_action( 'after_setup_theme', function() {
       'post_types'        => [
         'page',
       ],
-      'supports'          => [
-        'align'   => false,
-        'anchor'  => true,
+      'supports'  => [
+        'align'           => false,
+        'anchor'          => true,
+        'customClassName' => false,
       ],
       'render_callback'   => __NAMESPACE__ . '\render_acf_block',
     ],
