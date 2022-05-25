@@ -8,7 +8,7 @@
 * Add var(--box-shadow-sub-menu) for desktop navigation
 * Add more clear starting point with demo content placeholder
 * Add support for anchors in the block (thanks @timiwahalahti)
-* Disable support for additional css classes in blocks (thanks @timiwahalahti)
+* Disable support for additional CSS classes in blocks (thanks @timiwahalahti)
 * Bump tested up WordPress version to 6.0.0
 * Fix back to top label for screen readers
 * Add data-version attribute to footer indicating Air-light version in use

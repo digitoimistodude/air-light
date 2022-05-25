@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-02-08 10:43:53
+ * @Last Modified time: 2022-05-25 16:07:50
  * @package air-light
  */
 
@@ -87,8 +87,13 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
 
   // Get and return block contents
   \ob_start( $output_callback );
-  include $block_path;
-  return \ob_get_clean();
+  $content = \ob_get_clean();
+
+  if ( ! $is_preview && isset( $block['anchor'] ) && ! empty( $block['anchor'] ) ) {
+    $content = str_replace( '<section class="block', '<section id="' . $block['anchor'] . '" class="block', $content );
+  }
+
+  return $content;
 } // end load_acf_block(
 
 /**
