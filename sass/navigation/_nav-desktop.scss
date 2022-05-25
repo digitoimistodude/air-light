@@ -15,7 +15,8 @@ $use-dropdown-toggle-animation: true;
   // Dimensions, gaps and spacings
   --border-radius-sub-menu: 0;
   --box-shadow-navigation-static: 0 0 10px rgb(84 87 115 / .1);
-  --box-shadow-sub-menu: 0 25px 20px -10px rgb(5 4 25 / .05);
+  // This could be for instance: 0 25px 20px -10px rgb(5 4 25 / .05)
+  --box-shadow-sub-menu: transparent;
   --dropdown-toggle-size: 12px;
   --gap-dropdown: 1rem;
   --gap-between-dropdown-toggle: 1.5rem;
@@ -33,10 +34,10 @@ $use-dropdown-toggle-animation: true;
   --color-border-sub-menu: rgb(41 44 61 / .05);
   --color-dropdown-toggle: var(--color-valhalla);
   --color-sub-menu: var(--color-valhalla);
-  --color-hover-main-level: var(--color-white);
+  --color-hover-main-level: var(--color-link-text);
   --color-hover-sub-menu: var(--color-valhalla);
-  --color-main-level: var(--color-white);
-  --color-current: var(--color-main);
+  --color-main-level: var(--color-black);
+  --color-current: var(--color-link-text);
 
   // Font styles
   --font-size-main-level: var(--font-size-16);

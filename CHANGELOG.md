@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Disable dropdown box-shadow by default
+
 ### 9.0.0: 2022-05-24
 
 #### Major update
