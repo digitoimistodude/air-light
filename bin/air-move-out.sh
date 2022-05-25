@@ -55,7 +55,7 @@ rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
 mv ~/Projects/airdev/content/themes/air-light/screenshot.png ~/air-temp/
 cd ~/Projects/airdev/content/themes/air-light/
 wget https://i.imgur.com/idVvQKv.png
-mv Pwz9nc4.png screenshot.png
+mv idVvQKv.png screenshot.png
 
 # Moving to bin dir
 cd ~/air-temp/bin
