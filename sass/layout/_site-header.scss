@@ -29,3 +29,29 @@
 .nav-container {
   z-index: 10;
 }
+
+// Delete these styles when you start!
+.nav-container::after {
+  align-items: center;
+  // stylelint-disable-next-line
+  background-image: linear-gradient(var(--color-black), var(--color-science-blue)), linear-gradient(var(--color-black), var(--color-science-blue));
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+  background-size: 3px 100%;
+  border-bottom: 3px solid var(--color-science-blue);
+  border-top: 3px solid var(--color-black);
+  color: var(--color-black);
+  content: 'Build your website here! (Remove this bit in sass/layout/_site-header.scss)';
+  display: flex;
+  // stylelint-disable-next-line
+  font-size: clamp(.5rem, 3.4vw, 3rem);
+  font-weight: var(--font-weight-semibold);
+  justify-content: center;
+  margin: 4rem auto;
+  max-width: $width-grid-base;
+  opacity: .7;
+  padding: 4rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}

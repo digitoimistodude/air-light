@@ -15,6 +15,7 @@ $use-dropdown-toggle-animation: true;
   // Dimensions, gaps and spacings
   --border-radius-sub-menu: 0;
   --box-shadow-navigation-static: 0 0 10px rgb(84 87 115 / .1);
+  --box-shadow-sub-menu: 0 25px 20px -10px rgb(5 4 25 / .05);
   --dropdown-toggle-size: 12px;
   --gap-dropdown: 1rem;
   --gap-between-dropdown-toggle: 1.5rem;
@@ -178,7 +179,7 @@ $use-dropdown-toggle-animation: true;
     border-right: 1px solid var(--color-border-sub-menu);
     border-top-left-radius: var(--border-radius-sub-menu);
     border-top-right-radius: var(--border-radius-sub-menu);
-    box-shadow: 0 25px 20px -10px rgb(5 4 25 / .05);
+    box-shadow: var(--box-shadow-sub-menu);
     left: 0;
     margin-left: 0;
     margin-top: var(--gap-dropdown);

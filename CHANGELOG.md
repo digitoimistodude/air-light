@@ -3,6 +3,8 @@
 * Update default logo
 * Deprecate %screen-reader-text, use mixin instead
 * Deprecate old lazy load styles from future themes
+* Add var(--box-shadow-sub-menu) for desktop navigation
+* Add more clear starting point with demo content placeholder
 
 ### 8.4.8: 2022-05-24
 
