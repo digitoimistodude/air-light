@@ -467,7 +467,7 @@ Whenever you have updates that are worthwile, commit them with clear commit mess
 Use bash alias (replace YOURUSERNAME with your own):
 
 ``` bash
-alias release_new_air_version='git push && git push --tags && rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} $HOME/Projects/airdev/content/themes/air-light/* YOURUSERNAME@185.87.110.7:/var/www/dudetest.xyz/public_html/air/content/themes/air-light/ && cd $HOME/Projects/airdev/content/themes/air-light/bin && sh air-move-out.sh && sh air-pack.sh'
+alias release_new_air_version='git push && git push --tags && rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} /var/www/airdev/content/themes/air-light/* YOURUSERNAME@YOURSERVER:/var/www/airwptheme.com/public_html/demo/content/themes/air-light/ && /var/www/airdev/content/themes/air-light/bin && sh air-move-out.sh && sh air-pack.sh'
 ```
 
 The release cycle:
