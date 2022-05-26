@@ -4,6 +4,7 @@
 * Improve placeholder for new project
 * Fix typo in CSS variable name
 * Fix critical JS error with calling getChildAltText() in vain
+* Fix outdated release command
 
 ### 9.0.0: 2022-05-24
 
