@@ -2,7 +2,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2021-05-21 14:40:29
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2022-04-11 17:23:54
+# @Last Modified time: 2022-05-26 13:42:28
 echo "${YELLOW}Adding media library folder...${TXTRESET}"
 mkdir -p ${PROJECT_PATH}/media
 echo "" > ${PROJECT_PATH}/media/index.php
@@ -10,7 +10,7 @@ chmod 777 ${PROJECT_PATH}/media
 
 echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
-NEWEST_AIR_VERSION="9.0.0"
+NEWEST_AIR_VERSION="9.0.1"
 NEWEST_WORDPRESS_VERSION="6.0.0"
 NEWEST_PHP_VERSION="7.4"
 CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');

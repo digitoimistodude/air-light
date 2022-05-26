@@ -6,7 +6,7 @@
 // Import modules
 import reframe from 'reframe.js';
 import getLocalization from './modules/localization';
-import { styleExternalLinks, getChildAltText, initExternalLinkLabels } from './modules/external-link';
+import { styleExternalLinks, initExternalLinkLabels } from './modules/external-link';
 import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import 'what-input';
@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   backToTop();
   styleExternalLinks();
   initExternalLinkLabels();
-  getChildAltText();
 
   // Fit video embeds to container
   reframe('.wp-has-aspect-ratio iframe');

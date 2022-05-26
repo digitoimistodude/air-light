@@ -1,8 +1,9 @@
-### [Unreleased]
+### 9.0.1: 2022-05-26
 
 * Disable dropdown box-shadow by default
 * Improve placeholder for new project
 * Fix typo in CSS variable name
+* Fix critical JS error with calling getChildAltText() in vain
 
 ### 9.0.0: 2022-05-24
 
