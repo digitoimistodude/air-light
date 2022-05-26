@@ -13,33 +13,33 @@ echo "${YELLOW}Moving dev files out...${TXTRESET}"
 mkdir -p $HOME/air-temp
 find . -name '.DS_Store' -type f -delete
 find ../ -name '.DS_Store' -type f -delete
-sudo rm /var/www/airdev/content/themes/air-light/sass/components/.gitkeep $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/sass/modules/.gitkeep $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.hintrc $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.stylelintignore $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.nvmrc $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.eslintrc.js $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.browserslistrc $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.vscode $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.svgo.yml $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.accessibilityrc $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.git $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.gitignore $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.jshintignore $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.travis.yml $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/package.json $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/package-lock.json $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/phpcs.xml $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/node_modules $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/gulpfile.js $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/bin $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/content $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/__MACOSX $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.scss-lint.yml $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/front-page.php $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/README.md $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.stylelintrc $HOME/air-temp/
-sudo mv /var/www/airdev/content/themes/air-light/.editorconfig $HOME/air-temp/
+rm /var/www/airdev/content/themes/air-light/sass/components/.gitkeep $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/sass/modules/.gitkeep $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.hintrc $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.stylelintignore $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.nvmrc $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.eslintrc.js $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.browserslistrc $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.vscode $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.svgo.yml $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.accessibilityrc $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.git $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.gitignore $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.jshintignore $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.travis.yml $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/package.json $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/package-lock.json $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/phpcs.xml $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/node_modules $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/gulpfile.js $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/bin $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/content $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/__MACOSX $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.scss-lint.yml $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/front-page.php $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/README.md $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.stylelintrc $HOME/air-temp/
+mv /var/www/airdev/content/themes/air-light/.editorconfig $HOME/air-temp/
 mkdir -p $HOME/air-temp/template-parts
 mkdir -p $HOME/air-temp/template-parts/header
 mkdir -p $HOME/air-temp/template-parts/footer
