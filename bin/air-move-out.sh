@@ -10,55 +10,55 @@ white=$(tput setaf 7)
 txtreset=$(tput sgr0)
 
 echo "${YELLOW}Moving dev files out...${TXTRESET}"
-mkdir -p ~/air-temp
+mkdir -p $HOME/air-temp
 find . -name '.DS_Store' -type f -delete
 find ../ -name '.DS_Store' -type f -delete
-sudo rm ~/Projects/airdev/content/themes/air-light/sass/components/.gitkeep ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/sass/modules/.gitkeep ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.hintrc ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.stylelintignore ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.nvmrc ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.eslintrc.js ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.browserslistrc ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.vscode ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.svgo.yml ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.accessibilityrc ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.git ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.gitignore ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.jshintignore ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.travis.yml ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/package.json ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/package-lock.json ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/phpcs.xml ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/node_modules ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/gulpfile.js ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/bin ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/content ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/__MACOSX ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.scss-lint.yml ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/front-page.php ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/README.md ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.stylelintrc ~/air-temp/
-sudo mv ~/Projects/airdev/content/themes/air-light/.editorconfig ~/air-temp/
-mkdir -p ~/air-temp/template-parts
-mkdir -p ~/air-temp/template-parts/header
-mkdir -p ~/air-temp/template-parts/footer
+sudo rm /var/www/airdev/content/themes/air-light/sass/components/.gitkeep $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/sass/modules/.gitkeep $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.hintrc $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.stylelintignore $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.nvmrc $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.eslintrc.js $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.browserslistrc $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.vscode $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.svgo.yml $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.accessibilityrc $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.git $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.gitignore $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.jshintignore $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.travis.yml $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/package.json $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/package-lock.json $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/phpcs.xml $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/node_modules $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/gulpfile.js $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/bin $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/content $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/__MACOSX $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.scss-lint.yml $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/front-page.php $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/README.md $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.stylelintrc $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/.editorconfig $HOME/air-temp/
+mkdir -p $HOME/air-temp/template-parts
+mkdir -p $HOME/air-temp/template-parts/header
+mkdir -p $HOME/air-temp/template-parts/footer
 
 # Remove custom stuff that are not part of an official WordPress theme in WP theme directory,
 # Because:
 # REQUIRED: The theme uses the register_taxonomy() function, which is plugin-territory functionality.
 # REQUIRED: The theme uses the register_post_type() function, which is plugin-territory functionality.
-rm ~/Projects/airdev/content/themes/air-light/inc/includes/taxonomy.php
-rm ~/Projects/airdev/content/themes/air-light/inc/includes/post-type.php
+rm /var/www/airdev/content/themes/air-light/inc/includes/taxonomy.php
+rm /var/www/airdev/content/themes/air-light/inc/includes/post-type.php
 
 # Screenshot, related to: https://themes.trac.wordpress.org/ticket/100180#comment:2
-mv ~/Projects/airdev/content/themes/air-light/screenshot.png ~/air-temp/
-cd ~/Projects/airdev/content/themes/air-light/
+mv /var/www/airdev/content/themes/air-light/screenshot.png $HOME/air-temp/
+cd /var/www/airdev/content/themes/air-light/
 wget https://i.imgur.com/idVvQKv.png
 mv idVvQKv.png screenshot.png
 
 # Moving to bin dir
-cd ~/air-temp/bin
+cd $HOME/air-temp/bin
 
 echo "
 ${boldgreen}Done! Next steps:${TXTRESET}"

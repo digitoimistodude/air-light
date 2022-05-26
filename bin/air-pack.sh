@@ -11,10 +11,10 @@ txtreset=$(tput sgr0)
 
 mkdir -p ~/Projects
 mkdir -p ~/Projects/airdev
-mkdir -p ~/Projects/airdev/content
-mkdir -p ~/Projects/airdev/content/themes
-rm ~/Projects/airdev/content/themes/air-light.zip
-sh ~/Projects/airdev/content/themes/air-light/bin/air-move-out.sh
-cd ~/Projects/airdev/content/themes/
+mkdir -p /var/www/airdev/content
+mkdir -p /var/www/airdev/content/themes
+rm /var/www/airdev/content/themes/air-light.zip
+sh /var/www/airdev/content/themes/air-light/bin/air-move-out.sh
+cd /var/www/airdev/content/themes/
 zip -r air-light.zip air-light
-sh ~/air-temp/bin/air-move-in.sh
+sh $HOME/air-temp/bin/air-move-in.sh

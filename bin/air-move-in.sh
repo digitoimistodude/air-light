@@ -9,40 +9,40 @@ green=$(tput setaf 2)
 white=$(tput setaf 7)
 txtreset=$(tput sgr0)
 
-mkdir -p ~/air-temp
-sudo cp ~/air-temp/.gitkeep ~/Projects/airdev/content/themes/air-light/sass/components/
-sudo cp ~/air-temp/.gitkeep ~/Projects/airdev/content/themes/air-light/sass/modules/
-sudo mv ~/air-temp/.hintrc ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.stylelintignore ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.nvmrc ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.eslintrc.js ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.browserslistrc ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.vscode ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.svgo.yml ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.accessibilityrc ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.git ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.gitignore ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.jshintignore ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.travis.yml ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/package.json ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/package-lock.json ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/phpcs.xml ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/node_modules ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/gulpfile.js ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/bin ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/content ~/Projects/airdev/content/themes/air-light/content
-sudo mv ~/air-temp/.scss-lint.yml ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/front-page.php ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/README.md ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.stylelintrc ~/Projects/airdev/content/themes/air-light/
-sudo mv ~/air-temp/.editorconfig ~/Projects/airdev/content/themes/air-light/
+mkdir -p $HOME/air-temp
+sudo cp $HOME/air-temp/.gitkeep /var/www/airdev/content/themes/air-light/sass/components/
+sudo cp $HOME/air-temp/.gitkeep /var/www/airdev/content/themes/air-light/sass/modules/
+sudo mv $HOME/air-temp/.hintrc /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.stylelintignore /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.nvmrc /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.eslintrc.js /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.browserslistrc /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.vscode /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.svgo.yml /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.accessibilityrc /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.git /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.gitignore /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.jshintignore /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.travis.yml /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/package.json /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/package-lock.json /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/phpcs.xml /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/node_modules /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/gulpfile.js /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/bin /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/content /var/www/airdev/content/themes/air-light/content
+sudo mv $HOME/air-temp/.scss-lint.yml /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/front-page.php /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/README.md /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.stylelintrc /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/.editorconfig /var/www/airdev/content/themes/air-light/
 
 # Move the original starter screenshot back in, related to: https://themes.trac.wordpress.org/ticket/100180#comment:2
-rm ~/Projects/airdev/content/themes/air-light/screenshot.png
-mv ~/air-temp/screenshot.png ~/Projects/airdev/content/themes/air-light/
+rm /var/www/airdev/content/themes/air-light/screenshot.png
+mv $HOME/air-temp/screenshot.png /var/www/airdev/content/themes/air-light/
 
 # Restore repository state before move
-cd ~/Projects/airdev/content/themes/air-light/ && git stash
+cd /var/www/airdev/content/themes/air-light/ && git stash
 git status
 
 echo "
