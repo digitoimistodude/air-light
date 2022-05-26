@@ -9,8 +9,8 @@ green=$(tput setaf 2)
 white=$(tput setaf 7)
 txtreset=$(tput sgr0)
 
-mkdir -p ~/Projects
-mkdir -p ~/Projects/airdev
+mkdir -p /var/www
+mkdir -p /var/www/airdev
 mkdir -p /var/www/airdev/content
 mkdir -p /var/www/airdev/content/themes
 rm /var/www/airdev/content/themes/air-light.zip
