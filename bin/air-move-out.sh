@@ -30,7 +30,7 @@ mv /var/www/airdev/content/themes/air-light/.travis.yml $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/package.json $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/package-lock.json $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/phpcs.xml $HOME/air-temp/
-mv /var/www/airdev/content/themes/air-light/node_modules $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/node_modules $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/gulpfile.js $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/bin $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/content $HOME/air-temp/
@@ -55,7 +55,7 @@ rm /var/www/airdev/content/themes/air-light/inc/includes/post-type.php
 mv /var/www/airdev/content/themes/air-light/screenshot.png $HOME/air-temp/
 cd /var/www/airdev/content/themes/air-light/
 wget https://i.imgur.com/idVvQKv.png
-mv idVvQKv.png screenshot.png
+mv -v idVvQKv.png screenshot.png
 
 # Moving to bin dir
 cd $HOME/air-temp/bin

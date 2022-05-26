@@ -27,7 +27,7 @@ mv $HOME/air-temp/.travis.yml /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/package.json /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/package-lock.json /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/phpcs.xml /var/www/airdev/content/themes/air-light/
-mv $HOME/air-temp/node_modules /var/www/airdev/content/themes/air-light/
+sudo mv $HOME/air-temp/node_modules /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/gulpfile.js /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/bin /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/content /var/www/airdev/content/themes/air-light/content
