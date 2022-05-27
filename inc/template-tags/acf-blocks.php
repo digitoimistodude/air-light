@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-05-25 16:07:50
+ * @Last Modified by:   Elias Kautto
+ * @Last Modified time: 2022-05-27 10:33:27
  * @package air-light
  */
 
@@ -87,6 +87,7 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
 
   // Get and return block contents
   \ob_start( $output_callback );
+  include $block_path;
   $content = \ob_get_clean();
 
   if ( ! $is_preview && isset( $block['anchor'] ) && ! empty( $block['anchor'] ) ) {

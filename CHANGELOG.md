@@ -1,3 +1,7 @@
+### 9.0.2: 2022-05-27
+
+* Fix critical regression about ACF blocks not outputting, Fixes #153
+
 ### 9.0.1: 2022-05-26
 
 * Disable dropdown box-shadow by default
