@@ -24,7 +24,8 @@
     font-size: unset;
   }
 
-  .block-form {
+  // Make buttons and input fields work in ACF previews
+  .acf-block-preview .block {
     @import 'layout/forms';
   }
 

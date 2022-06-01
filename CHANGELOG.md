@@ -2,6 +2,7 @@
 
 * Remove leftover %screen-reader-text from editor styles
 * Move editor styles outside of the global gutenberg-editor-styles.scss
+* Fix form elements in ACF block previews
 
 ### 9.0.2: 2022-05-27
 
