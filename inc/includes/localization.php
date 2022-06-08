@@ -48,6 +48,9 @@ function get_default_localization_strings( $language = 'en' ) {
       'This error is shown only for logged in users' => __( 'This error is shown only for logged in users', 'air-light' ),
       'No results found for your search'             => __( 'No results found for your search', 'air-light' ),
       'Edit'                                         => __( 'Edit', 'air-light' ),
+      'Previous slide'                               => __( 'Previous slide', 'air-light' ),
+      'Next slide'                                   => __( 'Next slide', 'air-light' ),
+      'Last slide'                                   => __( 'Last slide', 'air-light' ),
     ],
     'fi'  => [
       'Add a menu'                                   => 'Luo uusi valikko',
@@ -69,6 +72,9 @@ function get_default_localization_strings( $language = 'en' ) {
       'This error is shown only for logged in users' => 'Tämä virhe näytetään vain kirjautuneille käyttäjille',
       'No results for your search'                   => 'Haullasi ei löytynyt tuloksia',
       'Edit'                                         => 'Muokkaa',
+      'Previous slide'                               => 'Edellinen dia',
+      'Next slide'                                   => 'Seuraava dia',
+      'Last slide'                                   => 'Viimeinen dia',
     ],
   ];
 

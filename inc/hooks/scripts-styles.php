@@ -58,6 +58,9 @@ function enqueue_theme_scripts() {
     'collapse_toggle' => get_default_localization( 'Close main menu' ),
     'external_link'   => get_default_localization( 'External site' ),
     'target_blank'    => get_default_localization( 'opens in a new window' ),
+    'previous_slide'  => get_default_localization( 'Previous slide' ),
+    'next_slide'      => get_default_localization( 'Next slide' ),
+    'last_slide'      => get_default_localization( 'Last slide' ),
   ] );
 
   // Add domains/hosts to disable external link indicators

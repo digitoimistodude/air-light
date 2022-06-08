@@ -1,8 +1,9 @@
-### [Unreleased]
+### 9.0.3: 2022-06-08
 
 * Remove leftover %screen-reader-text from editor styles
 * Move editor styles outside of the global gutenberg-editor-styles.scss
 * Fix form elements in ACF block previews
+* A11y: Localizations for possible carousel blocks from Air-blocks
 
 ### 9.0.2: 2022-05-27
 
@@ -27,7 +28,7 @@
 * Add more clear starting point with demo content placeholder
 * Add support for anchors in the block (thanks @timiwahalahti)
 * Disable support for additional CSS classes in blocks (thanks @timiwahalahti)
-* Bump tested up WordPress version to 6.0.0
+* Bump tested up WordPress version to 6.0
 * Fix back to top label for screen readers
 * Add data-version attribute to footer indicating Air-light version in use
 
