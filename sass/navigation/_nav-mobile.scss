@@ -127,6 +127,13 @@ $hamburger-hover-transition-timing-function: linear;
     visibility: hidden;
   }
 
+  // Prevent flickering before JS has been loaded
+  // stylelint-disable-next-line a11y/no-display-none
+  .no-js .nav-primary {
+    // We can't support non-JS versions at this time
+    display: none;
+  }
+
   .menu-items {
     margin: 0;
     padding: 2rem 0;

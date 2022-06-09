@@ -1,3 +1,7 @@
+### 9.0.5: 2022-06-09
+
+* Prevent mobile navigation flickering before JS has been loaded
+
 ### 9.0.4: 2022-06-09
 
 * Add default localization for accessible carousels to support Air-blocks 1.1.2
