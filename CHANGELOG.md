@@ -1,3 +1,7 @@
+### 9.0.4: 2022-06-09
+
+* Add default localization for accessible carousels to support Air-blocks 1.1.2
+
 ### 9.0.3: 2022-06-08
 
 * Remove leftover %screen-reader-text from editor styles

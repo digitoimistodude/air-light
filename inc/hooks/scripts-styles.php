@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-04-08 13:04:00
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-06-09 12:03:40
  *
  * @package air-light
  */
@@ -61,6 +61,7 @@ function enqueue_theme_scripts() {
     'previous_slide'  => get_default_localization( 'Previous slide' ),
     'next_slide'      => get_default_localization( 'Next slide' ),
     'last_slide'      => get_default_localization( 'Last slide' ),
+    'skip_slider'     => get_default_localization( 'Skip over the carousel element' ),
   ] );
 
   // Add domains/hosts to disable external link indicators

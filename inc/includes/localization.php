@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-02-08 17:08:22
+ * @Last Modified time: 2022-06-09 12:04:05
  *
  * @package air-light
  */
@@ -39,6 +39,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Close child menu'                             => __( 'Close child menu', 'air-light' ),
       'Close child menu for'                         => __( 'Close child menu for', 'air-light' ),
       'Skip to content'                              => __( 'Skip to content', 'air-light' ),
+      'Skip over the carousel element'               => __( 'Skip over the carousel element', 'air-light' ),
       'External site'                                => __( 'External site', 'air-light' ),
       'opens in a new window'                        => __( 'opens in a new window', 'air-light' ),
       'Page not found.'                              => __( 'Page not found.', 'air-light' ),
@@ -63,6 +64,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Close child menu'                             => 'Sulje alavalikko',
       'Close child menu for'                         => 'Sulje alavalikko kohteelle',
       'Skip to content'                              => 'Siirry suoraan sisältöön',
+      'Skip over the carousel element'               => 'Hyppää karusellisisällön yli seuraavaan sisältöön',
       'External site'                                => 'Ulkoinen sivusto',
       'opens in a new window'                        => 'avautuu uuteen ikkunaan',
       'Page not found.'                              => 'Hups. Näyttää, ettei sivua löydy.',
