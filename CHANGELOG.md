@@ -1,3 +1,8 @@
+### 9.0.6: 2022-06-30
+
+* Upgrade to [devpackages 2.4.7](https://github.com/digitoimistodude/devpackages/releases/tag/2.4.7)
+* Remove air_helper_custom_settings_post_ids hook that is no longer used (kudos to latenssi @ wpfi Slack for spotting it!)
+
 ### 9.0.5: 2022-06-09
 
 * Prevent mobile navigation flickering before JS has been loaded

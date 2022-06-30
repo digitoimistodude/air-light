@@ -1,6 +1,13 @@
 <?php
 /**
+ * Hooks
+ *
  * All hooks that are run in the theme are listed here
+ *
+ * @Author:		Roni Laukkarinen
+ * @Date:   		2022-06-30 16:24:47
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-06-30 16:36:05
  *
  * @package air-light
  */
@@ -22,7 +29,6 @@ namespace Air_Light;
  */
 require get_theme_file_path( 'inc/hooks/general.php' );
 add_action( 'widgets_init', __NAMESPACE__ . '\widgets_init' );
-add_filter( 'air_helper_custom_settings_post_ids', __NAMESPACE__ . '\custom_settings_post_ids' );
 
 /**
  * Scripts and styles associated hooks
