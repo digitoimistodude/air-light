@@ -1,0 +1,14 @@
+// A natural box layout model to all elements
+// Update: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+html,
+*,
+*::before,
+*::after {
+  /* autoprefixer: ignore next */
+  box-sizing: border-box;
+}
+
+img {
+  /* autoprefixer: ignore next */
+  box-sizing: content-box;
+}
