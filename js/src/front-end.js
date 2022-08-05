@@ -5,7 +5,6 @@
 
 // Import modules
 import reframe from 'reframe.js';
-import getLocalization from './modules/localization';
 import { styleExternalLinks, initExternalLinkLabels } from './modules/external-link';
 import initAnchors from './modules/anchors';
 import backToTop from './modules/top';

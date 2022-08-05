@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Add box-model helper
+* Remove leftover getLocalization declaration
 
 ### 9.0.6: 2022-06-30
 
