@@ -2,6 +2,7 @@
 
 * Add box-model helper
 * Remove leftover getLocalization declaration
+* Remove block-file-slug.svg placeholder, replace with .gitkeep
 
 ### 9.0.6: 2022-06-30
 
