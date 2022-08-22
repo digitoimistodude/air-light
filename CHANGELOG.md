@@ -1,8 +1,9 @@
-### [Unreleased]
+### 9.0.7: 2022-08-22
 
 * Add box-model helper
 * Remove leftover getLocalization declaration
 * Remove block-file-slug.svg placeholder, replace with .gitkeep
+* Improvement: Consistent $transition-duration, less movement
 
 ### 9.0.6: 2022-06-30
 

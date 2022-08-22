@@ -331,7 +331,7 @@ $hamburger-hover-transition-timing-function: linear;
 
     .nav-primary {
       opacity: 0;
-      transition: all $transition-duration ease-in-out;
+      transition: all $transition-duration;
       width: 100vw;
     }
 

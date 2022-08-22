@@ -1,5 +1,5 @@
 // Transition duration and animations
-$transition-duration: .18s;
+$transition-duration: 50ms;
 
 // Mixins
 @mixin cubic-bezier($property: color, $duration: .18s) {

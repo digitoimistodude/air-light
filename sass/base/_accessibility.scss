@@ -97,7 +97,7 @@ a.is-external-link::after {
   position: relative;
   right: 0;
   top: 0;
-  transition: all .18s ease-in-out;
+  transition: all $transition-duration;
   width: 12px;
 }
 

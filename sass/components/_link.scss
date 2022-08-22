@@ -7,7 +7,7 @@
   text-decoration: underline;
   text-decoration-color: var(--color-link-text);
   text-underline-offset: 6px;
-  transition: all .18s ease-in-out;
+  transition: all $transition-duration;
 
   &.is-external-link::after {
     background-image: url('../../svg/external-link-styled-links.svg');
