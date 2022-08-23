@@ -6,6 +6,10 @@
 
 // Helpers
 @import 'helpers/animations';
+@import 'helpers/aspect-ratio';
+@import 'helpers/box-model';
+@import 'helpers/clamp';
+@import 'helpers/images';
 @import 'helpers/typography';
 
 // Variables
@@ -37,9 +41,6 @@
 
 // Gutenberg formatting
 @import 'gutenberg/formatting';
-
-// Global features needed by editor
-@import 'features/lazyload';
 
 // Editor
 @import 'gutenberg/editor';
