@@ -1,0 +1,13 @@
+// stylelint-disable max-line-length
+@use 'sass:math';
+
+// Easy CSS Clamp SCSS function
+// @source https://dev.to/christianmay21/easy-css-clamp-scss-mixin-1225
+// Usage: font-size: clamp-calc(480px, 640px, 12px, 16px);
+@function clamp-calc($min-width, $max-width, $size-at-min-width, $size-at-max-width) {
+  $slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width) or calc(($size-at-max-width - $size-at-min-width) / ($max-width - $min-width));
+  $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+  $return-value: clamp(#{$size-at-min-width}, #{$y-axis-intersection} + #{$slope} * 100vw, #{$size-at-max-width});
+
+  @return $return-value;
+}

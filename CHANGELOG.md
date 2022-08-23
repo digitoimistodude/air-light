@@ -2,6 +2,8 @@
 
 * Deprecate lazyload from CSS as it is no longer needed after loading="lazy"
 * Add image-background helper class for imgs as backgrounds
+* Add CSS clamp function as helper for responsive font sizes
+* Add CSS aspect-ratio helper for responsive images
 
 ### 9.0.7: 2022-08-22
 
