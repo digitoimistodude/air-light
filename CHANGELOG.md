@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add custom version of sanitize.css
+
 ### 9.0.8: 2022-08-23
 
 * Deprecate lazyload from CSS as it is no longer needed after loading="lazy"

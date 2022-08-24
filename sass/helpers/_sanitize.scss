@@ -1,0 +1,206 @@
+// Custom version of sanitized.css.
+
+/**
+ * 1. Add border box sizing in all browsers (opinionated).
+ * 2. Backgrounds do not repeat by default (opinionated).
+ */
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat; /* 2 */
+  box-sizing: border-box; /* 1 */
+}
+
+/**
+   * 1. Add text decoration inheritance in all browsers (opinionated).
+   * 2. Add vertical alignment inheritance in all browsers (opinionated).
+   */
+
+::before,
+::after {
+  text-decoration: inherit; /* 1 */
+  vertical-align: inherit; /* 2 */
+}
+
+/**
+   * 1. Use the default cursor in all browsers (opinionated).
+   * 2. Change the line height in all browsers (opinionated).
+   * 3. Breaks words to prevent overflow in all browsers (opinionated).
+   * 4. Use a 4-space tab width in all browsers (opinionated).
+   * 5. Remove the grey highlight on links in iOS (opinionated).
+   * 6. Prevent adjustments of font size after orientation changes in iOS.
+   */
+
+:where(:root) {
+  cursor: default; /* 1 */
+  line-height: 1.5; /* 2 */
+  overflow-wrap: break-word; /* 3 */
+  tab-size: 4; /* 4 */
+  -webkit-tap-highlight-color: transparent; /* 5 */
+  text-size-adjust: 100%; /* 6 */
+}
+
+/* Sections
+   * ========================================================================== */
+
+/**
+   * Remove the margin in all browsers (opinionated).
+   */
+
+:where(body) {
+  margin: 0;
+}
+
+/**
+   * 1. Correct the inheritance of border color in Firefox.
+   * 2. Add the correct box sizing in Firefox.
+   */
+
+:where(hr) {
+  // stylelint-disable-next-line
+  color: inherit; /* 1 */
+  height: 0; /* 2 */
+}
+
+/**
+   * Remove the list style on navigation lists in all browsers (opinionated).
+   */
+
+:where(nav) :where(ol, ul) {
+  list-style-type: none;
+  padding: 0;
+}
+
+/**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   * 3. Prevent overflow of the container in all browsers (opinionated).
+   */
+
+:where(pre) {
+  // stylelint-disable-next-line
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+  overflow: auto; /* 3 */
+}
+
+/**
+   * Change the fill color to match the text color in all browsers (opinionated).
+   */
+
+:where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+/* Forms
+   * ========================================================================== */
+
+/**
+   * Correct the inability to style buttons in iOS and Safari.
+   */
+
+:where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
+  appearance: button;
+}
+
+/**
+   * 1. Remove the margin in Firefox and Safari.
+   * 3. Change the resize direction in all browsers (opinionated).
+   */
+
+:where(textarea) {
+  margin: 0; /* 1 */
+  resize: vertical; /* 3 */
+}
+
+/**
+   * 1. Correct the odd appearance in Chrome, Edge, and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+
+:where([type="search" i]) {
+  appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+   * Correct the cursor style of increment and decrement buttons in Safari.
+   */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+   * Correct the text style of placeholders in Chrome, Edge, and Safari.
+   */
+
+// stylelint-disable-next-line
+::input-placeholder {
+  // stylelint-disable-next-line
+  color: inherit;
+  opacity: .54;
+}
+
+/**
+   * Remove the inner padding in Chrome, Edge, and Safari on macOS.
+   */
+
+::-webkit-search-decoration {
+  appearance: none;
+}
+
+/**
+   * 1. Correct the inability to style upload buttons in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+
+::-webkit-file-upload-button {
+  appearance: button; /* 1 */
+  // stylelint-disable-next-line
+  font: inherit; /* 2 */
+}
+
+/*
+   * Add the correct display in Safari.
+   */
+
+:where(details > summary:first-of-type) {
+  display: list-item;
+}
+
+/* Accessibility
+   * ========================================================================== */
+
+/**
+   * Change the cursor on busy elements in all browsers (opinionated).
+   */
+
+:where([aria-busy="true" i]) {
+  cursor: progress;
+}
+
+/*
+   * Change the cursor on disabled, not-editable, or otherwise
+   * inoperable elements in all browsers (opinionated).
+   */
+
+:where([aria-disabled="true" i], [disabled]) {
+  cursor: not-allowed;
+}
+
+/*
+   * Change the display on visually hidden accessible elements
+   * in all browsers (opinionated).
+   */
+
+:where([aria-hidden="false" i][hidden]) {
+  display: initial;
+}
+
+:where([aria-hidden="false" i][hidden]:not(:focus)) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
