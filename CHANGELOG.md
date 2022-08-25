@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Improve post title color and size accessibility in Gutenberg editor
+
 ### 9.0.9: 2022-08-25
 
 * Add custom version of sanitize.css

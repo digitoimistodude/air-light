@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-03-16 15:35:47
+ * @Last Modified time: 2022-08-25 14:53:45
  *
  * @package air-light
  */
@@ -121,7 +121,13 @@ function block_editor_title_input_styles() {
   $styles = '
   /* Remove gap between post title wrapper and first block */
   .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child {
+    padding: 4rem 2rem;
     margin-top: 0;
+  }
+
+  /* Remove border from the appender */
+  .block-editor-button-block-appender {
+    box-shadow: none;
   }
 
   /* Remove white border from top */
@@ -147,16 +153,19 @@ function block_editor_title_input_styles() {
 
   .block-editor .editor-styles-wrapper .editor-post-title {
     color: #fff;
-    font-size: 20px;
-    font-weight: 600;
     margin: 0 auto;
     padding: 4rem 2rem;
   }
 
+  .block-editor .editor-styles-wrapper .editor-post-title [data-rich-text-placeholder]::after {
+    color: #fff;
+    opacity: 1;
+  }
+
   .block-editor .editor-styles-wrapper .editor-post-title::before {
-    color: rgb(255 255 255 / .5);
+    color: #bababa;
     display: block;
-    font-size: 12px;
+    font-size: medium;
     font-weight: 500;
     margin-bottom: 1rem;
     position: relative;
