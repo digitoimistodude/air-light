@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Improve post title color and size accessibility in Gutenberg editor
+* Remove unnecessary float reset from nav item
 
 ### 9.0.9: 2022-08-25
 
