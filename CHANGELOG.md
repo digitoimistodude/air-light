@@ -1,6 +1,11 @@
-### [Unreleased]
+### 9.0.9: 2022-08-25
 
 * Add custom version of sanitize.css
+* Improve external-links.js JavaScript
+* Ignore external link arrows for links that have only imgs in them
+* Add ignore classes for external links
+* Generate SVG arrow for external links via JS instead of CSS
+* Clean up old different versions of external-link.svg files
 
 ### 9.0.8: 2022-08-23
 

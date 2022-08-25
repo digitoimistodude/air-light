@@ -26,12 +26,6 @@
   white-space: nowrap;
   width: auto;
 
-  // Buttons usually already have arrows
-  // stylelint-disable-next-line a11y/no-display-none
-  &.is-external-link::after {
-    display: none;
-  }
-
   &.focus,
   &:hover,
   &:focus {

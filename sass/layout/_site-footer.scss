@@ -34,12 +34,6 @@
     position: relative;
   }
 
-  // Hiding for aesthetic reasons
-  // stylelint-disable-next-line a11y/no-display-none
-  .is-external-link::after {
-    display: none;
-  }
-
   .powered-by-wordpress {
     display: inline-block;
     font-weight: var(--font-weight-semibold);
@@ -53,19 +47,6 @@
     overflow: hidden;
     padding-bottom: 4px;
     position: relative;
-
-    &.is-external-link::after {
-      background-color: var(--color-white);
-      bottom: 0;
-      content: '';
-      display: block;
-      height: 1px;
-      opacity: .4;
-      position: absolute;
-      top: auto;
-      transition: opacity $transition-duration;
-      width: 100%;
-    }
   }
 
   a {

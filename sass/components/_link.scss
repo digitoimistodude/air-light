@@ -9,19 +9,10 @@
   text-underline-offset: 6px;
   transition: all $transition-duration;
 
-  &.is-external-link::after {
-    background-image: url('../../svg/external-link-styled-links.svg');
-  }
-
   &:hover,
   &:focus {
     color: var(--color-link-text-hover);
     text-decoration-color: var(--color-link-text-hover);
-  }
-
-  &.is-external-link:hover::after,
-  &.is-external-link:focus::after {
-    background-image: url('../../svg/external-link-black.svg');
   }
 
   // Make focus a little more engaging

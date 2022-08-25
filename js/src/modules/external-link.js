@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-09-01 11:55:37
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-26 13:36:49
+ * @Last Modified time: 2022-08-25 14:15:33
  */
 /**
  * Style external links
@@ -47,12 +47,12 @@ function isLinkExternal(link, localDomains) {
 }
 
 /**
- * Try to get image alt texts from inside a link
- * to use in aria-label, when only elements inside
- * of link are images
- * @param {*} link DOM link element
- * @returns string
- */
+  * Try to get image alt texts from inside a link
+  * to use in aria-label, when only elements inside
+  * of link are images
+  * @param {*} link DOM link element
+  * @returns string
+  */
 export function getChildAltText(link) {
   const children = [...link.children];
 
@@ -83,20 +83,39 @@ export function styleExternalLinks() {
     window.location.host,
   ];
 
-  if (typeof window.air_light_externalLinkDomains !== 'undefined') {
-    localDomains = localDomains.concat(window.air_light_externalLinkDomains);
+  if (typeof window.rvnayttely_externalLinkDomains !== 'undefined') {
+    localDomains = localDomains.concat(window.rvnayttely_externalLinkDomains);
   }
 
   const links = document.querySelectorAll('a');
 
   const externalLinks = [...links].filter((link) => isLinkExternal(link.href, localDomains));
 
+  // eslint-disable-next-line consistent-return
   externalLinks.forEach((externalLink) => {
-    const textContent = externalLink.textContent.trim().length
-      ? externalLink.textContent.trim() : getChildAltText(externalLink);
-    const ariaLabel = externalLink.target === '_blank' ? `${textContent}: ${getLocalization('external_link')}, ${getLocalization('target_blank')}` : `${textContent}: ${getLocalization('external_link')}`;
-    externalLink.setAttribute('aria-label', ariaLabel);
-    externalLink.classList.add('is-external-link');
+    // Abort mission if there is only img element inside of link
+    if (externalLink.childElementCount === 1 && externalLink.children[0].tagName.toLowerCase() === 'img') {
+      return false;
+    }
+
+    if (!externalLink.classList.contains('no-external-link-label')) {
+      const textContent = externalLink.textContent.trim().length
+        ? externalLink.textContent.trim() : getChildAltText(externalLink);
+      const ariaLabel = externalLink.target === '_blank' ? `${textContent}: ${getLocalization('external_link')}, ${getLocalization('target_blank')}` : `${textContent}: ${getLocalization('external_link')}`;
+      externalLink.setAttribute('aria-label', ariaLabel);
+    }
+
+    // Arrow icon won't be added if one of these classes is defined for the link
+    const classExceptions = [
+      'no-external-link-indicator',
+      'global-link',
+      'button',
+    ];
+
+    if (!classExceptions.some((className) => externalLink.classList.contains(className))) {
+      // Add SVG arrow icon
+      externalLink.insertAdjacentHTML('beforeend', '<svg aria-hidden="true" style="margin-left: .5rem; margin-right: .2rem;" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 9 9"><path d="M4.499 1.497h4v4m0-4l-7 7" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+    }
   });
 }
 
