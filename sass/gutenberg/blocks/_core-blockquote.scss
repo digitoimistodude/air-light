@@ -28,7 +28,7 @@ blockquote {
 
 .wp-block-quote {
   border-left: 2px solid var(--color-blockquote);
-  line-height: var(--line-height-paragraphs-blog);
+  line-height: var(--line-height-paragraph);
   margin-bottom: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -38,7 +38,7 @@ blockquote {
 
   > p {
     color: var(--color-blockquote);
-    line-height: var(--line-height-paragraphs-blog);
+    line-height: var(--line-height-paragraph);
   }
 
   @media (max-width: $width-max-article + 40px) {

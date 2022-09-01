@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Combine `--line-height-paragraphs-blog` and `--line-height-paragraphs` to one unified CSS variable: `--line-height-paragraph`
+
 ### 9.1.0: 2022-09-01
 
 * Improve post title color and size accessibility in Gutenberg editor
