@@ -1,15 +1,21 @@
 // Styling background-images
+// For custom sized image background, use: class="image image-background"
+// For bg as layer, use: class="image image-background image-background-layer"
 .image-background > img {
-  height: 100%;
-  left: 0;
   object-fit: cover;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 0;
 }
 
 .image-background {
   overflow: hidden;
   position: relative;
+}
+
+.image-background > img,
+.image-background-layer {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
 }
