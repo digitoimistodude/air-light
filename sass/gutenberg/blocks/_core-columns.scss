@@ -11,7 +11,7 @@
     @media (max-width: 900px) {
       display: grid;
       grid-gap: 1em;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat($i, 1fr);
       width: 100%;
 
       .wp-block-column {
