@@ -78,13 +78,25 @@ body *[aria-invalid="true"] {
   }
 
   textarea,
-  input {
+  input:not([type="checkbox"]):not([type="radio"]) {
     width: 100%;
   }
 
   // Fix textarea not full width
   .ginput_container.ginput_container_textarea {
     display: flex;
+  }
+
+  // Checkboxes & radio buttons
+  .gfield_radio,
+  .gfield_checkbox {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .gchoice {
+    display: flex;
+    gap: 1rem;
   }
 
   .gfield_label {

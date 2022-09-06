@@ -1,5 +1,8 @@
-### [Unreleased]
+### 9.1.1: 2022-09-06
 
+* Improve form checkbox and radiob button styles
+* Form checkboxes and radio buttons: Add bouncy check animation
+* Clarify reset for checkboxes and radio buttons for gravity forms
 * Combine `--line-height-paragraphs-blog` and `--line-height-paragraphs` to one unified CSS variable: `--line-height-paragraph`
 
 ### 9.1.0: 2022-09-01
