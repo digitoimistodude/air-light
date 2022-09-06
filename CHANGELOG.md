@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Clean up is-external-link from CSS that is no longer used
+
 ### 9.1.1: 2022-09-06
 
 * Improve form checkbox and radiob button styles
