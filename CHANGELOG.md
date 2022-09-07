@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add default font-family for form select items
+
 ### 9.1.4: 2022-09-07
 
 * Fix: Viewport padding/white-space on mobile devices
