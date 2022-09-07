@@ -1,7 +1,8 @@
-### [Unreleased]
+### 9.1.3: 2022-09-07
 
 * Consistency for variable `--font-weight-paragraph`
 * Remove `has-light-bg` and `has-dark-bg` classes that are no longer used by back to top feature
+* Increase padding on mid-sized screens to prevent container sticking to sides
 
 ### 9.1.2: 2022-09-07
 
