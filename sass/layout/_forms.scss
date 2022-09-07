@@ -47,7 +47,6 @@ input[type="month"],
 input[type="week"],
 input[type="email"],
 input[type="search"] {
-  @extend %default;
   background-color: var(--color-background-input-field);
   border-color: var(--color-border-forms);
   border-radius: var(--border-radius-input-field);

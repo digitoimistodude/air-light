@@ -19,5 +19,5 @@ ol {
 // Colorized markers
 li::marker {
   color: var(--color-link-text);
-  font-size: var(--font-size-16);
+  font-size: inherit;
 }

@@ -12,10 +12,11 @@
 body {
   color: var(--color-paragraph);
   font-family: var(--font-paragraph);
-  font-size: var(--font-size-default);
+  font-size: var(--font-size-paragraph);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: var(--font-weight-paragraphs);
+  line-height: var(--line-height-paragraph);
   // stylelint-disable-next-line value-keyword-case
   text-rendering: geometricPrecision;
 }
@@ -38,10 +39,9 @@ code,
 th,
 td,
 table,
-tr,
-%default {
-  font-size: var(--font-size-paragraphs);
-  line-height: var(--line-height-paragraph);
+tr {
+  font-size: inherit;
+  line-height: inherit;
 }
 
 // Heading defaults

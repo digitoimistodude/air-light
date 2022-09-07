@@ -19,8 +19,7 @@
   --font-size-22: 22px;
 
   // Element font sizes
-  --font-size-default: var(--font-size-17);
-  --font-size-paragraphs: var(--font-size-18);
+  --font-size-paragraph: var(--font-size-18);
   --font-size-nav-toggle-label: 15px;
   --font-size-captions: 15px;
 
@@ -46,8 +45,7 @@
     --font-size-h4: 18px;
     --font-size-h5: 14px;
     --font-size-h6: 12px;
-    --font-size-paragraphs: 16px;
-    --font-size-default: 16px;
+    --font-size-paragraph: 16px;
   }
 
   // Element font sizes in tiny phones like iPhone 5S
