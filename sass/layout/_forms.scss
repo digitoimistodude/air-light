@@ -34,6 +34,13 @@ legend,
 label {
   color: var(--color-form-label-text);
   font-size: var(--font-size-input-fields);
+  font-weight: var(--font-weight-semibold);
+}
+
+// Unset checkbox and radio button labels
+input + label {
+  // stylelint-disable-next-line font-weight-notation
+  font-weight: unset;
 }
 
 // Form input elements and textareas

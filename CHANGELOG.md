@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Add default font-family for form select items
+* Remove opionated label font-weight
 
 ### 9.1.4: 2022-09-07
 
