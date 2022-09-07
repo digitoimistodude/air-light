@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Consistency for variable `--font-weight-paragraph`
+
 ### 9.1.2: 2022-09-07
 
 * Clean up is-external-link from CSS that is no longer used
