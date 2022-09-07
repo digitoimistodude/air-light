@@ -21,7 +21,7 @@ get_header(); ?>
 
 <main class="site-main">
 
-  <section class="block block-blog has-light-bg">
+  <section class="block block-blog">
     <div class="container">
 
       <?php if ( have_posts() ) : ?>

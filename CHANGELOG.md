@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Consistency for variable `--font-weight-paragraph`
+* Remove `has-light-bg` and `has-dark-bg` classes that are no longer used by back to top feature
 
 ### 9.1.2: 2022-09-07
 
