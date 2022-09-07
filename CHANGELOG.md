@@ -1,3 +1,8 @@
+### 9.1.4: 2022-09-07
+
+* Fix: Viewport padding/white-space on mobile devices
+* Fix: Leftover variable not defined
+
 ### 9.1.3: 2022-09-07
 
 * Consistency for variable `--font-weight-paragraph`

@@ -20,6 +20,11 @@
     --padding-container-horizontal: 6.4rem;
   }
 
+  // When there's no longer room for container to fit with wider white space
+  @media (max-width: 700px) {
+    --padding-container-horizontal: 2rem;
+  }
+
   // When navigation transforms to a responsive hamburger menu
   @media (max-width: $width-max-mobile) {
     --padding-site-header-vertical: 2rem;
