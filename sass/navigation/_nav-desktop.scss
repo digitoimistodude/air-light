@@ -14,9 +14,6 @@ $use-dropdown-toggle-animation: true;
 :root {
   // Dimensions, gaps and spacings
   --border-radius-sub-menu: 0;
-  --box-shadow-navigation-static: 0 0 10px rgb(84 87 115 / .1);
-  // This could be for instance: 0 25px 20px -10px rgb(5 4 25 / .05)
-  --box-shadow-sub-menu: transparent;
   --dropdown-toggle-size: 12px;
   --gap-dropdown: 1rem;
   --gap-between-dropdown-toggle: 1.5rem;
@@ -31,7 +28,6 @@ $use-dropdown-toggle-animation: true;
   // Colors
   --color-background-nav-desktop: var(--color-white);
   --color-background-sub-menu: var(--color-white);
-  --color-border-sub-menu: rgb(41 44 61 / .05);
   --color-dropdown-toggle: var(--color-valhalla);
   --color-sub-menu: var(--color-valhalla);
   --color-hover-main-level: var(--color-link-text);
@@ -55,7 +51,6 @@ $use-dropdown-toggle-animation: true;
   .nav-container {
     @if $absolute-navigation == false {
       background-color: var(--color-background-nav-desktop);
-      box-shadow: var(--box-shadow-navigation-static);
       position: relative;
       z-index: 222;
     }
@@ -173,14 +168,8 @@ $use-dropdown-toggle-animation: true;
   // Dropdowns
   .sub-menu {
     background-color: var(--color-background-sub-menu);
-    border-bottom: 1px solid var(--color-border-sub-menu);
-    border-bottom-left-radius: var(--border-radius-sub-menu);
-    border-bottom-right-radius: var(--border-radius-sub-menu);
-    border-left: 1px solid var(--color-border-sub-menu);
-    border-right: 1px solid var(--color-border-sub-menu);
     border-top-left-radius: var(--border-radius-sub-menu);
     border-top-right-radius: var(--border-radius-sub-menu);
-    box-shadow: var(--box-shadow-sub-menu);
     left: 0;
     margin-left: 0;
     margin-top: var(--gap-dropdown);
