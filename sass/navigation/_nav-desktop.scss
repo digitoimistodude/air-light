@@ -6,7 +6,6 @@
 
 // Settings
 $absolute-navigation: true;
-$use-dropdown-bubble: true;
 $use-dropdown-toggle-animation: true;
 
 // CSS variables
@@ -342,28 +341,6 @@ $use-dropdown-toggle-animation: true;
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
       transform: translateY(0%) rotate(90deg);
-    }
-  }
-
-  // Dropdown bubble
-  @if $use-dropdown-bubble == true {
-    .menu-item-has-children::before {
-      // Use of non-variable is acceptable here because bubble needs it
-      // stylelint-disable-next-line sh-waqar/declaration-use-variable
-      border-color: transparent transparent var(--color-white);
-      border-style: solid;
-      border-width: 0 5px 5px;
-      bottom: -10px;
-      content: '';
-      display: block;
-      height: 0;
-      left: 50%;
-      margin-left: -20px;
-      position: absolute;
-      transform: scale(0);
-      transform-origin: center bottom;
-      transition: none;
-      width: 0;
     }
   }
 } // @media only screen and (min-width: $width-max-mobile)

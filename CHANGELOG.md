@@ -1,9 +1,10 @@
-### [Unreleased]
+### 9.1.5: 2022-09-12
 
 * Add default font-family for form select items
 * Remove opionated label font-weight
 * Remove opionated nav default dropshadow from sub menus
 * Remove opionated nav default border-color from sub menus
+* Remove opionated bubble tip from sub menus
 
 ### 9.1.4: 2022-09-07
 
