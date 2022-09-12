@@ -1,5 +1,8 @@
 ### 9.1.5: 2022-09-12
 
+* Fix: Use ACF defined font styles in ACF fields
+* Fix acf icons visibility issue
+* Fix link colors in sidebar
 * Add default font-family for form select items
 * Remove opionated label font-weight
 * Remove opionated nav default dropshadow from sub menus

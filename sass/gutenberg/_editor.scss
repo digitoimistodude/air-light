@@ -18,10 +18,28 @@
   overflow-x: hidden;
 
   // Use ACF defined font styles in ACF fields
+  .acf-field,
+  .acf-input,
+  .acf-button-group label,
   .acf-fields *[class^='acf-'],
   .acf-fields [class^='acf-'] *:not(.mce-ico) {
     font-family: inherit;
     font-size: unset;
+  }
+
+  // Fix acf icons visibility issue
+  .acf-icon {
+    // stylelint-disable-next-line
+    z-index: 5555 !important;
+  }
+
+  // Fix link colors in sidebar
+  .edit-post-post-link__preview-link-container a,
+  .editor-post-link a {
+
+    // stylelint-disable-next-line
+    color: inherit;
+    text-decoration: inherit;
   }
 
   // Make buttons and input fields work in ACF previews
