@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix font-size not inheriting to Gutenberg editor
+
 ### 9.1.5: 2022-09-12
 
 * Fix: Use ACF defined font styles in ACF fields
