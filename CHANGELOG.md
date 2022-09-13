@@ -2,6 +2,7 @@
 
 * Fix font-size not inheriting to Gutenberg editor
 * Fix rich text font size in Gutenberg editor
+* Fix Gutenberg editor font-sizing issues
 
 ### 9.1.5: 2022-09-12
 

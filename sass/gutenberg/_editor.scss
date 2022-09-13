@@ -18,11 +18,13 @@
   overflow-x: hidden;
 
   // Use ACF defined font styles in ACF fields
+  .acf-bl,
+  .acf-bl *,
   .acf-field,
   .acf-input,
   .acf-button-group label,
-  .acf-fields *[class^='acf-'],
-  .acf-fields [class^='acf-'] *:not(.mce-ico) {
+  .wpseo-metabox-root *,
+  .acf-fields *[class^='acf-']:not(.acf-field-url) {
     font-family: inherit;
     font-size: unset;
   }
