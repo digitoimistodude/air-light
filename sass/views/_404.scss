@@ -8,7 +8,7 @@
   }
 
   h1 {
-    @include responsive-font(42px, 200px);
+    font-size: clamp-calc($container-mobile, 1600px, 42px, 200px);
     margin-bottom: 2rem;
   }
 }
