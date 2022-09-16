@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add external-link-icon styles for mobile
+
 ### 9.1.6: 2022-09-14
 
 * Fix font-size not inheriting to Gutenberg editor

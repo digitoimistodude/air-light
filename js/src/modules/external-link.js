@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-09-01 11:55:37
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-08-25 14:15:33
+ * @Last Modified time: 2022-09-16 14:48:01
  */
 /**
  * Style external links
@@ -114,7 +114,7 @@ export function styleExternalLinks() {
 
     if (!classExceptions.some((className) => externalLink.classList.contains(className))) {
       // Add SVG arrow icon
-      externalLink.insertAdjacentHTML('beforeend', '<svg aria-hidden="true" style="margin-left: .5rem; margin-right: .2rem;" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 9 9"><path d="M4.499 1.497h4v4m0-4l-7 7" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+      externalLink.insertAdjacentHTML('beforeend', '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 9 9"><path d="M4.499 1.497h4v4m0-4l-7 7" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
     }
   });
 }

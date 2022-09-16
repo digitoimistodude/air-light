@@ -104,3 +104,16 @@
     transition: outline-offset .25s ease;
   }
 }
+
+// External link icon
+.external-link-icon {
+  margin-left: .7rem;
+  margin-right: .2rem;
+
+  @media (max-width: $container-mobile) {
+    height: 12px;
+    margin-left: .4rem;
+    transform: translateY(1px);
+    width: 12px;
+  }
+}
