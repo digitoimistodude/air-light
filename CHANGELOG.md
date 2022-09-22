@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Add external-link-icon styles for mobile
+* Remove setup_editor_styles function because it breaks stage+prod and block styles still load correctly without that
 
 ### 9.1.6: 2022-09-14
 

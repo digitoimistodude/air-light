@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-08-25 14:53:45
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-09-22 12:14:41
  *
  * @package air-light
  */
@@ -92,17 +92,6 @@ function remove_gutenberg_inline_styles( $editor_settings, $editor_context ) {
   }
 
   return $editor_settings;
-}
-
-/**
- * Make sure Gutenberg wp-admin editor styles are loaded
- */
-function setup_editor_styles() {
-  // Add support for editor styles.
-  add_theme_support( 'editor-styles' );
-
-  // Enqueue editor styles.
-  add_editor_style( get_theme_file_uri( get_asset_file( 'gutenberg-editor-styles.css' ) ) );
 }
 
 /**
