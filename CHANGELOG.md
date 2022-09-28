@@ -3,6 +3,7 @@
 * Add external-link-icon styles for mobile
 * Remove setup_editor_styles function because it breaks stage+prod and block styles still load correctly without that
 * Improve anchors.js formatting
+* Add a11y-skip-link JS module for ensuring that skip links always focus to first heading
 
 ### 9.1.6: 2022-09-14
 
