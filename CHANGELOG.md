@@ -1,6 +1,7 @@
-### [Unreleased]
+### 9.1.8: 2022-09-29
 
 * Remove leftover styles from default block
+* Remove outdated scripts in gutenberg-editor.js that causes an error on wp-admin
 
 ### 9.1.7: 2022-09-28
 
