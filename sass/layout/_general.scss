@@ -5,9 +5,6 @@
 // Default structural element
 .block {
   background-color: var(--color-white);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0 auto;
   max-width: $width-max-layout;
   position: relative;

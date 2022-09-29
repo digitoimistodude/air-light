@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Remove leftover styles from default block
+
 ### 9.1.7: 2022-09-28
 
 * Add external-link-icon styles for mobile
