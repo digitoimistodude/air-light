@@ -56,6 +56,7 @@
     "function-name-case": "lower",
     "function-max-empty-lines": 0,
     "max-empty-lines": 1,
+    "max-line-length": null,
     "unit-case": "lower",
     "selector-pseudo-class-case": "lower",
     "selector-attribute-brackets-space-inside": "never",

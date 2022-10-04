@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Disable stylelint max-line-length
+
 ### 9.1.8: 2022-09-29
 
 * Remove leftover styles from default block
