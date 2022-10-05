@@ -68,6 +68,9 @@
   textarea:focus,
   div[tabindex]:focus {
     opacity: 1;
+    outline-color: var(--color-focus-outline);
+    outline-offset: 8px;
+    outline-width: 2px;
   }
 }
 
@@ -88,7 +91,6 @@
   *:focus,
   [data-whatinput="keyboard"] :focus,
   [data-whatinput="keyboard"] a:focus {
-    outline-offset: 5px;
     transition: outline-offset .25s ease;
   }
 }
