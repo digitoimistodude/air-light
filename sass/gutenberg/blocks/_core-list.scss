@@ -2,7 +2,6 @@
 // Default list block
 ul,
 ol {
-  color: var(--color-paragraph);
   list-style-position: outside;
   width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
 }

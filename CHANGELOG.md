@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Disable stylelint max-line-length
+* Remove default list color conflicting with ACF fields
 
 ### 9.1.8: 2022-09-29
 
