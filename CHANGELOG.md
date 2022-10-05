@@ -2,6 +2,7 @@
 
 * Disable stylelint max-line-length
 * Remove default list color conflicting with ACF fields
+* Remove global link focus color that is no longer used
 
 ### 9.1.8: 2022-09-29
 

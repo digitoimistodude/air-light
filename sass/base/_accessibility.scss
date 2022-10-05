@@ -69,18 +69,6 @@
   div[tabindex]:focus {
     opacity: 1;
   }
-
-  .global-link {
-    transition: none;
-  }
-
-  // A bit better focus for large elements
-  a.global-link:focus {
-    outline-offset: 5px;
-    outline-style: solid;
-    outline-width: 4px;
-    transition: outline-offset .25s ease;
-  }
 }
 
 // Define here the upsell blocks that have overlay link areas
