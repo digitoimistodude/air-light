@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add missing external-link-icon class
+
 ### 9.1.9: 2022-10-06
 
 * Disable stylelint max-line-length
