@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-06-09 12:04:05
+ * @Last Modified time: 2022-10-06 22:44:52
  *
  * @package air-light
  */
@@ -58,7 +58,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Open main menu'                               => 'Avaa päävalikko',
       'Close main menu'                              => 'Sulje päävalikko',
       'Main navigation'                              => 'Päävalikko',
-      'Back to top'                                  => 'Takaisin ylös',
+      'Back to top'                                  => 'Siirry takaisin sivun alkuun',
       'Open child menu'                              => 'Avaa alavalikko',
       'Open child menu for'                          => 'Avaa alavalikko kohteelle',
       'Close child menu'                             => 'Sulje alavalikko',
