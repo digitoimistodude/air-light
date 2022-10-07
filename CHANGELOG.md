@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Add missing external-link-icon class
+* Fix aspect-ratio mixin supports query
 
 ### 9.1.9: 2022-10-06
 

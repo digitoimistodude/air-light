@@ -4,7 +4,7 @@
   aspect-ratio: #{$width} / #{$height};
 
   // Support for Safari 10-14 (Big Sur and earlier)
-  @supports not (aspect-ratio: 1 / 1) {
+  @supports not (aspect-ratio: #{$width} / #{$height}) {
     position: relative;
 
     &::before {
