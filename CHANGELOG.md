@@ -2,6 +2,7 @@
 
 * Add missing external-link-icon class
 * Fix aspect-ratio mixin supports query
+* Fix mobile nav-toggle one side is longer than others while button focused
 
 ### 9.1.9: 2022-10-06
 
