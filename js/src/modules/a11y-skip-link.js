@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-05-12 17:32:43
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-09-28 14:34:22
+ * @Last Modified time: 2022-10-12 15:06:50
  */
 import MoveTo from 'moveto';
 
@@ -16,11 +16,14 @@ const initA11ySkipLink = () => {
   const moveTo = new MoveTo();
 
   // When clicked, move focus to the target element
-  a11ySkipLink.addEventListener('click', () => {
-    a11ySkipLinkTarget.setAttribute('tabindex', '-1');
-    a11ySkipLinkTarget.focus();
-    moveTo.move(a11ySkipLinkTarget);
-  });
+
+  if (a11ySkipLink) {
+    a11ySkipLink.addEventListener('click', () => {
+      a11ySkipLinkTarget.setAttribute('tabindex', '-1');
+      a11ySkipLinkTarget.focus();
+      moveTo.move(a11ySkipLinkTarget);
+    });
+  }
 };
 
 export default initA11ySkipLink;
