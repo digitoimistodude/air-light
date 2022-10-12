@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Ensure all blocks get default alignment styles despite core styles or Autoptimize order
+
 ### 9.2.0: 2022-10-12
 
 * Add check for a11ySkipLink

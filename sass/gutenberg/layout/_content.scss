@@ -9,6 +9,7 @@
 }
 
 // Gutenberg core magic
+.article-content > [class^='wp-block-'],
 .is-root-container > *,
 .article-content > * {
   line-height: var(--line-height-paragraph);
