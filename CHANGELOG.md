@@ -1,5 +1,6 @@
-### [Unreleased]
+### 9.2.0: 2022-10-12
 
+* Add check for a11ySkipLink
 * Add missing external-link-icon class
 * Fix aspect-ratio mixin supports query
 
