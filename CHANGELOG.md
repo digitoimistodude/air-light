@@ -81,7 +81,7 @@
 * Remove unnecessary float reset from nav item
 * Add image-background-layer to image helper classes
 * Fix enumerating grid in columns
-* Bump tested up WordPress version to 6.0.2
+* Bump tested up WordPress version to 6.0.3
 
 ### 9.0.9: 2022-08-25
 
