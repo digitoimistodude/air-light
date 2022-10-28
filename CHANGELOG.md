@@ -1,6 +1,7 @@
-### [Unreleased]
+### 9.2.1: 2022-10-28
 
 * Ensure all blocks get default alignment styles despite core styles or Autoptimize order
+* Increase default $transition-duration
 
 ### 9.2.0: 2022-10-12
 

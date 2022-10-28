@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-10-12 15:07:26
+ * @Last Modified time: 2022-10-28 10:17:27
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '9.2.0' );
+define( 'AIR_LIGHT_VERSION', '9.2.1' );
 
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
