@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-09-01 11:55:37
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-10-06 22:57:34
+ * @Last Modified time: 2022-10-31 16:23:45
  */
 /**
  * Style external links
@@ -83,8 +83,8 @@ export function styleExternalLinks() {
     window.location.host,
   ];
 
-  if (typeof window.rvnayttely_externalLinkDomains !== 'undefined') {
-    localDomains = localDomains.concat(window.rvnayttely_externalLinkDomains);
+  if (typeof window.air_light_externalLinkDomains !== 'undefined') {
+    localDomains = localDomains.concat(window.air_light_externalLinkDomains);
   }
 
   const links = document.querySelectorAll('a');

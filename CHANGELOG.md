@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix incorrect textdomain in external-link JS module
+
 ### 9.2.1: 2022-10-28
 
 * Ensure all blocks get default alignment styles despite core styles or Autoptimize order
