@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-10-28 10:17:27
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-11-03 16:44:56
  *
  * @package air-light
  */
@@ -92,10 +92,7 @@ add_action( 'after_setup_theme', function() {
      * https://github.com/digitoimistodude/air-light#custom-taxonomies
      */
     'taxonomies' => [
-      // 'your-taxonomy' => [
-      //   'name' => 'Your_Taxonomy',
-      //   'post_types' => [ 'post', 'page' ],
-      // ],
+      // 'Your_Taxonomy' => [ 'post', 'page' ],
     ],
 
     /**
@@ -105,7 +102,7 @@ add_action( 'after_setup_theme', function() {
      * https://github.com/digitoimistodude/air-light#custom-post-types
      */
     'post_types' => [
-      // 'your-post-type' => 'Your_Post_Type',
+      // 'Your_Post_Type',
     ],
 
     /**
