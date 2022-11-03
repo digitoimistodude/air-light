@@ -5,7 +5,7 @@
  * @Author: Timi Wahalahti
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-11-03 16:10:59
+ * @Last Modified time: 2022-11-03 16:44:39
  *
  * @package vierityspalkki
  **/
@@ -45,10 +45,10 @@ function build_taxonomies() {
     return;
   }
 
-  foreach ( THEME_SETTINGS['taxonomies'] as $args ) {
-    $slug = strtolower( $args['name'] );
+  foreach ( THEME_SETTINGS['taxonomies'] as $name => $post_types ) {
+    $slug = strtolower( $name );
 
-    $classname = __NAMESPACE__ . '\\' . $args['name'];
+    $classname = __NAMESPACE__ . '\\' . $name;
     $file_path = get_theme_file_path( '/inc/taxonomies/' . str_replace('_', '-', $slug ) . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
@@ -61,7 +61,7 @@ function build_taxonomies() {
     }
 
     $taxonomy_class = new $classname( $slug );
-    $taxonomy_class->register( $args['post_types'] );
+    $taxonomy_class->register( $post_types );
   }
 }
 

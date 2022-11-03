@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-11-03 16:06:07
+ * @Last Modified time: 2022-11-03 16:44:56
  *
  * @package air-light
  */
@@ -92,10 +92,7 @@ add_action( 'after_setup_theme', function() {
      * https://github.com/digitoimistodude/air-light#custom-taxonomies
      */
     'taxonomies' => [
-      // [
-      //   'name' => 'Your_Taxonomy',
-      //   'post_types' => [ 'post', 'page' ],
-      // ],
+      // 'Your_Taxonomy' => [ 'post', 'page' ],
     ],
 
     /**

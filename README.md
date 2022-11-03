@@ -248,9 +248,8 @@ Air-light can register your Taxonomies automatically.
 1. Add your taxonomy to theme settings under taxonomies, located in `functions.php` like this:
 
 ```
-[
-  'name' => 'Your_Taxonomy'
-  'post_types' => 'post, page'
+'taxonomies' => [
+  'Your_Taxonomy' => [ 'post', 'page', 'your-post-type' ]
 ]
 ```
 
