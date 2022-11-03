@@ -1,7 +1,7 @@
 ### [Unreleased]
 
 * Fix incorrect textdomain in external-link JS module
-* Simplify CPT and taxonomy registration by using the class name also as a slug
+* Simplify CPT and taxonomy registration by using the class name also as a slug (Merge pull request #158 from digitoimistodude/cpt-tax-register-simplification, kudos to @timiwahalahti)
 
 ### 9.2.1: 2022-10-28
 
