@@ -234,7 +234,7 @@ Air-light can register your CPT:s automatically.
 
 ```
 'post_types' => [
-  'your-post-type' => 'Your_Post_Type'
+  'Your_Post_Type'
 ]
 ```
 
@@ -248,7 +248,7 @@ Air-light can register your Taxonomies automatically.
 1. Add your taxonomy to theme settings under taxonomies, located in `functions.php` like this:
 
 ```
-'your-taxonomy' => [
+[
   'name' => 'Your_Taxonomy'
   'post_types' => 'post, page'
 ]

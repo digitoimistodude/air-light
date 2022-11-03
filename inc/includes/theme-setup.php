@@ -2,12 +2,12 @@
 /**
  * Theme setup
  *
- * @Author: Niku Hietanen
+ * @Author: Timi Wahalahti
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:13:01
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2022-11-03 16:10:59
  *
- * @package air-light
+ * @package vierityspalkki
  **/
 
 namespace Air_Light;
@@ -45,17 +45,19 @@ function build_taxonomies() {
     return;
   }
 
-  foreach ( THEME_SETTINGS['taxonomies'] as $slug => $args ) {
+  foreach ( THEME_SETTINGS['taxonomies'] as $args ) {
+    $slug = strtolower( $args['name'] );
+
     $classname = __NAMESPACE__ . '\\' . $args['name'];
-    $file_path = get_theme_file_path( '/inc/taxonomies/' . $slug . '.php' );
+    $file_path = get_theme_file_path( '/inc/taxonomies/' . str_replace('_', '-', $slug ) . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'vierityspalkki' ), $classname );
     }
     require $file_path;
 
     if ( ! class_exists( $classname ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'vierityspalkki' ), $classname );
     }
 
     $taxonomy_class = new $classname( $slug );
@@ -71,18 +73,20 @@ function build_post_types() {
     return;
   }
 
-  foreach ( THEME_SETTINGS['post_types'] as $slug => $name ) {
+  foreach ( THEME_SETTINGS['post_types'] as $name ) {
+    $slug = strtolower( $name );
+
     $classname = __NAMESPACE__ . '\\' . $name;
-    $file_path = get_theme_file_path( '/inc/post-types/' . $slug . '.php' );
+    $file_path = get_theme_file_path( '/inc/post-types/' . str_replace('_', '-', $slug ) . '.php' );
 
     if ( ! file_exists( $file_path ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy class file does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-cpt', __( 'The custom post type class file does not exist.', 'vierityspalkki' ), $classname );
     }
     // Get the class file
     require $file_path;
 
     if ( ! class_exists( $classname ) ) {
-      return new \WP_Error( 'invalid-taxonomy', __( 'The taxonomy you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'air-light' ), $classname );
+      return new \WP_Error( 'invalid-cpt', __( 'The custom post type you attempting to create does not have a class to instance. Possible problems: your configuration does not match the class file name; the class file name does not exist.', 'vierityspalkki' ), $classname );
     }
 
     $post_type_class = new $classname( $slug );

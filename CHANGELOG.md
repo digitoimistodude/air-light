@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Fix incorrect textdomain in external-link JS module
+* Simplify CPT and taxonomy registration by using the class name also as a slug
 
 ### 9.2.1: 2022-10-28
 
