@@ -1,7 +1,8 @@
-### [Unreleased]
+### 9.2.2: 2022-11-04
 
 * Fix incorrect textdomain in external-link JS module
 * Simplify CPT and taxonomy registration by using the class name also as a slug (Merge pull request #158 from digitoimistodude/cpt-tax-register-simplification, kudos to @timiwahalahti)
+* Remove what-input depenency, use :focus and :focus-within instead, remove forced focus outline-color
 
 ### 9.2.1: 2022-10-28
 

@@ -1,6 +1,6 @@
 {
   "name": "air-light",
-  "version": "9.2.1",
+  "version": "9.2.2",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -68,7 +68,6 @@
     "hamburgers": "^1.2.1",
     "moveto": "^1.8.2",
     "reframe.js": "^4.0.0",
-    "sanitize.css": "git+https://github.com/csstools/sanitize.css.git",
-    "what-input": "^5.2.12"
+    "sanitize.css": "git+https://github.com/csstools/sanitize.css.git"
   }
 }
