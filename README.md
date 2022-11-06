@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/com/digitoimistodude/air-light.svg?style=flat-square)](https://travis-ci.com/digitoimistodude/air-light) [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air-light.svg?style=flat-square)](https://github.com/digitoimistodude/air-light/releases) ![GitHub contributors](https://img.shields.io/github/contributors/digitoimistodude/air-light.svg?style=flat-square)
 
-Air-light (or simply *Air*) is designed to be a ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
+Air-light (or simply *Air*) is designed to be an ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
 
 ## [Demo](https://airwptheme.com/demo) | [Documentation](https://github.com/digitoimistodude/air-light/wiki)
 
@@ -66,7 +66,7 @@ _Fully keyboard accessible navigation!_
 
 ### Please note before using
 
-Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that the anything can change to a different direction without a warning when you look at this dev-git the next time. Please note this theme has no updates inside WordPress by design. Use this theme to hack it to pieces and create your new awesome theme based on Air! Please also see [Debuggers](#debuggers)!
+Air is a **development theme**, so it has updates very often. By using this starter theme, you agree that anything can change to a different direction without a warning when you look at this dev-git the next time. Please note this theme has no updates inside WordPress by design. Use this theme to hack it to pieces and create your new awesome theme based on Air! Please also see [Debuggers](#debuggers)!
 
 Air is not meant to be "a theme for everyone", which means it doesn't have all the parts that are generally included in multi-purpose themes for non-technical people (please see [Disabled features](#disabled-features)).
 
@@ -82,7 +82,7 @@ We try to follow traditional WordPress [Template Hierarchy](https://developer.wo
 
 Please see [Visual Overview](https://developer.wordpress.org/themes/basics/template-hierarchy/#visual-overview) if you are interested in how the WordPress theme structure works.
 
-Here's the current Air-light theme structure (prone to changes, not updating in real time, but stays mostly the same in its pricinpals):
+Here's the current Air-light theme structure (prone to changes, not updating in real time, but stays mostly the same in its principles):
 
 ``` shell
 themes/your-theme-name/              # → Root of your air-light based theme
@@ -129,7 +129,7 @@ themes/your-theme-name/              # → Root of your air-light based theme
 │   ├── global.scss                  # → Core CSS file that calls all the modular files
 │   ├── gutenberg-editor-styles.scss # → Core CSS file for Gutenberg editor and blocks
 │   ├── components/                  # → Add your style components to this folder
-│   ├── features/                    # → Fuctionality styles
+│   ├── features/                    # → Functionality styles
 │   │   ├── _gallery.scss            # → Default WordPress gallery feature styles
 │   │   ├── _gravity-forms.scss      # → Defaults for Gravity Forms + WCAG 2.0 form fields for Gravity Forms
 │   │   ├── _lazyload.scss           # → Styles for air-helper lazyload feature (lazyload.js needed)
@@ -144,12 +144,12 @@ themes/your-theme-name/              # → Root of your air-light based theme
 │   │   ├── _general.scss            # → Mixins for general use, or helpers of other mixins
 │   │   ├── _grid.scss               # → CSS Grid helper mixin
 │   │   └── _typography.scss         # → Typography style mixins
-│   ├── layout/                      # → Fuctionality styles
+│   ├── layout/                      # → Functionality styles
 │   │   ├── _forms.scss              # → Styles for general forms and Gravity Forms
 │   │   ├── _site-footer.scss        # → Footer styles
 │   │   ├── _site-header.scss        # → Header styles
 │   │   ├── _typography.scss         # → Defaults for typography and fonts
-│   │   └── _gutenberg.scss          # → Site-side styles for Gutenberg (pratically for single.php)
+│   │   └── _gutenberg.scss          # → Site-side styles for Gutenberg (practically for single.php)
 │   ├── navigation/                  # → Navigation styles
 │   │   ├── _burger.scss             # → Burger styles and animations
 │   │   ├── _nav-desktop.scss        # → Desktop navigation styles and dropdowns
@@ -208,7 +208,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Navigation
 
-* WCAG 2.0 accessible with keyboard and screen readeres, aria roles and labels included
+* WCAG 2.0 accessible with keyboard and screen readers, aria roles and labels included
 * Custom navigation walker
 * Support for multi-level drop down submenus
 * Support for both absolute and relative navigation
@@ -397,7 +397,7 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 6. Go to the theme folder of your WordPress instance via Terminal (`cd /var/www/airdev/content/themes`)
 7. Clone your fork with `git clone git@github.com:yourusername/air-light.git` (replace yourusername with your actual username)
 8. Cd to your new cloned repository `cd /var/www/airdev/content/themes/air-light`
-9. Get the dependencides by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
+9. Get the dependencies by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
 10. Wait npm to get through files (get another cup of coffee)
 11. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
 12. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
@@ -461,7 +461,7 @@ This release cycle will release a new version to:
 - [WordPress.org](https://wordpress.org/themes/air-light/)
 - [Demo site](https://dudetest.xyz/air/)
 
-Whenever you have updates that are worthwile, commit them with clear commit messages and then do versioning. Every meaningful commit or bunch of commits that form a feature together make the version go up semantically 0.0.1.
+Whenever you have updates that are worthwhile, commit them with clear commit messages and then do versioning. Every meaningful commit or bunch of commits that form a feature together make the version go up semantically 0.0.1.
 
 Use bash alias (replace YOURUSERNAME with your own):
 
@@ -484,7 +484,7 @@ That's it, you released a new version!
 
 Gzip file sizes tested with `wc -c css/prod/global.css` and `gzip -c css/prod/global.css | wc -c` commands.
 
-**Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-light subfolders inside theme directory for it to work on both global projects and with air-light.
+**Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-light subfolders inside the theme directory for it to work on both global projects and with air-light.
 
 ### Known issues
 
