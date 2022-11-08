@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add core/list-item to allowed blocks due to WP 6.1 and latest Gutenberg editor
+
 ### 9.2.2: 2022-11-04
 
 * Fix incorrect textdomain in external-link JS module

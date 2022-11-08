@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-11-04 13:53:19
+ * @Last Modified time: 2022-11-08 17:07:47
  *
  * @package air-light
  */
@@ -163,6 +163,7 @@ add_action( 'after_setup_theme', function() {
         'core/latestComments',
         'core/latestPosts',
         'core/list',
+        'core/list-item',
         'core/more',
         'core/nextpage',
         'core/paragraph',
