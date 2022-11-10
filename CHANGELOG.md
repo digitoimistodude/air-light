@@ -4,6 +4,7 @@
 * Remove extraneous padding in the first block on Gutenberg editor
 * Make heading CSS variable naming more consistent
 * Button component: Do not use border-radius on ghost button as it's inherited from button
+* Button component: Use own border radius instead of shared with form fields
 
 ### 9.2.2: 2022-11-04
 
