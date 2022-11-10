@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-09-22 12:14:41
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-11-10 16:04:19
  *
  * @package air-light
  */
@@ -110,7 +110,6 @@ function block_editor_title_input_styles() {
   $styles = '
   /* Remove gap between post title wrapper and first block */
   .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child {
-    padding: 4rem 2rem;
     margin-top: 0;
   }
 
