@@ -32,7 +32,7 @@ h5,
 h6 {
   color: var(--color-heading);
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-headings);
+  font-weight: var(--font-weight-heading);
   margin-bottom: var(--margin-between-paragraphs);
   margin-top: var(--margin-between-paragraphs);
 }
@@ -42,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: var(--line-height-headings);
+  line-height: var(--line-height-heading);
 }
 
 // Define heading scales

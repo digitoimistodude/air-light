@@ -2,6 +2,7 @@
 
 * Add core/list-item to allowed blocks due to WP 6.1 and latest Gutenberg editor
 * Remove extraneous padding in the first block on Gutenberg editor
+* Make heading CSS variable naming more consistent
 
 ### 9.2.2: 2022-11-04
 
