@@ -39,26 +39,29 @@ This project is hand made for customer by Dude.
 
 ![Screenshot](/content/themes/${THEME_NAME}/screenshot.png?raw=true \"Screenshot\")
 
-## Environments
+## Getting started
 
-Green checkmarks show if the environment is already set up and running, red cross indicates if it's not yet there or disabled.
+Your local server should be up and running. If you need help, ask your superviser or refer to **[Internal Development Docs](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/)** → **[Joining the project later on](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/project-stages/joining-the-project-later-on)**.
 
-✅  Development: [${PROJECT_NAME}.test](http://${PROJECT_NAME}.test)<br>
-❌  Staging: [${PROJECT_NAME}.vaiheessa.fi](https://${PROJECT_NAME}.vaiheessa.fi)<br>
-❌  Production: [${PROJECT_NAME}.fi](https://${PROJECT_NAME}.fi/)
+### Installation
 
-## Setting it up initially
+In project root:
 
-According to our handbook, you should have run \`createproject\`, inital setup by now. Your local server should be up and running.
+\`\`\`
+composer install
+nvm install
+nvm use
+npm install
+\`\`\`
 
-If you need help, ask your superviser or go back to [dudestack-instructions](https://github.com/digitoimistodude/dudestack-instructions) / [Dude handbook](https://handbook.dude.fi/wordpress-kehitys/projektin-aloitus) and read what you have do.
+In theme directory:
 
-If local development environment is indeed running, you're ready to version control the project.
+\`\`\`
+npm install
+\`\`\`
 
-There are npm packages in both project root and theme folder. If you come later to this project, please go through [handbook](https://handbook.dude.fi/wordpress-kehitys/projektin-aloitus#myohemmin-projektiin-mukana-tulevan-devaajan-tehtavat) and run:
+Start development from project root:
 
-1. \`composer install\` (in project folder)
-2. \`npm install\` (in project folder)
-2. \`npm install\` (in theme folder)
-
-Run watcher task with \`gulp\` and start developing. Most of all, have fun working!" > "${PROJECTS_HOME}/${PROJECT_NAME}/README.md"
+\`\`\`
+gulp
+\`\`\`" > "${PROJECTS_HOME}/${PROJECT_NAME}/README.md"

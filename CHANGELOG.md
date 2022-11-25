@@ -5,6 +5,8 @@
 * Make heading CSS variable naming more consistent
 * Button component: Do not use border-radius on ghost button as it's inherited from button
 * Button component: Use own border radius instead of shared with form fields
+* Update generated README.md in the start script
+* Fix ACF relation field color in Gutenberg blocks
 
 ### 9.2.2: 2022-11-04
 

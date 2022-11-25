@@ -25,6 +25,8 @@
   .acf-button-group label,
   .wpseo-metabox-root *,
   .acf-fields *[class^='acf-']:not(.acf-field-url) {
+    // stylelint-disable-next-line
+    color: inherit;
     font-family: inherit;
     font-size: unset;
   }
