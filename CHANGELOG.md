@@ -1,4 +1,4 @@
-### [Unreleased]
+### 9.2.3: 2022-11-28
 
 * Add core/list-item to allowed blocks due to WP 6.1 and latest Gutenberg editor
 * Remove extraneous padding in the first block on Gutenberg editor
@@ -7,6 +7,9 @@
 * Button component: Use own border radius instead of shared with form fields
 * Update generated README.md in the start script
 * Fix ACF relation field color in Gutenberg blocks
+* Simplify _font-family.scss
+* Deprecate core/code, core/columns, core/cover, core/embed, core/preformatted and code/verse CSS from Air-light, use Gutenberg official styles instead
+* Add Inter as variable font
 
 ### 9.2.2: 2022-11-04
 

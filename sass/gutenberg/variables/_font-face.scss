@@ -1,6 +1,15 @@
 // Font family settings for Gutenberg
-@include fontface('Inter', '../../../../../content/themes/air-light/fonts/inter-400', 400);
-@include fontface('Inter', '../../../../../content/themes/air-light/fonts/inter-400-italic', 400, italic);
-@include fontface('Inter', '../../../../../content/themes/air-light/fonts/inter-500', 500);
-@include fontface('Inter', '../../../../../content/themes/air-light/fonts/inter-600', 600);
-@include fontface('Inter', '../../../../../content/themes/air-light/fonts/inter-700', 700);
+
+// Variable fonts
+@include variablefont('Inter', '../../../../../content/themes/air-light/fonts/inter-400', 400);
+@include variablefont('Inter', '../../../../../content/themes/air-light/fonts/inter-400-italic', 400, italic);
+@include variablefont('Inter', '../../../../../content/themes/air-light/fonts/inter-500', 500);
+@include variablefont('Inter', '../../../../../content/themes/air-light/fonts/inter-600', 600);
+@include variablefont('Inter', '../../../../../content/themes/air-light/fonts/inter-700', 700);
+
+// Regular fonts
+// @include font('Inter', '../../../../../content/themes/air-light/fonts/inter-400', 400);
+// @include font('Inter', '../../../../../content/themes/air-light/fonts/inter-400-italic', 400, italic);
+// @include font('Inter', '../../../../../content/themes/air-light/fonts/inter-500', 500);
+// @include font('Inter', '../../../../../content/themes/air-light/fonts/inter-600', 600);
+// @include font('Inter', '../../../../../content/themes/air-light/fonts/inter-700', 700);

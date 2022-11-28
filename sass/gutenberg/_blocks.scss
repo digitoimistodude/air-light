@@ -4,19 +4,14 @@
 .article-content {
   @import 'gutenberg/blocks/core-blockquote';
   @import 'gutenberg/blocks/core-buttons';
-  @import 'gutenberg/blocks/core-code';
   @import 'gutenberg/blocks/core-columns';
-  @import 'gutenberg/blocks/core-cover';
-  @import 'gutenberg/blocks/core-embed';
   @import 'gutenberg/blocks/core-separator';
   @import 'gutenberg/blocks/core-heading';
   @import 'gutenberg/blocks/core-image';
   @import 'gutenberg/blocks/core-list';
   @import 'gutenberg/blocks/core-paragraph';
-  @import 'gutenberg/blocks/core-preformatted';
   @import 'gutenberg/blocks/core-pullquote';
   @import 'gutenberg/blocks/core-table';
-  @import 'gutenberg/blocks/core-verse';
   @import 'gutenberg/blocks/core-video';
 
   // Custom Gutenberg block styles

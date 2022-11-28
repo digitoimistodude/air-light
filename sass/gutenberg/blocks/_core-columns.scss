@@ -1,5 +1,17 @@
 // Core/columns block
 // Loops to enumerate the classes for columns.
+.wp-block-column > p:first-child {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  + .wp-block-columns {
+    margin-top: 0;
+  }
+}
+
 @for $i from 1 through 9 {
   .wp-block-columns.has-#{$i}-columns.alignfull {
     padding-left: var(--padding-container-horizontal);

@@ -1,8 +1,0 @@
-// Core/verse block
-.wp-block-verse {
-  @media (max-width: $width-grid-base + 40px) {
-    margin-left: var(--padding-container-horizontal);
-    margin-right: var(--padding-container-horizontal);
-    width: calc(100% - calc(var(--padding-container-horizontal) * 4));
-  }
-}

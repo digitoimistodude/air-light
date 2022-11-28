@@ -1,0 +1,13 @@
+@use 'sass:math';
+
+// Helper mixin for variable fonts
+@mixin variablefont($family, $src, $weight: normal, $style: normal) {
+  @font-face {
+    // @link https://css-tricks.com/almanac/properties/f/font-display/
+    font-display: auto;
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    src: url('#{$src}.ttf') format("truetype-variations");
+  }
+}
