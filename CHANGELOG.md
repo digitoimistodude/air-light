@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Upgrade to [devpackages 2.4.9](https://github.com/digitoimistodude/devpackages/releases/tag/2.4.9)
+
 ### 9.2.3: 2022-11-28
 
 * Add core/list-item to allowed blocks due to WP 6.1 and latest Gutenberg editor
