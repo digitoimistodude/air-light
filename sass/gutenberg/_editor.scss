@@ -82,7 +82,7 @@
     padding-left: var(--padding-container-horizontal);
     padding-right: var(--padding-container-horizontal);
 
-    // stylelint-disable-next-line no-descending-specificity, selector-max-specificity
+    // stylelint-disable-next-line selector-max-specificity
     &.alignfull {
       padding-left: var(--padding-container-horizontal);
       padding-right: var(--padding-container-horizontal);

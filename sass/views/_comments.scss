@@ -80,7 +80,6 @@
   font-size: var(--font-size-14);
   text-align: right;
 
-  // stylelint-disable-next-line no-descending-specificity
   a {
     color: var(--color-link-comment);
   }
@@ -92,7 +91,6 @@
     color: var(--color-black);
   }
 
-  // stylelint-disable-next-line no-descending-specificity
   svg {
     margin-right: 7px;
     position: relative;
