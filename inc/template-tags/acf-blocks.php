@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-05-27 10:33:27
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-12-02 16:36:20
  * @package air-light
  */
 
@@ -16,7 +16,7 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
   // Always bypass cache if is preview from editor or in development phase
   $block_cache_enabled = $is_preview || 'development' === wp_get_environment_type() ? false : acf_block_maybe_enable_cache( $block_slug );
 
-  \do_action( 'qm/debug', "Block {$block_slug} output started" );
+  \do_action( 'qm/debug', "Block {$block_slug} output started" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
   /**
    * Make cache key for this block.
@@ -27,13 +27,13 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
    * way to identify blocks, but also as an way to burst the
    * block cache when contents are updated.
    */
-  $content_hash = crc32( serialize( get_fields() ) );
+  $content_hash = crc32( serialize( get_fields() ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.serialize_serialize
   $cache_key    = "post_{$post_id}_{$block['id']}|{$content_hash}";
   $cache_key    = apply_filters( 'air_acf_block_cache_key', $cache_key, $block_slug, $post_id );
 
   // Get block contents
   if ( ! $block_cache_enabled ) {
-    \do_action( 'qm/debug', "Block {$block_slug} bypassed cache ({$cache_key})" );
+    \do_action( 'qm/debug', "Block {$block_slug} bypassed cache ({$cache_key})" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
     $block_output = load_acf_block( $block_path, false, $block, $is_preview, $post_id );
   } else {
     $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block, $is_preview, $post_id );
@@ -48,7 +48,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
   $output = \wp_cache_get( $cache_key, 'theme' );
 
   if ( $output ) {
-    \do_action( 'qm/debug', "Block {$block_slug} served from cache ({$cache_key})" );
+    \do_action( 'qm/debug', "Block {$block_slug} served from cache ({$cache_key})" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
     return $output;
   }
 
@@ -57,7 +57,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
 
   // Save block to cache
   \wp_cache_set( $cache_key, $output, 'theme', apply_filters( 'air_acf_block_cache_lifetime', HOUR_IN_SECONDS, $block_slug, $post_id ) );
-  \do_action( 'qm/debug', "Block {$block_slug} cached ({$cache_key})" );
+  \do_action( 'qm/debug', "Block {$block_slug} cached ({$cache_key})" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
   return $output;
 } // end load_acf_block_from_cache
@@ -74,14 +74,14 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
    */
   if ( ! $is_preview ) {
     $post_type = get_post_type();
-    if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) {
+    if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
       return '';
     }
   }
 
   // Validate that file actually exists
   if ( ! \file_exists( $block_path ) ) {
-    \do_action( 'qm/error', "Block file {$block_path} not found" );
+    \do_action( 'qm/error', "Block file {$block_path} not found" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
     return '';
   }
 
@@ -108,13 +108,13 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
 
   // This function shouldn't really be running if we don't have these, but check to be safe
   if ( empty( THEME_SETTINGS ) || empty( THEME_SETTINGS['acf_blocks'] ) ) {
-    \do_action( 'qm/debug', 'Blocks couldnt be found in theme settings' );
+    \do_action( 'qm/debug', 'Blocks couldnt be found in theme settings' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores, WordPress.PHP.StrictInArray.MissingTrueStrict
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, null );
   }
 
-  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) );
+  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) ); // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
   if ( false === $block_key ) {
-    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" );
+    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
   }
 
