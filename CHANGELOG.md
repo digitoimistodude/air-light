@@ -1,7 +1,8 @@
-### [Unreleased]
+### 9.2.4: 2022-12-02
 
 * Upgrade to [devpackages 2.4.9](https://github.com/digitoimistodude/devpackages/releases/tag/2.4.9)
 * Disable no-descending-specificity rule in stylelint
+* Ignore some obvious phpcs nags
 
 ### 9.2.3: 2022-11-28
 
