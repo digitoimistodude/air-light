@@ -2,6 +2,7 @@
 
 * Fix acf-button color inside a Gutenberg block
 * Navigation.js: Bail if navigation doesn't exist
+* Remove leftover deprecated gutenberg-helpers.js
 
 ### 9.2.4: 2022-12-02
 
