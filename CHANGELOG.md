@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Fix acf-button color inside a Gutenberg block
+* Navigation.js: Bail if navigation doesn't exist
 
 ### 9.2.4: 2022-12-02
 

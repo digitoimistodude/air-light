@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2021-04-23 13:10:51
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-05-12 15:10:04
+ * @Last Modified time: 2022-12-05 18:30:35
  */
 // TODO: Refactor file
 /* eslint-disable default-case, camelcase, eqeqeq, no-restricted-globals, no-undef, no-var, vars-on-top, max-len, prefer-destructuring, no-redeclare, no-plusplus, no-use-before-define, no-unused-vars, block-scoped-var, func-names */
@@ -488,6 +488,11 @@ var isOutOfViewport = function (elem) {
 
     // Return focus to nav-toggle
     button.focus();
+  }
+
+  // Bail if navigation doesn't exist
+  if (!menu) {
+    return;
   }
 
   // Get all the link elements within the menu.
