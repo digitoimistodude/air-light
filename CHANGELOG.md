@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix acf-button color inside a Gutenberg block
+
 ### 9.2.4: 2022-12-02
 
 * Upgrade to [devpackages 2.4.9](https://github.com/digitoimistodude/devpackages/releases/tag/2.4.9)

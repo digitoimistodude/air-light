@@ -29,6 +29,12 @@
     color: inherit;
     font-family: inherit;
     font-size: unset;
+
+    // Exception for the buttons
+    // stylelint-disable-next-line selector-max-specificity
+    &.acf-button {
+      color: var(--color-white);
+    }
   }
 
   // Fix acf icons visibility issue
