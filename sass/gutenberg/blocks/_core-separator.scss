@@ -17,6 +17,7 @@ hr,
   max-width: $width-max-article;
 }
 
+// stylelint-disable-next-line selector-not-notation
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
   margin-bottom: calc(var(--margin-between-paragraphs) * 2);
   margin-top: calc(var(--margin-between-paragraphs) * 2);
