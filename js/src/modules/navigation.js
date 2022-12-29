@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 20:39:51
+ * @Last Modified time: 2022-12-29 22:29:29
  */
 
 // Check if an element is out of the viewport
@@ -652,5 +652,12 @@ const navDesktop = () => {
   checkForSubmenuOverflow(menuItems);
 };
 
+const navMobile = () => {
+  // When clicking #nav-toggle, add .js-nav-active body class
+  addMultipleEventListener(document.getElementById('nav-toggle'), ['click', 'keydown', 'keypress'], () => {
+    document.body.classList.toggle('js-nav-active');
+  });
+};
+
 // Export different navigation functions
-export { navCore, navDesktop };
+export { navCore, navDesktop, navMobile };

@@ -9,11 +9,7 @@ import { styleExternalLinks, initExternalLinkLabels } from './modules/external-l
 import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import initA11ySkipLink from './modules/a11y-skip-link';
-import { navCore, navDesktop } from './modules/navigation';
-
-// Define Javascript is active by changing the body class
-document.body.classList.remove('no-js');
-document.body.classList.add('js');
+import { navCore, navDesktop, navMobile } from './modules/navigation';
 
 document.addEventListener('DOMContentLoaded', () => {
   initAnchors();
@@ -25,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Init navigation
   navCore();
   navDesktop();
+  navMobile();
 
   // Fit video embeds to container
   reframe('.wp-has-aspect-ratio iframe');
