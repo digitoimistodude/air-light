@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 18:06:59
+ * @Last Modified time: 2022-12-29 18:20:51
  */
 
 // Check if an element is out of the viewport
@@ -206,22 +206,43 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
           return;
         }
 
+        // Toggle the dropdown
+        if (!thisDropdown.classList.contains('toggled-on')) {
         // Add hover-intent class to this menu-item
-        thisMenuItem.classList.add('hover-intent');
+          thisMenuItem.classList.add('hover-intent');
 
-        // Add toggled-on class to this dropdown
-        thisDropdown.classList.add('toggled-on');
+          // Add toggled-on class to this dropdown
+          thisDropdown.classList.add('toggled-on');
 
-        // If we're on button, add aria-expanded to true
-        if (thisElement.classList.contains('dropdown-toggle')) {
-          thisElement.setAttribute('aria-expanded', 'true');
+          // If we're on button, add aria-expanded to true
+          if (thisElement.classList.contains('dropdown-toggle')) {
+            thisElement.setAttribute('aria-expanded', 'true');
 
-          // Get the link label of .dropdown link
-          const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+            // Get the link label of .dropdown link
+            const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
 
-          // Set aria-label of the dropdown button
-          // eslint-disable-next-line camelcase, no-undef
-          thisElement.setAttribute('aria-label', `${air_light_screenReaderText.collapse_for} ${linkLabel}`);
+            // Set aria-label of the dropdown button
+            // eslint-disable-next-line camelcase, no-undef
+            thisElement.setAttribute('aria-label', `${air_light_screenReaderText.collapse_for} ${linkLabel}`);
+          }
+        } else {
+          // Remove hover-intent class from this menu-item
+          thisMenuItem.classList.remove('hover-intent');
+
+          // Remove toggled-on class from this dropdown
+          thisDropdown.classList.remove('toggled-on');
+
+          // If we're on button, add aria-expanded to false
+          if (thisElement.classList.contains('dropdown-toggle')) {
+            thisElement.setAttribute('aria-expanded', 'false');
+
+            // Get the link label of .dropdown link
+            const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+
+            // Set aria-label of the dropdown button
+            // eslint-disable-next-line camelcase, no-undef
+            thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+          }
         }
       }
 
