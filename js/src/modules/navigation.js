@@ -5,10 +5,11 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 14:56:25
+ * @Last Modified time: 2022-12-29 15:03:56
  */
 
 // Check if an element is out of the viewport
+// eslint-disable-next-line func-names
 const isOutOfViewport = function (elem) {
   // Get element's bounding
   const bounding = elem.getBoundingClientRect();
@@ -24,15 +25,34 @@ const isOutOfViewport = function (elem) {
   return out;
 };
 
-// Dropdown menu function
-function dropdownMenu() {
-  // Define menu items for items
-  const menuItems = document.querySelectorAll('.menu-item');
+// Check for submenu overflow
+function checkForSubmenuOverflow(items) {
+  items.forEach((li) => {
+    // Find sub menus
+    const subMenusUnderMenuItem = li.querySelectorAll('.sub-menu');
 
+    // Loop through sub menus
+    subMenusUnderMenuItem.forEach((subMenu) => {
+      // First let's check if submenu exists
+      if (typeof subMenusUnderMenuItem !== 'undefined') {
+        // Check if the sub menu is out of viewport or not
+        const isOut = isOutOfViewport(subMenu);
+
+        // At least one side of the element is out of viewport
+        if (isOut.right) {
+          subMenu.classList.add('is-out-of-viewport');
+        }
+      }
+    });
+  });
+}
+
+// Dropdown menu function
+function dropdownMenu(items) {
   // Optional timeout
   const hoverIntentTimeout = 0;
 
-  menuItems.forEach((li) => {
+  items.forEach((li) => {
     // eslint-disable-next-line func-names
     li.addEventListener('mouseover', function () {
       // If has .removing-hover class then don't add hover-intent class
@@ -81,10 +101,8 @@ function dropdownMenu() {
 }
 
 // Accessible keyboard navigation for dropdown menus
-function dropdownMenuKeyboardNavigation() {
-  const menuItems = document.querySelectorAll('.menu-item');
-
-  menuItems.forEach((li) => {
+function dropdownMenuKeyboardNavigation(items) {
+  items.forEach((li) => {
     // eslint-disable-next-line func-names
     li.addEventListener('keydown', function (e) {
       // Open navigation on Enter
@@ -116,14 +134,16 @@ function dropdownMenuKeyboardNavigation() {
 }
 
 const navDesktop = () => {
-  // Define things
+  // Define globals
   const html = document.getElementsByTagName('html')[0];
   const body = document.getElementsByTagName('body')[0];
   const menuWrapper = document.getElementById('main-navigation-wrapper');
+  const menuItems = document.querySelectorAll('.menu-item');
 
   // Dropdown menus
-  dropdownMenu();
-  dropdownMenuKeyboardNavigation();
+  dropdownMenu(menuItems);
+  dropdownMenuKeyboardNavigation(menuItems);
+  checkForSubmenuOverflow(menuItems);
 };
 
 // Export different navigation functions
