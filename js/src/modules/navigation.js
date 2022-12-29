@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 22:29:29
+ * @Last Modified time: 2022-12-29 23:07:16
  */
 
 // Check if an element is out of the viewport
@@ -657,6 +657,14 @@ const navMobile = () => {
   addMultipleEventListener(document.getElementById('nav-toggle'), ['click', 'keydown', 'keypress'], () => {
     document.body.classList.toggle('js-nav-active');
   });
+
+  // Get the height of .site-header and #nav-toggle
+  // Calculate the top position of the toggle to be exactly in the center vertically
+  const siteHeaderHeight = document.querySelector('.site-header').offsetHeight;
+  const navToggleHeight = document.getElementById('nav-toggle').offsetHeight;
+
+  // Set the top position of the toggle
+  document.getElementById('nav-toggle').style.top = `${(siteHeaderHeight - navToggleHeight) / 2}px`;
 };
 
 // Export different navigation functions

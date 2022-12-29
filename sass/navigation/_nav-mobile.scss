@@ -1,18 +1,5 @@
-// Site navigation mobile layout
-// The main layout for the website navigation, for the mobile version only.
-
-// Settings for jonsuh/hamburgers
-// These need to be SCSS variables
-$hamburger-padding-x: 1.5rem;
-$hamburger-padding-y: 4rem;
-$hamburger-layer-width: 3rem;
-$hamburger-layer-height: .2rem;
-$hamburger-layer-spacing: .5rem;
-$hamburger-layer-color: var(--color-hamburger);
-$hamburger-layer-border-radius: 0;
-$hamburger-hover-opacity: .8;
-$hamburger-hover-transition-duration: .15s;
-$hamburger-hover-transition-timing-function: linear;
+// Import nav-toggle
+@import 'nav-toggle';
 
 // CSS variables
 // These can be adjusted with media queries for in-between breakpoints
@@ -42,17 +29,6 @@ $hamburger-hover-transition-timing-function: linear;
   --color-main-level-mobile: var(--color-white);
   --color-separator-nav-mobile: rgb(255 255 255 / .1);
   --color-sub-menu-mobile: rgb(255 255 255 / .8);
-}
-
-// Init Tasty Hamburger navigation toggle
-@import 'hamburgers/_sass/hamburgers/hamburgers';
-
-// Init hamburger animation
-// Choose from animations: https://jonsuh.com/hamburgers/
-.hamburger {
-  // This comes from node module so can't do anything about the selector
-  // stylelint-disable-next-line
-  @extend .hamburger--collapse;
 }
 
 // Navigation core functionality

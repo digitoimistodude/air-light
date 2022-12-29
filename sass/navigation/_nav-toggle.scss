@@ -1,0 +1,97 @@
+// 🍔
+.hamburger {
+  --hamburger-layer-height: 2px;
+  --hamburger-width: 3.2rem;
+  --hamburger-color: var(--color-white);
+  --hamburger-color-active: var(--color-white);
+  background-color: var(--hamburger-color);
+  flex-shrink: 0;
+  height: var(--hamburger-layer-height);
+  position: relative;
+  transition: all .2s ease 0s;
+  width: var(--hamburger-width);
+
+  // Hamburger layers
+  &::before,
+  &::after {
+    background-color: var(--hamburger-color);
+    content: '';
+    display: block;
+    height: var(--hamburger-layer-height);
+    position: absolute;
+    transition: all .2s ease 0s;
+    width: var(--hamburger-width);
+  }
+
+  &::before {
+    top: -.9rem;
+  }
+
+  &::after {
+    bottom: -.9rem;
+  }
+}
+
+// 🍔 third layer width
+body:not(.js-nav-active) .nav-toggle .hamburger::after,
+body:not(.js-nav-active) .nav-toggle:focus .hamburger::after {
+  width: 80%;
+}
+
+// 🍔 third layer hover
+body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
+  width: 100%;
+}
+
+// Active state for 🍔
+.js-nav-active .hamburger::before,
+.js-nav-active .hamburger::after {
+  background-color: var(--hamburger-color-active);
+  left: 0;
+  top: 0;
+}
+
+.js-nav-active .hamburger::before {
+  transform: rotate(-45deg);
+}
+
+.js-nav-active .hamburger::after {
+  transform: rotate(45deg);
+}
+
+.js-nav-active .hamburger {
+  background-color: transparent;
+}
+
+// Make visual label out of aria-label
+.nav-toggle::after {
+  color: var(--color-white);
+  content: attr(aria-label);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-semibold);
+  margin-left: 1.6rem;
+  white-space: nowrap;
+}
+
+// The actual toggle <button>
+.nav-toggle {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  font-weight: var(--font-weight-semibold);
+  height: 2rem;
+  justify-content: center;
+  margin: 0;
+  opacity: 1;
+  overflow: visible;
+  padding: 0;
+  position: absolute;
+  right: var(--padding-container-horizontal);
+  text-decoration: none;
+  top: var(--padding-container-horizontal);
+  user-select: none;
+  z-index: 100;
+}
