@@ -394,7 +394,7 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 3. Run `createproject`, name project after *airdev* when asked
 4. Wait for the project to be created (get a coffee, first time can take couple of minutes)
 5. Create a fork of air-light (press fork button on GitHub) (or if you are Dude staff, just create new branch for changes)
-6. Go to the theme folder of your WordPress instance via Terminal (`cd /var/www/airdev/content/themes`)
+6. Go to the themes folder of your WordPress instance via Terminal (`cd /var/www/airdev/content/themes`)
 7. Clone your fork with `git clone git@github.com:yourusername/air-light.git` (replace `yourusername` with your actual username)
 8. Cd to your new cloned repository `cd /var/www/airdev/content/themes/air-light`
 9. Add `devDependencies` to package.json from [here](https://github.com/digitoimistodude/devpackages/blob/master/package.json)
