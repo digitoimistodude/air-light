@@ -329,7 +329,7 @@ $use-dropdown-toggle-animation: true;
   // Smooth animation
   @if $use-dropdown-toggle-animation == true {
     .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
-    .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+    .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
     .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
       transform: translateY(0%) rotate(180deg);
     }
@@ -337,7 +337,7 @@ $use-dropdown-toggle-animation: true;
     // Smooth animation
     // stylelint-disable-next-line selector-max-specificity, selector-max-class
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
-    .menu-item.menu-item-has-children .menu-item.menu-item-has-children:hover > .dropdown-toggle svg,
+    .menu-item.menu-item-has-children .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
       transform: translateY(0%) rotate(90deg);
     }

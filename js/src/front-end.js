@@ -9,8 +9,7 @@ import { styleExternalLinks, initExternalLinkLabels } from './modules/external-l
 import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import initA11ySkipLink from './modules/a11y-skip-link';
-import './modules/navigation';
-// import './modules/sticky-nav';
+import navDesktop from './modules/navigation';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
@@ -22,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   styleExternalLinks();
   initExternalLinkLabels();
   initA11ySkipLink();
+
+  // Init navigation
+  navDesktop();
 
   // Fit video embeds to container
   reframe('.wp-has-aspect-ratio iframe');
