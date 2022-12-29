@@ -2,7 +2,6 @@
 // The main layout for the website navigation, for the mobile version only.
 
 // Settings
-$absolute-navigation-mobile: true;
 $nav-slide-animation: true;
 
 // Settings for jonsuh/hamburgers
@@ -76,23 +75,6 @@ $hamburger-hover-transition-timing-function: linear;
 
 // Mobile styles
 @media screen and (max-width: $width-max-mobile - 1px) {
-
-  // Let's ensure site-header loads properly and doesn't leave empty spaces
-  .nav-container {
-    background-color: var(--color-background-nav-mobile-header);
-
-    @if $absolute-navigation-mobile == false {
-      position: relative;
-      z-index: 222;
-    }
-
-    @if $absolute-navigation-mobile == true {
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-  }
 
   // General navigation resets for mobile
   .site-header ul,
@@ -276,10 +258,6 @@ $hamburger-hover-transition-timing-function: linear;
       opacity: 1;
     }
 
-    .nav-container {
-      background-color: var(--color-background-nav-mobile-header-active);
-    }
-
     // iOS only: https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-touch-callout
     @supports (-webkit-touch-callout: none) {
       .main-navigation-wrapper {
@@ -293,12 +271,6 @@ $hamburger-hover-transition-timing-function: linear;
   @supports (-webkit-touch-callout: none) {
     .js .main-navigation-wrapper {
       width: $hamburger-layer-width;
-    }
-  }
-
-  @if $absolute-navigation-mobile == true {
-    .site {
-      padding-top: var(--height-navigation-mobile);
     }
   }
 

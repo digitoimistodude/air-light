@@ -33,13 +33,9 @@ namespace Air_Light;
   <?php wp_body_open(); ?>
   <div id="page" class="site">
 
-    <div class="nav-container">
-      <header class="site-header">
-
-        <?php get_template_part( 'template-parts/header/branding' ); ?>
-        <?php get_template_part( 'template-parts/header/navigation' ); ?>
-
-      </header>
-    </div><!-- .nav-container -->
+    <header class="site-header">
+      <?php get_template_part( 'template-parts/header/branding' ); ?>
+      <?php get_template_part( 'template-parts/header/navigation' ); ?>
+    </header>
 
     <div class="site-content">

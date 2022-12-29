@@ -3,10 +3,6 @@
 
 // Disable some rules that are not needed here
 
-// Settings
-$absolute-navigation: true;
-$use-dropdown-toggle-animation: true;
-
 // CSS variables
 // These can be adjusted with media queries for in-between breakpoints
 :root {
@@ -46,20 +42,6 @@ $use-dropdown-toggle-animation: true;
 }
 
 @media only screen and (min-width: $width-max-mobile) {
-  .nav-container {
-    @if $absolute-navigation == false {
-      background-color: var(--color-background-nav-desktop);
-      position: relative;
-      z-index: 222;
-    }
-
-    @if $absolute-navigation == true {
-      background-color: transparent;
-      position: absolute;
-      width: 100%;
-    }
-  }
-
   // Need to use display: none here to make sure mobile nav-toggle is visually hidden on desktop
   // stylelint-disable-next-line a11y/no-display-none
   .nav-toggle {
@@ -261,11 +243,8 @@ $use-dropdown-toggle-animation: true;
   // Toggle icon dimensions on desktop
   .dropdown-toggle svg {
     height: var(--dropdown-toggle-size);
+    transition: all .35s cubic-bezier(.19, 1, .22, 1);
     width: var(--dropdown-toggle-size);
-
-    @if $use-dropdown-toggle-animation == true {
-      transition: all .35s cubic-bezier(.19, 1, .22, 1);
-    }
   }
 
   // Main level toggle icon
@@ -304,6 +283,19 @@ $use-dropdown-toggle-animation: true;
     display: none;
   }
 
+  // Smooth animation
+  .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
+  .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+    transform: translateY(0%) rotate(180deg);
+  }
+
+  // Smooth animation
+  // stylelint-disable-next-line selector-max-specificity, selector-max-class
+  .menu-item.menu-item-has-children .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
+  .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+    transform: translateY(0%) rotate(90deg);
+  }
+
   @media only screen and (max-width: $width-max-mobile) {
     ul li:focus > ul,
     ul li:hover > ul {
@@ -317,21 +309,6 @@ $use-dropdown-toggle-animation: true;
     ul li:focus > ul,
     ul li:hover > ul {
       display: block;
-    }
-  }
-
-  // Smooth animation
-  @if $use-dropdown-toggle-animation == true {
-    .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
-    .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
-      transform: translateY(0%) rotate(180deg);
-    }
-
-    // Smooth animation
-    // stylelint-disable-next-line selector-max-specificity, selector-max-class
-    .menu-item.menu-item-has-children .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
-    .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
-      transform: translateY(0%) rotate(90deg);
     }
   }
 } // @media only screen and (min-width: $width-max-mobile)
