@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 19:08:49
+ * @Last Modified time: 2022-12-29 19:14:39
  */
 
 // Check if an element is out of the viewport
@@ -166,7 +166,7 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
       const thisElement = e.target;
 
       // Close previous dropdown if this parent contains id main-menu
-      if (thisElement.parentNode.parentNode.id === 'main-menu') {
+      if (thisElement.parentNode.parentNode.id === 'main-menu' || (thisElement.classList.contains('button-nav') && thisElement.parentNode.parentNode.id === 'main-menu')) {
         // If we have previous item
         if (thisElement.parentNode.previousElementSibling) {
           // Get the previous item
@@ -191,7 +191,7 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
             // Change toggle button aria-label
             // eslint-disable-next-line camelcase, no-undef
-            previousItem.querySelector('.dropdown-toggle').setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${previousItem.querySelector('.dropdown').innerText}`);
+            previousItem.querySelector('.dropdown-toggle').setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${previousItem.querySelector('.dropdown-item').innerText}`);
 
             // Change toggle button aria-expanded
             previousItem.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
@@ -332,7 +332,7 @@ const navDesktop = () => {
   const menuItems = document.querySelectorAll('.menu-item');
 
   // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
-  const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button');
+  const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button, .button-nav');
 
   // Dropdown menus
   addDropdownToggleLabels(menuItems);
