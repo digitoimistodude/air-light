@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 17:10:06
+ * @Last Modified time: 2022-12-29 17:22:38
  */
 
 // Check if an element is out of the viewport
@@ -212,6 +212,14 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 }
 
 const navDesktop = () => {
+  // Get --width-max-mobile from CSS
+  const widthMaxMobile = getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile');
+
+  // Bail if we're on mobile
+  if (window.matchMedia(`(max-width: ${widthMaxMobile})`).matches) {
+    return;
+  }
+
   // Define globals
   const menuItems = document.querySelectorAll('.menu-item');
 
