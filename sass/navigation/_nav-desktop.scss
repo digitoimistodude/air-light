@@ -141,16 +141,12 @@ $use-dropdown-toggle-animation: true;
   }
 
   // Create animation illusion
-  .sub-menu.toggled-on a,
-  .sub-menu.toggled-on .sub-menu a,
   .menu-item.menu-item-has-children.hover-intent .sub-menu a,
   .menu-item.menu-item-has-children:focus .sub-menu a {
     padding-bottom: var(--padding-sub-menu-link-vertical);
     padding-top: var(--padding-sub-menu-link-vertical);
   }
 
-  .sub-menu.toggled-on,
-  .sub-menu.toggled-on .sub-menu,
   .menu-item.menu-item-has-children.hover-intent .sub-menu,
   .menu-item.menu-item-has-children:focus .sub-menu {
     padding-bottom: var(--padding-sub-menu-vertical);
@@ -166,6 +162,7 @@ $use-dropdown-toggle-animation: true;
   // Dropdowns
   .sub-menu {
     background-color: var(--color-background-sub-menu);
+    border: 1px solid var(--color-black);
     border-top-left-radius: var(--border-radius-sub-menu);
     border-top-right-radius: var(--border-radius-sub-menu);
     left: 0;
@@ -216,7 +213,6 @@ $use-dropdown-toggle-animation: true;
   }
 
   // This is where the magic happens
-  .menu-item-has-children > .sub-menu.toggled-on,
   .menu-item-has-children:focus > .sub-menu,
   .menu-item-has-children.hover-intent > .sub-menu {
     opacity: 1;
@@ -225,8 +221,6 @@ $use-dropdown-toggle-animation: true;
     z-index: 12;
   }
 
-  .menu-item-has-children .sub-menu.toggled-on .sub-menu,
-  .menu-item-has-children .sub-menu .sub-menu.toggled-on,
   .menu-item-has-children:focus .sub-menu .sub-menu,
   .menu-item-has-children.hover-intent .sub-menu .sub-menu {
     margin-top: calc(-1 * var(--padding-sub-menu-vertical));
@@ -275,7 +269,7 @@ $use-dropdown-toggle-animation: true;
   }
 
   // Main level toggle icon
-  .dropdown-toggle.toggled-on svg {
+  .hover-intent > .dropdown-toggle svg {
     transform: rotateX(180deg);
   }
 
@@ -299,7 +293,7 @@ $use-dropdown-toggle-animation: true;
     transform: rotate(-90deg) rotateX(0deg);
   }
 
-  .sub-menu .dropdown-toggle.toggled-on svg {
+  .sub-menu .hover-intent > .dropdown-toggle > svg {
     transform: rotate(-90deg) rotateX(180deg);
   }
 
@@ -328,7 +322,6 @@ $use-dropdown-toggle-animation: true;
 
   // Smooth animation
   @if $use-dropdown-toggle-animation == true {
-    .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
     .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
     .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
       transform: translateY(0%) rotate(180deg);
@@ -336,7 +329,6 @@ $use-dropdown-toggle-animation: true;
 
     // Smooth animation
     // stylelint-disable-next-line selector-max-specificity, selector-max-class
-    .menu-item.menu-item-has-children .menu-item.menu-item-has-children > .dropdown-toggle.toggled-on svg,
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
     .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
       transform: translateY(0%) rotate(90deg);

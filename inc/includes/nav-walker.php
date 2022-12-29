@@ -180,7 +180,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
     // Add .dropdown or .active classes where they are needed.
 		if ( $this->has_children ) {
-			$classes[] = 'dropdown';
+			$classes[] = 'dropdown dropdown-item';
 		}
 
 		if ( in_array( 'current-menu-item', $classes, true ) || in_array( 'current-menu-parent', $classes, true ) ) {
@@ -230,7 +230,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 		if ( $this->has_children && 0 === $depth ) {
 			$atts['href']          = ! empty( $item->url ) ? $item->url : '';
 			$atts['aria-haspopup'] = 'true';
-			$atts['class']         = 'dropdown nav-link';
+			$atts['class']         = 'dropdown dropdown-item nav-link';
 			$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 		} else {
 			if ( true === $this->has_schema ) {

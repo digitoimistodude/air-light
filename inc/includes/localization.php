@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-10-06 22:44:52
+ * @Last Modified time: 2022-12-29 16:23:45
  *
  * @package air-light
  */
@@ -34,9 +34,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Close main menu'                              => __( 'Close main menu', 'air-light' ),
       'Main navigation'                              => __( 'Main navigation', 'air-light' ),
       'Back to top'                                  => __( 'Back to top', 'air-light' ),
-      'Open child menu'                              => __( 'Open child menu', 'air-light' ),
       'Open child menu for'                          => __( 'Open child menu for', 'air-light' ),
-      'Close child menu'                             => __( 'Close child menu', 'air-light' ),
       'Close child menu for'                         => __( 'Close child menu for', 'air-light' ),
       'Skip to content'                              => __( 'Skip to content', 'air-light' ),
       'Skip over the carousel element'               => __( 'Skip over the carousel element', 'air-light' ),
@@ -59,9 +57,7 @@ function get_default_localization_strings( $language = 'en' ) {
       'Close main menu'                              => 'Sulje päävalikko',
       'Main navigation'                              => 'Päävalikko',
       'Back to top'                                  => 'Siirry takaisin sivun alkuun',
-      'Open child menu'                              => 'Avaa alavalikko',
       'Open child menu for'                          => 'Avaa alavalikko kohteelle',
-      'Close child menu'                             => 'Sulje alavalikko',
       'Close child menu for'                         => 'Sulje alavalikko kohteelle',
       'Skip to content'                              => 'Siirry suoraan sisältöön',
       'Skip over the carousel element'               => 'Hyppää karusellisisällön yli seuraavaan sisältöön',

@@ -5,7 +5,7 @@
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-06-09 12:03:40
+ * @Last Modified time: 2022-12-29 16:20:28
  *
  * @package air-light
  */
@@ -50,8 +50,6 @@ function enqueue_theme_scripts() {
   }
 
   wp_localize_script( 'scripts', 'air_light_screenReaderText', [
-    'expand'          => get_default_localization( 'Open child menu' ),
-    'collapse'        => get_default_localization( 'Close child menu' ),
     'expand_for'      => get_default_localization( 'Open child menu for' ),
     'collapse_for'    => get_default_localization( 'Close child menu for' ),
     'expand_toggle'   => get_default_localization( 'Open main menu' ),

@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 15:03:56
+ * @Last Modified time: 2022-12-29 17:10:06
  */
 
 // Check if an element is out of the viewport
@@ -55,15 +55,29 @@ function dropdownMenu(items) {
   items.forEach((li) => {
     // eslint-disable-next-line func-names
     li.addEventListener('mouseover', function () {
-      // If has .removing-hover class then don't add hover-intent class
+      // If rules don't apply, bail
       if (li.classList.contains('removing-hover')) {
         return;
       }
 
+      // Add hover classes
       this.classList.add('hover-intent');
+      this.classList.add('hovering');
       this.parentNode.classList.add('hover-intent');
+      this.parentNode.classList.add('hovering');
+
+      // Remove hovering class after a while
+      setTimeout(() => {
+        this.classList.remove('hovering');
+        this.parentNode.classList.remove('hovering');
+      }, 500);
 
       document.addEventListener('keydown', (keydownMouseoverEvent) => {
+        // If rules don't apply, bail
+        if (this.classList.contains('removing-hover') || !this.classList.contains('hovering') || !this.parentNode.classList.contains('hovering')) {
+          return;
+        }
+
         // Close navigation on Escape while hovering the navigation
         if (keydownMouseoverEvent.key === 'Escape') {
           li.classList.remove('hover-intent');
@@ -73,6 +87,12 @@ function dropdownMenu(items) {
           // Add class removing-hover to prevent the menu from opening again when moving the mouse
           li.classList.add('removing-hover');
           li.parentNode.classList.add('removing-hover');
+
+          // Remove removing-hover class after a while to re-initialize the menu
+          setTimeout(() => {
+            this.classList.remove('removing-hover');
+            this.parentNode.classList.remove('removing-hover');
+          }, 500);
         }
       });
 
@@ -100,34 +120,92 @@ function dropdownMenu(items) {
   });
 }
 
-// Accessible keyboard navigation for dropdown menus
-function dropdownMenuKeyboardNavigation(items) {
+// Add proper link labels for screen readers
+function addDropdownToggleLabels(items) {
   items.forEach((li) => {
+    // If .dropdown-class does not exist then do nothing
+    if (!li.querySelector('.dropdown')) {
+      return;
+    }
+
+    // Get the dropdown-button
+    const dropdownButton = li.querySelector('.dropdown-toggle');
+
+    // Get the link text that is children of this item
+    const linkText = li.querySelector('.dropdown').innerText;
+
+    // Add the aria-label to the dropdown button
+    // eslint-disable-next-line camelcase, no-undef
+    dropdownButton.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+  });
+}
+
+// Accessible keyboard navigation for dropdown menus
+function dropdownMenuKeyboardNavigation(items, focusableElements) {
+  focusableElements.forEach((li) => {
     // eslint-disable-next-line func-names
-    li.addEventListener('keydown', function (e) {
+    li.addEventListener('keydown', (e) => {
+      // Get this link
+      const thisElement = e.target;
+
+      // Get this menu-item
+      const thisMenuItem = thisElement.parentNode;
+
+      // Define the elements of this dropdown
+      const firstDropdown = thisElement.parentNode.parentNode.parentNode.querySelector('.sub-menu');
+      const thisDropdown = thisElement.parentNode.parentNode.querySelector('.sub-menu');
+      const dropdownToggleButton = thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle');
+
+      // Remove removing-hover class
+      thisElement.classList.remove('removing-hover');
+      thisMenuItem.parentNode.classList.remove('removing-hover');
+
       // Open navigation on Enter
       if (e.key === 'Enter') {
-        this.classList.add('hover-intent');
-        this.parentNode.classList.add('hover-intent');
+        // Add hover-intent class to this menu-item
+        thisMenuItem.classList.add('hover-intent');
+
+        // Add toggled-on class to this dropdown
+        thisDropdown.classList.add('toggled-on');
+
+        // If we're on button, add aria-expanded to true
+        if (thisElement.classList.contains('dropdown-toggle')) {
+          thisElement.setAttribute('aria-expanded', 'true');
+
+          // Get the link label of .dropdown link
+          const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+
+          // Set aria-label of the dropdown button
+          // eslint-disable-next-line camelcase, no-undef
+          thisElement.setAttribute('aria-label', `${air_light_screenReaderText.collapse_for} ${linkLabel}`);
+        }
       }
 
-      // Close navigation on Escape if we are focused on the links under sub-menu
-      if (e.key === 'Escape' && this.querySelector('.sub-menu')) {
-        this.classList.remove('hover-intent');
-        this.parentNode.classList.remove('hover-intent');
+      // Close navigation on Escape
+      if (e.key === 'Escape') {
+        // Remove toggled-on classes from this dropdown
+        firstDropdown.classList.remove('toggled-on');
 
-        // Add class removing-hover to prevent the menu from opening again when moving the mouse
-        this.classList.add('removing-hover');
-        this.parentNode.classList.add('removing-hover');
+        // Remove hover-intent classes from the current menu-item
+        thisMenuItem.classList.remove('hover-intent');
 
-        // Move focus back to the previous .dropdown-toggle <button>
-        this.querySelector('.dropdown-toggle').focus();
+        // Set aria expanded attribute to false
+        dropdownToggleButton.setAttribute('aria-expanded', 'false');
 
-        // Remove removing-hover class after a while to re-initialize the menu
-        setTimeout(() => {
-          this.classList.remove('removing-hover');
-          this.parentNode.classList.remove('removing-hover');
-        }, 500);
+        // If we're on button, add aria-expanded to false
+        if (thisElement.classList.contains('dropdown-toggle')) {
+          thisElement.setAttribute('aria-expanded', 'false');
+
+          // Get the link label of .dropdown link
+          const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+
+          // Set aria-label of the dropdown button
+          // eslint-disable-next-line camelcase, no-undef
+          thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+        }
+
+        // Move focus back to previous .dropdown-toggle:first
+        dropdownToggleButton.focus();
       }
     });
   });
@@ -135,14 +213,15 @@ function dropdownMenuKeyboardNavigation(items) {
 
 const navDesktop = () => {
   // Define globals
-  const html = document.getElementsByTagName('html')[0];
-  const body = document.getElementsByTagName('body')[0];
-  const menuWrapper = document.getElementById('main-navigation-wrapper');
   const menuItems = document.querySelectorAll('.menu-item');
 
+  // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
+  const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button');
+
   // Dropdown menus
+  addDropdownToggleLabels(menuItems);
   dropdownMenu(menuItems);
-  dropdownMenuKeyboardNavigation(menuItems);
+  dropdownMenuKeyboardNavigation(menuItems, focusableElementsforDropdown);
   checkForSubmenuOverflow(menuItems);
 };
 
