@@ -302,13 +302,4 @@
       display: block;
     }
   }
-
-  // Disable animations on IE10 + IE11
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    // Enable hovers
-    ul li:focus > ul,
-    ul li:hover > ul {
-      display: block;
-    }
-  }
 } // @media only screen and (min-width: $width-max-mobile)
