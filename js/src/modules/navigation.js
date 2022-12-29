@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 19:14:39
+ * @Last Modified time: 2022-12-29 20:39:51
  */
 
 // Check if an element is out of the viewport
@@ -120,12 +120,13 @@ function dropdownMenu(items) {
           // Set aria-expanded to false for all dropdown-toggle elements
           dropdownToggle.setAttribute('aria-expanded', 'false');
 
-          // Get the link text that is children of this item
-          const linkText = dropdownToggle.parentNode.querySelector('.dropdown').textContent;
+          if (dropdownToggle.parentNode.querySelector('.dropdown')) {
+            const linkText = dropdownToggle.parentNode.querySelector('.dropdown').textContent;
 
-          // Set aria-label to expand for all dropdown-toggle elements
-          // eslint-disable-next-line camelcase, no-undef
-          dropdownToggle.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+            // Set aria-label to expand for all dropdown-toggle elements
+            // eslint-disable-next-line camelcase, no-undef
+            dropdownToggle.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+          }
         });
       }, hoverIntentTimeout);
 
@@ -307,19 +308,329 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
           }, 100);
         }
       }
+
+      // If no arrow keys used, do not continue
+      if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') {
+        return;
+      }
+
+      // Arrow keys
+      switch (e.code) {
+      // ArrowUp
+      case 'ArrowUp':
+
+        // Stop propagation
+        e.stopPropagation();
+
+        // Stop scrolling
+        e.preventDefault();
+
+        // If we're on the sub-menu, move up
+        if (thisElement.parentNode.parentNode.previousElementSibling && thisElement.parentNode.parentNode.previousElementSibling.classList.contains('dropdown-toggle')) {
+          // Focus to the previous link
+          thisElement.parentNode.parentNode.previousElementSibling.focus();
+        }
+
+        // If this is a .dropdown-toggle button and aria-expanded is true, close the dropdown
+        if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true') {
+          // Remove hover-intent class from this menu-item
+          thisMenuItem.classList.remove('hover-intent');
+
+          // Remove toggled-on class from this dropdown
+          thisDropdown.classList.remove('toggled-on');
+
+          // Set aria-expanded attribute to false
+          thisElement.setAttribute('aria-expanded', 'false');
+
+          // Get the link label of .dropdown link
+          const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+
+          // Set aria-label of the dropdown button
+          // eslint-disable-next-line camelcase, no-undef
+          thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+
+          // Move focus back to previous .dropdown-toggle
+          dropdownToggleButton.focus();
+        }
+
+        // If this is a correct element, focus to the previous link
+        if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+          // If there is no previous items, bail
+          if (!thisElement.parentNode.previousElementSibling) {
+            return;
+          }
+
+          // Get the previous link
+          const previousLink = thisElement.parentNode.previousElementSibling.querySelector('a');
+
+          // Get .dropdown-toggle element
+          const previousToggle = thisElement.parentNode.previousElementSibling.querySelector('.dropdown-toggle');
+
+          // If previous element is .dropdown-toggle element, focus to it
+          if (previousToggle && !thisElement.querySelector('.dropdown-toggle')) {
+            previousToggle.focus();
+          } else {
+            // If previous element is a link, focus to it
+            previousLink.focus();
+          }
+        }
+
+        break;
+
+        // ArrowDown
+      case 'ArrowDown':
+
+        // Stop propagation
+        e.stopPropagation();
+
+        // Stop scrolling
+        e.preventDefault();
+
+        // If we're on the sub-menu, move down
+        if (thisElement.parentNode.parentNode.nextElementSibling && thisElement.parentNode.parentNode.nextElementSibling.classList.contains('dropdown-toggle')) {
+          // Focus to the next link
+          thisElement.parentNode.parentNode.nextElementSibling.focus();
+        }
+
+        // If this is a .dropdown-toggle button and aria-expanded is true, move down
+        if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true') {
+          // Focus to the next link
+          thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+        }
+
+        // If this is a .dropdown-toggle button and aria-expanded is false, open sub-menu
+        // (if we are not inside sub-menu)
+        if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && !thisElement.parentNode.parentNode.classList.contains('sub-menu')) {
+          // Open sub-menu
+          thisElement.click();
+
+          // Focus to the next link under sub-menu
+          thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+
+          // Don't do anything else
+          return;
+        }
+
+        // If we are in fact in sub menu, move to next link
+        if (thisElement.parentNode.parentNode.classList.contains('sub-menu')) {
+          // Focus to the next link
+          thisElement.parentNode.nextElementSibling.querySelector('a').focus();
+        }
+
+        // If this is a correct element, focus to the next link
+        if ((thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') && !thisElement.classList.contains('dropdown-toggle')) {
+          // If there is no next items, bail
+          if (!thisElement.parentNode.nextElementSibling) {
+            return;
+          }
+
+          // Get the next link
+          const nextLink = thisElement.parentNode.nextElementSibling.querySelector('a');
+
+          // Get .dropdown-toggle element
+          let nextToggle = thisElement.parentNode.nextElementSibling.querySelector('.dropdown-toggle');
+
+          // If this has class .dropdown-item, jump to the next .dropdown-toggle
+          if (thisElement.classList.contains('dropdown-item')) {
+          // If there is a toggle
+            if (thisElement.nextElementSibling) {
+            // Get the dropdown-toggle element
+              nextToggle = thisElement.nextElementSibling;
+
+              // If next element is .dropdown-toggle element, focus to it
+              if (nextToggle) {
+                nextToggle.focus();
+              }
+            }
+          }
+
+          // If next element is .dropdown-toggle element, focus to it
+          if (nextToggle && !thisElement.querySelector('.dropdown-toggle')) {
+            nextToggle.focus();
+          } else {
+            // If next element is a link, focus to it
+            nextLink.focus();
+          }
+        }
+
+        break;
+
+        // ArrowLeft
+      case 'ArrowLeft':
+
+        // Stop propagation
+        e.stopPropagation();
+
+        // Stop scrolling
+        e.preventDefault();
+
+        // If we are on the first link, move to the dropdown-toggle and close menu
+        if (thisElement.parentNode.previousElementSibling === null && thisElement.parentNode.parentNode.id !== 'main-menu') {
+          // Focus to the previous link
+          thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle').focus();
+
+          // Close the dropdown
+          thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle').click();
+
+          // Don't do anything else
+          return;
+        }
+
+        // If this is a .dropdown-toggle button and aria-expanded is true, move left
+        if (thisElement.parentNode.previousElementSibling && thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+          // Focus to the previous link
+          thisElement.parentNode.previousElementSibling.querySelector('a').focus();
+        }
+
+        // If this is a .dropdown-toggle button and aria-expanded is false, close the dropdown
+        if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+          // Remove hover-intent class from this menu-item
+          thisMenuItem.classList.remove('hover-intent');
+
+          // Remove toggled-on class from this dropdown
+          thisDropdown.classList.remove('toggled-on');
+
+          // Set aria-expanded attribute to false
+          thisElement.setAttribute('aria-expanded', 'false');
+
+          // Get the link label of .dropdown link
+          const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+
+          // Set aria-label of the dropdown button
+          // eslint-disable-next-line camelcase, no-undef
+          thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+
+          // Move focus back to previous .dropdown-toggle
+          dropdownToggleButton.focus();
+        }
+
+        // If this is a correct element, focus to the previous link
+        if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+          // If this is a .dropdown-toggle button and aria-expanded is false,
+          // move to the link directly before it
+          if (thisElement.previousElementSibling && thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false') {
+            // Focus to the previous link
+            thisElement.previousElementSibling.focus();
+
+            // Don't do anything else
+            return;
+          }
+
+          // If there is no previous items, bail
+          if (!thisElement.parentNode.previousElementSibling) {
+            return;
+          }
+
+          // Get the previous link
+          const previousLink = thisElement.parentNode.previousElementSibling.querySelector('a');
+
+          // Get .dropdown-toggle element
+          const previousToggle = thisElement.parentNode.previousElementSibling.querySelector('.dropdown-toggle');
+
+          // If previous element is .dropdown-toggle element, focus to it
+          if (previousToggle) {
+            previousToggle.focus();
+          } else {
+            // If previous element is a link, focus to it
+            previousLink.focus();
+          }
+        }
+
+        break;
+
+        // ArrowRight
+      case 'ArrowRight':
+
+        // Stop propagation
+        e.stopPropagation();
+
+        // Stop scrolling
+        e.preventDefault();
+
+        // If this is a .dropdown-toggle button and aria-expanded is true, move right
+        if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+          // Focus to the next link
+          thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+        }
+
+        // If this has class .dropdown-item, jump to the next .dropdown-toggle
+        if (thisElement.nextElementSibling) {
+          thisElement.nextElementSibling.focus();
+
+          // Disable other actions if this is a .dropdown-item
+          if (thisElement.classList.contains('dropdown-item')) {
+            return;
+          }
+        }
+
+        // If this is a .dropdown-toggle button and aria-expanded is false, open sub-menu
+        if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+          // Open sub-menu
+          thisElement.click();
+
+          // Do nothing else
+          return;
+        }
+
+        // If this is a dropdown-toggle button and aria-expanded is true, move right
+        if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+          // Focus to the next link
+          thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+
+          // Don't do anything else
+          return;
+        }
+
+        // If this is a correct element, focus to the previous link
+        if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+          // If there is no next items, bail
+          if (!thisElement.parentNode.nextElementSibling) {
+            return;
+          }
+
+          // Get the next link
+          const nextLink = thisElement.parentNode.nextElementSibling.querySelector('a');
+
+          // Get .dropdown-toggle element
+          const nextToggle = thisElement.parentNode.nextElementSibling.querySelector('.dropdown-toggle');
+
+          // If next element is .dropdown-toggle element, focus to it
+          if (nextToggle) {
+            nextToggle.focus();
+          } else {
+            // If next element is a link, focus to it
+            nextLink.focus();
+          }
+        }
+
+        break;
+
+      default:
+        break;
+      }
     });
   });
 }
 
 const navCore = () => {
+  // If main-menu is not found, bail
+  // if (!document.getElementById('main-menu')) {
+  //   return;
+  // }
+
   // Set vars.
-  const html = document.getElementsByTagName('html')[0];
-  const body = document.getElementsByTagName('body')[0];
-  const container = document.getElementById('nav');
-  const menu = container.getElementsByTagName('ul')[0];
+  // const html = document.getElementsByTagName('html')[0];
+  // const body = document.getElementsByTagName('body')[0];
+  // const container = document.getElementById('nav');
+  // const menu = container.getElementsByTagName('ul')[0];
 };
 
 const navDesktop = () => {
+  // If main-menu is not found, bail
+  if (!document.getElementById('main-menu')) {
+    return;
+  }
+
   // Get --width-max-mobile from CSS
   const widthMaxMobile = getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile');
 
