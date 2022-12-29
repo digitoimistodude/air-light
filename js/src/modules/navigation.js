@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 17:22:38
+ * @Last Modified time: 2022-12-29 18:06:59
  */
 
 // Check if an element is out of the viewport
@@ -143,6 +143,45 @@ function addDropdownToggleLabels(items) {
 // Accessible keyboard navigation for dropdown menus
 function dropdownMenuKeyboardNavigation(items, focusableElements) {
   focusableElements.forEach((li) => {
+    li.addEventListener('keyup', (e) => {
+      // Get this item
+      const thisElement = e.target;
+
+      // Close previous dropdown if this parent contains id main-menu
+      if (thisElement.parentNode.parentNode.id === 'main-menu') {
+        // If we have previous item
+        if (thisElement.parentNode.previousElementSibling) {
+          // Get the previous item
+          const previousItem = thisElement.parentNode.previousElementSibling;
+
+          // Remove toggled-on class from previous item
+          previousItem.classList.remove('toggled-on');
+
+          // Remove hover-intent class from previous item
+          previousItem.classList.remove('hover-intent');
+
+          // If sub-menu found
+          if (previousItem.querySelector('.sub-menu')) {
+          // Get the previous item's dropdown
+            const previousItemDropdown = previousItem.querySelector('.sub-menu');
+
+            // Remove toggled-on class from previous sibling
+            previousItemDropdown.classList.remove('toggled-on');
+
+            // Remove hover-intent class from previous sibling
+            previousItemDropdown.classList.remove('hover-intent');
+
+            // Change toggle button aria-label
+            // eslint-disable-next-line camelcase, no-undef
+            previousItem.querySelector('.dropdown-toggle').setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${previousItem.querySelector('.dropdown').innerText}`);
+
+            // Change toggle button aria-expanded
+            previousItem.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+          }
+        }
+      }
+    });
+
     // eslint-disable-next-line func-names
     li.addEventListener('keydown', (e) => {
       // Get this link
@@ -162,6 +201,11 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
       // Open navigation on Enter
       if (e.key === 'Enter') {
+        // If this item is a hyperlink, do nothing. We want to use Enter only with buttons
+        if (thisElement.tagName === 'A') {
+          return;
+        }
+
         // Add hover-intent class to this menu-item
         thisMenuItem.classList.add('hover-intent');
 
@@ -183,11 +227,19 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
       // Close navigation on Escape
       if (e.key === 'Escape') {
+        // If we're on main level and nav item is not open, do nothing
+        if (thisElement.parentNode.parentNode.id === 'main-menu' && !thisElement.parentNode.classList.contains('hover-intent')) {
+          return;
+        }
+
         // Remove toggled-on classes from this dropdown
         firstDropdown.classList.remove('toggled-on');
 
         // Remove hover-intent classes from the current menu-item
         thisMenuItem.classList.remove('hover-intent');
+
+        // Hide menu if we're on second level
+        thisMenuItem.parentNode.parentNode.classList.remove('hover-intent');
 
         // Set aria expanded attribute to false
         dropdownToggleButton.setAttribute('aria-expanded', 'false');
@@ -204,12 +256,22 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
           thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
         }
 
-        // Move focus back to previous .dropdown-toggle:first
-        dropdownToggleButton.focus();
+        // Move focus back to previous .dropdown-toggle, but only if we're not on main level
+        if (thisElement.parentNode.parentNode.id !== 'main-menu') {
+          dropdownToggleButton.focus();
+        }
       }
     });
   });
 }
+
+const navCore = () => {
+  // Set vars.
+  const html = document.getElementsByTagName('html')[0];
+  const body = document.getElementsByTagName('body')[0];
+  const container = document.getElementById('nav');
+  const menu = container.getElementsByTagName('ul')[0];
+};
 
 const navDesktop = () => {
   // Get --width-max-mobile from CSS
@@ -234,4 +296,4 @@ const navDesktop = () => {
 };
 
 // Export different navigation functions
-export default navDesktop;
+export { navCore, navDesktop };

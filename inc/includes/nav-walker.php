@@ -188,8 +188,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 		}
 
 		// Add some additional default classes to the item.
-		$classes[] = 'air-light-menu-item menu-item-' . $item->ID;
-		$classes[] = 'nav-item';
+		$classes[] = 'menu-item-' . $item->ID;
 
 		// Allow filtering the classes.
 		$classes = apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth );
@@ -370,7 +369,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 			$class            = $args['menu_class'] ? ' class="menu-fallback-menu ' . esc_attr( $args['menu_class'] ) . '"' : ' class="menu-fallback-menu"';
 			$id               = $args['menu_id'] ? ' id="' . esc_attr( $args['menu_id'] ) . '"' : '';
 			$fallback_output .= '<ul' . $id . $class . '>';
-			$fallback_output .= '<li class="nav-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'air-light' ) . '">' . esc_html__( 'Add a menu', 'air-light' ) . '</a></li>';
+			$fallback_output .= '<li class="menu-item"><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" class="nav-link" title="' . esc_attr__( 'Add a menu', 'air-light' ) . '">' . esc_html__( 'Add a menu', 'air-light' ) . '</a></li>';
 			$fallback_output .= '</ul>';
 
 			// Menu container closing tag.
