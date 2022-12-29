@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 18:20:51
+ * @Last Modified time: 2022-12-29 19:08:49
  */
 
 // Check if an element is out of the viewport
@@ -45,6 +45,11 @@ function checkForSubmenuOverflow(items) {
       }
     });
   });
+}
+
+// Event listener helper function
+function addMultipleEventListener(element, events, handler) {
+  events.forEach((e) => element.addEventListener(e, handler));
 }
 
 // Dropdown menu function
@@ -105,14 +110,27 @@ function dropdownMenu(items) {
 
     // eslint-disable-next-line func-names
     li.addEventListener('mouseleave', function () {
-      // Remove hover-intent class on mouse leave
       setTimeout(() => {
+        // Remove hover-intent class on mouse leave
         this.classList.remove('hover-intent');
         this.parentNode.classList.remove('hover-intent');
+
+        const dropdownToggles = this.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach((dropdownToggle) => {
+          // Set aria-expanded to false for all dropdown-toggle elements
+          dropdownToggle.setAttribute('aria-expanded', 'false');
+
+          // Get the link text that is children of this item
+          const linkText = dropdownToggle.parentNode.querySelector('.dropdown').textContent;
+
+          // Set aria-label to expand for all dropdown-toggle elements
+          // eslint-disable-next-line camelcase, no-undef
+          dropdownToggle.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+        });
       }, hoverIntentTimeout);
 
-      // Remove removing-hover class after a while to re-initialize the menu
       setTimeout(() => {
+        // Remove removing-hover class after a while to re-initialize the menu
         this.classList.remove('removing-hover');
         this.parentNode.classList.remove('removing-hover');
       }, 500);
@@ -182,8 +200,8 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
       }
     });
 
-    // eslint-disable-next-line func-names
-    li.addEventListener('keydown', (e) => {
+    // NVDA supported keyboard navigation (NVDA needs click event to work)
+    addMultipleEventListener(li, ['click', 'keydown', 'keypress'], (e) => {
       // Get this link
       const thisElement = e.target;
 
@@ -199,8 +217,8 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
       thisElement.classList.remove('removing-hover');
       thisMenuItem.parentNode.classList.remove('removing-hover');
 
-      // Open navigation on Enter
-      if (e.key === 'Enter') {
+      // Open navigation on Enter, e.type click is for NVDA
+      if (e.key === 'Enter' || e.type === 'click') {
         // If this item is a hyperlink, do nothing. We want to use Enter only with buttons
         if (thisElement.tagName === 'A') {
           return;
@@ -208,7 +226,7 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
         // Toggle the dropdown
         if (!thisDropdown.classList.contains('toggled-on')) {
-        // Add hover-intent class to this menu-item
+          // Add hover-intent class to this menu-item
           thisMenuItem.classList.add('hover-intent');
 
           // Add toggled-on class to this dropdown
@@ -265,12 +283,16 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
         // Set aria expanded attribute to false
         dropdownToggleButton.setAttribute('aria-expanded', 'false');
 
+        // Get the link label of dropdown link
+        const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+
+        // Set aria label attribute
+        // eslint-disable-next-line camelcase, no-undef
+        dropdownToggleButton.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+
         // If we're on button, add aria-expanded to false
         if (thisElement.classList.contains('dropdown-toggle')) {
           thisElement.setAttribute('aria-expanded', 'false');
-
-          // Get the link label of .dropdown link
-          const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
 
           // Set aria-label of the dropdown button
           // eslint-disable-next-line camelcase, no-undef
@@ -279,7 +301,10 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
         // Move focus back to previous .dropdown-toggle, but only if we're not on main level
         if (thisElement.parentNode.parentNode.id !== 'main-menu') {
-          dropdownToggleButton.focus();
+          // Delay toggling for NVDA for 100 ms
+          setTimeout(() => {
+            dropdownToggleButton.focus();
+          }, 100);
         }
       }
     });
