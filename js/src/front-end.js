@@ -9,7 +9,7 @@ import { styleExternalLinks, initExternalLinkLabels } from './modules/external-l
 import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import initA11ySkipLink from './modules/a11y-skip-link';
-import { navCore, navDesktop, navMobile } from './modules/navigation';
+import { navDesktop, navMobile } from './modules/navigation';
 
 document.addEventListener('DOMContentLoaded', () => {
   initAnchors();
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initA11ySkipLink();
 
   // Init navigation
-  navCore();
   navDesktop();
   navMobile();
 
