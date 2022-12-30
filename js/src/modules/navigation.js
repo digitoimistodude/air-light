@@ -5,10 +5,10 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-31 01:38:54
+ * @Last Modified time: 2022-12-31 01:48:34
  */
 
-// Import functions from navigation/
+// Import functions needed for the navigation module
 import addMultipleEventListeners from './navigation/add-multiple-event-listeners';
 import calculateBurgerMenuPosition from './navigation/calculate-burger-menu-position';
 import a11yFocusTrap from './navigation/a11y-focus-trap';
@@ -101,8 +101,78 @@ const navMobile = () => {
   });
 };
 
+// Sticky navigation
+// eslint-disable-next-line no-unused-vars
+const navSticky = () => {
+  function initStickyNavStyles() {
+    // Add default styles for sticky navigation as <style>
+    const style = document.createElement('style');
+    style.innerHTML = `
+    .site-header {
+      transition: all 100ms cubic-bezier(.4, 0, .2, 1);
+      overflow: visible;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .site-header.is-fixed {
+      animation-duration: 300ms;
+      animation-iteration-count: 1;
+      animation-name: roll-in;
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-black);
+      left: 0;
+      position: fixed;
+      top: 0;
+    }
+
+    @keyframes roll-in {
+      0% {
+        opacity: 0;
+        top: -100%;
+      }
+
+      100% {
+        opacity: 1;
+        top: 0;
+      }
+    }`;
+    document.head.appendChild(style);
+  }
+
+  function initStickyNav() {
+    // Get --width-max-mobile from CSS
+    const widthMaxMobile = getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile');
+
+    // Let's see if we are on mobile viewport
+    const isMobile = window.matchMedia(`(max-width: ${widthMaxMobile})`).matches;
+
+    // If things are not okay, bail
+    if (isMobile) {
+      return;
+    }
+
+    const siteHeader = document.querySelector('.site-header');
+    const headerHeight = getComputedStyle(siteHeader).height.split('px')[0];
+    const scrollValue = window.scrollY;
+
+    if (scrollValue > headerHeight) {
+      siteHeader.classList.add('is-fixed');
+    } else if (scrollValue < headerHeight) {
+      siteHeader.classList.remove('is-fixed');
+    }
+
+    if (window.pageYOffset > headerHeight) {
+      siteHeader.classList.add('is-fixed');
+    }
+  }
+
+  window.addEventListener('scroll', initStickyNav);
+  window.addEventListener('DOMContentLoaded', initStickyNavStyles);
+};
+
 // Export different navigation functions
-export { navDesktop, navMobile };
+export { navSticky, navDesktop, navMobile };
 
 // Reinit some things
 window.addEventListener('resize', () => {
