@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-30 23:36:52
+ * @Last Modified time: 2022-12-31 00:10:10
  */
 
 // Check if an element is out of the viewport
@@ -35,6 +35,16 @@ function calculateBurgerMenuPosition() {
     return;
   }
 
+  // Set viewport
+  let viewportWidth = window.innerWidth;
+
+  // Reinit for resize function
+  // eslint-disable-next-line max-len
+  viewportWidth = viewportWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+  // Get --width-max-mobile from CSS
+  const widthMaxMobile = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile'), 10);
+
   // Get the height of .site-header and #nav-toggle
   // Calculate the top position of the toggle to be exactly in the center vertically
   const siteHeaderHeight = document.querySelector('.site-header').offsetHeight;
@@ -43,8 +53,12 @@ function calculateBurgerMenuPosition() {
   // Set the top position of the toggle
   document.getElementById('nav-toggle').style.top = `${(siteHeaderHeight - navToggleHeight) / 2}px`;
 
-  // Set navigation position from top
-  document.getElementById('main-menu').style.top = `${siteHeaderHeight}px`;
+  // Set navigation position from top if on mobile
+  if (viewportWidth <= widthMaxMobile) {
+    document.getElementById('main-menu').style.top = `${siteHeaderHeight}px`;
+  } else {
+    document.getElementById('main-menu').style.top = '0';
+  }
 }
 
 // Calculate mobile nav-toggle height
@@ -324,6 +338,14 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
       // Close navigation on Escape
       if (e.key === 'Escape') {
+        // Close mobile nav if no sub-menu is open
+        if (thisElement.parentNode.parentNode.id === 'main-menu' && !thisElement.parentNode.classList.contains('toggled-on')) {
+          document.body.classList.remove('js-nav-active');
+
+          // Move focus back to nav-toggle
+          document.getElementById('nav-toggle').focus();
+        }
+
         // If we're on main level and nav item is not open, do nothing
         if (thisElement.parentNode.parentNode.id === 'main-menu' && !thisElement.parentNode.classList.contains('hover-intent')) {
           return;
@@ -340,6 +362,9 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
         // Set aria expanded attribute to false
         dropdownToggleButton.setAttribute('aria-expanded', 'false');
+
+        // Remove toggled-on
+        dropdownToggleButton.classList.remove('toggled-on');
 
         // Get the link label of dropdown link
         const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;

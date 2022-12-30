@@ -2,13 +2,16 @@
 @import 'nav-toggle';
 
 // CSS variables
-// These can be adjusted with media queries for in-between breakpoints
 :root {
-  // Main level font-size
+  // Main level on mobile
   --font-size-main-level-mobile: 15px;
-
-  // Main level font-weight
   --font-weight-main-level-mobile: 600;
+  --padding-main-level-vertical-mobile: 1.2rem;
+  --color-main-level-menu-item-hover-focus-mobile: var(--color-white);
+  --color-main-level-menu-item-mobile: var(--color-white);
+
+  // General mobile navigation items
+  --color-separator-nav-mobile: rgb(255 255 255 / .1);
 
   // Sub-menu font-size
   --font-size-sub-menu-mobile: 15px;
@@ -16,25 +19,22 @@
   // Sub-menu font-weight
   --font-weight-sub-menu-mobile: 600;
 
-  // Dropdown-toggle button size
-  --dropdown-toggle-size-mobile: 12px;
-  --margin-left-sub-menu: 2rem;
-  --padding-main-level-vertical-mobile: 1.2rem;
+  // Indent on sub-menus
+  --margin-left-sub-menu: 1rem;
+
+  // Padding vertically on sub-menu
   --padding-sub-menu-vertical-mobile: .8rem;
+
+  // Padding horizontally on sub-menu
   --padding-sub-menu-horizontal-mobile: 2.5rem;
 
   // Colors
-  --color-active-main-level-mobile: var(--color-white);
   --color-background-nav-mobile-header: var(--color-main);
   --color-background-nav-mobile-header-active: var(--color-main);
-  --color-background-nav-mobile-layer: var(--color-main);
-  --color-background-nav-mobile-layer-active: var(--color-main);
-  --color-current-mobile: var(--color-white);
+  --color-background-menu-items: var(--color-main);
+  --color-background-menu-items-active: var(--color-main);
+  --color-current-menu-item: var(--color-white);
   --color-dropdown-toggle-mobile: var(--color-white);
-  --color-hamburger-active: var(--color-white);
-  --color-hamburger: var(--color-white);
-  --color-main-level-mobile: var(--color-white);
-  --color-separator-nav-mobile: rgb(255 255 255 / .1);
   --color-sub-menu-mobile: rgb(255 255 255 / .8);
 }
 
@@ -87,7 +87,7 @@
 
   .menu-items {
     backface-visibility: hidden;
-    background-color: var(--color-background-nav-mobile-layer);
+    background-color: var(--color-background-menu-items);
     display: block;
     height: 100vh;
     left: 0;
@@ -110,7 +110,7 @@
   // Main level mobile navigation links
   .menu-item a {
     border-top: 1px solid var(--color-separator-nav-mobile);
-    color: var(--color-main-level-mobile);
+    color: var(--color-main-level-menu-item-mobile);
     display: block;
     font-size: var(--font-size-main-level-mobile);
     font-weight: var(--font-weight-main-level-mobile);
@@ -147,25 +147,20 @@
 
   .menu-item a:hover,
   .menu-item a:focus {
-    color: var(--color-active-main-level-mobile);
+    color: var(--color-main-level-menu-item-hover-focus-mobile);
   }
 
   // Current menu item color
   .menu-item.current-menu-parent > a,
   .menu-item.current-menu-item > a {
-    color: var(--color-current-mobile);
+    color: var(--color-current-menu-item);
   }
 
   // Dropdown toggle
   .dropdown-toggle {
+    --dropdown-toggle-size: 12px;
     align-items: center;
     background-color: transparent;
-
-    // Alternative + and minus effect
-    // background-image: url('../../svg/nav-open.svg');
-    // background-position: center;
-    // background-repeat: no-repeat;
-    // background-size: var(--dropdown-toggle-size-mobile) var(--dropdown-toggle-size-mobile);
     border: 0;
     color: var(--color-dropdown-toggle-mobile);
     display: inline-flex;
@@ -175,20 +170,39 @@
     overflow: hidden;
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: var(--padding-sub-menu-horizontal-mobile);
-    padding-right: var(--padding-sub-menu-horizontal-mobile);
+    padding-right: calc(var(--padding-sub-menu-horizontal-mobile) - calc(var(--dropdown-toggle-size) / 2));
     padding-top: var(--padding-sub-menu-vertical-mobile);
     position: absolute;
     right: 0;
     top: 2px;
-    transform: rotate(0);
-    transition: all $transition-duration;
     z-index: 100;
 
     // Make svg not clickable so that it won't interfere with the menu item
     svg {
+      background-image: url('data:image/svg+xml, %3Csvg xmlns="http://www.w3.org/2000/svg" style="width: var(--dropdown-toggle-size); height: var(--dropdown-toggle-size);" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 1.5v7M1.5 5h7"/%3E%3C/svg%3E%0A');
+      background-size: 100%;
+      height: var(--dropdown-toggle-size);
       pointer-events: none;
       position: relative;
+      transform: rotate(0);
+      transition: all $transition-duration;
+      width: var(--dropdown-toggle-size);
       z-index: -1;
+
+      // Let's hide the original SVG because we have a custom one here
+      // stylelint-disable a11y/no-display-none
+      path {
+        display: none;
+      }
+    }
+  }
+
+  .dropdown-toggle.toggled-on {
+    svg {
+      background-image: url('data:image/svg+xml, %3Csvg xmlns="http://www.w3.org/2000/svg" style="width: var(--dropdown-toggle-size); height: var(--dropdown-toggle-size);" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1.5 5h7"/%3E%3C/svg%3E%0A');
+
+      // Rotate 180 degrees
+      transform: rotate(-180deg);
     }
   }
 
@@ -205,31 +219,12 @@
     color: var(--color-sub-menu-mobile);
   }
 
-  // Hide desktop toggles
-  .dropdown-toggle svg {
-    height: var(--dropdown-toggle-size-mobile);
-    width: var(--dropdown-toggle-size-mobile);
-    // Enable for alternative + and minus effect
-    // Need to use display: none here to make sure there are visually no double toggles
-    // stylelint-disable-next-line a11y/no-display-none
-    // display: none;
-  }
-
-  .dropdown-toggle.toggled-on {
-    background-color: transparent;
-
-    // Alternative + and minus effect
-    // background-image: url('../../svg/nav-close.svg');
-    cursor: pointer;
-    transform: rotate(-180deg);
-  }
-
   // Mobile navigation core functionality
   .js-nav-active {
     overflow: hidden;
 
     .menu-items {
-      background-color: var(--color-background-nav-mobile-layer-active);
+      background-color: var(--color-background-menu-items-active);
       opacity: 1;
       pointer-events: all;
       transform: translate3d(0, 0, 0);
