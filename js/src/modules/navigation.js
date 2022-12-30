@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-31 01:36:12
+ * @Last Modified time: 2022-12-31 01:38:54
  */
 
 // Import functions from navigation/
@@ -55,9 +55,6 @@ const navMobile = () => {
     if (e.type === 'click' || e.keyCode === 13) {
       // Activate nav
       document.body.classList.toggle('js-nav-active');
-
-      // Make #main-menu height the document height
-      document.getElementById('main-menu').style.height = `${document.documentElement.scrollHeight}px`;
 
       // Toggle aria-expanded attribute, if it's false, change to true and vice versa
       if (document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false') {
