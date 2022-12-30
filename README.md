@@ -110,15 +110,18 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Navigation
 
-* WCAG 2.0 accessible with keyboard and screen readers, aria roles and labels included
-* Custom navigation walker
-* Support for multi-level drop down submenus
-* Support for both absolute and relative navigation
-* Improved version of the [accessible menu for WordPress themes](https://github.com/theme-smith/accessible-nav-wp), fully accessible and responsive multi-level navigation
-* Support for animations
-* Hover intent with minimal animations
-* Accessible mobile menu
-* Wide selection of [tasty hamburger](https://github.com/jonsuh/hamburgers) animations
+* Dependency-free, all in Vanilla JS
+* Custom navigation walker built accessibility in mind
+* Fully accessible
+* Full keyboard navigation support
+* Arrow navigation support
+* WCAG 2.0 AA compliant: Dropdowns close when pressing Esc while hovering
+* Supports multi-level drop down submenus
+* Supports animations
+* Hover-intent support
+* Focus trap for mobile navigation
+* Accessible burger menu
+* Easy to customize
 
 #### WordPress & functions
 
