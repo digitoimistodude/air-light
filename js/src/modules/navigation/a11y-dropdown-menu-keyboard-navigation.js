@@ -2,12 +2,15 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-12-31 00:27:10
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-31 00:28:45
+ * @Last Modified time: 2022-12-31 01:03:17
  */
+// Import required modules
+import addMultipleEventListeners from './add-multiple-event-listeners';
+
 // Accessible keyboard navigation for dropdown menus
-function A11yDropdownMenuKeyboardNavigation(items, focusableElements) {
-  focusableElements.forEach((li) => {
-    li.addEventListener('keyup', (e) => {
+function a11yDropdownMenuKeyboardNavigation(items, focusableElements) {
+  focusableElements.forEach((item) => {
+    item.addEventListener('keyup', (e) => {
       // Get this item
       const thisElement = e.target;
 
@@ -47,7 +50,7 @@ function A11yDropdownMenuKeyboardNavigation(items, focusableElements) {
     });
 
     // NVDA supported keyboard navigation (NVDA and mobile need click event to work)
-    addMultipleEventListeners(li, ['click', 'keydown', 'keypress'], (e) => {
+    addMultipleEventListeners(item, ['click', 'keydown', 'keypress'], (e) => {
       // Get this link
       const thisElement = e.target;
 
@@ -471,4 +474,4 @@ function A11yDropdownMenuKeyboardNavigation(items, focusableElements) {
   });
 }
 
-export default A11yDropdownMenuKeyboardNavigation;
+export default a11yDropdownMenuKeyboardNavigation;

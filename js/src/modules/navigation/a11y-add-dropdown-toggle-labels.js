@@ -2,10 +2,10 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-12-31 00:23:22
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-31 00:28:29
+ * @Last Modified time: 2022-12-31 00:32:37
  */
 // Add proper link labels for screen readers
-function A11yAddDropdownToggleLabels(items) {
+function a11yAddDropdownToggleLabels(items) {
   items.forEach((li) => {
     // If .dropdown-class does not exist then do nothing
     if (!li.querySelector('.dropdown')) {
@@ -24,4 +24,4 @@ function A11yAddDropdownToggleLabels(items) {
   });
 }
 
-export default A11yAddDropdownToggleLabels;
+export default a11yAddDropdownToggleLabels;

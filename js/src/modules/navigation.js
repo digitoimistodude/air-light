@@ -5,18 +5,18 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-31 00:30:38
+ * @Last Modified time: 2022-12-31 01:36:12
  */
 
 // Import functions from navigation/
 import addMultipleEventListeners from './navigation/add-multiple-event-listeners';
 import calculateBurgerMenuPosition from './navigation/calculate-burger-menu-position';
-// import focusTrap from './navigation/focus-trap';
+import a11yFocusTrap from './navigation/a11y-focus-trap';
 import calculateDropdownToggleHeight from './navigation/calculate-dropdown-toggle-height';
 import checkForSubmenuOverflow from './navigation/check-for-submenu-overflow';
 import dropdownMenuOnHover from './navigation/dropdown-menu-on-hover';
-import A11yAddDropdownToggleLabels from './navigation/a11y-add-dropdown-toggle-labels';
-import A11yDropdownMenuKeyboardNavigation from './navigation/a11y-dropdown-menu-keyboard-navigation';
+import a11yAddDropdownToggleLabels from './navigation/a11y-add-dropdown-toggle-labels';
+import a11yDropdownMenuKeyboardNavigation from './navigation/a11y-dropdown-menu-keyboard-navigation';
 
 const navDesktop = () => {
   // Define globals
@@ -31,8 +31,8 @@ const navDesktop = () => {
   }
 
   // Dropdown menus
-  A11yAddDropdownToggleLabels(menuItems);
-  A11yDropdownMenuKeyboardNavigation(menuItems, focusableElementsforDropdown);
+  a11yAddDropdownToggleLabels(menuItems);
+  a11yDropdownMenuKeyboardNavigation(menuItems, focusableElementsforDropdown);
 
   // Dropdown on mouse hover
   dropdownMenuOnHover(menuItems);
@@ -55,6 +55,9 @@ const navMobile = () => {
     if (e.type === 'click' || e.keyCode === 13) {
       // Activate nav
       document.body.classList.toggle('js-nav-active');
+
+      // Make #main-menu height the document height
+      document.getElementById('main-menu').style.height = `${document.documentElement.scrollHeight}px`;
 
       // Toggle aria-expanded attribute, if it's false, change to true and vice versa
       if (document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false') {
@@ -92,6 +95,13 @@ const navMobile = () => {
 
   // Calculate mobile nav-toggle position
   calculateBurgerMenuPosition();
+
+  // Focusable elements
+  const focusableElements = document.getElementById('nav').querySelectorAll('a, button');
+
+  focusableElements.forEach((menuItem) => {
+    menuItem.addEventListener('keyup', a11yFocusTrap);
+  });
 };
 
 // Export different navigation functions

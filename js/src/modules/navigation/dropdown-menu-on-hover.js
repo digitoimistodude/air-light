@@ -1,3 +1,9 @@
+/**
+ * @Author: Roni Laukkarinen
+ * @Date:   2022-12-31 00:24:53
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2022-12-31 01:33:39
+ */
 // Dropdown menu function
 function dropdownMenuOnHover(items) {
   // Optional timeout
@@ -6,8 +12,14 @@ function dropdownMenuOnHover(items) {
   items.forEach((li) => {
     // eslint-disable-next-line func-names
     li.addEventListener('mouseover', function () {
+      // Get --width-max-mobile from CSS
+      const widthMaxMobile = getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile');
+
+      // Let's see if we are on mobile viewport
+      const isMobile = window.matchMedia(`(max-width: ${widthMaxMobile})`).matches;
+
       // If rules don't apply, bail
-      if (li.classList.contains('removing-hover')) {
+      if (li.classList.contains('removing-hover') || isMobile) {
         return;
       }
 
