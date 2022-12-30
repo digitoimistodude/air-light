@@ -3,6 +3,17 @@
 
 // CSS variables
 :root {
+  // Site-header and general mobile navigation elements
+  --color-background-nav-mobile-header: var(--color-main);
+  --color-background-nav-mobile-header-active: var(--color-main);
+
+  // Affecting to both main and sub-levels
+  --color-background-menu-items: var(--color-main);
+  --color-background-menu-items-active: var(--color-main);
+  --color-separator-nav-mobile: rgb(255 255 255 / .1);
+  --color-current-menu-item: var(--color-white);
+  --color-dropdown-toggle-mobile: var(--color-white);
+
   // Main level on mobile
   --font-size-main-level-mobile: 15px;
   --font-weight-main-level-mobile: 600;
@@ -10,31 +21,12 @@
   --color-main-level-menu-item-hover-focus-mobile: var(--color-white);
   --color-main-level-menu-item-mobile: var(--color-white);
 
-  // General mobile navigation items
-  --color-separator-nav-mobile: rgb(255 255 255 / .1);
-
-  // Sub-menu font-size
+  // Sub-menu on mobile
   --font-size-sub-menu-mobile: 15px;
-
-  // Sub-menu font-weight
   --font-weight-sub-menu-mobile: 600;
-
-  // Indent on sub-menus
   --margin-left-sub-menu: 1rem;
-
-  // Padding vertically on sub-menu
   --padding-sub-menu-vertical-mobile: .8rem;
-
-  // Padding horizontally on sub-menu
   --padding-sub-menu-horizontal-mobile: 2.5rem;
-
-  // Colors
-  --color-background-nav-mobile-header: var(--color-main);
-  --color-background-nav-mobile-header-active: var(--color-main);
-  --color-background-menu-items: var(--color-main);
-  --color-background-menu-items-active: var(--color-main);
-  --color-current-menu-item: var(--color-white);
-  --color-dropdown-toggle-mobile: var(--color-white);
   --color-sub-menu-mobile: rgb(255 255 255 / .8);
 }
 
