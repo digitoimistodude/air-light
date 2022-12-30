@@ -5,7 +5,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 23:07:16
+ * @Last Modified time: 2022-12-30 23:36:52
  */
 
 // Check if an element is out of the viewport
@@ -25,8 +25,62 @@ const isOutOfViewport = function (elem) {
   return out;
 };
 
+// Calculate burger menu position
+function calculateBurgerMenuPosition() {
+  // If nav-toggle, site-header or main-menu not found, bail
+  if (!document.getElementById('nav-toggle') || !document.querySelector('.site-header') || !document.getElementById('main-menu')) {
+    // eslint-disable-next-line no-console
+    console.log('Warning: No nav-toggle or site-header found.');
+
+    return;
+  }
+
+  // Get the height of .site-header and #nav-toggle
+  // Calculate the top position of the toggle to be exactly in the center vertically
+  const siteHeaderHeight = document.querySelector('.site-header').offsetHeight;
+  const navToggleHeight = document.getElementById('nav-toggle').offsetHeight;
+
+  // Set the top position of the toggle
+  document.getElementById('nav-toggle').style.top = `${(siteHeaderHeight - navToggleHeight) / 2}px`;
+
+  // Set navigation position from top
+  document.getElementById('main-menu').style.top = `${siteHeaderHeight}px`;
+}
+
+// Calculate mobile nav-toggle height
+function calculateDropdownToggleHeight() {
+  // If .dropdown-toggle not found, bail
+  if (!document.querySelectorAll('.dropdown-toggle')) {
+    // eslint-disable-next-line no-console
+    console.log('Warning: No dropdown-toggles found.');
+
+    return;
+  }
+
+  // Find all .dropdown-toggle elements on mobile
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+  // Loop through dropdown toggles
+  dropdownToggles.forEach((dropdownToggle) => {
+    // Get the height of previous element
+    const previousElementHeight = dropdownToggle.previousElementSibling.offsetHeight;
+
+    // Set the height of the dropdown toggle
+    // eslint-disable-next-line no-param-reassign
+    dropdownToggle.style.height = `${previousElementHeight}px`;
+  });
+}
+
 // Check for submenu overflow
 function checkForSubmenuOverflow(items) {
+  // If items not found, bail
+  if (!items) {
+    // eslint-disable-next-line no-console
+    console.log('Warning: No items for sub-menus found.');
+
+    return;
+  }
+
   items.forEach((li) => {
     // Find sub menus
     const subMenusUnderMenuItem = li.querySelectorAll('.sub-menu');
@@ -53,7 +107,7 @@ function addMultipleEventListener(element, events, handler) {
 }
 
 // Dropdown menu function
-function dropdownMenu(items) {
+function dropdownMenuOnHover(items) {
   // Optional timeout
   const hoverIntentTimeout = 0;
 
@@ -201,7 +255,7 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
       }
     });
 
-    // NVDA supported keyboard navigation (NVDA needs click event to work)
+    // NVDA supported keyboard navigation (NVDA and mobile need click event to work)
     addMultipleEventListener(li, ['click', 'keydown', 'keypress'], (e) => {
       // Get this link
       const thisElement = e.target;
@@ -211,7 +265,7 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
 
       // Define the elements of this dropdown
       const firstDropdown = thisElement.parentNode.parentNode.parentNode.querySelector('.sub-menu');
-      const thisDropdown = thisElement.parentNode.parentNode.querySelector('.sub-menu');
+      const thisDropdown = thisElement.nextElementSibling;
       const dropdownToggleButton = thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle');
 
       // Remove removing-hover class
@@ -225,42 +279,45 @@ function dropdownMenuKeyboardNavigation(items, focusableElements) {
           return;
         }
 
+        // Get the link label of .dropdown link
+        const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+
+        // Toggle toggled-on class
+        thisElement.classList.toggle('toggled-on');
+
+        // If aria-expanded is false, set it to true
+        if (thisElement.getAttribute('aria-expanded') === 'false') {
+          // Set aria-expanded to true
+          thisElement.setAttribute('aria-expanded', 'true');
+
+          // Set aria-label of the dropdown button
+          // eslint-disable-next-line camelcase, no-undef
+          thisElement.setAttribute('aria-label', `${air_light_screenReaderText.collapse_for} ${linkLabel}`);
+        } else {
+          // Set aria-expanded to false
+          thisElement.setAttribute('aria-expanded', 'false');
+
+          // Set aria-label of the dropdown button
+          // eslint-disable-next-line camelcase, no-undef
+          thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+        }
+
         // Toggle the dropdown
-        if (!thisDropdown.classList.contains('toggled-on')) {
+        if (thisDropdown && !thisDropdown.classList.contains('toggled-on')) {
           // Add hover-intent class to this menu-item
           thisMenuItem.classList.add('hover-intent');
 
           // Add toggled-on class to this dropdown
           thisDropdown.classList.add('toggled-on');
-
-          // If we're on button, add aria-expanded to true
-          if (thisElement.classList.contains('dropdown-toggle')) {
-            thisElement.setAttribute('aria-expanded', 'true');
-
-            // Get the link label of .dropdown link
-            const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
-
-            // Set aria-label of the dropdown button
-            // eslint-disable-next-line camelcase, no-undef
-            thisElement.setAttribute('aria-label', `${air_light_screenReaderText.collapse_for} ${linkLabel}`);
-          }
         } else {
           // Remove hover-intent class from this menu-item
-          thisMenuItem.classList.remove('hover-intent');
+          if (thisMenuItem) {
+            thisMenuItem.classList.remove('hover-intent');
+          }
 
           // Remove toggled-on class from this dropdown
-          thisDropdown.classList.remove('toggled-on');
-
-          // If we're on button, add aria-expanded to false
-          if (thisElement.classList.contains('dropdown-toggle')) {
-            thisElement.setAttribute('aria-expanded', 'false');
-
-            // Get the link label of .dropdown link
-            const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
-
-            // Set aria-label of the dropdown button
-            // eslint-disable-next-line camelcase, no-undef
-            thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+          if (thisDropdown) {
+            thisDropdown.classList.remove('toggled-on');
           }
         }
       }
@@ -626,46 +683,92 @@ const navCore = () => {
 };
 
 const navDesktop = () => {
-  // If main-menu is not found, bail
-  if (!document.getElementById('main-menu')) {
-    return;
-  }
-
-  // Get --width-max-mobile from CSS
-  const widthMaxMobile = getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile');
-
-  // Bail if we're on mobile
-  if (window.matchMedia(`(max-width: ${widthMaxMobile})`).matches) {
-    return;
-  }
-
   // Define globals
   const menuItems = document.querySelectorAll('.menu-item');
 
   // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
   const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button, .button-nav');
 
+  // If main-menu is not found, bail
+  if (!document.getElementById('main-menu')) {
+    return;
+  }
+
   // Dropdown menus
   addDropdownToggleLabels(menuItems);
-  dropdownMenu(menuItems);
   dropdownMenuKeyboardNavigation(menuItems, focusableElementsforDropdown);
+
+  // Dropdown on mouse hover
+  dropdownMenuOnHover(menuItems);
+
+  // Check for submenu overflow
   checkForSubmenuOverflow(menuItems);
 };
 
 const navMobile = () => {
+  // If burger toggle is not found, bail
+  if (!document.getElementById('nav-toggle')) {
+    // eslint-disable-next-line no-console
+    console.log('Warning: No nav-toggle found.');
+
+    return;
+  }
+
+  function navToggle(e) {
+    // If clicked with mouse or enter key
+    if (e.type === 'click' || e.keyCode === 13) {
+      // Activate nav
+      document.body.classList.toggle('js-nav-active');
+
+      // Toggle aria-expanded attribute, if it's false, change to true and vice versa
+      if (document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false') {
+        document.getElementById('nav-toggle').setAttribute('aria-expanded', 'true');
+      } else {
+        document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
+      }
+
+      // Toggle aria-label
+      // eslint-disable-next-line camelcase, no-undef
+      if (document.getElementById('nav-toggle').getAttribute('aria-label') === air_light_screenReaderText.expand_toggle) {
+        // eslint-disable-next-line camelcase, no-undef
+        document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.collapse_toggle);
+      } else {
+        // eslint-disable-next-line camelcase, no-undef
+        document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.expand_toggle);
+      }
+
+      // Center vertically the absolute positioned mobile dropdown toggles by setting fixed height
+      calculateDropdownToggleHeight();
+    }
+  }
+
   // When clicking #nav-toggle, add .js-nav-active body class
-  addMultipleEventListener(document.getElementById('nav-toggle'), ['click', 'keydown', 'keypress'], () => {
-    document.body.classList.toggle('js-nav-active');
+  addMultipleEventListener(document.getElementById('nav-toggle'), ['click', 'keydown', 'keypress'], navToggle);
+
+  // Get all dropdown-toggles
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+  // Loop through dropdown-toggles
+  dropdownToggles.forEach((dropdownToggle) => {
+    // When clicking a dropdown-toggle, add .js-dropdown-active class to the parent .menu-item
+    addMultipleEventListener(dropdownToggle, ['click', 'keydown', 'keypress'], calculateDropdownToggleHeight);
   });
 
-  // Get the height of .site-header and #nav-toggle
-  // Calculate the top position of the toggle to be exactly in the center vertically
-  const siteHeaderHeight = document.querySelector('.site-header').offsetHeight;
-  const navToggleHeight = document.getElementById('nav-toggle').offsetHeight;
-
-  // Set the top position of the toggle
-  document.getElementById('nav-toggle').style.top = `${(siteHeaderHeight - navToggleHeight) / 2}px`;
+  // Calculate mobile nav-toggle position
+  calculateBurgerMenuPosition();
 };
 
 // Export different navigation functions
 export { navCore, navDesktop, navMobile };
+
+// Reinit some things
+window.addEventListener('resize', () => {
+  // Center vertically the absolute positioned burger
+  calculateBurgerMenuPosition();
+
+  // Center vertically the absolute positioned mobile dropdown toggles by setting fixed height
+  calculateDropdownToggleHeight();
+
+  // Check for submenu overflow
+  checkForSubmenuOverflow(document.querySelectorAll('.menu-item'));
+});

@@ -4,13 +4,20 @@
 // CSS variables
 // These can be adjusted with media queries for in-between breakpoints
 :root {
-  // Dimensions, gaps and spacings
-  --font-size-main-level-mobile: 17px;
-  --font-size-sub-menu-mobile: 17px;
+  // Main level font-size
+  --font-size-main-level-mobile: 15px;
+
+  // Main level font-weight
   --font-weight-main-level-mobile: 600;
+
+  // Sub-menu font-size
+  --font-size-sub-menu-mobile: 15px;
+
+  // Sub-menu font-weight
   --font-weight-sub-menu-mobile: 600;
+
+  // Dropdown-toggle button size
   --dropdown-toggle-size-mobile: 12px;
-  --height-navigation-mobile: 72px;
   --margin-left-sub-menu: 2rem;
   --padding-main-level-vertical-mobile: 1.2rem;
   --padding-sub-menu-vertical-mobile: .8rem;
@@ -82,17 +89,17 @@
     backface-visibility: hidden;
     background-color: var(--color-background-nav-mobile-layer);
     display: block;
-    height: calc(100vh - var(--height-navigation-mobile));
+    height: 100vh;
     left: 0;
     margin: 0;
     overflow: auto;
-    padding: 2rem 0;
+    padding: 0;
     pointer-events: none;
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
 
     // Default position, some browsers need this
-    top: var(--height-navigation-mobile);
+    top: 72px;
     transform: translate3d(100%, 0, 0);
     transition: all 180ms ease-in-out;
     visibility: hidden;
@@ -165,7 +172,6 @@
     height: 100%;
     left: auto;
     margin-top: 0;
-    max-height: 52px;
     overflow: hidden;
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: var(--padding-sub-menu-horizontal-mobile);
@@ -176,11 +182,23 @@
     top: 2px;
     transform: rotate(0);
     transition: all $transition-duration;
-    z-index: 9999;
+    z-index: 100;
+
+    // Make svg not clickable so that it won't interfere with the menu item
+    svg {
+      pointer-events: none;
+      position: relative;
+      z-index: -1;
+    }
+  }
+
+  .dropdown-toggle:hover {
+    cursor: pointer;
   }
 
   .dropdown-toggle:focus {
-    z-index: 10000;
+    cursor: pointer;
+    z-index: 100;
   }
 
   .sub-menu .dropdown-toggle {

@@ -13,6 +13,10 @@
   padding-top: var(--padding-site-header-vertical);
   position: relative;
   z-index: 15;
+
+  @media (max-width: $width-max-mobile) {
+    --padding-container-horizontal: 2rem;
+  }
 }
 
 .site-title {
