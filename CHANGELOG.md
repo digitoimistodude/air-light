@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix undefined body class
+
 ### 9.2.5: 2022-12-31
 
 * Major navigation.js rewrite
