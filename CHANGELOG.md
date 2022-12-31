@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Fix undefined body class
+* Fix nav styles leaking to pagination
 
 ### 9.2.5: 2022-12-31
 
