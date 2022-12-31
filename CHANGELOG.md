@@ -1,5 +1,23 @@
-### [Unreleased]
+### 9.2.5: 2022-12-31
 
+* Major navigation.js rewrite
+* Modularize navigation.js
+* Make navigation dependency free, completely dropping jQuery
+* Perfected arrow and keyboard navigation patterns for A11y
+* Fix aria-labels and aria-expanded
+* Move nav-toggle inside nav landmark
+* Fix focus trap
+* Rewrite nav-toggle and 🍔
+* Use clever way to visually present attr(aria-label) for 🍔
+* Define mobile breakpoint more modern way with getPropertyValue
+* Drop IE10-IE11 support for navigation.js
+* Drop hamburgers npm module dependency
+* Fix focusable elements if last item is a button
+* Fix checkForSubmenuOverflow() function
+* Fix resize functions
+* Remove useless vars and functions
+* Add plus and minus icons for mobile as default as inlined SVG
+* Drop devDependencies from theme package.json, add instructions on contributing
 * Fix acf-button color inside a Gutenberg block
 * Navigation.js: Bail if navigation doesn't exist
 * Remove leftover deprecated gutenberg-helpers.js
