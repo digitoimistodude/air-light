@@ -7,7 +7,7 @@
  * @Author: Roni Laukkarinen
  * @Date: 2020-05-11 13:17:32
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 22:24:32
+ * @Last Modified time: 2022-12-31 02:11:21
  *
  * @package air-light
  */
@@ -27,7 +27,7 @@ namespace Air_Light;
   <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class( $class ); ?>>
   <a class="skip-link screen-reader-text js-trigger" href="#content"><?php echo esc_html( get_default_localization( 'Skip to content' ) ); ?></a>
 
   <?php wp_body_open(); ?>
