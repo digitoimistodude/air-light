@@ -1,39 +1,33 @@
-// Site navigation desktop layout
-// The main layout for the website navigation, for a desktop devices only.
-
-// Disable some rules that are not needed here
-
+// Navigation for large screens
 // CSS variables
-// These can be adjusted with media queries for in-between breakpoints
 :root {
-  // Dimensions, gaps and spacings
-  --border-radius-sub-menu: 0;
+
+  // Affecting to both main and sub-levels
+  --color-dropdown-toggle: var(--color-valhalla);
+  --color-current: var(--color-link-text);
   --dropdown-toggle-size: 12px;
-  --gap-dropdown: 1rem;
-  --gap-between-dropdown-toggle: 1.5rem;
-  --gap-main-level-horizontal: 2.5rem;
+
+  // Main level items on desktop
+  --font-size-main-level: var(--font-size-16);
+  --font-weight-main-level: var(--font-weight-bold);
   --padding-main-level-horizontal: 0;
   --padding-main-level-vertical: .6rem;
+  --color-main-level: var(--color-black);
+  --color-hover-main-level: var(--color-link-text);
+  --gap-between-dropdown-toggle: 1.5rem;
+  --gap-main-level-horizontal: 2.5rem;
+
+  // Sub menu items on desktop
+  --font-size-sub-menu: var(--font-size-16);
+  --font-weight-sub-menu: var(--font-weight-regular);
   --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-link-vertical: .6rem;
   --padding-sub-menu-link-horizontal: 1.5rem;
-  --width-sub-menu: 22rem;
-
-  // Colors
-  --color-background-nav-desktop: var(--color-white);
-  --color-background-sub-menu: var(--color-white);
-  --color-dropdown-toggle: var(--color-valhalla);
+  --width-sub-menu: 20rem;
   --color-sub-menu: var(--color-valhalla);
-  --color-hover-main-level: var(--color-link-text);
   --color-hover-sub-menu: var(--color-valhalla);
-  --color-main-level: var(--color-black);
-  --color-current: var(--color-link-text);
-
-  // Font styles
-  --font-size-main-level: var(--font-size-16);
-  --font-size-sub-menu: var(--font-size-16);
-  --font-weight-main-level: var(--font-weight-bold);
-  --font-weight-sub-menu: var(--font-weight-regular);
+  --color-background-sub-menu: var(--color-white);
+  --gap-dropdown: 1rem;
 }
 
 // General navigation resets
@@ -145,8 +139,6 @@
   .sub-menu {
     background-color: var(--color-background-sub-menu);
     border: 1px solid var(--color-black);
-    border-top-left-radius: var(--border-radius-sub-menu);
-    border-top-right-radius: var(--border-radius-sub-menu);
     left: 0;
     margin-left: 0;
     margin-top: var(--gap-dropdown);
@@ -302,4 +294,4 @@
       display: block;
     }
   }
-} // @media only screen and (min-width: $width-max-mobile)
+}
