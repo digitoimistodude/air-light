@@ -48,7 +48,7 @@
 // Mobile styles
 @media screen and (max-width: $width-max-mobile - 1px) {
   // The nav is always absolute on mobile
-  nav {
+  .site-header nav {
     position: absolute;
     right: 0;
     top: 0;
