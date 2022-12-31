@@ -1,7 +1,9 @@
-### [Unreleased]
+### 9.2.6: 2022-12-31
 
 * Fix undefined body class
 * Fix nav styles leaking to pagination
+* Drop sanitize.css dependency
+* Use sanitize.css/reduce-motion baked-in instead from npm
 
 ### 9.2.5: 2022-12-31
 

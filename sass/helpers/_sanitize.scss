@@ -1,3 +1,4 @@
+// stylelint-disable a11y/display-none, declaration-no-important
 // Custom version of sanitized.css.
 
 /**
@@ -203,4 +204,18 @@
 :where([aria-hidden="false" i][hidden]:not(:focus)) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important; /* 1 */
+    animation-duration: 1ms !important; /* 1 */
+    animation-iteration-count: 1 !important; /* 1 */
+    background-attachment: initial !important; /* 2 */
+    scroll-behavior: auto !important; /* 3 */
+    transition-delay: 0s !important; /* 4 */
+    transition-duration: 0s !important; /* 4 */
+  }
 }
