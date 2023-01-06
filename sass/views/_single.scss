@@ -1,12 +1,17 @@
-// General blog index and single styles
-// Category listing styles
 .article-content .categories,
 .article-content .tags,
 .categories,
 .tags {
+  display: flex;
+  flex-wrap: wrap;
   list-style: none;
   list-style-type: none;
   padding-inline-start: 0;
+}
+
+.categories,
+.article-content .categories {
+  gap: 1.2rem;
 }
 
 .categories a {
@@ -26,7 +31,6 @@
   color: var(--color-white);
 }
 
-// Blog post tag styles
 .article-content .tags,
 .tags {
   display: flex;

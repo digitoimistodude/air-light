@@ -1,3 +1,7 @@
+[Unreleased]
+
+* Add gap for categories
+
 ### 9.2.7: 2023-01-06
 
 * Remove unused no-js styles
