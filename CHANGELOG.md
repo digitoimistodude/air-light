@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Remove unused no-js styles
+
 ### 9.2.6: 2022-12-31
 
 * Fix undefined body class

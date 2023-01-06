@@ -66,12 +66,6 @@
     position: relative;
   }
 
-  // Users that don't have Javascript enabled
-  .no-js .site-header {
-    background-color: var(--color-background-nav-mobile-header);
-    position: static;
-  }
-
   // Disable scroll on html body when menu is opened.
   .disable-scroll {
     overflow: hidden;
