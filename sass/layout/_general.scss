@@ -18,18 +18,6 @@
   padding-top: 0;
 }
 
-// Default shade on top of blocks
-.shade {
-  background-color: var(--color-background-shade);
-  height: 100%;
-  left: 0;
-  opacity: .35;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 0;
-}
-
 // Global link helper
 // This is useful in services -type of areas where the whole block is a link
 // Remember to define aria-label or screen-reader-text for accessibility
@@ -71,23 +59,12 @@
   }
 }
 
-// Clear block containers by default
-.site-main .container {
-  clear: both;
-  overflow: hidden;
-}
-
-// Meta actions
-.entry-footer {
-  clear: both;
-  display: flex;
-  justify-content: space-between;
-  margin-top: var(--padding-container-vertical);
-  overflow: hidden;
-}
-
 // Better edit link
 .edit-link {
+  --color-link-edit-background-hover: var(--color-pattens-blue);
+  --color-link-edit-border: var(--color-pattens-blue);
+  --color-link-edit-text: color.adjust(#eaf1f8, -20%);
+  --color-link-edit-text-hover: var(--color-east-bay);
   clear: both;
   display: block;
   margin-bottom: 0;

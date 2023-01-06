@@ -1,5 +1,7 @@
 // The one and only anchor link that brings user back to top
 .top {
+  --color-background-top: #f5f5f5;
+  --color-background-top-hover: #f0f0f0;
   background-color: var(--color-background-top);
   border-radius: 2px;
   bottom: var(--padding-container-horizontal);

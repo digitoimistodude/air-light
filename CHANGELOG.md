@@ -1,6 +1,15 @@
-### [Unreleased]
+### 9.2.7: 2023-01-06
 
 * Remove unused no-js styles
+* Remove unused CSS variables
+* Simplify defining CSS variables in single use cases
+* Remove <kbd> styles that are rarely needed
+* Fix entry-footer
+* Simplify category styles
+* Simplify tag styles
+* Remove _blog.scss
+* Add views/_single.scss
+* Use list element in categories instead of a paragraph
 
 ### 9.2.6: 2022-12-31
 

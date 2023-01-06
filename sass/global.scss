@@ -37,7 +37,6 @@
 @import 'layout/site-header';
 @import 'layout/site-footer';
 @import 'layout/forms';
-@import 'layout/blog';
 @import 'layout/wordpress';
 
 // Global features
@@ -50,6 +49,7 @@
 @import 'views/front-page';
 @import 'views/search';
 @import 'views/404';
+@import 'views/single';
 @import 'views/comments';
 
 // Gutenberg layout outside blocks

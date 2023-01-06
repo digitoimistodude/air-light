@@ -12,7 +12,7 @@ blockquote {
   position: relative;
 
   p {
-    color: var(--color-blockquote);
+    color: var(--color-paragraph);
     font-style: normal;
     font-weight: var(--font-weight-semibold);
     margin-bottom: 0;
@@ -27,7 +27,7 @@ blockquote {
 }
 
 .wp-block-quote {
-  border-left: 2px solid var(--color-blockquote);
+  border-left: 2px solid var(--color-paragraph);
   line-height: var(--line-height-paragraph);
   margin-bottom: 4rem;
   margin-left: auto;
@@ -37,7 +37,7 @@ blockquote {
   width: calc(100% - 12rem);
 
   > p {
-    color: var(--color-blockquote);
+    color: var(--color-paragraph);
     line-height: var(--line-height-paragraph);
   }
 

@@ -21,57 +21,10 @@
   --color-paragraph: var(--color-east-bay);
 
   // Modern link
-  --color-link-border-bottom: var(--color-science-blue);
-  --color-link-border-focus: var(--color-black);
-  --color-link-comment: var(--color-scorpion);
-  --color-link-comment-time-anchor: var(--color-east-bay);
-  --color-link-edit-background-hover: var(--color-pattens-blue);
-  --color-link-edit-border: var(--color-pattens-blue);
-  --color-link-edit-text: color.adjust(#eaf1f8, -20%);
-  --color-link-edit-text-hover: var(--color-east-bay);
   --color-link-text: var(--color-science-blue);
-  --color-link-text-focus: var(--color-black);
   --color-link-text-hover: var(--color-black);
-  --color-link-background-hover: var(--color-link-text);
-
-  // Element colors
-  --color-background-code-block: var(--color-black-rock);
-  --color-background-code-inline: #f9f2f4;
-  --color-background-default: #f0f0f0;
-  --color-background-shade: #03061b;
-  --color-background-table-cell-odd: var(--color-white);
-  --color-background-table-cell-even: #f3f3f3;
-  --color-background-top: #f5f5f5;
-  --color-background-top-hover: #f0f0f0;
-  --color-background-tag: var(--color-pattens-blue);
-  --color-blockquote: var(--color-science-blue);
-  --color-comment-text: var(--color-east-bay);
-  --color-comment-author-text: var(--color-east-bay);
-  --color-tag-border: rgb(6 22 41 / .1);
-  --color-tag-border-hover: rgb(6 22 41 / .4);
-  --color-tag-text: var(--color-black);
-  --color-category-border: #cdcfd4;
-  --color-category-text: var(--color-black);
-  --color-caption: #5c5c6a;
-  --color-code-block: #c7254e;
-  --color-code-text: #f5f5f5;
-  --color-kbd-border: #ccc;
-  --color-kbd-background: var(--color-pattens-blue);
-  --color-pagination-text: var(--color-valhalla);
-  --color-pagination-background-hover: var(--color-valhalla);
-  --color-pagination-border-hover: var(--color-valhalla);
-  --color-pagination-text-hover: var(--color-white);
-  --color-pagination-background-current: var(--color-valhalla);
-  --color-pagination-border-current: var(--color-valhalla);
-  --color-pagination-text-current: var(--color-white);
-  --color-top-arrow-dark: var(--color-black);
-  --color-top-arrow-light: var(--color-white);
-  --color-error-block-border: #adb2ad; // Color picked from ACF
-  --color-error-block-background: #f9f9f9; // Color picked from ACF
 
   // Element states
   --color-error: #cc2e2e;
   --color-success: #21aa14;
-  --color-warning: #cc752e;
-  --color-focus-outline: #7b46e1;
 }

@@ -7,7 +7,7 @@
  * @Author:		Roni Laukkarinen
  * @Date:   		2021-04-22 08:06:03
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-02-08 17:20:50
+ * @Last Modified time: 2023-01-06 20:43:03
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -20,16 +20,14 @@ function entry_footer() {
 
   if ( 'post' === get_post_type() ) :
     if ( has_category() ) : ?>
-      <div class="entry-categories">
-        <p class="cat">
-          <?php $categories = wp_get_post_categories( get_the_id(), [ 'fields' => 'all' ] );
+      <ul class="categories">
+        <?php $categories = wp_get_post_categories( get_the_id(), [ 'fields' => 'all' ] );
           if ( ! empty( $categories ) ) {
             foreach ( $categories as $category ) {
-              echo '<a href="' . esc_url( get_category_link( $category ) ) . '">' . esc_html( $category->name ) . '</a>';
+              echo '<li><a href="' . esc_url( get_category_link( $category ) ) . '">' . esc_html( $category->name ) . '</a></li>';
             }
-          } ?>
-        </p>
-      </div>
+        } ?>
+      </ul>
     <?php	endif;
 
     $tags_list = get_the_tag_list( '', esc_attr_x( ', ', 'list item separator', 'air-light' ) );

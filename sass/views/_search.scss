@@ -43,15 +43,4 @@
   p {
     margin-top: 1rem;
   }
-
-  .tags a {
-    background-color: var(--color-background-tag);
-    color: var(--color-main);
-
-    &:hover,
-    &:focus {
-      background-color: var(--color-main);
-      color: var(--color-background-tag);
-    }
-  }
 }

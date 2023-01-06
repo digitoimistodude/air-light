@@ -47,6 +47,8 @@ thead,
 
 // Defaults
 table {
+  --color-background-table-cell-odd: var(--color-white);
+  --color-background-table-cell-even: #f3f3f3;
   border-collapse: collapse;
   border-spacing: 0;
 }
