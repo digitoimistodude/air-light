@@ -3,7 +3,7 @@
 * Remove unused no-js styles
 * Remove unused CSS variables
 * Simplify defining CSS variables in single use cases
-* Remove <kbd> styles that are rarely needed
+* Remove `<kbd>` styles that are rarely needed
 * Fix entry-footer
 * Simplify category styles
 * Simplify tag styles
