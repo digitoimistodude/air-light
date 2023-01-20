@@ -51,8 +51,8 @@
   padding-top: var(--padding-container-vertical);
 
   // If base grid is larger than Macbook Air screen
-  @if $width-grid-base > $container-macbook-air {
-    @media (min-width: $container-ipad-landscape) and (max-width: $container-macbook-air + 6.4rem) {
+  @if $width-grid-base > 1440 {
+    @media (min-width: $container-ipad-landscape) and (max-width: 140rem + 6.4rem) {
       padding-left: var(--padding-container-horizontal-large);
       padding-right: var(--padding-container-horizontal-large);
     }

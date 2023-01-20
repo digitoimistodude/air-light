@@ -2,6 +2,7 @@
 
 * Add gap for categories
 * Change default mobile breakpoint to 600px
+* Remove breakpoints not in use
 
 ### 9.2.7: 2023-01-06
 
