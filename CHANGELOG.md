@@ -1,8 +1,9 @@
-[Unreleased]
+### 9.2.8: 2023-01-30
 
 * Add gap for categories
 * Change default mobile breakpoint to 600px
 * Remove breakpoints not in use
+* Fix iPad navigation overlapping blocks when closed
 
 ### 9.2.7: 2023-01-06
 
