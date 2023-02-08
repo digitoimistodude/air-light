@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Start script: Copy .nvmrc to project root from devpackages
+
 ### 9.2.8: 2023-01-30
 
 * Add gap for categories
