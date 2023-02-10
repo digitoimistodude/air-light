@@ -3,7 +3,7 @@
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-02-10 10:25:04
+ * @Last Modified time: 2023-02-10 10:31:21
  * @package air-light
  */
 
@@ -121,7 +121,7 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
   // Check that we have the block in defined in theme settings
   $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) );
   if ( false === $block_key ) {
-    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" );
+    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
   }
 
