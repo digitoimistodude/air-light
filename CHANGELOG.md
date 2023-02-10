@@ -1,6 +1,8 @@
 ### [Unreleased]
 
 * Start script: Copy .nvmrc to project root from devpackages
+* Improve block cache bypass logic and show bypass reason on log
+* Try to determine if block has Gravity Forms form and always bypass cache if has
 
 ### 9.2.8: 2023-01-30
 

@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:38:45
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-02 16:36:20
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-02-10 10:25:04
  * @package air-light
  */
 
@@ -13,8 +13,11 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
   $block_slug = str_replace( 'acf/', '', $block['name'] );
   $block_path = get_theme_file_path( "template-parts/blocks/{$block_slug}.php" );
 
+  // Get block cache setting
+  $block_cache_enabled = acf_block_maybe_enable_cache( $block_slug );
+
   // Always bypass cache if is preview from editor or in development phase
-  $block_cache_enabled = $is_preview || 'development' === wp_get_environment_type() ? false : acf_block_maybe_enable_cache( $block_slug );
+  $block_cache_enabled = $is_preview || 'development' === wp_get_environment_type() ? false : $block_cache_enabled;
 
   \do_action( 'qm/debug', "Block {$block_slug} output started" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 
@@ -33,7 +36,10 @@ function render_acf_block( $block, $content = '', $is_preview = false, $post_id 
 
   // Get block contents
   if ( ! $block_cache_enabled ) {
-    \do_action( 'qm/debug', "Block {$block_slug} bypassed cache ({$cache_key})" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+    $cache_bypass_reason = $is_preview || 'development' === wp_get_environment_type() ? 'preview/development' : 'cache setting';
+
+    \do_action( 'qm/debug', "Block {$block_slug} bypassed cache because {$cache_bypass_reason} ({$cache_key})" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+
     $block_output = load_acf_block( $block_path, false, $block, $is_preview, $post_id );
   } else {
     $block_output = load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block, $is_preview, $post_id );
@@ -112,20 +118,25 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, null );
   }
 
-  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) ); // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+  // Check that we have the block in defined in theme settings
+  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) );
   if ( false === $block_key ) {
-    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
+    \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" );
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
   }
 
+  // Get block settings
   $block = THEME_SETTINGS['acf_blocks'][ $block_key ];
 
-  if ( ! isset( $block['prevent_cache'] ) ) {
-    return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
+  // Check from block settings if we should prevent cache
+  if ( isset( $block['prevent_cache'] ) ) {
+    $enable_cache = $block['prevent_cache'] ? false : true;
   }
 
-  // Check from block settings if we should prevent cache
-  $enable_cache = $block['prevent_cache'] ? false : true;
+  // If block likely contains form and GF is used, disable cache to avoid problems
+  if ( false !== strpos( $block_slug, 'form' ) && function_exists( 'gravity_form' ) ) {
+    $enable_cache = false;
+  }
 
   return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
 } // end acf_block_maybe_enable_cache
