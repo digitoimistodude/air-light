@@ -3,10 +3,13 @@
   "plugins": [
     "@ronilaukkarinen/stylelint-a11y",
     "@ronilaukkarinen/stylelint-value-no-unknown-custom-properties",
-    "stylelint-declaration-strict-value",
-    "stylelint-order"
+    "@ronilaukkarinen/stylelint-declaration-strict-value",
+    "stylelint-order",
+    "stylelint-file-max-lines",
+    "stylelint-rem-over-px"
   ],
   "extends": [
+    "stylelint-config-standard",
     "stylelint-config-standard-scss"
   ],
   "customSyntax": "postcss-scss",
@@ -33,6 +36,25 @@
         "name": "media"
       }
     ],
+    "rem-over-px/rem-over-px": [
+      true,
+      {
+        "ignore": [
+          "1px",
+          "2px",
+          "3px",
+          "4px"
+        ],
+        "ignoreFunctions": [
+          "url"
+        ],
+        "ignoreAtRules": [
+          "media"
+        ]
+      }
+    ],
+    "plugin/file-max-lines": 200,
+    "declaration-property-value-no-unknown": true,
     "scss/at-mixin-argumentless-call-parentheses": null,
     "scss/double-slash-comment-empty-line-before": null,
     "scss/at-rule-conditional-no-parentheses": null,
@@ -52,7 +74,6 @@
     "selector-type-case": "lower",
     "selector-pseudo-class-parentheses-space-inside": "never",
     "function-parentheses-space-inside": "never",
-    "function-comma-newline-after": "never-multi-line",
     "function-name-case": "lower",
     "function-max-empty-lines": 0,
     "max-empty-lines": 1,
@@ -69,7 +90,6 @@
     "linebreaks": "unix",
     "selector-max-specificity": "0,4,4",
     "block-no-empty": true,
-    "declaration-colon-newline-after": null,
     "declaration-empty-line-before": null,
     "number-leading-zero": "never",
     "number-no-trailing-zeros": true,
@@ -104,8 +124,6 @@
     "no-invalid-position-at-import-rule": null,
     "declaration-no-important": true,
     "comment-empty-line-before": null,
-    "at-rule-name-newline-after": null,
-    "at-rule-semicolon-newline-after": null,
     "at-rule-semicolon-space-before": "never",
     "at-rule-name-space-after": "always",
     "at-rule-name-case": "lower",

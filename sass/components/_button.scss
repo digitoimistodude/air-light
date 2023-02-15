@@ -1,37 +1,41 @@
 // stylelint-disable number-max-precision, max-line-length
-@mixin button($max-width: 230px, $color: var(--color-button), $hover: var(--color-button-hover), $background: var(--color-button-background), $background-hover: var(--color-button-background-hover), $radius: var(--border-radius-button), $border: var(--border-width-input-field) solid var(--color-button-background), $border-hover: var(--border-width-input-field) solid $background-hover, $weight: var(--font-weight-semibold), $arrow: false, $transition: all $transition-duration cubic-bezier(.25, .46, .45, .94)) {
-  // doiuse-disable
+@mixin button($arrow: false) {
   appearance: none;
-  background-color: $background;
-  border: $border;
-  border-radius: $radius;
-  color: $color;
+  background-color: var(--color-button-background);
+  border: var(--border-width-input-field) solid var(--color-button-background);
+  border-radius: var(--border-radius-button);
+  color: var(--color-button);
   cursor: pointer;
   display: inline-block;
   font-family: var(--font-paragraph);
   font-size: var(--font-size-16);
-  font-weight: $weight;
+  font-weight: var(--font-weight-semibold);
+  // stylelint-disable-next-line rem-over-px/rem-over-px
   line-height: 19.6364px;
   margin-bottom: 0;
-  max-width: $max-width;
+  max-width: 23rem;
   overflow: hidden;
+  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-bottom: calc(14px - calc(var(--border-width-input-field) * 2));
+  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-left: calc(21px - calc(var(--border-width-input-field) * 2));
+  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-right: calc(21px - calc(var(--border-width-input-field) * 2));
+  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-top: calc(14px - calc(var(--border-width-input-field) * 2));
   position: relative;
   text-decoration: none;
   text-overflow: ellipsis;
-  transition: $transition;
+  transition: all $transition-duration cubic-bezier(.25, .46, .45, .94);
   white-space: nowrap;
   width: auto;
 
   &.focus,
   &:hover,
   &:focus {
-    background-color: $background-hover;
-    border: $border-hover;
-    color: $hover;
+    background-color: var(--color-button-background-hover);
+    border: var(--color-button-hover);
+    color: var(--color-button-hover);
   }
 
   // Arrow icon
