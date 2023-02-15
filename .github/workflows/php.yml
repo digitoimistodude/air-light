@@ -1,11 +1,10 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:13:42
+# @Last Modified time: 2023-02-15 18:16:42
 name: Run PHP related checks
 
-on:
-  workflow_dispatch
+on: push
 
 env:
   PHPCS_DIR: /tmp/phpcs
