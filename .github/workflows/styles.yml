@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:25:58
+# @Last Modified time: 2023-02-15 18:36:11
 name: Run style related checks
 
 on: push
@@ -29,11 +29,10 @@ jobs:
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-    - name: Run dependencies.sh
+    - name: Install packages
       run: |
-        bash bin/tasks/dependencies.sh
+        cd /tmp;wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json;npm install -g;npm link;cd -
 
     - name: Run checks with npm
       run: |
-        npm install
         stylelint . --max-warnings 0 --config .stylelintrc
