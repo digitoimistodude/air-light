@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:07:13
+# @Last Modified time: 2023-02-15 18:09:43
 name: Run PHP related checks
 
 on:
@@ -18,11 +18,6 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Checkout code
-      with:
-        fetch-depth: 0
-
     - name: Set up and run PHPCS
       run: |
         git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR
