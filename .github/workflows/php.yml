@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:09:43
+# @Last Modified time: 2023-02-15 18:13:42
 name: Run PHP related checks
 
 on:
@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    name: Test styles
+    name: Test php
     runs-on: ubuntu-20.04
 
     steps:

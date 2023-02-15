@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:09:54
+# @Last Modified time: 2023-02-15 18:13:27
 name: Run JS related checks
 
 jobs:
@@ -14,17 +14,16 @@ jobs:
       run: echo ::set-output name=NVMRC::$(cat .nvmrc)
       id: nvm
 
-    - name: Get package.json from devpackages
+    - name: Setup node
       uses: actions/setup-node@v1
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
+
+    - name: Run dependencies.sh
       run: |
         bash bin/dependencies.sh
 
     - name: Run checks with npm
-      uses: actions/setup-node@v1
-      with:
-        node-version: '${{ steps.nvm.outputs.NVMRC }}'
       run: |
         npm install
         wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.eslintrc.js
