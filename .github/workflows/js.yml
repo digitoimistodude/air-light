@@ -4,6 +4,9 @@
 # @Last Modified time: 2023-02-15 18:13:27
 name: Run JS related checks
 
+on:
+  workflow_dispatch
+
 jobs:
   build:
     name: Test JS
