@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:15:21
+# @Last Modified time: 2023-02-15 20:21:54
 name: CSS
 
 on: push
@@ -26,12 +26,12 @@ jobs:
 
     - name: Install packages from devpackages
       run: |
+        nvm use
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
         npm i
 
-    - name: Run checks with npm
+    - name: Run stylelint
       run: |
-        npm update
-        npm ci
+        npm i -g stylelint@^15.1.0
         stylelint . --max-warnings 0 --config .stylelintrc
