@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:52:10
+# @Last Modified time: 2023-02-15 20:54:20
 name: CSS
 
 on: push
@@ -33,4 +33,4 @@ jobs:
 
     - name: Run stylelint
       run: |
-        stylelint . --max-warnings 0 --config .stylelintrc
+        npx stylelint . --max-warnings 0 --config .stylelintrc

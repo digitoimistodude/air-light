@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:29:28
+# @Last Modified time: 2023-02-15 20:54:29
 name: JS
 
 on: push
@@ -41,4 +41,4 @@ jobs:
       run: |
         npm ci
         npm link eslint --ignore-scripts
-        eslint .
+        npx eslint .
