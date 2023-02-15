@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:20:50
+# @Last Modified time: 2023-02-15 20:23:11
 name: JS
 
 on: push
@@ -32,7 +32,6 @@ jobs:
 
     - name: Install air-light related packages
       run: |
-        nvm use
         npm i airbnb-browser-shims@^3.3.0 --save
         npm i moveto@^1.8.2 --save
         npm i reframe.js@^4.0.0 --save
