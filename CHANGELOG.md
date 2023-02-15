@@ -1,8 +1,18 @@
-### [Unreleased]
+### 9.2.9: 2023-02-15
 
 * Start script: Copy .nvmrc to project root from devpackages
 * Improve block cache bypass logic and show bypass reason on log
-* Try to determine if block has Gravity Forms form and always bypass cache if has
+* Try to determine if block has Gravity Forms form and always bypass cache if 
+* Stylelint fixes
+* Simplify button SCSS component
+* Remove Travis
+* Add GitHub workflows for styles, html, php and js
+* Fix version in .nvmrc
+* Add badges for GitHub workflow build statuses
+* Fix stylelint errors for v15
+* Add smaller font-sizes 12 and 13
+* Replace all suitable px sizes with rem as per stylelint-rem-over-px
+* Update .stylelintrc from devpackages 2.5.3
 
 ### 9.2.8: 2023-01-30
 
