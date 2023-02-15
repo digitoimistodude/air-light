@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:18:11
+# @Last Modified time: 2023-02-15 18:20:53
 name: Run style related checks
 
 on: push
@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Checkout the repository
-    - uses: actions/checkout@v3
+      uses: actions/checkout@v3
 
     - name: Read .nvmrc
       run: echo ::set-output name=NVMRC::$(cat .nvmrc)
