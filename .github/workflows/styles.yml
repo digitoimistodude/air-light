@@ -1,15 +1,10 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 19:36:39
+# @Last Modified time: 2023-02-15 19:45:39
 name: Run style related checks
 
 on: push
-
-env:
-  PROJECT_NAME: air-light
-  PROJECT_PATH: ./
-  PROJECT_THEME_PATH: ./
 
 jobs:
   build:
@@ -34,8 +29,8 @@ jobs:
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
         npm i
-        npm i -g
 
     - name: Run checks with npm
       run: |
+        npm link stylelint --ignore-scripts
         stylelint . --max-warnings 0 --config .stylelintrc

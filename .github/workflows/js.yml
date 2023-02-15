@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 19:36:18
+# @Last Modified time: 2023-02-15 19:45:32
 name: Run JS related checks
 
 on: push
@@ -29,7 +29,6 @@ jobs:
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
         npm i
-        npm i -g
 
     - name: Install air-light related packages
       run: |
@@ -39,4 +38,5 @@ jobs:
 
     - name: Run checks with npm
       run: |
+        npm link eslint --ignore-scripts
         eslint .
