@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:36:17
+# @Last Modified time: 2023-02-15 18:42:53
 name: Run JS related checks
 
 on: push
@@ -26,11 +26,11 @@ jobs:
 
     - name: Install packages
       run: |
-        cd /tmp;wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json;npm install -g;npm link;cd -
+        rm package.json
+        wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
+        npm install
 
     - name: Run checks with npm
       run: |
-        npm install
-        wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.eslintrc.js
         npm link eslint
         eslint .

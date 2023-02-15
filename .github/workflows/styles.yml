@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:36:11
+# @Last Modified time: 2023-02-15 18:43:01
 name: Run style related checks
 
 on: push
@@ -31,7 +31,9 @@ jobs:
 
     - name: Install packages
       run: |
-        cd /tmp;wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json;npm install -g;npm link;cd -
+        rm package.json
+        wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
+        npm install
 
     - name: Run checks with npm
       run: |
