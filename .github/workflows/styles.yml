@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 19:52:46
+# @Last Modified time: 2023-02-15 19:53:44
 name: CSS
 
 on: push
@@ -34,4 +34,5 @@ jobs:
     - name: Run checks with npm
       run: |
         npm i
+        npm link stylelint --ignore-scripts
         stylelint . --max-warnings 0 --config .stylelintrc
