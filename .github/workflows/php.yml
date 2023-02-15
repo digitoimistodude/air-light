@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:00:06
+# @Last Modified time: 2023-02-15 18:03:34
 name: Run PHP related checks
 
 on:
@@ -11,15 +11,6 @@ env:
   PHPCS_DIR: /tmp/phpcs
   PHPCOMPAT_DIR: /tmp/phpcompatibility
   SNIFFS_DIR: /tmp/sniffs
-
-on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
-
-permissions:
-  contents: read
 
 jobs:
   build:

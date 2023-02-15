@@ -1,17 +1,8 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 17:57:43
+# @Last Modified time: 2023-02-15 18:03:41
 name: Run JS related checks
-
-on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
-
-permissions:
-  contents: read
 
 jobs:
   build:
