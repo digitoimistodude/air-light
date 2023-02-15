@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 21:26:24
+# @Last Modified time: 2023-02-15 21:34:47
 name: CSS
 
 on: push
@@ -31,6 +31,22 @@ jobs:
         sed -i 's/PROJECTNAME/air-light/g' package.json
         npm install --global
 
+    - name: Install stylelint packages
+      run: |
+        npm install --global \
+        stylelint@^15.1.0 \
+        stylelint-config-recommended@^10.0.1 \
+        stylelint-config-recommended-scss@^9.0.0 \
+        stylelint-config-standard@^30.0.1 \
+        stylelint-config-standard-scss@^7.0.0 \
+        stylelint-file-max-lines@^1.0.0 \
+        stylelint-order@^6.0.2 \
+        stylelint-rem-over-px@^0.0.4 \
+        stylelint-scss@^4.4.0 \
+        @ronilaukkarinen/stylelint-a11y@^1.2.7 \
+        @ronilaukkarinen/stylelint-declaration-strict-value@^1.9.2 \
+        @ronilaukkarinen/stylelint-value-no-unknown-custom-properties@^4.0.1
+
     - name: Run stylelint
       run: |
-        ./node_modules/.bin/stylelint . --max-warnings 0 --config .stylelintrc
+        npx stylelint . --max-warnings 0 --config .stylelintrc
