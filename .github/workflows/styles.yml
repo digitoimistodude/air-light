@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:32:21
+# @Last Modified time: 2023-02-15 20:39:56
 name: CSS
 
 on: push
@@ -35,7 +35,7 @@ jobs:
       uses: sergeysova/jq-action@v2
       id: dependencies
       with:
-        cmd: 'jq -r '.dependencies | keys | .[]' package.json'
+        cmd: 'jq .dependencies[] package.json -r'
         multiline: true
 
     - name: Install packages
