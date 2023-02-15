@@ -1,8 +1,8 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 19:50:15
-name: Run style related checks
+# @Last Modified time: 2023-02-15 19:52:46
+name: CSS
 
 on: push
 
