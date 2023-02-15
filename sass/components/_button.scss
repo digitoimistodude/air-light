@@ -1,4 +1,4 @@
-// stylelint-disable number-max-precision, max-line-length
+// stylelint-disable number-max-precision, rem-over-px/rem-over-px
 @mixin button($arrow: false) {
   appearance: none;
   background-color: var(--color-button-background);
@@ -10,18 +10,13 @@
   font-family: var(--font-paragraph);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-semibold);
-  // stylelint-disable-next-line rem-over-px/rem-over-px
   line-height: 19.6364px;
   margin-bottom: 0;
   max-width: 23rem;
   overflow: hidden;
-  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-bottom: calc(14px - calc(var(--border-width-input-field) * 2));
-  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-left: calc(21px - calc(var(--border-width-input-field) * 2));
-  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-right: calc(21px - calc(var(--border-width-input-field) * 2));
-  // stylelint-disable-next-line rem-over-px/rem-over-px
   padding-top: calc(14px - calc(var(--border-width-input-field) * 2));
   position: relative;
   text-decoration: none;
@@ -34,7 +29,7 @@
   &:hover,
   &:focus {
     background-color: var(--color-button-background-hover);
-    border: var(--color-button-hover);
+    border-color: var(--color-button-background-hover);
     color: var(--color-button-hover);
   }
 

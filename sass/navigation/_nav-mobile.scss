@@ -1,3 +1,4 @@
+// stylelint-disable a11y/no-display-none, plugin/file-max-lines
 // Import nav-toggle
 @import 'nav-toggle';
 
@@ -15,14 +16,14 @@
   --color-dropdown-toggle-mobile: var(--color-white);
 
   // Main level items on mobile
-  --font-size-main-level-mobile: 15px;
+  --font-size-main-level-mobile: 1.5rem;
   --font-weight-main-level-mobile: 600;
   --padding-main-level-vertical-mobile: 1.2rem;
   --color-main-level-menu-item-hover-focus-mobile: var(--color-white);
   --color-main-level-menu-item-mobile: var(--color-white);
 
   // Sub-menu items on mobile
-  --font-size-sub-menu-mobile: 15px;
+  --font-size-sub-menu-mobile: 1.5rem;
   --font-weight-sub-menu-mobile: 600;
   --margin-left-sub-menu: 1rem;
   --padding-sub-menu-vertical-mobile: .8rem;
@@ -33,7 +34,6 @@
 // Navigation core functionality
 @media only screen and (max-width: $width-max-mobile) {
   // Functionality needs display: none here for visual reasons
-  // stylelint-disable-next-line a11y/no-display-none
   .menu-items ul {
     display: none;
   }
@@ -49,7 +49,7 @@
 @media screen and (max-width: $width-max-mobile - 1px) {
   // The nav is always absolute on mobile
   .site-header nav {
-    max-height: 72px;
+    max-height: 7.2rem;
     position: absolute;
     right: 0;
     top: 0;
@@ -90,7 +90,7 @@
     position: fixed;
 
     // Default position, some browsers need this
-    top: 72px;
+    top: 7.2rem;
     transform: translate3d(100%, 0, 0);
     transition: all 180ms ease-in-out;
     visibility: hidden;
@@ -149,7 +149,7 @@
 
   // Dropdown toggle
   .dropdown-toggle {
-    --dropdown-toggle-size: 12px;
+    --dropdown-toggle-size: 1.2rem;
     align-items: center;
     background-color: transparent;
     border: 0;
@@ -181,7 +181,6 @@
       z-index: -1;
 
       // Let's hide the original SVG because we have a custom one here
-      // stylelint-disable a11y/no-display-none
       path {
         display: none;
       }
@@ -229,6 +228,6 @@
 
   // Push site content to the left
   .js-nav-active .site-main {
-    transform: translate3d(-310px, 0, 0);
+    transform: translate3d(-31rem, 0, 0);
   }
 }

@@ -1,6 +1,6 @@
+// stylelint-disable number-max-precision, rem-over-px/rem-over-px
 @mixin button-size-large() {
   font-size: var(--font-size-18);
-  // stylelint-disable-next-line number-max-precision
   line-height: 23.0909px;
   padding-bottom: calc(17px - calc(var(--border-width-input-field) * 2));
   padding-left: calc(21px - calc(var(--border-width-input-field) * 2));

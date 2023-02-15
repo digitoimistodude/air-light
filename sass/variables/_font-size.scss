@@ -1,3 +1,4 @@
+// stylelint-disable rem-over-px/rem-over-px
 // CSS Variables for responsive fonts
 :root {
   // Heading font sizes
@@ -10,6 +11,8 @@
   --font-size-h6: 14px;
 
   // Paragraph font sizes
+  --font-size-12: 12px;
+  --font-size-13: 13px;
   --font-size-14: 14px;
   --font-size-15: 15px;
   --font-size-16: 16px;

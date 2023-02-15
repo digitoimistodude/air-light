@@ -4,7 +4,7 @@
   align-items: flex-start;
   display: flex;
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size: 1.4rem;
   justify-content: flex-start;
   margin-top: 4rem;
   overflow: hidden;
@@ -33,12 +33,12 @@
   color: var(--color-pagination-text);
   display: flex;
   font-weight: var(--font-weight-medium);
-  height: 35px;
+  height: 3.5rem;
   justify-content: center;
   margin-left: 0;
   margin-right: 0;
   transition: all $transition-duration;
-  width: 35px;
+  width: 3.5rem;
 
   &:last-child {
     border-bottom-left-radius: 0;
@@ -55,8 +55,8 @@
   }
 
   @media (max-width: 600px) {
-    height: 26px;
-    width: 26px;
+    height: 2.6rem;
+    width: 2.6rem;
   }
 }
 
@@ -76,12 +76,12 @@ a.page-numbers:focus {
 // Remove this if you are using version with next/prev
 .page-numbers.next,
 .page-numbers.prev {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
   width: auto;
 
   @media (max-width: 600px) {
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

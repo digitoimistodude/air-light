@@ -6,7 +6,7 @@
   --color-link-comment: var(--color-scorpion);
   --color-link-comment-time-anchor: var(--color-east-bay);
   margin-bottom: 0;
-  margin-top: 50px;
+  margin-top: 5rem;
   overflow: visible;
 }
 
@@ -22,7 +22,7 @@
 
   li {
     font-size: var(--font-size-14);
-    margin-bottom: 70px;
+    margin-bottom: 7rem;
     margin-top: 0;
     padding: 0;
   }
@@ -40,7 +40,7 @@
   .comment-author {
     color: var(--color-comment-author-text);
     font-size: var(--font-size-h4);
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     margin-top: 0;
     padding: 0;
   }
@@ -72,7 +72,7 @@
 
   .comment-time svg {
     fill: var(--color-link-comment-time-anchor);
-    margin-right: 5px;
+    margin-right: .5rem;
     position: relative;
     top: 2px;
   }
@@ -96,7 +96,7 @@
   }
 
   svg {
-    margin-right: 7px;
+    margin-right: .7rem;
     position: relative;
     top: -1px;
   }
@@ -133,37 +133,37 @@
   }
 
   .comment-form-author {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     margin-top: 0;
 
     input {
       border-width: 1px;
-      padding: 15px;
+      padding: 1.5rem;
       width: 100%;
     }
   }
 
   .comment-form-email {
     clear: right;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     margin-right: 0;
     margin-top: 0;
 
     input {
       border-width: 1px;
-      padding: 15px;
+      padding: 1.5rem;
       width: 100%;
     }
   }
 
   .comment-form-url {
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
     margin-top: 0;
     position: relative;
 
     input {
       border-width: 1px;
-      padding: 15px;
+      padding: 1.5rem;
       width: 100%;
     }
   }
@@ -176,7 +176,7 @@
   }
 
   .comment-form-comment {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
   }
 
   textarea {

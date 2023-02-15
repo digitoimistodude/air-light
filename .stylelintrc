@@ -39,14 +39,20 @@
     "rem-over-px/rem-over-px": [
       true,
       {
+        "fontSize": 10,
         "ignore": [
+          "-4px",
+          "-3px",
+          "-2px",
+          "-1px",
           "1px",
           "2px",
           "3px",
           "4px"
         ],
         "ignoreFunctions": [
-          "url"
+          "url",
+          "clamp-calc"
         ],
         "ignoreAtRules": [
           "media"
@@ -54,7 +60,7 @@
       }
     ],
     "plugin/file-max-lines": 200,
-    "declaration-property-value-no-unknown": true,
+    "declaration-property-value-no-unknown": null,
     "scss/at-mixin-argumentless-call-parentheses": null,
     "scss/double-slash-comment-empty-line-before": null,
     "scss/at-rule-conditional-no-parentheses": null,

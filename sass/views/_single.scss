@@ -47,7 +47,7 @@
     box-shadow: none;
     color: var(--color-black);
     display: inline-block;
-    font-size: 12px;
+    font-size: var(--font-size-12);
     margin-right: .4em;
     padding: .1em .8em;
     transition: all $transition-duration;

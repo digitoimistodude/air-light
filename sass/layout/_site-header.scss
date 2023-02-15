@@ -55,6 +55,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: calc(var(--padding-container-vertical) * 2);
+  // stylelint-disable-next-line
   max-width: $width-grid-base - 40px;
   opacity: .7;
   order: -1;

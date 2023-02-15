@@ -9,6 +9,7 @@
   cursor: pointer;
   font-size: var(--font-size-16);
   height: 3rem;
+  // stylelint-disable-next-line rem-over-px/rem-over-px
   line-height: 30px;
   opacity: 0;
   position: fixed;
