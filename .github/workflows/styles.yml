@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:03:32
+# @Last Modified time: 2023-02-15 18:06:28
 name: Run style related checks
 
 on:
@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: Checkout code
     - uses: actions/checkout@v3
+    - name: Checkout code
       with:
         fetch-depth: 0
 
