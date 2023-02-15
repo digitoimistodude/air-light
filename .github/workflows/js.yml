@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:42:53
+# @Last Modified time: 2023-02-15 19:36:18
 name: Run JS related checks
 
 on: push
@@ -28,9 +28,15 @@ jobs:
       run: |
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
-        npm install
+        npm i
+        npm i -g
+
+    - name: Install air-light related packages
+      run: |
+        npm i -g airbnb-browser-shims@^3.3.0
+        npm i -g moveto@^1.8.2
+        npm i -g reframe.js@^4.0.0
 
     - name: Run checks with npm
       run: |
-        npm link eslint
         eslint .
