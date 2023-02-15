@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 18:43:01
+# @Last Modified time: 2023-02-15 19:12:13
 name: Run style related checks
 
 on: push
@@ -34,7 +34,9 @@ jobs:
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
         npm install
+        npm install -g
 
     - name: Run checks with npm
       run: |
+        npm link stylelint
         stylelint . --max-warnings 0 --config .stylelintrc
