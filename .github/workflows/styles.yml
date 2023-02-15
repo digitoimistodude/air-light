@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 19:53:44
+# @Last Modified time: 2023-02-15 20:01:43
 name: CSS
 
 on: push
@@ -28,11 +28,10 @@ jobs:
       run: |
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
-        npm i -g husky
         npm i
 
     - name: Run checks with npm
       run: |
-        npm i
-        npm link stylelint --ignore-scripts
+        npm update
+        npm link stylelint -global --ignore-scripts --audit=false
         stylelint . --max-warnings 0 --config .stylelintrc
