@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:50:14
+# @Last Modified time: 2023-02-15 20:52:10
 name: CSS
 
 on: push
@@ -23,7 +23,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
-        path: ~/.nvm
 
     - name: Get package.json from devpackages
       run: |
@@ -31,7 +30,6 @@ jobs:
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
         sed -i 's/PROJECTNAME/air-light/g' package.json
         npm install --global
-      path: ~/.nvm
 
     - name: Run stylelint
       run: |
