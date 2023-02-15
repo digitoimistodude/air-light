@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:23:11
+# @Last Modified time: 2023-02-15 20:29:28
 name: JS
 
 on: push
@@ -28,6 +28,7 @@ jobs:
       run: |
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
+        sed -i 's/PROJECTNAME/air-light/g' package.json
         npm i
 
     - name: Install air-light related packages
