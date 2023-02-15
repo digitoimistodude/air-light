@@ -1,0 +1,46 @@
+# @Author: Roni Laukkarinen
+# @Date:   2023-02-15 17:39:37
+# @Last Modified by:   Roni Laukkarinen
+# @Last Modified time: 2023-02-15 17:57:43
+name: Run JS related checks
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Test JS
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout code
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Read .nvmrc
+      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      id: nvm
+
+    - name: Get package.json from devpackages
+      uses: actions/setup-node@v1
+      with:
+        node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      run: |
+        bash bin/dependencies.sh
+
+    - name: Run checks with npm
+      uses: actions/setup-node@v1
+      with:
+        node-version: '${{ steps.nvm.outputs.NVMRC }}'
+      run: |
+        npm install
+        wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/.eslintrc.js
+        npm link eslint
+        eslint .
