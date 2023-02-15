@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 20:29:25
+# @Last Modified time: 2023-02-15 20:32:21
 name: CSS
 
 on: push
@@ -24,17 +24,28 @@ jobs:
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-    - name: Install packages from devpackages
+    - name: Get package.json from devpackages
       run: |
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
         sed -i 's/PROJECTNAME/air-light/g' package.json
         npm i
 
+    - name: Extract all packages from package.json
+      uses: sergeysova/jq-action@v2
+      id: dependencies
+      with:
+        cmd: 'jq -r '.dependencies | keys | .[]' package.json'
+        multiline: true
+
+    - name: Install packages
+      run: |
+        packages="${{ steps.dependencies.outputs.value }}"
+        for package in $packages
+        do
+          npm i -g $package
+        done
+
     - name: Run stylelint
       run: |
-        rm package.json
-        wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
-        sed -i 's/PROJECTNAME/air-light/g' package.json
-        npm i
         stylelint . --max-warnings 0 --config .stylelintrc
