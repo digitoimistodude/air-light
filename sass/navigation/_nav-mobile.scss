@@ -77,18 +77,15 @@
     overflow: hidden;
   }
 
-  .menu-items {
+  .menu-items-wrapper {
     backface-visibility: hidden;
     background-color: var(--color-background-menu-items);
-    display: block;
     height: 100vh;
-    left: 0;
-    margin: 0;
     overflow: auto;
-    padding: 0;
     pointer-events: none;
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
+    right: 0;
 
     // Default position, some browsers need this
     top: 7.2rem;
@@ -97,6 +94,10 @@
     visibility: hidden;
     width: var(--width-navigation);
     z-index: 5;
+  }
+
+  .menu-items {
+    margin: 0;
   }
 
   // Main level mobile navigation links
@@ -214,7 +215,7 @@
   .js-nav-active {
     overflow: hidden;
 
-    .menu-items {
+    .menu-items-wrapper {
       background-color: var(--color-background-menu-items-active);
       opacity: 1;
       pointer-events: all;
