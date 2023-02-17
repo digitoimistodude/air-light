@@ -10,7 +10,7 @@ chmod 777 ${PROJECT_PATH}/media
 
 echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
-NEWEST_AIR_VERSION="9.2.9"
+NEWEST_AIR_VERSION="9.3.0"
 NEWEST_WORDPRESS_VERSION="6.1.1"
 NEWEST_PHP_VERSION="7.4"
 CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');

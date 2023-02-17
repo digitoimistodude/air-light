@@ -1,7 +1,8 @@
-[Unreleased]
-* Change nav toggle position to static by default
-* Add wrapper to navigation
-* Mobile nav variable to change nav width
+### 9.3.0: 2023-02-17
+
+* Change nav toggle position to static by default (kudos to @Tumppex)
+* Add wrapper to navigation (kudos to @Tumppex)
+* Mobile nav variable to change nav width (kudos to @Tumppex)
 
 ### 9.2.9: 2023-02-15
 
