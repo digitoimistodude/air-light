@@ -48,15 +48,10 @@
 // Mobile styles
 @media screen and (max-width: $width-max-mobile - 1px) {
   // The nav is always absolute on mobile
-  .site-header nav {
-    max-height: 7.2rem;
+  .site-header .menu-items {
     position: absolute;
     right: 0;
     top: 0;
-  }
-
-  .js-nav-active nav {
-    max-height: unset;
   }
 
   // Let's ensure site-header loads properly and doesn't leave empty spaces

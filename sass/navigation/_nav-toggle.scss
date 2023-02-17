@@ -74,6 +74,7 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
 }
 
 // The actual toggle <button>
+// Uncomment lines if absolute positioning of toggle is needed
 .nav-toggle {
   align-items: center;
   background-color: transparent;
@@ -82,13 +83,13 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   cursor: pointer;
   display: flex;
   font-weight: var(--font-weight-semibold);
-  height: 2rem;
+  // height: 2rem;
   justify-content: center;
   margin: 0;
   opacity: 1;
   overflow: visible;
   padding: 0;
-  position: absolute;
+  // position: absolute;
   right: var(--padding-container-horizontal);
   text-decoration: none;
   top: var(--padding-container-horizontal);

@@ -1,3 +1,6 @@
+[Unreleased]
+* Change nav toggle position to static by default
+
 ### 9.2.9: 2023-02-15
 
 * Start script: Copy .nvmrc to project root from devpackages
