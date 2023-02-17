@@ -1,5 +1,6 @@
 [Unreleased]
 * Add wrapper to navigation
+* Mobile nav variable to change nav width
 
 ### 9.2.9: 2023-02-15
 

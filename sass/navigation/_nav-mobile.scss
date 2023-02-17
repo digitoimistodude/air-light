@@ -7,6 +7,7 @@
   // Site-header and general mobile navigation elements
   --color-background-nav-mobile-header: var(--color-main);
   --color-background-nav-mobile-header-active: var(--color-main);
+  --width-navigation: 27.5rem;
 
   // Affecting to both main and sub-levels
   --color-background-menu-items: var(--color-main);
@@ -91,7 +92,7 @@
     transform: translate3d(100%, 0, 0);
     transition: all 180ms ease-in-out;
     visibility: hidden;
-    width: 100%;
+    width: var(--width-navigation);
     z-index: 5;
   }
 
@@ -220,6 +221,7 @@
       pointer-events: all;
       transform: translate3d(0, 0, 0);
       visibility: visible;
+      width: var(--width-navigation);
     }
   }
 
@@ -229,6 +231,6 @@
 
   // Push site content to the left
   .js-nav-active .site-main {
-    transform: translate3d(-31rem, 0, 0);
+    transform: translate3d(calc(var(--width-navigation) * -1), 0, 0);
   }
 }
