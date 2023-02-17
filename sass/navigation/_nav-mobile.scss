@@ -81,11 +81,11 @@
     backface-visibility: hidden;
     background-color: var(--color-background-menu-items);
     height: 100vh;
-    left: 0;
     overflow: auto;
     pointer-events: none;
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
+    right: 0;
 
     // Default position, some browsers need this
     top: 7.2rem;
