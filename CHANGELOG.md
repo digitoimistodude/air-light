@@ -1,5 +1,7 @@
 [Unreleased]
 * Change nav toggle position to static by default
+* Add wrapper to navigation
+* Mobile nav variable to change nav width
 
 ### 9.2.9: 2023-02-15
 
