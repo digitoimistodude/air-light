@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Remove nav-toggle styles not in use
+
 ### 9.3.0: 2023-02-17
 
 * Change nav toggle position to static by default (kudos to @Tumppex)

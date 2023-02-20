@@ -83,16 +83,12 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   cursor: pointer;
   display: flex;
   font-weight: var(--font-weight-semibold);
-  // height: 2rem;
+  height: 2rem;
   justify-content: center;
   margin: 0;
   opacity: 1;
   overflow: visible;
   padding: 0;
-  // position: absolute;
-  right: var(--padding-container-horizontal);
   text-decoration: none;
-  top: var(--padding-container-horizontal);
   user-select: none;
-  z-index: 100;
 }
