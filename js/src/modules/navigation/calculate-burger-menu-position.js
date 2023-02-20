@@ -1,8 +1,8 @@
 /**
  * @Author: Roni Laukkarinen
  * @Date:   2022-12-31 00:21:23
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-02-17 10:27:14
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-02-20 14:58:42
  */
 // Calculate burger menu position
 function calculateBurgerMenuPosition() {
@@ -35,6 +35,17 @@ function calculateBurgerMenuPosition() {
   // Set navigation position from top if on mobile
   if (viewportWidth <= widthMaxMobile) {
     document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight}px`;
+
+    // If there is a sticky .air-notification element, add its height to the top position
+    if (document.querySelector('.air-notification')) {
+      const airNotificationHeight = document.querySelector('.air-notification').offsetHeight;
+      document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight + airNotificationHeight}px`;
+
+      // Remove the notification height as soon as .air-notification-close is clicked
+      document.querySelector('.air-notification-close').addEventListener('click', () => {
+        document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight}px`;
+      });
+    }
   } else {
     document.getElementById('menu-items-wrapper').style.top = '0';
   }
