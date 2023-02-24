@@ -1,7 +1,8 @@
-### [Unreleased]
+### 9.3.1: 2023-02-24
 
 * Remove nav-toggle styles not in use
 * Add air-notification support to navigation.js
+* Simplify button component even more by removing unused arrow conditional
 
 ### 9.3.0: 2023-02-17
 

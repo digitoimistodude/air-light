@@ -1,5 +1,5 @@
 // stylelint-disable number-max-precision, rem-over-px/rem-over-px
-@mixin button($arrow: false) {
+@mixin button() {
   appearance: none;
   background-color: var(--color-button-background);
   border: var(--border-width-input-field) solid var(--color-button-background);
@@ -31,12 +31,5 @@
     background-color: var(--color-button-background-hover);
     border-color: var(--color-button-background-hover);
     color: var(--color-button-hover);
-  }
-
-  // Arrow icon
-  @if $arrow {
-    svg {
-      margin-left: 2rem;
-    }
   }
 }
