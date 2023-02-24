@@ -1,3 +1,6 @@
+[Unreleased]
+* When page is loaded with "s" in url parameters try to set focus to search input field
+
 ### 9.3.1: 2023-02-24
 
 * Remove nav-toggle styles not in use
