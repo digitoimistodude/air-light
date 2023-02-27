@@ -1,8 +1,8 @@
 /**
  * @Author: Roni Laukkarinen
  * @Date:   2022-12-31 00:21:23
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-02-20 14:58:42
+ * @Last Modified by:   Tuomas Marttila
+ * @Last Modified time: 2023-02-27 10:29:11
  */
 // Calculate burger menu position
 function calculateBurgerMenuPosition() {
@@ -35,19 +35,39 @@ function calculateBurgerMenuPosition() {
   // Set navigation position from top if on mobile
   if (viewportWidth <= widthMaxMobile) {
     document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight}px`;
+    document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight}px)`;
 
-    // If there is a sticky .air-notification element, add its height to the top position
+    // If there is air-notification element(s), calculate top and height of menu-items-wrapper
     if (document.querySelector('.air-notification')) {
-      const airNotificationHeight = document.querySelector('.air-notification').offsetHeight;
-      document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight + airNotificationHeight}px`;
+      // Get air-notification element(s)
+      const airNotifications = document.querySelectorAll('.air-notification');
 
-      // Remove the notification height as soon as .air-notification-close is clicked
-      document.querySelector('.air-notification-close').addEventListener('click', () => {
-        document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight}px`;
+      // Get the height of air-notification(s)
+      let airNotificationsHeight = 0;
+      airNotifications.forEach((airNotification) => {
+        airNotificationsHeight = airNotification.offsetHeight + airNotificationsHeight;
+      });
+
+      // Set the height and top of menu-items-wrapper
+      document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight + airNotificationsHeight}px)`;
+      document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight + airNotificationsHeight}px`;
+
+      // When air-notification is closed, recalculate the height of menu-items-wrapper
+      airNotifications.forEach((airNotification) => {
+        const button = airNotification.querySelector('button');
+        const currenNotificationHeight = airNotification.offsetHeight;
+        if (button) {
+          button.addEventListener('click', () => {
+            airNotificationsHeight -= currenNotificationHeight;
+            document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight + airNotificationsHeight}px)`;
+            document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight + airNotificationsHeight}px`;
+          });
+        }
       });
     }
   } else {
     document.getElementById('menu-items-wrapper').style.top = '0';
+    document.getElementById('menu-items-wrapper').style.height = 'auto';
   }
 }
 

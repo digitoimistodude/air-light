@@ -68,14 +68,16 @@
   .menu-items-wrapper {
     backface-visibility: hidden;
     background-color: var(--color-background-menu-items);
-    height: 100vh;
+    // Real height is calculated in JS so this is a fallback
+    height: calc(100vh - 7.2rem);
     overflow: auto;
+    // Add padding to ensure all nav elements are visible on all devices and browsers for example iOS Safari
+    padding-bottom: 12rem;
     pointer-events: none;
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
     right: 0;
-
-    // Default position, some browsers need this
+    // Real top is calculated in JS so this is a fallback
     top: 7.2rem;
     transform: translate3d(100%, 0, 0);
     transition: all 180ms ease-in-out;
@@ -213,12 +215,14 @@
     }
   }
 
-  .site-main {
+  .site-main,
+  .site-footer {
     transition: transform 180ms ease-in-out;
   }
 
-  // Push site content to the left
-  .js-nav-active .site-main {
+  // Push site content and footer to the left
+  .js-nav-active .site-main,
+  .js-nav-active .site-footer {
     transform: translate3d(calc(var(--width-navigation) * -1), 0, 0);
   }
 }
