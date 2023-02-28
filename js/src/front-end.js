@@ -15,8 +15,8 @@ import { styleExternalLinks, initExternalLinkLabels } from './modules/external-l
 import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import initA11ySkipLink from './modules/a11y-skip-link';
+import initA11yFocusSearchField from './modules/a11y-focus-search-field';
 import { navDesktop, navMobile } from './modules/navigation';
-import initFocusSearchField from './modules/focus-search-field';
 
 document.addEventListener('DOMContentLoaded', () => {
   initAnchors();
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   styleExternalLinks();
   initExternalLinkLabels();
   initA11ySkipLink();
-  initFocusSearchField();
+  initA11yFocusSearchField();
 
   // Init navigation
   navDesktop();

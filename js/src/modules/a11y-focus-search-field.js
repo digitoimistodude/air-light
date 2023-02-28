@@ -1,11 +1,11 @@
 /**
  * @Author: Elias Kautto
  * @Date:   2023-02-24 12:00:15
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2023-02-24 12:32:51
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-02-28 15:24:56
  */
 
-const initFocusSearchField = () => {
+const initA11yFocusSearchField = () => {
   const urlSearch = window.location.search;
   const urlParams = new URLSearchParams(urlSearch);
   if (urlParams.has('s')) {
@@ -16,4 +16,4 @@ const initFocusSearchField = () => {
   }
 };
 
-export default initFocusSearchField;
+export default initA11yFocusSearchField;
