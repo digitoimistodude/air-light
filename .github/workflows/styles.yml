@@ -1,10 +1,10 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-02-15 21:48:27
+# @Last Modified time: 2023-03-03 20:01:10
 name: CSS
 
-on: push
+on: [push, pull_request]
 
 jobs:
   build:
