@@ -17,7 +17,7 @@ function a11yFocusTrap(e) {
 
   // Get --width-max-mobile from CSS
   const widthMaxMobile = getComputedStyle(
-    document.documentElement
+    document.documentElement,
   ).getPropertyValue('--width-max-mobile');
 
   // Let's see if we are on mobile viewport
@@ -31,13 +31,12 @@ function a11yFocusTrap(e) {
   // Set focusable elements inside main navigation.
   focusableElements = [
     ...container.querySelectorAll(
-      'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+      'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])',
     ),
   ]
     .filter((el) => !el.hasAttribute('disabled'))
     .filter(
-      (el) =>
-        !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+      (el) => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length),
     );
 
   // Get first and last focusable element
