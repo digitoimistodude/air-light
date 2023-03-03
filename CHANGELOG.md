@@ -2,6 +2,8 @@
 
 * When page is loaded with "s" in url parameters try to set focus to search input field (kudos to EliasKau)
 * Calculate mobile nav top and height in js when there are air notificans present (kudos to @Tumppex)
+* Fix irregularities with keyboard navigation (kudos to @michaelbourne!)
+* Fix navigation focus trap (kudos to @michaelbourne!)
 
 ### 9.3.1: 2023-02-24
 

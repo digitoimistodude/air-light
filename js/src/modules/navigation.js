@@ -4,8 +4,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-02-27 10:44:19
+ * @Last Modified by:   Michael Bourne
+ * @Last Modified time: 2023-03-01 21:22:11
  */
 
 // Import functions needed for the navigation module
@@ -23,7 +23,9 @@ const navDesktop = () => {
   const menuItems = document.querySelectorAll('.menu-item');
 
   // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
-  const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button, .button-nav');
+  const focusableElementsforDropdown = document.querySelectorAll(
+    '.menu-item a, .dropdown button, .button-nav'
+  );
 
   // If main-menu is not found, bail
   if (!document.getElementById('main-menu')) {
@@ -62,29 +64,67 @@ const navMobile = () => {
       window.scrollTo(0, 0);
 
       // Toggle aria-expanded attribute, if it's false, change to true and vice versa
-      if (document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false') {
-        document.getElementById('nav-toggle').setAttribute('aria-expanded', 'true');
+      if (
+        document.getElementById('nav-toggle').getAttribute('aria-expanded') ===
+        'false'
+      ) {
+        document
+          .getElementById('nav-toggle')
+          .setAttribute('aria-expanded', 'true');
       } else {
-        document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
+        document
+          .getElementById('nav-toggle')
+          .setAttribute('aria-expanded', 'false');
       }
 
       // Toggle aria-label
       // eslint-disable-next-line camelcase, no-undef
-      if (document.getElementById('nav-toggle').getAttribute('aria-label') === air_light_screenReaderText.expand_toggle) {
+      if (
+        document.getElementById('nav-toggle').getAttribute('aria-label') ===
+        air_light_screenReaderText.expand_toggle
+      ) {
         // eslint-disable-next-line camelcase, no-undef
-        document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.collapse_toggle);
+        document
+          .getElementById('nav-toggle')
+          .setAttribute(
+            'aria-label',
+            air_light_screenReaderText.collapse_toggle
+          );
       } else {
         // eslint-disable-next-line camelcase, no-undef
-        document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.expand_toggle);
+        document
+          .getElementById('nav-toggle')
+          .setAttribute('aria-label', air_light_screenReaderText.expand_toggle);
       }
 
       // Center vertically the absolute positioned mobile dropdown toggles by setting fixed height
       calculateDropdownToggleHeight();
+
+      // Focusable elements
+      const navContainer = document.getElementById('nav');
+      const focusableElements = [
+        ...navContainer.querySelectorAll(
+          'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+        ),
+      ]
+        .filter((el) => !el.hasAttribute('disabled'))
+        .filter(
+          (el) =>
+            !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+        );
+
+      focusableElements.forEach((menuItem) => {
+        menuItem.addEventListener('keydown', a11yFocusTrap);
+      });
     }
   }
 
   // When clicking #nav-toggle, add .js-nav-active body class
-  addMultipleEventListeners(document.getElementById('nav-toggle'), ['click', 'keydown', 'keypress'], navToggle);
+  addMultipleEventListeners(
+    document.getElementById('nav-toggle'),
+    ['click', 'keydown', 'keypress'],
+    navToggle
+  );
 
   // Get all dropdown-toggles
   const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
@@ -92,18 +132,15 @@ const navMobile = () => {
   // Loop through dropdown-toggles
   dropdownToggles.forEach((dropdownToggle) => {
     // When clicking a dropdown-toggle, add .js-dropdown-active class to the parent .menu-item
-    addMultipleEventListeners(dropdownToggle, ['click', 'keydown', 'keypress'], calculateDropdownToggleHeight);
+    addMultipleEventListeners(
+      dropdownToggle,
+      ['click', 'keydown', 'keypress'],
+      calculateDropdownToggleHeight
+    );
   });
 
   // Calculate mobile nav-toggle position
   calculateBurgerMenuPosition();
-
-  // Focusable elements
-  const focusableElements = document.getElementById('nav').querySelectorAll('a, button');
-
-  focusableElements.forEach((menuItem) => {
-    menuItem.addEventListener('keyup', a11yFocusTrap);
-  });
 };
 
 // Sticky navigation
@@ -147,10 +184,14 @@ const navSticky = () => {
 
   function initStickyNav() {
     // Get --width-max-mobile from CSS
-    const widthMaxMobile = getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile');
+    const widthMaxMobile = getComputedStyle(
+      document.documentElement
+    ).getPropertyValue('--width-max-mobile');
 
     // Let's see if we are on mobile viewport
-    const isMobile = window.matchMedia(`(max-width: ${widthMaxMobile})`).matches;
+    const isMobile = window.matchMedia(
+      `(max-width: ${widthMaxMobile})`
+    ).matches;
 
     // If things are not okay, bail
     if (isMobile) {
