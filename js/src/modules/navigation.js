@@ -4,8 +4,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
- * @Last Modified by:   Michael Bourne
- * @Last Modified time: 2023-03-01 21:22:11
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-03-03 19:58:52
  */
 
 // Import functions needed for the navigation module
@@ -24,7 +24,7 @@ const navDesktop = () => {
 
   // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
   const focusableElementsforDropdown = document.querySelectorAll(
-    '.menu-item a, .dropdown button, .button-nav'
+    '.menu-item a, .dropdown button, .button-nav',
   );
 
   // If main-menu is not found, bail
@@ -65,8 +65,7 @@ const navMobile = () => {
 
       // Toggle aria-expanded attribute, if it's false, change to true and vice versa
       if (
-        document.getElementById('nav-toggle').getAttribute('aria-expanded') ===
-        'false'
+        document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false'
       ) {
         document
           .getElementById('nav-toggle')
@@ -78,22 +77,21 @@ const navMobile = () => {
       }
 
       // Toggle aria-label
-      // eslint-disable-next-line camelcase, no-undef
       if (
-        document.getElementById('nav-toggle').getAttribute('aria-label') ===
-        air_light_screenReaderText.expand_toggle
-      ) {
         // eslint-disable-next-line camelcase, no-undef
+        document.getElementById('nav-toggle').getAttribute('aria-label') === air_light_screenReaderText.expand_toggle
+      ) {
         document
           .getElementById('nav-toggle')
           .setAttribute(
             'aria-label',
-            air_light_screenReaderText.collapse_toggle
+            // eslint-disable-next-line camelcase, no-undef
+            air_light_screenReaderText.collapse_toggle,
           );
       } else {
-        // eslint-disable-next-line camelcase, no-undef
         document
           .getElementById('nav-toggle')
+          // eslint-disable-next-line camelcase, no-undef
           .setAttribute('aria-label', air_light_screenReaderText.expand_toggle);
       }
 
@@ -104,13 +102,12 @@ const navMobile = () => {
       const navContainer = document.getElementById('nav');
       const focusableElements = [
         ...navContainer.querySelectorAll(
-          'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])'
+          'a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])',
         ),
       ]
         .filter((el) => !el.hasAttribute('disabled'))
         .filter(
-          (el) =>
-            !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)
+          (el) => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length),
         );
 
       focusableElements.forEach((menuItem) => {
@@ -123,7 +120,7 @@ const navMobile = () => {
   addMultipleEventListeners(
     document.getElementById('nav-toggle'),
     ['click', 'keydown', 'keypress'],
-    navToggle
+    navToggle,
   );
 
   // Get all dropdown-toggles
@@ -135,7 +132,7 @@ const navMobile = () => {
     addMultipleEventListeners(
       dropdownToggle,
       ['click', 'keydown', 'keypress'],
-      calculateDropdownToggleHeight
+      calculateDropdownToggleHeight,
     );
   });
 
@@ -185,12 +182,12 @@ const navSticky = () => {
   function initStickyNav() {
     // Get --width-max-mobile from CSS
     const widthMaxMobile = getComputedStyle(
-      document.documentElement
+      document.documentElement,
     ).getPropertyValue('--width-max-mobile');
 
     // Let's see if we are on mobile viewport
     const isMobile = window.matchMedia(
-      `(max-width: ${widthMaxMobile})`
+      `(max-width: ${widthMaxMobile})`,
     ).matches;
 
     // If things are not okay, bail
