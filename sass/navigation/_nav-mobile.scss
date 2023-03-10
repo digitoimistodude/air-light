@@ -7,7 +7,7 @@
   // Site-header and general mobile navigation elements
   --color-background-nav-mobile-header: var(--color-main);
   --color-background-nav-mobile-header-active: var(--color-main);
-  --width-navigation: 27.5rem;
+  --width-navigation: min(27.5rem,100vw);
 
   // Affecting to both main and sub-levels
   --color-background-menu-items: var(--color-main);
