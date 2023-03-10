@@ -93,6 +93,7 @@
     padding-right: var(--padding-sub-menu-link-horizontal);
     padding-top: var(--padding-sub-menu-link-vertical);
     white-space: normal;
+    width: 100%;
   }
 
   // Current menu item color
@@ -103,7 +104,7 @@
 
   // Let's make space for the nav-toggle/arrow
   .menu-item.menu-item-has-children a {
-    transition: padding .2s cubic-bezier(.19, 1, .22, 1), background-color .2s cubic-bezier(.19, 1, .22, 1);
+    transition: background-color .2s cubic-bezier(.19, 1, .22, 1);
   }
 
   .menu-item > a:hover,
@@ -135,14 +136,53 @@
     transition: all .2s cubic-bezier(.19, 1, .22, 1);
   }
 
+
+  // stop flash of submenus on page load, reduce CLS
+  // add progressive enhancement for no JS
+  .no-js {
+
+    // pretend its out of viewport since we cant measure it
+    .sub-menu {
+      display: none;
+      left: unset;
+      right: 0;
+
+      // All dropdowns in level 2 and after
+      .sub-menu {
+        left: unset;
+        right: 100%;
+      }
+    }
+
+    .menu-item-has-children:focus,
+    .menu-item-has-children:focus-within,
+    .menu-item-has-children:hover {
+      &>.sub-menu {
+        display: block;
+      }
+    }
+  }
+
+  // Progressive enhancement: Dropdown toggle with js enabled
+  .js {
+    .sub-menu {
+      margin-top: var(--gap-dropdown);
+      opacity: 0;
+      visibility: hidden;
+
+          // All dropdowns in level 2 and after
+          .sub-menu {
+            margin-top: calc(-1 * var(--padding-sub-menu-vertical));
+          }
+    }
+  }
+
   // Dropdowns
   .sub-menu {
     background-color: var(--color-background-sub-menu);
     border: 1px solid var(--color-black);
     left: 0;
     margin-left: 0;
-    margin-top: var(--gap-dropdown);
-    opacity: 0;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
@@ -150,7 +190,6 @@
     position: absolute;
     top: 100%;
     transition: all .2s cubic-bezier(.19, 1, .22, 1);
-    visibility: hidden;
     width: var(--width-sub-menu);
     z-index: 9;
 
@@ -176,13 +215,11 @@
     .sub-menu {
       left: 100%;
       margin-left: 0;
-      margin-top: calc(-1 * var(--padding-sub-menu-vertical));
       top: 0;
     }
 
     li {
       padding: 0;
-      width: var(--width-sub-menu);
     }
   }
 
