@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-11-10 16:04:19
+ * @Last Modified by:   Michael Bourne
+ * @Last Modified time: 2023-03-10 12:05:11
  *
  * @package air-light
  */
@@ -24,7 +24,7 @@ function allowed_block_types( $allowed_blocks, $editor_context ) {
   $allowed_blocks = isset( THEME_SETTINGS['allowed_blocks']['default'] ) ? THEME_SETTINGS['allowed_blocks']['default'] : [];
 
   // If there is post type specific blocks, add them to the allowed blocks list
-  if ( isset( THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] ) ) {
+  if ( isset( $editor_context->post->post_type ) && isset( THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] ) ) {
     $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] );
   }
 
@@ -46,7 +46,7 @@ function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
     return false;
   }
 
-  return true;
+  return $use_block_editor;
 } // end use_block_editor_for_post_type
 
 /**
