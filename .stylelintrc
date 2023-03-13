@@ -93,6 +93,7 @@
     "no-duplicate-selectors": true,
     "length-zero-no-unit": true,
     "font-weight-notation": "numeric",
+    "number-leading-zero": "never",
     "number-max-precision": 3,
     "selector-class-pattern": null,
     "selector-max-class": 4,
