@@ -27,7 +27,7 @@ namespace Air_Light;
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'no-js' ); ?>>
   <a class="skip-link screen-reader-text js-trigger" href="#content"><?php echo esc_html( get_default_localization( 'Skip to content' ) ); ?></a>
 
   <?php wp_body_open(); ?>

@@ -18,6 +18,10 @@ import initA11ySkipLink from './modules/a11y-skip-link';
 import initA11yFocusSearchField from './modules/a11y-focus-search-field';
 import { navDesktop, navMobile } from './modules/navigation';
 
+// Define Javascript is active by changing the body class
+document.body.classList.remove('no-js');
+document.body.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
   initAnchors();
   backToTop();

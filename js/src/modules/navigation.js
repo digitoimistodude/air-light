@@ -4,8 +4,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-03-03 19:58:52
+ * @Last Modified by:   Michael Bourne
+ * @Last Modified time: 2023-03-01 21:22:11
  */
 
 // Import functions needed for the navigation module
@@ -64,35 +64,20 @@ const navMobile = () => {
       window.scrollTo(0, 0);
 
       // Toggle aria-expanded attribute, if it's false, change to true and vice versa
-      if (
-        document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false'
-      ) {
-        document
-          .getElementById('nav-toggle')
-          .setAttribute('aria-expanded', 'true');
+      if (document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false') {
+        document.getElementById('nav-toggle').setAttribute('aria-expanded', 'true');
       } else {
-        document
-          .getElementById('nav-toggle')
-          .setAttribute('aria-expanded', 'false');
+        document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
       }
 
       // Toggle aria-label
-      if (
+      // eslint-disable-next-line camelcase, no-undef
+      if (document.getElementById('nav-toggle').getAttribute('aria-label') === air_light_screenReaderText.expand_toggle) {
         // eslint-disable-next-line camelcase, no-undef
-        document.getElementById('nav-toggle').getAttribute('aria-label') === air_light_screenReaderText.expand_toggle
-      ) {
-        document
-          .getElementById('nav-toggle')
-          .setAttribute(
-            'aria-label',
-            // eslint-disable-next-line camelcase, no-undef
-            air_light_screenReaderText.collapse_toggle,
-          );
+        document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.collapse_toggle);
       } else {
-        document
-          .getElementById('nav-toggle')
-          // eslint-disable-next-line camelcase, no-undef
-          .setAttribute('aria-label', air_light_screenReaderText.expand_toggle);
+        // eslint-disable-next-line camelcase, no-undef
+        document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.expand_toggle);
       }
 
       // Center vertically the absolute positioned mobile dropdown toggles by setting fixed height
@@ -106,9 +91,7 @@ const navMobile = () => {
         ),
       ]
         .filter((el) => !el.hasAttribute('disabled'))
-        .filter(
-          (el) => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length),
-        );
+        .filter((el) => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
 
       focusableElements.forEach((menuItem) => {
         menuItem.addEventListener('keydown', a11yFocusTrap);

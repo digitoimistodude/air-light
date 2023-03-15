@@ -14,8 +14,10 @@ const isOutOfViewport = function (elem) {
   const out = {};
   out.top = bounding.top < 0;
   out.left = bounding.left < 0;
-  out.bottom = bounding.bottom >= (document.documentElement.clientHeight || document.body.clientHeight);
-  out.right = bounding.right >= (document.documentElement.clientWidth || document.body.clientWidth);
+  out.bottom = bounding.bottom
+    >= (document.documentElement.clientHeight || document.body.clientHeight);
+  out.right = bounding.right
+    >= (document.documentElement.clientWidth || document.body.clientWidth);
   out.any = out.top || out.left || out.bottom || out.right;
 
   return out;
