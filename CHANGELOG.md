@@ -1,10 +1,11 @@
-### [Unreleased]
+### 9.3.2: 2023-02-25
 
 * When page is loaded with "s" in url parameters try to set focus to search input field (kudos to EliasKau)
 * Calculate mobile nav top and height in js when there are air notificans present (kudos to @Tumppex)
 * Fix irregularities with keyboard navigation #175 (kudos to @michaelbourne!)
 * Fix navigation focus trap #175 (kudos to @michaelbourne!)
 * Stylelint: Add number-leading-zero from devpackages
+* Fix navigation issues #177 (kudos to @michaelbourne!)
 
 ### 9.3.1: 2023-02-24
 
