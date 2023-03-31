@@ -7,7 +7,7 @@
  *
  * @Date: 2019-10-15 12:30:02
  * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-03-31 14:24:06
+ * @Last Modified time: 2023-03-31 14:50:38
  *
  * @package air-light
  */
@@ -197,5 +197,5 @@ require get_theme_file_path( '/inc/includes.php' );
 require get_theme_file_path( '/inc/template-tags.php' );
 
 // Run theme setup
-add_action( 'init', __NAMESPACE__ . '\theme_setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\theme_setup' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );

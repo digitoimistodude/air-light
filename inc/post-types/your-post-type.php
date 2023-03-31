@@ -2,8 +2,8 @@
 /**
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:45
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:13:10
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-03-31 14:39:55
  *
  * @package air-light
  **/
@@ -39,14 +39,13 @@ class Your_Post_Type extends Post_Type {
     // http://codex.wordpress.org/Function_Reference/register_post_type
     $args = [
       'labels'              => $generated_labels,
-      'description'         => '',
       'menu_icon'           => null,
-      'public'              => false,
+      'public'              => true,
+      'show_ui'             => true,
       'has_archive'         => false,
       'exclude_from_search' => false,
-      'show_ui'             => true,
-      'show_in_menu'        => true,
       'show_in_rest'        => false,
+      'pll_translatable'    => true,
       'rewrite'             => [
         'with_front'  => false,
         'slug'        => 'your-post-type',

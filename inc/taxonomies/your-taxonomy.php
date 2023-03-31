@@ -2,8 +2,8 @@
 /**
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:05:35
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:13:17
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-03-31 14:29:17
  *
  * @package air-light
  */
@@ -45,8 +45,8 @@ class Your_Taxonomy extends Taxonomy {
       'show_admin_column' => true,
       'hierarchical'      => true,
       'show_tagcloud'     => false,
-      'show_ui'           => true,
       'query_var'         => false,
+      'pll_translatable'  => true,
       'rewrite'           => [
         'slug' => 'your-taxonomy',
       ],

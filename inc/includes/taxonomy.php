@@ -2,8 +2,8 @@
 /**
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:23
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:12:50
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-03-31 14:50:32
  *
  * @package air-light
  */
@@ -57,6 +57,13 @@ abstract class Taxonomy {
 				return $object_type->slug;
 			}
 		}, $object_types );
+
+    if ( $args['pll_translatable'] ) {
+      add_filter( 'pll_get_taxonomies', function( $cpts ) use ( $slug ) {
+        $cpts[ $slug ] = $slug;
+        return $cpts;
+      } );
+    }
 
 		register_taxonomy( $slug, $object_types_slugs, $args );
 

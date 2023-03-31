@@ -2,6 +2,8 @@
 
 * Reset core-list bullet size
 * Remove un-used `image_sizes` array from theme settings
+* run `theme_setup` on `after_setup_theme` hook
+* add custom `pll_translatable` setting to cpt and tax registration, use that to automatically register that content type for Polylang
 
 ### 9.3.2: 2023-03-21
 

@@ -4,8 +4,8 @@
  *
  * @Author: Niku Hietanen
  * @Date: 2020-02-20 13:45:26
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:12:42
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-03-31 14:50:15
  *
  * @package air-light
  */
@@ -55,6 +55,14 @@ abstract class Post_Type {
    *                               of failure.
    */
   public function register_wp_post_type( $slug, $args ) {
+    if ( $args['pll_translatable'] ) {
+      add_filter( 'pll_get_post_types', function( $cpts ) use ( $slug ) {
+        $cpts[ $slug ] = $slug;
+
+        return $cpts;
+      }, 9, 2 );
+    }
+
     return register_post_type( $slug, $args );
   }
 
