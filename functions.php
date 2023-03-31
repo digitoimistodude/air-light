@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-03-21 16:01:34
+ * @Last Modified by:   Timi Wahalahti
+ * @Last Modified time: 2023-03-31 14:24:06
  *
  * @package air-light
  */
@@ -33,13 +33,8 @@ add_action( 'after_setup_theme', function() {
     'textdomain' => 'air-light',
 
     /**
-     * Image and content sizes
+     * Content width
      */
-    'image_sizes' => [
-      'small'   => 300,
-      'medium'  => 700,
-      'large'   => 1200,
-    ],
     'content_width' => 800,
 
     /**

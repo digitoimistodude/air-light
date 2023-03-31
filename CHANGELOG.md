@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Reset core-list bullet size
+* Remove un-used `image_sizes` array from theme settings
 
 ### 9.3.2: 2023-03-21
 
