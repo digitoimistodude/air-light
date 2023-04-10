@@ -5,6 +5,7 @@
 * Run `theme_setup` on `after_setup_theme` hook
 * Add custom `pll_translatable` setting to cpt and tax registration, use that to automatically register that content type for Polylang
 * Fix ACF button color
+* Remove deprecated number-leading-zero rule
 
 ### 9.3.2: 2023-03-21
 
