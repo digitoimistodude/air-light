@@ -1,8 +1,8 @@
 /**
  * @Author: Roni Laukkarinen
  * @Date:   2022-12-31 00:21:44
- * @Last Modified by:   Michael Bourne
- * @Last Modified time: 2023-03-01 21:22:11
+ * @Last Modified by:   Tuomas Marttila
+ * @Last Modified time: 2023-04-12 12:08:00
  */
 
 function a11yFocusTrap(e) {
@@ -48,7 +48,6 @@ function a11yFocusTrap(e) {
     e.preventDefault();
     lastFocusableElement.focus();
   }
-
   // On key down on last element, if it's a Tab, redirect to first element
   if (lastFocusableElement === e.target && e.code === 'Tab' && !e.shiftKey) {
     e.preventDefault();
