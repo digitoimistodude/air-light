@@ -1,7 +1,45 @@
+// stylelint-disable selector-not-notation, selector-max-pseudo-class, selector-max-specificity, plugin/file-max-lines
 :root {
   // Set root size for rems so that 1rem = 10px
   // stylelint-disable-next-line declaration-property-unit-allowed-list
   font-size: 62.5%;
+}
+
+// Use ACF defined font styles in ACF fields
+.acf-bl,
+.acf-bl *,
+.acf-field,
+.acf-input,
+.acf-button-group label,
+.acf-fields *[class^='acf-']:not(.acf-field-url),
+.acf-fields [class^='acf-']:not(.acf-field-url) *:not(.mce-ico):not(.acf-icon),
+.wpseo-metabox-root * {
+  // stylelint-disable-next-line
+  color: inherit;
+  // stylelint-disable-next-line
+  font-family: inherit;
+  font-size: unset;
+}
+
+// stylelint-disable-next-line
+.wpseo-metabox-content button *,
+.wpseo-metabox-content button {
+  // stylelint-disable-next-line
+  font-size: 14px !important;
+}
+
+// Fix acf icons visibility issue
+.acf-icon {
+  // stylelint-disable-next-line
+  z-index: 5555 !important;
+}
+
+// Fix link colors in sidebar
+.edit-post-post-link__preview-link-container a,
+.editor-post-link a {
+  // stylelint-disable-next-line
+  color: inherit;
+  text-decoration: inherit;
 }
 
 // Editor exceptions below
@@ -16,19 +54,6 @@
 
   // Prevent horizontal scrolling
   overflow-x: hidden;
-
-  // Use ACF defined font styles in ACF fields
-  .acf-bl,
-  .acf-bl *,
-  .acf-field,
-  .acf-input,
-  .acf-button-group label,
-  .wpseo-metabox-root *,
-  .acf-fields *[class^='acf-']:not(.acf-field-url) {
-    // stylelint-disable-next-line
-    font-family: inherit;
-    font-size: unset;
-  }
 
   // Fix acf icons visibility issue
   .acf-icon {
@@ -59,7 +84,6 @@
       padding-right: var(--padding-container-horizontal);
       width: 100%;
 
-      // stylelint-disable-next-line selector-max-specificity, selector-max-class
       &.alignleft,
       &.alignright,
       &.alignwide,
@@ -81,7 +105,6 @@
     padding-left: var(--padding-container-horizontal);
     padding-right: var(--padding-container-horizontal);
 
-    // stylelint-disable-next-line selector-max-specificity
     &.alignfull {
       padding-left: var(--padding-container-horizontal);
       padding-right: var(--padding-container-horizontal);
@@ -159,7 +182,6 @@
 }
 
 // Reset minus margins in Gutenberg editor
-// stylelint-disable-next-line selector-max-specificity
 .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
   margin-left: unset;
   margin-right: unset;
