@@ -2,7 +2,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-12-31 00:27:10
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-05-18 17:18:30
+ * @Last Modified time: 2023-05-18 17:31:30
  */
 // Import required modules
 import addMultipleEventListeners from './add-multiple-event-listeners';
@@ -13,6 +13,10 @@ function a11yDropdownMenuKeyboardNavigationClick(items, focusableElements) {
     item.addEventListener('keyup', (e) => {
       // Get this item
       const thisElement = e.target;
+
+      // Get this menu-item
+      // eslint-disable-next-line no-unused-vars
+      const thisMenuItem = thisElement.parentNode;
 
       // Close previous dropdown if this parent contains id main-menu
       if (thisElement.parentNode.parentNode.id === 'main-menu' || (thisElement.classList.contains('button-nav') && thisElement.parentNode.parentNode.id === 'main-menu')) {

@@ -86,6 +86,11 @@ function a11yDropdownMenuKeyboardNavigation(items, focusableElements) {
           return;
         }
 
+        // If link label not found, do nothing
+        if (!thisElement.parentNode.querySelector('.dropdown-item')) {
+          return;
+        }
+
         // Get the link label of .dropdown link
         const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
 

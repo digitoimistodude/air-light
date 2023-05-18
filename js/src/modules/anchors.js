@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-05-07 12:20:13
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-09-28 14:33:09
+ * @Last Modified time: 2023-05-18 17:33:15
  */
 import MoveTo from 'moveto';
 
@@ -24,7 +24,27 @@ const initAnchors = () => {
   const triggers = document.getElementsByClassName('js-trigger');
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < triggers.length; i++) {
+    // If target doesn't exist, bail
+    if (!document.getElementById(triggers[i].hash.substring(1))) {
+      return;
+    }
+
+    // If the trigger is nav-link
+    if (triggers[i].classList.contains('nav-link')) {
+      document.body.classList.remove('js-nav-active');
+    }
+
+    // Move to target
     moveTo.registerTrigger(triggers[i]);
+
+    // Move focus to target
+    triggers[i].addEventListener('click', (event) => {
+      event.preventDefault();
+      const target = document.getElementById(triggers[i].hash.substring(1));
+      target.setAttribute('tabindex', '-1');
+      target.focus();
+      window.history.pushState('', '', triggers[i].hash);
+    });
   }
 };
 
