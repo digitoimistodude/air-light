@@ -1,4 +1,4 @@
-### [Unreleased]
+### 9.3.3: 2023-05-18
 
 * Reset core-list bullet size
 * Remove un-used `image_sizes` array from theme settings
@@ -6,8 +6,11 @@
 * Add custom `pll_translatable` setting to cpt and tax registration, use that to automatically register that content type for Polylang
 * Fix ACF button color
 * Remove deprecated number-leading-zero rule
-* Add support for navigation version where main item is a clickable <button>
+* Add support for navigation version where main item is a clickable <button> (kudos to @Tumppex)
 * If nav link anchor link, add class js-trigger for moveTo
+* Fix JS error with link label not existing
+* Close navigation if anchor item is nav-link
+* Fix focus to target in anchors.js
 
 ### 9.3.2: 2023-03-21
 

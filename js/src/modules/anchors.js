@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-05-07 12:20:13
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-05-18 17:33:15
+ * @Last Modified time: 2023-05-18 17:38:05
  */
 import MoveTo from 'moveto';
 
@@ -29,16 +29,16 @@ const initAnchors = () => {
       return;
     }
 
-    // If the trigger is nav-link
-    if (triggers[i].classList.contains('nav-link')) {
-      document.body.classList.remove('js-nav-active');
-    }
-
-    // Move to target
+    // Move to target smoothly
     moveTo.registerTrigger(triggers[i]);
 
-    // Move focus to target
+    // Focus to target
     triggers[i].addEventListener('click', (event) => {
+      // If the trigger is nav-link, close nav
+      if (triggers[i].classList.contains('nav-link')) {
+        document.body.classList.remove('js-nav-active');
+      }
+
       event.preventDefault();
       const target = document.getElementById(triggers[i].hash.substring(1));
       target.setAttribute('tabindex', '-1');
