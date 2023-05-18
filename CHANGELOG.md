@@ -11,7 +11,7 @@
 * Fix JS error with link label not existing
 * Close navigation if anchor item is nav-link
 * Fix focus to target in anchors.js
-* Bump tested up WordPress version to 6.1.2
+* Bump tested up WordPress version to 6.2.1
 
 ### 9.3.2: 2023-03-21
 
