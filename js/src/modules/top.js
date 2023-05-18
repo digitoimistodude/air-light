@@ -3,7 +3,7 @@
  * @Author: Roni Laukkarinen
  * @Date:   2022-05-07 12:20:13
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-10-06 22:53:19
+ * @Last Modified time: 2023-05-18 18:04:44
  */
 import MoveTo from 'moveto';
 
@@ -31,8 +31,11 @@ const backToTop = () => {
       // Don't add hash in the end of the url
       event.preventDefault();
 
-      // Focus to the first focusable element on the page
+      // Move smoothly to the first focusable element on the page
       moveToTop.move(focusableElements[0]);
+
+      // Focus to the first focusable element on the page
+      focusableElements[0].focus();
     });
 
     // Focus too, if on keyboard

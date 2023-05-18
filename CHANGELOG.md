@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix focus to item when pressing back to top indicator
+
 ### 9.3.3: 2023-05-18
 
 * Reset core-list bullet size
