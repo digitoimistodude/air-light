@@ -7,6 +7,7 @@
 * Fix ACF button color
 * Remove deprecated number-leading-zero rule
 * Add support for navigation version where main item is a clickable <button>
+* If nav link anchor link, add class js-trigger for moveTo
 
 ### 9.3.2: 2023-03-21
 
