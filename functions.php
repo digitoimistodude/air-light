@@ -6,8 +6,8 @@
  * own files under /inc and just require here.
  *
  * @Date: 2019-10-15 12:30:02
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-03-31 14:50:38
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-05-18 17:39:55
  *
  * @package air-light
  */
@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '9.3.2' );
+define( 'AIR_LIGHT_VERSION', '9.3.3' );
 
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
