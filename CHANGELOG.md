@@ -6,6 +6,7 @@
 * Add custom `pll_translatable` setting to cpt and tax registration, use that to automatically register that content type for Polylang
 * Fix ACF button color
 * Remove deprecated number-leading-zero rule
+* Add support for navigation version where main item is a clickable <button>
 
 ### 9.3.2: 2023-03-21
 

@@ -1,0 +1,74 @@
+// stylelint-disable a11y/no-display-none, plugin/file-max-lines
+// Import nav-toggle
+@import 'nav-toggle';
+@import 'nav-mobile';
+
+// Mobile styles
+@media screen and (max-width: $width-max-mobile - 1px) {
+
+  // Dropdown toggle
+  .menu-item-clickable {
+    --menu-item-clickable-size: 1.2rem;
+    align-items: center;
+    background-color: transparent;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    text-align: initial;
+    width: 100%;
+  }
+
+  .menu-item-clickable::after {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='var(--menu-item-clickable-size)' height='var(--menu-item-clickable-size)' viewBox='0 0 12 7'%3E%3Cpath fill-rule='evenodd' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1.385 1.417L6 5.583m4.615-4.166L6 5.583'/%3E%3C/svg%3E ");
+    background-position: 50% 50%;
+    content: '';
+    height: var(--menu-item-clickable-size);
+    transition: transform .35s cubic-bezier(.19, 1, .22, 1);
+    width: var(--menu-item-clickable-size);
+  }
+
+  .menu-item-clickable.toggled-on::after {
+    transform: rotate(-180deg) rotateX(0deg);
+  }
+
+  .menu-item-clickable:hover {
+    cursor: pointer;
+  }
+
+  .menu-item-clickable:focus {
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .sub-menu .menu-item-clickable {
+    color: var(--color-sub-menu-mobile);
+  }
+
+  // Mobile navigation core functionality
+  .js-nav-active {
+    overflow: hidden;
+
+    .menu-items-wrapper {
+      background-color: var(--color-background-menu-items-active);
+      opacity: 1;
+      pointer-events: all;
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+      width: var(--width-navigation);
+    }
+  }
+
+  .site-main,
+  .site-footer {
+    transition: transform 180ms ease-in-out;
+  }
+
+  // Push site content and footer to the left
+  .js-nav-active .site-main,
+  .js-nav-active .site-footer {
+    transform: translate3d(calc(var(--width-navigation) * -1), 0, 0);
+  }
+}

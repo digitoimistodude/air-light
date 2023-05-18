@@ -4,8 +4,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
- * @Last Modified by:   Michael Bourne
- * @Last Modified time: 2023-03-01 21:22:11
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-05-18 17:10:37
  */
 
 // Import functions needed for the navigation module
@@ -17,6 +17,12 @@ import checkForSubmenuOverflow from './navigation/check-for-submenu-overflow';
 import dropdownMenuOnHover from './navigation/dropdown-menu-on-hover';
 import a11yAddDropdownToggleLabels from './navigation/a11y-add-dropdown-toggle-labels';
 import a11yDropdownMenuKeyboardNavigation from './navigation/a11y-dropdown-menu-keyboard-navigation';
+
+// Navigation desktop click functions
+import convertDropdownMenuItems from './navigation/convert-dropdown-menu-items';
+import closeSubMenuHandler from './navigation/close-sub-menu-handler';
+import a11yAddDropdownToggleLabelsClick from './navigation/a11y-add-dropdown-toggle-labels-click';
+import a11yDropdownMenuKeyboardNavigationClick from './navigation/a11y-dropdown-menu-keyboard-navigation-click';
 
 const navDesktop = () => {
   // Define globals
@@ -41,6 +47,30 @@ const navDesktop = () => {
 
   // Check for submenu overflow
   checkForSubmenuOverflow(menuItems);
+};
+
+const navClick = () => {
+  // If main-menu is not found, bail
+  if (!document.getElementById('main-menu')) {
+    return;
+  }
+  // Search for all menu items that have submenus
+  const dropdownMenuItems = document.querySelectorAll('.menu-item-has-children');
+
+  // Convert submenus to clickable elements
+  convertDropdownMenuItems(dropdownMenuItems);
+
+  // Define globals
+  const menuItems = document.querySelectorAll('.menu-item');
+  // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
+  const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button, .button-nav');
+
+  // Dropdown menus
+  a11yAddDropdownToggleLabelsClick(menuItems);
+  a11yDropdownMenuKeyboardNavigationClick(menuItems, focusableElementsforDropdown);
+
+  // Handle different scenarios when menus should be closed
+  closeSubMenuHandler(menuItems);
 };
 
 const navMobile = () => {
@@ -198,7 +228,9 @@ const navSticky = () => {
 };
 
 // Export different navigation functions
-export { navSticky, navDesktop, navMobile };
+export {
+  navSticky, navDesktop, navClick, navMobile,
+};
 
 // Reinit some things
 window.addEventListener('resize', () => {
