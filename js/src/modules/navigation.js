@@ -4,8 +4,8 @@
  *
  * @Author: Roni Laukkarinen
  * @Date:   2022-06-30 16:24:47
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-04-12 12:25:36
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-05-18 17:10:37
  */
 
 // Import functions needed for the navigation module
@@ -17,11 +17,12 @@ import checkForSubmenuOverflow from './navigation/check-for-submenu-overflow';
 import dropdownMenuOnHover from './navigation/dropdown-menu-on-hover';
 import a11yAddDropdownToggleLabels from './navigation/a11y-add-dropdown-toggle-labels';
 import a11yDropdownMenuKeyboardNavigation from './navigation/a11y-dropdown-menu-keyboard-navigation';
+
 // Navigation desktop click functions
-import convertDropdownMenuItems from './navigation/navigation-click/convert-dropdown-menu-items';
-import closeSubMenuHandler from './navigation/navigation-click/close-sub-menu-handler';
-import a11yAddDropdownToggleLabelsClick from './navigation/navigation-click/a11y-add-dropdown-toggle-labels';
-import a11yDropdownMenuKeyboardNavigationClick from './navigation/navigation-click/a11y-dropdown-menu-keyboard-navigation';
+import convertDropdownMenuItems from './navigation/convert-dropdown-menu-items';
+import closeSubMenuHandler from './navigation/close-sub-menu-handler';
+import a11yAddDropdownToggleLabelsClick from './navigation/a11y-add-dropdown-toggle-labels-click';
+import a11yDropdownMenuKeyboardNavigationClick from './navigation/a11y-dropdown-menu-keyboard-navigation-click';
 
 const navDesktop = () => {
   // Define globals

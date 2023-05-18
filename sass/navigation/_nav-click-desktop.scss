@@ -1,43 +1,9 @@
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines
-// Navigation for large screens
-// CSS variables
-:root {
-
-  // Affecting to both main and sub-levels
-  --color-dropdown-toggle: var(--color-valhalla);
-  --color-current: var(--color-link-text);
-  --dropdown-toggle-size: 1.2rem;
-
-  // Main level items on desktop
-  --font-size-main-level: var(--font-size-16);
-  --font-weight-main-level: var(--font-weight-bold);
-  --padding-main-level-horizontal: 0;
-  --padding-main-level-vertical: .6rem;
-  --color-main-level: var(--color-black);
-  --color-hover-main-level: var(--color-link-text);
-  --gap-between-dropdown-toggle: 1.5rem;
-  --gap-main-level-horizontal: 2.5rem;
-
-  // Sub menu items on desktop
-  --font-size-sub-menu: var(--font-size-16);
-  --font-weight-sub-menu: var(--font-weight-regular);
-  --padding-sub-menu-vertical: .6rem;
-  --padding-sub-menu-link-vertical: .6rem;
-  --padding-sub-menu-link-horizontal: 1.5rem;
-  --width-sub-menu: 20rem;
-  --color-sub-menu: var(--color-valhalla);
-  --color-hover-sub-menu: var(--color-valhalla);
-  --color-background-sub-menu: var(--color-white);
-  --gap-dropdown: 1rem;
-}
-
-// General navigation resets
-.site-header ul {
-  list-style: none;
-}
+@import 'nav-desktop';
 
 @media only screen and (min-width: $width-max-mobile) {
   // Need to use display: none here to make sure mobile nav-toggle is visually hidden on desktop
+  // stylelint-disable-next-line
   button.nav-toggle {
     display: none;
   }
@@ -67,7 +33,7 @@
 
   // Menu items
   .menu-item > a,
-  .dropdown-toggle {
+  .menu-item-clickable {
     align-items: center;
     color: var(--color-main-level);
     display: inline-flex;
@@ -83,7 +49,7 @@
   }
 
   .menu-item .sub-menu a,
-  .menu-item .sub-menu .dropdown-toggle {
+  .menu-item .sub-menu .menu-item-clickable {
     align-items: center;
     color: var(--color-sub-menu);
     display: inline-flex;
@@ -119,11 +85,11 @@
     color: var(--color-hover-sub-menu);
   }
 
-  // stop flash of submenus on page load, reduce CLS
+  // Stop flash of submenus on page load, reduce CLS
   // add progressive enhancement for no JS
   .no-js {
 
-    // pretend its out of viewport since we cant measure it
+    // Pretend its out of viewport since we cant measure it
     .sub-menu {
       display: none;
       left: unset;
@@ -146,17 +112,15 @@
   }
 
   // Progressive enhancement: Dropdown toggle with js enabled
-  .js {
-    .sub-menu {
-      margin-top: var(--gap-dropdown);
-      opacity: 0;
-      visibility: hidden;
+  .js .sub-menu {
+    margin-top: var(--gap-dropdown);
+    opacity: 0;
+    visibility: hidden;
+  }
 
-      // All dropdowns in level 2 and after
-      .sub-menu {
-        margin-top: calc(-1 * var(--padding-sub-menu-vertical));
-      }
-    }
+  // All dropdowns in level 2 and after
+  .js .sub-menu .sub-menu {
+    margin-top: calc(-1 * var(--padding-sub-menu-vertical));
   }
 
   // Dropdowns
@@ -213,18 +177,19 @@
     z-index: 12;
   }
 
-  .dropdown-toggle {
+  .menu-item-clickable {
     background-color: transparent;
     border: 0;
     cursor: pointer;
     gap: var(--gap-between-dropdown-toggle);
     justify-content: space-between;
+    pointer-events: auto;
     position: relative;
     text-align: left;
     width: 100%;
   }
 
-  .dropdown-toggle::after {
+  .menu-item-clickable::after {
     background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='var(--dropdown-toggle-size)' height='var(--dropdown-toggle-size)' viewBox='0 0 12 7'%3E%3Cpath fill-rule='evenodd' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M1.385 1.417L6 5.583m4.615-4.166L6 5.583'/%3E%3C/svg%3E ");
     background-position: 50% 50%;
     content: '';
@@ -233,12 +198,12 @@
     width: var(--dropdown-toggle-size);
   }
 
-  .dropdown-toggle.toggled-on::after {
+  .menu-item-clickable.toggled-on::after {
     transform: rotate(-90deg) rotateX(0deg);
   }
 
   // Main level dropdown toggle
-  .menu-items > .menu-item-has-children > .dropdown-toggle.toggled-on::after {
+  .menu-items > .menu-item-has-children > .menu-item-clickable.toggled-on::after {
     transform: rotate(-180deg) rotateX(0deg);
   }
 }

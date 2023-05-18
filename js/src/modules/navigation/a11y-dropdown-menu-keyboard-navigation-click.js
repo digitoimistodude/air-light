@@ -1,11 +1,11 @@
 /**
  * @Author: Roni Laukkarinen
  * @Date:   2022-12-31 00:27:10
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-04-12 11:02:53
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2023-05-18 17:11:33
  */
 // Import required modules
-import addMultipleEventListeners from '../add-multiple-event-listeners';
+import addMultipleEventListeners from './add-multiple-event-listeners';
 
 // Accessible keyboard navigation for dropdown menus
 function a11yDropdownMenuKeyboardNavigationClick(items, focusableElements) {

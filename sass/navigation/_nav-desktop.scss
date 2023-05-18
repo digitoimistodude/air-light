@@ -66,6 +66,7 @@
   }
 
   // Menu items
+  .menu-item-clickable,
   .menu-item > a {
     align-items: center;
     color: var(--color-main-level);
@@ -157,7 +158,7 @@
     .menu-item-has-children:focus,
     .menu-item-has-children:focus-within,
     .menu-item-has-children:hover {
-      &>.sub-menu {
+      & > .sub-menu {
         display: block;
       }
     }
@@ -170,10 +171,10 @@
       opacity: 0;
       visibility: hidden;
 
-          // All dropdowns in level 2 and after
-          .sub-menu {
-            margin-top: calc(-1 * var(--padding-sub-menu-vertical));
-          }
+      // All dropdowns in level 2 and after
+      .sub-menu {
+        margin-top: calc(-1 * var(--padding-sub-menu-vertical));
+      }
     }
   }
 

@@ -16,7 +16,7 @@ import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import initA11ySkipLink from './modules/a11y-skip-link';
 import initA11yFocusSearchField from './modules/a11y-focus-search-field';
-import { navDesktop, navMobile } from './modules/navigation';
+import { navDesktop, navClick, navMobile } from './modules/navigation';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initA11yFocusSearchField();
 
   // Init navigation
+  // If you want to enable click based navigation, comment navDesktop() and uncomment navClick()
+  // Remember to enable styles in sass/navigation/navigation.scss
   navDesktop();
+  // navClick();
   navMobile();
 
   // Fit video embeds to container
