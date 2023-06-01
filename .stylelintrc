@@ -93,6 +93,7 @@
     "no-duplicate-selectors": true,
     "length-zero-no-unit": true,
     "font-weight-notation": "numeric",
+    "number-leading-zero": "never",
     "number-max-precision": 3,
     "selector-class-pattern": null,
     "selector-max-class": 4,
@@ -107,6 +108,9 @@
     "no-unknown-animations": true,
     "shorthand-property-no-redundant-values": true,
     "declaration-block-single-line-max-declarations": 1,
+    "unit-disallowed-list": [
+      "%"
+    ],
     "value-keyword-case": [
       "lower",
       {
@@ -161,11 +165,14 @@
     ],
     "no-descending-specificity": null,
     "max-nesting-depth": [
-      3,
+      2,
       {
         "ignore": [
           "blockless-at-rules",
           "pseudo-classes"
+        ],
+        "ignoreAtRules": [
+          "media"
         ]
       }
     ],

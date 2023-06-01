@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Fix focus to item when pressing back to top indicator
+* Update devpackages to 2.5.4
 
 ### 9.3.3: 2023-05-18
 
