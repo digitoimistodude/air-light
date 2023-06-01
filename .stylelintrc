@@ -108,9 +108,6 @@
     "no-unknown-animations": true,
     "shorthand-property-no-redundant-values": true,
     "declaration-block-single-line-max-declarations": 1,
-    "unit-disallowed-list": [
-      "%"
-    ],
     "value-keyword-case": [
       "lower",
       {
