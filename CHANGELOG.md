@@ -3,6 +3,7 @@
 * Fix focus to item when pressing back to top indicator
 * Fix Gutenberg admin to use the correct variable font
 * Update devpackages to 2.5.4
+* Exclude WordPress.DB.SlowDBQuery.slow_db_query_meta_query
 
 ### 9.3.3: 2023-05-18
 
