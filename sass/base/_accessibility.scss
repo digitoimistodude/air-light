@@ -19,7 +19,13 @@
   // stylelint-disable-next-line declaration-no-important, max-line-length
   word-wrap: normal !important;
 
-  &:focus-within {
+  // Focused on mouse (it never can be focused via mouse, because it's already invisible)
+  &:focus {
+    opacity: 0;
+  }
+
+  // Focused on keyboard
+  &:focus-visible {
     background-color: var(--color-white);
     border-radius: 0;
     box-shadow: 0 0 2px 2px rgb(22 22 22 / .6);
@@ -31,6 +37,7 @@
     height: auto;
     left: .5rem;
     line-height: normal;
+    opacity: 1;
     padding: 1.5rem 2.3rem 1.4rem;
     text-decoration: none;
     top: .5rem;
