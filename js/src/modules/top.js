@@ -9,20 +9,14 @@ import MoveTo from 'moveto';
 
 const backToTop = () => {
   // Back to top button
+  const moveToTop = new MoveTo({
+    duration: 300,
+    easing: 'easeOutQuart',
+  });
   const topButton = document.getElementById('top');
   const focusableElements = document.querySelectorAll(
     'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])',
   );
-
-  function finishScrolling() {
-    focusableElements[0].focus();
-  }
-
-  const moveToTop = new MoveTo({
-    duration: 300,
-    easing: 'easeOutQuart',
-    callback: finishScrolling,
-  });
 
   function trackScroll() {
     const scrolled = window.pageYOffset;
