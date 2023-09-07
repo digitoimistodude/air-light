@@ -5,6 +5,7 @@
 * Update devpackages to 2.5.4
 * Exclude WordPress.DB.SlowDBQuery.slow_db_query_meta_query
 * Do not show skip link when focused via mouse from back to top
+* Fix external link aria-label getting replaced #193
 
 ### 9.3.3: 2023-05-18
 
