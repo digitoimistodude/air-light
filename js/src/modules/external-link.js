@@ -2,8 +2,8 @@
 /**
  * @Author: Roni Laukkarinen
  * @Date:   2021-09-01 11:55:37
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-10-31 16:23:45
+ * @Last Modified by:   Elias Kautto
+ * @Last Modified time: 2023-09-07 12:13:08
  */
 /**
  * Style external links
@@ -101,8 +101,10 @@ export function styleExternalLinks() {
     if (!externalLink.classList.contains('no-external-link-label')) {
       const textContent = externalLink.textContent.trim().length
         ? externalLink.textContent.trim() : getChildAltText(externalLink);
-      const ariaLabel = externalLink.target === '_blank' ? `${textContent}: ${getLocalization('external_link')}, ${getLocalization('target_blank')}` : `${textContent}: ${getLocalization('external_link')}`;
-      externalLink.setAttribute('aria-label', ariaLabel);
+      if (textContent && !externalLink.getAttribute('aria-label')) {
+        const ariaLabel = externalLink.target === '_blank' ? `${textContent}: ${getLocalization('external_link')}, ${getLocalization('target_blank')}` : `${textContent}: ${getLocalization('external_link')}`;
+        externalLink.setAttribute('aria-label', ariaLabel);
+      }
     }
 
     // Arrow icon won't be added if one of these classes is defined for the link
