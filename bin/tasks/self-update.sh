@@ -16,13 +16,13 @@ fi
 
 # Check for updates
 # Get symlink path from /usr/local/bin/newtheme
-SYMLINKPATH=$(readlink /usr/local/bin/newtheme)
+SYMLINKPATH=$(sudo readlink /usr/local/bin/newtheme)
 
 # Get theme bin folder directory from symlink path
-THEMEBINFOLDER=$(dirname $SYMLINKPATH)
+THEMEBINFOLDER=$(sudo dirname $SYMLINKPATH)
 
 # Go one step back from bin to get theme root folder
-THEMEROOTFOLDER=$(dirname $THEMEBINFOLDER)
+THEMEROOTFOLDER=$(sudo dirname $THEMEBINFOLDER)
 
 # Go to the theme root folder
 cd $THEMEROOTFOLDER

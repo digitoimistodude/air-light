@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix the permission issue with self-updater
+
 ### 9.3.5: 2023-09-12
 
 * Use semver + date in newtheme.sh start script
