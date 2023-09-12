@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Use semver + date in newtheme.sh start script
+
 ### 9.3.4: 2023-09-07
 
 * Fix focus to item when pressing back to top indicator
