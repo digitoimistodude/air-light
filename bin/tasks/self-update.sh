@@ -1,6 +1,7 @@
 # Temp colors
 export YELLOW=$(tput setaf 3)
 export GREEN=$(tput setaf 2)
+export RED=$(tput setaf 1)
 export TXTRESET=$(tput sgr0)
 
 # Check for symlink
@@ -34,9 +35,14 @@ git pull origin master
 
 # If there is something preventing the update, show error message
 if [ $? -ne 0 ]; then
-echo "${TXTRESET}${WHITE}There was an error updating the start script. You have probably made changes to the air-light theme? Please commit those changes, send a PR or stash them. Please check the error message above and try again."
+echo ""
+echo "${TXTRESET}${RED}There was an error updating the start script. You have probably made changes to the air-light theme? Please commit those changes, send a PR or stash them. Please check the error message above and try again.${TXTRESET}"
+echo ""
 
-# If there are no errors, show success message
+# Stop script
+exit 1
+
+# If there are no errors, add line break
 else
-echo "${TXTRESET}${GREEN}The start script newtheme.sh has been updated successfully to the latest version.${TXTRESET}"
+echo ""
 fi
