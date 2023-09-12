@@ -33,6 +33,9 @@ git config core.fileMode false --replace-all
 # Check for updates
 git pull origin master
 
+# Ensure permissions are intact
+sudo chmod +x /usr/local/bin/newtheme
+
 # If there is something preventing the update, show error message
 if [ $? -ne 0 ]; then
 echo ""
