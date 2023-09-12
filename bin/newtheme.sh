@@ -7,7 +7,7 @@
 
 # Script specific vars
 SCRIPT_LABEL='for macOS'
-SCRIPT_VERSION='1.1.2 (2023-09-12)'
+SCRIPT_VERSION='1.1.3 (2023-09-12)'
 
 # Vars needed for this file to function globally
 CURRENTFILE=`basename $0`
@@ -30,6 +30,9 @@ echo "${WHITE}Using this start script requires you use the following:
 https://github.com/digitoimistodude/macos-lemp-setup
 https://github.com/digitoimistodude/air-light
 ${TXTRESET}"
+
+# First, let's check updates to self
+source ${SCRIPTS_LOCATION}/tasks/self-update.sh
 
 # Import required tasks
 source ${SCRIPTS_LOCATION}/tasks/imports.sh

@@ -1,6 +1,7 @@
-### [Unreleased]
+### 9.3.5: 2023-09-12
 
 * Use semver + date in newtheme.sh start script
+* Add self-updater to the start script
 
 ### 9.3.4: 2023-09-07
 
