@@ -22,7 +22,7 @@ THEMEROOTFOLDER=$(dirname $THEMEBINFOLDER)
 cd $THEMEROOTFOLDER
 
 # Make sure no file mods are being committed
-git config core.fileMode false
+git config core.fileMode false --replace-all
 
 # Check for updates
 git pull origin master
