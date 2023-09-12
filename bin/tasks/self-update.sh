@@ -1,3 +1,8 @@
+# Temp colors
+export YELLOW=$(tput setaf 3)
+export GREEN=$(tput setaf 2)
+export TXTRESET=$(tput sgr0)
+
 # Check for symlink
 echo "${YELLOW}Running self-updater...${TXTRESET}"
 
@@ -33,5 +38,5 @@ echo "${TXTRESET}${WHITE}There was an error updating the start script. You have 
 
 # If there are no errors, show success message
 else
-echo "${TXTRESET}${boldgreen}The start script newtheme.sh has been updated successfully to the latest version.${TXTRESET}"
+echo "${TXTRESET}${GREEN}The start script newtheme.sh has been updated successfully to the latest version.${TXTRESET}"
 fi
