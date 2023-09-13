@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Fix the permission issue with self-updater
+* Fix ACF element colors in Gutenberg editor
 
 ### 9.3.5: 2023-09-12
 
