@@ -9,8 +9,8 @@ hr,
   height: 0;
   margin-bottom: calc(var(--margin-between-paragraphs) * 2);
   margin-top: calc(var(--margin-between-paragraphs) * 2);
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding-bottom: rem(10px);
+  padding-top: rem(10px);
 }
 
 .wp-block-separator.is-style-default {
@@ -22,5 +22,5 @@ hr,
   margin-bottom: calc(var(--margin-between-paragraphs) * 2);
   margin-top: calc(var(--margin-between-paragraphs) * 2);
   opacity: .4;
-  width: 10rem;
+  width: rem(100px);
 }

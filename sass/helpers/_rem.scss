@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+// From https://fedmentor.dev/posts/rem-html-font-size-hack/
+
+/// Converts PX to REM
+/// @access public
+/// @param {string} $size - Value to be converted as PX.
+/// @returns {string} - Returns REM string.
+/// @example font-size: rem(24px);
+/// @returns font-size: rem(1.5px);
+@function rem($size) {
+  /* stylelint-disable-next-line rem-over-px/rem-over-px */
+  $remSize: math.div($size, 16px);
+
+  @return #{$remSize}rem;
+}

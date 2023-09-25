@@ -8,14 +8,14 @@
 
   // Dropdown toggle
   .menu-item-clickable {
-    --menu-item-clickable-size: 1.2rem;
+    --menu-item-clickable-size: #{rem(12px)};
     align-items: center;
     background-color: transparent;
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
     display: flex;
-    gap: 1rem;
+    gap: rem(10px);
     justify-content: space-between;
     text-align: initial;
     width: 100%;

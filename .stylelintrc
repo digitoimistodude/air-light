@@ -52,7 +52,9 @@
         ],
         "ignoreFunctions": [
           "url",
-          "clamp-calc"
+          "clamp-calc",
+          "rem",
+          "#{rem"
         ],
         "ignoreAtRules": [
           "media"

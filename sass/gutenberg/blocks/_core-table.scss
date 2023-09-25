@@ -20,8 +20,8 @@ th,
   border: 0;
   font-family: var(--font-paragraph);
   font-size: var(--font-size-14);
-  height: 2rem;
-  padding: .6rem 1.5rem;
+  height: rem(20px);
+  padding: rem(6px) rem(15px);
 }
 
 tr:nth-child(even) {
@@ -37,11 +37,11 @@ thead,
   border: 0;
 
   th:first-child {
-    border-top-left-radius: .8rem;
+    border-top-left-radius: rem(8px);
   }
 
   th:last-child {
-    border-top-right-radius: .8rem;
+    border-top-right-radius: rem(8px);
   }
 }
 

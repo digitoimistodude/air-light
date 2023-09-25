@@ -15,7 +15,7 @@
   z-index: 15;
 
   @media (max-width: $width-max-mobile) {
-    --padding-container-horizontal: 2rem;
+    --padding-container-horizontal: #{rem(20px)};
   }
 }
 
@@ -48,7 +48,7 @@
   content: 'Build your website here! (Remove this bit in sass/layout/_site-header.scss)';
   display: flex;
   // stylelint-disable-next-line
-  font-size: clamp(.5rem, 3.4vw, 3rem);
+  font-size: clamp(rem(5px), 3.4vw, rem(30px));
   font-weight: var(--font-weight-semibold);
   justify-content: center;
   margin-bottom: var(--padding-container-vertical);
@@ -59,9 +59,9 @@
   max-width: $width-grid-base - 40px;
   opacity: .7;
   order: -1;
-  padding: 4rem;
+  padding: rem(40px);
   position: relative;
   text-align: center;
-  width: calc(100% - 4rem);
+  width: calc(100% - rem(40px));
 }
 // --clip--

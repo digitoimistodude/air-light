@@ -1,5 +1,6 @@
 // A hidden screen reader texts for readers, focus elements for
 // vision impaired and other useful a11y CSS hacks.
+@import 'helpers/rem';
 
 // Text meant only for screen readers.
 @mixin screen-reader-text() {
@@ -32,15 +33,15 @@
     clip: auto;
     clip-path: none;
     display: block;
-    font-size: 1.7rem;
+    font-size: rem(17px);
     font-weight: var(--font-weight-bold);
     height: auto;
-    left: .5rem;
+    left: rem(5px);
     line-height: normal;
     opacity: 1;
-    padding: 1.5rem 2.3rem 1.4rem;
+    padding: rem(15px) rem(23px) rem(14px);
     text-decoration: none;
-    top: .5rem;
+    top: rem(5px);
     width: auto;
     z-index: 100000; // Above WP toolbar.
   }
@@ -51,7 +52,7 @@
 }
 
 .skip-link {
-  margin: .5rem;
+  margin: rem(5px);
 }
 
 // Visually distinct focus color on keyboard
@@ -65,7 +66,7 @@ div[tabindex]:focus {
   opacity: 1;
 
   // Make sure it's not glued to the element
-  outline-offset: .5rem;
+  outline-offset: rem(5px);
 }
 
 // Make focus a little more engaging
@@ -79,13 +80,13 @@ div[tabindex]:focus {
 
 // External link icon
 .external-link-icon {
-  margin-left: .7rem;
-  margin-right: .2rem;
+  margin-left: rem(7px);
+  margin-right: rem(2px);
 
   @media (max-width: $container-mobile) {
-    height: 1.2rem;
-    margin-left: .4rem;
+    height: rem(12px);
+    margin-left: rem(4px);
     transform: translateY(1px);
-    width: 1.2rem;
+    width: rem(12px);
   }
 }

@@ -9,7 +9,7 @@ div.validation_error {
   font-size: var(--font-size-17);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--form-row-gap);
-  padding: 2rem;
+  padding: rem(20px);
 
   &:focus {
     color: var(--color-white);
@@ -92,19 +92,19 @@ body *[aria-invalid="true"] {
   .gfield_radio,
   .gfield_checkbox {
     display: grid;
-    gap: 1rem;
+    gap: rem(10px);
   }
 
   .gchoice {
     display: flex;
-    gap: 1rem;
+    gap: rem(10px);
   }
 
   .gfield_label {
     display: inline-flex;
     gap: var(--form-required-gap);
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: rem(10px);
+    margin-top: rem(10px);
     padding-inline-end: 0;
     padding-inline-start: 0;
   }
@@ -190,5 +190,5 @@ body *[aria-invalid="true"] {
   color: var(--color-success);
   font-size: var(--font-size-paragraph);
   font-weight: var(--font-weight-semibold);
-  padding: 2rem;
+  padding: rem(20px);
 }

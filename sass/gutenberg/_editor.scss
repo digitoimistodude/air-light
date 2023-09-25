@@ -1,9 +1,4 @@
 // stylelint-disable selector-not-notation, selector-max-pseudo-class, selector-max-specificity, plugin/file-max-lines
-:root {
-  // Set root size for rems so that 1rem = 10px
-  // stylelint-disable-next-line declaration-property-unit-allowed-list
-  font-size: 62.5%;
-}
 
 // Use ACF defined font styles in ACF fields
 .acf-bl,

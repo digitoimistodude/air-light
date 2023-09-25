@@ -52,7 +52,7 @@
 
   // If base grid is larger than Macbook Air screen
   @if $width-grid-base > 1440 {
-    @media (min-width: $container-ipad-landscape) and (max-width: 140rem + 6.4rem) {
+    @media (min-width: $container-ipad-landscape) and (max-width: rem(1400px) + rem(64px)) {
       padding-left: var(--padding-container-horizontal-large);
       padding-right: var(--padding-container-horizontal-large);
     }
@@ -68,7 +68,7 @@
   clear: both;
   display: block;
   margin-bottom: 0;
-  margin-top: 2rem;
+  margin-top: rem(20px);
   max-width: 100%;
   min-width: 0;
   overflow: hidden;
@@ -83,7 +83,7 @@
     color: var(--color-link-edit-text);
     display: block;
     margin: 0;
-    padding: 2rem;
+    padding: rem(20px);
     text-align: center;
     text-decoration: none;
     transition: all $transition-duration;
