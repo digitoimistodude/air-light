@@ -18,26 +18,25 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v3
+      - name: Checkout the repository
+        uses: actions/checkout@v3
 
-    - name: Setup PHP with Xdebug 2.x
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: '7.4'
-        coverage: xdebug2
+      - name: Setup PHP with Xdebug 2.x
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: xdebug2
 
-    - name: Set up PHPCS and WordPress-Coding-Standards
-      run: |
-        git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR
-        git clone -b 2.2.1 --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git $WPCS_DIR
-        $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR,$SNIFFS_DIR
-        git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR
+      - name: Set up PHPCS and WordPress-Coding-Standards
+        run: |
+          git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR
+          git clone -b 3.0.1 --depth 1 https://github.com/WordPress/WordPress-Coding-Standards.git $WPCS_DIR
+          $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR,$SNIFFS_DIR
+          git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR
 
-    - name: Run PHPCS
-      run: |
-        $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/*,*/sass/* --standard=phpcs.xml
+      - name: Run PHPCS
+        run: |
+          $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/*,*/sass/* --standard=phpcs.xml
 
-    - name: Test PHP for syntax errors
-      run: find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
-
+      - name: Test PHP for syntax errors
+        run: find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
