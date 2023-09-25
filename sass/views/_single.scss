@@ -11,17 +11,17 @@
 
 .categories,
 .article-content .categories {
-  gap: 1.2rem;
+  gap: rem(12px);
 }
 
 .categories a {
   background-color: var(--color-valhalla);
-  border-radius: 3rem;
+  border-radius: rem(30px);
   color: var(--color-white);
   display: inline-block;
   font-size: var(--font-size-14);
   margin: 0;
-  padding: .5rem 1.5rem;
+  padding: rem(5px) rem(15px);
   transition: all $transition-duration;
 }
 
@@ -35,7 +35,7 @@
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;
+  gap: rem(5px);
   margin-bottom: var(--margin-between-text-elements);
   margin-top: 0;
 
@@ -43,7 +43,7 @@
   a {
     background-color: transparent;
     border: 1px solid var(--color-black);
-    border-radius: 3rem;
+    border-radius: rem(30px);
     box-shadow: none;
     color: var(--color-black);
     display: inline-block;

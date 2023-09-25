@@ -1,52 +1,52 @@
 // CSS Variables for responsive paddings and margins
 :root {
   // Gaps
-  --grid-gap: 4.8rem;
+  --grid-gap: #{rem(48px)};
 
   // Paddings
-  --padding-container-horizontal: 2rem;
-  --padding-container-horizontal-large: 6.4rem;
-  --padding-container-vertical: 6.4rem;
-  --padding-site-header-vertical: 2rem;
-  --padding-block: 8rem;
+  --padding-container-horizontal: #{rem(20px)};
+  --padding-container-horizontal-large: #{rem(64px)};
+  --padding-container-vertical: #{rem(64px)};
+  --padding-site-header-vertical: #{rem(20px)};
+  --padding-block: #{rem(80px)};
 
   // Margins
-  --margin-between-text-elements: 4rem;
-  --margin-wp-block-image: 4rem;
-  --margin-between-paragraphs: 2.7rem;
+  --margin-between-text-elements: #{rem(40px)};
+  --margin-wp-block-image: #{rem(40px)};
+  --margin-between-paragraphs: #{rem(27px)};
 
   // Mid-sized screens
   @media (max-width: $width-grid-base + 150px) {
-    --padding-container-horizontal: 6.4rem;
+    --padding-container-horizontal: #{rem(64px)};
   }
 
   // When there's no longer room for container to fit with wider white space
   @media (max-width: 700px) {
-    --padding-container-horizontal: 2rem;
+    --padding-container-horizontal: #{rem(20px)};
   }
 
   // When navigation transforms to a responsive hamburger menu
   @media (max-width: $width-max-mobile) {
-    --padding-site-header-vertical: 2rem;
+    --padding-site-header-vertical: #{rem(20px)};
   }
 
   // iPad
   @media (max-width: $container-ipad-landscape) {
-    --grid-gap: 3.2rem;
+    --grid-gap: #{rem(32px)};
   }
 
   @media (max-width: $container-ipad) {
     --grid-gap: var(--padding-container-horizontal);
-    --padding-container-vertical: 5rem;
+    --padding-container-vertical: #{rem(50px)};
   }
 
   // Between iPad and a mobile phone
   @media (max-width: 600px) {
-    --padding-block: 6rem;
+    --padding-block: #{rem(60px)};
   }
 
   // Vars in mobile
   @media (max-width: $container-mobile) {
-    --padding-container-vertical: 4rem;
+    --padding-container-vertical: #{rem(40px)};
   }
 }

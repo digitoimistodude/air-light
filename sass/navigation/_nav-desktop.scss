@@ -6,29 +6,29 @@
   // Affecting to both main and sub-levels
   --color-dropdown-toggle: var(--color-valhalla);
   --color-current: var(--color-link-text);
-  --dropdown-toggle-size: 1.2rem;
+  --dropdown-toggle-size: #{rem(12px)};
 
   // Main level items on desktop
   --font-size-main-level: var(--font-size-16);
   --font-weight-main-level: var(--font-weight-bold);
   --padding-main-level-horizontal: 0;
-  --padding-main-level-vertical: .6rem;
+  --padding-main-level-vertical: #{rem(6px)};
   --color-main-level: var(--color-black);
   --color-hover-main-level: var(--color-link-text);
-  --gap-between-dropdown-toggle: 1.5rem;
-  --gap-main-level-horizontal: 2.5rem;
+  --gap-between-dropdown-toggle: #{rem(15px)};
+  --gap-main-level-horizontal: #{rem(25px)};
 
   // Sub menu items on desktop
   --font-size-sub-menu: var(--font-size-16);
   --font-weight-sub-menu: var(--font-weight-regular);
-  --padding-sub-menu-vertical: .6rem;
-  --padding-sub-menu-link-vertical: .6rem;
-  --padding-sub-menu-link-horizontal: 1.5rem;
-  --width-sub-menu: 20rem;
+  --padding-sub-menu-vertical: #{rem(6px)};
+  --padding-sub-menu-link-vertical: #{rem(6px)};
+  --padding-sub-menu-link-horizontal: #{rem(15px)};
+  --width-sub-menu: #{rem(200px)};
   --color-sub-menu: var(--color-valhalla);
   --color-hover-sub-menu: var(--color-valhalla);
   --color-background-sub-menu: var(--color-white);
-  --gap-dropdown: 1rem;
+  --gap-dropdown: #{rem(10px)};
 }
 
 // General navigation resets
@@ -295,7 +295,7 @@
 
   // Sub-menu toggle icon
   .sub-menu .dropdown-toggle {
-    width: 3rem;
+    width: rem(30px);
   }
 
   .sub-menu .dropdown-toggle svg {

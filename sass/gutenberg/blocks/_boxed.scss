@@ -7,12 +7,12 @@
   font-style: normal;
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-paragraph);
-  padding: 2rem;
-  width: calc(100% - 4rem);
+  padding: rem(20px);
+  width: calc(100% - rem(40px));
 }
 
 @media (min-width: $width-max-article + 40px) {
   .is-style-boxed {
-    transform: translate(2rem, 0);
+    transform: translate(rem(20px), 0);
   }
 }

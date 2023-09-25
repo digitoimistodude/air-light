@@ -8,7 +8,7 @@
   color: var(--color-black);
   cursor: pointer;
   font-size: var(--font-size-16);
-  height: 3rem;
+  height: rem(30px);
   // stylelint-disable-next-line rem-over-px/rem-over-px
   line-height: 30px;
   opacity: 0;
@@ -18,7 +18,7 @@
   text-decoration: none;
   transition: 500ms opacity;
   visibility: hidden;
-  width: 3rem;
+  width: rem(30px);
   z-index: 1;
 
   &:hover {

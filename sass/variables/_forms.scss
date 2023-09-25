@@ -1,4 +1,6 @@
 // CSS Variables for radios and checkboxes
+@import 'helpers/rem';
+
 :root {
   // Form element colors
   --color-background-input-field: var(--color-white);
@@ -30,17 +32,17 @@
   --font-size-input-fields: var(--font-size-17);
   --font-size-input-labels: var(--font-size-input-fields);
   --font-size-required-text-label: var(--font-size-input-fields);
-  --font-size-required-asterisk-label: 1.375rem;
-  --form-column-gap: 2rem;
-  --form-row-gap: 2rem;
-  --form-required-gap: .5rem;
-  --form-line-height: 1.5rem;
-  --form-padding-vertical: 1rem;
-  --form-padding-horizontal: 1.5rem;
-  --gap-checkbox: .625rem;
-  --gap-select-icon: 1.5rem;
-  --size-checkbox: 2.2rem;
-  --size-checkbox-marker: .75rem;
-  --size-radio-button: 1rem;
-  --size-radio-button-marker: .5rem;
+  --font-size-required-asterisk-label: #{rem(13.75px)};
+  --form-column-gap: #{rem(20px)};
+  --form-row-gap: #{rem(20px)};
+  --form-required-gap: #{rem(5px)};
+  --form-line-height: #{rem(15px)};
+  --form-padding-vertical: #{rem(10px)};
+  --form-padding-horizontal: #{rem(15px)};
+  --gap-checkbox: #{rem(625px)};
+  --gap-select-icon: #{rem(15px)};
+  --size-checkbox: #{rem(22px)};
+  --size-checkbox-marker: #{rem(75px)};
+  --size-radio-button: #{rem(10px)};
+  --size-radio-button-marker: #{rem(5px)};
 }

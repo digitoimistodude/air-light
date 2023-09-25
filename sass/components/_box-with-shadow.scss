@@ -1,7 +1,7 @@
 // Use with @include box-with-shadow();
 @mixin box-with-shadow() {
   background-color: var(--color-white);
-  border-radius: 1rem;
-  box-shadow: .1rem .1rem 3.7rem 0 rgb(0 0 0 / .05);
-  padding: 5.5rem;
+  border-radius: rem(10px);
+  box-shadow: rem(1px) rem(1px) rem(37px) 0 rgb(0 0 0 / .05);
+  padding: rem(55px);
 }

@@ -3,11 +3,6 @@
 // presets. No modular scale, but a sophisticated viewport
 // based responsive mixin can be found in _helpers.scss
 
-// Set root size for rems
-:root {
-  font-size: 62.5%;
-}
-
 // Typography settings
 .is-root-container,
 .acf-block-preview .block,
@@ -94,8 +89,8 @@ i {
 
 // Default paragraphs
 p {
-  margin-bottom: 2.9rem;
-  margin-top: 2.9rem;
+  margin-bottom: rem(29px);
+  margin-top: rem(29px);
 }
 
 p:last-child {
