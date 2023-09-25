@@ -25,6 +25,10 @@ function allowed_block_types( $allowed_blocks, $editor_context ) {
 
   // If there is post type specific blocks, add them to the allowed blocks list
   if ( isset( $editor_context->post->post_type ) && isset( THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] ) ) {
+    if ( 'all' === THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] ) {
+      return $allowed_blocks;
+    }
+
     $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ $editor_context->post->post_type ] );
   }
 

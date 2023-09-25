@@ -84,5 +84,4 @@ abstract class Taxonomy {
 
 		return $registered_object_types;
 	}
-
 }

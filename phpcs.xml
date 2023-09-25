@@ -29,11 +29,11 @@
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
-        <exclude name="WordPress.WhiteSpace.PrecisionAlignment" />
+        <exclude name="Universal.WhiteSpace.PrecisionAlignment" />
         <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
         <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
         <exclude name="WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned" />
-        <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
+        <exclude name="Universal.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
         <exclude name="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned" />
         <exclude name="PEAR.Functions.FunctionCallSignature.OpeningIndent" />
 
@@ -58,7 +58,7 @@
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
         <exclude name="PHPCompatibility.PHP.NewFunctionArrayDereferencing.Found" />
-        <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax" />
 
         <!-- General WordPress stuff we like to overrule -->
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
@@ -97,9 +97,10 @@
         <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
         <exclude name="WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode" />
         <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query" />
-        <exclude name="WordPress.PHP.DisallowShortTernary.Found" />
+        <exclude name="Universal.Operators.DisallowShortTernary.Found" />
         <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_query" />
-
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction" />
+        
         <!-- Project based -->
         <exclude name="Squiz.PHP.CommentedOutCode.Found" />
     </rule>

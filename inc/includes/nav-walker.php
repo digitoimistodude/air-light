@@ -106,7 +106,6 @@ class Nav_Walker extends \Walker_Nav_Menu {
     } else {
       $output .= "\n{$n}{$indent}<ul>{$n}";
     }
-
   }
 
  	/**
@@ -146,7 +145,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 
     // Updating the CSS classes of a menu item in the WordPress Customizer preview results in all classes defined
 		// in that particular input box to come in as one big class string.
-		$split_on_spaces = function ( $class ) {
+		$split_on_spaces = function( $class ) {
 			return preg_split( '/\s+/', $class );
 		};
 		$classes         = $this->flatten( array_map( $split_on_spaces, $classes ) );
@@ -600,5 +599,4 @@ class Nav_Walker extends \Walker_Nav_Menu {
 			}
 			return $result;
 		}
-
 	}

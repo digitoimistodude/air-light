@@ -15,7 +15,8 @@
 
 namespace Air_Light;
 
-function single_comment( $comment, $args, $depth ) { ?>
+function single_comment( $comment, $args, $depth ) {
+?>
   <li id="li-comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
     <div id="comment-<?php comment_ID(); ?>">
       <?php echo get_avatar( $comment, '62' ); ?>
