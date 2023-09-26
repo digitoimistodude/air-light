@@ -66,7 +66,7 @@ abstract class Taxonomy {
 			}
 		}, $object_types );
 
-    if ( $args['pll_translatable'] ) {
+    if ( $args['pll_translatable'] && false === $args['public'] ) {
       add_filter( 'pll_get_taxonomies', function( $cpts ) use ( $slug ) {
         $cpts[ $slug ] = $slug;
         return $cpts;

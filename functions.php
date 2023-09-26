@@ -22,7 +22,6 @@ define( 'AIR_LIGHT_VERSION', '9.3.5' );
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
 
-
 /**
  * Theme settings
  */
