@@ -211,5 +211,5 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\build_taxonomies' );
 add_action( 'after_setup_theme', __NAMESPACE__ . '\build_post_types' );
 
-add_action( 'air_helper_activated', __NAMESPACE__ . '\rebuild_taxonomies' );
-add_action( 'air_helper_activated', __NAMESPACE__ . '\rebuild_post_types' );
+add_action( 'after_air_helper_init', __NAMESPACE__ . '\rebuild_taxonomies' );
+add_action( 'after_air_helper_init', __NAMESPACE__ . '\rebuild_post_types' );
