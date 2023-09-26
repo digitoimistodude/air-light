@@ -80,7 +80,11 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
    */
   if ( ! $is_preview ) {
     $post_type = get_post_type();
-    if ( $post_type && 'wp_block' !== $post_type && is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+
+    $is_not_wp_block = $post_type && 'wp_block' !== $post_type;
+    $is_disallowed_in_post_type = is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] );
+
+    if ( $is_not_wp_block && $is_disallowed_in_post_type ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
       return '';
     }
   }
