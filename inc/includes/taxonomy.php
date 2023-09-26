@@ -22,9 +22,17 @@ abstract class Taxonomy {
 	 */
 	protected $slug;
 
+	/**
+   * Translations used in labels
+   * 
+   * @var array(string)
+   */
+  public $translations;
+
 
 	public function __construct( $slug ) {
 		$this->slug = $slug;
+		$this->translations = [];
 	}
 
 	/**
@@ -65,6 +73,7 @@ abstract class Taxonomy {
       } );
     }
 
+		$this->register_translations();
 		register_taxonomy( $slug, $object_types_slugs, $args );
 
 		// Note from the Codex: "Better be safe than sorry when registering
@@ -85,4 +94,22 @@ abstract class Taxonomy {
 		return $registered_object_types;
 	}
 
+	// Wrapper for ask__
+  public function ask__( $key, $value ) {
+    $pllKey = "{$key}: {$value}";
+    $this->translations[ $pllKey ] = $value;
+    if ( function_exists("ask__") ) {
+      return ask__( $pllKey );
+    }
+
+    return $value;
+  }
+
+  private function register_translations() {
+    $translations = $this->translations;
+
+    add_filter( 'air_light_translations', function($strings) use($translations) {
+      return array_merge( $translations, $strings );
+    }, 10, 2 );
+  }
 }
