@@ -84,7 +84,7 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
     $is_not_wp_block = $post_type && 'wp_block' !== $post_type;
     $is_disallowed_in_post_type = is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] );
 
-    if ( $is_not_wp_block && $is_disallowed_in_post_type ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
+    if ( $is_not_wp_block && $is_disallowed_in_post_type ) {
       return '';
     }
   }
