@@ -16,23 +16,25 @@ namespace Air_Light;
 class Your_Post_Type extends Post_Type {
 
   public function register() {
-
     // Modify all the i18ized strings here.
     $generated_labels = [
-      'menu_name'          => __( 'Your Post Type', 'air-light' ),
-      'name'               => _x( 'Your Post Types', 'post type general name', 'air-light' ),
-      'singular_name'      => _x( 'Your Post Type', 'post type singular name', 'air-light' ),
-      'name_admin_bar'     => _x( 'Your Post Type', 'add new on admin bar', 'air-light' ),
-      'add_new'            => _x( 'Add New', 'thing', 'air-light' ),
-      'add_new_item'       => __( 'Add New Your Post Type', 'air-light' ),
-      'new_item'           => __( 'New Your Post Type', 'air-light' ),
-      'edit_item'          => __( 'Edit Your Post Type', 'air-light' ),
-      'view_item'          => __( 'View Your Post Type', 'air-light' ),
-      'all_items'          => __( 'All Your Post Types', 'air-light' ),
-      'search_items'       => __( 'Search Your Post Types', 'air-light' ),
-      'parent_item_colon'  => __( 'Parent Your Post Types:', 'air-light' ),
-      'not_found'          => __( 'No your post types found.', 'air-light' ),
-      'not_found_in_trash' => __( 'No your post types found in Trash.', 'air-light' ),
+      // The Post_Type ask__ function wraps the air-helper ask__, and automatically registers the keys to Polylang!
+      // self::ask__( 'Key', 'Default value' )
+      // -> Key: Default value => 'Default value'
+      'menu_name'          => self::ask__( 'Your Post Type', 'Your Post Type' ),
+      'name'               => self::ask__( 'Your Post Type', 'Your Post Types' ),
+      'singular_name'      => self::ask__( 'Your Post Type', 'Your Post Type' ),
+      'name_admin_bar'     => self::ask__( 'Your Post Type', 'Your Post Type' ),
+      'add_new'            => self::ask__( 'Your Post Type', 'Add New' ),
+      'add_new_item'       => self::ask__( 'Your Post Type', 'Add New Your Post Type' ),
+      'new_item'           => self::ask__( 'Your Post Type', 'New Your Post Type' ),
+      'edit_item'          => self::ask__( 'Your Post Type', 'Edit Your Post Type' ),
+      'view_item'          => self::ask__( 'Your Post Type', 'View Your Post Type' ),
+      'all_items'          => self::ask__( 'Your Post Type', 'All Your Post Types' ),
+      'search_items'       => self::ask__( 'Your Post Type', 'Search Your Post Types' ),
+      'parent_item_colon'  => self::ask__( 'Your Post Type', 'Parent Your Post Types:' ),
+      'not_found'          => self::ask__( 'Your Post Type', 'No your post types found.' ),
+      'not_found_in_trash' => self::ask__( 'Your Post Type', 'No your post types found in Trash.' ),
     ];
 
     // Definition of the post type arguments. For full list see:

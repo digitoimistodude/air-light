@@ -31,9 +31,17 @@ abstract class Post_Type {
    */
   public $slug;
 
+  /**
+   * Translations used in labels
+   * 
+   * @var array(string)
+   */
+  public $translations;
+
 
   public function __construct( $slug ) {
     $this->slug = $slug;
+    $this->translations = [];
   }
 
 
@@ -55,7 +63,8 @@ abstract class Post_Type {
    *                               of failure.
    */
   public function register_wp_post_type( $slug, $args ) {
-    if ( $args['pll_translatable'] ) {
+    // Register PolyLang translatable only if it's private
+    if ( $args['pll_translatable'] && false === $args['public'] ) {
       add_filter( 'pll_get_post_types', function( $cpts ) use ( $slug ) {
         $cpts[ $slug ] = $slug;
 
@@ -63,7 +72,26 @@ abstract class Post_Type {
       }, 9, 2 );
     }
 
+    $this->register_translations();
     return register_post_type( $slug, $args );
   }
 
+  // Wrapper for ask__
+  public function ask__( $key, $value ) {
+    $pllKey = "{$key}: {$value}";
+    $this->translations[ $pllKey ] = $value;
+    if ( function_exists("ask__") ) {
+      return ask__( $pllKey );
+    }
+
+    return $value;
+  }
+
+  private function register_translations() {
+    $translations = $this->translations;
+
+    add_filter( 'air_light_translations', function($strings) use($translations) {
+      return array_merge( $translations, $strings );
+    }, 10, 2 );
+  }
 }
