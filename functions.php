@@ -99,7 +99,6 @@ add_action( 'after_setup_theme', function() {
      */
     'post_types' => [
       // 'Your_Post_Type',
-      'Question',
     ],
 
     /**
@@ -180,9 +179,7 @@ add_action( 'after_setup_theme', function() {
     ],
 
     // If you want to use classic editor somewhere, define it here
-    'use_classic_editor' => [
-      'question'
-    ],
+    'use_classic_editor' => [],
 
     // Add your own settings and use them wherever you need, for example THEME_SETTINGS['my_custom_setting']
     'my_custom_setting' => true,
@@ -217,11 +214,3 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\build_post_types' );
 
 add_action( 'air_helper_activated', __NAMESPACE__ . '\rebuild_taxonomies' );
 add_action( 'air_helper_activated', __NAMESPACE__ . '\rebuild_post_types' );
-
-/**
- * Show plugins and other menus for everyone
- */
-add_action( 'init', function() {
-  remove_filter( 'air_helper_helper_remove_admin_menu_links', 'air_helper_maybe_remove_plugins_from_admin_menu' );
-  add_filter( 'air_helper_disable_views_author', '__return_false' );
-} );
