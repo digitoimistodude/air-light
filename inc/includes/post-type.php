@@ -90,7 +90,7 @@ abstract class Post_Type {
   private function register_translations() {
     $translations = $this->translations;
 
-    add_filter( 'air_light_translations', function( $strings ) use( $translations ) {
+    add_filter( 'air_light_translations', function ( $strings ) use ( $translations ) {
       return array_merge( $translations, $strings );
     }, 10, 2 );
   }

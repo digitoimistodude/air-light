@@ -23,10 +23,10 @@ abstract class Taxonomy {
 	protected $slug;
 
 	/**
-   * Translations used in labels
-   * 
-   * @var array(string)
-   */
+     * Translations used in labels
+		 * 
+     * @var array(string)
+     */
   public $translations;
 
 
@@ -109,7 +109,7 @@ abstract class Taxonomy {
     $translations = $this->translations;
 
     add_filter( 'air_light_translations', function( $strings ) use( $translations ) {
-      return array_merge( $translations, $strings );
+      return array_merge ( $translations, $strings );
     }, 10, 2 );
   }
 }
