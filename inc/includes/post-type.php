@@ -80,7 +80,7 @@ abstract class Post_Type {
   public function ask__( $key, $value ) {
     $pll_key = "{$key}: {$value}";
     $this->translations[ $pll_key ] = $value;
-    if ( function_exists( "ask__" ) ) {
+    if ( function_exists( 'ask__' ) ) {
       return ask__( $pll_key );
     }
 
@@ -90,7 +90,7 @@ abstract class Post_Type {
   private function register_translations() {
     $translations = $this->translations;
 
-    add_filter( 'air_light_translations', function($strings) use($translations) {
+    add_filter( 'air_light_translations', function( $strings ) use( $translations ) {
       return array_merge( $translations, $strings );
     }, 10, 2 );
   }
