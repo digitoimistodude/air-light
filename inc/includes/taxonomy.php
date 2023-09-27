@@ -23,10 +23,10 @@ abstract class Taxonomy {
 	protected $slug;
 
 	/**
-   * Translations used in labels
-	 *
-   * @var array
-   */
+    * Translations used in labels
+	  *
+    * @var array
+    */
   public $translations;
 
 
