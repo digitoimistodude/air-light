@@ -33,7 +33,7 @@ abstract class Post_Type {
 
   /**
    * Translations used in labels
-   * 
+   *
    * @var array(string)
    */
   public $translations;
@@ -78,10 +78,10 @@ abstract class Post_Type {
 
   // Wrapper for ask__
   public function ask__( $key, $value ) {
-    $pllKey = "{$key}: {$value}";
-    $this->translations[ $pllKey ] = $value;
-    if ( function_exists("ask__") ) {
-      return ask__( $pllKey );
+    $pll_key = "{$key}: {$value}";
+    $this->translations[ $pll_key ] = $value;
+    if ( function_exists( "ask__" ) ) {
+      return ask__( $pll_key );
     }
 
     return $value;

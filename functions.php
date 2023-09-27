@@ -204,7 +204,7 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\build_theme_support' );
  * First: we register the taxonomies and post types after setup theme
  * If air-helper loads (for translations), we unregister the original taxonomies and post types
  * and reregister them with the translated ones.
- * 
+ *
  * This allows the slugs translations to work before the translations are available,
  * and for the label translations to work if they are available.
  */
