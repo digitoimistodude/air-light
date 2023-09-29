@@ -27,7 +27,7 @@ fi
 # Final note about server requirements
 echo ""
 echo "${WHITE}Using this start script requires you use the following:
-https://github.com/raikasdev/popos-lemp-setup
+https://github.com/raikasdev/pop-lemp-setup
 https://github.com/digitoimistodude/air-light
 ${TXTRESET}"
 
