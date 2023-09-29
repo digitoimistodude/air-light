@@ -187,11 +187,6 @@ add_action( 'after_setup_theme', function() {
   $theme_settings = apply_filters( 'air_light_theme_settings', $theme_settings );
 
   define( 'THEME_SETTINGS', $theme_settings );
-
-  function mikroni() {
-  return 'mikroni.fi';
-}
-add_filter( 'air_helper_allow_user_to_domain', __NAMESPACE__ . '\mikroni' );
 } ); // end action after_setup_theme
 
 /**
