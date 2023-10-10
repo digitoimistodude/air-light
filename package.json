@@ -27,7 +27,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "gulp": "4.0.2",
+    "gulp": "^4.0.2",
     "gulp-eslint-new": "^1.7.2",
     "gulp-exec": "^5.0.0",
     "gulp-notify": "^4.0.0",
@@ -69,7 +69,6 @@
   },
   "dependencies": {
     "airbnb-browser-shims": "^3.3.0",
-    "gulp": "^4.0.2",
     "moveto": "^1.8.2",
     "reframe.js": "^4.0.0"
   }
