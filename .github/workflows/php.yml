@@ -29,6 +29,7 @@ jobs:
       - name: Set up PHPCS and WordPress-Coding-Standards
         run: |
           composer global require --dev dealerdirect/phpcodesniffer-composer-installer
+          composer global config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
           composer global require --dev phpcsstandards/phpcsextra:"^1.1.0"
           composer global require phpcsstandards/phpcsutils:"^1.0"
           composer global require --dev wp-coding-standards/wpcs:"^3.0"
