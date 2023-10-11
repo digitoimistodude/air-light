@@ -2,6 +2,7 @@
 
 * Fix the permission issue with self-updater
 * Fix ACF element colors in Gutenberg editor
+* Add WOFF2 to variablefont mixin #194 (thanks @raikasdev!)
 
 ### 9.3.5: 2023-09-12
 
