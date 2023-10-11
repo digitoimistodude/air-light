@@ -7,7 +7,6 @@ name: PHP
 on: [push, pull_request]
 
 env:
-  PHPCS_DIR: /tmp/phpcs
   PHPCOMPAT_DIR: /tmp/phpcompatibility
   SNIFFS_DIR: /tmp/sniffs
   WPCS_DIR: /tmp/wpcs
@@ -24,19 +23,20 @@ jobs:
       - name: Setup PHP with Xdebug 2.x
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.2'
           coverage: xdebug2
 
       - name: Set up PHPCS and WordPress-Coding-Standards
         run: |
-          git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git $PHPCS_DIR
-          git clone -b 3.0.1 --depth 1 https://github.com/WordPress/WordPress-Coding-Standards.git $WPCS_DIR
-          $PHPCS_DIR/bin/phpcs --config-set installed_paths $WPCS_DIR,$PHPCOMPAT_DIR,$SNIFFS_DIR
+          composer global require --dev dealerdirect/phpcodesniffer-composer-installer
+          composer global require --dev phpcsstandards/phpcsextra:"^1.1.0"
+          composer global require phpcsstandards/phpcsutils:"^1.0"
+          composer global require --dev wp-coding-standards/wpcs:"^3.0"
           git clone -b master --depth 1 https://github.com/wimg/PHPCompatibility.git $PHPCOMPAT_DIR
 
       - name: Run PHPCS
         run: |
-          $PHPCS_DIR/bin/phpcs -p . --ignore=node_modules,*/css/*,*/sass/* --standard=phpcs.xml
+          phpcs -p . --ignore=node_modules,*/css/*,*/sass/* --standard=phpcs.xml
 
       - name: Test PHP for syntax errors
         run: find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
