@@ -8,7 +8,6 @@
     font-family: $family;
     font-style: $style;
     font-weight: $weight;
-    // IE support (WOFF) is unnecessary as it doesn't support variable fonts.
     src: url('#{$src}.woff2') format('woff2-variations'), url('#{$src}.ttf') format('truetype-variations');
   }
 }
