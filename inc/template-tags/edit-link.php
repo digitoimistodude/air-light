@@ -28,5 +28,4 @@ function air_edit_link() {
       </a>
     </p>
   <?php
-
 }

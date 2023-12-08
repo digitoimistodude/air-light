@@ -65,5 +65,4 @@ abstract class Post_Type {
 
     return register_post_type( $slug, $args );
   }
-
 }
