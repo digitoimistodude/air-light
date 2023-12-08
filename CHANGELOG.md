@@ -1,8 +1,17 @@
-### [Unreleased]
+### 9.3.6rc: 2023-12-08
 
 * Fix the permission issue with self-updater
 * Fix ACF element colors in Gutenberg editor
 * Add WOFF2 to variablefont mixin #194 (thanks @raikasdev!)
+* Fix the permission issue with self-updater
+* Fix ACF element colors in Gutenberg editor
+* Add WOFF2 to variablefont mixin #194 (thanks @raikasdev!)
+* Remove duplicate gulp dependency #204 (thanks @Nostalginen!)
+* Pop!_OS support for newtheme script #202 (thanks @raikasdev!)
+* Fix footer colors on WordPress.org theme preview, Closes #182 #200 (thanks @raikasdev!)
+* Clean up ACF Block load script if expression #199 (thanks @raikasdev!)
+* Fix PHP styling with new guidelines and fixed allowed blocks #198 (thanks @raikasdev!)
+* Remove package-lock.json from gitignore #197 (thanks @raikasdev!)
 
 ### 9.3.5: 2023-09-12
 
