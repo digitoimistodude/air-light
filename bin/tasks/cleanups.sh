@@ -21,5 +21,4 @@ rm ${PROJECT_THEME_PATH}/sass/layout/_wordpress.scss
 echo "${YELLOW}Remove things we need to remove anyway in each start...${TXTRESET}"
 rm ${PROJECT_THEME_PATH}/sass/layout/_site-footer.scss
 touch ${PROJECT_THEME_PATH}/sass/layout/_site-footer.scss
-rm ${PROJECT_THEME_PATH}/template-parts/header/demo-content.php
 rm -rf ${PROJECT_THEME_PATH}/template-parts/footer

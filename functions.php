@@ -137,8 +137,7 @@ add_action( 'after_setup_theme', function() {
     // Restrict to only selected blocks
     // Set the value to 'all' to allow all blocks everywhere
    'allowed_blocks' => [
-      'default' => [
-      ],
+      'default' => [],
       'post' => [
         'core/archives',
         'core/audio',

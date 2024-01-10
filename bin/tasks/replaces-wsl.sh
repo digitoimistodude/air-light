@@ -22,9 +22,11 @@ read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
 
 echo "${YELLOW}Running project gulp styles once...${TXTRESET}"
 cd ${PROJECT_PATH}
-gulp devstyles
-gulp prodstyles
+
+# NPX to try use the project gulp first (making sure we use right version)
+npx gulp devstyles
+npx gulp prodstyles
 
 echo "${YELLOW}Running project gulp scripts task once...${TXTRESET}"
 cd ${PROJECT_PATH}
-gulp js
+npx gulp js

@@ -54,5 +54,4 @@ class Your_Taxonomy extends Taxonomy {
 
     $this->register_wp_taxonomy( $this->slug, $post_types, $args );
   }
-
 }

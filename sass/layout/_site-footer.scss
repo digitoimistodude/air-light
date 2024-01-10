@@ -6,16 +6,13 @@
 // so feel free to remove everything in this file
 // and start over.
 .site-footer {
+  // Making sure the footer background is white, even on WordPress.org
+  background-color: var(--color-white);
   clear: both;
-  color: var(--color-white);
+  color: var(--color-paragraph);
   overflow: hidden;
   padding: 6rem 2rem;
   text-align: center;
-
-  p,
-  span {
-    color: var(--color-white);
-  }
 
   .wordpress-logo {
     display: block;
@@ -49,23 +46,9 @@
     position: relative;
   }
 
-  a {
-    color: var(--color-white);
-    transition: opacity $transition-duration;
-
-    &:hover,
-    &:focus {
-      color: var(--color-white);
-      opacity: .5;
-
-      &::after {
-        opacity: .2;
-      }
-    }
-  }
-
   .theme-info {
     align-items: center;
+    color: var(--color-paragraph);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

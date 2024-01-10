@@ -8,6 +8,6 @@
     font-family: $family;
     font-style: $style;
     font-weight: $weight;
-    src: url('#{$src}.ttf') format("truetype-variations");
+    src: url('#{$src}.woff2') format('woff2-variations'), url('#{$src}.ttf') format('truetype-variations');
   }
 }
