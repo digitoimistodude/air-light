@@ -23,7 +23,7 @@ add_filter( 'air_helper_pll_register_strings', function() {
   // $strings[ "Accessibility: {$key}" ] = $value;
   // }
 
-  return $strings;
+  return apply_filters( 'air_light_translations', $strings );
 } );
 
 function get_default_localization_strings( $language = 'en' ) {

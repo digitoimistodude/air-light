@@ -2,8 +2,8 @@
 /**
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:23
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-03-31 14:50:32
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2024-01-10 15:35:17
  *
  * @package air-light
  */
@@ -16,24 +16,31 @@ namespace Air_Light;
 abstract class Taxonomy {
 
 	/**
-	 * Taxonomy slug or name.
+	 * Taxonomy slug or name
 	 *
 	 * @var string
 	 */
 	protected $slug;
 
+	/**
+	 * Translations used in labels
+	 *
+	 * @var array(string)
+	 */
+  public $translations;
 
 	public function __construct( $slug ) {
 		$this->slug = $slug;
+		$this->translations = [];
 	}
 
 	/**
-	 * Register taxonomy handler.
+	 * Register taxonomy handler
 	 */
 	abstract protected function register();
 
 	/**
-	 * Registers a custom taxonomy in WordPress.
+	 * Registers a custom taxonomy in WordPress
 	 *
 	 * @param  string $slug Taxonomy slug. Should only contain lowercase letters
 	 *                      and the underscore character, and not be more than
@@ -58,13 +65,14 @@ abstract class Taxonomy {
 			}
 		}, $object_types );
 
-    if ( $args['pll_translatable'] ) {
+    if ( $args['pll_translatable'] && false === $args['public'] ) {
       add_filter( 'pll_get_taxonomies', function( $cpts ) use ( $slug ) {
         $cpts[ $slug ] = $slug;
         return $cpts;
       } );
     }
 
+		$this->register_translations();
 		register_taxonomy( $slug, $object_types_slugs, $args );
 
 		// Note from the Codex: "Better be safe than sorry when registering
@@ -84,4 +92,23 @@ abstract class Taxonomy {
 
 		return $registered_object_types;
 	}
+
+	// Wrapper for ask__
+  public function ask__( $key, $value ) {
+    $pll_key = "{$key}: {$value}";
+    $this->translations[ $pll_key ] = $value;
+    if ( function_exists( 'ask__' ) ) {
+      return ask__( $pll_key );
+    }
+
+    return $value;
+  }
+
+  private function register_translations() {
+    $translations = $this->translations;
+
+    add_filter( 'air_light_translations', function ( $strings ) use ( $translations ) {
+      return array_merge( $translations, $strings );
+    }, 10, 2 );
+  }
 }

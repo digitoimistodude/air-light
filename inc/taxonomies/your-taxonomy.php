@@ -22,20 +22,20 @@ class Your_Taxonomy extends Taxonomy {
   public function register( array $post_types = [] ) {
     // Taxonomy labels.
     $labels = [
-      'name'                  => _x( 'Your Taxonomies', 'Taxonomy plural name', 'air-light' ),
-      'singular_name'         => _x( 'Your Taxonomy', 'Taxonomy singular name', 'air-light' ),
-      'search_items'          => __( 'Search Your Taxonomies', 'air-light' ),
-      'popular_items'         => __( 'Popular Your Taxonomies', 'air-light' ),
-      'all_items'             => __( 'All Your Taxonomies', 'air-light' ),
-      'parent_item'           => __( 'Parent Your Taxonomy', 'air-light' ),
-      'parent_item_colon'     => __( 'Parent Your Taxonomy', 'air-light' ),
-      'edit_item'             => __( 'Edit Your Taxonomy', 'air-light' ),
-      'update_item'           => __( 'Update Your Taxonomy', 'air-light' ),
-      'add_new_item'          => __( 'Add New Your Taxonomy', 'air-light' ),
-      'new_item_name'         => __( 'New Your Taxonomy', 'air-light' ),
-      'add_or_remove_items'   => __( 'Add or remove Your Taxonomies', 'air-light' ),
-      'choose_from_most_used' => __( 'Choose from most used Taxonomies', 'air-light' ),
-      'menu_name'             => __( 'Your Taxonomy', 'air-light' ),
+      'name'                  => self::ask__( 'Your Taxonomy', 'Taxonomy plural name' ),
+      'singular_name'         => self::ask__( 'Your Taxonomy', 'Taxonomy singular name' ),
+      'search_items'          => self::ask__( 'Your Taxonomy', 'Search Your Taxonomies' ),
+      'popular_items'         => self::ask__( 'Your Taxonomy', 'Popular Your Taxonomies' ),
+      'all_items'             => self::ask__( 'Your Taxonomy', 'All Your Taxonomies' ),
+      'parent_item'           => self::ask__( 'Your Taxonomy', 'Parent Your Taxonomy' ),
+      'parent_item_colon'     => self::ask__( 'Your Taxonomy', 'Parent Your Taxonomy' ),
+      'edit_item'             => self::ask__( 'Your Taxonomy', 'Edit Your Taxonomy' ),
+      'update_item'           => self::ask__( 'Your Taxonomy', 'Update Your Taxonomy' ),
+      'add_new_item'          => self::ask__( 'Your Taxonomy', 'Add New Your Taxonomy' ),
+      'new_item_name'         => self::ask__( 'Your Taxonomy', 'New Your Taxonomy' ),
+      'add_or_remove_items'   => self::ask__( 'Your Taxonomy', 'Add or remove Your Taxonomies' ),
+      'choose_from_most_used' => self::ask__( 'Your Taxonomy', 'Choose from most used Taxonomies' ),
+      'menu_name'             => self::ask__( 'Your Taxonomy', 'Your Taxonomy' ),
     ];
 
     $args = [
