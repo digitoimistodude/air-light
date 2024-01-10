@@ -244,11 +244,6 @@ class Nav_Walker extends \Walker_Nav_Menu {
 			}
 		}
 
-    // If has hash in the beginning of href attribute, add class js-trigger
-    if ( '#' === substr( $atts['href'], 0, 1 ) ) {
-      $atts['class'] .= ' js-trigger';
-    }
-
     // Aria current
     $atts['aria-current'] = $item->current ? 'page' : '';
 

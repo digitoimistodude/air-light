@@ -1,4 +1,4 @@
-### 9.3.6rc: 2024-01-10
+### 9.3.6: 2024-01-10
 
 * Fix the permission issue with self-updater
 * Fix ACF element colors in Gutenberg editor
@@ -20,6 +20,8 @@
 * Merge pull request #211 from digitoimistodude/dependabot/npm_and_yarn/axios-and-browser-sync--removed
 * Remove deprecated number-leading-zero rule
 * Add reset for img
+* Fix a regression with anchors not working when target not found, use in all hashs not just with js-trigger class
+* Bump WordPress to 6.4.2
 
 ### 9.3.5: 2023-09-12
 
