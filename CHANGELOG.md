@@ -18,6 +18,8 @@
 * Merge pull request #207 from digitoimistodude/dependabot/npm_and_yarn/postcss-8.4.31
 * Merge pull request #210 from digitoimistodude/dependabot/npm_and_yarn/follow-redirects-1.15.4
 * Merge pull request #211 from digitoimistodude/dependabot/npm_and_yarn/axios-and-browser-sync--removed
+* Remove deprecated number-leading-zero rule
+* Add reset for img
 
 ### 9.3.5: 2023-09-12
 
