@@ -54,8 +54,8 @@ rm /var/www/airdev/content/themes/air-light/inc/includes/post-type.php
 # Screenshot, related to: https://themes.trac.wordpress.org/ticket/100180#comment:2
 mv /var/www/airdev/content/themes/air-light/screenshot.png $HOME/air-temp/
 cd /var/www/airdev/content/themes/air-light/
-wget https://i.imgur.com/idVvQKv.png
-mv -v idVvQKv.png screenshot.png
+wget https://storage.googleapis.com/dude-dropshare/dKdyP0MyhiVPKL3GkDvNi8VTLWComTdxuUiHVbdjGoVNgyTNrVpNFlgrWRQ1QI5gwLgbWaXHY0ZzXCkEbJD9PFQrV4W4Etby2OTa.png
+mv -v dKdyP0MyhiVPKL3GkDvNi8VTLWComTdxuUiHVbdjGoVNgyTNrVpNFlgrWRQ1QI5gwLgbWaXHY0ZzXCkEbJD9PFQrV4W4Etby2OTa.png screenshot.png
 
 # Moving to bin dir
 cd $HOME/air-temp/bin
