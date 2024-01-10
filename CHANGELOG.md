@@ -1,4 +1,4 @@
-### 9.3.6rc: 2023-12-08
+### 9.3.6rc: 2024-01-10
 
 * Fix the permission issue with self-updater
 * Fix ACF element colors in Gutenberg editor
@@ -12,6 +12,12 @@
 * Clean up ACF Block load script if expression #199 (thanks @raikasdev!)
 * Fix PHP styling with new guidelines and fixed allowed blocks #198 (thanks @raikasdev!)
 * Remove package-lock.json from gitignore #197 (thanks @raikasdev!)
+* Add translation support for Custom Post Types and taxonomies #201 (thanks @raikasdev!)
+* Update package: follow-redirects from 1.15.3 to 1.15.4
+* Merge pull request #208 from digitoimistodude/dependabot/npm_and_yarn/babel/traverse-7.23.5
+* Merge pull request #207 from digitoimistodude/dependabot/npm_and_yarn/postcss-8.4.31
+* Merge pull request #210 from digitoimistodude/dependabot/npm_and_yarn/follow-redirects-1.15.4
+* Merge pull request #211 from digitoimistodude/dependabot/npm_and_yarn/axios-and-browser-sync--removed
 
 ### 9.3.5: 2023-09-12
 
