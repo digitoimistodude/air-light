@@ -2,8 +2,8 @@
 /**
  * @Author: Niku Hietanen
  * @Date: 2020-02-18 15:06:23
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-03-31 14:50:32
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2024-01-10 15:35:17
  *
  * @package air-light
  */
@@ -16,19 +16,18 @@ namespace Air_Light;
 abstract class Taxonomy {
 
 	/**
-	 * Taxonomy slug or name.
+	 * Taxonomy slug or name
 	 *
 	 * @var string
 	 */
 	protected $slug;
 
 	/**
-   * Translations used in labels
-   *
-   * @var array(string)
-   */
+	 * Translations used in labels
+	 *
+	 * @var array(string)
+	 */
   public $translations;
-
 
 	public function __construct( $slug ) {
 		$this->slug = $slug;
@@ -36,12 +35,12 @@ abstract class Taxonomy {
 	}
 
 	/**
-	 * Register taxonomy handler.
+	 * Register taxonomy handler
 	 */
 	abstract protected function register();
 
 	/**
-	 * Registers a custom taxonomy in WordPress.
+	 * Registers a custom taxonomy in WordPress
 	 *
 	 * @param  string $slug Taxonomy slug. Should only contain lowercase letters
 	 *                      and the underscore character, and not be more than
