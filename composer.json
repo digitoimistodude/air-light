@@ -1,0 +1,11 @@
+{
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/php-compatibility": "*"
+    }
+}
