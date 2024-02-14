@@ -100,10 +100,12 @@
         <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction" />
         <exclude name="WordPress.PHP.DisallowShortTernary.Found" />
         <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
 
         <!-- Whitespace rules -->
         <exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found" />
         <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
+        <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
 
         <!-- Project based -->
         <exclude name="Squiz.PHP.CommentedOutCode.Found" />
