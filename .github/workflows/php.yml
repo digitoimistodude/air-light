@@ -1,7 +1,7 @@
 # @Author: Roni Laukkarinen
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2024-02-14 17:14:59
+# @Last Modified time: 2024-02-14 17:15:37
 name: PHP
 
 on: [push, pull_request]
@@ -38,7 +38,7 @@ jobs:
 
     - name: Run PHP_CodeSniffer
       run: |
-        vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules,src,*/css/*,*/sass/* --standard=phpcs.xml
+        vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules,src,js,css,sass --standard=phpcs.xml
 
     - name: Test PHP for syntax errors
       run: find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
