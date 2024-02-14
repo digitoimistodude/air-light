@@ -1,3 +1,8 @@
+### 9.4.0rc: 2024-02-14
+
+* Update unit tests for WordPress Coding Standards 3.0.1
+* Prepare for PHP version 8.3
+
 ### 9.3.6: 2024-01-10
 
 * Fix the permission issue with self-updater
