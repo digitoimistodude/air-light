@@ -335,22 +335,55 @@ PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPre
 
 The golden rule here is to make sure the commands `stylelint`, `eslint` and `phpcs` work from command line.
 
-#### How to install for Gulp
+#### How to install PHP_CodeSniffer with WordPress Coding Standards for Gulp
 
-1. `mkdir -p ~/Projects && cd ~/Projects && git clone -b master --depth 1 https://github.com/squizlabs/PHP_CodeSniffer.git phpcs`
-2. `git clone -b master https://github.com/PHPCompatibility/PHPCompatibility`
-3. `git clone -b master --depth 1 https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards.git wpcs`
-4. **Please note: Replace _yourusername_ name with your actual user name!** `sudo ln -s /Users/rolle/Projects/phpcs/bin/phpcs /usr/local/bin/phpcs`
-5. `sudo chmod +x /usr/local/bin/phpcs`
-6. **Please note: Replace _yourusername_ name with your actual user name!** `phpcs --config-set installed_paths "/Users/rolle/Projects/wpcs","/Users/rolle/Projects/PHPCompatibility"`
-7. Test your standards with `phpcs -i`, it should display something like this:
+This tutorial is based on the official instructions in [WordPress-Coding-Standards](https://github.com/WordPress/WordPress-Coding-Standards) and can be found also in our Internal handbook [How to install the latest PHP_CodeSniffers with latest WordPress-Coding-Standards](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/servers/scripts-and-automation/upgrade-php-to-a-new-version/scan-wordpress-sites-files-for-php-version-compatibility-e.-g.-php-8.3) (private)
 
-```bash $ phpcs -i
-The installed coding standards are PEAR, Zend, PSR2, MySource, Squiz, PSR1, PSR12, PHPCompatibility, WordPress, WordPress-Extra, WordPress-Docs and WordPress-Core
+First, remove the old phpcs installation if you have one:
+
+```bash
+sudo rm /usr/local/bin/phpcs
 ```
 
-8. `npm i stylelint eslint -g`
-9. Check that other linters work: `stylelint -v`, `eslint -v`
+Then go to home (not _really yet_, just on your command line, lol):
+
+```bash
+cd $HOME
+```
+
+Then, install phpcs + WPCS via [composer](https://getcomposer.org/):
+
+```bash
+composer global config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
+composer global require --dev wp-coding-standards/wpcs:"^3.0"
+```
+
+Symlink globally:
+
+```bash
+sudo ln -s $HOME/.composer/vendor/bin/phpcs /usr/local/bin/phpcs
+sudo chmod +x /usr/local/bin/phpcs
+```
+
+Get PHPCompatibility package:
+
+```bash
+composer global require --dev phpcompatibility/php-compatibility:"*"
+```
+
+Test it works:
+
+```bash
+phpcs -i
+```
+
+Output should read:
+
+```bash
+The installed coding standards are MySource, PEAR, PSR1, PSR2, PSR12, Squiz, Zend, PHPCompatibility, Modernize, NormalizedArrays, Universal, PHPCSUtils, WordPress, WordPress-Core, WordPress-Docs and WordPress-Extra
+```
+
+Check that other linters work: `stylelint -v`, `eslint -v`
 
 #### For your editor
 
