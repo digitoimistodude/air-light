@@ -3,6 +3,7 @@
 * Update unit tests for WordPress Coding Standards 3.0.1
 * Prepare for PHP version 8.3
 * Allow short array syntax for WPCS 3.0.1
+* Fix accessibility strings always getting english versions if set to be translated via polylang
 
 ### 9.3.6: 2024-01-10
 

@@ -2,8 +2,8 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2019-12-03 11:03:31
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-29 19:05:36
+ * @Last Modified by:   Elias Kautto
+ * @Last Modified time: 2024-02-15 16:15:48
  *
  * @package air-light
  */
@@ -19,7 +19,7 @@ add_filter( 'air_helper_pll_register_strings', function() {
    * Uncomment if you need to have default air-light accessibility strings
    * translatable via Polylang string translations.
    */
-  // foreach ( get_default_localization_strings() as $key => $value ) {
+  // foreach ( get_default_localization_strings( get_bloginfo( 'language' ) ) as $key => $value ) {
   // $strings[ "Accessibility: {$key}" ] = $value;
   // }
 
