@@ -38,4 +38,4 @@ jobs:
 
     - name: Run PHP_CodeSniffer
       run: |
-        vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules,src,js,css,sass --runtime-set testVersion 8.3
+        vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules,src,js,css,sass --standard=PHPCompatibility --runtime-set testVersion 8.3
