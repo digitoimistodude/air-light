@@ -40,5 +40,9 @@ jobs:
       run: |
         vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules,src,js,css,sass --standard=phpcs.xml
 
+    - name: Test for PHP8.3 compatibility
+      run: |
+        vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules,src,js,css,sass --standard=PHPCompatibility --runtime-set testVersion 8.3
+
     - name: Test PHP for syntax errors
       run: find -L . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l

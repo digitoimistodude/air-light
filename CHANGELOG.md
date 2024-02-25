@@ -4,6 +4,8 @@
 * Prepare for PHP version 8.3
 * Allow short array syntax for WPCS 3.0.1
 * Fix accessibility strings always getting english versions if set to be translated via polylang
+* Merge pull request #212 from digitoimistodude/dependabot/npm_and_yarn/ip-2.0.1
+* Add unit tests for PHPCompatibility
 
 ### 9.3.6: 2024-01-10
 
@@ -32,7 +34,7 @@
 
 ### 9.3.5: 2023-09-12
 
-* Use semver + date in newtheme.sh start script
+* Use semver + date in newtheme.sh startscript
 * Add self-updater to the start script
 
 ### 9.3.4: 2023-09-07
