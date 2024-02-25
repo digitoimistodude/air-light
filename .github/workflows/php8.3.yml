@@ -2,7 +2,7 @@
 # @Date:   2023-02-15 17:39:37
 # @Last Modified by:   Roni Laukkarinen
 # @Last Modified time: 2024-02-14 17:15:37
-name: PHP
+name: PHP 8.3 compatibility
 
 on: [push, pull_request]
 
