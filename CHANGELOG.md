@@ -6,6 +6,8 @@
 * Fix accessibility strings always getting english versions if set to be translated via polylang
 * Merge pull request #212 from digitoimistodude/dependabot/npm_and_yarn/ip-2.0.1
 * Add unit tests for PHPCompatibility
+* Upgrade PHP version in use to PHP 8.3
+* Require PHP 8.3
 
 ### 9.3.6: 2024-01-10
 

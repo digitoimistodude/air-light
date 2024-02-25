@@ -12,7 +12,7 @@ echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
 NEWEST_AIR_VERSION="9.3.6"
 NEWEST_WORDPRESS_VERSION="6.4.2"
-NEWEST_PHP_VERSION="7.4"
+NEWEST_PHP_VERSION="8.3"
 CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
 echo "# ${PROJECT_NAME}
 ![based_on_air_version ${NEWEST_AIR_VERSION}_](https://img.shields.io/badge/based_on_air_version-${NEWEST_AIR_VERSION}_-brightgreen.svg?style=flat-square) ![project_created ${CURRENT_DATE}](https://img.shields.io/badge/project_created-${CURRENT_DATE}-blue.svg?style=flat-square) ![Tested_up_to WordPress_${NEWEST_WORDPRESS_VERSION}](https://img.shields.io/badge/Tested_up_to-WordPress_${NEWEST_WORDPRESS_VERSION}-blue.svg?style=flat-square) ![Compatible_with PHP_${NEWEST_PHP_VERSION}](https://img.shields.io/badge/Compatible_with-PHP_${NEWEST_PHP_VERSION}-green.svg?style=flat-square)
