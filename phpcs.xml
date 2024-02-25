@@ -126,4 +126,8 @@
             <property name="is_theme" value="true" />
         </properties>
     </rule>
+
+    <!-- Include sniffs for PHP cross-version compatibility. -->
+    <config name="testVersion" value="8.3"/>
+    <rule ref="PHPCompatibility"/>
 </ruleset>

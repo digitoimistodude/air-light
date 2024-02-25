@@ -1,4 +1,4 @@
-### 9.4.0rc: 2024-02-14
+### 9.4.0rc: 2024-02-25
 
 * Update unit tests for WordPress Coding Standards 3.0.1
 * Prepare for PHP version 8.3
@@ -7,8 +7,9 @@
 * Merge pull request #212 from digitoimistodude/dependabot/npm_and_yarn/ip-2.0.1
 * Add unit tests for PHPCompatibility
 * Upgrade PHP version in use to PHP 8.3
-* Require PHP 8.3
 * Unit tests: Separately test for PHP 8.3 support
+* Fix PHPCompatibility.TextStrings.RemovedDollarBraceStringEmbeds.DeprecatedVariableSyntax
+* Bump WordPress to 6.4.2
 
 ### 9.3.6: 2024-01-10
 

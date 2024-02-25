@@ -106,5 +106,5 @@ function get_asset_file( $filename ) {
 
   $filetype = pathinfo( $filename )['extension'];
 
-  return "${filetype}/${env}/${filename}";
+  return "{$filetype}/{$env}/{$filename}";
 } // end get_asset_file
