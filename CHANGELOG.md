@@ -8,6 +8,7 @@
 * Add unit tests for PHPCompatibility
 * Upgrade PHP version in use to PHP 8.3
 * Require PHP 8.3
+* Unit tests: Separately test for PHP 8.3 support
 
 ### 9.3.6: 2024-01-10
 

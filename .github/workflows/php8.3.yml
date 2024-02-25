@@ -1,0 +1,41 @@
+# @Author: Roni Laukkarinen
+# @Date:   2023-02-15 17:39:37
+# @Last Modified by:   Roni Laukkarinen
+# @Last Modified time: 2024-02-14 17:15:37
+name: PHP
+
+on: [push, pull_request]
+
+env:
+  PHPCS_DIR: /tmp/phpcs
+  PHPCOMPAT_DIR: /tmp/phpcompatibility
+  SNIFFS_DIR: /tmp/sniffs
+  WPCS_DIR: /tmp/wpcs
+
+jobs:
+  build:
+    name: Test for PHP 8.3 support
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v3
+
+    - name: Setup PHP with Xdebug 2.x
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.3'
+        coverage: xdebug2
+
+    - name: Set up PHPCS and WordPress-Coding-Standards
+      uses: php-actions/composer@v6
+      env:
+        COMPOSER: "composer.json"
+      with:
+        php_version: "8.3"
+        version: "2.3.7"
+        args: "--ignore-platform-reqs --optimize-autoloader"
+
+    - name: Run PHP_CodeSniffer
+      run: |
+        vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules,src,js,css,sass --runtime-set testVersion 8.3
