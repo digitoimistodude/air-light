@@ -5,7 +5,7 @@
     }
   },
   "require-dev": {
-    "wp-coding-standards/wpcs": "^2.3.0",
+    "wp-coding-standards/wpcs": "^3.0",
     "phpcompatibility/php-compatibility": "dev-develop as 9.3.5",
     "phpcsstandards/phpcsutils": "^1.0",
     "squizlabs/php_codesniffer": "*",
