@@ -1,4 +1,4 @@
-### 9.4.0rc: 2024-02-25
+### 9.4.0: 2024-02-26
 
 * Update unit tests for WordPress Coding Standards 3.0.1
 * Prepare for PHP version 8.3
