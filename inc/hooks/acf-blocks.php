@@ -2,14 +2,14 @@
 /**
  * @Author: Timi Wahalahti
  * @Date:   2021-05-11 14:34:14
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-05-26 13:06:36
+ * @Last Modified by:   Roni Laukkarinen
+ * @Last Modified time: 2024-02-26 13:32:38
  * @package air-light
  */
 
 namespace Air_Light;
 
-function acf_blocks_add_category_in_gutenberg( $categories, $post ) {
+function acf_blocks_add_category_in_gutenberg( $categories, $post ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
   return array_merge( $categories, [
     [
       'slug'  => 'air-light',
