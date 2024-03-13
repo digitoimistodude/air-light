@@ -234,11 +234,7 @@ Air has a sticky navigation baked in.
 
 ##### How to enable
 
-You can enable the navigation by
-
-1. Adding sticky-nav.js to your gulpfile (already included with [Devpackages](https://github.com/digitoimistodude/devpackages) and bin/newtheme.sh start script)
-2. Uncommeting sticky-nav import in global.scss
-3. Restart gulp and save scripts.js once to compile working combined javascript file
+You can enable the sticky navigation by uncommenting navSticky() in the js/src/front-end.js file.
 
 #### WooCommerce support
 

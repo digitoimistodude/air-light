@@ -10,7 +10,9 @@ import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import initA11ySkipLink from './modules/a11y-skip-link';
 import initA11yFocusSearchField from './modules/a11y-focus-search-field';
-import { navDesktop, navClick, navMobile } from './modules/navigation';
+import {
+  navSticky, navClick, navDesktop, navMobile,
+} from './modules/navigation';
 
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
@@ -30,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
   navDesktop();
   // navClick();
   navMobile();
+
+  // Uncomment if you like to use a sticky navigation
+  // navSticky();
 
   // Fit video embeds to container
   reframe('.wp-has-aspect-ratio iframe');

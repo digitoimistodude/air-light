@@ -1,3 +1,7 @@
+### 9.4.1rc: 2024-03-13
+
+* Clarify sticky nav functionality presented in 7.9.1, Fixes #213 (thanks @semidivine!)
+
 ### 9.4.0: 2024-02-26
 
 * Update unit tests for WordPress Coding Standards 3.0.1
