@@ -37,7 +37,7 @@
 * Merge pull request #211 from digitoimistodude/dependabot/npm_and_yarn/axios-and-browser-sync--removed
 * Remove deprecated number-leading-zero rule
 * Add reset for img
-* Fix a regression with anchors not working when target not found, use in all hashs not just with js-trigger class
+* Fix a regression with anchors not working when target not found, use in all hashes not just with js-trigger class
 * Bump WordPress to 6.4.2
 
 ### 9.3.5: 2023-09-12
@@ -182,7 +182,7 @@
 
 * Fix incorrect textdomain in external-link JS module
 * Simplify CPT and taxonomy registration by using the class name also as a slug (Merge pull request #158 from digitoimistodude/cpt-tax-register-simplification, kudos to @timiwahalahti)
-* Remove what-input depenency, use :focus and :focus-within instead, remove forced focus outline-color
+* Remove what-input dependency, use :focus and :focus-within instead, remove forced focus outline-color
 * Bump tested up WordPress version to 6.1
 
 ### 9.2.1: 2022-10-28
@@ -231,10 +231,10 @@
 * Fix acf icons visibility issue
 * Fix link colors in sidebar
 * Add default font-family for form select items
-* Remove opionated label font-weight
-* Remove opionated nav default dropshadow from sub menus
-* Remove opionated nav default border-color from sub menus
-* Remove opionated bubble tip from sub menus
+* Remove opinionated label font-weight
+* Remove opinionated nav default dropshadow from sub menus
+* Remove opinionated nav default border-color from sub menus
+* Remove opinionated bubble tip from sub menus
 
 ### 9.1.4: 2022-09-07
 
@@ -503,7 +503,7 @@
 
 * Open submenus on the left if the nav items go over the viewport, Fixes #5
 * Added $is_preview and $post_id to be always handed over to block template
-* Create empty inc/functions directory for custom funtions
+* Create empty inc/functions directory for custom functions
 
 ### 8.2.4: 2021-12-03
 
@@ -578,7 +578,7 @@
 
 * Devpackages 2.3.7: Change back from @ronilaukkarinen/stylelint-declaration-strict-value@1.7.13 to official stylelint-declaration-strict-value@1.8.0
 * Devpackages 2.3.7: Fix rule for declaration-strict-value
-* Devpackages 2.3.7: Upgade to webpack 5
+* Devpackages 2.3.7: Upgrade to webpack 5
 * Devpackages 2.3.7: Update packages
 
 ### 8.1.1: 2021-11-05
