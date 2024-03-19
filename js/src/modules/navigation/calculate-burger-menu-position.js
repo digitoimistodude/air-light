@@ -47,10 +47,10 @@ function calculateBurgerMenuPosition() {
       // When air-notification is closed, recalculate the height of menu-items-wrapper
       airNotifications.forEach((airNotification) => {
         const button = airNotification.querySelector('button');
-        const currenNotificationHeight = airNotification.offsetHeight;
+        const currentNotificationHeight = airNotification.offsetHeight;
         if (button) {
           button.addEventListener('click', () => {
-            airNotificationsHeight -= currenNotificationHeight;
+            airNotificationsHeight -= currentNotificationHeight;
             document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight + airNotificationsHeight}px)`;
             document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight + airNotificationsHeight}px`;
           });

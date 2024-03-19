@@ -41,7 +41,7 @@ This project is hand made for customer by Dude.
 
 ## Getting started
 
-Your local server should be up and running. If you need help, ask your superviser or refer to **[Internal Development Docs](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/)** → **[Joining the project later on](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/project-stages/joining-the-project-later-on)**.
+Your local server should be up and running. If you need help, ask your supervisor or refer to **[Internal Development Docs](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/)** → **[Joining the project later on](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/project-stages/joining-the-project-later-on)**.
 
 ### Installation
 

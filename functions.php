@@ -63,7 +63,7 @@ add_action( 'after_setup_theme', function() {
     ],
 
     /**
-     * All links are cheked with JS, if those direct to external site and if,
+     * All links are checked with JS, if those direct to external site and if,
      * indicator of that is included. Exclude domains from that check in this array.
      */
     'external_link_domains_exclude' => [
