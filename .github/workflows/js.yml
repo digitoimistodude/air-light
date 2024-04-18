@@ -39,6 +39,5 @@ jobs:
 
     - name: Run eslint
       run: |
-        npm ci
-        npm link eslint --ignore-scripts
-        npx eslint -c .eslintrc.js js/src/
+        npm i eslint@8.18.0 --save-dev
+        eslint -c .eslintrc.js js/src/
