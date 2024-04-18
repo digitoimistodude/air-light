@@ -34,4 +34,4 @@ jobs:
         npm i reframe.js@^4.0.0 --save
         npm i
         npm i eslint@8.18.0 --save-dev
-        eslint -c .eslintrc.js js/src/
+        npx eslint -c .eslintrc.js js/src/
