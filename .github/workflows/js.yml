@@ -41,4 +41,4 @@ jobs:
       run: |
         npm ci
         npm link eslint --ignore-scripts
-        npx eslint .
+        npx eslint -c .eslintrc.js js/src/
