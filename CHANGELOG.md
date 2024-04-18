@@ -1,7 +1,7 @@
 ### 9.4.1: 2024-04-18
 
 * Clarify sticky nav functionality presented in 7.9.1, Fixes #213 (thanks @semidivine!)
-* Release version 1.1.4 of the `newthem` starting script: Use phpcs.xml from devpackages 2.5.6 (2024-04-18)
+* Release version 1.1.4 of the `newtheme` starting script: Use phpcs.xml from devpackages 2.5.6 (2024-04-18)
 * Bump tested WordPress version to 6.5.2
 
 ### 9.4.0: 2024-02-26
