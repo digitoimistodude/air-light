@@ -17,3 +17,4 @@ sed -e "s/\THEMENAME/${THEME_NAME}/" -e "s/\THEMENAME/${THEME_NAME}/" -e "s/\THE
 rm ${PROJECT_PATH}/gulp/config.js
 sed -e "s/\PROJECTNAME/${PROJECT_NAME}/" -e "s/\PROJECTNAME/${PROJECT_NAME}/" -e "s/\PROJECTNAME/${PROJECT_NAME}/" ${PROJECT_PATH}/gulp/config2.js > ${PROJECT_PATH}/gulp/config.js
 rm ${PROJECT_PATH}/gulp/config2.js
+sed -e "s/\PROJECTNAME/${PROJECT_NAME}/" ${PROJECT_PATH}/devpackages/phpcs.xml > ${PROJECT_PATH}/phpcs.xml

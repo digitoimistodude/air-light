@@ -1,6 +1,8 @@
-### 9.4.1rc: 2024-03-13
+### 9.4.1: 2024-04-18
 
 * Clarify sticky nav functionality presented in 7.9.1, Fixes #213 (thanks @semidivine!)
+* Release version 1.1.4 of the `newthem` starting script: Use phpcs.xml from devpackages 2.5.6 (2024-04-18)
+* Bump tested WordPress version to 6.5.2
 
 ### 9.4.0: 2024-02-26
 
@@ -1032,7 +1034,7 @@ This release includes only form style and accessibility improvements.
 
 * Add Laragon support #92 (thank you @divn!)
 * New theme script dependencies partial: Gulp styles to later stage
-* Release version 1.0.5 of newtheme starting scripts
+* Release version 1.0.5 of newtheme starting scripts 
 
 ### 7.1.3: 2021-04-15
 
