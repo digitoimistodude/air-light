@@ -1,3 +1,7 @@
+### 9.4.2rc: 2024-06-05
+
+* Fix typos #216 (thanks @szepeviktor!)
+
 ### 9.4.1: 2024-04-18
 
 * Clarify sticky nav functionality presented in 7.9.1, Fixes #213 (thanks @semidivine!)
