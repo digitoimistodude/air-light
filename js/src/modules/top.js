@@ -54,7 +54,7 @@ const backToTop = () => {
       // Don't add hash in the end of the url
       event.preventDefault();
 
-      // Focus without visiblity (as user is not using keyboard)
+      // Focus without visibility (as user is not using keyboard)
       scroll(false);
     });
 
