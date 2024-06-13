@@ -1,6 +1,7 @@
-### 9.4.2rc: 2024-06-05
+### 9.4.2: 2024-06-13
 
 * Fix typos #216 (thanks @szepeviktor!)
+* Add is-external-link helper class to external links
 
 ### 9.4.1: 2024-04-18
 
