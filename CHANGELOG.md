@@ -2,6 +2,7 @@
 
 * Fix typos #216 (thanks @szepeviktor!)
 * Add is-external-link helper class to external links
+* Bump tested WordPress version to 6.5.4
 
 ### 9.4.1: 2024-04-18
 
