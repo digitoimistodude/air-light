@@ -1,8 +1,9 @@
-### Unreleased
+### 9.4.3: 2024-09-06
 
 * Fix navigation rules leaking to other navs, Fixes T-1644
 * Remove obsolete fileheader information from all files for consistency, Fixes T-13958
 * Fix phpcs errors
+* Exclude vendor dir in gulp-phpcs
 
 ### 9.4.2: 2024-06-13
 
