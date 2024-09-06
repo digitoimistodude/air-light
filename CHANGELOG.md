@@ -4,6 +4,7 @@
 * Remove obsolete fileheader information from all files for consistency, Fixes T-13958
 * Fix phpcs errors
 * Exclude vendor dir in gulp-phpcs
+* Bump tested WordPress version to 6.6.1
 
 ### 9.4.2: 2024-06-13
 
