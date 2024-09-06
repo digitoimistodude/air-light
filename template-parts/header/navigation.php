@@ -2,11 +2,6 @@
 /**
  * Navigation layout.
  *
- * @Author: Roni Laukkarinen
- * @Date: 2020-05-11 13:22:26
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-02-17 10:31:08
- *
  * @package air-light
  */
 

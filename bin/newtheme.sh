@@ -1,9 +1,5 @@
 #!/bin/bash
 # WordPress theme starting bash script for Air-light
-# @Author: Roni Laukkarinen
-# @Date:   2021-04-22 08:06:02
-# @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2021-11-25 13:22:53
 
 # Script specific vars
 SCRIPT_LABEL='for macOS'

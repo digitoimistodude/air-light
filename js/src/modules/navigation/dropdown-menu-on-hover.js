@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-12-31 00:24:53
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-31 01:33:39
- */
 // Dropdown menu function
 function dropdownMenuOnHover(items) {
   // Optional timeout

@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-12-31 00:27:10
- * @Last Modified by:   Michael Bourne
- * @Last Modified time: 2023-03-01 21:22:11
- */
 // Import required modules
 import addMultipleEventListeners from './add-multiple-event-listeners';
 

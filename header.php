@@ -4,11 +4,6 @@
  *
  * <head> section and everything up until <div id="content">
  *
- * @Author: Roni Laukkarinen
- * @Date: 2020-05-11 13:17:32
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2024-01-10 18:53:14
- *
  * @package air-light
  */
 

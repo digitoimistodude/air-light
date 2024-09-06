@@ -1,13 +1,6 @@
 <?php
 /**
- * Single comment callback
- *
- * Callback for a single comment.
- *
- * @Author:		Roni Laukkarinen
- * @Date:   		2022-06-30 16:24:47
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-08-25 14:16:38
+ * Single comment callback.
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials

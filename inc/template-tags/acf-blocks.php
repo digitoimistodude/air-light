@@ -1,9 +1,7 @@
 <?php
 /**
- * @Author: Timi Wahalahti
- * @Date:   2021-05-11 14:38:45
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-02-10 10:31:21
+ * ACF block rendering functions.
+ *
  * @package air-light
  */
 

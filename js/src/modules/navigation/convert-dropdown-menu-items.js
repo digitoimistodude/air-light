@@ -1,10 +1,3 @@
-/**
- * @Author: Tuomas Marttila
- * @Date:   2023-02-28 10:38:36
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-03-31 12:00:41
- */
-
 function convertDropdownMenuItems(items) {
   items.forEach((li) => {
   // Get dropdown toggle button

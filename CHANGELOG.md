@@ -1,3 +1,9 @@
+### Unreleased
+
+* Fix navigation rules leaking to other navs, Fixes T-1644
+* Remove obsolete fileheader information from all files for consistency, Fixes T-13958
+* Fix phpcs errors
+
 ### 9.4.2: 2024-06-13
 
 * Fix typos #216 (thanks @szepeviktor!)

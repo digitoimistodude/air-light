@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-12-31 00:23:22
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-12-31 00:28:01
- */
 // Import required modules
 import isOutOfViewport from './is-out-of-viewport';
 

@@ -1,9 +1,7 @@
 <?php
 /**
- * @Author: Timi Wahalahti
- * @Date:   2021-05-11 14:34:14
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2024-02-26 13:32:38
+ * ACF Blocks related hooks.
+ *
  * @package air-light
  */
 

@@ -2,11 +2,6 @@
 /**
  * General hooks.
  *
- * @Author: Niku Hietanen
- * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2022-02-01 11:42:49
- *
  * @package air-light
  */
 

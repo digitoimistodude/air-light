@@ -2,11 +2,6 @@
 /**
  * Include custom features etc.
  *
- * @Author: Niku Hietanen
- * @Date: 2020-02-18 15:07:17
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2021-12-10 11:48:15
- *
  * @package air-light
  */
 

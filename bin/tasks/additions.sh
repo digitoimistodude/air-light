@@ -1,8 +1,4 @@
 #!/bin/bash
-# @Author: Roni Laukkarinen
-# @Date:   2021-05-21 14:40:29
-# @Last Modified by:   Elias Kautto
-# @Last Modified time: 2022-05-27 10:37:34
 echo "${YELLOW}Adding media library folder...${TXTRESET}"
 mkdir -p ${PROJECT_PATH}/media
 echo "" > ${PROJECT_PATH}/media/index.php

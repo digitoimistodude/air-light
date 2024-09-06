@@ -1,9 +1,3 @@
-/**
- * @Author: Tuomas Marttila
- * @Date:   2023-03-22 09:20:46
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-04-12 10:32:04
- */
 function closeSubMenu(li) {
   // If menu item is not a dropdown then do nothing
   if (!li.querySelector('.dropdown-toggle') && !li.querySelector('.sub-menu')) {

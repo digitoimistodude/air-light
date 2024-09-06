@@ -1,9 +1,6 @@
 <?php
 /**
- * @Author: Timi Wahalahti
- * @Date:   2019-12-03 11:03:31
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2024-02-15 16:15:48
+ * Localization strings.
  *
  * @package air-light
  */
@@ -79,7 +76,7 @@ function get_default_localization_strings( $language = 'en' ) {
   return ( array_key_exists( $language, $strings ) ) ? $strings[ $language ] : $strings['en'];
 } // end get_default_localization_strings
 
-function get_default_localization( $string ) {
+function get_default_localization( $string ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.stringFound
   if ( function_exists( 'ask__' ) && array_key_exists( "Accessibility: {$string}", apply_filters( 'air_helper_pll_register_strings', [] ) ) ) {
     return ask__( "Accessibility: {$string}" );
   }
@@ -87,7 +84,7 @@ function get_default_localization( $string ) {
   return esc_html( get_default_localization_translation( $string ) );
 } // end get_default_localization
 
-function get_default_localization_translation( $string ) {
+function get_default_localization_translation( $string ) { // phpcs:ignore Universal.NamingConventions.NoReservedKeywordParameterNames.stringFound
   $language = get_bloginfo( 'language' );
   if ( function_exists( 'pll_the_languages' ) ) {
     $language = pll_current_language();

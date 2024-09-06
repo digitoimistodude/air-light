@@ -1,14 +1,4 @@
 /* eslint-disable no-param-reassign */
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2021-09-01 11:55:37
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2023-09-07 12:13:08
- */
-/**
- * Style external links
- */
-
 import getLocalization from './localization';
 
 function isLinkExternal(link, localDomains) {

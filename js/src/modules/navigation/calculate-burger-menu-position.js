@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-12-31 00:21:23
- * @Last Modified by:   Michael Bourne
- * @Last Modified time: 2023-03-09 12:19:32
- */
 // Calculate burger menu position
 function calculateBurgerMenuPosition() {
   // If nav-toggle, site-header or main-menu not found, bail

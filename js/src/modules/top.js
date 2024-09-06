@@ -1,10 +1,4 @@
 /* eslint-disable max-len */
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-05-07 12:20:13
- * @Last Modified by:   Roni Äikäs
- * @Last Modified time: 2023-08-16 17:05:43
- */
 import MoveTo from 'moveto';
 
 const backToTop = () => {

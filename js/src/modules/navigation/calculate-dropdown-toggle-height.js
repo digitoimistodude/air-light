@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-12-31 00:22:16
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-04-12 09:53:53
- */
 // Calculate mobile nav-toggle height
 function calculateDropdownToggleHeight() {
   // If .dropdown-toggle not found, bail

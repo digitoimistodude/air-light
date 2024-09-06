@@ -1,9 +1,5 @@
 #!/bin/bash
 # WordPress theme starting bash script for Air-light, ported for Pop!_OS, might work on Ubuntu or even Debian, or other forks.
-# @Author: Roni Laukkarinen
-# @Date:   2021-04-22 08:06:02
-# @Last Modified by:   Roni Äikäs
-# @Last Modified time: 2023-09-29 22:15:53
 
 # Script specific vars
 SCRIPT_LABEL='for Pop!_OS'

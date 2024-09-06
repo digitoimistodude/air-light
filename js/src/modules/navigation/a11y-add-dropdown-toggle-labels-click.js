@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-12-31 00:23:22
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-05-18 17:06:12
- */
 // Add proper link labels for screen readers
 function a11yAddDropdownToggleLabelsClick(items) {
   items.forEach((li) => {
