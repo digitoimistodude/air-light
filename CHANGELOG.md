@@ -5,6 +5,7 @@
 * Fix phpcs errors
 * Exclude vendor dir in gulp-phpcs
 * Bump tested WordPress version to 6.6.1
+* Upgrade to node v20.17.0
 
 ### 9.4.2: 2024-06-13
 

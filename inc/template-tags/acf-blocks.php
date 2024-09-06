@@ -66,7 +66,7 @@ function load_acf_block_from_cache( $cache_key, $block_slug, $block_path, $block
   return $output;
 } // end load_acf_block_from_cache
 
-function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false, $post_id = 0 ) {
+function load_acf_block( $block_path, $cache = false, $block = [], $is_preview = false, $post_id = 0 ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
   $output_callback = $cache ? 'ob_gzhandler' : null;
 
   /**
@@ -80,7 +80,7 @@ function load_acf_block( $block_path, $cache = false, $block = [], $is_preview =
     $post_type = get_post_type();
 
     $is_not_wp_block = $post_type && 'wp_block' !== $post_type;
-    $is_disallowed_in_post_type = is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] );
+    $is_disallowed_in_post_type = is_array( $block['post_types'] ) && ! in_array( $post_type, $block['post_types'] ); // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
 
     if ( $is_not_wp_block && $is_disallowed_in_post_type ) {
       return '';
@@ -121,7 +121,7 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
   }
 
   // Check that we have the block in defined in theme settings
-  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) );
+  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) ); // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
   if ( false === $block_key ) {
     \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
