@@ -48,3 +48,9 @@ jobs:
     - name: Run stylelint
       run: |
         npx stylelint . --max-warnings 0 --config .stylelintrc
+
+    - name: Run gulp task devstyles in this project
+      run: |
+        wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json
+        npm install
+        npx gulp devstyles
