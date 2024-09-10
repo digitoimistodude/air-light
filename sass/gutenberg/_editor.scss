@@ -40,18 +40,21 @@
   text-decoration: inherit;
 }
 
+// Prevent horizontal scrolling
+.editor-styles-wrapper {
+  overflow-x: hidden;
+}
+
 // Editor exceptions below
 // These styles are NO USE to front-end
 // Need to be right after general, because after typography comes block styles
+// stylelint-disable-next-line
 .editor-styles-wrapper {
   // Import typography related styles inside blocks
   @import 'layout/typography';
 
   // Import gravity forms inside Gutenberg editor
   @import 'features/gravity-forms';
-
-  // Prevent horizontal scrolling
-  overflow-x: hidden;
 
   // Fix acf icons visibility issue
   .acf-icon {
