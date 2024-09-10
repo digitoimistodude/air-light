@@ -55,6 +55,10 @@ jobs:
         wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json
         npm install
 
+        # Make the command visible
+        echo "Running npx gulp devstyles..."
+        npx gulp devstyles
+
         # Capture the output
         output=$(npx gulp devstyles 2>&1)
 
