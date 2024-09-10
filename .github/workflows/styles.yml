@@ -50,7 +50,24 @@ jobs:
         npx stylelint . --max-warnings 0 --config .stylelintrc
 
     - name: Run gulp task devstyles in this project
+      if:
       run: |
         wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json
         npm install
-        npx gulp devstyles
+
+        # Capture the output
+        output=$(npx gulp devstyles 2>&1)
+
+        # Save it to a temporary file
+        echo "$output" > output.txt
+
+        # Check if the output contains the string "DEPRECATED" or "ERROR" or "WARNING"
+        if grep -q "DEPRECATED" output.txt || grep -q "ERROR" output.txt || grep -q "WARNING" output.txt; then
+          echo "Error found in output, failing build..."
+          exit 1
+        else
+          echo "No errors found in output."
+        fi
+
+        # Remove the temporary file
+        rm output.txt
