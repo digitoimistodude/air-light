@@ -1,7 +1,9 @@
-### [Unreleased]
+### 9.4.4: 2024-09-13
 
 * Add unit tests for gulp devstyles
 * Fix nesting deprecation, fix build
+* Remove from sanitize scss: `overflow-wrap: break-word;`
+* Bump tested WordPress version to 6.6.2
 
 ### 9.4.3: 2024-09-06
 
