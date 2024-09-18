@@ -1,3 +1,8 @@
+### 9.5.0rc: 2024-09-18
+
+* Change logic for allowed blocks: None, selected, blocks, 'all', 'all-core-blocks' or 'acf'
+* Prepare for air-blocks-buildtool
+
 ### 9.4.4: 2024-09-13
 
 * Add unit tests for gulp devstyles

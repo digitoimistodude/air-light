@@ -135,45 +135,9 @@ add_action( 'after_setup_theme', function() {
     ],
 
     // Restrict to only selected blocks
-    // Set the value to 'all' to allow all blocks everywhere
-   'allowed_blocks' => [
-      'default' => [],
-      'post' => [
-        'core/archives',
-        'core/audio',
-        'core/buttons',
-        'core/categories',
-        'core/code',
-        'core/column',
-        'core/columns',
-        'core/coverImage',
-        'core/embed',
-        'core/file',
-        'core/freeform',
-        'core/gallery',
-        'core/heading',
-        'core/html',
-        'core/image',
-        'core/latestComments',
-        'core/latestPosts',
-        'core/list',
-        'core/list-item',
-        'core/more',
-        'core/nextpage',
-        'core/paragraph',
-        'core/preformatted',
-        'core/pullquote',
-        'core/quote',
-        'core/block',
-        'core/separator',
-        'core/shortcode',
-        'core/spacer',
-        'core/subhead',
-        'core/table',
-        'core/textColumns',
-        'core/verse',
-        'core/video',
-      ],
+    'allowed_blocks' => [
+      'post' => 'all-core-blocks', // Add array of blocks, 'all', 'all-core-blocks' or 'acf'
+      'page' => [],
     ],
 
     // If you want to use classic editor somewhere, define it here
