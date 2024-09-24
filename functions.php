@@ -135,9 +135,25 @@ add_action( 'after_setup_theme', function() {
     ],
 
     // Restrict to only selected blocks
+    //
+    // Options: 'none', 'all', 'all-core-blocks', 'all-acf-blocks',
+    // or any specific block or a combination of these
+    // Accepts both string (all*/none-options only) and array (options + specific blocks)
     'allowed_blocks' => [
-      'post' => 'all-core-blocks', // Add array of blocks, 'all', 'all-core-blocks' or 'acf'
+      'post' => 'all-core-blocks',
       'page' => [],
+      // 'page' => [
+      //   'all-acf-blocks',
+      //   'core/paragraph',
+      // ],
+      // 'post-type' => [
+      //   'acf/content-image',
+      //   'core/paragraph',
+      // ],
+      // 'example' => [
+      //   'all-core-blocks',
+      //   'acf/content-image',
+      // ],
     ],
 
     // If you want to use classic editor somewhere, define it here
