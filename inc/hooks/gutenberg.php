@@ -24,9 +24,27 @@ function allowed_block_types( $allowed_blocks, $editor_context ) { // phpcs:igno
   // If post type block has been set to 'all', return all blocks, or if the array below it contains 'all', return all blocks
   if ( 'all' === THEME_SETTINGS['allowed_blocks'][ get_post_type() ] || is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) && in_array( 'all', THEME_SETTINGS['allowed_blocks'][ get_post_type() ], true ) ) {
 
-    // If single blocks are defined in post type array, add them to allowed blocks on top of the existing blocks
-    if ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) ) {
+    // Add ACF blocks
+    if ( isset( THEME_SETTINGS['acf_blocks'] ) ) {
+      $allowed_blocks = [];
 
+      foreach ( THEME_SETTINGS['acf_blocks'] as $custom_block ) {
+        $allowed_blocks[] = 'acf/' . $custom_block['name'];
+      }
+
+      // Add blocks defined on top of ACF blocks
+      if ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) ) {
+        $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type() ] );
+      }
+    }
+
+    // Add all core blocks on top of the ACF blocks
+    $allowed_blocks = array_merge( $allowed_blocks, array_map(function( $block ) {
+      return $block->name;
+    }, \WP_Block_Type_Registry::get_instance()->get_all_registered()));
+
+    // And add all defined blocks on top of the core blocks
+    if ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) ) {
       $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type() ] );
     }
 
@@ -42,12 +60,10 @@ function allowed_block_types( $allowed_blocks, $editor_context ) { // phpcs:igno
 
       foreach ( THEME_SETTINGS['acf_blocks'] as $custom_block ) {
         $allowed_blocks[] = 'acf/' . $custom_block['name'];
-
       }
 
-      // If single blocks are defined in post type array, add them to allowed blocks on top of the existing blocks
+      // Add blocks defined on top of ACF blocks
       if ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) ) {
-
         $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type() ] );
       }
 
@@ -69,15 +85,15 @@ function allowed_block_types( $allowed_blocks, $editor_context ) { // phpcs:igno
     // Get array values
     $allowed_blocks = array_values( $allowed_blocks );
 
-    // If single blocks are defined in post type array, add them to allowed blocks on top of the existing blocks
+    // Add blocks defined on top of core blocks
     if ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) ) {
-
       $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type() ] );
     }
 
     return $allowed_blocks;
   }
 
+  $allowed_blocks = THEME_SETTINGS['allowed_blocks'][ get_post_type() ];
   return $allowed_blocks;
 } // end allowed_block_types
 
