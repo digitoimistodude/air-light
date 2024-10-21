@@ -5,7 +5,6 @@
     "@ronilaukkarinen/stylelint-value-no-unknown-custom-properties",
     "@ronilaukkarinen/stylelint-declaration-strict-value",
     "stylelint-order",
-    "stylelint-file-max-lines",
     "stylelint-rem-over-px"
   ],
   "extends": [
@@ -59,7 +58,6 @@
         ]
       }
     ],
-    "plugin/file-max-lines": 200,
     "declaration-property-value-no-unknown": null,
     "scss/at-mixin-argumentless-call-parentheses": null,
     "scss/double-slash-comment-empty-line-before": null,
