@@ -3,7 +3,7 @@
 * Rewrite: allowed_block_types - Change logic for allowed blocks: 'none', 'all', 'all-core-blocks', 'all-acf-blocks', Fixes #226 (thanks @villekujansuu)
 * Allow options + specific blocks for allowed blocks
 * Prepare for air-blocks-buildtool
-* Remove stylelint-file-max-lines
+* Remove stylelint-file-max-lines (T-20758)
 
 ### 9.4.4: 2024-09-13
 
