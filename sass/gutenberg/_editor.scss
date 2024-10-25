@@ -134,7 +134,7 @@
 
 // Default editor blocks
 .is-root-container > .wp-block {
-  font-family: var(--font-paragraph);
+  font-family: var(--typography-family-paragraph);
 
   // Font smoothing
   -moz-osx-font-smoothing: grayscale;
@@ -203,7 +203,7 @@
 .is-root-container .wp-block.wp-block-quote,
 .is-root-container .wp-block[data-type^="core"],
 .is-root-container [contenteditable] p {
-  font-family: var(--font-paragraph);
+  font-family: var(--typography-family-paragraph);
 
   // Font smoothing
   -moz-osx-font-smoothing: grayscale;

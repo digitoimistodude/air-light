@@ -13,7 +13,7 @@
 .acf-block-preview .block,
 body {
   color: var(--color-paragraph);
-  font-family: var(--font-paragraph);
+  font-family: var(--typography-family-paragraph);
   font-size: var(--typography-size-paragraph);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +31,7 @@ h4,
 h5,
 h6 {
   color: var(--color-heading);
-  font-family: var(--font-heading);
+  font-family: var(--typography-family-heading);
   font-weight: var(--typography-weight-heading);
   margin-bottom: var(--margin-between-paragraphs);
   margin-top: var(--margin-between-paragraphs);
