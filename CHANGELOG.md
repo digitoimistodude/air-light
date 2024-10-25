@@ -1,4 +1,4 @@
-### Unreleased
+### 9.4.5: 2024-10-25
 
 * Add global variable for current block during `render_acf_block` (T-17629)
 * Add default styles for 404.scss
