@@ -1,13 +1,14 @@
 ### Unreleased
+
 * Add default styles for 404.scss
-
-### 9.5.0rc: 2024-09-18
-
+* Make navigation to wrap automatically if there are too many links, T-20918
+* Add default column-gap to header, T-20918
 * Rewrite: allowed_block_types - Change logic for allowed blocks: 'none', 'all', 'all-core-blocks', 'all-acf-blocks', Fixes #226 (thanks @villekujansuu)
 * Allow options + specific blocks for allowed blocks
 * Prepare for air-blocks-buildtool
-* Remove stylelint-file-max-lines (T-20765)
-* Add more breakpoints like $container-desktop (T-20758)
+* Remove stylelint-file-max-lines, T-20765
+* Add more breakpoints like $container-desktop, T-20758
+* Fix burger navigation sometimes not being centered vertically
 
 ### 9.4.4: 2024-09-13
 
