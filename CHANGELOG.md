@@ -10,6 +10,8 @@
 * Remove stylelint-file-max-lines, T-20765
 * Add more breakpoints like $container-desktop, T-20758
 * Fix burger navigation sometimes not being centered vertically
+* Change to new dev.docs.dude.fi way of naming conventions, combine font partials under variables to one _typography.scss file
+* Move font-face include under _typography.scss
 
 ### 9.4.4: 2024-09-13
 
