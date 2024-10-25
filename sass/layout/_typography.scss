@@ -1,3 +1,28 @@
+// stylelint-disable declaration-property-unit-allowed-list
+// Everything around fonts, font size definitions and typeset
+// presets. No modular scale, but a sophisticated viewport
+// based responsive mixin can be found in _helpers.scss
+
+// Set root size for rems
+:root {
+  font-size: 62.5%;
+}
+
+// Typography settings
+.is-root-container,
+.acf-block-preview .block,
+body {
+  color: var(--color-paragraph);
+  font-family: var(--font-paragraph);
+  font-size: var(--typography-size-paragraph);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--typography-weight-paragraph);
+  line-height: var(--typography-paragraph-line-height);
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
+}
+
 // Heading defaults
 h1,
 h2,
@@ -7,7 +32,7 @@ h5,
 h6 {
   color: var(--color-heading);
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-heading);
+  font-weight: var(--typography-weight-heading);
   margin-bottom: var(--margin-between-paragraphs);
   margin-top: var(--margin-between-paragraphs);
 }
@@ -17,33 +42,33 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: var(--line-height-heading);
+  line-height: var(--typography-heading-line-height);
 }
 
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--typography-size-h1);
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+  font-size: var(--typography-size-h2);
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+  font-size: var(--typography-size-h3);
 }
 
 h4 {
-  font-size: var(--font-size-h4);
+  font-size: var(--typography-size-h4);
 }
 
 h5 {
-  font-size: var(--font-size-h5);
+  font-size: var(--typography-size-h5);
 }
 
 h6 {
-  font-size: var(--font-size-h6);
+  font-size: var(--typography-size-h6);
 }
 
 h1:first-child,
@@ -58,7 +83,7 @@ h6:first-child {
 // Bold
 b,
 strong {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--typography-weight-bold);
 }
 
 // Italic

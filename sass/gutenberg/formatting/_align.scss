@@ -11,7 +11,7 @@
 
   .alignleft > img {
     margin-bottom: var(--margin-between-paragraphs);
-    margin-right: var(--padding-container-horizontal);
+    margin-right: var(--spacing-container-padding-inline);
     margin-top: var(--margin-between-paragraphs);
 
     + figcaption {
@@ -21,7 +21,7 @@
 
   .alignright > img {
     margin-bottom: var(--margin-between-paragraphs);
-    margin-left: var(--padding-container-horizontal);
+    margin-left: var(--spacing-container-padding-inline);
     margin-top: var(--margin-between-paragraphs);
 
     + figcaption {
@@ -31,8 +31,8 @@
 
   .alignwide {
     max-width: $width-wide;
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
     width: 100%;
 
     @media (min-width: $width-wide + 40px) {
@@ -52,8 +52,8 @@
     }
 
     @media (min-width: $width-max-article + 40px) {
-      margin-bottom: var(--padding-block);
-      margin-top: var(--padding-block);
+      margin-bottom: var(--spacing-content-padding-block);
+      margin-top: var(--spacing-content-padding-block);
       max-width: $width-full;
       width: $width-full;
     }

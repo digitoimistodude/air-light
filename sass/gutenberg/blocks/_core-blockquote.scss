@@ -14,7 +14,7 @@ blockquote {
   p {
     color: var(--color-paragraph);
     font-style: normal;
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--typography-weight-semibold);
     margin-bottom: 0;
     overflow: visible;
     position: relative;
@@ -28,7 +28,7 @@ blockquote {
 
 .wp-block-quote {
   border-left: 2px solid var(--color-paragraph);
-  line-height: var(--line-height-paragraph);
+  line-height: var(--typography-paragraph-line-height);
   margin-bottom: 4rem;
   margin-left: auto;
   margin-right: auto;
@@ -38,12 +38,12 @@ blockquote {
 
   > p {
     color: var(--color-paragraph);
-    line-height: var(--line-height-paragraph);
+    line-height: var(--typography-paragraph-line-height);
   }
 
   @media (max-width: $width-max-article + 40px) {
     padding: 3.5rem 2rem;
-    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }
 
   @media (max-width: $container-mobile) {
@@ -53,9 +53,9 @@ blockquote {
 
 .wp-block-blockquote.alignwide,
 .wp-block-blockquote.alignfull {
-  padding-left: var(--padding-container-horizontal);
-  padding-right: var(--padding-container-horizontal);
-  width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  padding-left: var(--spacing-container-padding-inline);
+  padding-right: var(--spacing-container-padding-inline);
+  width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
 }
 
 .wp-block-blockquote blockquote {

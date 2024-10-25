@@ -14,8 +14,8 @@ h3 {
 
 @for $i from 1 through 9 {
   .wp-block-columns.has-#{$i}-columns.alignfull {
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
     width: 100%;
   }
 

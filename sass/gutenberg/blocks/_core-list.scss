@@ -2,7 +2,7 @@
 ul,
 ol {
   list-style-position: outside;
-  width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
+  width: calc((100% - calc(var(--spacing-container-padding-inline) * 2)));
 }
 
 ul {
