@@ -5,8 +5,8 @@
   color: var(--color-paragraph);
   font-size: var(--typography-size-17);
   font-style: normal;
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-paragraph);
+  font-weight: var(--typography-weight-medium);
+  line-height: var(--typography-paragraph-line-height);
   padding: 2rem;
   width: calc(100% - 4rem);
 }

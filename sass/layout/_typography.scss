@@ -17,8 +17,8 @@ body {
   font-size: var(--typography-size-paragraph);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: var(--font-weight-paragraph);
-  line-height: var(--line-height-paragraph);
+  font-weight: var(--typography-weight-paragraph);
+  line-height: var(--typography-paragraph-line-height);
   // stylelint-disable-next-line value-keyword-case
   text-rendering: geometricPrecision;
 }
@@ -32,7 +32,7 @@ h5,
 h6 {
   color: var(--color-heading);
   font-family: var(--font-heading);
-  font-weight: var(--font-weight-heading);
+  font-weight: var(--typography-weight-heading);
   margin-bottom: var(--margin-between-paragraphs);
   margin-top: var(--margin-between-paragraphs);
 }
@@ -42,7 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: var(--line-height-heading);
+  line-height: var(--typography-heading-line-height);
 }
 
 // Define heading scales
@@ -83,7 +83,7 @@ h6:first-child {
 // Bold
 b,
 strong {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--typography-weight-bold);
 }
 
 // Italic

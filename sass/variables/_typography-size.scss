@@ -36,8 +36,8 @@
   --typography-weight-medium: 500;
   --typography-weight-semibold: 600;
   --typography-weight-bold: 700;
-  --typography-weight-paragraph: var(--font-weight-regular);
-  --typography-weight-heading: var(--font-weight-bold);
+  --typography-weight-paragraph: var(--typography-weight-regular);
+  --typography-weight-heading: var(--typography-weight-bold);
 
   // Heading font sizes in mobile
   @media (max-width: $container-mobile) {

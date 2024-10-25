@@ -7,7 +7,7 @@ div.validation_error {
   background-color: var(--color-error);
   color: var(--color-white);
   font-size: var(--typography-size-17);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--typography-weight-bold);
   margin-bottom: var(--form-row-gap);
   padding: 2rem;
 
@@ -23,7 +23,7 @@ body *[aria-invalid="true"] {
 .validation_message {
   color: var(--color-error);
   font-size: var(--typography-size-16);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--typography-weight-regular);
 }
 
 .validation_list {
@@ -39,7 +39,7 @@ body *[aria-invalid="true"] {
 
   li {
     color: var(--color-error);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--typography-weight-bold);
   }
 }
 
@@ -189,6 +189,6 @@ body *[aria-invalid="true"] {
   border: 2px solid var(--color-success);
   color: var(--color-success);
   font-size: var(--typography-size-paragraph);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--typography-weight-semibold);
   padding: 2rem;
 }

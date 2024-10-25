@@ -275,7 +275,7 @@
 
 ### 9.1.3: 2022-09-07
 
-* Consistency for variable `--font-weight-paragraph`
+* Consistency for variable `--typography-weight-paragraph`
 * Remove `has-light-bg` and `has-dark-bg` classes that are no longer used by back to top feature
 * Increase padding on mid-sized screens to prevent container sticking to sides
 
@@ -292,7 +292,7 @@
 * Improve form checkbox and radiob button styles
 * Form checkboxes and radio buttons: Add bouncy check animation
 * Clarify reset for checkboxes and radio buttons for gravity forms
-* Combine `--line-height-paragraphs-blog` and `--line-height-paragraphs` to one unified CSS variable: `--line-height-paragraph`
+* Combine `--typography-paragraph-line-heights-blog` and `--typography-paragraph-line-heights` to one unified CSS variable: `--typography-paragraph-line-height`
 
 ### 9.1.0: 2022-09-01
 
