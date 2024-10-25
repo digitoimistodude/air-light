@@ -282,8 +282,8 @@
 ### 9.1.2: 2022-09-07
 
 * Clean up is-external-link from CSS that is no longer used
-* Consistency in variables: `--font-size-paragraphs` -> `--font-size-paragraph`
-* Remove unused `--font-size-default` and combine with `--font-size-paragraph`
+* Consistency in variables: `--typography-size-paragraphs` -> `--typography-size-paragraph`
+* Remove unused `--typography-size-default` and combine with `--typography-size-paragraph`
 * Fix list font-sizes not inheriting from paragraph styles
 * Define default font sizes and line-heights on body level instead in separate elements
 

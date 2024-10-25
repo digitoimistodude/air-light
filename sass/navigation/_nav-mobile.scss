@@ -17,14 +17,14 @@
   --color-dropdown-toggle-mobile: var(--color-white);
 
   // Main level items on mobile
-  --font-size-main-level-mobile: 1.5rem;
+  --typography-size-main-level-mobile: 1.5rem;
   --font-weight-main-level-mobile: 600;
   --padding-main-level-vertical-mobile: 1.2rem;
   --color-main-level-menu-item-hover-focus-mobile: var(--color-white);
   --color-main-level-menu-item-mobile: var(--color-white);
 
   // Sub-menu items on mobile
-  --font-size-sub-menu-mobile: 1.5rem;
+  --typography-size-sub-menu-mobile: 1.5rem;
   --font-weight-sub-menu-mobile: 600;
   --margin-left-sub-menu: 1rem;
   --padding-sub-menu-vertical-mobile: .8rem;
@@ -95,7 +95,7 @@
     border-top: 1px solid var(--color-separator-nav-mobile);
     color: var(--color-main-level-menu-item-mobile);
     display: block;
-    font-size: var(--font-size-main-level-mobile);
+    font-size: var(--typography-size-main-level-mobile);
     font-weight: var(--font-weight-main-level-mobile);
     margin-left: 0;
     margin-right: 0;
@@ -111,7 +111,7 @@
   // Sub menu items
   .sub-menu a {
     color: var(--color-sub-menu-mobile);
-    font-size: var(--font-size-sub-menu-mobile);
+    font-size: var(--typography-size-sub-menu-mobile);
     font-weight: var(--font-weight-sub-menu-mobile);
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu));

@@ -9,7 +9,7 @@
   --dropdown-toggle-size: 1.2rem;
 
   // Main level items on desktop
-  --font-size-main-level: var(--font-size-16);
+  --typography-size-main-level: var(--typography-size-16);
   --font-weight-main-level: var(--font-weight-bold);
   --padding-main-level-horizontal: 0;
   --padding-main-level-vertical: .6rem;
@@ -19,7 +19,7 @@
   --gap-main-level-horizontal: 2.5rem;
 
   // Sub menu items on desktop
-  --font-size-sub-menu: var(--font-size-16);
+  --typography-size-sub-menu: var(--typography-size-16);
   --font-weight-sub-menu: var(--font-weight-regular);
   --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-link-vertical: .6rem;
@@ -71,7 +71,7 @@
     align-items: center;
     color: var(--color-main-level);
     display: inline-flex;
-    font-size: var(--font-size-main-level);
+    font-size: var(--typography-size-main-level);
     font-weight: var(--font-weight-main-level);
     margin-left: 0;
     margin-right: 0;
@@ -86,7 +86,7 @@
     align-items: center;
     color: var(--color-sub-menu);
     display: inline-flex;
-    font-size: var(--font-size-sub-menu);
+    font-size: var(--typography-size-sub-menu);
     font-weight: var(--font-weight-sub-menu);
     line-height: 1.5;
     padding-bottom: var(--padding-sub-menu-link-vertical);

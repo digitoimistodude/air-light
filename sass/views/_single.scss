@@ -19,7 +19,7 @@
   border-radius: 3rem;
   color: var(--color-white);
   display: inline-block;
-  font-size: var(--font-size-14);
+  font-size: var(--typography-size-14);
   margin: 0;
   padding: .5rem 1.5rem;
   transition: all $transition-duration;
@@ -47,7 +47,7 @@
     box-shadow: none;
     color: var(--color-black);
     display: inline-block;
-    font-size: var(--font-size-12);
+    font-size: var(--typography-size-12);
     margin-right: .4em;
     padding: .1em .8em;
     transition: all $transition-duration;

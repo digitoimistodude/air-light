@@ -14,7 +14,7 @@
 body {
   color: var(--color-paragraph);
   font-family: var(--font-paragraph);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--typography-size-paragraph);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: var(--font-weight-paragraph);
@@ -48,27 +48,27 @@ h6 {
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--typography-size-h1);
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+  font-size: var(--typography-size-h2);
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+  font-size: var(--typography-size-h3);
 }
 
 h4 {
-  font-size: var(--font-size-h4);
+  font-size: var(--typography-size-h4);
 }
 
 h5 {
-  font-size: var(--font-size-h5);
+  font-size: var(--typography-size-h5);
 }
 
 h6 {
-  font-size: var(--font-size-h6);
+  font-size: var(--typography-size-h6);
 }
 
 h1:first-child,

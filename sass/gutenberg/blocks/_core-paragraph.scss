@@ -6,13 +6,13 @@
 
 .has-large-font-size {
   @media (max-width: $container-mobile) {
-    font-size: var(--font-size-18);
+    font-size: var(--typography-size-18);
   }
 }
 
 .has-larger-font-size {
   @media (max-width: $container-mobile) {
-    font-size: var(--font-size-22);
+    font-size: var(--typography-size-22);
   }
 }
 

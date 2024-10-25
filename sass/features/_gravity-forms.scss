@@ -6,7 +6,7 @@
 div.validation_error {
   background-color: var(--color-error);
   color: var(--color-white);
-  font-size: var(--font-size-17);
+  font-size: var(--typography-size-17);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--form-row-gap);
   padding: 2rem;
@@ -22,7 +22,7 @@ body *[aria-invalid="true"] {
 
 .validation_message {
   color: var(--color-error);
-  font-size: var(--font-size-16);
+  font-size: var(--typography-size-16);
   font-weight: var(--font-weight-regular);
 }
 
@@ -51,7 +51,7 @@ body *[aria-invalid="true"] {
 
 // Default required label
 .gfield_required.gfield_required_asterisk {
-  font-size: var(--font-size-required-asterisk-label);
+  font-size: var(--typography-size-required-asterisk-label);
 }
 
 .gfield_required.gfield_required_asterisk,
@@ -60,7 +60,7 @@ body *[aria-invalid="true"] {
 }
 
 .gfield_required.gfield_required_text {
-  font-size: var(--font-size-required-text-label);
+  font-size: var(--typography-size-required-text-label);
 }
 
 // Gravity forms minimal default styles
@@ -188,7 +188,7 @@ body *[aria-invalid="true"] {
   background-color: transparent;
   border: 2px solid var(--color-success);
   color: var(--color-success);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--typography-size-paragraph);
   font-weight: var(--font-weight-semibold);
   padding: 2rem;
 }
