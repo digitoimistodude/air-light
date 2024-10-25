@@ -188,7 +188,7 @@ body *[aria-invalid="true"] {
   background-color: transparent;
   border: 2px solid var(--color-success);
   color: var(--color-success);
-  font-size: var(--typography-size-paragraph);
+  font-size: var(--typography-paragraph-size);
   font-weight: var(--typography-weight-semibold);
   padding: 2rem;
 }

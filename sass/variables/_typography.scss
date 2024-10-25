@@ -1,6 +1,13 @@
 // stylelint-disable rem-over-px/rem-over-px
 // CSS Variables for responsive fonts
 :root {
+  // Defined font families, replace these with your own
+  --typography-family-inter: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+
+  // Contexts where the fonts are used, replace this with the families defined above
+  --typography-family-paragraph: var(--typography-family-inter);
+  --typography-family-heading: var(--typography-family-inter);
+
   // Heading font sizes
   --typography-size-hero: 52px;
   --typography-size-h1: 40px;
@@ -28,7 +35,7 @@
 
   // Line-heights
   --typography-heading-line-height: 1.5;
-  --typography-core-heading-line-height: 1.23;
+  --typography-heading-core-line-height: 1.23;
   --typography-paragraph-line-height: 1.7;
 
   // Font weights
@@ -48,7 +55,7 @@
     --typography-size-h4: 18px;
     --typography-size-h5: 14px;
     --typography-size-h6: 12px;
-    --typography-size-paragraph: 16px;
+    --typography-paragraph-size: 16px;
   }
 
   // Element font sizes in tiny phones like iPhone 5S

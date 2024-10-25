@@ -7,8 +7,8 @@ hr,
   background-size: 2px 2px;
   border: 0;
   height: 0;
-  margin-bottom: calc(var(--margin-between-paragraphs) * 2);
-  margin-top: calc(var(--margin-between-paragraphs) * 2);
+  margin-bottom: calc(var(--spacing-paragraphs-margin-block) * 2);
+  margin-top: calc(var(--spacing-paragraphs-margin-block) * 2);
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
@@ -19,8 +19,8 @@ hr,
 
 // stylelint-disable-next-line selector-not-notation
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
-  margin-bottom: calc(var(--margin-between-paragraphs) * 2);
-  margin-top: calc(var(--margin-between-paragraphs) * 2);
+  margin-bottom: calc(var(--spacing-paragraphs-margin-block) * 2);
+  margin-top: calc(var(--spacing-paragraphs-margin-block) * 2);
   opacity: .4;
   width: 10rem;
 }

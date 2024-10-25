@@ -14,7 +14,7 @@
 body {
   color: var(--color-paragraph);
   font-family: var(--typography-family-paragraph);
-  font-size: var(--typography-size-paragraph);
+  font-size: var(--typography-paragraph-size);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-weight: var(--typography-weight-paragraph);
@@ -33,8 +33,8 @@ h6 {
   color: var(--color-heading);
   font-family: var(--typography-family-heading);
   font-weight: var(--typography-weight-heading);
-  margin-bottom: var(--margin-between-paragraphs);
-  margin-top: var(--margin-between-paragraphs);
+  margin-bottom: var(--spacing-paragraphs-margin-block);
+  margin-top: var(--spacing-paragraphs-margin-block);
 }
 
 h2,
