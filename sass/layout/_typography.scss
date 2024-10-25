@@ -48,27 +48,27 @@ h6 {
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
 h1 {
-  font-size: var(--typography-size-h1);
+  font-size: var(--typography-h1-size);
 }
 
 h2 {
-  font-size: var(--typography-size-h2);
+  font-size: var(--typography-h2-size);
 }
 
 h3 {
-  font-size: var(--typography-size-h3);
+  font-size: var(--typography-h3-size);
 }
 
 h4 {
-  font-size: var(--typography-size-h4);
+  font-size: var(--typography-h4-size);
 }
 
 h5 {
-  font-size: var(--typography-size-h5);
+  font-size: var(--typography-h5-size);
 }
 
 h6 {
-  font-size: var(--typography-size-h6);
+  font-size: var(--typography-h6-size);
 }
 
 h1:first-child,
