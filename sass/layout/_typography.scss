@@ -1,28 +1,3 @@
-// stylelint-disable declaration-property-unit-allowed-list
-// Everything around fonts, font size definitions and typeset
-// presets. No modular scale, but a sophisticated viewport
-// based responsive mixin can be found in _helpers.scss
-
-// Set root size for rems
-:root {
-  font-size: 62.5%;
-}
-
-// Typography settings
-.is-root-container,
-.acf-block-preview .block,
-body {
-  color: var(--color-paragraph);
-  font-family: var(--font-paragraph);
-  font-size: var(--font-size-paragraph);
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: var(--font-weight-paragraph);
-  line-height: var(--line-height-paragraph);
-  // stylelint-disable-next-line value-keyword-case
-  text-rendering: geometricPrecision;
-}
-
 // Heading defaults
 h1,
 h2,
