@@ -45,16 +45,16 @@
   margin-left: auto;
   margin-right: auto;
   max-width: $width-grid-base;
-  padding-bottom: var(--padding-container-vertical);
-  padding-left: var(--padding-container-horizontal);
-  padding-right: var(--padding-container-horizontal);
-  padding-top: var(--padding-container-vertical);
+  padding-bottom: var(--spacing-container-padding-block);
+  padding-left: var(--spacing-container-padding-inline);
+  padding-right: var(--spacing-container-padding-inline);
+  padding-top: var(--spacing-container-padding-block);
 
   // If base grid is larger than Macbook Air screen
   @if $width-grid-base > 1440 {
     @media (min-width: $container-ipad-landscape) and (max-width: 140rem + 6.4rem) {
-      padding-left: var(--padding-container-horizontal-large);
-      padding-right: var(--padding-container-horizontal-large);
+      padding-left: var(--spacing-container-padding-inline-large);
+      padding-right: var(--spacing-container-padding-inline-large);
     }
   }
 }

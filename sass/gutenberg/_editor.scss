@@ -81,8 +81,8 @@
   .wp-block-gallery,
   .wp-block.editor-post-title {
     @media (max-width: $width-max-article + 40px) {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
       width: 100%;
 
       &.alignleft,
@@ -103,12 +103,12 @@
 
   // Full width gallery should be always be with paddings
   .wp-block[data-align="full"] > .wp-block-gallery {
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
 
     &.alignfull {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
     }
   }
 
