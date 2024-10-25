@@ -52,11 +52,14 @@
   .menu-items {
     align-items: center;
     background-color: transparent;
+    column-gap: var(--gap-main-level-horizontal);
     display: flex;
-    gap: var(--gap-main-level-horizontal);
+    flex-wrap: wrap;
+    justify-content: flex-end;
     margin: 0;
     padding: 0;
     position: relative;
+    row-gap: 1rem;
   }
 
   // Navigation list item
