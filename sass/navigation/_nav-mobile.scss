@@ -53,6 +53,11 @@
     background-color: var(--color-background-nav-mobile-header);
   }
 
+  // Fix burger navigation sometimes not being centered vertically
+  .nav-primary {
+    align-self: center;
+  }
+
   // General navigation resets for mobile
   .site-header ul,
   .site-header li,

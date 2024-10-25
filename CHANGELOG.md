@@ -1,10 +1,15 @@
-### 9.5.0rc: 2024-09-18
+### Unreleased
 
+* Add global variable for current block during `render_acf_block` (T-17629)
+* Add default styles for 404.scss
+* Make navigation to wrap automatically if there are too many links, T-20918
+* Add default column-gap to header, T-20918
 * Rewrite: allowed_block_types - Change logic for allowed blocks: 'none', 'all', 'all-core-blocks', 'all-acf-blocks', Fixes #226 (thanks @villekujansuu)
 * Allow options + specific blocks for allowed blocks
 * Prepare for air-blocks-buildtool
-* Remove stylelint-file-max-lines (T-20765)
-* Add more breakpoints like $container-desktop (T-20758)
+* Remove stylelint-file-max-lines, T-20765
+* Add more breakpoints like $container-desktop, T-20758
+* Fix burger navigation sometimes not being centered vertically
 
 ### 9.4.4: 2024-09-13
 
@@ -275,15 +280,15 @@
 
 ### 9.1.3: 2022-09-07
 
-* Consistency for variable `--typography-weight-paragraph`
+* Consistency for variable `--font-weight-paragraph`
 * Remove `has-light-bg` and `has-dark-bg` classes that are no longer used by back to top feature
 * Increase padding on mid-sized screens to prevent container sticking to sides
 
 ### 9.1.2: 2022-09-07
 
 * Clean up is-external-link from CSS that is no longer used
-* Consistency in variables: `--typography-size-paragraphs` -> `--typography-size-paragraph`
-* Remove unused `--typography-size-default` and combine with `--typography-size-paragraph`
+* Consistency in variables: `--font-size-paragraphs` -> `--font-size-paragraph`
+* Remove unused `--font-size-default` and combine with `--font-size-paragraph`
 * Fix list font-sizes not inheriting from paragraph styles
 * Define default font sizes and line-heights on body level instead in separate elements
 
@@ -292,7 +297,7 @@
 * Improve form checkbox and radiob button styles
 * Form checkboxes and radio buttons: Add bouncy check animation
 * Clarify reset for checkboxes and radio buttons for gravity forms
-* Combine `--typography-paragraph-line-heights-blog` and `--typography-paragraph-line-heights` to one unified CSS variable: `--typography-paragraph-line-height`
+* Combine `--line-height-paragraphs-blog` and `--line-height-paragraphs` to one unified CSS variable: `--line-height-paragraph`
 
 ### 9.1.0: 2022-09-01
 

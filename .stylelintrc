@@ -170,24 +170,6 @@
         ]
       }
     ],
-    "declaration-property-unit-allowed-list": [
-      {
-        "font-size": [
-          "rem",
-          "em",
-          "px"
-        ],
-        "/^animation/": [
-          "ms",
-          "s"
-        ],
-        "line-height": [
-          "px",
-          "%",
-          ""
-        ]
-      }
-    ],
     "a11y/font-size-is-readable": [
       true,
       {
