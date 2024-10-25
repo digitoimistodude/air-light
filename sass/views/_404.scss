@@ -7,6 +7,10 @@
     }
   }
 
+  .content {
+    text-align: center;
+  }
+
   h1 {
     font-size: clamp-calc($container-mobile, 1600px, 42px, 200px);
     margin-bottom: 2rem;

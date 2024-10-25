@@ -1,3 +1,6 @@
+### Unreleased
+* Add default styles for 404.scss
+
 ### 9.5.0rc: 2024-09-18
 
 * Rewrite: allowed_block_types - Change logic for allowed blocks: 'none', 'all', 'all-core-blocks', 'all-acf-blocks', Fixes #226 (thanks @villekujansuu)
