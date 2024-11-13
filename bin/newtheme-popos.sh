@@ -9,7 +9,7 @@ SCRIPT_VERSION='1.0.0 (2023-09-29)'
 CURRENTFILE=`basename $0`
 
 # Determine scripts location to get imports right
-if [ "$CURRENTFILE" = "newtheme.sh" ]; then
+if [ "$CURRENTFILE" = "newtheme-popos.sh" ]; then
   SCRIPTS_LOCATION="$( pwd )"
   source ${SCRIPTS_LOCATION}/tasks/variables.sh
   source ${SCRIPTS_LOCATION}/tasks/header.sh
@@ -17,7 +17,13 @@ if [ "$CURRENTFILE" = "newtheme.sh" ]; then
 else
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
   ORIGINAL_FILE=$( readlink $DIR/$CURRENTFILE )
-  SCRIPTS_LOCATION=$( dirname $ORIGINAL_FILE )
+  # Check if ORIGINAL_FILE is empty before calling dirname
+  if [ -n "$ORIGINAL_FILE" ]; then
+    SCRIPTS_LOCATION=$( dirname "$ORIGINAL_FILE" )
+  else
+    echo "Error: Could not determine original file location"
+    exit 1
+  fi
 fi
 
 # Final note about server requirements
