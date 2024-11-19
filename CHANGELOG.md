@@ -3,11 +3,11 @@
 * Demo: Prevent spaces in theme-info link
 * Fix newtheme-popos.sh script location detection
 * Check if pll_translatable is set
-* Add more clear placeholder to site-header.scss
 * Fix gulp task stripping out @font-face declaration
 * Remove postcss-discard-unused and postcss-minify-font-values
 * Make black truly black
 * Add Mona Sans variable font
+* Re-design placeholder content
 
 ### 9.4.5: 2024-10-25
 

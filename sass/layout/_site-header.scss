@@ -9,15 +9,13 @@
   margin-right: auto;
   max-width: $width-grid-base;
   padding-bottom: var(--spacing-site-header-padding-block);
-  padding-left: var(--spacing-container-padding-inline);
-  padding-right: var(--spacing-container-padding-inline);
+  // stylelint-disable-next-line
+  padding-left: 20px;
+  // stylelint-disable-next-line
+  padding-right: 20px;
   padding-top: var(--spacing-site-header-padding-block);
   position: relative;
   z-index: 15;
-
-  @media (max-width: $width-max-mobile) {
-    --spacing-container-padding-inline: 2rem;
-  }
 }
 
 .site-title {
@@ -31,11 +29,13 @@
 }
 
 // Delete the following styles when you start! (marked with --clip--)
+// This is just dummy content and should be removed the instant you start!
 // --clip--
 .site-main {
   display: grid;
 }
 
+// Delete this too:
 .site-main::after {
   align-items: center;
   background-position: 0 0, 100% 0;
@@ -44,11 +44,11 @@
   // stylelint-disable-next-line
   border: 6px solid var(--color-black);
   color: var(--color-black);
-  content: 'Build your website here! (Remove this bit in sass/layout/_site-header.scss)';
+  content: 'Build your website here!';
   display: flex;
   // stylelint-disable-next-line
-  font-size: clamp(.5rem, 3.4vw, 3rem);
-  font-weight: var(--typography-weight-semibold);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  font-weight: var(--typography-weight-bold);
   justify-content: center;
   margin-bottom: var(--spacing-container-padding-block);
   margin-left: auto;
@@ -60,6 +60,55 @@
   padding: 4rem;
   position: relative;
   text-align: center;
+  white-space: nowrap;
   width: calc(100% - 4rem);
+}
+
+// Delete this too:
+// stylelint-disable-next-line
+.site-branding .site-title {
+  display: none;
+}
+
+// Delete this too:
+.site-branding::after {
+  border: 4px solid var(--color-black);
+  color: var(--color-black);
+  content: 'Your logo here';
+  // stylelint-disable-next-line
+  font-size: 16px;
+  font-weight: var(--typography-weight-bold);
+  // stylelint-disable-next-line
+  padding: 10px 20px;
+  white-space: nowrap;
+
+  @media (max-width: $width-max-mobile) {
+    border-color: var(--color-white);
+    color: var(--color-white);
+  }
+}
+
+// And delete this as well:
+.menu-items-wrapper:not(:has(.menu-items)) {
+  display: flex;
+
+  // Add pseudo menu
+  &::before {
+    align-self: center;
+    color: var(--color-black);
+    // Add pseudo content with non breaking spaces
+    content: 'Your nav here \00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0 About\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0Services\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0Pricing\00A0\00A0\00A0\00A0\00A0\00A0\00A0 Contact';
+    display: block;
+    font-weight: var(--typography-weight-semibold);
+    opacity: .2;
+    // stylelint-disable-next-line
+    padding: 15px 0;
+  }
+}
+
+// And of course this:
+// stylelint-disable-next-line
+.site-footer {
+  display: none;
 }
 // --clip--
