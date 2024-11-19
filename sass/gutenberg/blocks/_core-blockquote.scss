@@ -1,14 +1,14 @@
 // Core/blockquote block
 blockquote + cite,
 blockquote + p > cite {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
 // General blockquote styles
 blockquote {
   border: 0 none;
   clear: both;
-  padding-bottom: 3rem;
+  padding-bottom: 1.875rem;
   position: relative;
 
   p {
@@ -21,20 +21,20 @@ blockquote {
   }
 
   @media (min-width: $container-ipad) {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
+    margin-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 }
 
 .wp-block-quote {
   border-left: 2px solid var(--color-paragraph);
   line-height: var(--typography-paragraph-line-height);
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4rem;
-  padding: 3.5rem 6rem;
-  width: calc(100% - 12rem);
+  margin-top: 2.5rem;
+  padding: 2.1875rem 3.75rem;
+  width: calc(100% - 7.5rem);
 
   > p {
     color: var(--color-paragraph);
@@ -42,12 +42,12 @@ blockquote {
   }
 
   @media (max-width: $width-max-article + 40px) {
-    padding: 3.5rem 2rem;
+    padding: 2.1875rem 1.25rem;
     width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }
 
   @media (max-width: $container-mobile) {
-    padding: 4rem 4rem 4rem 2rem;
+    padding: 2.5rem 2.5rem 2.5rem 1.25rem;
   }
 }
 

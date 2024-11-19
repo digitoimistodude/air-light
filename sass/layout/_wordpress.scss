@@ -8,14 +8,14 @@
 
 .sticky {
   border: 1px dashed var(--color-border-sticky);
-  margin-bottom: 2rem;
-  padding: 2rem;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
 }
 
 .comment-list li.bypostauthor,
 .bypostauthor {
   border: 1px dashed var(--color-bypostauthor);
-  padding: 2rem;
+  padding: 1.25rem;
 }
 
 // WordPress captions
@@ -31,8 +31,8 @@
 
   .wp-caption-text {
     font-style: italic;
-    margin-bottom: 2rem;
-    padding: 1rem 0;
+    margin-bottom: 1.25rem;
+    padding: 0.625rem 0;
     text-align: left;
   }
 }

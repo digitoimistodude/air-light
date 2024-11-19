@@ -17,18 +17,18 @@
   --color-dropdown-toggle-mobile: var(--color-white);
 
   // Main level items on mobile
-  --typography-size-main-level-mobile: 1.5rem;
+  --typography-size-main-level-mobile: 0.9375rem;
   --typography-weight-main-level-mobile: 600;
-  --padding-main-level-vertical-mobile: 1.2rem;
+  --padding-main-level-vertical-mobile: 0.75rem;
   --color-main-level-menu-item-hover-focus-mobile: var(--color-white);
   --color-main-level-menu-item-mobile: var(--color-white);
 
   // Sub-menu items on mobile
-  --typography-size-sub-menu-mobile: 1.5rem;
+  --typography-size-sub-menu-mobile: 0.9375rem;
   --typography-weight-sub-menu-mobile: 600;
-  --margin-left-sub-menu: 1rem;
-  --padding-sub-menu-vertical-mobile: .8rem;
-  --padding-sub-menu-horizontal-mobile: 2.5rem;
+  --margin-left-sub-menu: 0.625rem;
+  --padding-sub-menu-vertical-mobile: 0.5rem;
+  --padding-sub-menu-horizontal-mobile: 1.5625rem;
   --color-sub-menu-mobile: rgb(255 255 255 / .8);
 }
 
@@ -77,13 +77,13 @@
     height: calc(100vh - 7.2rem);
     overflow: auto;
     // Add padding to ensure all nav elements are visible on all devices and browsers for example iOS Safari
-    padding-bottom: 12rem;
+    padding-bottom: 120px;
     pointer-events: none;
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
     right: 0;
     // Real top is calculated in JS so this is a fallback
-    top: 7.2rem;
+    top: 72px;
     transform: translate3d(100%, 0, 0);
     transition: all 180ms ease-in-out;
     visibility: hidden;
@@ -146,7 +146,7 @@
 
   // Dropdown toggle
   .dropdown-toggle {
-    --dropdown-toggle-size: 1.2rem;
+    --dropdown-toggle-size: 12px;
     align-items: center;
     background-color: transparent;
     border: 0;

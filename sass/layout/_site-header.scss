@@ -57,11 +57,13 @@
   // stylelint-disable-next-line
   max-width: $width-grid-base - 40px;
   order: -1;
-  padding: 4rem;
+  // stylelint-disable-next-line
+  padding: 40px;
   position: relative;
   text-align: center;
   white-space: nowrap;
-  width: calc(100% - 4rem);
+  // stylelint-disable-next-line
+  width: calc(100% - 40px);
 }
 
 // Delete this too:

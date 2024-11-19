@@ -57,7 +57,7 @@
     "stylelint-config-standard": "^30.0.1",
     "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-order": "^6.0.2",
-    "stylelint-rem-over-px": "^1.0.0",
+    "stylelint-rem-over-px": "^1.0.2",
     "stylelint-scss": "^4.4.0",
     "terser-webpack-plugin": "^5.3.6",
     "vinyl-named": "^1.1.0",

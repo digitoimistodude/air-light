@@ -14,6 +14,6 @@
   h1 {
     font-size: clamp-calc($container-mobile, 1600px, 60px, 120px);
     line-height: var(--typography-heading-core-line-height);
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 }

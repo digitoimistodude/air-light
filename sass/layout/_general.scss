@@ -2,11 +2,6 @@
 // that apply everywhere throughout the website. Add more
 // always repeating elements right below.
 
-// Set root size for rems
-:root {
-  font-size: 62.5%;
-}
-
 // Body
 .is-root-container,
 .acf-block-preview .block,
@@ -88,7 +83,7 @@ body {
   clear: both;
   display: block;
   margin-bottom: 0;
-  margin-top: 2rem;
+  margin-top: 1.25rem;
   max-width: 100%;
   min-width: 0;
   overflow: hidden;
@@ -103,7 +98,7 @@ body {
     color: var(--color-link-edit-text);
     display: block;
     margin: 0;
-    padding: 2rem;
+    padding: 1.25rem;
     text-align: center;
     text-decoration: none;
     transition: all $transition-duration;

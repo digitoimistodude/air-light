@@ -32,15 +32,15 @@
     clip: auto;
     clip-path: none;
     display: block;
-    font-size: 1.7rem;
+    font-size: 1.0625rem;
     font-weight: var(--typography-weight-bold);
     height: auto;
-    left: .5rem;
+    left: 0.3125rem;
     line-height: normal;
     opacity: 1;
-    padding: 1.5rem 2.3rem 1.4rem;
+    padding: 0.9375rem 1.4375rem 0.875rem;
     text-decoration: none;
-    top: .5rem;
+    top: 0.3125rem;
     width: auto;
     z-index: 100000; // Above WP toolbar.
   }
@@ -51,7 +51,7 @@
 }
 
 .skip-link {
-  margin: .5rem;
+  margin: 0.3125rem;
 }
 
 // Visually distinct focus color on keyboard
@@ -65,7 +65,7 @@ div[tabindex]:focus {
   opacity: 1;
 
   // Make sure it's not glued to the element
-  outline-offset: .5rem;
+  outline-offset: 0.3125rem;
 }
 
 // Make focus a little more engaging
@@ -79,13 +79,13 @@ div[tabindex]:focus {
 
 // External link icon
 .external-link-icon {
-  margin-left: .7rem;
-  margin-right: .2rem;
+  margin-left: 0.4375rem;
+  margin-right: 2px;
 
   @media (max-width: $container-mobile) {
-    height: 1.2rem;
-    margin-left: .4rem;
+    height: 0.75rem;
+    margin-left: 4px;
     transform: translateY(1px);
-    width: 1.2rem;
+    width: 0.75rem;
   }
 }
