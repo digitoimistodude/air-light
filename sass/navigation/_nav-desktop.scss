@@ -60,7 +60,7 @@
     margin: 0;
     padding: 0;
     position: relative;
-    row-gap: 10px;
+    row-gap: .625rem;
   }
 
   // Navigation list item
@@ -299,7 +299,7 @@
 
   // Sub-menu toggle icon
   .sub-menu .dropdown-toggle {
-    width: 30px;
+    width: 1.875rem;
   }
 
   .sub-menu .dropdown-toggle svg {

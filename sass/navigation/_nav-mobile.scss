@@ -77,13 +77,13 @@
     height: calc(100vh - 7.2rem);
     overflow: auto;
     // Add padding to ensure all nav elements are visible on all devices and browsers for example iOS Safari
-    padding-bottom: 120px;
+    padding-bottom: 7.5rem;
     pointer-events: none;
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
     right: 0;
     // Real top is calculated in JS so this is a fallback
-    top: 72px;
+    top: 4.5rem;
     transform: translate3d(100%, 0, 0);
     transition: all 180ms ease-in-out;
     visibility: hidden;
@@ -146,7 +146,7 @@
 
   // Dropdown toggle
   .dropdown-toggle {
-    --dropdown-toggle-size: 12px;
+    --dropdown-toggle-size: 0.75rem;
     align-items: center;
     background-color: transparent;
     border: 0;
