@@ -1,4 +1,4 @@
-### Unreleased
+### 9.4.6: 2024-11-19
 
 * Demo: Prevent spaces in theme-info link
 * Fix newtheme-popos.sh script location detection
@@ -8,6 +8,7 @@
 * Make black truly black
 * Add Mona Sans variable font
 * Re-design placeholder content
+* Remove root font-size 62.5%, add rem-over-px formula, Fixes #192
 
 ### 9.4.5: 2024-10-25
 
