@@ -1,3 +1,47 @@
+### Unreleased
+
+* Demo: Prevent spaces in theme-info link
+* Fix newtheme-popos.sh script location detection
+* Check if pll_translatable is set
+
+### 9.4.5: 2024-10-25
+
+* Add global variable for current block during `render_acf_block`, T-17629
+* Add default styles for 404.scss
+* Make navigation to wrap automatically if there are too many links, T-20918
+* Add default column-gap to header, T-20918
+* Rewrite: allowed_block_types - Change logic for allowed blocks: 'none', 'all', 'all-core-blocks', 'all-acf-blocks', Fixes #226 (thanks @villekujansuu)
+* Allow options + specific blocks for allowed blocks
+* Prepare for air-blocks-buildtool
+* Remove stylelint-file-max-lines, T-20765
+* Add more breakpoints like $container-desktop, T-20758
+* Fix burger navigation sometimes not being centered vertically, T-20918
+* Change to new dev.docs.dude.fi way of naming conventions, combine font partials under variables to one _typography.scss file, T-20761
+* Move font-face include under _typography.scss, T-20761
+* Change typography variables to headings, T-20761
+
+### 9.4.4: 2024-09-13
+
+* Add unit tests for gulp devstyles
+* Fix nesting deprecation, fix build
+* Remove from sanitize scss: `overflow-wrap: break-word;`
+* Bump tested WordPress version to 6.6.2
+
+### 9.4.3: 2024-09-06
+
+* Fix navigation rules leaking to other navs, Fixes T-1644
+* Remove obsolete fileheader information from all files for consistency, Fixes T-13958
+* Fix phpcs errors
+* Exclude vendor dir in gulp-phpcs
+* Bump tested WordPress version to 6.6.1
+* Upgrade to node v20.17.0
+
+### 9.4.2: 2024-06-13
+
+* Fix typos #216 (thanks @szepeviktor!)
+* Add is-external-link helper class to external links
+* Bump tested WordPress version to 6.5.4
+
 ### 9.4.1: 2024-04-18
 
 * Clarify sticky nav functionality presented in 7.9.1, Fixes #213 (thanks @semidivine!)
@@ -39,7 +83,7 @@
 * Merge pull request #211 from digitoimistodude/dependabot/npm_and_yarn/axios-and-browser-sync--removed
 * Remove deprecated number-leading-zero rule
 * Add reset for img
-* Fix a regression with anchors not working when target not found, use in all hashs not just with js-trigger class
+* Fix a regression with anchors not working when target not found, use in all hashes not just with js-trigger class
 * Bump WordPress to 6.4.2
 
 ### 9.3.5: 2023-09-12
@@ -184,7 +228,7 @@
 
 * Fix incorrect textdomain in external-link JS module
 * Simplify CPT and taxonomy registration by using the class name also as a slug (Merge pull request #158 from digitoimistodude/cpt-tax-register-simplification, kudos to @timiwahalahti)
-* Remove what-input depenency, use :focus and :focus-within instead, remove forced focus outline-color
+* Remove what-input dependency, use :focus and :focus-within instead, remove forced focus outline-color
 * Bump tested up WordPress version to 6.1
 
 ### 9.2.1: 2022-10-28
@@ -233,10 +277,10 @@
 * Fix acf icons visibility issue
 * Fix link colors in sidebar
 * Add default font-family for form select items
-* Remove opionated label font-weight
-* Remove opionated nav default dropshadow from sub menus
-* Remove opionated nav default border-color from sub menus
-* Remove opionated bubble tip from sub menus
+* Remove opinionated label font-weight
+* Remove opinionated nav default dropshadow from sub menus
+* Remove opinionated nav default border-color from sub menus
+* Remove opinionated bubble tip from sub menus
 
 ### 9.1.4: 2022-09-07
 
@@ -505,7 +549,7 @@
 
 * Open submenus on the left if the nav items go over the viewport, Fixes #5
 * Added $is_preview and $post_id to be always handed over to block template
-* Create empty inc/functions directory for custom funtions
+* Create empty inc/functions directory for custom functions
 
 ### 8.2.4: 2021-12-03
 
@@ -580,7 +624,7 @@
 
 * Devpackages 2.3.7: Change back from @ronilaukkarinen/stylelint-declaration-strict-value@1.7.13 to official stylelint-declaration-strict-value@1.8.0
 * Devpackages 2.3.7: Fix rule for declaration-strict-value
-* Devpackages 2.3.7: Upgade to webpack 5
+* Devpackages 2.3.7: Upgrade to webpack 5
 * Devpackages 2.3.7: Update packages
 
 ### 8.1.1: 2021-11-05

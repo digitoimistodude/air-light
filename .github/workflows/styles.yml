@@ -1,7 +1,3 @@
-# @Author: Roni Laukkarinen
-# @Date:   2023-02-15 17:39:37
-# @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2023-03-03 20:01:10
 name: CSS
 
 on: [push, pull_request]
@@ -41,7 +37,6 @@ jobs:
         stylelint-config-recommended-scss@^9.0.0 \
         stylelint-config-standard@^30.0.1 \
         stylelint-config-standard-scss@^7.0.0 \
-        stylelint-file-max-lines@^1.0.0 \
         stylelint-order@^6.0.2 \
         stylelint-rem-over-px@^0.0.4 \
         stylelint-scss@^4.4.0 \
@@ -52,3 +47,30 @@ jobs:
     - name: Run stylelint
       run: |
         npx stylelint . --max-warnings 0 --config .stylelintrc
+
+    - name: Run gulp task devstyles in this project
+      if:
+      run: |
+        wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json
+        npm install
+
+        # Make the command visible
+        echo "Running npx gulp devstyles..."
+        npx gulp devstyles
+
+        # Capture the output
+        output=$(npx gulp devstyles 2>&1)
+
+        # Save it to a temporary file
+        echo "$output" > output.txt
+
+        # Check if the output contains the string "DEPRECATED" or "ERROR" or "WARNING"
+        if grep -q "DEPRECATED" output.txt || grep -q "ERROR" output.txt || grep -q "WARNING" output.txt; then
+          echo "Error found in output, failing build..."
+          exit 1
+        else
+          echo "No errors found in output."
+        fi
+
+        # Remove the temporary file
+        rm output.txt

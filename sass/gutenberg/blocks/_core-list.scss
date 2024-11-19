@@ -2,7 +2,7 @@
 ul,
 ol {
   list-style-position: outside;
-  width: calc((100% - calc(var(--padding-container-horizontal) * 2)));
+  width: calc((100% - calc(var(--spacing-container-padding-inline) * 2)));
 }
 
 ul {
@@ -17,7 +17,7 @@ ol {
 // Colorized markers
 li::marker {
   color: var(--color-link-text);
-  // Reseting the font in numbering magically removes the gap
+  // Resetting the font in numbering magically removes the gap
   font-family: system-ui, sans-serif;
   font-size: inherit;
 }

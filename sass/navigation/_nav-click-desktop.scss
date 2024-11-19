@@ -37,8 +37,8 @@
     align-items: center;
     color: var(--color-main-level);
     display: inline-flex;
-    font-size: var(--font-size-main-level);
-    font-weight: var(--font-weight-main-level);
+    font-size: var(--typography-size-main-level);
+    font-weight: var(--typography-weight-main-level);
     margin-left: 0;
     margin-right: 0;
     padding-bottom: var(--padding-main-level-vertical);
@@ -53,8 +53,8 @@
     align-items: center;
     color: var(--color-sub-menu);
     display: inline-flex;
-    font-size: var(--font-size-sub-menu);
-    font-weight: var(--font-weight-sub-menu);
+    font-size: var(--typography-size-sub-menu);
+    font-weight: var(--typography-weight-sub-menu);
     line-height: 1.5;
     padding-bottom: var(--padding-sub-menu-link-vertical);
     padding-left: var(--padding-sub-menu-link-horizontal);

@@ -1,11 +1,6 @@
 /**
  * Navigation.js module
  * The original, accessible navigation module for Air-light
- *
- * @Author: Roni Laukkarinen
- * @Date:   2022-06-30 16:24:47
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-05-18 17:10:37
  */
 
 // Import functions needed for the navigation module
@@ -25,8 +20,15 @@ import a11yAddDropdownToggleLabelsClick from './navigation/a11y-add-dropdown-tog
 import a11yDropdownMenuKeyboardNavigationClick from './navigation/a11y-dropdown-menu-keyboard-navigation-click';
 
 const navDesktop = () => {
+  const navPrimary = document.querySelector('.nav-primary');
+
+  // If .nav-primary doesn't exist, don't continue
+  if (!navPrimary) {
+    return;
+  }
+
   // Define globals
-  const menuItems = document.querySelectorAll('.menu-item');
+  const menuItems = navPrimary.querySelectorAll('.menu-item');
 
   // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
   const focusableElementsforDropdown = document.querySelectorAll(

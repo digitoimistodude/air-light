@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2021-04-22 08:06:03
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-11-23 09:52:24
- */
 // Dependencies
 const {
   watch,

@@ -1,13 +1,8 @@
 <?php
 /**
- * Entry footer
+ * The post meta information template.
  *
  * Show categories, tags, comment and edit links after post.
- *
- * @Author:		Roni Laukkarinen
- * @Date:   		2021-04-22 08:06:03
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2023-01-06 20:43:03
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials

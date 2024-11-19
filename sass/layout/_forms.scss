@@ -2,7 +2,7 @@
 .site-footer {
 
   // Buttons
-  .button-wrapper {
+  .wrapper-button {
     margin-bottom: 0;
   }
 
@@ -33,8 +33,8 @@
 legend,
 label {
   color: var(--color-form-label-text);
-  font-size: var(--font-size-input-fields);
-  font-weight: var(--font-weight-semibold);
+  font-size: var(--typography-size-input-fields);
+  font-weight: var(--typography-weight-semibold);
 }
 
 // Unset checkbox and radio button labels
@@ -60,8 +60,8 @@ input[type="search"] {
   border-style: solid;
   border-width: var(--border-width-input-field);
   color: var(--color-form-text);
-  font-family: var(--font-paragraph);
-  font-size: var(--font-size-input-fields);
+  font-family: var(--typography-family-paragraph);
+  font-size: var(--typography-size-input-fields);
   line-height: var(--form-line-height);
   margin-bottom: 0;
   padding-bottom: var(--form-padding-vertical);
@@ -102,8 +102,8 @@ select {
   border-style: solid;
   border-width: var(--border-width-input-field);
   color: var(--color-form-text);
-  font-family: var(--font-paragraph);
-  font-size: var(--font-size-input-fields);
+  font-family: var(--typography-family-paragraph);
+  font-size: var(--typography-size-input-fields);
   line-height: var(--form-line-height);
   max-width: 100%;
   min-width: 0;

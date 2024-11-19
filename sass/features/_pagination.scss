@@ -3,7 +3,7 @@
 .navigation:not(.post-navigation) .nav-links {
   align-items: flex-start;
   display: flex;
-  font-family: var(--font-heading);
+  font-family: var(--typography-family-heading);
   font-size: 1.4rem;
   justify-content: flex-start;
   margin-top: 4rem;
@@ -32,7 +32,7 @@
   border-top: 2px solid var(--color-blue-chalk);
   color: var(--color-pagination-text);
   display: flex;
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--typography-weight-medium);
   height: 3.5rem;
   justify-content: center;
   margin-left: 0;

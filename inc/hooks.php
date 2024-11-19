@@ -4,11 +4,6 @@
  *
  * All hooks that are run in the theme are listed here
  *
- * @Author:		Roni Laukkarinen
- * @Date:   		2022-06-30 16:24:47
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2022-09-22 12:14:52
- *
  * @package air-light
  */
 

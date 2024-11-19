@@ -1,23 +1,23 @@
 // Core/paragraph block
 .has-larger-font-size,
 .has-large-font-size {
-  line-height: var(--line-height-heading);
+  line-height: var(--typography-heading-line-height);
 }
 
 .has-large-font-size {
   @media (max-width: $container-mobile) {
-    font-size: var(--font-size-18);
+    font-size: var(--typography-size-18);
   }
 }
 
 .has-larger-font-size {
   @media (max-width: $container-mobile) {
-    font-size: var(--font-size-22);
+    font-size: var(--typography-size-22);
   }
 }
 
 @media (max-width: $width-grid-base + 40px) {
   .has-background {
-    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }
 }

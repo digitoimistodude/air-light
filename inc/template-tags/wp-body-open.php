@@ -1,9 +1,6 @@
 <?php
 /**
- * @Author: Niku Hietanen
- * @Date: 2020-03-02 10:57:56
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-05-04 11:13:43
+ * Function wp_body_open.
  *
  * @package air-light
  */

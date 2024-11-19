@@ -4,7 +4,7 @@ th {
   backface-visibility: hidden;
   background-color: var(--color-scorpion);
   color: var(--color-white);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--typography-weight-bold);
   overflow: hidden;
   text-align: left;
 }
@@ -18,8 +18,8 @@ th,
 .wp-block-table td,
 .wp-block-table th {
   border: 0;
-  font-family: var(--font-paragraph);
-  font-size: var(--font-size-14);
+  font-family: var(--typography-family-paragraph);
+  font-size: var(--typography-size-14);
   height: 2rem;
   padding: .6rem 1.5rem;
 }
@@ -55,20 +55,20 @@ table {
 
 .wp-block-table {
   @media (max-width: $width-grid-base + 40px) {
-    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }
 }
 
 .wp-block-table.alignfull {
-  margin-left: var(--padding-container-horizontal);
-  margin-right: var(--padding-container-horizontal);
-  width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+  margin-left: var(--spacing-container-padding-inline);
+  margin-right: var(--spacing-container-padding-inline);
+  width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
 }
 
 @media (max-width: $width-grid-base + 40px) {
   .wp-block-table.alignwide {
-    margin-left: var(--padding-container-horizontal);
-    margin-right: var(--padding-container-horizontal);
-    width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+    margin-left: var(--spacing-container-padding-inline);
+    margin-right: var(--spacing-container-padding-inline);
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }
 }

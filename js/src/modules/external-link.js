@@ -1,14 +1,4 @@
 /* eslint-disable no-param-reassign */
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2021-09-01 11:55:37
- * @Last Modified by:   Elias Kautto
- * @Last Modified time: 2023-09-07 12:13:08
- */
-/**
- * Style external links
- */
-
 import getLocalization from './localization';
 
 function isLinkExternal(link, localDomains) {
@@ -117,6 +107,7 @@ export function styleExternalLinks() {
     if (!classExceptions.some((className) => externalLink.classList.contains(className))) {
       // Add SVG arrow icon
       externalLink.insertAdjacentHTML('beforeend', '<svg class="external-link-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 9 9"><path d="M4.499 1.497h4v4m0-4l-7 7" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+      externalLink.classList.add('is-external-link');
     }
   });
 }

@@ -2,12 +2,7 @@
 /**
  * Template tags and helpers
  *
- * File for template related things.
- *
- * @Author:		Roni Laukkarinen
- * @Date:   		2021-05-18 10:29:32
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-02-08 17:18:22
+ * The file for template related things.
  *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials

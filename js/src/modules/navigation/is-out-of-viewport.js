@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-12-31 00:19:27
- * @Last Modified by:   Michael Bourne
- * @Last Modified time: 2023-03-09 12:19:32
- */
 // Check if an element is out of the viewport
 // eslint-disable-next-line func-names
 const isOutOfViewport = function (elem) {
