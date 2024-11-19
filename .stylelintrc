@@ -38,7 +38,7 @@
     "rem-over-px/rem-over-px": [
       true,
       {
-        "fontSize": 10,
+        "fontSize": 16,
         "ignore": [
           "-4px",
           "-3px",
@@ -91,7 +91,7 @@
     "no-duplicate-selectors": true,
     "length-zero-no-unit": true,
     "font-weight-notation": "numeric",
-    "number-max-precision": 3,
+    "number-max-precision": 4,
     "selector-class-pattern": null,
     "selector-max-class": 4,
     "selector-max-combinators": 3,

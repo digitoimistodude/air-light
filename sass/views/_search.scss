@@ -7,7 +7,7 @@
 .block-search form {
   display: grid;
   /* autoprefixer: off */
-  grid-gap: 1rem;
+  grid-gap: 0.625rem;
   grid-template-columns: 9fr 1fr;
 
   input,
@@ -28,7 +28,7 @@
 
   .row-result {
     border-top: 2px solid var(--color-border-forms);
-    padding: 2rem 0;
+    padding: 1.25rem 0;
 
     &:last-of-type {
       border-bottom: 2px solid var(--color-border-forms);
@@ -37,10 +37,10 @@
 
   h3 {
     font-size: var(--typography-h4-size);
-    margin-bottom: 1rem;
+    margin-bottom: 0.625rem;
   }
 
   p {
-    margin-top: 1rem;
+    margin-top: 0.625rem;
   }
 }

@@ -1,7 +1,7 @@
 // 🍔
 .hamburger {
   --hamburger-layer-height: 2px;
-  --hamburger-width: 3.2rem;
+  --hamburger-width: 2rem;
   --hamburger-color: var(--color-white);
   --hamburger-color-active: var(--color-white);
   background-color: var(--hamburger-color);
@@ -24,11 +24,11 @@
   }
 
   &::before {
-    top: -.9rem;
+    top: -0.5625rem;
   }
 
   &::after {
-    bottom: -.9rem;
+    bottom: -0.5625rem;
   }
 }
 
@@ -69,7 +69,7 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   content: attr(aria-label);
   font-size: var(--typography-size-14);
   font-weight: var(--typography-weight-semibold);
-  margin-left: 1.6rem;
+  margin-left: 1rem;
   white-space: nowrap;
 }
 
@@ -83,7 +83,7 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   cursor: pointer;
   display: flex;
   font-weight: var(--typography-weight-semibold);
-  height: 2rem;
+  height: 1.25rem;
   justify-content: center;
   margin: 0;
   opacity: 1;

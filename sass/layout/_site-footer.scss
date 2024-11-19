@@ -11,12 +11,12 @@
   clear: both;
   color: var(--color-paragraph);
   overflow: hidden;
-  padding: 6rem 2rem;
+  padding: 3.75rem 1.25rem;
   text-align: center;
 
   .wordpress-logo {
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     margin-left: auto;
     margin-right: auto;
   }
@@ -27,19 +27,19 @@
   }
 
   svg {
-    margin-right: .5rem;
+    margin-right: 0.3125rem;
     position: relative;
   }
 
   .powered-by-wordpress {
     display: inline-block;
     font-weight: var(--typography-weight-semibold);
-    margin-bottom: 1rem;
+    margin-bottom: 0.625rem;
     text-align: center;
   }
 
   .github-link {
-    margin-left: .8rem;
+    margin-left: 0.5rem;
     margin-top: 4px;
     overflow: hidden;
     padding-bottom: 4px;
@@ -57,7 +57,7 @@
     text-align: center;
 
     i {
-      margin: 0 .5rem;
+      margin: 0 0.3125rem;
     }
   }
 }
