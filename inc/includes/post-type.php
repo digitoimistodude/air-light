@@ -59,7 +59,7 @@ abstract class Post_Type {
    */
   public function register_wp_post_type( $slug, $args ) {
     // Register PolyLang translatable only if it's private
-    if ( $args['pll_translatable'] && false === $args['public'] ) {
+    if ( isset( $args['pll_translatable'] ) && $args['pll_translatable'] && false === $args['public'] ) {
       add_filter( 'pll_get_post_types', function( $cpts ) use ( $slug ) {
         $cpts[ $slug ] = $slug;
 

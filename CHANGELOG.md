@@ -2,6 +2,7 @@
 
 * Demo: Prevent spaces in theme-info link
 * Fix newtheme-popos.sh script location detection
+* Check if pll_translatable is set
 
 ### 9.4.5: 2024-10-25
 
