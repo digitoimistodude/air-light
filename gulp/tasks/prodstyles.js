@@ -13,7 +13,6 @@ const discardEmpty = require('postcss-discard-empty');
 const discardUnused = require('postcss-discard-unused');
 const mergeLonghand = require('postcss-merge-longhand');
 const mergeAdjacentRules = require('postcss-merge-rules');
-const minifyFontValues = require('postcss-minify-font-values');
 const minifyGradients = require('postcss-minify-gradients');
 const normalizePositions = require('postcss-normalize-positions');
 const normalizeUrl = require('postcss-normalize-url');
@@ -37,10 +36,8 @@ function prodstyles() {
       colormin(),
       calcFunction(),
       discardEmpty(),
-      discardUnused(),
       mergeLonghand(),
       mergeAdjacentRules(),
-      minifyFontValues(),
       minifyGradients(),
       normalizePositions(),
       normalizeUrl(),

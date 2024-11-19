@@ -38,13 +38,11 @@
 
 .site-main::after {
   align-items: center;
-  // stylelint-disable-next-line
-  background-image: linear-gradient(var(--color-black), var(--color-science-blue)), linear-gradient(var(--color-black), var(--color-science-blue));
   background-position: 0 0, 100% 0;
   background-repeat: no-repeat;
   background-size: 3px 100%;
-  border-bottom: 3px solid var(--color-science-blue);
-  border-top: 3px solid var(--color-black);
+  // stylelint-disable-next-line
+  border: 6px solid var(--color-black);
   color: var(--color-black);
   content: 'Build your website here! (Remove this bit in sass/layout/_site-header.scss)';
   display: flex;
@@ -58,7 +56,6 @@
   margin-top: calc(var(--spacing-container-padding-block) * 2);
   // stylelint-disable-next-line
   max-width: $width-grid-base - 40px;
-  opacity: .7;
   order: -1;
   padding: 4rem;
   position: relative;
