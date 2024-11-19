@@ -1,9 +1,3 @@
-/**
- * @Author: Tuomas Marttila
- * @Date:   2023-03-21 15:25:27
- * @Last Modified by:   Tuomas Marttila
- * @Last Modified time: 2023-04-12 15:30:03
- */
 import closeSubMenu from './close-sub-menu';
 
 function closeSubMenuHandler(items) {

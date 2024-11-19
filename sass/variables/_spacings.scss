@@ -1,52 +1,52 @@
 // CSS Variables for responsive paddings and margins
 :root {
   // Gaps
-  --grid-gap: 4.8rem;
+  --spacing-grid-gap: 4.8rem;
 
   // Paddings
-  --padding-container-horizontal: 2rem;
-  --padding-container-horizontal-large: 6.4rem;
-  --padding-container-vertical: 6.4rem;
-  --padding-site-header-vertical: 2rem;
-  --padding-block: 8rem;
+  --spacing-container-padding-inline: 2rem;
+  --spacing-container-padding-inline-large: 6.4rem;
+  --spacing-container-padding-block: 6.4rem;
+  --spacing-site-header-padding-block: 2rem;
+  --spacing-content-padding-block: 8rem;
 
   // Margins
-  --margin-between-text-elements: 4rem;
-  --margin-wp-block-image: 4rem;
-  --margin-between-paragraphs: 2.7rem;
+  --spacing-text-margin-block: 4rem;
+  --spacing-wp-block-image-margin-block: 4rem;
+  --spacing-paragraphs-margin-block: 2.7rem;
 
   // Mid-sized screens
   @media (max-width: $width-grid-base + 150px) {
-    --padding-container-horizontal: 6.4rem;
+    --spacing-container-padding-inline: 6.4rem;
   }
 
   // When there's no longer room for container to fit with wider white space
   @media (max-width: 700px) {
-    --padding-container-horizontal: 2rem;
+    --spacing-container-padding-inline: 2rem;
   }
 
   // When navigation transforms to a responsive hamburger menu
   @media (max-width: $width-max-mobile) {
-    --padding-site-header-vertical: 2rem;
+    --spacing-site-header-padding-block: 2rem;
   }
 
   // iPad
   @media (max-width: $container-ipad-landscape) {
-    --grid-gap: 3.2rem;
+    --spacing-grid-gap: 3.2rem;
   }
 
   @media (max-width: $container-ipad) {
-    --grid-gap: var(--padding-container-horizontal);
-    --padding-container-vertical: 5rem;
+    --spacing-grid-gap: var(--spacing-container-padding-inline);
+    --spacing-container-padding-block: 5rem;
   }
 
   // Between iPad and a mobile phone
   @media (max-width: 600px) {
-    --padding-block: 6rem;
+    --spacing-content-padding-block: 6rem;
   }
 
   // Vars in mobile
   @media (max-width: $container-mobile) {
-    --padding-container-vertical: 4rem;
+    --spacing-container-padding-block: 4rem;
   }
 }

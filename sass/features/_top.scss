@@ -4,16 +4,16 @@
   --color-background-top-hover: #f0f0f0;
   background-color: var(--color-background-top);
   border-radius: 2px;
-  bottom: var(--padding-container-horizontal);
+  bottom: var(--spacing-container-padding-inline);
   color: var(--color-black);
   cursor: pointer;
-  font-size: var(--font-size-16);
+  font-size: var(--typography-size-16);
   height: 3rem;
   // stylelint-disable-next-line rem-over-px/rem-over-px
   line-height: 30px;
   opacity: 0;
   position: fixed;
-  right: var(--padding-container-horizontal);
+  right: var(--spacing-container-padding-inline);
   text-align: center;
   text-decoration: none;
   transition: 500ms opacity;

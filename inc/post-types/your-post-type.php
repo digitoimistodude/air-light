@@ -1,9 +1,6 @@
 <?php
 /**
- * @Author: Niku Hietanen
- * @Date: 2020-02-18 15:06:45
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-03-31 14:39:55
+ * The post type class.
  *
  * @package air-light
  **/

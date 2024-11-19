@@ -1,8 +1,8 @@
 // Image block
 .wp-block-image {
   display: block;
-  margin-bottom: var(--margin-wp-block-image);
-  margin-top: var(--margin-wp-block-image);
+  margin-bottom: var(--spacing-wp-block-image-margin-block);
+  margin-top: var(--spacing-wp-block-image-margin-block);
 
   &.alignwide,
   &.alignfull {
@@ -48,7 +48,7 @@
 
   @media (max-width: $width-grid-base + 40px) {
     &.alignwide {
-      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+      width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
     }
   }
 

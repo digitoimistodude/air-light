@@ -1,8 +1,4 @@
 #!/bin/bash
-# @Author: Roni Laukkarinen
-# @Date:   2021-04-22 08:06:02
-# @Last Modified by:   Roni Laukkarinen
-# @Last Modified time: 2021-11-25 13:22:15
 echo "${YELLOW}Getting devpackages${TXTRESET}"
 cd ${PROJECT_PATH}
 git clone https://github.com/digitoimistodude/devpackages

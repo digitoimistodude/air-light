@@ -11,8 +11,8 @@ Contributors: Digitoimisto Dude Oy
 Tags: one-column, accessibility-ready, translation-ready
 
 Requires at least: 5.0
-Tested up to: 6.4.3
-Stable tag: 9.3.5
+Tested up to: 6.6.2
+Stable tag: 9.4.5
 License: MIT License
 License URI: https://opensource.org/licenses/MIT
 

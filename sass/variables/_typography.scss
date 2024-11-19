@@ -1,0 +1,79 @@
+// Self-hosted fonts
+// Remember to add these also to gutenberg/variables/_typography.scss with correct paths
+
+// Variable fonts
+@include variablefont('Inter', '../../fonts/inter-variablefont', 1 999);
+
+// Regular fonts
+// @include font('Inter', '../../fonts/inter-400', 400);
+// @include font('Inter', '../../fonts/inter-400-italic', 400, italic);
+// @include font('Inter', '../../fonts/inter-500', 500);
+// @include font('Inter', '../../fonts/inter-600', 600);
+// @include font('Inter', '../../fonts/inter-700', 700);
+
+// stylelint-disable rem-over-px/rem-over-px
+// CSS Variables for responsive fonts
+:root {
+  // Defined font families, replace these with your own
+  --typography-family-inter: 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+
+  // Contexts where the fonts are used, replace this with the families defined above
+  --typography-family-paragraph: var(--typography-family-inter);
+  --typography-family-heading: var(--typography-family-inter);
+
+  // Heading font sizes
+  --typography-size-hero: 52px;
+  --typography-h1-size: 40px;
+  --typography-h2-size: 30px;
+  --typography-h3-size: 24px;
+  --typography-h4-size: 20px;
+  --typography-h5-size: 16px;
+  --typography-h6-size: 14px;
+
+  // Paragraph font sizes
+  --typography-size-12: 12px;
+  --typography-size-13: 13px;
+  --typography-size-14: 14px;
+  --typography-size-15: 15px;
+  --typography-size-16: 16px;
+  --typography-size-17: 17px;
+  --typography-size-18: 18px;
+  --typography-size-20: 20px;
+  --typography-size-22: 22px;
+
+  // Element font sizes
+  --typography-paragraph-size: var(--typography-size-18);
+  --typography-nav-toggle-label-size: 15px;
+  --typography-captions-size: 15px;
+
+  // Line-heights
+  --typography-heading-line-height: 1.5;
+  --typography-heading-core-line-height: 1.23;
+  --typography-paragraph-line-height: 1.7;
+
+  // Font weights
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+  --typography-weight-paragraph: var(--typography-weight-regular);
+  --typography-weight-heading: var(--typography-weight-bold);
+
+  // Heading font sizes in mobile
+  @media (max-width: $container-mobile) {
+    --typography-size-hero: 38px;
+    --typography-h1-size: 32px;
+    --typography-h2-size: 24px;
+    --typography-h3-size: 21px;
+    --typography-h4-size: 18px;
+    --typography-h5-size: 14px;
+    --typography-h6-size: 12px;
+    --typography-paragraph-size: 16px;
+  }
+
+  // Element font sizes in tiny phones like iPhone 5S
+  @media (max-width: 420px) {
+    --typography-size-16: 14px;
+    --typography-nav-toggle-label-size: 13px;
+  }
+}

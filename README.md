@@ -249,9 +249,9 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 ### Requirements
 
-* PHP >= 7.4
+* PHP >= 8.3
 * Requires at least: WordPress 4.7.1
-* Tested up to WordPress 6.4.3
+* Tested up to WordPress 6.6.2
 
 ### Recommendations for development
 

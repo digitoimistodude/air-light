@@ -1,11 +1,6 @@
 <?php
 /**
- * Theme setup
- *
- * @Author: Timi Wahalahti
- * @Date: 2020-02-20 13:46:50
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-11-04 13:56:43
+ * Theme setup and supports.
  *
  * @package air-light
  **/

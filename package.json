@@ -1,6 +1,6 @@
 {
   "name": "air-light",
-  "version": "9.4.0",
+  "version": "9.4.5",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -58,7 +58,6 @@
     "stylelint-config-recommended-scss": "^9.0.1",
     "stylelint-config-standard": "^30.0.1",
     "stylelint-config-standard-scss": "^7.0.1",
-    "stylelint-file-max-lines": "^1.0.0",
     "stylelint-order": "^6.0.2",
     "stylelint-rem-over-px": "^1.0.0",
     "stylelint-scss": "^4.4.0",

@@ -1,9 +1,6 @@
 <?php
 /**
- * @Author: Roni Laukkarinen
- * @Date:   2021-02-04 18:15:59
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2021-06-22 09:33:02
+ * Forms related hooks.
  *
  * @package air-light
  */

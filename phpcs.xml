@@ -35,8 +35,6 @@
         <exclude name="Universal.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
         <exclude name="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned" />
         <exclude name="PEAR.Functions.FunctionCallSignature.OpeningIndent" />
-
-        <!-- Don't require too strict inline commenting, it's a good thing to documentate, let's not make it frustrating -->
         <exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
         <exclude name="Squiz.Commenting.ClassComment.WrongStyle" />
         <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
@@ -46,8 +44,6 @@
         <exclude name="Squiz.Commenting.FileComment.Missing" />
         <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
         <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
-
-        <!-- General code style related excludes -->
         <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
         <exclude name="Squiz.PHP.EmbeddedPhp.MultipleStatements" />
         <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
@@ -57,11 +53,7 @@
         <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound" />
         <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
         <exclude name="PHPCompatibility.PHP.NewFunctionArrayDereferencing.Found" />
-
-        <!-- General WordPress stuff we like to overrule -->
         <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
-
-        <!-- Very strict VIP/discouraged rules that are not needed -->
         <exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
         <exclude name="WordPress.Functions.DontExtract.extract_extract" />
         <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
@@ -73,17 +65,9 @@
         <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
         <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
         <exclude name="WordPress.PHP.DontExtract.extract_extract" />
-
-        <!-- Translations related, not always necessary, too strict -->
         <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
-
-        <!-- EditorConfig makes sure this happens anyway & false positives happen with this -->
         <exclude name="Generic.Files.EndFileNewline.NotFound" />
-
-        <!-- Many times when developing a customer case we have placeholders for SVG includes, so unnecessary error reports happen with this rule -->
         <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
-
-        <!-- Other useful excludes -->
         <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
         <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
         <exclude name="PEAR.NamingConventions.ValidClassName.StartWithCapital" />
@@ -101,14 +85,9 @@
         <exclude name="WordPress.PHP.DisallowShortTernary.Found" />
         <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
         <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
-
-        <!-- Whitespace rules -->
-        <exclude name="WordPress.WhiteSpace.PrecisionAlignment.Found" />
         <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
-        <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
-
-        <!-- Project based -->
         <exclude name="Squiz.PHP.CommentedOutCode.Found" />
+        <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.

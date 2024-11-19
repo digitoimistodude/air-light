@@ -16,8 +16,7 @@
 // Variables
 @import 'variables/colors';
 @import 'variables/breakpoints';
-@import 'variables/font-family';
-@import 'variables/font-size';
+@import 'variables/typography';
 @import 'variables/forms';
 @import 'variables/spacings';
 
@@ -25,7 +24,7 @@
 @import 'base/accessibility';
 
 // Gutenberg editor specific webfonts
-@import 'gutenberg/variables/font-face';
+@import 'gutenberg/variables/typography';
 
 // Components needed by gutenberg
 @import 'components/components';

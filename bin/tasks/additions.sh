@@ -1,8 +1,4 @@
 #!/bin/bash
-# @Author: Roni Laukkarinen
-# @Date:   2021-05-21 14:40:29
-# @Last Modified by:   Elias Kautto
-# @Last Modified time: 2022-05-27 10:37:34
 echo "${YELLOW}Adding media library folder...${TXTRESET}"
 mkdir -p ${PROJECT_PATH}/media
 echo "" > ${PROJECT_PATH}/media/index.php
@@ -10,8 +6,8 @@ chmod 777 ${PROJECT_PATH}/media
 
 echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
-NEWEST_AIR_VERSION="9.4.0"
-NEWEST_WORDPRESS_VERSION="6.4.3"
+NEWEST_AIR_VERSION="9.4.5"
+NEWEST_WORDPRESS_VERSION="6.6.2"
 NEWEST_PHP_VERSION="8.3"
 CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
 echo "# ${PROJECT_NAME}
@@ -41,7 +37,7 @@ This project is hand made for customer by Dude.
 
 ## Getting started
 
-Your local server should be up and running. If you need help, ask your superviser or refer to **[Internal Development Docs](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/)** → **[Joining the project later on](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/project-stages/joining-the-project-later-on)**.
+Your local server should be up and running. If you need help, ask your supervisor or refer to **[Internal Development Docs](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/)** → **[Joining the project later on](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/project-stages/joining-the-project-later-on)**.
 
 ### Installation
 

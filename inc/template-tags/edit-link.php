@@ -4,11 +4,6 @@
  *
  * This function shows edit links.
  *
- * @Author:		Roni Laukkarinen
- * @Date:   		2022-02-08 17:18:33
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-02-08 17:26:27
- *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */

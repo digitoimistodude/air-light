@@ -1,11 +1,6 @@
 <?php
 /**
- * The base for a post type object
- *
- * @Author: Niku Hietanen
- * @Date: 2020-02-20 13:45:26
- * @Last Modified by:   Timi Wahalahti
- * @Last Modified time: 2023-03-31 14:50:15
+ * The base for a post type object.
  *
  * @package air-light
  */
@@ -64,7 +59,7 @@ abstract class Post_Type {
    */
   public function register_wp_post_type( $slug, $args ) {
     // Register PolyLang translatable only if it's private
-    if ( $args['pll_translatable'] && false === $args['public'] ) {
+    if ( isset( $args['pll_translatable'] ) && $args['pll_translatable'] && false === $args['public'] ) {
       add_filter( 'pll_get_post_types', function( $cpts ) use ( $slug ) {
         $cpts[ $slug ] = $slug;
 

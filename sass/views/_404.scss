@@ -7,8 +7,13 @@
     }
   }
 
+  .content {
+    text-align: center;
+  }
+
   h1 {
-    font-size: clamp-calc($container-mobile, 1600px, 42px, 200px);
+    font-size: clamp-calc($container-mobile, 1600px, 60px, 120px);
+    line-height: var(--typography-heading-core-line-height);
     margin-bottom: 2rem;
   }
 }

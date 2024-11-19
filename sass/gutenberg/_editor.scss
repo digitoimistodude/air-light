@@ -40,18 +40,21 @@
   text-decoration: inherit;
 }
 
+// Prevent horizontal scrolling
+.editor-styles-wrapper {
+  overflow-x: hidden;
+}
+
 // Editor exceptions below
 // These styles are NO USE to front-end
 // Need to be right after general, because after typography comes block styles
+// stylelint-disable-next-line
 .editor-styles-wrapper {
   // Import typography related styles inside blocks
   @import 'layout/typography';
 
   // Import gravity forms inside Gutenberg editor
   @import 'features/gravity-forms';
-
-  // Prevent horizontal scrolling
-  overflow-x: hidden;
 
   // Fix acf icons visibility issue
   .acf-icon {
@@ -78,8 +81,8 @@
   .wp-block-gallery,
   .wp-block.editor-post-title {
     @media (max-width: $width-max-article + 40px) {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
       width: 100%;
 
       &.alignleft,
@@ -100,12 +103,12 @@
 
   // Full width gallery should be always be with paddings
   .wp-block[data-align="full"] > .wp-block-gallery {
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
 
     &.alignfull {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
     }
   }
 
@@ -131,7 +134,7 @@
 
 // Default editor blocks
 .is-root-container > .wp-block {
-  font-family: var(--font-paragraph);
+  font-family: var(--typography-family-paragraph);
 
   // Font smoothing
   -moz-osx-font-smoothing: grayscale;
@@ -200,7 +203,7 @@
 .is-root-container .wp-block.wp-block-quote,
 .is-root-container .wp-block[data-type^="core"],
 .is-root-container [contenteditable] p {
-  font-family: var(--font-paragraph);
+  font-family: var(--typography-family-paragraph);
 
   // Font smoothing
   -moz-osx-font-smoothing: grayscale;

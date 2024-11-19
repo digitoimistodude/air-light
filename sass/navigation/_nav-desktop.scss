@@ -9,8 +9,8 @@
   --dropdown-toggle-size: 1.2rem;
 
   // Main level items on desktop
-  --font-size-main-level: var(--font-size-16);
-  --font-weight-main-level: var(--font-weight-bold);
+  --typography-size-main-level: var(--typography-size-16);
+  --typography-weight-main-level: var(--typography-weight-bold);
   --padding-main-level-horizontal: 0;
   --padding-main-level-vertical: .6rem;
   --color-main-level: var(--color-black);
@@ -19,8 +19,8 @@
   --gap-main-level-horizontal: 2.5rem;
 
   // Sub menu items on desktop
-  --font-size-sub-menu: var(--font-size-16);
-  --font-weight-sub-menu: var(--font-weight-regular);
+  --typography-size-sub-menu: var(--typography-size-16);
+  --typography-weight-sub-menu: var(--typography-weight-regular);
   --padding-sub-menu-vertical: .6rem;
   --padding-sub-menu-link-vertical: .6rem;
   --padding-sub-menu-link-horizontal: 1.5rem;
@@ -44,6 +44,7 @@
 
   // Navigation wrapper
   .nav-primary {
+    line-height: 0;
     padding-bottom: 0;
     padding-top: 0;
   }
@@ -52,11 +53,14 @@
   .menu-items {
     align-items: center;
     background-color: transparent;
+    column-gap: var(--gap-main-level-horizontal);
     display: flex;
-    gap: var(--gap-main-level-horizontal);
+    flex-wrap: wrap;
+    justify-content: flex-end;
     margin: 0;
     padding: 0;
     position: relative;
+    row-gap: 1rem;
   }
 
   // Navigation list item
@@ -71,8 +75,8 @@
     align-items: center;
     color: var(--color-main-level);
     display: inline-flex;
-    font-size: var(--font-size-main-level);
-    font-weight: var(--font-weight-main-level);
+    font-size: var(--typography-size-main-level);
+    font-weight: var(--typography-weight-main-level);
     margin-left: 0;
     margin-right: 0;
     padding-bottom: var(--padding-main-level-vertical);
@@ -86,8 +90,8 @@
     align-items: center;
     color: var(--color-sub-menu);
     display: inline-flex;
-    font-size: var(--font-size-sub-menu);
-    font-weight: var(--font-weight-sub-menu);
+    font-size: var(--typography-size-sub-menu);
+    font-weight: var(--typography-weight-sub-menu);
     line-height: 1.5;
     padding-bottom: var(--padding-sub-menu-link-vertical);
     padding-left: var(--padding-sub-menu-link-horizontal);

@@ -1,10 +1,4 @@
 /* eslint-disable no-param-reassign, no-undef */
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-05-07 12:20:13
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2024-01-10 18:53:09
- */
 import MoveTo from 'moveto';
 
 const initAnchors = () => {

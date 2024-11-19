@@ -1,9 +1,6 @@
 <?php
 /**
- * @Author: Niku Hietanen
- * @Date: 2020-02-18 15:06:23
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2024-01-10 15:35:17
+ * Taxonomy base class.
  *
  * @package air-light
  */

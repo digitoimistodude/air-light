@@ -2,29 +2,29 @@
 .editor-styles-wrapper,
 .article-content {
   max-width: 100%;
-  padding-bottom: var(--padding-block);
+  padding-bottom: var(--spacing-content-padding-block);
   padding-left: 0;
   padding-right: 0;
-  padding-top: var(--padding-block);
+  padding-top: var(--spacing-content-padding-block);
 }
 
 // Gutenberg core magic
 .article-content > [class^='wp-block-'],
 .is-root-container > *,
 .article-content > * {
-  line-height: var(--line-height-paragraph);
+  line-height: var(--typography-paragraph-line-height);
   margin-left: auto;
   margin-right: auto;
   max-width: $width-max-article;
 
   @media (max-width: $width-max-article + 40px) {
-    padding-left: var(--padding-container-horizontal);
-    padding-right: var(--padding-container-horizontal);
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
 
     &.alignfull {
-      padding-left: var(--padding-container-horizontal);
-      padding-right: var(--padding-container-horizontal);
-      width: calc(100% - calc(var(--padding-container-horizontal) * 2));
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
+      width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
     }
   }
 }

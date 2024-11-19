@@ -1,9 +1,3 @@
-/**
- * @Author: Roni Laukkarinen
- * @Date:   2022-05-12 17:32:43
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-10-12 15:06:50
- */
 import MoveTo from 'moveto';
 
 const initA11ySkipLink = () => {
