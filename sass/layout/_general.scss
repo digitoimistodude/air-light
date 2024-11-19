@@ -5,7 +5,7 @@
 // Body
 .is-root-container,
 .acf-block-preview .block,
-body {
+body:not(.wp-admin) {
   color: var(--color-paragraph);
   font-family: var(--typography-family-paragraph);
   font-size: var(--typography-paragraph-size);

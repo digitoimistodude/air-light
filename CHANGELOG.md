@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix body styles leaking to wp-admin
+
 ### 9.4.6: 2024-11-19
 
 * Demo: Prevent spaces in theme-info link
