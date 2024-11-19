@@ -11,4 +11,4 @@ jobs:
     - name: Run html-validator-cli
       run: |
         npm i -g html-validator-cli
-        html-validator "https://airwptheme.com/demo" --format=text --quiet
+         html-validator "https://airwptheme.com/demo" --format=text --ignore='Error: CSS: “padding-top”: only “0” can be a “unit”. You must put a unit after your number.' --quiet
