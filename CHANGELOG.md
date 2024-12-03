@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Fix body styles leaking to wp-admin
+* Fix img proportions fallback for images that have width and height set, T-23188
 
 ### 9.4.6: 2024-11-19
 
