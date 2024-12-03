@@ -3,6 +3,7 @@
 * Fix body styles leaking to wp-admin
 * Fix img proportions fallback for images that have width and height set, T-23188
 * Fix image proportions for overlay images due to air-helper 3.1.1, T-23188
+* Change HTML build CI to use vnu-jar instead of outdated html-validator-cli
 
 ### 9.4.6: 2024-11-19
 
