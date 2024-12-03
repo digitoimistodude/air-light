@@ -1,7 +1,8 @@
 // Styling background-images
 // For custom sized image background, use: class="image image-background"
 // For bg as layer, use: class="image image-background image-background-layer"
-.image-background > img {
+.image-background > img,
+.image-background > img[width][height] {
   object-fit: cover;
 }
 
@@ -11,6 +12,7 @@
 }
 
 .image-background > img,
+.image-background > img[width][height],
 .image-background-layer {
   height: 100%;
   left: 0;
