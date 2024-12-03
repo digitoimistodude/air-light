@@ -67,6 +67,7 @@
   "dependencies": {
     "airbnb-browser-shims": "^3.3.0",
     "moveto": "^1.8.2",
-    "reframe.js": "^4.0.0"
+    "reframe.js": "^4.0.0",
+    "vnu-jar": "^24.10.17"
   }
 }

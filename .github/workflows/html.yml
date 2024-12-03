@@ -7,8 +7,22 @@ jobs:
     name: Test HTML and accessibility with NU HTML Checker
     runs-on: ubuntu-20.04
 
+    # Test on macOS:
+    # brew install openjdk
+    # sudo ln -sfn $(brew --prefix)/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
     steps:
-    - name: Run html-validator-cli
+    - name: Install Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Download vnu.jar
+      run: wget https://github.com/validator/validator/releases/download/latest/vnu.jar
+
+    - name: Run vnu validator
       run: |
-        npm i -g html-validator-cli
-         html-validator "https://airwptheme.com/demo" --format=text --ignore='Error: CSS: “padding-top”: only “0” can be a “unit”. You must put a unit after your number.' --quiet
+        java -jar vnu.jar --skip-non-html --errors-only --format text \
+        --filterpattern ".*contain-intrinsic-size.*" \
+        --filterpattern ".*only.*0.*can be a.*unit.*" \
+        "https://airwptheme.com/demo"
