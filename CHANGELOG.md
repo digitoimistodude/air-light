@@ -1,9 +1,10 @@
-### [Unreleased]
+### 9.4.7: 2024-12-04
 
 * Fix body styles leaking to wp-admin
 * Fix img proportions fallback for images that have width and height set, T-23188
 * Fix image proportions for overlay images due to air-helper 3.1.1, T-23188
 * Change HTML build CI to use vnu-jar instead of outdated html-validator-cli
+* Remove polyfills, T-14767
 
 ### 9.4.6: 2024-11-19
 
