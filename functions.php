@@ -173,10 +173,10 @@ add_action( 'after_setup_theme', function() {
  */
 function debug_print_all_blocks() {
   $blocks = \WP_Block_Type_Registry::get_instance()->get_all_registered();
-  $block_names = array_map(function($block) {
+  $block_names = array_map(function( $block ) {
     return "'" . $block->name . "',";
   }, $blocks);
-  echo '<pre>' . implode("\n", $block_names) . '</pre>';
+  echo '<pre>' . implode( "\n", $block_names ) . '</pre>'; // phpcs:ignore
   die();
 }
 
