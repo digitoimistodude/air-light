@@ -141,7 +141,7 @@ add_action( 'after_setup_theme', function() {
     // Accepts both string (all*/none-options only) and array (options + specific blocks)
     'allowed_blocks' => [
       'post' => 'all-core-blocks',
-      'page' => [],
+      'page' => 'all',
       // 'page' => [
       //   'all-acf-blocks',
       //   'core/paragraph',
@@ -167,6 +167,22 @@ add_action( 'after_setup_theme', function() {
 
   define( 'THEME_SETTINGS', $theme_settings );
 } ); // end action after_setup_theme
+
+/**
+ * Debug function to print all available blocks
+ */
+function debug_print_all_blocks() {
+  $blocks = \WP_Block_Type_Registry::get_instance()->get_all_registered();
+  $block_names = array_map(function($block) {
+    return "'" . $block->name . "',";
+  }, $blocks);
+  echo '<pre>' . implode("\n", $block_names) . '</pre>';
+  die();
+}
+
+// Uncomment the following line to see all available blocks:
+// add_action('init', __NAMESPACE__ . '\\debug_print_all_blocks');
+
 
 /**
  * Required files

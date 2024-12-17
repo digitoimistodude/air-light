@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Add debug function to print all available blocks
+
 ### 9.4.7: 2024-12-04
 
 * Fix body styles leaking to wp-admin
