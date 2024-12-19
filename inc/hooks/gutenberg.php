@@ -11,6 +11,7 @@ namespace Air_Light;
  * Restrict blocks to only allowed blocks in the settings
  */
 function allowed_block_types( $allowed_blocks, $editor_context ) { // phpcs:ignore
+
   // If no allowed blocks are defined or it is set to none, return an empty array
   if ( empty( THEME_SETTINGS['allowed_blocks'] ) || 'none' === THEME_SETTINGS['allowed_blocks'] ) {
     return [];
