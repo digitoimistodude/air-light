@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Add debug function to print all available blocks
+* Fix page including all allowed blocks by default (default: none)
 
 ### 9.4.7: 2024-12-04
 
