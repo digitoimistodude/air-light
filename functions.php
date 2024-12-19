@@ -141,7 +141,9 @@ add_action( 'after_setup_theme', function() {
     // Accepts both string (all*/none-options only) and array (options + specific blocks)
     'allowed_blocks' => [
       'post' => 'all-core-blocks',
-      'page' => 'all',
+      'page' => [
+        'airdev/content-image',
+      ],
       // 'page' => [
       //   'all-acf-blocks',
       //   'core/paragraph',
@@ -208,3 +210,10 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\build_post_types' );
 
 add_action( 'after_air_helper_init', __NAMESPACE__ . '\rebuild_taxonomies' );
 add_action( 'after_air_helper_init', __NAMESPACE__ . '\rebuild_post_types' );
+
+/**
+ * Register air-blocks-buildtool blocks
+ */
+add_action('init', function() {
+  register_block_type( __DIR__ . '/blocks/content-image/block.json' );
+});

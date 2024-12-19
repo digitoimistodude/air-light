@@ -88,6 +88,7 @@
         <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
         <exclude name="Squiz.PHP.CommentedOutCode.Found" />
         <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.

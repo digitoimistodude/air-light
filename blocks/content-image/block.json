@@ -1,0 +1,37 @@
+{
+  "apiVersion": 3,
+  "name": "airblocks/content-image",
+  "title": "Sisältö ja kuva",
+  "category": "airdev",
+  "description": "A Gutenberg block!",
+  "icon": "block-default",
+  "editorScript": "file:./editor.js",
+  "render": "file:./render.php",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "",
+      "air_label": "title",
+      "air_location": "rich-text",
+      "air_type": "string"
+    },
+    "content": {
+      "type": "string",
+      "default": "",
+      "air_label": "content",
+      "air_location": "rich-text",
+      "air_type": "string"
+    },
+    "image": {
+      "type": "string",
+      "default": "",
+      "air_label": "image",
+      "air_location": "rich-text",
+      "air_type": "string"
+    }
+  },
+  "supports": {
+    "html": false,
+    "customClassName": false
+  }
+}
