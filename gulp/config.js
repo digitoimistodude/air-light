@@ -7,6 +7,8 @@ module.exports = {
     "preset": [
       "cssnano-preset-advanced",
       {
+        discardUnused: false, // Prevent removal of seemingly unused font-family
+        reduceInitial: false, // Retain initial value optimizations
         "discardComments": {
           "removeAll": true
         }

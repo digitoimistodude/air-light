@@ -2,6 +2,7 @@
 
 * Add debug function to print all available blocks
 * Fix page including all allowed blocks by default (default: none)
+* Fix cssnano stripping out font-family declarations
 
 ### 9.4.7: 2024-12-04
 
