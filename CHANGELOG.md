@@ -3,6 +3,7 @@
 * Add debug function to print all available blocks
 * Fix page including all allowed blocks by default (default: none)
 * Fix cssnano stripping out font-family declarations
+* Add tripped down tinymce toolbars to acf wysiwyg, T-19418
 
 ### 9.4.7: 2024-12-04
 

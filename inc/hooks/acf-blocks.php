@@ -65,3 +65,9 @@ function get_acf_block_icon_str( $icon_path ) {
   include $icon_path;
   return ob_get_clean();
 } // end get_acf_block_icon_str
+
+function add_custom_tinymce_toolbars( $toolbars ) {
+  $toolbars['Small'][1] = [ 'bold', 'italic', 'underline', 'strikethrough', 'link', 'bullist', 'numlist', 'blockquote' ];
+  $toolbars['Mini'][1] = [ 'bold', 'italic', 'underline', 'strikethrough', 'link' ];
+  return $toolbars;
+} // end add_custom_tinymce_toolbars
