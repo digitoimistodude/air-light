@@ -96,3 +96,33 @@ p {
 p:last-child {
   margin-bottom: 0;
 }
+
+// Enhance styles for blockquote and lists added via wysiwyg
+.wysiwyg li {
+  margin-bottom: .6rem;
+  margin-top: .6rem;
+}
+
+.wysiwyg li:first-child {
+  margin-top: 0;
+}
+
+.wysiwyg li:last-child {
+  margin-bottom: 0;
+}
+
+blockquote.wysiwyg {
+  border-left: 2px solid var(--color-main);
+  margin: 2.9rem 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+blockquote.wysiwyg > *:first-child {
+  margin-top: 0;
+}
+
+blockquote.wysiwyg > *:last-child {
+  margin-bottom: 0;
+}
+
+
