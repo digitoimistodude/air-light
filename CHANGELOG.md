@@ -4,6 +4,7 @@
 * Fix page including all allowed blocks by default (default: none)
 * Fix cssnano stripping out font-family declarations
 * Add stripped down tinymce toolbars to acf wysiwyg field, T-19418
+* Enhance styles for blockquote and lists added via wysiwyg, T-17639
 
 ### 9.4.7: 2024-12-04
 
