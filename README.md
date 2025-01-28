@@ -292,11 +292,12 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 7. Clone your fork with `git clone git@github.com:yourusername/air-light.git` (replace `yourusername` with your actual username)
 8. Cd to your new cloned repository `cd /var/www/airdev/content/themes/air-light`
 9. Add `devDependencies` to package.json from [here](https://github.com/digitoimistodude/devpackages/blob/master/package.json)
-10. Install the dependencies by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
-11. Wait npm to get through files (get another cup of coffee)
-12. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
-13. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
-14. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
+10. Run `nvm use`.
+11. Install the dependencies by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
+12. Wait npm to get through files (get another cup of coffee)
+13. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
+14. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
+15. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) to be able to run WP-CLI with just `wp`.
 
