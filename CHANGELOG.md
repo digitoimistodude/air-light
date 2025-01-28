@@ -3,6 +3,7 @@
 * Add debug function to print all available blocks
 * Fix page including all allowed blocks by default (default: none)
 * Fix cssnano stripping out font-family declarations
+* Remove root font-size 62.5% from editor styles, T-24605
 
 ### 9.4.7: 2024-12-04
 
