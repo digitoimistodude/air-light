@@ -5,6 +5,7 @@
 * Fix cssnano stripping out font-family declarations
 * Remove root font-size 62.5% from editor styles, T-24605
 * Add limited amount of core blocks for articles by default, remove extra embed blocks, T-25121
+* Bump tested up to WordPress 6.7.1
 
 ### 9.4.7: 2024-12-04
 
