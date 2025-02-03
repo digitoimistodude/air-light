@@ -1,9 +1,10 @@
-### [Unreleased]
+### 9.4.8: 2025-02-03
 
 * Add debug function to print all available blocks
 * Fix page including all allowed blocks by default (default: none)
 * Fix cssnano stripping out font-family declarations
 * Remove root font-size 62.5% from editor styles, T-24605
+* Add limited amount of core blocks for articles by default, remove extra embed blocks, T-25121
 
 ### 9.4.7: 2024-12-04
 
