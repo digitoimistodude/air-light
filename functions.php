@@ -141,7 +141,6 @@ add_action( 'after_setup_theme', function() {
     // Accepts both string (all*/none-options only) and array (options + specific blocks)
     'allowed_blocks' => [
       'post' => [
-        'core/code',
         'core/column',
         'core/columns',
         'core/coverImage',

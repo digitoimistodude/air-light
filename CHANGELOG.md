@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Disable core/code block by default, T-25121
+
 ### 9.4.8: 2025-02-03
 
 * Add debug function to print all available blocks
