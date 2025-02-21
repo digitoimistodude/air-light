@@ -231,3 +231,10 @@
     transform: translate3d(calc(var(--width-navigation) * -1), 0, 0);
   }
 }
+
+// This offsets the menu position in mobile viewports for logged in users
+@media screen and (max-width: 782px) {
+  .logged-in.admin-bar .menu-items-wrapper {
+    margin-top: 46px;
+  }
+}
