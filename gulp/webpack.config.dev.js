@@ -12,11 +12,12 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            ['airbnb', {
+            ['@babel/preset-env', {
+              modules: false,
+              useBuiltIns: 'usage',
+              corejs: 3,
               targets: {
-                chrome: 50,
-                ie: 11,
-                firefox: 45
+                esmodules: true
               }
             }]
           ]

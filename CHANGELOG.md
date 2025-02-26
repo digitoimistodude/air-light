@@ -8,6 +8,11 @@
 * Delete redundant _box-with-shadow.scss, T-24776
 * Delete obsolete aspect-ratio mixin, T-24777
 * Add parts folder, T-24778
+* Force minimal selection of formatting in tinymce WYSIWYG editor, T-19418
+* Rewrite allowed_blocks, make it possible to use single blocks, T-17645
+* Fix: Mobile navigation is wrongly offset with WP admin bar, T-25557
+* Remove obsolete airbnb-browser-shims, T-23391
+* Avoid serving legacy JS bundles, T-23391
 
 ### 9.4.8: 2025-02-03
 

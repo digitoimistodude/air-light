@@ -25,7 +25,6 @@ jobs:
         rm package.json
         wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
         sed -i 's/PROJECTNAME/air-light/g' package.json
-        npm i airbnb-browser-shims@^3.3.0 --save
         npm i moveto@^1.8.2 --save
         npm i reframe.js@^4.0.0 --save
         npm i

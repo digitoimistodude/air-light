@@ -4,8 +4,9 @@
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/eslint-parser": "^7.19.1",
+    "@babel/core": "^7.23.7",
+    "@babel/eslint-parser": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
     "@hint/hint-axe": "^4.4.17",
     "@hint/hint-button-type": "^3.0.19",
     "@hint/hint-compat-api": "^4.5.3",
@@ -16,13 +17,11 @@
     "autoprefixer": "^10.4.13",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.2",
-    "babel-preset-airbnb": "^5.0.0",
     "browser-sync": "^3.0.3",
     "caniuse-lite": "^1.0.30001452",
     "cssnano": "^5.1.14",
     "cssnano-preset-advanced": "^5.3.9",
     "eslint": "^8.34.0",
-    "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
@@ -65,7 +64,7 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "airbnb-browser-shims": "^3.3.0",
+    "core-js": "^3.40.0",
     "moveto": "^1.8.2",
     "reframe.js": "^4.0.0",
     "vnu-jar": "^24.10.17"

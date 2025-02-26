@@ -218,10 +218,6 @@ All .js files in `/js/src/*` is built to production bundles in `/js/prod/` folde
 
 If you want to add a piece of custom JS, create a file under `/js/src/modules/` and import or require it in `/js/src/front-end.js`. If you need a admin-specific JS, add a `/js/src/admin.js` and then enqueue `/js/dist/admin.js` with `enqueue_admin_scripts`
 
-#### Linter
-
-We use [Airbnb](https://github.com/airbnb/javascript) es-lint presets spiced up with our own flavors.
-
 ### Extra building blocks
 
 #### Sticky navigation

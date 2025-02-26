@@ -5,25 +5,18 @@ module.exports = {
       (compiler) => {
         const TerserPlugin = require('terser-webpack-plugin');
         new TerserPlugin({
-        terserOptions: {
-          // ecma: 6,
-          parse: {},
-          compress: {},
-          mangle: true, // Note `mangle.properties` is `false` by default.
-          module: false,
-          toplevel: false,
-          nameCache: null,
-          ie8: false,
-          keep_fnames: false,
-          safari10: false,
-          format: {
-            comments: false,
+          extractComments: false,
+          terserOptions: {
+            compress: {},
+            mangle: true,
+            module: false,
+            format: {
+              comments: false,
+            },
           },
-        },
-        extractComments: false,
-      }).apply(compiler);
-    },
-  ]
+        }).apply(compiler);
+      },
+    ]
   },
   externals: {
     jquery: 'jQuery' // Available and loaded through WordPress.
@@ -37,11 +30,12 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: [
-            ['airbnb', {
+            ['@babel/preset-env', {
+              modules: false,
+              useBuiltIns: 'usage',
+              corejs: 3,
               targets: {
-                chrome: 50,
-                ie: 11,
-                firefox: 45
+                esmodules: true
               }
             }]
           ]
