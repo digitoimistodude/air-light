@@ -13,6 +13,7 @@
 * Fix: Mobile navigation is wrongly offset with WP admin bar, T-25557
 * Remove obsolete airbnb-browser-shims, T-23391
 * Avoid serving legacy JS bundles, T-23391
+* Bump tested up to WordPress 6.7.2
 
 ### 9.4.8: 2025-02-03
 
