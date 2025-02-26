@@ -235,6 +235,7 @@
 // This offsets the menu position in mobile viewports for logged in users
 @media screen and (max-width: 782px) {
   .logged-in.admin-bar .menu-items-wrapper {
+    // stylelint-disable-next-line rem-over-px/rem-over-px
     margin-top: 46px;
   }
 }
