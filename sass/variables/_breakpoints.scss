@@ -17,7 +17,7 @@ $container-tiny-mobile: 354px;
 $width-wide: 1200px;
 $width-full: 100%;
 
-// CSS variables for JS
+// CSS variables for JS. Remove this negative 1px value or add 1px if needed depending on when you want to stop the JS from controling the position of the navigation.
 :root {
-  --width-max-mobile: #{$width-max-mobile};
+  --width-max-mobile: #{$width-max-mobile - 1px};
 }
