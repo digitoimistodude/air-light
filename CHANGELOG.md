@@ -1,8 +1,13 @@
-### [Unreleased]
+### 9.5.0: 2025-02-26
 
 * Disable core/code block by default, T-25121
 * Add stripped down tinymce toolbars to acf wysiwyg field, T-19418
 * Enhance styles for blockquote and lists added via wysiwyg, T-17639
+* Add nav walker for simplified footer navs, T-25859
+* Fix JS breakpoint navigation variable, T-25787
+* Delete redundant _box-with-shadow.scss, T-24776
+* Delete obsolete aspect-ratio mixin, T-24777
+* Add parts folder, T-24778
 
 ### 9.4.8: 2025-02-03
 
