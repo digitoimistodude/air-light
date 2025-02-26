@@ -2,7 +2,7 @@
 
 [![GitHub release](https://img.shields.io/github/tag/digitoimistodude/air-light.svg)](https://github.com/digitoimistodude/air-light/releases) ![GitHub contributors](https://img.shields.io/github/contributors/digitoimistodude/air-light.svg) [![Build Status for PHP 8.3](https://github.com/digitoimistodude/air-light/actions/workflows/php8.3.yml/badge.svg)](https://github.com/digitoimistodude/air-light/actions/workflows/php8.3.yml) [![Build Status for HTML](https://github.com/digitoimistodude/air-light/actions/workflows/html.yml/badge.svg)](https://github.com/digitoimistodude/air-light/actions/workflows/html.yml) [![Build Status for JS](https://github.com/digitoimistodude/air-light/actions/workflows/js.yml/badge.svg)](https://github.com/digitoimistodude/air-light/actions/workflows/js.yml) [![Build Status for CSS](https://github.com/digitoimistodude/air-light/actions/workflows/styles.yml/badge.svg)](https://github.com/digitoimistodude/air-light/actions/workflows/styles.yml) [![Build Status for PHP](https://github.com/digitoimistodude/air-light/actions/workflows/php.yml/badge.svg)](https://github.com/digitoimistodude/air-light/actions/workflows/php.yml)
 
-Air-light (or simply *Air*) is designed to be an ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms! [See roadmap](https://favro.com/organization/3b45e73eaf083f68fefef368/c1dd2d4a99d6723904d2e763).
+Air-light (or simply *Air*) is designed to be an ultra minimal starting point for a WordPress project at [Digitoimisto Dude Oy](https://www.dude.fi), a Finnish boutique digital agency in the center of Jyväskylä. Theme is originally based on [\_s](https://github.com/automattic/_s). We welcome all happy contributors with open arms!
 
 ## [Demo](https://airwptheme.com/demo) | [Documentation](https://github.com/digitoimistodude/air-light/wiki)
 
@@ -247,7 +247,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 
 * PHP >= 8.3
 * Requires at least: WordPress 4.7.1
-* Tested up to WordPress 6.6.2
+* Tested up to WordPress 6.7.1
 
 ### Recommendations for development
 
@@ -292,11 +292,12 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 7. Clone your fork with `git clone git@github.com:yourusername/air-light.git` (replace `yourusername` with your actual username)
 8. Cd to your new cloned repository `cd /var/www/airdev/content/themes/air-light`
 9. Add `devDependencies` to package.json from [here](https://github.com/digitoimistodude/devpackages/blob/master/package.json)
-10. Install the dependencies by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
-11. Wait npm to get through files (get another cup of coffee)
-12. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
-13. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
-14. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
+10. Run `nvm use`.
+11. Install the dependencies by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
+12. Wait npm to get through files (get another cup of coffee)
+13. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
+14. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
+15. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) to be able to run WP-CLI with just `wp`.
 

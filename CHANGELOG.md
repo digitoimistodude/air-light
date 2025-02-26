@@ -1,10 +1,17 @@
 ### [Unreleased]
 
+* Disable core/code block by default, T-25121
+* Add stripped down tinymce toolbars to acf wysiwyg field, T-19418
+* Enhance styles for blockquote and lists added via wysiwyg, T-17639
+
+### 9.4.8: 2025-02-03
+
 * Add debug function to print all available blocks
 * Fix page including all allowed blocks by default (default: none)
 * Fix cssnano stripping out font-family declarations
-* Add stripped down tinymce toolbars to acf wysiwyg field, T-19418
-* Enhance styles for blockquote and lists added via wysiwyg, T-17639
+* Remove root font-size 62.5% from editor styles, T-24605
+* Add limited amount of core blocks for articles by default, remove extra embed blocks, T-25121
+* Bump tested up to WordPress 6.7.1
 
 ### 9.4.7: 2024-12-04
 

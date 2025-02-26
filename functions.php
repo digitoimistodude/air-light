@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '9.4.7' );
+define( 'AIR_LIGHT_VERSION', '9.4.8' );
 
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
@@ -140,7 +140,24 @@ add_action( 'after_setup_theme', function() {
     // or any specific block or a combination of these
     // Accepts both string (all*/none-options only) and array (options + specific blocks)
     'allowed_blocks' => [
-      'post' => 'all-core-blocks',
+      'post' => [
+        'core/column',
+        'core/columns',
+        'core/coverImage',
+        'core/embed',
+        'core/freeform',
+        'core/gallery',
+        'core/heading',
+        'core/html',
+        'core/image',
+        'core/list',
+        'core/list-item',
+        'core/paragraph',
+        'core/quote',
+        'core/block',
+        'core/table',
+        'core/textColumns',
+      ],
       'page' => [],
       // 'page' => [
       //   'all-acf-blocks',
