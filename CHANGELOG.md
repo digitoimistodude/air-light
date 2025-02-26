@@ -14,6 +14,7 @@
 * Remove obsolete airbnb-browser-shims, T-23391
 * Avoid serving legacy JS bundles, T-23391
 * Bump tested up to WordPress 6.7.2
+* Silence deprecation warnings, fix build T-20953
 
 ### 9.4.8: 2025-02-03
 

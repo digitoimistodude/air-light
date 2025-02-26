@@ -77,6 +77,7 @@ module.exports = {
         errLogToConsole: true,
         includePaths: [themeDir + 'node_modules/'],
         quietDeps: true,
+        silenceDeprecations: ['legacy-js-api', 'import'],
       },
       production: {
         verbose: false,
@@ -86,6 +87,7 @@ module.exports = {
         errLogToConsole: false,
         includePaths: [themeDir + 'node_modules/'],
         quietDeps: true,
+        silenceDeprecations: ['legacy-js-api', 'import'],
       }
     }
   },
