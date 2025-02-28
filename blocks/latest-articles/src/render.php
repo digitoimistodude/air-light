@@ -26,20 +26,24 @@ if ( $latest_posts->have_posts() ) : ?>
         <?php while ( $latest_posts->have_posts() ) :
             $latest_posts->the_post(); ?>
           <article class="item item-article">
-            <h3>
-              <a href="<?php echo esc_url( get_permalink() ); ?>">
-                <?php the_title(); ?>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" class="global-link" aria-hidden="true" tabindex="-1"></a>
+
+            <?php if ( has_post_thumbnail() ) : ?>
+              <?php the_post_thumbnail( 'medium' ); ?>
+            <?php endif; ?>
+
+            <div class="content">
+              <h3>
+                <a href="<?php echo esc_url( get_permalink() ); ?>">
+                  <?php the_title(); ?>
               </a>
             </h3>
 
             <p>
               <time datetime="<?php echo get_the_date( 'c' ); ?>">
                 <?php echo get_the_date(); ?>
-              </time>
-            </p>
-
-            <div class="excerpt">
-              <?php the_excerpt(); ?>
+                </time>
+              </p>
             </div>
           </article>
         <?php endwhile; ?>

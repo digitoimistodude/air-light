@@ -62,22 +62,28 @@ export default function Edit({ attributes, setAttributes }) {
 				<div className="items">
 					{posts.map((post) => (
 						<article key={post.id} className="item item-article">
-							<h3>
-								<a href={post.link}>
-									{post.title.rendered}
-								</a>
-							</h3>
+							<a href={post.link} className="global-link" aria-hidden="true" tabindex="-1"></a>
 
-							<p>
-								<time dateTime={post.date}>
-									{new Date(post.date).toLocaleDateString()}
-								</time>
-							</p>
+							{post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+                <img
+                  src={post._embedded['wp:featuredmedia'][0].source_url}
+                  alt={post._embedded['wp:featuredmedia'][0].alt_text || ''}
+                />
+							)}
 
-							<div
-								className="excerpt"
-								dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-							/>
+							<div className="content">
+								<h3>
+									<a href={post.link}>
+										{post.title.rendered}
+							  	</a>
+                </h3>
+
+						  	<p>
+								  <time dateTime={post.date}>
+									  {new Date(post.date).toLocaleDateString()}
+									</time>
+								</p>
+							</div>
 						</article>
 					))}
 				</div>
