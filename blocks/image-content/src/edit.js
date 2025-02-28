@@ -56,8 +56,11 @@ export default function Edit({ attributes, setAttributes }) {
 	});
 
 	const onSelectImage = (media) => {
+		// Check if large size exists and use it, otherwise fallback to original
+		const imageUrl = media.sizes?.large?.url || media.url;
+
 		setAttributes({
-			imageUrl: media.url,
+			imageUrl: imageUrl,
 			imageId: media.id,
 			imageAlt: media.alt,
 		});

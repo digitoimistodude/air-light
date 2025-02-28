@@ -74,6 +74,7 @@ body:not(.wp-admin) {
   }
 }
 
+.edit-link:last-child,
 .edit-link {
   --color-link-edit-border: #ddd;
   --color-link-edit-text: #555;
@@ -81,7 +82,7 @@ body:not(.wp-admin) {
   --color-link-edit-background-hover: #aaa;
   --color-link-edit-border-hover: #aaa;
   display: block;
-  margin-bottom: 0;
+  margin-bottom: 1.25rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.25rem;
@@ -99,7 +100,8 @@ body:not(.wp-admin) {
     color: var(--color-link-edit-text);
     display: block;
     font-weight: var(--typography-weight-semibold);
-    margin: 0;
+    margin: 0 auto;
+    max-width: calc(100% - 2rem);
     padding: 1rem;
     text-align: center;
     text-decoration: none;

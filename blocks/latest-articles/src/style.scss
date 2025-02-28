@@ -9,6 +9,10 @@
   // This is important, because wp core applies html :where(.wp-block) to 840px
   max-width: 100%;
 
+  h2 {
+    color: var(--color-heading);
+  }
+
   h3 {
     font-size: var(--typography-size-h4);
     line-height: 1.23;
