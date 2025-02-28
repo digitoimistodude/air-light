@@ -4,7 +4,7 @@
 :root {
 
   // Affecting to both main and sub-levels
-  --color-dropdown-toggle: var(--color-valhalla);
+  --color-dropdown-toggle: #2a2d3e;
   --color-current: var(--color-link-text);
   --dropdown-toggle-size: 0.75rem;
 
@@ -20,13 +20,13 @@
 
   // Sub menu items on desktop
   --typography-size-sub-menu: var(--typography-size-16);
-  --typography-weight-sub-menu: var(--typography-weight-regular);
+  --typography-weight-sub-menu: var(--typography-weight-semibold);
   --padding-sub-menu-vertical: 0.375rem;
   --padding-sub-menu-link-vertical: 0.3125rem;
   --padding-sub-menu-link-horizontal: 0.9375rem;
   --width-sub-menu: 12.5rem;
-  --color-sub-menu: var(--color-valhalla);
-  --color-hover-sub-menu: var(--color-valhalla);
+  --color-sub-menu: var(--color-black);
+  --color-hover-sub-menu: var(--color-accent);
   --color-background-sub-menu: var(--color-white);
   --gap-dropdown: 0.625rem;
 }
