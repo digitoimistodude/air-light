@@ -59,6 +59,11 @@
 
   .content {
     padding: var(--spacing-text-margin-block);
+    width: 100%;
+
+    @media (max-width: 500px) {
+      --spacing-text-margin-block: 2rem;
+    }
   }
 
   .content * {

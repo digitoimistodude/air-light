@@ -58,6 +58,14 @@
       border-color: var(--color-accent);
       color: var(--color-white);
     }
+
+    @media (max-width: 1024px) {
+      padding: var(--spacing-text-margin-block);
+    }
+
+    @media (max-width: 500px) {
+      --spacing-text-margin-block: 2rem;
+    }
   }
 
   .container {
@@ -86,8 +94,20 @@
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .container .image.image-background {
+      aspect-ratio: 16 / 9;
+      order: 1;
+    }
+
+    .container.iamge-on-left .content,
+    .container.image-on-right .content {
+      order: 2;
     }
   }
 }
