@@ -35,8 +35,4 @@
     padding: 15px 0;
   }
 }
-
-.site-footer {
-  display: none;
-}
 </style>
