@@ -13,3 +13,4 @@ sass/navigation/_luxbar.scss
 html
 w3cErrors/
 .vscode
+blocks/*/node_modules

@@ -16,16 +16,17 @@
      -->
      <arg value="psvn"/>
 
-     <!-- Only check the PHP, CSS and SCSS files. JS files are checked separately with JSCS and JSHint. -->
-     <arg name="extensions" value="php,css,scss/css"/>
+     <!-- Only check the PHP files. -->
+     <arg name="extensions" value="php"/>
 
      <!-- Check all files in this directory and the directories below it. -->
      <file>.</file>
 
+     <!-- Exclude asset.php files (Gutenberg build files) -->
+     <exclude-pattern>*.asset.php</exclude-pattern>
+
      <!-- Include the WordPress ruleset, with exclusions. -->
      <rule ref="WordPress">
-
-        <!-- Strict intendation rules we want to exclude -->
         <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
         <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
         <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
@@ -88,6 +89,7 @@
         <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
         <exclude name="Squiz.PHP.CommentedOutCode.Found" />
         <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
     </rule>
 
     <!-- Verify that the text_domain is set to the desired text-domain.

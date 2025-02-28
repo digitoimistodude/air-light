@@ -43,7 +43,7 @@ export default function Edit() {
 	if (!posts) {
 		return (
 			<p {...blockProps}>
-				{__('Loading...', 'mastodonopas')}
+				{__('Loading...', 'air-light')}
 			</p>
 		);
 	}
@@ -51,7 +51,7 @@ export default function Edit() {
 	if (posts.length === 0) {
 		return (
 			<p {...blockProps}>
-				{__('No posts found.', 'mastodonopas')}
+				{__('No posts found.', 'air-light')}
 			</p>
 		);
 	}

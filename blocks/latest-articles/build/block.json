@@ -6,7 +6,7 @@
   "title": "Uusimmat ohjeet",
   "category": "air-light",
   "icon": "grid-view",
-  "description": "Näytä uusimmat ohjeet palstoissa.",
+  "description": "Show latest articles in a grid.",
   "example": {},
   "supports": {
     "html": false,

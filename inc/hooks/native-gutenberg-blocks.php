@@ -16,7 +16,6 @@ function register_block_categories( $categories ) {
     [
       [
         'slug'  => 'air-light',
-        // Translators: Block category name
         // This can be something like "Customer's blocks"
         'title' => __( 'Air-light blocks', 'air-light' ),
       ],
@@ -34,10 +33,15 @@ function register_native_gutenberg_blocks() {
   $block_folders = array_filter( glob( $blocks_dir . '/*' ), 'is_dir' );
 
   foreach ( $block_folders as $block_folder ) {
-		// Check if block.json exists in the folder
-		if ( file_exists( $block_folder . '/block.json' ) ) {
-		  register_block_type( $block_folder );
-			}
+    // Check if block.json exists in the build folder
+    if ( file_exists( $block_folder . '/build/block.json' ) ) {
+      // Add error logging to debug block registration
+      $registration_result = register_block_type( $block_folder . '/build' );
+
+      if ( is_wp_error( $registration_result ) ) {
+        error_log( 'Block registration error for ' . basename( $block_folder ) . ': ' . $registration_result->get_error_message() );
+      }
+    }
   }
 }
 add_action( 'init', __NAMESPACE__ . '\register_native_gutenberg_blocks' );
@@ -51,19 +55,19 @@ function enqueue_block_editor_assets() {
   $block_folders = array_filter( glob( $blocks_dir . '/*' ), 'is_dir' );
 
   foreach ( $block_folders as $block_folder ) {
-		$block_name = basename( $block_folder );
-		$asset_file = get_theme_file_path( "build/{$block_name}/index.asset.php" );
+    $block_name = basename( $block_folder );
+    $asset_file = get_theme_file_path( "blocks/{$block_name}/build/index.asset.php" );
 
-		if ( file_exists( $asset_file ) ) {
-		  $asset = require $asset_file;
+    if ( file_exists( $asset_file ) ) {
+      $asset = require $asset_file;
 
-		  wp_enqueue_script(
-			"mastodonopas-{$block_name}",
-			get_theme_file_uri( "build/{$block_name}/index.js" ),
-			$asset['dependencies'] ?? [ 'wp-blocks', 'wp-element', 'wp-editor' ],
-			$asset['version'] ?? filemtime( get_theme_file_path( "build/{$block_name}/index.js" ) ),
-			true
-		  );
+      wp_enqueue_script(
+        "air-light-{$block_name}",
+        get_theme_file_uri( "blocks/{$block_name}/build/index.js" ),
+        $asset['dependencies'] ?? [ 'wp-blocks', 'wp-element', 'wp-editor' ],
+        $asset['version'] ?? filemtime( get_theme_file_path( "blocks/{$block_name}/build/index.js" ) ),
+        true
+      );
     }
   }
 }

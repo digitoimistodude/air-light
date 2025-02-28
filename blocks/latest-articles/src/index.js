@@ -30,4 +30,11 @@ registerBlockType( metadata.name, {
 	 * @see ./edit.js
 	 */
 	edit: Edit,
+
+	/**
+	 * @return {null} Dynamic blocks have no content to save
+	 */
+	save: () => {
+		return null;
+	},
 } );
