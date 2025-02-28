@@ -5,9 +5,9 @@
 // CSS variables
 :root {
   // Site-header and general mobile navigation elements
-  --color-background-nav-mobile-header: var(--color-main);
-  --color-background-nav-mobile-header-active: var(--color-main);
-  --width-navigation: min(27.5rem, 100vw);
+  --color-background-nav-mobile-header: var(--color-white);
+  --color-background-nav-mobile-header-active: var(--color-black);
+  --width-navigation: 100vw;
 
   // Affecting to both main and sub-levels
   --color-background-menu-items: var(--color-main);
@@ -82,17 +82,16 @@
     // Hide mobile navigation by default while enabling use of animations
     position: fixed;
     right: 0;
-    // Real top is calculated in JS so this is a fallback
-    top: 4.5rem;
+    top: 0;
     transform: translate3d(100%, 0, 0);
-    transition: all 180ms ease-in-out;
+    transition: opacity 180ms ease-in-out;
     visibility: hidden;
     width: var(--width-navigation);
     z-index: 5;
   }
 
   .menu-items {
-    margin: 0;
+    margin: 16px 0 0;
   }
 
   // Main level mobile navigation links
@@ -220,16 +219,16 @@
     }
   }
 
-  .site-main,
-  .site-footer {
-    transition: transform 180ms ease-in-out;
-  }
+  // .site-main,
+  // .site-footer {
+  //   transition: transform 180ms ease-in-out;
+  // }
 
   // Push site content and footer to the left
-  .js-nav-active .site-main,
-  .js-nav-active .site-footer {
-    transform: translate3d(calc(var(--width-navigation) * -1), 0, 0);
-  }
+  // .js-nav-active .site-main,
+  // .js-nav-active .site-footer {
+  //   transform: translate3d(calc(var(--width-navigation) * -1), 0, 0);
+  // }
 }
 
 // This offsets the menu position in mobile viewports for logged in users

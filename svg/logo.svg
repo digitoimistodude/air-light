@@ -3,8 +3,10 @@
 <!-- You should replace this file with your own logo -->
 <!-- Delete these and everything below this line -->
 <style>
-.site-branding .site-title {
-  display: none;
+.site-branding .site-title svg {
+  height: 10px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .site-branding::after {
@@ -33,6 +35,13 @@
     font-weight: var(--typography-weight-semibold);
     opacity: .2;
     padding: 15px 0;
+  }
+}
+
+@media (max-width: 1030px) {
+  .js-nav-active .site-branding::after {
+    border-color: var(--color-white);
+    color: var(--color-white);
   }
 }
 </style>

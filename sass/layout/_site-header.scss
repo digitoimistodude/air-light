@@ -2,6 +2,14 @@
 // the site navigation and search for example.
 .site-header {
   background-color: var(--color-white);
+
+  @media screen and (max-width: $width-max-mobile) {
+    background-color: var(--color-background-nav-mobile-header);
+  }
+}
+
+.js-nav-active .site-header {
+  background-color: var(--color-background-nav-mobile-header-active);
 }
 
 .site-header-inner {
@@ -12,12 +20,17 @@
   margin-left: auto;
   margin-right: auto;
   max-width: $width-grid-base;
-  padding-bottom: 2.5rem;
+  padding-bottom: 0;
   padding-left: var(--spacing-container-padding-inline);
   padding-right: var(--spacing-container-padding-inline);
   padding-top: 2.5rem;
   position: relative;
   z-index: 15;
+
+  @media screen and (max-width: $width-max-mobile) {
+    padding-bottom: 0;
+    padding-top: 1.25rem;
+  }
 }
 
 .site-title {

@@ -5,7 +5,6 @@ module.exports = {
   parserOptions: {
     requireConfigFile: false,
   },
-  extends: 'eslint-config-airbnb/base',
   rules: {
     indent: ['error', 2],
   },
