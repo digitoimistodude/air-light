@@ -9,6 +9,11 @@
   // This is important, because wp core applies html :where(.wp-block) to 840px
   max-width: 100%;
 
+  h2 a {
+    color: var(--color-heading);
+    font-size: var(--typography-h3-size);
+  }
+
   .items {
     display: grid;
     gap: var(--spacing-grid-gap);
