@@ -7,7 +7,9 @@
   "category": "air-light",
   "icon": "grid-view",
   "description": "Show latest articles in a grid.",
-  "example": {},
+  "example": {
+    "viewportWidth": 1200
+  },
   "supports": {
     "html": true,
     "align": false
