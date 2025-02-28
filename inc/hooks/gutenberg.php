@@ -145,27 +145,35 @@ function block_editor_title_input_styles() {
   if ( ! in_array( get_post_type(), $post_types, true ) ) {
     return;
   }
+
   $styles = '
-  /* Remove gap between post title wrapper and first block */
-  .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child {
-    margin-top: 0;
+  /* Styles for both contexts */
+  .edit-post-visual-editor__post-title-wrapper,
+  .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child,
+  body.block-editor-iframe__body .edit-post-visual-editor__post-title-wrapper,
+  body.block-editor-iframe__body .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child {
+    margin-top: 0 !important;
   }
 
   /* Remove border from the appender */
-  .block-editor-button-block-appender {
+  .block-editor-button-block-appender,
+  body.block-editor-iframe__body .block-editor-button-block-appender {
     box-shadow: none;
   }
 
   /* Remove white border from top */
-  .interface-interface-skeleton__header {
+  .interface-interface-skeleton__header,
+  body.block-editor-iframe__body .interface-interface-skeleton__header {
     border-bottom: 0;
   }
 
-  .block-editor .editor-styles-wrapper {
+  .block-editor .editor-styles-wrapper,
+  .block-editor-iframe__body {
     padding-top: 0;
   }
 
-  .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper {
+  .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
+  body.block-editor-iframe__body .edit-post-visual-editor__post-title-wrapper {
     background-color: #1e1e1e;
     border-bottom: 1px solid #1e1e1e;
     color: #fff;
@@ -177,18 +185,21 @@ function block_editor_title_input_styles() {
     margin: 0;
   }
 
-  .block-editor .editor-styles-wrapper .editor-post-title {
+  .block-editor .editor-styles-wrapper .editor-post-title,
+  body.block-editor-iframe__body .editor-post-title {
     color: #fff;
     margin: 0 auto;
     padding: 4rem 2rem;
   }
 
-  .block-editor .editor-styles-wrapper .editor-post-title [data-rich-text-placeholder]::after {
+  .block-editor .editor-styles-wrapper .editor-post-title [data-rich-text-placeholder]::after,
+  body.block-editor-iframe__body .editor-post-title [data-rich-text-placeholder]::after {
     color: #fff;
     opacity: 1;
   }
 
-  .block-editor .editor-styles-wrapper .editor-post-title::before {
+  .block-editor .editor-styles-wrapper .editor-post-title::before,
+  body.block-editor-iframe__body .editor-post-title::before {
     color: #bababa;
     display: block;
     font-size: medium;
@@ -201,9 +212,10 @@ function block_editor_title_input_styles() {
     content: "Nimi, joka näkyy selaimen välilehdessä ja valikossa";
   }
 
-  body.locale-en-us .editor-styles-wrapper .editor-post-title::before {
+  body.locale-en-us .editor-styles-wrapper .editor-post-title::before,
+  .block-editor-iframe__body .editor-post-title::before {
     content: "Post name shown in the browser tab and menus";
   }
   ';
-  wp_add_inline_style( 'block-editor-styles',  $styles );
+  wp_add_inline_style( 'block-editor-styles', $styles );
 }
