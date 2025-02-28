@@ -15,7 +15,7 @@
 }
 
 .categories a {
-  background-color: var(--color-valhalla);
+  background-color: var(--color-paragraph);
   border-radius: 1.875rem;
   color: var(--color-white);
   display: inline-block;
@@ -42,10 +42,10 @@
   // stylelint-disable a11y/font-size-is-readable
   a {
     background-color: transparent;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-paragraph);
     border-radius: 1.875rem;
     box-shadow: none;
-    color: var(--color-black);
+    color: var(--color-paragraph);
     display: inline-block;
     font-size: var(--typography-size-12);
     margin-right: 4px;
