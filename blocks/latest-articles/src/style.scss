@@ -9,9 +9,13 @@
   // This is important, because wp core applies html :where(.wp-block) to 840px
   max-width: 100%;
 
-  h2 a {
+  h3 {
+    font-size: var(--typography-size-h4);
+  }
+
+  h3 a {
     color: var(--color-heading);
-    font-size: var(--typography-h3-size);
+    text-decoration: none;
   }
 
   .items {
@@ -27,9 +31,17 @@
     padding: var(--spacing-text-margin-block);
   }
 
+  time {
+    font-size: var(--typography-size-14);
+  }
+
   h3,
   p {
     line-height: 1.4;
     margin: 0;
+  }
+
+  p {
+    font-size: var(--typography-size-16);
   }
 }

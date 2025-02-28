@@ -1,6 +1,10 @@
 // The very top of the site, element that usually includes
 // the site navigation and search for example.
 .site-header {
+  background-color: var(--color-white);
+}
+
+.site-header-inner {
   align-items: flex-start;
   column-gap: var(--spacing-grid-gap);
   display: flex;
@@ -8,12 +12,10 @@
   margin-left: auto;
   margin-right: auto;
   max-width: $width-grid-base;
-  padding-bottom: var(--spacing-site-header-padding-block);
-  // stylelint-disable-next-line
-  padding-left: 20px;
-  // stylelint-disable-next-line
-  padding-right: 20px;
-  padding-top: var(--spacing-site-header-padding-block);
+  padding-bottom: 40px;
+  padding-left: var(--spacing-container-padding-inline);
+  padding-right: var(--spacing-container-padding-inline);
+  padding-top: 40px;
   position: relative;
   z-index: 15;
 }
