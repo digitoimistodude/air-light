@@ -1,0 +1,93 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-air-light-image-content {
+  // Imports
+  @import '../../../sass/helpers/images';
+  @import '../../../sass/helpers/animations';
+  @import '../../../sass/components/button';
+
+  // This is important, because wp core applies html :where(.wp-block) to 840px
+  max-width: 100%;
+
+  .button {
+    @include button();
+  }
+
+  .content {
+    background-color: var(--color-black);
+    display: grid;
+    gap: 2rem;
+    padding: 5rem;
+
+    .button-wrapper {
+      margin: 0;
+    }
+
+    h2,
+    .description {
+      color: var(--color-white);
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      color: var(--color-white);
+      margin: 0 0 var(--spacing-paragraphs-margin-block) 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .button {
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+      color: var(--color-black);
+    }
+
+    .button:hover,
+    .button:focus {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-white);
+    }
+  }
+
+  .container {
+    display: grid;
+    gap: 0;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    padding: var(--spacing-container-padding-block) var(--spacing-container-padding-inline);
+
+    &.image-on-right {
+      .image {
+        order: 2;
+      }
+
+      .content {
+        order: 1;
+      }
+    }
+
+    &.image-on-left {
+      .image {
+        order: 1;
+      }
+
+      .content {
+        order: 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

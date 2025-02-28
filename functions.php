@@ -161,6 +161,7 @@ add_action( 'after_setup_theme', function() {
       'page' => [
         // Demo blocks
         'air-light/latest-articles',
+        'air-light/image-content',
       ],
       // 'page' => [
       //   'all-acf-blocks',

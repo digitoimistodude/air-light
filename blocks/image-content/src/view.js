@@ -20,6 +20,6 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#view-script
  */
 
-/* eslint-disa ble no-console */
-// console.log("Hello World! (from create-block-latest-articles block)");
+/* eslint-disable no-console */
+// console.log("Hello World! (from air-light-image-content block)");
 /* eslint-enable no-console */

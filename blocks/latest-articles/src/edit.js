@@ -31,63 +31,68 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const blockProps = useBlockProps();
+  const blockProps = useBlockProps();
 
-	// Get latest posts using useSelect
-	const posts = useSelect((select) => {
-		return select('core').getEntityRecords('postType', 'post', {
-			per_page: 3,
-			_embed: true,
-		});
-	}, []);
+  // Get latest posts using useSelect
+  const posts = useSelect((select) => {
+    return select('core').getEntityRecords('postType', 'post', {
+      per_page: 3,
+      _embed: true,
+    });
+  }, []);
 
-	if (!posts) {
-		return (
-			<div {...blockProps}>
-				<p>{__('Loading...', 'air-light')}</p>
-			</div>
-		);
-	}
+  if (!posts) {
+    return (
+      <div {...blockProps}>
+        <p>{__('Loading...', 'air-light')}</p>
+      </div>
+    );
+  }
 
-	return (
-		<div {...blockProps}>
-			<div className="container">
-				<RichText
-					tagName="h2"
-					value={attributes.heading}
-					onChange={(heading) => setAttributes({ heading })}
-					placeholder={__('Write heading…', 'air-light')}
-				/>
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+  };
 
-				<div className="items">
-					{posts.map((post) => (
-						<article key={post.id} className="item item-article">
-							<a href={post.link} className="global-link" aria-hidden="true" tabindex="-1"></a>
+  return (
+    <div {...blockProps}>
+      <div className="container">
+        <RichText
+          tagName="h2"
+          value={attributes.heading}
+          onChange={(heading) => setAttributes({ heading })}
+          placeholder={__('Heading (optional)', 'air-light')}
+        />
 
-							{post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
+        <div className="items">
+          {posts.map((post) => (
+            <article key={post.id} className="item item-article">
+              <a href={post.link} className="global-link" aria-hidden="true" tabindex="-1"></a>
+
+              {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                 <img
                   src={post._embedded['wp:featuredmedia'][0].source_url}
                   alt={post._embedded['wp:featuredmedia'][0].alt_text || ''}
                 />
-							)}
+              )}
 
-							<div className="content">
-								<h3>
-									<a href={post.link}>
-										{post.title.rendered}
-							  	</a>
+              <div className="content">
+                <h3>
+                  <a href={post.link}>
+                    {post.title.rendered}
+                  </a>
                 </h3>
 
-						  	<p>
-								  <time dateTime={post.date}>
-									  {new Date(post.date).toLocaleDateString()}
-									</time>
-								</p>
-							</div>
-						</article>
-					))}
-				</div>
-			</div>
-		</div>
-	);
+                <p>
+                  <time dateTime={post.date}>
+                    {formatDate(post.date)}
+                  </time>
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }

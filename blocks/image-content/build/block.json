@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "air-light/image-content",
+  "version": "1.0.0",
+  "title": "Image Content",
+  "category": "air-light",
+  "icon": "align-pull-left",
+  "description": "Content block with image and text side by side",
+  "example": {},
+  "supports": {
+    "html": true,
+    "align": false
+  },
+  "textdomain": "air-light",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Default heading"
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "multiline": "p",
+      "selector": ".content .description",
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Read more"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number"
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "imageOnRight": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

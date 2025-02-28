@@ -159,7 +159,7 @@
     ],
     "no-descending-specificity": null,
     "max-nesting-depth": [
-      2,
+      3,
       {
         "ignore": [
           "blockless-at-rules",
