@@ -31,7 +31,9 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-  const blockProps = useBlockProps();
+  const blockProps = useBlockProps({
+    className: 'latest-articles has-unified-padding-if-stacked'
+  });
 
   // Get latest posts using useSelect
   const posts = useSelect((select) => {

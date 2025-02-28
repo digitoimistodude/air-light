@@ -51,7 +51,9 @@ export default function Edit({ attributes, setAttributes }) {
 		imageOnRight,
 	} = attributes;
 
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps({
+		className: 'image-content has-unified-padding-if-stacked'
+	});
 
 	const onSelectImage = (media) => {
 		setAttributes({

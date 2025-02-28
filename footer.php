@@ -27,7 +27,7 @@ namespace Air_Light;
       </a>
       <span class="theme-info">
         <span>
-          <?php printf( esc_html__( 'Lightweight like %1$s itself. You are using version %2$s', 'air-light' ), '<i>air</i>', esc_attr( AIR_LIGHT_VERSION ) ); ?>.
+          <?php printf( esc_html__( 'Lightweight like %1$s itself. You are using air-light by Dude version %2$s', 'air-light' ), '<i>air</i>', esc_attr( AIR_LIGHT_VERSION ) ); ?>.
         </span>
       </span>
     </div>
