@@ -16,7 +16,7 @@ $args = [
 $latest_posts = new WP_Query( $args );
 
 if ( $latest_posts->have_posts() ) : ?>
-	<section <?php echo get_block_wrapper_attributes( ['class' => 'latest-articles'] ); // phpcs:ignore ?>>
+	<section <?php echo get_block_wrapper_attributes( ['class' => 'latest-articles has-unified-padding-if-stacked'] ); // phpcs:ignore ?>>
     <div class="container">
       <?php if ( ! empty( $attributes['heading'] ) ) : ?>
         <h2><?php echo wp_kses_post( $attributes['heading'] ); ?></h2>

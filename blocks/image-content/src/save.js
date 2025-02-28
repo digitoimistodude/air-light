@@ -26,7 +26,7 @@ export default function Save({ attributes }) {
 		imageOnRight,
 	} = attributes;
 
-	const blockProps = useBlockProps.save({ className: 'image-content' });
+	const blockProps = useBlockProps.save({ className: 'image-content has-unified-padding-if-stacked' });
 
 	return (
 		<section {...blockProps}>
