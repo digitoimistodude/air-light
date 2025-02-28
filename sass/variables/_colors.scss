@@ -4,10 +4,8 @@
 // For AA: https://chir.ag/projects/name-that-color/
 // ------------------------------------------------------
 :root {
-  // Brand color pool
   --color-black: #000;
   --color-blue-chalk: #ece6f2;
-  --color-east-bay: #545773;
   --color-pattens-blue: #eaf1f8;
   --color-science-blue: #0049d1;
   --color-scorpion: #5f5f5f;
@@ -17,7 +15,7 @@
   // Main element colors
   --color-main: var(--color-valhalla);
   --color-heading: var(--color-main);
-  --color-paragraph: var(--color-east-bay);
+  --color-paragraph: #545773;
 
   // Modern link
   --color-link-text: var(--color-science-blue);

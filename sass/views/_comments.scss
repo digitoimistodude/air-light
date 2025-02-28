@@ -1,10 +1,10 @@
 // WordPress built-in comments with comment_form().
 // Custom comment template can be found in inc/comments.php
 .comments-area {
-  --color-comment-text: var(--color-east-bay);
-  --color-comment-author-text: var(--color-east-bay);
+  --color-comment-text: var(--color-paragraph);
+  --color-comment-author-text: var(--color-paragraph);
   --color-link-comment: var(--color-scorpion);
-  --color-link-comment-time-anchor: var(--color-east-bay);
+  --color-link-comment-time-anchor: var(--color-paragraph);
   margin-bottom: 0;
   margin-top: 3.125rem;
   overflow: visible;
