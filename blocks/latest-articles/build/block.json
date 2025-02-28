@@ -22,6 +22,10 @@
     "preview": {
       "type": "boolean",
       "default": false
+    },
+    "heading": {
+      "type": "string",
+      "default": "Latest articles"
     }
   }
 }

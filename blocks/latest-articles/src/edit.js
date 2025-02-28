@@ -11,9 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
-import ServerSideRender from '@wordpress/server-side-render';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,15 +30,58 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
 	const blockProps = useBlockProps();
+
+	// Get latest posts using useSelect
+	const posts = useSelect((select) => {
+		return select('core').getEntityRecords('postType', 'post', {
+			per_page: 3,
+			_embed: true,
+		});
+	}, []);
+
+	if (!posts) {
+		return (
+			<div {...blockProps}>
+				<p>{__('Loading...', 'air-light')}</p>
+			</div>
+		);
+	}
 
 	return (
 		<div {...blockProps}>
-			<ServerSideRender
-				block="air-light/latest-articles"
-				attributes={{ preview: true }}
-			/>
+			<div className="container">
+				<RichText
+					tagName="h2"
+					value={attributes.heading}
+					onChange={(heading) => setAttributes({ heading })}
+					placeholder={__('Write heading…', 'air-light')}
+				/>
+
+				<div className="items">
+					{posts.map((post) => (
+						<article key={post.id} className="item item-article">
+							<h3>
+								<a href={post.link}>
+									{post.title.rendered}
+								</a>
+							</h3>
+
+							<p>
+								<time dateTime={post.date}>
+									{new Date(post.date).toLocaleDateString()}
+								</time>
+							</p>
+
+							<div
+								className="excerpt"
+								dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+							/>
+						</article>
+					))}
+				</div>
+			</div>
 		</div>
 	);
 }
