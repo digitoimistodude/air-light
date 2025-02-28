@@ -45,11 +45,14 @@
 // Need to be right after general, because after typography comes block styles
 // stylelint-disable-next-line
 .editor-styles-wrapper {
-  // Import typography related styles inside blocks
-  @import 'layout/typography';
 
   // Import gravity forms inside Gutenberg editor
   @import 'features/gravity-forms';
+
+  // Import typography related styles inside blocks, only for acf-blocks (wp-block-acf-*)
+  [class^="wp-block-acf-"] {
+    @import 'layout/typography';
+  }
 
   // Fix acf icons visibility issue
   .acf-icon {

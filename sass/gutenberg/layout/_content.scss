@@ -8,9 +8,8 @@
   padding-top: var(--spacing-content-padding-block);
 }
 
-// Gutenberg core magic
+// Gutenberg core magic for article content
 .article-content > [class^='wp-block-'],
-.is-root-container > *,
 .article-content > * {
   line-height: var(--typography-paragraph-line-height);
   margin-left: auto;

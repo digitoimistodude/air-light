@@ -5,7 +5,10 @@
  * @package air-light
  */
 
- .wp-block-air-light-latest-articles {
+.wp-block-air-light-latest-articles {
+  // This is important, because wp core applies html :where(.wp-block) to 840px
+  max-width: 100%;
+
   .items {
     display: grid;
     gap: var(--spacing-grid-gap);
