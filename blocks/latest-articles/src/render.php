@@ -16,26 +16,32 @@ $args = [
 $latest_posts = new WP_Query( $args );
 
 if ( $latest_posts->have_posts() ) : ?>
-	<div <?php echo get_block_wrapper_attributes( ['class' => 'latest-articles'] ); // phpcs:ignore ?>>
-		<?php while ( $latest_posts->have_posts() ) :
-			$latest_posts->the_post(); ?>
-			<article class="latest-article">
-				<h3>
-					<a href="<?php echo esc_url( get_permalink() ); ?>">
-						<?php the_title(); ?>
-					</a>
-				</h3>
+	<section <?php echo get_block_wrapper_attributes( ['class' => 'latest-articles'] ); // phpcs:ignore ?>>
+    <div class="container">
+      <div class="items">
+        <?php while ( $latest_posts->have_posts() ) :
+            $latest_posts->the_post(); ?>
+          <article class="item item-article">
+            <h3>
+              <a href="<?php echo esc_url( get_permalink() ); ?>">
+                <?php the_title(); ?>
+              </a>
+            </h3>
 
-				<time datetime="<?php echo get_the_date( 'c' ); ?>">
-					<?php echo get_the_date(); ?>
-				</time>
+            <p>
+              <time datetime="<?php echo get_the_date( 'c' ); ?>">
+                <?php echo get_the_date(); ?>
+              </time>
+            </p>
 
-				<div class="excerpt">
-					<?php the_excerpt(); ?>
-				</div>
-			</article>
-		<?php endwhile; ?>
-	</div>
+            <div class="excerpt">
+              <?php the_excerpt(); ?>
+            </div>
+          </article>
+        <?php endwhile; ?>
+      </div>
+    </div>
+	</section>
 	<?php
 	wp_reset_postdata();
 endif;

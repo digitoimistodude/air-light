@@ -4,40 +4,24 @@
  *
  * @package air-light
  */
+
  .wp-block-air-light-latest-articles {
-  .latest-articles {
+  .items {
     display: grid;
-    gap: var(--spacing-base);
+    gap: var(--spacing-grid-gap);
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .latest-article {
-    h3 {
-      margin: 0 0 var(--spacing-base);
-    }
+  .item {
+    border: 2px solid var(--color-black);
+    display: grid;
+    gap: 0.3125rem;
+    padding: var(--spacing-text-margin-block);
+  }
 
-    a {
-      color: var(--color-heading);
-      text-decoration: none;
-    }
-
-    a:focus,
-    a:hover {
-      text-decoration: underline;
-    }
-
-    time {
-      display: block;
-      font-size: var(--typography-size-14);
-      margin-bottom: var(--spacing-small);
-      color: var(--color-paragraph);
-    }
-
-    .excerpt {
-      color: var(--color-paragraph);
-    }
-
-    .excerpt p:last-child {
-      margin-bottom: 0;
-    }
+  h3,
+  p {
+    line-height: 1.4;
+    margin: 0;
   }
 }

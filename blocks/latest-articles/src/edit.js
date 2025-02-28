@@ -13,6 +13,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
+import ServerSideRender from '@wordpress/server-side-render';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,51 +32,14 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit() {
-	const posts = useSelect((select) => {
-		return select('core').getEntityRecords('postType', 'post', {
-			per_page: 3,
-			_embed: true
-		});
-	}, []);
-
 	const blockProps = useBlockProps();
-
-	if (!posts) {
-		return (
-			<p {...blockProps}>
-				{__('Loading...', 'air-light')}
-			</p>
-		);
-	}
-
-	if (posts.length === 0) {
-		return (
-			<p {...blockProps}>
-				{__('No posts found.', 'air-light')}
-			</p>
-		);
-	}
 
 	return (
 		<div {...blockProps}>
-			<div className="latest-articles">
-				{posts.map((post) => (
-					<article key={post.id} className="latest-article">
-						<h3>
-							<a href={post.link}>
-								{post.title.rendered}
-							</a>
-						</h3>
-						<time dateTime={post.date}>
-							{new Date(post.date).toLocaleDateString()}
-						</time>
-						<div
-							className="excerpt"
-							dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-						/>
-					</article>
-				))}
-			</div>
+			<ServerSideRender
+				block="air-light/latest-articles"
+				attributes={{ preview: true }}
+			/>
 		</div>
 	);
 }

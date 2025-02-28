@@ -3,13 +3,13 @@
   "apiVersion": 3,
   "name": "air-light/latest-articles",
   "version": "1.0.0",
-  "title": "Uusimmat ohjeet",
+  "title": "Latest articles",
   "category": "air-light",
   "icon": "grid-view",
   "description": "Show latest articles in a grid.",
   "example": {},
   "supports": {
-    "html": false,
+    "html": true,
     "align": false
   },
   "textdomain": "air-light",
@@ -17,5 +17,11 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "render": "file:./render.php",
-  "viewScript": "file:./view.js"
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "preview": {
+      "type": "boolean",
+      "default": false
+    }
+  }
 }

@@ -39,7 +39,8 @@ function watchBlocks() {
   watch([
     'blocks/*/src/**/*.js',
     'blocks/*/src/**/*.scss',
-    'blocks/*/*.json'
+    'blocks/*/src/**/*.php',
+    'blocks/*/src/**/*.json',
   ], buildBlocks);
 }
 
