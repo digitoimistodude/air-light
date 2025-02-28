@@ -158,7 +158,9 @@ add_action( 'after_setup_theme', function() {
         'core/table',
         'core/textColumns',
       ],
-      'page' => [],
+      'page' => [
+        'air-light/latest-articles',
+      ],
       // 'page' => [
       //   'all-acf-blocks',
       //   'core/paragraph',

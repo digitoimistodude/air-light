@@ -1,0 +1,43 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * @package air-light
+ */
+ .wp-block-air-light-latest-articles {
+  .latest-articles {
+    display: grid;
+    gap: var(--spacing-base);
+  }
+
+  .latest-article {
+    h3 {
+      margin: 0 0 var(--spacing-base);
+    }
+
+    a {
+      color: var(--color-heading);
+      text-decoration: none;
+    }
+
+    a:focus,
+    a:hover {
+      text-decoration: underline;
+    }
+
+    time {
+      display: block;
+      font-size: var(--typography-size-14);
+      margin-bottom: var(--spacing-small);
+      color: var(--color-paragraph);
+    }
+
+    .excerpt {
+      color: var(--color-paragraph);
+    }
+
+    .excerpt p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
