@@ -21,14 +21,14 @@
   // Sub menu items on desktop
   --typography-size-sub-menu: var(--typography-size-16);
   --typography-weight-sub-menu: var(--typography-weight-semibold);
-  --padding-sub-menu-vertical: 0.375rem;
-  --padding-sub-menu-link-vertical: 0.3125rem;
-  --padding-sub-menu-link-horizontal: 0.9375rem;
+  --padding-sub-menu-vertical: 0.625rem;
+  --padding-sub-menu-link-vertical: 0.5rem;
+  --padding-sub-menu-link-horizontal: 1.25rem;
   --width-sub-menu: 12.5rem;
-  --color-sub-menu: var(--color-black);
-  --color-hover-sub-menu: var(--color-accent);
-  --color-background-sub-menu: var(--color-white);
-  --gap-dropdown: 0.625rem;
+  --color-sub-menu: var(--color-white);
+  --color-hover-sub-menu: var(--color-white);
+  --color-background-sub-menu: var(--color-black);
+  --gap-dropdown: 1.6rem;
 }
 
 // General navigation resets
@@ -120,6 +120,8 @@
   .menu-item .sub-menu a:hover,
   .menu-item .sub-menu a:focus {
     color: var(--color-hover-sub-menu);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
   }
 
   // Create animation illusion
