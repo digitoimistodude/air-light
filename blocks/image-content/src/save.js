@@ -16,39 +16,40 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function Save({ attributes }) {
-	const {
-		heading,
-		content,
-		buttonText,
-		buttonUrl,
-		imageUrl,
-		imageAlt,
-		imageOnRight,
-	} = attributes;
+  const {
+    heading,
+    content,
+    buttonText,
+    buttonUrl,
+    imageUrl,
+    imageAlt,
+    imageOnRight,
+  } = attributes;
 
-	const blockProps = useBlockProps.save({ className: 'image-content has-unified-padding-if-stacked' });
+  const blockProps = useBlockProps.save({ className: 'image-content has-unified-padding-if-stacked' });
 
-	return (
-		<section {...blockProps}>
-			<div className={`container ${imageOnRight ? 'image-on-right' : 'image-on-left'}`}>
-				<div className="content">
-					{heading && <h2>{heading}</h2>}
-					{content && <div className="description" dangerouslySetInnerHTML={{ __html: content }} />}
-					{buttonText && buttonUrl && (
-						<p className="button-wrapper">
-							<a href={buttonUrl} className="button">
-								{buttonText}
-							</a>
-						</p>
-					)}
-				</div>
+  return (
+    <section {...blockProps}>
+      <div className={`container ${imageOnRight ? 'image-on-right' : 'image-on-left'}`}>
+        <div className="content">
+          {heading && <h2>{heading}</h2>}
+          {content && <div className="description" dangerouslySetInnerHTML={{ __html: content }} />}
 
-				<div className="image image-background">
-					{imageUrl && (
-						<img src={imageUrl} alt={imageAlt || ''} />
-					)}
-				</div>
-			</div>
-		</section>
-	);
+          <div className="button-wrapper">
+            {buttonText && buttonUrl && (
+              <a href={buttonUrl} className="button">
+                {buttonText}
+              </a>
+            )}
+          </div>
+        </div>
+
+        <div className="image image-background">
+          {imageUrl && (
+            <img src={imageUrl} alt={imageAlt || ''} />
+          )}
+        </div>
+      </div>
+    </section>
+  );
 }

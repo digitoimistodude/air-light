@@ -142,28 +142,26 @@ export default function Edit({ attributes, setAttributes }) {
                 value={imageId}
                 render={({ open }) => (
                   <div className="image-button-container">
-                    <Button
-                      onClick={open}
-                      className={!imageUrl ? 'editor-post-featured-image__toggle' : 'editor-post-featured-image__preview'}
-                    >
-                      {!imageUrl && __('Choose an image', 'air-light')}
-                      {imageUrl && (
-                        <div className="image-preview-wrapper">
-                          <img src={imageUrl} alt={imageAlt} />
-                          <Button
-                            className="remove-image-button components-button"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              removeImage();
-                            }}
-                            aria-label={__('Remove image', 'air-light')}
-                            isDestructive
-                          >
-														×
-                          </Button>
-                        </div>
-                      )}
-                    </Button>
+                    {!imageUrl ? (
+                      <Button
+                        onClick={open}
+                        className="editor-post-featured-image__toggle"
+                      >
+                        {__('Choose an image', 'air-light')}
+                      </Button>
+                    ) : (
+                      <div className="image-preview-wrapper">
+                        <img src={imageUrl} alt={imageAlt} onClick={open} style={{cursor: 'pointer'}} />
+                        <Button
+                          className="remove-image-button components-button"
+                          onClick={removeImage}
+                          aria-label={__('Remove image', 'air-light')}
+                          isDestructive
+                        >
+                          ×
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 )}
               />
