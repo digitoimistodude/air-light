@@ -4,6 +4,9 @@ module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
+    babelOptions: {
+      presets: ['@wordpress/babel-preset-default']
+    }
   },
   rules: {
     indent: ['error', 2],
@@ -11,5 +14,6 @@ module.exports = {
   env: {
     browser: true,
     jquery: true,
+    es6: true,
   },
 };
