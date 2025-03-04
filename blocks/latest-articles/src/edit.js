@@ -69,7 +69,7 @@ export default function Edit({ attributes, setAttributes }) {
         <div className="items">
           {posts.map((post) => (
             <article key={post.id} className="item item-article">
-              <a href={post.link} className="global-link" aria-hidden="true" tabindex="-1"></a>
+              <a href={post.link} className="global-link" aria-hidden="true" tabIndex="-1"></a>
 
               {post._embedded?.['wp:featuredmedia']?.[0]?.source_url && (
                 <img
