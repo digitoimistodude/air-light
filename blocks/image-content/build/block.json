@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "air-light/image-content",
   "version": "1.0.0",
-  "title": "Image Content",
+  "title": "Image content",
   "category": "air-light",
   "icon": "align-pull-left",
   "description": "Content block with image and text side by side",

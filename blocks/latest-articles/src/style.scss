@@ -43,7 +43,8 @@
   }
 
   // 3D effect
-  .item:hover, .item:focus {
+  .item:hover,
+  .item:focus {
     transform: perspective(62.5rem) rotateX(10deg) rotateY(10deg);
   }
 
@@ -57,7 +58,8 @@
     width: 100%;
   }
 
-  .global-link:hover + .image img, .global-link:focus + .image img {
+  .global-link:hover + .image img,
+  .global-link:focus + .image img {
     opacity: 1;
   }
 

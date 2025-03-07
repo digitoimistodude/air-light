@@ -3,3 +3,8 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+
+// Prevent accidentally clicking the links
+.wp-block-latest-articles a {
+  pointer-events: none;
+}
