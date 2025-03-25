@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-import { registerBlockType } from '@wordpress/blocks';
+import { registerBlockType, getBlockType } from '@wordpress/blocks';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -25,16 +25,12 @@ import metadata from './block.json';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( metadata.name, {
-	/**
-	 * @see ./edit.js
-	 */
-	edit: Edit,
-
-	/**
-	 * @return {null} Dynamic blocks have no content to save
-	 */
-	save: () => {
-		return null;
-	},
-} );
+// Only register if not already registered
+if ( ! getBlockType( metadata.name ) ) {
+  registerBlockType( metadata.name, {
+    ...metadata,
+    edit: Edit,
+    // For dynamic blocks, save should return null
+    save: () => null,
+  } );
+}
