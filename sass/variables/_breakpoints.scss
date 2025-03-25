@@ -1,4 +1,6 @@
 // stylelint-disable rem-over-px/rem-over-px
+// SCSS because media quaries do not support CSS custom properties
+
 // Layout widths
 $width-max-layout: 100%;
 $width-max-article: 800px;
@@ -17,7 +19,11 @@ $container-tiny-mobile: 354px;
 $width-wide: 1200px;
 $width-full: 100%;
 
-// CSS variables for JS. Remove this negative 1px value or add 1px if needed depending on when you want to stop the JS from controling the position of the navigation.
-:root {
+@mixin breakpoints() {
   --width-max-mobile: #{$width-max-mobile - 1px};
+  --width-grid-base: #{$width-grid-base};
+}
+
+:root {
+  @include breakpoints();
 }

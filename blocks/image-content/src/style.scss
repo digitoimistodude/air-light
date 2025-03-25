@@ -6,16 +6,44 @@
  */
 
 .wp-block-air-light-image-content {
-  // Imports
+  // TODO: Replace with includePaths in config
+
+  // Needed helpers
+  // @import '../../../sass/helpers/font';
+  // @import '../../../sass/helpers/variablefont';
+
+  // Variables
+  @import '../../../sass/variables/breakpoints';
+  @import '../../../sass/variables/colors';
+  // @import '../../../sass/variables/typography';
+
+  // Needed elements
+  // @import '../../../sass/layout/typography';
   @import '../../../sass/helpers/images';
   @import '../../../sass/helpers/animations';
   @import '../../../sass/components/button';
 
-  // This is important, because wp core applies html :where(.wp-block) to 840px
-  max-width: 100%;
+  // Get colors
+  @include colors();
 
-  .button {
-    @include button();
+  // Get fonts
+  // @include typography();
+
+  // Apply typographic definitions
+  // @include typography-definitions();
+
+
+  // Apply breakpoints
+  @include breakpoints();
+
+  // This is important, because wp core applies html :where(.wp-block) to 840px
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--width-grid-base);
+
+  .image {
+    // Default background color, if the image is not set
+    background-color: rgb(0 0 0 / 0.122);
   }
 
   .content {
@@ -23,10 +51,6 @@
     display: grid;
     gap: 2rem;
     padding: 5rem;
-
-    .button-wrapper {
-      margin: 0;
-    }
 
     h2,
     .description {
@@ -44,19 +68,6 @@
       &:last-child {
         margin-bottom: 0;
       }
-    }
-
-    .button {
-      background-color: var(--color-white);
-      border-color: var(--color-white);
-      color: var(--color-black);
-    }
-
-    .button:hover,
-    .button:focus {
-      background-color: var(--color-accent);
-      border-color: var(--color-accent);
-      color: var(--color-white);
     }
 
     @media (max-width: 1024px) {
@@ -99,15 +110,17 @@
     }
   }
 
-  .wp-block-buttons {
-    margin: 0;
+  .wp-block-button__link {
+    @include button();
+    background-color: var(--color-white);
+    border-color: var(--color-white);
+    color: var(--color-black);
 
-    .wp-block-button {
-      margin: 0;
-    }
-
-    .wp-block-button__link {
-      @include button();
+    &:hover,
+    &:focus {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-white);
     }
   }
 

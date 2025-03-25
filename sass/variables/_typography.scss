@@ -1,3 +1,4 @@
+// stylelint-disable rem-over-px/rem-over-px
 // Self-hosted fonts
 // Remember to add these also to gutenberg/variables/_typography.scss with correct paths
 
@@ -11,9 +12,7 @@
 // @include font('Inter', '../../fonts/inter-600', 600);
 // @include font('Inter', '../../fonts/inter-700', 700);
 
-// stylelint-disable rem-over-px/rem-over-px
-// CSS Variables for responsive fonts
-:root {
+@mixin typography() {
   // Defined font families, replace these with your own
   --typography-family-main: 'Mona Sans', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 
@@ -76,4 +75,9 @@
     --typography-size-16: 14px;
     --typography-nav-toggle-label-size: 13px;
   }
+}
+
+// CSS Variables for responsive fonts
+:root {
+  @include typography();
 }

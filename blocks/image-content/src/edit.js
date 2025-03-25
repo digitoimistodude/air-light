@@ -22,6 +22,7 @@ import {
 } from '@wordpress/block-editor';
 import { Button, ToolbarGroup, ToolbarButton, Popover, Icon } from '@wordpress/components';
 import { useState } from '@wordpress/element';
+import { createBlock } from '@wordpress/blocks';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -57,14 +58,13 @@ export default function Edit({ attributes, setAttributes }) {
   const ALLOWED_BLOCKS = ['core/paragraph', 'core/buttons'];
   const TEMPLATE = [
     ['core/paragraph', {
-      placeholder: 'Add content...',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+      placeholder: 'First paragraph...',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }],
-    ['core/paragraph', {
-      placeholder: 'Add content...',
-      content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }],
-    ['core/buttons', {}, [
+    ['core/buttons', {
+      layout: { type: 'flex', justifyContent: 'left' },
+      className: 'button-wrapper'
+    }, [
       ['core/button', {
         text: 'Read more',
         className: 'button',

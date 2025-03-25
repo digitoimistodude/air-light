@@ -3,10 +3,7 @@
 // presets. No modular scale, but a sophisticated viewport
 // based responsive mixin can be found in _helpers.scss
 
-// Typography settings
-.is-root-container,
-.acf-block-preview .block,
-body {
+@mixin typography-definitions() {
   color: var(--color-paragraph);
   font-family: var(--typography-family-paragraph);
   font-size: var(--typography-paragraph-size);
@@ -16,113 +13,120 @@ body {
   line-height: var(--typography-paragraph-line-height);
   // stylelint-disable-next-line value-keyword-case
   text-rendering: geometricPrecision;
+
+  // Heading defaults
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-heading);
+    font-family: var(--typography-family-heading);
+    font-weight: var(--typography-weight-heading);
+    margin-bottom: var(--spacing-paragraphs-margin-block);
+    margin-top: var(--spacing-paragraphs-margin-block);
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: var(--typography-heading-line-height);
+  }
+
+  // Define heading scales
+  // Current: Perfect fourth: https://type-scale.com/
+  h1 {
+    font-size: var(--typography-size-h1);
+  }
+
+  h2 {
+    font-size: var(--typography-size-h2);
+  }
+
+  h3 {
+    font-size: var(--typography-size-h3);
+  }
+
+  h4 {
+    font-size: var(--typography-size-h4);
+  }
+
+  h5 {
+    font-size: var(--typography-size-h5);
+  }
+
+  h6 {
+    font-size: var(--typography-size-h6);
+  }
+
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    margin-top: 0;
+  }
+
+  // Bold
+  b,
+  strong {
+    font-weight: var(--typography-weight-bold);
+  }
+
+  // Italic
+  em,
+  i {
+    font-style: italic;
+  }
+
+  // Default paragraphs
+  p {
+    margin-bottom: 2.9rem;
+    margin-top: 2.9rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  // Enhance styles for blockquote and lists added via wysiwyg
+  .wysiwyg li {
+    margin-bottom: .6rem;
+    margin-top: .6rem;
+  }
+
+  .wysiwyg li:first-child {
+    margin-top: 0;
+  }
+
+  .wysiwyg li:last-child {
+    margin-bottom: 0;
+  }
+
+  blockquote.wysiwyg {
+    border-left: 2px solid var(--color-main);
+    margin: 2.9rem 1rem;
+    padding: .5rem 0 .5rem 1.5rem;
+  }
+
+  blockquote.wysiwyg > *:first-child {
+    margin-top: 0;
+  }
+
+  blockquote.wysiwyg > *:last-child {
+    margin-bottom: 0;
+  }
 }
 
-// Heading defaults
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-heading);
-  font-family: var(--typography-family-heading);
-  font-weight: var(--typography-weight-heading);
-  margin-bottom: var(--spacing-paragraphs-margin-block);
-  margin-top: var(--spacing-paragraphs-margin-block);
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--typography-heading-line-height);
-}
-
-// Define heading scales
-// Current: Perfect fourth: https://type-scale.com/
-h1 {
-  font-size: var(--typography-size-h1);
-}
-
-h2 {
-  font-size: var(--typography-size-h2);
-}
-
-h3 {
-  font-size: var(--typography-size-h3);
-}
-
-h4 {
-  font-size: var(--typography-size-h4);
-}
-
-h5 {
-  font-size: var(--typography-size-h5);
-}
-
-h6 {
-  font-size: var(--typography-size-h6);
-}
-
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
-
-// Bold
-b,
-strong {
-  font-weight: var(--typography-weight-bold);
-}
-
-// Italic
-em,
-i {
-  font-style: italic;
-}
-
-// Default paragraphs
-p {
-  margin-bottom: 2.9rem;
-  margin-top: 2.9rem;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-// Enhance styles for blockquote and lists added via wysiwyg
-.wysiwyg li {
-  margin-bottom: .6rem;
-  margin-top: .6rem;
-}
-
-.wysiwyg li:first-child {
-  margin-top: 0;
-}
-
-.wysiwyg li:last-child {
-  margin-bottom: 0;
-}
-
-blockquote.wysiwyg {
-  border-left: 2px solid var(--color-main);
-  margin: 2.9rem 1rem;
-  padding: .5rem 0 .5rem 1.5rem;
-}
-
-blockquote.wysiwyg > *:first-child {
-  margin-top: 0;
-}
-
-blockquote.wysiwyg > *:last-child {
-  margin-bottom: 0;
+// Typography settings
+.is-root-container,
+.acf-block-preview .block,
+body {
+  @include typography-definitions();
 }
 
 

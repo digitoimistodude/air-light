@@ -3,7 +3,7 @@
 // For AAA: https://www.color-blindness.com/color-name-hue/
 // For AA: https://chir.ag/projects/name-that-color/
 // ------------------------------------------------------
-:root {
+@mixin colors() {
   --color-black: #000;
   --color-white: #fff;
 
@@ -20,4 +20,8 @@
   // Element states
   --color-error: #cc2e2e;
   --color-success: #21aa14;
+}
+
+:root {
+  @include colors();
 }
