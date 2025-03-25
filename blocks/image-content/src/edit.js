@@ -95,7 +95,6 @@ export default function Edit({ attributes, setAttributes }) {
               value={heading}
               onChange={(heading) => setAttributes({ heading })}
               placeholder={__('Add heading...', 'air-light')}
-              onSplit={() => null}
               onReplace={() => null}
             />
             <RichText

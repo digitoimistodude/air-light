@@ -12,7 +12,8 @@
   },
   "supports": {
     "html": true,
-    "align": false
+    "align": false,
+    "splitting": true
   },
   "textdomain": "air-light",
   "editorScript": "file:./index.js",
