@@ -18,8 +18,6 @@ import { useBlockProps, RichText, InnerBlocks } from '@wordpress/block-editor';
 export default function Save({ attributes }) {
   const {
     heading,
-    buttonText,
-    buttonUrl,
     imageUrl,
     imageAlt,
     imageOnRight,
@@ -40,15 +38,6 @@ export default function Save({ attributes }) {
 
           <div className="description">
             <InnerBlocks.Content />
-          </div>
-
-          <div className="button-wrapper">
-            <RichText.Content
-              tagName="a"
-              value={buttonText}
-              className="button"
-              href={buttonUrl}
-            />
           </div>
         </div>
 

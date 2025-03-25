@@ -24,14 +24,6 @@
       "type": "string",
       "default": "Default heading"
     },
-    "buttonText": {
-      "type": "string",
-      "default": "Read more"
-    },
-    "buttonUrl": {
-      "type": "string",
-      "default": "#"
-    },
     "imageUrl": {
       "type": "string",
       "default": ""

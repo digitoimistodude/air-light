@@ -43,8 +43,6 @@ export default function Edit({ attributes, setAttributes }) {
   const [isEditingURL, setIsEditingURL] = useState(false);
   const {
     heading,
-    buttonText,
-    buttonUrl,
     imageUrl,
     imageId,
     imageAlt,
@@ -55,24 +53,24 @@ export default function Edit({ attributes, setAttributes }) {
     className: 'image-content has-unified-padding-if-stacked'
   });
 
-  // Define allowed blocks and template with multiple paragraphs
-  const ALLOWED_BLOCKS = ['core/paragraph'];
+  // Define allowed blocks and template
+  const ALLOWED_BLOCKS = ['core/paragraph', 'core/buttons'];
   const TEMPLATE = [
     ['core/paragraph', {
-      placeholder: 'First paragraph...',
+      placeholder: 'Add content...',
       content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     }],
     ['core/paragraph', {
-      placeholder: 'Second paragraph...',
+      placeholder: 'Add content...',
       content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
     }],
-    ['core/paragraph', {
-      placeholder: 'Add more content...'
-    }]
+    ['core/buttons', {}, [
+      ['core/button', {
+        text: 'Read more',
+        className: 'button',
+      }]
+    ]]
   ];
-
-  // You can also lock the template if you want to prevent adding/removing paragraphs
-  const TEMPLATE_LOCK = false; // Set to 'all' to prevent adding/removing blocks, or 'insert' to only prevent adding
 
   const onSelectImage = (media) => {
     // Check if large size exists and use it, otherwise fallback to original
@@ -121,34 +119,8 @@ export default function Edit({ attributes, setAttributes }) {
               <InnerBlocks
                 allowedBlocks={ALLOWED_BLOCKS}
                 template={TEMPLATE}
-                templateLock={TEMPLATE_LOCK}
+                templateLock={false}
               />
-            </div>
-
-            <div className="button-wrapper">
-              <RichText
-                tagName="a"
-                value={buttonText}
-                onChange={(buttonText) => setAttributes({ buttonText })}
-                placeholder={__('Button text...', 'air-light')}
-                className="button"
-                allowedFormats={[]}
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsEditingURL(true);
-                }}
-              />
-              {isEditingURL && (
-                <Popover
-                  position="bottom center"
-                  onClose={() => setIsEditingURL(false)}
-                >
-                  <URLInput
-                    value={buttonUrl}
-                    onChange={(buttonUrl) => setAttributes({ buttonUrl })}
-                  />
-                </Popover>
-              )}
             </div>
           </div>
 
