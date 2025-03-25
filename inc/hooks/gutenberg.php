@@ -100,15 +100,6 @@ function register_block_editor_assets() {
     'wp-components', // Provides many prebuilt components and controls
   ];
 
-  // Enqueue the bundled block JS file
-  wp_enqueue_script(
-    'block-editor-js',
-    get_theme_file_uri( get_asset_file( 'gutenberg-editor.js' ) ),
-    $dependencies,
-    filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor.js' ) ) ),
-    'all'
-  );
-
   // Enqueue optional editor only styles
   wp_enqueue_style(
     'block-editor-styles',
