@@ -24,13 +24,6 @@
       "type": "string",
       "default": "Default heading"
     },
-    "content": {
-      "type": "string",
-      "source": "html",
-      "multiline": "p",
-      "selector": ".content .description",
-      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
-    },
     "buttonText": {
       "type": "string",
       "default": "Read more"

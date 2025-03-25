@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText, InnerBlocks } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -18,7 +18,6 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function Save({ attributes }) {
   const {
     heading,
-    content,
     buttonText,
     buttonUrl,
     imageUrl,
@@ -26,27 +25,36 @@ export default function Save({ attributes }) {
     imageOnRight,
   } = attributes;
 
-  const blockProps = useBlockProps.save({ className: 'image-content has-unified-padding-if-stacked' });
+  const blockProps = useBlockProps.save({
+    className: 'image-content has-unified-padding-if-stacked'
+  });
 
   return (
     <section {...blockProps}>
       <div className={`container ${imageOnRight ? 'image-on-right' : 'image-on-left'}`}>
         <div className="content">
-          {heading && <h2>{heading}</h2>}
-          {content && <div className="description" dangerouslySetInnerHTML={{ __html: content }} />}
+          <RichText.Content
+            tagName="h2"
+            value={heading}
+          />
+
+          <div className="description">
+            <InnerBlocks.Content />
+          </div>
 
           <div className="button-wrapper">
-            {buttonText && buttonUrl && (
-              <a href={buttonUrl} className="button">
-                {buttonText}
-              </a>
-            )}
+            <RichText.Content
+              tagName="a"
+              value={buttonText}
+              className="button"
+              href={buttonUrl}
+            />
           </div>
         </div>
 
         <div className="image image-background">
           {imageUrl && (
-            <img src={imageUrl} alt={imageAlt || ''} />
+            <img src={imageUrl} alt={imageAlt} />
           )}
         </div>
       </div>

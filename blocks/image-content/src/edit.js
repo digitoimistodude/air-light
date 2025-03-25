@@ -18,6 +18,7 @@ import {
   MediaUploadCheck,
   BlockControls,
   URLInput,
+  InnerBlocks,
 } from '@wordpress/block-editor';
 import { Button, ToolbarGroup, ToolbarButton, Popover, Icon } from '@wordpress/components';
 import { useState } from '@wordpress/element';
@@ -42,7 +43,6 @@ export default function Edit({ attributes, setAttributes }) {
   const [isEditingURL, setIsEditingURL] = useState(false);
   const {
     heading,
-    content,
     buttonText,
     buttonUrl,
     imageUrl,
@@ -54,6 +54,25 @@ export default function Edit({ attributes, setAttributes }) {
   const blockProps = useBlockProps({
     className: 'image-content has-unified-padding-if-stacked'
   });
+
+  // Define allowed blocks and template with multiple paragraphs
+  const ALLOWED_BLOCKS = ['core/paragraph'];
+  const TEMPLATE = [
+    ['core/paragraph', {
+      placeholder: 'First paragraph...',
+      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    }],
+    ['core/paragraph', {
+      placeholder: 'Second paragraph...',
+      content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    }],
+    ['core/paragraph', {
+      placeholder: 'Add more content...'
+    }]
+  ];
+
+  // You can also lock the template if you want to prevent adding/removing paragraphs
+  const TEMPLATE_LOCK = false; // Set to 'all' to prevent adding/removing blocks, or 'insert' to only prevent adding
 
   const onSelectImage = (media) => {
     // Check if large size exists and use it, otherwise fallback to original
@@ -97,14 +116,14 @@ export default function Edit({ attributes, setAttributes }) {
               placeholder={__('Add heading...', 'air-light')}
               onReplace={() => null}
             />
-            <RichText
-              tagName="div"
-              multiline="p"
-              className="description"
-              value={content}
-              onChange={(content) => setAttributes({ content })}
-              placeholder={__('Add content...', 'air-light')}
-            />
+
+            <div className="description">
+              <InnerBlocks
+                allowedBlocks={ALLOWED_BLOCKS}
+                template={TEMPLATE}
+                templateLock={TEMPLATE_LOCK}
+              />
+            </div>
 
             <div className="button-wrapper">
               <RichText
