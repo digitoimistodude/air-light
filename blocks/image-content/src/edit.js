@@ -112,6 +112,7 @@ export default function Edit({ attributes, setAttributes }) {
               value={heading}
               onChange={(heading) => setAttributes({ heading })}
               placeholder={__('Add heading...', 'air-light')}
+              // Prevents replacing the heading with another element
               onReplace={() => null}
             />
 
