@@ -7,9 +7,6 @@
   "category": "air-light",
   "icon": "align-pull-left",
   "description": "Content block with image and text side by side",
-  "example": {
-    "viewportWidth": 1200
-  },
   "supports": {
     "html": true,
     "align": false,

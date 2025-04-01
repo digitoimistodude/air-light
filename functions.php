@@ -162,6 +162,7 @@ add_action( 'after_setup_theme', function() {
         // Demo blocks
         'air-light/latest-articles',
         'air-light/image-content',
+        'air-light/hero',
       ],
       // 'page' => [
       //   'all-acf-blocks',
