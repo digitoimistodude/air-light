@@ -23,12 +23,12 @@
 
   // Heading font sizes
   --typography-size-hero: 52px;
-  --typography-h1-size: 40px;
-  --typography-h2-size: 30px;
-  --typography-h3-size: 24px;
-  --typography-h4-size: 20px;
-  --typography-h5-size: 16px;
-  --typography-h6-size: 14px;
+  --typography-size-h1: 40px;
+  --typography-size-h2: 30px;
+  --typography-size-h3: 24px;
+  --typography-size-h4: 20px;
+  --typography-size-h5: 16px;
+  --typography-size-h6: 14px;
 
   // Paragraph font sizes
   --typography-size-12: 12px;
@@ -62,12 +62,12 @@
   // Heading font sizes in mobile
   @media (max-width: $container-mobile) {
     --typography-size-hero: 38px;
-    --typography-h1-size: 32px;
-    --typography-h2-size: 24px;
-    --typography-h3-size: 21px;
-    --typography-h4-size: 18px;
-    --typography-h5-size: 14px;
-    --typography-h6-size: 12px;
+    --typography-size-h1: 32px;
+    --typography-size-h2: 24px;
+    --typography-size-h3: 21px;
+    --typography-size-h4: 18px;
+    --typography-size-h5: 14px;
+    --typography-size-h6: 12px;
     --typography-paragraph-size: 16px;
   }
 
