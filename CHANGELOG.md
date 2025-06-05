@@ -1,3 +1,8 @@
+
+### 9.5.1: 2025-05-23
+* Fix inconsistent heading variables, T-25878
+* Fix anchors.js not working with #hash in url, DEV-262
+
 ### 9.5.0: 2025-02-26
 
 * Disable core/code block by default, T-25121

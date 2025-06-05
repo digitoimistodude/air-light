@@ -1,12 +1,11 @@
 /* eslint-disable no-param-reassign, no-undef */
+
 import MoveTo from 'moveto';
 
 const initAnchors = () => {
   const easeFunctions = {
     easeInQuad(t, b, c, d) { t /= d; return c * t * t + b; },
-    easeOutQuad(t, b, c, d) {
-      t /= d; return -c * t * (t - 2) + b;
-    },
+    easeOutQuad(t, b, c, d) { t /= d; return -c * t * (t - 2) + b; },
   };
 
   const moveTo = new MoveTo(
@@ -14,36 +13,56 @@ const initAnchors = () => {
     easeFunctions,
   );
 
-  // Get all links that have only the hash as href and is not back to top link
-  const triggers = document.querySelectorAll('a[href*="#"]:not([href="#"]):not(#top)');
+  let triggers = document.querySelectorAll('a[href*="#"]:not([href="#"]):not(#top)');
 
-  // eslint-disable-next-line no-plusplus
-  for (let i = 0; i < triggers.length; i++) {
-    // Move to target smoothly
-    moveTo.registerTrigger(triggers[i]);
-    const target = document.getElementById(triggers[i].hash.substring(1));
+  triggers = Array.from(triggers);
 
-    // If the trigger is nav-link, close nav
-    if (triggers[i].classList.contains('nav-link')) {
-      document.body.classList.remove('js-nav-active');
-    }
+  triggers.forEach((trigger) => {
+    moveTo.registerTrigger(trigger);
+    const targetId = trigger.hash.substring(1);
+    const target = document.getElementById(targetId);
 
-    triggers[i].addEventListener('click', () => {
+    trigger.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent default behavior of anchor links
+
       // If the trigger is nav-link, close nav
-      if (triggers[i].classList.contains('nav-link')) {
+      if (trigger.classList.contains('nav-link') || trigger.classList.contains('dropdown-item')) {
         document.body.classList.remove('js-nav-active');
+
+        // Additional navigation cleanup
+        const html = document.documentElement;
+        const container = document.getElementById('main-navigation-wrapper');
+        const menu = container?.querySelector('ul');
+        const button = document.getElementById('nav-toggle');
+
+        if (html) html.classList.remove('disable-scroll');
+        if (container) container.classList.remove('is-active');
+        if (button) {
+          button.classList.remove('is-active');
+          button.setAttribute('aria-expanded', 'false');
+        }
+        if (menu) menu.setAttribute('aria-expanded', 'false');
       }
 
-      // Focus to target
+      // Check if the target element exists on the current page
       if (target) {
-        // Needs delay for smooth moveTo scroll
+        // Scroll to the target element
+        moveTo.move(target);
+
+        // Update URL history
+        window.history.pushState('', '', trigger.hash);
+
+        // Focus on the target element after a delay
         setTimeout(() => {
           target.setAttribute('tabindex', '-1');
           target.focus();
         }, 500);
+      } else {
+        // Navigate to the target page
+        window.location.href = trigger.href;
       }
     });
-  }
+  });
 };
 
 export default initAnchors;
