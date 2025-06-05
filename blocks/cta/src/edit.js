@@ -30,9 +30,9 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit() {
-	return (
-		<p { ...useBlockProps() }>
-			{ __( 'Cta – hello from the editor!', 'cta' ) }
-		</p>
-	);
+  return (
+    <p { ...useBlockProps() }>
+      { __( 'Cta – hello from the editor!', 'cta' ) }
+    </p>
+  );
 }

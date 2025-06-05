@@ -159,6 +159,7 @@ add_action( 'after_setup_theme', function() {
         'core/textColumns',
       ],
       'page' => [
+        'all-core-blocks',
         // Demo blocks
         'air-light/latest-articles',
         'air-light/image-content',
