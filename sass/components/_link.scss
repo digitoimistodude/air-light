@@ -1,17 +1,17 @@
 // Links within content must be visually underlined
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
 @mixin link() {
-  color: var(--color-link-text);
+  color: var(--color-link);
   // Create your own default content link styles here
   // for pages and articles
   text-decoration: underline;
-  text-decoration-color: var(--color-link-text);
+  text-decoration-color: var(--color-link);
   text-underline-offset: 0.375rem;
   transition: all $transition-duration;
 
   &:hover,
   &:focus {
-    color: var(--color-link-text-hover);
-    text-decoration-color: var(--color-link-text-hover);
+    color: var(--color-link-hover);
+    text-decoration-color: var(--color-link-hover);
   }
 }

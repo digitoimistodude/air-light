@@ -16,7 +16,7 @@ ol {
 
 // Colorized markers
 li::marker {
-  color: var(--color-link-text);
+  color: var(--color-link);
   // Resetting the font in numbering magically removes the gap
   font-family: system-ui, sans-serif;
   font-size: inherit;

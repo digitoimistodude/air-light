@@ -26,11 +26,12 @@ body:not(.wp-admin) {
 }
 
 // Block padding exceptions
-// This class is useful when we have multiple blocks stacked with same background-color
-// stylelint-disable-next-line selector-max-class, selector-max-specificity
-.block.has-unified-padding-if-stacked + .block.has-unified-padding-if-stacked .container {
-  overflow: visible;
-  padding-top: 0;
+// Remove top padding when consecutive blocks have the same background color. This prevents double spacing between blocks of the same color.
+@each $background-color in $background-colors {
+  .block.has-unified-padding-if-stacked.has-background-color-#{$background-color} + .block.has-unified-padding-if-stacked.has-background-color-#{$background-color} .container {
+    overflow: visible;
+    padding-top: 0;
+  }
 }
 
 // Global link helper
