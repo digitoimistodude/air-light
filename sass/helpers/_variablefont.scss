@@ -10,3 +10,6 @@
     src: url('#{$src}.woff2') format('woff2'), url('#{$src}.woff') format('woff');
   }
 }
+
+// Define variable fonts, Ref: DEV-308
+@include variablefont('Mona Sans', '../../fonts/monasansvf', 1 999);

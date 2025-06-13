@@ -8,33 +8,29 @@
 .wp-block-air-light-image-content {
   // TODO: Replace with includePaths in config
 
-  // Needed helpers
+  // Required helpers
   // @import '../../../sass/helpers/font';
   // @import '../../../sass/helpers/variablefont';
 
-  // Variables
+  // Required variables
   @import '../../../sass/variables/breakpoints';
   @import '../../../sass/variables/colors';
-  // @import '../../../sass/variables/typography';
+  @import '../../../sass/variables/forms';
+  @import '../../../sass/variables/typography';
 
-  // Needed elements
-  // @import '../../../sass/layout/typography';
+  // Required elements
+  @import '../../../sass/layout/typography';
   @import '../../../sass/helpers/images';
   @import '../../../sass/helpers/animations';
   @import '../../../sass/components/button';
 
-  // Get colors
-  @include colors();
+  // Get required variables
+  @include variables-colors();
+  @include variables-breakpoints();
+  @include variables-typography();
 
-  // Get fonts
-  // @include typography();
-
-  // Apply typographic definitions
-  // @include typography-definitions();
-
-
-  // Apply breakpoints
-  @include breakpoints();
+  // Get required definitions
+  @include typography-definitions();
 
   // This is important, because wp core applies html :where(.wp-block) to 840px
   margin-left: auto;
@@ -110,7 +106,13 @@
     }
   }
 
+  // Need to reset margin, otherwise WordPress will add margin to the button wrapper
+  .wp-block-buttons {
+    margin-bottom: 0;
+  }
+
   .wp-block-button__link {
+    @include variables-forms();
     @include button();
     background-color: var(--color-white);
     border-color: var(--color-white);
