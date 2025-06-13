@@ -160,10 +160,6 @@ add_action( 'after_setup_theme', function() {
       ],
       'page' => [
         'all-core-blocks',
-        // Demo blocks
-        'air-light/latest-articles',
-        'air-light/image-content',
-        'air-light/cta',
       ],
       // 'page' => [
       //   'all-acf-blocks',
