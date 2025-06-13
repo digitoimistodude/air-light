@@ -5,11 +5,11 @@
 // ------------------------------------------------------
 :root {
   // Brand colors
-  --color-brand-valhalla: #2a2d3e;
-  --color-brand-blue-chalk: #ece6f2;
-  --color-brand-east-bay: #545773;
-  --color-brand-pattens-blue: #eaf1f8;
-  --color-brand-science-blue: #0049d1;
+  --color-valhalla: #2a2d3e;
+  --color-blue-chalk: #ece6f2;
+  --color-east-bay: #545773;
+  --color-pattens-blue: #eaf1f8;
+  --color-science-blue: #0049d1;
 
   // Neutrals
   --color-white: #fff;
@@ -17,12 +17,38 @@
   --color-black: #000;
 
   // Base typography colors
-  --color-heading: var(--color-brand-valhalla);
-  --color-paragraph: var(--color-brand-east-bay);
-  --color-link: var(--color-brand-science-blue);
+  --color-heading: var(--color-valhalla);
+  --color-paragraph: var(--color-east-bay);
+  --color-link: var(--color-science-blue);
   --color-link-hover: var(--color-black);
 
   // Element states
   --color-error: #cc2e2e;
   --color-success: #21aa14;
+}
+
+// Background color loop based on '.has-background-color-[color] class name' on blocks
+$background-colors: "white", "black", "scorpion", "valhalla", "blue-chalk", "east-bay", "pattens-blue", "science-blue";
+
+@each $background-color in $background-colors {
+  .has-background-color-#{$background-color} {
+    // We need to disable the linter here because we're dynamically generating CSS custom property names using SCSS interpolation (--color-#{$background-color}). The linter can't validate these dynamic property names at build time, but they will be valid at runtime.
+    // stylelint-disable-next-line
+    background-color: var(--color-#{$background-color});
+
+    // Automatically set text to white when using dark background colors to ensure sufficient contrast and readability. These color combinations meet WCAG 2.1 AAA standards for contrast ratio.
+      @if $background-color == 'black' or $background-color == 'scorpion' or $background-color == 'valhalla' or $background-color == 'gradient-red-purple-diagonal' or $background-color == 'gradient-deep-purple' {
+      --color-paragraph: var(--color-blue-chalk);
+      --color-heading: var(--color-blue-chalk);
+      --color-link: var(--color-blue-chalk);
+      --color-link-hover: var(--color-blue-chalk);
+    }
+
+    @if $background-color == 'east-bay' or $background-color == 'science-blue' {
+      --color-paragraph: var(--color-white);
+      --color-heading: var(--color-white);
+      --color-link: var(--color-white);
+      --color-link-hover: var(--color-white);
+    }
+  }
 }

@@ -4,7 +4,7 @@
 :root {
 
   // Affecting to both main and sub-levels
-  --color-dropdown-toggle: var(--color-brand-valhalla);
+  --color-dropdown-toggle: var(--color-valhalla);
   --color-current: var(--color-link);
   --dropdown-toggle-size: 0.75rem;
 
@@ -13,7 +13,7 @@
   --typography-weight-main-level: var(--typography-weight-bold);
   --padding-main-level-horizontal: 0;
   --padding-main-level-vertical: 0.375rem;
-  --color-brand-valhalla-level: var(--color-black);
+  --color-valhalla-level: var(--color-black);
   --color-hover-main-level: var(--color-link);
   --gap-between-dropdown-toggle: 0.9375rem;
   --gap-main-level-horizontal: 1.5625rem;
@@ -25,8 +25,8 @@
   --padding-sub-menu-link-vertical: 0.3125rem;
   --padding-sub-menu-link-horizontal: 0.9375rem;
   --width-sub-menu: 12.5rem;
-  --color-sub-menu: var(--color-brand-valhalla);
-  --color-hover-sub-menu: var(--color-brand-valhalla);
+  --color-sub-menu: var(--color-valhalla);
+  --color-hover-sub-menu: var(--color-valhalla);
   --color-background-sub-menu: var(--color-white);
   --gap-dropdown: 0.625rem;
 }
@@ -73,7 +73,7 @@
   .menu-item-clickable,
   .menu-item > a {
     align-items: center;
-    color: var(--color-brand-valhalla-level);
+    color: var(--color-valhalla-level);
     display: inline-flex;
     font-size: var(--typography-size-main-level);
     font-weight: var(--typography-weight-main-level);
