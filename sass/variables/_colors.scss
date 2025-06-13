@@ -4,24 +4,23 @@
 // For AA: https://chir.ag/projects/name-that-color/
 // ------------------------------------------------------
 :root {
-  // Brand color pool
-  --color-black: #000;
-  --color-blue-chalk: #ece6f2;
-  --color-east-bay: #545773;
-  --color-pattens-blue: #eaf1f8;
-  --color-science-blue: #0049d1;
-  --color-scorpion: #5f5f5f;
-  --color-valhalla: #2a2d3e;
+  // Brand colors
+  --color-brand-valhalla: #2a2d3e;
+  --color-brand-blue-chalk: #ece6f2;
+  --color-brand-east-bay: #545773;
+  --color-brand-pattens-blue: #eaf1f8;
+  --color-brand-science-blue: #0049d1;
+
+  // Neutrals
   --color-white: #fff;
+  --color-scorpion: #5f5f5f;
+  --color-black: #000;
 
-  // Main element colors
-  --color-main: var(--color-valhalla);
-  --color-heading: var(--color-main);
-  --color-paragraph: var(--color-east-bay);
-
-  // Modern link
-  --color-link-text: var(--color-science-blue);
-  --color-link-text-hover: var(--color-black);
+  // Base typography colors
+  --color-heading: var(--color-brand-valhalla);
+  --color-paragraph: var(--color-brand-east-bay);
+  --color-link: var(--color-brand-science-blue);
+  --color-link-hover: var(--color-black);
 
   // Element states
   --color-error: #cc2e2e;
