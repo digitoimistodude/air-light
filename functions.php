@@ -159,7 +159,7 @@ add_action( 'after_setup_theme', function() {
         'core/textColumns',
       ],
       'page' => [
-        'all-core-blocks',
+        'air-light/image-content',
       ],
       // 'page' => [
       //   'all-acf-blocks',

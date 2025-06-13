@@ -12,7 +12,7 @@
 // @include font('Inter', '../../fonts/inter-600', 600);
 // @include font('Inter', '../../fonts/inter-700', 700);
 
-@mixin typography() {
+@mixin variables-typography() {
   // Defined font families, replace these with your own
   --typography-family-main: 'Mona Sans', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
 
@@ -79,5 +79,5 @@
 
 // CSS Variables for responsive fonts
 :root {
-  @include typography();
+  @include variables-typography();
 }

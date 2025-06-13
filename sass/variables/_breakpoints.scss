@@ -19,11 +19,11 @@ $container-tiny-mobile: 354px;
 $width-wide: 1200px;
 $width-full: 100%;
 
-@mixin breakpoints() {
+@mixin variables-breakpoints() {
   --width-max-mobile: #{$width-max-mobile - 1px};
   --width-grid-base: #{$width-grid-base};
 }
 
 :root {
-  @include breakpoints();
+  @include variables-breakpoints();
 }

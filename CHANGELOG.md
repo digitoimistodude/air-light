@@ -1,6 +1,7 @@
 ### 10.0.0rc: 2025-05-06
 
 * Native blocks (beta), DEV-10
+* Major SCSS variable method overhaul: Move root vars to mixins so they can be re-used in new blocks, Ref: DEV-32, DEV-10
 
 ### 9.5.1: 2025-05-23
 * Fix inconsistent heading variables, T-25878

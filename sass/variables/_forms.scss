@@ -1,5 +1,5 @@
 // CSS Variables for radios and checkboxes
-:root {
+@mixin variables-forms() {
   // Form element colors
   --color-background-input-field: var(--color-white);
   --color-form-text: var(--color-paragraph);
@@ -43,4 +43,8 @@
   --size-checkbox-marker: 0.4675rem;
   --size-radio-button: 0.625rem;
   --size-radio-button-marker: 0.3125rem;
+}
+
+:root {
+  @include variables-forms();
 }

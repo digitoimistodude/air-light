@@ -58,8 +58,8 @@ export default function Edit({ attributes, setAttributes }) {
   const ALLOWED_BLOCKS = ['core/paragraph', 'core/buttons'];
   const TEMPLATE = [
     ['core/paragraph', {
-      placeholder: 'First paragraph...',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      placeholder: 'Start writing your text here...',
+      content: 'Please add your default text content here based on the Figma layouts created for the customer. This placeholder should always reflect the real content that will appear in the final design.'
     }],
     ['core/buttons', {
       layout: { type: 'flex', justifyContent: 'left' },

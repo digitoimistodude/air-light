@@ -3,7 +3,7 @@
 // For AAA: https://www.color-blindness.com/color-name-hue/
 // For AA: https://chir.ag/projects/name-that-color/
 // ------------------------------------------------------
-@mixin colors() {
+@mixin variables-colors() {
   --color-black: #000;
   --color-white: #fff;
 
@@ -23,5 +23,5 @@
 }
 
 :root {
-  @include colors();
+  @include variables-colors();
 }
