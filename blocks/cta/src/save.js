@@ -5,7 +5,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { __ } from '@wordpress/i18n';
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -17,14 +17,16 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save({ attributes }) {
+  const blockProps = useBlockProps.save();
+
   return (
-    <section {...useBlockProps.save()}>
-      <div className='container'>
+    <section {...blockProps}>
+      <div className={`container has-color-${attributes.style}`}>
         <h2>
           {attributes.title}
         </h2>
 
-        <RichText.Content tagName='p' value={attributes.content} />
+        <InnerBlocks.Content />
       </div>
     </section>
   );

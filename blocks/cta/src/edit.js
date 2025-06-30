@@ -5,13 +5,19 @@
  */
 import { __ } from '@wordpress/i18n';
 
+import {
+  __experimentalToggleGroupControl as ToggleGroupControl,
+  __experimentalToggleGroupControlOption as ToggleGroupControlOption,
+  PanelBody,
+} from '@wordpress/components';
+
 /**
  * React hook that is used to mark the block wrapper element.
  * It provides all the necessary props like the class name.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { RichText, useBlockProps, useInnerBlocksProps, InspectorControls } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,29 +36,50 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
+  const innerBlocksProps = useInnerBlocksProps(
+    {},
+    {
+      allowedBlocks: ['core/paragraph', 'core/buttons'],
+      template: [
+        ['core/paragraph'],
+        [
+          'core/buttons',
+          {
+            layout: { type: 'flex', justifyContent: 'left' },
+            className: 'button-wrapper',
+          },
+        ],
+      ],
+    }
+  );
+
   return (
-    <section {...useBlockProps()}>
-      <div className='container'>
-        <RichText
-          tagName='h2'
-          value={attributes.title}
-          onChange={(title) => setAttributes({ title })}
-          placeholder='Otsikko...'
-        />
+    <>
+      <InspectorControls>
+        <PanelBody>
+          <ToggleGroupControl
+            label="Tyyli"
+            isBlock
+            onChange={(style) => setAttributes({ style: style })}
+            value={attributes.style}
+          >
+            <ToggleGroupControlOption value="light" label="Vaalea" />
+            <ToggleGroupControlOption value="dark" label="Tumma" />
+          </ToggleGroupControl>
+        </PanelBody>
+      </InspectorControls>
+      <section {...useBlockProps()}>
+        <div className={`container has-color-${attributes.style}`}>
+          <RichText
+            tagName="h2"
+            value={attributes.title}
+            onChange={(title) => setAttributes({ title })}
+            placeholder="Otsikko..."
+          />
 
-        <RichText
-          tagName='p'
-          value={attributes.content}
-          onChange={(content) => setAttributes({ content })}
-        />
-      </div>
-
-      <InnerBlocks
-        template={[['core/button', {
-          text: 'Nappi'
-        }]]}
-        allowedBlocks={['core/button']}
-      />
-    </section>
+          <div {...innerBlocksProps} />
+        </div>
+      </section>
+    </>
   );
 }

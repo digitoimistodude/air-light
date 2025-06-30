@@ -6,7 +6,32 @@
  */
 
 .wp-block-air-light-cta {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+  .container {
+    background-color: #F2F2F2;
+  }
+
+  h2,
+  p {
+    color: #222222;
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  a {
+    border-radius: unset;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .has-color-dark {
+    background-color: #222222;
+
+    h2,
+    p {
+      color: #F2F2F2;
+    }
+  }
 }

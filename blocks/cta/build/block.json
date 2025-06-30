@@ -21,10 +21,9 @@
       "type": "string",
       "selector": "h2"
     },
-    "content": {
+    "style": {
       "type": "string",
-      "source": "html",
-      "selector": "p"
+      "default": "light"
     }
   }
 }
