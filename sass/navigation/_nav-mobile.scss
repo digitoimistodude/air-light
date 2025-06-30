@@ -1,6 +1,8 @@
+@use '../variables' as *;
+@use '../helpers' as *;
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines
 // Import nav-toggle
-@import 'nav-toggle';
+@use 'nav-toggle';
 
 // CSS variables
 :root {
@@ -85,7 +87,7 @@
     // Real top is calculated in JS so this is a fallback
     top: 4.5rem;
     transform: translate3d(100%, 0, 0);
-    transition: all 180ms ease-in-out;
+    transition: all $transition-duration ease-in-out;
     visibility: hidden;
     width: var(--width-navigation);
     z-index: 5;
@@ -222,7 +224,7 @@
 
   .site-main,
   .site-footer {
-    transition: transform 180ms ease-in-out;
+    transition: transform $transition-duration ease-in-out;
   }
 
   // Push site content and footer to the left
