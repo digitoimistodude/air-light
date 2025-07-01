@@ -6,8 +6,45 @@
  */
 
 .wp-block-air-light-cta {
+  // TODO: Replace with includePaths in config
+
+  // Needed helpers
+  // @import '../../../sass/helpers/font';
+  // @import '../../../sass/helpers/variablefont';
+
+  // Variables
+  @import '../../../sass/variables/breakpoints';
+  @import '../../../sass/variables/colors';
+  // @import '../../../sass/variables/typography';
+
+  // Needed elements
+  // @import '../../../sass/layout/typography';
+  @import '../../../sass/helpers/images';
+  @import '../../../sass/helpers/animations';
+  @import '../../../sass/components/button';
+
+  // Get colors
+  @include colors();
+
+  // Get fonts
+  // @include typography();
+
+  // Apply typographic definitions
+  // @include typography-definitions();
+
+
+  // Apply breakpoints
+  @include breakpoints();
+
+  // This is important, because wp core applies html :where(.wp-block) to 840px
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--width-grid-base);
+
   .container {
     background-color: #F2F2F2;
+    // padding: 96px;
+    padding: var(--spacing-container-padding-block) var(--spacing-container-padding-inline);
   }
 
   h2,
@@ -19,11 +56,25 @@
     margin-bottom: 3rem;
   }
 
-  a {
-    border-radius: unset;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 700;
+  // a {
+  //   border-radius: unset;
+  //   padding: 12px 24px;
+  //   font-size: 16px;
+  //   font-weight: 700;
+  // }
+
+  .wp-block-button__link {
+    @include button();
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: var(--color-white);
+    }
   }
 
   .has-color-dark {
@@ -32,6 +83,12 @@
     h2,
     p {
       color: #F2F2F2;
+    }
+
+    .wp-block-button__link {
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+      color: var(--color-black);
     }
   }
 }

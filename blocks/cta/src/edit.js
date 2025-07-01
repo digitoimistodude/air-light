@@ -57,6 +57,7 @@ export default function Edit({ attributes, setAttributes }) {
     <>
       <InspectorControls>
         <PanelBody>
+
           <ToggleGroupControl
             label="Tyyli"
             isBlock
@@ -66,8 +67,10 @@ export default function Edit({ attributes, setAttributes }) {
             <ToggleGroupControlOption value="light" label="Vaalea" />
             <ToggleGroupControlOption value="dark" label="Tumma" />
           </ToggleGroupControl>
+
         </PanelBody>
       </InspectorControls>
+
       <section {...useBlockProps()}>
         <div className={`container has-color-${attributes.style}`}>
           <RichText

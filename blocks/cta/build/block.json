@@ -4,7 +4,7 @@
   "name": "air-light/cta",
   "version": "0.1.0",
   "title": "Cta",
-  "category": "widgets",
+  "category": "air-light",
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
