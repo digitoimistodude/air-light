@@ -163,6 +163,7 @@ add_action( 'after_setup_theme', function() {
         'air-light/latest-articles',
         'air-light/image-content',
         'air-light/cta',
+        'air-light/hero',
       ],
       // 'page' => [
       //   'all-acf-blocks',
