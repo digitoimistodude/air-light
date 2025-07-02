@@ -6,32 +6,11 @@
  */
 
 .wp-block-air-light-cta {
-  // TODO: Replace with includePaths in config
-
-  // Needed helpers
-  // @import '../../../sass/helpers/font';
-  // @import '../../../sass/helpers/variablefont';
-
-  // Variables
-  @import '../../../sass/variables/breakpoints';
-  @import '../../../sass/variables/colors';
-  // @import '../../../sass/variables/typography';
-
-  // Needed elements
-  // @import '../../../sass/layout/typography';
-  @import '../../../sass/helpers/images';
-  @import '../../../sass/helpers/animations';
-  @import '../../../sass/components/button';
-
   // Get colors
   @include colors();
 
   // Get fonts
-  // @include typography();
-
-  // Apply typographic definitions
-  // @include typography-definitions();
-
+  @include typography();
 
   // Apply breakpoints
   @include breakpoints();
@@ -43,8 +22,7 @@
 
   .container {
     background-color: #F2F2F2;
-    // padding: 96px;
-    padding: var(--spacing-container-padding-block) var(--spacing-container-padding-inline);
+    padding: 4rem 1.25rem;
   }
 
   h2,
@@ -55,13 +33,6 @@
   h2 {
     margin-bottom: 3rem;
   }
-
-  // a {
-  //   border-radius: unset;
-  //   padding: 12px 24px;
-  //   font-size: 16px;
-  //   font-weight: 700;
-  // }
 
   .wp-block-button__link {
     @include button();
