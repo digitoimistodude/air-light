@@ -13,7 +13,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { InspectorControls, useBlockProps, useInnerBlocksProps, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
 
-import { PanelBody, Button, Spinner } from '@wordpress/components';
+import { PanelBody, Button } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -32,14 +32,17 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-  const innerBlockProps = useInnerBlocksProps({},
+  const innerBlockProps = useInnerBlocksProps({ className: 'wrapper-content' },
     {
-      allowedBlocks: ['core/heading', 'core/paragraph', 'core/buttons'],
+      allowedBlocks: ['core/heading', 'core/paragraph', 'core/buttons', 'core/button'],
       template: [
         ['core/heading'],
         ['core/paragraph'],
-        ['core/buttons'],
-      ]
+        ['core/buttons', {
+          className: "wrapper-buttons",
+          orientation: "horizontal",
+        }],
+      ],
     }
   );
 
@@ -79,8 +82,8 @@ export default function Edit({ attributes, setAttributes }) {
         </PanelBody>
       </InspectorControls>
       <section {...useBlockProps()}>
-        {!!image && <img src={image.url} />}
         <div className='container'>
+          {!!image && <img className='image image-background' src={image.url} />}
           <div {...innerBlockProps} />
         </div>
       </section>

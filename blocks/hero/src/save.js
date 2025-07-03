@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -18,11 +18,14 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 export default function save({ attributes }) {
   const { image } = attributes;
 
+  const blockProps = useBlockProps.save();
+  const innerBlockProps = useInnerBlocksProps.save({ className: 'wrapper-content' });
+
   return (
-    <section {...useBlockProps.save()}>
-      {!!image && <img src={image.url} />}
+    <section {...blockProps}>
       <div className='container'>
-        <InnerBlocks.Content />
+        {!!image && <img className='image image-background' src={image.url} />}
+        <div {...innerBlockProps} />
       </div>
     </section>
   );
