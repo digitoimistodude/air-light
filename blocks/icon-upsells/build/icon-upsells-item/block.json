@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "air-light/icon-upsells-item",
+  "version": "0.1.0",
+  "title": "Column",
+  "category": "widgets",
+  "parent": "air-light/icon-upsells",
+  "icon": "smiley",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "icon": {
+      "type": "object"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "textdomain": "icon-upsells-item",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}
