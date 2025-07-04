@@ -30,17 +30,22 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\register_block_categories'
 function register_native_gutenberg_blocks() {
   // Get all directories in the blocks folder
   $blocks_dir = get_theme_file_path( '/blocks' );
-  $block_folders = array_filter( glob( $blocks_dir . '/*' ), 'is_dir' );
 
-  foreach ( $block_folders as $block_folder ) {
-    // Check if block.json exists in the build folder
-    if ( file_exists( $block_folder . '/build/block.json' ) ) {
-      // Add error logging to debug block registration
-      $registration_result = register_block_type( $block_folder . '/build' );
+  // Get all singular blocks
+  $blocks = glob( $blocks_dir . '/*/build/block.json' );
 
-      if ( is_wp_error( $registration_result ) ) {
-        error_log( 'Block registration error for ' . basename( $block_folder ) . ': ' . $registration_result->get_error_message() );
-      }
+  // Get all blocks that have multiple blocks
+  $inner_blocks = glob( $blocks_dir . '/*/build/*/block.json' );
+
+  // Combine blocks
+  $blocks = array_merge( $blocks, $inner_blocks );
+
+  foreach ( $blocks as $block_folder ) {
+    // Add error logging to debug block registration
+    $registration_result = register_block_type( str_replace( '/block.json', '', $block_folder ) );
+
+    if ( is_wp_error( $registration_result ) ) {
+      error_log( 'Block registration error for ' . basename( $block_folder ) . ': ' . $registration_result->get_error_message() );
     }
   }
 }
