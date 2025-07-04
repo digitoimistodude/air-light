@@ -11,9 +11,9 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { InspectorControls, useBlockProps, useInnerBlocksProps, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps, useInnerBlocksProps, MediaUpload, MediaUploadCheck, BlockControls } from '@wordpress/block-editor';
 
-import { PanelBody, Button } from '@wordpress/components';
+import { PanelBody, Button, ToolbarGroup } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -50,6 +50,26 @@ export default function Edit({ attributes, setAttributes }) {
 
   return (
     <>
+      <BlockControls>
+        <ToolbarGroup>
+          {!image &&
+            <MediaUploadCheck>
+              <MediaUpload
+                onSelect={(image) => setAttributes({ image: image })}
+                allowedTypes={['image']}
+                value={image}
+                render={({ open }) => (
+                  <Button onClick={open}>Add background image</Button>
+                )}
+              />
+            </MediaUploadCheck>
+          }
+          {!!image &&
+            <Button onClick={() => setAttributes({ image: null })}>Remove background image</Button>
+          }
+        </ToolbarGroup>
+      </BlockControls>
+
       <InspectorControls>
         <PanelBody title="Background image">
           <MediaUploadCheck>
@@ -59,7 +79,7 @@ export default function Edit({ attributes, setAttributes }) {
               value={image}
               render={({ open }) => (
                 <div>
-                  {!image && <Button variant="secondary" onClick={open}>Upload image</Button>}
+                  {!image && <Button variant="secondary" onClick={open}>Add background image</Button>}
                   {!!image && image &&
                     <>
                       <Button variant="link" onClick={open}>
