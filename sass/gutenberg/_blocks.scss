@@ -25,9 +25,6 @@
 // Blocks only meant for outside article-content
 .editor-styles-wrapper,
 .site-main {
-  // Error block styles
-  @import 'gutenberg/blocks/error';
-
   // ACF blocks
   // @import 'gutenberg/blocks/your-new-acf-block';
 }

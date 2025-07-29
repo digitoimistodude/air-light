@@ -147,32 +147,11 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
 } // end acf_block_maybe_enable_cache
 
 /**
- * Show error block if user is allowed to see error blocks
+ * @deprecated This function is deprecated and will be removed in a future version. We no longer show error blocks ( DEV-226 )
  *
- * @param string $message Error message to be shown
- * @param mixed  $title Set to false to show default title, a string for block title or an empty string to hide the title
+ * @param string $message Error message to be shown (ignored)
+ * @param mixed  $title Set to false to show default title (ignored)
  */
 function maybe_show_error_block( $message, $title = false ) {
-  if ( ! current_user_can( 'edit_posts' ) ) {
-    return;
-  }
-
-  if ( false === $title ) {
-    $title = get_default_localization( 'Block missing required data' );
-  }
-  ?>
-  <div class="block block-error">
-    <div class="container">
-      <?php if ( ! empty( $title ) ) : ?>
-        <h2><?php echo esc_html( $title ); ?></h2>
-      <?php endif; ?>
-
-      <?php if ( ! empty( $message ) ) : ?>
-        <p class="error-message"><?php echo wp_kses_post( $message ) ?></p>
-      <?php endif; ?>
-
-      <p class="info"><?php echo esc_html( get_default_localization( 'This error is shown only for logged in users' ) ); ?></p>
-    </div>
-  </div>
-  <?php
+  return;
 }
