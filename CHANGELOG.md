@@ -2,6 +2,7 @@
 
 * Fix deprecated workflow that still uses devpackages, fix build DEV-83, DEV-385
 * Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
+* Bump axios and browser-sync #260
 
 ### 9.6.1: 2025-08-08
 
