@@ -1,9 +1,10 @@
-### 9.6.0rc: 2025-08-08
+### 9.6.0-rc: 2025-08-08
 
 * Use acf_block_defaults preview mode by default, Ref: DEV-155
 * Add Husky code quality tests, Ref: DEV-373
 * Update dart-sass to 1.86.3, Ref: DEV-149 #253 (thanks @nadyahakkinen!)
 * Fix regression with 404 template not having clamp-calc, Ref: DEV-377
+* Add helper wrapper for site-header, make it container width, #245, Refs: T-25879, DEV-93
 
 ### 9.5.1: 2025-05-23
 * Fix inconsistent heading variables, T-25878
