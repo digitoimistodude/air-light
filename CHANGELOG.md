@@ -1,4 +1,4 @@
-### 9.6.0-rc: 2025-08-08
+### 9.6.0rc: 2025-08-08
 
 * Use acf_block_defaults preview mode by default, Ref: DEV-155
 * Add Husky code quality tests, Ref: DEV-373
