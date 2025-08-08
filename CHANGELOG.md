@@ -1,7 +1,16 @@
-### [Unreleased]
+### 9.6.0: 2025-08-08
 
 * Bump form-data from 4.0.2 to 4.0.4 #254
 * Bump eazy-logger from 4.0.1 to 4.1.0 #251
+* Use acf_block_defaults preview mode by default, Ref: DEV-155
+* Add Husky code quality tests, Ref: DEV-373
+* Update dart-sass to 1.86.3, Ref: DEV-149 #253 (thanks @nadyahakkinen!)
+* Fix regression with 404 template not having clamp-calc, Ref: DEV-377
+* Add helper wrapper for site-header, make it container width, #245, Refs: T-25879, DEV-93 (thanks @nadyahakkinen!)
+* Make sure husky has executable permissions after each branch switch, Ref: DEV-378
+* Code quality checks: Fix deprecated install command, update version for tests, Ref: DEV-373
+* Run gulp from theme instead of project from now on, Ref: DEV-83, DEV-127
+* Bump tested WordPress version to 6.8.2
 
 ### 9.5.1: 2025-05-23
 

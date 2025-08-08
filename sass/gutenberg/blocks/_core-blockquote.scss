@@ -1,3 +1,5 @@
+@use '../../variables' as *;
+
 // Core/blockquote block
 blockquote + cite,
 blockquote + p > cite {

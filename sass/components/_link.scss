@@ -1,3 +1,4 @@
+@use '../helpers' as *;
 // Links within content must be visually underlined
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
 @mixin link() {
