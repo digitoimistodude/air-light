@@ -1,33 +1,34 @@
+@use 'gutenberg/blocks/core-blockquote';
+@use 'gutenberg/blocks/core-buttons';
+@use 'gutenberg/blocks/core-columns';
+@use 'gutenberg/blocks/core-separator';
+@use 'gutenberg/blocks/core-heading';
+@use 'gutenberg/blocks/core-image';
+@use 'gutenberg/blocks/core-list';
+@use 'gutenberg/blocks/core-paragraph';
+@use 'gutenberg/blocks/core-pullquote';
+@use 'gutenberg/blocks/core-table';
+@use 'gutenberg/blocks/core-video';
+@use 'gutenberg/blocks/boxed';
+@use 'gutenberg/blocks/button-file';
+@use 'gutenberg/blocks/error';
+
 // List of all blocks: https://wordpress.org/support/article/blocks/
 // Core blocks only meant for article content
 .editor-styles-wrapper,
 .article-content {
-  @import 'gutenberg/blocks/core-blockquote';
-  @import 'gutenberg/blocks/core-buttons';
-  @import 'gutenberg/blocks/core-columns';
-  @import 'gutenberg/blocks/core-separator';
-  @import 'gutenberg/blocks/core-heading';
-  @import 'gutenberg/blocks/core-image';
-  @import 'gutenberg/blocks/core-list';
-  @import 'gutenberg/blocks/core-paragraph';
-  @import 'gutenberg/blocks/core-pullquote';
-  @import 'gutenberg/blocks/core-table';
-  @import 'gutenberg/blocks/core-video';
-
-  // Custom Gutenberg block styles
-  @import 'gutenberg/blocks/boxed';
-  @import 'gutenberg/blocks/button-file';
+  // Core block styles are now available from the top-level @use statements
+  // Custom Gutenberg block styles are now available from the top-level @use statements
 
   // Add here those ACF Gutenberg blocks you want to use inside article-content
-  // @import 'gutenberg/blocks/your-new-acf-block';
+  // @use 'gutenberg/blocks/your-new-acf-block';
 }
 
 // Blocks only meant for outside article-content
 .editor-styles-wrapper,
 .site-main {
-  // Error block styles
-  @import 'gutenberg/blocks/error';
+  // Error block styles are now available from the top-level @use statements
 
   // ACF blocks
-  // @import 'gutenberg/blocks/your-new-acf-block';
+  // @use 'gutenberg/blocks/your-new-acf-block';
 }

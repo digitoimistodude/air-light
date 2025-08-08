@@ -6,7 +6,7 @@ chmod 777 ${PROJECT_PATH}/media
 
 echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
-NEWEST_AIR_VERSION="9.5.0"
+NEWEST_AIR_VERSION="9.5.1"
 NEWEST_WORDPRESS_VERSION="6.7.0"
 NEWEST_PHP_VERSION="8.3"
 CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
@@ -25,7 +25,6 @@ This project is hand made for customer by Dude.
 
 * [digitoimistodude/dudestack](https://github.com/digitoimistodude/dudestack)
 * [digitoimistodude/air-light](https://github.com/digitoimistodude/air-light)
-* [digitoimistodude/devpackages](https://github.com/digitoimistodude/devpackages)
 
 ### Recommended development environment
 

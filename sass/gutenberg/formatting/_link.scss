@@ -1,3 +1,5 @@
+@use '../../components' as *;
+
 // Default links everywhere
 a {
   @include link();

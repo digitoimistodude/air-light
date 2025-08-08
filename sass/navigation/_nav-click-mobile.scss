@@ -1,7 +1,8 @@
+@use '../variables' as *;
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines
 // Import nav-toggle
-@import 'nav-toggle';
-@import 'nav-mobile';
+@use 'nav-toggle';
+@use 'nav-mobile';
 
 // Mobile styles
 @media screen and (max-width: $width-max-mobile - 1px) {

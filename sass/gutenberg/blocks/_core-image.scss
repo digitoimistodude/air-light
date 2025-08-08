@@ -1,3 +1,5 @@
+@use '../../variables' as *;
+
 // Image block
 .wp-block-image {
   display: block;
@@ -27,7 +29,7 @@
     &.alignleft,
     &.alignright {
       // Hack for keeping figcaption from flowing over floated image
-      // This variable is set inline to the corresponding figure with gutenberg-helpers.js
+      // This variable is set inline to the corresponding figure with gutenberg-js
       // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
       max-width: var(--width-child-img);
     }

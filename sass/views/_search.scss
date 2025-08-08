@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 // Search
 .block-search,
 .block-search-results {
@@ -36,7 +38,7 @@
   }
 
   h3 {
-    font-size: var(--typography-h4-size);
+    font-size: var(--typography-size-h4);
     margin-bottom: 0.625rem;
   }
 

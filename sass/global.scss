@@ -1,59 +1,47 @@
 @charset 'utf-8';
 
-// Reset
-@import 'helpers/sanitize';
-
-// Helpers
-@import 'helpers/animations';
-@import 'helpers/box-model';
-@import 'helpers/clamp';
-@import 'helpers/images';
-@import 'helpers/font';
-@import 'helpers/variablefont';
+// Reset and Helpers
+@use 'helpers';
 
 // Variables
-@import 'variables/colors';
-@import 'variables/breakpoints';
-@import 'variables/typography';
-@import 'variables/forms';
-@import 'variables/spacings';
+@use 'variables';
 
 // Accessibility
-@import 'base/accessibility';
+@use 'base/accessibility';
 
 // Style components
-@import 'components/components';
+@use 'components';
 
 // Navigation
-@import 'navigation/navigation';
+@use 'navigation/navigation';
 
 // Structure
-@import 'layout/general';
-@import 'layout/print';
-@import 'layout/typography';
-@import 'layout/site-header';
-@import 'layout/site-footer';
-@import 'layout/forms';
-@import 'layout/wordpress';
+@use 'layout/general';
+@use 'layout/print';
+@use 'layout/typography';
+@use 'layout/site-header';
+@use 'layout/site-footer';
+@use 'layout/forms';
+@use 'layout/wordpress';
 
 // Global features
-@import 'features/top';
-@import 'features/gallery';
-@import 'features/pagination';
-@import 'features/gravity-forms';
+@use 'features/top';
+@use 'features/gallery';
+@use 'features/pagination';
+@use 'features/gravity-forms';
 
 // Views
-@import 'views/front-page';
-@import 'views/search';
-@import 'views/404';
-@import 'views/single';
-@import 'views/comments';
+@use 'views/front-page';
+@use 'views/search';
+@use 'views/404' as error404;
+@use 'views/single';
+@use 'views/comments';
 
 // Gutenberg layout outside blocks
-@import 'gutenberg/layout/content';
+@use 'gutenberg/layout/content';
 
 // Gutenberg blocks
-@import 'gutenberg/blocks';
+@use 'gutenberg/blocks';
 
 // Gutenberg formatting
-@import 'gutenberg/formatting';
+@use 'gutenberg/formatting';
