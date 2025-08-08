@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Fix deprecated workflow that still uses devpackages, fix build DEV-83, DEV-385
+
 ### 9.6.1: 2025-08-08
 
 * Fix regression in 9.6.0, fonts and colors leaking to admin, Ref: DEV-381
