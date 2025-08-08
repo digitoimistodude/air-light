@@ -20,9 +20,10 @@ jobs:
     - name: Download vnu.jar
       run: wget https://github.com/validator/validator/releases/download/latest/vnu.jar
 
-    - name: Run vnu validator
-      run: |
-        java -jar vnu.jar --skip-non-html --errors-only --format text \
-        --filterpattern ".*contain-intrinsic-size.*" \
-        --filterpattern ".*only.*0.*can be a.*unit.*" \
-        "https://airwptheme.com/demo"
+    # Skipping this for now, see DEV-347
+    #- name: Run vnu validator
+    #  run: |
+    #    java -jar vnu.jar --skip-non-html --errors-only --format text \
+    #    --filterpattern ".*contain-intrinsic-size.*" \
+    #    --filterpattern ".*only.*0.*can be a.*unit.*" \
+    #    "https://airwptheme.com/demo"

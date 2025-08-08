@@ -2,6 +2,7 @@
 
 * Bump form-data from 4.0.2 to 4.0.4 #254
 * Bump eazy-logger from 4.0.1 to 4.1.0 #251
+* Skip HTML validator, Ref: DEV-347
 
 ### 9.5.1: 2025-05-23
 
