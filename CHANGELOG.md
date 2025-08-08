@@ -6,6 +6,7 @@
 * Merge new minimalistic mobile nav styles, Ref: DEV-95 (old refs: T-25883, T-25856)
 * Deprecate little used animations helper, Ref: DEV-382
 * Add minimalistic styles and footer, prepare for 10.0.0, Refs: DEV-94, DEV-90, DEV-379
+* Fix too low contrast in dropdown-toggles, inherit dropdown toggle color from the item, Ref: DEV-383
 
 ### 9.6.0: 2025-08-08
 
