@@ -7,6 +7,7 @@
 * Deprecate little used animations helper, Ref: DEV-382
 * Add minimalistic styles and footer, prepare for 10.0.0, Refs: DEV-94, DEV-90, DEV-379
 * Fix too low contrast in dropdown-toggles, inherit dropdown toggle color from the item, Ref: DEV-383
+* Prevent longer dropdowns from cutting out on too low pages, Ref: DEV-384
 
 ### 9.6.0: 2025-08-08
 
