@@ -19,7 +19,7 @@ function setupHusky() {
   
   if (!huskyExists) {
     console.log('Husky not installed, setting up...');
-    command += 'husky install && ';
+    command += 'husky && ';
   }
   
   command += 'chmod +x .husky/pre-commit .husky/commit-msg';

@@ -1,8 +1,8 @@
 # Pre commit hooks for Dude projects
-# Ref: DEV-177
+# Ref: DEV-177, DEV-373
 
 # Version:
-VERSION="1.0.1 (2025-08-06)"
+VERSION="1.0.2+air-light (2025-08-08)"
 
 # Load configuration
 . "$(dirname "$0")/pre-commit-config"

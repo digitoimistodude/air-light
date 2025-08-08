@@ -65,7 +65,7 @@
     "webpack-stream": "^7.0.0"
   },
   "scripts": {
-    "prepare": "husky install && chmod +x .husky/pre-commit .husky/commit-msg"
+    "prepare": "husky && chmod +x .husky/pre-commit .husky/commit-msg"
   },
   "dependencies": {
     "core-js": "^3.40.0",

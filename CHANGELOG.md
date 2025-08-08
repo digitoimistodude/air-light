@@ -1,4 +1,4 @@
-### 9.6.0rc: 2025-08-08
+### 9.6.0-rc: 2025-08-08
 
 * Use acf_block_defaults preview mode by default, Ref: DEV-155
 * Add Husky code quality tests, Ref: DEV-373
@@ -6,6 +6,7 @@
 * Fix regression with 404 template not having clamp-calc, Ref: DEV-377
 * Add helper wrapper for site-header, make it container width, #245, Refs: T-25879, DEV-93
 * Make sure husky has executable permissions after each branch switch, Ref: DEV-378
+* Code quality checks: Fix deprecated install command, update version for tests, Ref: DEV-373
 
 ### 9.5.1: 2025-05-23
 
