@@ -1,5 +1,5 @@
 ### Unreleased
-* Deprecate maybe_show_error_block function and trash the logic, DEV-226
+* Delete maybe_show_error_block function, DEV-226
 
 ### 9.5.1: 2025-05-23
 * Fix inconsistent heading variables, T-25878

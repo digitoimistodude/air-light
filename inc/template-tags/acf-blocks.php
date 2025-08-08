@@ -145,13 +145,3 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
 
   return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
 } // end acf_block_maybe_enable_cache
-
-/**
- * @deprecated This function is deprecated and will be removed in a future version. We no longer show error blocks ( DEV-226 )
- *
- * @param string $message Error message to be shown (ignored)
- * @param mixed  $title Set to false to show default title (ignored)
- */
-function maybe_show_error_block( $message, $title = false ) {
-  return;
-}
