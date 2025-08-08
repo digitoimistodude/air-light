@@ -120,7 +120,7 @@ if [ -f "$commit_msg_file" ]; then
         day_of_week=$(date +%u)  # 1=Monday, 7=Sunday
         hour_of_day=$(date +%H)
         if [ "$day_of_week" -eq 5 ] && [ "$hour_of_day" -ge 15 ]; then
-            echo "${GREEN}║${NC} ${GREEN}⚠️  Friday afternoon - defer non-critical deploys${NC}$(printf '%*s' 13 '')${GREEN}║${NC}"
+            echo "${GREEN}║${NC} ${GREEN}⚠️  Friday afternoon - defer non-critical deploys${NC}$(printf '%*s' 8 '')${GREEN}║${NC}"
         fi
 
         echo "$bottom"
