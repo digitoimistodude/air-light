@@ -87,7 +87,7 @@ print_logo() {
 print_logo
 
 echo ""
-echo "${MINT}Dude's husky quality control config DEV-177 v. ${VERSION}${NC}"
+echo "${MINT}Dude's husky quality control config v. ${VERSION}${NC}"
 echo "${MINT}${GEAR}  Running pre-commit checks...${NC}"
 echo ""
 
