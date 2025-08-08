@@ -1,3 +1,7 @@
+### 9.6.0rc: 2025-08-08
+
+* Use acf_block_defaults preview mode by default, Ref: DEV-155
+* Add Husky code quality tests, Ref: DEV-373
 
 ### 9.5.1: 2025-05-23
 * Fix inconsistent heading variables, T-25878
