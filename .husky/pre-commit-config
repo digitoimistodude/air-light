@@ -1,0 +1,13 @@
+# Pre-commit hook configuration
+# Directories to exclude (pipe-separated for easier parsing)
+EXCLUDE_DIRS=".husky|node_modules|vendor|.git|uploads|cache"
+
+# Files to exclude (pipe-separated, supports glob patterns)
+EXCLUDE_FILES="*.min.js|*.min.css|*.map|*.lock|*.log|composer.lock|package-lock.json|yarn.lock"
+
+# File extensions to exclude from conflict/scissor checks
+EXCLUDE_EXTENSIONS=".jpg|.jpeg|.png|.gif|.svg|.ico|.pdf|.zip|.tar|.gz|.woff|.woff2|.ttf|.eot"
+
+# Quality checks configuration
+# CHECK_CHANGED_ONLY: true = only check changed files, false = check entire codebase
+CHECK_CHANGED_ONLY=true
