@@ -15,6 +15,7 @@
 * From now on run gulp and tools from the theme instead of external devpackages repo, Ref: DEV-83
 * Simplify starter color variables, #243, Ref: DEV-379
 * Update release build scripts, do not pack vendor/, Ref: DEV-83
+* Fix editor styles for native blocks, T-25877 #242, Ref: DEV-380
 
 ### 9.5.1: 2025-05-23
 
