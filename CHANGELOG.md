@@ -2,6 +2,7 @@
 
 * Use acf_block_defaults preview mode by default, Ref: DEV-155
 * Add Husky code quality tests, Ref: DEV-373
+* Update dart-sass to 1.86.3, Ref: DEV-149 #253 (thanks @nadyahakkinen!)
 
 ### 9.5.1: 2025-05-23
 * Fix inconsistent heading variables, T-25878
