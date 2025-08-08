@@ -101,8 +101,8 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 
 #### Development
 
-* [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing (included in [devpackages](https://github.com/digitoimistodude/devpackages))
-* [gulp](http://gulpjs.com/) build script that compiles both Less and Sass, checks for JavaScript errors, optimizes images, and concatenates and minifies files (see Dude's [devpackages](https://github.com/digitoimistodude/devpackages))
+* [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing
+* [gulp](http://gulpjs.com/) build script that compiles both Less and Sass, checks for JavaScript errors, optimizes images, and concatenates and minifies files
 * [npm](https://www.npmjs.com) for front-end package management
 
 #### Navigation
@@ -248,7 +248,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 ### Recommendations for development
 
 * macOS
-* [Devpackages](https://github.com/digitoimistodude/devpackages) \- Npm and Gulp \+ plugins
+* npm and Gulp \+ plugins
 * [Dudestack](https://github.com/digitoimistodude/dudestack) \- A toolkit for creating a new professional WordPress project with deployments\. Heavily based on Bedrock by Roots\.
 
 ### How to build a new theme
@@ -287,13 +287,12 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 6. Go to the themes folder of your WordPress instance via Terminal (`cd /var/www/airdev/content/themes`)
 7. Clone your fork with `git clone git@github.com:yourusername/air-light.git` (replace `yourusername` with your actual username)
 8. Cd to your new cloned repository `cd /var/www/airdev/content/themes/air-light`
-9. Add `devDependencies` to package.json from [here](https://github.com/digitoimistodude/devpackages/blob/master/package.json)
-10. Run `nvm use`.
-11. Install the dependencies by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
-12. Wait npm to get through files (get another cup of coffee)
-13. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
-14. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
-15. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
+9. Run `nvm use`.
+10. Install the dependencies by running `npm install` inside the theme folder (if you don't have npm installed, see [here](https://www.npmjs.com/get-npm) or just use [homebrew](https://brew.sh))
+11. Wait npm to get through files (get another cup of coffee)
+12. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
+13. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
+14. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) to be able to run WP-CLI with just `wp`.
 
@@ -410,7 +409,3 @@ That's it, you released a new version!
 Gzip file sizes tested with `wc -c css/prod/global.css` and `gzip -c css/prod/global.css | wc -c` commands.
 
 **Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-light subfolders inside the theme directory for it to work on both global projects and with air-light.
-
-### Known issues
-
-See tool related issues in [devpackages](https://github.com/digitoimistodude/devpackages#known-issues) and [air-light issue tracker](https://github.com/digitoimistodude/issues).
