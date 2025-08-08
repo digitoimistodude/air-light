@@ -64,6 +64,9 @@
     "webpack": "^5.75.0",
     "webpack-stream": "^7.0.0"
   },
+  "scripts": {
+    "prepare": "husky install && chmod +x .husky/pre-commit .husky/commit-msg"
+  },
   "dependencies": {
     "core-js": "^3.40.0",
     "moveto": "^1.8.2",

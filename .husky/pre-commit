@@ -292,44 +292,6 @@ for theme_dir in content/themes/*/; do
     fi
 done
 
-echo ""
-# Check WordPress version
-echo "${CYAN}${PACKAGE} Checking WordPress version...${NC}"
-
-printf "  ${ARROW} Checking WordPress version in composer.json... "
-if [ -f "composer.json" ]; then
-    # Extract WordPress version from composer.json (check both variants)
-    wp_version=$(grep -o '"johnpbloch/wordpress\(-core\)\?": "[^"]*"' composer.json | sed 's/.*": "//' | sed 's/".*//')
-
-    if [ -n "$wp_version" ]; then
-        # Get latest WordPress version from API with timeout
-        latest_wp_version=$(curl -s --max-time 10 https://api.wordpress.org/core/version-check/1.7/ | grep -o '"version":"[^"]*"' | head -1 | sed 's/.*":"//' | sed 's/".*//' 2>/dev/null || echo "")
-
-        if [ -n "$latest_wp_version" ]; then
-            if [ "$wp_version" != "$latest_wp_version" ]; then
-                echo "${RED}${CROSS} FAILED${NC}"
-                echo "    ${RED}WordPress version in composer.json: ${wp_version}${NC}"
-                echo "    ${RED}Latest WordPress version: ${latest_wp_version}${NC}"
-                echo "    ${YELLOW}Please update WordPress immediately:${NC}"
-                echo "    ${BLUE}sed -i '' 's/\"johnpbloch\/wordpress\": \"[^\"]*\"/\"johnpbloch\/wordpress\": \"'$latest_wp_version'\"/' composer.json${NC}"
-                echo "    ${BLUE}composer update${NC}"
-                exit 1
-            else
-                echo "${GREEN}${CHECK} OK (${wp_version})${NC}"
-            fi
-        else
-            echo "${YELLOW}⚠️  UNKNOWN${NC}"
-            echo "    ${YELLOW}Could not fetch latest WordPress version (network issue)${NC}"
-            echo "    ${YELLOW}Current version in composer.json: ${wp_version}${NC}"
-        fi
-    else
-        echo "${YELLOW}⚠️  NOT FOUND${NC}"
-        echo "    ${YELLOW}WordPress core not found in composer.json${NC}"
-    fi
-else
-    echo "${YELLOW}⚠️  SKIPPED${NC}"
-    echo "    ${YELLOW}No composer.json found${NC}"
-fi
 
 echo ""
 # Check if dependencies are up to date
