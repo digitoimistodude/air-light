@@ -7,6 +7,7 @@
 * Add helper wrapper for site-header, make it container width, #245, Refs: T-25879, DEV-93
 * Make sure husky has executable permissions after each branch switch, Ref: DEV-378
 * Code quality checks: Fix deprecated install command, update version for tests, Ref: DEV-373
+* Run gulp from theme instead of project from now on, Ref: DEV-83, DEV-127
 
 ### 9.5.1: 2025-05-23
 
