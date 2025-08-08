@@ -399,19 +399,38 @@ else
     echo "    ${YELLOW}No GitHub Actions workflows found${NC}"
 fi
 
-
-# Check PHP files with PHPCS (using your workflow pattern)
-if [ -f "phpcs.xml" ] && [ -f "./vendor/bin/phpcs" ]; then
-    echo "  ${ARROW} Running PHP CodeSniffer on entire codebase..."
-    # Use the same pattern as your GitHub Actions workflow
-    if ./vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml; then
-        echo "    ${GREEN}${CHECK} OK${NC}"
-    else
-        echo "    ${RED}${CROSS} FAILED${NC}"
-        echo ""
-        echo "    ${YELLOW}To fix automatically:${NC}"
-        echo "    ${BLUE}./vendor/bin/phpcbf -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml${NC}"
-        exit 1
+# Check PHP files with PHPCS
+if [ "$CHECK_CHANGED_ONLY" = "true" ]; then
+    # Check only changed PHP files
+    php_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.php$' | tr '\n' ' ')
+    if [ -n "$php_files" ] && [ -f "phpcs.xml" ] && [ -f "./vendor/bin/phpcs" ]; then
+        echo "  ${ARROW} Running PHP CodeSniffer on changed files..."
+        if ./vendor/bin/phpcs --standard=phpcs.xml --error-severity=1 --warning-severity=8 --colors $php_files; then
+            echo "    ${GREEN}${CHECK} OK${NC}"
+        else
+            echo "    ${RED}${CROSS} FAILED${NC}"
+            echo ""
+            echo "    ${YELLOW}To fix automatically:${NC}"
+            echo "    ${BLUE}./vendor/bin/phpcbf --standard=phpcs.xml $php_files${NC}"
+            exit 1
+        fi
+    elif [ -z "$php_files" ]; then
+        echo "  ${YELLOW}No PHP files to check${NC}"
+    fi
+else
+    # Check entire codebase (original behavior)
+    if [ -f "phpcs.xml" ] && [ -f "./vendor/bin/phpcs" ]; then
+        echo "  ${ARROW} Running PHP CodeSniffer on entire codebase..."
+        # Use the same pattern as your GitHub Actions workflow
+        if ./vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml; then
+            echo "    ${GREEN}${CHECK} OK${NC}"
+        else
+            echo "    ${RED}${CROSS} FAILED${NC}"
+            echo ""
+            echo "    ${YELLOW}To fix automatically:${NC}"
+            echo "    ${BLUE}./vendor/bin/phpcbf -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml${NC}"
+            exit 1
+        fi
     fi
 fi
 
