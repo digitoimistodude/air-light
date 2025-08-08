@@ -19,7 +19,7 @@
     "autoprefixer": "^10.4.13",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^9.1.2",
-    "browser-sync": "^3.0.3",
+    "browser-sync": "^3.0.4",
     "caniuse-lite": "^1.0.30001452",
     "cssnano": "^5.1.14",
     "cssnano-preset-advanced": "^5.3.9",
