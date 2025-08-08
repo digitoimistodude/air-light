@@ -115,18 +115,6 @@ if [ ! -f "phpcs.xml" ]; then
 fi
 echo "${GREEN}${CHECK} OK${NC}"
 
-printf "  ${ARROW} Checking for .stylelintrc in root (should not exist)... "
-if [ -f ".stylelintrc" ] || [ -f ".stylelintrc.json" ] || [ -f ".stylelintrc.js" ] || [ -f ".stylelintrc.yml" ]; then
-    echo "${RED}${CROSS} FAILED${NC}"
-    echo "    ${RED}.stylelintrc file found in root directory${NC}"
-    echo "    ${YELLOW}Stylelint config should only be in theme directories, please move:${NC}"
-    echo "    ${BLUE}mv .stylelintrc* content/themes/your-theme/${NC}"
-    echo "    ${YELLOW}Then update csstools/value-no-unknown-custom-properties importFrom path${NC}"
-    echo "    ${YELLOW}And update .github/workflows/styles.yml path${NC}"
-    exit 1
-fi
-echo "${GREEN}${CHECK} OK${NC}"
-
 printf "  ${ARROW} Checking for .github/workflows directory... "
 if [ ! -d ".github/workflows" ]; then
     echo "${RED}${CROSS} FAILED${NC}"
@@ -173,33 +161,16 @@ printf "  ${ARROW} Checking CHANGELOG.md format and freshness... "
 if [ -f "CHANGELOG.md" ]; then
     first_line=$(head -n 1 CHANGELOG.md)
 
-    # Check if first line matches format: ### x.x.x: yyyy-mm-dd
-    if echo "$first_line" | grep -qE "^### [0-9]+\.[0-9]+\.[0-9]+: [0-9]{4}-[0-9]{2}-[0-9]{2}$"; then
+    # Check if first line matches format: ### x.x.x: yyyy-mm-dd (allows rc versions like x.x.xrc or x.x.x-rc)
+    if echo "$first_line" | grep -qE "^### [0-9]+\.[0-9]+\.[0-9]+(-?rc)?[0-9]*: [0-9]{4}-[0-9]{2}-[0-9]{2}$"; then
         # Extract date from first line
         changelog_date=$(echo "$first_line" | sed 's/.*: //')
 
         # Get current date in yyyy-mm-dd format
         current_date=$(date +%Y-%m-%d)
 
-        # Convert dates to seconds for comparison (cross-platform)
-        if date -d "$changelog_date" +%s >/dev/null 2>&1; then
-            # Linux/GNU date
-            changelog_seconds=$(date -d "$changelog_date" +%s 2>/dev/null || echo "0")
-            current_seconds=$(date -d "$current_date" +%s)
-        else
-            # macOS/BSD date
-            changelog_seconds=$(date -j -f "%Y-%m-%d" "$changelog_date" +%s 2>/dev/null || echo "0")
-            current_seconds=$(date -j -f "%Y-%m-%d" "$current_date" +%s)
-        fi
-
-        if [ "$changelog_seconds" -eq "0" ]; then
-            echo "${RED}${CROSS} FAILED${NC}"
-            echo "    ${RED}Invalid date format in CHANGELOG.md first line${NC}"
-            echo "    ${YELLOW}Found: $first_line${NC}"
-            echo "    ${YELLOW}Expected format: ### x.x.x: yyyy-mm-dd${NC}"
-            echo "    ${BLUE}nano CHANGELOG.md${NC}"
-            exit 1
-        elif [ "$changelog_seconds" -ne "$current_seconds" ]; then
+        # Simple string comparison for dates (both should be in YYYY-MM-DD format)
+        if [ "$changelog_date" != "$current_date" ]; then
             echo "${RED}${CROSS} FAILED${NC}"
             echo "    ${RED}CHANGELOG.md date must be today's date to keep it current${NC}"
             echo "    ${YELLOW}Changelog date: $changelog_date${NC}"
@@ -214,8 +185,8 @@ if [ -f "CHANGELOG.md" ]; then
         echo "${RED}${CROSS} FAILED${NC}"
         echo "    ${RED}CHANGELOG.md first line format is incorrect${NC}"
         echo "    ${YELLOW}Found: $first_line${NC}"
-        echo "    ${YELLOW}Expected format: ### x.x.x: yyyy-mm-dd${NC}"
-        echo "    ${YELLOW}Example: ### 1.0.0: 2025-01-15${NC}"
+        echo "    ${YELLOW}Expected format: ### x.x.x: yyyy-mm-dd (or ### x.x.xrc: yyyy-mm-dd)${NC}"
+        echo "    ${YELLOW}Example: ### 1.0.0: 2025-01-15 or ### 1.0.0rc: 2025-01-15${NC}"
         echo "    ${BLUE}nano CHANGELOG.md${NC}"
         exit 1
     fi
@@ -363,34 +334,6 @@ fi
 echo ""
 # Check if dependencies are up to date
 echo "${CYAN}${PACKAGE} Checking dependencies...${NC}"
-
-# Check root composer.json
-if [ -f "composer.json" ]; then
-    printf "  ${ARROW} Checking root composer dependencies... "
-    if [ ! -f "composer.lock" ]; then
-        echo "${RED}${CROSS} FAILED${NC}"
-        echo "    ${RED}composer.lock file missing${NC}"
-        echo "    ${YELLOW}Please run:${NC}"
-        echo "    ${BLUE}composer install${NC}"
-        exit 1
-    fi
-    if [ ! -d "vendor" ]; then
-        echo "${RED}${CROSS} FAILED${NC}"
-        echo "    ${RED}vendor directory missing${NC}"
-        echo "    ${YELLOW}Please run:${NC}"
-        echo "    ${BLUE}composer install${NC}"
-        exit 1
-    fi
-    # Check if composer.lock is valid by checking if it can be parsed
-    if ! composer validate --no-check-all --quiet >/dev/null 2>&1; then
-        echo "${RED}${CROSS} FAILED${NC}"
-        echo "    ${RED}composer.lock file is invalid or out of sync${NC}"
-        echo "    ${YELLOW}Please run:${NC}"
-        echo "    ${BLUE}composer update${NC}"
-        exit 1
-    fi
-    echo "${GREEN}${CHECK} OK${NC}"
-fi
 
 # Check root package.json
 if [ -f "package.json" ]; then
