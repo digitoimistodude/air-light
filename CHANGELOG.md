@@ -1,6 +1,7 @@
 ### 9.6.1: 2025-08-08
 
 * Fix regression in 9.6.0, fonts and colors leaking to admin, Ref: DEV-381
+* Add minimalistic styles and footer, prepare for 10.0.0, Refs: DEV-94, DEV-90, DEV-379
 
 ### 9.6.0: 2025-08-08
 

@@ -8,56 +8,47 @@
 .site-footer {
   // Making sure the footer background is white, even on WordPress.org
   background-color: var(--color-white);
-  clear: both;
+  border-top: 1px solid #e3e3f0;
   color: var(--color-paragraph);
   overflow: hidden;
   padding: 3.75rem 1.25rem;
-  text-align: center;
 
-  .wordpress-logo {
-    display: block;
-    margin-bottom: 1.25rem;
-    margin-left: auto;
-    margin-right: auto;
+  .container {
+    padding-bottom: 2.5rem;
+    padding-top: 2.5rem;
   }
 
-  span {
-    display: block;
-    text-align: center;
+  p,
+  a {
+    color: var(--color-black);
   }
 
-  svg {
-    margin-right: 0.3125rem;
-    position: relative;
-  }
-
-  .powered-by-wordpress {
-    display: inline-block;
-    font-weight: var(--typography-weight-semibold);
-    margin-bottom: 0.625rem;
-    text-align: center;
-  }
-
-  .github-link {
-    margin-left: 0.5rem;
-    margin-top: 4px;
-    overflow: hidden;
-    padding-bottom: 4px;
-    position: relative;
+  .site-info {
+    display: grid;
+    gap: 1rem;
+    justify-content: start;
   }
 
   .theme-info {
-    align-items: center;
-    color: var(--color-paragraph);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    line-height: 1.5;
-    margin: 0 auto;
-    text-align: center;
+    font-size: var(--typography-size-16);
+  }
 
-    i {
-      margin: 0 0.3125rem;
-    }
+  .theme-info a {
+    display: block;
+  }
+
+  .powered-by-wordpress,
+  .theme-info {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .powered-by-wordpress {
+    font-weight: var(--typography-weight-semibold);
+  }
+
+  .powered-by-wordpress svg {
+    height: 1.75rem;
+    width: 1.75rem;
   }
 }
