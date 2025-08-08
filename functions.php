@@ -17,7 +17,7 @@ namespace Air_Light;
 /**
  * The current version of the theme.
  */
-define( 'AIR_LIGHT_VERSION', '9.5.1' );
+define( 'AIR_LIGHT_VERSION', '9.6.0' );
 
 // We need to have some defaults as comments or empties so let's allow this:
 // phpcs:disable Squiz.Commenting.InlineComment.SpacingBefore, WordPress.Arrays.ArrayDeclarationSpacing.SpaceInEmptyArray
@@ -121,7 +121,7 @@ add_action( 'after_setup_theme', function() {
     // Custom ACF block default settings
     'acf_block_defaults' => [
       'category'          => 'air-light',
-      'mode'              => 'auto',
+      'mode'              => 'preview',
       'align'             => 'full',
       'post_types'        => [
         'page',

@@ -1,3 +1,8 @@
+@use '../variables' as *;
+@use '../layout/forms';
+@use '../layout/typography';
+@use '../features/gravity-forms';
+
 // stylelint-disable selector-not-notation, selector-max-pseudo-class, selector-max-specificity, plugin/file-max-lines
 
 // Use ACF defined font styles in ACF fields
@@ -45,11 +50,6 @@
 // Need to be right after general, because after typography comes block styles
 // stylelint-disable-next-line
 .editor-styles-wrapper {
-  // Import typography related styles inside blocks
-  @import 'layout/typography';
-
-  // Import gravity forms inside Gutenberg editor
-  @import 'features/gravity-forms';
 
   // Fix acf icons visibility issue
   .acf-icon {
@@ -68,7 +68,7 @@
 
   // Make buttons and input fields work in ACF previews
   .acf-block-preview .block {
-    @import 'layout/forms';
+    // Forms styles are now available from the top-level @use
   }
 
   // Fix padding for certain native blocks in article view
@@ -111,17 +111,18 @@
   .wp-block[data-align="wide"] > .wp-block-gallery {
     width: 100%;
   }
+  // Typography and gravity forms styles are now available from the top-level @use
 }
 
 // Fix alignleft and alignright figcaption width
-// Hack for achieving the same than in gutenberg-helpers.js
+// Hack for achieving the same than in gutenberg-js
 [data-align="right"] figcaption,
 [data-align="left"] figcaption {
   margin-left: auto;
   margin-right: auto;
 
   // Hack for keeping figcaption from flowing over floated image
-  // This variable is set inline to the corresponding figure with gutenberg-helpers.js
+  // This variable is set inline to the corresponding figure with gutenberg-js
   // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
   max-width: var(--width-child-img);
   text-align: center;
