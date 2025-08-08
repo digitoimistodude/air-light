@@ -4,13 +4,16 @@ module.exports = {
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,
+    babelOptions: {
+      presets: ['@wordpress/babel-preset-default']
+    }
   },
-  extends: 'eslint-config-airbnb/base',
   rules: {
     indent: ['error', 2],
   },
   env: {
     browser: true,
     jquery: true,
+    es6: true,
   },
 };

@@ -158,7 +158,11 @@ add_action( 'after_setup_theme', function() {
         'core/table',
         'core/textColumns',
       ],
-      'page' => [],
+      'page' => [
+        // Demo blocks
+        'air-light/latest-articles',
+        'air-light/image-content',
+      ],
       // 'page' => [
       //   'all-acf-blocks',
       //   'core/paragraph',
@@ -198,7 +202,7 @@ function debug_print_all_blocks() {
 }
 
 // Uncomment the following line to see all available blocks:
-// add_action('init', __NAMESPACE__ . '\\debug_print_all_blocks');
+// add_action( 'init', __NAMESPACE__ . '\debug_print_all_blocks' );
 
 
 /**
