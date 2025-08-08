@@ -31,6 +31,7 @@ mv /var/www/airdev/content/themes/air-light/package.json $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/package-lock.json $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/phpcs.xml $HOME/air-temp/
 sudo mv /var/www/airdev/content/themes/air-light/node_modules $HOME/air-temp/
+sudo mv /var/www/airdev/content/themes/air-light/vendor $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/gulpfile.js $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/bin $HOME/air-temp/
 mv /var/www/airdev/content/themes/air-light/content $HOME/air-temp/

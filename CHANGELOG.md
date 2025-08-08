@@ -14,6 +14,7 @@
 * Bump tested WordPress version to 6.8.2
 * From now on run gulp and tools from the theme instead of external devpackages repo, Ref: DEV-83
 * Simplify starter color variables, #243, Ref: DEV-379
+* Update release build scripts, do not pack vendor/, Ref: DEV-83
 
 ### 9.5.1: 2025-05-23
 
