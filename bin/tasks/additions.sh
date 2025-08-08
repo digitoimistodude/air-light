@@ -25,7 +25,6 @@ This project is hand made for customer by Dude.
 
 * [digitoimistodude/dudestack](https://github.com/digitoimistodude/dudestack)
 * [digitoimistodude/air-light](https://github.com/digitoimistodude/air-light)
-* [digitoimistodude/devpackages](https://github.com/digitoimistodude/devpackages)
 
 ### Recommended development environment
 

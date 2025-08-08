@@ -11,6 +11,7 @@
 * Code quality checks: Fix deprecated install command, update version for tests, Ref: DEV-373
 * Run gulp from theme instead of project from now on, Ref: DEV-83, DEV-127
 * Bump tested WordPress version to 6.8.2
+* From now on run gulp and tools from the theme instead of external devpackages repo, Ref: DEV-83
 
 ### 9.5.1: 2025-05-23
 
