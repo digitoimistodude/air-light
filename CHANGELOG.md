@@ -1,5 +1,10 @@
+### [Unreleased]
+
+* Bump form-data from 4.0.2 to 4.0.4 #254
+* Bump eazy-logger from 4.0.1 to 4.1.0 #251
 
 ### 9.5.1: 2025-05-23
+
 * Fix inconsistent heading variables, T-25878
 * Fix anchors.js not working with #hash in url, DEV-262
 
