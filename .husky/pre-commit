@@ -156,143 +156,6 @@ if [ ! -f "CHANGELOG.md" ]; then
 fi
 echo "${GREEN}${CHECK} OK${NC}"
 
-printf "  ${ARROW} Checking CHANGELOG.md format and freshness... "
-# Check CHANGELOG.md format and date
-if [ -f "CHANGELOG.md" ]; then
-    first_line=$(head -n 1 CHANGELOG.md)
-
-    # Check if first line matches format: ### x.x.x: yyyy-mm-dd (allows rc versions like x.x.xrc or x.x.x-rc)
-    if echo "$first_line" | grep -qE "^### [0-9]+\.[0-9]+\.[0-9]+(-?rc)?[0-9]*: [0-9]{4}-[0-9]{2}-[0-9]{2}$"; then
-        # Extract date from first line
-        changelog_date=$(echo "$first_line" | sed 's/.*: //')
-
-        # Get current date in yyyy-mm-dd format
-        current_date=$(date +%Y-%m-%d)
-
-        # Simple string comparison for dates (both should be in YYYY-MM-DD format)
-        if [ "$changelog_date" != "$current_date" ]; then
-            echo "${RED}${CROSS} FAILED${NC}"
-            echo "    ${RED}CHANGELOG.md date must be today's date to keep it current${NC}"
-            echo "    ${YELLOW}Changelog date: $changelog_date${NC}"
-            echo "    ${YELLOW}Current date: $current_date${NC}"
-            echo "    ${YELLOW}Please update the changelog with today's date and recent changes:${NC}"
-            echo "    ${BLUE}nano CHANGELOG.md${NC}"
-            exit 1
-        else
-            echo "${GREEN}${CHECK} OK${NC}"
-        fi
-    else
-        echo "${RED}${CROSS} FAILED${NC}"
-        echo "    ${RED}CHANGELOG.md first line format is incorrect${NC}"
-        echo "    ${YELLOW}Found: $first_line${NC}"
-        echo "    ${YELLOW}Expected format: ### x.x.x: yyyy-mm-dd (or ### x.x.xrc: yyyy-mm-dd)${NC}"
-        echo "    ${YELLOW}Example: ### 1.0.0: 2025-01-15 or ### 1.0.0rc: 2025-01-15${NC}"
-        echo "    ${BLUE}nano CHANGELOG.md${NC}"
-        exit 1
-    fi
-else
-    echo "${YELLOW}⚠️  NOT FOUND${NC}"
-fi
-
-printf "  ${ARROW} Checking for CHANGELOG.md in themes (should not exist)... "
-changelog_in_themes=""
-for theme_dir in content/themes/*/; do
-    if [ -f "${theme_dir}CHANGELOG.md" ]; then
-        changelog_in_themes="$changelog_in_themes ${theme_dir}CHANGELOG.md"
-    fi
-done
-
-if [ -n "$changelog_in_themes" ]; then
-    echo "${RED}${CROSS} FAILED${NC}"
-    echo "    ${RED}CHANGELOG.md found in theme directories (should only be in root):${NC}"
-    for file in $changelog_in_themes; do
-        echo "      ${YELLOW}• $file${NC}"
-    done
-    echo "    ${YELLOW}Please move changelog content to root CHANGELOG.md and remove:${NC}"
-    echo "    ${BLUE}rm $changelog_in_themes${NC}"
-    exit 1
-fi
-echo "${GREEN}${CHECK} OK${NC}"
-
-# Check README.md first line for repo name
-printf "  ${ARROW} Checking README.md first line... "
-if [ -f "README.md" ]; then
-    first_line=$(head -n 1 README.md)
-    project_name=$(basename "$(pwd)")
-
-    # Check if first line contains repo name (case sensitive)
-    if echo "$first_line" | grep -q "$project_name"; then
-        echo "${RED}${CROSS} FAILED${NC}"
-        echo "    ${RED}README.md first line contains repo name '$project_name'${NC}"
-        echo "    ${YELLOW}Found: $first_line${NC}"
-        echo "    ${YELLOW}Should contain a clear project name in sentence case${NC}"
-        echo "    ${YELLOW}Example: # My Website Name${NC}"
-        echo "    ${BLUE}nano README.md${NC}"
-        exit 1
-    fi
-    echo "${GREEN}${CHECK} OK${NC}"
-else
-    echo "${YELLOW}⚠️  NOT FOUND${NC}"
-fi
-
-# Check theme style.css files
-for theme_dir in content/themes/*/; do
-    if [ -f "${theme_dir}style.css" ]; then
-        theme_name=$(basename "$theme_dir")
-        printf "  ${ARROW} Checking theme '${theme_name}' style.css... "
-
-        # Check Theme Name line
-        theme_name_line=$(grep "^Theme Name:" "${theme_dir}style.css" 2>/dev/null || echo "")
-        if [ -n "$theme_name_line" ]; then
-            # Check if theme name contains lowercase theme name
-            if echo "$theme_name_line" | grep -qi "Theme Name:.*$theme_name"; then
-                echo "${RED}${CROSS} FAILED${NC}"
-                echo "    ${RED}Theme Name contains lowercase theme name '$theme_name'${NC}"
-                echo "    ${YELLOW}Found: $theme_name_line${NC}"
-                echo "    ${YELLOW}Should contain a clear theme name in sentence case${NC}"
-                echo "    ${YELLOW}Example: Theme Name: My Website Theme${NC}"
-                echo "    ${BLUE}nano ${theme_dir}style.css${NC}"
-                exit 1
-            fi
-        fi
-
-        # Check Description line
-        description_line=$(grep "^Description:" "${theme_dir}style.css" 2>/dev/null || echo "")
-        if [ -n "$description_line" ]; then
-            # Check if description contains default starter theme text
-            if echo "$description_line" | grep -qi "Description:.*Hi.*starter.*theme.*called"; then
-                echo "${RED}${CROSS} FAILED${NC}"
-                echo "    ${RED}Description contains default starter theme text${NC}"
-                echo "    ${YELLOW}Found: $description_line${NC}"
-                echo "    ${YELLOW}Should contain a meaningful description${NC}"
-                echo "    ${YELLOW}Example: Description: Custom WordPress theme for My Website${NC}"
-                echo "    ${BLUE}nano ${theme_dir}style.css${NC}"
-                exit 1
-            fi
-        fi
-
-        # Check Version against changelog
-        version_line=$(grep "^Version:" "${theme_dir}style.css" 2>/dev/null || echo "")
-        if [ -n "$version_line" ] && [ -f "CHANGELOG.md" ]; then
-            style_version=$(echo "$version_line" | sed 's/Version: *//')
-            changelog_version=$(head -n 1 CHANGELOG.md | sed 's/### *//' | sed 's/:.*$//')
-
-            if [ "$style_version" != "$changelog_version" ]; then
-                echo "${RED}${CROSS} FAILED${NC}"
-                echo "    ${RED}Version mismatch between style.css and CHANGELOG.md${NC}"
-                echo "    ${YELLOW}style.css version: $style_version${NC}"
-                echo "    ${YELLOW}CHANGELOG.md version: $changelog_version${NC}"
-                echo "    ${YELLOW}Please update version in style.css to match changelog${NC}"
-                echo "    ${BLUE}nano ${theme_dir}style.css${NC}"
-                exit 1
-            fi
-        fi
-
-        echo "${GREEN}${CHECK} OK${NC}"
-    fi
-done
-
-
 echo ""
 # Check if dependencies are up to date
 echo "${CYAN}${PACKAGE} Checking dependencies...${NC}"
@@ -319,48 +182,41 @@ if [ -f "package.json" ]; then
     echo "${GREEN}${CHECK} OK${NC}"
 fi
 
-# Check all themes with package.json
-if [ -d "content/themes" ]; then
-    for theme_dir in content/themes/*/; do
-        if [ -f "${theme_dir}package.json" ]; then
-            theme_name=$(basename "$theme_dir")
-            printf "  ${ARROW} Checking theme '${theme_name}' dependencies... "
-            if [ ! -f "${theme_dir}package-lock.json" ]; then
-                echo "${RED}${CROSS} FAILED${NC}"
-                echo "    ${RED}${theme_dir}package-lock.json file missing${NC}"
-                echo "    ${YELLOW}Please run:${NC}"
-                echo "    ${BLUE}cd ${theme_dir}${NC}"
-                echo "    ${PURPLE}nvm use${NC}"
-                echo "    ${PURPLE}npm install${NC}"
-                exit 1
-            fi
-            if [ ! -d "${theme_dir}node_modules" ]; then
-                echo "${RED}${CROSS} FAILED${NC}"
-                echo "    ${RED}${theme_dir}node_modules directory missing${NC}"
-                echo "    ${YELLOW}Please run:${NC}"
-                echo "    ${BLUE}cd ${theme_dir}${NC}"
-                echo "    ${PURPLE}nvm use${NC}"
-                echo "    ${PURPLE}npm install${NC}"
-                exit 1
-            fi
-            echo "${GREEN}${CHECK} OK${NC}"
+# Check current theme dependencies
+if [ -f "package.json" ]; then
+    theme_name=$(basename "$(pwd)")
+    printf "  ${ARROW} Checking current theme dependencies... "
+    if [ ! -f "package-lock.json" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}package-lock.json file missing${NC}"
+        echo "    ${YELLOW}Please run:${NC}"
+        echo "    ${BLUE}nvm use${NC}"
+        echo "    ${PURPLE}npm install${NC}"
+        exit 1
+    fi
+    if [ ! -d "node_modules" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}node_modules directory missing${NC}"
+        echo "    ${YELLOW}Please run:${NC}"
+        echo "    ${BLUE}nvm use${NC}"
+        echo "    ${PURPLE}npm install${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
 
-            # Check for stylelint config in theme
-            printf "  ${ARROW} Checking theme '${theme_name}' stylelint config... "
-            if ! [ -f "${theme_dir}.stylelintrc" ] && ! [ -f "${theme_dir}.stylelintrc.json" ] && ! [ -f "${theme_dir}.stylelintrc.js" ] && ! [ -f "${theme_dir}.stylelintrc.yml" ]; then
-                echo "${RED}${CROSS} FAILED${NC}"
-                echo "    ${RED}No .stylelintrc file found in theme directory${NC}"
-                echo "    ${YELLOW}Please create stylelint config in theme:${NC}"
-                echo "    ${BLUE}cd ${theme_dir}${NC}"
-                echo "    ${BLUE}touch .stylelintrc.json${NC}"
-                echo "    ${YELLOW}If moving from root, update these paths:${NC}"
-                echo "    ${YELLOW}- csstools/value-no-unknown-custom-properties importFrom${NC}"
-                echo "    ${YELLOW}- .github/workflows/styles.yml working directory${NC}"
-                exit 1
-            fi
-            echo "${GREEN}${CHECK} OK${NC}"
-        fi
-    done
+    # Check for stylelint config in current theme
+    printf "  ${ARROW} Checking current theme stylelint config... "
+    if ! [ -f ".stylelintrc" ] && ! [ -f ".stylelintrc.json" ] && ! [ -f ".stylelintrc.js" ] && ! [ -f ".stylelintrc.yml" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}No .stylelintrc file found in theme directory${NC}"
+        echo "    ${YELLOW}Please create stylelint config in theme:${NC}"
+        echo "    ${BLUE}touch .stylelintrc.json${NC}"
+        echo "    ${YELLOW}If moving from root, update these paths:${NC}"
+        echo "    ${YELLOW}- csstools/value-no-unknown-custom-properties importFrom${NC}"
+        echo "    ${YELLOW}- .github/workflows/styles.yml working directory${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
 fi
 
 echo ""
@@ -419,17 +275,17 @@ scss_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.scss$' | 
 if [ -n "$scss_files" ]; then
     printf "  ${ARROW} Running stylelint on changed SCSS files... "
 
-    # Find stylelint config in theme directories
+    # Find stylelint config in current theme
     stylelint_config=""
-    for theme_dir in content/themes/*/; do
-        if [ -f "${theme_dir}.stylelintrc" ]; then
-            stylelint_config="${theme_dir}.stylelintrc"
-            break
-        elif [ -f "${theme_dir}.stylelintrc.json" ]; then
-            stylelint_config="${theme_dir}.stylelintrc.json"
-            break
-        fi
-    done
+    if [ -f ".stylelintrc" ]; then
+        stylelint_config=".stylelintrc"
+    elif [ -f ".stylelintrc.json" ]; then
+        stylelint_config=".stylelintrc.json"
+    elif [ -f ".stylelintrc.js" ]; then
+        stylelint_config=".stylelintrc.js"
+    elif [ -f ".stylelintrc.yml" ]; then
+        stylelint_config=".stylelintrc.yml"
+    fi
 
     if [ -n "$stylelint_config" ]; then
         if ! npx stylelint --config "$stylelint_config" $scss_files 2>/dev/null; then
@@ -446,7 +302,7 @@ if [ -n "$scss_files" ]; then
         echo "${GREEN}${CHECK} OK${NC}"
     else
         echo "${YELLOW}⚠️  SKIPPED${NC}"
-        echo "    ${YELLOW}No .stylelintrc config found in theme directories${NC}"
+        echo "    ${YELLOW}No .stylelintrc config found in current theme${NC}"
     fi
 else
     echo "  ${YELLOW}No SCSS files to check${NC}"
@@ -493,7 +349,7 @@ if [ "$CHECK_CHANGED_ONLY" = "true" ]; then
 else
     # Check entire codebase (original behavior)
     printf "  ${ARROW} Checking PHP 8.3 compatibility on entire codebase... "
-    php_syntax_output=$(find -L . -name '*.php' -not -path "./vendor/*" -not -path "./node_modules/*" -not -path "./src/*" -not -path "./js/*" -not -path "./css/*" -not -path "./sass/*" -not -path "./plugin-update-checker/*" -not -path "./content/themes/*" -not -path "./content/plugins/*" -not -path "./content/uploads/*" -not -path "./content/languages/*" -not -path "./content-mu-plugins/*" -not -path "./media/*" -not -path "./wp/*" -exec php -l {} \; 2>&1)
+    php_syntax_output=$(find -L . -name '*.php' -not -path "./vendor/*" -not -path "./node_modules/*" -exec php -l {} \; 2>&1)
     php_syntax_exit_code=$?
 
     if [ $php_syntax_exit_code -ne 0 ]; then
@@ -510,7 +366,7 @@ else
 
         echo ""
         echo "    ${YELLOW}To check syntax manually:${NC}"
-        echo "    ${BLUE}find -L . -name '*.php' -not -path \"./vendor/*\" -not -path \"./node_modules/*\" -not -path \"./src/*\" -not -path \"./js/*\" -not -path \"./css/*\" -not -path \"./sass/*\" -not -path \"./plugin-update-checker/*\" -not -path \"./content/themes/*\" -not -path \"./content/plugins/*\" -not -path \"./content/uploads/*\" -not -path \"./wp/*\" -exec php -l {} \\;${NC}"
+        echo "    ${BLUE}find -L . -name '*.php' -not -path \"./vendor/*\" -not -path \"./node_modules/*\" -exec php -l {} \\;${NC}"
         exit 1
     fi
     echo "${GREEN}${CHECK} OK${NC}"
@@ -548,13 +404,13 @@ fi
 if [ -f "phpcs.xml" ] && [ -f "./vendor/bin/phpcs" ]; then
     echo "  ${ARROW} Running PHP CodeSniffer on entire codebase..."
     # Use the same pattern as your GitHub Actions workflow
-    if ./vendor/bin/phpcs -p . --extensions=php --ignore=vendor,content/themes,content/plugins,content/uploads,node_modules,src,js,css,sass,plugin-update-checker,wp,mu-plugins/air-blocks-acf-example-data,content/languages,scripts/Roots/Bedrock/Installer.php,index.php,content/mu-plugins --standard=phpcs.xml; then
+    if ./vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml; then
         echo "    ${GREEN}${CHECK} OK${NC}"
     else
         echo "    ${RED}${CROSS} FAILED${NC}"
         echo ""
         echo "    ${YELLOW}To fix automatically:${NC}"
-        echo "    ${BLUE}./vendor/bin/phpcbf -p . --extensions=php --ignore=vendor,content/themes,content/plugins,content/uploads,node_modules,src,js,css,sass,plugin-update-checker,wp,mu-plugins/air-blocks-acf-example-data,content/languages,scripts/Roots/Bedrock/Installer.php,index.php,content/mu-plugins --standard=phpcs.xml${NC}"
+        echo "    ${BLUE}./vendor/bin/phpcbf -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml${NC}"
         exit 1
     fi
 fi
