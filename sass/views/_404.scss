@@ -1,3 +1,6 @@
+@use '../variables' as *;
+@use '../helpers/clamp' as *;
+
 // Error 404 title
 .block-error-404 {
   .container {

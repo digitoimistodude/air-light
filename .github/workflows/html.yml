@@ -5,7 +5,7 @@ on: push
 jobs:
   build:
     name: Test HTML and accessibility with NU HTML Checker
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     # Test on macOS:
     # brew install openjdk

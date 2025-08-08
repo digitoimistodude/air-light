@@ -1,3 +1,4 @@
+@use '../../variables' as *;
 // Core/pullquote block
 .wp-block-pullquote {
   border-color: var(--color-paragraph);

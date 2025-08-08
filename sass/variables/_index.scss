@@ -1,0 +1,12 @@
+// stylelint-disable at-rule-empty-line-before
+// Variables index file
+// This file forwards all variable definitions for use with @use
+
+// Variables need helpers for mixins like variablefont
+@use '../helpers' as *;
+
+@forward 'colors';
+@forward 'breakpoints';
+@forward 'typography';
+@forward 'forms';
+@forward 'spacings';
