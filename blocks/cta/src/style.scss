@@ -5,23 +5,23 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+// Import components
+@use '../../../sass/components/button';
+
+// Import variables
+@use '../../../sass/variables/breakpoints';
+@use '../../../sass/variables/colors';
+@use '../../../sass/variables/typography';
+
 .wp-block-air-light-cta {
-  // Import components
-  @use '../../../sass/components/button';
-
-  // Import variables
-  @use '../../../sass/variables/breakpoints';
-  @use '../../../sass/variables/colors';
-  @use '../../../sass/variables/typography';
-
   // Get colors
-  @include colors();
+  @include colors.colors ();
 
   // Get fonts
-  @include typography();
+  @include typography.typography ();
 
   // Apply breakpoints
-  @include breakpoints();
+  @include breakpoints.breakpoints ();
 
   // This is important, because wp core applies html :where(.wp-block) to 840px
   margin-left: auto;
@@ -43,7 +43,7 @@
   }
 
   .wp-block-button__link {
-    @include button();
+    @include button.button ();
     background-color: var(--color-black);
     border-color: var(--color-black);
     color: var(--color-white);
