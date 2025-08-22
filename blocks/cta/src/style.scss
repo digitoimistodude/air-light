@@ -6,6 +6,14 @@
  */
 
 .wp-block-air-light-cta {
+  // Import components
+  @use '../../../sass/components/button';
+
+  // Import variables
+  @use '../../../sass/variables/breakpoints';
+  @use '../../../sass/variables/colors';
+  @use '../../../sass/variables/typography';
+
   // Get colors
   @include colors();
 
@@ -21,13 +29,13 @@
   max-width: var(--width-grid-base);
 
   .container {
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
     padding: 4rem 1.25rem;
   }
 
   h2,
   p {
-    color: #222222;
+    color: #222;
   }
 
   h2 {
@@ -49,11 +57,11 @@
   }
 
   .has-color-dark {
-    background-color: #222222;
+    background-color: #222;
 
     h2,
     p {
-      color: #F2F2F2;
+      color: #f2f2f2;
     }
 
     .wp-block-button__link {

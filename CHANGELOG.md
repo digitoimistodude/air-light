@@ -10,6 +10,7 @@
 * Update caniuse lite to 1.0.30001737, Ref: DEV-10
 * Upgrade gulp-sass to 6.0.1, Ref: DEV-426
 * Ignore merge commits from husky checks, Ref: DEV-427
+* Add `@use` order to .stylelintrc to be first, Ref: DEV-431
 
 ### 9.6.1: 2025-08-08
 
