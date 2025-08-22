@@ -1,0 +1,442 @@
+# Pre commit hooks for Dude projects
+# Ref: DEV-177, DEV-373
+
+# Version:
+VERSION="1.0.2+air-light (2025-08-08)"
+
+# Load configuration
+. "$(dirname "$0")/pre-commit-config"
+
+# Function to check if a file should be excluded
+should_exclude_file() {
+    file="$1"
+
+    # Check directories to exclude
+    case "|$EXCLUDE_DIRS|" in
+        *"|${file%%/*}|"*) return 0 ;;
+    esac
+
+    # Check file patterns to exclude
+    IFS='|'
+    for pattern in $EXCLUDE_FILES; do
+        case "$file" in
+            $pattern) IFS=' '; return 0 ;;
+        esac
+    done
+    IFS=' '
+
+    # Check extensions to exclude
+    case "|$EXCLUDE_EXTENSIONS|" in
+        *"|${file##*.}|"*) return 0 ;;
+    esac
+
+    return 1  # don't exclude
+}
+
+# Function to get filtered staged files
+get_filtered_staged_files() {
+    all_files=$(git diff --cached --name-only)
+    filtered_files=""
+
+    for file in $all_files; do
+        if ! should_exclude_file "$file"; then
+            filtered_files="$filtered_files $file"
+        fi
+    done
+
+    echo "$filtered_files"
+}
+
+# Colors for output
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'  # Bright blue for commands
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# Emojis for better visual feedback
+CHECK="✅"
+CROSS="❌"
+ARROW="➜"
+GEAR="⚙️"
+PACKAGE="📦"
+SEARCH="🔍"
+CLEAN="🧹"
+
+# ASCII art with colors
+print_logo() {
+  RESET='\033[0m'
+  MINT='\033[38;2;0;128;128m'
+
+  printf "${MINT}"
+  printf "
+███████████████   ██████     ██████ ███████████████    ████████████████
+████████████████  ██████     ██████ █████████████████  ████████████████
+██████   ████████ ██████     ██████ ███████   ████████ ████████
+██████     ██████ ██████     ██████ ███████     ██████ ███████████████
+██████    ███████ ████████  ███████ ███████   ████████ ████████
+████████████████   ███████████████  █████████████████  ████████████████
+██████████████       ████████████   ███████████████    ████████████████
+"
+  printf "${RESET}"
+}
+
+# Show the logo
+print_logo
+
+echo ""
+echo "${MINT}Dude's husky quality control config v. ${VERSION}${NC}"
+echo "${MINT}${GEAR}  Running pre-commit checks...${NC}"
+echo ""
+
+echo ""
+
+# Check for required files
+echo "${CYAN}${SEARCH} Checking required configuration files...${NC}"
+
+printf "  ${ARROW} Checking for .nvmrc file... "
+if [ ! -f ".nvmrc" ]; then
+    echo "${RED}${CROSS} FAILED${NC}"
+    echo "    ${RED}.nvmrc file is missing${NC}"
+    echo "    ${YELLOW}Please create .nvmrc file with your Node.js version:${NC}"
+    echo "    ${BLUE}node --version > .nvmrc${NC}"
+    exit 1
+fi
+echo "${GREEN}${CHECK} OK${NC}"
+
+printf "  ${ARROW} Checking for phpcs.xml file... "
+if [ ! -f "phpcs.xml" ]; then
+    echo "${RED}${CROSS} FAILED${NC}"
+    echo "    ${RED}phpcs.xml file is missing${NC}"
+    echo "    ${YELLOW}Please create phpcs.xml configuration file for PHP CodeSniffer${NC}"
+    exit 1
+fi
+echo "${GREEN}${CHECK} OK${NC}"
+
+printf "  ${ARROW} Checking for .github/workflows directory... "
+if [ ! -d ".github/workflows" ]; then
+    echo "${RED}${CROSS} FAILED${NC}"
+    echo "    ${RED}.github/workflows directory is missing${NC}"
+    echo "    ${YELLOW}Please create GitHub workflows directory:${NC}"
+    echo "    ${BLUE}mkdir -p .github/workflows${NC}"
+    echo "    ${YELLOW}And add your CI/CD workflow files${NC}"
+    exit 1
+fi
+echo "${GREEN}${CHECK} OK${NC}"
+
+printf "  ${ARROW} Checking for gulpfile.js... "
+if [ ! -f "gulpfile.js" ]; then
+    echo "${RED}${CROSS} FAILED${NC}"
+    echo "    ${RED}gulpfile.js is missing from root directory${NC}"
+    echo "    ${YELLOW}Please ensure Gulp is properly set up${NC}"
+    exit 1
+fi
+echo "${GREEN}${CHECK} OK${NC}"
+
+printf "  ${ARROW} Checking for gulp in package.json... "
+if [ -f "package.json" ] && ! npm list gulp >/dev/null 2>&1; then
+    echo "${RED}${CROSS} FAILED${NC}"
+    echo "    ${RED}Gulp is not installed${NC}"
+    echo "    ${YELLOW}Please install Gulp:${NC}"
+    echo "    ${BLUE}nvm use${NC}"
+    echo "    ${BLUE}npm install gulp --save-dev${NC}"
+    exit 1
+fi
+echo "${GREEN}${CHECK} OK${NC}"
+
+printf "  ${ARROW} Checking for root CHANGELOG.md... "
+if [ ! -f "CHANGELOG.md" ]; then
+    echo "${RED}${CROSS} FAILED${NC}"
+    echo "    ${RED}CHANGELOG.md is missing from root directory${NC}"
+    echo "    ${YELLOW}Please create CHANGELOG.md in root:${NC}"
+    echo "    ${BLUE}touch CHANGELOG.md${NC}"
+    exit 1
+fi
+echo "${GREEN}${CHECK} OK${NC}"
+
+echo ""
+# Check if dependencies are up to date
+echo "${CYAN}${PACKAGE} Checking dependencies...${NC}"
+
+# Check root package.json
+if [ -f "package.json" ]; then
+    printf "  ${ARROW} Checking root npm dependencies... "
+    if [ ! -f "package-lock.json" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}package-lock.json file missing${NC}"
+        echo "    ${YELLOW}Please run:${NC}"
+        echo "    ${BLUE}nvm use${NC}"
+        echo "    ${BLUE}npm install${NC}"
+        exit 1
+    fi
+    if [ ! -d "node_modules" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}node_modules directory missing${NC}"
+        echo "    ${YELLOW}Please run:${NC}"
+        echo "    ${BLUE}nvm use${NC}"
+        echo "    ${BLUE}npm install${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
+fi
+
+# Check current theme dependencies
+if [ -f "package.json" ]; then
+    theme_name=$(basename "$(pwd)")
+    printf "  ${ARROW} Checking current theme dependencies... "
+    if [ ! -f "package-lock.json" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}package-lock.json file missing${NC}"
+        echo "    ${YELLOW}Please run:${NC}"
+        echo "    ${BLUE}nvm use${NC}"
+        echo "    ${PURPLE}npm install${NC}"
+        exit 1
+    fi
+    if [ ! -d "node_modules" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}node_modules directory missing${NC}"
+        echo "    ${YELLOW}Please run:${NC}"
+        echo "    ${BLUE}nvm use${NC}"
+        echo "    ${PURPLE}npm install${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
+
+    # Check for stylelint config in current theme
+    printf "  ${ARROW} Checking current theme stylelint config... "
+    if ! [ -f ".stylelintrc" ] && ! [ -f ".stylelintrc.json" ] && ! [ -f ".stylelintrc.js" ] && ! [ -f ".stylelintrc.yml" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}No .stylelintrc file found in theme directory${NC}"
+        echo "    ${YELLOW}Please create stylelint config in theme:${NC}"
+        echo "    ${BLUE}touch .stylelintrc.json${NC}"
+        echo "    ${YELLOW}If moving from root, update these paths:${NC}"
+        echo "    ${YELLOW}- csstools/value-no-unknown-custom-properties importFrom${NC}"
+        echo "    ${YELLOW}- .github/workflows/styles.yml working directory${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
+fi
+
+echo ""
+echo "${CYAN}${SEARCH} Checking staged files for issues...${NC}"
+
+# Get filtered staged files
+staged_files=$(get_filtered_staged_files)
+
+if [ -n "$staged_files" ]; then
+    # Check for merge conflict markers
+    printf "  ${ARROW} Checking for merge conflict markers... "
+    conflict_files=""
+    for file in $staged_files; do
+        # Look for actual merge conflict markers at start of line, not in comments
+        if git show :"$file" 2>/dev/null | grep -qE "^<<<<<<<\s|^=======\s*$|^>>>>>>>\s"; then
+            conflict_files="$conflict_files $file"
+        fi
+    done
+
+    if [ -n "$conflict_files" ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}Merge conflict markers found in the following files:${NC}"
+        for file in $conflict_files; do
+            echo "      ${YELLOW}• $file${NC}"
+            git show :"$file" | grep -nE "^<<<<<<<\s|^=======\s*$|^>>>>>>>\s" | head -3 | while read line; do
+                echo "        ${PURPLE}$line${NC}"
+            done
+        done
+        echo "    ${YELLOW}Please resolve conflicts and remove markers: ${NC}${PURPLE}<<<<<<< HEAD${NC}, ${PURPLE}=======${NC}, ${PURPLE}>>>>>>>${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
+else
+    echo "  ${YELLOW}No files to check${NC}"
+fi
+
+echo ""
+echo "${CYAN}${CLEAN} Running code quality checks...${NC}"
+
+# Check for PHP CodeSniffer errors
+php_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.php$' | tr '\n' ' ')
+if [ -n "$php_files" ] && [ -f "phpcs.xml" ]; then
+    printf "  ${ARROW} Running PHP CodeSniffer... "
+    if ! ./vendor/bin/phpcs --standard=phpcs.xml --error-severity=1 --warning-severity=8 --colors $php_files; then
+        echo ""
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${YELLOW}To fix automatically:${NC}"
+        echo "    ${BLUE}./vendor/bin/phpcbf --standard=phpcs.xml $php_files${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
+fi
+
+# Check SCSS files with stylelint (changed files only)
+scss_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.scss$' | tr '\n' ' ')
+if [ -n "$scss_files" ]; then
+    printf "  ${ARROW} Running stylelint on changed SCSS files... "
+
+    # Find stylelint config in current theme
+    stylelint_config=""
+    if [ -f ".stylelintrc" ]; then
+        stylelint_config=".stylelintrc"
+    elif [ -f ".stylelintrc.json" ]; then
+        stylelint_config=".stylelintrc.json"
+    elif [ -f ".stylelintrc.js" ]; then
+        stylelint_config=".stylelintrc.js"
+    elif [ -f ".stylelintrc.yml" ]; then
+        stylelint_config=".stylelintrc.yml"
+    fi
+
+    if [ -n "$stylelint_config" ]; then
+        if ! npx stylelint --config "$stylelint_config" $scss_files 2>/dev/null; then
+            echo "${RED}${CROSS} FAILED${NC}"
+            echo "    ${RED}Stylelint found errors in SCSS files${NC}"
+            echo "    ${YELLOW}Please fix the following files:${NC}"
+            for file in $scss_files; do
+                echo "      ${YELLOW}• $file${NC}"
+            done
+            echo "    ${YELLOW}To see detailed errors:${NC}"
+            echo "    ${BLUE}npx stylelint --config \"$stylelint_config\" $scss_files${NC}"
+            exit 1
+        fi
+        echo "${GREEN}${CHECK} OK${NC}"
+    else
+        echo "${YELLOW}⚠️  SKIPPED${NC}"
+        echo "    ${YELLOW}No .stylelintrc config found in current theme${NC}"
+    fi
+else
+    echo "  ${YELLOW}No SCSS files to check${NC}"
+fi
+
+
+# Check PHP 8.3 compatibility
+if [ "$CHECK_CHANGED_ONLY" = "true" ]; then
+    # Check only changed PHP files
+    php_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.php$' | tr '\n' ' ')
+    if [ -n "$php_files" ]; then
+        printf "  ${ARROW} Checking PHP 8.3 compatibility on changed files... "
+        php_syntax_output=""
+        php_syntax_exit_code=0
+
+        for file in $php_files; do
+            if [ -f "$file" ]; then
+                file_output=$(php -l "$file" 2>&1)
+                file_exit_code=$?
+                if [ $file_exit_code -ne 0 ]; then
+                    php_syntax_output="$php_syntax_output\n$file_output"
+                    php_syntax_exit_code=1
+                fi
+            fi
+        done
+
+        if [ $php_syntax_exit_code -ne 0 ]; then
+            echo "${RED}${CROSS} FAILED${NC}"
+            echo "    ${PURPLE}PHP syntax errors found:${NC}"
+            echo "$php_syntax_output" | while IFS= read -r line; do
+                if [ -n "$line" ]; then
+                    echo "    ${YELLOW}$line${NC}"
+                fi
+            done
+            echo ""
+            echo "    ${YELLOW}To check syntax manually:${NC}"
+            echo "    ${BLUE}php -l [filename]${NC}"
+            exit 1
+        fi
+        echo "${GREEN}${CHECK} OK${NC}"
+    else
+        echo "  ${YELLOW}No PHP files to check${NC}"
+    fi
+else
+    # Check entire codebase (original behavior)
+    printf "  ${ARROW} Checking PHP 8.3 compatibility on entire codebase... "
+    php_syntax_output=$(find -L . -name '*.php' -not -path "./vendor/*" -not -path "./node_modules/*" -exec php -l {} \; 2>&1)
+    php_syntax_exit_code=$?
+
+    if [ $php_syntax_exit_code -ne 0 ]; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${PURPLE}PHP syntax errors found:${NC}"
+
+        if [ -n "$php_syntax_output" ]; then
+            echo "$php_syntax_output" | while IFS= read -r line; do
+                if [ -n "$line" ]; then
+                    echo "    ${YELLOW}$line${NC}"
+                fi
+            done
+        fi
+
+        echo ""
+        echo "    ${YELLOW}To check syntax manually:${NC}"
+        echo "    ${BLUE}find -L . -name '*.php' -not -path \"./vendor/*\" -not -path \"./node_modules/*\" -exec php -l {} \\;${NC}"
+        exit 1
+    fi
+    echo "${GREEN}${CHECK} OK${NC}"
+fi
+
+echo ""
+echo "${CYAN}${SEARCH} Running comprehensive codebase checks...${NC}"
+
+
+# Check GitHub Actions workflow syntax
+printf "  ${ARROW} Checking GitHub Actions workflow syntax... "
+workflow_files=""
+if [ -d ".github/workflows" ]; then
+    workflow_files=$(find .github/workflows -name "*.yml" -o -name "*.yaml" 2>/dev/null)
+fi
+
+if [ -n "$workflow_files" ]; then
+    syntax_errors=""
+    for workflow in $workflow_files; do
+        # Basic YAML syntax check using python if available
+        if command -v python3 >/dev/null 2>&1; then
+            if ! python3 -c "import yaml; yaml.safe_load(open('$workflow'))" >/dev/null 2>&1; then
+                syntax_errors="$syntax_errors $workflow"
+            fi
+        fi
+    done
+
+else
+    echo "${YELLOW}⚠️  NOT FOUND${NC}"
+    echo "    ${YELLOW}No GitHub Actions workflows found${NC}"
+fi
+
+# Check PHP files with PHPCS
+if [ "$CHECK_CHANGED_ONLY" = "true" ]; then
+    # Check only changed PHP files
+    php_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.php$' | tr '\n' ' ')
+    if [ -n "$php_files" ] && [ -f "phpcs.xml" ] && [ -f "./vendor/bin/phpcs" ]; then
+        echo "  ${ARROW} Running PHP CodeSniffer on changed files..."
+        if ./vendor/bin/phpcs --standard=phpcs.xml --error-severity=1 --warning-severity=8 --colors $php_files; then
+            echo "    ${GREEN}${CHECK} OK${NC}"
+        else
+            echo "    ${RED}${CROSS} FAILED${NC}"
+            echo ""
+            echo "    ${YELLOW}To fix automatically:${NC}"
+            echo "    ${BLUE}./vendor/bin/phpcbf --standard=phpcs.xml $php_files${NC}"
+            exit 1
+        fi
+    elif [ -z "$php_files" ]; then
+        echo "  ${YELLOW}No PHP files to check${NC}"
+    fi
+else
+    # Check entire codebase (original behavior)
+    if [ -f "phpcs.xml" ] && [ -f "./vendor/bin/phpcs" ]; then
+        echo "  ${ARROW} Running PHP CodeSniffer on entire codebase..."
+        # Use the same pattern as your GitHub Actions workflow
+        if ./vendor/bin/phpcs -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml; then
+            echo "    ${GREEN}${CHECK} OK${NC}"
+        else
+            echo "    ${RED}${CROSS} FAILED${NC}"
+            echo ""
+            echo "    ${YELLOW}To fix automatically:${NC}"
+            echo "    ${BLUE}./vendor/bin/phpcbf -p . --extensions=php --ignore=vendor,node_modules --standard=phpcs.xml${NC}"
+            exit 1
+        fi
+    fi
+fi
+
+# Note: Style checking is now handled by Gulp devstyles above
+
+echo ""
+
+echo ""
+echo "${GREEN}${CHECK} All pre-commit checks passed!${NC}"

@@ -1,0 +1,36 @@
+// Gutenberg editor styles
+// Please note: These styles affect only wp-admin
+// editor side. Please remember to add imports
+// from "Gutenberg blocks" also to the main
+// global.scss to see them on front end side.
+
+// Helpers
+@use 'helpers';
+
+// Variables
+@use 'variables';
+
+// Accessibility
+@use 'base/accessibility';
+
+// Gutenberg editor specific webfonts
+@use 'gutenberg/variables/typography';
+
+// Components needed by gutenberg
+@use 'components';
+
+// Gutenberg layout outside blocks
+@use 'gutenberg/layout/content';
+@use 'gutenberg/layout/button';
+
+// Gutenberg blocks
+@use 'gutenberg/blocks';
+
+// Apply general styles from site front-end
+@use 'layout/general';
+
+// Gutenberg formatting
+@use 'gutenberg/formatting';
+
+// Editor
+@use 'gutenberg/editor';

@@ -1,0 +1,215 @@
+@use '../variables' as *;
+@use '../layout/forms';
+@use '../features/gravity-forms';
+
+// stylelint-disable selector-not-notation, selector-max-pseudo-class, selector-max-specificity, plugin/file-max-lines
+
+// Use ACF defined font styles in ACF fields
+.acf-bl,
+.acf-bl *,
+.acf-field,
+.acf-input,
+.acf-button-group label,
+.acf-fields *[class^='acf-']:not(.acf-field-url),
+.acf-fields [class^='acf-']:not(.acf-field-url) *:not(.mce-ico):not(.acf-icon),
+.wpseo-metabox-root * {
+  // stylelint-disable-next-line
+  font-family: inherit;
+  font-size: unset;
+}
+
+// stylelint-disable-next-line
+.wpseo-metabox-content button *,
+.wpseo-metabox-content button {
+  // stylelint-disable-next-line
+  font-size: 14px !important;
+}
+
+// Fix acf icons visibility issue
+.acf-icon {
+  // stylelint-disable-next-line
+  z-index: 5555 !important;
+}
+
+// Fix link colors in sidebar
+.edit-post-post-link__preview-link-container a,
+.editor-post-link a {
+  // stylelint-disable-next-line
+  color: inherit;
+  text-decoration: inherit;
+}
+
+// Prevent horizontal scrolling
+.editor-styles-wrapper {
+  overflow-x: hidden;
+}
+
+// Editor exceptions below
+// These styles are NO USE to front-end
+// Need to be right after general, because after typography comes block styles
+// stylelint-disable-next-line
+.editor-styles-wrapper {
+
+  // Import typography related styles inside blocks, only for acf-blocks (wp-block-acf-*)
+  [class^="wp-block-acf-"] {
+    @import 'layout/typography';
+  }
+
+  // Fix acf icons visibility issue
+  .acf-icon {
+    // stylelint-disable-next-line
+    z-index: 5555 !important;
+  }
+
+  // Fix link colors in sidebar
+  .edit-post-post-link__preview-link-container a,
+  .editor-post-link a {
+
+    // stylelint-disable-next-line
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  // Make buttons and input fields work in ACF previews
+  .acf-block-preview .block {
+    // Forms styles are now available from the top-level @use
+  }
+
+  // Fix padding for certain native blocks in article view
+  .wp-block-text-columns,
+  .wp-block-gallery,
+  .wp-block.editor-post-title {
+    @media (max-width: $width-max-article + 40px) {
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
+      width: 100%;
+
+      &.alignleft,
+      &.alignright,
+      &.alignwide,
+      &.alignfull {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  // Full width image should be always without paddings
+  .wp-block[data-align="full"] > .wp-block-image {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // Full width gallery should be always be with paddings
+  .wp-block[data-align="full"] > .wp-block-gallery {
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
+
+    &.alignfull {
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
+    }
+  }
+
+  // Wide gallery fix for mobile editor
+  .wp-block[data-align="wide"] > .wp-block-gallery {
+    width: 100%;
+  }
+  // Typography and gravity forms styles are now available from the top-level @use
+}
+
+// Fix alignleft and alignright figcaption width
+// Hack for achieving the same than in gutenberg-js
+[data-align="right"] figcaption,
+[data-align="left"] figcaption {
+  margin-left: auto;
+  margin-right: auto;
+
+  // Hack for keeping figcaption from flowing over floated image
+  // This variable is set inline to the corresponding figure with gutenberg-js
+  // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
+  max-width: var(--width-child-img);
+  text-align: center;
+}
+
+// Default editor blocks
+.is-root-container > .wp-block {
+  font-family: var(--typography-family-paragraph);
+
+  // Font smoothing
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
+
+  // Full width block
+  &[data-align="full"] {
+    max-width: $width-full;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
+
+  // Wide width block
+  &[data-align="wide"] {
+    max-width: $width-wide;
+    width: 100%;
+
+    @media (min-width: 870px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+// stylelint-disable-next-line selector-attribute-quotes
+.wp-block[data-type^=acf] {
+  // Reset 28px gap that comes from wp-includes/css/dist/edit-post/classic.css
+  margin-bottom: 0;
+  margin-top: 0;
+
+  // Allow ACF blocks to be full width by default
+  max-width: 100%;
+}
+
+// Reset admin lists
+.edit-post-layout__metaboxes ul,
+.edit-post-layout__metaboxes ol,
+.wp-admin .edit-post-sidebar ul,
+.wp-admin .edit-post-sidebar ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+// Reset minus margins in Gutenberg editor
+.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+  margin-left: unset;
+  margin-right: unset;
+}
+
+// Article view main title in Gutenberg editor
+.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .editor-post-title {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  max-width: $width-max-article;
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
+}
+
+// Enable fonts in articles and Gutenberg editor in article view
+.is-root-container > .wp-block.block-editor-rich-text__editable,
+.is-root-container > .block-editor-rich-text__editable,
+.is-root-container .wp-block.wp-block-quote,
+.is-root-container .wp-block[data-type^="core"],
+.is-root-container [contenteditable] p {
+  font-family: var(--typography-family-paragraph);
+
+  // Font smoothing
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  max-width: $width-max-article;
+
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
+}

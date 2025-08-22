@@ -1,5 +1,7 @@
+@use '../helpers' as *;
+
 // stylelint-disable-next-line max-line-length
-@mixin button-style-ghost($background: transparent, $background-hover: var(--color-button-background), $color: var(--color-button-background), $hover: var(--color-white), $border: var(--border-width-input-field) solid var(--color-button-background), $transition: all $transition-duration cubic-bezier(.25, .46, .45, .94)) {
+@mixin button-style-ghost($background: transparent, $background-hover: var(--color-button-background), $color: var(--color-button-background), $hover: var(--color-white), $border: var(--border-width-input-field) solid var(--color-button-background), $transition: all 150ms cubic-bezier(.25, .46, .45, .94)) {
   background-color: $background;
   border: $border;
   color: $color;

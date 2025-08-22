@@ -1,3 +1,4 @@
+@use '../helpers' as *;
 // stylelint-disable number-max-precision, rem-over-px/rem-over-px
 @mixin button() {
   appearance: none;
@@ -21,7 +22,7 @@
   position: relative;
   text-decoration: none;
   text-overflow: ellipsis;
-  transition: all $transition-duration cubic-bezier(.25, .46, .45, .94);
+  transition: all 150ms cubic-bezier(.25, .46, .45, .94);
   white-space: nowrap;
   width: auto;
 
