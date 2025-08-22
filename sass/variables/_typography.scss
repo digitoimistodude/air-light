@@ -23,29 +23,29 @@
   --typography-family-heading: var(--typography-family-main);
 
   // Heading font sizes
-  --typography-size-hero: 52px;
-  --typography-size-h1: 40px;
-  --typography-size-h2: 30px;
-  --typography-size-h3: 24px;
-  --typography-size-h4: 20px;
-  --typography-size-h5: 16px;
-  --typography-size-h6: 14px;
+  --typography-size-hero: 3.25rem; // 52px
+  --typography-size-h1: 2.5rem; // 40px
+  --typography-size-h2: 1.875rem; // 30px
+  --typography-size-h3: 1.5rem; // 24px
+  --typography-size-h4: 1.25rem; // 20px
+  --typography-size-h5: 1rem; // 16px
+  --typography-size-h6: 0.875rem; // 14px
 
   // Paragraph font sizes
-  --typography-size-12: 12px;
-  --typography-size-13: 13px;
-  --typography-size-14: 14px;
-  --typography-size-15: 15px;
-  --typography-size-16: 16px;
-  --typography-size-17: 17px;
-  --typography-size-18: 18px;
-  --typography-size-20: 20px;
-  --typography-size-22: 22px;
+  --typography-size-12: 0.75rem; // 12px
+  --typography-size-13: 0.8125rem; // 13px
+  --typography-size-14: 0.875rem; // 14px
+  --typography-size-15: 0.9375rem; // 15px
+  --typography-size-16: 1rem; // 16px
+  --typography-size-17: 1.0625rem; // 17px
+  --typography-size-18: 1.125rem; // 18px
+  --typography-size-20: 1.25rem; // 20px
+  --typography-size-22: 1.375rem; // 22px
 
   // Element font sizes
   --typography-paragraph-size: var(--typography-size-18);
-  --typography-nav-toggle-label-size: 15px;
-  --typography-captions-size: 15px;
+  --typography-nav-toggle-label-size: 0.9375rem; // 15px
+  --typography-captions-size: 0.9375rem; // 15px
 
   // Line-heights
   --typography-heading-line-height: 1.5;
@@ -62,20 +62,20 @@
 
   // Heading font sizes in mobile
   @media (max-width: $container-mobile) {
-    --typography-size-hero: 38px;
-    --typography-size-h1: 32px;
-    --typography-size-h2: 24px;
-    --typography-size-h3: 21px;
-    --typography-size-h4: 18px;
-    --typography-size-h5: 14px;
-    --typography-size-h6: 12px;
-    --typography-paragraph-size: 16px;
+    --typography-size-hero: 2.375rem; // 38px
+    --typography-size-h1: 2rem; // 32px
+    --typography-size-h2: 1.5rem; // 24px
+    --typography-size-h3: 1.3125rem; // 21px
+    --typography-size-h4: 1.125rem; // 18px
+    --typography-size-h5: 0.875rem; // 14px
+    --typography-size-h6: 0.75rem; // 12px
+    --typography-paragraph-size: 1rem; // 16px
   }
 
   // Element font sizes in tiny phones like iPhone 5S
   @media (max-width: 420px) {
-    --typography-size-16: 14px;
-    --typography-nav-toggle-label-size: 13px;
+    --typography-size-16: 0.875rem; // 14px
+    --typography-nav-toggle-label-size: 0.8125rem; // 13px
   }
 }
 
