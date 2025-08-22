@@ -7,6 +7,12 @@ VERSION="1.0.2+air-light (2025-08-08)"
 # Load configuration
 . "$(dirname "$0")/pre-commit-config"
 
+# Check if this is a merge commit
+if git rev-parse --verify MERGE_HEAD >/dev/null 2>&1; then
+    echo "🔀 Merge commit detected - skipping pre-commit checks"
+    exit 0
+fi
+
 # Function to check if a file should be excluded
 should_exclude_file() {
     file="$1"

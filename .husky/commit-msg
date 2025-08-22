@@ -22,6 +22,12 @@ echo "${SEARCH} Checking commit message format..."
 commit_msg_file="$1"
 if [ -f "$commit_msg_file" ]; then
     commit_msg=$(cat "$commit_msg_file")
+    
+    # Check if this is a merge commit
+    if echo "$commit_msg" | grep -E "^Merge (branch|pull request|remote-tracking branch)" >/dev/null 2>&1; then
+        echo "  ${ARROW} Merge commit detected - skipping message validation ${GREEN}${CHECK}${NC}"
+        exit 0
+    fi
 
     printf "  ${ARROW} Validating commit message... "
 

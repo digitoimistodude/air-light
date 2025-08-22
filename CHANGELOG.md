@@ -4,11 +4,12 @@
 * Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
 * Bump axios and browser-sync #260
 
-### 10.0.0rc: 2025-05-06
+### 10.0.0rc: 2025-08-22
 
 * Native blocks (beta), DEV-10
 * Update caniuse lite to 1.0.30001737, Ref: DEV-10
-* Upgrade gulp-sass to 6.0.1, DEV-426
+* Upgrade gulp-sass to 6.0.1, Ref: DEV-426
+* Ignore merge commits from husky checks, Ref: DEV-427
 
 ### 9.6.1: 2025-08-08
 
