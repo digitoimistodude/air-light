@@ -1,10 +1,8 @@
-// stylelint-disable a11y/no-display-none, plugin/file-max-lines
-// Navigation for large screens
-// CSS variables
-:root {
+@use '../variables' as *;
 
+// stylelint-disable a11y/no-display-none, plugin/file-max-lines
+.site-header ul {
   // Affecting to both main and sub-levels
-  --color-dropdown-toggle: #2a2d3e;
   --color-current: var(--color-link-text);
   --dropdown-toggle-size: 0.75rem;
 
@@ -29,11 +27,9 @@
   --color-hover-sub-menu: var(--color-white);
   --color-background-sub-menu: var(--color-black);
   --gap-dropdown: 1.6rem;
-}
 
-// General navigation resets
-.site-header ul {
   list-style: none;
+  width: unset;
 }
 
 @media only screen and (min-width: $width-max-mobile) {
@@ -99,6 +95,10 @@
     padding-top: var(--padding-sub-menu-link-vertical);
     white-space: normal;
     width: 100%;
+  }
+
+  .menu-item .sub-menu button {
+    color: var(--color-sub-menu);
   }
 
   // Current menu item color
@@ -292,7 +292,6 @@
     align-items: center;
     background-color: transparent;
     border: 0;
-    color: var(--color-dropdown-toggle);
     display: inline-flex;
     justify-content: center;
     padding: 0;

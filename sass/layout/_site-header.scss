@@ -1,5 +1,5 @@
-// The very top of the site, element that usually includes
-// the site navigation and search for example.
+@use '../variables' as *;
+
 .site-header {
   background-color: var(--color-white);
 

@@ -4,6 +4,7 @@ exports.phpcs = require('./gulp/tasks/phpcs.js').phpcs;
 exports.lintstyles = require('./gulp/tasks/lintstyles.js').lintstyles;
 exports.devstyles = require('./gulp/tasks/devstyles.js').devstyles;
 exports.prodstyles = require('./gulp/tasks/prodstyles.js').prodstyles;
+exports.husky = require('./gulp/tasks/husky.js').husky;
 exports.watch = require('./gulp/tasks/watch.js').watch;
 exports.default = require('./gulp/tasks/watch.js').watch;
 exports.blocks = require('./gulp/tasks/blocks.js').buildBlocks;

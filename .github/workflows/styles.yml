@@ -20,40 +20,15 @@ jobs:
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-    - name: Get package.json from devpackages
-      run: |
-        rm package.json
-        wget https://raw.githubusercontent.com/digitoimistodude/devpackages/master/package.json
-        sed -i 's/PROJECTNAME/air-light/g' package.json
-        npm install --global
-
-    - name: Install stylelint packages
-      run: |
-        npm install --global \
-        postcss@^8.4.21 \
-        postcss-scss@^4.0.6 \
-        stylelint@^15.1.0 \
-        stylelint-config-recommended@^10.0.1 \
-        stylelint-config-recommended-scss@^9.0.0 \
-        stylelint-config-standard@^30.0.1 \
-        stylelint-config-standard-scss@^7.0.0 \
-        stylelint-order@^6.0.2 \
-        stylelint-rem-over-px@^0.0.4 \
-        stylelint-scss@^4.4.0 \
-        @ronilaukkarinen/stylelint-a11y@^1.2.7 \
-        @ronilaukkarinen/stylelint-declaration-strict-value@^1.9.2 \
-        @ronilaukkarinen/stylelint-value-no-unknown-custom-properties@^4.0.1
+    - name: Install packages
+      run: npm install
 
     - name: Run stylelint
       run: |
         npx stylelint . --max-warnings 0 --config .stylelintrc
 
-    - name: Run gulp task devstyles in this project
-      if:
+    - name: Run gulp task devstyles
       run: |
-        wget https://raw.githubusercontent.com/digitoimistodude/air-light/master/package.json
-        npm install
-
         # Make the command visible
         echo "Running npx gulp devstyles..."
         npx gulp devstyles

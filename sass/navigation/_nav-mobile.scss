@@ -1,6 +1,8 @@
+@use '../variables' as *;
+@use '../helpers' as *;
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines
 // Import nav-toggle
-@import 'nav-toggle';
+@use 'nav-toggle';
 
 // CSS variables
 :root {
@@ -172,7 +174,7 @@
       pointer-events: none;
       position: relative;
       transform: rotate(0);
-      transition: all $transition-duration;
+      transition: all 150ms;
       width: var(--dropdown-toggle-size);
       z-index: -1;
 

@@ -1,3 +1,4 @@
+@use '../helpers' as *;
 // Links within content must be visually underlined
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
 @mixin link() {
@@ -7,7 +8,7 @@
   text-decoration: underline;
   text-decoration-color: var(--color-link-text);
   text-underline-offset: 0.375rem;
-  transition: all $transition-duration;
+  transition: all 150ms;
 
   &:hover,
   &:focus {

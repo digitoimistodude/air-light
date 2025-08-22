@@ -1,3 +1,5 @@
+@use '../helpers' as *;
+
 .article-content .categories,
 .article-content .tags,
 .categories,
@@ -22,7 +24,7 @@
   font-size: var(--typography-size-14);
   margin: 0;
   padding: 0.3125rem 0.9375rem;
-  transition: all $transition-duration;
+  transition: all 150ms;
 }
 
 .categories a:hover,
@@ -50,7 +52,7 @@
     font-size: var(--typography-size-12);
     margin-right: 4px;
     padding: 0.0625rem 0.5rem;
-    transition: all $transition-duration;
+    transition: all 150ms;
     white-space: nowrap;
   }
 
