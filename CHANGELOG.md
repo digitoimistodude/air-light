@@ -4,6 +4,7 @@
 * Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
 * Bump axios and browser-sync #260
 * Fix replace scripts not removing scss imports, Ref: DEV-433
+* Add new logo header to scripts, Ref: DEV-436
 
 ### 9.6.1: 2025-08-08
 
