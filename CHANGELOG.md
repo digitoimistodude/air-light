@@ -5,6 +5,7 @@
 * Bump axios and browser-sync #260
 * Fix replace scripts not removing scss imports, Ref: DEV-433
 * Add new logo header to scripts, Ref: DEV-436
+* Add `--test-branch <branch>` flag for newtheme.sh for testing, Ref: DEV-437
 
 ### 9.6.1: 2025-08-08
 

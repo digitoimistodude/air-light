@@ -1,10 +1,14 @@
 # Note about running directly as we can't prevent people running this via sh or bash pre-cmd
-if [ "$1" = "--existing" ]; then
-  # Skip dirname/basename for --existing flag
+if [ "$1" = "--existing" ] || [[ "$1" == --* ]]; then
+  # Skip dirname/basename for any flag arguments
   export DIR_TO_FILE=""
 else
   # Only try to get directory for non-flag arguments
-  export DIR_TO_FILE=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
+  if [ -n "$1" ] && [[ "$1" != --* ]]; then
+    export DIR_TO_FILE=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
+  else
+    export DIR_TO_FILE=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)/$(basename "${BASH_SOURCE[0]}")
+  fi
 fi
 
 # Get air-light version from CHANGELOG.md first line, format: "### 1.2.3: YYYY-MM-DD"
