@@ -126,22 +126,22 @@ if [ ! -d ".github/workflows" ]; then
 fi
 echo "${GREEN}${CHECK} OK${NC}"
 
-printf "  ${ARROW} Checking for gulpfile.js... "
-if [ ! -f "gulpfile.js" ]; then
+printf "  ${ARROW} Checking for parcel in package.json... "
+if [ -f "package.json" ] && ! npm list parcel >/dev/null 2>&1; then
     echo "${RED}${CROSS} FAILED${NC}"
-    echo "    ${RED}gulpfile.js is missing from root directory${NC}"
-    echo "    ${YELLOW}Please ensure Gulp is properly set up${NC}"
+    echo "    ${RED}Parcel is not installed${NC}"
+    echo "    ${YELLOW}Please install Parcel:${NC}"
+    echo "    ${BLUE}nvm use${NC}"
+    echo "    ${BLUE}npm install parcel --save-dev${NC}"
     exit 1
 fi
 echo "${GREEN}${CHECK} OK${NC}"
 
-printf "  ${ARROW} Checking for gulp in package.json... "
-if [ -f "package.json" ] && ! npm list gulp >/dev/null 2>&1; then
+printf "  ${ARROW} Checking for parcel config files... "
+if [ ! -f ".parcelrc" ] && [ ! -f ".parcelrc.watch" ]; then
     echo "${RED}${CROSS} FAILED${NC}"
-    echo "    ${RED}Gulp is not installed${NC}"
-    echo "    ${YELLOW}Please install Gulp:${NC}"
-    echo "    ${BLUE}nvm use${NC}"
-    echo "    ${BLUE}npm install gulp --save-dev${NC}"
+    echo "    ${RED}Parcel configuration files are missing${NC}"
+    echo "    ${YELLOW}Please ensure Parcel is properly configured${NC}"
     exit 1
 fi
 echo "${GREEN}${CHECK} OK${NC}"

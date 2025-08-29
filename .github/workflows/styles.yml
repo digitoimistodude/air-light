@@ -25,16 +25,16 @@ jobs:
 
     - name: Run stylelint
       run: |
-        npx stylelint . --max-warnings 0 --config .stylelintrc
+        npx stylelint sass/**/*.scss --max-warnings 0
 
-    - name: Run gulp task devstyles
+    - name: Build development styles with Parcel
       run: |
         # Make the command visible
-        echo "Running npx gulp devstyles..."
-        npx gulp devstyles
+        echo "Running npm run devstyles..."
+        npm run devstyles
 
         # Capture the output
-        output=$(npx gulp devstyles 2>&1)
+        output=$(npm run devstyles 2>&1)
 
         # Save it to a temporary file
         echo "$output" > output.txt

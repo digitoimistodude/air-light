@@ -1,12 +1,6 @@
-last 1 edge version
-last 1 safari version
-last 1 chrome version
-last 1 firefox version
-not firefox > 90
+# Browsers supported by air-light theme
+> 0.5%
+last 2 versions
+Firefox ESR
 not dead
-not ie > 0
-not ucandroid > 0
-not firefoxandroid > 0
-not samsung > 0
-not op_mob > 0
-> 1% in FI
+not IE 11

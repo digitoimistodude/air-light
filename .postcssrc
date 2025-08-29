@@ -1,0 +1,17 @@
+{
+  "plugins": {
+    "postcss-calc": {},
+    "cssnano": {
+      "preset": [
+        "cssnano-preset-advanced",
+        {
+          "discardUnused": false,
+          "reduceInitial": false,
+          "discardComments": {
+            "removeAll": true
+          }
+        }
+      ]
+    }
+  }
+}

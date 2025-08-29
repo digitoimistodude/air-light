@@ -23,4 +23,5 @@ jobs:
     - name: Install packages and test JS
       run: |
         npm i
-        npx eslint -c .eslintrc.js js/src/
+        npm run lint
+        npm run js

@@ -1,6 +1,8 @@
 ### [Unreleased]
 
-* Fix deprecated workflow that still uses devpackages, fix build DEV-83, DEV-385
+* Replace outdated stylelint plugins with modern alternatives for accessibility and custom properties validation, DEV-446
+* Change asset output directories: CSS to assets/, JS to assets/js/, fonts to assets/, DEV-444
+* Migrate from Gulp to Parcel build system, DEV-439
 * Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
 * Bump axios and browser-sync #260
 

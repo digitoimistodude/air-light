@@ -1,11 +1,10 @@
 {
   "defaultSeverity": "warning",
   "plugins": [
-    "@ronilaukkarinen/stylelint-a11y",
-    "@ronilaukkarinen/stylelint-value-no-unknown-custom-properties",
-    "@ronilaukkarinen/stylelint-declaration-strict-value",
+    "@double-great/stylelint-a11y",
     "stylelint-order",
-    "stylelint-rem-over-px"
+    "stylelint-rem-over-px",
+    "stylelint-value-no-unknown-custom-properties"
   ],
   "extends": [
     "stylelint-config-standard",
@@ -111,23 +110,6 @@
         "camelCaseSvgKeywords": true
       }
     ],
-    "scale-unlimited/declaration-strict-value": [
-      "/color$/",
-      {
-        "ignoreValues": [
-          "transparent",
-          "currentColor"
-        ]
-      }
-    ],
-    "csstools/value-no-unknown-custom-properties": [
-      true,
-      {
-        "importFrom": [
-          "css/dev/global.css"
-        ]
-      }
-    ],
     "rule-empty-line-before": [
       "always-multi-line",
       {
@@ -176,12 +158,6 @@
         "severity": "warning"
       }
     ],
-    "a11y/line-height-is-vertical-rhythmed": [
-      null,
-      {
-        "severity": "warning"
-      }
-    ],
     "a11y/no-display-none": [
       true,
       {
@@ -198,6 +174,14 @@
       true,
       {
         "severity": "warning"
+      }
+    ],
+    "csstools/value-no-unknown-custom-properties": [
+      true,
+      {
+        "importFrom": [
+          "css/dev/global.css"
+        ]
       }
     ],
     "property-disallowed-list": [
