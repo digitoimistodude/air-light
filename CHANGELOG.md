@@ -1,3 +1,6 @@
+[Unreleased]
+* .stylelintrc: Change to `"declaration-empty-line-before": "never",`
+
 ### 9.6.2: 2025-08-29
 
 * Fix deprecated workflow that still uses devpackages, fix build DEV-83, DEV-385

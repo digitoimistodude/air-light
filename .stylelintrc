@@ -77,7 +77,7 @@
     "comment-whitespace-inside": "always",
     "selector-max-specificity": "0,5,5",
     "block-no-empty": true,
-    "declaration-empty-line-before": null,
+    "declaration-empty-line-before": "never",
     "font-family-no-missing-generic-family-keyword": true,
     "font-family-name-quotes": "always-where-required",
     "at-rule-no-unknown": null,
