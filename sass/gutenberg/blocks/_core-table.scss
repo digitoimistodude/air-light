@@ -55,7 +55,7 @@ table {
 }
 
 .wp-block-table {
-  @media (max-width: $width-grid-base + 40px) {
+  @media (max-width: ( $width-grid-base + 40px)) {
     width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }
 }
@@ -66,7 +66,7 @@ table {
   width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
 }
 
-@media (max-width: $width-grid-base + 40px) {
+@media (max-width: ( $width-grid-base + 40px)) {
   .wp-block-table.alignwide {
     margin-left: var(--spacing-container-padding-inline);
     margin-right: var(--spacing-container-padding-inline);

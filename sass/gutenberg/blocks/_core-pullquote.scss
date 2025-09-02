@@ -5,13 +5,13 @@
   border-width: 3px;
   display: grid;
 
-  [aria-label="Pullquote citation text"],
+  [aria-label='Pullquote citation text'],
   cite {
     display: block;
     margin-top: 1.875rem;
   }
 
-  @media (max-width: $width-grid-base + 40px) {
+  @media (max-width: ( $width-grid-base + 40px)) {
     width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }
 }
@@ -25,7 +25,7 @@
     justify-self: center;
   }
 
-  @media (max-width: $width-grid-base + 40px) {
+  @media (max-width: ( $width-grid-base + 40px)) {
     margin-left: var(--spacing-container-padding-inline);
     margin-right: var(--spacing-container-padding-inline);
   }

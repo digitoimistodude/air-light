@@ -18,7 +18,7 @@
   --spacing-paragraphs-margin-block: 1.6875rem;
 
   // Mid-sized screens
-  @media (max-width: $width-grid-base + 150px) {
+  @media (max-width: ($width-grid-base + 150px)) {
     --spacing-container-padding-inline: 4rem;
   }
 
