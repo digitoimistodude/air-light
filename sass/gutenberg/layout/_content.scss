@@ -18,7 +18,7 @@
   margin-right: auto;
   max-width: $width-max-article;
 
-  @media (max-width: $width-max-article + 40px) {
+  @media (max-width: ($width-max-article + 40px)) {
     padding-left: var(--spacing-container-padding-inline);
     padding-right: var(--spacing-container-padding-inline);
 
