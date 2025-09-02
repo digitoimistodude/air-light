@@ -1,4 +1,5 @@
 [Unreleased]
+* Fix incorrect path in newtheme.sh ACTION REQUIRED message
 * .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
 
 ### 9.6.2: 2025-08-29
