@@ -12,13 +12,13 @@
   --color-button-background: var(--color-paragraph);
   --color-button-background-hover: #2a2d3e;
   --color-checkbox: var(--color-paragraph);
-  --color-checkbox-outline: 0 0 0 3px rgb(84 87 115 / .2);
+  --color-checkbox-outline: 0 0 0 3px rgb(84 87 115 / 0.2);
   --color-checkbox-border-hover: color.adjust(#545773, 15%);
   --color-checkbox-checked: var(--color-form-label-text);
   --color-placeholder: var(--color-paragraph);
   --color-placeholder-focus: var(--color-black);
-  --opacity-placeholder: .4;
-  --opacity-placeholder-focus: .8;
+  --opacity-placeholder: 0.4;
+  --opacity-placeholder-focus: 0.8;
 
   // Form element settings
   --border-radius-checkbox: 3px;

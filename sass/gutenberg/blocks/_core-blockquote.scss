@@ -43,7 +43,7 @@ blockquote {
     line-height: var(--typography-paragraph-line-height);
   }
 
-  @media (max-width: $width-max-article + 40px) {
+  @media (max-width: ($width-max-article + 40px)) {
     padding: 2.1875rem 1.25rem;
     width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }

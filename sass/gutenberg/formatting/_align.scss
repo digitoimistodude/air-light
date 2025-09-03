@@ -37,7 +37,7 @@
     padding-right: var(--spacing-container-padding-inline);
     width: 100%;
 
-    @media (min-width: $width-wide + 40px) {
+    @media (min-width: ($width-wide + 40px)) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -53,7 +53,7 @@
       border-radius: 0;
     }
 
-    @media (min-width: $width-max-article + 40px) {
+    @media (min-width: ($width-max-article + 40px)) {
       margin-bottom: var(--spacing-content-padding-block);
       margin-top: var(--spacing-content-padding-block);
       max-width: $width-full;

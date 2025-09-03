@@ -49,9 +49,8 @@
 // Need to be right after general, because after typography comes block styles
 // stylelint-disable-next-line
 .editor-styles-wrapper {
-
   // Import typography related styles inside blocks, only for acf-blocks (wp-block-acf-*)
-  [class^="wp-block-acf-"] {
+  [class^='wp-block-acf-'] {
     @import 'layout/typography';
   }
 
@@ -64,7 +63,6 @@
   // Fix link colors in sidebar
   .edit-post-post-link__preview-link-container a,
   .editor-post-link a {
-
     // stylelint-disable-next-line
     color: inherit;
     text-decoration: inherit;
@@ -79,7 +77,7 @@
   .wp-block-text-columns,
   .wp-block-gallery,
   .wp-block.editor-post-title {
-    @media (max-width: $width-max-article + 40px) {
+    @media (max-width: ($width-max-article + 40px)) {
       padding-left: var(--spacing-container-padding-inline);
       padding-right: var(--spacing-container-padding-inline);
       width: 100%;
@@ -95,13 +93,13 @@
   }
 
   // Full width image should be always without paddings
-  .wp-block[data-align="full"] > .wp-block-image {
+  .wp-block[data-align='full'] > .wp-block-image {
     padding-left: 0;
     padding-right: 0;
   }
 
   // Full width gallery should be always be with paddings
-  .wp-block[data-align="full"] > .wp-block-gallery {
+  .wp-block[data-align='full'] > .wp-block-gallery {
     padding-left: var(--spacing-container-padding-inline);
     padding-right: var(--spacing-container-padding-inline);
 
@@ -112,7 +110,7 @@
   }
 
   // Wide gallery fix for mobile editor
-  .wp-block[data-align="wide"] > .wp-block-gallery {
+  .wp-block[data-align='wide'] > .wp-block-gallery {
     width: 100%;
   }
   // Typography and gravity forms styles are now available from the top-level @use
@@ -120,8 +118,8 @@
 
 // Fix alignleft and alignright figcaption width
 // Hack for achieving the same than in gutenberg-js
-[data-align="right"] figcaption,
-[data-align="left"] figcaption {
+[data-align='right'] figcaption,
+[data-align='left'] figcaption {
   margin-left: auto;
   margin-right: auto;
 
@@ -144,7 +142,7 @@
   text-rendering: geometricPrecision;
 
   // Full width block
-  &[data-align="full"] {
+  &[data-align='full'] {
     max-width: $width-full;
     padding-left: 0;
     padding-right: 0;
@@ -152,7 +150,7 @@
   }
 
   // Wide width block
-  &[data-align="wide"] {
+  &[data-align='wide'] {
     max-width: $width-wide;
     width: 100%;
 
@@ -164,7 +162,7 @@
 }
 
 // stylelint-disable-next-line selector-attribute-quotes
-.wp-block[data-type^=acf] {
+.wp-block[data-type^='acf'] {
   // Reset 28px gap that comes from wp-includes/css/dist/edit-post/classic.css
   margin-bottom: 0;
   margin-top: 0;
@@ -183,13 +181,17 @@
 }
 
 // Reset minus margins in Gutenberg editor
-.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
+.editor-styles-wrapper
+  .block-editor-block-list__layout.is-root-container
+  > .wp-block[data-align='full'] {
   margin-left: unset;
   margin-right: unset;
 }
 
 // Article view main title in Gutenberg editor
-.editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper .editor-post-title {
+.editor-styles-wrapper
+  .edit-post-visual-editor__post-title-wrapper
+  .editor-post-title {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   max-width: $width-max-article;
@@ -201,7 +203,7 @@
 .is-root-container > .wp-block.block-editor-rich-text__editable,
 .is-root-container > .block-editor-rich-text__editable,
 .is-root-container .wp-block.wp-block-quote,
-.is-root-container .wp-block[data-type^="core"],
+.is-root-container .wp-block[data-type^='core'],
 .is-root-container [contenteditable] p {
   font-family: var(--typography-family-paragraph);
 

@@ -5,9 +5,9 @@
 .wp-block .acf-block-preview {
   button,
   .button,
-  input[type="reset"],
-  input[type="submit"],
-  input[type="button"] {
+  input[type='reset'],
+  input[type='submit'],
+  input[type='button'] {
     @include button();
 
     // Button sizes
