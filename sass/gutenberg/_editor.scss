@@ -77,7 +77,7 @@
   .wp-block-text-columns,
   .wp-block-gallery,
   .wp-block.editor-post-title {
-    @media (max-width: $width-max-article + 40px) {
+    @media (max-width: ($width-max-article + 40px)) {
       padding-left: var(--spacing-container-padding-inline);
       padding-right: var(--spacing-container-padding-inline);
       width: 100%;
