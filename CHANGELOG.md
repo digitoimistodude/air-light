@@ -1,5 +1,6 @@
 ### Unreleased
 * Delete maybe_show_error_block function, DEV-226
+* Enable field validation for ACF blocks, DEV-372
 
 ### 9.5.1: 2025-05-23
 * Fix inconsistent heading variables, T-25878

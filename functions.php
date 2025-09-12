@@ -131,6 +131,7 @@ add_action( 'after_setup_theme', function() {
         'anchor'          => true,
         'customClassName' => false,
       ],
+      'validate'          => true,
       'render_callback'   => __NAMESPACE__ . '\render_acf_block',
     ],
 
