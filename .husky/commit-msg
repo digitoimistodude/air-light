@@ -1,0 +1,132 @@
+#!/bin/sh
+# Commit message validation hook for Dude projects
+
+# Colors for output
+RED='\033[1;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+PURPLE='\033[0;35m'
+NC='\033[0m' # No Color
+
+# Emojis for better visual feedback
+CHECK="✅"
+CROSS="❌"
+ARROW="➜"
+SEARCH="🔍"
+
+echo ""
+echo "${SEARCH} Checking commit message format..."
+
+# Get the commit message from the file passed as argument
+commit_msg_file="$1"
+if [ -f "$commit_msg_file" ]; then
+    commit_msg=$(cat "$commit_msg_file")
+
+    printf "  ${ARROW} Validating commit message... "
+
+    # Check for task ID pattern (e.g., DEV-123, TASK-456, etc.)
+    task_id_pattern="[A-Z]+-[0-9]+"
+
+    # Check for magic words (closing)
+    closing_words="close|closes|closed|closing|fix|fixes|fixed|fixing|resolve|resolves|resolved|resolving|complete|completes|completed|completing"
+
+    # Check for magic words (non-closing)
+    non_closing_words="ref|refs|references|part of|related to|contributes to|toward|towards"
+
+    # Check if commit message contains task ID
+    if ! echo "$commit_msg" | grep -iE "$task_id_pattern" >/dev/null 2>&1; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}Commit message missing task ID${NC}"
+        echo "    ${YELLOW}Your commit message:${NC}"
+        echo "    ${BLUE}\"$commit_msg\"${BLUE}"
+        echo ""
+        echo "    ${YELLOW}Expected format: [MAGIC_WORD]: [TASK-ID]${NC}"
+        echo "    ${YELLOW}Correct example: ${BLUE}\"$commit_msg, Ref: DEV-123\"${NC}"
+        echo "    ${YELLOW}See: ${NC}${BLUE}https://linear.app/docs/github?tabs=206cad22125a#link-through-pull-requests${NC}"
+        exit 1
+    fi
+
+    # Check if commit message contains magic words
+    if ! echo "$commit_msg" | grep -iE "($closing_words|$non_closing_words)" >/dev/null 2>&1; then
+        echo "${RED}${CROSS} FAILED${NC}"
+        echo "    ${RED}Commit message missing magic words${NC}"
+        echo "    ${YELLOW}Your commit message:${NC}"
+        echo "    ${PURPLE}\"$commit_msg\"${NC}"
+        echo "    ${YELLOW}Closing magic words: ${NC}${PURPLE}close, closes, closed, closing, fix, fixes, fixed, fixing, resolve, resolves, resolved, resolving, complete, completes, completed, completing${NC}"
+        echo "    ${YELLOW}Non-closing magic words: ${NC}${PURPLE}ref, refs, references, part of, related to, contributes to, toward, towards${NC}"
+        # Extract task ID from commit message if present for dynamic example
+        extracted_task_id=$(echo "$commit_msg" | grep -ioE "$task_id_pattern" | head -1 || echo "DEV-123")
+        echo "    ${YELLOW}Correct examples:${NC}"
+        echo "    ${PURPLE}\"$commit_msg, Closes $extracted_task_id\"${NC}"
+        echo "    ${PURPLE}\"$commit_msg, Ref: $extracted_task_id\"${NC}"
+        echo "    ${YELLOW}See: ${NC}${PURPLE}https://linear.app/docs/github?tabs=206cad22125a#link-through-pull-requests${NC}"
+        exit 1
+    fi
+
+    echo "${GREEN}${CHECK} OK${NC}"
+
+    # If we reach this point, ALL hooks have passed - show success box
+    echo ""
+
+    # Create ASCII box with reminders
+    print_success_box() {
+        local box_width=60
+        local border="${GREEN}╔$(printf '═%.0s' $(seq 1 $((box_width-2))))╗${NC}"
+        local bottom="${GREEN}╚$(printf '═%.0s' $(seq 1 $((box_width-2))))╝${NC}"
+
+        echo "$border"
+        echo "${GREEN}║${NC} ${GREEN}✅ All checks passed! Ready to push!${NC}$(printf '%*s' 21 '')${GREEN}║${NC}"
+        echo "${GREEN}║${NC}$(printf '%*s' 58 '')${GREEN}║${NC}"
+        echo "${GREEN}║${NC} ${GREEN}💡 Reminders before pushing:${NC}$(printf '%*s' 29 '')${GREEN}║${NC}"
+        echo "${GREEN}║${NC}$(printf '%*s' 58 '')${GREEN}║${NC}"
+
+        # Check CHANGELOG.md age
+        if [ -f "CHANGELOG.md" ]; then
+            changelog_age_minutes=$(find CHANGELOG.md -mmin +0 -printf '%Tm\n' 2>/dev/null || echo "0")
+            if [ "$changelog_age_minutes" -gt 10 ]; then
+                echo "${GREEN}║${NC} ${GREEN}• Update CHANGELOG.md with recent changes${NC}$(printf '%*s' 20 '')${GREEN}║${NC}"
+            fi
+
+            # Check if CHANGELOG.md has today's date
+            changelog_first_line=$(head -n 1 CHANGELOG.md)
+            current_date=$(date +%Y-%m-%d)
+            if ! echo "$changelog_first_line" | grep -q "$current_date"; then
+                echo "${GREEN}║${NC} ${GREEN}• Consider updating changelog date to $current_date${NC}$(printf '%*s' 10 '')${GREEN}║${NC}"
+            fi
+        fi
+
+        # Check for uncommitted files
+        uncommitted_files=$(git status --porcelain | wc -l | tr -d ' ')
+        if [ "$uncommitted_files" -gt 0 ]; then
+            if [ "$uncommitted_files" -ge 10 ]; then
+                echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 27 '')${GREEN}║${NC}"
+            else
+                echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 27 '')${GREEN}║${NC}"
+            fi
+        fi
+
+        # Check current branch
+        current_branch=$(git branch --show-current 2>/dev/null || echo "unknown")
+        if [ "$current_branch" = "master" ] || [ "$current_branch" = "main" ]; then
+            echo "${GREEN}║${NC} ${GREEN}• You're on '$current_branch' - use task ID branches, if possible ${NC}$(printf '%*s' 0 '')${GREEN}║${NC}"
+        fi
+
+        # General reminders
+        echo "${GREEN}║${NC} ${GREEN}• Test changes locally before pushing${NC}$(printf '%*s' 20 '')${GREEN}║${NC}"
+        echo "${GREEN}║${NC} ${GREEN}• When in doubt, huddle calls and docs are your friends${NC}$(printf '%*s' 2 '')${GREEN}║${NC}"
+
+        # Check if this is Friday afternoon
+        day_of_week=$(date +%u)  # 1=Monday, 7=Sunday
+        hour_of_day=$(date +%H)
+        if [ "$day_of_week" -eq 5 ] && [ "$hour_of_day" -ge 15 ]; then
+            echo "${GREEN}║${NC} ${GREEN}⚠️  Friday afternoon - defer non-critical deploys${NC}$(printf '%*s' 8 '')${GREEN}║${NC}"
+        fi
+
+        echo "$bottom"
+    }
+
+    print_success_box
+else
+    echo "${YELLOW}⚠️  SKIPPED (no commit message file)${NC}"
+fi

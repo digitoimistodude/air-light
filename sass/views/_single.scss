@@ -1,3 +1,5 @@
+@use '../helpers' as *;
+
 .article-content .categories,
 .article-content .tags,
 .categories,
@@ -15,14 +17,14 @@
 }
 
 .categories a {
-  background-color: var(--color-valhalla);
+  background-color: var(--color-paragraph);
   border-radius: 1.875rem;
   color: var(--color-white);
   display: inline-block;
   font-size: var(--typography-size-14);
   margin: 0;
   padding: 0.3125rem 0.9375rem;
-  transition: all $transition-duration;
+  transition: all 150ms;
 }
 
 .categories a:hover,
@@ -42,15 +44,15 @@
   // stylelint-disable a11y/font-size-is-readable
   a {
     background-color: transparent;
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-paragraph);
     border-radius: 1.875rem;
     box-shadow: none;
-    color: var(--color-black);
+    color: var(--color-paragraph);
     display: inline-block;
     font-size: var(--typography-size-12);
     margin-right: 4px;
     padding: 0.0625rem 0.5rem;
-    transition: all $transition-duration;
+    transition: all 150ms;
     white-space: nowrap;
   }
 

@@ -1,3 +1,6 @@
+@use '../variables' as *;
+@use '../helpers' as *;
+
 // This file is meant for general styles and containers
 // that apply everywhere throughout the website. Add more
 // always repeating elements right below.
@@ -28,7 +31,7 @@ body:not(.wp-admin) {
 // Block padding exceptions
 // This class is useful when we have multiple blocks stacked with same background-color
 // stylelint-disable-next-line selector-max-class, selector-max-specificity
-.block.has-unified-padding-if-stacked + .block.has-unified-padding-if-stacked .container {
+.has-unified-padding-if-stacked + .has-unified-padding-if-stacked .container {
   overflow: visible;
   padding-top: 0;
 }
@@ -50,6 +53,9 @@ body:not(.wp-admin) {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
+
+  // Prevent longer dropdowns from cutting out on too low pages
+  min-height: 100vh;
   overflow: hidden;
   position: relative;
 }
@@ -74,21 +80,23 @@ body:not(.wp-admin) {
   }
 }
 
-// Better edit link
+.edit-link:last-child,
 .edit-link {
-  --color-link-edit-background-hover: var(--color-pattens-blue);
-  --color-link-edit-border: var(--color-pattens-blue);
-  --color-link-edit-text: color.adjust(#eaf1f8, -20%);
-  --color-link-edit-text-hover: var(--color-east-bay);
-  clear: both;
+  --color-link-edit-border: #ddd;
+  --color-link-edit-text: #555;
+  --color-link-edit-text-hover: #fff;
+  --color-link-edit-background-hover: #aaa;
+  --color-link-edit-border-hover: #aaa;
   display: block;
-  margin-bottom: 0;
+  margin-bottom: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1.25rem;
-  max-width: 100%;
+  max-width: $width-grid-base;
   min-width: 0;
   overflow: hidden;
   text-align: left;
-  transition: all $transition-duration;
+  transition: all 150ms;
   width: 100%;
 
   a {
@@ -97,16 +105,19 @@ body:not(.wp-admin) {
     clear: both;
     color: var(--color-link-edit-text);
     display: block;
-    margin: 0;
-    padding: 1.25rem;
+    font-weight: var(--typography-weight-semibold);
+    margin: 0 auto;
+    max-width: calc(100% - 2rem);
+    padding: 1rem;
     text-align: center;
     text-decoration: none;
-    transition: all $transition-duration;
+    transition: all 150ms;
   }
 
   &:focus,
   a:hover {
     background-color: var(--color-link-edit-background-hover);
+    border-color: var(--color-link-edit-border-hover);
     color: var(--color-link-edit-text-hover);
   }
 }

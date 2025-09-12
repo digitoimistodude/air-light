@@ -54,6 +54,11 @@ add_action( 'acf/init', __NAMESPACE__ . '\acf_blocks_init' );
 add_filter( 'acf/fields/wysiwyg/toolbars', __NAMESPACE__ . '\add_custom_tinymce_toolbars' );
 
 /**
+ * Native Gutenberg blocks
+ */
+require get_theme_file_path( 'inc/hooks/native-gutenberg-blocks.php' );
+
+/**
  * Form related hooks
  */
 require get_theme_file_path( 'inc/hooks/forms.php' );

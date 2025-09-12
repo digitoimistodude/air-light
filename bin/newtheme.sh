@@ -3,7 +3,7 @@
 
 # Script specific vars
 SCRIPT_LABEL='for macOS'
-SCRIPT_VERSION='1.1.4 (2024-04-18)'
+SCRIPT_VERSION='1.1.5 (2025-08-28)'
 
 # Vars needed for this file to function globally
 CURRENTFILE=`basename $0`
@@ -16,8 +16,13 @@ if [ "$CURRENTFILE" = "newtheme.sh" ]; then
   exit
 else
   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-  ORIGINAL_FILE=$( readlink $DIR/$CURRENTFILE )
-  SCRIPTS_LOCATION=$( dirname $ORIGINAL_FILE )
+  ORIGINAL_FILE=$( readlink "$DIR/$CURRENTFILE" )
+  if [ -n "$ORIGINAL_FILE" ]; then
+    SCRIPTS_LOCATION=$( dirname "$ORIGINAL_FILE" )
+  else
+    # Fallback if readlink fails
+    SCRIPTS_LOCATION="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+  fi
 fi
 
 # Final note about server requirements
@@ -31,7 +36,7 @@ ${TXTRESET}"
 source ${SCRIPTS_LOCATION}/tasks/self-update.sh
 
 # Import required tasks
-source ${SCRIPTS_LOCATION}/tasks/imports.sh
+source ${SCRIPTS_LOCATION}/tasks/imports.sh $@
 
 # Replace Air-light with your theme name and other seds
 source ${SCRIPTS_LOCATION}/tasks/replaces.sh

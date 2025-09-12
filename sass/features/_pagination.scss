@@ -1,3 +1,4 @@
+@use '../helpers' as *;
 // Alternative style: https://i.imgur.com/A8gUyu2.png
 // stylelint-disable a11y/font-size-is-readable
 .navigation:not(.post-navigation) .nav-links {
@@ -17,19 +18,20 @@
 }
 
 .page-numbers {
-  --color-pagination-text: var(--color-valhalla);
-  --color-pagination-background-hover: var(--color-valhalla);
-  --color-pagination-border-hover: var(--color-valhalla);
-  --color-pagination-text-hover: var(--color-white);
-  --color-pagination-background-current: var(--color-valhalla);
-  --color-pagination-border-current: var(--color-valhalla);
+  --color-pagination-border: #ece6f2;
+  --color-pagination-text: #2a2d3e;
+  --color-pagination-background-hover: #2a2d3e;
+  --color-pagination-border-hover: #2a2d3e;
+  --color-pagination-text-hover: #2a2d3e;
+  --color-pagination-background-current: #2a2d3e;
+  --color-pagination-border-current: #2a2d3e;
   --color-pagination-text-current: var(--color-white);
   align-items: center;
   background-color: var(--color-white);
-  border-bottom: 2px solid var(--color-blue-chalk);
-  border-left: 1px solid var(--color-blue-chalk);
-  border-right: 1px solid var(--color-blue-chalk);
-  border-top: 2px solid var(--color-blue-chalk);
+  border-bottom: 2px solid var(--color-pagination-border);
+  border-left: 1px solid var(--color-pagination-border);
+  border-right: 1px solid var(--color-pagination-border);
+  border-top: 2px solid var(--color-pagination-border);
   color: var(--color-pagination-text);
   display: flex;
   font-weight: var(--typography-weight-medium);
@@ -37,7 +39,7 @@
   justify-content: center;
   margin-left: 0;
   margin-right: 0;
-  transition: all $transition-duration;
+  transition: all 150ms;
   width: 2.1875rem;
 
   &:last-child {

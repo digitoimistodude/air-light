@@ -1,5 +1,7 @@
 // Buttons inside Gutenberg
 // We have to override default wp-admin blue buttons
+@use '../../components' as *;
+
 .wp-block .acf-block-preview {
   button,
   .button,

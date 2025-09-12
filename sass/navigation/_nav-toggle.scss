@@ -2,7 +2,7 @@
 .hamburger {
   --hamburger-layer-height: 2px;
   --hamburger-width: 2rem;
-  --hamburger-color: var(--color-white);
+  --hamburger-color: var(--color-black);
   --hamburger-color-active: var(--color-white);
   background-color: var(--hamburger-color);
   flex-shrink: 0;
@@ -63,15 +63,15 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   background-color: transparent;
 }
 
-// Make visual label out of aria-label
-.nav-toggle::after {
-  color: var(--color-white);
-  content: attr(aria-label);
-  font-size: var(--typography-size-14);
-  font-weight: var(--typography-weight-semibold);
-  margin-left: 1rem;
-  white-space: nowrap;
-}
+// Create visual label out of aria-label
+// .nav-toggle::after {
+//   color: var(--color-black);
+//   content: attr(aria-label);
+//   font-size: var(--typography-size-14);
+//   font-weight: var(--typography-weight-semibold);
+//   margin-left: 1rem;
+//   white-space: nowrap;
+// }
 
 // The actual toggle <button>
 // Uncomment lines if absolute positioning of toggle is needed
@@ -83,12 +83,19 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   cursor: pointer;
   display: flex;
   font-weight: var(--typography-weight-semibold);
-  height: 1.25rem;
+  height: 4rem;
   justify-content: center;
   margin: 0;
+  margin-right: -1rem;
+  margin-top: -0.5rem;
   opacity: 1;
   overflow: visible;
   padding: 0;
+  position: relative;
+  right: 0;
   text-decoration: none;
   user-select: none;
+  // Bigger area for fingers
+  width: 4rem;
+  z-index: 99999;
 }

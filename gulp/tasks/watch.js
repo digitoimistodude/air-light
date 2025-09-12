@@ -8,6 +8,7 @@ const config = require('../config.js');
 const {
   handleError
 } = require('../helpers/handle-errors.js');
+const { watchBlocks } = require('./blocks');
 
 // Watch task
 function watchFiles(done) {
@@ -38,6 +39,9 @@ function watchFiles(done) {
 
   // Lint styles
   watch(config.styles.watch.development, series('lintstyles'));
+
+  // Add block watching
+  watchBlocks();
 
   // Finish task
   done();

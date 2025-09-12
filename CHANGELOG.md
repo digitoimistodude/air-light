@@ -1,8 +1,51 @@
 ### Unreleased
 * Delete maybe_show_error_block function, DEV-226
 * Enable field validation for ACF blocks, DEV-372
+* Fix incorrect path in newtheme.sh ACTION REQUIRED message
+* .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
+
+### 9.6.2: 2025-08-29
+
+* Fix deprecated workflow that still uses devpackages, fix build DEV-83, DEV-385
+* Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
+* Bump axios and browser-sync #260
+* Fix replace scripts not removing scss imports, Ref: DEV-433
+* Add new logo header to scripts, Ref: DEV-436
+* Add `--test-branch <branch>` flag for newtheme.sh for testing, Ref: DEV-437
+
+### 9.6.1: 2025-08-08
+
+* Fix regression in 9.6.0, fonts and colors leaking to admin, Ref: DEV-381
+* Fix regression in 9.6.0, links are underlined and not formatted from formatting SCSS
+* Fix ul and ol styles leaking to navigation, regression to DEV-93
+* Merge new minimalistic mobile nav styles, Ref: DEV-95 (old refs: T-25883, T-25856)
+* Deprecate little used animations helper, Ref: DEV-382
+* Add minimalistic styles and footer, prepare for 10.0.0, Refs: DEV-94, DEV-90, DEV-379
+* Fix too low contrast in dropdown-toggles, inherit dropdown toggle color from the item, Ref: DEV-383
+* Prevent longer dropdowns from cutting out on too low pages, Ref: DEV-384
+* Fix build, prepare for native blocks, fix dependencies, Refs: DEV-10, DEV-385
+
+### 9.6.0: 2025-08-08
+
+* Bump form-data from 4.0.2 to 4.0.4 #254
+* Bump eazy-logger from 4.0.1 to 4.1.0 #251
+* Skip HTML validator, Ref: DEV-347
+* Use acf_block_defaults preview mode by default, Ref: DEV-155
+* Add Husky code quality tests, Ref: DEV-373
+* Update dart-sass to 1.86.3, Ref: DEV-149 #253 (thanks @nadyahakkinen!)
+* Fix regression with 404 template not having clamp-calc, Ref: DEV-377
+* Add helper wrapper for site-header, make it container width, #245, Refs: T-25879, DEV-93 (thanks @nadyahakkinen!)
+* Make sure husky has executable permissions after each branch switch, Ref: DEV-378
+* Code quality checks: Fix deprecated install command, update version for tests, Ref: DEV-373
+* Run gulp from theme instead of project from now on, Ref: DEV-83, DEV-127
+* Bump tested WordPress version to 6.8.2
+* From now on run gulp and tools from the theme instead of external devpackages repo, Ref: DEV-83
+* Simplify starter color variables, #243, Ref: DEV-379
+* Update release build scripts, do not pack vendor/, Ref: DEV-83
+* Fix editor styles for native blocks, T-25877 #242, Ref: DEV-380
 
 ### 9.5.1: 2025-05-23
+
 * Fix inconsistent heading variables, T-25878
 * Fix anchors.js not working with #hash in url, DEV-262
 
