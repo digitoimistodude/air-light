@@ -92,7 +92,7 @@ if [ -f "$commit_msg_file" ]; then
             changelog_first_line=$(head -n 1 CHANGELOG.md)
             current_date=$(date +%Y-%m-%d)
             if ! echo "$changelog_first_line" | grep -q "$current_date"; then
-                echo "${GREEN}║${NC} ${GREEN}• Consider updating changelog date to $current_date${NC}$(printf '%*s' 10 '')${GREEN}║${NC}"
+                echo "${GREEN}║${NC} ${GREEN}• Consider updating changelog date to $current_date${NC}$(printf '%*s' 9 '')${GREEN}║${NC}"
             fi
         fi
 
@@ -102,7 +102,7 @@ if [ -f "$commit_msg_file" ]; then
             if [ "$uncommitted_files" -ge 10 ]; then
                 echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 27 '')${GREEN}║${NC}"
             else
-                echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 27 '')${GREEN}║${NC}"
+                echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 26 '')${GREEN}║${NC}"
             fi
         fi
 
