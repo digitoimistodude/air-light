@@ -100,7 +100,7 @@ if [ -f "$commit_msg_file" ]; then
         uncommitted_files=$(git status --porcelain | wc -l | tr -d ' ')
         if [ "$uncommitted_files" -gt 0 ]; then
             if [ "$uncommitted_files" -ge 10 ]; then
-                echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 27 '')${GREEN}║${NC}"
+                echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 28 '')${GREEN}║${NC}"
             else
                 echo "${GREEN}║${NC} ${GREEN}• You have $uncommitted_files uncommitted files${NC}$(printf '%*s' 26 '')${GREEN}║${NC}"
             fi
