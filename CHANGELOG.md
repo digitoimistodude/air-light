@@ -1,6 +1,8 @@
 [Unreleased]
+
 * Fix incorrect path in newtheme.sh ACTION REQUIRED message
 * .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
+* Stylelint fixes, fix css-rparentexpected for media queries, Ref: DEV-623, DEV-630
 
 ### 9.6.2: 2025-08-29
 

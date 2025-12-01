@@ -157,6 +157,7 @@ add_action( 'after_setup_theme', function() {
         'core/block',
         'core/table',
         'core/textColumns',
+        'core/media-text',
       ],
       'page' => [],
       // 'page' => [
