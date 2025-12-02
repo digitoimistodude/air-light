@@ -1,4 +1,6 @@
-[Unreleased]
+### Unreleased
+* Delete maybe_show_error_block function, DEV-226
+* Enable field validation for ACF blocks, DEV-372
 * Fix incorrect path in newtheme.sh ACTION REQUIRED message
 * .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
 
