@@ -5,18 +5,17 @@
 @use 'nav-mobile';
 
 // Mobile styles
-@media screen and (max-width: $width-max-mobile - 1px) {
-
+@media screen and (max-width: ($width-max-mobile - 1px)) {
   // Dropdown toggle
   .menu-item-clickable {
-    --menu-item-clickable-size: .75rem;
+    --menu-item-clickable-size: 0.75rem;
     align-items: center;
     background-color: transparent;
     border-bottom: 0;
     border-left: 0;
     border-right: 0;
     display: flex;
-    gap: .625rem;
+    gap: 0.625rem;
     justify-content: space-between;
     text-align: initial;
     width: 100%;
@@ -27,7 +26,7 @@
     background-position: 50% 50%;
     content: '';
     height: var(--menu-item-clickable-size);
-    transition: transform .35s cubic-bezier(.19, 1, .22, 1);
+    transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1);
     width: var(--menu-item-clickable-size);
   }
 

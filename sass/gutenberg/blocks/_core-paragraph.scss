@@ -17,7 +17,7 @@
   }
 }
 
-@media (max-width: $width-grid-base + 40px) {
+@media (max-width: ( $width-grid-base + 40px)) {
   .has-background {
     width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }

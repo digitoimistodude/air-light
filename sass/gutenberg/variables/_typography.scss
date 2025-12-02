@@ -4,7 +4,11 @@
 // Needed typography exceptions for Gutenberg
 
 // Variable fonts
-@include variablefont('Mona Sans', '../../../../../content/themes/air-light/fonts/monasansvf', 1 999);
+@include variablefont(
+  'Mona Sans',
+  '../../../../../content/themes/air-light/fonts/monasansvf',
+  1 999
+);
 
 // Regular fonts
 // @include font('Inter', '../../../../../content/themes/air-light/fonts/inter-400', 400);
@@ -17,7 +21,9 @@
 // CSS Variables for responsive fonts
 :root {
   // Defined font families, replace these with your own
-  --typography-family-main: 'Mona Sans', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+  --typography-family-main: 'Mona Sans', -apple-system, 'BlinkMacSystemFont',
+    'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
+    sans-serif;
 
   // Contexts where the fonts are used, replace this with the families defined above
   --typography-family-paragraph: var(--typography-family-main);

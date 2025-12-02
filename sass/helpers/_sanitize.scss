@@ -99,7 +99,7 @@
    * Correct the inability to style buttons in iOS and Safari.
    */
 
-:where(button, [type="button" i], [type="reset" i], [type="submit" i]) {
+:where(button, [type='button' i], [type='reset' i], [type='submit' i]) {
   appearance: button;
 }
 
@@ -118,7 +118,7 @@
    * 2. Correct the outline style in Safari.
    */
 
-:where([type="search" i]) {
+:where([type='search' i]) {
   appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -140,7 +140,7 @@
 ::input-placeholder {
   // stylelint-disable-next-line
   color: inherit;
-  opacity: .54;
+  opacity: 0.54;
 }
 
 /**
@@ -177,7 +177,7 @@
    * Change the cursor on busy elements in all browsers (opinionated).
    */
 
-:where([aria-busy="true" i]) {
+:where([aria-busy='true' i]) {
   cursor: progress;
 }
 
@@ -186,7 +186,7 @@
    * inoperable elements in all browsers (opinionated).
    */
 
-:where([aria-disabled="true" i], [disabled]) {
+:where([aria-disabled='true' i], [disabled]) {
   cursor: not-allowed;
 }
 
@@ -195,11 +195,11 @@
    * in all browsers (opinionated).
    */
 
-:where([aria-hidden="false" i][hidden]) {
+:where([aria-hidden='false' i][hidden]) {
   display: initial;
 }
 
-:where([aria-hidden="false" i][hidden]:not(:focus)) {
+:where([aria-hidden='false' i][hidden]:not(:focus)) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }

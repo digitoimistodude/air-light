@@ -12,6 +12,8 @@
 
     // Slightly Deeper Browser Support
     // @source https://css-tricks.com/snippets/css/using-font-face/#slightly-deeper-browser-support
-    src: url('#{$src}.woff') format('woff'), url('#{$src}.woff2') format('woff2'), url('#{$src}.ttf') format('truetype');
+    src: url('#{$src}.woff') format('woff'),
+      url('#{$src}.woff2') format('woff2'),
+      url('#{$src}.ttf') format('truetype');
   }
 }

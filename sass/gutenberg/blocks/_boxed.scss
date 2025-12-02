@@ -13,7 +13,7 @@
   width: calc(100% - 2.5rem);
 }
 
-@media (min-width: $width-max-article + 40px) {
+@media (min-width: ($width-max-article + 40px)) {
   .is-style-boxed {
     transform: translate(1.25rem, 0);
   }
