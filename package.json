@@ -68,7 +68,7 @@
     "webpack-stream": "^7.0.0"
   },
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky node_modules/@digitoimistodude/code-quality-checks/.husky"
   },
   "dependencies": {
     "core-js": "^3.40.0",
