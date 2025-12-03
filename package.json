@@ -7,6 +7,7 @@
     "@babel/core": "^7.23.7",
     "@babel/eslint-parser": "^7.25.9",
     "@babel/preset-env": "^7.26.0",
+    "@digitoimistodude/code-quality-checks": "^2.0.0",
     "@hint/hint-axe": "^4.4.17",
     "@hint/hint-button-type": "^3.0.19",
     "@hint/hint-compat-api": "^4.5.3",
@@ -67,7 +68,7 @@
     "webpack-stream": "^7.0.0"
   },
   "scripts": {
-    "prepare": "husky && chmod +x .husky/pre-commit .husky/commit-msg"
+    "prepare": "husky"
   },
   "dependencies": {
     "core-js": "^3.40.0",
