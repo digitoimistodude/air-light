@@ -12,6 +12,15 @@ rm -f ${PROJECT_THEME_PATH}/languages/*
 rm ${PROJECT_THEME_PATH}/README.md
 rm ${PROJECT_THEME_PATH}/LICENSE.md
 
+# DEV-177: Remove code-quality-checks from theme (dudestack project root handles hooks)
+# Remove the dependency and prepare script from package.json
+if [ -f "${PROJECT_THEME_PATH}/package.json" ]; then
+  # Remove @digitoimistodude/code-quality-checks dependency
+  sed -i '' '/"@digitoimistodude\/code-quality-checks"/d' ${PROJECT_THEME_PATH}/package.json
+  # Remove the prepare script (husky is handled at project root)
+  sed -i '' '/"prepare":/d' ${PROJECT_THEME_PATH}/package.json
+fi
+
 # Remove demo content leftover files
 rm ${PROJECT_THEME_PATH}/sass/layout/_wordpress.scss
 
