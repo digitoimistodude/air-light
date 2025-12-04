@@ -1,0 +1,52 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        {
+          "slug": "white",
+          "color": "#ffffff",
+          "name": "Valkoinen"
+        },
+        {
+          "slug": "black",
+          "color": "#000000",
+          "name": "Musta"
+        },
+        {
+          "slug": "grey-light",
+          "color": "#dad9dc",
+          "name": "Vaaleanharmaa"
+        }
+      ]
+    },
+    "typography": {
+      "fontSizes": []
+    },
+    "spacing": {
+      "units": ["px", "em", "rem", "%", "vw", "vh"]
+    },
+    "blocks": {
+      "core/media-text": {
+        "color": {
+          "background": true,
+          "text": false
+        }
+      }
+    }
+  },
+  "styles": {
+    "blocks": {
+      "core/media-text": {
+        "spacing": {
+          "margin": {
+            "top": "0",
+            "bottom": "0"
+          }
+        }
+      }
+    }
+  }
+}

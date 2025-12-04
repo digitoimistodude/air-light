@@ -108,16 +108,6 @@ function register_block_editor_assets() {
     filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor.js' ) ) ),
     'all'
   );
-
-  // Enqueue optional editor only styles
-  wp_enqueue_style(
-    'block-editor-styles',
-    get_theme_file_uri( get_asset_file( 'gutenberg-editor-styles.css' ) ),
-    [],
-    filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor-styles.css' ) ) ),
-    'all',
-    true
-  );
 } // end register_block_editor_assets
 
 // Remove Gutenberg inline "Normalization styles" like .editor-styles-wrapper h1
@@ -130,92 +120,4 @@ function remove_gutenberg_inline_styles( $editor_settings, $editor_context ) {
   }
 
   return $editor_settings;
-}
-
-/**
- * Block editor title input styles for post types that don't show
- * post title in templates
- */
-function block_editor_title_input_styles() {
-  $post_types = [
-    'page',
-    'settings',
-  ];
-
-  if ( ! in_array( get_post_type(), $post_types, true ) ) {
-    return;
-  }
-
-  $styles = '
-  /* Styles for both contexts */
-  .edit-post-visual-editor__post-title-wrapper,
-  .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child,
-  body.block-editor-iframe__body .edit-post-visual-editor__post-title-wrapper,
-  body.block-editor-iframe__body .edit-post-visual-editor__post-title-wrapper + .is-root-container > .wp-block:first-child {
-    margin-top: 0 !important;
-  }
-
-  /* Remove border from the appender */
-  .block-editor-button-block-appender,
-  body.block-editor-iframe__body .block-editor-button-block-appender {
-    box-shadow: none;
-  }
-
-  /* Remove white border from top */
-  .interface-interface-skeleton__header,
-  body.block-editor-iframe__body .interface-interface-skeleton__header {
-    border-bottom: 0;
-  }
-
-  .block-editor .editor-styles-wrapper,
-  .block-editor-iframe__body {
-    padding-top: 0;
-  }
-
-  .block-editor .editor-styles-wrapper .edit-post-visual-editor__post-title-wrapper,
-  body.block-editor-iframe__body .edit-post-visual-editor__post-title-wrapper {
-    background-color: #1e1e1e;
-    border-bottom: 1px solid #1e1e1e;
-    color: #fff;
-    position: relative;
-    z-index: 3;
-  }
-
-  .edit-post-visual-editor__post-title-wrapper {
-    margin: 0;
-  }
-
-  .block-editor .editor-styles-wrapper .editor-post-title,
-  body.block-editor-iframe__body .editor-post-title {
-    color: #fff;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .block-editor .editor-styles-wrapper .editor-post-title [data-rich-text-placeholder]::after,
-  body.block-editor-iframe__body .editor-post-title [data-rich-text-placeholder]::after {
-    color: #fff;
-    opacity: 1;
-  }
-
-  .block-editor .editor-styles-wrapper .editor-post-title::before,
-  body.block-editor-iframe__body .editor-post-title::before {
-    color: #bababa;
-    display: block;
-    font-size: medium;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-
-  body.locale-fi .editor-styles-wrapper .editor-post-title::before {
-    content: "Nimi, joka näkyy selaimen välilehdessä ja valikossa";
-  }
-
-  body.locale-en-us .editor-styles-wrapper .editor-post-title::before,
-  .block-editor-iframe__body .editor-post-title::before {
-    content: "Post name shown in the browser tab and menus";
-  }
-  ';
-  wp_add_inline_style( 'block-editor-styles', $styles );
 }
