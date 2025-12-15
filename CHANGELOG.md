@@ -7,6 +7,7 @@
 * Use @digitoimistodude/code-quality-checks npm package for husky hooks, Ref: DEV-177
 * Remove code-quality-checks from themes in newtheme script, Ref: DEV-177
 * Remove gutenberg-editor-styles.scss and related admin style leaks, Ref: DEV-623
+* Rename gutenberg-editor.js to editor.js, add core-blocks structure, Ref: DEV-623
 
 ### 9.6.2: 2025-08-29
 
