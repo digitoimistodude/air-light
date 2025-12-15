@@ -159,7 +159,13 @@ add_action( 'after_setup_theme', function() {
         'core/textColumns',
         'core/media-text',
       ],
-      'page' => [],
+      'page' => [
+        'core/media-text',
+        'core/heading',
+        'core/paragraph',
+        'core/buttons',
+        'core/button',
+      ],
       // 'page' => [
       //   'all-acf-blocks',
       //   'core/paragraph',

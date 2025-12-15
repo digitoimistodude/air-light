@@ -1,9 +1,17 @@
 /**
  * @file media-text.js
- * @description Configure core/media-text block defaults
+ * @description Configure core/media-text block defaults and restrictions
  */
 
-// Set default attributes for core/media-text block
+// Allowed blocks inside media-text content area
+const ALLOWED_BLOCKS = [
+  'core/heading',
+  'core/paragraph',
+  'core/buttons',
+  'core/button',
+];
+
+// Set default attributes and restrictions for core/media-text block
 wp.hooks.addFilter(
   'blocks.registerBlockType',
   'air-light/media-text-defaults',
@@ -14,6 +22,7 @@ wp.hooks.addFilter(
 
     return {
       ...settings,
+      allowedBlocks: ALLOWED_BLOCKS,
       attributes: {
         ...settings.attributes,
         isStackedOnMobile: {

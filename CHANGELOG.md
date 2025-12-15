@@ -8,6 +8,7 @@
 * Remove code-quality-checks from themes in newtheme script, Ref: DEV-177
 * Remove gutenberg-editor-styles.scss and related admin style leaks, Ref: DEV-623
 * Rename gutenberg-editor.js to editor.js, add core-blocks structure, Ref: DEV-623
+* Remove remove_gutenberg_inline_styles that broke core editor styles, Ref: DEV-623
 
 ### 9.6.2: 2025-08-29
 
