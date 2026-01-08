@@ -26,6 +26,7 @@ assets/
 ## Commits and code style
 
 - 2 space indents
+- Always commit build and asset files
 - One logical change per commit
 - Keep commit messages concise (one line), use sentence case
 - Reference Linear issues at end: `Fix navigation bug, Ref: DEV-123`
