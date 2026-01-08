@@ -1,0 +1,260 @@
+# Default application configuration that all configurations inherit from.
+
+scss_files: "**/*.scss"
+plugin_directories: ['.scss-linters']
+
+# List of gem names to load custom linters from (make sure they are already
+# installed)
+plugin_gems: []
+
+# Default severity of all linters.
+severity: warning
+
+linters:
+  BangFormat:
+    enabled: true
+    space_before_bang: true
+    space_after_bang: false
+
+  BemDepth:
+    enabled: false
+    max_elements: 1
+
+  BorderZero:
+    enabled: true
+    convention: zero # or `none`
+
+  ChainedClasses:
+    enabled: false
+
+  ColorKeyword:
+    enabled: true
+
+  ColorVariable:
+    enabled: false
+
+  Comment:
+    enabled: false
+    style: silent
+
+  DebugStatement:
+    enabled: true
+
+  DeclarationOrder:
+    enabled: true
+
+  DisableLinterReason:
+    enabled: false
+
+  DuplicateProperty:
+    enabled: true
+
+  ElsePlacement:
+    enabled: false
+    style: same_line # or 'new_line'
+
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: true
+
+  EmptyRule:
+    enabled: true
+
+  ExtendDirective:
+    enabled: false
+
+  FinalNewline:
+    enabled: true
+    present: true
+
+  HexLength:
+    enabled: true
+    style: short # or 'long'
+
+  HexNotation:
+    enabled: true
+    style: lowercase # or 'uppercase'
+
+  HexValidation:
+    enabled: true
+
+  IdSelector:
+    enabled: false
+
+  ImportantRule:
+    enabled: false
+
+  ImportPath:
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
+
+  Indentation:
+    enabled: false
+    allow_non_nested_indentation: false
+    character: space # or 'tab'
+    width: 2
+
+  LeadingZero:
+    enabled: true
+    style: exclude_zero # or 'include_zero'
+
+  MergeableSelector:
+    enabled: true
+    force_nesting: false
+
+  NameFormat:
+    enabled: false
+    allow_leading_underscore: true
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
+
+  NestingDepth:
+    enabled: true
+    max_depth: 4
+    ignore_parent_selectors: false
+
+  PlaceholderInExtend:
+    enabled: false
+
+  PrivateNamingConvention:
+    enabled: false
+    prefix: _
+
+  PropertyCount:
+    enabled: false
+    include_nested: false
+    max_properties: 10
+
+  PropertySortOrder:
+    enabled: false
+    ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
+
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
+    disabled_properties: []
+
+  PropertyUnits:
+    enabled: true
+    global: [
+      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
+      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
+      'fr',                                    # Grid fractional lengths
+      'deg', 'grad', 'rad', 'turn',            # Angle
+      'ms', 's',                               # Duration
+      'Hz', 'kHz',                             # Frequency
+      'dpi', 'dpcm', 'dppx',                   # Resolution
+      '%']                                     # Other
+    properties: {}
+
+  PseudoElement:
+    enabled: false
+
+  QualifyingElement:
+    enabled: false
+    allow_element_with_attribute: false
+    allow_element_with_class: false
+    allow_element_with_id: false
+
+  SelectorDepth:
+    enabled: true
+    max_depth: 8
+
+  SelectorFormat:
+    enabled: null
+    convention: hyphenated_lowercase # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    ignored_names: ['is_stuck', 'choice_1_4_1', ' input_1_1', 'input_1_3', 'label_1_4_1', 'gchoice_1_4_1', 'ginput_container_name', 'gform_submit_button_1', 'gform_confirmation_wrapper', 'lang_choice_1', 'input_1_1', label_1_2_1', gform_confirmation_wrapper_1', 'gform_1' , 'input_1_2', 'coverImage', 'coverImageshelf', 'bookTitle', 'page_item_has_children', 'gf_browser_chrome', 'gform_confirmation_message_1', 'gform_confirmation_message_2', 'gform_confirmation_message_3', 'gf_left_half', 'current_page_ancestor', 'current_page_item', 'gform_wrapper_2', 'gform_submit_button_2', 'field_5_1', 'gf_right_half', 'validation_message', 'gfield_creditcard_warning', 'gform_validation_error', 'gform_confirmation_message', 'gform_fields_2', 'gfield_contains_required', 'gfield_description', field_5_1', 'gform_submit_button_4', 'hidden_label', 'field_5_6', 'gchoice_5_6_1', 'gform_submit_button_3', 'gform_submit_button_5', 'field_5_2', 'field_5_3', 'field_5_4', 'field_5_5', 'input_5_5', 'input_5_1', 'field_5_6', 'gform_fields_5', 'gform_title', 'validation_error', 'gform_button', 'gfield_error', 'gchoice_2_1_2', 'gchoice_2_1_1', 'gchoice_2_1_3', 'gfield_label', 'gfield_required', 'ginput_container', 'gchoice_2_7_1', 'choice_2_7_1', 'gform_description', 'field_3_5', 'choice_3_4_1', 'ginput_container', 'gchoice_3_4_1', 'label_2_7_1', 'gform_heading', 'gform_fields', 'ginput_container_radio', 'field_description_below', 'current_menu_item', 'current_page_parent', 'breadcrumbs__crumb--home', 'breadcrumbs__crumb', 'breadcrumbs__trail', 'breadcrumbs__title', 'gform_body', 'ginput_container_checkbox', 'choice_1_8_1', 'gform_page_footer', 'gform_wrapper', 'gform_header', 'field_1_1', 'field_1_2', 'field_1_3', 'field_1_4', 'field_1_5', 'field_1_6', 'field_1_7', 'field_1_8', 'field_1_9', 'field_1_10', 'field_2_1', 'field_2_2', 'field_2_3', 'field_2_4', 'field_2_5', 'field_2_6', 'field_2_7', 'field_2_8', 'field_2_9', 'field_2_10', 'ginput_container_email', 'gform_footer', 'top_label', 'gfield_radio', 'gfield_checkbox']
+
+  Shorthand:
+    enabled: true
+    allowed_shorthands: [1, 2, 3, 4]
+
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: true
+
+  SingleLinePerSelector:
+    enabled: true
+
+  SpaceAfterComma:
+    enabled: true
+    style: one_space # or 'no_space', or 'at_least_one_space'
+
+  SpaceAfterComment:
+    enabled: false
+    style: one_space # or 'no_space', or 'at_least_one_space'
+    allow_empty_comments: true
+
+  SpaceAfterPropertyColon:
+    enabled: true
+    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+
+  SpaceAfterPropertyName:
+    enabled: true
+
+  SpaceAfterVariableColon:
+    enabled: false
+    style: one_space # or 'no_space', 'at_least_one_space' or 'one_space_or_newline'
+
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: false
+    style: no_space # or 'at_least_one_space', or 'no_space'
+
+  SpaceBeforeBrace:
+    enabled: true
+    style: space # or 'new_line'
+    allow_single_line_padding: false
+
+  SpaceBetweenParens:
+    enabled: true
+    spaces: 0
+
+  StringQuotes:
+    enabled: false
+    style: single_quotes # or double_quotes
+
+  TrailingSemicolon:
+    enabled: true
+
+  TrailingWhitespace:
+    enabled: true
+
+  TrailingZero:
+    enabled: false
+
+  TransitionAll:
+    enabled: false
+
+  UnnecessaryMantissa:
+    enabled: true
+
+  UnnecessaryParentReference:
+    enabled: true
+
+  UrlFormat:
+    enabled: true
+
+  UrlQuotes:
+    enabled: true
+
+  VariableForProperty:
+    enabled: false
+    properties: []
+
+  VendorPrefix:
+    enabled: true
+    identifier_list: base
+    additional_identifiers: []
+    excluded_identifiers: []
+
+  ZeroUnit:
+    enabled: false
+
+  Compass::*:
+    enabled: false
