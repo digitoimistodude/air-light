@@ -1,114 +1,121 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress Theme Coding Standards">
-    <!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-    <!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
-    <!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki -->
-    <!-- See https://github.com/wimg/PHPCompatibility -->
+<ruleset name="Dude-Coding-Standards">
+  <description>
+    Dude Coding Standards (DCS)
+    https://dev.docs.dude.fi
+    Combined WordPress*, WordPress-Security and PSR-12 coding standards
+    with PHP 8.0+ compatibility for Dude projects.
+    Reference: https://linear.app/dude/issue/DEV-624/dude-coding-standards-10-phpcsxml
+  </description>
 
-    <!-- Set a description for this ruleset. -->
-    <description>A custom set of code standard rules to check for WordPress themes.</description>
+  <!-- PHPCS command line arguments arguments -->
+  <arg value="p" />  <!-- show progress -->
+  <arg value="s" />  <!-- show sniff codes -->
+  <arg value="v" />  <!-- verbose output -->
+  <arg name="extensions" value="php" />
 
-    <!-- Pass some flags to PHPCS:
-         p flag: Show progress of the run.
-         s flag: Show sniff codes in all reports.
-         v flag: Print verbose output.
-         n flag: Do not print warnings.
-     -->
-     <arg value="psvn"/>
+  <!-- Exclude common folders -->
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+  <exclude-pattern>*/dist/*</exclude-pattern>
+  <exclude-pattern>*/plugin-update-checker/*</exclude-pattern>
+  <exclude-pattern>*/mu-plugins/mercator/*</exclude-pattern>
+  <exclude-pattern>*/mu-plugins/bedrock-autoloader*</exclude-pattern>
+  <exclude-pattern>*/content/db.php</exclude-pattern>
+  <exclude-pattern>scripts/Roots/*</exclude-pattern>
 
-     <!-- Only check the PHP files. -->
-     <arg name="extensions" value="php"/>
+  <!-- Suppress deprecation warnings -->
+  <config name="ignore_warnings_on_exit" value="1"/>
+  <config name="ignore_errors_on_exit" value="0"/>
 
-     <!-- Check all files in this directory and the directories below it. -->
-     <file>.</file>
+  <!-- Generic PHP rules -->
+  <rule ref="PSR1">
+    <exclude name="PSR1.Files.SideEffects" />
+    <exclude name="PSR1.Methods" />
+  </rule>
 
-     <!-- Exclude asset.php files (Gutenberg build files) -->
-     <exclude-pattern>*.asset.php</exclude-pattern>
+  <rule ref="PSR2">
+    <exclude name="PSR2.ControlStructures" />
+    <exclude name="PSR2.Methods.FunctionCallSignature" />
+  </rule>
 
-     <!-- Include the WordPress ruleset, with exclusions. -->
-     <rule ref="WordPress">
-        <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-        <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned" />
-        <exclude name="Universal.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.OpeningIndent" />
-        <exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
-        <exclude name="Squiz.Commenting.ClassComment.WrongStyle" />
-        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-        <exclude name="Squiz.Commenting.FunctionComment.Missing" />
-        <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
-        <exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
-        <exclude name="Squiz.Commenting.FileComment.Missing" />
-        <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
-        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
-        <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.MultipleStatements" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
-        <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound" />
-        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
-        <exclude name="PHPCompatibility.PHP.NewFunctionArrayDereferencing.Found" />
-        <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
-        <exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
-        <exclude name="WordPress.Functions.DontExtract.extract_extract" />
-        <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
-        <exclude name="Generic.Commenting.DocComment.MissingShort" />
-        <exclude name="Generic.Commenting.DocComment.SpacingBeforeTags" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
-        <exclude name="PHPCompatibility.PHP.NewClosure.Found" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
-        <exclude name="WordPress.PHP.DontExtract.extract_extract" />
-        <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
-        <exclude name="Generic.Files.EndFileNewline.NotFound" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
-        <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
-        <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
-        <exclude name="PEAR.NamingConventions.ValidClassName.StartWithCapital" />
-        <exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
-        <exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
-        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
-        <exclude name="PEAR.Files.IncludingFile.UseRequire" />
-        <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
-        <exclude name="WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode" />
-        <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query" />
-        <exclude name="Universal.Operators.DisallowShortTernary.Found" />
-        <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_query" />
-        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction" />
-        <exclude name="WordPress.PHP.DisallowShortTernary.Found" />
-        <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
-        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
-        <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
-        <exclude name="Squiz.PHP.CommentedOutCode.Found" />
-        <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
-        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
-    </rule>
+  <rule ref="PSR12">
+    <exclude name="PSR12.ControlStructures" />
+    <exclude name="PSR12.Classes" />
+  </rule>
 
-    <!-- Verify that the text_domain is set to the desired text-domain.
-    Multiple valid text domains can be provided as a comma-delimited list. -->
-    <rule ref="WordPress.WP.I18n">
-        <properties>
-            <property name="text_domain" type="array" value="air-light" />
-        </properties>
-    </rule>
+  <rule ref="Generic">
+    <exclude name="Generic.PHP.UpperCaseConstant" />
+    <exclude name="Generic.Arrays.ArrayIndent" />
+    <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
+    <exclude name="Generic.WhiteSpace" />
+    <exclude name="Generic.PHP.ClosingPHPTag" />
+    <exclude name="Generic.PHP.RequireStrictTypes" />
+    <exclude name="Generic.NamingConventions" />
+    <exclude name="Generic.Functions" />
+    <exclude name="Generic.Files" />
+    <exclude name="Generic.Formatting" />
+    <exclude name="Generic.Commenting.DocComment" />
+    <exclude name="Generic.ControlStructures.DisallowYodaConditions" />
+    <exclude name="Generic.Debug" />
+  </rule>
 
-    <!-- Allow for theme specific exceptions to the file name rules based
-    on the theme hierarchy. -->
-    <rule ref="WordPress.Files.FileName">
-        <properties>
-            <property name="is_theme" value="true" />
-        </properties>
-    </rule>
+  <rule ref="Universal">
+    <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
+    <exclude name="Universal.Namespaces.EnforceCurlyBraceSyntax" />
+    <exclude name="Universal.FunctionDeclarations.NoLongClosures" />
+    <exclude name="Universal.WhiteSpace" />
+        <exclude name="Universal.ControlStructures" />
+    <exclude name="Universal.Operators" />
+  </rule>
 
-    <!-- Include sniffs for PHP cross-version compatibility. -->
-    <config name="testVersion" value="8.3"/>
-    <rule ref="PHPCompatibility"/>
+  <rule ref="PEAR">
+    <exclude name="PEAR.Functions.FunctionCallSignature" />
+    <exclude name="PEAR.Commenting" />
+    <exclude name="PEAR.Classes" />
+    <exclude name="PEAR.NamingConventions" />
+    <exclude name="PEAR.Functions" />
+    <exclude name="PEAR.ControlStructures" />
+    <exclude name="PEAR.WhiteSpace" />
+  </rule>
+
+  <rule ref="Squiz">
+    <exclude name="Squiz.Commenting" />
+    <exclude name="Squiz.Functions" />
+    <exclude name="Squiz.Operators" />
+    <exclude name="Squiz.NamingConventions" />
+    <exclude name="Squiz.Arrays" />
+    <exclude name="Squiz.PHP.DisallowBooleanStatement" />
+    <exclude name="Squiz.WhiteSpace" />
+    <exclude name="Squiz.CSS" />
+    <exclude name="Squiz.Debug" />
+    <exclude name="Squiz.Classes.DuplicateProperty" />
+    <exclude name="Squiz.Objects" />
+    <exclude name="Squiz.PHP.DisallowInlineIf" />
+
+    <!-- Exclude deprecated sniffs -->
+    <exclude name="Zend.Debug"/>
+  </rule>
+
+  <!-- WordPress standards -->
+  <rule ref="WordPress">
+    <exclude name="WordPress.Arrays.MultipleStatementAlignment" />
+    <exclude name="WordPress.Arrays.ArrayIndentation" />
+    <exclude name="WordPress.Arrays.ArrayDeclarationSpacing" />
+  </rule>
+
+  <!-- PHP compatibility checks -->
+  <rule ref="PHPCompatibility" />
+  <config name="testVersion" value="8.3" />
+
+  <!-- Encoding and indentation -->
+  <config name="encoding" value="utf-8" />
+
+  <!-- We use 2 spaces -->
+  <config name="tab_width" value="2" />
+  <rule ref="PEAR.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
 </ruleset>
