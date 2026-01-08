@@ -77,5 +77,5 @@ function get_asset_file( $filename ) {
     return "assets/js/{$filename}";
   }
 
-  return "assets/{$filename}";
+  return "assets/css/{$filename}";
 } // end get_asset_file
