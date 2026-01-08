@@ -1,11 +1,17 @@
-[Unreleased]
-* Fix incorrect path in newtheme.sh ACTION REQUIRED message
+### 9.7.0: 2026-01-08
+
+* Restructure assets to `assets/src/` and `assets/dist/` pattern, Ref: DEV-444
+* Update README for Parcel build system, Ref: DEV-439
+* Update to `@digitoimistodude/dude-coding-standards` for standalone use, Ref: DEV-674
+* Use `@digitoimistodude/code-quality-checks` npm package for husky hooks, Ref: DEV-672
+* Use `@digitoimistodude/stylelint-config` npm package, #271, Ref: DEV-638
+* Remove .scss-lint and update stylelint, #262, Ref: DEV-440 (thanks @nadyahakkinen!)
+* Fix incorrect path in newtheme.sh ACTION REQUIRED message, Ref: DEV-450
 * .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
 
 ### 9.6.2: 2025-08-29
 
 * Replace outdated stylelint plugins with modern alternatives for accessibility and custom properties validation, DEV-446
-* Change asset output directories: CSS to assets/, JS to assets/js/, fonts to assets/, DEV-444
 * Migrate from Gulp to Parcel build system, DEV-439
 * Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
 * Bump axios and browser-sync #260
