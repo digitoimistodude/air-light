@@ -32,7 +32,7 @@ echo ""
 if [ ! -f /usr/local/bin/newtheme ]; then
 echo "${TXTRESET}${TXTBOLD}ACTION REQUIRED:${TXTRESET}${WHITE} Link this file to system level and start from there with this oneliner:${TXTRESET}"
 echo ""
-echo "${GREEN}sudo ln -s ${DIR_TO_FILE}${CURRENTFILE} /usr/local/bin/newtheme && sudo chmod +x /usr/local/bin/newtheme && newtheme${TXTRESET}" 1>&2
+echo "${GREEN}sudo ln -s ${SCRIPTS_LOCATION}/newtheme.sh /usr/local/bin/newtheme && sudo chmod +x /usr/local/bin/newtheme && newtheme${TXTRESET}" 1>&2
 echo ""
 exit
 fi
