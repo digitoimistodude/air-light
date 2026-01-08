@@ -8,7 +8,7 @@
     "@babel/eslint-parser": "^7.28.0",
     "@babel/preset-env": "^7.28.3",
     "@digitoimistodude/code-quality-checks": "^2.1.0",
-    "@digitoimistodude/stylelint-config": "^1.0.0",
+    "@digitoimistodude/stylelint-config": "^1.0.1",
     "@hint/hint-axe": "^4.4.21",
     "@hint/hint-button-type": "^3.0.23",
     "@hint/hint-compat-api": "^4.5.8",
@@ -34,7 +34,7 @@
     "postcss-calc": "^10.1.1",
     "postcss-scss": "^4.0.9",
     "sass": "^1.91.0",
-    "stylelint": "^16.23.1"
+    "stylelint": "^15.11.0"
   },
   "scripts": {
     "prepare": "husky node_modules/@digitoimistodude/code-quality-checks/.husky",
