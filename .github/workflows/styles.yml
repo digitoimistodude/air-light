@@ -9,14 +9,14 @@ jobs:
 
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Read .nvmrc
-      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_OUTPUT
       id: nvm
 
     - name: Setup node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
@@ -24,28 +24,7 @@ jobs:
       run: npm install
 
     - name: Run stylelint
-      run: |
-        npx stylelint sass/**/*.scss --max-warnings 0
+      run: npm run lint:styles -- --max-warnings 0
 
     - name: Build development styles with Parcel
-      run: |
-        # Make the command visible
-        echo "Running npm run devstyles..."
-        npm run devstyles
-
-        # Capture the output
-        output=$(npm run devstyles 2>&1)
-
-        # Save it to a temporary file
-        echo "$output" > output.txt
-
-        # Check if the output contains the string "DEPRECATED" or "ERROR" or "WARNING"
-        if grep -q "DEPRECATED" output.txt || grep -q "ERROR" output.txt || grep -q "WARNING" output.txt; then
-          echo "Error found in output, failing build..."
-          exit 1
-        else
-          echo "No errors found in output."
-        fi
-
-        # Remove the temporary file
-        rm output.txt
+      run: npm run dev:styles
