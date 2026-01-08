@@ -7,6 +7,7 @@
     "@babel/core": "^7.28.3",
     "@babel/eslint-parser": "^7.28.0",
     "@babel/preset-env": "^7.28.3",
+    "@digitoimistodude/code-quality-checks": "^2.1.0",
     "@double-great/stylelint-a11y": "^3.4.0",
     "@hint/hint-axe": "^4.4.21",
     "@hint/hint-button-type": "^3.0.23",
@@ -44,7 +45,7 @@
     "stylelint-value-no-unknown-custom-properties": "^6.0.1"
   },
   "scripts": {
-    "prepare": "husky && chmod +x .husky/pre-commit .husky/commit-msg",
+    "prepare": "husky node_modules/@digitoimistodude/code-quality-checks/.husky",
     "dev": "concurrently --kill-others -n \"CSS,JS,SYNC\" \"PARCEL_CONFIG=.parcelrc.watch POSTCSS_CONFIG=.postcssrc.dev parcel watch sass/global.scss sass/gutenberg-editor-styles.scss --dist-dir assets --no-hmr --no-cache --no-source-maps --log-level verbose\" \"parcel watch js/src/front-end.js js/src/gutenberg-editor.js --dist-dir assets/js --no-hmr --no-cache --no-source-maps\" \"npm run browsersync\"",
     "browsersync": "node parcel/browsersync.js",
     "build": "npm-run-all build:styles build:js",
