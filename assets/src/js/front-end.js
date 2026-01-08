@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Init navigation
   // If you want to enable click based navigation, comment navDesktop() and uncomment navClick()
-  // Remember to enable styles in sass/navigation/navigation.scss
+  // Remember to enable styles in assets/src/sass/navigation/navigation.scss
   navDesktop();
   // navClick();
   navMobile();

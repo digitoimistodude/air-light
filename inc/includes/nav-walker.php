@@ -80,7 +80,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
     if ( isset( $args->has_dropdown ) && $args->has_dropdown ) {
       // Get the icon
       ob_start();
-      require get_theme_file_path( 'svg/mobile-nav-arrow-down.svg' );
+      require get_theme_file_path( 'assets/svg/mobile-nav-arrow-down.svg' );
       $icon = ob_get_clean();
       $output .= '<button class="dropdown-toggle" aria-expanded="false" aria-label="' . get_default_localization( 'Open child menu' ) . '">';
       $output .= $icon . '</button>';

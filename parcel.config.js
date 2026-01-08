@@ -18,22 +18,20 @@ const config = {
   // Source and destination paths
   paths: {
     styles: {
-      src: ['sass/global.scss', 'sass/gutenberg-editor-styles.scss'],
-      dev: 'assets',
-      prod: 'assets'
+      src: ['assets/src/sass/global.scss', 'assets/src/sass/gutenberg-editor-styles.scss'],
+      dest: 'assets/dist/css'
     },
     scripts: {
-      src: ['js/src/front-end.js', 'js/src/gutenberg-editor.js'],
-      dev: 'assets/js',
-      prod: 'assets/js'
+      src: ['assets/src/js/front-end.js', 'assets/src/js/gutenberg-editor.js'],
+      dest: 'assets/dist/js'
     }
   },
-  
+
   // Files to watch for BrowserSync
   watchFiles: [
     '**/*.php',
-    'assets/*.css',
-    'assets/js/*.js'
+    'assets/dist/css/*.css',
+    'assets/dist/js/*.js'
   ],
   
   // BrowserSync options

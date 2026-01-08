@@ -8,8 +8,9 @@ theme_tests.sh
 bower_components/
 node_modules/
 dandelion.yml
-sass/navigation/luxbar
-sass/navigation/_luxbar.scss
+assets/src/sass/navigation/luxbar
+assets/src/sass/navigation/_luxbar.scss
+assets/dist/
 .DS_Store
 html
 w3cErrors/

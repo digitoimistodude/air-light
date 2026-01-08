@@ -5,7 +5,7 @@
 // Remember to add these also to gutenberg/variables/_typography.scss with correct paths
 
 // Variable fonts
-@include variablefont('Mona Sans', '../fonts/monasansvf', 1 999);
+@include variablefont('Mona Sans', '../../fonts/monasansvf', 1 999);
 
 // Regular fonts
 // @include font('Inter', '../../fonts/inter-400', 400);

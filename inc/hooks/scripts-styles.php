@@ -74,8 +74,8 @@ function get_asset_file( $filename ) {
   $filetype = pathinfo( $filename )['extension'];
 
   if ( 'js' === $filetype ) {
-    return "assets/js/{$filename}";
+    return "assets/dist/js/{$filename}";
   }
 
-  return "assets/css/{$filename}";
+  return "assets/dist/css/{$filename}";
 } // end get_asset_file

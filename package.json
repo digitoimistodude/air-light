@@ -38,15 +38,15 @@
   },
   "scripts": {
     "prepare": "husky node_modules/@digitoimistodude/code-quality-checks/.husky",
-    "dev": "concurrently --kill-others -n \"CSS,JS,SYNC\" \"PARCEL_CONFIG=.parcelrc.watch POSTCSS_CONFIG=.postcssrc.dev parcel watch sass/global.scss sass/gutenberg-editor-styles.scss --dist-dir assets/css --no-hmr --no-cache --no-source-maps --log-level verbose\" \"parcel watch js/src/front-end.js js/src/gutenberg-editor.js --dist-dir assets/js --no-hmr --no-cache --no-source-maps\" \"npm run browsersync\"",
+    "dev": "concurrently --kill-others -n \"CSS,JS,SYNC\" \"PARCEL_CONFIG=.parcelrc.watch POSTCSS_CONFIG=.postcssrc.dev parcel watch assets/src/sass/global.scss assets/src/sass/gutenberg-editor-styles.scss --dist-dir assets/dist/css --no-hmr --no-cache --no-source-maps --log-level verbose\" \"parcel watch assets/src/js/front-end.js assets/src/js/gutenberg-editor.js --dist-dir assets/dist/js --no-hmr --no-cache --no-source-maps\" \"npm run browsersync\"",
     "browsersync": "node parcel/browsersync.js",
     "build": "npm-run-all build:styles build:js",
-    "build:styles": "parcel build sass/global.scss sass/gutenberg-editor-styles.scss --dist-dir assets/css --no-cache",
-    "build:js": "parcel build js/src/front-end.js js/src/gutenberg-editor.js --dist-dir assets/js --no-cache",
-    "dev:styles": "POSTCSS_CONFIG=.postcssrc.dev parcel build sass/global.scss sass/gutenberg-editor-styles.scss --dist-dir assets/css --no-optimize --no-cache",
-    "dev:js": "parcel build js/src/front-end.js js/src/gutenberg-editor.js --dist-dir assets/js --no-optimize --no-cache",
-    "lint": "eslint js/src",
-    "lint:styles": "stylelint sass/**/*.scss",
+    "build:styles": "parcel build assets/src/sass/global.scss assets/src/sass/gutenberg-editor-styles.scss --dist-dir assets/dist/css --no-cache",
+    "build:js": "parcel build assets/src/js/front-end.js assets/src/js/gutenberg-editor.js --dist-dir assets/dist/js --no-cache",
+    "dev:styles": "POSTCSS_CONFIG=.postcssrc.dev parcel build assets/src/sass/global.scss assets/src/sass/gutenberg-editor-styles.scss --dist-dir assets/dist/css --no-optimize --no-cache",
+    "dev:js": "parcel build assets/src/js/front-end.js assets/src/js/gutenberg-editor.js --dist-dir assets/dist/js --no-optimize --no-cache",
+    "lint": "eslint assets/src/js",
+    "lint:styles": "stylelint assets/src/sass/**/*.scss",
     "phpcs": "phpcs"
   },
   "dependencies": {
