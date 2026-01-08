@@ -1,5 +1,10 @@
 export PROJECTS_HOME="/var/www"
-export DIR_TO_FILE=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
+# Handle flag arguments properly - don't try to get directory from flags
+if [ -n "$1" ] && [[ "$1" != --* ]]; then
+  export DIR_TO_FILE=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
+else
+  export DIR_TO_FILE=$(cd "$(dirname "${BASH_SOURCE[0]}")"; pwd -P)/$(basename "${BASH_SOURCE[0]}")
+fi
 export CURRENTFILE=`basename $0`
 export TXTBOLD=$(tput bold)
 export BOLDYELLOW=${TXTBOLD}$(tput setaf 3)

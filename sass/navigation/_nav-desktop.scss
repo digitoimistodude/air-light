@@ -27,7 +27,6 @@
   --color-hover-sub-menu: var(--color-white);
   --color-background-sub-menu: var(--color-black);
   --gap-dropdown: 1.6rem;
-
   list-style: none;
   width: unset;
 }
@@ -56,7 +55,7 @@
     margin: 0;
     padding: 0;
     position: relative;
-    row-gap: .625rem;
+    row-gap: 0.625rem;
   }
 
   // Navigation list item
@@ -109,7 +108,7 @@
 
   // Let's make space for the nav-toggle/arrow
   .menu-item.menu-item-has-children a {
-    transition: background-color .2s cubic-bezier(.19, 1, .22, 1);
+    transition: background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .menu-item > a:hover,
@@ -140,14 +139,12 @@
   .nav-primary > ul:first-of-type > .menu-item-has-children:focus::before,
   .nav-primary > ul:first-of-type > .menu-item-has-children:hover::before {
     transform: scale(1);
-    transition: all .2s cubic-bezier(.19, 1, .22, 1);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   }
-
 
   // stop flash of submenus on page load, reduce CLS
   // add progressive enhancement for no JS
   .no-js {
-
     // pretend its out of viewport since we cant measure it
     .sub-menu {
       display: none;
@@ -196,7 +193,7 @@
     padding-top: 0;
     position: absolute;
     top: 100%;
-    transition: all .2s cubic-bezier(.19, 1, .22, 1);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
     width: var(--width-sub-menu);
     z-index: 9;
 
@@ -279,7 +276,7 @@
   // Toggle icon dimensions on desktop
   .dropdown-toggle svg {
     height: var(--dropdown-toggle-size);
-    transition: all .35s cubic-bezier(.19, 1, .22, 1);
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1);
     width: var(--dropdown-toggle-size);
   }
 
@@ -325,8 +322,14 @@
 
   // Smooth animation
   // stylelint-disable-next-line selector-max-specificity, selector-max-class
-  .menu-item.menu-item-has-children .menu-item.menu-item-has-children.hover-intent > .dropdown-toggle svg,
-  .menu-item.menu-item-has-children .menu-item.menu-item-has-children:focus > .dropdown-toggle svg {
+  .menu-item.menu-item-has-children
+    .menu-item.menu-item-has-children.hover-intent
+    > .dropdown-toggle
+    svg,
+  .menu-item.menu-item-has-children
+    .menu-item.menu-item-has-children:focus
+    > .dropdown-toggle
+    svg {
     transform: translateY(0%) rotate(90deg);
   }
 

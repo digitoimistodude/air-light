@@ -1,6 +1,6 @@
 @use '../variables' as *;
 @use '../helpers' as *;
-// stylelint-disable a11y/no-display-none, plugin/file-max-lines
+// stylelint-disable a11y/no-display-none, plugin/file-max-lines, scss/operator-no-newline-after
 // Import nav-toggle
 @use 'nav-toggle';
 
@@ -14,7 +14,7 @@
   // Affecting to both main and sub-levels
   --color-background-menu-items: var(--color-main);
   --color-background-menu-items-active: var(--color-main);
-  --color-separator-nav-mobile: rgb(255 255 255 / .1);
+  --color-separator-nav-mobile: rgb(255 255 255 / 0.1);
   --color-current-menu-item: var(--color-white);
   --color-dropdown-toggle-mobile: var(--color-white);
 
@@ -31,7 +31,7 @@
   --margin-left-sub-menu: 0.625rem;
   --padding-sub-menu-vertical-mobile: 0.5rem;
   --padding-sub-menu-horizontal-mobile: 1.5625rem;
-  --color-sub-menu-mobile: rgb(255 255 255 / .8);
+  --color-sub-menu-mobile: rgb(255 255 255 / 0.8);
 }
 
 // Navigation core functionality
@@ -49,7 +49,7 @@
 }
 
 // Mobile styles
-@media screen and (max-width: $width-max-mobile - 1px) {
+@media screen and (max-width: ($width-max-mobile - 1px)) {
   // Let's ensure site-header loads properly and doesn't leave empty spaces
   .site-header {
     background-color: var(--color-background-nav-mobile-header);
@@ -121,7 +121,9 @@
     font-size: var(--typography-size-sub-menu-mobile);
     font-weight: var(--typography-weight-sub-menu-mobile);
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
-    padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu));
+    padding-left: calc(
+      var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu)
+    );
     padding-top: var(--padding-sub-menu-vertical-mobile);
   }
 
@@ -132,7 +134,10 @@
 
   .sub-menu .sub-menu a {
     // stylelint-disable-next-line max-line-length
-    padding-left: calc(var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu) + var(--margin-left-sub-menu));
+    padding-left: calc(
+      var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu) +
+        var(--margin-left-sub-menu)
+    );
   }
 
   .menu-item a:hover,
@@ -160,7 +165,10 @@
     overflow: hidden;
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: var(--padding-sub-menu-horizontal-mobile);
-    padding-right: calc(var(--padding-sub-menu-horizontal-mobile) - calc(var(--dropdown-toggle-size) / 2));
+    padding-right: calc(
+      var(--padding-sub-menu-horizontal-mobile) -
+        calc(var(--dropdown-toggle-size) / 2)
+    );
     padding-top: var(--padding-sub-menu-vertical-mobile);
     position: absolute;
     right: 0;

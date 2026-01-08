@@ -72,7 +72,7 @@
 
   // Let's make space for the nav-toggle/arrow
   .menu-item.menu-item-has-children a {
-    transition: background-color .2s cubic-bezier(.19, 1, .22, 1);
+    transition: background-color 0.2s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
   .menu-item > a:hover,
@@ -88,7 +88,6 @@
   // Stop flash of submenus on page load, reduce CLS
   // add progressive enhancement for no JS
   .no-js {
-
     // Pretend its out of viewport since we cant measure it
     .sub-menu {
       display: none;
@@ -136,7 +135,7 @@
     padding-top: 0;
     position: absolute;
     top: 100%;
-    transition: all .2s cubic-bezier(.19, 1, .22, 1);
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
     width: var(--width-sub-menu);
     z-index: 9;
 
@@ -194,7 +193,7 @@
     background-position: 50% 50%;
     content: '';
     height: var(--dropdown-toggle-size);
-    transition: transform .35s cubic-bezier(.19, 1, .22, 1);
+    transition: transform 0.35s cubic-bezier(0.19, 1, 0.22, 1);
     width: var(--dropdown-toggle-size);
   }
 
@@ -203,8 +202,9 @@
   }
 
   // Main level dropdown toggle
-  .menu-items > .menu-item-has-children > .menu-item-clickable.toggled-on::after {
+  .menu-items
+    > .menu-item-has-children
+    > .menu-item-clickable.toggled-on::after {
     transform: rotate(-180deg) rotateX(0deg);
   }
 }
-

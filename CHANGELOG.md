@@ -1,10 +1,13 @@
-### [Unreleased]
+### 9.6.2: 2025-08-29
 
 * Replace outdated stylelint plugins with modern alternatives for accessibility and custom properties validation, DEV-446
 * Change asset output directories: CSS to assets/, JS to assets/js/, fonts to assets/, DEV-444
 * Migrate from Gulp to Parcel build system, DEV-439
 * Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
 * Bump axios and browser-sync #260
+* Fix replace scripts not removing scss imports, Ref: DEV-433
+* Add new logo header to scripts, Ref: DEV-436
+* Add `--test-branch <branch>` flag for newtheme.sh for testing, Ref: DEV-437
 
 ### 9.6.1: 2025-08-08
 

@@ -8,7 +8,7 @@ source ${SCRIPTS_LOCATION}/tasks/header.sh
 source ${SCRIPTS_LOCATION}/tasks/askvars.sh
 
 # Get latest Air-light version with updates and copy it over to your project
-source ${SCRIPTS_LOCATION}/tasks/get-theme.sh
+source ${SCRIPTS_LOCATION}/tasks/get-theme.sh $@
 
 # Set needed file and directory permissions
 source ${SCRIPTS_LOCATION}/tasks/permissions.sh

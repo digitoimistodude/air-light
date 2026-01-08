@@ -3,7 +3,11 @@
 // Core/separator block
 hr,
 .wp-block-separator {
-  background-image: linear-gradient(to bottom, rgb(0 0 0 / 0) 50%, rgb(0 0 0 / .3) 50%);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0) 50%,
+    rgb(0 0 0 / 0.3) 50%
+  );
   background-position: 0 50%;
   background-repeat: repeat-x;
   background-size: 2px 2px;
@@ -23,6 +27,6 @@ hr,
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
   margin-bottom: calc(var(--spacing-paragraphs-margin-block) * 2);
   margin-top: calc(var(--spacing-paragraphs-margin-block) * 2);
-  opacity: .4;
+  opacity: 0.4;
   width: 6.25rem;
 }

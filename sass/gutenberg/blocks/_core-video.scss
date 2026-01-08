@@ -5,7 +5,7 @@
   width: 100%;
 }
 
-@media (max-width: $width-grid-base + 40px) {
+@media (max-width: ( $width-grid-base + 40px)) {
   .wp-block-video.alignwide {
     width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
   }

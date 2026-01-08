@@ -19,10 +19,10 @@ fi
 SYMLINKPATH=$(sudo readlink /usr/local/bin/newtheme)
 
 # Get theme bin folder directory from symlink path
-THEMEBINFOLDER=$(sudo dirname $SYMLINKPATH)
+THEMEBINFOLDER=$(dirname "$SYMLINKPATH")
 
 # Go one step back from bin to get theme root folder
-THEMEROOTFOLDER=$(sudo dirname $THEMEBINFOLDER)
+THEMEROOTFOLDER=$(dirname "$THEMEBINFOLDER")
 
 # Go to the theme root folder
 cd $THEMEROOTFOLDER
