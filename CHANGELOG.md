@@ -8,6 +8,7 @@
 * Remove .scss-lint and update stylelint, #262, Ref: DEV-440 (thanks @nadyahakkinen!)
 * Fix incorrect path in newtheme.sh ACTION REQUIRED message, Ref: DEV-450
 * .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
+* Bump tested WordPress version to 6.9.0
 
 ### 9.6.2: 2025-08-29
 
