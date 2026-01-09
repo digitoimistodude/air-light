@@ -23,8 +23,8 @@ jobs:
     - name: Install packages
       run: npm install
 
+    - name: Build styles with Parcel
+      run: npm run dev:styles
+
     - name: Run stylelint
       run: npm run lint:styles -- --max-warnings 0
-
-    - name: Build development styles with Parcel
-      run: npm run dev:styles
