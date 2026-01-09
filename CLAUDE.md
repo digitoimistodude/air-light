@@ -37,7 +37,7 @@ assets/
 - Always add an empty line after headings
 - No formatting in CHANGELOG.md except `inline code` and when absolute necessary
 - Use `*` as bullets in CHANGELOG.md
-- Never use Claude watermark in commits
+- Never use Claude watermark in commits (FORBIDDEN: "Co-Authored-By")
 - No emojis in commits or code
 - Keep CHANGELOG.md date up to date when adding entries
 
