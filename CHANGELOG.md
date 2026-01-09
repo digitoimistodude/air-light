@@ -16,6 +16,7 @@
 * Add translators comments and phpcs:ignore for nav-walker complexity, Ref: DEV-672
 * Simplify `phpcs.xml` to use DCS standard directly, Ref: DEV-672
 * Update ESLint to 8.x and stylelint to 15.x for compatibility, Ref: DEV-672
+* Update bin/ scripts to use npm commands instead of gulp, Ref: DEV-672
 
 ### 9.6.2: 2025-08-29
 

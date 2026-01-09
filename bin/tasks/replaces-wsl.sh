@@ -20,13 +20,12 @@ else
   echo ' '
 fi
 
-echo "${YELLOW}Running project gulp styles once...${TXTRESET}"
+echo "${YELLOW}Running project build tasks once...${TXTRESET}"
 cd ${PROJECT_PATH}
 
-# NPX to try use the project gulp first (making sure we use right version)
-npx gulp devstyles
-npx gulp prodstyles
+npm run dev:styles
+npm run build:styles
 
-echo "${YELLOW}Running project gulp scripts task once...${TXTRESET}"
+echo "${YELLOW}Running project scripts task once...${TXTRESET}"
 cd ${PROJECT_PATH}
-npx gulp js
+npm run dev:js
