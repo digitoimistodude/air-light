@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  ignorePatterns: ['**/js/dev/*.js', '**/js/prod/*.js', '**/node_modules/*.js', '**/gulp/**/*.js', '**/gulp/*.js', 'gulpfile.js'],
+  ignorePatterns: ['**/assets/dist/**', '**/node_modules/**', '**/vendor/**', '**/parcel/**'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     requireConfigFile: false,

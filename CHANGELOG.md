@@ -1,10 +1,27 @@
-[Unreleased]
-* Fix incorrect path in newtheme.sh ACTION REQUIRED message
+### 9.7.0: 2026-01-09
+
+* Migrate from Gulp to Parcel build system, Ref: DEV-439
+* Restructure assets to `assets/src/` and `assets/dist/` pattern, Ref: DEV-444
+* Fix SCSS import and font paths for Parcel, Ref: DEV-439
+* Update README for Parcel build system, Ref: DEV-439
+* Update to `@digitoimistodude/dude-coding-standards` for standalone use, Ref: DEV-674
+* Use `@digitoimistodude/code-quality-checks@2.1.2` npm package for husky hooks, Ref: DEV-672
+* Use `@digitoimistodude/stylelint-config` npm package, #271, Ref: DEV-638
+* Remove .scss-lint and update stylelint, #262, Ref: DEV-440 (thanks @nadyahakkinen!)
+* Fix incorrect path in newtheme.sh ACTION REQUIRED message, Ref: DEV-450
 * .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
+* Bump tested WordPress version to 6.9.0
+* Update GitHub Actions workflows for Parcel build system, Ref: DEV-672
+* Fix embedded PHP formatting to comply with DCS standards, Ref: DEV-672
+* Add translators comments and phpcs:ignore for nav-walker complexity, Ref: DEV-672
+* Simplify `phpcs.xml` to use DCS standard directly, Ref: DEV-672
+* Update ESLint to 8.x and stylelint to 15.x for compatibility, Ref: DEV-672
+* Update bin/ scripts to use npm commands instead of gulp, Ref: DEV-672
+* Remove native Gutenberg block registration for Theme Directory compliance, Refs: DEV-10, DEV-672
 
 ### 9.6.2: 2025-08-29
 
-* Fix deprecated workflow that still uses devpackages, fix build DEV-83, DEV-385
+* Replace outdated stylelint plugins with modern alternatives for accessibility and custom properties validation, DEV-446
 * Remove mentions of archived devpackages, use theme package.json in unit tests, Ref: DEV-130
 * Bump axios and browser-sync #260
 * Fix replace scripts not removing scss imports, Ref: DEV-433

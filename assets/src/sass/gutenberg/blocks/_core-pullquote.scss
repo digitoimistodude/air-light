@@ -1,0 +1,38 @@
+@use '../../variables' as *;
+// Core/pullquote block
+.wp-block-pullquote {
+  border-color: var(--color-paragraph);
+  border-width: 3px;
+  display: grid;
+
+  [aria-label='Pullquote citation text'],
+  cite {
+    display: block;
+    margin-top: 1.875rem;
+  }
+
+  @media (max-width: ( $width-grid-base + 40px)) {
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+  }
+}
+
+.wp-block-pullquote.alignwide,
+.wp-block-pullquote.alignfull {
+  padding-left: 0;
+  padding-right: 0;
+
+  blockquote {
+    justify-self: center;
+  }
+
+  @media (max-width: ( $width-grid-base + 40px)) {
+    margin-left: var(--spacing-container-padding-inline);
+    margin-right: var(--spacing-container-padding-inline);
+  }
+}
+
+.wp-block-pullquote.alignfull {
+  margin-left: var(--spacing-container-padding-inline);
+  margin-right: var(--spacing-container-padding-inline);
+  width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+}

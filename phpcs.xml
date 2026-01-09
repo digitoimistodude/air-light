@@ -1,114 +1,12 @@
 <?xml version="1.0"?>
-<ruleset name="WordPress Theme Coding Standards">
-    <!-- See https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml -->
-    <!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards -->
-    <!-- See https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/wiki -->
-    <!-- See https://github.com/wimg/PHPCompatibility -->
+<ruleset name="Air-Light">
+  <description>Air-light theme coding standards using DCS</description>
 
-    <!-- Set a description for this ruleset. -->
-    <description>A custom set of code standard rules to check for WordPress themes.</description>
+  <!-- Use DCS standard -->
+  <rule ref="DCS"/>
 
-    <!-- Pass some flags to PHPCS:
-         p flag: Show progress of the run.
-         s flag: Show sniff codes in all reports.
-         v flag: Print verbose output.
-         n flag: Do not print warnings.
-     -->
-     <arg value="psvn"/>
-
-     <!-- Only check the PHP files. -->
-     <arg name="extensions" value="php"/>
-
-     <!-- Check all files in this directory and the directories below it. -->
-     <file>.</file>
-
-     <!-- Exclude asset.php files (Gutenberg build files) -->
-     <exclude-pattern>*.asset.php</exclude-pattern>
-
-     <!-- Include the WordPress ruleset, with exclusions. -->
-     <rule ref="WordPress">
-        <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
-        <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
-        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.Indent" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.ItemNotAligned" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.MultiLineArrayItemNotAligned" />
-        <exclude name="Universal.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
-        <exclude name="WordPress.Arrays.ArrayIndentation.CloseBraceNotAligned" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.OpeningIndent" />
-        <exclude name="Squiz.Commenting.FunctionComment.WrongStyle" />
-        <exclude name="Squiz.Commenting.ClassComment.WrongStyle" />
-        <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-        <exclude name="Squiz.Commenting.FunctionComment.Missing" />
-        <exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
-        <exclude name="Squiz.Commenting.InlineComment.SpacingAfter" />
-        <exclude name="Squiz.Commenting.FileComment.Missing" />
-        <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing" />
-        <exclude name="Squiz.Commenting.FunctionComment.ParamCommentFullStop" />
-        <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.MultipleStatements" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd" />
-        <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeKeyFound" />
-        <exclude name="WordPress.Arrays.ArrayDeclarationSpacing.AssociativeArrayFound" />
-        <exclude name="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace" />
-        <exclude name="PHPCompatibility.PHP.NewFunctionArrayDereferencing.Found" />
-        <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
-        <exclude name="WordPress.XSS.EscapeOutput.OutputNotEscaped" />
-        <exclude name="WordPress.Functions.DontExtract.extract_extract" />
-        <exclude name="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma" />
-        <exclude name="Generic.Commenting.DocComment.MissingShort" />
-        <exclude name="Generic.Commenting.DocComment.SpacingBeforeTags" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon" />
-        <exclude name="PHPCompatibility.PHP.NewClosure.Found" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine" />
-        <exclude name="PEAR.Functions.FunctionCallSignature.MultipleArguments" />
-        <exclude name="WordPress.PHP.DontExtract.extract_extract" />
-        <exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
-        <exclude name="Generic.Files.EndFileNewline.NotFound" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.Empty" />
-        <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
-        <exclude name="WordPress.WP.GlobalVariablesOverride.Prohibited" />
-        <exclude name="PEAR.NamingConventions.ValidClassName.StartWithCapital" />
-        <exclude name="WordPress.Security.ValidatedSanitizedInput.MissingUnslash" />
-        <exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
-        <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen" />
-        <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
-        <exclude name="PEAR.Files.IncludingFile.UseRequire" />
-        <exclude name="WordPress.Arrays.MultipleStatementAlignment.DoubleArrowNotAligned" />
-        <exclude name="WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode" />
-        <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_tax_query" />
-        <exclude name="Universal.Operators.DisallowShortTernary.Found" />
-        <exclude name="WordPress.DB.SlowDBQuery.slow_db_query_meta_query" />
-        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction" />
-        <exclude name="WordPress.PHP.DisallowShortTernary.Found" />
-        <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
-        <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
-        <exclude name="WordPress.WhiteSpace.DisallowInlineTabs.NonIndentTabsUsed" />
-        <exclude name="Squiz.PHP.CommentedOutCode.Found" />
-        <exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
-        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
-    </rule>
-
-    <!-- Verify that the text_domain is set to the desired text-domain.
-    Multiple valid text domains can be provided as a comma-delimited list. -->
-    <rule ref="WordPress.WP.I18n">
-        <properties>
-            <property name="text_domain" type="array" value="air-light" />
-        </properties>
-    </rule>
-
-    <!-- Allow for theme specific exceptions to the file name rules based
-    on the theme hierarchy. -->
-    <rule ref="WordPress.Files.FileName">
-        <properties>
-            <property name="is_theme" value="true" />
-        </properties>
-    </rule>
-
-    <!-- Include sniffs for PHP cross-version compatibility. -->
-    <config name="testVersion" value="8.3"/>
-    <rule ref="PHPCompatibility"/>
+  <!-- Exclude common folders -->
+  <exclude-pattern>*/vendor/*</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+  <exclude-pattern>*/assets/dist/*</exclude-pattern>
 </ruleset>

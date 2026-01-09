@@ -5,12 +5,6 @@
     }
   },
   "require-dev": {
-    "wp-coding-standards/wpcs": "^3.0",
-    "phpcompatibility/php-compatibility": "dev-develop as 9.3.5",
-    "phpcsstandards/phpcsutils": "^1.0",
-    "squizlabs/php_codesniffer": "*",
-    "phpcsstandards/phpcsextra": "^1.2.0",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-    "phpcompatibility/phpcompatibility-wp": "*"
+    "digitoimistodude/dude-coding-standards": "^1.0"
   }
 }

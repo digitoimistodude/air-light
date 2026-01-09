@@ -1,0 +1,26 @@
+@use '../../variables' as *;
+// Core/video block
+.wp-block-video video {
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: ( $width-grid-base + 40px)) {
+  .wp-block-video.alignwide {
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+  }
+}
+
+.wp-block-video.alignwide {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.wp-block-video.alignfull {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}

@@ -56,8 +56,6 @@ Air-light v. 4.2.2 was approved to [official WordPress theme directory](https://
 9. [Contributing](#contributing)
     1. [Air development](#air-development)
     2. [Debuggers](#debuggers)
-        1. [For Gulp](#for-gulp)
-        2. [For your editor](#for-your-editor)
     3. [Releasing a new version (staff only)](#releasing-a-new-version-staff-only)
 10. [Notes](#notes)
 
@@ -102,7 +100,7 @@ Some features, WooCommerce support and personal preferences of Dude are moved to
 #### Development
 
 * [BrowserSync](http://www.browsersync.io/) for keeping multiple browsers and devices synchronized while testing, along with injecting updated CSS and JS into your browser while you're developing
-* [gulp](http://gulpjs.com/) build script that compiles both Less and Sass, checks for JavaScript errors, optimizes images, and concatenates and minifies files
+* [Parcel](https://parceljs.org/) build tool that compiles Sass, bundles JavaScript, and optimizes assets with zero configuration
 * [npm](https://www.npmjs.com) for front-end package management
 
 #### Navigation
@@ -214,9 +212,9 @@ From 4.7.1 air-light has a lazy loading image features for background images and
 
 #### Structure
 
-All .js files in `/js/src/*` is built to production bundles in `/js/prod/` folder and development bundles in `/js/dev/` folder with the same name and loaded corresponding to the WP_ENV environment variable. The production scripts can be loaded on development by using `?load_production_builds` URL parameter. The main scripts file loaded in front end is `/js/src/front-end.js`.
+All .js files in `/assets/src/js/` are built to `/assets/dist/js/` folder. The main scripts file loaded in front end is `/assets/src/js/front-end.js`.
 
-If you want to add a piece of custom JS, create a file under `/js/src/modules/` and import or require it in `/js/src/front-end.js`. If you need a admin-specific JS, add a `/js/src/admin.js` and then enqueue `/js/dist/admin.js` with `enqueue_admin_scripts`
+If you want to add a piece of custom JS, create a file under `/assets/src/js/modules/` and import or require it in `/assets/src/js/front-end.js`. If you need admin-specific JS, add a `/assets/src/js/admin.js` and then enqueue `/assets/dist/js/admin.js` with `enqueue_admin_scripts`
 
 ### Extra building blocks
 
@@ -226,7 +224,7 @@ Air has a sticky navigation baked in.
 
 ##### How to enable
 
-You can enable the sticky navigation by uncommenting navSticky() in the js/src/front-end.js file.
+You can enable the sticky navigation by uncommenting navSticky() in the assets/src/js/front-end.js file.
 
 #### WooCommerce support
 
@@ -248,7 +246,7 @@ Starting from v2.6.0 WooCommerce support comes with [Air helper](https://github.
 ### Recommendations for development
 
 * macOS
-* npm and Gulp \+ plugins
+* Node.js and npm
 * [Dudestack](https://github.com/digitoimistodude/dudestack) \- A toolkit for creating a new professional WordPress project with deployments\. Heavily based on Bedrock by Roots\.
 
 ### How to build a new theme
@@ -292,13 +290,13 @@ Air is originally built on [dudestack](https://github.com/digitoimistodude/dudes
 11. Wait npm to get through files (get another cup of coffee)
 12. Activate theme - if you are using the lightweight [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup): `cd /var/www/airdev && vendor/wp-cli/wp-cli/bin/wp theme activate air-light`
 13. Open whole project to your preferred coding editor, for example when using [Visual Studio Code](https://github.com/ronilaukkarinen/vscode-settings) that would be `code /var/www/airdev/content/themes/air-light` or via GUI (Open folder).
-14. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `gulp` and start developing! Please note, contributing to this theme is only possible when gulp is run from theme directory, NOT on project root.
+14. Go to back to air-light dir with `cd /var/www/airdev/content/themes/air-light` and then run `npm run dev` and start developing!
 
 You may want to add `alias wp='./vendor/wp-cli/wp-cli/bin/wp'` for [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) to be able to run WP-CLI with just `wp`.
 
 ##### 2\. Use your own stack
 
-To install air-light to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need to use our gulpfile and npm dependencies, so make sure you go through steps 9-10 and 12 above.
+To install air-light to your own development environment, just clone your fork to your theme directory, activate the theme, and make changes. If you make changes to front-end (JS/SCSS), you'll need npm dependencies, so make sure you go through steps 9-10 and 12 above.
 
 When you make changes, commit them with clear describing commit messages and them make a pull request. We are happy to accept improvements!
 
@@ -313,17 +311,13 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 ### Debuggers
 
-Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files built inside gulpfile.js. **Please note, you need to configure global versions of these separately!**
+Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files. **Please note, you need to configure global versions of these separately!**
 
 It's also recommended to use [Query Monitor](https://wordpress.org/plugins/query-monitor/) plugin, as some debugging messages goes straight to it's logger.
 
-#### For gulp
-
-PHP_CodeSniffer needs to be installed under `/usr/local/bin/phpcs` with [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards) for php-debuggers to work properly in gulp. If you don't want to use phpcs with gulp, you can disable it by commenting out or deleting line `gulp.watch(phpSrc, ['phpcs']);`.
-
 The golden rule here is to make sure the commands `stylelint`, `eslint` and `phpcs` work from command line.
 
-#### How to install PHP_CodeSniffer with WordPress Coding Standards for Gulp
+#### How to install PHP_CodeSniffer with WordPress Coding Standards
 
 This tutorial is based on the official instructions in [WordPress-Coding-Standards](https://github.com/WordPress/WordPress-Coding-Standards) and can be found also in our Internal handbook [How to install the latest PHP_CodeSniffers with latest WordPress-Coding-Standards](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/servers/scripts-and-automation/upgrade-php-to-a-new-version/scan-wordpress-sites-files-for-php-version-compatibility-e.-g.-php-8.3) (private)
 
@@ -390,7 +384,7 @@ Whenever you have updates that are worthwhile, commit them with clear commit mes
 Use bash alias (replace YOURUSERNAME with your own):
 
 ``` bash
-alias release_new_air_version='git push && git push --tags && rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/sass/*"} /var/www/airdev/content/themes/air-light/* YOURUSERNAME@YOURSERVER:/var/www/airwptheme.com/public_html/demo/content/themes/air-light/ && /var/www/airdev/content/themes/air-light/bin && sh air-move-out.sh && sh air-pack.sh'
+alias release_new_air_version='git push && git push --tags && rsync -av -e ssh --exclude={"/node_modules/*","/bin/*","/assets/src/*"} /var/www/airdev/content/themes/air-light/* YOURUSERNAME@YOURSERVER:/var/www/airwptheme.com/public_html/demo/content/themes/air-light/ && /var/www/airdev/content/themes/air-light/bin && sh air-move-out.sh && sh air-pack.sh'
 ```
 
 The release cycle:
@@ -406,6 +400,6 @@ That's it, you released a new version!
 
 ### Notes
 
-Gzip file sizes tested with `wc -c css/prod/global.css` and `gzip -c css/prod/global.css | wc -c` commands.
+Gzip file sizes tested with `wc -c assets/dist/css/global.css` and `gzip -c assets/dist/css/global.css | wc -c` commands.
 
 **Theme developers please note:** if you use phpcs in [SublimeLinter as custom standard](https://github.com/ronilaukkarinen/sublime-settings/blob/master/Library/Application%20Support/Sublime%20Text%203/Packages/User/SublimeLinter.sublime-settings#L47) on [dudestack](https://github.com/digitoimistodude/dudestack), you will need extra content/themes/air-light subfolders inside the theme directory for it to work on both global projects and with air-light.

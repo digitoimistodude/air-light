@@ -40,7 +40,7 @@ function acf_blocks_init() {
 
     // Check if icon is set, otherwise try to load svg icon
     if ( ! isset( $block['icon'] ) || empty( $block['icon'] ) ) {
-      $icon_path = get_theme_file_path( "svg/block-icons/{$block['name']}.svg" );
+      $icon_path = get_theme_file_path( "assets/svg/block-icons/{$block['name']}.svg" );
       $icon_path = apply_filters( 'air_light_acf_block_icon', $icon_path, $block['name'], $block );
 
       if ( file_exists( $icon_path ) ) {

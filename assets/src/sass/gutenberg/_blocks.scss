@@ -1,0 +1,34 @@
+@use 'blocks/core-blockquote';
+@use 'blocks/core-buttons';
+@use 'blocks/core-columns';
+@use 'blocks/core-separator';
+@use 'blocks/core-heading';
+@use 'blocks/core-image';
+@use 'blocks/core-list';
+@use 'blocks/core-paragraph';
+@use 'blocks/core-pullquote';
+@use 'blocks/core-table';
+@use 'blocks/core-video';
+@use 'blocks/boxed';
+@use 'blocks/button-file';
+@use 'blocks/error';
+
+// List of all blocks: https://wordpress.org/support/article/blocks/
+// Core blocks only meant for article content
+.editor-styles-wrapper,
+.article-content {
+  // Core block styles are now available from the top-level @use statements
+  // Custom Gutenberg block styles are now available from the top-level @use statements
+
+  // Add here those ACF Gutenberg blocks you want to use inside article-content
+  // @use 'blocks/your-new-acf-block';
+}
+
+// Blocks only meant for outside article-content
+.editor-styles-wrapper,
+.site-main {
+  // Error block styles are now available from the top-level @use statements
+
+  // ACF blocks
+  // @use 'blocks/your-new-acf-block';
+}

@@ -27,7 +27,8 @@ namespace Air_Light;
       'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
       'has_dropdown'   => true,
       'walker'         => new Nav_Walker(),
-    ) ); ?>
+    ) );
+    ?>
   </div>
 
 </nav>

@@ -1,0 +1,54 @@
+@use 'breakpoints' as *;
+
+// CSS Variables for responsive paddings and margins
+:root {
+  // Gaps
+  --spacing-grid-gap: 3rem;
+
+  // Paddings
+  --spacing-container-padding-inline: 1.25rem;
+  --spacing-container-padding-inline-large: 4rem;
+  --spacing-container-padding-block: 4rem;
+  --spacing-site-header-padding-block: 1.25rem;
+  --spacing-content-padding-block: 5rem;
+
+  // Margins
+  --spacing-text-margin-block: 2.5rem;
+  --spacing-wp-block-image-margin-block: 2.5rem;
+  --spacing-paragraphs-margin-block: 1.6875rem;
+
+  // Mid-sized screens
+  @media (max-width: ($width-grid-base + 150px)) {
+    --spacing-container-padding-inline: 4rem;
+  }
+
+  // When there's no longer room for container to fit with wider white space
+  @media (max-width: 700px) {
+    --spacing-container-padding-inline: 1.25rem;
+  }
+
+  // When navigation transforms to a responsive hamburger menu
+  @media (max-width: $width-max-mobile) {
+    --spacing-site-header-padding-block: 1.25rem;
+  }
+
+  // iPad
+  @media (max-width: $container-ipad-landscape) {
+    --spacing-grid-gap: 2rem;
+  }
+
+  @media (max-width: $container-ipad) {
+    --spacing-grid-gap: var(--spacing-container-padding-inline);
+    --spacing-container-padding-block: 3.125rem;
+  }
+
+  // Between iPad and a mobile phone
+  @media (max-width: 600px) {
+    --spacing-content-padding-block: 3.75rem;
+  }
+
+  // Vars in mobile
+  @media (max-width: $container-mobile) {
+    --spacing-container-padding-block: 2.5rem;
+  }
+}

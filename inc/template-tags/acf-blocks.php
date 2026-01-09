@@ -168,7 +168,7 @@ function maybe_show_error_block( $message, $title = false ) {
       <?php endif; ?>
 
       <?php if ( ! empty( $message ) ) : ?>
-        <p class="error-message"><?php echo wp_kses_post( $message ) ?></p>
+        <p class="error-message"><?php echo wp_kses_post( $message ); ?></p>
       <?php endif; ?>
 
       <p class="info"><?php echo esc_html( get_default_localization( 'This error is shown only for logged in users' ) ); ?></p>

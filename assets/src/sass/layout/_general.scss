@@ -1,0 +1,168 @@
+@use '../variables' as *;
+@use '../helpers' as *;
+
+// This file is meant for general styles and containers
+// that apply everywhere throughout the website. Add more
+// always repeating elements right below.
+
+// Body
+.is-root-container,
+.acf-block-preview .block,
+body:not(.wp-admin) {
+  color: var(--color-paragraph);
+  font-family: var(--typography-family-paragraph);
+  font-size: var(--typography-paragraph-size);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--typography-weight-paragraph);
+  line-height: var(--typography-paragraph-line-height);
+  // stylelint-disable-next-line value-keyword-case
+  text-rendering: geometricPrecision;
+}
+
+// Default structural element
+.block {
+  background-color: var(--color-white);
+  margin: 0 auto;
+  max-width: $width-max-layout;
+  position: relative;
+}
+
+// Block padding exceptions
+// This class is useful when we have multiple blocks stacked with same background-color
+// stylelint-disable-next-line selector-max-class, selector-max-specificity
+.has-unified-padding-if-stacked + .has-unified-padding-if-stacked .container {
+  overflow: visible;
+  padding-top: 0;
+}
+
+// Global link helper
+// This is useful in services -type of areas where the whole block is a link
+// Remember to define aria-label or screen-reader-text for accessibility
+.global-link {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+// Site wrapper
+.site {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+
+  // Prevent longer dropdowns from cutting out on too low pages
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+// Containers
+.container {
+  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width-grid-base;
+  padding-bottom: var(--spacing-container-padding-block);
+  padding-left: var(--spacing-container-padding-inline);
+  padding-right: var(--spacing-container-padding-inline);
+  padding-top: var(--spacing-container-padding-block);
+
+  // If base grid is larger than Macbook Air screen
+  @if $width-grid-base > 1440 {
+    @media (min-width: $container-ipad-landscape) and (max-width: (140rem + 6.4rem)) {
+      padding-left: var(--spacing-container-padding-inline-large);
+      padding-right: var(--spacing-container-padding-inline-large);
+    }
+  }
+}
+
+.edit-link:last-child,
+.edit-link {
+  --color-link-edit-border: #ddd;
+  --color-link-edit-text: #555;
+  --color-link-edit-text-hover: #fff;
+  --color-link-edit-background-hover: #aaa;
+  --color-link-edit-border-hover: #aaa;
+  display: block;
+  margin-bottom: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.25rem;
+  max-width: $width-grid-base;
+  min-width: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: all 150ms;
+  width: 100%;
+
+  a {
+    background-color: var(--color-white);
+    border: 2px dashed var(--color-link-edit-border);
+    clear: both;
+    color: var(--color-link-edit-text);
+    display: block;
+    font-weight: var(--typography-weight-semibold);
+    margin: 0 auto;
+    max-width: calc(100% - 2rem);
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 150ms;
+  }
+
+  &:focus,
+  a:hover {
+    background-color: var(--color-link-edit-background-hover);
+    border-color: var(--color-link-edit-border-hover);
+    color: var(--color-link-edit-text-hover);
+  }
+}
+
+// Hide/show helpers
+// stylelint-disable-next-line a11y/no-display-none
+.hide-on-desktop {
+  @media (min-width: $container-mobile) {
+    // Forced to use important here, because makes no sense to write too specific selectors here
+    // stylelint-disable-next-line declaration-no-important
+    display: none !important;
+  }
+}
+
+// Forced to use important here, because makes no sense to write too specific selectors here
+// stylelint-disable-next-line a11y/no-display-none
+.hide-on-mobile {
+  @media (max-width: $container-mobile) {
+    // stylelint-disable-next-line declaration-no-important
+    display: none !important;
+  }
+}
+
+// Only function of these is to force hide content based on the view
+// Forced to use important here, because makes no sense to write too specific selectors here
+// stylelint-disable-next-line a11y/no-display-none
+.hide-on-mobile-nav-view {
+  @media (max-width: $width-max-mobile) {
+    // stylelint-disable-next-line declaration-no-important
+    display: none !important;
+  }
+}
+
+// Forced to use important here, because makes no sense to write too specific selectors here
+// stylelint-disable-next-line a11y/no-display-none
+.hide-on-desktop-nav-view {
+  @media (min-width: $width-max-mobile) {
+    // stylelint-disable-next-line declaration-no-important
+    display: none !important;
+  }
+}
+
+// Forced to use important here, because makes no sense to write too specific selectors here
+// stylelint-disable-next-line a11y/no-display-none
+.hide-completely {
+  // stylelint-disable-next-line declaration-no-important
+  display: none !important;
+}

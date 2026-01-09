@@ -30,6 +30,7 @@ get_header(); ?>
       entry_footer();
 
       if ( get_edit_post_link() ) {
+        // translators: %s: post title.
         edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
       }
 
@@ -38,7 +39,8 @@ get_header(); ?>
   		// If comments are open or we have at least one comment, load up the comment template.
       if ( comments_open() || get_comments_number() ) {
         comments_template();
-      } ?>
+      }
+      ?>
 
     </article>
   </section>

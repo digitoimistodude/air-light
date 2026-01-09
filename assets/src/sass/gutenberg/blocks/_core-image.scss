@@ -1,0 +1,66 @@
+@use '../../variables' as *;
+
+// Image block
+.wp-block-image {
+  display: block;
+  margin-bottom: var(--spacing-wp-block-image-margin-block);
+  margin-top: var(--spacing-wp-block-image-margin-block);
+
+  &.alignwide,
+  &.alignfull {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .alignwide img,
+  .alignfull img {
+    width: 100%;
+  }
+
+  // No border radius on full width image and wide on small screens
+  .alignfull img {
+    border-radius: 0;
+  }
+
+  > figure {
+    display: block;
+    width: auto;
+
+    &.alignleft,
+    &.alignright {
+      // Hack for keeping figcaption from flowing over floated image
+      // This variable is set inline to the corresponding figure with gutenberg-js
+      // stylelint-disable-next-line csstools/value-no-unknown-custom-properties
+      max-width: var(--width-child-img);
+    }
+  }
+
+  figcaption {
+    margin-bottom: 1.25rem;
+  }
+
+  .aligncenter {
+    text-align: center;
+  }
+
+  .aligncenter img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: ( $width-grid-base + 40px)) {
+    &.alignwide {
+      width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+    }
+  }
+
+  @media (max-width: $container-mobile) {
+    &.alignleft img,
+    &.alignright img,
+    &.aligncenter img {
+      float: none;
+      height: auto;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "includePaths": [
+    "sass",
+    "node_modules"
+  ],
+  "quietDeps": true,
+  "silenceDeprecations": ["legacy-js-api", "import"]
+}
