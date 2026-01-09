@@ -1,4 +1,4 @@
-### 9.7.0: 2026-01-08
+### 9.7.0: 2026-01-09
 
 * Restructure assets to `assets/src/` and `assets/dist/` pattern, Ref: DEV-444
 * Update README for Parcel build system, Ref: DEV-439
@@ -10,6 +10,10 @@
 * .stylelintrc: Change to `"declaration-empty-line-before": "never",`, Ref: DEV-449
 * Bump tested WordPress version to 6.9.0
 * Update GitHub Actions workflows for Parcel build system
+* Fix embedded PHP formatting to comply with DCS standards, Ref: DEV-672
+* Add translators comments and phpcs:ignore for nav-walker complexity, Ref: DEV-672
+* Simplify `phpcs.xml` to use DCS standard directly, Ref: DEV-672
+* Update ESLint to 8.x and stylelint to 15.x for compatibility, Ref: DEV-672
 
 ### 9.6.2: 2025-08-29
 
