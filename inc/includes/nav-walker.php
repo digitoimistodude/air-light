@@ -122,6 +122,7 @@ class Nav_Walker extends \Walker_Nav_Menu {
 	 * @param WP_Nav_Menu_Args $args   An object of wp_nav_menu() arguments.
 	 * @param int              $id     Current item ID.
 	 */
+  // phpcs:ignore Generic.Metrics.CyclomaticComplexity.MaxExceeded -- Complexity is inherent to the WordPress nav walker pattern from wp-bootstrap-navwalker.
   public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
     // Indent
     if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
