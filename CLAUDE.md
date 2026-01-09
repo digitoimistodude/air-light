@@ -41,6 +41,12 @@ assets/
 - No emojis in commits or code
 - Keep CHANGELOG.md date up to date when adding entries
 
+## Claude Code workflow
+
+- Always add tasks to the Claude Code to-do list and keep it up to date.
+- Review your to-do list and prioritize before starting.
+- If new tasks come in, don’t jump to them right away—add them to the list in order of urgency and finish your current work first.
+
 ## PHP conventions
 
 - Namespaced PHP: `namespace Air_Light;`
