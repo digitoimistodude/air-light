@@ -46,6 +46,8 @@ assets/
 - Always add tasks to the Claude Code to-do list and keep it up to date.
 - Review your to-do list and prioritize before starting.
 - If new tasks come in, don’t jump to them right away—add them to the list in order of urgency and finish your current work first.
+- Do not ever guess features, always proof them via looking up official docs, GitHub code, issues, if possible.
+- When looking things up, do not use years in search terms like 2024 or 2025.
 
 ## PHP conventions
 

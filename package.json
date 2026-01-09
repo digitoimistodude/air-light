@@ -39,7 +39,7 @@
   },
   "scripts": {
     "prepare": "husky node_modules/@digitoimistodude/code-quality-checks/.husky",
-    "dev": "concurrently --kill-others -n \"CSS,JS,SYNC\" \"PARCEL_CONFIG=.parcelrc.watch POSTCSS_CONFIG=.postcssrc.dev parcel watch assets/src/sass/global.scss assets/src/sass/gutenberg-editor-styles.scss --dist-dir assets/dist/css --no-hmr --no-cache --no-source-maps --log-level verbose\" \"parcel watch assets/src/js/front-end.js assets/src/js/gutenberg-editor.js --dist-dir assets/dist/js --no-hmr --no-cache --no-source-maps\" \"npm run browsersync\"",
+    "dev": "concurrently -n \"CSS,JS,SYNC\" \"node parcel/css-watch.js\" \"PARCEL_CONFIG=.parcelrc.watch parcel watch assets/src/js/front-end.js assets/src/js/gutenberg-editor.js --dist-dir assets/dist/js --no-source-maps --no-hmr --no-cache --log-level verbose\" \"npm run browsersync\"",
     "browsersync": "node parcel/browsersync.js",
     "build": "npm-run-all build:styles build:js",
     "build:styles": "parcel build assets/src/sass/global.scss assets/src/sass/gutenberg-editor-styles.scss --dist-dir assets/dist/css --no-cache",

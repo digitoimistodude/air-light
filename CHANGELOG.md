@@ -18,6 +18,8 @@
 * Update ESLint to 8.x and stylelint to 15.x for compatibility, Ref: DEV-672
 * Update bin/ scripts to use npm commands instead of gulp, Ref: DEV-672
 * Remove native Gutenberg block registration for Theme Directory compliance, Refs: DEV-10, DEV-672
+* Fix Parcel watch not recovering from SCSS errors, Ref: DEV-676
+* Improve BrowserSync hot reload consistency for CSS/JS, Ref: DEV-677
 
 ### 9.6.2: 2025-08-29
 

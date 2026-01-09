@@ -5,15 +5,20 @@
 
 // Import modules
 import reframe from 'reframe.js';
-import { styleExternalLinks, initExternalLinkLabels } from './modules/external-link';
+import {
+  styleExternalLinks,
+  initExternalLinkLabels,
+} from './modules/external-link';
 import initAnchors from './modules/anchors';
 import backToTop from './modules/top';
 import initA11ySkipLink from './modules/a11y-skip-link';
 import initA11yFocusSearchField from './modules/a11y-focus-search-field';
 import {
-  navSticky, navClick, navDesktop, navMobile,
+  navSticky,
+  navClick,
+  navDesktop,
+  navMobile,
 } from './modules/navigation';
-
 // Define Javascript is active by changing the body class
 document.body.classList.remove('no-js');
 document.body.classList.add('js');
