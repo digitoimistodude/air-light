@@ -17,6 +17,7 @@
 * Simplify `phpcs.xml` to use DCS standard directly, Ref: DEV-672
 * Update ESLint to 8.x and stylelint to 15.x for compatibility, Ref: DEV-672
 * Update bin/ scripts to use npm commands instead of gulp, Ref: DEV-672
+* Remove native Gutenberg block registration for Theme Directory compliance, Refs: DEV-10, DEV-672
 
 ### 9.6.2: 2025-08-29
 

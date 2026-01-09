@@ -53,10 +53,6 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\acf_blocks_add_category_in
 add_action( 'acf/init', __NAMESPACE__ . '\acf_blocks_init' );
 add_filter( 'acf/fields/wysiwyg/toolbars', __NAMESPACE__ . '\add_custom_tinymce_toolbars' );
 
-/**
- * Native Gutenberg blocks
- */
-require get_theme_file_path( 'inc/hooks/native-gutenberg-blocks.php' );
 
 /**
  * Form related hooks
