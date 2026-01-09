@@ -1,121 +1,12 @@
 <?xml version="1.0"?>
-<ruleset name="Dude-Coding-Standards">
-  <description>
-    Dude Coding Standards (DCS)
-    https://dev.docs.dude.fi
-    Combined WordPress*, WordPress-Security and PSR-12 coding standards
-    with PHP 8.0+ compatibility for Dude projects.
-    Reference: https://linear.app/dude/issue/DEV-624/dude-coding-standards-10-phpcsxml
-  </description>
+<ruleset name="Air-Light">
+  <description>Air-light theme coding standards using DCS</description>
 
-  <!-- PHPCS command line arguments arguments -->
-  <arg value="p" />  <!-- show progress -->
-  <arg value="s" />  <!-- show sniff codes -->
-  <arg value="v" />  <!-- verbose output -->
-  <arg name="extensions" value="php" />
+  <!-- Use DCS standard -->
+  <rule ref="DCS"/>
 
   <!-- Exclude common folders -->
   <exclude-pattern>*/vendor/*</exclude-pattern>
   <exclude-pattern>*/node_modules/*</exclude-pattern>
-  <exclude-pattern>*/dist/*</exclude-pattern>
-  <exclude-pattern>*/plugin-update-checker/*</exclude-pattern>
-  <exclude-pattern>*/mu-plugins/mercator/*</exclude-pattern>
-  <exclude-pattern>*/mu-plugins/bedrock-autoloader*</exclude-pattern>
-  <exclude-pattern>*/content/db.php</exclude-pattern>
-  <exclude-pattern>scripts/Roots/*</exclude-pattern>
-
-  <!-- Suppress deprecation warnings -->
-  <config name="ignore_warnings_on_exit" value="1"/>
-  <config name="ignore_errors_on_exit" value="0"/>
-
-  <!-- Generic PHP rules -->
-  <rule ref="PSR1">
-    <exclude name="PSR1.Files.SideEffects" />
-    <exclude name="PSR1.Methods" />
-  </rule>
-
-  <rule ref="PSR2">
-    <exclude name="PSR2.ControlStructures" />
-    <exclude name="PSR2.Methods.FunctionCallSignature" />
-  </rule>
-
-  <rule ref="PSR12">
-    <exclude name="PSR12.ControlStructures" />
-    <exclude name="PSR12.Classes" />
-  </rule>
-
-  <rule ref="Generic">
-    <exclude name="Generic.PHP.UpperCaseConstant" />
-    <exclude name="Generic.Arrays.ArrayIndent" />
-    <exclude name="Generic.Arrays.DisallowShortArraySyntax" />
-    <exclude name="Generic.WhiteSpace" />
-    <exclude name="Generic.PHP.ClosingPHPTag" />
-    <exclude name="Generic.PHP.RequireStrictTypes" />
-    <exclude name="Generic.NamingConventions" />
-    <exclude name="Generic.Functions" />
-    <exclude name="Generic.Files" />
-    <exclude name="Generic.Formatting" />
-    <exclude name="Generic.Commenting.DocComment" />
-    <exclude name="Generic.ControlStructures.DisallowYodaConditions" />
-    <exclude name="Generic.Debug" />
-  </rule>
-
-  <rule ref="Universal">
-    <exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
-    <exclude name="Universal.Namespaces.EnforceCurlyBraceSyntax" />
-    <exclude name="Universal.FunctionDeclarations.NoLongClosures" />
-    <exclude name="Universal.WhiteSpace" />
-        <exclude name="Universal.ControlStructures" />
-    <exclude name="Universal.Operators" />
-  </rule>
-
-  <rule ref="PEAR">
-    <exclude name="PEAR.Functions.FunctionCallSignature" />
-    <exclude name="PEAR.Commenting" />
-    <exclude name="PEAR.Classes" />
-    <exclude name="PEAR.NamingConventions" />
-    <exclude name="PEAR.Functions" />
-    <exclude name="PEAR.ControlStructures" />
-    <exclude name="PEAR.WhiteSpace" />
-  </rule>
-
-  <rule ref="Squiz">
-    <exclude name="Squiz.Commenting" />
-    <exclude name="Squiz.Functions" />
-    <exclude name="Squiz.Operators" />
-    <exclude name="Squiz.NamingConventions" />
-    <exclude name="Squiz.Arrays" />
-    <exclude name="Squiz.PHP.DisallowBooleanStatement" />
-    <exclude name="Squiz.WhiteSpace" />
-    <exclude name="Squiz.CSS" />
-    <exclude name="Squiz.Debug" />
-    <exclude name="Squiz.Classes.DuplicateProperty" />
-    <exclude name="Squiz.Objects" />
-    <exclude name="Squiz.PHP.DisallowInlineIf" />
-
-    <!-- Exclude deprecated sniffs -->
-    <exclude name="Zend.Debug"/>
-  </rule>
-
-  <!-- WordPress standards -->
-  <rule ref="WordPress">
-    <exclude name="WordPress.Arrays.MultipleStatementAlignment" />
-    <exclude name="WordPress.Arrays.ArrayIndentation" />
-    <exclude name="WordPress.Arrays.ArrayDeclarationSpacing" />
-  </rule>
-
-  <!-- PHP compatibility checks -->
-  <rule ref="PHPCompatibility" />
-  <config name="testVersion" value="8.3" />
-
-  <!-- Encoding and indentation -->
-  <config name="encoding" value="utf-8" />
-
-  <!-- We use 2 spaces -->
-  <config name="tab_width" value="2" />
-  <rule ref="PEAR.WhiteSpace.ScopeIndent">
-    <properties>
-      <property name="indent" value="2" />
-    </properties>
-  </rule>
+  <exclude-pattern>*/assets/dist/*</exclude-pattern>
 </ruleset>
