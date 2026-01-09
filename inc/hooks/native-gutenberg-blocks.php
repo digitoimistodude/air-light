@@ -39,6 +39,7 @@ function register_native_gutenberg_blocks() {
       $registration_result = register_block_type( $block_folder . '/build' );
 
       if ( is_wp_error( $registration_result ) ) {
+        // phpcs:ignore Squiz.PHP.DiscouragedFunctions.Discouraged, WordPress.PHP.DevelopmentFunctions.error_log_error_log -- Intentional error logging for debugging block registration failures.
         error_log( 'Block registration error for ' . basename( $block_folder ) . ': ' . $registration_result->get_error_message() );
       }
     }
