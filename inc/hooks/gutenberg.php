@@ -109,6 +109,15 @@ function register_block_editor_assets() {
     'all'
   );
 
+  // Pass theme data to block editor JS
+  wp_localize_script(
+    'block-editor-js',
+    'airLightBlockEditor',
+    [
+      'themeUrl' => get_template_directory_uri(),
+    ]
+  );
+
   // Enqueue optional editor only styles
   wp_enqueue_style(
     'block-editor-styles',

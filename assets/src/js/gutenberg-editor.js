@@ -1,4 +1,11 @@
 /* eslint-disable no-undef */
+import registerBlockVariations from './block-variations';
+
+// Register block variations with Dude defaults
+wp.domReady(() => {
+  registerBlockVariations();
+});
+
 // Declare the blocks you'd like to style.
 wp.blocks.registerBlockStyle('core/paragraph', {
   name: 'boxed',
