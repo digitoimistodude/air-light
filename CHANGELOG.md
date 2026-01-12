@@ -1,3 +1,10 @@
+### [Unreleased]: 2026-01-12
+
+* Add modular block variations system for customizing core blocks, Ref: DEV-245
+* Add Media & Text (Dude) block variation with placeholder image and default content, Ref: DEV-245
+* Add `wp_localize_script` to pass theme URL to block editor JS, Ref: DEV-245
+* Remove `_editor.scss` ACF-specific editor styles, Ref: DEV-245
+
 ### 9.7.0: 2026-01-09
 
 * Migrate from Gulp to Parcel build system, Ref: DEV-439
