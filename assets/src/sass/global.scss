@@ -44,4 +44,8 @@
 @use 'gutenberg/blocks';
 
 // Gutenberg formatting
-@use 'gutenberg/formatting';
+@use 'formatting/align';
+@use 'formatting/caption';
+@use 'formatting/img';
+@use 'formatting/link';
+@use 'formatting/paragraph';

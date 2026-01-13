@@ -5,6 +5,8 @@
 * Add `wp_localize_script` to pass theme URL to block editor JS, Ref: DEV-245
 * Remove `_editor.scss` ACF-specific editor styles, Ref: DEV-245
 * Fix block editor styles for iframed editor by using `enqueue_block_assets` hook, Ref: DEV-245
+* Completely remove and deprecate assets/src/sass/gutenberg/blocks/_core* styles. Let's use WordPress Gutenberg core styles instead as base, Ref: DEV-245
+* Move formatting to upper level from gutenberg/formatting/ as there are styles that do not belong to Gutenberg, Ref: DEV-245
 
 ### 9.7.0: 2026-01-09
 

@@ -3,28 +3,60 @@
   "version": 3,
   "settings": {
     "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
     "layout": {
       "contentSize": "800px",
       "wideSize": "1200px"
+    },
+    "spacing": {
+      "units": ["px", "rem", "%", "vw"],
+      "customSpacingSize": false,
+      "spacingSizes": [
+        {
+          "slug": "10",
+          "size": "0.625rem",
+          "name": "Extra small"
+        },
+        {
+          "slug": "20",
+          "size": "1rem",
+          "name": "Small"
+        },
+        {
+          "slug": "30",
+          "size": "1.5rem",
+          "name": "Medium"
+        },
+        {
+          "slug": "40",
+          "size": "2rem",
+          "name": "Large"
+        },
+        {
+          "slug": "50",
+          "size": "3rem",
+          "name": "Extra large"
+        }
+      ]
     },
     "color": {
       "custom": false,
       "customGradient": false,
       "palette": [
         {
-          "slug": "primary",
-          "color": "#0070f3",
-          "name": "Primary"
-        },
-        {
-          "slug": "secondary",
-          "color": "#ff4081",
-          "name": "Secondary"
+          "slug": "accent",
+          "color": "#0049d1",
+          "name": "Accent"
         },
         {
           "slug": "dark",
-          "color": "#333333",
+          "color": "#000000",
           "name": "Dark"
+        },
+        {
+          "slug": "paragraph",
+          "color": "#545773",
+          "name": "Paragraph"
         },
         {
           "slug": "light",
@@ -67,11 +99,45 @@
   "styles": {
     "color": {
       "background": "#ffffff",
-      "text": "#333333"
+      "text": "#000000"
     },
     "typography": {
       "fontSize": "16px",
       "lineHeight": "1.6"
+    },
+    "spacing": {
+      "padding": {
+        "left": "var(--spacing-container-padding-inline)",
+        "right": "var(--spacing-container-padding-inline)"
+      }
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--color-link-text)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--color-link-text-hover)"
+          }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--color-accent)",
+          "text": "#ffffff"
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--color-link-text-hover)"
+          }
+        }
+      },
+      "heading": {
+        "color": {
+          "text": "var(--color-heading)"
+        }
+      }
     }
   }
 }
