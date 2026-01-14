@@ -1,4 +1,4 @@
-### [Unreleased]: 2026-01-12
+### [Unreleased]: 2026-01-13
 
 * Add modular block variations system for customizing core blocks, Ref: DEV-245
 * Add Media & Text (Dude) block variation with placeholder image and default content, Ref: DEV-245
@@ -7,6 +7,9 @@
 * Fix block editor styles for iframed editor by using `enqueue_block_assets` hook, Ref: DEV-245
 * Completely remove and deprecate assets/src/sass/gutenberg/blocks/_core* styles. Let's use WordPress Gutenberg core styles instead as base, Ref: DEV-245
 * Move formatting to upper level from gutenberg/formatting/ as there are styles that do not belong to Gutenberg, Ref: DEV-245
+* Update theme.json with element styles for links, buttons, and headings, Ref: DEV-245
+* Add `useRootPaddingAwareAlignments` and custom gridBase to theme.json, Ref: DEV-245
+* Sync theme.json colors with `_colors.scss` CSS custom properties, Ref: DEV-245
 
 ### 9.7.0: 2026-01-09
 

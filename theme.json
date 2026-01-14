@@ -94,6 +94,9 @@
           "name": "Extra large"
         }
       ]
+    },
+    "custom": {
+      "gridBase": "1440px"
     }
   },
   "styles": {
