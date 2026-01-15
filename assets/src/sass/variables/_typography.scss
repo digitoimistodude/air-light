@@ -65,7 +65,7 @@
   --typography-weight-heading: var(--typography-weight-bold);
 
   // Heading font sizes in mobile
-  @media (max-width: $container-mobile) {
+  @media (max-width: $breakpoint-mobile) {
     --typography-size-hero: 38px;
     --typography-size-h1: 32px;
     --typography-size-h2: 24px;

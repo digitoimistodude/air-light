@@ -35,21 +35,21 @@
 }
 
 // Navigation core functionality
-@media only screen and (max-width: $width-max-mobile) {
+@media only screen and (max-width: $breakpoint-nav) {
   // Functionality needs display: none here for visual reasons
   .menu-items ul {
     display: none;
   }
 }
 
-@media only screen and (max-width: $width-max-mobile) {
+@media only screen and (max-width: $breakpoint-nav) {
   ul .sub-menu.toggled-on {
     display: block;
   }
 }
 
 // Mobile styles
-@media screen and (max-width: ($width-max-mobile - 1px)) {
+@media screen and (max-width: ($breakpoint-nav - 1px)) {
   // Let's ensure site-header loads properly and doesn't leave empty spaces
   .site-header {
     background-color: var(--color-background-nav-mobile-header);

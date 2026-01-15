@@ -31,7 +31,7 @@
   width: unset;
 }
 
-@media only screen and (min-width: $width-max-mobile) {
+@media only screen and (min-width: $breakpoint-nav) {
   // Need to use display: none here to make sure mobile nav-toggle is visually hidden on desktop
   .nav-toggle {
     display: none;
@@ -333,7 +333,7 @@
     transform: translateY(0%) rotate(90deg);
   }
 
-  @media only screen and (max-width: $width-max-mobile) {
+  @media only screen and (max-width: $breakpoint-nav) {
     ul li:focus > ul,
     ul li:hover > ul {
       display: block;

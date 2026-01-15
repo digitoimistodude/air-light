@@ -5,7 +5,7 @@
 @use 'nav-mobile';
 
 // Mobile styles
-@media screen and (max-width: ($width-max-mobile - 1px)) {
+@media screen and (max-width: ($breakpoint-nav - 1px)) {
   // Dropdown toggle
   .menu-item-clickable {
     --menu-item-clickable-size: 0.75rem;
