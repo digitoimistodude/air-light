@@ -11,15 +11,15 @@ function calculateBurgerMenuPosition() {
   // Set viewport
   const viewportWidth = document.documentElement.clientWidth || document.body.clientWidth;
 
-  // Get --width-max-mobile from CSS
-  const widthMaxMobile = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile'), 10);
+  // Get --breakpoint-nav from CSS
+  const breakpointNav = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-nav'), 10);
 
   // Get the height of .site-header and #nav-toggle
   // Calculate the top position of the toggle to be exactly in the center vertically
   const siteHeaderHeight = document.querySelector('.site-header').offsetHeight;
 
   // Set navigation position from top if on mobile
-  if (viewportWidth <= widthMaxMobile) {
+  if (viewportWidth <= breakpointNav) {
     document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight}px`;
     document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight}px)`;
 

@@ -10,7 +10,6 @@ node_modules/
 dandelion.yml
 assets/src/sass/navigation/luxbar
 assets/src/sass/navigation/_luxbar.scss
-assets/dist/
 .DS_Store
 html
 w3cErrors/
