@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Remove theme phpcs.xml in newtheme script to use project root config, Ref: DEV-624
+
 ### 9.7.0: 2026-01-09
 
 * Migrate from Gulp to Parcel build system, Ref: DEV-439
