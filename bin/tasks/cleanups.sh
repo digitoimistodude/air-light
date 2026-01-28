@@ -11,6 +11,7 @@ rm -f ${PROJECT_THEME_PATH}/readme.txt
 rm -f ${PROJECT_THEME_PATH}/languages/*
 rm ${PROJECT_THEME_PATH}/README.md
 rm ${PROJECT_THEME_PATH}/LICENSE.md
+rm -f ${PROJECT_THEME_PATH}/phpcs.xml
 
 # Remove demo content leftover files
 rm ${PROJECT_THEME_PATH}/sass/layout/_wordpress.scss
