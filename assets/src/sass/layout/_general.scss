@@ -29,14 +29,6 @@ body:not(.wp-admin) {
   position: relative;
 }
 
-// Block padding exceptions
-// This class is useful when we have multiple blocks stacked with same background-color
-// stylelint-disable-next-line selector-max-class, selector-max-specificity
-.has-unified-padding-if-stacked + .has-unified-padding-if-stacked .container {
-  overflow: visible;
-  padding-top: 0;
-}
-
 // Global link helper
 // This is useful in services -type of areas where the whole block is a link
 // Remember to define aria-label or screen-reader-text for accessibility
@@ -113,49 +105,4 @@ body:not(.wp-admin) {
     border-color: var(--color-link-edit-border-hover);
     color: var(--color-link-edit-text-hover);
   }
-}
-
-// Hide/show helpers
-// stylelint-disable-next-line a11y/no-display-none
-.hide-on-desktop {
-  @media (min-width: $breakpoint-mobile) {
-    // Forced to use important here, because makes no sense to write too specific selectors here
-    // stylelint-disable-next-line declaration-no-important
-    display: none !important;
-  }
-}
-
-// Forced to use important here, because makes no sense to write too specific selectors here
-// stylelint-disable-next-line a11y/no-display-none
-.hide-on-mobile {
-  @media (max-width: $breakpoint-mobile) {
-    // stylelint-disable-next-line declaration-no-important
-    display: none !important;
-  }
-}
-
-// Only function of these is to force hide content based on the view
-// Forced to use important here, because makes no sense to write too specific selectors here
-// stylelint-disable-next-line a11y/no-display-none
-.hide-on-mobile-nav-view {
-  @media (max-width: $breakpoint-nav) {
-    // stylelint-disable-next-line declaration-no-important
-    display: none !important;
-  }
-}
-
-// Forced to use important here, because makes no sense to write too specific selectors here
-// stylelint-disable-next-line a11y/no-display-none
-.hide-on-desktop-nav-view {
-  @media (min-width: $breakpoint-nav) {
-    // stylelint-disable-next-line declaration-no-important
-    display: none !important;
-  }
-}
-
-// Forced to use important here, because makes no sense to write too specific selectors here
-// stylelint-disable-next-line a11y/no-display-none
-.hide-completely {
-  // stylelint-disable-next-line declaration-no-important
-  display: none !important;
 }
