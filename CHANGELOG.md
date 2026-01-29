@@ -1,4 +1,4 @@
-### [Unreleased]
+### 10.0.0rc: 2026-01-29
 
 * Remove theme phpcs.xml in newtheme script to use project root config, Ref: DEV-624
 * Delete maybe_show_error_block function, Ref: DEV-226
