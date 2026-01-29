@@ -6,6 +6,8 @@
 // Core/media-text block variation styles
 .wp-block-media-text {
   gap: var(--spacing-block-gap, 2rem);
+  padding-left: var(--spacing-container-padding-inline);
+  padding-right: var(--spacing-container-padding-inline);
 
   // Grey placeholder for empty media area
   .wp-block-media-text__media {
@@ -34,6 +36,10 @@
   }
 
   // Button styles
+  .wp-block-button {
+    text-align: left; // Override WordPress default center alignment
+  }
+
   .wp-block-button__link {
     @include button();
   }
