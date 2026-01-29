@@ -8,16 +8,11 @@
   --color-white: #fff;
 
   // Main element colors
-  --color-accent: #0049d1;
   --color-heading: var(--color-black);
   --color-main: var(--color-black);
-  --color-paragraph: #545773;
+  --color-paragraph: var(--color-black);
 
-  // Modern link
-  --color-link-text: var(--color-accent);
+  // Links
+  --color-link-text: var(--color-black);
   --color-link-text-hover: var(--color-black);
-
-  // Element states
-  --color-error: #cc2e2e;
-  --color-success: #21aa14;
 }

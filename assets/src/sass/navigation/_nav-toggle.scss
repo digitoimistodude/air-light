@@ -79,7 +79,7 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   align-items: center;
   background-color: transparent;
   border: 0;
-  border-radius: 3px;
+  border-radius: 0;
   cursor: pointer;
   display: flex;
   font-weight: var(--typography-weight-semibold);

@@ -1,11 +1,12 @@
 // The one and only anchor link that brings user back to top
 .top {
-  --color-background-top: #f5f5f5;
-  --color-background-top-hover: #f0f0f0;
+  --color-background-top: var(--color-black);
+  --color-background-top-hover: var(--color-white);
   background-color: var(--color-background-top);
-  border-radius: 2px;
+  border: 1px solid var(--color-black);
+  border-radius: 0;
   bottom: var(--spacing-container-padding-inline);
-  color: var(--color-black);
+  color: var(--color-white);
   cursor: pointer;
   font-size: var(--typography-size-16);
   height: 1.875rem;
