@@ -23,6 +23,7 @@
 - Change media-text block title to Media ja teksti / Media & Text, Ref: DEV-722
 - Use airwptheme.com placeholder image for media-text block, Ref: DEV-722
 - Apply air-light button styles to media-text block buttons, Ref: DEV-722
+- Fix editor post title showing serif font by adding fontFamily to theme.json, Ref: DEV-720
 
 ### 9.7.0: 2026-01-09
 
