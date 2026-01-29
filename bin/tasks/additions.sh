@@ -16,9 +16,7 @@ echo "# ${PROJECT_NAME}
 
 This project is hand made for customer by Dude.
 
-------8<----------<br>
-**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, \`git blame\` is in place ;)<br>
-------8<----------
+**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, \`git blame\` is in place ;)
 
 ## Stack
 

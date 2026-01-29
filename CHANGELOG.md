@@ -1,6 +1,8 @@
 ### [Unreleased]
 
 * Remove theme phpcs.xml in newtheme script to use project root config, Ref: DEV-624
+* Delete maybe_show_error_block function, Ref: DEV-226
+* Enable field validation for ACF blocks, Ref: DEV-372
 
 ### 9.7.0: 2026-01-09
 
