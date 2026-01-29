@@ -1,5 +1,9 @@
 ### 10.0.0rc: 2026-01-29
 
+* Update README badges to modern style with for-the-badge format, Ref: DEV-720
+* Remove default form styles to clean up, will use Gravity Forms default Orbit and re-style in the future, Ref: DEV-721
+* Simplify styles to minimal black and white design with square corners, Ref: DEV-718
+* Fix submenu current item visibility with white color and underline, Ref: DEV-718
 * Remove theme phpcs.xml in newtheme script to use project root config, Ref: DEV-624
 * Delete maybe_show_error_block function, Ref: DEV-226
 * Enable field validation for ACF blocks, Ref: DEV-372
