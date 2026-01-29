@@ -1,3 +1,5 @@
+// WordPress uses custom properties with double dashes from theme.json that don't match kebab-case
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
 
 // Alignments

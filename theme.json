@@ -6,7 +6,7 @@
     "useRootPaddingAwareAlignments": true,
     "layout": {
       "contentSize": "800px",
-      "wideSize": "1200px"
+      "wideSize": "1440px"
     },
     "spacing": {
       "units": ["px", "rem", "%", "vw"],

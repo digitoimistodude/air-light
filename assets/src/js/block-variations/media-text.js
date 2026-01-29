@@ -32,14 +32,17 @@ const mediaTextVariation = {
         'core/heading',
         {
           level: 2,
-          content: __('Add a descriptive heading for your content here', 'air-light'),
+          content: __(
+            'Add a descriptive heading for your content here',
+            'air-light'
+          ),
         },
       ],
       [
         'core/paragraph',
         {
           content: __(
-            'Write a paragraph here that tells more about the topic and helps the reader understand what this section is about. You can use multiple paragraphs if needed.',
+            'This is the media-text "Text part". You can write a paragraph here that tells more about the topic and helps the reader understand what this section is about. You can use multiple paragraphs if needed.',
             'air-light'
           ),
         },

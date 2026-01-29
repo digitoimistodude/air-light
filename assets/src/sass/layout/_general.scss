@@ -17,7 +17,6 @@ body:not(.wp-admin) {
   -webkit-font-smoothing: antialiased;
   font-weight: var(--typography-weight-paragraph);
   line-height: var(--typography-paragraph-line-height);
-  // stylelint-disable-next-line value-keyword-case
   text-rendering: geometricPrecision;
 }
 

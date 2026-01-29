@@ -93,7 +93,6 @@
   }
 
   .menu-items {
-    // stylelint-disable-next-line
     margin: 16px 0 0;
   }
 
@@ -133,7 +132,6 @@
   }
 
   .sub-menu .sub-menu a {
-    // stylelint-disable-next-line max-line-length
     padding-left: calc(
       var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu) +
         var(--margin-left-sub-menu)
@@ -166,8 +164,9 @@
     padding-bottom: var(--padding-sub-menu-vertical-mobile);
     padding-left: var(--padding-sub-menu-horizontal-mobile);
     padding-right: calc(
-      var(--padding-sub-menu-horizontal-mobile) -
-        calc(var(--dropdown-toggle-size) / 2)
+      var(--padding-sub-menu-horizontal-mobile) - calc(
+          var(--dropdown-toggle-size) / 2
+        )
     );
     padding-top: var(--padding-sub-menu-vertical-mobile);
     position: absolute;
@@ -245,7 +244,6 @@
 // This offsets the menu position in mobile viewports for logged in users
 @media screen and (max-width: 782px) {
   .logged-in.admin-bar .menu-items-wrapper {
-    // stylelint-disable-next-line rem-over-px/rem-over-px
     margin-top: 46px;
   }
 }

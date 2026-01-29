@@ -13,7 +13,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-weight: var(--typography-weight-paragraph);
   line-height: var(--typography-paragraph-line-height);
-  // stylelint-disable-next-line value-keyword-case
   text-rendering: geometricPrecision;
 }
 
@@ -98,8 +97,8 @@ p:last-child {
 
 // Enhance styles for blockquote and lists added via wysiwyg
 .wysiwyg li {
-  margin-bottom: .6rem;
-  margin-top: .6rem;
+  margin-bottom: 0.6rem;
+  margin-top: 0.6rem;
 }
 
 .wysiwyg li:first-child {
@@ -113,7 +112,7 @@ p:last-child {
 blockquote.wysiwyg {
   border-left: 2px solid var(--color-main);
   margin: 2.9rem 1rem;
-  padding: .5rem 0 .5rem 1.5rem;
+  padding: 0.5rem 0 0.5rem 1.5rem;
 }
 
 blockquote.wysiwyg > *:first-child {
@@ -123,5 +122,3 @@ blockquote.wysiwyg > *:first-child {
 blockquote.wysiwyg > *:last-child {
   margin-bottom: 0;
 }
-
-

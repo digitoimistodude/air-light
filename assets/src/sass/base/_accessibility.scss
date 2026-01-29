@@ -1,5 +1,6 @@
 @use '../variables/breakpoints' as *;
 
+// stylelint-disable declaration-no-important
 // A hidden screen reader texts for readers, focus elements for
 // vision impaired and other useful a11y CSS hacks.
 
@@ -18,7 +19,6 @@
   width: 1px;
 
   // Many screen reader and browser combinations announce broken words as they would appear visually.
-  // stylelint-disable-next-line declaration-no-important, max-line-length
   word-wrap: normal !important;
 
   // Focused on mouse (it never can be focused via mouse, because it's already invisible)
@@ -30,7 +30,7 @@
   &:focus-visible {
     background-color: var(--color-white);
     border-radius: 0;
-    box-shadow: 0 0 2px 2px rgb(22 22 22 / .6);
+    box-shadow: 0 0 2px 2px rgb(22 22 22 / 0.6);
     clip: auto;
     clip-path: none;
     display: block;
@@ -75,7 +75,7 @@ div[tabindex]:focus {
 // @link https://codepen.io/argyleink/pen/JjEzeLp
 @media (prefers-reduced-motion: no-preference) {
   *:focus {
-    transition: outline-offset .25s ease;
+    transition: outline-offset 0.25s ease;
   }
 }
 

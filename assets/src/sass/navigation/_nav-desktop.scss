@@ -1,6 +1,6 @@
 @use '../variables' as *;
 
-// stylelint-disable a11y/no-display-none, plugin/file-max-lines
+// stylelint-disable a11y/no-display-none, plugin/file-max-lines, selector-max-specificity, selector-max-class
 .site-header ul {
   // Affecting to both main and sub-levels
   --color-current: var(--color-black);
@@ -332,7 +332,6 @@
   }
 
   // Smooth animation
-  // stylelint-disable-next-line selector-max-specificity, selector-max-class
   .menu-item.menu-item-has-children
     .menu-item.menu-item-has-children.hover-intent
     > .dropdown-toggle

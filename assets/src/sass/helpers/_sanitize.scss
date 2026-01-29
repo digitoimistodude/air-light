@@ -1,4 +1,4 @@
-// stylelint-disable a11y/display-none, declaration-no-important, plugin/file-max-lines
+// stylelint-disable
 // Custom version of sanitized.css.
 
 /**
@@ -57,7 +57,6 @@
    */
 
 :where(hr) {
-  // stylelint-disable-next-line
   color: inherit; /* 1 */
   height: 0; /* 2 */
 }
@@ -78,7 +77,6 @@
    */
 
 :where(pre) {
-  // stylelint-disable-next-line
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
   overflow: auto; /* 3 */
@@ -136,9 +134,7 @@
    * Correct the text style of placeholders in Chrome, Edge, and Safari.
    */
 
-// stylelint-disable-next-line
 ::placeholder {
-  // stylelint-disable-next-line
   color: inherit;
   opacity: 0.54;
 }
@@ -158,7 +154,6 @@
 
 ::-webkit-file-upload-button {
   appearance: button; /* 1 */
-  // stylelint-disable-next-line
   font: inherit; /* 2 */
 }
 

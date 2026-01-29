@@ -36,12 +36,18 @@
   }
 
   // Button styles
+  .wp-block-buttons {
+    justify-content: flex-start; // Override WordPress default center alignment
+  }
+
   .wp-block-button {
-    text-align: left; // Override WordPress default center alignment
+    text-align: left;
   }
 
   .wp-block-button__link {
     @include button();
+    display: inline-block;
+    text-align: center;
   }
 
   // Wide alignment adjustments
