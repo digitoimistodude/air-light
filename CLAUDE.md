@@ -25,6 +25,7 @@ assets/
 
 ## Commits and code style
 
+- CRITICAL: Always lint before committing changes!
 - 2 space indents
 - Always commit build and asset files
 - One logical change per commit
