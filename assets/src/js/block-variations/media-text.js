@@ -6,14 +6,14 @@
 
 /* global airLightBlockEditor */
 
-// Placeholder image from theme assets (works across all environments)
-const placeholderImage = `${airLightBlockEditor.themeUrl}/assets/dist/img/placeholder.jpg`;
+// Placeholder image
+const placeholderImage = 'https://airwptheme.com/placeholder.png';
 
 const mediaTextVariation = {
   blockName: 'core/media-text',
   variation: {
     name: 'dude-media-text',
-    title: 'Media & Text (Dude)',
+    title: 'Media ja teksti / Media & Text',
     description: 'Media & Text block with Dude defaults',
     isDefault: true,
     attributes: {
@@ -23,23 +23,24 @@ const mediaTextVariation = {
       mediaType: 'image',
       mediaUrl: placeholderImage,
       imageFill: true,
+      mediaWidth: 50,
     },
     innerBlocks: [
       [
         'core/heading',
         {
           level: 2,
-          content: 'Add your heading here',
+          content: 'Lisää tähän kuvaava otsikko sisällöllesi / Add a descriptive heading for your content here',
         },
       ],
       [
         'core/paragraph',
         {
           content:
-            'Add a short description that explains your content. This text will help visitors understand what this section is about.',
+            'Kirjoita tähän kappale, joka kertoo tarkemmin aiheesta ja auttaa lukijaa ymmärtämään, mistä tässä osiossa on kyse. Voit käyttää useampia kappaleita tarvittaessa. / Write a paragraph here that tells more about the topic and helps the reader understand what this section is about. You can use multiple paragraphs if needed.',
         },
       ],
-      ['core/buttons', {}, [['core/button', { text: 'Call to action' }]]],
+      ['core/buttons', {}, [['core/button', { text: 'Toimintakutsu / Call to action' }]]],
     ],
     scope: ['inserter'],
   },

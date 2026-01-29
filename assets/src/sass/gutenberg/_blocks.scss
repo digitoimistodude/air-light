@@ -1,6 +1,6 @@
 // List of all blocks: https://wordpress.org/support/article/blocks/
 // Core block styles: Use WordPress Gutenberg core styles as base
-// Block variations: @use 'block-variations/index';
+@use 'block-variations/index';
 
 // Block variations only meant for article content
 // .editor-styles-wrapper,

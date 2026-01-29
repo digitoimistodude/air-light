@@ -18,6 +18,11 @@
 - Add `useRootPaddingAwareAlignments` and custom gridBase to theme.json, Ref: DEV-245
 - Sync theme.json colors with `_colors.scss` CSS custom properties, Ref: DEV-245
 - Fix stylelint issues in DEV-245 files, convert px to rem and add WordPress custom property exceptions, Ref: DEV-245
+- Enable block-variations SCSS import to apply custom block styles, Ref: DEV-722
+- Update media-text block variation with Finnish and English bilingual placeholder texts, Ref: DEV-722
+- Change media-text block title to Media ja teksti / Media & Text, Ref: DEV-722
+- Use airwptheme.com placeholder image for media-text block, Ref: DEV-722
+- Apply air-light button styles to media-text block buttons, Ref: DEV-722
 
 ### 9.7.0: 2026-01-09
 

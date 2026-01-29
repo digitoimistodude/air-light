@@ -1,4 +1,5 @@
 @use '../../variables' as *;
+@use '../../components/button' as *;
 
 // Core/media-text block variation styles
 .wp-block-media-text {
@@ -28,6 +29,11 @@
     > *:last-child {
       margin-bottom: 0;
     }
+  }
+
+  // Button styles
+  .wp-block-button__link {
+    @include button();
   }
 
   // Wide alignment adjustments
