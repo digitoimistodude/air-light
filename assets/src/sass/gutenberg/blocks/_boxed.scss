@@ -1,0 +1,20 @@
+@use '../../variables' as *;
+
+// Boxed block style
+.wp-block.is-style-boxed,
+.is-style-boxed {
+  border: 2px solid var(--color-paragraph);
+  color: var(--color-paragraph);
+  font-size: var(--typography-size-17);
+  font-style: normal;
+  font-weight: var(--typography-weight-medium);
+  line-height: var(--typography-paragraph-line-height);
+  padding: 1.25rem;
+  width: calc(100% - 2.5rem);
+}
+
+@media (min-width: ($width-max-article + 40px)) {
+  .is-style-boxed {
+    transform: translate(1.25rem, 0);
+  }
+}

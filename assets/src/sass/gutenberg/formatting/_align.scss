@@ -1,0 +1,63 @@
+@use '../../variables' as *;
+
+// Alignments
+.editor-styles-wrapper,
+.article-content {
+  .alignleft > * {
+    float: left;
+  }
+
+  .alignright > * {
+    float: right;
+  }
+
+  .alignleft > img {
+    margin-bottom: var(--spacing-paragraphs-margin-block);
+    margin-right: var(--spacing-container-padding-inline);
+    margin-top: var(--spacing-paragraphs-margin-block);
+
+    + figcaption {
+      margin-top: 0;
+    }
+  }
+
+  .alignright > img {
+    margin-bottom: var(--spacing-paragraphs-margin-block);
+    margin-left: var(--spacing-container-padding-inline);
+    margin-top: var(--spacing-paragraphs-margin-block);
+
+    + figcaption {
+      margin-top: 0;
+    }
+  }
+
+  .alignwide {
+    max-width: $width-wide;
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
+    width: 100%;
+
+    @media (min-width: ($width-wide + 40px)) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .alignfull {
+    max-width: $width-full;
+    padding-left: 0;
+    padding-right: 0;
+    width: $width-full;
+
+    &.wp-block-image img {
+      border-radius: 0;
+    }
+
+    @media (min-width: ($width-max-article + 40px)) {
+      margin-bottom: var(--spacing-content-padding-block);
+      margin-top: var(--spacing-content-padding-block);
+      max-width: $width-full;
+      width: $width-full;
+    }
+  }
+}

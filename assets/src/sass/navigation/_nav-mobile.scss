@@ -1,0 +1,251 @@
+@use '../variables' as *;
+@use '../helpers' as *;
+// stylelint-disable a11y/no-display-none, plugin/file-max-lines, scss/operator-no-newline-after
+// Import nav-toggle
+@use 'nav-toggle';
+
+// CSS variables
+:root {
+  // Site-header and general mobile navigation elements
+  --color-background-nav-mobile-header: var(--color-white);
+  --color-background-nav-mobile-header-active: var(--color-black);
+  --width-navigation: 100vw;
+
+  // Affecting to both main and sub-levels
+  --color-background-menu-items: var(--color-main);
+  --color-background-menu-items-active: var(--color-main);
+  --color-separator-nav-mobile: rgb(255 255 255 / 0.1);
+  --color-current-menu-item: var(--color-white);
+  --color-dropdown-toggle-mobile: var(--color-white);
+
+  // Main level items on mobile
+  --typography-size-main-level-mobile: 0.9375rem;
+  --typography-weight-main-level-mobile: 600;
+  --padding-main-level-vertical-mobile: 0.75rem;
+  --color-main-level-menu-item-hover-focus-mobile: var(--color-white);
+  --color-main-level-menu-item-mobile: var(--color-white);
+
+  // Sub-menu items on mobile
+  --typography-size-sub-menu-mobile: 0.9375rem;
+  --typography-weight-sub-menu-mobile: 600;
+  --margin-left-sub-menu: 0.625rem;
+  --padding-sub-menu-vertical-mobile: 0.5rem;
+  --padding-sub-menu-horizontal-mobile: 1.5625rem;
+  --color-sub-menu-mobile: rgb(255 255 255 / 0.8);
+}
+
+// Navigation core functionality
+@media only screen and (max-width: $width-max-mobile) {
+  // Functionality needs display: none here for visual reasons
+  .menu-items ul {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $width-max-mobile) {
+  ul .sub-menu.toggled-on {
+    display: block;
+  }
+}
+
+// Mobile styles
+@media screen and (max-width: ($width-max-mobile - 1px)) {
+  // Let's ensure site-header loads properly and doesn't leave empty spaces
+  .site-header {
+    background-color: var(--color-background-nav-mobile-header);
+  }
+
+  // Fix burger navigation sometimes not being centered vertically
+  .nav-primary {
+    align-self: center;
+  }
+
+  // General navigation resets for mobile
+  .site-header ul,
+  .site-header li,
+  .site-header a {
+    position: relative;
+  }
+
+  // Disable scroll on html body when menu is opened.
+  .disable-scroll {
+    overflow: hidden;
+  }
+
+  .menu-items-wrapper {
+    backface-visibility: hidden;
+    background-color: var(--color-background-menu-items);
+    // Real height is calculated in JS so this is a fallback
+    height: calc(100vh - 7.2rem);
+    overflow: auto;
+    // Add padding to ensure all nav elements are visible on all devices and browsers for example iOS Safari
+    padding-bottom: 7.5rem;
+    pointer-events: none;
+    // Hide mobile navigation by default while enabling use of animations
+    position: fixed;
+    right: 0;
+    top: 0;
+    transform: translate3d(100%, 0, 0);
+    transition: opacity 180ms ease-in-out;
+    visibility: hidden;
+    width: var(--width-navigation);
+    z-index: 5;
+  }
+
+  .menu-items {
+    // stylelint-disable-next-line
+    margin: 16px 0 0;
+  }
+
+  // Main level mobile navigation links
+  .menu-item a {
+    border-top: 1px solid var(--color-separator-nav-mobile);
+    color: var(--color-main-level-menu-item-mobile);
+    display: block;
+    font-size: var(--typography-size-main-level-mobile);
+    font-weight: var(--typography-weight-main-level-mobile);
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: var(--padding-main-level-vertical-mobile);
+    padding-left: var(--padding-sub-menu-horizontal-mobile);
+    padding-right: var(--padding-sub-menu-horizontal-mobile);
+    padding-top: var(--padding-main-level-vertical-mobile);
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+  }
+
+  // Sub menu items
+  .sub-menu a {
+    color: var(--color-sub-menu-mobile);
+    font-size: var(--typography-size-sub-menu-mobile);
+    font-weight: var(--typography-weight-sub-menu-mobile);
+    padding-bottom: var(--padding-sub-menu-vertical-mobile);
+    padding-left: calc(
+      var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu)
+    );
+    padding-top: var(--padding-sub-menu-vertical-mobile);
+  }
+
+  .sub-menu {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .sub-menu .sub-menu a {
+    // stylelint-disable-next-line max-line-length
+    padding-left: calc(
+      var(--padding-sub-menu-horizontal-mobile) + var(--margin-left-sub-menu) +
+        var(--margin-left-sub-menu)
+    );
+  }
+
+  .menu-item a:hover,
+  .menu-item a:focus {
+    color: var(--color-main-level-menu-item-hover-focus-mobile);
+  }
+
+  // Current menu item color
+  .menu-item.current-menu-parent > a,
+  .menu-item.current-menu-item > a {
+    color: var(--color-current-menu-item);
+  }
+
+  // Dropdown toggle
+  .dropdown-toggle {
+    --dropdown-toggle-size: 0.75rem;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: var(--color-dropdown-toggle-mobile);
+    display: inline-flex;
+    height: 100%;
+    left: auto;
+    margin-top: 0;
+    overflow: hidden;
+    padding-bottom: var(--padding-sub-menu-vertical-mobile);
+    padding-left: var(--padding-sub-menu-horizontal-mobile);
+    padding-right: calc(
+      var(--padding-sub-menu-horizontal-mobile) -
+        calc(var(--dropdown-toggle-size) / 2)
+    );
+    padding-top: var(--padding-sub-menu-vertical-mobile);
+    position: absolute;
+    right: 0;
+    top: 2px;
+    z-index: 100;
+
+    // Make svg not clickable so that it won't interfere with the menu item
+    svg {
+      background-image: url('data:image/svg+xml, %3Csvg xmlns="http://www.w3.org/2000/svg" style="width: var(--dropdown-toggle-size); height: var(--dropdown-toggle-size);" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 1.5v7M1.5 5h7"/%3E%3C/svg%3E%0A');
+      background-size: 100%;
+      height: var(--dropdown-toggle-size);
+      pointer-events: none;
+      position: relative;
+      transform: rotate(0);
+      transition: all 150ms;
+      width: var(--dropdown-toggle-size);
+      z-index: -1;
+
+      // Let's hide the original SVG because we have a custom one here
+      path {
+        display: none;
+      }
+    }
+  }
+
+  .dropdown-toggle.toggled-on {
+    svg {
+      background-image: url('data:image/svg+xml, %3Csvg xmlns="http://www.w3.org/2000/svg" style="width: var(--dropdown-toggle-size); height: var(--dropdown-toggle-size);" width="10" height="10" viewBox="0 0 10 10"%3E%3Cpath fill="none" stroke="%23fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M1.5 5h7"/%3E%3C/svg%3E%0A');
+
+      // Rotate 180 degrees
+      transform: rotate(-180deg);
+    }
+  }
+
+  .dropdown-toggle:hover {
+    cursor: pointer;
+  }
+
+  .dropdown-toggle:focus {
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .sub-menu .dropdown-toggle {
+    color: var(--color-sub-menu-mobile);
+  }
+
+  // Mobile navigation core functionality
+  .js-nav-active {
+    overflow: hidden;
+
+    .menu-items-wrapper {
+      background-color: var(--color-background-menu-items-active);
+      opacity: 1;
+      pointer-events: all;
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+      width: var(--width-navigation);
+    }
+  }
+
+  // .site-main,
+  // .site-footer {
+  //   transition: transform 180ms ease-in-out;
+  // }
+
+  // Push site content and footer to the left
+  // .js-nav-active .site-main,
+  // .js-nav-active .site-footer {
+  //   transform: translate3d(calc(var(--width-navigation) * -1), 0, 0);
+  // }
+}
+
+// This offsets the menu position in mobile viewports for logged in users
+@media screen and (max-width: 782px) {
+  .logged-in.admin-bar .menu-items-wrapper {
+    // stylelint-disable-next-line rem-over-px/rem-over-px
+    margin-top: 46px;
+  }
+}

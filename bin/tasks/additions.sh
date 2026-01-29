@@ -6,18 +6,17 @@ chmod 777 ${PROJECT_PATH}/media
 
 echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
-NEWEST_AIR_VERSION="9.5.1"
-NEWEST_WORDPRESS_VERSION="6.7.0"
-NEWEST_PHP_VERSION="8.3"
+# Extract versions from style.css
+NEWEST_AIR_VERSION=$(grep -m1 "^Version:" ${PROJECT_THEME_PATH}/style.css | sed 's/Version: //')
+NEWEST_WORDPRESS_VERSION=$(grep -m1 "^Tested up to:" ${PROJECT_THEME_PATH}/style.css | sed 's/Tested up to: //')
+NEWEST_PHP_VERSION=$(grep -m1 "^Requires PHP:" ${PROJECT_THEME_PATH}/style.css | sed 's/Requires PHP: //')
 CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
 echo "# ${PROJECT_NAME}
 ![based_on_air_version ${NEWEST_AIR_VERSION}_](https://img.shields.io/badge/based_on_air_version-${NEWEST_AIR_VERSION}_-brightgreen.svg?style=flat-square) ![project_created ${CURRENT_DATE}](https://img.shields.io/badge/project_created-${CURRENT_DATE}-blue.svg?style=flat-square) ![Tested_up_to WordPress_${NEWEST_WORDPRESS_VERSION}](https://img.shields.io/badge/Tested_up_to-WordPress_${NEWEST_WORDPRESS_VERSION}-blue.svg?style=flat-square) ![Compatible_with PHP_${NEWEST_PHP_VERSION}](https://img.shields.io/badge/Compatible_with-PHP_${NEWEST_PHP_VERSION}-green.svg?style=flat-square)
 
 This project is hand made for customer by Dude.
 
-------8<----------<br>
-**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, \`git blame\` is in place ;)<br>
-------8<----------
+**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, \`git blame\` is in place ;)
 
 ## Stack
 
@@ -58,5 +57,5 @@ npm install
 Start development from project root:
 
 \`\`\`
-gulp
+npm run dev
 \`\`\`" > "${PROJECTS_HOME}/${PROJECT_NAME}/README.md"

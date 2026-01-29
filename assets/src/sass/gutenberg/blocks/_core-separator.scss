@@ -1,0 +1,32 @@
+@use '../../variables' as *;
+
+// Core/separator block
+hr,
+.wp-block-separator {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(0 0 0 / 0) 50%,
+    rgb(0 0 0 / 0.3) 50%
+  );
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: 2px 2px;
+  border: 0;
+  height: 0;
+  margin-bottom: calc(var(--spacing-paragraphs-margin-block) * 2);
+  margin-top: calc(var(--spacing-paragraphs-margin-block) * 2);
+  padding-bottom: 0.625rem;
+  padding-top: 0.625rem;
+}
+
+.wp-block-separator.is-style-default {
+  max-width: $width-max-article;
+}
+
+// stylelint-disable-next-line selector-not-notation
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+  margin-bottom: calc(var(--spacing-paragraphs-margin-block) * 2);
+  margin-top: calc(var(--spacing-paragraphs-margin-block) * 2);
+  opacity: 0.4;
+  width: 6.25rem;
+}

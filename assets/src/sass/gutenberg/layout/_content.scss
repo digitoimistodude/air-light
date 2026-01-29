@@ -1,0 +1,31 @@
+@use '../../variables' as *;
+
+// Gutenberg content
+.editor-styles-wrapper,
+.article-content {
+  max-width: 100%;
+  padding-bottom: var(--spacing-content-padding-block);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: var(--spacing-content-padding-block);
+}
+
+// Gutenberg core magic for article content
+.article-content > [class^='wp-block-'],
+.article-content > * {
+  line-height: var(--typography-paragraph-line-height);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $width-max-article;
+
+  @media (max-width: ($width-max-article + 40px)) {
+    padding-left: var(--spacing-container-padding-inline);
+    padding-right: var(--spacing-container-padding-inline);
+
+    &.alignfull {
+      padding-left: var(--spacing-container-padding-inline);
+      padding-right: var(--spacing-container-padding-inline);
+      width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+    }
+  }
+}

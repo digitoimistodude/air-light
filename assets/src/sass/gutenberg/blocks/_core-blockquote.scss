@@ -1,0 +1,65 @@
+@use '../../variables' as *;
+
+// Core/blockquote block
+blockquote + cite,
+blockquote + p > cite {
+  margin-bottom: 2.5rem;
+}
+
+// General blockquote styles
+blockquote {
+  border: 0 none;
+  clear: both;
+  padding-bottom: 1.875rem;
+  position: relative;
+
+  p {
+    color: var(--color-paragraph);
+    font-style: normal;
+    font-weight: var(--typography-weight-semibold);
+    margin-bottom: 0;
+    overflow: visible;
+    position: relative;
+  }
+
+  @media (min-width: $container-ipad) {
+    margin-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.wp-block-quote {
+  border-left: 2px solid var(--color-paragraph);
+  line-height: var(--typography-paragraph-line-height);
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  padding: 2.1875rem 3.75rem;
+  width: calc(100% - 7.5rem);
+
+  > p {
+    color: var(--color-paragraph);
+    line-height: var(--typography-paragraph-line-height);
+  }
+
+  @media (max-width: ($width-max-article + 40px)) {
+    padding: 2.1875rem 1.25rem;
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+  }
+
+  @media (max-width: $container-mobile) {
+    padding: 2.5rem 2.5rem 2.5rem 1.25rem;
+  }
+}
+
+.wp-block-blockquote.alignwide,
+.wp-block-blockquote.alignfull {
+  padding-left: var(--spacing-container-padding-inline);
+  padding-right: var(--spacing-container-padding-inline);
+  width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+}
+
+.wp-block-blockquote blockquote {
+  padding-bottom: 0;
+}

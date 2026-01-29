@@ -25,11 +25,11 @@ else
   echo ' '
 fi
 
-echo "${YELLOW}Running theme gulp styles tasks once...${TXTRESET}"
+echo "${YELLOW}Running theme build tasks once...${TXTRESET}"
 cd ${PROJECT_THEME_PATH}
-gulp devstyles
-gulp prodstyles
+npm run dev:styles
+npm run build:styles
 
-echo "${YELLOW}Running theme gulp scripts task once...${TXTRESET}"
+echo "${YELLOW}Running theme scripts task once...${TXTRESET}"
 cd ${PROJECT_THEME_PATH}
-gulp js
+npm run dev:js

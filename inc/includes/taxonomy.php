@@ -83,6 +83,7 @@ abstract class Taxonomy {
 
 		// Remove post types that in which the taxonomy was not properly
 		// registered from the result array.
+		// phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed -- ARRAY_FILTER_USE_BOTH requires both parameters in callback signature.
 		$registered_object_types = array_filter( $register_result, function( $result, $object_type ) {
 			return ( $result ) ? true : false;
 		}, ARRAY_FILTER_USE_BOTH );

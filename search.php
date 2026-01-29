@@ -53,23 +53,23 @@ get_header(); ?>
       <div class="container">
 
         <?php foreach ( $results as $slug => $post_type ) : ?>
-          <div class="col col-results col-results-<?php echo esc_attr( $slug ) ?>">
+          <div class="col col-results col-results-<?php echo esc_attr( $slug ); ?>">
             <h2>
               <?php echo esc_html( $post_type['object']->labels->name ); ?>&nbsp;
               (<?php echo esc_html( $post_type['count'] ); ?>)
             </h2>
 
             <?php foreach ( $post_type['posts'] as $post ) : ?>
-              <div class="row row-result row-result-<?php echo esc_attr( $slug ) ?>">
+              <div class="row row-result row-result-<?php echo esc_attr( $slug ); ?>">
 
                 <div class="content">
                   <h3>
-                    <a href="<?php echo esc_url( $post['permalink'] ) ?>">
-                      <?php echo esc_html( $post['title'] ) ?>
+                    <a href="<?php echo esc_url( $post['permalink'] ); ?>">
+                      <?php echo esc_html( $post['title'] ); ?>
                     </a>
                   </h3>
 
-                  <p><?php echo wp_kses_post( $post['excerpt'] ) ?></p>
+                  <p><?php echo wp_kses_post( $post['excerpt'] ); ?></p>
 
                 </div>
 
@@ -86,7 +86,8 @@ get_header(); ?>
   <?php
   // "No results" message block
   // phpcs:ignore WordPress.Security.NonceVerification.Recommended
-  if ( ! empty( $_GET['s'] ) && ! have_posts() ) : ?>
+  if ( ! empty( $_GET['s'] ) && ! have_posts() ) :
+  ?>
     <section class="block block-search-results">
       <div class="container">
         <h2><?php echo esc_html( get_default_localization( 'No results found for your search' ) ); ?>.</h2>

@@ -31,7 +31,8 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php while ( have_posts() ) :
-          the_post(); ?>
+          the_post();
+          ?>
           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
             <h2>

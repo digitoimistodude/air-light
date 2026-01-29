@@ -1,0 +1,75 @@
+@use '../../variables' as *;
+// Core/table block
+// Table heading cells
+th {
+  backface-visibility: hidden;
+  background-color: var(--color-paragraph);
+  color: var(--color-white);
+  font-weight: var(--typography-weight-bold);
+  overflow: hidden;
+  text-align: left;
+}
+
+td {
+  color: var(--color-black);
+}
+
+td,
+th,
+.wp-block-table td,
+.wp-block-table th {
+  border: 0;
+  font-family: var(--typography-family-paragraph);
+  font-size: var(--typography-size-14);
+  height: 1.25rem;
+  padding: 0.3125rem 0.9375rem;
+}
+
+tr:nth-child(even) {
+  background-color: var(--color-background-table-cell-even);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--color-background-table-cell-odd);
+}
+
+thead,
+.wp-block-table thead {
+  border: 0;
+
+  th:first-child {
+    border-top-left-radius: 0.5rem;
+  }
+
+  th:last-child {
+    border-top-right-radius: 0.5rem;
+  }
+}
+
+// Defaults
+table {
+  --color-background-table-cell-odd: var(--color-white);
+  --color-background-table-cell-even: #f3f3f3;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wp-block-table {
+  @media (max-width: ( $width-grid-base + 40px)) {
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+  }
+}
+
+.wp-block-table.alignfull {
+  margin-left: var(--spacing-container-padding-inline);
+  margin-right: var(--spacing-container-padding-inline);
+  width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+}
+
+@media (max-width: ( $width-grid-base + 40px)) {
+  .wp-block-table.alignwide {
+    margin-left: var(--spacing-container-padding-inline);
+    margin-right: var(--spacing-container-padding-inline);
+    width: calc(100% - calc(var(--spacing-container-padding-inline) * 2));
+  }
+}

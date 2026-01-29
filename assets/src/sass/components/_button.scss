@@ -1,0 +1,36 @@
+@use '../helpers' as *;
+// stylelint-disable number-max-precision, rem-over-px/rem-over-px
+@mixin button() {
+  appearance: none;
+  background-color: var(--color-button-background);
+  border: var(--border-width-input-field) solid var(--color-button-background);
+  border-radius: var(--border-radius-button);
+  color: var(--color-button);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--typography-family-paragraph);
+  font-size: var(--typography-size-16);
+  font-weight: var(--typography-weight-semibold);
+  line-height: 1.39;
+  margin-bottom: 0;
+  max-width: 230px;
+  overflow: hidden;
+  padding-bottom: calc(14px - calc(var(--border-width-input-field) * 2));
+  padding-left: calc(21px - calc(var(--border-width-input-field) * 2));
+  padding-right: calc(21px - calc(var(--border-width-input-field) * 2));
+  padding-top: calc(14px - calc(var(--border-width-input-field) * 2));
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  white-space: nowrap;
+  width: auto;
+
+  &.focus,
+  &:hover,
+  &:focus {
+    background-color: var(--color-button-background-hover);
+    border-color: var(--color-button-background-hover);
+    color: var(--color-button-hover);
+  }
+}

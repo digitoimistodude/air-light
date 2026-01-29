@@ -9,18 +9,22 @@ jobs:
 
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Read .nvmrc
-      run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+      run: echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_OUTPUT
       id: nvm
 
     - name: Setup node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
-    - name: Install packages and test JS
-      run: |
-        npm i
-        npx eslint -c .eslintrc.js js/src/
+    - name: Install packages
+      run: npm install
+
+    - name: Lint JS
+      run: npm run lint
+
+    - name: Build JS with Parcel
+      run: npm run dev:js
