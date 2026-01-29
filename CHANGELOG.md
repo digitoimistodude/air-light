@@ -27,6 +27,7 @@
 - Restructure SCSS folders, remove gutenberg/ directory and move to cleaner structure with block-variations/ at root, Ref: DEV-719
 - Remove ACF-specific styles from base theme to keep it minimal, Ref: DEV-719
 - Remove outdated ACF block initialization code from editor JS, Ref: DEV-719
+- Use WordPress theme.json wide-size variable instead of custom width variable, Ref: DEV-722
 
 ### 9.7.0: 2026-01-09
 
