@@ -17,6 +17,7 @@
 - Update theme.json with element styles for links, buttons, and headings, Ref: DEV-245
 - Add `useRootPaddingAwareAlignments` and custom gridBase to theme.json, Ref: DEV-245
 - Sync theme.json colors with `_colors.scss` CSS custom properties, Ref: DEV-245
+- Fix stylelint issues in DEV-245 files, convert px to rem and add WordPress custom property exceptions, Ref: DEV-245
 
 ### 9.7.0: 2026-01-09
 
