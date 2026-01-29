@@ -3,7 +3,8 @@
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines
 .site-header ul {
   // Affecting to both main and sub-levels
-  --color-current: var(--color-link-text);
+  --color-current: var(--color-black);
+  --color-current-dropdown: var(--color-white);
   --dropdown-toggle-size: 0.75rem;
 
   // Main level items on desktop
@@ -100,10 +101,20 @@
     color: var(--color-sub-menu);
   }
 
+  .menu-item .sub-menu {
+    --color-current: var(--color-current-dropdown);
+  }
+
   // Current menu item color
   .menu-item.current-menu-parent > a,
   .menu-item.current-menu-item > a {
     color: var(--color-current);
+  }
+
+  // Current menu item in submenu with underline
+  .sub-menu .menu-item.current-menu-item > a {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
   }
 
   // Let's make space for the nav-toggle/arrow
