@@ -105,7 +105,7 @@
 
 // Comment form grid
 .comment-form {
-  @media (min-width: $container-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     display: grid;
     grid-gap: 1em;
     // doiuse-disable
@@ -128,7 +128,7 @@
   overflow: visible;
 
   input {
-    @media (max-width: $container-mobile) {
+    @media (max-width: $breakpoint-mobile) {
       width: 100%;
     }
   }

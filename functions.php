@@ -159,19 +159,9 @@ add_action( 'after_setup_theme', function() {
         'core/table',
         'core/textColumns',
       ],
-      'page' => [],
-      // 'page' => [
-      //   'all-acf-blocks',
-      //   'core/paragraph',
-      // ],
-      // 'post-type' => [
-      //   'acf/content-image',
-      //   'core/paragraph',
-      // ],
-      // 'example' => [
-      //   'all-core-blocks',
-      //   'acf/content-image',
-      // ],
+      'page' => [
+        'core/media-text',
+      ],
     ],
 
     // If you want to use classic editor somewhere, define it here

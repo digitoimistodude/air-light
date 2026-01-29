@@ -1,4 +1,4 @@
-@use '../../variables' as *;
+@use '../variables' as *;
 
 // Alignments
 .editor-styles-wrapper,
@@ -32,32 +32,34 @@
   }
 
   .alignwide {
-    max-width: $width-wide;
+    max-width: var(--wp--style--global--wide-size);
     padding-left: var(--spacing-container-padding-inline);
     padding-right: var(--spacing-container-padding-inline);
     width: 100%;
 
-    @media (min-width: ($width-wide + 40px)) {
+    // 1240px = wide-size (1200px) + 40px
+    @media (min-width: 1240px) {
       padding-left: 0;
       padding-right: 0;
     }
   }
 
   .alignfull {
-    max-width: $width-full;
+    max-width: 100%;
     padding-left: 0;
     padding-right: 0;
-    width: $width-full;
+    width: 100%;
 
     &.wp-block-image img {
       border-radius: 0;
     }
 
-    @media (min-width: ($width-max-article + 40px)) {
+    // 840px = content-size (800px) + 40px
+    @media (min-width: 840px) {
       margin-bottom: var(--spacing-content-padding-block);
       margin-top: var(--spacing-content-padding-block);
-      max-width: $width-full;
-      width: $width-full;
+      max-width: 100%;
+      width: 100%;
     }
   }
 }

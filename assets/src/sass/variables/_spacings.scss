@@ -18,7 +18,7 @@
   --spacing-paragraphs-margin-block: 1.6875rem;
 
   // Mid-sized screens
-  @media (max-width: ($width-grid-base + 150px)) {
+  @media (max-width: ($breakpoint-grid-base + 150px)) {
     --spacing-container-padding-inline: 4rem;
   }
 
@@ -28,27 +28,28 @@
   }
 
   // When navigation transforms to a responsive hamburger menu
-  @media (max-width: $width-max-mobile) {
+  @media (max-width: $breakpoint-nav) {
     --spacing-site-header-padding-block: 1.25rem;
   }
 
-  // iPad
-  @media (max-width: $container-ipad-landscape) {
+  // Tablet landscape
+  @media (max-width: $breakpoint-tablet-landscape) {
     --spacing-grid-gap: 2rem;
   }
 
-  @media (max-width: $container-ipad) {
+  // Tablet
+  @media (max-width: $breakpoint-tablet) {
     --spacing-grid-gap: var(--spacing-container-padding-inline);
     --spacing-container-padding-block: 3.125rem;
   }
 
-  // Between iPad and a mobile phone
+  // Between tablet and mobile
   @media (max-width: 600px) {
     --spacing-content-padding-block: 3.75rem;
   }
 
-  // Vars in mobile
-  @media (max-width: $container-mobile) {
+  // Mobile
+  @media (max-width: $breakpoint-mobile) {
     --spacing-container-padding-block: 2.5rem;
   }
 }

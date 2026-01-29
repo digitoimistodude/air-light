@@ -65,6 +65,10 @@ assets/
 - Naming: SMACSS + DCS (Dude Coding Standards) + WordPress conventions
 - Use `.is-something`, `.has-something`, `.subject-something`
 - Never use BEM double dashes `--` or underscores `__`
+- Always prefer `//` comments in SCSS, never `/* */`
+- Use `// stylelint-disable` at top of file instead of `stylelint-disable-next-line`
+- Always explain why disabling stylelint rules in first comment line
+- Check prettier/stylelint config to enforce `//` comment style
 
 ## JavaScript conventions
 

@@ -6,11 +6,11 @@ function dropdownMenuOnHover(items) {
   items.forEach((li) => {
     // eslint-disable-next-line func-names
     li.addEventListener('mouseover', function () {
-      // Get --width-max-mobile from CSS
-      const widthMaxMobile = getComputedStyle(document.documentElement).getPropertyValue('--width-max-mobile');
+      // Get --breakpoint-nav from CSS
+      const breakpointNav = getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-nav');
 
       // Let's see if we are on mobile viewport
-      const isMobile = window.matchMedia(`(max-width: ${widthMaxMobile})`).matches;
+      const isMobile = window.matchMedia(`(max-width: ${breakpointNav})`).matches;
 
       // If rules don't apply, bail
       if (li.classList.contains('removing-hover') || isMobile) {

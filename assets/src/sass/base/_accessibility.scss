@@ -84,7 +84,7 @@ div[tabindex]:focus {
   margin-left: 0.4375rem;
   margin-right: 2px;
 
-  @media (max-width: $container-mobile) {
+  @media (max-width: $breakpoint-mobile) {
     height: 0.75rem;
     margin-left: 4px;
     transform: translateY(1px);

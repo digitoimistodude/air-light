@@ -1,0 +1,57 @@
+@use '../../variables' as *;
+
+// Core/media-text block variation styles
+.wp-block-media-text {
+  gap: var(--spacing-block-gap, 2rem);
+
+  // Grey placeholder for empty media area
+  .wp-block-media-text__media {
+    background-color: var(--color-placeholder, #f0f0f0);
+    min-height: 18.75rem;
+
+    // When image is present, remove placeholder background
+    &:has(img),
+    &:has(video) {
+      background-color: transparent;
+      min-height: auto;
+    }
+  }
+
+  // Content area spacing
+  .wp-block-media-text__content {
+    padding: var(--spacing-block-padding, 2rem);
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Wide alignment adjustments
+  &.alignwide {
+    margin-inline: auto;
+    max-width: var(--width-wide, 75rem);
+  }
+
+  // Full alignment adjustments
+  &.alignfull {
+    padding-inline: var(--spacing-container-padding-inline);
+  }
+}
+
+// Editor-specific styles
+.editor-styles-wrapper {
+  .wp-block-media-text {
+    .wp-block-media-text__media {
+      // Show placeholder in editor when no media selected
+      &:empty,
+      &:has(.block-editor-media-placeholder) {
+        background-color: var(--color-placeholder, #f0f0f0);
+        min-height: 18.75rem;
+      }
+    }
+  }
+}

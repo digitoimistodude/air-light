@@ -1,3 +1,5 @@
+// WordPress uses custom properties with double dashes from theme.json that don't match kebab-case
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../../variables' as *;
 
 // Gutenberg content
@@ -16,9 +18,10 @@
   line-height: var(--typography-paragraph-line-height);
   margin-left: auto;
   margin-right: auto;
-  max-width: $width-max-article;
+  max-width: var(--wp--style--global--content-size);
 
-  @media (max-width: ($width-max-article + 40px)) {
+  // 840px = content-size (800px) + 40px
+  @media (max-width: 840px) {
     padding-left: var(--spacing-container-padding-inline);
     padding-right: var(--spacing-container-padding-inline);
 

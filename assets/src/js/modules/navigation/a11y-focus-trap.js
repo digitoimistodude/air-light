@@ -8,13 +8,13 @@ function a11yFocusTrap(e) {
   // Define nav-toggle
   const navToggle = document.getElementById('nav-toggle');
 
-  // Get --width-max-mobile from CSS
-  const widthMaxMobile = getComputedStyle(
+  // Get --breakpoint-nav from CSS
+  const breakpointNav = getComputedStyle(
     document.documentElement,
-  ).getPropertyValue('--width-max-mobile');
+  ).getPropertyValue('--breakpoint-nav');
 
   // Let's see if we are on mobile viewport
-  const isMobile = window.matchMedia(`(max-width: ${widthMaxMobile})`).matches;
+  const isMobile = window.matchMedia(`(max-width: ${breakpointNav})`).matches;
 
   // If things are not okay, bail
   if (!container || !navToggle || !isMobile) {

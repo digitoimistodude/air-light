@@ -88,7 +88,7 @@ function use_block_editor_for_post_type( $use_block_editor, $post_type ) {
 } // end use_block_editor_for_post_type
 
 /**
- * Enqueue block editor JavaScript and CSS
+ * Enqueue block editor JavaScript
  */
 function register_block_editor_assets() {
 
@@ -109,16 +109,32 @@ function register_block_editor_assets() {
     'all'
   );
 
-  // Enqueue optional editor only styles
+  // Pass theme data to block editor JS
+  wp_localize_script(
+    'block-editor-js',
+    'airLightBlockEditor',
+    [
+      'themeUrl' => get_template_directory_uri(),
+    ]
+  );
+} // end register_block_editor_assets
+
+/**
+ * Enqueue block editor styles via enqueue_block_assets for iframe compatibility
+ */
+function register_block_editor_styles() {
+  if ( ! is_admin() ) {
+    return;
+  }
+
   wp_enqueue_style(
     'block-editor-styles',
     get_theme_file_uri( get_asset_file( 'gutenberg-editor-styles.css' ) ),
     [],
     filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor-styles.css' ) ) ),
-    'all',
-    true
+    'all'
   );
-} // end register_block_editor_assets
+} // end register_block_editor_styles
 
 // Remove Gutenberg inline "Normalization styles" like .editor-styles-wrapper h1
 // color: inherit;

@@ -1,23 +1,22 @@
 // stylelint-disable rem-over-px/rem-over-px
-// Layout widths
-$width-max-layout: 100%;
-$width-max-article: 800px;
-$width-grid-base: 1440px;
-$width-max-mobile: 1030px;
 
-// Breakpoints for containers
-$container-ipad: 770px;
-$container-ipad-landscape: 1024px;
-$container-mobile: 600px;
-$container-desktop: 1200px;
-$container-small-mobile: 420px;
-$container-tiny-mobile: 354px;
+// For max-width properties, use WordPress CSS variables from theme.json:
+// - var(--wp--style--global--content-size)  = 800px (default) (article width)
+// - var(--wp--style--global--wide-size)     = 1200px (default) (wide blocks)
+// - var(--wp--custom--grid-base)            = 1440px (default) (site container)
 
-// Gutenberg widths
-$width-wide: 1200px;
-$width-full: 100%;
+// SCSS variables below are ONLY for media queries (CSS vars don't work there)
+// Media query breakpoints
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 768px;
+$breakpoint-tablet-landscape: 1024px;
+$breakpoint-desktop: 1200px;
+$breakpoint-grid-base: 1440px;
 
-// CSS variables for JS. Remove this negative 1px value or add 1px if needed depending on when you want to stop the JS from controling the position of the navigation.
+// Navigation breakpoint (when mobile nav kicks in)
+$breakpoint-nav: 1030px;
+
+// CSS variable for JS navigation
 :root {
-  --width-max-mobile: #{$width-max-mobile - 1px};
+  --breakpoint-nav: #{$breakpoint-nav - 1px};
 }
