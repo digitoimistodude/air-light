@@ -41,7 +41,7 @@
   // Wide alignment adjustments
   &.alignwide {
     margin-inline: auto;
-    max-width: var(--wp--style--global--wide-size);
+    max-width: var(--wp--custom--grid-base);
   }
 
   // Full alignment adjustments

@@ -121,6 +121,7 @@ function register_block_editor_assets() {
 
 /**
  * Enqueue block editor styles via enqueue_block_assets for iframe compatibility
+ * Using main global.css for consistent styling between editor and front-end
  */
 function register_block_editor_styles() {
   if ( ! is_admin() ) {
@@ -129,9 +130,9 @@ function register_block_editor_styles() {
 
   wp_enqueue_style(
     'block-editor-styles',
-    get_theme_file_uri( get_asset_file( 'gutenberg-editor-styles.css' ) ),
+    get_theme_file_uri( get_asset_file( 'global.css' ) ),
     [],
-    filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor-styles.css' ) ) ),
+    filemtime( get_theme_file_path( get_asset_file( 'global.css' ) ) ),
     'all'
   );
 } // end register_block_editor_styles

@@ -4,7 +4,9 @@
  * @package air-light
  */
 
-/* global airLightBlockEditor */
+/* global airLightBlockEditor, wp */
+
+const { __ } = wp.i18n;
 
 // Placeholder image
 const placeholderImage = 'https://airwptheme.com/placeholder.png';
@@ -13,8 +15,8 @@ const mediaTextVariation = {
   blockName: 'core/media-text',
   variation: {
     name: 'dude-media-text',
-    title: 'Media ja teksti / Media & Text',
-    description: 'Media & Text block with Dude defaults',
+    title: __('Media & Text', 'air-light'),
+    description: __('Media & Text block with Dude defaults', 'air-light'),
     isDefault: true,
     attributes: {
       align: 'wide',
@@ -30,17 +32,23 @@ const mediaTextVariation = {
         'core/heading',
         {
           level: 2,
-          content: 'Lisää tähän kuvaava otsikko sisällöllesi / Add a descriptive heading for your content here',
+          content: __('Add a descriptive heading for your content here', 'air-light'),
         },
       ],
       [
         'core/paragraph',
         {
-          content:
-            'Kirjoita tähän kappale, joka kertoo tarkemmin aiheesta ja auttaa lukijaa ymmärtämään, mistä tässä osiossa on kyse. Voit käyttää useampia kappaleita tarvittaessa. / Write a paragraph here that tells more about the topic and helps the reader understand what this section is about. You can use multiple paragraphs if needed.',
+          content: __(
+            'Write a paragraph here that tells more about the topic and helps the reader understand what this section is about. You can use multiple paragraphs if needed.',
+            'air-light'
+          ),
         },
       ],
-      ['core/buttons', {}, [['core/button', { text: 'Toimintakutsu / Call to action' }]]],
+      [
+        'core/buttons',
+        {},
+        [['core/button', { text: __('Call to action', 'air-light') }]],
+      ],
     ],
     scope: ['inserter'],
   },

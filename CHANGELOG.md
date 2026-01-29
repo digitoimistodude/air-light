@@ -28,6 +28,9 @@
 - Remove ACF-specific styles from base theme to keep it minimal, Ref: DEV-719
 - Remove outdated ACF block initialization code from editor JS, Ref: DEV-719
 - Use WordPress theme.json wide-size variable instead of custom width variable, Ref: DEV-722
+- Load global.css in block editor instead of separate editor stylesheet for consistent styling, Ref: DEV-720
+- Use base container width for alignwide blocks instead of WordPress wideSize, Ref: DEV-722
+- Add WordPress i18n translations to media-text block variation placeholders, Ref: DEV-722
 
 ### 9.7.0: 2026-01-09
 
