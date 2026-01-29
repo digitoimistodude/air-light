@@ -21,14 +21,12 @@
 @use 'layout/typography';
 @use 'layout/site-header';
 @use 'layout/site-footer';
-@use 'layout/forms';
 @use 'layout/wordpress';
 
 // Global features
 @use 'features/top';
 @use 'features/gallery';
 @use 'features/pagination';
-@use 'features/gravity-forms';
 
 // Views
 @use 'views/front-page';
