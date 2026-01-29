@@ -35,13 +35,13 @@
 @use 'views/single';
 @use 'views/comments';
 
-// Gutenberg layout outside blocks
-@use 'gutenberg/layout/content';
+// Content layout
+@use 'layout/content';
 
-// Gutenberg blocks
-@use 'gutenberg/blocks';
+// Block variations
+@use 'block-variations/media-text';
 
-// Gutenberg formatting
+// Formatting
 @use 'formatting/align';
 @use 'formatting/caption';
 @use 'formatting/img';

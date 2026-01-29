@@ -24,6 +24,9 @@
 - Use airwptheme.com placeholder image for media-text block, Ref: DEV-722
 - Apply air-light button styles to media-text block buttons, Ref: DEV-722
 - Fix editor post title showing serif font by adding fontFamily to theme.json, Ref: DEV-720
+- Restructure SCSS folders, remove gutenberg/ directory and move to cleaner structure with block-variations/ at root, Ref: DEV-719
+- Remove ACF-specific styles from base theme to keep it minimal, Ref: DEV-719
+- Remove outdated ACF block initialization code from editor JS, Ref: DEV-719
 
 ### 9.7.0: 2026-01-09
 
