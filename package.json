@@ -8,7 +8,7 @@
     "@babel/eslint-parser": "^7.28.0",
     "@babel/preset-env": "^7.28.3",
     "@digitoimistodude/code-quality-checks": "^2.1.8",
-    "@digitoimistodude/stylelint-config": "^1.0.1",
+    "@digitoimistodude/stylelint-config": "^1.0.6",
     "@hint/hint-axe": "^4.4.21",
     "@hint/hint-button-type": "^3.0.23",
     "@hint/hint-compat-api": "^4.5.8",

@@ -28,6 +28,8 @@
 * Restructure stylesheets: rename global.scss to front-end.scss, create editor.scss for editor-only styles, Ref: DEV-723
 * Create block-variations/_index.scss for centralized block variation imports, Ref: DEV-723
 * Update @digitoimistodude/code-quality-checks to 2.1.8, Ref: DEV-720
+* Add typography to editor.scss, WordPress auto-scopes to prevent admin leaks, Ref: DEV-723
+* Update @digitoimistodude/stylelint-config to 1.0.6 with front-end.css support, Ref: DEV-720
 
 ### 9.7.0: 2026-01-09
 

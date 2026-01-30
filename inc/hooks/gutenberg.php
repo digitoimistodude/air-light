@@ -120,8 +120,23 @@ function register_block_editor_assets() {
 } // end register_block_editor_assets
 
 /**
- * Register editor styles
- * Loads minimal editor.css with fonts, colors, and block styles
+ * Register editor styles for WordPress block editor (Gutenberg)
+ *
+ * This is the official WordPress way to load styles in the block editor:
+ * 1. add_theme_support('editor-styles') - Enables editor styles feature
+ * 2. add_editor_style() - Loads stylesheet with automatic scoping
+ *
+ * WordPress automatically parses editor.css and wraps all selectors with
+ * .editor-styles-wrapper, preventing styles from leaking into wp-admin.
+ *
+ * Example: body { font-size: 16px; } becomes
+ *          .editor-styles-wrapper body { font-size: 16px; }
+ *
+ * This allows us to include global typography and formatting styles without
+ * affecting the WordPress admin interface.
+ *
+ * @link https://developer.wordpress.org/reference/functions/add_editor_style/
+ * @link https://developer.wordpress.org/block-editor/how-to-guides/themes/theme-support/#editor-styles
  */
 function setup_editor_styles() {
   add_theme_support( 'editor-styles' );
