@@ -1,48 +1,28 @@
 ### 10.0.0rc: 2026-01-30
 
 * Update README badges to modern style with for-the-badge format, Ref: DEV-720
-* Remove default form styles to clean up, will use Gravity Forms default Orbit and re-style in the future, Ref: DEV-721
+* Remove default form styles, will use Gravity Forms Orbit theme, Ref: DEV-721
 * Simplify styles to minimal black and white design with square corners, Ref: DEV-718
 * Fix submenu current item visibility with white color and underline, Ref: DEV-718
 * Remove theme phpcs.xml in newtheme script to use project root config, Ref: DEV-624
 * Delete maybe_show_error_block function, Ref: DEV-226
 * Enable field validation for ACF blocks, Ref: DEV-372
 * Add modular block variations system for customizing core blocks, Ref: DEV-245
-* Add Media & Text (Dude) block variation with placeholder image and default content, Ref: DEV-245
+* Add Media & Text block variation with bilingual placeholders and button styles, Ref: DEV-245, DEV-722
+* Add Hero block variation using core/cover with full-height defaults, Ref: DEV-720
+* Add CTA block variation using core/group with call-to-action defaults, Ref: DEV-720
+* Add Columns block variation using core/columns with 3-column layout, Ref: DEV-720
 * Add `wp_localize_script` to pass theme URL to block editor JS, Ref: DEV-245
-* Remove `_editor.scss` ACF-specific editor styles, Ref: DEV-245
-* Fix block editor styles for iframed editor by using `enqueue_block_assets` hook, Ref: DEV-245
-* Completely remove and deprecate assets/src/sass/gutenberg/blocks/\_core\* styles. Let's use WordPress Gutenberg core styles instead as base, Ref: DEV-245
-* Move formatting to upper level from gutenberg/formatting/ as there are styles that do not belong to Gutenberg, Ref: DEV-245
-* Update theme.json with element styles for links, buttons, and headings, Ref: DEV-245
-* Add `useRootPaddingAwareAlignments` and custom gridBase to theme.json, Ref: DEV-245
-* Sync theme.json colors with `_colors.scss` CSS custom properties, Ref: DEV-245
-* Fix stylelint issues in DEV-245 files, convert px to rem and add WordPress custom property exceptions, Ref: DEV-245
-* Enable block-variations SCSS import to apply custom block styles, Ref: DEV-722
-* Update media-text block variation with Finnish and English bilingual placeholder texts, Ref: DEV-722
-* Change media-text block title to Media ja teksti / Media & Text, Ref: DEV-722
-* Use airwptheme.com placeholder image for media-text block, Ref: DEV-722
-* Apply air-light button styles to media-text block buttons, Ref: DEV-722
-* Fix editor post title showing serif font by adding fontFamily to theme.json, Ref: DEV-720
-* Restructure SCSS folders, remove gutenberg/ directory and move to cleaner structure with block-variations/ at root, Ref: DEV-719
-* Remove ACF-specific styles from base theme to keep it minimal, Ref: DEV-719
-* Remove outdated ACF block initialization code from editor JS, Ref: DEV-719
-* Use WordPress theme.json wide-size  variable instead of custom width variable, Ref: DEV-722
-* Load global.css in block editor instead of separate editor stylesheet for consistent styling, Ref: DEV-720
-* Use base container width for alignwide blocks instead of WordPress wideSize, Ref: DEV-722
-* Add WordPress i18n translations to media-text block variation placeholders, Ref: DEV-722
-* Change theme.json wideSize from 1200px to 1440px to match base container width, Ref: DEV-722
-* Add `!important` to button `white-space: nowrap` to override WordPress editor inline styles, Ref: DEV-722
-* Fix button alignment in media-text block with `justify-content: flex-start`, Ref: DEV-722
-* Add stylelint disable comments for WordPress custom properties to align, caption, and button files, Ref: DEV-720
-* Move all `stylelint-disable-next-line` to top of files as `stylelint-disable`, Ref: DEV-720
-* Update media-text block placeholder text to be more descriptive, Ref: DEV-722
-* Add Hero block variation using core/cover with full-height hero defaults, Ref: DEV-720
-* Add CTA block variation using core/group with call-to-action section defaults, Ref: DEV-720
-* Add Columns block variation using core/columns with 3-column layout defaults, Ref: DEV-720
-* Remove `gutenberg-editor-styles.scss` from build system, deprecated in favor of global.css, Ref: DEV-723
-* Replace `article-content` class with WordPress standard `entry-content` for better theme.json integration, Ref: DEV-723
-* Remove opinionated Gutenberg-specific styles and trust theme.json for content layout, Ref: DEV-723
+* Restructure SCSS folders, remove gutenberg/ directory and move to block-variations/ at root, Ref: DEV-719
+* Remove ACF-specific styles and outdated ACF block initialization code, Ref: DEV-719
+* Update theme.json with element styles, useRootPaddingAwareAlignments, and sync colors with SCSS, Ref: DEV-245
+* Change theme.json wideSize from 1200px to 1440px to match container width, Ref: DEV-722
+* Fix editor post title font by adding fontFamily to theme.json, Ref: DEV-720
+* Remove separate editor stylesheet, use global.css in editor for consistent styling, Ref: DEV-720, DEV-723
+* Replace `article-content` with WordPress standard `entry-content`, Ref: DEV-723
+* Remove opinionated Gutenberg-specific styles and trust theme.json for layout, Ref: DEV-723
+* Fix button alignment and add important declarations for editor inline style overrides, Ref: DEV-722
+* Consolidate stylelint disable comments to top of files with explanations, Ref: DEV-720
 
 ### 9.7.0: 2026-01-09
 
