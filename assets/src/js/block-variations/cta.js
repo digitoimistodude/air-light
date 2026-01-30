@@ -14,6 +14,7 @@ const ctaVariation = {
     name: 'dude-cta',
     title: __('CTA', 'air-light'),
     description: __('Call to action section with heading and buttons', 'air-light'),
+    isDefault: true,
     attributes: {
       align: 'wide',
       layout: { type: 'constrained' },

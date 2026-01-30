@@ -31,7 +31,8 @@
 * Add typography to editor.scss, WordPress auto-scopes to prevent admin leaks, Ref: DEV-723
 * Update @digitoimistodude/stylelint-config to 1.0.6 with front-end.css support, Ref: DEV-720
 * Add adjustable padding options to media-text block with No padding, M padding and L padding styles, Ref: DEV-722
-* Hide media width control from media-text block, ensure images use object-fit cover, Ref: DEV-722
+* Hide media width control from media-text block, ensure images use object-fit cover with aspect-ratio, Ref: DEV-722
+* Enable media-text block variation for pages, Ref: DEV-720
 
 ### 9.7.0: 2026-01-09
 
