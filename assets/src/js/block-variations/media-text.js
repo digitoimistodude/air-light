@@ -1,11 +1,18 @@
 /**
  * Media & Text block variation with Dude defaults
  *
+ * Features:
+ * - Image works as cover (object-fit: cover)
+ * - Media width control hidden
+ * - Adjustable padding (No padding, M padding, L padding)
+ *
  * @package air-light
  */
 
 /* global airLightBlockEditor, wp */
 
+// Internationalization utilities
+// @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
 const { __ } = wp.i18n;
 
 // Placeholder image
@@ -26,6 +33,7 @@ const mediaTextVariation = {
       mediaUrl: placeholderImage,
       imageFill: true,
       mediaWidth: 50,
+      className: 'has-m-padding',
     },
     innerBlocks: [
       [
@@ -56,5 +64,54 @@ const mediaTextVariation = {
     scope: ['inserter'],
   },
 };
+
+// Register block style variations for padding control
+// Uses WordPress registerBlockStyle API to add custom style options
+// @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
+wp.domReady(() => {
+  wp.blocks.registerBlockStyle('core/media-text', {
+    name: 'no-padding',
+    label: __('No padding', 'air-light'),
+  });
+
+  wp.blocks.registerBlockStyle('core/media-text', {
+    name: 'has-m-padding',
+    label: __('M padding', 'air-light'),
+  });
+
+  wp.blocks.registerBlockStyle('core/media-text', {
+    name: 'has-l-padding',
+    label: __('L padding', 'air-light'),
+  });
+});
+
+// Hide media width control by targeting the ToolsPanelItem that contains it
+// WordPress doesn't provide a native way to disable this control in variations,
+// so we inject CSS to hide it from the block inspector.
+//
+// Implementation details from WordPress Gutenberg source code:
+// - The control is a RangeControl component wrapped in a ToolsPanelItem
+// - Located in InspectorControls of the MediaTextEdit component
+// - Label: "Media width" (or "Median leveys" in Finnish)
+//
+// @link https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/media-text/edit.js
+// @link https://developer.wordpress.org/block-editor/reference-guides/components/tools-panel-item/
+// @link https://developer.wordpress.org/block-editor/reference-guides/components/range-control/
+wp.domReady(() => {
+  const style = document.createElement('style');
+  style.id = 'air-light-hide-media-width';
+  style.textContent = `
+    /* Hide the ToolsPanelItem containing the media width RangeControl */
+    /* Target by the grid item that contains a RangeControl as its child */
+    .components-tools-panel-item:has(.components-range-control__wrapper) {
+      display: none !important;
+    }
+    /* Fallback: hide any RangeControl in media-text inspector */
+    .block-editor-block-inspector__card + div .components-range-control__wrapper {
+      display: none !important;
+    }
+  `;
+  document.head.appendChild(style);
+});
 
 export default mediaTextVariation;

@@ -13,16 +13,36 @@
     margin: 0;
   }
 
-  // Grey placeholder for empty media area
+  // Media area with aspect ratio constraint
+  // Using aspect-ratio instead of fixed height for better responsiveness
+  // Images use object-fit: cover to fill the container while maintaining aspect
   .wp-block-media-text__media {
+    aspect-ratio: 4 / 3;
     background-color: var(--color-placeholder, #f0f0f0);
-    min-height: 18.75rem;
+
+    // Ensure images fill container with object-fit cover
+    // This prevents portrait images from expanding the block height
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
 
     // When image is present, remove placeholder background
     &:has(img),
     &:has(video) {
       background-color: transparent;
-      min-height: auto;
+    }
+  }
+
+  // Editor-specific: also target the resizable container
+  .editor-media-container__resizer {
+    aspect-ratio: 4 / 3;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
     }
   }
 
@@ -63,6 +83,22 @@
   // Full alignment adjustments
   &.alignfull {
     padding-inline: var(--spacing-container-padding-inline);
+  }
+
+  // Padding variations (default: M padding)
+  &.is-style-has-m-padding {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
+
+  &.is-style-has-l-padding {
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  &.is-style-no-padding {
+    padding-bottom: 0;
+    padding-top: 0;
   }
 }
 
