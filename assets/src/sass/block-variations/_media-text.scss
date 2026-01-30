@@ -9,6 +9,10 @@
   padding-left: var(--spacing-container-padding-inline);
   padding-right: var(--spacing-container-padding-inline);
 
+  .wp-block-heading {
+    margin: 0;
+  }
+
   // Grey placeholder for empty media area
   .wp-block-media-text__media {
     background-color: var(--color-placeholder, #f0f0f0);
@@ -63,15 +67,11 @@
 }
 
 // Editor-specific styles
-.editor-styles-wrapper {
-  .wp-block-media-text {
-    .wp-block-media-text__media {
-      // Show placeholder in editor when no media selected
-      &:empty,
-      &:has(.block-editor-media-placeholder) {
-        background-color: var(--color-placeholder, #f0f0f0);
-        min-height: 18.75rem;
-      }
-    }
+.editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media {
+  // Show placeholder in editor when no media selected
+  &:empty,
+  &:has(.block-editor-media-placeholder) {
+    background-color: var(--color-placeholder, #f0f0f0);
+    min-height: 18.75rem;
   }
 }
