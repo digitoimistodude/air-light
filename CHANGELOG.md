@@ -24,6 +24,7 @@
 * Fix button alignment and add important declarations for editor inline style overrides, Ref: DEV-722
 * Consolidate stylelint disable comments to top of files with explanations, Ref: DEV-720
 * Fix undefined CSS custom properties in media-text block styles, Ref: DEV-723
+* Remove global.css from editor to prevent style leaks, trust theme.json for editor styling, Ref: DEV-723
 
 ### 9.7.0: 2026-01-09
 

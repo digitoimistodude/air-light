@@ -42,7 +42,7 @@ require get_theme_file_path( 'inc/hooks/gutenberg.php' );
 add_filter( 'allowed_block_types_all', __NAMESPACE__ . '\allowed_block_types', 10, 2 );
 add_filter( 'use_block_editor_for_post_type', __NAMESPACE__ . '\use_block_editor_for_post_type', 10, 2 );
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\register_block_editor_assets' );
-add_action( 'enqueue_block_assets', __NAMESPACE__ . '\register_block_editor_styles' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup_editor_styles' );
 add_filter( 'block_editor_settings_all', __NAMESPACE__ . '\remove_gutenberg_inline_styles', 10, 2 );
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\block_editor_title_input_styles' );
 

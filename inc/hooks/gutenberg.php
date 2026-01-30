@@ -120,22 +120,12 @@ function register_block_editor_assets() {
 } // end register_block_editor_assets
 
 /**
- * Enqueue block editor styles via enqueue_block_assets for iframe compatibility
- * Using main global.css for consistent styling between editor and front-end
+ * Register editor styles support
+ * Trust theme.json and WordPress defaults for editor styling
  */
-function register_block_editor_styles() {
-  if ( ! is_admin() ) {
-    return;
-  }
-
-  wp_enqueue_style(
-    'block-editor-styles',
-    get_theme_file_uri( get_asset_file( 'global.css' ) ),
-    [],
-    filemtime( get_theme_file_path( get_asset_file( 'global.css' ) ) ),
-    'all'
-  );
-} // end register_block_editor_styles
+function setup_editor_styles() {
+  add_theme_support( 'editor-styles' );
+} // end setup_editor_styles
 
 // Remove Gutenberg inline "Normalization styles" like .editor-styles-wrapper h1
 // color: inherit;
