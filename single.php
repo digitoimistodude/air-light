@@ -18,7 +18,7 @@ get_header(); ?>
 <main class="site-main">
 
   <section class="block block-single">
-    <article class="article-content">
+    <article class="entry-content">
 
       <h1><?php the_title(); ?></h1>
 

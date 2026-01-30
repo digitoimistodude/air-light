@@ -1,8 +1,8 @@
 @use '../helpers' as *;
 @use '../components' as *;
 
-.article-content .categories,
-.article-content .tags,
+.entry-content .categories,
+.entry-content .tags,
 .categories,
 .tags {
   display: flex;
@@ -13,7 +13,7 @@
 }
 
 .categories,
-.article-content .categories {
+.entry-content .categories {
   gap: 0.75rem;
 }
 
@@ -34,7 +34,7 @@
   color: var(--color-white);
 }
 
-.article-content .tags,
+.entry-content .tags,
 .tags {
   display: flex;
   flex-wrap: wrap;

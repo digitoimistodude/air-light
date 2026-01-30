@@ -4,7 +4,7 @@
 
 // Gutenberg content
 .editor-styles-wrapper,
-.article-content {
+.entry-content {
   max-width: 100%;
   padding-bottom: var(--spacing-content-padding-block);
   padding-left: 0;
@@ -13,8 +13,8 @@
 }
 
 // Gutenberg core magic for article content
-.article-content > [class^='wp-block-'],
-.article-content > * {
+.entry-content > [class^='wp-block-'],
+.entry-content > * {
   line-height: var(--typography-paragraph-line-height);
   margin-left: auto;
   margin-right: auto;
