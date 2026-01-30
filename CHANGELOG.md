@@ -25,6 +25,8 @@
 * Consolidate stylelint disable comments to top of files with explanations, Ref: DEV-720
 * Fix undefined CSS custom properties in media-text block styles, Ref: DEV-723
 * Remove global.css from editor to prevent style leaks, trust theme.json for editor styling, Ref: DEV-723
+* Restructure stylesheets: rename global.scss to front-end.scss, create editor.scss for editor-only styles, Ref: DEV-723
+* Create block-variations/_index.scss for centralized block variation imports, Ref: DEV-723
 
 ### 9.7.0: 2026-01-09
 

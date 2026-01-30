@@ -4,7 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const entryFiles = [
-  'assets/src/sass/global.scss',
+  'assets/src/sass/front-end.scss',
+  'assets/src/sass/editor.scss',
 ];
 
 let hasError = false;

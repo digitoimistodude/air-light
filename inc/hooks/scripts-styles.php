@@ -23,11 +23,11 @@ function move_jquery_into_footer( $wp_scripts ) {
  */
 function enqueue_theme_scripts() {
 
-  // Enqueue global.css
+  // Enqueue front-end.css
   wp_enqueue_style( 'styles',
-    get_theme_file_uri( get_asset_file( 'global.css' ) ),
+    get_theme_file_uri( get_asset_file( 'front-end.css' ) ),
     [],
-    filemtime( get_theme_file_path( get_asset_file( 'global.css' ) ) )
+    filemtime( get_theme_file_path( get_asset_file( 'front-end.css' ) ) )
   );
 
   // Enqueue jquery and front-end.js

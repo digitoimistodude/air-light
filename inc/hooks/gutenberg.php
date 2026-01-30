@@ -120,11 +120,12 @@ function register_block_editor_assets() {
 } // end register_block_editor_assets
 
 /**
- * Register editor styles support
- * Trust theme.json and WordPress defaults for editor styling
+ * Register editor styles
+ * Loads minimal editor.css with fonts, colors, and block styles
  */
 function setup_editor_styles() {
   add_theme_support( 'editor-styles' );
+  add_editor_style( get_asset_file( 'editor.css' ) );
 } // end setup_editor_styles
 
 // Remove Gutenberg inline "Normalization styles" like .editor-styles-wrapper h1

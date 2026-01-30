@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+// Variables (fonts, colors, spacing, typography)
+@use 'variables';
+
+// Components (only button for block buttons)
+@use 'components/button';
+@use 'components/button-style-ghost';
+
+// Block variations
+@use 'block-variations';
+
+// Formatting (already scoped to .editor-styles-wrapper and .entry-content)
+@use 'formatting/align';
+@use 'formatting/caption';
+@use 'formatting/img';
+@use 'formatting/link';
+@use 'formatting/paragraph';
