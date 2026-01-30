@@ -42,6 +42,7 @@
 * Add Columns block variation using core/columns with 3-column layout defaults, Ref: DEV-720
 * Remove `gutenberg-editor-styles.scss` from build system, deprecated in favor of global.css, Ref: DEV-723
 * Replace `article-content` class with WordPress standard `entry-content` for better theme.json integration, Ref: DEV-723
+* Remove opinionated Gutenberg-specific styles and trust theme.json for content layout, Ref: DEV-723
 
 ### 9.7.0: 2026-01-09
 
