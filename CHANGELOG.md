@@ -23,6 +23,7 @@
 * Remove opinionated Gutenberg-specific styles and trust theme.json for layout, Ref: DEV-723
 * Fix button alignment and add important declarations for editor inline style overrides, Ref: DEV-722
 * Consolidate stylelint disable comments to top of files with explanations, Ref: DEV-720
+* Fix undefined CSS custom properties in media-text block styles, Ref: DEV-723
 
 ### 9.7.0: 2026-01-09
 
