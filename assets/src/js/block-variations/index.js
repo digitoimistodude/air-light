@@ -8,10 +8,16 @@
  */
 
 import mediaTextVariation from './media-text';
+import heroVariation from './hero';
+import ctaVariation from './cta';
+import columnsVariation from './columns';
 
 // Add all block variations here
 const variations = [
   mediaTextVariation,
+  heroVariation,
+  ctaVariation,
+  columnsVariation,
 ];
 
 /**

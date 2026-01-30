@@ -1,4 +1,4 @@
-### 10.0.0rc: 2026-01-29
+### 10.0.0rc: 2026-01-30
 
 * Update README badges to modern style with for-the-badge format, Ref: DEV-720
 * Remove default form styles to clean up, will use Gravity Forms default Orbit and re-style in the future, Ref: DEV-721
@@ -37,6 +37,9 @@
 * Add stylelint disable comments for WordPress custom properties to align, caption, and button files, Ref: DEV-720
 * Move all `stylelint-disable-next-line` to top of files as `stylelint-disable`, Ref: DEV-720
 * Update media-text block placeholder text to be more descriptive, Ref: DEV-722
+* Add Hero block variation using core/cover with full-height hero defaults, Ref: DEV-720
+* Add CTA block variation using core/group with call-to-action section defaults, Ref: DEV-720
+* Add Columns block variation using core/columns with 3-column layout defaults, Ref: DEV-720
 
 ### 9.7.0: 2026-01-09
 
