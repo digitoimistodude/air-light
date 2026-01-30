@@ -5,7 +5,6 @@ const path = require('path');
 
 const entryFiles = [
   'assets/src/sass/global.scss',
-  'assets/src/sass/gutenberg-editor-styles.scss',
 ];
 
 let hasError = false;

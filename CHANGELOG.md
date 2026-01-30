@@ -40,6 +40,7 @@
 * Add Hero block variation using core/cover with full-height hero defaults, Ref: DEV-720
 * Add CTA block variation using core/group with call-to-action section defaults, Ref: DEV-720
 * Add Columns block variation using core/columns with 3-column layout defaults, Ref: DEV-720
+* Remove `gutenberg-editor-styles.scss` from build system, deprecated in favor of global.css, Ref: DEV-723
 
 ### 9.7.0: 2026-01-09
 
