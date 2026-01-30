@@ -12,6 +12,23 @@ wp.blocks.registerBlockStyle('core/paragraph', {
   label: 'Laatikko',
 });
 
+// Register media-text padding styles
+wp.blocks.registerBlockStyle('core/media-text', {
+  name: 'no-padding',
+  label: wp.i18n.__('No padding', 'air-light'),
+});
+
+wp.blocks.registerBlockStyle('core/media-text', {
+  name: 'has-m-padding',
+  label: wp.i18n.__('M padding', 'air-light'),
+  isDefault: true,
+});
+
+wp.blocks.registerBlockStyle('core/media-text', {
+  name: 'has-l-padding',
+  label: wp.i18n.__('L padding', 'air-light'),
+});
+
 // Deregister some unused embed blocks
 wp.domReady(() => {
   wp.blocks.unregisterBlockVariation('core/embed', 'amazon-kindle');

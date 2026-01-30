@@ -65,26 +65,6 @@ const mediaTextVariation = {
   },
 };
 
-// Register block style variations for padding control
-// Uses WordPress registerBlockStyle API to add custom style options
-// @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-styles/
-wp.domReady(() => {
-  wp.blocks.registerBlockStyle('core/media-text', {
-    name: 'no-padding',
-    label: __('No padding', 'air-light'),
-  });
-
-  wp.blocks.registerBlockStyle('core/media-text', {
-    name: 'has-m-padding',
-    label: __('M padding', 'air-light'),
-  });
-
-  wp.blocks.registerBlockStyle('core/media-text', {
-    name: 'has-l-padding',
-    label: __('L padding', 'air-light'),
-  });
-});
-
 // Hide media width control by targeting the ToolsPanelItem that contains it
 // WordPress doesn't provide a native way to disable this control in variations,
 // so we inject CSS to hide it from the block inspector.
