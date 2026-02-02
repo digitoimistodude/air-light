@@ -2,10 +2,6 @@
 /**
  * The template for displaying all single posts
  *
- * @Date:   2019-10-15 12:30:02
- * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2022-09-07 11:57:39
- *
  * @package air-light
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  */
@@ -13,37 +9,62 @@
 namespace Air_Light;
 
 the_post();
-get_header(); ?>
+get_header();
+?>
 
-<main class="site-main">
+<main id="site-content" class="site-main">
 
-  <section class="block block-single">
-    <article class="entry-content">
+  <article <?php post_class(); ?>>
+    <div class="post-inner">
+      <header class="entry-header">
+        <h1 class="entry-title"><?php the_title(); ?></h1>
+      </header>
 
-      <h1><?php the_title(); ?></h1>
+      <div class="entry-content">
+        <?php
+        the_content();
+        wp_link_pages(
+          [
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ),
+            'after'  => '</div>',
+          ]
+        );
+        ?>
+      </div>
 
-      <?php the_content();
-
-      // Required by WordPress Theme Check, feel free to remove as it's rarely used in starter themes
-      wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'air-light' ), 'after' => '</div>' ) );
-
+      <?php
       entry_footer();
 
       if ( get_edit_post_link() ) {
-        // translators: %s: post title.
-        edit_post_link( sprintf( wp_kses( __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ), [ 'span' => [ 'class' => [] ] ] ), get_the_title() ), '<p class="edit-link">', '</p>' );
+        edit_post_link(
+          sprintf(
+            wp_kses(
+              /* translators: %s: post title */
+              __( 'Edit <span class="screen-reader-text">%s</span>', 'air-light' ),
+              [
+                'span' => [
+                  'class' => [],
+                ],
+              ]
+            ),
+            get_the_title()
+          ),
+          '<p class="edit-link">',
+          '</p>'
+        );
       }
 
       the_post_navigation();
 
-  		// If comments are open or we have at least one comment, load up the comment template.
       if ( comments_open() || get_comments_number() ) {
+        echo '<div class="comments-wrapper">';
         comments_template();
+        echo '</div>';
       }
       ?>
 
-    </article>
-  </section>
+    </div>
+  </article>
 
 </main>
 

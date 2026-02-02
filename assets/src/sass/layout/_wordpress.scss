@@ -3,19 +3,23 @@
 // REQUIRED: .bypostauthor css class is needed in your theme css.
 :root {
   --color-border-sticky: #d7e4f2;
-  --color-bypostauthor: rgb(42 45 62 / .5);
+  --color-bypostauthor: rgb(42 45 62 / 0.5);
 }
 
-.sticky {
-  border: 1px dashed var(--color-border-sticky);
-  margin-bottom: 1.25rem;
-  padding: 1.25rem;
+.sticky .post-inner {
+  border: 2px dashed var(--color-border-sticky);
+  margin-bottom: var(--spacing-container-padding-inline);
+  padding: var(--spacing-container-padding-inline);
 }
 
 .comment-list li.bypostauthor,
 .bypostauthor {
   border: 1px dashed var(--color-bypostauthor);
-  padding: 1.25rem;
+  padding: var(--spacing-container-padding-inline);
+}
+
+.blog article:first-of-type {
+  margin-top: var(--spacing-block-padding-m);
 }
 
 // WordPress captions
@@ -24,7 +28,7 @@
 .wp-caption {
   max-width: 100%;
 
-  img[class*="wp-image-"] {
+  img[class*='wp-image-'] {
     display: block;
     margin: 0 auto;
   }

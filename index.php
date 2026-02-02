@@ -21,48 +21,38 @@ get_header(); ?>
 
 <main class="site-main">
 
-  <section class="block block-blog">
-    <div class="container">
+  <?php if ( have_posts() ) : ?>
 
-      <?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) :
+      the_post();
+      ?>
+      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <div class="post-inner">
+          <h2>
+            <a href="<?php echo esc_url( get_the_permalink() ); ?>">
+              <?php the_title(); ?>
+            </a>
+          </h2>
 
-        <?php if ( is_home() && ! is_front_page() ) : ?>
-          <h1 id="content" class="screen-reader-text"><?php single_post_title(); ?></h1>
-        <?php endif; ?>
+          <p>
+            <time datetime="<?php the_time( 'c' ); ?>">
+              <?php echo get_the_date( get_option( 'date_format' ) ); ?>
+            </time>
+          </p>
 
-        <?php while ( have_posts() ) :
-          the_post();
-          ?>
-          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+          <div class="content">
+            <?php
+              the_content();
+              entry_footer();
+            ?>
+          </div>
+        </div>
+      </article>
+    <?php endwhile; ?>
 
-            <h2>
-              <a href="<?php echo esc_url( get_the_permalink() ); ?>">
-                <?php the_title(); ?>
-              </a>
-            </h2>
+    <?php the_posts_pagination(); ?>
 
-            <p>
-              <time datetime="<?php the_time( 'c' ); ?>">
-                <?php echo get_the_date( get_option( 'date_format' ) ); ?>
-              </time>
-            </p>
-
-            <div class="content">
-              <?php
-                the_content();
-                entry_footer();
-              ?>
-            </div>
-
-          </article>
-        <?php endwhile; ?>
-
-        <?php the_posts_pagination(); ?>
-
-      <?php endif; ?>
-
-    </div>
-  </section>
+  <?php endif; ?>
 
 </main>
 

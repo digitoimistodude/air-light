@@ -1,5 +1,6 @@
 ### 10.0.0rc: 2026-02-02
 
+* Simplify single.php based on Twenty Twenty structure with proper content width constraint, Ref: DEV-733
 * Rename gutenberg-editor.js to editor.js and modularize by moving embed disabling to separate module, Ref: DEV-725
 * Move block styles to separate file with PHP server-side registration and scalable array-based approach, Ref: DEV-732, DEV-722
 * Configure media-text block with spacing presets (None, Medium 5rem, Large 8rem), hide typography/text color/gradient/media width controls, add alignwide support and fix responsive styles, Ref: DEV-722
