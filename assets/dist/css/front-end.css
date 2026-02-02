@@ -1693,15 +1693,35 @@ a.page-numbers:focus, a.page-numbers:hover {
   margin-bottom: 0;
 }
 
-.wp-block-media-text .wp-block-buttons {
+.editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media:empty, .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media:has(.block-editor-media-placeholder) {
+  background-color: var(--color-placeholder, #f0f0f0);
+  min-height: 18.75rem;
+}
+
+[class*="wp-block"].is-style-has-m-padding {
+  padding-bottom: var(--spacing-block-padding-m);
+  padding-top: var(--spacing-block-padding-m);
+}
+
+[class*="wp-block"].is-style-has-l-padding {
+  padding-bottom: var(--spacing-block-padding-l);
+  padding-top: var(--spacing-block-padding-l);
+}
+
+[class*="wp-block"].is-style-no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.wp-block-buttons {
   justify-content: flex-start;
 }
 
-.wp-block-media-text .wp-block-button {
+.wp-block-button {
   text-align: left;
 }
 
-.wp-block-media-text .wp-block-button__link {
+.wp-block-button__link {
   appearance: none;
   background-color: var(--color-black);
   border: 1px solid var(--color-black);
@@ -1724,35 +1744,118 @@ a.page-numbers:focus, a.page-numbers:hover {
   white-space: nowrap !important;
 }
 
-.wp-block-media-text .wp-block-button__link.focus, .wp-block-media-text .wp-block-button__link:focus, .wp-block-media-text .wp-block-button__link:hover {
+.wp-block-button__link.focus, .wp-block-button__link:focus, .wp-block-button__link:hover {
   background-color: var(--color-white);
   border-color: var(--color-black);
   color: var(--color-black);
 }
 
-.wp-block-media-text .wp-block-button__link {
+.wp-block-button__link {
   text-align: center;
   display: inline-block;
 }
 
-.editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media:empty, .editor-styles-wrapper .wp-block-media-text .wp-block-media-text__media:has(.block-editor-media-placeholder) {
-  background-color: var(--color-placeholder, #f0f0f0);
-  min-height: 18.75rem;
+.button {
+  appearance: none;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: var(--typography-family-paragraph);
+  font-size: var(--typography-size-16);
+  font-weight: var(--typography-weight-semibold);
+  text-overflow: ellipsis;
+  border-radius: 0;
+  width: auto;
+  max-width: 230px;
+  margin-bottom: 0;
+  padding: 14px 21px;
+  line-height: 1.39;
+  text-decoration: none;
+  transition: all .15s cubic-bezier(.25, .46, .45, .94);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap !important;
 }
 
-[class*="wp-block"].is-style-has-m-padding {
-  padding-bottom: var(--spacing-block-padding-m);
-  padding-top: var(--spacing-block-padding-m);
+.button.focus, .button:focus, .button:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+  color: var(--color-black);
 }
 
-[class*="wp-block"].is-style-has-l-padding {
-  padding-bottom: var(--spacing-block-padding-l);
-  padding-top: var(--spacing-block-padding-l);
+.button-small {
+  appearance: none;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: var(--typography-family-paragraph);
+  font-weight: var(--typography-weight-semibold);
+  text-overflow: ellipsis;
+  border-radius: 0;
+  width: auto;
+  max-width: 230px;
+  margin-bottom: 0;
+  padding: 14px 21px;
+  line-height: 1.39;
+  text-decoration: none;
+  transition: all .15s cubic-bezier(.25, .46, .45, .94);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap !important;
 }
 
-[class*="wp-block"].is-style-no-padding {
-  padding-top: 0;
-  padding-bottom: 0;
+.button-small.focus, .button-small:focus, .button-small:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.button-small {
+  padding: 8px 19px;
+  line-height: 20.9091px;
+}
+
+.button-large, .button-small {
+  font-size: var(--typography-size-16);
+}
+
+.button-large {
+  appearance: none;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: var(--typography-family-paragraph);
+  font-weight: var(--typography-weight-semibold);
+  text-overflow: ellipsis;
+  border-radius: 0;
+  width: auto;
+  max-width: 230px;
+  margin-bottom: 0;
+  padding: 14px 21px;
+  line-height: 1.39;
+  text-decoration: none;
+  transition: all .15s cubic-bezier(.25, .46, .45, .94);
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap !important;
+}
+
+.button-large.focus, .button-large:focus, .button-large:hover {
+  background-color: var(--color-white);
+  border-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.button-large {
+  font-size: var(--typography-size-18);
+  padding: 15px 19px;
+  line-height: 1.66;
 }
 
 .alignwide {

@@ -1,6 +1,5 @@
 // Important needed to override WordPress editor inline styles
 // stylelint-disable number-max-precision, rem-over-px/rem-over-px, declaration-no-important
-
 @use '../helpers' as *;
 
 @mixin button() {
