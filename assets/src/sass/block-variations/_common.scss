@@ -1,0 +1,19 @@
+// Common styles shared between block variations
+// Match all wp-block-*
+[class*='wp-block'] {
+  // Padding variations (default: M padding)
+  &.is-style-has-m-padding {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+  }
+
+  &.is-style-has-l-padding {
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  &.is-style-no-padding {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}

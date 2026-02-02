@@ -26,7 +26,7 @@ const mediaTextVariation = {
     description: __('Media & Text block with Dude defaults', 'air-light'),
     isDefault: true,
     attributes: {
-      align: 'wide',
+      align: 'full',
       mediaPosition: 'left',
       verticalAlignment: 'center',
       mediaType: 'image',
@@ -94,6 +94,11 @@ wp.domReady(() => {
 
     /* Hide resizable box handle on the block itself */
     .wp-block-media-text .components-resizable-box__handle {
+      display: none !important;
+    }
+
+    /* Hide alignment controls for media-text block */
+    .wp-block-media-text.is-selected .block-editor-block-toolbar .block-editor-block-alignment-control {
       display: none !important;
     }
   `;

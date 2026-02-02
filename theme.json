@@ -94,7 +94,8 @@
         "color": {
           "text": false,
           "background": true
-        }
+        },
+        "align": false
       }
     }
   },

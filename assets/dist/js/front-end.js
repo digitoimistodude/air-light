@@ -1,2 +1,2021 @@
-!function(){function e(e){return e&&e.__esModule?e.default:e}function t(e){return void 0===window.air_light_screenReaderText||void 0===window.air_light_screenReaderText[e]?(console.error(`Missing translation for ${e}`),""):window.air_light_screenReaderText[e]}function n(e){let t=[...e.children];if(0===t.length)return"";let n=t.filter(e=>"img"===e.tagName.toLowerCase());if(t.length!==n.length)return"";let o=n.filter(e=>e.alt&&""!==e.alt).map(e=>e.alt);return o.length?o.join(", "):""}"use strict";var o={};o=function(){var e={tolerance:0,duration:800,easing:"easeOutQuart",container:window,callback:function(){}};function t(e,t,n,o){return e/=o,-n*(--e*e*e*e-1)+t}function n(e,t){var n={};return Object.keys(e).forEach(function(t){n[t]=e[t]}),Object.keys(t).forEach(function(e){n[e]=t[e]}),n}function o(e){return e instanceof HTMLElement?e.scrollTop:e.pageYOffset}function r(){var o=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};this.options=n(e,o),this.easeFunctions=n({easeOutQuart:t},r)}return r.prototype.registerTrigger=function(e,t){var o=this;if(e){var r,i,a,l=e.getAttribute("href")||e.getAttribute("data-target"),s=l&&"#"!==l?document.getElementById(l.substring(1)):document.body,d=n(this.options,(r=e,i=this.options,a={},Object.keys(i).forEach(function(e){var t=r.getAttribute("data-mt-".concat(e.replace(/([A-Z])/g,function(e){return"-"+e.toLowerCase()})));t&&(a[e]=isNaN(t)?t:parseInt(t,10))}),a));"function"==typeof t&&(d.callback=t);var c=function(e){e.preventDefault(),o.move(s,d)};return e.addEventListener("click",c,!1),function(){return e.removeEventListener("click",c,!1)}}},r.prototype.move=function(e){var t,r=this,i=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};if(0===e||e){i=n(this.options,i);var a="number"==typeof e?e:e.getBoundingClientRect().top,l=o(i.container),s=null;a-=i.tolerance,window.requestAnimationFrame(function n(d){var c=o(r.options.container);s||(s=d-1);var u=d-s;if(t&&(a>0&&t>c||a<0&&t<c))return i.callback(e);t=c;var g=r.easeFunctions[i.easing](u,l,a,i.duration);i.container.scroll(0,g),u<i.duration?window.requestAnimationFrame(n):(i.container.scroll(0,a+l),i.callback(e))})}},r.prototype.addEaseFunction=function(e,t){this.easeFunctions[e]=t},r}();var r=function(e,t,n){t.forEach(t=>e.addEventListener(t,n))},i=function(){if(!document.getElementById("nav-toggle")||!document.querySelector(".site-header")||!document.getElementById("menu-items-wrapper"))return void console.log("Warning: No nav-toggle or site-header found.");let e=document.documentElement.clientWidth||document.body.clientWidth,t=parseInt(getComputedStyle(document.documentElement).getPropertyValue("--breakpoint-nav"),10),n=document.querySelector(".site-header").offsetHeight;if(e<=t){if(document.getElementById("menu-items-wrapper").style.top=`${n}px`,document.getElementById("menu-items-wrapper").style.height=`calc(100vh - ${n}px)`,document.querySelector(".air-notification")){let e=document.querySelectorAll(".air-notification"),t=0;e.forEach(e=>{t=e.offsetHeight+t}),document.getElementById("menu-items-wrapper").style.height=`calc(100vh - ${n+t}px)`,document.getElementById("menu-items-wrapper").style.top=`${n+t}px`,e.forEach(e=>{let o=e.querySelector("button"),r=e.offsetHeight;o&&o.addEventListener("click",()=>{t-=r,document.getElementById("menu-items-wrapper").style.height=`calc(100vh - ${n+t}px)`,document.getElementById("menu-items-wrapper").style.top=`${n+t}px`})})}}else document.getElementById("menu-items-wrapper").style.top="0",document.getElementById("menu-items-wrapper").style.height="auto"},a=function(e){let t=[],n=document.getElementById("nav"),o=document.getElementById("nav-toggle"),r=getComputedStyle(document.documentElement).getPropertyValue("--breakpoint-nav"),i=window.matchMedia(`(max-width: ${r})`).matches;if(!n||!o||!i)return;let a=(t=[...n.querySelectorAll('a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])')].filter(e=>!e.hasAttribute("disabled")).filter(e=>!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)))[0],l=t[t.length-1];a===e.target&&"Tab"===e.code&&e.shiftKey&&(e.preventDefault(),l.focus()),l!==e.target||"Tab"!==e.code||e.shiftKey||(e.preventDefault(),a.focus())},l=function(){document.querySelectorAll(".dropdown-toggle")?document.querySelectorAll(".dropdown-toggle").forEach(e=>{let t=e.previousElementSibling;if(t){let n=t.offsetHeight;e.style.height=`${n}px`}}):console.log("Warning: No dropdown-toggles found.")},s=function(e){let t=e.getBoundingClientRect(),n={};return n.top=t.top<0,n.left=t.left<0,n.bottom=t.bottom>=(document.documentElement.clientHeight||document.body.clientHeight),n.right=t.right>=(document.documentElement.clientWidth||document.body.clientWidth),n.any=n.top||n.left||n.bottom||n.right,n},d=function(e){e?e.forEach(e=>{let t=e.querySelectorAll(".sub-menu");t.forEach(e=>{void 0!==t&&s(e).right&&e.classList.add("is-out-of-viewport")})}):console.log("Warning: No items for sub-menus found.")},c=function(e){e.forEach(e=>{e.addEventListener("mouseover",function(){let t=getComputedStyle(document.documentElement).getPropertyValue("--breakpoint-nav"),n=window.matchMedia(`(max-width: ${t})`).matches;e.classList.contains("removing-hover")||n||(this.classList.add("hover-intent"),this.classList.add("hovering"),this.parentNode.classList.add("hover-intent"),this.parentNode.classList.add("hovering"),setTimeout(()=>{this.classList.remove("hovering"),this.parentNode.classList.remove("hovering")},500),document.addEventListener("keydown",t=>{!this.classList.contains("removing-hover")&&this.classList.contains("hovering")&&this.parentNode.classList.contains("hovering")&&"Escape"===t.key&&(e.classList.remove("hover-intent"),e.parentNode.classList.remove("hover-intent"),e.parentNode.parentNode.classList.remove("hover-intent"),e.classList.add("removing-hover"),e.parentNode.classList.add("removing-hover"),setTimeout(()=>{this.classList.remove("removing-hover"),this.parentNode.classList.remove("removing-hover")},500))}),setTimeout(()=>{this.classList.remove("removing-hover"),this.parentNode.classList.remove("removing-hover")},500))}),e.addEventListener("mouseleave",function(){setTimeout(()=>{this.classList.remove("hover-intent"),this.parentNode.classList.remove("hover-intent"),this.querySelectorAll(".dropdown-toggle").forEach(e=>{if(e.setAttribute("aria-expanded","false"),e.parentNode.querySelector(".dropdown")){let t=e.parentNode.querySelector(".dropdown").textContent;e.setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${t}`)}})},0),setTimeout(()=>{this.classList.remove("removing-hover"),this.parentNode.classList.remove("removing-hover")},500)})})},u=function(e){e.forEach(e=>{if(!e.querySelector(".dropdown"))return;let t=e.querySelector(".dropdown-toggle"),n=e.querySelector(".dropdown").innerText;t.setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${n}`)})},g=function(e,t){t.forEach(e=>{e.addEventListener("keyup",e=>{let t=e.target;if(("main-menu"===t.parentNode.parentNode.id||t.classList.contains("button-nav")&&"main-menu"===t.parentNode.parentNode.id)&&t.parentNode.previousElementSibling){let e=t.parentNode.previousElementSibling;if(e.classList.remove("toggled-on"),e.classList.remove("hover-intent"),e.querySelector(".sub-menu")){let t=e.querySelector(".sub-menu");t.classList.remove("toggled-on"),t.classList.remove("hover-intent"),e.querySelector(".dropdown-toggle").setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${e.querySelector(".dropdown-item").innerText}`),e.querySelector(".dropdown-toggle").setAttribute("aria-expanded","false"),e.querySelector(".dropdown-toggle").classList.remove("toggled-on")}}}),r(e,["click","keydown","keypress"],e=>{let t=e.target,n=t.parentNode,o=t.parentNode.parentNode.parentNode.querySelector(".sub-menu"),r=t.nextElementSibling,i=t.parentNode.parentNode.parentNode.querySelector(".dropdown-toggle");if(t.classList.remove("removing-hover"),n.parentNode.classList.remove("removing-hover"),"Enter"===e.key||"click"===e.type){if("A"===t.tagName||!t.parentNode.querySelector(".dropdown-item"))return;let e=t.parentNode.querySelector(".dropdown-item").innerText;t.classList.toggle("toggled-on"),"false"===t.getAttribute("aria-expanded")?(t.setAttribute("aria-expanded","true"),t.setAttribute("aria-label",`${air_light_screenReaderText.collapse_for} ${e}`)):(t.setAttribute("aria-expanded","false"),t.setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${e}`)),r&&!r.classList.contains("toggled-on")?(n.classList.add("hover-intent"),r.classList.add("toggled-on")):(n&&n.classList.remove("hover-intent"),r&&r.classList.remove("toggled-on"))}if("Escape"===e.key){if("main-menu"!==t.parentNode.parentNode.id||t.parentNode.classList.contains("toggled-on")||(document.body.classList.remove("js-nav-active"),document.getElementById("nav-toggle").focus()),"main-menu"===t.parentNode.parentNode.id&&!t.parentNode.classList.contains("hover-intent"))return;o.classList.remove("toggled-on"),n.classList.remove("hover-intent"),n.parentNode.parentNode.classList.remove("hover-intent"),i.setAttribute("aria-expanded","false"),i.classList.remove("toggled-on");let e=t.parentNode.querySelector(".dropdown-item").innerText;i.setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${e}`),t.classList.contains("dropdown-toggle")&&(t.setAttribute("aria-expanded","false"),t.setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${e}`)),"main-menu"!==t.parentNode.parentNode.id&&setTimeout(()=>{i.focus()},100)}if("ArrowUp"===e.key||"ArrowDown"===e.key||"ArrowLeft"===e.key||"ArrowRight"===e.key)switch(e.code){case"ArrowUp":if(e.stopPropagation(),e.preventDefault(),t.parentNode.parentNode.previousElementSibling&&t.parentNode.parentNode.previousElementSibling.classList.contains("dropdown-toggle")&&t.parentNode.parentNode.previousElementSibling.focus(),t.classList.contains("dropdown-toggle")&&"true"===t.getAttribute("aria-expanded")){n.classList.remove("hover-intent"),r.classList.remove("toggled-on"),t.setAttribute("aria-expanded","false");let e=t.parentNode.querySelector(".dropdown-item").innerText;t.setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${e}`),i.focus()}if("A"===t.tagName||"BUTTON"===t.tagName){if(!t.parentNode.previousElementSibling)return;let e=t.parentNode.previousElementSibling.querySelector("a"),n=t.parentNode.previousElementSibling.querySelector(".dropdown-toggle");n&&!t.querySelector(".dropdown-toggle")?n.focus():e.focus()}break;case"ArrowDown":if(e.stopPropagation(),e.preventDefault(),t.parentNode.parentNode.nextElementSibling&&t.parentNode.parentNode.nextElementSibling.classList.contains("dropdown-toggle")&&t.parentNode.parentNode.nextElementSibling.focus(),t.classList.contains("dropdown-toggle")&&"true"===t.getAttribute("aria-expanded")&&t.parentNode.querySelector(".sub-menu").querySelector("li:first-child").querySelector("a").focus(),t.classList.contains("dropdown-toggle")&&"false"===t.getAttribute("aria-expanded")&&!t.parentNode.parentNode.classList.contains("sub-menu")){t.click(),t.parentNode.querySelector(".sub-menu").querySelector("li:first-child").querySelector("a").focus();return}if(t.parentNode.parentNode.classList.contains("sub-menu")&&t.parentNode.nextElementSibling.querySelector("a").focus(),("A"===t.tagName||"BUTTON"===t.tagName)&&!t.classList.contains("dropdown-toggle")){if(!t.parentNode.nextElementSibling)return;let e=t.parentNode.nextElementSibling.querySelector("a"),n=t.parentNode.nextElementSibling.querySelector(".dropdown-toggle");t.classList.contains("dropdown-item")&&t.nextElementSibling&&(n=t.nextElementSibling)&&n.focus(),n&&!t.querySelector(".dropdown-toggle")?n.focus():e.focus()}break;case"ArrowLeft":if(e.stopPropagation(),e.preventDefault(),null===t.parentNode.previousElementSibling&&"main-menu"!==t.parentNode.parentNode.id){t.parentNode.parentNode.parentNode.querySelector(".dropdown-toggle").focus(),t.parentNode.parentNode.parentNode.querySelector(".dropdown-toggle").click();return}if(t.parentNode.previousElementSibling&&t.classList.contains("dropdown-toggle")&&"true"===t.getAttribute("aria-expanded")&&"main-menu"!==t.parentNode.parentNode.id&&t.parentNode.previousElementSibling.querySelector("a").focus(),t.classList.contains("dropdown-toggle")&&"false"===t.getAttribute("aria-expanded")&&"main-menu"!==t.parentNode.parentNode.id){n.classList.remove("hover-intent"),r.classList.remove("toggled-on"),t.setAttribute("aria-expanded","false");let e=t.parentNode.querySelector(".dropdown-item").innerText;t.setAttribute("aria-label",`${air_light_screenReaderText.expand_for} ${e}`),i.focus()}if("A"===t.tagName||"BUTTON"===t.tagName){if(t.previousElementSibling&&t.classList.contains("dropdown-toggle")&&"false"===t.getAttribute("aria-expanded"))return void t.previousElementSibling.focus();if(!t.parentNode.previousElementSibling)return;let e=t.parentNode.previousElementSibling.querySelector("a"),n=t.parentNode.previousElementSibling.querySelector(".dropdown-toggle");n?n.focus():e.focus()}break;case"ArrowRight":if(e.stopPropagation(),e.preventDefault(),t.classList.contains("dropdown-toggle")&&"true"===t.getAttribute("aria-expanded")&&"main-menu"!==t.parentNode.parentNode.id&&t.parentNode.querySelector(".sub-menu").querySelector("li:first-child").querySelector("a").focus(),t.nextElementSibling&&(t.nextElementSibling.focus(),t.classList.contains("dropdown-item")))return;if(t.classList.contains("dropdown-toggle")&&"false"===t.getAttribute("aria-expanded")&&"main-menu"!==t.parentNode.parentNode.id)return void t.click();if(t.classList.contains("dropdown-toggle")&&"true"===t.getAttribute("aria-expanded")&&"main-menu"!==t.parentNode.parentNode.id)return void t.parentNode.querySelector(".sub-menu").querySelector("li:first-child").querySelector("a").focus();if("A"===t.tagName||"BUTTON"===t.tagName){if(!t.parentNode.nextElementSibling)return;let e=t.parentNode.nextElementSibling.querySelector("a"),n=t.parentNode.nextElementSibling.querySelector(".dropdown-toggle");n?n.focus():e.focus()}}})})};window.addEventListener("resize",()=>{i(),l(),d(document.querySelectorAll(".menu-item"))}),document.body.classList.remove("no-js"),document.body.classList.add("js"),document.addEventListener("DOMContentLoaded",()=>{let s,m,p,f,v;s=new(e(o))({ease:"easeInQuad"},{easeInQuad:(e,t,n,o)=>n*(e/=o)*e+t,easeOutQuad:(e,t,n,o)=>-n*(e/=o)*(e-2)+t}),Array.from(document.querySelectorAll('a[href*="#"]:not([href="#"]):not(#top)')).forEach(e=>{s.registerTrigger(e);let t=e.hash.substring(1),n=document.getElementById(t);e.addEventListener("click",t=>{if(t.preventDefault(),e.classList.contains("nav-link")||e.classList.contains("dropdown-item")){document.body.classList.remove("js-nav-active");let e=document.documentElement,t=document.getElementById("main-navigation-wrapper"),n=t?.querySelector("ul"),o=document.getElementById("nav-toggle");e&&e.classList.remove("disable-scroll"),t&&t.classList.remove("is-active"),o&&(o.classList.remove("is-active"),o.setAttribute("aria-expanded","false")),n&&n.setAttribute("aria-expanded","false")}n?(s.move(n),window.history.pushState("","",e.hash),setTimeout(()=>{n.setAttribute("tabindex","-1"),n.focus()},500)):window.location.href=e.href})});let h=new(e(o))({duration:300,easing:"easeOutQuart"}),b=document.getElementById("top"),y=document.querySelectorAll('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])');function w(e){window.matchMedia("(prefers-reduced-motion: reduce)").matches?y[0].focus({focusVisible:e}):(h.move(y[0]),y[0].focus({preventScroll:!0,focusVisible:e}))}if(b&&(b.addEventListener("click",e=>{e.preventDefault(),w(!1)}),b.addEventListener("keydown",e=>{e.preventDefault(),w(!0)})),window.addEventListener("scroll",function(){let e=window.pageYOffset,t=document.documentElement.clientHeight;e>t&&b.classList.add("is-visible"),e<t&&b.classList.remove("is-visible")}),m=[window.location.host],void 0!==window.air_light_externalLinkDomains&&(m=m.concat(window.air_light_externalLinkDomains)),[...document.querySelectorAll("a")].filter(e=>(function(e,t){let n;if(!e.length||["#","tel:","mailto:","/"].some(t=>RegExp(`^${t}`,"g").test(e)))return!1;try{n=new URL(e)}catch(t){return console.log(`Invalid URL: ${e}`),!1}return!t.some(e=>n.host===e)})(e.href,m)).forEach(e=>{if(1===e.childElementCount&&"img"===e.children[0].tagName.toLowerCase())return!1;if(!e.classList.contains("no-external-link-label")){let o=e.textContent.trim().length?e.textContent.trim():n(e);if(o&&!e.getAttribute("aria-label")){let n="_blank"===e.target?`${o}: ${t("external_link")}, ${t("target_blank")}`:`${o}: ${t("external_link")}`;e.setAttribute("aria-label",n)}}["no-external-link-indicator","global-link","button"].some(t=>e.classList.contains(t))||(e.insertAdjacentHTML("beforeend",'<svg class="external-link-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 9 9"><path d="M4.499 1.497h4v4m0-4l-7 7" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>'),e.classList.add("is-external-link"))}),[...document.querySelectorAll("a")].forEach(e=>{if(""!==e.textContent.trim()||e.ariaLabel)return;let t=n(e);""!==t&&(e.ariaLabel=t)}),p=document.querySelectorAll("h1, h2, h3, h4, h5, h6")[0],f=document.querySelectorAll(".skip-link")[0],v=new(e(o)),f&&f.addEventListener("click",()=>{p.setAttribute("tabindex","-1"),p.focus(),v.move(p)}),new URLSearchParams(window.location.search).has("s")){let e=document.querySelector('main input[name="s"]');e&&e.focus({preventScroll:!0})}(()=>{let e=document.querySelector(".nav-primary");if(!e)return;let t=e.querySelectorAll(".menu-item"),n=document.querySelectorAll(".menu-item a, .dropdown button, .button-nav");document.getElementById("main-menu")&&(u(t),g(t,n),c(t),d(t))})(),document.getElementById("nav-toggle")?(r(document.getElementById("nav-toggle"),["click","keydown","keypress"],function(e){("click"===e.type||13===e.keyCode)&&(document.body.classList.toggle("js-nav-active"),window.scrollTo(0,0),"false"===document.getElementById("nav-toggle").getAttribute("aria-expanded")?document.getElementById("nav-toggle").setAttribute("aria-expanded","true"):document.getElementById("nav-toggle").setAttribute("aria-expanded","false"),document.getElementById("nav-toggle").getAttribute("aria-label")===air_light_screenReaderText.expand_toggle?document.getElementById("nav-toggle").setAttribute("aria-label",air_light_screenReaderText.collapse_toggle):document.getElementById("nav-toggle").setAttribute("aria-label",air_light_screenReaderText.expand_toggle),l(),[...document.getElementById("nav").querySelectorAll('a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])')].filter(e=>!e.hasAttribute("disabled")).filter(e=>!!(e.offsetWidth||e.offsetHeight||e.getClientRects().length)).forEach(e=>{e.addEventListener("keydown",a)}))}),document.querySelectorAll(".dropdown-toggle").forEach(e=>{r(e,["click","keydown","keypress"],l)}),i()):console.log("Warning: No nav-toggle found."),function(e,t){var n,o,r="string"==typeof e?document.querySelectorAll(e):e,i="js-reframe";"length"in r||(r=[r]);for(var a=0;a<r.length;a+=1){var l=r[a];if(-1!==l.className.split(" ").indexOf(i)||l.style.width.indexOf("%")>-1)return;var s=l.getAttribute("height")||l.offsetHeight,d=l.getAttribute("width")||l.offsetWidth,c=("string"==typeof s?parseInt(s):s)/("string"==typeof d?parseInt(d):d)*100,u=document.createElement("div");u.className=i;var g=u.style;g.position="relative",g.width="100%",g.paddingTop="".concat(c,"%");var m=l.style;m.position="absolute",m.width="100%",m.height="100%",m.left="0",m.top="0",null==(n=l.parentNode)||n.insertBefore(u,l),null==(o=l.parentNode)||o.removeChild(l),u.appendChild(l)}}(".wp-has-aspect-ratio iframe")})}();
-//# sourceMappingURL=front-end.js.map
+// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+
+(function (
+  modules,
+  entry,
+  mainEntry,
+  parcelRequireName,
+  externals,
+  distDir,
+  publicUrl,
+  devServer
+) {
+  /* eslint-disable no-undef */
+  var globalObject =
+    typeof globalThis !== 'undefined'
+      ? globalThis
+      : typeof self !== 'undefined'
+      ? self
+      : typeof window !== 'undefined'
+      ? window
+      : typeof global !== 'undefined'
+      ? global
+      : {};
+  /* eslint-enable no-undef */
+
+  // Save the require from previous bundle to this closure if any
+  var previousRequire =
+    typeof globalObject[parcelRequireName] === 'function' &&
+    globalObject[parcelRequireName];
+
+  var importMap = previousRequire.i || {};
+  var cache = previousRequire.cache || {};
+  // Do not use `require` to prevent Webpack from trying to bundle this call
+  var nodeRequire =
+    typeof module !== 'undefined' &&
+    typeof module.require === 'function' &&
+    module.require.bind(module);
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        if (externals[name]) {
+          return externals[name];
+        }
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire =
+          typeof globalObject[parcelRequireName] === 'function' &&
+          globalObject[parcelRequireName];
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error("Cannot find module '" + name + "'");
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = (cache[name] = new newRequire.Module(name));
+
+      modules[name][0].call(
+        module.exports,
+        localRequire,
+        module,
+        module.exports,
+        globalObject
+      );
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x) {
+      var res = localRequire.resolve(x);
+      if (res === false) {
+        return {};
+      }
+      // Synthesize a module to follow re-exports.
+      if (Array.isArray(res)) {
+        var m = {__esModule: true};
+        res.forEach(function (v) {
+          var key = v[0];
+          var id = v[1];
+          var exp = v[2] || v[0];
+          var x = newRequire(id);
+          if (key === '*') {
+            Object.keys(x).forEach(function (key) {
+              if (
+                key === 'default' ||
+                key === '__esModule' ||
+                Object.prototype.hasOwnProperty.call(m, key)
+              ) {
+                return;
+              }
+
+              Object.defineProperty(m, key, {
+                enumerable: true,
+                get: function () {
+                  return x[key];
+                },
+              });
+            });
+          } else if (exp === '*') {
+            Object.defineProperty(m, key, {
+              enumerable: true,
+              value: x,
+            });
+          } else {
+            Object.defineProperty(m, key, {
+              enumerable: true,
+              get: function () {
+                if (exp === 'default') {
+                  return x.__esModule ? x.default : x;
+                }
+                return x[exp];
+              },
+            });
+          }
+        });
+        return m;
+      }
+      return newRequire(res);
+    }
+
+    function resolve(x) {
+      var id = modules[name][1][x];
+      return id != null ? id : x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.require = nodeRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.distDir = distDir;
+  newRequire.publicUrl = publicUrl;
+  newRequire.devServer = devServer;
+  newRequire.i = importMap;
+  newRequire.register = function (id, exports) {
+    modules[id] = [
+      function (require, module) {
+        module.exports = exports;
+      },
+      {},
+    ];
+  };
+
+  // Only insert newRequire.load when it is actually used.
+  // The code in this file is linted against ES5, so dynamic import is not allowed.
+  // INSERT_LOAD_HERE
+
+  Object.defineProperty(newRequire, 'root', {
+    get: function () {
+      return globalObject[parcelRequireName];
+    },
+  });
+
+  globalObject[parcelRequireName] = newRequire;
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  if (mainEntry) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(mainEntry);
+
+    // CommonJS
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+      module.exports = mainExports;
+
+      // RequireJS
+    } else if (typeof define === 'function' && define.amd) {
+      define(function () {
+        return mainExports;
+      });
+    }
+  }
+})({"eX5PS":[function(require,module,exports,__globalThis) {
+/* eslint-disable max-len, no-param-reassign, no-unused-vars */ /**
+ * Air theme JavaScript.
+ */ // Import modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _reframeJs = require("reframe.js");
+var _reframeJsDefault = parcelHelpers.interopDefault(_reframeJs);
+var _externalLink = require("./modules/external-link");
+var _anchors = require("./modules/anchors");
+var _anchorsDefault = parcelHelpers.interopDefault(_anchors);
+var _top = require("./modules/top");
+var _topDefault = parcelHelpers.interopDefault(_top);
+var _a11YSkipLink = require("./modules/a11y-skip-link");
+var _a11YSkipLinkDefault = parcelHelpers.interopDefault(_a11YSkipLink);
+var _a11YFocusSearchField = require("./modules/a11y-focus-search-field");
+var _a11YFocusSearchFieldDefault = parcelHelpers.interopDefault(_a11YFocusSearchField);
+var _navigation = require("./modules/navigation");
+// Define Javascript is active by changing the body class
+document.body.classList.remove('no-js');
+document.body.classList.add('js');
+document.addEventListener('DOMContentLoaded', ()=>{
+    (0, _anchorsDefault.default)();
+    (0, _topDefault.default)();
+    (0, _externalLink.styleExternalLinks)();
+    (0, _externalLink.initExternalLinkLabels)();
+    (0, _a11YSkipLinkDefault.default)();
+    (0, _a11YFocusSearchFieldDefault.default)();
+    // Init navigation
+    // If you want to enable click based navigation, comment navDesktop() and uncomment navClick()
+    // Remember to enable styles in assets/src/sass/navigation/navigation.scss
+    (0, _navigation.navDesktop)();
+    // navClick();
+    (0, _navigation.navMobile)();
+    // Uncomment if you like to use a sticky navigation
+    // navSticky();
+    // Fit video embeds to container
+    (0, _reframeJsDefault.default)('.wp-has-aspect-ratio iframe');
+});
+
+},{"reframe.js":"bkavh","./modules/external-link":"9J9X5","./modules/anchors":"3Ru5C","./modules/top":"jy8xH","./modules/a11y-skip-link":"dTsEP","./modules/a11y-focus-search-field":"7NBWY","./modules/navigation":"ds5aQ","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"bkavh":[function(require,module,exports,__globalThis) {
+/**
+  reframe.js - Reframe.js: responsive iframes for embedded content
+  @version v4.0.2
+  @link https://github.com/yowainwright/reframe.ts#readme
+  @author Jeff Wainwright <yowainwright@gmail.com> (http://jeffry.in)
+  @license MIT
+**/ /**
+ * REFRAME.TS 🖼
+ * ---
+ * @param target
+ * @param cName
+ * @summary defines the height/width ratio of the targeted <element>
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>reframe);
+function reframe(target, cName) {
+    var _a, _b;
+    var frames = typeof target === 'string' ? document.querySelectorAll(target) : target;
+    var c = cName || 'js-reframe';
+    if (!('length' in frames)) frames = [
+        frames
+    ];
+    for(var i = 0; i < frames.length; i += 1){
+        var frame = frames[i];
+        var hasClass = frame.className.split(' ').indexOf(c) !== -1;
+        if (hasClass || frame.style.width.indexOf('%') > -1) return;
+        // get height width attributes
+        var height = frame.getAttribute('height') || frame.offsetHeight;
+        var width = frame.getAttribute('width') || frame.offsetWidth;
+        var heightNumber = typeof height === 'string' ? parseInt(height) : height;
+        var widthNumber = typeof width === 'string' ? parseInt(width) : width;
+        // general targeted <element> sizes
+        var padding = heightNumber / widthNumber * 100;
+        // created element <wrapper> of general reframed item
+        // => set necessary styles of created element <wrapper>
+        var div = document.createElement('div');
+        div.className = c;
+        var divStyles = div.style;
+        divStyles.position = 'relative';
+        divStyles.width = '100%';
+        divStyles.paddingTop = "".concat(padding, "%");
+        // set necessary styles of targeted <element>
+        var frameStyle = frame.style;
+        frameStyle.position = 'absolute';
+        frameStyle.width = '100%';
+        frameStyle.height = '100%';
+        frameStyle.left = '0';
+        frameStyle.top = '0';
+        // reframe targeted <element>
+        (_a = frame.parentNode) === null || _a === void 0 || _a.insertBefore(div, frame);
+        (_b = frame.parentNode) === null || _b === void 0 || _b.removeChild(frame);
+        div.appendChild(frame);
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"eF9qW":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"9J9X5":[function(require,module,exports,__globalThis) {
+/* eslint-disable no-param-reassign */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+  * Try to get image alt texts from inside a link
+  * to use in aria-label, when only elements inside
+  * of link are images
+  * @param {*} link DOM link element
+  * @returns string
+  */ parcelHelpers.export(exports, "getChildAltText", ()=>getChildAltText);
+parcelHelpers.export(exports, "styleExternalLinks", ()=>styleExternalLinks);
+parcelHelpers.export(exports, "initExternalLinkLabels", ()=>initExternalLinkLabels);
+var _localization = require("./localization");
+var _localizationDefault = parcelHelpers.interopDefault(_localization);
+function isLinkExternal(link, localDomains) {
+    // Empty links are not external
+    if (!link.length) return false;
+    const exceptions = [
+        '#',
+        'tel:',
+        'mailto:',
+        '/'
+    ];
+    // Check if the url starts with some of the exceptions
+    const isException = exceptions.some((exception)=>{
+        const compare = new RegExp(`^${exception}`, 'g');
+        return compare.test(link);
+    });
+    if (isException) return false;
+    let linkUrl;
+    try {
+        linkUrl = new URL(link);
+    } catch (error) {
+        // eslint-disable-next-line no-console
+        console.log(`Invalid URL: ${link}`);
+        return false;
+    }
+    // Check if host is one of the local domains
+    return !localDomains.some((domain)=>linkUrl.host === domain);
+}
+function getChildAltText(link) {
+    const children = [
+        ...link.children
+    ];
+    if (children.length === 0) return '';
+    const childImgs = children.filter((child)=>child.tagName.toLowerCase() === 'img');
+    // If there are other elements than img elements, no need to add aria-label
+    if (children.length !== childImgs.length) return '';
+    // Find alt texts and add to array
+    const altTexts = childImgs.filter((child)=>child.alt && child.alt !== '').map((child)=>child.alt);
+    // If there is no alt texts,
+    if (!altTexts.length) return '';
+    return altTexts.join(', ');
+}
+function styleExternalLinks() {
+    let localDomains = [
+        window.location.host
+    ];
+    if (typeof window.air_light_externalLinkDomains !== 'undefined') localDomains = localDomains.concat(window.air_light_externalLinkDomains);
+    const links = document.querySelectorAll('a');
+    const externalLinks = [
+        ...links
+    ].filter((link)=>isLinkExternal(link.href, localDomains));
+    // eslint-disable-next-line consistent-return
+    externalLinks.forEach((externalLink)=>{
+        // Abort mission if there is only img element inside of link
+        if (externalLink.childElementCount === 1 && externalLink.children[0].tagName.toLowerCase() === 'img') return false;
+        if (!externalLink.classList.contains('no-external-link-label')) {
+            const textContent = externalLink.textContent.trim().length ? externalLink.textContent.trim() : getChildAltText(externalLink);
+            if (textContent && !externalLink.getAttribute('aria-label')) {
+                const ariaLabel = externalLink.target === '_blank' ? `${textContent}: ${(0, _localizationDefault.default)('external_link')}, ${(0, _localizationDefault.default)('target_blank')}` : `${textContent}: ${(0, _localizationDefault.default)('external_link')}`;
+                externalLink.setAttribute('aria-label', ariaLabel);
+            }
+        }
+        // Arrow icon won't be added if one of these classes is defined for the link
+        const classExceptions = [
+            'no-external-link-indicator',
+            'global-link',
+            'button'
+        ];
+        if (!classExceptions.some((className)=>externalLink.classList.contains(className))) {
+            // Add SVG arrow icon
+            externalLink.insertAdjacentHTML('beforeend', '<svg class="external-link-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 9 9"><path d="M4.499 1.497h4v4m0-4l-7 7" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg>');
+            externalLink.classList.add('is-external-link');
+        }
+    });
+}
+function initExternalLinkLabels() {
+    // Add aria-labels to links without text or aria-labels and contain image with alt text
+    const links = [
+        ...document.querySelectorAll('a')
+    ];
+    // eslint-disable-next-line no-unused-vars
+    const linksWithImgChildren = links.forEach((link)=>{
+        // If link already has text content or an aria label no need to add aria-label
+        if (link.textContent.trim() !== '' || link.ariaLabel) return;
+        const ariaLabel = getChildAltText(link);
+        if (ariaLabel !== '') link.ariaLabel = ariaLabel;
+    });
+}
+
+},{"./localization":"eO6L7","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"eO6L7":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>getLocalization);
+function getLocalization(stringKey) {
+    if (typeof window.air_light_screenReaderText === 'undefined' || typeof window.air_light_screenReaderText[stringKey] === 'undefined') {
+        // eslint-disable-next-line no-console
+        console.error(`Missing translation for ${stringKey}`);
+        return '';
+    }
+    return window.air_light_screenReaderText[stringKey];
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"3Ru5C":[function(require,module,exports,__globalThis) {
+/* eslint-disable no-param-reassign, no-undef */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _moveto = require("moveto");
+var _movetoDefault = parcelHelpers.interopDefault(_moveto);
+const initAnchors = ()=>{
+    const easeFunctions = {
+        easeInQuad (t, b, c, d) {
+            t /= d;
+            return c * t * t + b;
+        },
+        easeOutQuad (t, b, c, d) {
+            t /= d;
+            return -c * t * (t - 2) + b;
+        }
+    };
+    const moveTo = new (0, _movetoDefault.default)({
+        ease: 'easeInQuad'
+    }, easeFunctions);
+    let triggers = document.querySelectorAll('a[href*="#"]:not([href="#"]):not(#top)');
+    triggers = Array.from(triggers);
+    triggers.forEach((trigger)=>{
+        moveTo.registerTrigger(trigger);
+        const targetId = trigger.hash.substring(1);
+        const target = document.getElementById(targetId);
+        trigger.addEventListener('click', (event)=>{
+            event.preventDefault(); // Prevent default behavior of anchor links
+            // If the trigger is nav-link, close nav
+            if (trigger.classList.contains('nav-link') || trigger.classList.contains('dropdown-item')) {
+                document.body.classList.remove('js-nav-active');
+                // Additional navigation cleanup
+                const html = document.documentElement;
+                const container = document.getElementById('main-navigation-wrapper');
+                const menu = container?.querySelector('ul');
+                const button = document.getElementById('nav-toggle');
+                if (html) html.classList.remove('disable-scroll');
+                if (container) container.classList.remove('is-active');
+                if (button) {
+                    button.classList.remove('is-active');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+                if (menu) menu.setAttribute('aria-expanded', 'false');
+            }
+            // Check if the target element exists on the current page
+            if (target) {
+                // Scroll to the target element
+                moveTo.move(target);
+                // Update URL history
+                window.history.pushState('', '', trigger.hash);
+                // Focus on the target element after a delay
+                setTimeout(()=>{
+                    target.setAttribute('tabindex', '-1');
+                    target.focus();
+                }, 500);
+            } else // Navigate to the target page
+            window.location.href = trigger.href;
+        });
+    });
+};
+exports.default = initAnchors;
+
+},{"moveto":"5liko","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"5liko":[function(require,module,exports,__globalThis) {
+/*!
+ * MoveTo - A lightweight scroll animation javascript library without any dependency.
+ * Version 1.8.2 (28-06-2019 14:30)
+ * Licensed under MIT
+ * Copyright 2019 Hasan Aydoğdu <hsnaydd@gmail.com>
+ */ "use strict";
+var MoveTo = function() {
+    /**
+   * Defaults
+   * @type {object}
+   */ var defaults = {
+        tolerance: 0,
+        duration: 800,
+        easing: 'easeOutQuart',
+        container: window,
+        callback: function callback() {}
+    };
+    /**
+   * easeOutQuart Easing Function
+   * @param  {number} t - current time
+   * @param  {number} b - start value
+   * @param  {number} c - change in value
+   * @param  {number} d - duration
+   * @return {number} - calculated value
+   */ function easeOutQuart(t, b, c, d) {
+        t /= d;
+        t--;
+        return -c * (t * t * t * t - 1) + b;
+    }
+    /**
+   * Merge two object
+   *
+   * @param  {object} obj1
+   * @param  {object} obj2
+   * @return {object} merged object
+   */ function mergeObject(obj1, obj2) {
+        var obj3 = {};
+        Object.keys(obj1).forEach(function(propertyName) {
+            obj3[propertyName] = obj1[propertyName];
+        });
+        Object.keys(obj2).forEach(function(propertyName) {
+            obj3[propertyName] = obj2[propertyName];
+        });
+        return obj3;
+    }
+    /**
+   * Converts camel case to kebab case
+   * @param  {string} val the value to be converted
+   * @return {string} the converted value
+   */ function kebabCase(val) {
+        return val.replace(/([A-Z])/g, function($1) {
+            return '-' + $1.toLowerCase();
+        });
+    }
+    /**
+   * Count a number of item scrolled top
+   * @param  {Window|HTMLElement} container
+   * @return {number}
+   */ function countScrollTop(container) {
+        if (container instanceof HTMLElement) return container.scrollTop;
+        return container.pageYOffset;
+    }
+    /**
+   * MoveTo Constructor
+   * @param {object} options Options
+   * @param {object} easeFunctions Custom ease functions
+   */ function MoveTo() {
+        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+        var easeFunctions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        this.options = mergeObject(defaults, options);
+        this.easeFunctions = mergeObject({
+            easeOutQuart: easeOutQuart
+        }, easeFunctions);
+    }
+    /**
+   * Register a dom element as trigger
+   * @param  {HTMLElement} dom Dom trigger element
+   * @param  {function} callback Callback function
+   * @return {function|void} unregister function
+   */ MoveTo.prototype.registerTrigger = function(dom, callback) {
+        var _this = this;
+        if (!dom) return;
+        var href = dom.getAttribute('href') || dom.getAttribute('data-target'); // The element to be scrolled
+        var target = href && href !== '#' ? document.getElementById(href.substring(1)) : document.body;
+        var options = mergeObject(this.options, _getOptionsFromTriggerDom(dom, this.options));
+        if (typeof callback === 'function') options.callback = callback;
+        var listener = function listener(e) {
+            e.preventDefault();
+            _this.move(target, options);
+        };
+        dom.addEventListener('click', listener, false);
+        return function() {
+            return dom.removeEventListener('click', listener, false);
+        };
+    };
+    /**
+   * Move
+   * Scrolls to given element by using easeOutQuart function
+   * @param  {HTMLElement|number} target Target element to be scrolled or target position
+   * @param  {object} options Custom options
+   */ MoveTo.prototype.move = function(target) {
+        var _this2 = this;
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        if (target !== 0 && !target) return;
+        options = mergeObject(this.options, options);
+        var distance = typeof target === 'number' ? target : target.getBoundingClientRect().top;
+        var from = countScrollTop(options.container);
+        var startTime = null;
+        var lastYOffset;
+        distance -= options.tolerance; // rAF loop
+        var loop = function loop(currentTime) {
+            var currentYOffset = countScrollTop(_this2.options.container);
+            if (!startTime) // To starts time from 1, we subtracted 1 from current time
+            // If time starts from 1 The first loop will not do anything,
+            // because easing value will be zero
+            startTime = currentTime - 1;
+            var timeElapsed = currentTime - startTime;
+            if (lastYOffset) {
+                if (distance > 0 && lastYOffset > currentYOffset || distance < 0 && lastYOffset < currentYOffset) return options.callback(target);
+            }
+            lastYOffset = currentYOffset;
+            var val = _this2.easeFunctions[options.easing](timeElapsed, from, distance, options.duration);
+            options.container.scroll(0, val);
+            if (timeElapsed < options.duration) window.requestAnimationFrame(loop);
+            else {
+                options.container.scroll(0, distance + from);
+                options.callback(target);
+            }
+        };
+        window.requestAnimationFrame(loop);
+    };
+    /**
+   * Adds custom ease function
+   * @param {string}   name Ease function name
+   * @param {function} fn   Ease function
+   */ MoveTo.prototype.addEaseFunction = function(name, fn) {
+        this.easeFunctions[name] = fn;
+    };
+    /**
+   * Returns options which created from trigger dom element
+   * @param  {HTMLElement} dom Trigger dom element
+   * @param  {object} options The instance's options
+   * @return {object} The options which created from trigger dom element
+   */ function _getOptionsFromTriggerDom(dom, options) {
+        var domOptions = {};
+        Object.keys(options).forEach(function(key) {
+            var value = dom.getAttribute("data-mt-".concat(kebabCase(key)));
+            if (value) domOptions[key] = isNaN(value) ? value : parseInt(value, 10);
+        });
+        return domOptions;
+    }
+    return MoveTo;
+}();
+module.exports = MoveTo;
+
+},{}],"jy8xH":[function(require,module,exports,__globalThis) {
+/* eslint-disable max-len */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _moveto = require("moveto");
+var _movetoDefault = parcelHelpers.interopDefault(_moveto);
+const backToTop = ()=>{
+    // Back to top button
+    const moveToTop = new (0, _movetoDefault.default)({
+        duration: 300,
+        easing: 'easeOutQuart'
+    });
+    const topButton = document.getElementById('top');
+    const focusableElements = document.querySelectorAll('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    function trackScroll() {
+        const scrolled = window.pageYOffset;
+        const scrollAmount = document.documentElement.clientHeight;
+        if (scrolled > scrollAmount) topButton.classList.add('is-visible');
+        if (scrolled < scrollAmount) topButton.classList.remove('is-visible');
+    }
+    function scroll(focusVisible) {
+        // Check if user prefers reduced motion, if so, just scroll to top
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+            focusableElements[0].focus({
+                focusVisible
+            });
+            return;
+        }
+        // Move smoothly to the first focusable element on the page
+        moveToTop.move(focusableElements[0]);
+        // Focus too, if on keyboard
+        focusableElements[0].focus({
+            preventScroll: true,
+            focusVisible
+        });
+    }
+    if (topButton) {
+        topButton.addEventListener('click', (event)=>{
+            // Don't add hash in the end of the url
+            event.preventDefault();
+            // Focus without visibility (as user is not using keyboard)
+            scroll(false);
+        });
+        topButton.addEventListener('keydown', (event)=>{
+            // Don't propagate keydown event to click event
+            event.preventDefault();
+            // Scroll with focus visible
+            scroll(true);
+        });
+    }
+    window.addEventListener('scroll', trackScroll);
+};
+exports.default = backToTop;
+
+},{"moveto":"5liko","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"dTsEP":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _moveto = require("moveto");
+var _movetoDefault = parcelHelpers.interopDefault(_moveto);
+const initA11ySkipLink = ()=>{
+    // Go through all the headings of the page and select the first one
+    const a11ySkipLinkTarget = document.querySelectorAll('h1, h2, h3, h4, h5, h6')[0];
+    const a11ySkipLink = document.querySelectorAll('.skip-link')[0];
+    // Register trigger element
+    // eslint-disable-next-line no-unused-vars, no-restricted-globals
+    const moveTo = new (0, _movetoDefault.default)();
+    // When clicked, move focus to the target element
+    if (a11ySkipLink) a11ySkipLink.addEventListener('click', ()=>{
+        a11ySkipLinkTarget.setAttribute('tabindex', '-1');
+        a11ySkipLinkTarget.focus();
+        moveTo.move(a11ySkipLinkTarget);
+    });
+};
+exports.default = initA11ySkipLink;
+
+},{"moveto":"5liko","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"7NBWY":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const initA11yFocusSearchField = ()=>{
+    const urlSearch = window.location.search;
+    const urlParams = new URLSearchParams(urlSearch);
+    if (urlParams.has('s')) {
+        const searchField = document.querySelector('main input[name="s"]');
+        if (searchField) searchField.focus({
+            preventScroll: true
+        });
+    }
+};
+exports.default = initA11yFocusSearchField;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"ds5aQ":[function(require,module,exports,__globalThis) {
+/**
+ * Navigation.js module
+ * The original, accessible navigation module for Air-light
+ */ // Import functions needed for the navigation module
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// Export different navigation functions
+parcelHelpers.export(exports, "navSticky", ()=>navSticky);
+parcelHelpers.export(exports, "navDesktop", ()=>navDesktop);
+parcelHelpers.export(exports, "navClick", ()=>navClick);
+parcelHelpers.export(exports, "navMobile", ()=>navMobile);
+var _addMultipleEventListeners = require("./navigation/add-multiple-event-listeners");
+var _addMultipleEventListenersDefault = parcelHelpers.interopDefault(_addMultipleEventListeners);
+var _calculateBurgerMenuPosition = require("./navigation/calculate-burger-menu-position");
+var _calculateBurgerMenuPositionDefault = parcelHelpers.interopDefault(_calculateBurgerMenuPosition);
+var _a11YFocusTrap = require("./navigation/a11y-focus-trap");
+var _a11YFocusTrapDefault = parcelHelpers.interopDefault(_a11YFocusTrap);
+var _calculateDropdownToggleHeight = require("./navigation/calculate-dropdown-toggle-height");
+var _calculateDropdownToggleHeightDefault = parcelHelpers.interopDefault(_calculateDropdownToggleHeight);
+var _checkForSubmenuOverflow = require("./navigation/check-for-submenu-overflow");
+var _checkForSubmenuOverflowDefault = parcelHelpers.interopDefault(_checkForSubmenuOverflow);
+var _dropdownMenuOnHover = require("./navigation/dropdown-menu-on-hover");
+var _dropdownMenuOnHoverDefault = parcelHelpers.interopDefault(_dropdownMenuOnHover);
+var _a11YAddDropdownToggleLabels = require("./navigation/a11y-add-dropdown-toggle-labels");
+var _a11YAddDropdownToggleLabelsDefault = parcelHelpers.interopDefault(_a11YAddDropdownToggleLabels);
+var _a11YDropdownMenuKeyboardNavigation = require("./navigation/a11y-dropdown-menu-keyboard-navigation");
+var _a11YDropdownMenuKeyboardNavigationDefault = parcelHelpers.interopDefault(_a11YDropdownMenuKeyboardNavigation);
+// Navigation desktop click functions
+var _convertDropdownMenuItems = require("./navigation/convert-dropdown-menu-items");
+var _convertDropdownMenuItemsDefault = parcelHelpers.interopDefault(_convertDropdownMenuItems);
+var _closeSubMenuHandler = require("./navigation/close-sub-menu-handler");
+var _closeSubMenuHandlerDefault = parcelHelpers.interopDefault(_closeSubMenuHandler);
+var _a11YAddDropdownToggleLabelsClick = require("./navigation/a11y-add-dropdown-toggle-labels-click");
+var _a11YAddDropdownToggleLabelsClickDefault = parcelHelpers.interopDefault(_a11YAddDropdownToggleLabelsClick);
+var _a11YDropdownMenuKeyboardNavigationClick = require("./navigation/a11y-dropdown-menu-keyboard-navigation-click");
+var _a11YDropdownMenuKeyboardNavigationClickDefault = parcelHelpers.interopDefault(_a11YDropdownMenuKeyboardNavigationClick);
+const navDesktop = ()=>{
+    const navPrimary = document.querySelector('.nav-primary');
+    // If .nav-primary doesn't exist, don't continue
+    if (!navPrimary) return;
+    // Define globals
+    const menuItems = navPrimary.querySelectorAll('.menu-item');
+    // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
+    const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button, .button-nav');
+    // If main-menu is not found, bail
+    if (!document.getElementById('main-menu')) return;
+    // Dropdown menus
+    (0, _a11YAddDropdownToggleLabelsDefault.default)(menuItems);
+    (0, _a11YDropdownMenuKeyboardNavigationDefault.default)(menuItems, focusableElementsforDropdown);
+    // Dropdown on mouse hover
+    (0, _dropdownMenuOnHoverDefault.default)(menuItems);
+    // Check for submenu overflow
+    (0, _checkForSubmenuOverflowDefault.default)(menuItems);
+};
+const navClick = ()=>{
+    // If main-menu is not found, bail
+    if (!document.getElementById('main-menu')) return;
+    // Search for all menu items that have submenus
+    const dropdownMenuItems = document.querySelectorAll('.menu-item-has-children');
+    // Convert submenus to clickable elements
+    (0, _convertDropdownMenuItemsDefault.default)(dropdownMenuItems);
+    // Define globals
+    const menuItems = document.querySelectorAll('.menu-item');
+    // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
+    const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button, .button-nav');
+    // Dropdown menus
+    (0, _a11YAddDropdownToggleLabelsClickDefault.default)(menuItems);
+    (0, _a11YDropdownMenuKeyboardNavigationClickDefault.default)(menuItems, focusableElementsforDropdown);
+    // Handle different scenarios when menus should be closed
+    (0, _closeSubMenuHandlerDefault.default)(menuItems);
+};
+const navMobile = ()=>{
+    // If burger toggle is not found, bail
+    if (!document.getElementById('nav-toggle')) {
+        // eslint-disable-next-line no-console
+        console.log('Warning: No nav-toggle found.');
+        return;
+    }
+    function navToggle(e) {
+        // If clicked with mouse or enter key
+        if (e.type === 'click' || e.keyCode === 13) {
+            // Activate nav
+            document.body.classList.toggle('js-nav-active');
+            // Scroll to top when triggering mobile navigation
+            // to ensure no gaps are between header and navigation
+            // Please note, if you use sticky-nav, comment out the next line
+            window.scrollTo(0, 0);
+            // Toggle aria-expanded attribute, if it's false, change to true and vice versa
+            if (document.getElementById('nav-toggle').getAttribute('aria-expanded') === 'false') document.getElementById('nav-toggle').setAttribute('aria-expanded', 'true');
+            else document.getElementById('nav-toggle').setAttribute('aria-expanded', 'false');
+            // Toggle aria-label
+            // eslint-disable-next-line camelcase, no-undef
+            if (document.getElementById('nav-toggle').getAttribute('aria-label') === air_light_screenReaderText.expand_toggle) // eslint-disable-next-line camelcase, no-undef
+            document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.collapse_toggle);
+            else // eslint-disable-next-line camelcase, no-undef
+            document.getElementById('nav-toggle').setAttribute('aria-label', air_light_screenReaderText.expand_toggle);
+            // Center vertically the absolute positioned mobile dropdown toggles by setting fixed height
+            (0, _calculateDropdownToggleHeightDefault.default)();
+            // Focusable elements
+            const navContainer = document.getElementById('nav');
+            const focusableElements = [
+                ...navContainer.querySelectorAll('a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])')
+            ].filter((el)=>!el.hasAttribute('disabled')).filter((el)=>!!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
+            focusableElements.forEach((menuItem)=>{
+                menuItem.addEventListener('keydown', (0, _a11YFocusTrapDefault.default));
+            });
+        }
+    }
+    // When clicking #nav-toggle, add .js-nav-active body class
+    (0, _addMultipleEventListenersDefault.default)(document.getElementById('nav-toggle'), [
+        'click',
+        'keydown',
+        'keypress'
+    ], navToggle);
+    // Get all dropdown-toggles
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    // Loop through dropdown-toggles
+    dropdownToggles.forEach((dropdownToggle)=>{
+        // When clicking a dropdown-toggle, add .js-dropdown-active class to the parent .menu-item
+        (0, _addMultipleEventListenersDefault.default)(dropdownToggle, [
+            'click',
+            'keydown',
+            'keypress'
+        ], (0, _calculateDropdownToggleHeightDefault.default));
+    });
+    // Calculate mobile nav-toggle position
+    (0, _calculateBurgerMenuPositionDefault.default)();
+};
+// Sticky navigation
+// eslint-disable-next-line no-unused-vars
+const navSticky = ()=>{
+    function initStickyNavStyles() {
+        // Add default styles for sticky navigation as <style>
+        const style = document.createElement('style');
+        style.innerHTML = `
+    .site-header {
+      transition: all 100ms cubic-bezier(.4, 0, .2, 1);
+      overflow: visible;
+      width: 100%;
+      z-index: 100;
+    }
+
+    .site-header.is-fixed {
+      animation-duration: 300ms;
+      animation-iteration-count: 1;
+      animation-name: roll-in;
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-black);
+      left: 0;
+      position: fixed;
+      top: 0;
+    }
+
+    @keyframes roll-in {
+      0% {
+        opacity: 0;
+        top: -100%;
+      }
+
+      100% {
+        opacity: 1;
+        top: 0;
+      }
+    }`;
+        document.head.appendChild(style);
+    }
+    function initStickyNav() {
+        // Get --breakpoint-nav from CSS
+        const breakpointNav = getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-nav');
+        // Let's see if we are on mobile viewport
+        const isMobile = window.matchMedia(`(max-width: ${breakpointNav})`).matches;
+        // If things are not okay, bail
+        if (isMobile) return;
+        const siteHeader = document.querySelector('.site-header');
+        const headerHeight = getComputedStyle(siteHeader).height.split('px')[0];
+        const scrollValue = window.scrollY;
+        if (scrollValue > headerHeight) siteHeader.classList.add('is-fixed');
+        else if (scrollValue < headerHeight) siteHeader.classList.remove('is-fixed');
+        if (window.pageYOffset > headerHeight) siteHeader.classList.add('is-fixed');
+    }
+    window.addEventListener('scroll', initStickyNav);
+    window.addEventListener('DOMContentLoaded', initStickyNavStyles);
+};
+// Reinit some things
+window.addEventListener('resize', ()=>{
+    // Center vertically the absolute positioned burger
+    (0, _calculateBurgerMenuPositionDefault.default)();
+    // Center vertically the absolute positioned mobile dropdown toggles by setting fixed height
+    (0, _calculateDropdownToggleHeightDefault.default)();
+    // Check for submenu overflow
+    (0, _checkForSubmenuOverflowDefault.default)(document.querySelectorAll('.menu-item'));
+});
+
+},{"./navigation/add-multiple-event-listeners":"7N8vZ","./navigation/calculate-burger-menu-position":"dm6QR","./navigation/a11y-focus-trap":"dg2Dw","./navigation/calculate-dropdown-toggle-height":"bFlyg","./navigation/check-for-submenu-overflow":"eCgY7","./navigation/dropdown-menu-on-hover":"bi9Ff","./navigation/a11y-add-dropdown-toggle-labels":"17lPy","./navigation/a11y-dropdown-menu-keyboard-navigation":"k7qY7","./navigation/convert-dropdown-menu-items":"iIK2e","./navigation/close-sub-menu-handler":"io9YC","./navigation/a11y-add-dropdown-toggle-labels-click":"9HJe4","./navigation/a11y-dropdown-menu-keyboard-navigation-click":"by7Hy","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"7N8vZ":[function(require,module,exports,__globalThis) {
+// Event listener helper function
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function addMultipleEventListeners(element, events, handler) {
+    events.forEach((e)=>element.addEventListener(e, handler));
+}
+exports.default = addMultipleEventListeners;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"dm6QR":[function(require,module,exports,__globalThis) {
+// Calculate burger menu position
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function calculateBurgerMenuPosition() {
+    // If nav-toggle, site-header or main-menu not found, bail
+    if (!document.getElementById('nav-toggle') || !document.querySelector('.site-header') || !document.getElementById('menu-items-wrapper')) {
+        // eslint-disable-next-line no-console
+        console.log('Warning: No nav-toggle or site-header found.');
+        return;
+    }
+    // Set viewport
+    const viewportWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    // Get --breakpoint-nav from CSS
+    const breakpointNav = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-nav'), 10);
+    // Get the height of .site-header and #nav-toggle
+    // Calculate the top position of the toggle to be exactly in the center vertically
+    const siteHeaderHeight = document.querySelector('.site-header').offsetHeight;
+    // Set navigation position from top if on mobile
+    if (viewportWidth <= breakpointNav) {
+        document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight}px`;
+        document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight}px)`;
+        // If there is air-notification element(s), calculate top and height of menu-items-wrapper
+        if (document.querySelector('.air-notification')) {
+            // Get air-notification element(s)
+            const airNotifications = document.querySelectorAll('.air-notification');
+            // Get the height of air-notification(s)
+            let airNotificationsHeight = 0;
+            airNotifications.forEach((airNotification)=>{
+                airNotificationsHeight = airNotification.offsetHeight + airNotificationsHeight;
+            });
+            // Set the height and top of menu-items-wrapper
+            document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight + airNotificationsHeight}px)`;
+            document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight + airNotificationsHeight}px`;
+            // When air-notification is closed, recalculate the height of menu-items-wrapper
+            airNotifications.forEach((airNotification)=>{
+                const button = airNotification.querySelector('button');
+                const currentNotificationHeight = airNotification.offsetHeight;
+                if (button) button.addEventListener('click', ()=>{
+                    airNotificationsHeight -= currentNotificationHeight;
+                    document.getElementById('menu-items-wrapper').style.height = `calc(100vh - ${siteHeaderHeight + airNotificationsHeight}px)`;
+                    document.getElementById('menu-items-wrapper').style.top = `${siteHeaderHeight + airNotificationsHeight}px`;
+                });
+            });
+        }
+    } else {
+        document.getElementById('menu-items-wrapper').style.top = '0';
+        document.getElementById('menu-items-wrapper').style.height = 'auto';
+    }
+}
+exports.default = calculateBurgerMenuPosition;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"dg2Dw":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function a11yFocusTrap(e) {
+    // Init focusable elements
+    let focusableElements = [];
+    // Define container
+    const container = document.getElementById('nav');
+    // Define nav-toggle
+    const navToggle = document.getElementById('nav-toggle');
+    // Get --breakpoint-nav from CSS
+    const breakpointNav = getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-nav');
+    // Let's see if we are on mobile viewport
+    const isMobile = window.matchMedia(`(max-width: ${breakpointNav})`).matches;
+    // If things are not okay, bail
+    if (!container || !navToggle || !isMobile) return;
+    // Set focusable elements inside main navigation.
+    focusableElements = [
+        ...container.querySelectorAll('a, button, input, textarea, select, details, [tabindex]:not([tabindex="-1"])')
+    ].filter((el)=>!el.hasAttribute('disabled')).filter((el)=>!!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
+    // Get first and last focusable element
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+    // On key down on first element, if it's a Shift+Tab, redirect to last element
+    if (firstFocusableElement === e.target && e.code === 'Tab' && e.shiftKey) {
+        e.preventDefault();
+        lastFocusableElement.focus();
+    }
+    // On key down on last element, if it's a Tab, redirect to first element
+    if (lastFocusableElement === e.target && e.code === 'Tab' && !e.shiftKey) {
+        e.preventDefault();
+        firstFocusableElement.focus();
+    }
+}
+exports.default = a11yFocusTrap;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"bFlyg":[function(require,module,exports,__globalThis) {
+// Calculate mobile nav-toggle height
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function calculateDropdownToggleHeight() {
+    // If .dropdown-toggle not found, bail
+    if (!document.querySelectorAll('.dropdown-toggle')) {
+        // eslint-disable-next-line no-console
+        console.log('Warning: No dropdown-toggles found.');
+        return;
+    }
+    // Find all .dropdown-toggle elements on mobile
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    // Loop through dropdown toggles
+    dropdownToggles.forEach((dropdownToggle)=>{
+        // Get the height of previous element
+        const previousElement = dropdownToggle.previousElementSibling;
+        if (previousElement) {
+            const previousElementHeight = previousElement.offsetHeight;
+            // Set the height of the dropdown toggle
+            // eslint-disable-next-line no-param-reassign
+            dropdownToggle.style.height = `${previousElementHeight}px`;
+        }
+    });
+}
+exports.default = calculateDropdownToggleHeight;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"eCgY7":[function(require,module,exports,__globalThis) {
+// Import required modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _isOutOfViewport = require("./is-out-of-viewport");
+var _isOutOfViewportDefault = parcelHelpers.interopDefault(_isOutOfViewport);
+// Check for submenu overflow
+function checkForSubmenuOverflow(items) {
+    // If items not found, bail
+    if (!items) {
+        // eslint-disable-next-line no-console
+        console.log('Warning: No items for sub-menus found.');
+        return;
+    }
+    items.forEach((li)=>{
+        // Find sub menus
+        const subMenusUnderMenuItem = li.querySelectorAll('.sub-menu');
+        // Loop through sub menus
+        subMenusUnderMenuItem.forEach((subMenu)=>{
+            // First let's check if submenu exists
+            if (typeof subMenusUnderMenuItem !== 'undefined') {
+                // Check if the sub menu is out of viewport or not
+                const isOut = (0, _isOutOfViewportDefault.default)(subMenu);
+                // At least one side of the element is out of viewport
+                if (isOut.right) subMenu.classList.add('is-out-of-viewport');
+            }
+        });
+    });
+}
+exports.default = checkForSubmenuOverflow;
+
+},{"./is-out-of-viewport":"inpem","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"inpem":[function(require,module,exports,__globalThis) {
+// Check if an element is out of the viewport
+// eslint-disable-next-line func-names
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const isOutOfViewport = function(elem) {
+    // Get element's bounding
+    const bounding = elem.getBoundingClientRect();
+    // Check if it's out of the viewport on each side
+    const out = {};
+    out.top = bounding.top < 0;
+    out.left = bounding.left < 0;
+    out.bottom = bounding.bottom >= (document.documentElement.clientHeight || document.body.clientHeight);
+    out.right = bounding.right >= (document.documentElement.clientWidth || document.body.clientWidth);
+    out.any = out.top || out.left || out.bottom || out.right;
+    return out;
+};
+exports.default = isOutOfViewport;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"bi9Ff":[function(require,module,exports,__globalThis) {
+// Dropdown menu function
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function dropdownMenuOnHover(items) {
+    // Optional timeout
+    const hoverIntentTimeout = 0;
+    items.forEach((li)=>{
+        // eslint-disable-next-line func-names
+        li.addEventListener('mouseover', function() {
+            // Get --breakpoint-nav from CSS
+            const breakpointNav = getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-nav');
+            // Let's see if we are on mobile viewport
+            const isMobile = window.matchMedia(`(max-width: ${breakpointNav})`).matches;
+            // If rules don't apply, bail
+            if (li.classList.contains('removing-hover') || isMobile) return;
+            // Add hover classes
+            this.classList.add('hover-intent');
+            this.classList.add('hovering');
+            this.parentNode.classList.add('hover-intent');
+            this.parentNode.classList.add('hovering');
+            // Remove hovering class after a while
+            setTimeout(()=>{
+                this.classList.remove('hovering');
+                this.parentNode.classList.remove('hovering');
+            }, 500);
+            document.addEventListener('keydown', (keydownMouseoverEvent)=>{
+                // If rules don't apply, bail
+                if (this.classList.contains('removing-hover') || !this.classList.contains('hovering') || !this.parentNode.classList.contains('hovering')) return;
+                // Close navigation on Escape while hovering the navigation
+                if (keydownMouseoverEvent.key === 'Escape') {
+                    li.classList.remove('hover-intent');
+                    li.parentNode.classList.remove('hover-intent');
+                    li.parentNode.parentNode.classList.remove('hover-intent');
+                    // Add class removing-hover to prevent the menu from opening again when moving the mouse
+                    li.classList.add('removing-hover');
+                    li.parentNode.classList.add('removing-hover');
+                    // Remove removing-hover class after a while to re-initialize the menu
+                    setTimeout(()=>{
+                        this.classList.remove('removing-hover');
+                        this.parentNode.classList.remove('removing-hover');
+                    }, 500);
+                }
+            });
+            // Remove removing-hover class after a while to re-initialize the menu
+            setTimeout(()=>{
+                this.classList.remove('removing-hover');
+                this.parentNode.classList.remove('removing-hover');
+            }, 500);
+        });
+        // eslint-disable-next-line func-names
+        li.addEventListener('mouseleave', function() {
+            setTimeout(()=>{
+                // Remove hover-intent class on mouse leave
+                this.classList.remove('hover-intent');
+                this.parentNode.classList.remove('hover-intent');
+                const dropdownToggles = this.querySelectorAll('.dropdown-toggle');
+                dropdownToggles.forEach((dropdownToggle)=>{
+                    // Set aria-expanded to false for all dropdown-toggle elements
+                    dropdownToggle.setAttribute('aria-expanded', 'false');
+                    if (dropdownToggle.parentNode.querySelector('.dropdown')) {
+                        const linkText = dropdownToggle.parentNode.querySelector('.dropdown').textContent;
+                        // Set aria-label to expand for all dropdown-toggle elements
+                        // eslint-disable-next-line camelcase, no-undef
+                        dropdownToggle.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+                    }
+                });
+            }, hoverIntentTimeout);
+            setTimeout(()=>{
+                // Remove removing-hover class after a while to re-initialize the menu
+                this.classList.remove('removing-hover');
+                this.parentNode.classList.remove('removing-hover');
+            }, 500);
+        });
+    });
+}
+exports.default = dropdownMenuOnHover;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"17lPy":[function(require,module,exports,__globalThis) {
+// Add proper link labels for screen readers
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function a11yAddDropdownToggleLabels(items) {
+    items.forEach((li)=>{
+        // If .dropdown-class does not exist then do nothing
+        if (!li.querySelector('.dropdown')) return;
+        // Get the dropdown-button
+        const dropdownButton = li.querySelector('.dropdown-toggle');
+        // Get the link text that is children of this item
+        const linkText = li.querySelector('.dropdown').innerText;
+        // Add the aria-label to the dropdown button
+        // eslint-disable-next-line camelcase, no-undef
+        dropdownButton.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+    });
+}
+exports.default = a11yAddDropdownToggleLabels;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"k7qY7":[function(require,module,exports,__globalThis) {
+// Import required modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _addMultipleEventListeners = require("./add-multiple-event-listeners");
+var _addMultipleEventListenersDefault = parcelHelpers.interopDefault(_addMultipleEventListeners);
+// Accessible keyboard navigation for dropdown menus
+function a11yDropdownMenuKeyboardNavigation(items, focusableElements) {
+    focusableElements.forEach((item)=>{
+        item.addEventListener('keyup', (e)=>{
+            // Get this item
+            const thisElement = e.target;
+            // Close previous dropdown if this parent contains id main-menu
+            if (thisElement.parentNode.parentNode.id === 'main-menu' || thisElement.classList.contains('button-nav') && thisElement.parentNode.parentNode.id === 'main-menu') // If we have previous item
+            {
+                if (thisElement.parentNode.previousElementSibling) {
+                    // Get the previous item
+                    const previousItem = thisElement.parentNode.previousElementSibling;
+                    // Remove toggled-on class from previous item
+                    previousItem.classList.remove('toggled-on');
+                    // Remove hover-intent class from previous item
+                    previousItem.classList.remove('hover-intent');
+                    // If sub-menu found
+                    if (previousItem.querySelector('.sub-menu')) {
+                        // Get the previous item's dropdown
+                        const previousItemDropdown = previousItem.querySelector('.sub-menu');
+                        // Remove toggled-on class from previous sibling
+                        previousItemDropdown.classList.remove('toggled-on');
+                        // Remove hover-intent class from previous sibling
+                        previousItemDropdown.classList.remove('hover-intent');
+                        // Change toggle button aria-label
+                        // eslint-disable-next-line camelcase, no-undef
+                        previousItem.querySelector('.dropdown-toggle').setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${previousItem.querySelector('.dropdown-item').innerText}`);
+                        // Change toggle button aria-expanded
+                        previousItem.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+                        // Toggle toggled-on class on previousItem
+                        previousItem.querySelector('.dropdown-toggle').classList.remove('toggled-on');
+                    }
+                }
+            }
+        });
+        // NVDA supported keyboard navigation (NVDA and mobile need click event to work)
+        (0, _addMultipleEventListenersDefault.default)(item, [
+            'click',
+            'keydown',
+            'keypress'
+        ], (e)=>{
+            // Get this link
+            const thisElement = e.target;
+            // Get this menu-item
+            const thisMenuItem = thisElement.parentNode;
+            // Define the elements of this dropdown
+            const firstDropdown = thisElement.parentNode.parentNode.parentNode.querySelector('.sub-menu');
+            const thisDropdown = thisElement.nextElementSibling;
+            const dropdownToggleButton = thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle');
+            // Remove removing-hover class
+            thisElement.classList.remove('removing-hover');
+            thisMenuItem.parentNode.classList.remove('removing-hover');
+            // Open navigation on Enter, e.type click is for NVDA
+            if (e.key === 'Enter' || e.type === 'click') {
+                // If this item is a hyperlink, do nothing. We want to use Enter only with buttons
+                if (thisElement.tagName === 'A') return;
+                // If link label not found, do nothing
+                if (!thisElement.parentNode.querySelector('.dropdown-item')) return;
+                // Get the link label of .dropdown link
+                const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+                // Toggle toggled-on class
+                thisElement.classList.toggle('toggled-on');
+                // If aria-expanded is false, set it to true
+                if (thisElement.getAttribute('aria-expanded') === 'false') {
+                    // Set aria-expanded to true
+                    thisElement.setAttribute('aria-expanded', 'true');
+                    // Set aria-label of the dropdown button
+                    // eslint-disable-next-line camelcase, no-undef
+                    thisElement.setAttribute('aria-label', `${air_light_screenReaderText.collapse_for} ${linkLabel}`);
+                } else {
+                    // Set aria-expanded to false
+                    thisElement.setAttribute('aria-expanded', 'false');
+                    // Set aria-label of the dropdown button
+                    // eslint-disable-next-line camelcase, no-undef
+                    thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                }
+                // Toggle the dropdown
+                if (thisDropdown && !thisDropdown.classList.contains('toggled-on')) {
+                    // Add hover-intent class to this menu-item
+                    thisMenuItem.classList.add('hover-intent');
+                    // Add toggled-on class to this dropdown
+                    thisDropdown.classList.add('toggled-on');
+                } else {
+                    // Remove hover-intent class from this menu-item
+                    if (thisMenuItem) thisMenuItem.classList.remove('hover-intent');
+                    // Remove toggled-on class from this dropdown
+                    if (thisDropdown) thisDropdown.classList.remove('toggled-on');
+                }
+            }
+            // Close navigation on Escape
+            if (e.key === 'Escape') {
+                // Close mobile nav if no sub-menu is open
+                if (thisElement.parentNode.parentNode.id === 'main-menu' && !thisElement.parentNode.classList.contains('toggled-on')) {
+                    document.body.classList.remove('js-nav-active');
+                    // Move focus back to nav-toggle
+                    document.getElementById('nav-toggle').focus();
+                }
+                // If we're on main level and nav item is not open, do nothing
+                if (thisElement.parentNode.parentNode.id === 'main-menu' && !thisElement.parentNode.classList.contains('hover-intent')) return;
+                // Remove toggled-on classes from this dropdown
+                firstDropdown.classList.remove('toggled-on');
+                // Remove hover-intent classes from the current menu-item
+                thisMenuItem.classList.remove('hover-intent');
+                // Hide menu if we're on second level
+                thisMenuItem.parentNode.parentNode.classList.remove('hover-intent');
+                // Set aria expanded attribute to false
+                dropdownToggleButton.setAttribute('aria-expanded', 'false');
+                // Remove toggled-on
+                dropdownToggleButton.classList.remove('toggled-on');
+                // Get the link label of dropdown link
+                const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+                // Set aria label attribute
+                // eslint-disable-next-line camelcase, no-undef
+                dropdownToggleButton.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                // If we're on button, add aria-expanded to false
+                if (thisElement.classList.contains('dropdown-toggle')) {
+                    thisElement.setAttribute('aria-expanded', 'false');
+                    // Set aria-label of the dropdown button
+                    // eslint-disable-next-line camelcase, no-undef
+                    thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                }
+                // Move focus back to previous .dropdown-toggle, but only if we're not on main level
+                if (thisElement.parentNode.parentNode.id !== 'main-menu') // Delay toggling for NVDA for 100 ms
+                setTimeout(()=>{
+                    dropdownToggleButton.focus();
+                }, 100);
+            }
+            // If no arrow keys used, do not continue
+            if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+            // Arrow keys
+            switch(e.code){
+                // ArrowUp
+                case 'ArrowUp':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If we're on the sub-menu, move up
+                    if (thisElement.parentNode.parentNode.previousElementSibling && thisElement.parentNode.parentNode.previousElementSibling.classList.contains('dropdown-toggle')) // Focus to the previous link
+                    thisElement.parentNode.parentNode.previousElementSibling.focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is true, close the dropdown
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true') {
+                        // Remove hover-intent class from this menu-item
+                        thisMenuItem.classList.remove('hover-intent');
+                        // Remove toggled-on class from this dropdown
+                        thisDropdown.classList.remove('toggled-on');
+                        // Set aria-expanded attribute to false
+                        thisElement.setAttribute('aria-expanded', 'false');
+                        // Get the link label of .dropdown link
+                        const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+                        // Set aria-label of the dropdown button
+                        // eslint-disable-next-line camelcase, no-undef
+                        thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                        // Move focus back to previous .dropdown-toggle
+                        dropdownToggleButton.focus();
+                    }
+                    // If this is a correct element, focus to the previous link
+                    if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+                        // If there is no previous items, bail
+                        if (!thisElement.parentNode.previousElementSibling) return;
+                        // Get the previous link
+                        const previousLink = thisElement.parentNode.previousElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        const previousToggle = thisElement.parentNode.previousElementSibling.querySelector('.dropdown-toggle');
+                        // If previous element is .dropdown-toggle element, focus to it
+                        if (previousToggle && !thisElement.querySelector('.dropdown-toggle')) previousToggle.focus();
+                        else // If previous element is a link, focus to it
+                        previousLink.focus();
+                    }
+                    break;
+                // ArrowDown
+                case 'ArrowDown':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If we're on the sub-menu, move down
+                    if (thisElement.parentNode.parentNode.nextElementSibling && thisElement.parentNode.parentNode.nextElementSibling.classList.contains('dropdown-toggle')) // Focus to the next link
+                    thisElement.parentNode.parentNode.nextElementSibling.focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is true, move down
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true') // Focus to the next link
+                    thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is false, open sub-menu
+                    // (if we are not inside sub-menu)
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && !thisElement.parentNode.parentNode.classList.contains('sub-menu')) {
+                        // Open sub-menu
+                        thisElement.click();
+                        // Focus to the next link under sub-menu
+                        thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                        // Don't do anything else
+                        return;
+                    }
+                    // If we are in fact in sub menu, move to next link
+                    if (thisElement.parentNode.parentNode.classList.contains('sub-menu')) // Focus to the next link
+                    thisElement.parentNode.nextElementSibling.querySelector('a').focus();
+                    // If this is a correct element, focus to the next link
+                    if ((thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') && !thisElement.classList.contains('dropdown-toggle')) {
+                        // If there is no next items, bail
+                        if (!thisElement.parentNode.nextElementSibling) return;
+                        // Get the next link
+                        const nextLink = thisElement.parentNode.nextElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        let nextToggle = thisElement.parentNode.nextElementSibling.querySelector('.dropdown-toggle');
+                        // If this has class .dropdown-item, jump to the next .dropdown-toggle
+                        if (thisElement.classList.contains('dropdown-item')) // If there is a toggle
+                        {
+                            if (thisElement.nextElementSibling) {
+                                // Get the dropdown-toggle element
+                                nextToggle = thisElement.nextElementSibling;
+                                // If next element is .dropdown-toggle element, focus to it
+                                if (nextToggle) nextToggle.focus();
+                            }
+                        }
+                        // If next element is .dropdown-toggle element, focus to it
+                        if (nextToggle && !thisElement.querySelector('.dropdown-toggle')) nextToggle.focus();
+                        else // If next element is a link, focus to it
+                        nextLink.focus();
+                    }
+                    break;
+                // ArrowLeft
+                case 'ArrowLeft':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If we are on the first link, move to the dropdown-toggle and close menu
+                    if (thisElement.parentNode.previousElementSibling === null && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Focus to the previous link
+                        thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle').focus();
+                        // Close the dropdown
+                        thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle').click();
+                        // Don't do anything else
+                        return;
+                    }
+                    // If this is a .dropdown-toggle button and aria-expanded is true, move left
+                    if (thisElement.parentNode.previousElementSibling && thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') // Focus to the previous link
+                    thisElement.parentNode.previousElementSibling.querySelector('a').focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is false, close the dropdown
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Remove hover-intent class from this menu-item
+                        thisMenuItem.classList.remove('hover-intent');
+                        // Remove toggled-on class from this dropdown
+                        thisDropdown.classList.remove('toggled-on');
+                        // Set aria-expanded attribute to false
+                        thisElement.setAttribute('aria-expanded', 'false');
+                        // Get the link label of .dropdown link
+                        const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+                        // Set aria-label of the dropdown button
+                        // eslint-disable-next-line camelcase, no-undef
+                        thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                        // Move focus back to previous .dropdown-toggle
+                        dropdownToggleButton.focus();
+                    }
+                    // If this is a correct element, focus to the previous link
+                    if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+                        // If this is a .dropdown-toggle button and aria-expanded is false,
+                        // move to the link directly before it
+                        if (thisElement.previousElementSibling && thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false') {
+                            // Focus to the previous link
+                            thisElement.previousElementSibling.focus();
+                            // Don't do anything else
+                            return;
+                        }
+                        // If there is no previous items, bail
+                        if (!thisElement.parentNode.previousElementSibling) return;
+                        // Get the previous link
+                        const previousLink = thisElement.parentNode.previousElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        const previousToggle = thisElement.parentNode.previousElementSibling.querySelector('.dropdown-toggle');
+                        // If previous element is .dropdown-toggle element, focus to it
+                        if (previousToggle) previousToggle.focus();
+                        else // If previous element is a link, focus to it
+                        previousLink.focus();
+                    }
+                    break;
+                // ArrowRight
+                case 'ArrowRight':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If this is a .dropdown-toggle button and aria-expanded is true, move right
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') // Focus to the next link
+                    thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                    // If this has class .dropdown-item, jump to the next .dropdown-toggle
+                    if (thisElement.nextElementSibling) {
+                        thisElement.nextElementSibling.focus();
+                        // Disable other actions if this is a .dropdown-item
+                        if (thisElement.classList.contains('dropdown-item')) return;
+                    }
+                    // If this is a .dropdown-toggle button and aria-expanded is false, open sub-menu
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Open sub-menu
+                        thisElement.click();
+                        // Do nothing else
+                        return;
+                    }
+                    // If this is a dropdown-toggle button and aria-expanded is true, move right
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Focus to the next link
+                        thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                        // Don't do anything else
+                        return;
+                    }
+                    // If this is a correct element, focus to the previous link
+                    if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+                        // If there is no next items, bail
+                        if (!thisElement.parentNode.nextElementSibling) return;
+                        // Get the next link
+                        const nextLink = thisElement.parentNode.nextElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        const nextToggle = thisElement.parentNode.nextElementSibling.querySelector('.dropdown-toggle');
+                        // If next element is .dropdown-toggle element, focus to it
+                        if (nextToggle) nextToggle.focus();
+                        else // If next element is a link, focus to it
+                        nextLink.focus();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
+    });
+}
+exports.default = a11yDropdownMenuKeyboardNavigation;
+
+},{"./add-multiple-event-listeners":"7N8vZ","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"iIK2e":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function convertDropdownMenuItems(items) {
+    items.forEach((li)=>{
+        // Get dropdown toggle button
+        const dropdownToggle = li.querySelector('.dropdown-toggle');
+        // Get dropdown menu item data
+        const menuItemTitle = li.querySelector('a > span').innerHTML;
+        const menuItemLinkElement = li.querySelector('a');
+        const menuItemLink = menuItemLinkElement.href;
+        // Remove dropdown menu item link
+        menuItemLinkElement.remove();
+        // Add dropdown menu item title to dropdown toggle button
+        dropdownToggle.innerHTML = menuItemTitle;
+        // Create new nav element
+        const navElement = document.createElement('li');
+        navElement.classList.add('menu-item');
+        // Add dropdown menu item data to nav element
+        // Create elements
+        const navElementLink = document.createElement('a');
+        const navElementLinkSpan = document.createElement('span');
+        // Add data to elements
+        // Span
+        navElementLinkSpan.innerHTML = menuItemTitle;
+        navElementLinkSpan.setAttribute('itemprop', 'name');
+        // Link
+        navElementLink.setAttribute('itemprop', 'url');
+        navElementLink.href = menuItemLink;
+        navElementLink.classList.add('dropdown-item');
+        // Append elements
+        navElementLink.appendChild(navElementLinkSpan);
+        navElement.appendChild(navElementLink);
+        // Get the sub menu first child and add the new nav element before it
+        const subMenuFirstChild = li.querySelector('.sub-menu > li');
+        const subMenu = li.querySelector('.sub-menu');
+        subMenu.insertBefore(navElement, subMenuFirstChild);
+    });
+}
+exports.default = convertDropdownMenuItems;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"io9YC":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _closeSubMenu = require("./close-sub-menu");
+var _closeSubMenuDefault = parcelHelpers.interopDefault(_closeSubMenu);
+function closeSubMenuHandler(items) {
+    // Close open dropdowns when clicking outside of the menu
+    const page = document.getElementById('page');
+    page.addEventListener('click', (e)=>{
+        // If the click is inside the menu, bail
+        if (e.target.closest('.menu-items')) return;
+        items.forEach((li)=>{
+            (0, _closeSubMenuDefault.default)(li);
+        });
+    });
+    // Close open dropdown when pressing escape
+    items.forEach((li)=>{
+        li.addEventListener('keydown', (keydownMouseoverEvent)=>{
+            if (keydownMouseoverEvent.key === 'Escape') (0, _closeSubMenuDefault.default)(li);
+        });
+    });
+    // Close other dropdowns when opening a new one
+    items.forEach((li)=>{
+        // Bail if no dropdown
+        if (!li.classList.contains('menu-item-has-children')) return;
+        const dropdownToggle = li.querySelector('.dropdown-toggle');
+        const sameLevelDropdowns = li.parentNode.querySelectorAll(':scope > .menu-item-has-children');
+        // Add event listener to dropdown toggle
+        dropdownToggle.addEventListener('click', ()=>{
+            // We want to close other dropdowns only when a new one is opened
+            if (!dropdownToggle.classList.contains('toggled-on')) return;
+            sameLevelDropdowns.forEach((sameLevelDropdown)=>{
+                if (sameLevelDropdown !== li) {
+                    // Close all other sub level dropdowns
+                    sameLevelDropdown.querySelectorAll('.menu-item').forEach((subLi)=>{
+                        (0, _closeSubMenuDefault.default)(subLi);
+                    });
+                    // Close other same level dropdowns
+                    (0, _closeSubMenuDefault.default)(sameLevelDropdown);
+                }
+            });
+        });
+    });
+}
+exports.default = closeSubMenuHandler;
+
+},{"./close-sub-menu":"66JHc","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"66JHc":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function closeSubMenu(li) {
+    // If menu item is not a dropdown then do nothing
+    if (!li.querySelector('.dropdown-toggle') && !li.querySelector('.sub-menu')) return;
+    // Get the dropdown-button
+    const dropdownButton = li.querySelector('.dropdown-toggle');
+    // Get the submenu
+    const subMenu = li.querySelector('.sub-menu');
+    // If the dropdown-menu is not open, bail
+    if (!subMenu.classList.contains('toggled-on')) return;
+    // Remove the open class from the dropdown-menu
+    subMenu.classList.remove('toggled-on');
+    // Remove the open class from the dropdown-button
+    dropdownButton.classList.remove('toggled-on');
+    // Remove the aria-expanded attribute from the dropdown-button
+    dropdownButton.setAttribute('aria-expanded', 'false');
+    // Get the link text that is children of this item
+    const linkText = dropdownButton.innerHTML;
+    // Add the aria-label to the dropdown button
+    // eslint-disable-next-line camelcase, no-undef
+    dropdownButton.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+}
+exports.default = closeSubMenu;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"9HJe4":[function(require,module,exports,__globalThis) {
+// Add proper link labels for screen readers
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function a11yAddDropdownToggleLabelsClick(items) {
+    items.forEach((li)=>{
+        // If .dropdown-toggle does not exist then do nothing
+        if (!li.querySelector('.dropdown-toggle')) return;
+        // Add helper class to dropdown-toggle
+        li.querySelector('.dropdown-toggle').classList.add('menu-item-clickable');
+        // Remove .dropdown-toggle class
+        li.querySelector('.dropdown-toggle').classList.remove('dropdown-toggle');
+        // Get the dropdown-button
+        const dropdownButton = li.querySelector('.menu-item-clickable');
+        // Get the link text that is children of this item
+        const linkText = dropdownButton.innerHTML;
+        // Add the aria-label to the dropdown button
+        // eslint-disable-next-line camelcase, no-undef
+        dropdownButton.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkText}`);
+    });
+}
+exports.default = a11yAddDropdownToggleLabelsClick;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"by7Hy":[function(require,module,exports,__globalThis) {
+// Import required modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _addMultipleEventListeners = require("./add-multiple-event-listeners");
+var _addMultipleEventListenersDefault = parcelHelpers.interopDefault(_addMultipleEventListeners);
+// Accessible keyboard navigation for dropdown menus
+function a11yDropdownMenuKeyboardNavigationClick(items, focusableElements) {
+    focusableElements.forEach((item)=>{
+        item.addEventListener('keyup', (e)=>{
+            // Get this item
+            const thisElement = e.target;
+            // Get this menu-item
+            // eslint-disable-next-line no-unused-vars
+            const thisMenuItem = thisElement.parentNode;
+            // Close previous dropdown if this parent contains id main-menu
+            if (thisElement.parentNode.parentNode.id === 'main-menu' || thisElement.classList.contains('button-nav') && thisElement.parentNode.parentNode.id === 'main-menu') // If we have previous item
+            {
+                if (thisElement.parentNode.previousElementSibling) {
+                    // Get the previous item
+                    const previousItem = thisElement.parentNode.previousElementSibling;
+                    // Get main level sub-menu
+                    const mainLevelSubMenu = previousItem.querySelector('.sub-menu');
+                    // If sub-menu found, close nested sub-menus first
+                    if (mainLevelSubMenu && mainLevelSubMenu.querySelectorAll('.menu-item-has-children')) mainLevelSubMenu.querySelectorAll('.menu-item-has-children').forEach((subMenu)=>{
+                        // Get the previous item's dropdown
+                        const previousItemDropdownToggle = subMenu.querySelector('.dropdown-toggle');
+                        const previousItemDropdown = subMenu.querySelector('.sub-menu');
+                        // Remove toggled-on class from previous item button
+                        previousItemDropdownToggle.classList.remove('toggled-on');
+                        // Remove toggled-on class from previous sibling
+                        previousItemDropdown.classList.remove('toggled-on');
+                        // Change toggle button aria-label
+                        // eslint-disable-next-line camelcase, no-undef
+                        previousItemDropdownToggle.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${previousItemDropdownToggle.innerText}`);
+                        // Change toggle button aria-expanded
+                        previousItemDropdownToggle.setAttribute('aria-expanded', 'false');
+                    });
+                    // Close main level sub-menu
+                    const previousItemDropdownToggle = previousItem.querySelector('.dropdown-toggle');
+                    const previousItemDropdown = previousItem.querySelector('.sub-menu');
+                    if (previousItemDropdownToggle && previousItemDropdown) {
+                        // Remove toggled-on class from previous item button
+                        previousItemDropdownToggle.classList.remove('toggled-on');
+                        // Remove toggled-on class from previous sibling
+                        previousItemDropdown.classList.remove('toggled-on');
+                        // Change toggle button aria-label
+                        // eslint-disable-next-line camelcase, no-undef
+                        previousItemDropdownToggle.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${previousItemDropdownToggle.innerText}`);
+                        // Change toggle button aria-expanded
+                        previousItemDropdownToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            }
+        });
+        // NVDA supported keyboard navigation (NVDA and mobile need click event to work)
+        (0, _addMultipleEventListenersDefault.default)(item, [
+            'click',
+            'keydown',
+            'keypress'
+        ], (e)=>{
+            // Get this link or button
+            const thisElement = e.target;
+            // Define the elements of this dropdown
+            const firstDropdown = thisElement.parentNode.parentNode.parentNode.querySelector('.sub-menu');
+            const thisDropdown = thisElement.nextElementSibling;
+            const dropdownToggleButton = thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle');
+            // Open navigation on Enter, e.type click is for NVDA
+            if (e.key === 'Enter' || e.type === 'click') {
+                // If this item is a hyperlink, do nothing. We want to use Enter only with buttons
+                if (thisElement.tagName === 'A') return;
+                // Get the text of button
+                const linkLabel = thisElement.innerText;
+                // Toggle toggled-on class
+                thisElement.classList.toggle('toggled-on');
+                // If aria-expanded is false, set it to true
+                if (thisElement.getAttribute('aria-expanded') === 'false') {
+                    // Set aria-expanded to true
+                    thisElement.setAttribute('aria-expanded', 'true');
+                    // Set aria-label of the dropdown button
+                    // eslint-disable-next-line camelcase, no-undef
+                    thisElement.setAttribute('aria-label', `${air_light_screenReaderText.collapse_for} ${linkLabel}`);
+                } else {
+                    // Set aria-expanded to false
+                    thisElement.setAttribute('aria-expanded', 'false');
+                    // Set aria-label of the dropdown button
+                    // eslint-disable-next-line camelcase, no-undef
+                    thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                }
+                // Toggle the dropdown
+                if (thisDropdown && !thisDropdown.classList.contains('toggled-on')) // Add toggled-on class to this dropdown
+                thisDropdown.classList.add('toggled-on');
+                else // Remove toggled-on class from this dropdown
+                // eslint-disable-next-line no-lonely-if
+                if (thisDropdown) thisDropdown.classList.remove('toggled-on');
+            }
+            // Close navigation on Escape
+            if (e.key === 'Escape') {
+                // Close mobile nav if no sub-menu is open
+                if (thisElement.parentNode.parentNode.id === 'main-menu' && !thisElement.parentNode.classList.contains('toggled-on')) {
+                    document.body.classList.remove('js-nav-active');
+                    // Move focus back to nav-toggle
+                    document.getElementById('nav-toggle').focus();
+                }
+                // If we're on main level and nav item is not open, do nothing
+                if (thisElement.parentNode.parentNode.id === 'main-menu' && !thisElement.parentNode.classList.contains('toggled-on')) return;
+                // Remove toggled-on classes from this dropdown
+                firstDropdown.classList.remove('toggled-on');
+                // Set aria expanded attribute to false
+                dropdownToggleButton.setAttribute('aria-expanded', 'false');
+                // Remove toggled-on
+                dropdownToggleButton.classList.remove('toggled-on');
+                // Get the link label of dropdown link
+                const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+                // Set aria label attribute
+                // eslint-disable-next-line camelcase, no-undef
+                dropdownToggleButton.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                // If we're on button, add aria-expanded to false
+                if (thisElement.classList.contains('dropdown-toggle')) {
+                    thisElement.setAttribute('aria-expanded', 'false');
+                    // Set aria-label of the dropdown button
+                    // eslint-disable-next-line camelcase, no-undef
+                    thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                }
+                // Move focus back to previous .dropdown-toggle, but only if we're not on main level
+                if (thisElement.parentNode.parentNode.id !== 'main-menu') // Delay toggling for NVDA for 100 ms
+                setTimeout(()=>{
+                    dropdownToggleButton.focus();
+                }, 100);
+            }
+            // If no arrow keys used, do not continue
+            if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+            // Arrow keys
+            switch(e.code){
+                // ArrowUp
+                case 'ArrowUp':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If we're on the sub-menu, move up
+                    if (thisElement.parentNode.parentNode.previousElementSibling && thisElement.parentNode.parentNode.previousElementSibling.classList.contains('dropdown-toggle')) // Focus to the previous link
+                    thisElement.parentNode.parentNode.previousElementSibling.focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is true, close the dropdown
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true') {
+                        // Remove toggled-on class from this dropdown
+                        thisDropdown.classList.remove('toggled-on');
+                        thisElement.classList.remove('toggled-on');
+                        // Set aria-expanded attribute to false
+                        thisElement.setAttribute('aria-expanded', 'false');
+                        // Get the link label of .dropdown link
+                        const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+                        // Set aria-label of the dropdown button
+                        // eslint-disable-next-line camelcase, no-undef
+                        thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                        // Move focus back to previous .dropdown-toggle
+                        dropdownToggleButton.focus();
+                    }
+                    // If this is a correct element, focus to the previous link
+                    if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+                        // If there is no previous items, bail
+                        if (!thisElement.parentNode.previousElementSibling) return;
+                        // Get the previous link
+                        const previousLink = thisElement.parentNode.previousElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        const previousToggle = thisElement.parentNode.previousElementSibling.querySelector('.dropdown-toggle');
+                        // If previous element is .dropdown-toggle element, focus to it
+                        if (previousToggle && !thisElement.querySelector('.dropdown-toggle')) previousToggle.focus();
+                        else // If previous element is a link, focus to it
+                        previousLink.focus();
+                    }
+                    break;
+                // ArrowDown
+                case 'ArrowDown':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If we're on the sub-menu, move down
+                    if (thisElement.parentNode.parentNode.nextElementSibling && thisElement.parentNode.parentNode.nextElementSibling.classList.contains('dropdown-toggle')) // Focus to the next link
+                    thisElement.parentNode.parentNode.nextElementSibling.focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is true, move down
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true') // Focus to the next link
+                    thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is false, open sub-menu
+                    // (if we are not inside sub-menu)
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && !thisElement.parentNode.parentNode.classList.contains('sub-menu')) {
+                        // Open sub-menu
+                        thisElement.click();
+                        // Focus to the next link under sub-menu
+                        thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                        // Don't do anything else
+                        return;
+                    }
+                    // If we are in fact in sub menu, move to next link
+                    if (thisElement.parentNode.parentNode.classList.contains('sub-menu')) {
+                        // Focus to the next link or .dropdown-toggle
+                        // Generally focus the next link
+                        if (thisElement.parentNode.nextElementSibling.querySelector(':scope > a')) thisElement.parentNode.nextElementSibling.querySelector(':scope > a').focus();
+                        else // If there is no next link, focus to the next .dropdown-toggle
+                        thisElement.parentNode.nextElementSibling.querySelector('.dropdown-toggle').focus();
+                    }
+                    // If this is a correct element, focus to the next link
+                    if ((thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') && !thisElement.classList.contains('dropdown-toggle')) {
+                        // If there is no next items, bail
+                        if (!thisElement.parentNode.nextElementSibling) return;
+                        // Get the next link
+                        const nextLink = thisElement.parentNode.nextElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        let nextToggle = thisElement.parentNode.nextElementSibling.querySelector('.dropdown-toggle');
+                        // If this has class .dropdown-item, jump to the next .dropdown-toggle
+                        if (thisElement.classList.contains('dropdown-item')) // If there is a toggle
+                        {
+                            if (thisElement.nextElementSibling) {
+                                // Get the dropdown-toggle element
+                                nextToggle = thisElement.nextElementSibling;
+                                // If next element is .dropdown-toggle element, focus to it
+                                if (nextToggle) nextToggle.focus();
+                            }
+                        }
+                        // If next element is .dropdown-toggle element, focus to it
+                        if (nextToggle && !thisElement.querySelector('.dropdown-toggle')) nextToggle.focus();
+                        else // If next element is a link, focus to it
+                        nextLink.focus();
+                    }
+                    break;
+                // ArrowLeft
+                case 'ArrowLeft':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If we are on the first link, move to the dropdown-toggle and close menu
+                    if (thisElement.parentNode.previousElementSibling === null && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Focus to the previous link
+                        thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle').focus();
+                        // Close the dropdown
+                        thisElement.parentNode.parentNode.parentNode.querySelector('.dropdown-toggle').click();
+                        // Don't do anything else
+                        return;
+                    }
+                    // If this is a .dropdown-toggle button and aria-expanded is true, move left
+                    if (thisElement.parentNode.previousElementSibling && thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') // Focus to the previous link
+                    thisElement.parentNode.previousElementSibling.querySelector('a').focus();
+                    // If this is a .dropdown-toggle button and aria-expanded is false, close the dropdown
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Remove toggled-on class from this dropdown
+                        thisDropdown.classList.remove('toggled-on');
+                        // Set aria-expanded attribute to false
+                        thisElement.setAttribute('aria-expanded', 'false');
+                        // Get the link label of .dropdown link
+                        const linkLabel = thisElement.parentNode.querySelector('.dropdown-item').innerText;
+                        // Set aria-label of the dropdown button
+                        // eslint-disable-next-line camelcase, no-undef
+                        thisElement.setAttribute('aria-label', `${air_light_screenReaderText.expand_for} ${linkLabel}`);
+                        // Move focus back to previous .dropdown-toggle
+                        dropdownToggleButton.focus();
+                    }
+                    // If this is a correct element, focus to the previous link
+                    if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+                        // If this is a .dropdown-toggle button and aria-expanded is false,
+                        // move to the link directly before it
+                        if (thisElement.previousElementSibling && thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false') {
+                            // Focus to the previous link
+                            thisElement.previousElementSibling.focus();
+                            // Don't do anything else
+                            return;
+                        }
+                        // If there is no previous items, bail
+                        if (!thisElement.parentNode.previousElementSibling) return;
+                        // Get the previous link
+                        const previousLink = thisElement.parentNode.previousElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        const previousToggle = thisElement.parentNode.previousElementSibling.querySelector('.dropdown-toggle');
+                        // If previous element is .dropdown-toggle element, focus to it
+                        if (previousToggle) previousToggle.focus();
+                        else // If previous element is a link, focus to it
+                        previousLink.focus();
+                    }
+                    break;
+                // ArrowRight
+                case 'ArrowRight':
+                    // Stop propagation
+                    e.stopPropagation();
+                    // Stop scrolling
+                    e.preventDefault();
+                    // If this is a .dropdown-toggle button and aria-expanded is true, move right
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') // Focus to the next link
+                    thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                    // If this has class .dropdown-item, jump to the next .dropdown-toggle
+                    if (thisElement.nextElementSibling) {
+                        thisElement.nextElementSibling.focus();
+                        // Disable other actions if this is a .dropdown-item
+                        if (thisElement.classList.contains('dropdown-item')) return;
+                    }
+                    // If this is a .dropdown-toggle button and aria-expanded is false, open sub-menu
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'false' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Open sub-menu
+                        thisElement.click();
+                        // Do nothing else
+                        return;
+                    }
+                    // If this is a dropdown-toggle button and aria-expanded is true, move right
+                    if (thisElement.classList.contains('dropdown-toggle') && thisElement.getAttribute('aria-expanded') === 'true' && thisElement.parentNode.parentNode.id !== 'main-menu') {
+                        // Focus to the next link
+                        thisElement.parentNode.querySelector('.sub-menu').querySelector('li:first-child').querySelector('a').focus();
+                        // Don't do anything else
+                        return;
+                    }
+                    // If this is a correct element, focus to the previous link
+                    if (thisElement.tagName === 'A' || thisElement.tagName === 'BUTTON') {
+                        // If there is no next items, bail
+                        if (!thisElement.parentNode.nextElementSibling) return;
+                        // Get the next link
+                        const nextLink = thisElement.parentNode.nextElementSibling.querySelector('a');
+                        // Get .dropdown-toggle element
+                        const nextToggle = thisElement.parentNode.nextElementSibling.querySelector('.dropdown-toggle');
+                        // If next element is .dropdown-toggle element, focus to it
+                        if (nextToggle) nextToggle.focus();
+                        else // If next element is a link, focus to it
+                        nextLink.focus();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        });
+    });
+}
+exports.default = a11yDropdownMenuKeyboardNavigationClick;
+
+},{"./add-multiple-event-listeners":"7N8vZ","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}]},["eX5PS"], "eX5PS", "parcelRequire1d92", {})
+

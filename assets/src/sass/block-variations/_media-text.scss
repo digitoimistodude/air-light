@@ -6,8 +6,36 @@
 // Core/media-text block variation styles
 .wp-block-media-text {
   gap: var(--spacing-grid-gap);
-  padding-left: var(--spacing-container-padding-inline);
-  padding-right: var(--spacing-container-padding-inline);
+  padding-inline: var(--spacing-container-padding-inline);
+
+  // Full-width background with constrained content
+  &.alignfull.has-background {
+    // Hide original background
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--wp--style--global--wide-size);
+    position: relative;
+
+    // Full-width background via pseudo-element
+    &::before {
+      background-color: var(--wp--preset--color--light);
+      bottom: 0;
+      content: '';
+      left: 50%;
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+      width: 100vw;
+      z-index: 0;
+    }
+
+    // Ensure content is above background
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
 
   .wp-block-heading {
     margin: 0;
@@ -72,33 +100,6 @@
     @include button();
     display: inline-block;
     text-align: center;
-  }
-
-  // Wide alignment adjustments
-  &.alignwide {
-    margin-inline: auto;
-    max-width: var(--wp--custom--grid-base);
-  }
-
-  // Full alignment adjustments
-  &.alignfull {
-    padding-inline: var(--spacing-container-padding-inline);
-  }
-
-  // Padding variations (default: M padding)
-  &.is-style-has-m-padding {
-    padding-bottom: 5rem;
-    padding-top: 5rem;
-  }
-
-  &.is-style-has-l-padding {
-    padding-bottom: 8rem;
-    padding-top: 8rem;
-  }
-
-  &.is-style-no-padding {
-    padding-bottom: 0;
-    padding-top: 0;
   }
 }
 
