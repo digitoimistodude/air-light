@@ -103,9 +103,9 @@ function register_block_editor_assets() {
   // Enqueue the bundled block JS file
   wp_enqueue_script(
     'block-editor-js',
-    get_theme_file_uri( get_asset_file( 'gutenberg-editor.js' ) ),
+    get_theme_file_uri( get_asset_file( 'editor.js' ) ),
     $dependencies,
-    filemtime( get_theme_file_path( get_asset_file( 'gutenberg-editor.js' ) ) ),
+    filemtime( get_theme_file_path( get_asset_file( 'editor.js' ) ) ),
     'all'
   );
 
