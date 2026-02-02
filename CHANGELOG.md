@@ -1,5 +1,6 @@
 ### 10.0.0rc: 2026-02-02
 
+* Update air-move-out and air-move-in scripts for Parcel build system, Ref: DEV-720
 * Simplify single.php and index.php based on Twenty Twenty structure with proper content width constraint, Ref: DEV-733
 * Rename gutenberg-editor.js to editor.js and modularize by moving embed disabling to separate module, Ref: DEV-725
 * Move block styles to separate file with PHP server-side registration and scalable array-based approach, Ref: DEV-732, DEV-722
