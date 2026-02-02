@@ -95,7 +95,9 @@
           "text": false,
           "background": true
         },
-        "align": false
+        "spacing": {
+          "padding": true
+        }
       }
     }
   },

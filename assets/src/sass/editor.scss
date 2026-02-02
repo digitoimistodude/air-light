@@ -32,8 +32,6 @@
 @use 'block-variations';
 
 // Formatting (already scoped to .editor-styles-wrapper and .entry-content)
-@use 'formatting/align';
-@use 'formatting/caption';
 @use 'formatting/img';
 @use 'formatting/link';
 @use 'formatting/paragraph';

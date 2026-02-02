@@ -26,7 +26,7 @@ const mediaTextVariation = {
     description: __('Media & Text block with Dude defaults', 'air-light'),
     isDefault: true,
     attributes: {
-      align: 'full',
+      align: 'wide',
       mediaPosition: 'left',
       verticalAlignment: 'center',
       mediaType: 'image',

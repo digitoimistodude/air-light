@@ -1,6 +1,7 @@
 // WordPress uses custom properties with double dashes from theme.json that don't match kebab-case
 // stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
+@use '../variables/breakpoints' as *;
 @use '../components/button' as *;
 
 // Core/media-text block variation styles
@@ -9,12 +10,9 @@
   padding-inline: var(--spacing-container-padding-inline);
 
   // Full-width background with constrained content
-  &.alignfull.has-background {
+  &.has-background {
     // Hide original background
     background-color: transparent;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--wp--style--global--wide-size);
     position: relative;
 
     // Full-width background via pseudo-element
@@ -61,6 +59,13 @@
     &:has(video) {
       background-color: transparent;
     }
+  }
+
+  // Override WordPress core height: 100% and min-height: 250px for is-image-fill-element
+  // Need higher specificity to override .wp-block-media-text.is-image-fill-element > .wp-block-media-text__media
+  &.is-image-fill-element > .wp-block-media-text__media {
+    height: auto;
+    min-height: 0;
   }
 
   // Editor-specific: also target the resizable container
