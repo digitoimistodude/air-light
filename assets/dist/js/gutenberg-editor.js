@@ -308,7 +308,18 @@ const mediaTextVariation = {
             mediaUrl: placeholderImage,
             imageFill: true,
             mediaWidth: 50,
-            className: 'is-style-has-m-padding'
+            style: {
+                spacing: {
+                    padding: {
+                        top: 'var:preset|spacing|30',
+                        bottom: 'var:preset|spacing|30'
+                    },
+                    margin: {
+                        top: 'var:preset|spacing|none',
+                        bottom: 'var:preset|spacing|none'
+                    }
+                }
+            }
         },
         innerBlocks: [
             [
@@ -342,9 +353,9 @@ const mediaTextVariation = {
         ]
     }
 };
-// Hide media width control by targeting the ToolsPanelItem that contains it
-// WordPress doesn't provide a native way to disable this control in variations,
-// so we inject CSS to hide it from the block inspector.
+// Hide some controls by targeting the ToolsPanelItem that contains them.
+// WordPress doesn't provide a native way to disable these controls in variations,
+// so we inject CSS to hide them from the block inspector when media-text is selected.
 //
 // Implementation details from WordPress Gutenberg source code:
 // - The control is a RangeControl component wrapped in a ToolsPanelItem
@@ -355,20 +366,10 @@ const mediaTextVariation = {
 // @link https://developer.wordpress.org/block-editor/reference-guides/components/tools-panel-item/
 // @link https://developer.wordpress.org/block-editor/reference-guides/components/range-control/
 wp.domReady(()=>{
-    const style = document.createElement('style');
-    style.id = 'air-light-hide-media-width';
-    style.textContent = `
-    /* Hide the ToolsPanelItem containing the media width RangeControl */
-    /* Target by the grid item that contains a RangeControl as its child */
-    .components-tools-panel-item:has(.components-range-control__wrapper) {
-      display: none !important;
-    }
-
-    /* Fallback: hide any RangeControl in media-text inspector */
-    .block-editor-block-inspector__card + div .components-range-control__wrapper {
-      display: none !important;
-    }
-
+    // Add global styles for controls that should always be hidden
+    const globalStyle = document.createElement('style');
+    globalStyle.id = 'air-light-media-text-global';
+    globalStyle.textContent = `
     /* Hide resizable box handle on the block itself */
     .wp-block-media-text .components-resizable-box__handle {
       display: none !important;
@@ -379,7 +380,44 @@ wp.domReady(()=>{
       display: none !important;
     }
   `;
-    document.head.appendChild(style);
+    document.head.appendChild(globalStyle);
+    // Add conditional styles that are toggled when media-text is selected
+    const conditionalStyle = document.createElement('style');
+    conditionalStyle.id = 'air-light-media-text-conditional';
+    document.head.appendChild(conditionalStyle);
+    // Function to hide/show sidebar controls based on selected block
+    function toggleMediaTextControls() {
+        const selectedBlock = wp.data.select('core/block-editor').getSelectedBlock();
+        const isMediaText = selectedBlock && selectedBlock.name === 'core/media-text';
+        if (isMediaText) {
+            conditionalStyle.textContent = `
+        /* Hide typography panel for media-text block only */
+        .typography-block-support-panel {
+          display: none !important;
+        }
+
+        /* Hide gradient controls */
+        .color-block-support-panel .components-circular-option-picker__swatches,
+        .color-block-support-panel button[aria-label*="Gradient"],
+        .color-block-support-panel button[aria-label*="gradient"],
+        .color-block-support-panel .components-tab-panel__tabs button[id$="-gradient"] {
+          display: none !important;
+        }
+      `;
+            // Hide media width control by finding label with specific text
+            setTimeout(()=>{
+                const labels = document.querySelectorAll('.components-base-control__label');
+                labels.forEach((label)=>{
+                    if (label.textContent === 'Median leveys' || label.textContent === 'Media width') {
+                        const toolsPanelItem = label.closest('.components-tools-panel-item');
+                        if (toolsPanelItem) toolsPanelItem.style.display = 'none';
+                    }
+                });
+            }, 100);
+        } else conditionalStyle.textContent = '';
+    }
+    // Listen for block selection changes
+    wp.data.subscribe(toggleMediaTextControls);
 });
 exports.default = mediaTextVariation;
 

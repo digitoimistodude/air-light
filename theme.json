@@ -20,37 +20,32 @@
     "spacing": {
       "units": ["px", "rem", "%", "vw"],
       "customSpacingSize": false,
+      "defaultSpacingSizes": false,
+      "padding": true,
+      "margin": true,
+      "blockGap": false,
       "spacingSizes": [
         {
-          "slug": "10",
-          "size": "0.625rem",
-          "name": "Extra small"
-        },
-        {
-          "slug": "20",
-          "size": "1rem",
-          "name": "Small"
+          "slug": "none",
+          "size": "0",
+          "name": "None"
         },
         {
           "slug": "30",
-          "size": "1.5rem",
+          "size": "5rem",
           "name": "Medium"
         },
         {
           "slug": "40",
-          "size": "2rem",
+          "size": "8rem",
           "name": "Large"
-        },
-        {
-          "slug": "50",
-          "size": "3rem",
-          "name": "Extra large"
         }
       ]
     },
     "color": {
       "custom": false,
       "customGradient": false,
+      "defaultGradients": false,
       "gradients": [],
       "defaultPalette": false,
       "palette": [
@@ -63,28 +58,13 @@
     },
     "typography": {
       "customFontSize": false,
-      "fontSizes": [
-        {
-          "slug": "small",
-          "size": "14px",
-          "name": "Small"
-        },
-        {
-          "slug": "normal",
-          "size": "16px",
-          "name": "Normal"
-        },
-        {
-          "slug": "large",
-          "size": "24px",
-          "name": "Large"
-        },
-        {
-          "slug": "xl",
-          "size": "32px",
-          "name": "Extra large"
-        }
-      ]
+      "fontStyle": false,
+      "fontWeight": false,
+      "lineHeight": false,
+      "letterSpacing": false,
+      "textDecoration": false,
+      "textTransform": false,
+      "fontSizes": []
     },
     "custom": {
       "gridBase": "1440px"
@@ -96,7 +76,15 @@
           "background": true
         },
         "spacing": {
-          "padding": true
+          "padding": true,
+          "margin": true
+        },
+        "typography": {
+          "fontSizes": [],
+          "customFontSize": false,
+          "lineHeight": false,
+          "fontWeight": false,
+          "fontStyle": false
         }
       }
     }

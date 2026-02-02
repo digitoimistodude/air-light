@@ -1,8 +1,7 @@
 ### 10.0.0rc: 2026-02-02
 
 * Move block styles to separate file with PHP server-side registration and scalable array-based approach, Ref: DEV-732, DEV-722
-* Add Finnish and English translations for block style labels using localization system, Ref: DEV-732
-* Hide resizable box handle and set M padding as default for media-text block, Ref: DEV-722
+* Configure media-text block with spacing presets (None, Medium 5rem, Large 8rem), hide typography/text color/gradient/media width controls, add alignwide support and fix responsive styles, Ref: DEV-722
 * Disable border, dimensions and text color controls in theme.json, Ref: DEV-722
 * Limit color palette to single light background color, disable gradients and default colors, Ref: DEV-722
 * Update README badges to modern style with for-the-badge format, Ref: DEV-720
@@ -13,7 +12,6 @@
 * Delete maybe_show_error_block function, Ref: DEV-226
 * Enable field validation for ACF blocks, Ref: DEV-372
 * Add modular block variations system for customizing core blocks, Ref: DEV-245
-* Add Media & Text block variation with bilingual placeholders and button styles, Ref: DEV-245, DEV-722
 * Add Hero block variation using core/cover with full-height defaults, Ref: DEV-720
 * Add CTA block variation using core/group with call-to-action defaults, Ref: DEV-720
 * Add Columns block variation using core/columns with 3-column layout, Ref: DEV-720
@@ -35,8 +33,6 @@
 * Update @digitoimistodude/code-quality-checks to 2.1.8, Ref: DEV-720
 * Add typography to editor.scss, WordPress auto-scopes to prevent admin leaks, Ref: DEV-723
 * Update @digitoimistodude/stylelint-config to 1.0.6 with front-end.css support, Ref: DEV-720
-* Add adjustable padding options to media-text block with No padding, M padding and L padding styles, Ref: DEV-722
-* Hide media width control from media-text block, ensure images use object-fit cover with aspect-ratio, Ref: DEV-722
 * Enable media-text block variation for pages, Ref: DEV-720
 
 ### 9.7.0: 2026-01-09
