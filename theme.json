@@ -4,6 +4,15 @@
   "settings": {
     "appearanceTools": true,
     "useRootPaddingAwareAlignments": true,
+    "border": {
+      "color": false,
+      "radius": false,
+      "style": false,
+      "width": false
+    },
+    "dimensions": {
+      "minHeight": false
+    },
     "layout": {
       "contentSize": "800px",
       "wideSize": "1440px"
@@ -97,6 +106,14 @@
     },
     "custom": {
       "gridBase": "1440px"
+    },
+    "blocks": {
+      "core/media-text": {
+        "color": {
+          "text": false,
+          "background": true
+        }
+      }
     }
   },
   "styles": {

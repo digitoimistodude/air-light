@@ -72,7 +72,7 @@ const mediaTextVariation = {
 // Implementation details from WordPress Gutenberg source code:
 // - The control is a RangeControl component wrapped in a ToolsPanelItem
 // - Located in InspectorControls of the MediaTextEdit component
-// - Label: "Media width" (or "Median leveys" in Finnish)
+// - Label: "Media width"
 //
 // @link https://github.com/WordPress/gutenberg/blob/trunk/packages/block-library/src/media-text/edit.js
 // @link https://developer.wordpress.org/block-editor/reference-guides/components/tools-panel-item/
@@ -86,10 +86,12 @@ wp.domReady(() => {
     .components-tools-panel-item:has(.components-range-control__wrapper) {
       display: none !important;
     }
+
     /* Fallback: hide any RangeControl in media-text inspector */
     .block-editor-block-inspector__card + div .components-range-control__wrapper {
       display: none !important;
     }
+
     /* Hide resizable box handle on the block itself */
     .wp-block-media-text .components-resizable-box__handle {
       display: none !important;
