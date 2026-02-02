@@ -4,6 +4,7 @@
 * Add Finnish and English translations for block style labels using localization system, Ref: DEV-732
 * Hide resizable box handle and set M padding as default for media-text block, Ref: DEV-722
 * Disable border, dimensions and text color controls in theme.json, Ref: DEV-722
+* Limit color palette to single light background color, disable gradients and default colors, Ref: DEV-722
 * Update README badges to modern style with for-the-badge format, Ref: DEV-720
 * Remove default form styles, will use Gravity Forms Orbit theme, Ref: DEV-721
 * Simplify styles to minimal black and white design with square corners, Ref: DEV-718

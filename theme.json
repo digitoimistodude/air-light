@@ -51,31 +51,13 @@
     "color": {
       "custom": false,
       "customGradient": false,
+      "gradients": [],
+      "defaultPalette": false,
       "palette": [
-        {
-          "slug": "accent",
-          "color": "#0049d1",
-          "name": "Accent"
-        },
-        {
-          "slug": "dark",
-          "color": "#000000",
-          "name": "Dark"
-        },
-        {
-          "slug": "paragraph",
-          "color": "#545773",
-          "name": "Paragraph"
-        },
         {
           "slug": "light",
           "color": "#f5f5f5",
           "name": "Light"
-        },
-        {
-          "slug": "white",
-          "color": "#ffffff",
-          "name": "White"
         }
       ]
     },
