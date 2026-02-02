@@ -36,6 +36,12 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_theme_scripts' );
 add_action( 'wp_default_scripts', __NAMESPACE__ . '\move_jquery_into_footer' );
 
 /**
+ * Block styles
+ */
+require get_theme_file_path( 'inc/hooks/block-styles.php' );
+add_action( 'init', __NAMESPACE__ . '\register_custom_block_styles' );
+
+/**
  * Gutenberg associated hooks
  */
 require get_theme_file_path( 'inc/hooks/gutenberg.php' );

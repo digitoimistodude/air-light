@@ -7,8 +7,8 @@
  * to .editor-styles-wrapper, preventing leaks into wp-admin areas.
  *
  * Example transformation:
- * - Input:  body { font-size: 16px; }
- * - Output: .editor-styles-wrapper body { font-size: 16px; }
+ * - Input:  .class { font-size: 16px; }
+ * - Output: .editor-styles-wrapper .class { font-size: 16px; }
  *
  * This allows us to include global styles (typography, formatting) without
  * worrying about affecting WordPress admin interface.

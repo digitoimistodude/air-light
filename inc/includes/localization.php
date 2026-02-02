@@ -47,6 +47,10 @@ function get_default_localization_strings( $language = 'en' ) {
       'Previous slide'                               => __( 'Previous slide', 'air-light' ),
       'Next slide'                                   => __( 'Next slide', 'air-light' ),
       'Last slide'                                   => __( 'Last slide', 'air-light' ),
+      'No padding'                                   => __( 'No padding', 'air-light' ),
+      'M padding'                                    => __( 'M padding', 'air-light' ),
+      'L padding'                                    => __( 'L padding', 'air-light' ),
+      'Boxed'                                        => __( 'Boxed', 'air-light' ),
     ],
     'fi'  => [
       'Add a menu'                                   => 'Luo uusi valikko',
@@ -70,6 +74,10 @@ function get_default_localization_strings( $language = 'en' ) {
       'Previous slide'                               => 'Edellinen dia',
       'Next slide'                                   => 'Seuraava dia',
       'Last slide'                                   => 'Viimeinen dia',
+      'No padding'                                   => 'Ei välistystä',
+      'M padding'                                    => 'M-välistyksellä',
+      'L padding'                                    => 'L-välistyksellä',
+      'Boxed'                                        => 'Laatikko',
     ],
   ];
 

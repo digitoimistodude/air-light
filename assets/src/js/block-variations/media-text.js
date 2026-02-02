@@ -33,7 +33,7 @@ const mediaTextVariation = {
       mediaUrl: placeholderImage,
       imageFill: true,
       mediaWidth: 50,
-      className: 'has-m-padding',
+      className: 'is-style-has-m-padding',
     },
     innerBlocks: [
       [
@@ -88,6 +88,10 @@ wp.domReady(() => {
     }
     /* Fallback: hide any RangeControl in media-text inspector */
     .block-editor-block-inspector__card + div .components-range-control__wrapper {
+      display: none !important;
+    }
+    /* Hide resizable box handle on the block itself */
+    .wp-block-media-text .components-resizable-box__handle {
       display: none !important;
     }
   `;

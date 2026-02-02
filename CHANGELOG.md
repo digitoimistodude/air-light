@@ -1,5 +1,8 @@
-### 10.0.0rc: 2026-01-30
+### 10.0.0rc: 2026-02-02
 
+* Move block styles to separate file with PHP server-side registration and scalable array-based approach, Ref: DEV-732, DEV-722
+* Add Finnish and English translations for block style labels using localization system, Ref: DEV-732
+* Hide resizable box handle and set M padding as default for media-text block, Ref: DEV-722
 * Update README badges to modern style with for-the-badge format, Ref: DEV-720
 * Remove default form styles, will use Gravity Forms Orbit theme, Ref: DEV-721
 * Simplify styles to minimal black and white design with square corners, Ref: DEV-718
