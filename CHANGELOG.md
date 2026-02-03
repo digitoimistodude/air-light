@@ -1,4 +1,4 @@
-### 10.0.0rc: 2026-02-03
+### 10.0.0: 2026-02-03
 
 * Update air-move-out and air-move-in scripts for Parcel build system, Ref: DEV-720
 * Simplify single.php and index.php based on Twenty Twenty structure with proper content width constraint, Ref: DEV-733
