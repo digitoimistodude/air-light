@@ -17,6 +17,7 @@ const { __ } = wp.i18n;
 
 // Placeholder image
 const placeholderImage = 'https://airwptheme.com/placeholder.png';
+// TODO: Fetch by ID in the real theme, add example as a code comment
 
 const mediaTextVariation = {
   blockName: 'core/media-text',
@@ -136,10 +137,17 @@ wp.domReady(() => {
 
       // Hide media width control by finding label with specific text
       setTimeout(() => {
-        const labels = document.querySelectorAll('.components-base-control__label');
+        const labels = document.querySelectorAll(
+          '.components-base-control__label'
+        );
         labels.forEach((label) => {
-          if (label.textContent === 'Median leveys' || label.textContent === 'Media width') {
-            const toolsPanelItem = label.closest('.components-tools-panel-item');
+          if (
+            label.textContent === 'Median leveys' ||
+            label.textContent === 'Media width'
+          ) {
+            const toolsPanelItem = label.closest(
+              '.components-tools-panel-item'
+            );
             if (toolsPanelItem) {
               toolsPanelItem.style.display = 'none';
             }
