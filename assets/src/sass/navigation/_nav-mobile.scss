@@ -30,7 +30,7 @@
   --typography-weight-sub-menu-mobile: 600;
   --margin-left-sub-menu: 0.625rem;
   --padding-sub-menu-vertical-mobile: 0.5rem;
-  --padding-sub-menu-horizontal-mobile: 1.5625rem;
+  --padding-sub-menu-horizontal-mobile: var(--spacing-container-padding-inline);
   --color-sub-menu-mobile: rgb(255 255 255 / 0.8);
 }
 
