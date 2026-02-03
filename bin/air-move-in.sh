@@ -32,6 +32,7 @@ mv $HOME/air-temp/phpcs.xml /var/www/airdev/content/themes/air-light/
 sudo mv $HOME/air-temp/node_modules /var/www/airdev/content/themes/air-light/
 sudo mv $HOME/air-temp/vendor /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/parcel /var/www/airdev/content/themes/air-light/
+mv $HOME/air-temp/.parcel-cache /var/www/airdev/content/themes/air-light/ 2>/dev/null || true
 mv $HOME/air-temp/bin /var/www/airdev/content/themes/air-light/
 mv $HOME/air-temp/content /var/www/airdev/content/themes/air-light/content
 mv $HOME/air-temp/.scss-lint.yml /var/www/airdev/content/themes/air-light/

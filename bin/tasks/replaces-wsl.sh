@@ -10,12 +10,12 @@ for i in $(grep -rl air * --exclude-dir=node_modules 2>/dev/null); do LC_ALL=C s
 
 # Remove demo content
 echo "${YELLOW}Removing demo content...${TXTRESET}"
-LC_ALL=C sed -i -e "s;@use 'layout\/wordpress'\;;;" ${PROJECT_THEME_PATH}/sass/global.scss
+LC_ALL=C sed -i -e "s;@use 'layout\/wordpress'\;;;" ${PROJECT_THEME_PATH}/assets/src/sass/global.scss
 
 read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
 if [ "$yn" = "n" ]; then
-  LC_ALL=C sed -i -e "s;@use 'views\/comments'\;;;" ${PROJECT_THEME_PATH}/sass/global.scss
-  rm ${PROJECT_THEME_PATH}/sass/views/_comments.scss
+  LC_ALL=C sed -i -e "s;@use 'views\/comments'\;;;" ${PROJECT_THEME_PATH}/assets/src/sass/global.scss
+  rm ${PROJECT_THEME_PATH}/assets/src/sass/views/_comments.scss
 else
   echo ' '
 fi

@@ -1,6 +1,6 @@
 {
   "name": "air-light",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
@@ -14,7 +14,7 @@
     "@hint/hint-compat-api": "^4.5.8",
     "@parcel/transformer-sass": "^2.15.4",
     "@wordpress/babel-preset-default": "^8.29.0",
-    "@wordpress/scripts": "^30.22.0",
+    "@wordpress/scripts": "^30.27.0",
     "browser-sync": "^3.0.4",
     "caniuse-lite": "^1.0.30001737",
     "concurrently": "^9.2.1",

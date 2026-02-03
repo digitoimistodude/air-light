@@ -11,7 +11,7 @@ for i in $(grep -rl airwptheme * --exclude-dir=node_modules 2>/dev/null); do LC_
 
 # Remove demo content
 echo "${YELLOW}Removing demo content...${TXTRESET}"
-find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@use 'layout\/wordpress';//g" {} +
+find ${PROJECT_THEME_PATH}/assets/src/sass/ -name 'global.scss' -exec sed -i '' -e "s/@use 'layout\/wordpress';//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/<\?php get_template_part( \'template-parts\/header\/demo-content\' ); \?>//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/\/\/ Featured image for Theme Checker (it\'s a requirement for theme to pass in official Theme directory)//g" {} +
 find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -e "s/\/\/ NB\! Our dev version uses newtheme.sh build script which cleans ups things including this next line//g" {} +
@@ -19,8 +19,8 @@ find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -
 
 read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
 if [ "$yn" = "n" ]; then
-  find ${PROJECT_THEME_PATH}/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'views\/comments';//g" {} +
-  rm ${PROJECT_THEME_PATH}/sass/views/_comments.scss
+  find ${PROJECT_THEME_PATH}/assets/src/sass/ -name 'global.scss' -exec sed -i '' -e "s/@import 'views\/comments';//g" {} +
+  rm ${PROJECT_THEME_PATH}/assets/src/sass/views/_comments.scss
 else
   echo ' '
 fi
