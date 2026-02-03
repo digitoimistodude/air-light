@@ -1,5 +1,7 @@
 ### 10.0.1: 2026-02-03
 
+* Fix air-pack.sh to exclude .parcel-cache directory from WordPress.org package, Ref: DEV-735
+* Add @wordpress/scripts as dev dependency for custom block development, Ref: DEV-735
 * Fix newtheme scripts for Parcel structure by updating sass paths to assets/src/sass in cleanups.sh and replaces scripts, Ref: DEV-735
 
 ### 10.0.0: 2026-02-03
