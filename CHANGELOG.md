@@ -1,3 +1,7 @@
+### 10.0.1: 2026-02-03
+
+* Fix newtheme scripts for Parcel structure by updating sass paths to assets/src/sass in cleanups.sh and replaces scripts, Ref: DEV-735
+
 ### 10.0.0: 2026-02-03
 
 * Update air-move-out and air-move-in scripts for Parcel build system, Ref: DEV-720
