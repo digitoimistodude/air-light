@@ -1,3 +1,7 @@
+### [Unreleased]: 2026-02-04
+
+* Fix changed filename for main scss file for replaces.sh in newtheme script, Ref: DEV-720
+
 ### 10.0.1: 2026-02-03
 
 * Fix air-pack.sh to exclude .parcel-cache directory from WordPress.org package, Ref: DEV-735
