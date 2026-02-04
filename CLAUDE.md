@@ -2,20 +2,6 @@
 
 Air-light is a minimalist WordPress starter theme by Digitoimisto Dude Oy. It follows traditional WordPress template hierarchy and coding standards.
 
-## Assets structure
-
-```
-assets/
-├── src/           # Source files
-│   ├── js/        # JavaScript source
-│   ├── sass/      # SCSS source
-│   └── fonts/     # Font files
-├── dist/          # Compiled output (Parcel)
-│   ├── js/        # Compiled JavaScript
-│   └── css/       # Compiled CSS + fonts
-└── svg/           # Static SVG files
-```
-
 ## Build system
 
 - Uses Parcel for bundling and compilation
@@ -41,6 +27,7 @@ assets/
 - Never use Claude watermark in commits (FORBIDDEN: "Co-Authored-By")
 - No emojis in commits or code
 - Keep CHANGELOG.md date up to date when adding entries
+- Features should be built inside branches, branches are all caps, e. g. DEV-111 and should reflect the Linear task ID
 
 ## Claude Code workflow
 
