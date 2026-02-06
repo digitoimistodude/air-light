@@ -1,6 +1,7 @@
 ### [Unreleased]: 2026-02-06
 
 * Update .eslintrc.js for native blocks, Ref: DEV-747
+* Update code-quality-checks to 2.1.9
 
 ### 10.0.2: 2026-02-06
 

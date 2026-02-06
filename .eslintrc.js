@@ -15,7 +15,6 @@ module.exports = {
   },
   rules: {
     indent: ['error', 2],
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'func-names': 'off',
     'no-underscore-dangle': 'off',
     'no-plusplus': 'off',
