@@ -1,3 +1,7 @@
+### [Unreleased]: 2026-02-06
+
+* Update .eslintrc.js for native blocks, Ref: DEV-747
+
 ### 10.0.2: 2026-02-06
 
 * Explicitly run husky setup after npm install to ensure pre-commit hooks are configured for all developers, Ref: DEV-742
