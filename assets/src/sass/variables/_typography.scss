@@ -1,26 +1,15 @@
-@use '../helpers' as *;
 @use 'breakpoints' as *;
 
-// Self-hosted fonts
-// Variable fonts
-@include variablefont('Mona Sans', '../fonts/monasansvf', 1 999);
+// Fonts are defined in theme.json and loaded via WordPress
+// No need to include @font-face here anymore
 
-// Regular fonts
-// @include font('Inter', '../fonts/inter-400', 400);
-// @include font('Inter', '../fonts/inter-400-italic', 400, italic);
-// @include font('Inter', '../fonts/inter-500', 500);
-// @include font('Inter', '../fonts/inter-600', 600);
-// @include font('Inter', '../fonts/inter-700', 700);
-
-// stylelint-disable rem-over-px/rem-over-px
+// stylelint-disable rem-over-px/rem-over-px, custom-property-pattern, csstools/value-no-unknown-custom-properties
 // CSS Variables for responsive fonts
 :root {
-  // Defined font families, replace these with your own
-  --typography-family-main: 'Mona Sans', -apple-system, 'BlinkMacSystemFont',
-    'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue',
-    sans-serif;
+  // Use WordPress preset font families from theme.json
+  --typography-family-main: var(--wp--preset--font-family--main);
 
-  // Contexts where the fonts are used, replace this with the families defined above
+  // Contexts where the fonts are used
   --typography-family-paragraph: var(--typography-family-main);
   --typography-family-heading: var(--typography-family-main);
 

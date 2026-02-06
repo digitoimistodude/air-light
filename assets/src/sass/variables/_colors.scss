@@ -1,19 +1,17 @@
-// CSS variables
-// Define names:
-// For AAA: https://www.color-blindness.com/color-name-hue/
-// For AA: https://chir.ag/projects/name-that-color/
-// ------------------------------------------------------
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
+// Colors are defined in theme.json and use WordPress preset variables
 :root {
-  --color-black: #000;
-  --color-white: #fff;
+  // Use WordPress preset colors from theme.json
+  --color-black: var(--wp--preset--color--black);
+  --color-white: var(--wp--preset--color--white);
 
   // Main element colors
-  --color-accent: var(--color-black);
-  --color-heading: var(--color-black);
-  --color-main: var(--color-black);
-  --color-paragraph: var(--color-black);
+  --color-accent: var(--wp--preset--color--black);
+  --color-heading: var(--wp--preset--color--black);
+  --color-main: var(--wp--preset--color--black);
+  --color-paragraph: var(--wp--preset--color--black);
 
   // Links
-  --color-link-text: var(--color-black);
-  --color-link-text-hover: var(--color-black);
+  --color-link-text: var(--wp--preset--color--black);
+  --color-link-text-hover: var(--wp--preset--color--black);
 }

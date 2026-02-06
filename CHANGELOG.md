@@ -1,5 +1,6 @@
-### [Unreleased]: 2026-02-04
+### [Unreleased]: 2026-02-06
 
+* Migrate fonts and variables from SCSS to theme.json using WordPress preset system with fontFace definitions and preset variables, Ref: DEV-740
 * Fix changed filename for main scss file for replaces.sh in newtheme script, Ref: DEV-720
 
 ### 10.0.1: 2026-02-03
