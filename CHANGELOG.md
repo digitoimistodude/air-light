@@ -1,7 +1,9 @@
-### [Unreleased]: 2026-02-06
+### 10.0.2: 2026-02-06
 
 * Explicitly run husky setup after npm install to ensure pre-commit hooks are configured for all developers, Ref: DEV-742
 * Fix changed filename for main scss file for replaces.sh in newtheme script, Ref: DEV-720
+* Release newtheme.sh 1.1.7
+* Bump tested WordPress version to 6.9.1
 
 ### 10.0.1: 2026-02-03
 
