@@ -3,7 +3,7 @@
 
 # Script specific vars
 SCRIPT_LABEL='for macOS'
-SCRIPT_VERSION='1.1.6 (2026-02-03)'
+SCRIPT_VERSION='1.1.7 (2026-02-06)'
 
 # Vars needed for this file to function globally
 CURRENTFILE=`basename $0`
