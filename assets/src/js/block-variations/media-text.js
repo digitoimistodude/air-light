@@ -15,9 +15,10 @@
 // @link https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
 const { __ } = wp.i18n;
 
-// Placeholder image
+// Default placeholder image
+// To use a media library image instead, replace with: mediaId: 7 (your image ID)
+// and remove the mediaUrl and mediaType attributes below
 const placeholderImage = 'https://airwptheme.com/placeholder.png';
-// TODO: Fetch by ID in the real theme, add example as a code comment
 
 const mediaTextVariation = {
   blockName: 'core/media-text',
@@ -32,6 +33,8 @@ const mediaTextVariation = {
       verticalAlignment: 'center',
       mediaType: 'image',
       mediaUrl: placeholderImage,
+      // To use media library image, comment out the line above and uncomment below:
+      // mediaId: 7, // Replace 7 with your image ID - URL will be fetched automatically
       imageFill: true,
       mediaWidth: 50,
       style: {
