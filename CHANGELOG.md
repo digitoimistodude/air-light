@@ -1,5 +1,6 @@
-### [Unreleased]: 2026-02-06
+### [Unreleased]: 2026-02-09
 
+* Remove normalization styles that prevented theme.json preset variables from applying to block editor, Ref: DEV-750
 * Migrate fonts and variables from SCSS to theme.json using WordPress preset system with fontFace definitions and preset variables, Ref: DEV-740
 * Update .eslintrc.js for native blocks, Ref: DEV-747
 * Update code-quality-checks to 2.1.9
