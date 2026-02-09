@@ -130,18 +130,6 @@ function setup_editor_styles() {
   add_editor_style( get_asset_file( 'editor.css' ) );
 } // end setup_editor_styles
 
-// Remove Gutenberg inline "Normalization styles" like .editor-styles-wrapper h1
-// color: inherit;
-// @source https://github.com/WordPress/gutenberg/issues/18595#issuecomment-599588153
-// @ref https://gist.github.com/gziolo/a947dc52eb2604c77a0a5b0797b2e781#block_editor_settings_all
-function remove_gutenberg_inline_styles( $editor_settings, $editor_context ) {
-  if ( ! empty( $editor_context->post ) ) {
-    unset( $editor_settings['styles'][0]['css'] );
-  }
-
-  return $editor_settings;
-}
-
 /**
  * Block editor title input styles for post types that don't show
  * post title in templates
