@@ -63,6 +63,17 @@ Air-light is a minimalist WordPress starter theme by Digitoimisto Dude Oy. It fo
 - Modules in `assets/src/js/modules/`
 - Main entry points: `front-end.js`, `gutenberg-editor.js`
 
+## Release checklist
+
+When releasing a new version, update ALL of these files:
+
+- `style.css` - `Version:` in theme header AND `@version` date
+- `functions.php` - `AIR_LIGHT_VERSION` constant
+- `package.json` - `version` field
+- `package-lock.json` - run `npm install --package-lock-only`
+- `readme.txt` - `Stable tag:` field
+- `CHANGELOG.md` - change `[Unreleased]` to version number with date
+
 # Linear references
 
 Use `, Ref: DEV-XXX` at end of commit messages to link to Linear issues.
