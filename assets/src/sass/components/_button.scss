@@ -1,18 +1,19 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 // Important needed to override WordPress editor inline styles
 // stylelint-disable number-max-precision, rem-over-px/rem-over-px, declaration-no-important
 @use '../helpers' as *;
 
 @mixin button() {
   appearance: none;
-  background-color: var(--color-black);
-  border: 1px solid var(--color-black);
+  background-color: var(--wp--preset--color--black);
+  border: 1px solid var(--wp--preset--color--black);
   border-radius: 0;
-  color: var(--color-white);
+  color: var(--wp--preset--color--white);
   cursor: pointer;
   display: inline-block;
-  font-family: var(--typography-family-paragraph);
-  font-size: var(--typography-size-16);
-  font-weight: var(--typography-weight-semibold);
+  font-family: var(--wp--preset--font-family--main);
+  font-size: var(--wp--preset--font-size--16);
+  font-weight: var(--wp--custom--typography--weight-semibold);
   line-height: 1.39;
   margin-bottom: 0;
   max-width: 230px;
@@ -28,8 +29,8 @@
   &.focus,
   &:hover,
   &:focus {
-    background-color: var(--color-white);
-    border-color: var(--color-black);
-    color: var(--color-black);
+    background-color: var(--wp--preset--color--white);
+    border-color: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--black);
   }
 }

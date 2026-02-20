@@ -28,17 +28,17 @@
         {
           "slug": "none",
           "size": "0",
-          "name": "None"
+          "name": "No padding"
         },
         {
           "slug": "30",
           "size": "5rem",
-          "name": "Medium"
+          "name": "M padding"
         },
         {
           "slug": "40",
           "size": "8rem",
-          "name": "Large"
+          "name": "L padding"
         }
       ]
     },
@@ -68,6 +68,7 @@
     },
     "typography": {
       "customFontSize": false,
+      "fluid": true,
       "fontStyle": false,
       "fontWeight": false,
       "lineHeight": false,
@@ -93,90 +94,58 @@
         }
       ],
       "fontSizes": [
-        {
-          "slug": "12",
-          "size": "12px",
-          "name": "12"
-        },
-        {
-          "slug": "13",
-          "size": "13px",
-          "name": "13"
-        },
-        {
-          "slug": "14",
-          "size": "14px",
-          "name": "14"
-        },
-        {
-          "slug": "15",
-          "size": "15px",
-          "name": "15"
-        },
-        {
-          "slug": "16",
-          "size": "16px",
-          "name": "16"
-        },
-        {
-          "slug": "17",
-          "size": "17px",
-          "name": "17"
-        },
-        {
-          "slug": "18",
-          "size": "18px",
-          "name": "18"
-        },
-        {
-          "slug": "20",
-          "size": "20px",
-          "name": "20"
-        },
-        {
-          "slug": "22",
-          "size": "22px",
-          "name": "22"
-        },
-        {
-          "slug": "hero",
-          "size": "52px",
-          "name": "Hero"
-        },
-        {
-          "slug": "h1",
-          "size": "40px",
-          "name": "H1"
-        },
-        {
-          "slug": "h2",
-          "size": "30px",
-          "name": "H2"
-        },
-        {
-          "slug": "h3",
-          "size": "24px",
-          "name": "H3"
-        },
-        {
-          "slug": "h4",
-          "size": "20px",
-          "name": "H4"
-        },
-        {
-          "slug": "h5",
-          "size": "16px",
-          "name": "H5"
-        },
-        {
-          "slug": "h6",
-          "size": "14px",
-          "name": "H6"
-        }
+        { "slug": "12", "size": "12px", "name": "12", "fluid": false },
+        { "slug": "13", "size": "13px", "name": "13", "fluid": false },
+        { "slug": "14", "size": "14px", "name": "14", "fluid": false },
+        { "slug": "15", "size": "15px", "name": "15", "fluid": false },
+        { "slug": "16", "size": "16px", "name": "16", "fluid": false },
+        { "slug": "17", "size": "17px", "name": "17", "fluid": false },
+        { "slug": "18", "size": "18px", "name": "18", "fluid": false },
+        { "slug": "20", "size": "20px", "name": "20", "fluid": false },
+        { "slug": "22", "size": "22px", "name": "22", "fluid": false },
+        { "slug": "hero", "size": "52px", "name": "Hero", "fluid": { "min": "38px", "max": "52px" } },
+        { "slug": "h1", "size": "40px", "name": "H1", "fluid": { "min": "32px", "max": "40px" } },
+        { "slug": "h2", "size": "30px", "name": "H2", "fluid": { "min": "24px", "max": "30px" } },
+        { "slug": "h3", "size": "24px", "name": "H3", "fluid": { "min": "21px", "max": "24px" } },
+        { "slug": "h4", "size": "20px", "name": "H4", "fluid": { "min": "18px", "max": "20px" } },
+        { "slug": "h5", "size": "16px", "name": "H5", "fluid": { "min": "14px", "max": "16px" } },
+        { "slug": "h6", "size": "14px", "name": "H6", "fluid": { "min": "12px", "max": "14px" } }
       ]
     },
     "custom": {
-      "gridBase": "1440px"
+      "gridBase": "1440px",
+      "spacing": {
+        "gridGap": "3rem",
+        "containerPaddingInline": "1.25rem",
+        "containerPaddingInlineLarge": "4rem",
+        "containerPaddingBlock": "4rem",
+        "siteHeaderPaddingBlock": "1.25rem",
+        "contentPaddingBlock": "5rem",
+        "textMarginBlock": "2.5rem",
+        "wpBlockImageMarginBlock": "2.5rem",
+        "paragraphsMarginBlock": "1.6875rem"
+      },
+      "color": {
+        "accent": "var(--wp--preset--color--black)",
+        "heading": "var(--wp--preset--color--black)",
+        "main": "var(--wp--preset--color--black)",
+        "paragraph": "var(--wp--preset--color--black)",
+        "linkText": "var(--wp--preset--color--black)",
+        "linkTextHover": "var(--wp--preset--color--black)"
+      },
+      "typography": {
+        "weightRegular": "400",
+        "weightMedium": "500",
+        "weightSemibold": "600",
+        "weightBold": "700",
+        "weightParagraph": "400",
+        "weightHeading": "700",
+        "paragraphLineHeight": "1.7",
+        "headingLineHeight": "1.5",
+        "headingCoreLineHeight": "1.23",
+        "captionsSize": "15px",
+        "navToggleLabelSize": "15px"
+      }
     },
     "blocks": {
       "core/media-text": {
@@ -210,35 +179,35 @@
     },
     "spacing": {
       "padding": {
-        "left": "var(--spacing-container-padding-inline)",
-        "right": "var(--spacing-container-padding-inline)"
+        "left": "var(--wp--custom--spacing--container-padding-inline)",
+        "right": "var(--wp--custom--spacing--container-padding-inline)"
       }
     },
     "elements": {
       "link": {
         "color": {
-          "text": "var(--color-link-text)"
+          "text": "var(--wp--custom--color--link-text)"
         },
         ":hover": {
           "color": {
-            "text": "var(--color-link-text-hover)"
+            "text": "var(--wp--custom--color--link-text-hover)"
           }
         }
       },
       "button": {
         "color": {
-          "background": "var(--color-accent)",
+          "background": "var(--wp--custom--color--accent)",
           "text": "#ffffff"
         },
         ":hover": {
           "color": {
-            "background": "var(--color-link-text-hover)"
+            "background": "var(--wp--custom--color--link-text-hover)"
           }
         }
       },
       "heading": {
         "color": {
-          "text": "var(--color-heading)"
+          "text": "var(--wp--custom--color--heading)"
         }
       }
     }

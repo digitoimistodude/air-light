@@ -1,3 +1,4 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 // It is acceptable to hide things for print
 // stylelint-disable a11y/no-display-none
 @media print {
@@ -10,6 +11,6 @@
   // Add colors, disable spacings or images,
   // etc. define here
   // * {
-  //   color: var(--color-black) !important;
+  //   color: var(--wp--preset--color--black) !important;
   // }
 }

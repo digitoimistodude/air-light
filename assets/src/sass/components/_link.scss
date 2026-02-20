@@ -1,18 +1,20 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../helpers' as *;
 // Links within content must be visually underlined
 // @link https://make.wordpress.org/themes/handbook/review/accessibility/required/#content-links
 @mixin link() {
-  color: var(--color-link-text);
+  color: var(--wp--custom--color--link-text);
   // Create your own default content link styles here
   // for pages and articles
   text-decoration: underline;
-  text-decoration-color: var(--color-link-text);
+  text-decoration-color: var(--wp--custom--color--link-text);
   text-underline-offset: 0.375rem;
   transition: all 150ms;
 
   &:hover,
   &:focus {
-    color: var(--color-link-text-hover);
-    text-decoration-color: var(--color-link-text-hover);
+    color: var(--wp--custom--color--link-text-hover);
+    text-decoration-color: var(--wp--custom--color--link-text-hover);
   }
 }

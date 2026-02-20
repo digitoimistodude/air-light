@@ -10,19 +10,19 @@
 // Body
 .is-root-container,
 body:not(.wp-admin) {
-  color: var(--color-paragraph);
-  font-family: var(--typography-family-paragraph);
-  font-size: var(--typography-paragraph-size);
+  color: var(--wp--custom--color--paragraph);
+  font-family: var(--wp--preset--font-family--main);
+  font-size: var(--wp--preset--font-size--18);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: var(--typography-weight-paragraph);
-  line-height: var(--typography-paragraph-line-height);
+  font-weight: var(--wp--custom--typography--weight-paragraph);
+  line-height: var(--wp--custom--typography--paragraph-line-height);
   text-rendering: geometricPrecision;
 }
 
 // Default structural element
 .block {
-  background-color: var(--color-white);
+  background-color: var(--wp--preset--color--white);
   margin: 0 auto;
   position: relative;
 }
@@ -57,10 +57,10 @@ body:not(.wp-admin) {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--wp--custom--grid-base);
-  padding-bottom: var(--spacing-container-padding-block);
-  padding-left: var(--spacing-container-padding-inline);
-  padding-right: var(--spacing-container-padding-inline);
-  padding-top: var(--spacing-container-padding-block);
+  padding-bottom: var(--wp--custom--spacing--container-padding-block);
+  padding-left: var(--wp--custom--spacing--container-padding-inline);
+  padding-right: var(--wp--custom--spacing--container-padding-inline);
+  padding-top: var(--wp--custom--spacing--container-padding-block);
 }
 
 .edit-link:last-child,
@@ -83,12 +83,12 @@ body:not(.wp-admin) {
   width: 100%;
 
   a {
-    background-color: var(--color-white);
+    background-color: var(--wp--preset--color--white);
     border: 2px dashed var(--color-link-edit-border);
     clear: both;
     color: var(--color-link-edit-text);
     display: block;
-    font-weight: var(--typography-weight-semibold);
+    font-weight: var(--wp--custom--typography--weight-semibold);
     margin: 0 auto;
     max-width: calc(100% - 2rem);
     padding: 1rem;
@@ -110,8 +110,8 @@ body:not(.wp-admin) {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--wp--style--global--content-size);
-  padding-bottom: var(--spacing-block-padding-m);
-  padding-left: var(--spacing-container-padding-inline);
-  padding-right: var(--spacing-container-padding-inline);
-  padding-top: var(--spacing-block-padding-m);
+  padding-bottom: var(--wp--preset--spacing--30);
+  padding-left: var(--wp--custom--spacing--container-padding-inline);
+  padding-right: var(--wp--custom--spacing--container-padding-inline);
+  padding-top: var(--wp--preset--spacing--30);
 }

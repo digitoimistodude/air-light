@@ -1,6 +1,7 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 // stylelint-disable number-max-precision, rem-over-px/rem-over-px
 @mixin button-size-small() {
-  font-size: var(--typography-size-16);
+  font-size: var(--wp--preset--font-size--16);
   line-height: 20.9091px;
   padding-bottom: calc(10px - calc(1px * 2));
   padding-left: calc(21px - calc(1px * 2));

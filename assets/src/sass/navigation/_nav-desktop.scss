@@ -1,32 +1,33 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
 
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines, selector-max-specificity, selector-max-class
 .site-header ul {
   // Affecting to both main and sub-levels
-  --color-current: var(--color-black);
-  --color-current-dropdown: var(--color-white);
+  --color-current: var(--wp--preset--color--black);
+  --color-current-dropdown: var(--wp--preset--color--white);
   --dropdown-toggle-size: 0.75rem;
 
   // Main level items on desktop
-  --typography-size-main-level: var(--typography-size-16);
-  --typography-weight-main-level: var(--typography-weight-semibold);
+  --typography-size-main-level: var(--wp--preset--font-size--16);
+  --typography-weight-main-level: var(--wp--custom--typography--weight-semibold);
   --padding-main-level-horizontal: 0;
   --padding-main-level-vertical: 0.375rem;
-  --color-main-level: var(--color-black);
-  --color-hover-main-level: var(--color-link-text);
+  --color-main-level: var(--wp--preset--color--black);
+  --color-hover-main-level: var(--wp--custom--color--link-text);
   --gap-between-dropdown-toggle: 0.9375rem;
   --gap-main-level-horizontal: 1.5625rem;
 
   // Sub menu items on desktop
-  --typography-size-sub-menu: var(--typography-size-16);
-  --typography-weight-sub-menu: var(--typography-weight-semibold);
+  --typography-size-sub-menu: var(--wp--preset--font-size--16);
+  --typography-weight-sub-menu: var(--wp--custom--typography--weight-semibold);
   --padding-sub-menu-vertical: 0.625rem;
   --padding-sub-menu-link-vertical: 0.5rem;
   --padding-sub-menu-link-horizontal: 1.25rem;
   --width-sub-menu: 12.5rem;
-  --color-sub-menu: var(--color-white);
-  --color-hover-sub-menu: var(--color-white);
-  --color-background-sub-menu: var(--color-black);
+  --color-sub-menu: var(--wp--preset--color--white);
+  --color-hover-sub-menu: var(--wp--preset--color--white);
+  --color-background-sub-menu: var(--wp--preset--color--black);
   --gap-dropdown: 1.6rem;
   list-style: none;
   width: unset;
@@ -195,7 +196,7 @@
   // Dropdowns
   .sub-menu {
     background-color: var(--color-background-sub-menu);
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--wp--preset--color--black);
     left: 0;
     margin-left: 0;
     padding-bottom: 0;

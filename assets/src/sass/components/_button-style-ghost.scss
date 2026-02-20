@@ -1,10 +1,12 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../helpers' as *;
 
 @mixin button-style-ghost(
   $background: transparent,
   $background-hover: var(--color-button-background),
   $color: var(--color-button-background),
-  $hover: var(--color-white),
+  $hover: var(--wp--preset--color--white),
   $border: var(--border-width-input-field) solid var(--color-button-background),
   $transition: all 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94)
 ) {

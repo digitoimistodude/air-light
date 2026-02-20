@@ -1,59 +1,42 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
+// Static spacing values are defined in theme.json custom section
+// This file only contains responsive overrides for breakpoints
 @use 'breakpoints' as *;
 
-// CSS Variables for responsive paddings and margins
 :root {
-  // Gaps
-  --spacing-grid-gap: 3rem;
-
-  // Paddings
-  --spacing-container-padding-inline: 1.25rem;
-  --spacing-container-padding-inline-large: 4rem;
-  --spacing-container-padding-block: 4rem;
-  --spacing-site-header-padding-block: 1.25rem;
-  --spacing-content-padding-block: 5rem;
-
-  // M and L paddings in blocks
-  --spacing-block-padding-m: 5rem;
-  --spacing-block-padding-l: 8rem;
-
-  // Margins
-  --spacing-text-margin-block: 2.5rem;
-  --spacing-wp-block-image-margin-block: 2.5rem;
-  --spacing-paragraphs-margin-block: 1.6875rem;
-
   // Mid-sized screens
   @media (max-width: ($breakpoint-grid-base + 150px)) {
-    --spacing-container-padding-inline: 4rem;
+    --wp--custom--spacing--container-padding-inline: 4rem;
   }
 
   // When there's no longer room for container to fit with wider white space
   @media (max-width: 700px) {
-    --spacing-container-padding-inline: 1.25rem;
+    --wp--custom--spacing--container-padding-inline: 1.25rem;
   }
 
   // When navigation transforms to a responsive hamburger menu
   @media (max-width: $breakpoint-nav) {
-    --spacing-site-header-padding-block: 1.25rem;
+    --wp--custom--spacing--site-header-padding-block: 1.25rem;
   }
 
   // Tablet landscape
   @media (max-width: $breakpoint-tablet-landscape) {
-    --spacing-grid-gap: 2rem;
+    --wp--custom--spacing--grid-gap: 2rem;
   }
 
   // Tablet
   @media (max-width: $breakpoint-tablet) {
-    --spacing-grid-gap: var(--spacing-container-padding-inline);
-    --spacing-container-padding-block: 3.125rem;
+    --wp--custom--spacing--grid-gap: var(--wp--custom--spacing--container-padding-inline);
+    --wp--custom--spacing--container-padding-block: 3.125rem;
   }
 
   // Between tablet and mobile
   @media (max-width: 600px) {
-    --spacing-content-padding-block: 3.75rem;
+    --wp--custom--spacing--content-padding-block: 3.75rem;
   }
 
   // Mobile
   @media (max-width: $breakpoint-mobile) {
-    --spacing-container-padding-block: 2.5rem;
+    --wp--custom--spacing--container-padding-block: 2.5rem;
   }
 }

@@ -1,3 +1,4 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables/breakpoints' as *;
 
 // stylelint-disable declaration-no-important
@@ -28,14 +29,14 @@
 
   // Focused on keyboard
   &:focus-visible {
-    background-color: var(--color-white);
+    background-color: var(--wp--preset--color--white);
     border-radius: 0;
     box-shadow: 0 0 2px 2px rgb(22 22 22 / 0.6);
     clip: auto;
     clip-path: none;
     display: block;
     font-size: 1.0625rem;
-    font-weight: var(--typography-weight-bold);
+    font-weight: var(--wp--custom--typography--weight-bold);
     height: auto;
     left: 0.3125rem;
     line-height: normal;

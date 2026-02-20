@@ -1,3 +1,5 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 // These styles are required by WordPress.org Theme Check
 // REQUIRED: .sticky css class is needed in your theme css.
 // REQUIRED: .bypostauthor css class is needed in your theme css.
@@ -8,18 +10,18 @@
 
 .sticky .post-inner {
   border: 2px dashed var(--color-border-sticky);
-  margin-bottom: var(--spacing-container-padding-inline);
-  padding: var(--spacing-container-padding-inline);
+  margin-bottom: var(--wp--custom--spacing--container-padding-inline);
+  padding: var(--wp--custom--spacing--container-padding-inline);
 }
 
 .comment-list li.bypostauthor,
 .bypostauthor {
   border: 1px dashed var(--color-bypostauthor);
-  padding: var(--spacing-container-padding-inline);
+  padding: var(--wp--custom--spacing--container-padding-inline);
 }
 
 .blog article:first-of-type {
-  margin-top: var(--spacing-block-padding-m);
+  margin-top: var(--wp--preset--spacing--30);
 }
 
 // WordPress captions

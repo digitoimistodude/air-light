@@ -3,7 +3,7 @@
 @use '../variables' as *;
 
 .site-header {
-  background-color: var(--color-white);
+  background-color: var(--wp--preset--color--white);
 
   @media screen and (max-width: $breakpoint-nav) {
     background-color: var(--color-background-nav-mobile-header);
@@ -16,15 +16,15 @@
 
 .site-header-inner {
   align-items: flex-start;
-  column-gap: var(--spacing-grid-gap);
+  column-gap: var(--wp--custom--spacing--grid-gap);
   display: flex;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   max-width: var(--wp--custom--grid-base);
   padding-bottom: 0;
-  padding-left: var(--spacing-container-padding-inline);
-  padding-right: var(--spacing-container-padding-inline);
+  padding-left: var(--wp--custom--spacing--container-padding-inline);
+  padding-right: var(--wp--custom--spacing--container-padding-inline);
   padding-top: 2.5rem;
   position: relative;
   z-index: 15;
@@ -41,7 +41,7 @@
 
   a {
     align-items: center;
-    color: var(--color-black);
+    color: var(--wp--preset--color--black);
     display: flex;
   }
 }

@@ -1,3 +1,5 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
 @use '../helpers/clamp' as *;
 
@@ -16,7 +18,7 @@
 
   h1 {
     font-size: clamp-calc($breakpoint-mobile, 1600px, 60px, 120px);
-    line-height: var(--typography-heading-core-line-height);
+    line-height: var(--wp--custom--typography--heading-core-line-height);
     margin-bottom: 1.25rem;
   }
 }

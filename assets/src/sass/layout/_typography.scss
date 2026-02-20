@@ -1,3 +1,4 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 // stylelint-disable declaration-property-unit-allowed-list
 // Everything around fonts, font size definitions and typeset
 // presets. No modular scale, but a sophisticated viewport
@@ -6,13 +7,13 @@
 // Typography settings
 .is-root-container,
 body {
-  color: var(--color-paragraph);
-  font-family: var(--typography-family-paragraph);
-  font-size: var(--typography-paragraph-size);
+  color: var(--wp--custom--color--paragraph);
+  font-family: var(--wp--preset--font-family--main);
+  font-size: var(--wp--preset--font-size--18);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: var(--typography-weight-paragraph);
-  line-height: var(--typography-paragraph-line-height);
+  font-weight: var(--wp--custom--typography--weight-paragraph);
+  line-height: var(--wp--custom--typography--paragraph-line-height);
   text-rendering: geometricPrecision;
 }
 
@@ -23,11 +24,11 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-heading);
-  font-family: var(--typography-family-heading);
-  font-weight: var(--typography-weight-heading);
-  margin-bottom: var(--spacing-paragraphs-margin-block);
-  margin-top: var(--spacing-paragraphs-margin-block);
+  color: var(--wp--custom--color--heading);
+  font-family: var(--wp--preset--font-family--main);
+  font-weight: var(--wp--custom--typography--weight-heading);
+  margin-bottom: var(--wp--custom--spacing--paragraphs-margin-block);
+  margin-top: var(--wp--custom--spacing--paragraphs-margin-block);
 }
 
 h2,
@@ -35,33 +36,33 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: var(--typography-heading-line-height);
+  line-height: var(--wp--custom--typography--heading-line-height);
 }
 
 // Define heading scales
 // Current: Perfect fourth: https://type-scale.com/
 h1 {
-  font-size: var(--typography-size-h1);
+  font-size: var(--wp--preset--font-size--h-1);
 }
 
 h2 {
-  font-size: var(--typography-size-h2);
+  font-size: var(--wp--preset--font-size--h-2);
 }
 
 h3 {
-  font-size: var(--typography-size-h3);
+  font-size: var(--wp--preset--font-size--h-3);
 }
 
 h4 {
-  font-size: var(--typography-size-h4);
+  font-size: var(--wp--preset--font-size--h-4);
 }
 
 h5 {
-  font-size: var(--typography-size-h5);
+  font-size: var(--wp--preset--font-size--h-5);
 }
 
 h6 {
-  font-size: var(--typography-size-h6);
+  font-size: var(--wp--preset--font-size--h-6);
 }
 
 h1:first-child,
@@ -76,7 +77,7 @@ h6:first-child {
 // Bold
 b,
 strong {
-  font-weight: var(--typography-weight-bold);
+  font-weight: var(--wp--custom--typography--weight-bold);
 }
 
 // Italic
@@ -110,7 +111,7 @@ p:last-child {
 }
 
 blockquote.wysiwyg {
-  border-left: 2px solid var(--color-main);
+  border-left: 2px solid var(--wp--custom--color--main);
   margin: 2.9rem 1rem;
   padding: 0.5rem 0 0.5rem 1.5rem;
 }

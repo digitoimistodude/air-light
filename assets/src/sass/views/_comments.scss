@@ -1,11 +1,13 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
 // WordPress built-in comments with comment_form().
 // Custom comment template can be found in inc/comments.php
 .comments-area {
-  --color-comment-text: var(--color-paragraph);
-  --color-comment-author-text: var(--color-paragraph);
-  --color-link-comment: var(--color-accent);
-  --color-link-comment-time-anchor: var(--color-paragraph);
+  --color-comment-text: var(--wp--custom--color--paragraph);
+  --color-comment-author-text: var(--wp--custom--color--paragraph);
+  --color-link-comment: var(--wp--custom--color--accent);
+  --color-link-comment-time-anchor: var(--wp--custom--color--paragraph);
   margin-bottom: 0;
   margin-top: 3.125rem;
   overflow: visible;
@@ -22,7 +24,7 @@
   }
 
   li {
-    font-size: var(--typography-size-14);
+    font-size: var(--wp--preset--font-size--14);
     margin-bottom: 4.375rem;
     margin-top: 0;
     padding: 0;
@@ -30,7 +32,7 @@
 
   p {
     color: var(--color-comment-text);
-    font-size: var(--typography-size-14);
+    font-size: var(--wp--preset--font-size--14);
   }
 
   .avatar {
@@ -40,7 +42,7 @@
 
   .comment-author {
     color: var(--color-comment-author-text);
-    font-size: var(--typography-size-h4);
+    font-size: var(--wp--preset--font-size--h-4);
     margin-bottom: 0.625rem;
     margin-top: 0;
     padding: 0;
@@ -53,11 +55,11 @@
   }
 
   .comment-author a {
-    color: var(--color-paragraph);
+    color: var(--wp--custom--color--paragraph);
   }
 
   .comment-time {
-    font-size: var(--typography-size-14);
+    font-size: var(--wp--preset--font-size--14);
     margin: 0;
     padding: 0;
 
@@ -82,7 +84,7 @@
 .comments-link {
   align-items: center;
   display: inline-flex;
-  font-size: var(--typography-size-14);
+  font-size: var(--wp--preset--font-size--14);
   text-align: right;
 
   a {
@@ -93,7 +95,7 @@
   &:focus,
   a:hover,
   a:focus {
-    color: var(--color-black);
+    color: var(--wp--preset--color--black);
   }
 
   svg {

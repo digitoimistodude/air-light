@@ -1,3 +1,5 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../components/button-size-small' as *;
 @use '../components/button-size-large' as *;
 @use '../components/button-size-small' as *;
@@ -8,13 +10,13 @@
 [class*='wp-block'] {
   // Padding variations (default: M padding)
   &.is-style-has-m-padding {
-    padding-bottom: var(--spacing-block-padding-m);
-    padding-top: var(--spacing-block-padding-m);
+    padding-bottom: var(--wp--preset--spacing--30);
+    padding-top: var(--wp--preset--spacing--30);
   }
 
   &.is-style-has-l-padding {
-    padding-bottom: var(--spacing-block-padding-l);
-    padding-top: var(--spacing-block-padding-l);
+    padding-bottom: var(--wp--preset--spacing--40);
+    padding-top: var(--wp--preset--spacing--40);
   }
 
   &.is-style-no-padding {

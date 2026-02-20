@@ -1,3 +1,4 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines
 
@@ -124,7 +125,7 @@
   // Dropdowns
   .sub-menu {
     background-color: var(--color-background-sub-menu);
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--wp--preset--color--black);
     left: 0;
     margin-left: 0;
     opacity: 0;

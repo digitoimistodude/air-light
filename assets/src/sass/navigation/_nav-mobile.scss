@@ -1,3 +1,4 @@
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
 @use '../helpers' as *;
 // stylelint-disable a11y/no-display-none, plugin/file-max-lines, scss/operator-no-newline-after
@@ -7,30 +8,30 @@
 // CSS variables
 :root {
   // Site-header and general mobile navigation elements
-  --color-background-nav-mobile-header: var(--color-white);
-  --color-background-nav-mobile-header-active: var(--color-black);
+  --color-background-nav-mobile-header: var(--wp--preset--color--white);
+  --color-background-nav-mobile-header-active: var(--wp--preset--color--black);
   --width-navigation: 100vw;
 
   // Affecting to both main and sub-levels
-  --color-background-menu-items: var(--color-main);
-  --color-background-menu-items-active: var(--color-main);
+  --color-background-menu-items: var(--wp--custom--color--main);
+  --color-background-menu-items-active: var(--wp--custom--color--main);
   --color-separator-nav-mobile: rgb(255 255 255 / 0.1);
-  --color-current-menu-item: var(--color-white);
-  --color-dropdown-toggle-mobile: var(--color-white);
+  --color-current-menu-item: var(--wp--preset--color--white);
+  --color-dropdown-toggle-mobile: var(--wp--preset--color--white);
 
   // Main level items on mobile
   --typography-size-main-level-mobile: 0.9375rem;
   --typography-weight-main-level-mobile: 600;
   --padding-main-level-vertical-mobile: 0.75rem;
-  --color-main-level-menu-item-hover-focus-mobile: var(--color-white);
-  --color-main-level-menu-item-mobile: var(--color-white);
+  --color-main-level-menu-item-hover-focus-mobile: var(--wp--preset--color--white);
+  --color-main-level-menu-item-mobile: var(--wp--preset--color--white);
 
   // Sub-menu items on mobile
   --typography-size-sub-menu-mobile: 0.9375rem;
   --typography-weight-sub-menu-mobile: 600;
   --margin-left-sub-menu: 0.625rem;
   --padding-sub-menu-vertical-mobile: 0.5rem;
-  --padding-sub-menu-horizontal-mobile: var(--spacing-container-padding-inline);
+  --padding-sub-menu-horizontal-mobile: var(--wp--custom--spacing--container-padding-inline);
   --color-sub-menu-mobile: rgb(255 255 255 / 0.8);
 }
 

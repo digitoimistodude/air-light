@@ -1,9 +1,11 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
 
 // Search
 .block-search,
 .block-search-results {
-  background-color: var(--color-white);
+  background-color: var(--wp--preset--color--white);
 }
 
 .block-search form {
@@ -29,16 +31,16 @@
   }
 
   .row-result {
-    border-top: 2px solid var(--color-black);
+    border-top: 2px solid var(--wp--preset--color--black);
     padding: 1.25rem 0;
 
     &:last-of-type {
-      border-bottom: 2px solid var(--color-black);
+      border-bottom: 2px solid var(--wp--preset--color--black);
     }
   }
 
   h3 {
-    font-size: var(--typography-size-h4);
+    font-size: var(--wp--preset--font-size--h-4);
     margin-bottom: 0.625rem;
   }
 
