@@ -1,12 +1,7 @@
-### [Unreleased]: 2026-02-20
+### 10.1.0: 2026-02-20
 
-* Delete `_colors.scss` and `_typography.scss`, reduce `_spacings.scss` to responsive overrides only, Ref: DEV-740
-* Replace all intermediate SCSS variables (`--color-*`, `--spacing-*`, `--typography-*`) with direct WordPress preset and custom variables (`--wp--preset--*`, `--wp--custom--*`) across all SCSS files, Ref: DEV-740
-* Add custom section to theme.json for spacing, color and typography design tokens, Ref: DEV-740
-* Enable fluid typography in theme.json with `clamp()` for heading sizes, Ref: DEV-740
-* Remove `padding-inline` from media-text block, Ref: DEV-763
+* Migrate all design tokens (colors, spacing, typography) from SCSS to theme.json as single source of truth with fluid typography, WordPress preset and custom variables, Ref: DEV-740
 * Remove normalization styles that prevented theme.json preset variables from applying to block editor, Ref: DEV-750
-* Migrate fonts and variables from SCSS to theme.json using WordPress preset system with fontFace definitions and preset variables, Ref: DEV-740
 * Update .eslintrc.js for native blocks, Ref: DEV-747
 * Update code-quality-checks to 2.1.9
 
