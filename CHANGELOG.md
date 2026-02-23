@@ -1,3 +1,7 @@
+### [Unreleased]
+
+* Update code-quality-checks version to 2.1.12, Ref: DEV-771
+
 ### 10.1.0: 2026-02-20
 
 * Migrate all design tokens (colors, spacing, typography) from SCSS to theme.json as single source of truth with fluid typography, WordPress preset and custom variables, Ref: DEV-740
