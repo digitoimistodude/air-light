@@ -311,7 +311,7 @@ Next you just need to add content and menu via [airdev.test/admin](http://airdev
 
 ### Debuggers
 
-Air-light comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files. **Please note, you need to configure global versions of these separately!**
+Air-light comes with [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer) for PHP files, [stylelint](https://github.com/stylelint/stylelint) for SCSS/CSS files and [eslint](https://github.com/eslint/eslint) for JS files. **Please note, you need to configure global versions of these separately!**
 
 It's also recommended to use [Query Monitor](https://wordpress.org/plugins/query-monitor/) plugin, as some debugging messages goes straight to it's logger.
 
