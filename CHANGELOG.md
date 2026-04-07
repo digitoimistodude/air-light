@@ -1,6 +1,7 @@
 ### [Unreleased]
 
 * Update code-quality-checks version to 2.1.12, Ref: DEV-771
+* Add blocks-watch browserSync live inject runner, Ref: DUDE-2319
 
 ### 10.1.0: 2026-02-20
 

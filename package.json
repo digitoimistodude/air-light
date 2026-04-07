@@ -38,7 +38,7 @@
     "stylelint": "^15.11.0"
   },
   "scripts": {
-    "dev": "concurrently -n \"CSS,JS,SYNC\" \"node parcel/css-watch.js\" \"PARCEL_CONFIG=.parcelrc.watch parcel watch assets/src/js/front-end.js assets/src/js/editor.js --dist-dir assets/dist/js --no-source-maps --no-hmr --no-cache --log-level verbose\" \"npm run browsersync\"",
+    "dev": "concurrently -n \"CSS,JS,BLOCKS,SYNC\" \"node parcel/css-watch.js\" \"PARCEL_CONFIG=.parcelrc.watch parcel watch assets/src/js/front-end.js assets/src/js/editor.js --dist-dir assets/dist/js --no-source-maps --no-hmr --no-cache --log-level verbose\" \"node parcel/blocks-watch.js\" \"npm run browsersync\"",
     "browsersync": "node parcel/browsersync.js",
     "build": "npm-run-all build:styles build:js",
     "build:styles": "parcel build assets/src/sass/front-end.scss assets/src/sass/editor.scss --dist-dir assets/dist/css --no-cache",
