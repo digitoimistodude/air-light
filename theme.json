@@ -87,7 +87,7 @@
               "fontStyle": "normal",
               "fontDisplay": "swap",
               "src": [
-                "file:./assets/dist/fonts/monasansvf.woff2"
+                "file:./assets/fonts/monasansvf.woff2"
               ]
             }
           ]
