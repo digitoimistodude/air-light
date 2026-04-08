@@ -19,7 +19,7 @@ find ${PROJECT_THEME_PATH}/ -maxdepth 2 -name 'front-page.php' -exec sed -i '' -
 
 read -p "${BOLDYELLOW}Do we use comments in this project? (y/n)${TXTRESET} " yn
 if [ "$yn" = "n" ]; then
-  find ${PROJECT_THEME_PATH}/assets/src/sass/ -name 'front-end.scss' -exec sed -i '' -e "s/@import 'views\/comments';//g" {} +
+  find ${PROJECT_THEME_PATH}/assets/src/sass/ -name 'front-end.scss' -exec sed -i '' -e "s/@use 'views\/comments';//g" {} +
   rm ${PROJECT_THEME_PATH}/assets/src/sass/views/_comments.scss
 else
   echo ' '
