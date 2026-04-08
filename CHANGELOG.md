@@ -1,4 +1,4 @@
-### [Unreleased]
+### 10.1.1: 2026-04-08
 
 * Update code-quality-checks to 2.2.0, Ref: DEV-887
 * Generate default GitHub Actions code quality workflows in newtheme, Ref: DEV-737
