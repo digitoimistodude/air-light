@@ -1,5 +1,7 @@
 ### [Unreleased]
 
+* Fix husky hooks not initializing in new projects by running setup after air-light `.git` removal, Ref: DEV-885
+* Clean up air-light CHANGELOGs from root and theme when running newtheme, Ref: DEV-886
 * Fix newtheme comments removal using stale `@import` instead of `@use`, Ref: DEV-883
 * Show commit ID and date in newtheme script header when version is unreleased, Ref: DEV-882
 * Clean up font pipeline: move fonts to `assets/fonts/` as static files, remove unused SCSS font mixins, stale Parcel font artifacts and unused Inter fonts, Ref: DEV-881
