@@ -14,8 +14,16 @@ fi
 # Get air-light version from CHANGELOG.md first line, format: "### 1.2.3: YYYY-MM-DD"
 AIRLIGHT_VERSION=$(grep '^### ' "${SCRIPTS_LOCATION}/../CHANGELOG.md" 2>/dev/null | head -n 1 | cut -d' ' -f2 | tr -d ':' || echo "dev")
 
-# Get version date from CHANGELOG.md in the air-light root directory
-AIRLIGHT_DATE=$(grep '^### ' "${SCRIPTS_LOCATION}/../CHANGELOG.md" 2>/dev/null | head -n 1 | cut -d' ' -f3 || date +%Y-%m-%d)
+# If version is unreleased, show commit info instead
+if [ "$AIRLIGHT_VERSION" = "[Unreleased]" ]; then
+  COMMIT_ID=$(git -C "${SCRIPTS_LOCATION}/.." rev-parse --short HEAD 2>/dev/null)
+  COMMIT_DATE=$(git -C "${SCRIPTS_LOCATION}/.." log -1 --format=%cs 2>/dev/null)
+  AIRLIGHT_VERSION="Unreleased, master branch ${COMMIT_ID}"
+  AIRLIGHT_DATE="${COMMIT_DATE}"
+else
+  # Get version date from CHANGELOG.md in the air-light root directory
+  AIRLIGHT_DATE=$(grep '^### ' "${SCRIPTS_LOCATION}/../CHANGELOG.md" 2>/dev/null | head -n 1 | cut -d' ' -f3 || date +%Y-%m-%d)
+fi
 
 # Source the logo
 source "$SCRIPTS_LOCATION/tasks/logo.sh"
