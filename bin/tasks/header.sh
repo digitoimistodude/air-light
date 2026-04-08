@@ -19,10 +19,12 @@ if [ "$AIRLIGHT_VERSION" = "[Unreleased]" ]; then
   COMMIT_ID=$(git -C "${SCRIPTS_LOCATION}/.." rev-parse --short HEAD 2>/dev/null)
   COMMIT_DATE=$(git -C "${SCRIPTS_LOCATION}/.." log -1 --format=%cs 2>/dev/null)
   AIRLIGHT_VERSION="Unreleased, master branch ${COMMIT_ID}"
+  AIRLIGHT_PREFIX=""
   AIRLIGHT_DATE="${COMMIT_DATE}"
 else
   # Get version date from CHANGELOG.md in the air-light root directory
   AIRLIGHT_DATE=$(grep '^### ' "${SCRIPTS_LOCATION}/../CHANGELOG.md" 2>/dev/null | head -n 1 | cut -d' ' -f3 || date +%Y-%m-%d)
+  AIRLIGHT_PREFIX="v"
 fi
 
 # Source the logo
@@ -34,7 +36,7 @@ print_logo
 echo ""
 echo "-----------------------------------------------------------------------"
 echo "newtheme start script ${SCRIPT_LABEL}, v${SCRIPT_VERSION}"
-echo "air-light v${AIRLIGHT_VERSION} (${AIRLIGHT_DATE})"
+echo "air-light ${AIRLIGHT_PREFIX}${AIRLIGHT_VERSION} (${AIRLIGHT_DATE})"
 echo "-----------------------------------------------------------------------"
 echo ""
 if [ ! -f /usr/local/bin/newtheme ]; then
