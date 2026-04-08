@@ -1,6 +1,7 @@
 ### [Unreleased]
 
-* Show commit ID and date in newtheme script header when version is unreleased
+* Fix newtheme comments removal using stale `@import` instead of `@use`, Ref: DEV-883
+* Show commit ID and date in newtheme script header when version is unreleased, Ref: DEV-882
 * Clean up font pipeline: move fonts to `assets/fonts/` as static files, remove unused SCSS font mixins, stale Parcel font artifacts and unused Inter fonts, Ref: DEV-881
 * Update code-quality-checks version to 2.1.12, Ref: DEV-771
 * Add blocks-watch browserSync live inject runner, Ref: DUDE-2319
