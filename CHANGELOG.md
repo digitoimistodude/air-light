@@ -1,5 +1,7 @@
 ### [Unreleased]
 
+* Update code-quality-checks to 2.2.0, Ref: DEV-887
+* Generate default GitHub Actions code quality workflows in newtheme, Ref: DEV-737
 * Fix husky hooks not initializing in new projects by running setup after air-light `.git` removal, Ref: DEV-885
 * Clean up air-light CHANGELOGs from root and theme when running newtheme, Ref: DEV-886
 * Fix newtheme comments removal using stale `@import` instead of `@use`, Ref: DEV-883
