@@ -24,7 +24,7 @@ function entry_footer() {
         }
         ?>
       </ul>
-    <?php	endif;
+    <?php  endif;
 
     $tags_list = get_the_tag_list( '', esc_attr_x( ', ', 'list item separator', 'air-light' ) );
     if ( $tags_list ) {

@@ -21,7 +21,7 @@ namespace Air_Light;
  * return early without loading the comments.
  */
 if ( post_password_required() ) {
-	return;
+  return;
 } ?>
 
 <div id="comments" class="comments-area">

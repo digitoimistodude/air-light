@@ -1,3 +1,6 @@
+### 10.1.2: 2026-04-21
+* Fix indentation: convert tabs to 2-space indent in several files, Ref: DEV-906
+
 ### 10.1.1: 2026-04-08
 
 * Update code-quality-checks to 2.2.0, Ref: DEV-887
