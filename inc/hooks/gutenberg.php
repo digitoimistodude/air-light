@@ -217,3 +217,9 @@ function block_editor_title_input_styles() {
   ';
   wp_add_inline_style( 'block-editor-styles', $styles );
 }
+
+/**
+ * Filter to disable remote block patterns
+ * @link https://developer.wordpress.org/reference/hooks/should_load_remote_block_patterns/
+ */
+add_filter( 'should_load_remote_block_patterns', '__return_false' );
