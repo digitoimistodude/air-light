@@ -63,16 +63,75 @@ Air-light is a minimalist WordPress starter theme by Digitoimisto Dude Oy. It fo
 - Modules in `assets/src/js/modules/`
 - Main entry points: `front-end.js`, `gutenberg-editor.js`
 
-## Release checklist
+## Releasing a new version (staff only)
 
-When releasing a new version, update ALL of these files:
+### Unreleased changes workflow
 
-- `style.css` - `Version:` in theme header AND `@version` date
-- `functions.php` - `AIR_LIGHT_VERSION` constant
-- `package.json` - `version` field
-- `package-lock.json` - run `npm install --package-lock-only`
-- `readme.txt` - `Stable tag:` field
-- `CHANGELOG.md` - change `[Unreleased]` to version number with date
+Master is the active dev branch and always contains the latest, possibly unreleased, code. New client projects pull master via `newtheme.sh`, so unreleased changes are not theoretical - they land in real projects immediately.
+
+Implications:
+
+- Master must always be in a buildable, working state. Do not merge half-finished work.
+- Every change to master is also a CHANGELOG.md change. Add an entry under `### [Unreleased]: YYYY-MM-DD` at the top of the file in the SAME commit as the code change.
+- Update the date on the `[Unreleased]` heading whenever you add a new entry, so it reflects the latest activity (not the date the heading was first created).
+- Do not bump `AIR_LIGHT_VERSION`, `style.css`, `package.json`, or `readme.txt` for unreleased work. Those move only during the release flow below.
+- When a release ships, the `[Unreleased]` heading is converted to `X.Y.Z: YYYY-MM-DD` and a new empty `[Unreleased]` heading is added on top for the next cycle.
+
+### When to release
+
+Suggest a release when CHANGELOG.md `[Unreleased]` accumulates enough to be worth shipping. Rough guide:
+
+- Patch (`X.Y.Z+1`) - around 3 or more entries, or a single critical fix that needs to ship now
+- Minor (`X.Y+1.0`) - new feature, deprecation, or noticeably larger surface change
+- Major (`X+1.0.0`) - breaking changes (renamed PHP/JS APIs, removed mixins, restructured assets, theme.json schema changes)
+
+Do not auto-release. Always confirm with the user before starting the flow. If `[Unreleased]` has only 1-2 trivial entries, suggest waiting unless the user asks to ship anyway.
+
+### Release flow
+
+Run the agent steps autonomously. Pause only on the manual steps (marked below) and wait for the user to confirm before continuing.
+
+1. Make sure master is clean and up to date
+
+   - `git checkout master && git pull --ff-only`
+   - `git status` must show a clean working tree
+   - All release-bound PRs are merged
+
+2. Bump version in ALL of these files (must match exactly)
+
+   - `style.css` - `Version:` in theme header AND `@version` date
+   - `functions.php` - `AIR_LIGHT_VERSION` constant
+   - `package.json` - `version` field
+   - `package-lock.json` - run `npm install --package-lock-only`
+   - `readme.txt` - `Stable tag:` field
+   - `CHANGELOG.md` - change `[Unreleased]` heading to `X.Y.Z: YYYY-MM-DD`
+
+3. Build production assets
+
+   - `npm run build`
+   - Commit the rebuilt `assets/` output along with the version bump
+
+4. Manual: run Theme Check in WordPress
+
+   - User opens https://airdev.test/wp/wp-admin/themes.php?page=themecheck and runs it against air-light
+   - Wait for the user to confirm it passes before continuing
+
+5. Commit, tag, and push
+
+   - One commit for the release (e.g. `Release X.Y.Z, Ref: DEV-XXX`)
+   - `git tag X.Y.Z` then `git push origin master --tags`
+   - Create a GitHub release from the tag with the CHANGELOG entry as body
+
+6. Manual: upload to WordPress.org theme directory
+
+   - Build a clean zip via `bin/air-pack.sh` (no `.parcel-cache`, no dev files)
+   - User uploads the zip at https://wordpress.org/themes/upload/
+   - Wait for the user to confirm the upload succeeded
+
+7. Post-release
+
+   - Add a new `### [Unreleased]: YYYY-MM-DD` heading at the top of `CHANGELOG.md` for the next cycle
+   - Announce the release in the relevant Slack channel if applicable
 
 # Linear references
 
