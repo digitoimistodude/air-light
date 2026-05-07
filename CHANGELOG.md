@@ -1,6 +1,7 @@
-### [Unreleased]: 2026-04-21
+### [Unreleased]: 2026-05-07
 * Fix indentation: convert tabs to 2-space indent in several files, Ref: DEV-906
 * Add filter to disable remote block patterns, Ref: DEV-985
+* Fix HTML/a11y workflow vnu.jar download by pinning to release `20.6.30` and extracting from zip, Ref: DEV-986
 
 ### 10.1.1: 2026-04-08
 
