@@ -1,6 +1,7 @@
-### [Unreleased]: 2026-04-21
+### [Unreleased]: 2026-05-12
 * Fix indentation: convert tabs to 2-space indent in several files, Ref: DEV-906
 * Add filter to disable remote block patterns, Ref: DEV-985
+* Fix click navigation bugs, Ref: DEV-984
 
 ### 10.1.1: 2026-04-08
 
