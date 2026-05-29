@@ -11,7 +11,7 @@
       "width": false
     },
     "dimensions": {
-      "minHeight": false
+      "minHeight": true
     },
     "layout": {
       "contentSize": "800px",
