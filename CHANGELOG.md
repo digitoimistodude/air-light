@@ -1,6 +1,7 @@
-### [Unreleased]: 2026-04-21
+### [Unreleased]: 2026-05-29
 * Fix indentation: convert tabs to 2-space indent in several files, Ref: DEV-906
 * Add filter to disable remote block patterns, Ref: DEV-985
+* Enable minHeight for Vertical Alignment support, Ref DEV-1039
 
 ### 10.1.1: 2026-04-08
 
