@@ -32,17 +32,17 @@
       "spacingSizes": [
         {
           "slug": "s",
-          "size": "clamp(0.375rem, 0.8571rem + 0.7143vw, 0.75rem)",
+          "size": "clamp(0.375rem, 0.1071rem + 0.7143vw, 0.75rem)",
           "name": "S"
         },
         {
           "slug": "m",
-          "size": "clamp(0.75rem, 1.2143rem + 1.4286vw, 1.5rem)",
+          "size": "clamp(0.75rem, 0.2143rem + 1.4286vw, 1.5rem)",
           "name": "M"
         },
         {
           "slug": "l",
-          "size": "clamp(1.5rem, 1.7857rem + 3.5714vw, 3rem)",
+          "size": "clamp(1.5rem, 0.4286rem + 2.8571vw, 3rem)",
           "name": "L"
         }
       ]
@@ -110,57 +110,57 @@
         { "slug": "22", "size": "22px", "name": "22", "fluid": false },
         {
           "slug": "body-s",
-          "size": "clamp(0.75rem, 0.647rem + 0.2747vw, 0.875rem)",
+          "size": "clamp(0.75rem, 0.6607rem + 0.2381vw, 0.875rem)",
           "name": "Body S"
         },
         {
           "slug": "body-m",
-          "size": "clamp(0.875rem, 0.772rem + 0.2747vw, 1rem)",
+          "size": "clamp(0.875rem, 0.7857rem + 0.2381vw, 1rem)",
           "name": "Body M"
         },
         {
           "slug": "body-l",
-          "size": "clamp(1rem, 0.897rem + 0.2747vw, 1.125rem)",
+          "size": "clamp(1rem, 0.9107rem + 0.2381vw, 1.125rem)",
           "name": "Body L"
         },
         {
           "slug": "body-xl",
-          "size": "clamp(1.125rem, 1.022rem + 0.2747vw, 1.25rem)",
+          "size": "clamp(1.125rem, 1.0357rem + 0.2381vw, 1.25rem)",
           "name": "Body XL"
         },
         {
           "slug": "heading-xxs",
-          "size": "clamp(1rem, 0.897rem + 0.2747vw, 1.125rem)",
+          "size": "clamp(1rem, 0.9107rem + 0.2381vw, 1.125rem)",
           "name": "Heading XXS"
         },
         {
           "slug": "heading-xs",
-          "size": "clamp(1.125rem, 1.022rem + 0.2747vw, 1.25rem)",
+          "size": "clamp(1.125rem, 1.0357rem + 0.2381vw, 1.25rem)",
           "name": "Heading XS"
         },
         {
           "slug": "heading-s",
-          "size": "clamp(1.25rem, 1.044rem + 0.5495vw, 1.5rem)",
+          "size": "clamp(1.25rem, 1.0714rem + 0.4762vw, 1.5rem)",
           "name": "Heading S"
         },
         {
           "slug": "heading-m",
-          "size": "clamp(1.5rem, 1.0879rem + 1.0989vw, 2rem)",
+          "size": "clamp(1.5rem, 1.1429rem + 0.9524vw, 2rem)",
           "name": "Heading M"
         },
         {
           "slug": "heading-l",
-          "size": "clamp(1.75rem, 1.1319rem + 1.6484vw, 2.5rem)",
+          "size": "clamp(1.75rem, 1.2143rem + 1.4286vw, 2.5rem)",
           "name": "Heading L"
         },
         {
           "slug": "heading-xl",
-          "size": "clamp(2rem, 1.1758rem + 2.1978vw, 3rem)",
+          "size": "clamp(2rem, 1.2857rem + 1.9048vw, 3rem)",
           "name": "Heading XL"
         },
         {
           "slug": "heading-xxl",
-          "size": "clamp(2rem, 0.3516rem + 4.3956vw, 4rem)",
+          "size": "clamp(2rem, 0.5714rem + 3.8095vw, 4rem)",
           "name": "Heading XXL"
         }
       ]
@@ -227,9 +227,9 @@
       "blockGap": "var:preset|spacing|s",
       "padding": {
         "top": "0",
-        "right": "var:preset|spacing|s",
+        "right": "var:preset|spacing|m",
         "bottom": "0",
-        "left": "var:preset|spacing|s"
+        "left": "var:preset|spacing|m"
       }
     },
     "elements": {

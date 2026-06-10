@@ -16,11 +16,29 @@
 .alignwide {
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--wp--style--global--wide-size);
+  max-width: calc(
+  var(--wp--style--global--wide-size) + 2 *
+    var(--wp--style--root--padding-right)
+  );
   width: 100%;
 }
 
 .alignfull {
   max-width: none;
-  width: 100vw;
+  width: 100%;
+}
+
+// All site main direct children wp blocks get the default width
+:where(.site-main > [class*='wp-block-']:not(.alignwide, .alignfull)) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(
+    var(--wp--style--global--content-size) + 2 * var(--wp--style--root--padding-right)
+  );
+}
+
+// All site main direct children should get some padding left and right
+:where(.site-main > [class*='wp-block-']:not(.alignfull)) {
+  padding-left: var(--wp--style--root--padding-right);
+  padding-right: var(--wp--style--root--padding-right);
 }
