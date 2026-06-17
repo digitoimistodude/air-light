@@ -1,4 +1,7 @@
-### [Unreleased]: 2026-04-21
+### [Unreleased]: 2026-06-17
+
+* Remove custom `gridBase`, `spacing`, `color` and `typography` variables from theme.json and replace usages with WordPress preset, Ref: DEV-1032
+* Delete `_spacings.scss` responsive override file, spacing now flows from `block-gap`, root padding and preset clamps, Ref: DEV-1032
 * Fix indentation: convert tabs to 2-space indent in several files, Ref: DEV-906
 * Add filter to disable remote block patterns, Ref: DEV-985
 

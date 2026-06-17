@@ -10,13 +10,13 @@
 [class*='wp-block'] {
   // Padding variations (default: M padding)
   &.is-style-has-m-padding {
-    padding-bottom: var(--wp--preset--spacing--30);
-    padding-top: var(--wp--preset--spacing--30);
+    padding-bottom: var(--wp--preset--spacing--m);
+    padding-top: var(--wp--preset--spacing--m);
   }
 
   &.is-style-has-l-padding {
-    padding-bottom: var(--wp--preset--spacing--40);
-    padding-top: var(--wp--preset--spacing--40);
+    padding-bottom: var(--wp--preset--spacing--l);
+    padding-top: var(--wp--preset--spacing--l);
   }
 
   &.is-style-no-padding {

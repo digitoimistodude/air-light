@@ -70,7 +70,7 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
 //   color: var(--wp--preset--color--black);
 //   content: attr(aria-label);
 //   font-size: var(--wp--preset--font-size--14);
-//   font-weight: var(--wp--custom--typography--weight-semibold);
+//   font-weight: var(--wp--custom--font-weight--semi-bold);
 //   margin-left: 1rem;
 //   white-space: nowrap;
 // }
@@ -84,7 +84,7 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger::after {
   border-radius: 0;
   cursor: pointer;
   display: flex;
-  font-weight: var(--wp--custom--typography--weight-semibold);
+  font-weight: var(--wp--custom--font-weight--semi-bold);
   height: 4rem;
   justify-content: center;
   margin: 0;

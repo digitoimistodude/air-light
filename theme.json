@@ -28,7 +28,7 @@
       "defaultSpacingSizes": false,
       "padding": ["top", "bottom"],
       "margin": ["top", "bottom"],
-      "blockGap": false,
+      "blockGap": true,
       "spacingSizes": [
         {
           "slug": "s",
@@ -166,39 +166,6 @@
       ]
     },
     "custom": {
-      "gridBase": "1440px",
-      "spacing": {
-        "gridGap": "3rem",
-        "containerPaddingInline": "1.25rem",
-        "containerPaddingInlineLarge": "4rem",
-        "containerPaddingBlock": "4rem",
-        "siteHeaderPaddingBlock": "1.25rem",
-        "contentPaddingBlock": "5rem",
-        "textMarginBlock": "2.5rem",
-        "wpBlockImageMarginBlock": "2.5rem",
-        "paragraphsMarginBlock": "1.6875rem"
-      },
-      "color": {
-        "accent": "var(--wp--preset--color--black)",
-        "heading": "var(--wp--preset--color--black)",
-        "main": "var(--wp--preset--color--black)",
-        "paragraph": "var(--wp--preset--color--black)",
-        "linkText": "var(--wp--preset--color--black)",
-        "linkTextHover": "var(--wp--preset--color--black)"
-      },
-      "typography": {
-        "weightRegular": "400",
-        "weightMedium": "500",
-        "weightSemibold": "600",
-        "weightBold": "700",
-        "weightParagraph": "400",
-        "weightHeading": "700",
-        "paragraphLineHeight": "1.7",
-        "headingLineHeight": "1.5",
-        "headingCoreLineHeight": "1.23",
-        "captionsSize": "15px",
-        "navToggleLabelSize": "15px"
-      },
       "fontWeight": {
         "regular": 400,
         "medium": 500,
@@ -224,7 +191,7 @@
       "fontWeight": "var:custom|font-weight|regular"
     },
     "spacing": {
-      "blockGap": "var:preset|spacing|s",
+      "blockGap": "var:preset|spacing|m",
       "padding": {
         "top": "0",
         "right": "var:preset|spacing|m",

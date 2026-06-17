@@ -4,10 +4,10 @@
 // WordPress built-in comments with comment_form().
 // Custom comment template can be found in inc/comments.php
 .comments-area {
-  --color-comment-text: var(--wp--custom--color--paragraph);
-  --color-comment-author-text: var(--wp--custom--color--paragraph);
-  --color-link-comment: var(--wp--custom--color--accent);
-  --color-link-comment-time-anchor: var(--wp--custom--color--paragraph);
+  --color-comment-text: var(--wp--preset--color--black);
+  --color-comment-author-text: var(--wp--preset--color--black);
+  --color-link-comment: var(--wp--preset--color--black);
+  --color-link-comment-time-anchor: var(--wp--preset--color--black);
   margin-bottom: 0;
   margin-top: 3.125rem;
   overflow: visible;
@@ -55,7 +55,7 @@
   }
 
   .comment-author a {
-    color: var(--wp--custom--color--paragraph);
+    color: var(--wp--preset--color--black);
   }
 
   .comment-time {

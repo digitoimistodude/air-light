@@ -40,7 +40,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.3125rem;
-  margin-bottom: var(--wp--custom--spacing--text-margin-block);
+  margin-bottom: var(--wp--preset--spacing--l);
   margin-top: 0;
 
   // stylelint-disable a11y/font-size-is-readable
@@ -49,7 +49,7 @@
     border: 1px solid var(--wp--preset--color--black);
     border-radius: 0;
     box-shadow: none;
-    color: var(--wp--custom--color--paragraph);
+    color: var(--wp--preset--color--black);
     display: inline-block;
     font-size: var(--wp--preset--font-size--12);
     margin-right: 4px;

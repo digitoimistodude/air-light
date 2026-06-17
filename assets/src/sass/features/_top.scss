@@ -7,7 +7,7 @@
   background-color: var(--color-background-top);
   border: 1px solid var(--wp--preset--color--black);
   border-radius: 0;
-  bottom: var(--wp--custom--spacing--container-padding-inline);
+  bottom: var(--wp--preset--spacing--m);
   color: var(--wp--preset--color--white);
   cursor: pointer;
   font-size: var(--wp--preset--font-size--16);
@@ -15,7 +15,7 @@
   line-height: 1.875rem;
   opacity: 0;
   position: fixed;
-  right: var(--wp--custom--spacing--container-padding-inline);
+  right: var(--wp--preset--spacing--m);
   text-align: center;
   text-decoration: none;
   transition: 500ms opacity;

@@ -10,18 +10,18 @@
 
 .sticky .post-inner {
   border: 2px dashed var(--color-border-sticky);
-  margin-bottom: var(--wp--custom--spacing--container-padding-inline);
-  padding: var(--wp--custom--spacing--container-padding-inline);
+  margin-bottom: var(--wp--preset--spacing--m);
+  padding: var(--wp--preset--spacing--m);
 }
 
 .comment-list li.bypostauthor,
 .bypostauthor {
   border: 1px dashed var(--color-bypostauthor);
-  padding: var(--wp--custom--spacing--container-padding-inline);
+  padding: var(--wp--preset--spacing--m);
 }
 
 .blog article:first-of-type {
-  margin-top: var(--wp--preset--spacing--30);
+  margin-top: var(--wp--preset--spacing--m);
 }
 
 // WordPress captions

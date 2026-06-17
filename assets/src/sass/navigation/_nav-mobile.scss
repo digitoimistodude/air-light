@@ -13,8 +13,8 @@
   --width-navigation: 100vw;
 
   // Affecting to both main and sub-levels
-  --color-background-menu-items: var(--wp--custom--color--main);
-  --color-background-menu-items-active: var(--wp--custom--color--main);
+  --color-background-menu-items: var(--wp--preset--color--black);
+  --color-background-menu-items-active: var(--wp--preset--color--black);
   --color-separator-nav-mobile: rgb(255 255 255 / 0.1);
   --color-current-menu-item: var(--wp--preset--color--white);
   --color-dropdown-toggle-mobile: var(--wp--preset--color--white);
@@ -31,7 +31,7 @@
   --typography-weight-sub-menu-mobile: 600;
   --margin-left-sub-menu: 0.625rem;
   --padding-sub-menu-vertical-mobile: 0.5rem;
-  --padding-sub-menu-horizontal-mobile: var(--wp--custom--spacing--container-padding-inline);
+  --padding-sub-menu-horizontal-mobile: var(--wp--preset--spacing--m);
   --color-sub-menu-mobile: rgb(255 255 255 / 0.8);
 }
 

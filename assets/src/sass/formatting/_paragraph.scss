@@ -2,6 +2,6 @@
 // stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 // General paragraphs
 p {
-  color: var(--wp--custom--color--paragraph);
-  line-height: var(--wp--custom--typography--paragraph-line-height);
+  color: var(--wp--preset--color--black);
+  line-height: var(--wp--custom--line-height--body);
 }

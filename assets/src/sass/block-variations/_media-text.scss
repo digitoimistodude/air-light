@@ -5,8 +5,8 @@
 
 // Core/media-text block variation styles
 .wp-block-media-text {
-  gap: var(--wp--custom--spacing--grid-gap);
-  padding-inline: var(--wp--custom--spacing--container-padding-inline);
+  gap: var(--wp--style--block-gap);
+  padding-inline: var(--wp--preset--spacing--m);
 
   // Full-width background with constrained content
   &.has-background {
