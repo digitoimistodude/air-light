@@ -1,5 +1,6 @@
-### [Unreleased]: 2026-06-17
+### [Unreleased]: 2026-06-18
 
+* Remove unused SVG icons (breadcrumbs arrow, chevrons, slider arrows), ref: DEV-1032
 * Fallback to page allowed blocks if post type blocks are not configured. Allow all blocks on pages. Add prettierignore, ref: DEV-1032
 * Fix submenu width, remove clamp helper, ref: DEV-1032
 * Update button styles used outside of block content to match theme.json button styles, ref: DEV-1032
