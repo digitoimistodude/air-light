@@ -286,7 +286,7 @@ exports.export = function(dest, destName, get) {
  */ /* global wp */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const disableEmbeds = ()=>{
-    const disabledEmbeds = [
+    const hideFromInserter = [
         'amazon-kindle',
         'animoto',
         'bluesky',
@@ -320,8 +320,18 @@ const disableEmbeds = ()=>{
         'wordpress-tv',
         'youtube'
     ];
-    disabledEmbeds.forEach((embed)=>{
-        wp.blocks.unregisterBlockVariation('core/embed', embed);
+    hideFromInserter.forEach((embedName)=>{
+        const variations = wp.blocks.getBlockVariations('core/embed');
+        const variation = variations.find((v)=>v.name === embedName);
+        if (!variation) return;
+        wp.blocks.unregisterBlockVariation('core/embed', embedName);
+        wp.blocks.registerBlockVariation('core/embed', {
+            ...variation,
+            scope: [
+                'block',
+                'transform'
+            ]
+        });
     });
 };
 exports.default = disableEmbeds;

@@ -212,8 +212,6 @@
  * Air theme JavaScript.
  */ // Import modules
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _reframeJs = require("reframe.js");
-var _reframeJsDefault = parcelHelpers.interopDefault(_reframeJs);
 var _externalLink = require("./modules/external-link");
 var _anchors = require("./modules/anchors");
 var _anchorsDefault = parcelHelpers.interopDefault(_anchors);
@@ -240,99 +238,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
     (0, _navigation.navDesktop)();
     // navClick();
     (0, _navigation.navMobile)();
-    // Uncomment if you like to use a sticky navigation
-    // navSticky();
-    // Fit video embeds to container
-    (0, _reframeJsDefault.default)('.wp-has-aspect-ratio iframe');
+// Uncomment if you like to use a sticky navigation
+// navSticky();
 });
 
-},{"reframe.js":"bkavh","./modules/external-link":"9J9X5","./modules/anchors":"3Ru5C","./modules/top":"jy8xH","./modules/a11y-skip-link":"dTsEP","./modules/a11y-focus-search-field":"7NBWY","./modules/navigation":"ds5aQ","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"bkavh":[function(require,module,exports,__globalThis) {
-/**
-  reframe.js - Reframe.js: responsive iframes for embedded content
-  @version v4.0.2
-  @link https://github.com/yowainwright/reframe.ts#readme
-  @author Jeff Wainwright <yowainwright@gmail.com> (http://jeffry.in)
-  @license MIT
-**/ /**
- * REFRAME.TS 🖼
- * ---
- * @param target
- * @param cName
- * @summary defines the height/width ratio of the targeted <element>
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>reframe);
-function reframe(target, cName) {
-    var _a, _b;
-    var frames = typeof target === 'string' ? document.querySelectorAll(target) : target;
-    var c = cName || 'js-reframe';
-    if (!('length' in frames)) frames = [
-        frames
-    ];
-    for(var i = 0; i < frames.length; i += 1){
-        var frame = frames[i];
-        var hasClass = frame.className.split(' ').indexOf(c) !== -1;
-        if (hasClass || frame.style.width.indexOf('%') > -1) return;
-        // get height width attributes
-        var height = frame.getAttribute('height') || frame.offsetHeight;
-        var width = frame.getAttribute('width') || frame.offsetWidth;
-        var heightNumber = typeof height === 'string' ? parseInt(height) : height;
-        var widthNumber = typeof width === 'string' ? parseInt(width) : width;
-        // general targeted <element> sizes
-        var padding = heightNumber / widthNumber * 100;
-        // created element <wrapper> of general reframed item
-        // => set necessary styles of created element <wrapper>
-        var div = document.createElement('div');
-        div.className = c;
-        var divStyles = div.style;
-        divStyles.position = 'relative';
-        divStyles.width = '100%';
-        divStyles.paddingTop = "".concat(padding, "%");
-        // set necessary styles of targeted <element>
-        var frameStyle = frame.style;
-        frameStyle.position = 'absolute';
-        frameStyle.width = '100%';
-        frameStyle.height = '100%';
-        frameStyle.left = '0';
-        frameStyle.top = '0';
-        // reframe targeted <element>
-        (_a = frame.parentNode) === null || _a === void 0 || _a.insertBefore(div, frame);
-        (_b = frame.parentNode) === null || _b === void 0 || _b.removeChild(frame);
-        div.appendChild(frame);
-    }
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"eF9qW":[function(require,module,exports,__globalThis) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"9J9X5":[function(require,module,exports,__globalThis) {
+},{"./modules/external-link":"9J9X5","./modules/anchors":"3Ru5C","./modules/top":"jy8xH","./modules/a11y-skip-link":"dTsEP","./modules/a11y-focus-search-field":"7NBWY","./modules/navigation":"ds5aQ","@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"9J9X5":[function(require,module,exports,__globalThis) {
 /* eslint-disable no-param-reassign */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /**
@@ -446,7 +356,37 @@ function getLocalization(stringKey) {
     return window.air_light_screenReaderText[stringKey];
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"3Ru5C":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"eF9qW"}],"eF9qW":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"3Ru5C":[function(require,module,exports,__globalThis) {
 /* eslint-disable no-param-reassign, no-undef */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _moveto = require("moveto");
