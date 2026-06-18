@@ -1,19 +1,12 @@
 // WordPress uses custom properties with double dashes from theme.json that don't match kebab-case
 // stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
+@use '../components' as *;
 @use '../variables' as *;
 @use '../helpers' as *;
 
 // This file is meant for general styles and containers
 // that apply everywhere throughout the website. Add more
 // always repeating elements right below.
-
-// Body
-.is-root-container,
-body:not(.wp-admin) {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision;
-}
 
 // Default structural element
 .block {
@@ -98,5 +91,22 @@ body:not(.wp-admin) {
     background-color: var(--color-link-edit-background-hover);
     border-color: var(--color-link-edit-border-hover);
     color: var(--color-link-edit-text-hover);
+  }
+}
+
+// Buttons outside of block content
+.button {
+  @include button();
+
+  &.is-style-outline {
+    @include button-style-outline();
+  }
+
+  &.is-size-small {
+    @include button-size-small();
+  }
+
+  &.is-size-large {
+    @include button-size-large();
   }
 }

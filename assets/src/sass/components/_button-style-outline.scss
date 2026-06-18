@@ -1,0 +1,16 @@
+// WordPress custom properties from theme.json
+// stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
+@use '../helpers' as *;
+
+@mixin button-style-outline() {
+  background-color: transparent;
+  border-color: currentColor;
+  color: var(--wp--preset--color--black);
+
+  &:focus,
+  &:hover {
+    background-color: var(--wp--preset--color--black);
+    border-color: var(--wp--preset--color--black);
+    color: var(--wp--preset--color--white);
+  }
+}

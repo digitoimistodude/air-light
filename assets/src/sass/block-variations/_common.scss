@@ -1,29 +1,2 @@
 // WordPress custom properties from theme.json
 // stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
-@use '../components/button-size-small' as *;
-@use '../components/button-size-large' as *;
-@use '../components/button-size-small' as *;
-@use '../components/button' as *;
-
-// Buttons
-.wp-block-buttons {
-  justify-content: flex-start; // Override WordPress default center alignment
-}
-
-.wp-block-button {
-  text-align: left;
-}
-
-.button {
-  @include button();
-}
-
-.button-small {
-  @include button();
-  @include button-size-small();
-}
-
-.button-large {
-  @include button();
-  @include button-size-large();
-}
