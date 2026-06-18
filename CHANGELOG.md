@@ -1,5 +1,6 @@
 ### [Unreleased]: 2026-06-17
 
+* Fix nav flickering around responsive breakpoint, ref: DEV-1032
 * Add support for responsive embeds. Hide embed types from inserter instead of disabling them. Drop now redundant reframe.js depedency, Ref: DEV-1032
 * Theme cleanup. Remove redundant styling, update single.php template, Ref: DEV-1032
 * Remove custom `gridBase`, `spacing`, `color` and `typography` variables from theme.json and replace usages with WordPress preset, Ref: DEV-1032

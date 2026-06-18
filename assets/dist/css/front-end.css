@@ -858,7 +858,7 @@ blockquote.wysiwyg > :last-child {
   background-color: var(--wp--preset--color--white);
 }
 
-@media screen and (width <= 1030px) {
+@media screen and (width <= 1029px) {
   .site-header {
     background-color: var(--color-background-nav-mobile-header);
   }
@@ -884,7 +884,7 @@ blockquote.wysiwyg > :last-child {
   position: relative;
 }
 
-@media screen and (width <= 1030px) {
+@media screen and (width <= 1029px) {
   .site-header-inner {
     padding-top: 1.25rem;
     padding-bottom: 0;

@@ -908,7 +908,7 @@ function calculateBurgerMenuPosition() {
         return;
     }
     // Set viewport
-    const viewportWidth = document.documentElement.clientWidth || document.body.clientWidth;
+    const viewportWidth = window.innerWidth;
     // Get --breakpoint-nav from CSS
     const breakpointNav = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--breakpoint-nav'), 10);
     // Get the height of .site-header and #nav-toggle
