@@ -1,7 +1,6 @@
 // WordPress custom properties from theme.json
 // stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 @use '../variables' as *;
-@use '../helpers/clamp' as *;
 
 // Error 404 title
 .block-error-404 {
@@ -17,8 +16,7 @@
   }
 
   h1 {
-    font-size: clamp-calc($breakpoint-mobile, 1600px, 60px, 120px);
-    line-height: var(--wp--custom--line-height--heading);
+    font-size: clamp(3.75rem, 1.0714rem + 7.1429vw, 7.5rem);
     margin-bottom: 1.25rem;
   }
 }

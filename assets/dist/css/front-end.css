@@ -490,8 +490,6 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger:after {
   --color-hover-sub-menu: var(--wp--preset--color--white);
   --color-background-sub-menu: var(--wp--preset--color--black);
   --gap-dropdown: 1.6rem;
-  width: unset;
-  list-style: none;
 }
 
 @media only screen and (width >= 1030px) {
@@ -1246,9 +1244,8 @@ a.page-numbers:focus, a.page-numbers:hover {
 }
 
 .block-error-404 h1 {
-  font-size: clamp(60px, 24px + 6vw, 120px);
-  line-height: var(--wp--custom--line-height--heading);
   margin-bottom: 1.25rem;
+  font-size: clamp(3.75rem, 1.0714rem + 7.1429vw, 7.5rem);
 }
 
 .categories, .entry-content .categories, .entry-content .tags, .tags {
