@@ -31,19 +31,39 @@
       "blockGap": true,
       "spacingSizes": [
         {
+          "slug": "xs",
+          "name": "XS",
+          "size": "clamp(0.5rem, 0.4286rem + 0.3571vw, 0.75rem)"
+        },
+        {
           "slug": "s",
-          "size": "clamp(0.375rem, 0.1071rem + 0.7143vw, 0.75rem)",
-          "name": "S"
+          "name": "S",
+          "size": "clamp(0.75rem, 0.6429rem + 0.5357vw, 1.125rem)"
         },
         {
           "slug": "m",
-          "size": "clamp(0.75rem, 0.2143rem + 1.4286vw, 1.5rem)",
-          "name": "M"
+          "name": "M",
+          "size": "clamp(1.25rem, 1.0714rem + 0.8929vw, 1.875rem)"
         },
         {
           "slug": "l",
-          "size": "clamp(1.5rem, 0.4286rem + 2.8571vw, 3rem)",
-          "name": "L"
+          "name": "L",
+          "size": "clamp(2rem, 1.7143rem + 1.4286vw, 3rem)"
+        },
+        {
+          "slug": "xl",
+          "name": "XL",
+          "size": "clamp(3rem, 2.4286rem + 2.8571vw, 5rem)"
+        },
+        {
+          "slug": "2xl",
+          "name": "2XL",
+          "size": "clamp(4rem, 3.1429rem + 4.2857vw, 7rem)"
+        },
+        {
+          "slug": "3xl",
+          "name": "3XL",
+          "size": "clamp(6rem, 4.8571rem + 5.7143vw, 10rem)"
         }
       ]
     },
@@ -186,7 +206,7 @@
     },
     "typography": {
       "fontFamily": "var:preset|font-family|main",
-      "fontSize": "var:preset|font-size|body-m",
+      "fontSize": "var:preset|font-size|body-l",
       "lineHeight": "var:custom|line-height|body",
       "fontWeight": "var:custom|font-weight|regular"
     },
@@ -226,7 +246,7 @@
         },
         "typography": {
           "fontSize": "var:preset|font-size|body-m",
-          "fontWeight": "var:custom|font-weight|medium"
+          "fontWeight": "var:custom|font-weight|bold"
         },
         ":hover": {
           "color": {
@@ -271,6 +291,36 @@
       "h6": {
         "typography": {
           "fontSize": "var:preset|font-size|heading-xxs"
+        }
+      }
+    },
+    "blocks": {
+      "core/quote": {
+        "border": {
+          "left": {
+            "color": "currentColor",
+            "style": "solid",
+            "width": "3px"
+          }
+        },
+        "spacing": {
+          "padding": {
+            "left": "var:preset|spacing|l"
+          }
+        }
+      },
+      "core/pullquote": {
+        "border": {
+          "top": {
+            "color": "currentColor",
+            "style": "solid",
+            "width": "3px"
+          },
+          "bottom": {
+            "color": "currentColor",
+            "style": "solid",
+            "width": "3px"
+          }
         }
       }
     }

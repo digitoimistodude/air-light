@@ -1,101 +1,26 @@
 // stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
 // stylelint-disable declaration-property-unit-allowed-list
-// Everything around fonts, font size definitions and typeset
-// presets. No modular scale, but a sophisticated viewport
-// based responsive mixin can be found in _scss
 
 // Typography settings
 .is-root-container,
 body {
-  color: var(--wp--preset--color--black);
-  font-family: var(--wp--preset--font-family--main);
-  font-size: var(--wp--preset--font-size--18);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-weight: var(--wp--custom--font-weight--regular);
-  line-height: var(--wp--custom--line-height--body);
   text-rendering: geometricPrecision;
 }
 
-// Heading defaults
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--wp--preset--color--black);
-  font-family: var(--wp--preset--font-family--main);
-  font-weight: var(--wp--custom--font-weight--bold);
-  margin-bottom: var(--wp--style--block-gap);
-  margin-top: var(--wp--style--block-gap);
+a:where(:not(.wp-element-button)) {
+  text-underline-offset: 0.375rem;
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--wp--custom--line-height--heading);
+// Define elements where you do not want to use default link styles
+.entry-footer,
+.site-header,
+.site-footer {
+  a {
+    text-decoration: none;
+  }
 }
-
-// Define heading scales
-// Current: Perfect fourth: https://type-scale.com/
-h1 {
-  font-size: var(--wp--preset--font-size--h-1);
-}
-
-h2 {
-  font-size: var(--wp--preset--font-size--h-2);
-}
-
-h3 {
-  font-size: var(--wp--preset--font-size--h-3);
-}
-
-h4 {
-  font-size: var(--wp--preset--font-size--h-4);
-}
-
-h5 {
-  font-size: var(--wp--preset--font-size--h-5);
-}
-
-h6 {
-  font-size: var(--wp--preset--font-size--h-6);
-}
-
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
-
-// Bold
-b,
-strong {
-  font-weight: var(--wp--custom--font-weight--bold);
-}
-
-// Italic
-em,
-i {
-  font-style: italic;
-}
-
-// Default paragraphs
-p {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
 // Enhance styles for blockquote and lists added via wysiwyg
 .wysiwyg li {
   margin-bottom: 0.6rem;

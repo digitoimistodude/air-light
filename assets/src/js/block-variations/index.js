@@ -7,11 +7,11 @@
  * @package air-light
  */
 
-import mediaTextVariation from './media-text';
+// import mediaTextVariation from './media-text';
 
 // Add all block variations here
 const variations = [
-  mediaTextVariation,
+  // mediaTextVariation,
 ];
 
 /**

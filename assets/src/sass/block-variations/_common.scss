@@ -5,26 +5,6 @@
 @use '../components/button-size-small' as *;
 @use '../components/button' as *;
 
-// Common styles shared between block variations, Ref: DEV-732
-// Match all wp-block-*
-[class*='wp-block'] {
-  // Padding variations (default: M padding)
-  &.is-style-has-m-padding {
-    padding-bottom: var(--wp--preset--spacing--m);
-    padding-top: var(--wp--preset--spacing--m);
-  }
-
-  &.is-style-has-l-padding {
-    padding-bottom: var(--wp--preset--spacing--l);
-    padding-top: var(--wp--preset--spacing--l);
-  }
-
-  &.is-style-no-padding {
-    padding-bottom: 0;
-    padding-top: 0;
-  }
-}
-
 // Buttons
 .wp-block-buttons {
   justify-content: flex-start; // Override WordPress default center alignment
@@ -32,12 +12,6 @@
 
 .wp-block-button {
   text-align: left;
-}
-
-.wp-block-button__link {
-  @include button();
-  display: inline-block;
-  text-align: center;
 }
 
 .button {
