@@ -11,21 +11,27 @@ namespace Air_Light;
  * Restrict blocks to only allowed blocks in the settings
  */
 function allowed_block_types( $allowed_blocks, $editor_context ) { // phpcs:ignore
+  $post_type = isset( $editor_context->post->post_type ) ? $editor_context->post->post_type : get_post_type();
 
   // If no allowed blocks are defined or it is set to none, return an empty array
   if ( empty( THEME_SETTINGS['allowed_blocks'] ) || 'none' === THEME_SETTINGS['allowed_blocks'] ) {
     return [];
   }
 
+  // If post type is not configured, fall back to page allowed blocks
+  if ( ! isset( THEME_SETTINGS['allowed_blocks'][ $post_type ] ) ) {
+    $post_type = 'page';
+  }
+
   // If the post type contains empty array or none, return an empty array for that post type post
-  if ( empty( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) || 'none' === THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) {
+  if ( empty( THEME_SETTINGS['allowed_blocks'][ $post_type ] ) || 'none' === THEME_SETTINGS['allowed_blocks'][ $post_type ] ) {
     return [];
   }
 
   $allowed_blocks = [];
-  $select_all = 'all' === THEME_SETTINGS['allowed_blocks'][ get_post_type() ] || ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) && in_array( 'all', THEME_SETTINGS['allowed_blocks'][ get_post_type() ], true ) );
-  $acf_blocks = 'all-acf-blocks' === THEME_SETTINGS['allowed_blocks'][ get_post_type() ] || ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) && in_array( 'all-acf-blocks', THEME_SETTINGS['allowed_blocks'][ get_post_type() ], true ) );
-  $core_blocks = 'all-core-blocks' === THEME_SETTINGS['allowed_blocks'][ get_post_type() ] || ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) && in_array( 'all-core-blocks', THEME_SETTINGS['allowed_blocks'][ get_post_type() ], true ) );
+  $select_all = 'all' === THEME_SETTINGS['allowed_blocks'][ $post_type ] || ( is_array( THEME_SETTINGS['allowed_blocks'][ $post_type ] ) && in_array( 'all', THEME_SETTINGS['allowed_blocks'][ $post_type ], true ) );
+  $acf_blocks = 'all-acf-blocks' === THEME_SETTINGS['allowed_blocks'][ $post_type ] || ( is_array( THEME_SETTINGS['allowed_blocks'][ $post_type ] ) && in_array( 'all-acf-blocks', THEME_SETTINGS['allowed_blocks'][ $post_type ], true ) );
+  $core_blocks = 'all-core-blocks' === THEME_SETTINGS['allowed_blocks'][ $post_type ] || ( is_array( THEME_SETTINGS['allowed_blocks'][ $post_type ] ) && in_array( 'all-core-blocks', THEME_SETTINGS['allowed_blocks'][ $post_type ], true ) );
 
   // If post type block has been set to 'all-acf-blocks', return all ACF blocks, or if the array below it contains 'all-acf-blocks', return all ACF blocks
   if ( $select_all || $acf_blocks ) {
@@ -69,8 +75,8 @@ function allowed_block_types( $allowed_blocks, $editor_context ) { // phpcs:igno
   }
 
   // Add blocks defined on top of core blocks
-  if ( is_array( THEME_SETTINGS['allowed_blocks'][ get_post_type() ] ) ) {
-    $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ get_post_type() ] );
+  if ( is_array( THEME_SETTINGS['allowed_blocks'][ $post_type ] ) ) {
+    $allowed_blocks = array_merge( $allowed_blocks, THEME_SETTINGS['allowed_blocks'][ $post_type ] );
   }
 
   return $allowed_blocks;
