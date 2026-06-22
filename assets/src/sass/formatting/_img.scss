@@ -3,6 +3,6 @@ img {
 }
 
 // For images that have width and height set, T-23188
-img[width][height] {
+img[width][height]:not([data-object-fit='cover']) {
   height: auto;
 }

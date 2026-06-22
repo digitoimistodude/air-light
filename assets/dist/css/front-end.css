@@ -1462,6 +1462,6 @@ img {
   max-width: 100%;
 }
 
-img[width][height] {
+img[width][height]:not([data-object-fit="cover"]) {
   height: auto;
 }
