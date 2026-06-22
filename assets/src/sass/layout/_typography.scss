@@ -9,10 +9,6 @@ body {
   text-rendering: geometricPrecision;
 }
 
-a:where(:not(.wp-element-button)) {
-  text-underline-offset: 0.375rem;
-}
-
 // Define elements where you do not want to use default link styles
 .entry-footer,
 .site-header,
@@ -20,32 +16,4 @@ a:where(:not(.wp-element-button)) {
   a {
     text-decoration: none;
   }
-}
-
-// Enhance styles for blockquote and lists added via wysiwyg
-.wysiwyg li {
-  margin-bottom: 0.6rem;
-  margin-top: 0.6rem;
-}
-
-.wysiwyg li:first-child {
-  margin-top: 0;
-}
-
-.wysiwyg li:last-child {
-  margin-bottom: 0;
-}
-
-blockquote.wysiwyg {
-  border-left: 2px solid var(--wp--preset--color--black);
-  margin: 2.9rem 1rem;
-  padding: 0.5rem 0 0.5rem 1.5rem;
-}
-
-blockquote.wysiwyg > *:first-child {
-  margin-top: 0;
-}
-
-blockquote.wysiwyg > *:last-child {
-  margin-bottom: 0;
 }

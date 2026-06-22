@@ -858,39 +858,8 @@ body:not(.js-nav-active) .nav-toggle:hover .hamburger:after {
   text-rendering: geometricprecision;
 }
 
-a:where(:not(.wp-element-button)) {
-  text-underline-offset: .375rem;
-}
-
 .entry-footer a, .site-footer a, .site-header a {
   text-decoration: none;
-}
-
-.wysiwyg li {
-  margin-top: .6rem;
-  margin-bottom: .6rem;
-}
-
-.wysiwyg li:first-child {
-  margin-top: 0;
-}
-
-.wysiwyg li:last-child {
-  margin-bottom: 0;
-}
-
-blockquote.wysiwyg {
-  border-left: 2px solid var(--wp--preset--color--black);
-  margin: 2.9rem 1rem;
-  padding: .5rem 0 .5rem 1.5rem;
-}
-
-blockquote.wysiwyg > :first-child {
-  margin-top: 0;
-}
-
-blockquote.wysiwyg > :last-child {
-  margin-bottom: 0;
 }
 
 .site-header {
