@@ -11,7 +11,8 @@
       "width": false
     },
     "dimensions": {
-      "defaultAspectRatios": true
+      "defaultAspectRatios": true,
+      "minHeight": true
     },
     "shadow": {
       "defaultPresets": false,
