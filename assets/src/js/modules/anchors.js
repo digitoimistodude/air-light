@@ -1,24 +1,11 @@
 /* eslint-disable no-param-reassign, no-undef */
 
-import MoveTo from 'moveto';
-
 const initAnchors = () => {
-  const easeFunctions = {
-    easeInQuad(t, b, c, d) { t /= d; return c * t * t + b; },
-    easeOutQuad(t, b, c, d) { t /= d; return -c * t * (t - 2) + b; },
-  };
-
-  const moveTo = new MoveTo(
-    { ease: 'easeInQuad' },
-    easeFunctions,
-  );
-
   let triggers = document.querySelectorAll('a[href*="#"]:not([href="#"]):not(#top)');
 
   triggers = Array.from(triggers);
 
   triggers.forEach((trigger) => {
-    moveTo.registerTrigger(trigger);
     const targetId = trigger.hash.substring(1);
     const target = document.getElementById(targetId);
 
@@ -47,7 +34,7 @@ const initAnchors = () => {
       // Check if the target element exists on the current page
       if (target) {
         // Scroll to the target element
-        moveTo.move(target);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         // Update URL history
         window.history.pushState('', '', trigger.hash);

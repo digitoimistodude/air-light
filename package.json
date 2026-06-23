@@ -51,7 +51,6 @@
   },
   "dependencies": {
     "core-js": "^3.45.1",
-    "moveto": "^1.8.2",
     "vnu-jar": "^24.10.17"
   }
 }

@@ -16,6 +16,7 @@
 * Fix responsive image height override for object-fit cover images, Ref: DEV-1040
 * Fix HTML/a11y workflow vnu.jar download by pinning to release `20.6.30` and extracting from zip, Ref: DEV-986
 * Fix click navigation bugs, Ref: DEV-984
+* Replace `moveto` dependency with native `Element.scrollIntoView({ behavior: 'smooth' })` in `top.js`, `anchors.js` and `a11y-skip-link.js`, Ref: DEV-86
 
 ### 10.1.1: 2026-04-08
 
