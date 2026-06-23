@@ -4,7 +4,7 @@
   "description": "A minimalist WordPress starter theme.",
   "author": "Digitoimisto Dude Oy (moro@dude.fi)",
   "devDependencies": {
-    "@babel/core": "^7.28.3",
+    "@babel/core": "^7.29.6",
     "@babel/eslint-parser": "^7.28.0",
     "@babel/preset-env": "^7.28.3",
     "@digitoimistodude/code-quality-checks": "^2.2.0",
