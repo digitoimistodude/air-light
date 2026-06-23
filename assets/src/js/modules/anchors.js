@@ -39,11 +39,9 @@ const initAnchors = () => {
         // Update URL history
         window.history.pushState('', '', trigger.hash);
 
-        // Focus on the target element after a delay
-        setTimeout(() => {
-          target.setAttribute('tabindex', '-1');
-          target.focus();
-        }, 500);
+        // Focus on the target element
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
       } else {
         // Navigate to the target page
         window.location.href = trigger.href;
