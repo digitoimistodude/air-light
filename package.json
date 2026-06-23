@@ -17,7 +17,7 @@
     "@wordpress/scripts": "^30.27.0",
     "browser-sync": "^3.0.4",
     "caniuse-lite": "^1.0.30001737",
-    "concurrently": "^9.2.1",
+    "concurrently": "^9.2.3",
     "cssnano": "^7.1.1",
     "cssnano-preset-advanced": "^7.0.9",
     "eslint": "^8.57.1",
