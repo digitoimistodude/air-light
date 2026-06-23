@@ -1,4 +1,4 @@
-### [Unreleased]: 2026-06-22
+### [Unreleased]: 2026-06-23
 
 * Remove wysiwyg(tinymce) editor specific styles. Move default link css to theme.json, ref: DEV-1032
 * Remove unused SVG icons (breadcrumbs arrow, chevrons, slider arrows), ref: DEV-1032
@@ -14,6 +14,7 @@
 * Add filter to disable remote block patterns, Ref: DEV-985
 * Enable minHeight for Vertical Alignment support, Ref DEV-1039
 * Fix responsive image height override for object-fit cover images, Ref: DEV-1040
+* Fix HTML/a11y workflow vnu.jar download by pinning to release `20.6.30` and extracting from zip, Ref: DEV-986
 
 ### 10.1.1: 2026-04-08
 

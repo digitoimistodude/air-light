@@ -18,7 +18,9 @@ jobs:
         java-version: '17'
 
     - name: Download vnu.jar
-      run: wget https://github.com/validator/validator/releases/download/latest/vnu.jar
+      run: |
+        wget -q https://github.com/validator/validator/releases/download/20.6.30/vnu.jar_20.6.30.zip
+        unzip -j vnu.jar_20.6.30.zip "*/vnu.jar" -d .
 
     # Skipping this for now, see DEV-347
     #- name: Run vnu validator
