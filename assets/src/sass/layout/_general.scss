@@ -1,24 +1,12 @@
 // WordPress uses custom properties with double dashes from theme.json that don't match kebab-case
 // stylelint-disable custom-property-pattern, csstools/value-no-unknown-custom-properties
+@use '../components' as *;
 @use '../variables' as *;
 @use '../helpers' as *;
 
 // This file is meant for general styles and containers
 // that apply everywhere throughout the website. Add more
 // always repeating elements right below.
-
-// Body
-.is-root-container,
-body:not(.wp-admin) {
-  color: var(--wp--custom--color--paragraph);
-  font-family: var(--wp--preset--font-family--main);
-  font-size: var(--wp--preset--font-size--18);
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-weight: var(--wp--custom--typography--weight-paragraph);
-  line-height: var(--wp--custom--typography--paragraph-line-height);
-  text-rendering: geometricPrecision;
-}
 
 // Default structural element
 .block {
@@ -56,11 +44,12 @@ body:not(.wp-admin) {
   margin: 0 auto;
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--wp--custom--grid-base);
-  padding-bottom: var(--wp--custom--spacing--container-padding-block);
-  padding-left: var(--wp--custom--spacing--container-padding-inline);
-  padding-right: var(--wp--custom--spacing--container-padding-inline);
-  padding-top: var(--wp--custom--spacing--container-padding-block);
+  // prettier-ignore
+  max-width: calc(var(--wp--style--global--wide-size) + var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left));
+  padding-bottom: var(--wp--preset--spacing--xl);
+  padding-left: var(--wp--style--root--padding-left);
+  padding-right: var(--wp--style--root--padding-right);
+  padding-top: var(--wp--preset--spacing--xl);
 }
 
 .edit-link:last-child,
@@ -75,7 +64,7 @@ body:not(.wp-admin) {
   margin-left: auto;
   margin-right: auto;
   margin-top: 1.25rem;
-  max-width: var(--wp--custom--grid-base);
+  max-width: var(--wp--style--global--wide-size);
   min-width: 0;
   overflow: hidden;
   text-align: left;
@@ -88,7 +77,7 @@ body:not(.wp-admin) {
     clear: both;
     color: var(--color-link-edit-text);
     display: block;
-    font-weight: var(--wp--custom--typography--weight-semibold);
+    font-weight: var(--wp--custom--font-weight--semi-bold);
     margin: 0 auto;
     max-width: calc(100% - 2rem);
     padding: 1rem;
@@ -105,13 +94,19 @@ body:not(.wp-admin) {
   }
 }
 
-// Post content wrapper
-.post-inner {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--wp--style--global--content-size);
-  padding-bottom: var(--wp--preset--spacing--30);
-  padding-left: var(--wp--custom--spacing--container-padding-inline);
-  padding-right: var(--wp--custom--spacing--container-padding-inline);
-  padding-top: var(--wp--preset--spacing--30);
+// Buttons outside of block content
+.button {
+  @include button();
+
+  &.is-style-outline {
+    @include button-style-outline();
+  }
+
+  &.is-size-small {
+    @include button-size-small();
+  }
+
+  &.is-size-large {
+    @include button-size-large();
+  }
 }

@@ -21,7 +21,7 @@ $thumbnail = wp_get_attachment_url( get_post_thumbnail_id() ) ?: THEME_SETTINGS[
 
 get_header(); ?>
 
-<main class="site-main">
+<main class="site-main has-global-padding is-layout-constrained">
   <?php
     the_content();
     air_edit_link();

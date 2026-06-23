@@ -25,11 +25,11 @@
   height: unset;
   margin: unset;
   font-size: var(--wp--preset--font-size--14);
-  font-weight: var(--wp--custom--typography--weight-semibold);
+  font-weight: var(--wp--custom--font-weight--semi-bold);
   white-space: nowrap;
   border: 4px solid var(--wp--preset--color--black);
   font-size: 16px;
-  font-weight: var(--wp--custom--typography--weight-bold);
+  font-weight: var(--wp--custom--font-weight--bold);
   padding: 10px 20px;
   position: relative;
   white-space: nowrap;
@@ -49,7 +49,7 @@
     color: var(--wp--preset--color--black);
     content: 'Your nav here \00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0 About\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0Services\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0\00A0Pricing\00A0\00A0\00A0\00A0\00A0\00A0\00A0 Contact';
     display: block;
-    font-weight: var(--wp--custom--typography--weight-semibold);
+    font-weight: var(--wp--custom--font-weight--semi-bold);
     opacity: .2;
     padding: 15px 0;
   }

@@ -4,7 +4,6 @@
  */
 
 // Import modules
-import reframe from 'reframe.js';
 import {
   styleExternalLinks,
   initExternalLinkLabels,
@@ -40,7 +39,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Uncomment if you like to use a sticky navigation
   // navSticky();
-
-  // Fit video embeds to container
-  reframe('.wp-has-aspect-ratio iframe');
 });

@@ -11,7 +11,7 @@
   // Making sure the footer background is white, even on WordPress.org
   background-color: var(--wp--preset--color--white);
   border-top: 1px solid #e3e3f0;
-  color: var(--wp--custom--color--paragraph);
+  color: var(--wp--preset--color--black);
   overflow: hidden;
   padding: 3.75rem 1.25rem;
 
@@ -46,7 +46,7 @@
   }
 
   .powered-by-wordpress {
-    font-weight: var(--wp--custom--typography--weight-semibold);
+    font-weight: var(--wp--custom--font-weight--semi-bold);
   }
 
   .powered-by-wordpress svg {

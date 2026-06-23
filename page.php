@@ -21,7 +21,7 @@ the_post();
 
 get_header(); ?>
 
-<main class="site-main">
+<main class="site-main has-global-padding is-layout-constrained">
   <?php
     the_content();
     air_edit_link();

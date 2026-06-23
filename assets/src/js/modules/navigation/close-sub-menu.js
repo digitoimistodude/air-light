@@ -4,8 +4,8 @@ function closeSubMenu(li) {
     return;
   }
 
-  // Get the dropdown-button
-  const dropdownButton = li.querySelector('.dropdown-toggle');
+  // Get the dropdown-button (.menu-item-clickable in click nav, .dropdown-toggle in hover nav)
+  const dropdownButton = li.querySelector('.menu-item-clickable') || li.querySelector('.dropdown-toggle');
 
   // Get the submenu
   const subMenu = li.querySelector('.sub-menu');

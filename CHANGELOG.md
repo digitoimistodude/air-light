@@ -1,6 +1,22 @@
-### [Unreleased]: 2026-04-21
+### 10.2.0: 2026-06-23
+
+* Remove wysiwyg(tinymce) editor specific styles. Move default link css to theme.json, ref: DEV-1032
+* Remove unused SVG icons (breadcrumbs arrow, chevrons, slider arrows), ref: DEV-1032
+* Fallback to page allowed blocks if post type blocks are not configured. Allow all blocks on pages. Add prettierignore, ref: DEV-1032
+* Fix submenu width, remove clamp helper, ref: DEV-1032
+* Update button styles used outside of block content to match theme.json button styles, ref: DEV-1032
+* Fix nav flickering around responsive breakpoint, ref: DEV-1032
+* Add support for responsive embeds. Hide embed types from inserter instead of disabling them. Drop now redundant reframe.js depedency, Ref: DEV-1032
+* Theme cleanup. Remove redundant styling, update single.php template, Ref: DEV-1032
+* Remove custom `gridBase`, `spacing`, `color` and `typography` variables from theme.json and replace usages with WordPress preset, Ref: DEV-1032
+* Delete `_spacings.scss` responsive override file, spacing now flows from `block-gap`, root padding and preset clamps, Ref: DEV-1032
 * Fix indentation: convert tabs to 2-space indent in several files, Ref: DEV-906
 * Add filter to disable remote block patterns, Ref: DEV-985
+* Enable minHeight for Vertical Alignment support, Ref DEV-1039
+* Fix responsive image height override for object-fit cover images, Ref: DEV-1040
+* Fix HTML/a11y workflow vnu.jar download by pinning to release `20.6.30` and extracting from zip, Ref: DEV-986
+* Fix click navigation bugs, Ref: DEV-984
+* Replace `moveto` dependency with native `Element.scrollIntoView({ behavior: 'smooth' })` in `top.js`, `anchors.js` and `a11y-skip-link.js`, Ref: DEV-86
 
 ### 10.1.1: 2026-04-08
 

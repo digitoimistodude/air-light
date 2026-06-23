@@ -16,11 +16,9 @@
 .alignwide {
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--wp--style--global--wide-size);
-  width: 100%;
+  max-width: var(--wp--style--global--content-size);
 }
 
 .alignfull {
   max-width: none;
-  width: 100vw;
 }

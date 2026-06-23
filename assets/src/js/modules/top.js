@@ -1,12 +1,5 @@
 /* eslint-disable max-len */
-import MoveTo from 'moveto';
-
 const backToTop = () => {
-  // Back to top button
-  const moveToTop = new MoveTo({
-    duration: 300,
-    easing: 'easeOutQuart',
-  });
   const topButton = document.getElementById('top');
   const focusableElements = document.querySelectorAll(
     'button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])',
@@ -37,7 +30,7 @@ const backToTop = () => {
     }
 
     // Move smoothly to the first focusable element on the page
-    moveToTop.move(focusableElements[0]);
+    focusableElements[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     // Focus too, if on keyboard
     focusableElements[0].focus({ preventScroll: true, focusVisible });
