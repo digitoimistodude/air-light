@@ -1,4 +1,4 @@
-### [Unreleased]: 2026-06-23
+### 10.2.0: 2026-06-23
 
 * Remove wysiwyg(tinymce) editor specific styles. Move default link css to theme.json, ref: DEV-1032
 * Remove unused SVG icons (breadcrumbs arrow, chevrons, slider arrows), ref: DEV-1032
