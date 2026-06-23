@@ -67,12 +67,13 @@ const navClick = () => {
   // Define focusable elements on sub-menu (.menu-item a, .dropdown button)
   const focusableElementsforDropdown = document.querySelectorAll('.menu-item a, .dropdown button, .button-nav');
 
+  // Handle different scenarios when menus should be closed
+  // Must be called before a11yAddDropdownToggleLabelsClick which renames .dropdown-toggle to .menu-item-clickable
+  closeSubMenuHandler(menuItems);
+
   // Dropdown menus
   a11yAddDropdownToggleLabelsClick(menuItems);
   a11yDropdownMenuKeyboardNavigationClick(menuItems, focusableElementsforDropdown);
-
-  // Handle different scenarios when menus should be closed
-  closeSubMenuHandler(menuItems);
 };
 
 const navMobile = () => {

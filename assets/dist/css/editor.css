@@ -1,21 +1,2 @@
-:root {
-  --breakpoint-nav: 1029px;
-}
-
-.is-root-container, body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: geometricprecision;
-}
-
-.entry-footer a, .site-footer a, .site-header a {
-  text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-}
-
-img[width][height]:not([data-object-fit="cover"]) {
-  height: auto;
-}
+:root{--breakpoint-nav:1029px}.is-root-container,body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;text-rendering:geometricprecision}.entry-footer a,.site-footer a,.site-header a{text-decoration:none}img{max-width:100%}img[width][height]:not([data-object-fit=cover]){height:auto}
+/*# sourceMappingURL=editor.css.map */

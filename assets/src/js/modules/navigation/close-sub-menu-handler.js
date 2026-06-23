@@ -30,7 +30,8 @@ function closeSubMenuHandler(items) {
       return;
     }
 
-    const dropdownToggle = li.querySelector('.dropdown-toggle');
+    const dropdownToggle = li.querySelector('.menu-item-clickable') || li.querySelector('.dropdown-toggle');
+
     const sameLevelDropdowns = li.parentNode.querySelectorAll(':scope > .menu-item-has-children');
 
     // Add event listener to dropdown toggle
