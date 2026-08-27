@@ -123,15 +123,21 @@ function acf_block_maybe_enable_cache( string $block_slug ) {
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, null );
   }
 
-  // Check that we have the block in defined in theme settings
-  $block_key = array_search( $block_slug, array_column( THEME_SETTINGS['acf_blocks'], 'name' ) ); // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
-  if ( false === $block_key ) {
+  // Check that we have the block in defined in theme settings. Matching on the
+  // entry itself rather than via array_column, which drops entries without a
+  // name and returns keys that no longer line up with the settings array.
+  $block = null;
+  foreach ( THEME_SETTINGS['acf_blocks'] as $block_settings ) {
+    if ( isset( $block_settings['name'] ) && $block_slug === $block_settings['name'] ) {
+      $block = $block_settings;
+      break;
+    }
+  }
+
+  if ( null === $block ) {
     \do_action( 'qm/debug', "Block {$block_slug} settings couldn't be found in theme settings" ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
     return apply_filters( 'air_acf_block_maybe_enable_cache', $enable_cache, $block_slug );
   }
-
-  // Get block settings
-  $block = THEME_SETTINGS['acf_blocks'][ $block_key ];
 
   // Check from block settings if we should prevent cache
   if ( isset( $block['prevent_cache'] ) ) {
