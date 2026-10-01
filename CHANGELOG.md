@@ -1,3 +1,7 @@
+### [Unreleased]: 2026-10-01
+
+* Update `engine.io` to 6.6.11 for the WebTransport SID DoS advisory GHSA-gr94-w7qr-f4j3, Ref: DEV-1305
+
 ### 10.2.0: 2026-06-23
 
 * Remove wysiwyg(tinymce) editor specific styles. Move default link css to theme.json, ref: DEV-1032
