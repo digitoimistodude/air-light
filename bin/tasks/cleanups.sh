@@ -10,6 +10,7 @@ rm -f ${PROJECT_THEME_PATH}/.gitignore
 rm -f ${PROJECT_THEME_PATH}/readme.txt
 rm -f ${PROJECT_THEME_PATH}/languages/*
 rm ${PROJECT_THEME_PATH}/README.md
+rm -f ${PROJECT_THEME_PATH}/CLAUDE.md
 rm ${PROJECT_THEME_PATH}/LICENSE.md
 
 # Clean up air-light CHANGELOGs from theme and project root

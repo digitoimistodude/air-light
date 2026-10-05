@@ -6,56 +6,50 @@ chmod 777 ${PROJECT_PATH}/media
 
 echo "${YELLOW}Generating default README.md...${TXTRESET}"
 
-# Extract versions from style.css
-NEWEST_AIR_VERSION=$(grep -m1 "^Version:" ${PROJECT_THEME_PATH}/style.css | sed 's/Version: //')
-NEWEST_WORDPRESS_VERSION=$(grep -m1 "^Tested up to:" ${PROJECT_THEME_PATH}/style.css | sed 's/Tested up to: //')
-NEWEST_PHP_VERSION=$(grep -m1 "^Requires PHP:" ${PROJECT_THEME_PATH}/style.css | sed 's/Requires PHP: //')
-CURRENT_DATE=$(LC_TIME=en_US date '+%d %b %Y' |tr ' ' '_');
-echo "# ${PROJECT_NAME}
-![based_on_air_version ${NEWEST_AIR_VERSION}_](https://img.shields.io/badge/based_on_air_version-${NEWEST_AIR_VERSION}_-brightgreen.svg?style=flat-square) ![project_created ${CURRENT_DATE}](https://img.shields.io/badge/project_created-${CURRENT_DATE}-blue.svg?style=flat-square) ![Tested_up_to WordPress_${NEWEST_WORDPRESS_VERSION}](https://img.shields.io/badge/Tested_up_to-WordPress_${NEWEST_WORDPRESS_VERSION}-blue.svg?style=flat-square) ![Compatible_with PHP_${NEWEST_PHP_VERSION}](https://img.shields.io/badge/Compatible_with-PHP_${NEWEST_PHP_VERSION}-green.svg?style=flat-square)
+# Only facts that stay true, bin/readme.sh describes the project from its code later
+cat > "${PROJECTS_HOME}/${PROJECT_NAME}/README.md" << README
+# ${PROJECT_NAME}
 
-This project is hand made for customer by Dude.
+WordPress site for ${PROJECT_NAME}, made by [Digitoimisto Dude Oy](https://www.dude.fi).
 
-**Disclaimer:** Please remove this disclaimer after you have edited the README.md, style.css version information and details and screenshot.png. If you see this text in place after the project has been deployed to production, \`git blame\` is in place ;)
+![${PROJECT_NAME} theme screenshot](content/themes/${THEME_NAME}/screenshot.png)
 
-## Stack
-
-### Project is based on
-
-* [digitoimistodude/dudestack](https://github.com/digitoimistodude/dudestack)
-* [digitoimistodude/air-light](https://github.com/digitoimistodude/air-light)
-
-### Recommended development environment
-
-* [digitoimistodude/macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup)
-
-## Theme screenshot
-
-![Screenshot](/content/themes/${THEME_NAME}/screenshot.png?raw=true \"Screenshot\")
+Built on [dudestack](https://github.com/digitoimistodude/dudestack) and [air-light](https://github.com/digitoimistodude/air-light). Versions and release notes are in [CHANGELOG.md](content/themes/${THEME_NAME}/CHANGELOG.md).
 
 ## Getting started
 
-Your local server should be up and running. If you need help, ask your supervisor or refer to **[Internal Development Docs](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/)** → **[Joining the project later on](https://app.gitbook.com/o/PedExJWZmbCiZe4gDwKC/s/VVikkYgIZ9miBzwYDCYh/project-stages/joining-the-project-later-on)**.
+You need [macos-lemp-setup](https://github.com/digitoimistodude/macos-lemp-setup) running. The full walkthrough is in [Joining the project later on](https://docs.dude.fi/doc/joining-the-project-later-on-enczxoagEQ).
 
-### Installation
-
-In project root:
-
-\`\`\`
+\`\`\`bash
+git clone git@github.com:digitoimistodude/${PROJECT_NAME}.git && cd ${PROJECT_NAME}
 composer install
-nvm install
+cd content/themes/${THEME_NAME}
 nvm use
 npm install
-\`\`\`
-
-In theme directory:
-
-\`\`\`
-npm install
-\`\`\`
-
-Start development from project root:
-
-\`\`\`
 npm run dev
-\`\`\`" > "${PROJECTS_HOME}/${PROJECT_NAME}/README.md"
+\`\`\`
+
+## Development
+
+Run these in \`content/themes/${THEME_NAME}\`:
+
+| Command | What it does |
+|---|---|
+| \`npm run dev\` | Watches styles and scripts, starts BrowserSync |
+| \`npm run build\` | Production build |
+| \`npm run lint\` | ESLint |
+| \`npm run lint:styles\` | Stylelint |
+
+Every change gets a line in CHANGELOG.md and a Linear issue reference at the end of the commit message.
+
+## Deployment
+
+Capistrano from \`master\`. Stage files in \`config/deploy/\` are not in the repo.
+
+\`\`\`bash
+cap staging deploy
+cap production deploy
+\`\`\`
+
+See [Deploying to staging](https://docs.dude.fi/doc/deploying-to-staging-dPBT6qe7NA).
+README
