@@ -24,6 +24,3 @@ source ${SCRIPTS_LOCATION}/tasks/cleanups.sh
 
 # Add media folder, generate README.md for project etc.
 source ${SCRIPTS_LOCATION}/tasks/additions.sh
-
-# Generate GitHub Actions workflows for the project
-source ${SCRIPTS_LOCATION}/tasks/workflows.sh

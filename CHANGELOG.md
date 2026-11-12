@@ -1,9 +1,10 @@
-### [Unreleased]: 2026-10-05
+### [Unreleased]: 2026-11-12
 
 * Replace the newtheme README boilerplate with a template that stays true, Ref: DEV-1750
 * Add `bin/readme.sh` to rewrite a project README from its code with Claude Code, Ref: DEV-1750
 * Stop copying air-light CLAUDE.md into new projects, Ref: DEV-1750
 * Update `engine.io` to 6.6.11 for the WebTransport SID DoS advisory GHSA-gr94-w7qr-f4j3, Ref: DEV-1305
+* Stop generating GitHub Actions workflows for new projects, Ref: DEV-335
 
 ### 10.2.0: 2026-06-23
 
